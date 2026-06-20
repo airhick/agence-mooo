@@ -36,48 +36,62 @@ EDITS_ENDPOINT = "https://api.openai.com/v1/images/edits"
 GEN_ENDPOINT = "https://api.openai.com/v1/images/generations"
 MODEL = "gpt-image-2"
 
-# Shared art direction so every image feels like one cohesive brand world,
-# built around the soft 3D "claymation" cow logo.
-STYLE = (
-    "Match the exact art style of the reference image: cute, soft, rounded 3D "
-    "claymation / matte clay render, smooth tactile surfaces, gentle soft "
-    "studio lighting with soft shadows. Brand palette: warm cream, soft "
-    "dusty-pink (#f3c0b8), charcoal black-and-white cow spots, ivory. Friendly, "
-    "premium, playful and calm. Clean and minimal with generous negative space. "
-    "Absolutely NO text, NO words, NO logos, NO watermarks, NO letters anywhere."
+# Shared brand atmosphere — the warm, soft, premium pastel world of the cow
+# logo, WITHOUT any cow: the mascot lives only in the logo now. Every other
+# image is professional web-design imagery that shares this mood.
+ATMOSPHERE = (
+    "Warm, premium and calm editorial atmosphere matching a soft pastel brand "
+    "world: palette of warm cream, soft dusty-pink (#f3c0b8) and ivory with "
+    "gentle charcoal accents. Soft diffused studio lighting, smooth gentle "
+    "shadows, rounded soft shapes, delicate bokeh and depth of field. Refined, "
+    "minimal and elegant with generous negative space, playful yet "
+    "sophisticated. Absolutely NO cow, NO animal, NO mascot, NO character, NO "
+    "logo, NO watermark, NO readable text or letters anywhere."
 )
 
 LANDSCAPE = "1536x1024"
 SQUARE = "1024x1024"
 PORTRAIT = "1024x1536"
 
-# --- BRAND clay images (generated with the logo as reference) ---------------
+# --- BRAND atmosphere images (professional web-design mood, no cow) ----------
 # key -> (prompt, size, quality)
 IMAGES: dict[str, tuple[str, str, str]] = {
+    # Full-bleed homepage hero. Headline sits bottom-left over a dark scrim, so
+    # the subject lives on the right and the left stays calm / uncluttered.
     "hero": (
-        "A dreamy, premium hero scene in the same soft 3D clay style as the "
-        "reference: the cute black-and-white clay cow mascot from the reference, "
-        "calm and friendly, floating gently among soft rounded clay clouds and "
-        "smooth pastel shapes, warm cream and dusty-pink atmosphere, soft depth "
-        "and bokeh, cinematic but adorable. " + STYLE,
+        "A cinematic, dreamy hero photograph evoking world-class web-design "
+        "craft. On the right side of the frame: an elegant minimalist creative "
+        "studio scene — a sleek modern laptop and a smartphone displaying soft, "
+        "softly-blurred beautiful minimal website layouts (no readable text), "
+        "with a few tasteful design objects (a notebook, smooth rounded colour "
+        "swatches, a small plant) on a warm cream surface. The left third of "
+        "the frame is calm, soft and uncluttered. Premium, serene, with soft "
+        "pink light and gentle depth. " + ATMOSPHERE,
         LANDSCAPE, "high",
     ),
+    # Brighter layer revealed under the cursor — a more luminous, magical take.
     "hero-reveal": (
-        "Macro abstract of soft rounded clay shapes and gentle pastel light, "
-        "cream and dusty-pink, smooth tactile blobs and soft bokeh, dreamy and "
-        "warm, in the same clay render style as the reference. " + STYLE,
+        "A luminous, dreamy close-up evoking digital design craft: a soft-focus "
+        "abstract of an elegant website interface glowing on a screen, with soft "
+        "rounded UI cards and panels gently floating, bright airy bokeh and "
+        "smooth light. Warm cream and dusty-pink, premium and magical. "
+        + ATMOSPHERE,
         LANDSCAPE, "high",
     ),
+    # Ambient story-section backdrop — shown darkened at low opacity.
     "texture-1": (
-        "Abstract soft clay gradient field, warm cream to dusty-pink with a few "
-        "smooth charcoal cow-spot shapes drifting, gentle and minimal, tactile "
-        "matte surfaces. " + STYLE,
+        "An abstract atmospheric macro of premium design materials: softly "
+        "overlapping sheets of cream and dusty-pink paper, a smooth gradient "
+        "mesh, subtle rounded shapes and gentle fine grain, minimal and elegant "
+        "with soft shadows. " + ATMOSPHERE,
         LANDSCAPE, "medium",
     ),
+    # Luminous reveal / feature-card media — shown screen-blended and brightened.
     "texture-2": (
-        "Abstract composition of soft rounded clay shapes and gentle cow-spot "
-        "patterns, cream, ivory and dusty-pink, smooth shadows, elegant and "
-        "calm. " + STYLE,
+        "An abstract luminous gradient field of warm cream and soft dusty-pink "
+        "light with gentle glowing bokeh and smooth rounded shapes of light, "
+        "dreamy, airy and minimal, like soft diffused studio light. "
+        + ATMOSPHERE,
         LANDSCAPE, "medium",
     ),
 }
@@ -200,7 +214,7 @@ def main(argv: list[str]) -> int:
     for name in keys:
         if name in IMAGES:
             prompt, size, quality = IMAGES[name]
-            reference = True
+            reference = False
         elif name in SHOWCASE:
             prompt, size, quality = SHOWCASE[name]
             reference = False
