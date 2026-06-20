@@ -1,15 +1,22 @@
-"""Generate brand imagery for the Agence Mooo landing page via OpenAI gpt-image-1.
+"""Generate imagery for the Agence Mooo landing page via OpenAI gpt-image-2.
 
-Every image is generated from the brand logo (logomooo.png) used as a *reference*
-through the image-edits endpoint, so the whole site shares the cute, soft 3D
-"clay" cow universe of the logo.
+Two families of images:
+
+1. BRAND images (hero, textures) — generated from the brand logo (logomooo.png)
+   used as a *reference* through the image-edits endpoint, so they share the
+   cute, soft 3D "clay" cow universe of the logo.
+
+2. SHOWCASE images (show-1/2/3, vision) — clean, realistic screenshots of
+   *professional websites*, each with a different industry and a distinct,
+   varied UI, so a prospective client can project themselves onto the result.
+   These are generated text-to-image (no clay reference) for true-to-life UIs.
 
 Resumable: skips any image already on disk. Saves PNGs to ./assets/.
-Run a single image first to validate:  python tools/gen_images.py hero
+Run a single image first to validate:  python tools/gen_images.py show-1
 
 Usage:
     python tools/gen_images.py            # generate all missing images
-    python tools/gen_images.py hero       # generate just one (by key)
+    python tools/gen_images.py show-1     # generate just one (by key)
     python tools/gen_images.py --force    # regenerate everything
 """
 from __future__ import annotations
@@ -24,9 +31,10 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
-REFERENCE = ROOT / "logomooo.png"          # the cow logo drives the whole mood
-ENDPOINT = "https://api.openai.com/v1/images/edits"
-MODEL = "gpt-image-1"
+REFERENCE = ROOT / "logomooo.png"          # the cow logo drives the brand mood
+EDITS_ENDPOINT = "https://api.openai.com/v1/images/edits"
+GEN_ENDPOINT = "https://api.openai.com/v1/images/generations"
+MODEL = "gpt-image-2"
 
 # Shared art direction so every image feels like one cohesive brand world,
 # built around the soft 3D "claymation" cow logo.
@@ -43,6 +51,7 @@ LANDSCAPE = "1536x1024"
 SQUARE = "1024x1024"
 PORTRAIT = "1024x1536"
 
+# --- BRAND clay images (generated with the logo as reference) ---------------
 # key -> (prompt, size, quality)
 IMAGES: dict[str, tuple[str, str, str]] = {
     "hero": (
@@ -59,31 +68,6 @@ IMAGES: dict[str, tuple[str, str, str]] = {
         "warm, in the same clay render style as the reference. " + STYLE,
         LANDSCAPE, "high",
     ),
-    "vision": (
-        "The cute clay cow mascot from the reference happily looking at a "
-        "floating soft-rounded clay screen showing a minimal elegant website "
-        "(no readable text), warm cream studio, soft pink glow, premium and "
-        "charming, vertical composition. " + STYLE,
-        PORTRAIT, "high",
-    ),
-    "show-1": (
-        "A floating soft clay screen showing an elegant minimal restaurant "
-        "website (no readable text), the cute clay cow peeking beside it, warm "
-        "cream backdrop with dusty-pink accents, adorable premium feel. " + STYLE,
-        SQUARE, "medium",
-    ),
-    "show-2": (
-        "A floating soft clay screen showing a refined boutique / shop website "
-        "(no readable text), the cute clay cow beside it, soft pink and cream "
-        "tones, charming minimal layout. " + STYLE,
-        SQUARE, "medium",
-    ),
-    "show-3": (
-        "A floating soft clay screen showing a modern artisan / craft business "
-        "website (no readable text), the cute clay cow beside it, warm cream and "
-        "dusty-pink, premium and playful. " + STYLE,
-        SQUARE, "medium",
-    ),
     "texture-1": (
         "Abstract soft clay gradient field, warm cream to dusty-pink with a few "
         "smooth charcoal cow-spot shapes drifting, gentle and minimal, tactile "
@@ -95,6 +79,59 @@ IMAGES: dict[str, tuple[str, str, str]] = {
         "patterns, cream, ivory and dusty-pink, smooth shadows, elegant and "
         "calm. " + STYLE,
         LANDSCAPE, "medium",
+    ),
+}
+
+# --- SHOWCASE website screenshots (text-to-image, no clay reference) ---------
+# Clean, realistic, *varied* professional website UIs so a prospective client
+# can picture their own future site. Each is a different industry AND a
+# distinctly different layout / design language.
+SHOT_STYLE = (
+    "Ultra-realistic, high-fidelity screenshot of a professional website "
+    "homepage, as if captured directly from a screen. Pixel-perfect modern web "
+    "design by a top studio: crisp clean typography, real-looking legible "
+    "interface text, a clear navigation bar, well-balanced spacing and a "
+    "tasteful call-to-action button. Straight-on flat view filling the whole "
+    "frame, no browser chrome, no window borders, no mouse cursor, no device "
+    "frame, sharp and photorealistic. No watermark."
+)
+
+SHOWCASE: dict[str, tuple[str, str, str]] = {
+    # Elegant restaurant — warm editorial, big food photography
+    "show-1": (
+        "Homepage of an elegant neighbourhood restaurant. Warm editorial layout: "
+        "a large full-width appetising plated-food photograph as the hero, a "
+        "refined serif headline overlaid, a 'Réserver' reservation button, a "
+        "slim top menu, and a row of dish cards below. Warm cream, terracotta "
+        "and charcoal palette, generous white space. " + SHOT_STYLE,
+        LANDSCAPE, "high",
+    ),
+    # Fashion boutique e-commerce — minimal product grid
+    "show-2": (
+        "Homepage of a chic fashion boutique online shop. Minimalist editorial "
+        "e-commerce design: a clean responsive grid of product cards with soft "
+        "pastel studio product photos, thin sans-serif typography, small price "
+        "tags, a slim navigation bar with a cart icon, lots of negative space. "
+        "Soft dusty-pink, ivory and charcoal palette. " + SHOT_STYLE,
+        LANDSCAPE, "high",
+    ),
+    # Artisan coffee roaster — bold, expressive, asymmetric
+    "show-3": (
+        "Homepage of an artisan coffee roaster. Bold modern design: oversized "
+        "expressive display typography, a striking hero photo of a coffee cup "
+        "and roasted beans, a dynamic asymmetric layout, a 'Boutique' shop "
+        "button, sticky nav. Warm earthy browns, deep green and cream palette. "
+        + SHOT_STYLE,
+        LANDSCAPE, "high",
+    ),
+    # Wellness / yoga studio shown on a phone — different format for variety
+    "vision": (
+        "A modern responsive website homepage for a boutique wellness and yoga "
+        "studio, displayed on a smartphone screen, vertical mobile UI. Serene "
+        "full-bleed calm photo hero, soft sage-green and cream palette, rounded "
+        "buttons, clean class-schedule cards, a tidy bottom navigation bar. "
+        "Elegant, airy and premium. " + SHOT_STYLE,
+        PORTRAIT, "high",
     ),
 }
 
@@ -113,23 +150,35 @@ def load_key() -> str:
     return key
 
 
-def generate(key: str, name: str, prompt: str, size: str, quality: str) -> None:
+def _save(out: Path, payload: dict, size: str, quality: str) -> None:
+    d = payload["data"][0]
+    b64 = d.get("b64_json")
+    if b64:
+        out.write_bytes(base64.b64decode(b64))
+    else:
+        img = requests.get(d["url"], timeout=120)
+        out.write_bytes(img.content)
+    print(f"  ✓ {out.name}  ({size}, {quality}, {out.stat().st_size//1024} KB)")
+
+
+def generate(key: str, name: str, prompt: str, size: str, quality: str,
+             reference: bool) -> None:
+    """reference=True -> clay edit from the logo; False -> plain text-to-image."""
     out = ASSETS / f"{name}.png"
     headers = {"Authorization": f"Bearer {key}"}
-    data = {"model": MODEL, "prompt": prompt, "size": size, "quality": quality, "n": "1"}
+    data = {"model": MODEL, "prompt": prompt, "size": size, "quality": quality, "n": 1}
     for attempt in range(1, 5):
-        with REFERENCE.open("rb") as fh:
-            files = {"image": (REFERENCE.name, fh, "image/png")}
-            r = requests.post(ENDPOINT, headers=headers, data=data, files=files, timeout=300)
+        if reference:
+            with REFERENCE.open("rb") as fh:
+                files = {"image": (REFERENCE.name, fh, "image/png")}
+                r = requests.post(EDITS_ENDPOINT, headers=headers, data=data,
+                                  files=files, timeout=300)
+        else:
+            r = requests.post(GEN_ENDPOINT, headers={**headers,
+                              "Content-Type": "application/json"},
+                              json=data, timeout=300)
         if r.status_code == 200:
-            d = r.json()["data"][0]
-            b64 = d.get("b64_json")
-            if b64:
-                out.write_bytes(base64.b64decode(b64))
-            else:
-                img = requests.get(d["url"], timeout=120)
-                out.write_bytes(img.content)
-            print(f"  ✓ {out.name}  ({size}, {quality}, {out.stat().st_size//1024} KB)")
+            _save(out, r.json(), size, quality)
             return
         if r.status_code in (429, 500, 502, 503):
             wait = 2 ** attempt
@@ -147,17 +196,23 @@ def main(argv: list[str]) -> int:
     key = load_key()
     force = "--force" in argv
     only = [a for a in argv if not a.startswith("-")]
-    keys = only or list(IMAGES)
+    keys = only or (list(IMAGES) + list(SHOWCASE))
     for name in keys:
-        if name not in IMAGES:
-            sys.exit(f"unknown image key: {name} (have: {', '.join(IMAGES)})")
+        if name in IMAGES:
+            prompt, size, quality = IMAGES[name]
+            reference = True
+        elif name in SHOWCASE:
+            prompt, size, quality = SHOWCASE[name]
+            reference = False
+        else:
+            avail = ", ".join(list(IMAGES) + list(SHOWCASE))
+            sys.exit(f"unknown image key: {name} (have: {avail})")
         out = ASSETS / f"{name}.png"
         if out.exists() and not force:
             print(f"  · {out.name} exists, skip")
             continue
-        prompt, size, quality = IMAGES[name]
         print(f"→ {name} …")
-        generate(key, name, prompt, size, quality)
+        generate(key, name, prompt, size, quality, reference)
     print("done.")
     return 0
 
