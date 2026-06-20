@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabac du Point du Jour – Restaurant & Bistrot à Boulogne-Billancourt | Place Marcel-Pagnol</title>
+    <meta name="description" content="Tabac du Point du Jour : restaurant de quartier sur la place Marcel-Pagnol à Boulogne-Billancourt. Cuisine de bistrot, café, tabac, presse. Terrasse, plat du jour, apéro-planche. Ouvert du mardi au dimanche.">
+    <meta property="og:title" content="Tabac du Point du Jour – Tout Boulogne passe au Point du Jour">
+    <meta property="og:description" content="Sur la place Marcel-Pagnol, il y a un endroit où le café est serré et les assiettes généreuses. Le vôtre, depuis toujours ou pour la première fois.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='85%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23C8A96E'/%3E%3Cstop offset='100%25' stop-color='%23F7F3EB'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='62' r='28' fill='url(%23g)'/%3E%3Crect x='35' y='42' width='30' height='4' rx='2' fill='%232E2A25' opacity='0.7'/%3E%3Crect x='38' y='35' width='24' height='4' rx='2' fill='%232E2A25' opacity='0.5'/%3E%3Crect x='40' y='28' width='20' height='4' rx='2' fill='%232E2A25' opacity='0.35'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Tabac du Point du Jour",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "23 Place Marcel Pagnol",
+                "addressLocality": "Boulogne-Billancourt",
+                "addressCountry": "FR"
+            },
+            "servesCuisine": "Bistrot français",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4",
+                "reviewCount": "26"
+            },
+            "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "23:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "15:00" }
+            ]
+        }
+    </script>
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --cream: #F7F3EB;
+            --espresso: #2E2A25;
+            --amber: #C8A96E;
+            --celadon: #9DB2A6;
+            --zinc-beige: #E4D5C3;
+            --chestnut: #6B4F3A;
+            --white-soft: #FCFAF6;
+            --shadow-warm: 0 4px 24px rgba(46, 42, 37, 0.08);
+            --shadow-lg: 0 12px 48px rgba(46, 42, 37, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+            --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --header-h: clamp(64px, 8vw, 80px);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream);
+            color: var(--espresso);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            letter-spacing: 0.01em;
+        }
+
+        /* Grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 99999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.028'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* ==================== TYPOGRAPHY ==================== */
+        h1,
+        h2,
+        h3,
+        h4,
+        .display-font {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            line-height: 1.1;
+            color: var(--espresso);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 6rem);
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: clamp(2rem, 5.5vw, 4.2rem);
+            letter-spacing: 0.07em;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .swash {
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+        .ornament {
+            font-feature-settings: "swsh", "salt";
+            letter-spacing: 0.1em;
+        }
+
+        p,
+        li,
+        span,
+        a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-smooth);
+        }
+        a:hover {
+            color: var(--chestnut);
+        }
+
+        /* ==================== FOCUS & ACCESSIBILITY ==================== */
+        :focus-visible {
+            outline: 3px solid var(--amber);
+            outline-offset: 4px;
+            border-radius: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                animation-delay: 0ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.2rem, 4vw, 3rem);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ==================== HEADER ==================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(247, 243, 235, 0.85);
+            backdrop-filter: blur(16px) saturate(1.1);
+            -webkit-backdrop-filter: blur(16px) saturate(1.1);
+            border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+            transition: all var(--transition-smooth);
+            height: var(--header-h);
+        }
+        .site-header.scrolled {
+            box-shadow: var(--shadow-warm);
+            background: rgba(247, 243, 235, 0.95);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 1.5rem;
+        }
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--espresso);
+            white-space: nowrap;
+            line-height: 1.2;
+            text-decoration: none;
+        }
+        .brand-name span {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.04em;
+            display: block;
+            font-size: 0.65em;
+            color: var(--amber);
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.8rem, 2.5vw, 2rem);
+            align-items: center;
+        }
+        .nav-list a {
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.35em 0;
+            color: var(--espresso);
+            white-space: nowrap;
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--amber);
+            transition: width var(--transition-smooth);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.6em 1.4em;
+            background: var(--amber);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            border-radius: 50px;
+            transition: all var(--transition-bounce);
+            white-space: nowrap;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+        .header-cta:hover {
+            background: var(--chestnut);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 79, 58, 0.3);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1100;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--espresso);
+            border-radius: 2px;
+            transition: all var(--transition-smooth);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 820px) {
+            .nav-list {
+                position: fixed;
+                top: var(--header-h);
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - var(--header-h));
+                flex-direction: column;
+                background: rgba(247, 243, 235, 0.98);
+                backdrop-filter: blur(20px);
+                padding: 3rem 2rem;
+                gap: 1.8rem;
+                transition: right var(--transition-smooth);
+                box-shadow: -8px 0 40px rgba(46, 42, 37, 0.1);
+                align-items: flex-start;
+            }
+            .nav-list.active {
+                right: 0;
+            }
+            .nav-list a {
+                font-size: 1.1rem;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-inner {
+                gap: 0.5rem;
+            }
+        }
+        @media (min-width: 821px) {
+            .hamburger {
+                display: none;
+            }
+            .header-cta.mobile-only {
+                display: none;
+            }
+        }
+
+        /* ==================== DAWN SEPARATOR (filet d'aube) ==================== */
+        .dawn-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: clamp(50px, 9vw, 90px);
+            position: relative;
+            overflow: visible;
+            margin: clamp(1.5rem, 4vw, 3rem) 0;
+        }
+        .dawn-separator .line {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(200, 169, 110, 0.15) 25%,
+                    rgba(200, 169, 110, 0.25) 50%,
+                    rgba(200, 169, 110, 0.15) 75%,
+                    transparent 100%);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .dawn-separator .sun-arc {
+            position: relative;
+            width: clamp(60px, 10vw, 100px);
+            height: clamp(60px, 10vw, 100px);
+            z-index: 2;
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.25;
+            transform: scale(0.85);
+        }
+        .dawn-separator.illuminated .sun-arc {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .dawn-separator .sun-arc svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .dawn-separator .sun-arc .glow {
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            fill: #C8A96E;
+            opacity: 0.3;
+        }
+        .dawn-separator.illuminated .sun-arc .glow {
+            opacity: 1;
+            fill: #C8A96E;
+        }
+        .dawn-separator .sun-arc .arc-stroke {
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            stroke: #C8A96E;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+        }
+        .dawn-separator.illuminated .sun-arc .arc-stroke {
+            stroke-dashoffset: 0;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: calc(100vh - var(--header-h));
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--cream);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.05) saturate(0.9);
+            opacity: 0.55;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(247, 243, 235, 0.3) 0%,
+                    rgba(247, 243, 235, 0.55) 35%,
+                    rgba(247, 243, 235, 0.85) 70%,
+                    rgba(247, 243, 235, 1) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: clamp(3rem, 10vw, 8rem) 0 clamp(2rem, 6vw, 5rem);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .hero-content h1 {
+            animation: revealUp 0.9s 0.15s both cubic-bezier(0.22, 0.61, 0.36, 1);
+            margin-bottom: 0.5em;
+        }
+        .hero-content .hero-subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            color: var(--espresso);
+            max-width: 620px;
+            margin: 0 auto 2.5em;
+            animation: revealUp 0.9s 0.4s both cubic-bezier(0.22, 0.61, 0.36, 1);
+            opacity: 0.85;
+        }
+        .hero-content .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 0.7em 1.5em;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            color: var(--espresso);
+            border: 1px solid rgba(200, 169, 110, 0.35);
+            animation: revealUp 0.9s 0.6s both cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .hero-content .hero-badge .stars {
+            color: var(--amber);
+            letter-spacing: 0.15em;
+            font-size: 1.1em;
+        }
+        .hero-cta-row {
+            animation: revealUp 0.9s 0.75s both cubic-bezier(0.22, 0.61, 0.36, 1);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.85em 2.2em;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all var(--transition-bounce);
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--amber);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--chestnut);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(107, 79, 58, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--amber);
+            color: var(--espresso);
+        }
+        .btn-outline:hover {
+            background: var(--amber);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== SECTION STYLES ==================== */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) 0;
+            position: relative;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 1em;
+            display: block;
+        }
+        .section-title {
+            margin-bottom: 0.7em;
+        }
+        .section-text {
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            line-height: 1.7;
+            color: var(--espresso);
+            max-width: 600px;
+            opacity: 0.85;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.25s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.4s;
+        }
+
+        /* ==================== CARD LAYOUTS ==================== */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .split-layout.reverse {
+            direction: rtl;
+        }
+        .split-layout.reverse>* {
+            direction: ltr;
+        }
+        .split-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        .split-image:hover img {
+            transform: scale(1.04);
+        }
+        .split-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(200, 169, 110, 0.12) 0%,
+                    transparent 60%);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        .image-accent-border {
+            position: absolute;
+            inset: -10px;
+            border: 1.5px solid rgba(200, 169, 110, 0.3);
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: -1;
+            transform: translate(16px, 16px);
+        }
+
+        /* ==================== SERVICE CARDS ==================== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .card {
+            background: var(--zinc-beige);
+            border-radius: var(--radius-md);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(200, 169, 110, 0.15);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(200, 169, 110, 0.4);
+        }
+        .card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.7;
+        }
+        .card h4 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5em;
+        }
+        .card p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ==================== BADGE GOOGLE ==================== */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8em;
+            background: #fff;
+            border-radius: 50px;
+            padding: 0.6em 1.4em;
+            box-shadow: var(--shadow-warm);
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid rgba(200, 169, 110, 0.3);
+        }
+        .google-badge .rating-stars {
+            color: #F4B400;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+        }
+        .google-badge .rating-value {
+            font-weight: 700;
+            color: var(--espresso);
+        }
+        .google-badge .rating-count {
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        /* ==================== INFO BLOCK ==================== */
+        .info-block {
+            background: var(--zinc-beige);
+            border-radius: var(--radius-lg);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            border: 1px solid rgba(200, 169, 110, 0.2);
+        }
+        .info-block h3 {
+            margin-bottom: 1.2em;
+        }
+        .info-block .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8em;
+            margin-bottom: 0.9em;
+            font-size: 1rem;
+        }
+        .info-block .info-icon {
+            flex-shrink: 0;
+            width: 1.4em;
+            text-align: center;
+            color: var(--amber);
+        }
+        .hours-list {
+            list-style: none;
+            display: grid;
+            gap: 0.5em;
+        }
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 2em;
+            font-size: 0.95rem;
+            padding: 0.4em 0;
+            border-bottom: 1px dotted rgba(200, 169, 110, 0.25);
+        }
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        .hours-list .day {
+            font-weight: 500;
+        }
+        .hours-list .time {
+            color: var(--espresso);
+            opacity: 0.8;
+        }
+
+        /* ==================== MAP ==================== */
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(200, 169, 110, 0.2);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        /* ==================== QUOTE BLOCK ==================== */
+        .quote-block {
+            text-align: center;
+            padding: clamp(2rem, 5vw, 4rem) 0;
+            position: relative;
+        }
+        .quote-block blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+            font-style: italic;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--espresso);
+            position: relative;
+            padding: 0 1.5em;
+        }
+        .quote-block blockquote::before {
+            content: '\201C';
+            position: absolute;
+            left: -0.1em;
+            top: -0.3em;
+            font-size: 5rem;
+            color: var(--amber);
+            opacity: 0.3;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .site-footer {
+            background: var(--espresso);
+            color: var(--cream);
+            padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+        }
+        .site-footer a {
+            color: var(--amber);
+            transition: color var(--transition-smooth);
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 3rem;
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #fff;
+            margin-bottom: 0.5em;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(247, 243, 235, 0.15);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .split-layout.reverse {
+                direction: ltr;
+            }
+            .split-image {
+                aspect-ratio: 3/2;
+            }
+            .hero-content h1 {
+                letter-spacing: 0.05em;
+            }
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .dawn-separator {
+                margin: 1rem 0;
+            }
+            .dawn-separator .sun-arc {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 10vw, 3.2rem);
+            }
+            .btn {
+                padding: 0.7em 1.5em;
+                font-size: 0.85rem;
+            }
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .split-image {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* ==================== ANIMATIONS SCROLL ADDITIVES ==================== */
+        @keyframes softGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 0 rgba(200, 169, 110, 0);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(200, 169, 110, 0.2);
+            }
+        }
+        .glow-pulse {
+            animation: softGlow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-name" aria-label="Tabac du Point du Jour - Accueil">
+                Tabac du Point du Jour
+                <span>Boulogne-Billancourt</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="#carte">Notre carte</a></li>
+                    <li><a href="#ame">L'âme du lieu</a></li>
+                    <li><a href="#quartier">Le quartier</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#trouver">Nous trouver</a></li>
+                    <li class="mobile-only"><a href="#trouver" class="header-cta">Venir</a></li>
+                </ul>
+            </nav>
+            <a href="#trouver" class="header-cta desktop-only">Itinéraire</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80&auto=format&fit=crop"
+            alt="Cuisine en préparation au Tabac du Point du Jour"
+            loading="eager"
+            width="1920"
+            height="1280">
+        </div>
+        <div class="container hero-content">
+            <h1>Tout Boulogne passe au Point du Jour</h1>
+            <p class="hero-subtitle">
+                Sur la place Marcel-Pagnol, il y a un endroit où le café est serré et les assiettes généreuses.
+                Le vôtre, depuis toujours ou pour la première fois.
+            </p>
+            <div style="margin-bottom:2em;">
+                <span class="google-badge glow-pulse">
+                    <span class="rating-stars">★★★★</span>
+                    <span class="rating-value">4,0</span>
+                    <span class="rating-count">(26 avis)</span>
+                </span>
+            </div>
+            <div class="hero-cta-row">
+                <a href="#carte" class="btn btn-primary">Découvrir la carte</a>
+                <a href="#trouver" class="btn btn-outline">Venir au restaurant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="sunGlow" cx="50%" cy="85%" r="55%">
+                        <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#C8A96E" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== NOTRE CARTE ==================== -->
+    <section class="section" id="carte">
+        <div class="container">
+            <span class="section-label reveal">Notre carte</span>
+            <div class="split-layout">
+                <div class="reveal reveal-delay-1">
+                    <h2 class="section-title">La faim du jour</h2>
+                    <p class="section-text">
+                        Entre le croque-monsieur qui réconforte et le tartare coupé au couteau,
+                        notre cuisine de bistrot fait honneur aux produits de saison.
+                        Le midi, on y vient pour le plat du jour&nbsp;; le soir, on s'y attarde
+                        pour le rituel de l'apéro-planche.
+                    </p>
+                    <p style="margin-top:1.2em;font-style:italic;opacity:0.7;" class="reveal reveal-delay-2">
+                        Carte renouvelée chaque semaine — venez découvrir le plat du jour au comptoir.
+                    </p>
+                </div>
+                <div class="split-image reveal reveal-delay-2" style="position:relative;">
+                    <div class="image-accent-border"></div>
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop"
+                    alt="Table dressée gastronomique au Tabac du Point du Jour"
+                    loading="lazy"
+                    width="1200"
+                    height="900">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== L'ÂME DU LIEU ==================== -->
+    <section class="section" id="ame">
+        <div class="container">
+            <span class="section-label reveal">L'âme du lieu</span>
+            <div class="split-layout reverse">
+                <div class="reveal reveal-delay-1">
+                    <h2 class="section-title">Zinc, bois et compagnie</h2>
+                    <p class="section-text">
+                        Un comptoir où l'on vide un petit noir avant le bureau, une salle
+                        où les familles se retrouvent le dimanche, et ce mur de vieilles
+                        publicités qui raconte le Boulogne d'avant. Ici, le tabac et la
+                        table ne font qu'un.
+                    </p>
+                </div>
+                <div class="split-image reveal reveal-delay-2" style="position:relative;">
+                    <div class="image-accent-border"></div>
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80&auto=format&fit=crop"
+                    alt="Salle de restaurant chaleureuse au Tabac du Point du Jour"
+                    loading="lazy"
+                    width="1200"
+                    height="900">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== LE QUARTIER EN PARTAGE ==================== -->
+    <section class="section" id="quartier">
+        <div class="container">
+            <span class="section-label reveal">Le quartier en partage</span>
+            <div class="split-layout">
+                <div class="reveal reveal-delay-1">
+                    <h2 class="section-title">Place à la vie</h2>
+                    <p class="section-text">
+                        La terrasse donne sur les platanes et le ballet discret de la place.
+                        On y célèbre les matchs du Racing, les arrivées de la journée et,
+                        surtout, l'art de prendre son temps quand la ville court.
+                    </p>
+                </div>
+                <div class="split-image reveal reveal-delay-2" style="position:relative;">
+                    <div class="image-accent-border"></div>
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&q=80&auto=format&fit=crop"
+                    alt="Table de dîner conviviale en terrasse"
+                    loading="lazy"
+                    width="1200"
+                    height="900">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== SERVICES & DOUCEURS ==================== -->
+    <section class="section" id="services">
+        <div class="container">
+            <span class="section-label reveal">Services & douceurs</span>
+            <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0.5em;">Plus qu'un restaurant</h2>
+            <p class="section-text reveal reveal-delay-1" style="margin-bottom:2.5em;max-width:650px;">
+                Tabac, presse, relais-colis et dépôt de pain&nbsp;: on est le point de
+                passage qui simplifie votre quotidien. Et pour les becs sucrés, nos
+                pâtisseries maison méritent à elles seules le détour.
+            </p>
+            <div class="card-grid">
+                <div class="card reveal reveal-delay-1">
+                    <span class="card-icon">🚬</span>
+                    <h4>Tabac</h4>
+                    <p>Toutes vos marques, cigarettes et accessoires, disponibles au comptoir toute la journée.</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <span class="card-icon">📰</span>
+                    <h4>Presse</h4>
+                    <p>Quotidiens, magazines, et le dernier numéro de votre revue préférée, chaque matin.</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <span class="card-icon">📦</span>
+                    <h4>Relais-colis</h4>
+                    <p>Déposez et récupérez vos colis en toute simplicité, aux horaires du restaurant.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <span class="card-icon">🥐</span>
+                    <h4>Pâtisseries maison</h4>
+                    <p>Éclairs, tartes et viennoiseries préparées chaque matin par notre pâtissier.</p>
+                </div>
+            </div>
+            <div style="margin-top:2.5rem; text-align:center;" class="reveal reveal-delay-3">
+                <div class="split-image" style="max-width:600px;margin:0 auto;position:relative;aspect-ratio:16/9;">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80&auto=format&fit=crop"
+                    alt="Assiette gastronomique dressée"
+                    loading="lazy"
+                    width="1200"
+                    height="675">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== QUOTE ==================== -->
+    <div class="quote-block section" style="padding-top:0;">
+        <div class="container">
+            <blockquote class="reveal">
+                Le Point du Jour, c'est le repère du jour — l'aube d'un moment, d'un goût, d'une rencontre.
+            </blockquote>
+            <p style="text-align:center;margin-top:1.5em;opacity:0.6;font-size:0.9rem;" class="reveal reveal-delay-1">
+                — Le patron, entre deux cafés serrés
+            </p>
+        </div>
+    </div>
+
+    <!-- Dawn Separator -->
+    <div class="dawn-separator" aria-hidden="true">
+        <div class="line"></div>
+        <div class="sun-arc">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="58" r="32" fill="url(#sunGlow)" class="glow"/>
+                <path d="M 20 58 A 30 30 0 0 1 80 58" class="arc-stroke" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="50" y1="28" x2="50" y2="20" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="32" y1="35" x2="26" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <line x1="68" y1="35" x2="74" y2="28" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== NOUS TROUVER ==================== -->
+    <section class="section" id="trouver" style="padding-top:0;">
+        <div class="container">
+            <span class="section-label reveal">Nous trouver</span>
+            <h2 class="section-title reveal reveal-delay-1">23, place Marcel-Pagnol, à l'angle du bien-manger</h2>
+            <div class="split-layout" style="margin-top:2rem;">
+                <div class="reveal reveal-delay-1">
+                    <p class="section-text" style="margin-bottom:1.5em;">
+                        À deux pas du métro Boulogne–Jean Jaurès, ouvert du mardi au samedi
+                        de 7h à 23h, le dimanche de 7h à 15h. Pas de réservation&nbsp;: on vous
+                        garde une place, comme toujours.
+                    </p>
+                    <div class="info-block">
+                        <h3>Horaires d'ouverture</h3>
+                        <ul class="hours-list">
+                            <li><span class="day">Lundi</span><span class="time">Fermé</span></li>
+                            <li><span class="day">Mardi – Samedi</span><span class="time">7h – 23h</span></li>
+                            <li><span class="day">Dimanche</span><span class="time">7h – 15h</span></li>
+                        </ul>
+                        <p style="margin-top:1.5em;font-size:0.85rem;opacity:0.7;">
+                            Horaires à confirmer aux jours fériés.
+                        </p>
+                    </div>
+                    <div style="margin-top:1.5em;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;" class="reveal reveal-delay-2">
+                        <span class="google-badge">
+                            <span class="rating-stars">★★★★</span>
+                            <span class="rating-value">4,0</span>
+                            <span class="rating-count">(26 avis Google)</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="map-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=Tabac+du+point+du+jour+23+Place+Marcel+Pagnol%2C+Boulogne-Billancourt&output=embed"
+                        width="100%"
+                        height="360"
+                        style="border:0;"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Carte du Tabac du Point du Jour, 23 Place Marcel Pagnol, Boulogne-Billancourt">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Tabac du Point du Jour</div>
+                <p style="opacity:0.8;margin-bottom:0.3em;">23 Place Marcel Pagnol</p>
+                <p style="opacity:0.7;font-size:0.9em;">92100 Boulogne-Billancourt</p>
+                <p style="opacity:0.6;font-size:0.85em;margin-top:0.5em;">Métro Boulogne–Jean Jaurès</p>
+            </div>
+            <div>
+                <h4 style="font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.05em;margin-bottom:0.8em;color:#fff;">Horaires</h4>
+                <ul class="hours-list" style="color:var(--cream);opacity:0.85;">
+                    <li><span class="day">Lundi</span><span class="time">Fermé</span></li>
+                    <li><span class="day">Mar – Sam</span><span class="time">7h – 23h</span></li>
+                    <li><span class="day">Dimanche</span><span class="time">7h – 15h</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.05em;margin-bottom:0.8em;color:#fff;">Services</h4>
+                <p style="opacity:0.8;margin-bottom:0.4em;">Restaurant • Tabac • Presse</p>
+                <p style="opacity:0.8;margin-bottom:0.4em;">Relais-colis • Dépôt de pain</p>
+                <p style="opacity:0.8;">Pâtisseries maison</p>
+                <p style="margin-top:1em;opacity:0.7;font-size:0.9em;">Note Google : 4★ (26 avis)</p>
+            </div>
+            <div>
+                <h4 style="font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.05em;margin-bottom:0.8em;color:#fff;">Le quartier</h4>
+                <p style="opacity:0.8;margin-bottom:0.4em;">Place Marcel-Pagnol</p>
+                <p style="opacity:0.8;margin-bottom:0.4em;">Terrasse sous les platanes</p>
+                <p style="opacity:0.8;">À deux pas du Racing</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Tabac du Point du Jour — Site créé par <a href="https://agence.mooo.com/tabac-du-point-du-jour" target="_blank" rel="noopener">Agence Mooo</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        // ==================== HAMBURGER MENU ====================
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('navList');
+        const navLinks = navList.querySelectorAll('a');
+
+        function toggleMenu() {
+            const isActive = navList.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // ==================== HEADER SCROLL SHADOW ====================
+        const header = document.getElementById('header');
+        let scrollTicking = false;
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 40) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        });
+
+        // ==================== INTERSECTION OBSERVER - REVEALS ====================
+        const revealElements = document.querySelectorAll('.reveal');
+        const dawnSeparators = document.querySelectorAll('.dawn-separator');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.15
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Optionally unobserve after reveal
+                    // revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ==================== INTERSECTION OBSERVER - DAWN SEPARATORS ====================
+        const dawnObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('illuminated');
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.3
+        });
+
+        dawnSeparators.forEach(sep => dawnObserver.observe(sep));
+
+        // ==================== CLOSE MENU ON OUTSIDE CLICK (MOBILE) ====================
+        document.addEventListener('click', (e) => {
+            if (
+                navList.classList.contains('active') &&
+                !navList.contains(e.target) &&
+                !hamburger.contains(e.target)
+            ) {
+                toggleMenu();
+            }
+        });
+
+        // ==================== ESC KEY TO CLOSE MENU ====================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navList.classList.contains('active')) {
+                toggleMenu();
+                hamburger.focus();
+            }
+        });
+
+    })();
+</script>
+</body>
+</html>

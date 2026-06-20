@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOARDING LAB — Planches artisanales à Boulogne-Billancourt</title>
+    <meta name="description" content="BOARDING LAB, laboratoire de la glisse urbaine à Boulogne-Billancourt. Planches artisanales en érable, façonnées à la main sous verrière. Longboards, cruisers, skateboards sur mesure.">
+    <meta property="og:title" content="BOARDING LAB — L'asphalte est votre page blanche">
+    <meta property="og:description" content="Planches artisanales façonnées à la main sous verrière, à Boulogne. De l'érable, du roulement suisse et un passage secret pour les passionnés.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#151515">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛹</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BOARDING LAB",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80&auto=format&fit=crop",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "42 Passage les Enfants du Paradis",
+            "addressLocality": "Boulogne-Billancourt",
+            "addressCountry": "FR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "1.0",
+            "reviewCount": "4"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "11:00",
+                "closes": "19:30"
+            }
+        ],
+        "priceRange": "€€€"
+    }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #151515;
+            --ink-light: #F4F0EB;
+            --accent: #FF521F;
+            --wood: #C49A6C;
+            --bg-secondary: #2E2E2E;
+            --text-secondary: #8C8C8C;
+            --font-display: 'Unbounded', sans-serif;
+            --font-body: 'Albert Sans', sans-serif;
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--ink-light);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 1;
+            background-image: var(--grain);
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        h1,
+        h2,
+        h3,
+        .unbounded {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(21, 21, 21, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(244, 240, 235, 0.08);
+            padding: 1rem clamp(1rem, 4vw, 4rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.4s ease, background 0.4s ease;
+        }
+
+        .header-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--ink-light);
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .header-logo:hover {
+            color: var(--accent);
+        }
+        .header-logo .lab {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.3rem 0;
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .header-nav a:hover {
+            color: var(--ink-light);
+        }
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-cta {
+            background: transparent;
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            padding: 0.6rem 1.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: -1;
+        }
+        .btn-cta:hover {
+            color: var(--bg-primary);
+        }
+        .btn-cta:hover::before {
+            left: 0;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ink-light);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(21, 21, 21, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(244, 240, 235, 0.1);
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        /* SECTIONS */
+        section {
+            padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 6vw, 6rem);
+            position: relative;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 5rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2) brightness(0.6);
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 82, 31, 0.15) 0%, transparent 60%),
+                linear-gradient(to bottom, rgba(21, 21, 21, 0.7) 0%, rgba(21, 21, 21, 0.4) 50%, rgba(21, 21, 21, 0.85) 100%);
+            mix-blend-mode: multiply;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent);
+            mix-blend-mode: color;
+            opacity: 0.08;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            padding: 0 1rem;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: var(--ink-light);
+            text-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .hero .accent-dot {
+            color: var(--accent);
+        }
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-weight: 300;
+            color: rgba(244, 240, 235, 0.85);
+            max-width: 650px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            border-left: 2px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+        .hero .badge-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(46, 46, 46, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink-light);
+            margin-top: 2rem;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(244, 240, 235, 0.1);
+        }
+        .badge-rating .stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* BROKEN TEXT EFFECT */
+        .broken-text {
+            display: inline-block;
+            position: relative;
+            transition: transform 0.1s linear;
+            will-change: transform;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--ink-light);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.4em;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background: var(--accent);
+            transform-origin: left;
+            transition: width 1s ease;
+        }
+        .section-title.visible-title::after {
+            width: 70%;
+        }
+
+        /* GRID & CARDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--bg-secondary);
+        }
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+        .image-frame:hover img {
+            filter: grayscale(80%) contrast(1.15);
+            transform: scale(1.03);
+        }
+        .image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 82, 31, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            mix-blend-mode: overlay;
+            transition: opacity 0.5s ease;
+        }
+        .image-frame:hover::after {
+            opacity: 0.7;
+        }
+        .image-frame .frame-accent {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+            z-index: 5;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            position: relative;
+            border: 1px solid rgba(244, 240, 235, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--ink-light);
+        }
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .card .wood-accent {
+            width: 40px;
+            height: 3px;
+            background: var(--wood);
+            margin-bottom: 1.5rem;
+        }
+
+        /* SEPARATOR */
+        .sep {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent 0%, var(--wood) 20%, var(--wood) 80%, transparent 100%);
+            margin: 2rem 0;
+            opacity: 0.4;
+        }
+
+        /* CONTACT MAP */
+        .map-container {
+            width: 100%;
+            height: 360px;
+            filter: grayscale(40%) contrast(1.1) brightness(0.8);
+            border: 1px solid rgba(244, 240, 235, 0.1);
+            margin: 2rem 0;
+            position: relative;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .map-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(45deg, rgba(21, 21, 21, 0.2) 0%, transparent 50%);
+        }
+
+        .info-block {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+            margin: 2rem 0;
+        }
+        .info-block p {
+            margin: 0.5rem 0;
+            color: var(--ink-light);
+            font-size: 1rem;
+        }
+        .info-block strong {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 3rem clamp(1rem, 6vw, 6rem);
+            border-top: 1px solid rgba(244, 240, 235, 0.08);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            background: var(--bg-primary);
+        }
+        footer .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--ink-light);
+            margin-bottom: 1rem;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--ink-light);
+        }
+
+        /* Focus */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        /* Animations initial load */
+        .hero h1 {
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero .subtitle {
+            animation: fadeSlideUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero .badge-rating {
+            animation: fadeSlideUp 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero h1,
+            .hero .subtitle,
+            .hero .badge-rating {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="header-logo">BOARDING <span class="lab">LAB</span></a>
+        <button class="mobile-menu-toggle" aria-label="Menu" id="menuToggle">☰</button>
+        <nav class="header-nav" id="headerNav">
+            <a href="#hero">Accueil</a>
+            <a href="#atelier">L'atelier</a>
+            <a href="#planches">Planches</a>
+            <a href="#surmesure">Sur mesure</a>
+            <a href="#matieres">Matières</a>
+            <a href="#essai">Essai</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact" class="btn-cta">Rendez-vous</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80&auto=format&fit=crop" alt="BOARDING LAB devanture" loading="eager">
+            </div>
+            <div class="hero-content">
+                <h1><span class="broken-text" id="brokenTitle">L'asphalte</span><br>est votre page<br>blanche<span class="accent-dot">.</span></h1>
+                <p class="subtitle">Planches artisanales façonnées à la main sous verrière, à Boulogne. De l'érable, du roulement suisse et un passage secret pour les passionnés.</p>
+                <div class="badge-rating">
+                    <span class="stars">★</span> 1/5 — 4 avis Google
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ATELIER -->
+        <section id="atelier">
+            <div class="grid-2">
+                <div class="reveal">
+                    <h2 class="section-title" id="titleAtelier">L'atelier</h2>
+                    <p style="color:var(--text-secondary); font-size:1.1rem; line-height:1.8; margin-top:2rem;">
+                        Sous la verrière du Passage des Enfants du Paradis, nous lamellions, collons, poncions et vernissons chaque planche dans les règles de l'art. Visitez l'antre où naissent vos boards.
+                    </p>
+                    <div class="sep"></div>
+                    <p style="color:var(--ink-light); font-weight:500;">
+                        Une précision d'ébéniste, une exigence de rideur. Ici, le bois parle et l'asphalte répond.
+                    </p>
+                </div>
+                <div class="image-frame reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Atelier BOARDING LAB" loading="lazy">
+                    <div class="frame-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOS PLANCHES -->
+        <section id="planches" style="background:var(--bg-secondary);">
+            <h2 class="section-title reveal" id="titlePlanches">Nos planches</h2>
+            <div class="grid-3" style="margin-top:3rem;">
+                <div class="card reveal reveal-delay-1">
+                    <div class="wood-accent"></div>
+                    <h3>Longboards</h3>
+                    <p>Stabilité et glisse infinie pour les longues avenues et les quais de Seine. Concavité douce, flex maîtrisé.</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <div class="wood-accent"></div>
+                    <h3>Cruisers</h3>
+                    <p>Agiles, compacts, taillés pour la ville. Ils se faufilent, accélèrent, et absorbent les pavés sans trembler.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <div class="wood-accent"></div>
+                    <h3>Séries limitées</h3>
+                    <p>Des collaborations avec des artistes, des essences rares, des finitions qui n'existent qu'à quelques exemplaires.</p>
+                </div>
+            </div>
+            <div class="image-frame reveal" style="margin-top:3rem; aspect-ratio: 16/7;">
+                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop" alt="Planches en vitrine" loading="lazy">
+                <div class="frame-accent"></div>
+            </div>
+        </section>
+
+        <!-- FAITS MAIN, FAITS VOUS -->
+        <section id="surmesure">
+            <div class="grid-2">
+                <div class="image-frame reveal">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Intérieur boutique BOARDING LAB" loading="lazy">
+                    <div class="frame-accent"></div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <h2 class="section-title">Faits main,<br>faits vous</h2>
+                    <p style="color:var(--text-secondary); font-size:1.1rem; line-height:1.8; margin-top:2rem;">
+                        Choisissez la forme, le bois, le grip et les roulements. Nous assemblons votre planche sur mesure sous 10 jours, comme un tailleur de bitume.
+                    </p>
+                    <a href="#contact" class="btn-cta" style="margin-top:2rem;">Configurer ma board</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MATIÈRES PREMIÈRES -->
+        <section id="matieres" style="background:var(--bg-secondary);">
+            <h2 class="section-title reveal">Matières premières</h2>
+            <div class="grid-2" style="margin-top:3rem;">
+                <div class="reveal">
+                    <p style="color:var(--ink-light); font-size:1.1rem; line-height:1.8;">
+                        Érable canadien, carbone, noyer… nous vous dévoilons l'origine et la rigueur de nos bois. Un manifeste pour la transparence et la qualité.
+                    </p>
+                    <ul style="list-style:none; margin-top:2rem; color:var(--text-secondary);">
+                        <li style="margin-bottom:0.8rem; padding-left:1.5rem; position:relative;">▹ <strong style="color:var(--wood);">Érable canadien</strong> — rigidité 7 plis, pop franc</li>
+                        <li style="margin-bottom:0.8rem; padding-left:1.5rem; position:relative;">▹ <strong style="color:var(--wood);">Carbone</strong> — légèreté et réactivité maximales</li>
+                        <li style="margin-bottom:0.8rem; padding-left:1.5rem; position:relative;">▹ <strong style="color:var(--wood);">Noyer</strong> — grain serré, esthétique brute</li>
+                    </ul>
+                </div>
+                <div class="image-frame reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Matières nobles BOARDING LAB" loading="lazy">
+                    <div class="frame-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE MUR D'ESSAI -->
+        <section id="essai">
+            <div class="grid-2">
+                <div class="reveal">
+                    <h2 class="section-title">Le mur<br>d'essai</h2>
+                    <p style="color:var(--text-secondary); font-size:1.1rem; line-height:1.8; margin-top:2rem;">
+                        La boutique abrite un espace dédié pour monter sur la planche, jauger son pop, sentir sa résilience. Prenez rendez-vous.
+                    </p>
+                    <a href="#contact" class="btn-cta" style="margin-top:2rem;">Réserver un créneau</a>
+                </div>
+                <div class="image-frame reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop" alt="Espace essai BOARDING LAB" loading="lazy">
+                    <div class="frame-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & PASSAGE -->
+        <section id="contact" style="background:var(--bg-secondary);">
+            <h2 class="section-title reveal">Contact & Passage</h2>
+            <div class="grid-2" style="margin-top:3rem;">
+                <div class="reveal">
+                    <div class="info-block">
+                        <p><strong>Adresse</strong></p>
+                        <p>42 Passage les Enfants du Paradis,<br>Boulogne-Billancourt</p>
+                        <p style="margin-top:1rem;"><strong>Métro</strong></p>
+                        <p>Marcel Sembat (ligne 9) — à deux pas</p>
+                        <p style="margin-top:1rem;"><strong>Horaires</strong></p>
+                        <p>Du mardi au samedi, 11h–19h30<br><em style="color:var(--text-secondary); font-size:0.85rem;">(Horaires à confirmer)</em></p>
+                    </div>
+                    <p style="color:var(--text-secondary); margin-top:1rem;">
+                        Téléphone : non communiqué — passez nous voir.
+                    </p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=BOARDING+LAB+42+Passage+les+Enfants+du+Paradis%2C+Boulogne-Billancourt&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte BOARDING LAB"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-brand">BOARDING LAB</div>
+        <p>42 Passage les Enfants du Paradis, Boulogne-Billancourt</p>
+        <p>Du mardi au samedi, 11h–19h30</p>
+        <p style="margin-top:1rem; opacity:0.7;">Site créé par <a href="https://agence.mooo.com/boarding-lab" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const headerNav = document.getElementById('headerNav');
+            menuToggle.addEventListener('click', function() {
+                headerNav.classList.toggle('active');
+                menuToggle.textContent = headerNav.classList.contains('active') ? '✕' : '☰';
+            });
+            // Fermer le menu au clic sur un lien
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    headerNav.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                });
+            });
+
+            // Intersection Observer pour les reveals
+            const reveals = document.querySelectorAll('.reveal');
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.15
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.classList.add('visible-title');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(el => observer.observe(el));
+            sectionTitles.forEach(el => observer.observe(el));
+
+            // Broken text effect on scroll for hero title
+            const brokenTitle = document.getElementById('brokenTitle');
+            let ticking = false;
+
+            function updateBrokenText() {
+                const scrollY = window.scrollY;
+                const maxShift = 30;
+                const shift = Math.min(scrollY * 0.08, maxShift);
+                brokenTitle.style.transform = `translateX(${shift}px)`;
+                brokenTitle.style.textShadow = `${-shift*0.3}px 0 0 rgba(255,82,31,0.4), ${shift*0.3}px 0 0 rgba(196,154,108,0.3)`;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateBrokenText);
+                    ticking = true;
+                }
+            });
+
+            // Respect reduced motion
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                brokenTitle.style.transform = 'none';
+                brokenTitle.style.textShadow = 'none';
+                // Remove scroll listener effect
+            }
+            mediaQuery.addEventListener('change', (e) => {
+                if (e.matches) {
+                    brokenTitle.style.transform = 'none';
+                    brokenTitle.style.textShadow = 'none';
+                }
+            });
+
+            // Header hide/show on scroll
+            let lastScroll = 0;
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > lastScroll && currentScroll > 200) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+</body>
+</html>
