@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antiquités Passy – Grégoire Sécula | Expert bijoux & objets d'art – Paris 16</title>
+    <meta name="description" content="Cabinet discret d'expertise et rachat de bijoux, or, argenterie, art asiatique et successions à Paris 16. Grégoire Sécula, antiquaire depuis plus de 20 ans, reçoit sur rendez-vous au 45 rue de Boulainvilliers. Estimation confidentielle sous 24h.">
+    <meta property="og:title" content="Antiquités Passy – Grégoire Sécula | Expert bijoux & objets d'art">
+    <meta property="og:description" content="Chaque objet porte un secret. Nous en connaissons la valeur. Estimation confidentielle et rachat comptant par votre antiquaire du 16e.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+    <style>
+        :root {
+            --ivoire: #F7F4EF;
+            --bronze: #1C1B19;
+            --or-patine: #C2A672;
+            --vert-de-gris: #3A4040;
+            --sable: #E0D5C5;
+            --bois: #8A5C50;
+            --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            --radius: 0.25rem;
+            --shadow-card: 0 1px 3px rgba(28,27,25,0.06), 0 4px 14px rgba(28,27,25,0.05);
+            --shadow-elevated: 0 2px 8px rgba(28,27,25,0.07), 0 12px 32px rgba(28,27,25,0.06);
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.25, 0.1, 0.0, 1.15);
+            --font-display: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Geist', 'Inter', 'Helvetica Neue', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--ivoire);
+            color: var(--bronze);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 999;
+            background: var(--grain);
+            opacity: 0.5;
+            mix-blend-mode: multiply;
+        }
+
+        /* Filigrane décoratif (cachet ancien) */
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            width: 600px;
+            height: 600px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background: radial-gradient(circle at 30% 30%, var(--or-patine) 0%, transparent 65%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: watermarkPulse 12s ease-in-out infinite;
+        }
+
+        @keyframes watermarkPulse {
+            0%,
+            100% {
+                opacity: 0.02;
+                transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+            }
+            50% {
+                opacity: 0.045;
+                transform: translate(-50%, -50%) rotate(-15deg) scale(1.08);
+            }
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 244, 239, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(194, 166, 114, 0.18);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 18px rgba(28, 27, 25, 0.07);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            border: 2px solid var(--or-patine);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--or-patine);
+            position: relative;
+            background: radial-gradient(circle at 35% 35%, rgba(194, 166, 114, 0.12), transparent 70%);
+            flex-shrink: 0;
+            transition: transform 0.35s ease;
+        }
+
+        .logo-mark:hover {
+            transform: rotate(15deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 1.6vw, 1.35rem);
+            font-weight: 600;
+            color: var(--bronze);
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.55em;
+            font-weight: 400;
+            color: var(--bois);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 0.15rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--bronze);
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: var(--radius);
+            letter-spacing: 0.02em;
+            transition: color 0.3s, background-color 0.3s;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 1.5px;
+            background: var(--or-patine);
+            transition: width 0.35s ease, left 0.35s ease;
+        }
+
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--or-patine);
+            background-color: rgba(194, 166, 114, 0.05);
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 60%;
+            left: 20%;
+        }
+
+        .nav-list a:focus-visible {
+            outline: 2px solid var(--or-patine);
+            outline-offset: 2px;
+        }
+
+        .btn-cta {
+            background: var(--vert-de-gris);
+            color: var(--ivoire);
+            padding: 0.55rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+            border: 1px solid transparent;
+            white-space: nowrap;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background: transparent;
+            color: var(--vert-de-gris);
+            border-color: var(--vert-de-gris);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(58, 64, 64, 0.12);
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(247, 244, 239, 0.7);
+            border: 1px solid rgba(194, 166, 114, 0.3);
+            padding: 0.25rem 0.7rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--bronze);
+            white-space: nowrap;
+            backdrop-filter: blur(4px);
+        }
+
+        .rating-stars {
+            color: var(--or-patine);
+            letter-spacing: 0.05em;
+        }
+
+        .rating-value {
+            font-weight: 700;
+            color: var(--bronze);
+        }
+
+        .rating-count {
+            color: var(--vert-de-gris);
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* Sections générales */
+        .section {
+            position: relative;
+            padding: 4rem 1.5rem;
+            z-index: 1;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Héro */
+        .hero {
+            padding: 0;
+            min-height: 85vh;
+            display: flex;
+            align-items: stretch;
+            position: relative;
+            overflow: hidden;
+            background: var(--ivoire);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 85vh;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            padding: clamp(2.5rem, 6vw, 5rem) 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-tag {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--bois);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            border-bottom: 1px solid var(--or-patine);
+            padding-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--bronze);
+            margin-bottom: 1.2rem;
+            max-width: 520px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--or-patine);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.55;
+            color: var(--vert-de-gris);
+            max-width: 420px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .hero-image-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--sable);
+            cursor: pointer;
+            transition: background 0.5s ease;
+        }
+
+        .hero-image-area:hover {
+            background: #d5c9b5;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.94) contrast(1.04) saturate(0.8);
+            transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.5s ease;
+            transform-origin: center center;
+        }
+
+        .hero-image-area:hover .hero-image {
+            transform: scale(1.06);
+            filter: brightness(0.88) contrast(1.08) saturate(0.7);
+        }
+
+        .hero-overlay-reveal {
+            position: absolute;
+            inset: 0;
+            background: var(--ivoire);
+            pointer-events: none;
+            z-index: 3;
+            transform-origin: right center;
+            animation: revealCurtain 1.4s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes revealCurtain {
+            0% {
+                transform: scaleX(1);
+            }
+            100% {
+                transform: scaleX(0);
+            }
+        }
+
+        .hero-watermark-detail {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            width: 100px;
+            height: 100px;
+            border: 1.5px solid rgba(194, 166, 114, 0.35);
+            border-radius: 50%;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 0.7;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--or-patine);
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 35%;
+        }
+
+        /* Filet décoratif */
+        .ornamental-rule {
+            width: 60px;
+            height: 1px;
+            background: var(--or-patine);
+            margin: 2rem 0;
+            position: relative;
+            opacity: 0.6;
+        }
+
+        .ornamental-rule::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--or-patine);
+            border-radius: 50%;
+            position: absolute;
+            right: -2px;
+            top: -2.5px;
+            opacity: 0.8;
+        }
+
+        /* Section titres */
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--bois);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.8vw, 3.2rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--bronze);
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+        }
+
+        .section-text {
+            color: var(--vert-de-gris);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 620px;
+            font-weight: 400;
+        }
+
+        /* Cartes */
+        .card {
+            background: rgba(247, 244, 239, 0.65);
+            border: 1px solid rgba(194, 166, 114, 0.2);
+            padding: 2rem;
+            border-radius: 0.3rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--or-patine), transparent);
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-elevated);
+            border-color: rgba(194, 166, 114, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .card:hover::before {
+            opacity: 0.6;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--bronze);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* Grilles */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Badge expertise */
+        .badge-expertise {
+            display: inline-block;
+            background: rgba(138, 92, 80, 0.08);
+            color: var(--bois);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.7rem;
+            border-radius: 2rem;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(138, 92, 80, 0.2);
+        }
+
+        /* Formulaire */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+            font-size: 0.85rem;
+            color: var(--bronze);
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid rgba(194, 166, 114, 0.3);
+            background: rgba(247, 244, 239, 0.5);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            border-radius: 0.25rem;
+            color: var(--bronze);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--or-patine);
+            box-shadow: 0 0 0 3px rgba(194, 166, 114, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--bronze);
+            color: var(--ivoire);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: all var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .btn-submit:hover {
+            background: transparent;
+            color: var(--bronze);
+            border-color: var(--bronze);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--vert-de-gris);
+            color: var(--sable);
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--or-patine);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-credits {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            margin-top: 2rem;
+            letter-spacing: 0.04em;
+        }
+
+        /* Map */
+        .map-container {
+            border-radius: 0.3rem;
+            overflow: hidden;
+            border: 1px solid rgba(194, 166, 114, 0.2);
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Animations reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-overlay-reveal {
+                animation: none;
+                transform: scaleX(0);
+            }
+            .hero-image-area:hover .hero-image {
+                transform: none;
+            }
+            .watermark {
+                animation: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero-image-area {
+                height: 50vh;
+                order: -1;
+            }
+            .hero {
+                min-height: auto;
+            }
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .site-header {
+                padding: 0.6rem 1rem;
+            }
+            .nav-list {
+                gap: 0;
+                font-size: 0.75rem;
+            }
+            .nav-list a {
+                padding: 0.3rem 0.45rem;
+                font-size: 0.75rem;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-headline {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.4rem;
+            }
+            .hero-watermark-detail {
+                width: 60px;
+                height: 60px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--bronze);
+            color: var(--ivoire);
+            padding: 0.5rem 1rem;
+            z-index: 200;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="watermark" aria-hidden="true"></div>
+    <div class="watermark" aria-hidden="true" style="top:20%;left:80%;width:400px;height:400px;animation-delay:-6s;"></div>
+
+    <header class="site-header" id="header">
+        <div class="logo-area">
+            <div class="logo-mark" aria-hidden="true">&#x2726;</div>
+            <div class="logo-text">Antiquités Passy<span>Grégoire Sécula</span></div>
+        </div>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li><a href="#expert">Expert</a></li>
+                <li><a href="#estimation">Estimation</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#successions">Successions</a></li>
+                <li><a href="#journal">Journal</a></li>
+                <li><a href="#rendezvous" class="btn-cta">Rendez-vous</a></li>
+            </ul>
+        </nav>
+        <div class="rating-badge" aria-label="Note Google 3.7 sur 5 – 22 avis">
+            <span class="rating-stars">★</span>
+            <span class="rating-value">3.7</span>
+            <span class="rating-count">(22 avis)</span>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-tag reveal">Cabinet d'expertise — Paris 16<sup>e</sup></p>
+                    <h1 class="hero-headline reveal reveal-delay-1">Chaque objet porte <em>un secret</em>. Nous en connaissons la valeur.</h1>
+                    <p class="hero-subtitle reveal reveal-delay-2">Bijoux, or, argenterie, art asiatique, successions — estimation confidentielle et rachat comptant par votre antiquaire du 16<sup>e</sup>, Grégoire Sécula.</p>
+                    <div class="hero-actions reveal reveal-delay-3">
+                        <a href="#rendezvous" class="btn-cta" style="padding:0.7rem 1.8rem;font-size:0.9rem;">Prendre rendez-vous</a>
+                        <a href="tel:+33670522465" style="color:var(--bronze);text-decoration:none;font-weight:500;padding:0.55rem 1rem;border-bottom:1px solid var(--or-patine);transition:color 0.3s;">06 70 52 24 65</a>
+                    </div>
+                    <div class="ornamental-rule reveal reveal-delay-4" aria-hidden="true"></div>
+                </div>
+                <div class="hero-image-area" aria-label="Photo de la boutique Antiquités Passy" role="img">
+                    <img src="assets/maps-1.jpg" alt="Façade d'Antiquités Passy – Grégoire Sécula, 2 Square Alfred Capus, Paris 16" class="hero-image" loading="eager" width="800" height="600">
+                    <div class="hero-overlay-reveal" aria-hidden="true"></div>
+                    <div class="hero-watermark-detail" aria-hidden="true">
+                        <div class="detail-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. L'Œil de l'antiquaire -->
+        <section class="section" id="expert" style="background:rgba(224,213,197,0.25);">
+            <div class="section-inner">
+                <div class="grid-2" style="align-items:center;">
+                    <div>
+                        <span class="section-label reveal">L'œil de l'antiquaire</span>
+                        <h2 class="section-title reveal reveal-delay-1">Grégoire Sécula, expert en bijoux et objets d'art depuis plus de 20 ans</h2>
+                        <div class="ornamental-rule reveal reveal-delay-2" aria-hidden="true" style="margin:1.5rem 0;"></div>
+                        <p class="section-text reveal reveal-delay-2">Un regard formé à l'authenticité des pierres, des poinçons et des époques. Je reçois sur rendez-vous au 45 rue de Boulainvilliers, dans la discrétion du quartier de Passy. Mon métier : vous aider à reconnaître ce qui mérite de durer.</p>
+                        <span class="badge-expertise reveal reveal-delay-3" style="margin-top:1rem;">Expertise certifiée</span>
+                    </div>
+                    <div class="card reveal reveal-delay-3" style="background:rgba(247,244,239,0.5);">
+                        <p style="font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--bois);line-height:1.6;">« Je ne juge pas la valeur marchande avant d'avoir tenu l'objet dans mes mains, observé sa lumière, senti son poids. Chaque pièce raconte son époque — encore faut-il savoir l'écouter. »</p>
+                        <p style="font-size:0.85rem;color:var(--vert-de-gris);margin-top:1rem;">— Grégoire Sécula</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Estimation & rachat -->
+        <section class="section" id="estimation">
+            <div class="section-inner">
+                <span class="section-label reveal">Estimation & rachat</span>
+                <h2 class="section-title reveal reveal-delay-1">Faites estimer vos bijoux, montres, argenterie et objets d'art</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom:2rem;">Décrivez en quelques mots la pièce que vous souhaitez faire évaluer, ajoutez une photo si vous le souhaitez. Je vous réponds sous 24 heures avec une première fourchette. Si vous acceptez l'offre, le rachat s'effectue au comptant, lors d'un rendez-vous en boutique. Je me déplace également à domicile pour les successions importantes.</p>
+                <div class="grid-2 reveal reveal-delay-3">
+                    <div class="card">
+                        <h3 class="card-title">Comment ça se passe</h3>
+                        <ul style="list-style:none;padding:0;color:var(--vert-de-gris);line-height:2;font-size:0.95rem;">
+                            <li style="display:flex;align-items:flex-start;gap:0.6rem;"><span style="color:var(--or-patine);font-weight:700;">1.</span> Vous décrivez votre objet et joignez une photo.</li>
+                            <li style="display:flex;align-items:flex-start;gap:0.6rem;"><span style="color:var(--or-patine);font-weight:700;">2.</span> Je vous réponds sous 24h avec une estimation indicative.</li>
+                            <li style="display:flex;align-items:flex-start;gap:0.6rem;"><span style="color:var(--or-patine);font-weight:700;">3.</span> Si l'offre vous convient, nous prenons rendez-vous.</li>
+                            <li style="display:flex;align-items:flex-start;gap:0.6rem;"><span style="color:var(--or-patine);font-weight:700;">4.</span> Rachat comptant le jour même, en toute confidentialité.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Ce que j'estime</h3>
+                        <p style="color:var(--vert-de-gris);font-size:0.95rem;line-height:1.8;">Bijoux anciens et contemporains, montres de collection, argenterie,orfèvrerie, art asiatique, bronzes, tableaux, mobilier d'époque, et tout objet d'art méritant une expertise. Successions complètes et inventaires.</p>
+                        <a href="#rendezvous" style="display:inline-block;margin-top:1.2rem;color:var(--or-patine);text-decoration:none;font-weight:600;border-bottom:1px solid var(--or-patine);transition:color 0.3s;">Demander une estimation →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Galerie — Dernières acquisitions -->
+        <section class="section" id="galerie" style="background:rgba(224,213,197,0.2);">
+            <div class="section-inner">
+                <span class="section-label reveal">Galerie</span>
+                <h2 class="section-title reveal reveal-delay-1">Dernières acquisitions</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom:2.5rem;">Un bronze de Lalanne, une montre ancienne, une aquarelle moderniste… Chaque objet présenté est une pièce réellement passée entre mes mains, avec sa provenance, son époque, ses matériaux, son histoire.</p>
+                <div class="grid-3 reveal reveal-delay-3">
+                    <div class="card" style="text-align:center;">
+                        <div style="background:var(--sable);height:180px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.5rem;color:var(--bois);border-radius:0.2rem;margin-bottom:1rem;">&#x2726;</div>
+                        <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--bronze);">Bronze de Lalanne</h3>
+                        <p style="font-size:0.85rem;color:var(--vert-de-gris);">Époque contemporaine — signé, numéroté. Provenance collection privée parisienne.</p>
+                    </div>
+                    <div class="card" style="text-align:center;">
+                        <div style="background:var(--sable);height:180px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.5rem;color:var(--bois);border-radius:0.2rem;margin-bottom:1rem;">&#x23F0;</div>
+                        <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--bronze);">Montre ancienne</h3>
+                        <p style="font-size:0.85rem;color:var(--vert-de-gris);">Mécanisme d'origine, boîtier or 18k. Début XX<sup>e</sup> siècle.</p>
+                    </div>
+                    <div class="card" style="text-align:center;">
+                        <div style="background:var(--sable);height:180px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.5rem;color:var(--bois);border-radius:0.2rem;margin-bottom:1rem;">&#x1F3A8;</div>
+                        <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--bronze);">Aquarelle moderniste</h3>
+                        <p style="font-size:0.85rem;color:var(--vert-de-gris);">École française, milieu XX<sup>e</sup>. Signée. Cadre d'origine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Débarras & successions -->
+        <section class="section" id="successions">
+            <div class="section-inner">
+                <div class="grid-2" style="align-items:center;">
+                    <div>
+                        <span class="section-label reveal">Débarras & successions</span>
+                        <h2 class="section-title reveal reveal-delay-1">Vous héritez, vous videz un appartement parisien : ne jetez pas sans avoir fait estimer.</h2>
+                        <div class="ornamental-rule reveal reveal-delay-2" aria-hidden="true" style="margin:1.5rem 0;"></div>
+                        <p class="section-text reveal reveal-delay-2">J'interviens avec discrétion dans le 16<sup>e</sup> arrondissement et au-delà. Je trie, j'identifie les pièces de valeur, j'organise le rachat ou je conseille une vente mieux adaptée. Service personnalisé, devis gratuit.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-3" style="background:rgba(58,64,64,0.04);border-color:rgba(58,64,64,0.15);">
+                        <h3 class="card-title" style="font-size:1.3rem;">Intervention complète</h3>
+                        <ul style="list-style:none;padding:0;color:var(--vert-de-gris);line-height:2.2;font-size:0.95rem;">
+                            <li>✓ Tri et identification des pièces de valeur</li>
+                            <li>✓ Estimation sur place</li>
+                            <li>✓ Rachat immédiat des objets sélectionnés</li>
+                            <li>✓ Conseil en vente aux enchères si pertinent</li>
+                            <li>✓ Déplacement à domicile (Paris & proche banlieue)</li>
+                        </ul>
+                        <a href="#rendezvous" style="display:inline-block;margin-top:1rem;color:var(--bronze);text-decoration:none;font-weight:600;border-bottom:1px solid var(--or-patine);">Demander un devis gratuit →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Le Journal de l'antiquaire -->
+        <section class="section" id="journal" style="background:rgba(224,213,197,0.25);">
+            <div class="section-inner">
+                <span class="section-label reveal">Le Journal de l'antiquaire</span>
+                <h2 class="section-title reveal reveal-delay-1">Actualités, conseils et découvertes</h2>
+                <div class="grid-2 reveal reveal-delay-2" style="margin-top:2rem;">
+                    <div class="card">
+                        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--bois);">Note d'expertise</p>
+                        <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--bronze);margin:0.5rem 0;">Reconnaître un poinçon d'orfèvre français du XVIII<sup>e</sup> siècle</h3>
+                        <p style="color:var(--vert-de-gris);font-size:0.9rem;">Chaque poinçon raconte une histoire : le maître-orfèvre, la ville, l'année de fabrication. Apprenez à déchiffrer ces marques discrètes qui authentifient vos pièces d'argenterie.</p>
+                        <span style="font-size:0.8rem;color:var(--bois);">Par Grégoire Sécula</span>
+                    </div>
+                    <div class="card">
+                        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--bois);">Marché de l'art</p>
+                        <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--bronze);margin:0.5rem 0;">Pourquoi les sculptures de François-Xavier Lalanne atteignent des records</h3>
+                        <p style="color:var(--vert-de-gris);font-size:0.9rem;">Retour sur la cote exceptionnelle des Lalannes, entre poésie animalière et savoir-faire technique. Ce que les collectionneurs recherchent vraiment.</p>
+                        <span style="font-size:0.8rem;color:var(--bois);">Par Grégoire Sécula</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Rendez-vous -->
+        <section class="section" id="rendezvous">
+            <div class="section-inner">
+                <span class="section-label reveal">Rendez-vous</span>
+                <h2 class="section-title reveal reveal-delay-1">Prenons le temps d'examiner vos trésors</h2>
+                <div class="grid-2 reveal reveal-delay-2" style="margin-top:2rem;">
+                    <div>
+                        <form class="card" style="background:rgba(247,244,239,0.5);" aria-label="Formulaire de contact">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="06 XX XX XX XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Décrivez l'objet que vous souhaitez faire estimer..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="photo">Photo (optionnelle)</label>
+                                <input type="file" id="photo" name="photo" accept="image/*" style="padding:0.4rem;">
+                            </div>
+                            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:1.5rem;">
+                            <h3 class="card-title" style="font-size:1.2rem;">Coordonnées</h3>
+                            <p style="color:var(--vert-de-gris);line-height:1.8;font-size:0.95rem;">
+                                <strong>Adresse :</strong> 45 rue de Boulainvilliers, 75016 Paris<br>
+                                <strong>Téléphone :</strong> <a href="tel:+33670522465" style="color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--or-patine);">06 70 52 24 65</a><br>
+                                <strong>Email :</strong> <a href="mailto:contact@antiquites-passy.fr" style="color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--or-patine);">contact@antiquites-passy.fr</a>
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title" style="font-size:1.2rem;">Horaires</h3>
+                            <p style="color:var(--vert-de-gris);line-height:1.8;font-size:0.95rem;">
+                                Lundi – Vendredi : 9h – 18h<br>
+                                Samedi : sur rendez-vous<br>
+                                <em style="font-size:0.85rem;opacity:0.8;">Horaires à confirmer lors de la prise de rendez-vous.</em>
+                            </p>
+                        </div>
+                        <div class="map-container reveal reveal-delay-3" style="margin-top:1.5rem;">
+                            <iframe src="https://maps.google.com/maps?q=Antiquites+Passy.+Secula+Gregoire+2+Square+Alfred+Capus%2C+Paris&output=embed" width="100%" height="260" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation d'Antiquités Passy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">Antiquités Passy</div>
+                <p style="font-size:0.9rem;opacity:0.8;margin-top:0.5rem;">Grégoire Sécula<br>Expert en bijoux et objets d'art</p>
+            </div>
+            <div>
+                <p style="font-weight:600;margin-bottom:0.5rem;color:var(--or-patine);">Contact</p>
+                <p style="font-size:0.9rem;line-height:1.8;">
+                    45 rue de Boulainvilliers<br>
+                    75016 Paris<br>
+                    <a href="tel:+33670522465" style="color:var(--sable);text-decoration:none;">06 70 52 24 65</a><br>
+                    <a href="mailto:contact@antiquites-passy.fr" style="color:var(--sable);text-decoration:none;">contact@antiquites-passy.fr</a>
+                </p>
+            </div>
+            <div>
+                <p style="font-weight:600;margin-bottom:0.5rem;color:var(--or-patine);">Navigation</p>
+                <nav aria-label="Navigation secondaire">
+                    <ul style="list-style:none;font-size:0.9rem;line-height:2;">
+                        <li><a href="#expert" style="color:var(--sable);text-decoration:none;">L'œil de l'antiquaire</a></li>
+                        <li><a href="#estimation" style="color:var(--sable);text-decoration:none;">Estimation & rachat</a></li>
+                        <li><a href="#galerie" style="color:var(--sable);text-decoration:none;">Galerie</a></li>
+                        <li><a href="#successions" style="color:var(--sable);text-decoration:none;">Successions</a></li>
+                        <li><a href="#rendezvous" style="color:var(--sable);text-decoration:none;">Rendez-vous</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-credits">
+                <p>Site créé par <a href="https://agence.mooo.com" style="color:var(--sable);text-decoration:underline;">Agence Mooo</a> — © 2024 Antiquités Passy. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Antiquités Passy – Grégoire Sécula",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "45 rue de Boulainvilliers",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33670522465",
+            "email": "contact@antiquites-passy.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.7",
+                "reviewCount": "22"
+            },
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "priceRange": "€€€",
+            "url": "https://agence.mooo.com/antiquites-passy-secula-gregoire"
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // IntersectionObserver pour les reveals au scroll
+            const reveals = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // Smooth scroll pour ancres (fallback pour navigateurs sans smooth scroll natif)
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Formulaire : comportement basique
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = form.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Demande envoyée ✓';
+                    btn.style.background = '#8A5C50';
+                    btn.style.color = '#F7F4EF';
+                    btn.style.borderColor = '#8A5C50';
+                    setTimeout(function() {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                        btn.style.borderColor = '';
+                    }, 2500);
+                    form.reset();
+                });
+            }
+
+            // Gérer prefers-reduced-motion pour les animations
+            const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mq.matches) {
+                document.querySelectorAll('.reveal').forEach(function(el) {
+                    el.classList.add('visible');
+                });
+                document.querySelector('.hero-overlay-reveal').style.animation = 'none';
+                document.querySelector('.hero-overlay-reveal').style.transform = 'scaleX(0)';
+            }
+        });
+    </script>
+</body>
+</html>
