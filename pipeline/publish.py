@@ -14,8 +14,11 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
+
+import requests
 
 from . import config
 
@@ -27,6 +30,41 @@ def _git(*args: str) -> str:
     if res.returncode != 0:
         raise SystemExit(f"git {' '.join(args)} failed:\n{res.stderr.strip()}")
     return res.stdout.strip()
+
+
+def verify_live(url: str, attempts: int = 6, delay: int = 10) -> bool:
+    """Poll a URL for an HTTP 200 (GitHub Pages can lag a minute after a push).
+
+    Best-effort confirmation that a freshly pushed site is actually serving; a
+    False result just means "not live yet", not that publishing failed.
+    """
+    for i in range(attempts):
+        try:
+            if requests.get(url, timeout=15, allow_redirects=True).status_code == 200:
+                return True
+        except requests.RequestException:
+            pass
+        if i < attempts - 1:
+            time.sleep(delay)
+    return False
+
+
+def push_sites(message: str | None = None, remote: str = "origin",
+               branch: str = "main") -> list[Path]:
+    """Stage every root <slug>/index.html site, commit, and push. Returns the
+    list of published folders (empty if there was nothing new)."""
+    folders = site_folders()
+    if not folders:
+        return []
+    for f in folders:
+        _git("add", f.name)
+    _git("add", "README.md", ".gitignore", "requirements.txt", "pipeline")
+    if not _git("status", "--porcelain"):
+        return folders  # already committed previously; treat as published
+    msg = message or f"Publish {len(folders)} site(s) — {datetime.now():%Y-%m-%d %H:%M}"
+    _git("commit", "-m", msg)
+    _git("push", remote, branch)
+    return folders
 
 
 def site_folders() -> list[Path]:
@@ -59,21 +97,8 @@ def main(argv: list[str] | None = None) -> int:
         print("\n(dry-run) nothing staged or pushed.")
         return 0
 
-    for f in folders:
-        _git("add", f.name)
-    # README/pipeline changes too, but never the gitignored data/secrets.
-    _git("add", "README.md", ".gitignore", "requirements.txt", "pipeline")
-
-    status = _git("status", "--porcelain")
-    if not status:
-        print("\nNothing new to commit (already published).")
-        return 0
-
-    msg = args.message or f"Publish {len(folders)} site(s) — {datetime.now():%Y-%m-%d %H:%M}"
-    _git("commit", "-m", msg)
-    print(f"\nCommitted: {msg}")
-    _git("push", args.remote, args.branch)
-    print(f"Pushed to {args.remote}/{args.branch}. Live shortly at {config.SITE_BASE_URL}/<slug>")
+    push_sites(message=args.message, remote=args.remote, branch=args.branch)
+    print(f"\nPushed to {args.remote}/{args.branch}. Live shortly at {config.SITE_BASE_URL}/<slug>")
     return 0
 
 

@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trop bon! – Pâtisserie artisanale à la commande | Boulogne-Billancourt</title>
+    <meta name="description" content="Trop bon! – Atelier de pâtisserie artisanale à Boulogne-Billancourt. Gâteaux sur mesure, entremets, letter cakes et ateliers. Fait à la commande, bio, local. Note 4,8★.">
+    <meta property="og:title" content="Trop bon! – Pâtisserie artisanale à la commande | Boulogne-Billancourt">
+    <meta property="og:description" content="Le gâteau que vous attendez n'existe pas encore. Pâtisserie artisanale à la commande & ateliers — Boulogne-Billancourt. 4,8★ sur 26 avis.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧁%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --creme: #FDF8F2;
+            --chocolat: #2B1E16;
+            --cafe: #1E110A;
+            --caramel: #D4784A;
+            --fruit-rouge: #B83A3A;
+            --sauge: #8FA3A0;
+            --font-display: 'Unbounded', 'Trebuchet MS', sans-serif;
+            --font-body: 'Albert Sans', 'Segoe UI', system-ui, sans-serif;
+            --gap: clamp(1.5rem, 5vw, 4rem);
+            --max-width: 1200px;
+            --nav-height: 4.5rem;
+            --border-thin: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--creme);
+            color: var(--cafe);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== UTILITIES ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* ===== GRAIN TEXTURE OVERLAY ===== */
+        .grain-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+            opacity: 0.5;
+        }
+
+        /* ===== HEADER / NAV ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(253, 248, 242, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: var(--border-thin);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .site-header.scrolled {
+            background: rgba(253, 248, 242, 0.98);
+            box-shadow: 0 2px 20px rgba(30, 17, 10, 0.06);
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: var(--cafe);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+
+        .nav-brand:hover {
+            color: var(--caramel);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--cafe);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--caramel);
+            outline: none;
+        }
+
+        .nav-links a:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+        }
+
+        .nav-cta {
+            background: var(--caramel);
+            color: #fff !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            letter-spacing: -0.01em;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: var(--fruit-rouge);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta:focus-visible {
+            outline: 2px solid var(--fruit-rouge);
+            outline-offset: 2px;
+        }
+
+        /* Mobile nav toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--cafe);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--creme);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 2rem;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.08);
+                transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+            padding-top: var(--nav-height);
+            background-color: var(--chocolat);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) contrast(1.1) saturate(0.7);
+            transform: scale(1.03);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 4rem clamp(1.5rem, 6vw, 5rem);
+            max-width: 900px;
+            color: var(--creme);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #FDF8F2 0%, #E8C9A0 45%, #D4784A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .hero .subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(253, 248, 242, 0.85);
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.01em;
+            max-width: 550px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--caramel);
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: 0 6px 24px rgba(212, 120, 74, 0.35);
+        }
+
+        .hero-cta:hover {
+            background: var(--fruit-rouge);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(184, 58, 58, 0.4);
+        }
+
+        .hero-cta:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        .hero-cta .arrow-icon {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s;
+        }
+
+        .hero-cta:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(253, 248, 242, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(253, 248, 242, 0.25);
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--creme);
+            letter-spacing: -0.01em;
+        }
+
+        .hero-badge .stars {
+            color: #F9C74F;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+        }
+
+        /* ===== INGREDIENT SEPARATOR ===== */
+        .ingredient-separator {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            font-family: var(--font-body);
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            color: var(--sauge);
+            letter-spacing: 0.02em;
+            position: relative;
+            border-top: 1px solid rgba(143, 163, 160, 0.25);
+            border-bottom: 1px solid rgba(143, 163, 160, 0.25);
+            background: rgba(143, 163, 160, 0.04);
+            margin: 0;
+        }
+
+        .ingredient-separator::before,
+        .ingredient-separator::after {
+            content: '—';
+            margin: 0 1rem;
+            color: var(--sauge);
+            opacity: 0.5;
+            font-style: normal;
+        }
+
+        /* ===== SECTIONS GENERIQUES ===== */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 6vw, 3rem);
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background-color: var(--chocolat);
+            color: var(--creme);
+            max-width: 100%;
+            padding-left: clamp(1.5rem, 6vw, 5rem);
+            padding-right: clamp(1.5rem, 6vw, 5rem);
+        }
+
+        .section-dark .section-title {
+            color: var(--creme);
+            background: linear-gradient(135deg, #FDF8F2 0%, #D4784A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-dark p,
+        .section-dark li {
+            color: rgba(253, 248, 242, 0.85);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+            color: var(--cafe);
+            background: linear-gradient(135deg, #2B1E16 0%, #6B4F3A 60%, #D4784A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .section-text {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.7;
+            max-width: 680px;
+            color: rgba(30, 17, 10, 0.85);
+        }
+
+        .section-dark .section-text {
+            color: rgba(253, 248, 242, 0.85);
+        }
+
+        /* ===== REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+            .hero-cta {
+                transition: none;
+            }
+        }
+
+        /* ===== SECTION 1 - LE GESTE ===== */
+        .geste-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+
+        .geste-image {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 20px 50px rgba(30, 17, 10, 0.12);
+        }
+
+        .geste-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: saturate(0.85) contrast(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .geste-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .geste-image .img-tag {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(43, 30, 22, 0.85);
+            color: var(--creme);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            letter-spacing: 0.02em;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .geste-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .geste-image {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ===== SECTION 2 - PREUVE SOCIALE ===== */
+        .preuve-block {
+            background: #fff;
+            border-radius: 2rem;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            box-shadow: 0 8px 30px rgba(30, 17, 10, 0.05);
+            border: 1px solid rgba(143, 163, 160, 0.2);
+            position: relative;
+        }
+
+        .preuve-stars {
+            font-size: 1.4rem;
+            color: #F9C74F;
+            letter-spacing: 3px;
+            margin-bottom: 0.8rem;
+        }
+
+        .preuve-note {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--fruit-rouge);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .preuve-avis-count {
+            font-size: 1rem;
+            color: var(--sauge);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .testimonial {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--cafe);
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--caramel);
+            margin: 1.5rem 0;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--cafe);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .preuve-counter {
+            display: inline-block;
+            background: rgba(143, 163, 160, 0.1);
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--cafe);
+            margin-top: 1rem;
+        }
+
+        /* ===== SECTION 3 - GALERIE GATEAUX ===== */
+        .galerie-macro {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .galerie-item {
+            position: relative;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 8px 25px rgba(30, 17, 10, 0.08);
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.4s;
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.05) contrast(1.08);
+        }
+
+        .galerie-item .legende {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(30, 17, 10, 0.8), transparent);
+            color: var(--creme);
+            padding: 2rem 1.2rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            z-index: 2;
+        }
+
+        .galerie-item:nth-child(1) {
+            grid-row: span 2;
+            aspect-ratio: 2/3;
+        }
+        .galerie-item:nth-child(2) {
+            grid-row: span 1;
+            aspect-ratio: 1/1;
+        }
+        .galerie-item:nth-child(3) {
+            grid-row: span 1;
+            aspect-ratio: 1/1;
+        }
+        .galerie-item:nth-child(4) {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        @media (max-width: 768px) {
+            .galerie-macro {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            .galerie-item:nth-child(1) {
+                grid-column: 1 / -1;
+                aspect-ratio: 4/3;
+            }
+            .galerie-item:nth-child(2),
+            .galerie-item:nth-child(3) {
+                aspect-ratio: 1/1;
+            }
+            .galerie-item:nth-child(4) {
+                grid-column: 1 / -1;
+                aspect-ratio: 3/2;
+            }
+        }
+
+        /* ===== SECTION 4 - COMMANDE ===== */
+        .commande-steps {
+            display: flex;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .step-card {
+            flex: 1 1 200px;
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 8px 25px rgba(30, 17, 10, 0.04);
+            border: 1px solid rgba(143, 163, 160, 0.15);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(30, 17, 10, 0.1);
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--caramel);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--cafe);
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: rgba(30, 17, 10, 0.75);
+            line-height: 1.5;
+        }
+
+        .tarif-bloc {
+            background: rgba(212, 120, 74, 0.08);
+            border-left: 4px solid var(--caramel);
+            padding: 1.5rem 2rem;
+            border-radius: 0 1rem 1rem 0;
+            margin: 2rem 0;
+            font-weight: 500;
+        }
+
+        .tarif-bloc strong {
+            color: var(--fruit-rouge);
+            font-family: var(--font-display);
+            font-weight: 600;
+        }
+
+        .commande-form {
+            background: #fff;
+            border-radius: 2rem;
+            padding: clamp(2rem, 5vw, 3rem);
+            box-shadow: 0 8px 30px rgba(30, 17, 10, 0.05);
+            border: 1px solid rgba(143, 163, 160, 0.2);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            color: var(--cafe);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid rgba(143, 163, 160, 0.4);
+            border-radius: 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: var(--creme);
+            color: var(--cafe);
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--caramel);
+            box-shadow: 0 0 0 3px rgba(212, 120, 74, 0.12);
+        }
+
+        .btn-submit {
+            background: var(--caramel);
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.15s;
+            box-shadow: 0 4px 15px rgba(212, 120, 74, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: var(--fruit-rouge);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:focus-visible {
+            outline: 2px solid var(--fruit-rouge);
+            outline-offset: 3px;
+        }
+
+        /* ===== SECTION 5 - ATELIERS ===== */
+        .ateliers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .atelier-card {
+            background: #fff;
+            border-radius: 1.8rem;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: 0 8px 25px rgba(30, 17, 10, 0.04);
+            border: 1px solid rgba(143, 163, 160, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .atelier-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(30, 17, 10, 0.1);
+        }
+
+        .atelier-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--cafe);
+            margin-bottom: 0.8rem;
+        }
+
+        .atelier-card .prix {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--fruit-rouge);
+            margin: 1rem 0 0.5rem;
+        }
+
+        .atelier-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .atelier-card ul li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: rgba(30, 17, 10, 0.8);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .atelier-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--caramel);
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .ateliers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 6 - INFOS PRATIQUES ===== */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+
+        .info-bloc {
+            background: #fff;
+            border-radius: 1.8rem;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: 0 8px 25px rgba(30, 17, 10, 0.04);
+            border: 1px solid rgba(143, 163, 160, 0.15);
+        }
+
+        .info-bloc h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--cafe);
+        }
+
+        .info-bloc p,
+        .info-bloc li {
+            font-size: 0.95rem;
+            color: rgba(30, 17, 10, 0.8);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .info-bloc a {
+            color: var(--caramel);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-bloc a:hover {
+            text-decoration: underline;
+        }
+
+        .newsletter-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-input input {
+            flex: 1 1 200px;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid rgba(143, 163, 160, 0.4);
+            border-radius: 2rem;
+            font-family: var(--font-body);
+            background: var(--creme);
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input button {
+            background: var(--caramel);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .newsletter-input button:hover {
+            background: var(--fruit-rouge);
+        }
+
+        .map-container {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30, 17, 10, 0.1);
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--chocolat);
+            color: rgba(253, 248, 242, 0.75);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
+            line-height: 1.7;
+            border-top: 1px solid rgba(253, 248, 242, 0.1);
+        }
+
+        .site-footer a {
+            color: var(--caramel);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-social {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ===== RESPONSIVE FINE-TUNING ===== */
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+            .nav-brand {
+                font-size: 1rem;
+            }
+            .commande-steps {
+                flex-direction: column;
+            }
+            .preuve-note {
+                font-size: 2.2rem;
+            }
+            .galerie-macro {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+            .galerie-item {
+                aspect-ratio: 4/3 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="siteHeader">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">TROP BON!</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#geste">L'atelier</a></li>
+                    <li><a href="#gateaux">Les gâteaux</a></li>
+                    <li><a href="#commande">Commander</a></li>
+                    <li><a href="#ateliers">Ateliers</a></li>
+                    <li><a href="#infos">Infos pratiques</a></li>
+                    <li><a href="#commande" class="nav-cta">Commander</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero grain-overlay">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Atelier Trop bon! – Intérieur chaleureux" loading="eager">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="stars">★★★★★</span> 4,8/5 · 26 avis Google
+                </div>
+                <h1 class="reveal reveal-delay-1">Le gâteau que vous attendez n'existe pas encore.</h1>
+                <p class="subtitle reveal reveal-delay-2">Pâtisserie artisanale à la commande & ateliers — Boulogne-Billancourt</p>
+                <a href="#commande" class="hero-cta reveal reveal-delay-3">
+                    Commandez un gâteau
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Separateur ingredient -->
+        <div class="ingredient-separator">farine de blé bio</div>
+
+        <!-- SECTION 1 - LE GESTE -->
+        <section class="section" id="geste">
+            <div class="geste-grid">
+                <div class="reveal">
+                    <h2 class="section-title">Pas de vitrine, juste un atelier.</h2>
+                    <p class="section-text">
+                        Ici, pas d'alignement de tartes identiques ni de vitrine réfrigérée. Trop bon! est un atelier de pâtisserie artisanale où tout est préparé à la commande — gâteaux d'anniversaire, letter cakes, entremets de saison. Julie sélectionne chaque ingrédient (bio, local quand la terre le permet), pétrit, garnit et décore à la main, dans l'ordre des commandes. Rien ne sort de l'atelier sans être passé par ses doigts.
+                    </p>
+                </div>
+                <div class="geste-image grain-overlay reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="L'atelier de Julie" loading="lazy">
+                    <span class="img-tag">Atelier · 64 av. Pierre Grenier</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="ingredient-separator">beurre de Normandie</div>
+
+        <!-- SECTION 2 - PREUVE SOCIALE -->
+        <section class="section" id="avis">
+            <div class="preuve-block reveal">
+                <div class="preuve-stars">★★★★★</div>
+                <div class="preuve-note">4,8 <span style="font-size:1.2rem;">/ 5</span></div>
+                <div class="preuve-avis-count">26 avis ne mentent pas.</div>
+                <blockquote class="testimonial">
+                    « Nous avons commandé un gâteau d'anniversaire personnalisé pour notre fille — splendide et surtout délicieux. Julie a su comprendre exactement ce qu'on voulait. Merci ! »
+                    <div class="testimonial-author">— Carine M. (avis vérifié Google)</div>
+                </blockquote>
+                <div class="preuve-counter">🍰 Déjà 26 familles boulonnaises conquises</div>
+            </div>
+        </section>
+
+        <div class="ingredient-separator">framboises de Dordogne</div>
+
+        <!-- SECTION 3 - GALERIE GATEAUX -->
+        <section class="section" id="gateaux">
+            <h2 class="section-title reveal">Des gâteaux qui ont un destinataire.</h2>
+            <p class="section-text reveal reveal-delay-1" style="margin-bottom:1.5rem;">
+                Chaque gâteau est imaginé pour une occasion et une personne. Letter cakes personnalisés, layer cakes, tartes de saison, entremets — Julie travaille sur mesure à partir de vos envies et des fruits du moment. Bio, sans additif, jamais congelé.
+            </p>
+            <div class="galerie-macro">
+                <div class="galerie-item grain-overlay reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="Gâteau citron-framboise" loading="lazy" style="object-position:center 20%; filter: saturate(0.9) contrast(1.05);">
+                    <div class="legende">Tarte citron-framboise — 8 parts — commande août 2025</div>
+                </div>
+                <div class="galerie-item grain-overlay reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Layer cake chocolat" loading="lazy" style="object-position:center 60%; filter: brightness(0.9) contrast(1.1) saturate(1.1);">
+                    <div class="legende">Layer cake chocolat — 10 parts</div>
+                </div>
+                <div class="galerie-item grain-overlay reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Entremets fruits rouges" loading="lazy" style="object-position:center 80%; filter: saturate(1.15) contrast(1);">
+                    <div class="legende">Entremets fruits rouges — 6 parts</div>
+                </div>
+                <div class="galerie-item grain-overlay reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Letter cake personnalisé" loading="lazy" style="object-position:center 45%; filter: contrast(1.08) brightness(1.02);">
+                    <div class="legende">Letter cake personnalisé — commande juillet 2025</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ingredient-separator">chocolat Valrhona 64 %</div>
+
+        <!-- SECTION 4 - COMMANDE -->
+        <section class="section" id="commande">
+            <h2 class="section-title reveal">Votre gâteau en trois étapes.</h2>
+            <div class="commande-steps">
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-number">1</div>
+                    <h3>Vos envies</h3>
+                    <p>Remplissez le formulaire avec vos parfums, le nombre de parts, l'occasion et les allergies éventuelles.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-number">2</div>
+                    <h3>Proposition</h3>
+                    <p>Julie vous répond sous 24 h avec une proposition chiffrée et les détails de votre commande.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-3">
+                    <div class="step-number">3</div>
+                    <h3>Récupération</h3>
+                    <p>Vous récupérez votre gâteau à l'atelier, 64 avenue Pierre Grenier, 72 h plus tard.</p>
+                </div>
+            </div>
+            <div class="tarif-bloc reveal">
+                <strong>Tarifs indicatifs :</strong> à partir de 38 € pour 6 parts · 55 € pour 10 parts · sur devis au-delà.
+            </div>
+
+            <div class="commande-form reveal reveal-delay-2">
+                <h3 style="font-family:var(--font-display); font-weight:600; margin-bottom:1.5rem; color:var(--cafe);">Votre commande sur mesure</h3>
+                <form action="#" method="post" onsubmit="alert('Merci ! Nous avons bien reçu votre demande. Julie vous répondra sous 24h. (Démonstration)'); return false;">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                        <div class="form-group">
+                            <label for="nom">Votre nom *</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Prénom et nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre email *</label>
+                            <input type="email" id="email" name="email" required placeholder="vous@email.fr">
+                        </div>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                        <div class="form-group">
+                            <label for="parts">Nombre de parts *</label>
+                            <select id="parts" name="parts" required>
+                                <option value="">--</option>
+                                <option value="4">4 parts</option>
+                                <option value="6">6 parts</option>
+                                <option value="8">8 parts</option>
+                                <option value="10">10 parts</option>
+                                <option value="12+">12 parts et +</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <input type="text" id="occasion" name="occasion" placeholder="Anniversaire, mariage, etc.">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="parfums">Parfums et envies *</label>
+                        <textarea id="parfums" name="parfums" rows="3" required placeholder="Décrivez les parfums souhaités, le style, les goûts du destinataire..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Allergies ou restrictions alimentaires</label>
+                        <input type="text" id="allergies" name="allergies" placeholder="Sans gluten, fruits à coque, etc.">
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
+        </section>
+
+        <div class="ingredient-separator">vanille de Madagascar</div>
+
+        <!-- SECTION 5 - ATELIERS -->
+        <section class="section" id="ateliers">
+            <h2 class="section-title reveal">Apprenez à faire — vraiment — de la pâtisserie.</h2>
+            <p class="section-text reveal reveal-delay-1" style="margin-bottom:2rem;">
+                Ateliers adultes et enfants par petits groupes (6 max), 2h30 à 3h. Tout est fourni : tablier, fiche recette, ingrédients bio. Vous repartez avec votre réalisation et la capacité de la refaire chez vous — promis, le matériel est le même qu'à la maison.
+            </p>
+            <div class="ateliers-grid">
+                <div class="atelier-card reveal reveal-delay-2">
+                    <h3>👩‍🍳 Atelier adulte</h3>
+                    <ul>
+                        <li>2h30 à 3h en petit groupe (6 max)</li>
+                        <li>Ingrédients bio, matériel fourni</li>
+                        <li>Fiche recette à emporter</li>
+                        <li>Votre réalisation à déguster chez vous</li>
+                    </ul>
+                    <div class="prix">65 €</div>
+                    <p style="font-size:0.9rem; color:var(--sauge);">par personne</p>
+                </div>
+                <div class="atelier-card reveal reveal-delay-3">
+                    <h3>🎂 Anniversaire enfant</h3>
+                    <ul>
+                        <li>Formule goûter + gâteau + animation</li>
+                        <li>Sur réservation, groupe de 6 enfants max</li>
+                        <li>Tout inclus : tablier, ingrédients, décoration</li>
+                        <li>Ils repartent avec leur gâteau</li>
+                    </ul>
+                    <div class="prix">45 €</div>
+                    <p style="font-size:0.9rem; color:var(--sauge);">par enfant</p>
+                </div>
+            </div>
+            <p style="margin-top:1.5rem; font-weight:500; text-align:center;" class="reveal">
+                Réservation en ligne — <a href="mailto:julie@tropbon-paris.com" style="color:var(--caramel);">contactez Julie</a>
+            </p>
+        </section>
+
+        <!-- SECTION 6 - INFOS PRATIQUES -->
+        <section class="section section-dark" id="infos" style="border-radius:0;">
+            <h2 class="section-title reveal" style="background:linear-gradient(135deg, #FDF8F2 0%, #E8C9A0 50%, #D4784A 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Trop bon!, mode d'emploi.</h2>
+            <div class="infos-grid" style="margin-top:1.5rem;">
+                <div class="info-bloc reveal reveal-delay-1" style="background:rgba(253,248,242,0.06); border-color:rgba(253,248,242,0.15); color:var(--creme);">
+                    <h3 style="color:var(--creme);">📍 Adresse</h3>
+                    <p>64 avenue Pierre Grenier<br>92100 Boulogne-Billancourt<br>(Porte de Saint-Cloud)</p>
+                    <h3 style="color:var(--creme); margin-top:1.2rem;">🕐 Horaires</h3>
+                    <p>Mardi – samedi : 9h – 19h<br>Retrait des commandes sur ces créneaux.<br>Fermé dimanche – lundi.</p>
+                    <h3 style="color:var(--creme); margin-top:1.2rem;">📞 Contact</h3>
+                    <p><a href="tel:+33683100389" style="color:var(--caramel);">06 83 10 03 89</a><br>
+                        <a href="mailto:julie@tropbon-paris.com" style="color:var(--caramel);">julie@tropbon-paris.com</a></p>
+                    <p style="margin-top:1rem;">
+                        <a href="https://instagram.com/julie_tropbon" target="_blank" rel="noopener" style="color:var(--caramel); font-weight:600;">📸 @julie_tropbon</a> — 1 200 abonnés, les coulisses de l'atelier
+                    </p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="info-bloc" style="background:rgba(253,248,242,0.06); border-color:rgba(253,248,242,0.15); color:var(--creme);">
+                        <h3 style="color:var(--creme);">📬 La lettre des fruits du mois</h3>
+                        <p style="color:rgba(253,248,242,0.8);">Les créations de Julie et les fruits de saison, une fois par saison. Pas plus.</p>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="votre@email.fr" aria-label="Email pour la newsletter">
+                            <button type="button" onclick="alert('Merci ! (Démonstration)')">S'inscrire</button>
+                        </div>
+                    </div>
+                    <div class="map-container" style="margin-top:1.5rem;">
+                        <iframe src="https://maps.google.com/maps?q=Trop+bon%21+64+Avenue+Pierre+Grenier%2C+Boulogne-Billancourt&output=embed" width="100%" height="360" style="border:0; display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de l'atelier Trop bon!"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-social">
+            <a href="https://instagram.com/julie_tropbon" target="_blank" rel="noopener">📸 @julie_tropbon</a> · 1 200 abonnés
+        </div>
+        <p>Mentions légales | CGV | © Trop bon! 2026 — Fait avec farine et patience à Boulogne-Billancourt.</p>
+        <p style="margin-top:0.3rem; opacity:0.6;">64 avenue Pierre Grenier, 92100 Boulogne-Billancourt · <a href="tel:+33683100389">06 83 10 03 89</a></p>
+        <p style="margin-top:0.8rem; font-size:0.8rem; opacity:0.5;">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script>
+        (function() {
+            // Sticky header bg on scroll
+            const header = document.getElementById('siteHeader');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !expanded);
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu on link click (mobile)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                // Fallback: show all reveals if no support
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FoodEstablishment",
+            "name": "Trop bon!",
+            "description": "Pâtisserie artisanale à la commande & ateliers — Boulogne-Billancourt. Gâteaux d'anniversaire, letter cakes, entremets de saison. Fait à la commande, bio, local.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "64 Avenue Pierre Grenier",
+                "postalCode": "92100",
+                "addressLocality": "Boulogne-Billancourt",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33683100389",
+            "email": "julie@tropbon-paris.com",
+            "image": "assets/maps-1.jpg",
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "09:00",
+                    "closes": "19:00"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "26",
+                "bestRating": "5"
+            },
+            "servesCuisine": "Pâtisserie française artisanale",
+            "url": "https://agence.mooo.com/trop-bon"
+        }
+    </script>
+</body>
+</html>

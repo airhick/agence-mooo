@@ -16,6 +16,7 @@ from datetime import datetime
 from urllib.parse import quote_plus
 
 from . import assets, config, deepseek
+from .gather import Research
 from .source import Business, resolve_unique_dir
 
 # --------------------------------------------------------------------------- #
@@ -47,6 +48,12 @@ BRIEF_USER = """Conçois la direction artistique du site vitrine de ce commerce.
 - Titres (display): {display_font}
 - Texte courant (body): {body_font}
 
+## Audit du site actuel (à corriger par la nouvelle DA)
+{audit}
+
+## Recherche réelle (web + Google Maps) à exploiter dans le contenu
+{research}
+
 ## Livrable : un BRIEF CRÉATIF en français, structuré ainsi
 1. **Concept & positionnement** (2-3 phrases : l'idée forte, ce qu'on retient).
 2. **Direction artistique** : nomme le parti pris esthétique précis.
@@ -60,10 +67,12 @@ BRIEF_USER = """Conçois la direction artistique du site vitrine de ce commerce.
 7. **Signature visuelle** : 1-2 détails mémorables (traitement d'image, motif,
    typographie surdimensionnée, animation clé...) qui rendent le site unique.
 
-Sois concret, spécifique à CE commerce. Pas de généralités interchangeables."""
+Sois concret, spécifique à CE commerce. Pas de généralités interchangeables.
+Réponds directement aux faiblesses pointées par l'audit ci-dessus."""
 
 
-def _brief(biz: Business, kit: assets.AssetKit) -> str:
+def _brief(biz: Business, kit: assets.AssetKit, audit_report: str | None,
+           research: Research | None) -> str:
     prompt = BRIEF_USER.format(
         name=biz.name,
         industry=biz.industry or "commerce de proximité",
@@ -75,6 +84,8 @@ def _brief(biz: Business, kit: assets.AssetKit) -> str:
         email=biz.email or "—",
         display_font=kit.display_font,
         body_font=kit.body_font,
+        audit=(audit_report or "(audit indisponible)")[:4000],
+        research=research.context() if research else "(non collectée)",
     )
     return deepseek.chat(
         [{"role": "system", "content": BRIEF_SYSTEM},
@@ -134,6 +145,7 @@ BUILD_USER = """Construis le site vitrine une page à partir de ce brief.
 -> display: '{display_font}', body: '{body_font}'
 
 ## Images réelles à utiliser (NE PAS en inventer d'autres)
+{image_note}
 - HÉRO ({hero_hint}): {hero}
 {gallery_block}
 
@@ -171,10 +183,32 @@ def _strip_fences(text: str) -> str:
     return t[m.start():].strip() if m else t.strip()
 
 
-def _build(biz: Business, kit: assets.AssetKit, brief: str, eff_slug: str) -> str:
+def _images(kit: assets.AssetKit, research: Research | None) -> tuple[str, str, str, str]:
+    """Pick imagery: real Google Maps photos first, curated stock as fallback.
+
+    Returns (image_note, hero, hero_hint, gallery_block). Real photos are
+    referenced by their relative path inside the site folder (e.g. assets/maps-1.jpg).
+    """
+    if research and research.has_real_images:
+        imgs = research.local_images
+        hero, hero_hint = imgs[0]["path"], imgs[0]["hint"]
+        gallery_block = "\n".join(
+            f"- GALERIE ({g['hint']}): {g['path']}" for g in imgs[1:]
+        )
+        note = ("Ce sont de VRAIES photos du commerce (chemins relatifs, déjà "
+                "présentes dans le dossier du site). Utilise-les telles quelles.")
+        return note, hero, hero_hint, gallery_block
+
     gallery_block = "\n".join(
         f"- GALERIE ({g['hint']}): {g['url']}" for g in kit.gallery
     )
+    note = "Photos professionnelles soigneusement sélectionnées (URLs absolues vérifiées)."
+    return note, kit.hero, kit.hero_hint, gallery_block
+
+
+def _build(biz: Business, kit: assets.AssetKit, brief: str, eff_slug: str,
+           research: Research | None) -> str:
+    image_note, hero, hero_hint, gallery_block = _images(kit, research)
     prompt = BUILD_USER.format(
         brief=brief,
         name=biz.name,
@@ -189,8 +223,9 @@ def _build(biz: Business, kit: assets.AssetKit, brief: str, eff_slug: str) -> st
         fonts_url=kit.fonts_css_url(),
         display_font=kit.display_font,
         body_font=kit.body_font,
-        hero=kit.hero,
-        hero_hint=kit.hero_hint,
+        image_note=image_note,
+        hero=hero,
+        hero_hint=hero_hint,
         gallery_block=gallery_block,
         map_embed=_maps_embed(biz),
     )
@@ -202,15 +237,22 @@ def _build(biz: Business, kit: assets.AssetKit, brief: str, eff_slug: str) -> st
     return _strip_fences(html)
 
 
-def run_generate(biz: Business) -> dict:
-    """Two-pass premium generation. Writes <slug>/index.html + meta.json."""
+def run_generate(biz: Business, audit_report: str | None = None,
+                 research: Research | None = None, out_dir=None) -> dict:
+    """Two-pass premium generation, chained from the audit + research.
+
+    Writes <slug>/index.html + brief.md + meta.json. `out_dir` lets the caller
+    reserve the folder first (so research can download real photos into it);
+    when omitted it is resolved here.
+    """
     kit = assets.pick(biz.name, biz.industry)
     # Reserve the per-business folder first so the URL matches the real folder.
-    out_dir = resolve_unique_dir(config.SITES_DIR, biz.slug, biz.place_id)
+    if out_dir is None:
+        out_dir = resolve_unique_dir(config.SITES_DIR, biz.slug, biz.place_id)
     eff_slug = out_dir.name
 
-    brief = _brief(biz, kit)
-    html = _build(biz, kit, brief, eff_slug)
+    brief = _brief(biz, kit, audit_report, research)
+    html = _build(biz, kit, brief, eff_slug, research)
     if "<html" not in html.lower():
         raise deepseek.DeepSeekError("Model did not return valid HTML")
 

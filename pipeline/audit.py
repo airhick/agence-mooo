@@ -6,6 +6,7 @@ from datetime import datetime
 
 from . import config, deepseek
 from .fetcher import PageContent, fetch
+from .gather import Research
 from .source import Business, resolve_unique_dir
 
 AUDIT_SYSTEM = (
@@ -41,6 +42,9 @@ AUDIT_TEMPLATE = """Voici un commerce et le contenu extrait de son site web actu
 {text}
 \"\"\"
 
+## Recherche complémentaire (web + Google Maps)
+{research}
+
 ## Ta mission
 Rends un rapport d'audit en **Markdown** avec EXACTEMENT ces sections:
 
@@ -73,7 +77,7 @@ Liste 6 à 10 actions, triées (🔴 Critique / 🟠 Important / 🟢 Bonus).
 Sois précis, cite des éléments réels du site quand c'est possible. Pas de blabla générique."""
 
 
-def build_prompt(biz: Business, page: PageContent) -> str:
+def build_prompt(biz: Business, page: PageContent, research: Research | None) -> str:
     return AUDIT_TEMPLATE.format(
         name=biz.name,
         industry=biz.industry or "—",
@@ -94,12 +98,14 @@ def build_prompt(biz: Business, page: PageContent) -> str:
         h1=" | ".join(page.h1) or "—",
         h2=" | ".join(page.h2) or "—",
         text=page.text or "(aucun texte extrait)",
+        research=research.context() if research else "(non collectée)",
     )
 
 
-def run_audit(biz: Business) -> dict:
-    """Fetch + audit one business. Returns a result dict; writes files on success."""
-    page = fetch(biz.website)
+def run_audit(biz: Business, research: Research | None = None) -> dict:
+    """Fetch + audit one business. Returns a result dict (incl. `report` text);
+    writes audit.md + meta.json on success."""
+    page = research.own_site if (research and research.own_site) else fetch(biz.website)
     out_dir = resolve_unique_dir(config.AUDITS_DIR, biz.slug, biz.place_id)
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -118,7 +124,7 @@ def run_audit(biz: Business) -> dict:
         report = deepseek.chat(
             [
                 {"role": "system", "content": AUDIT_SYSTEM},
-                {"role": "user", "content": build_prompt(biz, page)},
+                {"role": "user", "content": build_prompt(biz, page, research)},
             ],
             model=config.AUDIT_MODEL,
             temperature=0.4,
@@ -140,4 +146,4 @@ def run_audit(biz: Business) -> dict:
         "generated_at": datetime.now().isoformat(timespec="seconds"),
     }
     (out_dir / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-    return {**meta, "output": str(out_dir / "audit.md")}
+    return {**meta, "output": str(out_dir / "audit.md"), "report": report}

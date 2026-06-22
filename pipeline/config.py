@@ -26,11 +26,29 @@ def load_env(path: Path | None = None) -> None:
 
 load_env()
 
-# --- API ---
+# --- DeepSeek (audits + site generation) ---
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
 GEN_MODEL = os.environ.get("DEEPSEEK_GEN_MODEL", "deepseek-v4-pro")
 AUDIT_MODEL = os.environ.get("DEEPSEEK_AUDIT_MODEL", "deepseek-v4-pro")
+
+# --- OpenAI (email copy + personalized whiteboard image) ---
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+OPENAI_MAIL_MODEL = os.environ.get("OPENAI_MAIL_MODEL", "gpt-4o")
+OPENAI_IMAGE_MODEL = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
+
+# --- Outreach ---
+MOOO_FROM = os.environ.get("MOOO_FROM", "globalvisionswitzerland@gmail.com")
+REVIEWS_MIN = int(os.environ.get("REVIEWS_MIN", "100"))   # qualify: strictly more than this
+
+# --- Gmail API (create outreach drafts directly in MOOO_FROM's mailbox) ---
+# OAuth "Desktop app" client. Secrets live in .env (gitignored), never in git.
+GMAIL_CLIENT_ID = os.environ.get("GMAIL_CLIENT_ID", "")
+GMAIL_CLIENT_SECRET = os.environ.get("GMAIL_CLIENT_SECRET", "")
+# gmail.compose = create drafts only (no send, no read) — least privilege.
+GMAIL_SCOPE = "https://www.googleapis.com/auth/gmail.compose"
+GMAIL_OAUTH_PORT = int(os.environ.get("GMAIL_OAUTH_PORT", "8765"))
 
 # --- Deployment ---
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://agence.mooo.com").rstrip("/")
@@ -40,7 +58,15 @@ CSV_PATH = ROOT / "GMAPS_SCRAPPER_BUSINESS_With_Emails.csv"
 AUDITS_DIR = ROOT / "audits"      # internal deliverables (gitignored)
 SITES_DIR = ROOT                  # generated sites go at repo root -> /<slug>
 STATE_DIR = ROOT / "state"        # resume/progress tracking (gitignored)
+OUTBOX_DIR = ROOT / "outbox"      # per-lead email packages (gitignored)
+GMAIL_TOKEN_PATH = STATE_DIR / "gmail_token.json"   # OAuth refresh token (gitignored)
 RESULTS_CSV = ROOT / "results.csv"
+WHITEBOARD_SRC = ROOT / "assets" / "whiteboard.png"   # blank board, edited per lead
+
+# CSV columns the pipeline writes back so a lead is never targeted twice.
+CSV_STATUS_COL = "mooo_status"    # done | skipped:<reason> | error:<msg>
+CSV_URL_COL = "mooo_url"
+CSV_AT_COL = "mooo_at"
 
 # --- Runtime defaults ---
 BATCH_SIZE = int(os.environ.get("BATCH_SIZE", "20"))
@@ -58,3 +84,17 @@ def require_api_key() -> str:
     if not DEEPSEEK_API_KEY:
         raise SystemExit("DEEPSEEK_API_KEY missing. Set it in .env (see config.py).")
     return DEEPSEEK_API_KEY
+
+
+def require_openai_key() -> str:
+    if not OPENAI_API_KEY:
+        raise SystemExit("OPENAI_API_KEY missing. Set it in .env (see config.py).")
+    return OPENAI_API_KEY
+
+
+def require_gmail_creds() -> tuple[str, str]:
+    if not (GMAIL_CLIENT_ID and GMAIL_CLIENT_SECRET):
+        raise SystemExit(
+            "GMAIL_CLIENT_ID / GMAIL_CLIENT_SECRET missing. Set them in .env, then "
+            "run `python -m pipeline.gmail_client auth` once to authorize.")
+    return GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET
