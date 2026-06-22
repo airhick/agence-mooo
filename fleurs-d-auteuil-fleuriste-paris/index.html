@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleurs d'Auteuil — Fleuriste Paris 16ᵉ depuis 1936</title>
+    <meta name="description" content="Fleuriste au 103 boulevard de Montmorency, Paris 16ᵉ, depuis 1936. Bouquets de saison, fleurs séchées, plantes & pots, événements. Livraison dans Paris.">
+    <meta property="og:title" content="Fleurs d'Auteuil — Fleuriste Paris 16ᵉ depuis 1936">
+    <meta property="og:description" content="Chaque bouquet a l'âge de cette maison. Fleuriste au 103 boulevard de Montmorency depuis 1936. Le marché de Rungis à l'aube, vos compositions livrées avant midi.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💐%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --creme-coquillage: #F4F1E7;
+            --vert-tige: #2F3524;
+            --terre-cuite: #A65E3A;
+            --olive-frais: #7E8C54;
+            --zinc-clair: #B6B7B0;
+            --tilleul-fleuri: #C8D98F;
+            --display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+            --body: 'Geist', 'Helvetica Neue', Arial, sans-serif;
+            --grain-opacity: 0.035;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-lent: 0.7s var(--ease-out-expo);
+            --transition-doux: 0.4s var(--ease-out-quart);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--creme-coquillage);
+            color: var(--vert-tige);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Grain texture overlay */
+        .grain-overlay {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: var(--grain-opacity);
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            will-change: transform;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--terre-cuite);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        a {
+            color: var(--terre-cuite);
+            text-decoration: none;
+            transition: color var(--transition-doux);
+            font-weight: 500;
+        }
+        a:hover {
+            color: var(--olive-frais);
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(244, 241, 231, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--zinc-clair);
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+            transition: border-color var(--transition-doux);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: clamp(3.2rem, 5vw, 4rem);
+            gap: 1rem;
+        }
+        .header-brand {
+            font-family: var(--display);
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            font-weight: 500;
+            color: var(--vert-tige);
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .header-brand span {
+            color: var(--terre-cuite);
+            font-weight: 400;
+        }
+        .header-nav {
+            display: none;
+            align-items: center;
+            gap: clamp(1rem, 2vw, 1.8rem);
+            list-style: none;
+        }
+        .header-nav a {
+            font-family: var(--body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--vert-tige);
+            letter-spacing: 0.02em;
+            transition: color var(--transition-doux);
+            white-space: nowrap;
+            position: relative;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terre-cuite);
+            transition: width var(--transition-doux);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--terre-cuite);
+        }
+        .header-cta {
+            font-family: var(--body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--creme-coquillage);
+            background: var(--terre-cuite);
+            padding: 0.5rem 1.1rem;
+            border-radius: 2px;
+            letter-spacing: 0.03em;
+            transition: background var(--transition-doux), transform var(--transition-doux);
+            white-space: nowrap;
+            display: none;
+            text-decoration: none;
+        }
+        .header-cta:hover {
+            background: #8F4E30;
+            color: var(--creme-coquillage);
+            transform: translateY(-1px);
+        }
+
+        @media (min-width: 780px) {
+            .header-nav {
+                display: flex;
+            }
+            .header-cta {
+                display: inline-block;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            display: grid;
+            min-height: 85vh;
+            align-items: center;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.78) saturate(0.7);
+            opacity: 0.55;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(190deg,
+                    rgba(244, 241, 231, 0.05) 0%,
+                    rgba(244, 241, 231, 0.35) 40%,
+                    rgba(244, 241, 231, 0.75) 75%,
+                    rgba(244, 241, 231, 0.92) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: clamp(2rem, 6vw, 4rem);
+        }
+        .hero-title {
+            font-family: var(--display);
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--vert-tige);
+            min-height: 1.2em;
+            position: relative;
+            display: inline-block;
+        }
+        .hero-title .cursor-blink {
+            display: inline-block;
+            width: 2px;
+            height: 0.85em;
+            background: var(--terre-cuite);
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: cursorPulse 1s ease-in-out 3;
+            opacity: 0;
+        }
+        @keyframes cursorPulse {
+            0%,
+            100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            font-weight: 400;
+            color: var(--vert-tige);
+            opacity: 0.75;
+            line-height: 1.55;
+            max-width: 560px;
+            margin: 1.2rem auto 0;
+            letter-spacing: 0.01em;
+        }
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.5rem;
+            font-family: var(--body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--vert-tige);
+            background: rgba(244, 241, 231, 0.7);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.4rem 0.9rem;
+            border-radius: 24px;
+            border: 1px solid var(--zinc-clair);
+            letter-spacing: 0.02em;
+        }
+        .hero-rating .stars {
+            color: #D4A843;
+            letter-spacing: -0.05em;
+            font-size: 0.95rem;
+        }
+        .hero-rating .note {
+            font-weight: 600;
+            color: var(--vert-tige);
+        }
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            opacity: 0.5;
+            animation: floatHint 3s ease-in-out infinite;
+        }
+        .hero-scroll-hint span {
+            font-family: var(--body);
+            font-size: 0.65rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--vert-tige);
+        }
+        .hero-scroll-hint .arrow-down {
+            width: 20px;
+            height: 20px;
+            border-right: 1.5px solid var(--vert-tige);
+            border-bottom: 1.5px solid var(--vert-tige);
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+        @keyframes floatHint {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        @media (min-width: 780px) {
+            .hero {
+                min-height: 90vh;
+            }
+            .hero-content {
+                text-align: left;
+                margin: 0;
+                padding-left: clamp(1rem, 4vw, 4rem);
+            }
+            .hero-subtitle {
+                margin: 1.2rem 0 0;
+            }
+            .hero-rating {
+                margin-top: 1.8rem;
+            }
+            .hero-scroll-hint {
+                left: auto;
+                right: 2.5rem;
+                transform: none;
+            }
+            @keyframes floatHint {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(8px);
+                }
+            }
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-label {
+            font-family: var(--body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--olive-frais);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.005em;
+            color: var(--vert-tige);
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .section-title .accent-dot {
+            color: var(--terre-cuite);
+            font-weight: 600;
+        }
+
+        /* Filet decoratif */
+        .filet {
+            display: block;
+            width: clamp(30px, 5vw, 50px);
+            height: 1px;
+            background: var(--zinc-clair);
+            margin: 0 0 1.5rem;
+        }
+        .filet.terre {
+            background: var(--terre-cuite);
+            width: clamp(24px, 4vw, 38px);
+        }
+
+        /* ========== SECTION 1 — LE GESTE ========== */
+        .geste-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 4vw, 3.5rem);
+            align-items: start;
+        }
+        .geste-triptyque {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+        .geste-triptyque .frame {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 2px;
+            border: 1px solid var(--zinc-clair);
+            background: #e8e4d8;
+        }
+        .geste-triptyque .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.85) contrast(0.95) brightness(0.65);
+            transition: filter var(--transition-lent), transform var(--transition-lent);
+        }
+        .geste-triptyque .frame:nth-child(1) img {
+            object-position: 15% 40%;
+            filter: grayscale(0.9) contrast(1.0) brightness(0.6) sepia(0.15);
+        }
+        .geste-triptyque .frame:nth-child(2) img {
+            object-position: 50% 30%;
+            filter: grayscale(0.8) contrast(0.9) brightness(0.7) sepia(0.1);
+        }
+        .geste-triptyque .frame:nth-child(3) img {
+            object-position: 85% 45%;
+            filter: grayscale(0.85) contrast(1.05) brightness(0.58) sepia(0.12);
+        }
+        .geste-triptyque .frame:hover img {
+            filter: grayscale(0.3) contrast(1.0) brightness(0.8);
+            transform: scale(1.03);
+        }
+        .geste-texte {
+            font-family: var(--body);
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--vert-tige);
+            opacity: 0.85;
+        }
+        .geste-texte em {
+            font-style: italic;
+            color: var(--terre-cuite);
+            font-weight: 500;
+        }
+        @media (min-width: 780px) {
+            .geste-layout {
+                grid-template-columns: 1fr 1.1fr;
+                gap: clamp(3rem, 6vw, 5rem);
+            }
+            .geste-triptyque {
+                order: -1;
+            }
+        }
+
+        /* ========== SECTION 2 — QUATRE UNIVERS ========== */
+        .univers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(1.2rem, 2vw, 1.8rem);
+        }
+        @media (min-width: 580px) {
+            .univers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .univers-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .univers-card {
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border: 1px solid var(--zinc-clair);
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            transition: border-color var(--transition-doux), background var(--transition-doux), box-shadow var(--transition-doux);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .univers-card:hover {
+            border-color: var(--olive-frais);
+            background: rgba(255, 255, 255, 0.55);
+            box-shadow: 0 4px 24px rgba(47, 53, 36, 0.06);
+        }
+        .univers-card .card-icon {
+            display: inline-block;
+            width: 32px;
+            height: 1px;
+            background: var(--olive-frais);
+            margin-bottom: 0.8rem;
+            transition: width var(--transition-doux);
+        }
+        .univers-card:hover .card-icon {
+            width: 48px;
+            background: var(--terre-cuite);
+        }
+        .univers-card h3 {
+            font-family: var(--display);
+            font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+            font-weight: 500;
+            color: var(--vert-tige);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.01em;
+        }
+        .univers-card p {
+            font-family: var(--body);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--vert-tige);
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        /* ========== SECTION 3 — LE COMPTOIR ========== */
+        .comptoir-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            align-items: center;
+        }
+        @media (min-width: 780px) {
+            .comptoir-layout {
+                grid-template-columns: 1fr 1fr;
+                gap: clamp(3rem, 6vw, 5rem);
+            }
+        }
+        .comptoir-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 2px;
+            border: 1px solid var(--zinc-clair);
+            position: relative;
+        }
+        .comptoir-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            transition: transform var(--transition-lent);
+        }
+        .comptoir-image:hover img {
+            transform: scale(1.04);
+        }
+        .comptoir-infos {
+            font-family: var(--body);
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.7;
+            color: var(--vert-tige);
+        }
+        .comptoir-infos .adresse {
+            font-weight: 600;
+            color: var(--vert-tige);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .comptoir-infos .tel-link {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--terre-cuite);
+            margin: 0.6rem 0;
+            letter-spacing: 0.02em;
+            transition: color var(--transition-doux);
+        }
+        .comptoir-infos .tel-link:hover {
+            color: #8F4E30;
+        }
+        .comptoir-infos .horaires {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .comptoir-map {
+            margin-top: clamp(1.5rem, 3vw, 2.5rem);
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--zinc-clair);
+            aspect-ratio: 16/7;
+            min-height: 220px;
+        }
+        .comptoir-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ========== SECTION 4 — L'ATELIER EN IMAGES ========== */
+        .atelier-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(0.6rem, 1.2vw, 1rem);
+        }
+        @media (min-width: 700px) {
+            .atelier-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1000px) {
+            .atelier-gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .atelier-gallery .gallery-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 2px;
+            border: 1px solid var(--zinc-clair);
+            position: relative;
+            background: #e8e4d8;
+            cursor: pointer;
+        }
+        .atelier-gallery .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-lent), filter var(--transition-lent);
+        }
+        .atelier-gallery .gallery-item:nth-child(1) img {
+            object-position: 10% 30%;
+            filter: brightness(0.75) contrast(0.9);
+        }
+        .atelier-gallery .gallery-item:nth-child(2) img {
+            object-position: 40% 25%;
+            filter: brightness(0.8) saturate(0.7) contrast(0.95);
+        }
+        .atelier-gallery .gallery-item:nth-child(3) img {
+            object-position: 70% 35%;
+            filter: brightness(0.72) contrast(1.0) sepia(0.08);
+        }
+        .atelier-gallery .gallery-item:nth-child(4) img {
+            object-position: 25% 45%;
+            filter: brightness(0.78) saturate(0.75) contrast(0.9);
+        }
+        .atelier-gallery .gallery-item:nth-child(5) img {
+            object-position: 55% 30%;
+            filter: brightness(0.7) contrast(0.95) sepia(0.06);
+        }
+        .atelier-gallery .gallery-item:nth-child(6) img {
+            object-position: 80% 40%;
+            filter: brightness(0.76) saturate(0.7) contrast(0.92);
+        }
+        .atelier-gallery .gallery-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(0.9) saturate(0.9) contrast(1.0);
+        }
+        .atelier-gallery .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(244, 241, 231, 0);
+            transition: background var(--transition-doux);
+            pointer-events: none;
+            z-index: 1;
+            border-radius: 2px;
+        }
+        .atelier-gallery .gallery-item:hover::after {
+            background: rgba(244, 241, 231, 0.18);
+        }
+        .gallery-legend {
+            font-family: var(--body);
+            font-size: 0.8rem;
+            color: var(--vert-tige);
+            opacity: 0.6;
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+            font-style: italic;
+        }
+
+        /* ========== SECTION 5 — DEPUIS RUNGIS ========== */
+        .rungis-texte {
+            font-family: var(--body);
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.75;
+            color: var(--vert-tige);
+            opacity: 0.85;
+            max-width: 720px;
+        }
+        .rungis-texte .chiffre {
+            font-family: var(--display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--terre-cuite);
+            font-weight: 500;
+            display: inline-block;
+            line-height: 1;
+            margin-right: 0.2rem;
+            vertical-align: text-bottom;
+        }
+
+        /* ========== SECTION 6 — CONTACT ========== */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid var(--zinc-clair);
+            border-radius: 2px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        @media (min-width: 700px) {
+            .contact-layout {
+                grid-template-columns: 1fr 1.3fr;
+            }
+        }
+        .contact-promesse {
+            font-family: var(--display);
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            color: var(--vert-tige);
+            line-height: 1.3;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: var(--body);
+            font-size: 0.9rem;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--zinc-clair);
+            border-radius: 2px;
+            background: var(--creme-coquillage);
+            color: var(--vert-tige);
+            transition: border-color var(--transition-doux), box-shadow var(--transition-doux);
+            resize: vertical;
+            letter-spacing: 0.02em;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--terre-cuite);
+            box-shadow: 0 0 0 3px rgba(166, 94, 58, 0.08);
+            outline: none;
+        }
+        .contact-form textarea {
+            min-height: 90px;
+        }
+        .contact-form button {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.5rem;
+            background: var(--terre-cuite);
+            color: var(--creme-coquillage);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background var(--transition-doux), transform var(--transition-doux);
+            align-self: flex-start;
+        }
+        .contact-form button:hover {
+            background: #8F4E30;
+            transform: translateY(-1px);
+        }
+        .contact-form button:active {
+            transform: translateY(0);
+        }
+        .contact-rappel {
+            font-family: var(--body);
+            font-size: 0.75rem;
+            color: var(--olive-frais);
+            letter-spacing: 0.03em;
+            margin-top: 0.3rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            border-top: 1px solid var(--zinc-clair);
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 5vw, 3rem);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        @media (min-width: 600px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            }
+        }
+        .footer-col h4 {
+            font-family: var(--display);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--vert-tige);
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: var(--body);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: var(--vert-tige);
+            opacity: 0.7;
+            display: block;
+        }
+        .footer-col a:hover {
+            opacity: 1;
+            color: var(--terre-cuite);
+        }
+        .footer-bottom {
+            margin-top: clamp(2rem, 4vw, 3rem);
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--zinc-clair);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--body);
+            font-size: 0.7rem;
+            color: var(--vert-tige);
+            opacity: 0.55;
+            letter-spacing: 0.03em;
+        }
+        .footer-bottom .mooo-credit {
+            font-style: italic;
+        }
+
+        /* ========== MOBILE STICKY CTA ========== */
+        .mobile-sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: rgba(244, 241, 231, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--zinc-clair);
+            padding: 0.6rem 1rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .mobile-sticky-cta a {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            transition: all var(--transition-doux);
+        }
+        .mobile-sticky-cta .btn-call {
+            background: transparent;
+            color: var(--vert-tige);
+            border: 1px solid var(--zinc-clair);
+        }
+        .mobile-sticky-cta .btn-call:hover {
+            border-color: var(--terre-cuite);
+            color: var(--terre-cuite);
+        }
+        .mobile-sticky-cta .btn-devis {
+            background: var(--terre-cuite);
+            color: var(--creme-coquillage);
+            border: 1px solid var(--terre-cuite);
+        }
+        .mobile-sticky-cta .btn-devis:hover {
+            background: #8F4E30;
+            border-color: #8F4E30;
+        }
+        @media (min-width: 780px) {
+            .mobile-sticky-cta {
+                display: none;
+            }
+        }
+
+        /* ========== SCROLL REVEAL ========== */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        [data-reveal-delay="1"] {
+            transition-delay: 0.1s;
+        }
+        [data-reveal-delay="2"] {
+            transition-delay: 0.2s;
+        }
+        [data-reveal-delay="3"] {
+            transition-delay: 0.3s;
+        }
+        [data-reveal-delay="4"] {
+            transition-delay: 0.4s;
+        }
+        [data-reveal-delay="5"] {
+            transition-delay: 0.5s;
+        }
+
+        /* ========== PREFERS REDUCED MOTION ========== */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            [data-reveal] {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-scroll-hint {
+                animation: none;
+            }
+            .hero-title .cursor-blink {
+                animation: none;
+                opacity: 0;
+            }
+            .hero-bg img,
+            .geste-triptyque .frame img,
+            .atelier-gallery .gallery-item img,
+            .comptoir-image img {
+                transition: none;
+            }
+            .hero-title {
+                /* show full text immediately for screen readers */
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== UTILITY ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Badge livraison */
+        .badge-livraison {
+            display: inline-block;
+            font-family: var(--body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--tilleul-fleuri);
+            color: var(--vert-tige);
+            padding: 0.25rem 0.7rem;
+            border-radius: 24px;
+            margin-top: 0.6rem;
+        }
+
+        /* Spacing helpers */
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        .mt-3 {
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Grain overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="header-brand" aria-label="Fleurs d'Auteuil — Accueil">
+                Fleurs d'<span>Auteuil</span>
+            </a>
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a href="#le-geste">Le geste</a>
+                <a href="#univers">Ce que nous composons</a>
+                <a href="#le-comptoir">Le comptoir</a>
+                <a href="#latelier">L'atelier</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:+33140716161" class="header-cta" aria-label="Appeler Fleurs d'Auteuil">✆ 01 40 71 61 61</a>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Fleurs d'Auteuil — Devanture du 103 boulevard de Montmorency, Paris 16ᵉ" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title"></h1>
+            <p class="hero-subtitle">Fleuriste au 103 boulevard de Montmorency depuis 1936. Le marché de Rungis à l'aube, l'atelier à 7&nbsp;heures, vos compositions livrées avant midi dans le 16ᵉ et au-delà.</p>
+            <div class="hero-rating" aria-label="Note Google 4,1 sur 5 — 181 avis">
+                <span class="stars">★★★★★</span>
+                <span class="note">4.1</span>
+                <span>/5 — 181 avis</span>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span>Découvrir</span>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1 — LE GESTE ========== -->
+    <section class="section" id="le-geste" aria-labelledby="geste-title">
+        <span class="section-label">Depuis 1936</span>
+        <h2 class="section-title" id="geste-title">Le geste<span class="accent-dot">.</span></h2>
+        <span class="filet terre"></span>
+        <div class="geste-layout">
+            <div class="geste-triptyque" data-reveal>
+                <div class="frame"><img src="assets/maps-1.jpg" alt="Phototype — Détail de la boutique" loading="lazy"></div>
+                <div class="frame" data-reveal-delay="1"><img src="assets/maps-1.jpg" alt="Phototype — L'alignement des pots" loading="lazy"></div>
+                <div class="frame" data-reveal-delay="2"><img src="assets/maps-1.jpg" alt="Phototype — La lumière du matin" loading="lazy"></div>
+            </div>
+            <div class="geste-texte" data-reveal data-reveal-delay="3">
+                <p>Fleurir le 16ᵉ, c'est connaître chaque lumière, chaque seuil, chaque saison de la rue de Passy à l'hippodrome. Notre atelier n'a pas changé de méthode depuis trois générations.</p>
+                <p class="mt-2">Les mains qui coupent, qui nouent, qui disposent&nbsp;— ce sont les mêmes gestes qu'en <em>1936</em>, quand la maison ouvrait ses portes au 103 du boulevard de Montmorency. Ni chaîne, ni franchise&nbsp;: un atelier unique, une adresse unique, une exigence intacte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2 — QUATRE UNIVERS ========== -->
+    <section class="section" id="univers" aria-labelledby="univers-title">
+        <span class="section-label">Notre offre</span>
+        <h2 class="section-title" id="univers-title">Ce que nous composons<span class="accent-dot">.</span></h2>
+        <span class="filet"></span>
+        <div class="univers-grid">
+            <div class="univers-card" data-reveal>
+                <span class="card-icon"></span>
+                <h3>Bouquets de saison</h3>
+                <p>Cueillis à Rungis avant l'aube, composés à l'atelier, livrés le jour même. Chaque bouquet est unique, dicté par le marché du matin.</p>
+            </div>
+            <div class="univers-card" data-reveal data-reveal-delay="1">
+                <span class="card-icon"></span>
+                <h3>Fleurs séchées</h3>
+                <p>Une collection permanente pour une présence durable, sans un geste d'entretien. Immortelles, eucalyptus, lagurus&nbsp;— séchage lent en atelier.</p>
+            </div>
+            <div class="univers-card" data-reveal data-reveal-delay="2">
+                <span class="card-icon"></span>
+                <h3>Plantes &amp; pots</h3>
+                <p>Terre cuite, faïence, cache-pot chinés&nbsp;: chaque plante arrive accompagnée. Conseil d'entretien inclus, parce qu'une plante vit.</p>
+            </div>
+            <div class="univers-card" data-reveal data-reveal-delay="3">
+                <span class="card-icon"></span>
+                <h3>Événements &amp; deuil</h3>
+                <p>Mariages, signatures, cérémonies&nbsp;: nous parlons le langage des fleurs pour les jours qui comptent. Devis sur rendez-vous.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3 — LE COMPTOIR ========== -->
+    <section class="section" id="le-comptoir" aria-labelledby="comptoir-title">
+        <span class="section-label">La boutique</span>
+        <h2 class="section-title" id="comptoir-title">Passez le seuil<span class="accent-dot">.</span></h2>
+        <span class="filet terre"></span>
+        <div class="comptoir-layout">
+            <div class="comptoir-image" data-reveal>
+                <img src="assets/maps-1.jpg" alt="Devanture de Fleurs d'Auteuil, 103 boulevard de Montmorency" loading="lazy">
+            </div>
+            <div class="comptoir-infos" data-reveal data-reveal-delay="1">
+                <p class="adresse">103 boulevard de Montmorency, Paris 16ᵉ</p>
+                <a href="tel:+33140716161" class="tel-link" aria-label="Téléphoner au 01 40 71 61 61">✆ 01 40 71 61 61</a>
+                <div class="horaires mt-2">
+                    <p>Du mardi au samedi, 9h – 19h30</p>
+                    <p>Dimanche 9h – 13h</p>
+                </div>
+                <span class="badge-livraison">Commandez avant 14h, livraison aujourd'hui dans Paris</span>
+            </div>
+        </div>
+        <div class="comptoir-map" data-reveal data-reveal-delay="2">
+            <iframe src="https://maps.google.com/maps?q=Fleurs+d%27Auteuil+-+Fleuriste+Paris+103+Boulevard+de+Montmorency%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à Fleurs d'Auteuil" aria-label="Carte Google Maps de Fleurs d'Auteuil"></iframe>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4 — L'ATELIER EN IMAGES ========== -->
+    <section class="section" id="latelier" aria-labelledby="atelier-title">
+        <span class="section-label">En images</span>
+        <h2 class="section-title" id="atelier-title">La table de composition<span class="accent-dot">.</span></h2>
+        <span class="filet"></span>
+        <div class="atelier-gallery" data-reveal>
+            <div class="gallery-item"><img src="assets/maps-1.jpg" alt="Composition florale — vue 1" loading="lazy"></div>
+            <div class="gallery-item" data-reveal-delay="1"><img src="assets/maps-1.jpg" alt="Composition florale — vue 2" loading="lazy"></div>
+            <div class="gallery-item" data-reveal-delay="2"><img src="assets/maps-1.jpg" alt="Composition florale — vue 3" loading="lazy"></div>
+            <div class="gallery-item" data-reveal-delay="3"><img src="assets/maps-1.jpg" alt="Composition florale — vue 4" loading="lazy"></div>
+            <div class="gallery-item" data-reveal-delay="4"><img src="assets/maps-1.jpg" alt="Composition florale — vue 5" loading="lazy"></div>
+            <div class="gallery-item" data-reveal-delay="5"><img src="assets/maps-1.jpg" alt="Composition florale — vue 6" loading="lazy"></div>
+        </div>
+        <p class="gallery-legend">Ce que nous livrons cette semaine. Chaque composition naît à l'atelier, jamais en série.</p>
+    </section>
+
+    <!-- ========== SECTION 5 — DEPUIS RUNGIS ========== -->
+    <section class="section" id="depuis-rungis" aria-labelledby="rungis-title">
+        <span class="section-label">Savoir-faire</span>
+        <h2 class="section-title" id="rungis-title">Depuis Rungis<span class="accent-dot">.</span></h2>
+        <span class="filet terre"></span>
+        <div class="rungis-texte" data-reveal>
+            <p><span class="chiffre">4h</span> du matin, le marché de Rungis. Les allées sont encore calmes quand nous passons les premiers carreaux. Sélectionner, c'est écarter plus que prendre&nbsp;: sur <span class="chiffre" style="font-size:clamp(1.6rem,3vw,2.2rem);">200</span> variétés actives chaque semaine, une tige sur trois est refusée à l'arrivage.</p>
+            <p class="mt-3">Retour à l'atelier du boulevard de Montmorency avant 7 heures. Les seaux s'alignent, les sécateurs entrent en action. Chaque commande est montée le jour même, pour que le bouquet qui part à 11 heures ait la fraîcheur de l'aube. Pas de stock, pas de chambre froide&nbsp;: le circuit direct, de Rungis à votre seuil.</p>
+            <p class="mt-3">C'est ainsi depuis <em>trois générations</em>. Les variétés changent avec les saisons, les arrivages, les producteurs&nbsp;— le principe, lui, ne bouge pas.</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6 — CONTACT ========== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+        <span class="section-label">Devis & contact</span>
+        <h2 class="section-title" id="contact-title">Une composition sur mesure<span class="accent-dot">?</span></h2>
+        <span class="filet"></span>
+        <div class="contact-layout" data-reveal>
+            <div class="contact-promesse">
+                <p>Décrivez-nous votre projet. Nous vous rappelons dans l'heure, aux heures d'ouverture.</p>
+                <p class="mt-2" style="font-family:var(--body);font-size:0.85rem;opacity:0.7;">Ou appelez directement le <a href="tel:+33140716161">01 40 71 61 61</a></p>
+            </div>
+            <form class="contact-form" action="#" method="post" aria-label="Formulaire de contact">
+                <input type="text" name="prenom" placeholder="Votre prénom" required aria-required="true" autocomplete="given-name">
+                <input type="tel" name="telephone" placeholder="Votre téléphone" required aria-required="true" autocomplete="tel">
+                <textarea name="message" placeholder="Votre message (occasion, préférences, budget indicatif…)" aria-label="Message libre"></textarea>
+                <button type="submit">Envoyer</button>
+                <p class="contact-rappel">Nous vous rappelons dans l'heure, aux heures d'ouverture.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Fleurs d'Auteuil</h4>
+                <p>Maison fondée en 1936.<br>103 boulevard de Montmorency,<br>Paris 16ᵉ</p>
+                <p class="mt-1">
+                    <a href="tel:+33140716161">✆ 01 40 71 61 61</a>
+                    <a href="mailto:boutique@fleursdauteuil.fr">boutique@fleursdauteuil.fr</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Mar – Sam : 9h – 19h30</p>
+                <p>Dimanche : 9h – 13h</p>
+                <p>Lundi : fermé</p>
+            </div>
+            <div class="footer-col">
+                <h4>Catalogue</h4>
+                <a href="#">Bouquets de saison</a>
+                <a href="#">Fleurs séchées</a>
+                <a href="#">Plantes & pots</a>
+                <a href="#">Événements</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <a href="#" aria-label="Instagram de Fleurs d'Auteuil">Instagram</a>
+                <a href="#" aria-label="Facebook de Fleurs d'Auteuil">Facebook</a>
+                <p class="mt-2" style="font-size:0.7rem;">Note Google : 4.1 ★ (181 avis)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Fleurs d'Auteuil — Maison fondée en 1936.</span>
+            <span class="mooo-credit">Site créé par Agence Mooo</span>
+        </div>
+    </footer>
+
+    <!-- ========== MOBILE STICKY CTA ========== -->
+    <div class="mobile-sticky-cta" aria-label="Actions rapides">
+        <a href="tel:+33140716161" class="btn-call" aria-label="Appeler le 01 40 71 61 61">✆ Appeler</a>
+        <a href="#contact" class="btn-devis">Devis rapide</a>
+    </div>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        (function() {
+            // --- Typewriter animation for hero title ---
+            const heroTitleEl = document.getElementById('hero-title');
+            const fullTitle = 'Chaque bouquet a l\'âge de cette maison';
+            const charDelay = 150; // ms per character
+
+            function shouldAnimate() {
+                return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+
+            function typewriter() {
+                if (!heroTitleEl) return;
+                heroTitleEl.textContent = '';
+                heroTitleEl.style.visibility = 'visible';
+
+                if (!shouldAnimate()) {
+                    heroTitleEl.textContent = fullTitle;
+                    return;
+                }
+
+                let i = 0;
+                const interval = setInterval(() => {
+                    if (i < fullTitle.length) {
+                        heroTitleEl.textContent += fullTitle.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                        // Add blinking cursor after completion
+                        const cursor = document.createElement('span');
+                        cursor.classList.add('cursor-blink');
+                        cursor.setAttribute('aria-hidden', 'true');
+                        heroTitleEl.appendChild(cursor);
+                        // Remove cursor after animation completes
+                        setTimeout(() => {
+                            if (cursor.parentNode) {
+                                cursor.remove();
+                            }
+                        }, 3500);
+                    }
+                }, charDelay);
+            }
+
+            // Start typewriter shortly after DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(typewriter, 300);
+                });
+            } else {
+                setTimeout(typewriter, 300);
+            }
+
+            // --- IntersectionObserver for scroll reveals ---
+            const revealEls = document.querySelectorAll('[data-reveal]');
+
+            if (revealEls.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12,
+                };
+
+                const revealCallback = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const revealObserver = new IntersectionObserver(revealCallback, observerOptions);
+
+                if (shouldAnimate()) {
+                    revealEls.forEach(el => revealObserver.observe(el));
+                } else {
+                    // Show all immediately if reduced motion
+                    revealEls.forEach(el => el.classList.add('revealed'));
+                }
+            }
+        })();
+    </script>
+
+    <!-- ========== SCHEMA.ORG ========== -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Florist",
+            "name": "Fleurs d'Auteuil",
+            "description": "Fleuriste au 103 boulevard de Montmorency, Paris 16ᵉ, depuis 1936. Bouquets de saison, fleurs séchées, plantes & pots, événements.",
+            "url": "https://agence.mooo.com/fleurs-d-auteuil-fleuriste-paris",
+            "telephone": "+33140716161",
+            "email": "boutique@fleursdauteuil.fr",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "103 Boulevard de Montmorency",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.8545,
+                "longitude": 2.2670
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "181"
+            },
+            "foundingDate": "1936",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00",
+                    "closes": "19:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "13:00" }
+            ]
+        }
+    </script>
+
+</body>
+</html>
