@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evoleum — Laboratoire de beauté nutricosmétique | Paris 16</title>
+    <meta name="description" content="evoleum, 59 boulevard Exelmans Paris 16. Cures nutricosmétiques d'exception, diagnostics de peau sur mesure. Alliance de la science et du vivant. Note 4.9★. Prenez rendez-vous.">
+    <meta property="og:title" content="evoleum — Laboratoire de beauté nutricosmétique | Paris 16">
+    <meta property="og:description" content="Cures nutricosmétiques d'exception, conçues et conseillées au 59 boulevard Exelmans. Votre peau mérite l'alliance de la science et du vivant.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#1E3B2F">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>">
+    <style>
+        :root {
+            --fond: #F9F6F0;
+            --encre: #1E3B2F;
+            --accent: #3D7B52;
+            --accent-secondaire: #C4A56C;
+            --surface-froide: #E6ECE9;
+            --blanc: #ffffff;
+            --display: 'Bricolage Grotesque', 'Georgia', serif;
+            --body: 'Hanken Grotesk', 'Helvetica Neue', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* ---- SCROLL-LINK LINES (SVG overlay) ---- */
+        .scroll-connections {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.18;
+        }
+        .scroll-connections svg {
+            width: 100%;
+            height: 100%;
+        }
+        .connection-line {
+            stroke: #C4A56C;
+            stroke-width: 1.2;
+            fill: none;
+            stroke-dasharray: 6 4;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+        .connection-line.visible {
+            opacity: 0.55;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(249, 246, 240, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(196, 165, 108, 0.25);
+            transition: all 0.35s ease;
+        }
+        .site-header.scrolled {
+            padding: 0.6rem 2rem;
+            background: rgba(249, 246, 240, 0.94);
+            box-shadow: 0 2px 20px rgba(30, 59, 47, 0.06);
+        }
+        .logo-link {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        .logo-dot {
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-left: 2px;
+            animation: logoPulse 2.8s ease-in-out infinite;
+        }
+        @keyframes logoPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.9);
+                opacity: 1;
+            }
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-list a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.25s;
+            position: relative;
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--accent);
+            outline: none;
+        }
+        .nav-list a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 6px;
+            border-radius: 2px;
+        }
+        .cta-header {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1.5px solid transparent;
+        }
+        .cta-header:hover,
+        .cta-header:focus-visible {
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
+            outline: none;
+        }
+        .cta-header:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 4px;
+            z-index: 110;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--fond);
+            z-index: 105;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .mobile-nav.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-nav a {
+            font-family: var(--display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--encre);
+            text-decoration: none;
+        }
+
+        @media (max-width: 860px) {
+            .nav-list {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+            .site-header {
+                padding: 0.8rem 1.3rem;
+            }
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 7rem 2rem 4rem;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.92) saturate(0.85);
+            opacity: 0.75;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, rgba(30, 59, 47, 0.35) 0%, rgba(249, 246, 240, 0.55) 55%, rgba(230, 236, 233, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233D7B52' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 2;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(249, 246, 240, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--accent-secondaire);
+            border-radius: 40px;
+            padding: 0.4rem 1.3rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+            text-transform: uppercase;
+            font-family: var(--body);
+        }
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            color: var(--encre);
+            margin-bottom: 1.2rem;
+        }
+        .hero-title span {
+            display: inline-block;
+            position: relative;
+        }
+        .hero-title .accent-word {
+            color: var(--accent);
+            position: relative;
+        }
+        .hero-title .accent-word::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-secondaire);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--encre);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            transition: all 0.35s ease;
+            border: 2px solid var(--accent);
+            display: inline-block;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: transparent;
+            color: var(--accent);
+            outline: none;
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--encre);
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            border: 2px solid var(--accent-secondaire);
+            transition: all 0.35s ease;
+            display: inline-block;
+        }
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            background: var(--accent-secondaire);
+            color: #fff;
+            border-color: var(--accent-secondaire);
+            outline: none;
+        }
+        .btn-secondary:focus-visible {
+            outline: 3px solid var(--accent-secondaire);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 6rem 1.2rem 3rem;
+                min-height: 90vh;
+            }
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ---- SECTIONS GÉNÉRALES ---- */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 5;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-secondaire);
+            margin-bottom: 0.8rem;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: 1.5rem;
+        }
+        .section-text {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--encre);
+            opacity: 0.85;
+            max-width: 620px;
+        }
+
+        /* ---- BIENVENUE ---- */
+        .bienvenue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .bienvenue-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .bienvenue-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 16px;
+            filter: brightness(0.95) contrast(1.05);
+            transition: transform 0.6s ease;
+        }
+        .bienvenue-image:hover img {
+            transform: scale(1.03);
+        }
+        .bienvenue-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(61, 123, 82, 0.12) 0%, rgba(196, 165, 108, 0.08) 100%);
+            pointer-events: none;
+            border-radius: 16px;
+        }
+        .horaires-bloc {
+            margin-top: 1.8rem;
+            background: var(--surface-froide);
+            padding: 1.3rem 1.6rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .horaires-bloc strong {
+            font-weight: 600;
+            color: var(--encre);
+        }
+        .horloge-vivante {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--fond);
+            border: 1px solid var(--accent-secondaire);
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-family: var(--body);
+            letter-spacing: 0.02em;
+            transition: all 0.4s ease;
+        }
+        .horloge-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #aaa;
+            display: inline-block;
+            animation: none;
+        }
+        .horloge-dot.open {
+            background: #3D7B52;
+            box-shadow: 0 0 12px rgba(61, 123, 82, 0.6);
+            animation: dotGlow 1.8s ease-in-out infinite;
+        }
+        .horloge-dot.closed {
+            background: #C4A56C;
+            box-shadow: 0 0 0 transparent;
+        }
+        @keyframes dotGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 8px rgba(61, 123, 82, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 22px rgba(61, 123, 82, 0.9);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bienvenue-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .bienvenue-image img {
+                height: 300px;
+            }
+        }
+
+        /* ---- RITUEL 21 JOURS ---- */
+        .rituel-section {
+            background: var(--surface-froide);
+            border-top: 1px solid rgba(196, 165, 108, 0.3);
+            border-bottom: 1px solid rgba(196, 165, 108, 0.3);
+        }
+        .rituel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 2.5rem;
+        }
+        .rituel-card {
+            background: var(--fond);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(196, 165, 108, 0.25);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .rituel-card::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(61, 123, 82, 0.06);
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+        .rituel-card:hover::before {
+            width: 140px;
+            height: 140px;
+            top: -50px;
+            right: -50px;
+            background: rgba(61, 123, 82, 0.1);
+        }
+        .rituel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(30, 59, 47, 0.08);
+            border-color: var(--accent-secondaire);
+        }
+        .rituel-card-number {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 3rem;
+            color: rgba(61, 123, 82, 0.2);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .rituel-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--encre);
+            margin-bottom: 0.6rem;
+        }
+        .rituel-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .rituel-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        /* ---- CURES EMBLÉMATIQUES ---- */
+        .cures-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .cure-item {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(196, 165, 108, 0.3);
+            transition: all 0.3s ease;
+        }
+        .cure-item:last-child {
+            border-bottom: none;
+        }
+        .cure-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--surface-froide);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            border: 1.5px solid var(--accent-secondaire);
+            transition: all 0.35s ease;
+        }
+        .cure-item:hover .cure-icon {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+        }
+        .cure-info h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--encre);
+            margin-bottom: 0.25rem;
+        }
+        .cure-info p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+        @media (max-width: 600px) {
+            .cure-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        /* ---- DIAGNOSTIC ---- */
+        .diag-bloc {
+            background: var(--fond);
+            border: 1px dashed var(--accent-secondaire);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 650px;
+            margin: 2rem auto 0;
+            transition: all 0.4s ease;
+        }
+        .diag-bloc:hover {
+            border-style: solid;
+            box-shadow: 0 10px 30px rgba(30, 59, 47, 0.06);
+        }
+        .diag-bloc .btn-primary {
+            margin-top: 1.4rem;
+        }
+
+        /* ---- EXIGENCE ---- */
+        .exigence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .exigence-image {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .exigence-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            filter: brightness(0.9) contrast(1.1) saturate(0.8);
+            transition: transform 0.6s ease;
+        }
+        .exigence-image:hover img {
+            transform: scale(1.04);
+        }
+        .exigence-values {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .exigence-value {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(196, 165, 108, 0.2);
+        }
+        .exigence-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+            .exigence-grid {
+                grid-template-columns: 1fr;
+            }
+            .exigence-image img {
+                height: 280px;
+            }
+        }
+
+        /* ---- RENDEZ-VOUS / MAP ---- */
+        .map-section {
+            padding: 0;
+            position: relative;
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            filter: grayscale(20%) brightness(0.96);
+            border-top: 1px solid rgba(196, 165, 108, 0.3);
+            border-bottom: 1px solid rgba(196, 165, 108, 0.3);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .infos-contact {
+            background: var(--surface-froide);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .infos-contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+        }
+        .contact-card {
+            background: var(--fond);
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid rgba(196, 165, 108, 0.25);
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            border-color: var(--accent-secondaire);
+            box-shadow: 0 8px 24px rgba(30, 59, 47, 0.05);
+        }
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .contact-card a:hover {
+            color: var(--encre);
+        }
+
+        /* ---- MAGAZINE ---- */
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .magazine-card {
+            background: var(--fond);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(196, 165, 108, 0.2);
+            transition: all 0.35s ease;
+        }
+        .magazine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(30, 59, 47, 0.08);
+        }
+        .magazine-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.05);
+            transition: filter 0.4s;
+        }
+        .magazine-card:hover img {
+            filter: brightness(0.85) contrast(1.15);
+        }
+        .magazine-card-body {
+            padding: 1.2rem;
+        }
+        .magazine-card-body h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        @media (max-width: 768px) {
+            .magazine-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---- RATING BADGE ---- */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--fond);
+            border: 1px solid var(--accent-secondaire);
+            border-radius: 40px;
+            padding: 0.5rem 1.1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+        }
+        .rating-stars {
+            color: #C4A56C;
+            font-size: 1rem;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--encre);
+            color: var(--fond);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .site-footer a {
+            color: var(--accent-secondaire);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .site-footer .footer-credits {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* ---- REVEAL ANIMATIONS ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.25s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.55s;
+        }
+
+        /* ---- DOUBLE EXPOSURE OVERLAY (signature) ---- */
+        .double-expo {
+            position: relative;
+        }
+        .double-expo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 80 Q60 10 100 60 T170 50' stroke='%23C4A56C' stroke-width='0.6' fill='none' opacity='0.3'/%3E%3Ccircle cx='45' cy='110' r='3' fill='%233D7B52' opacity='0.3'/%3E%3Ccircle cx='130' cy='30' r='2' fill='%233D7B52' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: multiply;
+            opacity: 0.35;
+            border-radius: inherit;
+        }
+
+        /* ---- CURVED SEPARATOR ---- */
+        .curve-sep {
+            width: 100%;
+            height: 60px;
+            position: relative;
+            z-index: 4;
+            margin-top: -1px;
+        }
+        .curve-sep svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* ---- FOCUS VISIBLE GLOBAL ---- */
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 5px;
+            border-radius: 3px;
+        }
+
+        /* ---- UTILITIES ---- */
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- SCROLL CONNECTIONS SVG -->
+    <div class="scroll-connections" aria-hidden="true">
+        <svg viewBox="0 0 1440 3000" preserveAspectRatio="none">
+            <path class="connection-line" id="conn1" d="M200 400 Q400 600 300 900 T250 1400" />
+            <path class="connection-line" id="conn2" d="M1200 300 Q1000 700 1100 1100 T1150 1700" />
+            <path class="connection-line" id="conn3" d="M700 800 Q600 1200 750 1600 T680 2200" />
+        </svg>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#hero" class="logo-link" aria-label="evoleum — Accueil">evo<span class="logo-dot"></span>leum</a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li><a href="#bienvenue">Boutique</a></li>
+                <li><a href="#rituel">Rituel 21j</a></li>
+                <li><a href="#cures">Cures</a></li>
+                <li><a href="#diagnostic">Diagnostic</a></li>
+                <li><a href="#exigence">Exigence</a></li>
+                <li><a href="#rendezvous">Contact</a></li>
+                <li><a href="#magazine">Magazine</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33147554372" class="cta-header">01 47 55 43 72</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+        <a href="#bienvenue">Boutique</a>
+        <a href="#rituel">Rituel 21 jours</a>
+        <a href="#cures">Cures</a>
+        <a href="#diagnostic">Diagnostic</a>
+        <a href="#exigence">Exigence</a>
+        <a href="#rendezvous">Rendez-vous</a>
+        <a href="#magazine">Magazine</a>
+        <a href="tel:+33147554372" style="color:var(--accent);">Appeler</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80&auto=format&fit=crop" alt="Produits evoleum en vitrine" loading="eager" width="1920" height="1080">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-texture"></div>
+        <div class="hero-content reveal">
+            <div class="hero-badge reveal reveal-delay-1">Laboratoire Paris 16</div>
+            <h1 class="hero-title reveal reveal-delay-2">Votre peau mérite <span class="accent-word">l'alliance</span> de la science et du vivant.</h1>
+            <p class="hero-subtitle reveal reveal-delay-3">Cures nutricosmétiques d'exception, conçues et conseillées au 59 boulevard Exelmans.</p>
+            <div class="hero-cta-group reveal reveal-delay-4">
+                <a href="#rendezvous" class="btn-primary">Prendre rendez-vous</a>
+                <a href="#diagnostic" class="btn-secondary">Diagnostic sur mesure</a>
+            </div>
+            <div class="rating-badge reveal reveal-delay-4 mt-2" style="margin-top:1.8rem;">
+                <span class="rating-stars">★★★★★</span> 4.9 / 5 — 7 avis Google
+            </div>
+        </div>
+    </section>
+
+    <!-- BIENVENUE -->
+    <section class="section" id="bienvenue">
+        <div class="section-inner">
+            <div class="bienvenue-grid">
+                <div class="bienvenue-image double-expo reveal">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Intérieur de la boutique evoleum" loading="lazy" width="600" height="420">
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <span class="section-label">Bienvenue au 59</span>
+                    <h2 class="section-title">Boulevard Exelmans, Paris.</h2>
+                    <p class="section-text">Notre boutique parisienne vous accueille pour une expérience de beauté unique, entre conseil expert et rituel sur mesure. Ici, la nutricosmétique devient un art de vivre, porté par des ingrédients vivants et une exigence clinique.</p>
+                    <div class="horaires-bloc">
+                        <strong>Horaires d'ouverture</strong><br>
+                        Mardi – Samedi : 9h30 – 13h & 14h – 19h<br>
+                        Dimanche & Lundi : fermé
+                        <div class="horloge-vivante" id="horlogeVivante">
+                            <span class="horloge-dot" id="horlogeDot"></span>
+                            <span id="horlogeTexte">Chargement…</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RITUEL 21 JOURS -->
+    <section class="section rituel-section" id="rituel">
+        <div class="section-inner">
+            <span class="section-label reveal">Le rituel des 21 jours</span>
+            <h2 class="section-title reveal reveal-delay-1">Une approche inédite pour nourrir la beauté de l'intérieur.</h2>
+            <p class="section-text reveal reveal-delay-2">Nos cures agissent en profondeur, respectant les cycles naturels de la peau. Découvrez des protocoles pensés pour chaque besoin.</p>
+            <div class="rituel-grid">
+                <div class="rituel-card reveal reveal-delay-1">
+                    <div class="rituel-card-number">01</div>
+                    <h3>Longévité</h3>
+                    <p>Well-aging global pour préserver la jeunesse cellulaire et l'éclat naturel de la peau.</p>
+                </div>
+                <div class="rituel-card reveal reveal-delay-2">
+                    <div class="rituel-card-number">02</div>
+                    <h3>Radiance</h3>
+                    <p>Éclat immédiat et durable grâce à des actifs antioxydants puissants et biodisponibles.</p>
+                </div>
+                <div class="rituel-card reveal reveal-delay-3">
+                    <div class="rituel-card-number">03</div>
+                    <h3>Oxygénation</h3>
+                    <p>Stimulation de la microcirculation pour une peau lumineuse et revitalisée en profondeur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURES EMBLÉMATIQUES -->
+    <section class="section" id="cures">
+        <div class="section-inner">
+            <span class="section-label reveal">Les cures emblématiques</span>
+            <h2 class="section-title reveal reveal-delay-1">Des formules d'exception, une efficacité prouvée.</h2>
+            <div class="cures-list">
+                <div class="cure-item reveal reveal-delay-1">
+                    <div class="cure-icon">🌿</div>
+                    <div class="cure-info">
+                        <h3>Rituel Peau 24H</h3>
+                        <p>Cure well-aging jour & nuit — une synergie d'actifs pour accompagner les rythmes circadiens de la peau.</p>
+                    </div>
+                </div>
+                <div class="cure-item reveal reveal-delay-2">
+                    <div class="cure-icon">💧</div>
+                    <div class="cure-info">
+                        <h3>Eau de Bouleau Bio Source</h3>
+                        <p>Hydratation intense et drainage doux pour une peau nette, repulpée et éclatante.</p>
+                    </div>
+                </div>
+                <div class="cure-item reveal reveal-delay-3">
+                    <div class="cure-icon">✨</div>
+                    <div class="cure-info">
+                        <h3>Duo Pure Détox</h3>
+                        <p>Reminéralisation profonde et regain d'éclat — le duo essentiel pour une peau qui respire la santé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAGNOSTIC -->
+    <section class="section" id="diagnostic" style="background:var(--surface-froide);">
+        <div class="section-inner text-center">
+            <span class="section-label reveal">Sur-mesure & diagnostic</span>
+            <h2 class="section-title reveal reveal-delay-1">Quelle cure est faite pour vous ?</h2>
+            <p class="section-text reveal reveal-delay-2" style="max-width:550px;margin:0 auto;">En boutique ou en ligne, répondez à notre questionnaire en 2 minutes et recevez une recommandation experte, adaptée à votre peau.</p>
+            <div class="diag-bloc reveal reveal-delay-3">
+                <p style="font-weight:500;">Un diagnostic personnalisé, gratuit et sans engagement.</p>
+                <a href="#" class="btn-primary">Commencer le questionnaire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXIGENCE -->
+    <section class="section" id="exigence">
+        <div class="section-inner">
+            <span class="section-label reveal">L'exigence evoleum</span>
+            <div class="exigence-grid">
+                <div class="exigence-values reveal reveal-delay-1">
+                    <div class="exigence-value">
+                        <span class="exigence-dot"></span>
+                        <div><strong>Actifs brevetés</strong><br><span style="opacity:0.75;font-size:0.9rem;">Des molécules innovantes protégées par des études cliniques propriétaires.</span></div>
+                    </div>
+                    <div class="exigence-value">
+                        <span class="exigence-dot"></span>
+                        <div><strong>Ingrédients d'exception</strong><br><span style="opacity:0.75;font-size:0.9rem;">Sourcés avec soin, tracés jusqu'à leur origine, pour une pureté irréprochable.</span></div>
+                    </div>
+                    <div class="exigence-value">
+                        <span class="exigence-dot"></span>
+                        <div><strong>Efficacité mesurable</strong><br><span style="opacity:0.75;font-size:0.9rem;">L'efficacité est notre seule promesse — chaque cure est validée par des résultats observables.</span></div>
+                    </div>
+                </div>
+                <div class="exigence-image double-expo reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Rayons de magasin soignés evoleum" loading="lazy" width="600" height="380">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RENDEZ-VOUS / MAP -->
+    <section class="map-section" id="rendezvous">
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=evoleum+59+Boulevard+Exelmans%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte evoleum Paris"></iframe>
+        </div>
+        <div class="infos-contact">
+            <span class="section-label reveal">Rendez-vous au laboratoire</span>
+            <h2 class="section-title reveal reveal-delay-1">59 Boulevard Exelmans, 75016 Paris</h2>
+            <div class="infos-contact-grid reveal reveal-delay-2">
+                <div class="contact-card">
+                    <strong>Téléphone</strong><br>
+                    <a href="tel:+33147554372">01 47 55 43 72</a>
+                </div>
+                <div class="contact-card">
+                    <strong>Email</strong><br>
+                    <a href="mailto:contact@evoleum.fr">contact@evoleum.fr</a>
+                </div>
+                <div class="contact-card">
+                    <strong>Accès</strong><br>
+                    Métro Exelmans ou Porte de Saint-Cloud
+                </div>
+                <div class="contact-card">
+                    <strong>Ouvert</strong><br>
+                    Mardi – Samedi, 9h30–19h
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAGAZINE -->
+    <section class="section" id="magazine">
+        <div class="section-inner">
+            <span class="section-label reveal">Le Magazine</span>
+            <h2 class="section-title reveal reveal-delay-1">Conseils, rencontres, reportages.</h2>
+            <p class="section-text reveal reveal-delay-2">Prolongez l'expérience evoleum avec nos articles sur les ingrédients stars, les rituels de beauté et les experts qui font avancer la nutricosmétique.</p>
+            <div class="magazine-grid">
+                <div class="magazine-card reveal reveal-delay-1">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop" alt="Devanture de boutique" loading="lazy" width="400" height="180">
+                    <div class="magazine-card-body">
+                        <h3>Dans les coulisses du 59</h3>
+                        <p style="font-size:0.85rem;opacity:0.7;">Visite guidée de notre laboratoire parisien.</p>
+                    </div>
+                </div>
+                <div class="magazine-card reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format&fit=crop" alt="Ingrédients evoleum" loading="lazy" width="400" height="180">
+                    <div class="magazine-card-body">
+                        <h3>Le bouleau, trésor vivant</h3>
+                        <p style="font-size:0.85rem;opacity:0.7;">Découvrez les vertus de cet ingrédient d'exception.</p>
+                    </div>
+                </div>
+                <div class="magazine-card reveal reveal-delay-3">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Conseil en boutique" loading="lazy" width="400" height="180">
+                    <div class="magazine-card-body">
+                        <h3>Les 21 jours qui changent la peau</h3>
+                        <p style="font-size:0.85rem;opacity:0.7;">Témoignages et résultats après une cure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p><strong>evoleum</strong> — 59 Boulevard Exelmans, 75016 Paris</p>
+        <p><a href="tel:+33147554372">01 47 55 43 72</a> · <a href="mailto:contact@evoleum.fr">contact@evoleum.fr</a></p>
+        <p>Mardi – Samedi : 9h30–13h & 14h–19h · Métro Exelmans / Porte de Saint-Cloud</p>
+        <p class="footer-credits">Site créé par Agence Mooo — <span style="opacity:0.6;">Design & développement</span></p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "evoleum",
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "59 Boulevard Exelmans",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147554372",
+            "email": "contact@evoleum.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "7"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:30",
+                "closes": "19:00"
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            // ---- MOBILE NAV TOGGLE ----
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            let menuOpen = false;
+
+            function toggleMenu() {
+                menuOpen = !menuOpen;
+                mobileNav.classList.toggle('active', menuOpen);
+                hamburger.setAttribute('aria-expanded', menuOpen);
+                document.body.style.overflow = menuOpen ? 'hidden' : '';
+            }
+            hamburger.addEventListener('click', toggleMenu);
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuOpen) toggleMenu();
+                });
+            });
+
+            // ---- HEADER SCROLL ----
+            const header = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+                updateConnectionLines();
+            }, { passive: true });
+
+            // ---- HORLOGE VIVANTE ----
+            function updateHorloge() {
+                const dot = document.getElementById('horlogeDot');
+                const texte = document.getElementById('horlogeTexte');
+                if (!dot || !texte) return;
+                const now = new Date();
+                const day = now.getDay(); // 0=dimanche, 1=lundi, ..., 6=samedi
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const currentMinutes = hour * 60 + minute;
+                const isOpenDay = day >= 2 && day <= 6; // mardi(2) à samedi(6)
+                const morningOpen = 9 * 60 + 30;
+                const morningClose = 13 * 60;
+                const afternoonOpen = 14 * 60;
+                const afternoonClose = 19 * 60;
+                let isOpen = false;
+                if (isOpenDay) {
+                    if ((currentMinutes >= morningOpen && currentMinutes < morningClose) ||
+                        (currentMinutes >= afternoonOpen && currentMinutes < afternoonClose)) {
+                        isOpen = true;
+                    }
+                }
+                if (isOpen) {
+                    dot.className = 'horloge-dot open';
+                    texte.textContent = 'Boutique ouverte — fermeture à 19h';
+                } else {
+                    dot.className = 'horloge-dot closed';
+                    if (isOpenDay) {
+                        if (currentMinutes < morningOpen) {
+                            texte.textContent = 'Ouverture à 9h30 aujourd\'hui';
+                        } else if (currentMinutes >= morningClose && currentMinutes < afternoonOpen) {
+                            texte.textContent = 'Pause déjeuner — réouverture à 14h';
+                        } else {
+                            texte.textContent = 'Boutique fermée — à demain';
+                        }
+                    } else if (day === 1) {
+                        texte.textContent = 'Fermé le lundi — réouverture mardi 9h30';
+                    } else {
+                        texte.textContent = 'Fermé — réouverture mardi 9h30';
+                    }
+                }
+            }
+            updateHorloge();
+            setInterval(updateHorloge, 30000);
+
+            // ---- SCROLL CONNECTION LINES ----
+            function updateConnectionLines() {
+                const scrollY = window.pageYOffset;
+                const viewH = window.innerHeight;
+                const docH = document.body.scrollHeight;
+                const lines = document.querySelectorAll('.connection-line');
+                lines.forEach((line, i) => {
+                    const threshold = (i + 1) * docH * 0.18;
+                    if (scrollY > threshold && scrollY < docH - viewH - 200) {
+                        line.classList.add('visible');
+                    } else {
+                        line.classList.remove('visible');
+                    }
+                });
+            }
+
+            // ---- INTERSECTION OBSERVER (reveals) ----
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
+
+            // Initial check for lines
+            updateConnectionLines();
+
+            // ---- REDUCED MOTION ----
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (reducedMotion.matches) {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    el.classList.add('visible');
+                    el.style.transition = 'none';
+                });
+                document.querySelectorAll('.connection-line').forEach(el => {
+                    el.style.transition = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
