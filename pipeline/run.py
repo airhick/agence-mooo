@@ -1,22 +1,27 @@
 """Outreach funnel orchestrator.
 
-For each lead in the CSV, runs the full pipeline:
+Each qualified lead runs through the WHOLE funnel before the next one starts:
 
-  1. QUALIFY  — >100 reviews, active Google page, contact email, existing site.
+  1. QUALIFY  — active Google page + contact email + >=50 reviews, then per
+                --target: has-site (has a site) | no-site (no site).
   2. GATHER   — research the company (own site + web + Google Maps photos/facts).
   3. AUDIT    — DeepSeek v4 audits the current site (fed the research).
   4. BUILD    — DeepSeek v4 builds a new premium site from that audit + research.
-  5. PUBLISH  — push all new sites to GitHub once, then confirm they're live.
+  5. PUBLISH  — push this site to GitHub (its own commit), then confirm it's live.
   6. EMAIL    — prepare a personalized package (gpt-4o copy + a gpt-image-2
                whiteboard image) in outbox/<slug>/ and create a Gmail DRAFT
                for it directly via the Gmail API (pipeline.gmail_client).
 
-Processed leads are stamped back into the CSV (mooo_status / mooo_url / mooo_at)
-so they are never targeted twice. Disqualified leads scanned while filling the
-batch are stamped `skipped:<reason>` for the same reason.
+A lead's status is written to the CSV right after it finishes, so if a later
+lead fails the earlier ones stay fully published and drafted.
+
+Finished leads are stamped back into the CSV (done / error) so they are never
+targeted twice. Leads that fail a target's gate are NOT stamped — they stay
+re-checkable so the same lead can still qualify under the other --target.
 
 Usage:
     python -m pipeline.run --limit 5
+    python -m pipeline.run --limit 5 --target no-site
     python -m pipeline.run --limit 10 --no-push     # build locally, don't push
     python -m pipeline.run --limit 5 --no-mail      # skip email packages
 """
@@ -41,36 +46,48 @@ def _now() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
 
-def select(limit: int) -> tuple[list[Business], dict]:
-    """Scan the CSV for unprocessed, qualified leads (up to `limit`).
+def select(limit: int, target: str = config.DEFAULT_TARGET) -> tuple[list[Business], int]:
+    """Scan the CSV for unprocessed leads qualified for `target` (up to `limit`).
 
-    Returns (qualified, skip_updates) where skip_updates stamps every lead we
-    examined and rejected so the next run doesn't re-check it.
+    Returns (qualified, skipped_count). Rejections are NOT persisted: qualify is
+    pure-Python over the CSV (no network), so re-scanning each run is cheap, and
+    not stamping skips keeps every target's candidate pool intact across runs.
     """
     qualified: list[Business] = []
-    skips: dict[str, dict] = {}
+    skipped = 0
     for biz in read_rows():
         if biz.is_processed:
             continue
-        ok, reason = qualify(biz)
+        ok, _reason = qualify(biz, target)
         if ok:
             qualified.append(biz)
             if len(qualified) >= limit:
                 break
         else:
-            skips[biz.status_key] = {
-                config.CSV_STATUS_COL: f"skipped:{reason}", config.CSV_AT_COL: _now()}
-    return qualified, skips
+            skipped += 1
+    return qualified, skipped
 
 
-def build_one(biz: Business) -> dict:
+# For the no-site target there is no current site to audit; tell the generator
+# it is designing a FIRST web presence, not a redesign.
+_NOSITE_BRIEF_NOTE = ("Ce commerce n'a PAS de site web existant. Conçois sa toute "
+                      "première présence en ligne (création, pas refonte).")
+
+
+def build_one(biz: Business, target: str = config.DEFAULT_TARGET) -> dict:
     """Steps 2-4 for one lead: gather -> audit -> build. Returns a result dict
-    with the reserved folder, site URL and the Research (reused by the email)."""
+    with the reserved folder, site URL and the Research (reused by the email).
+
+    The audit step is skipped for the no-site target (no existing site to audit).
+    """
     out_dir = resolve_unique_dir(config.SITES_DIR, biz.slug, biz.place_id)
     research = gather.research(biz, assets_dir=out_dir / "assets")
-    audit_res = run_audit(biz, research)
+    if config.TARGETS[target]["needs_website"]:
+        audit_report = run_audit(biz, research).get("report")
+    else:
+        audit_report = _NOSITE_BRIEF_NOTE
     gen_res = run_generate(
-        biz, audit_report=audit_res.get("report"), research=research, out_dir=out_dir)
+        biz, audit_report=audit_report, research=research, out_dir=out_dir)
     return {
         "out_dir": out_dir,
         "slug": out_dir.name,
@@ -78,6 +95,35 @@ def build_one(biz: Business) -> dict:
         "research": research,
         "research_note": ",".join(research.notes),
     }
+
+
+def process_one(biz: Business, args) -> dict:
+    """Run the FULL funnel for a single lead, end to end, before the next one:
+    gather → audit → build → publish (its own commit) → verify → email → draft.
+
+    Each lead is finished completely, so if a later lead fails the earlier ones
+    are already published and drafted. Raises on any failure; the caller stamps
+    the error and moves on to the next lead.
+    """
+    res = build_one(biz, args.target)
+    print(f"  ✅ built {res['url']}  [research: {res['research_note']}]")
+
+    # Step 5: publish THIS site (its own commit), then confirm it's live.
+    if not args.no_push:
+        publish.push_sites(message=f"Add site {res['slug']} — {_now()}")
+        live = publish.verify_live(res["url"])
+        print(f"  {'🟢 live' if live else '🟡 deploying'}  {res['url']}")
+
+    # Step 6: build the email package and create the Gmail draft for this lead.
+    if not args.no_mail:
+        pkg = mail.prepare(biz, res["url"], research=res["research"], target=args.target)
+        print(f"  ✉️  draft package ready: outbox/{biz.slug}/")
+        if not args.no_draft:
+            draft_id = gmail_client.create_draft(
+                to=pkg["to"], subject=pkg["subject"], text=pkg["text"],
+                html=pkg["html"], image_path=pkg["image"])
+            print(f"  📥 Gmail draft created in {config.MOOO_FROM} (id={draft_id})")
+    return res
 
 
 def write_results(rows: list[dict]) -> None:
@@ -93,6 +139,9 @@ def write_results(rows: list[dict]) -> None:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Agence Mooo outreach funnel")
     ap.add_argument("--limit", type=int, default=5, help="qualified leads this run")
+    ap.add_argument("--target", choices=list(config.TARGETS), default=config.DEFAULT_TARGET,
+                    help="lead segment (both need email + >=50 reviews): 'has-site' "
+                         "(has a site, refresh) or 'no-site' (no site, first site)")
     ap.add_argument("--no-push", action="store_true", help="build locally, don't push to GitHub")
     ap.add_argument("--no-mail", action="store_true", help="skip email packages")
     ap.add_argument("--no-draft", action="store_true",
@@ -105,74 +154,44 @@ def main(argv: list[str] | None = None) -> int:
         if not args.no_draft:
             config.require_gmail_creds()
 
-    leads, skips = select(args.limit)
-    print(f"Qualified {len(leads)} lead(s) (skipped {len(skips)} while scanning).")
+    leads, skipped = select(args.limit, args.target)
+    print(f"Target '{args.target}' — {config.TARGETS[args.target]['label']}.")
+    print(f"Qualified {len(leads)} lead(s) (skipped {skipped} while scanning).")
     if not leads:
-        source.write_statuses(skips)
         print("Nothing to process.")
         return 0
 
-    updates: dict[str, dict] = dict(skips)
-    results: list[dict] = []
-    built: list[dict] = []   # leads whose site built OK (for push + email)
+    updates: dict[str, dict] = {}
+    done = 0
 
-    # Steps 2-4: gather -> audit -> build (sequential; each lead is heavy).
+    # Each lead runs through the WHOLE funnel before the next one starts, and its
+    # status is persisted to the CSV right after — so a failure mid-batch never
+    # undoes the leads already published and drafted.
     for i, biz in enumerate(leads, 1):
         print(f"\n[{i}/{len(leads)}] {biz.name}  ({biz.reviews_count} avis)")
         try:
-            res = build_one(biz)
-            res["biz"] = biz
-            built.append(res)
-            print(f"  ✅ built {res['url']}  [research: {res['research_note']}]")
-            results.append({"key": biz.status_key, "name": biz.name, "slug": res["slug"],
-                            "status": "built", "url": res["url"],
-                            "research": res["research_note"], "error": ""})
+            res = process_one(biz, args)
+            updates[biz.status_key] = {config.CSV_STATUS_COL: "done",
+                                       config.CSV_URL_COL: res["url"], config.CSV_AT_COL: _now()}
+            write_results([{"key": biz.status_key, "name": biz.name, "slug": res["slug"],
+                            "status": "done", "url": res["url"],
+                            "research": res["research_note"], "error": ""}])
+            done += 1
         except Exception as exc:  # noqa: BLE001 - one failure must not kill the batch
             traceback.print_exc()
             updates[biz.status_key] = {config.CSV_STATUS_COL: f"error:{str(exc)[:120]}",
                                        config.CSV_AT_COL: _now()}
-            results.append({"key": biz.status_key, "name": biz.name, "slug": biz.slug,
+            write_results([{"key": biz.status_key, "name": biz.name, "slug": biz.slug,
                             "status": "error", "url": "", "research": "",
-                            "error": str(exc)[:200]})
+                            "error": str(exc)[:200]}])
+        # Persist after every lead so progress survives a later crash.
+        source.write_statuses(updates)
 
-    # Step 5: push all new sites at once, then confirm liveness.
-    if built and not args.no_push:
-        print(f"\nPublishing {len(built)} site(s) to GitHub…")
-        publish.push_sites(message=f"Add {len(built)} site(s) — {_now()}")
-        for res in built:
-            live = publish.verify_live(res["url"])
-            print(f"  {'🟢 live' if live else '🟡 deploying'}  {res['url']}")
-
-    # Step 6: build the email package and create the Gmail draft for each lead.
-    for res in built:
-        biz = res["biz"]
-        if not args.no_mail:
-            try:
-                pkg = mail.prepare(biz, res["url"], research=res["research"])
-                print(f"  ✉️  draft package ready: outbox/{biz.slug}/")
-                if not args.no_draft:
-                    draft_id = gmail_client.create_draft(
-                        to=pkg["to"], subject=pkg["subject"], text=pkg["text"],
-                        html=pkg["html"], image_path=pkg["image"])
-                    print(f"  📥 Gmail draft created in {config.MOOO_FROM} (id={draft_id})")
-            except Exception as exc:  # noqa: BLE001
-                traceback.print_exc()
-                updates[biz.status_key] = {config.CSV_STATUS_COL: f"error:mail:{str(exc)[:100]}",
-                                           config.CSV_URL_COL: res["url"], config.CSV_AT_COL: _now()}
-                continue
-        updates[biz.status_key] = {config.CSV_STATUS_COL: "done",
-                                   config.CSV_URL_COL: res["url"], config.CSV_AT_COL: _now()}
-
-    # Persist all statuses back to the CSV in one rewrite, and the run index.
-    n = source.write_statuses(updates)
-    write_results(results)
-
-    done = sum(1 for u in updates.values() if u.get(config.CSV_STATUS_COL) == "done")
     u = deepseek.USAGE
     print("\n" + "=" * 60)
-    print(f"Done: {done} lead(s) fully processed | {len(updates)} CSV rows stamped ({n} written)")
+    print(f"Done: {done} lead(s) fully processed | {len(updates)} CSV rows stamped")
     print(f"DeepSeek calls: {u.calls} | tokens: {u.total_tokens:,}")
-    if not args.no_mail and built:
+    if not args.no_mail and done:
         if args.no_draft:
             print("Next: create the drafts with `python -m pipeline.gmail_client drafts`.")
         else:

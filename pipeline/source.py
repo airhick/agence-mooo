@@ -64,7 +64,14 @@ class Business:
 
     @property
     def is_processed(self) -> bool:
-        return bool(self.status.strip())
+        """Only a finished lead (done/error) is skipped on the next run.
+
+        A `skipped:` stamp is NOT final: it just records why a lead failed the
+        last target's gate, and must stay re-checkable so the same lead can still
+        qualify under a different --target (e.g. a no-website lead skipped by a
+        has-site run still qualifies for a no-site run)."""
+        s = self.status.strip()
+        return s.startswith("done") or s.startswith("error")
 
     @property
     def slug(self) -> str:

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import base64
 import time
+from pathlib import Path
 
 import requests
 
@@ -48,6 +49,46 @@ def chat(messages: list[dict], *, model: str | None = None,
             last = exc
         time.sleep(min(2 ** attempt, 20))
     raise OpenAIError(f"OpenAI chat failed after {max_retries} attempts: {last}")
+
+
+def describe_images(image_paths, prompt: str, *, model: str | None = None,
+                    max_tokens: int = 600, max_retries: int = 3,
+                    timeout: int = 120) -> str:
+    """gpt-4o vision: describe real photos as text (so a text-only model can use
+    them). Returns the assistant text, or "" on any failure (best-effort).
+
+    Used to translate the company's Google Maps photos into a 'visual energy'
+    brief — palette, materials, light, mood — that feeds the art direction.
+    """
+    paths = [Path(p) for p in image_paths if Path(p).exists()]
+    if not paths or not config.OPENAI_API_KEY:
+        return ""
+    key = config.OPENAI_API_KEY
+    url = f"{config.OPENAI_BASE_URL}/chat/completions"
+    content: list[dict] = [{"type": "text", "text": prompt}]
+    for p in paths:
+        b64 = base64.b64encode(p.read_bytes()).decode("ascii")
+        content.append({"type": "image_url",
+                        "image_url": {"url": f"data:image/jpeg;base64,{b64}",
+                                      "detail": "low"}})
+    payload = {
+        "model": model or config.OPENAI_MAIL_MODEL,
+        "messages": [{"role": "user", "content": content}],
+        "temperature": 0.4,
+        "max_tokens": max_tokens,
+    }
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    for attempt in range(max_retries):
+        try:
+            r = requests.post(url, json=payload, headers=headers, timeout=timeout)
+            if r.status_code == 200:
+                return (r.json()["choices"][0]["message"]["content"] or "").strip()
+            if r.status_code not in (429, 500, 502, 503, 504):
+                return ""   # non-retryable: degrade silently, energy is optional
+        except requests.RequestException:
+            pass
+        time.sleep(min(2 ** attempt, 15))
+    return ""
 
 
 def image_edit(image_path, prompt: str, *, model: str | None = None,

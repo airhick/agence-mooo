@@ -32,28 +32,65 @@ MAIL_USER = """Rédige un court email de prospection en français pour ce commer
 - Lien du nouveau site (déjà en ligne, gratuit): {link}
 
 Gabarit à respecter dans l'esprit (reste très proche, simple, 3-4 lignes max):
-Objet : Nouveau site web pour {name}
-« Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On est tombés sur
-votre site web et on s'est dit qu'un coup de jeune lui ferait du bien — on a donc
-pris la liberté de vous en créer un nouveau, gratuitement. Le voici : {link}
-Dites-nous ce que vous en pensez :) »
+{gabarit}
 
 Contraintes:
 - Garde-le simple, humain, sans jargon ni superlatifs marketing.
 - Inclus le lien {link} tel quel dans le corps.
 - Réponds en JSON: {{"subject": "...", "body": "...(texte brut, sauts de ligne avec \\n)"}}"""
 
+# One angle per target segment (see config.TARGETS):
+#  - "refresh": the business already has a site -> we redesigned it.
+#  - "create" : the business has no site -> we built its first one.
+# Each angle supplies the gabarit shown to gpt-4o plus a literal fallback used
+# verbatim if the model's JSON is unusable. {name}/{link} are filled in prepare().
+MAIL_ANGLES = {
+    "refresh": {
+        "subject": "Nouveau site web pour {name}",
+        "gabarit": (
+            "Objet : Nouveau site web pour {name}\n"
+            "« Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On est "
+            "tombés sur votre site web et on s'est dit qu'un coup de jeune lui ferait "
+            "du bien — on a donc pris la liberté de vous en créer un nouveau, "
+            "gratuitement. Le voici : {link}\n"
+            "Dites-nous ce que vous en pensez :) »"),
+        "fallback": (
+            "Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On est "
+            "tombés sur votre site web et on s'est dit qu'un coup de jeune lui ferait "
+            "du bien — on a donc pris la liberté de vous en créer un nouveau, "
+            "gratuitement. Le voici : {link}\n\nDites-nous ce que vous en pensez :)"),
+    },
+    "create": {
+        "subject": "Un site web pour {name}",
+        "gabarit": (
+            "Objet : Un site web pour {name}\n"
+            "« Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On a vu "
+            "que vous n'aviez pas encore de site web — vu vos avis, ce serait dommage ! "
+            "On a donc pris la liberté de vous en créer un, gratuitement. Le voici : "
+            "{link}\n"
+            "Dites-nous ce que vous en pensez :) »"),
+        "fallback": (
+            "Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On a vu que "
+            "vous n'aviez pas encore de site web — vu vos avis, ce serait dommage ! On "
+            "a donc pris la liberté de vous en créer un, gratuitement. Le voici : "
+            "{link}\n\nDites-nous ce que vous en pensez :)"),
+    },
+}
+
 # Handwritten message to render on the blank whiteboard.
 BOARD_PROMPT = (
     "Edit this photo of three people holding a blank white whiteboard in an "
     "office. Keep the people, lighting, and scene exactly the same, but write the "
-    "following friendly handwritten message in black marker, neatly and clearly, "
-    "centered on the whiteboard, in French:\n\n"
+    "following message on the whiteboard in black marker, in French, as if it were "
+    "written by hand: messy, bad handwriting that is not consistent (uneven letter "
+    "sizes, sloppy spacing, not perfectly straight lines), with a light reflection "
+    "glare on the whiteboard surface and faint eraser stains and smudges left over "
+    "from other writings that were wiped off. The text reads:\n\n"
     "\"Bonjour {name}\n"
     "Nous c'est Mooo, on aime bien votre boite,\n"
     "donc on vous a fait un nouveau site :)\"\n\n"
-    "The handwriting must be legible, well-sized to fill the board, and look like "
-    "real marker writing. Do not add any other text, logos or watermarks."
+    "Keep it readable but clearly hand-written and natural. Do not add any other "
+    "text, logos or watermarks."
 )
 
 
@@ -101,8 +138,14 @@ def _html_body(text: str, link: str) -> str:
 
 
 def prepare(biz: Business, site_url: str, research: Research | None = None,
-            out_dir: Path | None = None) -> dict:
-    """Build the email package for one lead. Returns the email.json dict."""
+            out_dir: Path | None = None,
+            target: str = config.DEFAULT_TARGET) -> dict:
+    """Build the email package for one lead. Returns the email.json dict.
+
+    `target` selects the message angle (see config.TARGETS / MAIL_ANGLES): a
+    "refresh" pitch for businesses that already had a site, a "create" pitch for
+    those that had none.
+    """
     to = _first_email(biz.email)
     if not to:
         raise ValueError("no usable contact email")
@@ -110,13 +153,20 @@ def prepare(biz: Business, site_url: str, research: Research | None = None,
     out_dir = out_dir or (config.OUTBOX_DIR / biz.slug)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    angle = MAIL_ANGLES[config.TARGETS[target]["mail"]]
+    gabarit = angle["gabarit"].format(name=biz.name, link=site_url)
+
     # 1) Email copy via gpt-4o (JSON).
     raw = openai_client.chat(
         [{"role": "system", "content": MAIL_SYSTEM},
-         {"role": "user", "content": MAIL_USER.format(name=biz.name, link=site_url)}],
+         {"role": "user", "content": MAIL_USER.format(
+             name=biz.name, link=site_url, gabarit=gabarit)}],
         temperature=0.6, max_tokens=500,
     )
-    subject, body = _parse_mail(raw, biz.name, site_url)
+    subject, body = _parse_mail(
+        raw, site_url,
+        angle["subject"].format(name=biz.name),
+        angle["fallback"].format(name=biz.name, link=site_url))
 
     # 2) Personalized whiteboard image via gpt-image-2 (edit of the blank board).
     board = out_dir / "whiteboard.png"
@@ -138,8 +188,9 @@ def prepare(biz: Business, site_url: str, research: Research | None = None,
     return email
 
 
-def _parse_mail(raw: str, name: str, link: str) -> tuple[str, str]:
-    """Parse the model JSON, with a safe fallback to the literal template."""
+def _parse_mail(raw: str, link: str, fallback_subject: str,
+                fallback_body: str) -> tuple[str, str]:
+    """Parse the model JSON, with a safe fallback to the angle's literal template."""
     try:
         m = re.search(r"\{.*\}", raw, re.DOTALL)
         data = json.loads(m.group(0) if m else raw)
@@ -149,11 +200,4 @@ def _parse_mail(raw: str, name: str, link: str) -> tuple[str, str]:
             return subject, body
     except (json.JSONDecodeError, AttributeError, TypeError):
         pass
-    subject = f"Nouveau site web pour {name}"
-    body = (
-        f"Bonjour {name}, nous sommes l'agence Mooo (comme la vache). On est "
-        "tombés sur votre site web et on s'est dit qu'un coup de jeune lui ferait "
-        "du bien — on a donc pris la liberté de vous en créer un nouveau, "
-        f"gratuitement. Le voici : {link}\n\nDites-nous ce que vous en pensez :)"
-    )
-    return subject, body
+    return fallback_subject, fallback_body

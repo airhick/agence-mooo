@@ -3,9 +3,16 @@
 Reads scraped French businesses from a CSV and, for each **qualified** lead, runs
 a full outreach funnel in one command:
 
-1. **Qualify** — keep only leads with **>100 Google reviews**, an **active Google
-   page** (Place ID + rating), at least one **contact email**, and an **existing
-   website** (the pitch references it). `pipeline/qualify.py`.
+1. **Qualify** — keep only leads with an **active Google page** (Place ID +
+   rating), a **contact email**, and **≥50 reviews**, then split by the chosen
+   **`--target`**:
+   - **`has-site`** (default): has an **existing website** → the email pitches a
+     *refonte* ("we redesigned your site").
+   - **`no-site`**: has **no website** → the email pitches a *first site* ("you
+     had no site, so we built you one"), and the audit step is skipped.
+
+   Leads that fail a target's gate are **not** stamped, so a no-website lead is
+   still available to a later `no-site` run. `pipeline/qualify.py`.
 2. **Gather** — research the company: its own site, a keyless web search, and its
    **Google Maps page** (real photos + facts) via headless Playwright. Photos are
    downloaded into the site folder. `pipeline/gather.py`.
@@ -68,8 +75,9 @@ Credentials, with the Gmail API enabled.
 ## Run
 
 ```bash
-./.venv/bin/python -m pipeline.run --limit 5        # full funnel on 5 leads
+./.venv/bin/python -m pipeline.run --limit 5        # full funnel on 5 leads (has-site)
 ./.venv/bin/python -m pipeline.run --limit 10       # next 10 (skips done leads)
+./.venv/bin/python -m pipeline.run --limit 5 --target no-site  # ≥50 reviews, no website
 ./.venv/bin/python -m pipeline.run --limit 5 --no-push   # build locally only
 ./.venv/bin/python -m pipeline.run --limit 5 --no-mail    # skip email packages
 ./.venv/bin/python -m pipeline.run --limit 5 --no-draft  # build packages, don't draft

@@ -40,7 +40,28 @@ OPENAI_IMAGE_MODEL = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
 
 # --- Outreach ---
 MOOO_FROM = os.environ.get("MOOO_FROM", "globalvisionswitzerland@gmail.com")
-REVIEWS_MIN = int(os.environ.get("REVIEWS_MIN", "100"))   # qualify: strictly more than this
+REVIEWS_MIN = int(os.environ.get("REVIEWS_MIN", "50"))   # both targets: at least this many
+
+# Which lead segment a run targets. Both require a contact email + REVIEWS_MIN
+# reviews; they differ only by website presence and the email angle.
+#   reviews_min  : inclusive minimum review count to qualify.
+#   needs_website: True -> must already have a site (refonte); False -> must NOT (création).
+#   mail         : which email angle in pipeline.mail to use.
+TARGETS = {
+    "has-site": {  # has a site -> we pitch a redesign
+        "label": "site existant (refonte)",
+        "reviews_min": REVIEWS_MIN,
+        "needs_website": True,
+        "mail": "refresh",
+    },
+    "no-site": {   # no site -> we pitch a first site
+        "label": "sans site (création)",
+        "reviews_min": REVIEWS_MIN,
+        "needs_website": False,
+        "mail": "create",
+    },
+}
+DEFAULT_TARGET = "has-site"
 
 # --- Gmail API (create outreach drafts directly in MOOO_FROM's mailbox) ---
 # OAuth "Desktop app" client. Secrets live in .env (gitignored), never in git.

@@ -1,7 +1,8 @@
 """Premium single-page site generator (two-pass) for businesses without a site.
 
-Pass A — Art direction: DeepSeek (reasoning) commits to a BOLD, context-specific
-         aesthetic and writes a detailed French creative brief + real copy.
+Pass A — Art direction: DeepSeek (reasoning) derives a BOLD aesthetic FROM the
+         company's own energy — its real Google Maps photos are read by gpt-4o
+         vision into a 'visual energy' note — and writes a French creative brief.
 Pass B — Build: DeepSeek builds a production-grade page from the brief, using
          real curated photography, a distinctive Google Font pairing, motion and
          atmosphere — the kind of site a client would pay top dollar for.
@@ -15,9 +16,38 @@ import re
 from datetime import datetime
 from urllib.parse import quote_plus
 
-from . import assets, config, deepseek
+from . import assets, config, deepseek, openai_client
 from .gather import Research
 from .source import Business, resolve_unique_dir
+
+# Full frontend-design guidance (the Anthropic frontend-design skill, adapted to
+# this pipeline's French voice) — fed to DeepSeek so it builds high-end, non-
+# generic sites. Injected into BOTH passes' system prompts.
+DESIGN_PRINCIPLES = (
+    "PRINCIPES DE DESIGN FRONT-END (haut de gamme, à appliquer sans exception) :\n"
+    "• Typographie — Associe une police display et une police de texte de façon "
+    "DÉLIBÉRÉE, jamais les défauts récurrents. Échelle typographique claire, "
+    "graisses/chasses/espacements intentionnels. La typo PORTE la personnalité de "
+    "la page ; elle n'est jamais un simple véhicule neutre.\n"
+    "• Couleur — Palette nommée de 4 à 6 valeurs HEX ancrée dans l'univers RÉEL du "
+    "commerce. Bannis les trois défauts d'IA : crème chaud + terracotta ; "
+    "presque-noir + vert acide/vermillon ; style 'journal / broadsheet'. La "
+    "couleur découle des spécificités du commerce, pas d'un goût générique.\n"
+    "• Composition — Ouvre sur une THÈSE : l'élément le plus caractéristique de "
+    "l'univers du commerce, sous la forme qui s'impose. N'emploie des dispositifs "
+    "structurels (numérotation, filets, étiquettes) que s'ils encodent une vraie "
+    "information — pas de marqueurs 01/02/03 sans contenu réellement séquentiel. "
+    "Accorde la complexité à la vision : le maximalisme exige une exécution "
+    "élaborée, le minimalisme exige de la précision. Ne pas prendre de risque EST "
+    "un risque.\n"
+    "• Mouvement — Anime là où ça SERT le sujet (chargement, reveals au scroll, "
+    "hover). Orchestre des moments intentionnels ; les effets éparpillés font "
+    "'généré par IA'. Parfois, less is more.\n"
+    "• À éviter — Palettes génériques plaquées quel que soit le sujet ; séquences "
+    "numérotées sans contenu séquentiel ; typo neutre sans personnalité ; "
+    "décoration qui ne sert pas le propos ; copie vague ou 'vendeuse' au lieu "
+    "d'explications claires et concrètes."
+)
 
 # --------------------------------------------------------------------------- #
 # Pass A — Art direction
@@ -36,6 +66,13 @@ BRIEF_SYSTEM = (
 
 BRIEF_USER = """Conçois la direction artistique du site vitrine de ce commerce.
 
+RÈGLE CARDINALE : la direction artistique doit ÉPOUSER l'énergie PROPRE de CE
+commerce, telle qu'elle ressort de ses vraies photos Google Maps, de sa fiche et
+de son activité — PAS un style plaqué de l'extérieur. Lis les signaux réels
+(matières, couleurs, lumière, clientèle, quartier, registre des avis) et traduis-
+les en parti pris esthétique. Deux commerces différents ne doivent jamais donner
+la même DA.
+
 ## Commerce (données réelles)
 - Nom: {name}
 - Activité (tags): {industry}
@@ -48,6 +85,9 @@ BRIEF_USER = """Conçois la direction artistique du site vitrine de ce commerce.
 - Titres (display): {display_font}
 - Texte courant (body): {body_font}
 
+## Énergie visuelle réelle (lecture des VRAIES photos Google Maps du commerce)
+{visual_energy}
+
 ## Audit du site actuel (à corriger par la nouvelle DA)
 {audit}
 
@@ -56,10 +96,11 @@ BRIEF_USER = """Conçois la direction artistique du site vitrine de ce commerce.
 
 ## Livrable : un BRIEF CRÉATIF en français, structuré ainsi
 1. **Concept & positionnement** (2-3 phrases : l'idée forte, ce qu'on retient).
-2. **Direction artistique** : nomme le parti pris esthétique précis.
-3. **Palette** : 4 à 6 couleurs en HEX avec rôle (fond, encre, accent, etc.).
-   Palettes dominantes + accent franc ; bannis le « blanc fade + gris ».
-   Choisis librement clair OU sombre selon ce qui sert l'ambiance.
+2. **Direction artistique** : nomme le parti pris esthétique précis, DÉRIVÉ de
+   l'énergie visuelle réelle ci-dessus (matières, couleurs, lumière de SES photos).
+3. **Palette** : 4 à 6 couleurs en HEX avec rôle (fond, encre, accent, etc.),
+   tirées des teintes réelles du commerce. Accent franc ; bannis le « blanc fade
+   + gris » et les défauts d'IA listés. Clair OU sombre selon ce qui sert l'ambiance.
 4. **Ton éditorial** : voix, niveau de langue, registre.
 5. **Accroche héro** : un grand titre percutant + sous-titre (vrai texte FR).
 6. **Sections** : liste ordonnée des sections avec, pour chacune, le titre réel
@@ -71,8 +112,35 @@ Sois concret, spécifique à CE commerce. Pas de généralités interchangeables
 Réponds directement aux faiblesses pointées par l'audit ci-dessus."""
 
 
+VISION_PROMPT = (
+    "Tu regardes les VRAIES photos d'un commerce ({name}). Décris en français, de "
+    "façon factuelle et concise (pas d'invention), son ÉNERGIE VISUELLE pour guider "
+    "un directeur artistique :\n"
+    "- Palette dominante réelle (3-5 teintes, en mots + HEX approximatif).\n"
+    "- Matières et textures (bois, métal, marbre, néon, végétal, tissu...).\n"
+    "- Lumière et ambiance (chaude/froide, tamisée/vive, mat/brillant).\n"
+    "- Registre et type de clientèle suggérés (chic, populaire, branché, familial...).\n"
+    "- 2-3 détails visuels singuliers et mémorables propres à CE lieu.\n"
+    "6 lignes maximum, pas de remplissage."
+)
+
+
+def _visual_energy(out_dir, research: Research | None, biz: Business) -> str:
+    """Caption the real Google Maps photos via gpt-4o vision so the text-only
+    generator can match the company's actual look. Best-effort: returns a neutral
+    placeholder when there are no real photos or vision is unavailable."""
+    if not (research and research.has_real_images and out_dir):
+        return "(pas de photos réelles exploitables — déduis l'énergie de l'activité et du quartier)"
+    paths = [out_dir / img["path"] for img in research.local_images]
+    try:
+        desc = openai_client.describe_images(paths, VISION_PROMPT.format(name=biz.name))
+    except Exception:  # noqa: BLE001 - visual energy is an enhancement, never fatal
+        desc = ""
+    return desc or "(lecture des photos indisponible — déduis l'énergie de l'activité et du quartier)"
+
+
 def _brief(biz: Business, kit: assets.AssetKit, audit_report: str | None,
-           research: Research | None) -> str:
+           research: Research | None, visual_energy: str) -> str:
     prompt = BRIEF_USER.format(
         name=biz.name,
         industry=biz.industry or "commerce de proximité",
@@ -84,11 +152,12 @@ def _brief(biz: Business, kit: assets.AssetKit, audit_report: str | None,
         email=biz.email or "—",
         display_font=kit.display_font,
         body_font=kit.body_font,
+        visual_energy=visual_energy,
         audit=(audit_report or "(audit indisponible)")[:4000],
         research=research.context() if research else "(non collectée)",
     )
     return deepseek.chat(
-        [{"role": "system", "content": BRIEF_SYSTEM},
+        [{"role": "system", "content": BRIEF_SYSTEM + "\n\n" + DESIGN_PRINCIPLES},
          {"role": "user", "content": prompt}],
         model=config.GEN_MODEL, temperature=0.9, max_tokens=4000,
     )
@@ -230,7 +299,7 @@ def _build(biz: Business, kit: assets.AssetKit, brief: str, eff_slug: str,
         map_embed=_maps_embed(biz),
     )
     html = deepseek.chat(
-        [{"role": "system", "content": BUILD_SYSTEM},
+        [{"role": "system", "content": BUILD_SYSTEM + "\n\n" + DESIGN_PRINCIPLES},
          {"role": "user", "content": prompt}],
         model=config.GEN_MODEL, temperature=0.85, max_tokens=20000,
     )
@@ -251,7 +320,8 @@ def run_generate(biz: Business, audit_report: str | None = None,
         out_dir = resolve_unique_dir(config.SITES_DIR, biz.slug, biz.place_id)
     eff_slug = out_dir.name
 
-    brief = _brief(biz, kit, audit_report, research)
+    visual_energy = _visual_energy(out_dir, research, biz)
+    brief = _brief(biz, kit, audit_report, research, visual_energy)
     html = _build(biz, kit, brief, eff_slug, research)
     if "<html" not in html.lower():
         raise deepseek.DeepSeekError("Model did not return valid HTML")

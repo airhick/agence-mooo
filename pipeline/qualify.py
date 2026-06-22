@@ -1,16 +1,13 @@
 """Lead qualification gate (step 1 of the outreach funnel).
 
-A business is worth the full pipeline only if it is an established, reachable
-local business with a contact email AND an existing website — the outreach email
-literally pitches "we saw your website and built you a new one", so a site must
-already exist.
+Both targets require an active Google page (proxied by a present Place ID +
+rating), at least one scraped contact email, and at least REVIEWS_MIN (default
+50) reviews. They differ only by website presence:
 
-Criteria:
-- more than REVIEWS_MIN (default 100) Google reviews;
-- an active Google page (we proxy this with a present Place ID — the row came
-  from a live Maps listing — plus a rating);
-- at least one scraped contact email;
-- an existing website.
+- target "has-site" (default): it ALREADY has a website -> the email pitches a
+  redesign ("we saw your site and built you a new one").
+- target "no-site": it has NO website -> the email pitches a first site ("you
+  had no site, so we made you one").
 """
 from __future__ import annotations
 
@@ -18,16 +15,19 @@ from . import config
 from .source import Business
 
 
-def qualify(biz: Business) -> tuple[bool, str]:
+def qualify(biz: Business, target: str = config.DEFAULT_TARGET) -> tuple[bool, str]:
     """Return (ok, reason). `reason` explains a rejection for the CSV log."""
-    if biz.reviews_count <= config.REVIEWS_MIN:
-        return False, f"reviews {biz.reviews_count} <= {config.REVIEWS_MIN}"
+    spec = config.TARGETS[target]
     if not biz.place_id:
         return False, "no Google Place ID (inactive/unknown listing)"
     if not biz.rating:
         return False, "no Google rating"
     if not biz.email:
         return False, "no contact email"
-    if not biz.has_website:
+    if biz.reviews_count < spec["reviews_min"]:
+        return False, f"reviews {biz.reviews_count} < {spec['reviews_min']}"
+    if spec["needs_website"] and not biz.has_website:
         return False, "no existing website"
+    if not spec["needs_website"] and biz.has_website:
+        return False, "already has a website"
     return True, "qualified"
