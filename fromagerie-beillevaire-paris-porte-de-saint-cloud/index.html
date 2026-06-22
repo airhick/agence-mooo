@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fromagerie Beillevaire Paris Porte de Saint Cloud - Fromager, affineur, dénicheur</title>
+    <meta name="description" content="Fromagerie Beillevaire Porte de Saint Cloud au 213 avenue de Versailles, Paris 16e. Plus de 120 fromages, beurres et crèmes de ferme. Affinage, vente à la coupe, retrait commande.">
+    <meta property="og:title" content="Fromagerie Beillevaire Paris Porte de Saint Cloud">
+    <meta property="og:description" content="Le goût commence au 213, avenue de Versailles. Fromager, affineur, dénicheur — Beillevaire Porte de Saint Cloud vous ouvre ses caves de quartier.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧀</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ardoise: #1A1C1A;
+            --chene: #EDEAE3;
+            --craie: #F5F3EE;
+            --pierre: #5B5D5A;
+            --pierre-fonce: #3E403E;
+            --enseigne: #4A6330;
+            --lait: #DCE1D5;
+            --metal: #8A8C88;
+            --font-display: 'Playfair Display', serif;
+            --font-text: 'Source Sans 3', sans-serif;
+            --radius: 0.25rem;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-text);
+            background-color: var(--ardoise);
+            color: var(--craie);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Texture grain globale */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
+        }
+
+        /* Header collant */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 28, 26, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 243, 238, 0.08);
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            background-color: rgba(26, 28, 26, 0.95);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.04em;
+            color: var(--craie);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+        .logo span {
+            display: block;
+            font-family: var(--font-text);
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--enseigne);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--craie);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--enseigne);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--lait);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-links a:focus-visible {
+            outline: 2px solid var(--enseigne);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .header-cta {
+            background-color: var(--enseigne);
+            color: var(--craie);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            transition: background-color 0.3s, transform 0.2s;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background-color: #5A7A3A;
+            transform: translateY(-1px);
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--craie);
+            outline-offset: 3px;
+        }
+
+        /* Menu mobile */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--craie);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--ardoise);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid rgba(245, 243, 238, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Sections générales */
+        .section {
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HÉRO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 7rem 1.5rem 4rem;
+            background-color: var(--ardoise);
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) contrast(1.1) saturate(0.8);
+            opacity: 0.7;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 30%, transparent 0%, var(--ardoise) 90%);
+            opacity: 0.9;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .hero .badge-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(26, 28, 26, 0.7);
+            backdrop-filter: blur(6px);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--lait);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(245, 243, 238, 0.15);
+        }
+        .badge-note .stars {
+            color: #E5A940;
+            letter-spacing: 2px;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.8rem, 9vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: 0.04em;
+            color: var(--craie);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.2rem;
+            max-width: 90%;
+        }
+        .hero .subtitle {
+            font-family: var(--font-text);
+            font-weight: 300;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 1.6;
+            color: var(--lait);
+            max-width: 560px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background-color: var(--enseigne);
+            color: var(--craie);
+            padding: 0.8rem 2rem;
+            border-radius: 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background-color: #5A7A3A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--craie);
+            color: var(--craie);
+            padding: 0.8rem 2rem;
+            border-radius: 2.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background-color: var(--craie);
+            color: var(--ardoise);
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        /* SECTION STYLES */
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: 0.03em;
+            color: var(--craie);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-family: var(--font-text);
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: var(--metal);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        /* FOND CLAIR */
+        .bg-chene {
+            background-color: var(--chene);
+            color: var(--pierre-fonce);
+        }
+        .bg-chene .section-title {
+            color: var(--ardoise);
+        }
+        .bg-chene .section-subtitle {
+            color: var(--pierre);
+        }
+
+        /* ① SÉLECTION DU MOMENT */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .carte-fromage {
+            background-color: var(--ardoise);
+            border-radius: 0.5rem;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .carte-fromage:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+        }
+        .carte-fromage .carte-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .carte-fromage:hover .carte-bg {
+            opacity: 1;
+        }
+        .carte-fromage .carte-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.2);
+        }
+        .carte-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(to top, var(--ardoise) 20%, rgba(26, 28, 26, 0.7) 70%, transparent);
+        }
+        .carte-fromage:hover .carte-content {
+            background: linear-gradient(to top, rgba(26, 28, 26, 0.9) 0%, rgba(26, 28, 26, 0.5) 60%, transparent);
+        }
+        .carte-fromage .nom-fromage {
+            font-family: var(--font-text);
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 0.02em;
+            color: var(--craie);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .carte-fromage .nom-fromage::before {
+            content: '';
+            position: absolute;
+            left: -0.6rem;
+            top: 0.2rem;
+            bottom: 0.2rem;
+            width: 3px;
+            background-color: var(--enseigne);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+            transform-origin: top;
+        }
+        .carte-fromage:hover .nom-fromage::before {
+            transform: scaleY(1);
+        }
+        .carte-fromage .desc-fromage {
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--lait);
+            line-height: 1.5;
+        }
+
+        /* ② LA CAVE EN IMAGES */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .galerie-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border-radius: 2px;
+        }
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+        .galerie-item:hover img {
+            transform: scale(1.05);
+        }
+        .galerie-item.span-2 {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+        @media (max-width: 700px) {
+            .galerie-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galerie-item.span-2 {
+                grid-column: span 2;
+            }
+        }
+        .legende-horaires {
+            font-family: var(--font-text);
+            font-weight: 400;
+            color: var(--pierre);
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            text-align: right;
+            letter-spacing: 0.02em;
+            border-top: 1px solid rgba(90, 93, 88, 0.3);
+            padding-top: 1rem;
+        }
+
+        /* ③ TROIS TUILES */
+        .tuiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .tuile {
+            background-color: var(--ardoise);
+            padding: 2rem 1.5rem;
+            border-radius: 0.4rem;
+            text-decoration: none;
+            color: var(--craie);
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(245, 243, 238, 0.08);
+            position: relative;
+        }
+        .tuile:hover {
+            background-color: #242724;
+            transform: translateY(-2px);
+            border-color: rgba(245, 243, 238, 0.2);
+        }
+        .tuile .tuile-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--enseigne);
+        }
+        .tuile h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .tuile p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--lait);
+            line-height: 1.5;
+        }
+        .tuile .link-arrow {
+            margin-top: auto;
+            padding-top: 1rem;
+            color: var(--enseigne);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ④ COMPTOIR DES CONSEILS */
+        .conseil-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .conseil-texte {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--craie);
+        }
+        .conseil-texte .tel-geant {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 0.03em;
+            color: var(--craie);
+            display: block;
+            margin: 1rem 0;
+            text-decoration: none;
+        }
+        .conseil-photo {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+        .conseil-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.05);
+        }
+        .conseil-photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(74, 99, 48, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        @media (max-width: 750px) {
+            .conseil-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ⑤ INFOS PRATIQUES */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .infos-liste {
+            list-style: none;
+            padding: 0;
+        }
+        .infos-liste li {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            display: flex;
+            gap: 0.8rem;
+            align-items: baseline;
+        }
+        .infos-liste .label {
+            font-weight: 600;
+            min-width: 110px;
+            color: var(--ardoise);
+            letter-spacing: 0.02em;
+        }
+        .infos-liste a {
+            color: var(--enseigne);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .carte-map {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            height: 360px;
+        }
+        .carte-map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        @media (max-width: 750px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background-color: #131513;
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--metal);
+            border-top: 1px solid rgba(245, 243, 238, 0.05);
+        }
+        .footer-nap {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .footer-credit {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* ANIMATIONS RÉVÉLATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Utilitaires */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Accueil Fromagerie Beillevaire">
+                BEILLEVAIRE
+                <span>Porte de Saint Cloud</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
+                    &#9776;
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#selection">Sélection</a></li>
+                    <li><a href="#cave">La cave</a></li>
+                    <li><a href="#offre">L'offre</a></li>
+                    <li><a href="#conseils">Conseils</a></li>
+                    <li><a href="#infos">Infos pratiques</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33146512813" class="header-cta">
+                <span aria-hidden="true">&#9742;</span> 01 46 51 28 13
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Façade de la fromagerie Beillevaire avenue de Versailles" loading="eager">
+            </div>
+            <div class="hero-content">
+                <div class="badge-note reveal">
+                    <span class="stars" aria-hidden="true">★ ★ ★ ★ ☆</span>
+                    <span>4.6 sur 46 avis Google</span>
+                </div>
+                <h1 class="reveal reveal-delay-1">Le goût commence au 213, avenue de Versailles.</h1>
+                <p class="subtitle reveal reveal-delay-2">
+                    Fromager, affineur, dénicheur — Beillevaire Porte de Saint Cloud vous ouvre ses caves de quartier et sa sélection de plus de 120 fromages, beurres et crèmes de ferme.
+                </p>
+                <div class="hero-actions reveal reveal-delay-3">
+                    <a href="#infos" class="btn-primary">Venir nous voir</a>
+                    <a href="tel:+33146512813" class="btn-outline">Appeler la boutique</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ① SÉLECTION DU MOMENT -->
+        <section class="section" id="selection">
+            <div class="section-inner">
+                <h2 class="section-title reveal">La sélection de votre fromager</h2>
+                <p class="section-subtitle reveal">Chaque semaine, notre équipe met en avant trois fromages à leur apogée d'affinage. En ce moment :</p>
+                <div class="selection-grid">
+                    <article class="carte-fromage reveal reveal-delay-1">
+                        <div class="carte-bg"><img src="assets/maps-1.jpg" alt="" loading="lazy" style="object-position: 20% 50%;"></div>
+                        <div class="carte-content">
+                            <h3 class="nom-fromage">Brie de Melun fermier</h3>
+                            <p class="desc-fromage">Affiné sur paille, cœur crémeux à point. Fruité, légèrement noisetté.</p>
+                        </div>
+                    </article>
+                    <article class="carte-fromage reveal reveal-delay-2">
+                        <div class="carte-bg"><img src="assets/maps-1.jpg" alt="" loading="lazy" style="object-position: 50% 60%;"></div>
+                        <div class="carte-content">
+                            <h3 class="nom-fromage">Tomme de Savoie au lait cru</h3>
+                            <p class="desc-fromage">Croûte fleurie, pâte souple aux arômes de cave et de noisette fraîche.</p>
+                        </div>
+                    </article>
+                    <article class="carte-fromage reveal reveal-delay-3">
+                        <div class="carte-bg"><img src="assets/maps-1.jpg" alt="" loading="lazy" style="object-position: 80% 40%;"></div>
+                        <div class="carte-content">
+                            <h3 class="nom-fromage">Saint-Nectaire affiné sur seigle</h3>
+                            <p class="desc-fromage">Pâte onctueuse, notes de sous-bois et de paille. Lait cru, affinage prolongé.</p>
+                        </div>
+                    </article>
+                </div>
+                <p style="margin-top:1.5rem; font-style:italic; color:var(--metal); font-size:0.9rem;">Disponibles à la coupe, sur place ou en retrait commande sous 24h.</p>
+            </div>
+        </section>
+
+        <!-- ② LA CAVE EN IMAGES -->
+        <section class="section bg-chene" id="cave">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Poussez la porte du 213</h2>
+                <p class="section-subtitle reveal">La boutique, l'équipe, les gestes. Un écrin minéral pour des produits d'exception.</p>
+                <div class="galerie-grid reveal">
+                    <div class="galerie-item span-2">
+                        <img src="assets/maps-1.jpg" alt="Devanture Beillevaire aux lettres vertes" loading="lazy" style="object-position: 10% 30%;">
+                    </div>
+                    <div class="galerie-item">
+                        <img src="assets/maps-1.jpg" alt="Comptoir en bois clair" loading="lazy" style="object-position: 60% 70%;">
+                    </div>
+                    <div class="galerie-item">
+                        <img src="assets/maps-1.jpg" alt="Vitrines réfrigérées" loading="lazy" style="object-position: 30% 80%;">
+                    </div>
+                    <div class="galerie-item span-2">
+                        <img src="assets/maps-1.jpg" alt="L'équipe au travail" loading="lazy" style="object-position: 70% 20%;">
+                    </div>
+                </div>
+                <div class="legende-horaires reveal">
+                    Du mardi au samedi, de 9h30 à 13h et de 15h à 20h. Le dimanche de 9h30 à 13h. Fermé le lundi.
+                </div>
+            </div>
+        </section>
+
+        <!-- ③ CE QUE VOUS TROUVEREZ ICI -->
+        <section class="section" id="offre">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Fromages, crèmerie, épicerie fine</h2>
+                <p class="section-subtitle reveal">Tout ce qui est disponible et conseillé dans cette boutique de l'avenue de Versailles.</p>
+                <div class="tuiles-grid">
+                    <a href="#" class="tuile reveal reveal-delay-1">
+                        <span class="tuile-icon" aria-hidden="true">🧀</span>
+                        <h3>Fromages à la coupe</h3>
+                        <p>Plus de 120 références affinées sur place. Pâtes molles, pressées cuites, chèvres, persillés : un tour de France des meilleurs terroirs, tranché devant vous.</p>
+                        <span class="link-arrow">Découvrir &rarr;</span>
+                    </a>
+                    <a href="#" class="tuile reveal reveal-delay-2">
+                        <span class="tuile-icon" aria-hidden="true">🧈</span>
+                        <h3>Beurres & desserts frais</h3>
+                        <p>Beurres de baratte, crèmes crues, yaourts fermiers, faisselles, fromages blancs. Tout arrive directement de nos producteurs partenaires.</p>
+                        <span class="link-arrow">Découvrir &rarr;</span>
+                    </a>
+                    <a href="#" class="tuile reveal reveal-delay-3">
+                        <span class="tuile-icon" aria-hidden="true">🍷</span>
+                        <h3>Épicerie fine & cave</h3>
+                        <p>Vins sélectionnés pour les accords, conserves artisanales, pains au levain, miels de ferme. De quoi composer un plateau complet.</p>
+                        <span class="link-arrow">Découvrir &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ④ COMPTOIR DES CONSEILS -->
+        <section class="section bg-chene" id="conseils">
+            <div class="section-inner conseil-wrapper">
+                <div class="conseil-texte reveal">
+                    <h2 class="section-title" style="color:var(--ardoise);">Besoin d'un conseil ? Parlez-nous.</h2>
+                    <p style="color:var(--pierre-fonce); margin-bottom:1.2rem;">
+                        Un plateau pour 8 personnes ? Un accord fromage et vin précis ? Un fromage qui plaira aux enfants ? On goûte, on discute, on trouve. Appelez-nous ou passez nous voir — c'est le métier qui parle.
+                    </p>
+                    <a href="tel:+33146512813" class="tel-geant" style="color:var(--ardoise);">01 46 51 28 13</a>
+                    <a href="tel:+33146512813" class="btn-primary" style="display:inline-flex; margin-top:0.5rem;">Appeler maintenant</a>
+                </div>
+                <div class="conseil-photo reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="L'équipe de la fromagerie Beillevaire au comptoir" loading="lazy" style="object-position: 40% 50%;">
+                </div>
+            </div>
+        </section>
+
+        <!-- ⑤ INFOS PRATIQUES -->
+        <section class="section" id="infos">
+            <div class="section-inner infos-grid">
+                <div class="reveal">
+                    <h2 class="section-title">Venir & commander</h2>
+                    <ul class="infos-liste" style="color:var(--craie);">
+                        <li><span class="label" style="color:var(--enseigne);">Adresse</span> 213 Avenue de Versailles, 75016 Paris</li>
+                        <li><span class="label" style="color:var(--enseigne);">Téléphone</span> <a href="tel:+33146512813">01 46 51 28 13</a></li>
+                        <li><span class="label" style="color:var(--enseigne);">Email</span> <a href="mailto:contact@beillevaire.com">contact@beillevaire.com</a></li>
+                        <li><span class="label" style="color:var(--enseigne);">Horaires</span> Mar–Sam 9h30–13h / 15h–20h<br><span style="margin-left:110px; display:block;">Dim 9h30–13h — fermé le lundi</span></li>
+                        <li><span class="label" style="color:var(--enseigne);">Métro</span> Porte de Saint-Cloud (ligne 9), Exelmans (ligne 9)</li>
+                        <li><span class="label" style="color:var(--enseigne);">Commandes</span> Appelez ou passez commande en ligne avec retrait en boutique sous 24h.</li>
+                    </ul>
+                </div>
+                <div class="carte-map reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=Fromagerie+Beillevaire+Paris+Porte+de+Saint+Cloud+213+Avenue+de+Versailles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de la fromagerie"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-nap">
+            <strong>Fromagerie Beillevaire Paris Porte de Saint Cloud</strong><br>
+            213 Avenue de Versailles, 75016 Paris &bull; 01 46 51 28 13<br>
+            contact@beillevaire.com
+        </div>
+        <div class="footer-credit">Site créé par Agence Mooo</div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Fromagerie Beillevaire Paris Porte de Saint Cloud",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "213 Avenue de Versailles",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146512813",
+            "email": "contact@beillevaire.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "46"
+            },
+            "openingHours": [
+                "Tu 09:30-13:00",
+                "Tu 15:00-20:00",
+                "We 09:30-13:00",
+                "We 15:00-20:00",
+                "Th 09:30-13:00",
+                "Th 15:00-20:00",
+                "Fr 09:30-13:00",
+                "Fr 15:00-20:00",
+                "Sa 09:30-13:00",
+                "Sa 15:00-20:00",
+                "Su 09:30-13:00"
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Menu mobile toggle
+            const toggleBtn = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', function() {
+                    const expanded = navLinks.classList.toggle('active');
+                    toggleBtn.setAttribute('aria-expanded', expanded);
+                });
+                // Fermer le menu au clic sur un lien
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header ombre au scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // IntersectionObserver pour les éléments .reveal
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                // Fallback si pas supporté
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+</body>
+</html>
