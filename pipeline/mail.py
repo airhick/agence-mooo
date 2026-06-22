@@ -94,32 +94,24 @@ BOARD_PROMPT = (
 )
 
 
-# Lowercase TLD only -> naturally trims glued trailing junk like "...comSUIVRE".
-_EMAIL_RE = re.compile(r"[A-Za-z0-9._+%-]+@[A-Za-z0-9.-]+\.[a-z]{2,24}")
-_PREFERRED = ("contact", "info", "hello", "bonjour", "accueil", "reservation",
-              "reservations", "direction", "commercial", "rh")
-
-
-def _first_email(raw: str) -> str:
-    """Extract the best deliverable address from a noisy scraped field.
-
-    The scraper concatenates multiple addresses and glues junk on (e.g.
-    'XVIcontact@x.com, contact@x.com' or '89contact@y.frOuvert'). We collect all
-    well-formed candidates (the lowercase-TLD match drops trailing garbage), then
-    prefer a known business prefix, else the shortest local part (which discards
-    glued prefixes like 'XVI'/'89').
-    """
-    seen: dict[str, str] = {}
-    for m in _EMAIL_RE.findall(raw or ""):
-        local, _, domain = m.partition("@")
-        key = f"{local.lower()}@{domain.lower()}"
-        seen.setdefault(key, f"{local}@{domain.lower()}")
-    if not seen:
-        return ""
-    cands = list(seen.values())
-    cands.sort(key=lambda e: (e.split("@")[0].lower() not in _PREFERRED,
-                              len(e.split("@")[0])))
-    return cands[0]
+# Email signature footer: Mooo logo + website + contact address. The logo is
+# served from the live site so it needs no extra inline attachment.
+_LOGO_URL = f"{config.SITE_BASE_URL}/logomooo.png"
+_FOOTER_SITE = config.SITE_BASE_URL.split("//", 1)[-1]   # "agence.mooo.com"
+_FOOTER_EMAIL = "agencemooo@gmail.com"
+_FOOTER_TEXT = f"\n\n—\nAgence Mooo · {config.SITE_BASE_URL.split('//', 1)[-1]} · {_FOOTER_EMAIL}"
+_FOOTER_HTML = (
+    '<div style="margin-top:28px;padding-top:18px;border-top:1px solid #eaeaea;'
+    'color:#888;font-size:13px;line-height:1.5">'
+    f'<img src="{_LOGO_URL}" alt="Agence Mooo" width="40" height="40" '
+    'style="vertical-align:middle;margin-right:12px;border-radius:8px">'
+    '<span style="vertical-align:middle">'
+    '<strong style="color:#1a1a1a">Agence Mooo</strong><br>'
+    f'<a href="{config.SITE_BASE_URL}" style="color:#888;text-decoration:none">{_FOOTER_SITE}</a>'
+    '&nbsp;·&nbsp;'
+    f'<a href="mailto:{_FOOTER_EMAIL}" style="color:#888;text-decoration:none">{_FOOTER_EMAIL}</a>'
+    '</span></div>'
+)
 
 
 def _html_body(text: str, link: str) -> str:
@@ -133,6 +125,7 @@ def _html_body(text: str, link: str) -> str:
         '<img src="cid:whiteboard" alt="L\'équipe Mooo" '
         'style="width:100%;max-width:560px;border-radius:12px;margin-bottom:18px">'
         f'<p>{safe}</p>'
+        f'{_FOOTER_HTML}'
         '</div>'
     )
 
@@ -146,9 +139,12 @@ def prepare(biz: Business, site_url: str, research: Research | None = None,
     "refresh" pitch for businesses that already had a site, a "create" pitch for
     those that had none.
     """
-    to = _first_email(biz.email)
-    if not to:
+    # Address every well-formed contact inbox for the business (best first),
+    # comma-joined into a single To header. qualify() already guarantees >=1.
+    recipients = biz.emails
+    if not recipients:
         raise ValueError("no usable contact email")
+    to = ", ".join(recipients)
 
     out_dir = out_dir or (config.OUTBOX_DIR / biz.slug)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -177,7 +173,7 @@ def prepare(biz: Business, site_url: str, research: Research | None = None,
     email = {
         "to": to,
         "subject": subject,
-        "text": body,
+        "text": body + _FOOTER_TEXT,
         "html": _html_body(body, site_url),
         "image": str(board),
         "site_url": site_url,

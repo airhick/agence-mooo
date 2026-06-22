@@ -13,6 +13,24 @@ from typing import Iterator
 from . import config
 
 
+# Lowercase TLD only -> naturally trims glued trailing junk like "...comSUIVRE".
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._+%-]+@[A-Za-z0-9.-]+\.[a-z]{2,24}")
+# Known business inbox prefixes, preferred first when ordering candidates.
+_PREFERRED = ("contact", "info", "hello", "bonjour", "accueil", "reservation",
+              "reservations", "direction", "commercial", "rh")
+# Template placeholders the scraper picks up from un-filled site boilerplate.
+_PLACEHOLDER_DOMAINS = {"example.com", "yourdomain.com", "domain.com", "email.com",
+                        "votredomaine.com", "monsite.com", "sitename.com"}
+_PLACEHOLDER_LOCALS = {"youremail", "votreemail", "nom", "name", "yourname",
+                       "prenom", "prenom.nom", "email", "exemple", "example"}
+
+
+def _clean_local(local: str) -> str:
+    """Strip a glued leading numeric run the scraper prepends (e.g. '72contact',
+    '05info', '99collectionballeron' -> 'contact'/'info'/'collectionballeron')."""
+    return re.sub(r"^\d+", "", local)
+
+
 def _clean(value: str | None) -> str:
     """Strip the layered quoting the scraper produced (e.g. '\"\"\"foo\"\"\"')."""
     if not value:
@@ -46,6 +64,53 @@ class Business:
     plus_code: str
     status: str = ""          # value of the CSV mooo_status column (empty = not processed)
     raw: dict = field(default_factory=dict, repr=False)
+
+    @property
+    def emails(self) -> list[str]:
+        """All distinct, deliverable contact addresses from the scraped field,
+        best first. Used both as the qualify gate (must be non-empty) and as the
+        set of email recipients (every business inbox is addressed).
+
+        The scraper is noisy: it glues junk onto addresses and repeats corrupted
+        copies of the same inbox. We clean that so we address the *real* inboxes,
+        not bounce-bound artifacts:
+          - the lowercase-TLD regex drops trailing garbage ('...frOuvert');
+          - a glued leading numeric run is stripped ('72contact' -> 'contact'),
+            which also collapses '72/82/45contact@x' down to one address;
+          - on a shared domain, a longer local that ends with a shorter one AND
+            carries a capitalised/numeric glued prefix is dropped as a corrupted
+            copy ('XVIcontact'/'Parisinfo' when 'contact'/'info' is present);
+          - obvious template placeholders ('nom@mail.com', 'youremail@...') drop.
+        Genuinely distinct inboxes ('contact@x' + 'getacooljob@x') are all kept.
+        """
+        seen: dict[str, str] = {}   # "local@domain" (lowercased) -> display form
+        for m in _EMAIL_RE.findall(self.email or ""):
+            local, _, domain = m.partition("@")
+            local = _clean_local(local)
+            domain = domain.lower()
+            if not local or domain in _PLACEHOLDER_DOMAINS \
+                    or local.lower() in _PLACEHOLDER_LOCALS:
+                continue
+            seen.setdefault(f"{local.lower()}@{domain}", f"{local}@{domain}")
+
+        # Drop corrupted copies: same domain, longer local ending with a shorter
+        # one via a capitalised/numeric glued prefix (e.g. 'XVIcontact'/'Parisinfo').
+        addrs = list(seen.values())
+        drop: set[str] = set()
+        for a in addrs:
+            al, ad = a.lower().split("@")
+            for b in addrs:
+                if b is a:
+                    continue
+                bl, bd = b.lower().split("@")
+                if bd == ad and len(bl) > len(al) and bl.endswith(al):
+                    prefix = b.split("@")[0][: len(bl) - len(al)]
+                    if any(c.isupper() or c.isdigit() for c in prefix):
+                        drop.add(b)
+        cands = [a for a in addrs if a not in drop]
+        cands.sort(key=lambda e: (e.split("@")[0].lower() not in _PREFERRED,
+                                  len(e.split("@")[0])))
+        return cands
 
     @property
     def has_website(self) -> bool:

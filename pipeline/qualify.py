@@ -22,8 +22,8 @@ def qualify(biz: Business, target: str = config.DEFAULT_TARGET) -> tuple[bool, s
         return False, "no Google Place ID (inactive/unknown listing)"
     if not biz.rating:
         return False, "no Google rating"
-    if not biz.email:
-        return False, "no contact email"
+    if not biz.emails:
+        return False, "no usable contact email"
     if biz.reviews_count < spec["reviews_min"]:
         return False, f"reviews {biz.reviews_count} < {spec['reviews_min']}"
     if spec["needs_website"] and not biz.has_website:
