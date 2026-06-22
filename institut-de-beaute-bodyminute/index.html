@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institut de beauté Bodyminute — Paris 16e | Soins sans rendez-vous</title>
+    <meta name="description" content="Institut de beauté Bodyminute à Paris 16e, Porte de St Cloud. Soins visage, épilation, massage, manucure — sans rendez-vous. Note 4.5★ sur 146 avis. Venez quand l'envie vous prend.">
+    <meta property="og:title" content="Institut de beauté Bodyminute — Soins sans RDV à Paris 16e">
+    <meta property="og:description" content="Soins visage, épilation, massage, manucure — sans rendez-vous. À deux minutes du métro Porte de St Cloud.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💆‍♀️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bleu: #004B87;
+            --blanc: #F9F7F8;
+            --rose: #FF5E9C;
+            --nuit: #1B2B3C;
+            --perle: #ECEAED;
+            --chrome: #9BA0A5;
+            --rayon: clamp(1.25rem, 2.5vw, 2rem);
+            --gap: clamp(0.75rem, 1.5vw, 1.25rem);
+            --max-w: 1280px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            background: var(--blanc);
+            color: var(--nuit);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(249, 247, 248, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0, 75, 135, 0.08);
+            padding: 0.6rem clamp(1rem, 3vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: box-shadow 0.35s ease, background 0.35s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+            background: rgba(249, 247, 248, 0.96);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .header-logo-text {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            color: var(--bleu);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .header-logo-text span {
+            color: var(--rose);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            list-style: none;
+        }
+        .header-nav a {
+            text-decoration: none;
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            font-weight: 500;
+            color: var(--nuit);
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.25s ease;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rose);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--bleu);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .badge-sans-rdv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--rose);
+            color: #fff;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(0.65rem, 0.85vw, 0.75rem);
+            letter-spacing: 0.04em;
+            border-radius: 50%;
+            width: clamp(2.8rem, 4vw, 3.4rem);
+            height: clamp(2.8rem, 4vw, 3.4rem);
+            text-align: center;
+            line-height: 1.1;
+            transform: rotate(-6deg);
+            box-shadow: 0 6px 24px rgba(255, 94, 156, 0.35);
+            flex-shrink: 0;
+            cursor: default;
+            user-select: none;
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+        @keyframes floatBadge {
+            0%,
+            100% {
+                transform: rotate(-6deg) translateY(0);
+            }
+            50% {
+                transform: rotate(-6deg) translateY(-6px);
+            }
+        }
+        .header-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--bleu);
+            color: #fff;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+            letter-spacing: 0.03em;
+            padding: 0.6em 1.3em;
+            border-radius: 2em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+            box-shadow: 0 4px 16px rgba(0, 75, 135, 0.25);
+        }
+        .header-cta-btn:hover,
+        .header-cta-btn:focus-visible {
+            background: #003a6b;
+            box-shadow: 0 6px 22px rgba(0, 75, 135, 0.4);
+            transform: translateY(-1px);
+        }
+        .header-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .header-mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--bleu);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--blanc);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 1.5rem;
+                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                z-index: 999;
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+            }
+            .header-mobile-toggle {
+                display: flex;
+            }
+            .badge-sans-rdv {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 0.6rem;
+            }
+            .header-cta-btn {
+                font-size: 0.7rem;
+                padding: 0.5em 1em;
+            }
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            background: var(--bleu);
+            margin-top: 0;
+            padding-top: 5rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.75) saturate(1.1);
+            transform: scale(1.03);
+            animation: heroSlowZoom 18s ease-out forwards;
+        }
+        @keyframes heroSlowZoom {
+            from {
+                transform: scale(1.08);
+            }
+            to {
+                transform: scale(1.03);
+            }
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 75, 135, 0.15) 0%, rgba(0, 75, 135, 0.55) 50%, rgba(0, 75, 135, 0.92) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vw, 6rem);
+            max-width: var(--max-w);
+            margin: 0 auto;
+            width: 100%;
+        }
+        .hero-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2em;
+            padding: 0.4em 1em;
+            font-size: clamp(0.75rem, 1vw, 0.85rem);
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.7s ease-out both;
+            animation-delay: 0.2s;
+        }
+        .hero-badge-top .stars {
+            color: #FFD700;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+        .hero h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 5vw, 3.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: #fff;
+            max-width: 700px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 0.7s ease-out both;
+            animation-delay: 0.35s;
+        }
+        .hero h1 .highlight {
+            color: var(--rose);
+            position: relative;
+            display: inline-block;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 560px;
+            margin-top: 1.2rem;
+            letter-spacing: 0.02em;
+            animation: fadeInUp 0.7s ease-out both;
+            animation-delay: 0.5s;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: var(--rose);
+            color: #fff;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            letter-spacing: 0.03em;
+            padding: 0.85em 2em;
+            border-radius: 2.5em;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+            box-shadow: 0 8px 28px rgba(255, 94, 156, 0.45);
+            animation: fadeInUp 0.7s ease-out both;
+            animation-delay: 0.65s;
+        }
+        .hero-cta:hover,
+        .hero-cta:focus-visible {
+            background: #e84d8a;
+            box-shadow: 0 12px 34px rgba(255, 94, 156, 0.6);
+            transform: translateY(-2px);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 90vh;
+                padding-top: 4rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero-sub {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* === SECTION TITLES === */
+        .section-title-wrap {
+            position: relative;
+            margin-bottom: clamp(2rem, 4vw, 3.5rem);
+        }
+        .section-title-wrap h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            letter-spacing: -0.02em;
+            color: var(--nuit);
+            line-height: 1.2;
+        }
+        .section-file {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--chrome);
+            border-radius: 2px;
+            margin-top: 0.6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-file::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--rose);
+            border-radius: 2px;
+            transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .section-file.revealed::after {
+            left: 0;
+        }
+        .section-subtitle {
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            color: var(--chrome);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        /* === SOINS === */
+        .soins-section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+        .soins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+            gap: var(--gap);
+        }
+        .soin-card {
+            background: #fff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: transform, opacity;
+        }
+        .soin-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .soin-card:hover {
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        .soin-card-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 0 0 2.5rem 0;
+        }
+        .soin-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+        }
+        .soin-card:hover .soin-card-image img {
+            transform: scale(1.06);
+        }
+        .soin-card-image .overlay-tag {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+            background: var(--rose);
+            color: #fff;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            padding: 0.35em 0.9em;
+            border-radius: 1.5em;
+            z-index: 2;
+        }
+        .soin-card-body {
+            padding: 1.2rem 1.3rem 1.5rem;
+        }
+        .soin-card-body h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            letter-spacing: -0.01em;
+            color: var(--nuit);
+            margin-bottom: 0.3rem;
+        }
+        .soin-card-body .duree {
+            font-size: 0.82rem;
+            color: var(--chrome);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.9rem;
+        }
+        .soin-card-body .btn-tarifs {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            padding: 0.4em 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+        .soin-card-body .btn-tarifs:hover {
+            border-bottom-color: var(--rose);
+            color: var(--rose);
+        }
+
+        /* === AVIS === */
+        .avis-section {
+            background: var(--perle);
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .avis-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            background: var(--rose);
+            border-radius: 50%;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+        .avis-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+        .avis-carousel {
+            display: flex;
+            gap: var(--gap);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--chrome) transparent;
+        }
+        .avis-carousel::-webkit-scrollbar {
+            height: 4px;
+        }
+        .avis-carousel::-webkit-scrollbar-thumb {
+            background: var(--chrome);
+            border-radius: 4px;
+        }
+        .avis-card {
+            flex: 0 0 min(85vw, 380px);
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: 1.2rem;
+            padding: 1.8rem;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .avis-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        }
+        .avis-stars {
+            color: #FFB800;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .avis-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--nuit);
+            font-style: italic;
+        }
+        .avis-author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu);
+            letter-spacing: 0.02em;
+        }
+
+        /* === INSTITUT VIVANT === */
+        .institut-section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3.5rem);
+            align-items: center;
+        }
+        @media (max-width: 750px) {
+            .institut-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        .institut-texte p {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.7;
+            color: var(--nuit);
+            margin-bottom: 1rem;
+        }
+        .institut-galerie {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+        .institut-galerie .gal-img {
+            border-radius: 0.8rem;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .institut-galerie .gal-img.revealed {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .institut-galerie .gal-img:nth-child(1) {
+            aspect-ratio: 1/1;
+        }
+        .institut-galerie .gal-img:nth-child(3) {
+            aspect-ratio: 1/1;
+        }
+        .institut-galerie .gal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .institut-galerie .gal-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bleu);
+            mix-blend-mode: overlay;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* === TARIFS === */
+        .tarifs-section {
+            background: #fff;
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            max-width: var(--max-w);
+            margin: 0 auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+        }
+        .tarifs-cat {
+            margin-bottom: 2rem;
+        }
+        .tarifs-cat h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--bleu);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--perle);
+        }
+        .tarifs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tarifs-table tr {
+            border-bottom: 1px solid var(--perle);
+            transition: background 0.2s ease;
+        }
+        .tarifs-table tr:hover {
+            background: rgba(249, 247, 248, 0.6);
+        }
+        .tarifs-table td {
+            padding: 0.7rem 0.5rem;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            color: var(--nuit);
+            letter-spacing: 0.02em;
+        }
+        .tarifs-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--bleu);
+            white-space: nowrap;
+        }
+        @media (max-width: 600px) {
+            .tarifs-table td {
+                font-size: 0.8rem;
+                padding: 0.5rem 0.3rem;
+            }
+        }
+
+        /* === FAQ === */
+        .faq-section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.2rem 1.5rem;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            color: var(--nuit);
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.25s ease;
+        }
+        .faq-question:hover {
+            background: rgba(249, 247, 248, 0.7);
+        }
+        .faq-icon {
+            font-size: 1.3rem;
+            color: var(--rose);
+            transition: transform 0.35s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.45s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.2rem;
+        }
+        .faq-answer p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--nuit);
+        }
+
+        /* === COIN PRATIQUE === */
+        .pratique-section {
+            background: var(--bleu);
+            color: #fff;
+            padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .pratique-section::before {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: var(--rose);
+            border-radius: 50%;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+        .pratique-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 700px) {
+            .pratique-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pratique-info h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+        }
+        .pratique-info p {
+            margin-bottom: 0.7rem;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .pratique-info a {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .pratique-tel {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem 0 1rem;
+            transition: color 0.3s ease;
+        }
+        .pratique-tel:hover {
+            color: var(--rose);
+        }
+        .pratique-badge-horaires {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2em;
+            padding: 0.5em 1.2em;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.8rem;
+        }
+        .pratique-badge-horaires .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #4cff88;
+            display: inline-block;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        .pratique-badge-horaires .dot.ferme {
+            background: var(--rose);
+            animation: none;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 255, 136, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(76, 255, 136, 0);
+            }
+        }
+        .pratique-horaires-liste {
+            list-style: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        .pratique-horaires-liste li {
+            display: flex;
+            justify-content: space-between;
+            max-width: 280px;
+        }
+        .pratique-horaires-liste .aujourdhui {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* === MAP === */
+        .map-wrap {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--nuit);
+            color: rgba(255, 255, 255, 0.7);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem);
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+        }
+        .site-footer strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        .site-footer .footer-credit {
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            opacity: 0.5;
+        }
+
+        /* === FILIGRANE SANS RDV === */
+        .filigrane-sans-rdv {
+            position: absolute;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(5rem, 15vw, 14rem);
+            color: var(--rose);
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            z-index: 0;
+        }
+
+        /* === FOCUS VISIBLE === */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--rose);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* === MISC === */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <a href="#" class="header-brand" aria-label="Bodyminute — Accueil">
+            <span class="header-logo-text">Body<span>minute</span></span>
+        </a>
+        <nav>
+            <ul class="header-nav" id="mainNav">
+                <li><a href="#soins">Soins</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#pratique">Infos pratiques</a></li>
+            </ul>
+        </nav>
+        <div class="badge-sans-rdv" aria-label="Sans rendez-vous">SANS<br>RDV</div>
+        <a href="#pratique" class="header-cta-btn">Venir aujourd'hui →</a>
+        <button class="header-mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Devanture de l'institut Bodyminute rue le Marois, Paris 16e" loading="eager">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge-top">
+                    <span class="stars">★★★★★</span> 4.5 sur 146 avis Google
+                </div>
+                <h1>Vous êtes à deux minutes du métro, <span class="highlight">on s'occupe de tout.</span></h1>
+                <p class="hero-sub">Soins visage, épilation, massage, manucure — sans rendez-vous. Venez quand l'envie vous prend, on garde une place.</p>
+                <a href="#pratique" class="hero-cta">Venir aujourd'hui →</a>
+            </div>
+        </section>
+
+        <!-- SOINS -->
+        <section class="soins-section" id="soins">
+            <div class="section-title-wrap">
+                <p class="section-subtitle">Ce que vous nous confiez le plus souvent</p>
+                <h2>Les soins, vrais et transparents</h2>
+                <span class="section-file" data-reveal></span>
+            </div>
+            <div class="soins-grid">
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Épilation au fil" loading="lazy" style="object-position: 20% 30%; filter: brightness(1.1) saturate(0.9);">
+                        <span class="overlay-tag">~15 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Épilation au fil</h3>
+                        <p class="duree">Sourcils, lèvres, visage — 10 à 20 min</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Soin visage longue tenue" loading="lazy" style="object-position: 60% 40%; filter: brightness(1.05) hue-rotate(-8deg);">
+                        <span class="overlay-tag">~45 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Soin visage longue tenue</h3>
+                        <p class="duree">Hydratation profonde, éclat immédiat</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Massage relax'minute" loading="lazy" style="object-position: 40% 50%; filter: brightness(1.08) saturate(0.85);">
+                        <span class="overlay-tag">~25 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Massage relax'minute</h3>
+                        <p class="duree">Nuque, dos, épaules — détente express</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Manucerie rapide" loading="lazy" style="object-position: 30% 20%; filter: brightness(1.0) sepia(0.1);">
+                        <span class="overlay-tag">~20 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Manucerie rapide</h3>
+                        <p class="duree">Limage, soin cuticules, vernis au choix</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Browlift et rehaussement" loading="lazy" style="object-position: 50% 60%; filter: brightness(1.12) contrast(1.05);">
+                        <span class="overlay-tag">~25 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Browlift & rehaussement</h3>
+                        <p class="duree">Sourcils redessinés, regard ouvert</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+                <article class="soin-card" data-reveal>
+                    <div class="soin-card-image">
+                        <img src="assets/maps-1.jpg" alt="Blanchiment dentaire" loading="lazy" style="object-position: 70% 30%; filter: brightness(1.15) saturate(0.7);">
+                        <span class="overlay-tag">~30 min</span>
+                    </div>
+                    <div class="soin-card-body">
+                        <h3>Blanchiment dentaire</h3>
+                        <p class="duree">Sourire éclatant en une séance</p>
+                        <a href="#tarifs" class="btn-tarifs">Voir les tarifs →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="avis-section" id="avis">
+            <div class="avis-inner">
+                <div class="section-title-wrap">
+                    <p class="section-subtitle">C'est vous qui le dites</p>
+                    <h2>Vos avis nous portent</h2>
+                    <span class="section-file" data-reveal></span>
+                </div>
+                <div class="avis-carousel">
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="avis-text">« J'y vais sans rendez-vous et en 15 minutes c'est réglé, efficace et propre. L'équipe est adorable, je reviens chaque semaine. »</p>
+                        <span class="avis-author">— Marie K.</span>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="avis-text">« Enfin un institut où on ne te prend pas de haut. Tarifs clairs, soin visage top, ma peau n'a jamais été aussi belle. »</p>
+                        <span class="avis-author">— Léa R.</span>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★☆</div>
+                        <p class="avis-text">« Pratique en sortant du métro, le massage relax'minute est un vrai bonheur après une journée de boulot. Je recommande. »</p>
+                        <span class="avis-author">— Samia D.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTITUT VIVANT -->
+        <section class="institut-section" id="institut">
+            <div class="institut-texte">
+                <div class="section-title-wrap">
+                    <p class="section-subtitle">Un institut qui vit au rythme du quartier</p>
+                    <h2>À deux pas du métro,<br>un écrin de douceur</h2>
+                    <span class="section-file" data-reveal></span>
+                </div>
+                <p>Situé au 5/7 rue le Marois, à la sortie du métro Porte de St Cloud (ligne 9), Bodyminute est ancré dans l'énergie du 16e arrondissement. On pousse la porte sans rendez-vous, entre deux courses ou après le travail, et on ressort rayonnante.</p>
+                <p>La lumière naturelle baigne les cabines, les produits Skinminute sont alignés sur les étagères, et nos esthéticiennes connaissent chaque cliente par son prénom.</p>
+            </div>
+            <div class="institut-galerie">
+                <div class="gal-img" data-reveal><img src="assets/maps-1.jpg" alt="Intérieur de l'institut Bodyminute" loading="lazy" style="object-position: 10% 50%; filter: brightness(1.06);"></div>
+                <div class="gal-img" data-reveal><img src="assets/maps-1.jpg" alt="Cabine de soin Bodyminute" loading="lazy" style="object-position: 80% 30%; filter: brightness(0.95) contrast(1.05);"></div>
+                <div class="gal-img" data-reveal><img src="assets/maps-1.jpg" alt="Produits Skinminute en institut" loading="lazy" style="object-position: 45% 70%; filter: brightness(1.08) saturate(0.9);"></div>
+                <div class="gal-img" data-reveal><img src="assets/maps-1.jpg" alt="Esthéticienne au travail" loading="lazy" style="object-position: 55% 20%; filter: brightness(1.02);"></div>
+            </div>
+        </section>
+
+        <!-- TARIFS -->
+        <section class="tarifs-section" id="tarifs">
+            <div class="section-title-wrap">
+                <p class="section-subtitle">Les tarifs, en toute simplicité</p>
+                <h2>Pas de surprise, tout est là</h2>
+                <span class="section-file" data-reveal></span>
+            </div>
+            <div class="tarifs-cat">
+                <h3>💆 Épilation</h3>
+                <table class="tarifs-table">
+                    <tr><td>Sourcils au fil</td><td>8 €</td></tr>
+                    <tr><td>Lèvres</td><td>6 €</td></tr>
+                    <tr><td>Visage complet</td><td>18 €</td></tr>
+                    <tr><td>Demi-jambes</td><td>16 €</td></tr>
+                    <tr><td>Jambes entières</td><td>25 €</td></tr>
+                    <tr><td>Aisselles</td><td>10 €</td></tr>
+                    <tr><td>Maillot</td><td>14 €</td></tr>
+                </table>
+            </div>
+            <div class="tarifs-cat">
+                <h3>✨ Soins visage</h3>
+                <table class="tarifs-table">
+                    <tr><td>Soin visage longue tenue (45 min)</td><td>42 €</td></tr>
+                    <tr><td>Soin éclat express (25 min)</td><td>28 €</td></tr>
+                    <tr><td>Peeling doux</td><td>32 €</td></tr>
+                </table>
+            </div>
+            <div class="tarifs-cat">
+                <h3>💆‍♀️ Massages</h3>
+                <table class="tarifs-table">
+                    <tr><td>Massage relax'minute (25 min)</td><td>35 €</td></tr>
+                    <tr><td>Massage dos & nuque (20 min)</td><td>28 €</td></tr>
+                    <tr><td>Massage corps entier (50 min)</td><td>58 €</td></tr>
+                </table>
+            </div>
+            <div class="tarifs-cat">
+                <h3>💅 Mains & Pieds</h3>
+                <table class="tarifs-table">
+                    <tr><td>Manucerie rapide</td><td>18 €</td></tr>
+                    <tr><td>Pose vernis semi-permanent</td><td>25 €</td></tr>
+                    <tr><td>Pédicurie express</td><td>22 €</td></tr>
+                </table>
+            </div>
+            <div class="tarifs-cat">
+                <h3>👁️ Regard & Sourire</h3>
+                <table class="tarifs-table">
+                    <tr><td>Browlift & rehaussement</td><td>22 €</td></tr>
+                    <tr><td>Teinture sourcils</td><td>14 €</td></tr>
+                    <tr><td>Blanchiment dentaire</td><td>49 €</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="section-title-wrap">
+                <p class="section-subtitle">Vos questions</p>
+                <h2>On vous répond franchement</h2>
+                <span class="section-file" data-reveal></span>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <button class="faq-question" aria-expanded="true">
+                        Faut-il vraiment prendre rendez-vous ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Non, vous pouvez arriver à tout moment pendant les heures d'ouverture. Nous gardons toujours des créneaux pour les venues spontanées. Si vous préférez être certaine d'être prise immédiatement, un appel au 01 42 24 67 11 suffit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Combien de temps dure une épilation ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>De 10 à 20 minutes selon la zone. Les sourcils au fil prennent environ 10 minutes, les demi-jambes 20 minutes. Tout est indiqué sur place et sur cette page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Les produits sont-ils testés ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui. Nous utilisons la gamme suisse Skinminute 🇨🇭, formulée sans perturbation endocrinienne, testée dermatologiquement. Tous les produits sont visibles en institut, n'hésitez pas à demander les compositions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Puis-je venir avec ma fille / mon ado ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bien sûr. Nous proposons des soins adaptés aux plus jeunes (manucure simple, épilation sourcils). L'ambiance est familiale et bienveillante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COIN PRATIQUE -->
+        <section class="pratique-section" id="pratique" style="position:relative;">
+            <div class="filigrane-sans-rdv" style="top:10%;right:-5%;">SANS RDV</div>
+            <div class="pratique-inner">
+                <div class="pratique-info">
+                    <h2>Le coin pratique</h2>
+                    <p><strong>📍 Adresse :</strong> 5/7 rue le Marois, 75016 Paris</p>
+                    <p><strong>🚇 Métro :</strong> Porte de St Cloud (ligne 9)</p>
+                    <p>
+                        <a href="tel:+33142246711" class="pratique-tel">01 42 24 67 11</a>
+                    </p>
+                    <p><a href="mailto:ParisLemarois@bodyminute.fr">ParisLemarois@bodyminute.fr</a></p>
+                    <div class="pratique-badge-horaires" id="badgeHoraires">
+                        <span class="dot" id="statusDot"></span>
+                        <span id="statusText">Chargement...</span>
+                    </div>
+                    <ul class="pratique-horaires-liste" id="horairesListe">
+                        <li><span>Lundi</span><span>10h – 19h</span></li>
+                        <li><span>Mardi</span><span>10h – 19h</span></li>
+                        <li><span>Mercredi</span><span>10h – 19h</span></li>
+                        <li><span>Jeudi</span><span>10h – 20h</span></li>
+                        <li><span>Vendredi</span><span>10h – 19h</span></li>
+                        <li><span>Samedi</span><span>10h – 18h</span></li>
+                        <li><span>Dimanche</span><span>Fermé</span></li>
+                    </ul>
+                </div>
+                <div class="map-wrap">
+                    <iframe src="https://maps.google.com/maps?q=Institut+de+beaut%C3%A9+Bodyminute+5%2F7+rue+le+Marois+Metro+Porte+de+St+Cloud%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à l'institut Bodyminute"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Institut de beauté Bodyminute</strong> — 5/7 rue le Marois, 75016 Paris</p>
+        <p>📞 <a href="tel:+33142246711" style="color:inherit;">01 42 24 67 11</a> · ✉️ <a href="mailto:ParisLemarois@bodyminute.fr" style="color:inherit;">ParisLemarois@bodyminute.fr</a></p>
+        <p>Métro Porte de St Cloud (ligne 9) · Ouvert du lundi au samedi</p>
+        <p class="footer-credit">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Institut de beauté Bodyminute",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "5/7 rue le Marois",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142246711",
+            "email": "ParisLemarois@bodyminute.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.5",
+                "reviewCount": "146"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "18:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobileToggle');
+            const nav = document.getElementById('mainNav');
+            const header = document.getElementById('header');
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Close nav on link click (mobile)
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Header scroll effect
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        header.classList.toggle('scrolled', window.scrollY > 40);
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // IntersectionObserver for reveals
+            const revealEls = document.querySelectorAll('[data-reveal]');
+            const observerOptions = { threshold: 0.18, rootMargin: '0px 0px -40px 0px' };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        // For section-file elements
+                        if (entry.target.classList.contains('section-file')) {
+                            entry.target.classList.add('revealed');
+                        }
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // Also observe soin-card elements for staggered reveal
+            const soinCards = document.querySelectorAll('.soin-card');
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        const delay = Array.from(soinCards).indexOf(entry.target) * 80;
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, delay);
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+            soinCards.forEach(card => cardObserver.observe(card));
+
+            // Galerie images reveal
+            const galImgs = document.querySelectorAll('.gal-img');
+            const galObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, i * 120);
+                        galObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            galImgs.forEach(img => galObserver.observe(img));
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const isOpen = item.classList.contains('open');
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(fi => fi.classList.remove(
+                        'open'));
+                    document.querySelectorAll('.faq-question').forEach(b => b.setAttribute(
+                        'aria-expanded', 'false'));
+                    // Open clicked if wasn't open
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Dynamic hours badge
+            function updateHorairesBadge() {
+                const now = new Date();
+                const day = now.getDay(); // 0=dimanche
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const timeDecimal = hour + minute / 60;
+
+                const horaires = {
+                    1: { open: 10, close: 19 }, // lundi
+                    2: { open: 10, close: 19 }, // mardi
+                    3: { open: 10, close: 19 }, // mercredi
+                    4: { open: 10, close: 20 }, // jeudi
+                    5: { open: 10, close: 19 }, // vendredi
+                    6: { open: 10, close: 18 }, // samedi
+                    0: { open: 0, close: 0, ferme: true } // dimanche
+                };
+
+                const today = horaires[day];
+                const dot = document.getElementById('statusDot');
+                const statusText = document.getElementById('statusText');
+                const badge = document.getElementById('badgeHoraires');
+
+                if (today.ferme || day === 0) {
+                    dot.classList.add('ferme');
+                    statusText.textContent = 'Fermé aujourd\'hui · Ouvre lundi à 10h';
+                    badge.style.background = 'rgba(255,94,156,0.2)';
+                } else if (timeDecimal >= today.open && timeDecimal < today.close) {
+                    dot.classList.remove('ferme');
+                    const closeStr = today.close.toString().replace('.5', 'h30').replace('.0', 'h');
+                    statusText.textContent = 'Ouvert jusqu\'à ' + closeStr;
+                    badge.style.background = 'rgba(255,255,255,0.15)';
+                } else if (timeDecimal < today.open) {
+                    dot.classList.add('ferme');
+                    const openStr = today.open.toString().replace('.5', 'h30').replace('.0', 'h');
+                    statusText.textContent = 'Ouvre à ' + openStr + ' aujourd\'hui';
+                    badge.style.background = 'rgba(255,94,156,0.2)';
+                } else {
+                    dot.classList.add('ferme');
+                    const demain = day === 6 ? 'lundi' : ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi',
+                        'samedi'
+                    ][day + 1];
+                    statusText.textContent = 'Fermé · Ouvre demain (' + demain + ') à 10h';
+                    badge.style.background = 'rgba(255,94,156,0.2)';
+                }
+
+                // Highlight today in horaires list
+                const joursMapping = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+                const todayName = joursMapping[day];
+                const horairesItems = document.querySelectorAll('.pratique-horaires-liste li');
+                horairesItems.forEach(li => {
+                    li.classList.remove('aujourdhui');
+                    if (li.textContent.toLowerCase().startsWith(todayName)) {
+                        li.classList.add('aujourdhui');
+                    }
+                });
+            }
+
+            updateHorairesBadge();
+            // Refresh every 60 seconds
+            setInterval(updateHorairesBadge, 60000);
+
+            // Initial call to set header state
+            if (window.scrollY > 40) header.classList.add('scrolled');
+        })();
+    </script>
+</body>
+</html>
