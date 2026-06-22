@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie Antoine — Livres anciens et rares, Paris 16e</title>
+    <meta name="description" content="Librairie de livres anciens et rares. Expertise, achat et vente d'éditions originales, reliures signées, manuscrits. Sur rendez-vous au 39 bis rue Molitor, Paris 16e.">
+    <meta property="og:title" content="Librairie Antoine — Livres anciens et rares">
+    <meta property="og:description" content="Un cabinet de livres au sud du 16e. De la matière, du temps, du texte.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📖</text></svg>">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Librairie Antoine",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "39 bis Rue Molitor",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140719157",
+            "email": "contact@librairie-antoine.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "bestRating": "5.0",
+                "reviewCount": "5"
+            },
+            "image": "assets/maps-1.jpg"
+        }
+    </script>
+
+    <style>
+        :root {
+            --suie: #1C1613;
+            --velin: #F4EFE6;
+            --sepia-fonce: #2C241D;
+            --bronze-eteint: #B58B5C;
+            --or-pali: #D4B486;
+            --vert-olive-use: #5B6E5A;
+            --grain-opacity: 0.04;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.35vw, 18px);
+            background: var(--suie);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--sepia-fonce);
+            background: var(--velin);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            cursor: default;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Curseur personnalisé — discret point bronze */
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: none;
+            }
+            .cursor-dot {
+                position: fixed;
+                top: -10px;
+                left: -10px;
+                width: 10px;
+                height: 10px;
+                background: var(--bronze-eteint);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99999;
+                mix-blend-mode: difference;
+                transition: transform 0.12s ease-out, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+                will-change: transform;
+            }
+            a:hover~.cursor-dot,
+            button:hover~.cursor-dot,
+            .cursor-dot.hover-link {
+                width: 18px;
+                height: 18px;
+                background: var(--or-pali);
+                transform: translate(-4px, -4px);
+            }
+        }
+        @media (prefers-reduced-motion: reduce),
+        (hover: none),
+        (pointer: coarse) {
+            .cursor-dot {
+                display: none;
+            }
+            body {
+                cursor: auto;
+            }
+        }
+
+        /* Grain global */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 99990;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.55'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+            background: transparent;
+            gap: 1.5rem;
+        }
+        .site-header.scrolled {
+            background: rgba(28, 22, 19, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.7rem 2rem;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.25);
+        }
+        .header-brand {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: var(--velin);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .site-header.scrolled .header-brand {
+            color: var(--or-pali);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--velin);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--bronze-eteint);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--or-pali);
+        }
+        .header-cta {
+            display: inline-block;
+            padding: 0.55rem 1.3rem;
+            border: 1.5px solid var(--bronze-eteint);
+            color: var(--velin);
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            white-space: nowrap;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bronze-eteint);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 0;
+        }
+        .header-cta:hover::before,
+        .header-cta:focus-visible::before {
+            transform: scaleX(1);
+        }
+        .header-cta span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        .header-cta:hover span,
+        .header-cta:focus-visible span {
+            color: var(--suie);
+        }
+        .site-header.scrolled .header-cta {
+            border-color: var(--or-pali);
+            color: var(--or-pali);
+        }
+        .site-header.scrolled .header-cta::before {
+            background: var(--or-pali);
+        }
+        .site-header.scrolled .header-cta:hover span,
+        .site-header.scrolled .header-cta:focus-visible span {
+            color: var(--suie);
+        }
+
+        /* Menu burger mobile */
+        .burger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+            width: 30px;
+            height: 22px;
+            justify-content: center;
+        }
+        .burger-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--velin);
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        .site-header.scrolled .burger-btn span {
+            background: var(--or-pali);
+        }
+        .mobile-nav {
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 22, 19, 0.97);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .mobile-nav.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-nav a {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.6rem;
+            color: var(--velin);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .mobile-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--bronze-eteint);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-origin: right;
+        }
+        .mobile-nav a:hover::after,
+        .mobile-nav a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .mobile-nav a:hover {
+            color: var(--or-pali);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                display: none;
+            }
+            .header-cta.desktop-cta {
+                display: none;
+            }
+            .burger-btn {
+                display: flex;
+            }
+            .site-header {
+                padding: 0.9rem 1.2rem;
+                justify-content: space-between;
+            }
+            .site-header.scrolled {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+        @media (min-width: 861px) {
+            .mobile-nav,
+            .burger-btn {
+                display: none;
+            }
+            .header-cta.mobile-cta {
+                display: none;
+            }
+        }
+
+        /* Sections générales */
+        section {
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        @media (max-width: 700px) {
+            .section-inner {
+                padding: 3rem 1.2rem;
+            }
+        }
+
+        /* ============ HÉRO ============ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            background: var(--suie);
+            padding: 0;
+            overflow: hidden;
+        }
+        .hero-image-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) contrast(1.1) saturate(0.6);
+            will-change: transform;
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(28, 22, 19, 0.95) 0%,
+                    rgba(28, 22, 19, 0.55) 35%,
+                    rgba(28, 22, 19, 0.2) 65%,
+                    rgba(28, 22, 19, 0.35) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: left;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(244, 239, 230, 0.08);
+            border: 1px solid rgba(212, 180, 134, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 3px;
+            margin-bottom: 1.8rem;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .hero-badge .stars {
+            color: var(--or-pali);
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+        }
+        .hero-badge .rating-text {
+            color: var(--velin);
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+        .hero-accroche {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            line-height: 1.08;
+            color: var(--velin);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeSlideUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s forwards;
+        }
+        .hero-soustitre {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            color: rgba(244, 239, 230, 0.85);
+            max-width: 580px;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s forwards;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeSlideUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s forwards;
+        }
+        .btn-dore {
+            display: inline-block;
+            padding: 0.75rem 1.8rem;
+            border: 1.5px solid var(--bronze-eteint);
+            color: var(--velin);
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn-dore::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bronze-eteint);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 0;
+        }
+        .btn-dore:hover::before,
+        .btn-dore:focus-visible::before {
+            transform: scaleX(1);
+        }
+        .btn-dore span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        .btn-dore:hover span,
+        .btn-dore:focus-visible span {
+            color: var(--suie);
+        }
+        .btn-plein {
+            background: var(--bronze-eteint);
+            color: var(--suie);
+        }
+        .btn-plein:hover span,
+        .btn-plein:focus-visible span {
+            color: var(--velin);
+        }
+        .btn-plein::before {
+            background: var(--suie);
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============ SECTION MACRO ============ */
+        .macro-section {
+            background: var(--velin);
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 60vh;
+            align-items: stretch;
+        }
+        .macro-section.reverse {
+            direction: rtl;
+        }
+        .macro-section.reverse>* {
+            direction: ltr;
+        }
+        .macro-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 350px;
+        }
+        .macro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.7) contrast(1.15) saturate(0.5) sepia(0.2);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+        .macro-image:hover img {
+            filter: brightness(0.8) contrast(1.05) saturate(0.4) sepia(0.15);
+            transform: scale(1.03);
+        }
+        .macro-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg,
+                    rgba(28, 22, 19, 0.5) 0%,
+                    rgba(28, 22, 19, 0.1) 40%,
+                    rgba(28, 22, 19, 0.35) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .macro-image .macro-label {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 2;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--or-pali);
+            background: rgba(28, 22, 19, 0.7);
+            padding: 0.35rem 0.9rem;
+            border-radius: 2px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .macro-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3.5rem 3rem;
+            background: var(--velin);
+            position: relative;
+        }
+        .macro-text .section-number {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 5rem;
+            color: rgba(44, 36, 29, 0.06);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .macro-text h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            color: var(--suie);
+            line-height: 1.2;
+            letter-spacing: -0.005em;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .macro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--bronze-eteint);
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .macro-text:hover h2::after {
+            width: 100%;
+        }
+        .macro-text p {
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            color: var(--sepia-fonce);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            max-width: 480px;
+        }
+        @media (max-width: 800px) {
+            .macro-section {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .macro-image {
+                min-height: 280px;
+                order: -1;
+            }
+            .macro-text {
+                padding: 2.5rem 1.5rem;
+            }
+            .macro-text .section-number {
+                font-size: 3.5rem;
+                top: 0.5rem;
+                right: 1rem;
+            }
+        }
+
+        /* ============ SECTION OEIL DU LIBRAIRE ============ */
+        .oeil-section {
+            background: var(--suie);
+            color: var(--velin);
+            position: relative;
+        }
+        .oeil-section .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .oeil-image-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            aspect-ratio: 4/3;
+        }
+        .oeil-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            filter: brightness(0.65) contrast(1.2) saturate(0.3) sepia(0.4);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+        .oeil-image-frame:hover img {
+            filter: brightness(0.75) contrast(1.1) saturate(0.25) sepia(0.3);
+            transform: scale(1.04);
+        }
+        .oeil-image-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212, 180, 134, 0.25);
+            z-index: 2;
+            pointer-events: none;
+            border-radius: 2px;
+        }
+        .oeil-text h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            letter-spacing: -0.005em;
+            margin-bottom: 1.2rem;
+            color: var(--or-pali);
+            position: relative;
+            display: inline-block;
+        }
+        .oeil-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--bronze-eteint);
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .oeil-text:hover h2::after {
+            width: 100%;
+        }
+        .oeil-text .feuilleton-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--vert-olive-use);
+            margin-bottom: 0.6rem;
+        }
+        .oeil-text p {
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            line-height: 1.75;
+            color: rgba(244, 239, 230, 0.8);
+            margin-bottom: 1rem;
+            max-width: 460px;
+        }
+        .oeil-text .signature {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: var(--bronze-eteint);
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 800px) {
+            .oeil-section .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .oeil-image-frame {
+                aspect-ratio: 3/2;
+            }
+        }
+
+        /* ============ SECTION CONTACT ============ */
+        .contact-section {
+            background: var(--velin);
+            position: relative;
+        }
+        .contact-section .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-info h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            color: var(--suie);
+            letter-spacing: -0.005em;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 55px;
+            height: 2px;
+            background: var(--bronze-eteint);
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .contact-info:hover h2::after {
+            width: 100%;
+        }
+        .contact-details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--sepia-fonce);
+            line-height: 1.5;
+        }
+        .contact-details .detail-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+            opacity: 0.7;
+        }
+        .contact-details a {
+            color: var(--sepia-fonce);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+        .contact-details a:hover,
+        .contact-details a:focus-visible {
+            color: var(--bronze-eteint);
+            border-bottom-color: var(--bronze-eteint);
+        }
+        .horaires-blk {
+            background: rgba(28, 22, 19, 0.04);
+            padding: 1.3rem 1.5rem;
+            border-left: 2px solid var(--bronze-eteint);
+            border-radius: 0 3px 3px 0;
+            font-size: 0.9rem;
+            color: var(--sepia-fonce);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .horaires-blk strong {
+            font-weight: 600;
+            color: var(--suie);
+        }
+        .map-wrapper {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(28, 22, 19, 0.18);
+            height: 100%;
+            min-height: 360px;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            border: 0;
+        }
+        @media (max-width: 800px) {
+            .contact-section .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .map-wrapper {
+                min-height: 300px;
+                height: 300px;
+            }
+            .map-wrapper iframe {
+                min-height: 300px;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        .site-footer {
+            background: var(--suie);
+            color: rgba(244, 239, 230, 0.65);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            border-top: 1px solid rgba(181, 139, 92, 0.2);
+        }
+        .site-footer .footer-nap {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+        .site-footer .footer-credit {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            letter-spacing: 0.06em;
+        }
+        .site-footer a {
+            color: var(--bronze-eteint);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .site-footer a:hover {
+            color: var(--or-pali);
+        }
+
+        /* ============ REVEAL AU SCROLL ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ============ ACCESSIBILITÉ ============ */
+        a:focus-visible,
+        button:focus-visible,
+        .btn-dore:focus-visible,
+        .header-cta:focus-visible {
+            outline: 2px solid var(--or-pali);
+            outline-offset: 3px;
+        }
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--bronze-eteint);
+            color: var(--suie);
+            padding: 0.5rem 1rem;
+            z-index: 99999;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+
+        /* ============ PETITES TOUCHES ============ */
+        .divider-dore {
+            width: 80px;
+            height: 2px;
+            background: var(--bronze-eteint);
+            margin: 1.5rem 0;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Librairie Antoine — Accueil">Librairie Antoine</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#ouvrage-rare">L'ouvrage rare</a></li>
+                <li><a href="#bibliotheque">Votre bibliothèque</a></li>
+                <li><a href="#la-librairie">La librairie</a></li>
+                <li><a href="#oeil">L'œil du libraire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33140719157" class="header-cta desktop-cta"><span>Appeler</span></a>
+        <button class="burger-btn" id="burger-btn" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
+        <a href="#ouvrage-rare">L'ouvrage rare</a>
+        <a href="#bibliotheque">Votre bibliothèque</a>
+        <a href="#la-librairie">La librairie</a>
+        <a href="#oeil">L'œil du libraire</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+33140719157" class="header-cta mobile-cta" style="margin-top:1rem;"><span>Appeler</span></a>
+    </nav>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero" aria-labelledby="hero-heading">
+            <div class="hero-image-wrapper">
+                <img src="assets/maps-1.jpg" alt="Librairie Antoine — intérieur feutré, bibliothèque de livres anciens" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge" aria-label="Note Google : 4,6 sur 5 étoiles, 5 avis">
+                    <span class="stars">★★★★<span style="opacity:0.45;">★</span></span>
+                    <span class="rating-text">4.6/5 — 5 avis</span>
+                </div>
+                <h1 class="hero-accroche" id="hero-heading">De la matière,<br>du temps, du texte.</h1>
+                <p class="hero-soustitre">Librairie de livres anciens et rares. Sur rendez-vous au 39 bis rue Molitor, Paris 16<sup>e</sup>.</p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-dore"><span>Prendre rendez-vous</span></a>
+                    <a href="tel:+33140719157" class="btn-dore btn-plein"><span>01 40 71 91 57</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : L'ouvrage rare -->
+        <section class="macro-section" id="ouvrage-rare" aria-labelledby="s1-heading">
+            <div class="macro-image reveal" aria-hidden="true">
+                <span class="macro-label">Détail — reliure</span>
+                <img src="assets/maps-1.jpg" alt="Détail macro d'une reliure ancienne" loading="lazy">
+            </div>
+            <div class="macro-text reveal">
+                <div class="section-number" aria-hidden="true">I</div>
+                <h2 id="s1-heading">L'ouvrage rare, d'un siècle à l'autre</h2>
+                <p>Nous achetons et vendons des éditions anciennes, des reliures signées, des livres épuisés et des manuscrits. Chaque volume est sélectionné pour sa rareté, son état, son histoire — jamais pour sa seule valeur marchande.</p>
+                <p>La Librairie Antoine défend une bibliophilie exigeante, où le geste de l'artisan relieur compte autant que le texte qu'il habille. Ici, on prend le temps de feuilleter, de comparer les tirages, de raconter la provenance d'un exemplaire.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : Votre bibliothèque nous intéresse -->
+        <section class="macro-section reverse" id="bibliotheque" aria-labelledby="s2-heading">
+            <div class="macro-image reveal" aria-hidden="true">
+                <span class="macro-label">Détail — tranche dorée</span>
+                <img src="assets/maps-1.jpg" alt="Détail macro d'une tranche dorée sur livre ancien" loading="lazy" style="object-position: center 60%;">
+            </div>
+            <div class="macro-text reveal">
+                <div class="section-number" aria-hidden="true">II</div>
+                <h2 id="s2-heading">Votre bibliothèque nous intéresse</h2>
+                <p>Achat de livres à l'unité ou de fonds entiers. Expertise sans engagement, estimation sur photographie ou sur place — dans une discrétion absolue et avec règlement immédiat.</p>
+                <p>Que vous souhaitiez vous séparer d'un seul ouvrage ou repenser une collection, nous nous déplaçons et vous recevons. Chaque livre est examiné avec le soin qu'il mérite, sans urgence ni pression.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : La librairie -->
+        <section class="macro-section" id="la-librairie" aria-labelledby="s3-heading">
+            <div class="macro-image reveal" aria-hidden="true">
+                <span class="macro-label">Détail — fer à dorer</span>
+                <img src="assets/maps-1.jpg" alt="Détail macro d'un fer à dorer sur cuir" loading="lazy" style="object-position: center 80%;">
+            </div>
+            <div class="macro-text reveal">
+                <div class="section-number" aria-hidden="true">III</div>
+                <h2 id="s3-heading">La librairie</h2>
+                <p>Un cabinet de livres au sud du 16<sup>e</sup>, à deux pas de Roland-Garros et de la station Michel-Ange Molitor. Ici, pas de passage : des murs de volumes, une table, et tout le temps de parler de ce que vous cherchez vraiment.</p>
+                <p>On y vient pour un incunable précis ou simplement pour découvrir. On en repart rarement sans un volume sous le bras, et toujours avec l'envie de revenir.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : L'œil du libraire -->
+        <section class="oeil-section" id="oeil" aria-labelledby="s4-heading">
+            <div class="section-inner">
+                <div class="oeil-image-frame reveal" aria-hidden="true">
+                    <img src="assets/maps-1.jpg" alt="Détail macro — édition originale dédicacée sous loupe" loading="lazy" style="object-position: center 15%;">
+                </div>
+                <div class="oeil-text reveal">
+                    <span class="feuilleton-label">Feuilleton du libraire</span>
+                    <h2 id="s4-heading">L'œil du libraire</h2>
+                    <p>Un feuilleton irrégulier où Alexis-Raphaël Antoine présente une pièce remarquable : édition originale dédicacée, reliure armoriée, impression clandestine — tout ce qui fait battre le cœur d'un bibliophile.</p>
+                    <p>Chaque entrée est une courte leçon de regard : papier, typographie, provenance, état. Un exercice d'attention qui s'adresse autant au collectionneur aguerri qu'au néophyte sincère.</p>
+                    <p class="signature">— Dernier billet : « Un Voltaire aux armes de Madame du Barry »</p>
+                    <div class="divider-dore"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : Contact -->
+        <section class="contact-section" id="contact" aria-labelledby="s5-heading">
+            <div class="section-inner">
+                <div class="contact-info reveal">
+                    <h2 id="s5-heading">Nous trouver,<br>nous joindre</h2>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="detail-icon" aria-hidden="true">📍</span>
+                            <span>39 bis Rue Molitor, 75016 Paris</span>
+                        </li>
+                        <li>
+                            <span class="detail-icon" aria-hidden="true">📞</span>
+                            <a href="tel:+33140719157">01 40 71 91 57</a>
+                        </li>
+                        <li>
+                            <span class="detail-icon" aria-hidden="true">✉️</span>
+                            <a href="mailto:contact@librairie-antoine.fr">contact@librairie-antoine.fr</a>
+                        </li>
+                    </ul>
+                    <div class="horaires-blk">
+                        <strong>Horaires</strong><br>
+                        Présence régulière l'après-midi en semaine, et tous les autres jours sur rendez-vous.<br>
+                        <em>Horaires à confirmer par téléphone.</em>
+                    </div>
+                    <a href="mailto:contact@librairie-antoine.fr?subject=Rendez-vous%20Librairie%20Antoine" class="btn-dore btn-plein" style="color:var(--suie);"><span>Prendre rendez-vous en ligne</span></a>
+                </div>
+                <div class="map-wrapper reveal">
+                    <iframe src="https://maps.google.com/maps?q=Librairie+Antoine+39+bis+Rue+Molitor%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation — Librairie Antoine, 39 bis Rue Molitor, Paris"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-nap">
+            <strong>Librairie Antoine</strong> — 39 bis Rue Molitor, 75016 Paris — <a href="tel:+33140719157">01 40 71 91 57</a> — <a href="mailto:contact@librairie-antoine.fr">contact@librairie-antoine.fr</a>
+        </div>
+        <div class="footer-credit">Site créé par <a href="https://agence.mooo.com/librairie-antoine" target="_blank" rel="noopener">Agence Mooo</a></div>
+    </footer>
+
+    <script>
+        (function() {
+            // Curseur personnalisé
+            const dot = document.querySelector('.cursor-dot');
+            if (dot && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia(
+                    '(prefers-reduced-motion: reduce)').matches) {
+                let mouseX = -100,
+                    mouseY = -100;
+                let dotX = -100,
+                    dotY = -100;
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+                const updateDot = () => {
+                    dotX += (mouseX - dotX) * 0.18;
+                    dotY += (mouseY - dotY) * 0.18;
+                    dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+                    requestAnimationFrame(updateDot);
+                };
+                updateDot();
+
+                // Ajouter classe hover-link sur les éléments interactifs
+                const hoverTargets = document.querySelectorAll(
+                    'a, button, .btn-dore, .header-cta, .oeil-image-frame, .macro-image');
+                hoverTargets.forEach(el => {
+                    el.addEventListener('mouseenter', () => dot.classList.add('hover-link'));
+                    el.addEventListener('mouseleave', () => dot.classList.remove('hover-link'));
+                });
+            }
+
+            // Header scroll
+            const header = document.getElementById('site-header');
+            const scrollHandler = () => {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            scrollHandler();
+
+            // Burger menu
+            const burgerBtn = document.getElementById('burger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const mobileLinks = mobileNav.querySelectorAll('a');
+            let menuOpen = false;
+
+            burgerBtn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                mobileNav.classList.toggle('active', menuOpen);
+                burgerBtn.setAttribute('aria-expanded', menuOpen);
+                if (menuOpen) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOpen = false;
+                    mobileNav.classList.remove('active');
+                    burgerBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // IntersectionObserver pour reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(el => revealObserver.observe(el));
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                revealElements.forEach(el => el.classList.add('revealed'));
+            }
+
+            // Fermer menu mobile si clic en dehors
+            document.addEventListener('click', (e) => {
+                if (menuOpen && !mobileNav.contains(e.target) && !burgerBtn.contains(e.target)) {
+                    menuOpen = false;
+                    mobileNav.classList.remove('active');
+                    burgerBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
