@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Ceramoka — Atelier de céramique & salon de thé à Paris 16. Cours, stages, tournage, peinture sur céramique. Une parenthèse sensorielle au 2 rue du Sergent Maginot.">
+    <title>Ceramoka | Atelier de céramique & salon de thé — Paris 16</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ceramoka — Atelier de céramique & salon de thé à Paris 16">
+    <meta property="og:description" content="Ici, on prend le temps. Atelier de céramique et salon de thé au cœur du 16e. Débutant ou confirmé, vous avez rendez-vous avec la terre.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon inline (data URI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' x='0.05em'>🫖</text></svg>">
+
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blanc-biscuit: #F9F5F0;
+            --noir-fumee: #2F2422;
+            --chamotte: #E8E0D5;
+            --bleu-celadon: #8699A6;
+            --rouge-oxyde: #C5432C;
+            --display: 'Bricolage Grotesque', system-ui, sans-serif;
+            --body: 'Hanken Grotesk', system-ui, sans-serif;
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--blanc-biscuit);
+            color: var(--noir-fumee);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Texture grain globale */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            background-image: var(--grain);
+            opacity: 0.7;
+            mix-blend-mode: multiply;
+        }
+
+        /* ========== HEADER COLLANT ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(249, 245, 240, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--chamotte);
+            padding: 0.75rem clamp(1rem, 5vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            letter-spacing: -0.03em;
+            color: var(--noir-fumee);
+            text-decoration: none;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--rouge-oxyde);
+            transform: scaleX(0.6);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: clamp(0.5rem, 2vw, 1.5rem);
+            align-items: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--noir-fumee);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background-color: var(--rouge-oxyde);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            font-family: var(--display);
+            font-weight: 600;
+            background-color: var(--rouge-oxyde);
+            color: var(--blanc-biscuit);
+            padding: 0.5rem 1.4rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+            box-shadow: 0 4px 12px rgba(197, 67, 44, 0.2);
+        }
+
+        .cta-header:hover {
+            background-color: var(--blanc-biscuit);
+            color: var(--rouge-oxyde);
+            border-color: var(--rouge-oxyde);
+            box-shadow: 0 6px 16px rgba(197, 67, 44, 0.25);
+        }
+
+        /* ========== SECTIONS GÉNÉRALES ========== */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 6vw, 3rem);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: 85vh;
+            padding-top: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding-right: 1rem;
+        }
+
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--noir-fumee);
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .hero-title .stamp {
+            display: inline-block;
+            position: relative;
+            color: var(--rouge-oxyde);
+            /* Effet timbre humide */
+            text-shadow: 0 1px 0 rgba(47, 36, 34, 0.1), 1px 0 0 rgba(197, 67, 44, 0.1);
+            letter-spacing: -0.02em;
+            transform: rotate(-0.5deg);
+        }
+
+        .hero-title .stamp::before {
+            content: "";
+            position: absolute;
+            inset: -8px -10px;
+            background: transparent;
+            border: 2px dashed rgba(197, 67, 44, 0.35);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            line-height: 1.5;
+            color: var(--noir-fumee);
+            opacity: 0.85;
+            max-width: 85%;
+            margin-bottom: 2rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 14px 40px rgba(47, 36, 34, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.98) contrast(1.05);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(249, 245, 240, 0.15) 0%, rgba(134, 153, 166, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--chamotte);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--noir-fumee);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+            border: 1px solid rgba(134, 153, 166, 0.2);
+        }
+
+        .hero-badge .stars {
+            color: var(--rouge-oxyde);
+            letter-spacing: 2px;
+        }
+
+        /* ========== SECTION ATELIER (Tourner, peindre, modeler) ========== */
+        .atelier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: var(--display);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--bleu-celadon);
+            border-bottom: 1px solid var(--bleu-celadon);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            color: var(--noir-fumee);
+            position: relative;
+        }
+
+        .section-text {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--noir-fumee);
+            opacity: 0.9;
+        }
+
+        .filet-discret {
+            width: 60px;
+            height: 3px;
+            background-color: var(--rouge-oxyde);
+            margin: 2rem 0 1.5rem;
+            border-radius: 1px;
+        }
+
+        .atelier-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            filter: grayscale(0.1) contrast(1.1);
+            box-shadow: 8px 8px 0px var(--chamotte);
+            transition: all 0.4s ease;
+        }
+
+        .atelier-image:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--chamotte);
+        }
+
+        /* ========== GALERIE IMMERSIVE ========== */
+        .galerie-immersive {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .galerie-large {
+            grid-row: span 2;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            filter: contrast(1.05) brightness(0.96);
+            transition: transform 0.5s ease;
+        }
+
+        .galerie-small {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            filter: contrast(1.05) brightness(0.96);
+            transition: transform 0.5s ease;
+        }
+
+        .galerie-large:hover,
+        .galerie-small:hover {
+            transform: scale(1.02);
+        }
+
+        .legende-galerie {
+            font-family: var(--display);
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--bleu-celadon);
+            letter-spacing: 0.04em;
+            margin-top: 0.5rem;
+            text-align: right;
+            border-top: 1px solid var(--chamotte);
+            padding-top: 0.75rem;
+        }
+
+        /* ========== FORMULES ========== */
+        .formules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .formule-card {
+            background: var(--blanc-biscuit);
+            border: 1px solid var(--chamotte);
+            padding: 2rem 1.5rem;
+            border-radius: 0.4rem;
+            position: relative;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(47, 36, 34, 0.04);
+        }
+
+        .formule-card:hover {
+            border-color: var(--rouge-oxyde);
+            box-shadow: 0 10px 28px rgba(197, 67, 44, 0.12);
+            transform: translateY(-6px);
+        }
+
+        .formule-titre {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--noir-fumee);
+            position: relative;
+            display: inline-block;
+        }
+
+        .formule-titre::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40%;
+            height: 2px;
+            background: var(--rouge-oxyde);
+            opacity: 0.5;
+        }
+
+        .formule-desc {
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            flex-grow: 1;
+            opacity: 0.85;
+        }
+
+        .formule-prix {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--rouge-oxyde);
+            letter-spacing: -0.02em;
+            margin-top: auto;
+            align-self: flex-start;
+            background: var(--chamotte);
+            padding: 0.3rem 0.9rem;
+            border-radius: 1.5rem;
+        }
+
+        /* ========== TÉMOIGNAGES ========== */
+        .temoignage-bloc {
+            background: var(--chamotte);
+            padding: clamp(2rem, 6vw, 4rem);
+            border-radius: 0.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-google {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--noir-fumee);
+            flex-wrap: wrap;
+        }
+
+        .badge-google .note {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--rouge-oxyde);
+            line-height: 1;
+        }
+
+        .citation {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--rouge-oxyde);
+        }
+
+        /* ========== HORAIRES ========== */
+        .horaires-liste {
+            list-style: none;
+            display: grid;
+            gap: 0.65rem;
+            font-family: var(--body);
+            font-size: 1rem;
+        }
+
+        .horaires-liste li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted var(--chamotte);
+            padding-bottom: 0.4rem;
+        }
+
+        .tel-proeminent {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--rouge-oxyde);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        .tel-proeminent:hover {
+            color: var(--noir-fumee);
+        }
+
+        /* ========== ÉVÉNEMENTS ========== */
+        .events-bloc {
+            background: var(--blanc-biscuit);
+            border: 1px solid var(--chamotte);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(47, 36, 34, 0.05);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--noir-fumee);
+            color: var(--blanc-biscuit);
+            padding: 3rem clamp(1rem, 6vw, 3rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-credits {
+            text-align: right;
+            opacity: 0.7;
+        }
+
+        /* ========== ANIMATIONS REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.35s; }
+
+        /* prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: 1.5rem;
+            }
+            .hero-image {
+                aspect-ratio: 4 / 3;
+                order: -1;
+            }
+            .atelier-grid {
+                grid-template-columns: 1fr;
+            }
+            .galerie-immersive {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galerie-large {
+                grid-row: auto;
+                aspect-ratio: 1/1;
+            }
+            .temoignage-bloc {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .site-header {
+                justify-content: center;
+                text-align: center;
+            }
+            .site-footer {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+            .footer-credits {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .galerie-immersive {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Map iframe container */
+        .map-container {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(47, 36, 34, 0.1);
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="#" class="logo" aria-label="Ceramoka — Accueil">Ceramoka</a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-links">
+                <li><a href="#atelier">L'atelier</a></li>
+                <li><a href="#formules">Formules</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33983549181" class="cta-header">Appeler l'atelier</a>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="section hero container">
+            <div class="hero-content reveal">
+                <div class="hero-badge reveal reveal-delay-1">
+                    <span class="stars">★★★★★</span> 4,6 • 258 avis
+                </div>
+                <h1 class="hero-title reveal reveal-delay-2">
+                    Ici, on <span class="stamp">prend</span> le temps.
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-3">
+                    Atelier de céramique & salon de thé — Paris 16.<br>
+                    Débutant ou confirmé, vous avez rendez-vous avec la terre.
+                </p>
+            </div>
+            <div class="hero-image reveal reveal-delay-2">
+                <img src="assets/maps-1.jpg" alt="Intérieur de l'atelier Ceramoka — mains façonnant l'argile, lumière douce" width="800" height="800" loading="eager">
+            </div>
+        </section>
+
+        <!-- TOURNER, PEINDRE, MODELER -->
+        <section class="section" id="atelier">
+            <div class="container atelier-grid">
+                <div class="reveal">
+                    <span class="section-tag">L'atelier</span>
+                    <h2 class="section-title">Tourner, peindre,<br>modeler.</h2>
+                    <div class="filet-discret"></div>
+                    <p class="section-text">
+                        Un atelier pas comme les autres. Adultes et enfants s'y croisent pour des workshops d'une journée, des stages ou des cours au trimestre. On vous donne la terre, l'outil et la technique. Vous créez.
+                    </p>
+                    <p class="section-text">
+                        Ici, chaque geste compte. Nos tours de potier côtoient les établis d'émaillage dans une lumière douce, latérale — celle qui révèle la texture de l'argile encore humide. Pas de décor générique : des établis en bois brut, des outils patinés, et l'odeur réconfortante du thé infusé à côté.
+                    </p>
+                </div>
+                <div class="reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="Gros plan sur les mains d'un artisan au travail chez Ceramoka" class="atelier-image" loading="lazy" width="600" height="750">
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE : La beauté du geste brut -->
+        <section class="section" style="background-color: var(--chamotte);">
+            <div class="container">
+                <span class="section-tag reveal">Galerie immersive</span>
+                <h2 class="section-title reveal">La beauté du geste brut</h2>
+                <div class="galerie-immersive">
+                    <img src="assets/maps-1.jpg" alt="Tour de potier en action, argile centrée" class="galerie-large reveal" loading="lazy" width="600" height="800">
+                    <img src="assets/maps-1.jpg" alt="Détail d'un bol en cours d'émaillage" class="galerie-small reveal reveal-delay-1" loading="lazy" width="400" height="400">
+                    <img src="assets/maps-1.jpg" alt="Éponge glissant sur la terre" class="galerie-small reveal reveal-delay-2" loading="lazy" width="400" height="400">
+                </div>
+                <p class="legende-galerie reveal">En ce moment sur les tours.</p>
+            </div>
+        </section>
+
+        <!-- FORMULES -->
+        <section class="section" id="formules">
+            <div class="container">
+                <span class="section-tag reveal">Les formules</span>
+                <h2 class="section-title reveal">Choisissez votre<br>moment terre & thé.</h2>
+                <div class="formules-grid">
+                    <div class="formule-card reveal">
+                        <h3 class="formule-titre">Peindre & Goûter</h3>
+                        <p class="formule-desc">Décorer une tasse, savourer un thé. Une parenthèse de deux heures où le pinceau remplace le clavier.</p>
+                        <span class="formule-prix">47 €</span>
+                    </div>
+                    <div class="formule-card reveal reveal-delay-1">
+                        <h3 class="formule-titre">Peindre & Bruncher</h3>
+                        <p class="formule-desc">Brunch maison et céramique peinte. Le dimanche, on s'attable pour créer et déguster.</p>
+                        <span class="formule-prix">75 €</span>
+                    </div>
+                    <div class="formule-card reveal reveal-delay-2">
+                        <h3 class="formule-titre">Initiation au tournage</h3>
+                        <p class="formule-desc">Asseyez-vous au tour, centrez la terre. Le geste ancestral à portée de main, guidé par un artisan.</p>
+                        <span class="formule-prix">79 €</span>
+                    </div>
+                    <div class="formule-card reveal reveal-delay-3">
+                        <h3 class="formule-titre">Peindre Deux Pièces</h3>
+                        <p class="formule-desc">Assiette et tasse pour doubler le plaisir. Repartez avec deux pièces uniques, émaillées par vos soins.</p>
+                        <span class="formule-prix">64 €</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="section" id="avis">
+            <div class="container temoignage-bloc reveal">
+                <div class="badge-google">
+                    <span class="note">4,6</span>
+                    <span>/5</span>
+                    <div>
+                        <span class="stars">★★★★★</span><br>
+                        <span style="font-size:0.9rem;">258 avis Google</span>
+                    </div>
+                </div>
+                <blockquote class="citation">
+                    « Une note qui parle pour nous. Lisez plutôt : ici, on touche la matière, on échange, on ralentit. Les avis le disent mieux que nous. »
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- HORAIRES & INFOS -->
+        <section class="section" id="infos">
+            <div class="container">
+                <span class="section-tag reveal">Infos pratiques</span>
+                <h2 class="section-title reveal">Ni matin, ni soir.<br>Entre les deux.</h2>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin-top:2rem;" class="reveal">
+                    <div>
+                        <p class="section-text" style="margin-bottom:1rem;">
+                            <strong>Adresse</strong><br>
+                            2 Rue du Sergent Maginot, 75016 Paris
+                        </p>
+                        <p class="section-text" style="margin-bottom:1rem;">
+                            <strong>Téléphone</strong><br>
+                            <a href="tel:+33983549181" class="tel-proeminent">09 83 54 91 81</a>
+                        </p>
+                        <p class="section-text">
+                            <strong>Email</strong><br>
+                            <a href="mailto:contact@ceramoka.fr" style="color:var(--noir-fumee);">contact@ceramoka.fr</a>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="section-text" style="margin-bottom:0.5rem;"><strong>Horaires</strong></p>
+                        <ul class="horaires-liste">
+                            <li><span>Mardi</span> <span>Ouvert</span></li>
+                            <li><span>Mercredi</span> <span>Fermé</span></li>
+                            <li><span>Jeudi</span> <span>Ouvert</span></li>
+                            <li><span>Vendredi</span> <span>Ouvert</span></li>
+                            <li><span>Samedi</span> <span>Ouvert</span></li>
+                            <li><span>Dimanche</span> <span>Fermé</span></li>
+                        </ul>
+                        <p style="font-size:0.8rem; opacity:0.7; margin-top:0.5rem;">Atelier ouvert le mardi, jeudi, vendredi, samedi. Fermé mercredi & dimanche.</p>
+                    </div>
+                </div>
+                <div class="map-container reveal reveal-delay-1">
+                    <iframe src="https://maps.google.com/maps?q=Ceramoka+2+Rue+du+Sergent+Maginot%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de Ceramoka"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉVÉNEMENTS & PRIVATISATION -->
+        <section class="section">
+            <div class="container events-bloc reveal">
+                <span class="section-tag">L'atelier vous reçoit</span>
+                <h2 class="section-title" style="font-size:2rem;">Bloquez l'atelier pour une expérience terre & thé.</h2>
+                <p class="section-text" style="max-width:600px; margin:1.5rem auto;">
+                    Anniversaires, team buildings, événements sur mesure — sur devis. Nous créons un moment rien que pour vous, dans l'écrin brut de l'atelier.
+                </p>
+                <a href="mailto:contact@ceramoka.fr" class="cta-header" style="display:inline-block; margin-top:0.5rem;">Nous écrire pour un devis</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-info">
+            <p><strong>Ceramoka</strong></p>
+            <p>2 Rue du Sergent Maginot, 75016 Paris</p>
+            <p><a href="tel:+33983549181" style="color:var(--blanc-biscuit);">09 83 54 91 81</a></p>
+            <p><a href="mailto:contact@ceramoka.fr" style="color:var(--blanc-biscuit);">contact@ceramoka.fr</a></p>
+            <p>4,6 ★ — 258 avis Google</p>
+        </div>
+        <div class="footer-credits">
+            <p>Site créé par Agence Mooo</p>
+            <p>© Ceramoka — Suspendre le geste</p>
+        </div>
+    </footer>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Ceramoka",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Rue du Sergent Maginot",
+                "addressLocality": "Paris",
+                "addressRegion": "Île-de-France",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33983549181",
+            "email": "contact@ceramoka.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "258"
+            },
+            "url": "https://agence.mooo.com/ceramoka"
+        }
+    </script>
+
+    <!-- IntersectionObserver pour reveals au scroll -->
+    <script>
+        (function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
+
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Petit délai au chargement pour le premier reveal du hero
+            window.addEventListener('load', () => {
+                const heroReveals = document.querySelectorAll('.hero .reveal');
+                heroReveals.forEach((el, i) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, i * 120);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
