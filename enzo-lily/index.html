@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo & Lily — Glaces artisanales Paris 16e • La glace est libre</title>
+    <meta name="description" content="Enzo & Lily, glacier artisanal au 2 rue Auguste Maquet, Paris 16e. Glaces et sorbets sans stabilisant, hérités de Berthillon. Note 4,6★. Commandez votre bûche de Noël.">
+    <meta property="og:title" content="Enzo & Lily — La glace est libre">
+    <meta property="og:description" content="Glaces artisanales sans stabilisant, rue Auguste Maquet, Paris 16e. Héritage Berthillon, création libre. 4,6★ — Commandez en ligne.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍊</text></svg>">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Enzo & Lily",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Rue Auguste Maquet",
+                "addressLocality": "Paris",
+                "addressCountry": "FR",
+                "postalCode": "75016"
+            },
+            "email": "lionelc@enzoetlily.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "49"
+            },
+            "image": "assets/maps-1.jpg",
+            "description": "Glacier artisanal – glaces et sorbets sans stabilisant, héritage Berthillon, créations libres."
+        }
+    </script>
+    <style>
+        :root {
+            --bleu-nuit: #1A1D23;
+            --blanc-glace: #FCFAF5;
+            --orange-enzo: #FF4500;
+            --dore-lanternes: #FBBB2F;
+            --anthracite-metal: #2C313A;
+            --creme-coquillage: #EDEAE3;
+            --radius: 0.25rem;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 1vw + 14px, 19px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--anthracite-metal);
+            background-color: var(--bleu-nuit);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ===== FOCUS ===== */
+        :focus-visible {
+            outline: 3px solid var(--orange-enzo);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(26, 29, 35, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(251, 187, 47, 0.18);
+            padding: 0.7rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            transition: background-color 0.4s;
+        }
+
+        .site-header.scrolled {
+            background-color: rgba(26, 29, 35, 0.96);
+            border-bottom-color: rgba(251, 187, 47, 0.3);
+        }
+
+        .brand-name {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+            font-weight: 500;
+            color: var(--blanc-glace);
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .brand-name span {
+            color: var(--orange-enzo);
+        }
+
+        .brand-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--dore-lanternes);
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(251, 187, 47, 0.6);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: clamp(0.8rem, 1.8vw, 1.6rem);
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: var(--creme-coquillage);
+            text-decoration: none;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dore-lanternes);
+            transition: width var(--transition);
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            color: var(--dore-lanternes);
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta-header {
+            display: inline-block;
+            background: var(--orange-enzo);
+            color: #fff;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 0.95vw, 0.85rem);
+            padding: 0.5rem 1.2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: background var(--transition), box-shadow var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-cta-header:hover {
+            background: #e03d00;
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.45);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bleu-nuit);
+            padding: 5rem clamp(1rem, 4vw, 3rem) 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.45) saturate(0.7) contrast(1.1);
+            opacity: 0.75;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(26, 29, 35, 0.55) 0%,
+                    rgba(26, 29, 35, 0.35) 30%,
+                    rgba(26, 29, 35, 0.7) 70%,
+                    rgba(26, 29, 35, 0.92) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(26, 29, 35, 0.06) 3px,
+                    rgba(26, 29, 35, 0.06) 4px);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 780px;
+            animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--dore-lanternes);
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(251, 187, 47, 0.4);
+            padding: 0.35rem 1rem;
+            border-radius: 2px;
+        }
+
+        .hero-title {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 400;
+            color: var(--blanc-glace);
+            line-height: 1.05;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-title .highlight-word {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            position: relative;
+            color: var(--blanc-glace);
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-weight: 400;
+        }
+
+        .hero-title .highlight-word::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0.12em;
+            height: 3px;
+            background: var(--dore-lanternes);
+            border-radius: 1px;
+            box-shadow: 0 1px 8px rgba(251, 187, 47, 0.4);
+        }
+
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 1.6vw, 1.3rem);
+            font-weight: 400;
+            color: var(--creme-coquillage);
+            line-height: 1.6;
+            max-width: 620px;
+            margin: 0 auto 2.2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--orange-enzo);
+            color: #fff;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: #e03d00;
+            box-shadow: 0 6px 28px rgba(255, 69, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--blanc-glace);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            padding: 0.8rem 1.9rem;
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 2px solid rgba(252, 250, 245, 0.45);
+            transition: border-color var(--transition), color var(--transition), box-shadow var(--transition);
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--dore-lanternes);
+            color: var(--dore-lanternes);
+            box-shadow: 0 0 22px rgba(251, 187, 47, 0.25);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: clamp(3rem, 7vw, 7rem) clamp(1rem, 5vw, 4rem);
+        }
+
+        .section-light {
+            background-color: var(--blanc-glace);
+            color: var(--anthracite-metal);
+        }
+
+        .section-dark {
+            background-color: var(--bleu-nuit);
+            color: var(--blanc-glace);
+        }
+
+        .section-mid {
+            background-color: var(--creme-coquillage);
+            color: var(--anthracite-metal);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(0.68rem, 0.8vw, 0.75rem);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange-enzo);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-title .hl {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+
+        .section-title .hl::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0.08em;
+            height: 2px;
+            background: var(--dore-lanternes);
+            border-radius: 1px;
+            box-shadow: 0 1px 6px rgba(251, 187, 47, 0.35);
+        }
+
+        .section-dark .section-title {
+            color: var(--blanc-glace);
+        }
+        .section-light .section-title {
+            color: var(--bleu-nuit);
+        }
+        .section-mid .section-title {
+            color: var(--bleu-nuit);
+        }
+
+        .section-desc {
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            opacity: 0.85;
+        }
+
+        /* ===== REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* ===== MANIFESTE ===== */
+        .manifeste-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manifeste-quote {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            line-height: 1.3;
+            color: var(--bleu-nuit);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .manifeste-interdits {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .manifeste-interdits li {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            color: var(--anthracite-metal);
+            background: var(--creme-coquillage);
+            padding: 0.55rem 1.3rem;
+            border-radius: 3px;
+            letter-spacing: 0.04em;
+            border-left: 3px solid var(--orange-enzo);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .manifeste-interdits li:hover {
+            transform: translateX(4px);
+            box-shadow: 4px 4px 0px rgba(255, 69, 0, 0.3);
+        }
+
+        /* ===== GRILLE PARFUMS ===== */
+        .parfums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .parfum-tile {
+            position: relative;
+            background: var(--anthracite-metal);
+            border-radius: 2px;
+            padding: 2rem 1.6rem 1.6rem;
+            cursor: pointer;
+            overflow: hidden;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform var(--transition), box-shadow var(--transition);
+            isolation: isolate;
+        }
+
+        .parfum-tile::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: repeating-linear-gradient(45deg,
+                    var(--orange-enzo) 0px,
+                    var(--orange-enzo) 5px,
+                    var(--bleu-nuit) 5px,
+                    var(--bleu-nuit) 10px);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        .parfum-tile:hover::before {
+            opacity: 0.22;
+        }
+
+        .parfum-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+        }
+
+        .parfum-tile>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .parfum-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .parfum-category {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--dore-lanternes);
+            margin-bottom: 0.3rem;
+        }
+
+        .parfum-name {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+            font-weight: 400;
+            color: var(--blanc-glace);
+            margin-bottom: 0.35rem;
+            letter-spacing: 0.02em;
+        }
+
+        .parfum-ingredients {
+            font-size: 0.85rem;
+            color: var(--creme-coquillage);
+            opacity: 0.75;
+            letter-spacing: 0.03em;
+        }
+
+        .parfum-tile.accent-tile {
+            background: var(--orange-enzo);
+        }
+        .parfum-tile.accent-tile .parfum-category {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .parfum-tile.accent-tile .parfum-name {
+            color: #fff;
+        }
+        .parfum-tile.accent-tile .parfum-ingredients {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .parfum-tile.accent-tile .parfum-icon {
+            filter: brightness(1.2);
+        }
+
+        /* ===== COMMANDES ===== */
+        .commandes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            max-width: 1000px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .commande-card {
+            background: var(--anthracite-metal);
+            border-radius: 2px;
+            padding: 2rem 1.6rem;
+            border-top: 4px solid var(--dore-lanternes);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .commande-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+
+        .commande-card h3 {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+            font-weight: 400;
+            color: var(--blanc-glace);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.03em;
+        }
+
+        .commande-prix {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--orange-enzo);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+
+        .commande-desc {
+            font-size: 0.9rem;
+            color: var(--creme-coquillage);
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .btn-commander {
+            display: inline-block;
+            background: transparent;
+            color: var(--dore-lanternes);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.55rem 1.4rem;
+            border: 2px solid var(--dore-lanternes);
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all var(--transition);
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-commander:hover {
+            background: var(--dore-lanternes);
+            color: var(--bleu-nuit);
+            box-shadow: 0 6px 20px rgba(251, 187, 47, 0.35);
+        }
+
+        /* ===== ATELIER ===== */
+        .atelier-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .atelier-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .atelier-img-wrap {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border: 3px solid rgba(251, 187, 47, 0.25);
+        }
+
+        .atelier-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.8) contrast(1.15) saturate(1.1);
+            transition: filter var(--transition);
+        }
+
+        .atelier-img-wrap:hover img {
+            filter: brightness(0.95) contrast(1.05) saturate(1.2);
+        }
+
+        .atelier-infos h3 {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
+            font-weight: 400;
+            color: var(--blanc-glace);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        .atelier-address {
+            font-size: 1rem;
+            color: var(--creme-coquillage);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .atelier-horaires {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+            color: var(--dore-lanternes);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .atelier-horaires-note {
+            font-size: 0.8rem;
+            color: var(--creme-coquillage);
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-itineraire {
+            display: inline-block;
+            background: var(--orange-enzo);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: background var(--transition), box-shadow var(--transition);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-itineraire:hover {
+            background: #e03d00;
+            box-shadow: 0 6px 22px rgba(255, 69, 0, 0.45);
+        }
+
+        .map-wrap {
+            margin-top: 2rem;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 2px solid rgba(251, 187, 47, 0.2);
+        }
+
+        /* ===== CONFIANCE ===== */
+        .confiance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--anthracite-metal);
+            color: var(--blanc-glace);
+            padding: 0.6rem 1.4rem;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(251, 187, 47, 0.35);
+        }
+
+        .stars {
+            color: var(--dore-lanternes);
+            font-size: 1.2rem;
+            letter-spacing: 0.15em;
+        }
+
+        .revendeurs-scroll {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .revendeurs-list {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .revendeurs-list li {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--creme-coquillage);
+            background: rgba(44, 49, 58, 0.7);
+            padding: 0.5rem 1.1rem;
+            border-radius: 3px;
+            letter-spacing: 0.04em;
+            border-left: 2px solid var(--dore-lanternes);
+            transition: background var(--transition);
+        }
+
+        .revendeurs-list li:hover {
+            background: rgba(44, 49, 58, 1);
+        }
+
+        .avis-citation {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+            font-style: italic;
+            color: var(--blanc-glace);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .avis-citation::before {
+            content: '"';
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            color: var(--dore-lanternes);
+            opacity: 0.35;
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            line-height: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--bleu-nuit);
+            color: var(--creme-coquillage);
+            padding: 3rem clamp(1rem, 4vw, 3rem) 2rem;
+            border-top: 2px solid rgba(251, 187, 47, 0.2);
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+
+        .footer-grid h4 {
+            font-family: 'DM Serif Display', 'Georgia', serif;
+            font-size: 1rem;
+            color: var(--blanc-glace);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            font-size: 0.85rem;
+            color: var(--creme-coquillage);
+            line-height: 1.6;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity var(--transition);
+        }
+
+        .footer-grid a:hover {
+            opacity: 1;
+            color: var(--dore-lanternes);
+        }
+
+        .footer-credit {
+            font-size: 0.75rem;
+            opacity: 0.55;
+            letter-spacing: 0.05em;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(237, 234, 227, 0.12);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .site-header {
+                padding: 0.5rem 1rem;
+                gap: 0.5rem;
+            }
+            .main-nav {
+                gap: 0.5rem;
+                font-size: 0.7rem;
+            }
+            .main-nav a {
+                font-size: 0.7rem;
+                letter-spacing: 0.02em;
+            }
+            .nav-cta-header {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .hero {
+                min-height: 80vh;
+                padding: 4rem 1rem 3rem;
+            }
+            .hero-title {
+                font-size: clamp(2.2rem, 9vw, 3.5rem);
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .hero-ctas {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-outline {
+                text-align: center;
+            }
+            .parfums-grid {
+                grid-template-columns: 1fr;
+            }
+            .commandes-grid {
+                grid-template-columns: 1fr;
+            }
+            .atelier-layout {
+                grid-template-columns: 1fr;
+            }
+            .atelier-img-wrap {
+                aspect-ratio: 3/2;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .parfums-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1200px;
+            }
+            .commandes-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <a href="#hero" class="brand-name" aria-label="Enzo & Lily — Accueil">
+            <span class="brand-dot"></span> Enzo <span>&</span> Lily
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="main-nav">
+                <li><a href="#parfums">Parfums</a></li>
+                <li><a href="#commandes">Commandes</a></li>
+                <li><a href="#atelier">Atelier</a></li>
+                <li><a href="#confiance">Avis</a></li>
+                <li><a href="#commandes" class="nav-cta-header">Commander</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Façade Enzo & Lily, rue Auguste Maquet, Paris 16e — auvent orange vif, grille métallique noire, lanternes dorées" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Glacier artisanal — Paris 16ᵉ</p>
+                <h1 class="hero-title">
+                    La glace est <span class="highlight-word">libre</span>.
+                </h1>
+                <p class="hero-subtitle">
+                    Chez Enzo & Lily, on ne met pas la glace en cage. Sabayon citron vert, pain brûlé, huître givrée ou grand classique dompté sans stabilisant. Notre seule règle&nbsp;: le goût vrai, hérité de Berthillon, libéré rue Auguste Maquet.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#parfums" class="btn-primary">Voir les parfums du moment ↓</a>
+                    <a href="#commandes" class="btn-outline">Commander une bûche Noël</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANIFESTE -->
+        <section class="section section-light" id="manifeste">
+            <div class="manifeste-content reveal">
+                <span class="section-tag">Notre engagement</span>
+                <h2 class="section-title">Le manifeste <span class="hl">du goût</span></h2>
+                <p class="manifeste-quote">«&nbsp;Zéro faux goût, zéro stabilisant, zéro air foisonné.&nbsp;»</p>
+                <ul class="manifeste-interdits">
+                    <li>✕ Aucun arôme artificiel</li>
+                    <li>✕ Aucun stabilisant</li>
+                    <li>✕ Aucun air foisonné</li>
+                    <li>✕ Aucun compromis</li>
+                </ul>
+                <a href="#parfums" class="btn-primary">Explorer la carte</a>
+            </div>
+        </section>
+
+        <!-- PARFUMS -->
+        <section class="section section-dark" id="parfums">
+            <div class="section-header reveal">
+                <span class="section-tag">La carte de saison</span>
+                <h2 class="section-title">Parfums <span class="hl">sans pareil</span></h2>
+                <p class="section-desc">Classiques intemporels, créations d'aventure, sorbets végétaux — chaque bac est une obsession.</p>
+            </div>
+            <div class="parfums-grid">
+                <div class="parfum-tile reveal reveal-delay-1">
+                    <span class="parfum-icon">🫘</span>
+                    <span class="parfum-category">Classiques</span>
+                    <span class="parfum-name">Vanille Bourbon</span>
+                    <span class="parfum-ingredients">Gousses de Madagascar, lait entier frais</span>
+                </div>
+                <div class="parfum-tile reveal reveal-delay-2">
+                    <span class="parfum-icon">🍫</span>
+                    <span class="parfum-category">Classiques</span>
+                    <span class="parfum-name">Chocolat Grand Cru</span>
+                    <span class="parfum-ingredients">Cacao Pur Caraïbe 72%, crème crue</span>
+                </div>
+                <div class="parfum-tile accent-tile reveal reveal-delay-3">
+                    <span class="parfum-icon">🍋</span>
+                    <span class="parfum-category">Aventure</span>
+                    <span class="parfum-name">Sabayon Citron Vert</span>
+                    <span class="parfum-ingredients">Zeste frais, jaune d'œuf, touche de gingembre</span>
+                </div>
+                <div class="parfum-tile reveal reveal-delay-2">
+                    <span class="parfum-icon">🍞</span>
+                    <span class="parfum-category">Aventure</span>
+                    <span class="parfum-name">Pain Brûlé</span>
+                    <span class="parfum-ingredients">Pain de campagne caramélisé, beurre noisette</span>
+                </div>
+                <div class="parfum-tile reveal reveal-delay-3">
+                    <span class="parfum-icon">🫒</span>
+                    <span class="parfum-category">Aventure</span>
+                    <span class="parfum-name">Huître Givrée</span>
+                    <span class="parfum-ingredients">Eau d'huître, citron confit, fleur de sel</span>
+                </div>
+                <div class="parfum-tile reveal reveal-delay-4">
+                    <span class="parfum-icon">🍓</span>
+                    <span class="parfum-category">Végétales</span>
+                    <span class="parfum-name">Fraise Mara des Bois</span>
+                    <span class="parfum-ingredients">Fraises pleine terre, basilic frais</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMANDES -->
+        <section class="section section-mid" id="commandes">
+            <div class="section-header reveal">
+                <span class="section-tag">Sur commande</span>
+                <h2 class="section-title">Créations <span class="hl">à emporter</span></h2>
+                <p class="section-desc">Des pièces uniques préparées au laboratoire. Commandez par email, retirez rue Auguste Maquet.</p>
+            </div>
+            <div class="commandes-grid">
+                <div class="commande-card reveal reveal-delay-1">
+                    <h3>Le Chat Glacé</h3>
+                    <p class="commande-prix">20 €</p>
+                    <p class="commande-desc">Sculpture glacée en forme de chat, parfum au choix. Pièce signature de la maison, idéale pour les grandes occasions.</p>
+                    <a href="mailto:lionelc@enzoetlily.com?subject=Commande%20%E2%80%93%20Chat%20Glac%C3%A9&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20un%20Chat%20Glac%C3%A9.%0A%0A%C2%B7%20Parfum%20souhait%C3%A9%20%3A%20%0A%C2%B7%20Date%20de%20retrait%20%3A%20%0A%C2%B7%20Nombre%20d%E2%80%99exemplaires%20%3A%20%0A%0AMerci%20%21" class="btn-commander">Commander par email</a>
+                </div>
+                <div class="commande-card reveal reveal-delay-2">
+                    <h3>Le Cornet Lily</h3>
+                    <p class="commande-prix">9,50 €</p>
+                    <p class="commande-desc">Cornet artisanal garni de deux boules au choix, nappage coulis framboise et éclats de pistache torréfiée.</p>
+                    <a href="mailto:lionelc@enzoetlily.com?subject=Commande%20%E2%80%93%20Cornet%20Lily&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20des%20Cornets%20Lily.%0A%0A%C2%B7%20Quantit%C3%A9%20%3A%20%0A%C2%B7%20Parfums%20souhait%C3%A9s%20%3A%20%0A%0AMerci%20%21" class="btn-commander">Commander par email</a>
+                </div>
+                <div class="commande-card reveal reveal-delay-3">
+                    <h3>Bûche de Noël</h3>
+                    <p class="commande-prix">Sur devis</p>
+                    <p class="commande-desc">Bûche glacée sur mesure, parfums et décor personnalisés. Minimum 6 parts. Réservation 7 jours à l'avance.</p>
+                    <a href="mailto:lionelc@enzoetlily.com?subject=Commande%20%E2%80%93%20B%C3%BBche%20de%20No%C3%ABl&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20une%20b%C3%BBche%20de%20No%C3%ABl.%0A%0A%C2%B7%20Nombre%20de%20parts%20%3A%20%0A%C2%B7%20Parfums%20souhait%C3%A9s%20%3A%20%0A%C2%B7%20Date%20de%20retrait%20%3A%20%0A%0AMerci%20%21" class="btn-commander">Commander par email</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATELIER -->
+        <section class="section section-dark" id="atelier">
+            <div class="section-header reveal">
+                <span class="section-tag">Venir nous voir</span>
+                <h2 class="section-title">L'<span class="hl">atelier</span></h2>
+                <p class="section-desc">Dans notre boutique de poche, rue Auguste Maquet. Une façade qui ne ressemble à aucune autre.</p>
+            </div>
+            <div class="atelier-layout">
+                <div class="atelier-img-wrap reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="Façade Enzo & Lily — auvent orange, lanterne dorée, grille noire" loading="lazy" decoding="async">
+                </div>
+                <div class="atelier-infos reveal reveal-delay-2">
+                    <h3>2 Rue Auguste Maquet, Paris 16ᵉ</h3>
+                    <p class="atelier-address">
+                        À deux pas du boulevard Suchet, entre le Ranelagh et la Porte d'Auteuil. Une adresse discrète derrière une grille noire — cherchez l'auvent orange.
+                    </p>
+                    <p class="atelier-horaires">Ouvert dès 6h</p>
+                    <p class="atelier-horaires-note">Horaires indicatifs — nous vous confirmons par téléphone ou sur place.</p>
+                    <a href="https://maps.google.com/?q=2+Rue+Auguste+Maquet+75016+Paris" target="_blank" rel="noopener noreferrer" class="btn-itineraire">Itinéraire Google Maps</a>
+                    <div class="map-wrap">
+                        <iframe src="https://maps.google.com/maps?q=Enzo+%26+Lily+2+Rue+Auguste+Maquet%2C+Paris&output=embed" width="100%" height="320" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Enzo & Lily, 2 Rue Auguste Maquet, Paris"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANCE -->
+        <section class="section section-dark" id="confiance">
+            <div class="section-header reveal">
+                <span class="section-tag">Ils nous font confiance</span>
+                <h2 class="section-title">La <span class="hl">reconnaissance</span></h2>
+            </div>
+            <div style="text-align:center;">
+                <div class="confiance-badge reveal reveal-delay-1">
+                    <span class="stars">★★★★★</span>
+                    <span>4,6 / 5 — 49 avis Google</span>
+                </div>
+            </div>
+            <p class="section-desc reveal reveal-delay-1" style="text-align:center;margin-bottom:2rem;">
+                Plus de <strong>80 tables parisiennes</strong> servent nos glaces&nbsp;: palaces, bistrots étoilés, hôtels de luxe, brasseries renommées.
+            </p>
+            <div class="revendeurs-scroll reveal reveal-delay-2">
+                <ul class="revendeurs-list">
+                    <li>Palaces parisiens</li>
+                    <li>Tables étoilées</li>
+                    <li>Bistrots d'exception</li>
+                    <li>Hôtels de luxe</li>
+                    <li>Restaurants gastronomiques</li>
+                    <li>Brasseries renommées</li>
+                    <li>Épiceries fines</li>
+                    <li>Traiteurs haut de gamme</li>
+                    <li>Salons de thé</li>
+                    <li>Cavistes réputés</li>
+                </ul>
+            </div>
+            <blockquote class="avis-citation reveal reveal-delay-3">
+                Une pépite discrète du 16ᵉ. Les parfums sont d'une justesse rare, le pain brûlé est une révélation. On comprend pourquoi les plus grandes tables parisiennes leur font confiance.
+            </blockquote>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4>Enzo & Lily</h4>
+                <p>2 Rue Auguste Maquet<br>75016 Paris<br>France</p>
+                <p><a href="mailto:lionelc@enzoetlily.com">lionelc@enzoetlily.com</a></p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <p><a href="#parfums">Parfums du moment</a></p>
+                <p><a href="#commandes">Commandes</a></p>
+                <p><a href="#atelier">Atelier & Accès</a></p>
+                <p><a href="#confiance">Avis & Confiance</a></p>
+            </div>
+            <div>
+                <h4>Suivez-nous</h4>
+                <p><a href="https://instagram.com/enzoetlily" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+                <p><a href="https://maps.google.com/?q=2+Rue+Auguste+Maquet+75016+Paris" target="_blank" rel="noopener noreferrer">Google Maps</a></p>
+            </div>
+        </div>
+        <p class="footer-credit">
+            © Enzo & Lily — Glacier artisanal Paris 16ᵉ. Site créé par Agence Mooo.
+        </p>
+    </footer>
+
+    <script>
+        (function() {
+            // ===== HEADER SCROLL EFFECT =====
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+
+            function updateHeaderScroll() {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderScroll);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ===== INTERSECTION OBSERVER — REVEAL =====
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                const revealElements = document.querySelectorAll('.reveal');
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12,
+                };
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach((el) => revealObserver.observe(el));
+            } else {
+                // Show all immediately if reduced motion is preferred
+                document.querySelectorAll('.reveal').forEach((el) => {
+                    el.classList.add('visible');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+
+            // ===== SMOOTH SCROLL FOR ANCHOR LINKS (fallback) =====
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition =
+                            target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight - 16;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth',
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
