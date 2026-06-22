@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The A — Conseil en art, automobile & objets rares | Paris 16ᵉ</title>
+    <meta name="description" content="The A — Conseil discret en art, automobile de collection et objets rares. Une adresse confidentielle au 83 rue Michel Ange, Paris 16ᵉ. Sur rendez-vous. Note 5★ (13 avis).">
+    <meta property="og:title" content="The A — L'art, l'automobile, l'objet rare">
+    <meta property="og:description" content="Conseil, recherche, transaction — en toute discrétion. Une signature au 83 rue Michel Ange, Paris 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif'>A</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-velin: #FAF7F2;
+            --noir-encre: #1C1A1A;
+            --pierre-seche: #F2EFE9;
+            --laiton-brosse: #A68A56;
+            --brun-havane: #4B3A2A;
+            --sepia-profond: #2C2621;
+            --shadow-subtle: 0 1px 6px rgba(28, 26, 26, 0.08);
+            --shadow-card: 0 2px 16px rgba(28, 26, 26, 0.06);
+            --shadow-elevated: 0 4px 24px rgba(28, 26, 26, 0.10);
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.1vw + 0.5rem, 17px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-weight: 400;
+            background-color: var(--blanc-velin);
+            color: var(--noir-encre);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+        }
+
+        /* MONOGRAM OVERLAY */
+        #monogram-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background-color: var(--blanc-velin);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: all;
+            animation: overlayFadeOut 0.1s ease-in 1.1s forwards;
+        }
+        #monogram-letter {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(6rem, 14vw, 11rem);
+            color: var(--noir-encre);
+            letter-spacing: 0.08em;
+            line-height: 1;
+            animation: monogramShrink 1.2s var(--ease-in-out-quint) forwards;
+            transform-origin: center center;
+        }
+        @keyframes monogramShrink {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            55% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(0.28);
+                opacity: 1;
+            }
+            85% {
+                transform: scale(0.28) translate(-42vw, -42vh);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.28) translate(-42vw, -42vh);
+                opacity: 0;
+            }
+        }
+        @keyframes overlayFadeOut {
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        /* HEADER */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(250, 247, 242, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(28, 26, 26, 0.06);
+            padding: 0.7rem clamp(1rem, 4vw, 3rem);
+        }
+        .header-logo {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            color: var(--noir-encre);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            line-height: 1;
+            opacity: 0;
+            animation: logoReveal 0.5s var(--ease-out-expo) 1.25s forwards;
+        }
+        @keyframes logoReveal {
+            to {
+                opacity: 1;
+            }
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2.5vw, 1.8rem);
+            opacity: 0;
+            animation: logoReveal 0.5s var(--ease-out-expo) 1.3s forwards;
+        }
+        .header-nav a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--noir-encre);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            position: relative;
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--laiton-brosse);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:focus-visible {
+            outline: 2px solid var(--laiton-brosse);
+            outline-offset: 6px;
+            border-radius: 2px;
+        }
+        .header-cta {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            padding: 0.55rem 1.3rem;
+            background: var(--laiton-brosse);
+            color: var(--blanc-velin);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(28, 26, 26, 0.15);
+            transition: height 0.35s var(--ease-out-expo);
+            z-index: 0;
+        }
+        .header-cta:hover::before,
+        .header-cta:focus-visible::before {
+            height: 100%;
+        }
+        .header-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(166, 138, 86, 0.3);
+        }
+        .header-cta span {
+            position: relative;
+            z-index: 1;
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--laiton-brosse);
+            outline-offset: 4px;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--noir-encre);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        @media (max-width: 768px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--blanc-velin);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 5rem 2rem 2rem;
+                gap: 1.6rem;
+                box-shadow: -8px 0 30px rgba(28, 26, 26, 0.12);
+                transition: right 0.45s var(--ease-out-expo);
+                z-index: 999;
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-nav .header-cta {
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
+        }
+        @media (min-width: 769px) {
+            .header-nav .header-cta {
+                display: none;
+            }
+        }
+
+        /* SECTIONS */
+        section {
+            padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .container-narrow {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: saturate(0.75) brightness(1.04) contrast(1.02);
+            opacity: 0.85;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(250, 247, 242, 0.55) 0%,
+                    rgba(250, 247, 242, 0.35) 30%,
+                    rgba(250, 247, 242, 0.2) 55%,
+                    rgba(250, 247, 242, 0.65) 85%,
+                    rgba(250, 247, 242, 0.92) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            background: rgba(250, 247, 242, 0.78);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border-radius: 2px;
+            box-shadow: var(--shadow-subtle);
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            animation: heroReveal 0.9s var(--ease-out-expo) 1.2s forwards;
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            0% {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+        }
+        .hero-content h1 {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            color: var(--noir-encre);
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+        }
+        .hero-content .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            color: var(--brun-havane);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            margin-bottom: 1.6rem;
+        }
+        .hero-content .hero-cta {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            padding: 0.7rem 1.8rem;
+            background: var(--laiton-brosse);
+            color: var(--blanc-velin);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content .hero-cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(28, 26, 26, 0.15);
+            transition: height 0.35s var(--ease-out-expo);
+            z-index: 0;
+        }
+        .hero-content .hero-cta:hover::before,
+        .hero-content .hero-cta:focus-visible::before {
+            height: 100%;
+        }
+        .hero-content .hero-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(166, 138, 86, 0.3);
+        }
+        .hero-content .hero-cta span {
+            position: relative;
+            z-index: 1;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--pierre-seche);
+            color: var(--noir-encre);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-subtle);
+        }
+        .google-badge .stars {
+            color: #e8b84b;
+            letter-spacing: 0.05em;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            color: var(--noir-encre);
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 2px;
+            background: var(--laiton-brosse);
+            margin-top: 0.7rem;
+        }
+        .section-title.centered {
+            text-align: center;
+        }
+        .section-title.centered::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* REVEAL ON SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* INTRO SECTION */
+        .intro-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            color: var(--noir-encre);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+            max-width: 700px;
+        }
+        .intro-text strong {
+            font-weight: 600;
+            color: var(--brun-havane);
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 1rem;
+        }
+        .service-card {
+            background: var(--pierre-seche);
+            padding: 2rem 1.8rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow 0.4s ease, transform 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--laiton-brosse);
+            transition: height 0.5s var(--ease-out-expo);
+        }
+        .service-card:hover::before,
+        .service-card:focus-within::before {
+            height: 100%;
+        }
+        .service-card:hover {
+            box-shadow: var(--shadow-elevated);
+            transform: translateY(-3px);
+        }
+        .service-card h3 {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-encre);
+            margin-bottom: 0.6rem;
+        }
+        .service-card p {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--brun-havane);
+            line-height: 1.55;
+            letter-spacing: 0.015em;
+        }
+        .service-card .service-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            color: var(--laiton-brosse);
+        }
+
+        /* COLLECTION */
+        .collection-filters {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            justify-content: center;
+        }
+        .filter-btn {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid var(--pierre-seche);
+            background: transparent;
+            color: var(--noir-encre);
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .filter-btn.active,
+        .filter-btn:hover,
+        .filter-btn:focus-visible {
+            border-color: var(--laiton-brosse);
+            background: var(--laiton-brosse);
+            color: var(--blanc-velin);
+        }
+        .filter-btn:focus-visible {
+            outline: 2px solid var(--laiton-brosse);
+            outline-offset: 3px;
+        }
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+        .collection-item {
+            background: var(--pierre-seche);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow 0.4s ease, transform 0.35s ease;
+            cursor: default;
+        }
+        .collection-item:hover {
+            box-shadow: var(--shadow-elevated);
+            transform: translateY(-4px);
+        }
+        .collection-item .img-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--blanc-velin);
+            margin: 0;
+            padding: 0;
+            box-shadow: inset 0 0 0 6px var(--blanc-velin);
+        }
+        .collection-item .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .collection-item:hover .img-frame img {
+            transform: scale(1.04);
+        }
+        .collection-item .item-info {
+            padding: 1.2rem 1.2rem 1.5rem;
+            background: var(--pierre-seche);
+        }
+        .collection-item .item-info h4 {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-encre);
+            margin-bottom: 0.3rem;
+        }
+        .collection-item .item-info p {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--brun-havane);
+            letter-spacing: 0.015em;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+        .collection-item .item-info .inquire-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            color: var(--laiton-brosse);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+            display: inline-block;
+        }
+        .collection-item .item-info .inquire-link:hover {
+            border-color: var(--laiton-brosse);
+        }
+
+        /* ADRESSE */
+        .adresse-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 680px) {
+            .adresse-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .adresse-info {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--noir-encre);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+        .adresse-info strong {
+            font-weight: 600;
+            color: var(--brun-havane);
+        }
+        .adresse-info .tel-link {
+            color: var(--noir-encre);
+            text-decoration: none;
+            border-bottom: 1px solid var(--laiton-brosse);
+            transition: color 0.3s ease;
+        }
+        .adresse-info .tel-link:hover {
+            color: var(--laiton-brosse);
+        }
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            background: var(--pierre-seche);
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            filter: grayscale(25%) contrast(0.95);
+        }
+
+        /* TÉMOIGNAGES */
+        .testimonials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--pierre-seche);
+            padding: 2rem 2.2rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            border-left: 3px solid var(--laiton-brosse);
+            transition: box-shadow 0.4s ease;
+        }
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-elevated);
+        }
+        .testimonial-card blockquote {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--brun-havane);
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            quotes: "«\00a0" "\00a0»";
+        }
+        .testimonial-card blockquote::before {
+            content: open-quote;
+            font-size: 2.5rem;
+            color: var(--laiton-brosse);
+            line-height: 0;
+            vertical-align: -0.3em;
+            margin-right: 0.15em;
+            font-family: 'Syne', serif;
+        }
+        .testimonial-card blockquote::after {
+            content: close-quote;
+        }
+        .testimonial-card .author {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--noir-encre);
+            letter-spacing: 0.03em;
+        }
+
+        /* FOOTER / CONTACT */
+        .footer-contact {
+            background: var(--sepia-profond);
+            color: var(--blanc-velin);
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+        }
+        .footer-contact .section-title {
+            color: var(--blanc-velin);
+        }
+        .footer-contact .section-title::after {
+            background: var(--laiton-brosse);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 680px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .footer-info {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            letter-spacing: 0.015em;
+            color: rgba(250, 247, 242, 0.85);
+        }
+        .footer-info a {
+            color: var(--laiton-brosse);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .footer-info a:hover {
+            border-color: var(--laiton-brosse);
+        }
+        .footer-info .tel-link-footer {
+            color: rgba(250, 247, 242, 0.85);
+            text-decoration: none;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid rgba(250, 247, 242, 0.25);
+            background: rgba(250, 247, 242, 0.06);
+            color: var(--blanc-velin);
+            border-radius: 2px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+            resize: vertical;
+            outline: none;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--laiton-brosse);
+            background: rgba(250, 247, 242, 0.1);
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(250, 247, 242, 0.4);
+        }
+        .contact-form button {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            padding: 0.8rem 1.8rem;
+            background: var(--laiton-brosse);
+            color: var(--blanc-velin);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-form button::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(28, 26, 26, 0.2);
+            transition: height 0.35s var(--ease-out-expo);
+            z-index: 0;
+        }
+        .contact-form button:hover::before,
+        .contact-form button:focus-visible::before {
+            height: 100%;
+        }
+        .contact-form button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(166, 138, 86, 0.35);
+        }
+        .contact-form button span {
+            position: relative;
+            z-index: 1;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            color: rgba(250, 247, 242, 0.5);
+            max-width: 1000px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(250, 247, 242, 0.12);
+            margin-top: 3rem;
+        }
+        .footer-bottom a {
+            color: var(--laiton-brosse);
+            text-decoration: none;
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: rgba(250, 247, 242, 0.6);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--laiton-brosse);
+        }
+
+        /* UTILITY */
+        .text-center {
+            text-align: center;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        /* Focus global */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--laiton-brosse);
+            outline-offset: 3px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--pierre-seche);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--laiton-brosse);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 480px) {
+            .collection-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MONOGRAM OVERLAY -->
+    <div id="monogram-overlay" aria-hidden="true">
+        <span id="monogram-letter">A</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#hero" class="header-logo" aria-label="The A — Accueil">The A</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="header-nav" role="navigation" aria-label="Navigation principale">
+            <a href="#intro">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#collection">Collection</a>
+            <a href="#adresse">Adresse</a>
+            <a href="#contact" class="header-cta"><span>Prendre rendez-vous</span></a>
+        </nav>
+        <a href="#contact" class="header-cta desktop-only"><span>Prendre rendez-vous</span></a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="The A — Détail évocateur" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-content container-narrow">
+            <div class="google-badge" aria-label="Note Google 5 étoiles sur 13 avis">
+                <span class="stars">★★★★★</span> 5/5 · 13 avis
+            </div>
+            <h1>L'art, l'automobile, l'objet rare.</h1>
+            <p class="hero-subtitle">Conseil, recherche, transaction — en toute discrétion.<br>Une adresse. Un interlocuteur unique. The A vous accompagne au 83 rue Michel Ange, Paris 16<sup>e</sup> — sur rendez-vous, sept jours sur sept.</p>
+            <a href="#contact" class="hero-cta"><span>Prendre rendez-vous</span></a>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section id="intro">
+        <div class="container-narrow">
+            <h2 class="section-title reveal">Un conseil qui ne s'affiche pas</h2>
+            <p class="intro-text reveal reveal-delay-1">
+                The A met en relation les amateurs les plus exigeants avec des pièces d'art, des automobiles iconiques et des objets de collection soigneusement sélectionnés. Nous intervenons comme <strong>conseil, intermédiaire ou acquéreur direct</strong> — sans publicité, sans intermédiaire superflu. Chaque dossier est traité de manière strictement confidentielle.
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title centered reveal">Quatre engagements</h2>
+            <div class="services-grid">
+                <div class="service-card reveal reveal-delay-1">
+                    <span class="service-icon">◆</span>
+                    <h3>Recherche & acquisition</h3>
+                    <p>Vous cherchez une pièce rare. Nous activons notre réseau international pour la localiser, l'authentifier et la négocier pour vous.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <span class="service-icon">◈</span>
+                    <h3>Conseil en investissement</h3>
+                    <p>Art, automobile de collection, objets précieux : nous documentons la cote, la projection et la liquidité de chaque actif.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <span class="service-icon">◇</span>
+                    <h3>Vente & mandat</h3>
+                    <p>Vous souhaitez céder un bien d'exception. Nous le prenons en mandat discret, sans exposition publique inutile.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <span class="service-icon">⬩</span>
+                    <h3>Financement & mutualisation</h3>
+                    <p>Pour les acquisitions importantes, nous vous orientons vers les solutions de financement adaptées et les montages en participation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection">
+        <div class="container">
+            <h2 class="section-title centered reveal">Objets de désir</h2>
+            <div class="collection-filters reveal reveal-delay-1">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">Tout</button>
+                <button class="filter-btn" data-filter="art" aria-pressed="false">Art</button>
+                <button class="filter-btn" data-filter="auto" aria-pressed="false">Automobile</button>
+                <button class="filter-btn" data-filter="objets" aria-pressed="false">Objets rares</button>
+            </div>
+            <div class="collection-grid" id="collection-grid">
+                <!-- Item 1 - Art -->
+                <div class="collection-item reveal reveal-delay-1" data-category="art">
+                    <div class="img-frame"><img src="assets/maps-1.jpg" alt="Œuvre d'art — The A" loading="lazy"></div>
+                    <div class="item-info">
+                        <h4>Composition abstraite, 1958</h4>
+                        <p>Huile sur toile — provenance documentée, certificat d'authenticité.</p>
+                        <a href="#contact" class="inquire-link">Se renseigner</a>
+                    </div>
+                </div>
+                <!-- Item 2 - Automobile -->
+                <div class="collection-item reveal reveal-delay-2" data-category="auto">
+                    <div class="img-frame"><img src="assets/maps-1.jpg" alt="Automobile de collection — The A" loading="lazy" style="object-position: center 60%;"></div>
+                    <div class="item-info">
+                        <h4>Bugatti Type 35, 1926</h4>
+                        <p>Palmarès documenté, état concours — historique complet.</p>
+                        <a href="#contact" class="inquire-link">Se renseigner</a>
+                    </div>
+                </div>
+                <!-- Item 3 - Objets rares -->
+                <div class="collection-item reveal reveal-delay-3" data-category="objets">
+                    <div class="img-frame"><img src="assets/maps-1.jpg" alt="Objet rare — The A" loading="lazy" style="object-position: center 25%;"></div>
+                    <div class="item-info">
+                        <h4>Pendule de cheminée, Empire</h4>
+                        <p>Bronze doré et marbre — mouvement d'origine, signé.</p>
+                        <a href="#contact" class="inquire-link">Se renseigner</a>
+                    </div>
+                </div>
+                <!-- Item 4 - Art -->
+                <div class="collection-item reveal reveal-delay-4" data-category="art">
+                    <div class="img-frame"><img src="assets/maps-1.jpg" alt="Œuvre d'art — The A" loading="lazy" style="object-position: center 70%;"></div>
+                    <div class="item-info">
+                        <h4>Sculpture en marbre, XX<sup>e</sup></h4>
+                        <p>Pièce unique — atelier français, cote en progression.</p>
+                        <a href="#contact" class="inquire-link">Se renseigner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADRESSE -->
+    <section id="adresse">
+        <div class="container">
+            <h2 class="section-title centered reveal">83 rue Michel Ange, Paris 16<sup>e</sup></h2>
+            <div class="adresse-block">
+                <div class="adresse-info reveal reveal-delay-1">
+                    <p>Nous vous recevons <strong>exclusivement sur rendez-vous</strong>, dans nos bureaux à deux pas de l'avenue Mozart. Un espace privé, discret, conçu pour que vous preniez le temps de la découverte.</p>
+                    <p class="mt-1"><strong>Téléphone :</strong> <a href="tel:+33681724175" class="tel-link">06 81 72 41 75</a></p>
+                    <p><strong>Horaires :</strong> Du mardi au samedi, 10h–18h — autres créneaux possibles sur demande.</p>
+                    <p><strong>Email :</strong> jointhe-a@the-a.fr</p>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=The+A+83+Rue+Michel+Ange%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation — The A, 83 rue Michel Ange, Paris 16ᵉ"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TÉMOIGNAGES -->
+    <section id="temoignages">
+        <div class="container-narrow">
+            <h2 class="section-title centered reveal">Ils nous ont confié leur regard</h2>
+            <div class="testimonials-list">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <blockquote>The A a su dénicher une pièce que je cherchais depuis près de dix ans. Leur discrétion et leur efficacité sont remarquables.</blockquote>
+                    <p class="author">Jean-Louis L., collectionneur d'horlogerie ancienne, Paris</p>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <blockquote>J'ai confié la vente d'une automobile de ma collection. Mandat discret, transaction fluide, résultat au-delà de mes attentes.</blockquote>
+                    <p class="author">Pierre D., amateur d'automobiles, Genève</p>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <blockquote>Un conseil éclairé, sans pression. On sent une vraie passion et une connaissance profonde des marchés. Je recommande sans réserve.</blockquote>
+                    <p class="author">Marie-Caroline F., investisseuse, Londres</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="footer-contact" id="contact">
+        <div class="container">
+            <h2 class="section-title centered reveal">Prenons rendez-vous</h2>
+            <div class="footer-grid">
+                <div class="footer-info reveal reveal-delay-1">
+                    <p><strong>The A</strong><br>83 rue Michel Ange<br>75016 Paris, France</p>
+                    <p><a href="tel:+33681724175" class="tel-link-footer">06 81 72 41 75</a></p>
+                    <p><a href="mailto:jointhe-a@the-a.fr">jointhe-a@the-a.fr</a></p>
+                    <p class="mt-1">Du mardi au samedi, 10h–18h<br>Autres créneaux sur demande.</p>
+                </div>
+                <form class="contact-form reveal reveal-delay-2" id="contact-form" action="#" method="post">
+                    <input type="text" name="name" placeholder="Votre nom" required aria-label="Votre nom">
+                    <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
+                    <textarea name="message" rows="4" placeholder="Objet de votre rendez-vous" required aria-label="Objet de votre rendez-vous"></textarea>
+                    <button type="submit"><span>Envoyer</span></button>
+                </form>
+            </div>
+            <div class="footer-bottom reveal">
+                <div class="footer-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Éthique</a>
+                    <a href="#">Confidentialité</a>
+                </div>
+                <p>© The A — 83 rue Michel Ange, Paris 16<sup>e</sup> · 06 81 72 41 75 · jointhe-a@the-a.fr</p>
+                <p>Site créé par <a href="https://agence.mooo.com/the-a" target="_blank" rel="noopener">Agence Mooo</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "The A",
+            "description": "Conseil discret en art, automobile de collection et objets rares. Sur rendez-vous au 83 rue Michel Ange, Paris 16ᵉ.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "83 rue Michel Ange",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33681724175",
+            "email": "jointhe-a@the-a.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "13"
+            },
+            "priceRange": "€€€",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "18:00"
+            },
+            "url": "https://agence.mooo.com/the-a"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const nav = document.getElementById('header-nav');
+            menuBtn.addEventListener('click', function() {
+                const isOpen = nav.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+            });
+            // Close menu on link click
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                if (scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = scrollY;
+            }, { passive: true });
+
+            // IntersectionObserver for reveal animations
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.12
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
+
+            // Collection filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const collectionItems = document.querySelectorAll('.collection-item');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-pressed', 'true');
+                    const filter = this.getAttribute('data-filter');
+                    collectionItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') ===
+                            filter) {
+                            item.style.display = '';
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(12px)';
+                            requestAnimationFrame(() => {
+                                item.style.transition =
+                                    'opacity 0.45s ease, transform 0.45s ease';
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            });
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(8px)';
+                            item.style.transition =
+                                'opacity 0.3s ease, transform 0.3s ease';
+                            setTimeout(() => {
+                                if (item.style.opacity === '0') {
+                                    item.style.display = 'none';
+                                }
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Contact form submission
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<span>Message envoyé ✓</span>';
+                btn.style.background = '#4B3A2A';
+                form.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                }, 2500);
+            });
+
+            // Remove monogram overlay after animation
+            const overlay = document.getElementById('monogram-overlay');
+            setTimeout(() => {
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            }, 1400);
+
+            // Smooth scroll for anchor links (fallback for older browsers)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top +
+                            window.pageYOffset - headerHeight - 16;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
