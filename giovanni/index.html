@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni — Boulangerie Contemporaine, Paris 16ᵉ</title>
+    <meta name="description" content="Giovanni signe ses pains au 49 rue Chardon Lagache, Paris 16ᵉ. Farines anciennes, pur beurre AOP, façonnage sur place. Du mardi au samedi, 7h–19h.">
+    <meta property="og:title" content="Giovanni — Boulangerie Contemporaine, Paris 16ᵉ">
+    <meta property="og:description" content="Giovanni signe ses pains. Farines anciennes, pur beurre AOP, façonnage sur place — une boulangerie contemporaine au cœur du 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥖</text></svg>">
+    <style>
+        :root {
+            --farine: #FAF7F2;
+            --croute: #2C2416;
+            --rouge-enseigne: #D42020;
+            --beurre-aop: #C8965C;
+            --pierre-parisienne: #9EA5A0;
+            --mie: #F3EDE4;
+            --syne: 'Syne', sans-serif;
+            --outfit: 'Outfit', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--outfit);
+            background-color: var(--farine);
+            color: var(--croute);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* ===== HEADER COLLANT ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.88);
+            backdrop-filter: blur(16px) saturate(120%);
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            border-bottom: 1px solid rgba(44, 36, 22, 0.06);
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: clamp(54px, 7vh, 68px);
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 18px rgba(44, 36, 22, 0.06);
+            background: rgba(250, 247, 242, 0.94);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--croute);
+            font-family: var(--syne);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            letter-spacing: -0.015em;
+            white-space: nowrap;
+        }
+
+        .header-brand .rouge-signature {
+            color: var(--rouge-enseigne);
+            font-weight: 700;
+            animation: neonPulse 2.8s ease-in-out infinite;
+        }
+
+        @keyframes neonPulse {
+            0%,
+            100% {
+                text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+            }
+            50% {
+                text-shadow: 0 0 6px rgba(212, 32, 32, 0.35), 0 0 18px rgba(212, 32, 32, 0.12);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .header-brand .rouge-signature {
+                animation: none;
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            list-style: none;
+            font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--croute);
+            transition: color 0.25s ease;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--rouge-enseigne);
+            transition: width 0.3s ease;
+        }
+
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--rouge-enseigne);
+            outline: none;
+        }
+
+        .header-nav a:focus-visible {
+            outline: 2px solid var(--rouge-enseigne);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--rouge-enseigne);
+            color: #fff;
+            padding: 0.45rem 1.1rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1vw, 0.82rem);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.28s ease;
+            font-family: var(--syne);
+            white-space: nowrap;
+            border: 1.5px solid var(--rouge-enseigne);
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #b81a1a;
+            border-color: #b81a1a;
+            box-shadow: 0 4px 16px rgba(212, 32, 32, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .header-cta:focus-visible {
+            outline: 3px solid var(--rouge-enseigne);
+            outline-offset: 3px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--croute);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--farine);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+                box-shadow: -8px 0 30px rgba(44, 36, 22, 0.12);
+                align-items: flex-start;
+                font-size: 1rem;
+                z-index: 1001;
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .mobile-menu-toggle {
+                display: block;
+                z-index: 1002;
+                position: relative;
+            }
+            .header-cta {
+                display: none;
+            }
+            .header-nav .header-cta-mobile {
+                display: inline-flex;
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media (min-width: 861px) {
+            .header-nav .header-cta-mobile {
+                display: none;
+            }
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 36, 22, 0.3);
+            z-index: 1000;
+        }
+        .nav-overlay.active {
+            display: block;
+        }
+
+        /* ===== HERO ===== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            position: relative;
+            padding-top: clamp(54px, 7vh, 68px);
+            overflow: hidden;
+        }
+
+        .hero-image-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(250, 247, 242, 0.08) 0%,
+                    rgba(250, 247, 242, 0.25) 55%,
+                    rgba(250, 247, 242, 0.82) 90%,
+                    rgba(250, 247, 242, 0.96) 100%);
+            z-index: 2;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: contrast(1.04) brightness(1.02);
+            animation: heroImageReveal 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        }
+
+        @keyframes heroImageReveal {
+            from {
+                transform: scale(1.06);
+                opacity: 0.7;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-wrapper img {
+                animation: none;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.2rem, 5vw, 3rem) clamp(3rem, 8vw, 6rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-signature-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+        }
+
+        .hero-signature-line .prefix {
+            font-family: var(--outfit);
+            font-weight: 300;
+            font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+            color: var(--croute);
+            letter-spacing: 0.04em;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .hero-giovanni {
+            font-family: var(--syne);
+            font-weight: 700;
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            color: var(--rouge-enseigne);
+            letter-spacing: -0.025em;
+            line-height: 0.95;
+            opacity: 0;
+            animation: neonFadeIn 0.55s 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            text-shadow: 0 0 12px rgba(212, 32, 32, 0.3), 0 0 40px rgba(212, 32, 32, 0.1);
+        }
+
+        @keyframes neonFadeIn {
+            from {
+                opacity: 0;
+                text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                text-shadow: 0 0 12px rgba(212, 32, 32, 0.3), 0 0 40px rgba(212, 32, 32, 0.1);
+                transform: translateY(0);
+            }
+        }
+
+        .hero-rest-of-title {
+            font-family: var(--syne);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            color: var(--croute);
+            letter-spacing: -0.015em;
+            line-height: 1;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-giovanni,
+            .hero-rest-of-title,
+            .hero-signature-line .prefix,
+            .hero-subtitle,
+            .hero-buttons {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        .hero-subtitle {
+            font-family: var(--outfit);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            color: var(--croute);
+            max-width: 600px;
+            line-height: 1.55;
+            margin-top: clamp(0.6rem, 1.5vw, 1rem);
+            letter-spacing: 0.015em;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: clamp(0.6rem, 1.2vw, 1rem);
+            margin-top: clamp(1.2rem, 2.5vw, 1.8rem);
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            font-family: var(--syne);
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1vw, 0.88rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--rouge-enseigne);
+            color: #fff;
+            border-color: var(--rouge-enseigne);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #b81a1a;
+            border-color: #b81a1a;
+            box-shadow: 0 6px 20px rgba(212, 32, 32, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--rouge-enseigne);
+            outline-offset: 3px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--croute);
+            border-color: var(--croute);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: var(--croute);
+            color: var(--farine);
+            border-color: var(--croute);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(44, 36, 22, 0.18);
+        }
+        .btn-outline:focus-visible {
+            outline: 3px solid var(--croute);
+            outline-offset: 3px;
+        }
+
+        /* ===== SECTION GENERIQUE ===== */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 3rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section.reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .section.reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .section.reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        .section-label {
+            font-family: var(--outfit);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--pierre-parisienne);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: var(--syne);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+            letter-spacing: -0.02em;
+            color: var(--croute);
+            line-height: 1.1;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .section-title .rouge-accent {
+            color: var(--rouge-enseigne);
+            font-weight: 700;
+        }
+
+        .filet-rouge {
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--rouge-enseigne);
+            margin-bottom: 1.5rem;
+            border-radius: 1px;
+        }
+
+        /* ===== L'ESSENTIEL ===== */
+        .essentiel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .essentiel-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .essentiel-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1px;
+        }
+
+        .essentiel-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            filter: grayscale(0.75) sepia(0.12) brightness(0.95) contrast(1.05);
+            display: block;
+            transition: filter 0.5s ease;
+        }
+
+        .essentiel-image:hover img {
+            filter: grayscale(0.55) sepia(0.08) brightness(1) contrast(1.02);
+        }
+
+        .essentiel-image .filet-lateral {
+            position: absolute;
+            left: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 4px;
+            background: var(--rouge-enseigne);
+            border-radius: 0 2px 2px 0;
+            z-index: 2;
+        }
+
+        .essentiel-texte {
+            font-family: var(--outfit);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+            color: var(--croute);
+        }
+
+        .essentiel-texte p+p {
+            margin-top: 1rem;
+        }
+
+        .essentiel-texte strong {
+            font-weight: 600;
+            color: var(--croute);
+        }
+
+        /* ===== CARTE ===== */
+        .carte-intro {
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+
+        .carte-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 1.8rem);
+        }
+
+        .carte-item {
+            background: var(--mie);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carte-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(44, 36, 22, 0.1);
+        }
+
+        .carte-item-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carte-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: contrast(1.03) brightness(1.02);
+        }
+
+        .carte-item:hover .carte-item-image img {
+            transform: scale(1.04);
+        }
+
+        .carte-item-body {
+            padding: 1.2rem 1.2rem 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .carte-item-nom {
+            font-family: var(--syne);
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: -0.01em;
+            color: var(--croute);
+        }
+
+        .carte-item-desc {
+            font-family: var(--outfit);
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--croute);
+            opacity: 0.75;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .carte-item-prix {
+            font-family: var(--syne);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--beurre-aop);
+            letter-spacing: 0.02em;
+            display: inline-block;
+            background: rgba(200, 150, 92, 0.1);
+            padding: 0.25rem 0.7rem;
+            border-radius: 2px;
+            align-self: flex-start;
+        }
+
+        /* ===== HORAIRES & VENUE ===== */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .venue-info {
+            font-family: var(--outfit);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.15vw, 0.98rem);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+
+        .venue-info .adresse-block {
+            font-style: normal;
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-info .adresse-block strong {
+            font-family: var(--syne);
+            font-weight: 600;
+            font-size: 1.15rem;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--rouge-enseigne);
+        }
+
+        .venue-horaires {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .venue-horaires li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.45rem 0;
+            border-bottom: 1px solid rgba(44, 36, 22, 0.08);
+            gap: 1rem;
+        }
+
+        .venue-horaires li .jour {
+            font-weight: 500;
+            color: var(--croute);
+        }
+        .venue-horaires li .heures {
+            font-weight: 600;
+            color: var(--croute);
+            letter-spacing: 0.02em;
+        }
+
+        .venue-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .venue-contact a {
+            color: var(--croute);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .venue-contact a:hover,
+        .venue-contact a:focus-visible {
+            color: var(--rouge-enseigne);
+        }
+        .venue-contact a:focus-visible {
+            outline: 2px solid var(--rouge-enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        .venue-map {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(44, 36, 22, 0.08);
+            aspect-ratio: 4/3;
+        }
+
+        .venue-map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ===== GALERIE & AVIS ===== */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(160px, 220px);
+            gap: clamp(0.5rem, 1.2vw, 0.9rem);
+        }
+
+        @media (max-width: 640px) {
+            .galerie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: minmax(130px, 180px);
+            }
+        }
+
+        .galerie-grid .galerie-item {
+            overflow: hidden;
+            border-radius: 1px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.35s ease;
+        }
+
+        .galerie-grid .galerie-item:hover {
+            transform: scale(1.018);
+            box-shadow: 0 8px 24px rgba(44, 36, 22, 0.13);
+            z-index: 2;
+        }
+
+        .galerie-grid .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: contrast(1.02);
+        }
+
+        .galerie-grid .galerie-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .galerie-grid .galerie-item.span-2 {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .galerie-grid .galerie-item.span-row-2 {
+            grid-row: span 2;
+        }
+
+        .galerie-grid .galerie-item.span-col-2 {
+            grid-column: span 2;
+        }
+
+        .avis-card {
+            background: var(--mie);
+            border-radius: 2px;
+            padding: clamp(1.2rem, 2vw, 1.6rem);
+            border: 2px solid var(--rouge-enseigne);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.7rem;
+            text-align: center;
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        @media (max-width: 640px) {
+            .avis-card {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .galerie-grid .galerie-item.span-2,
+            .galerie-grid .galerie-item.span-col-2 {
+                grid-column: span 1;
+            }
+            .galerie-grid .galerie-item.span-row-2 {
+                grid-row: span 1;
+            }
+        }
+
+        .avis-note {
+            font-family: var(--syne);
+            font-weight: 700;
+            font-size: 2.4rem;
+            color: var(--rouge-enseigne);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+        .avis-stars {
+            color: #f5a623;
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+        }
+        .avis-count {
+            font-family: var(--outfit);
+            font-size: 0.78rem;
+            color: var(--pierre-parisienne);
+            font-weight: 500;
+        }
+        .avis-extrait {
+            font-family: var(--outfit);
+            font-size: 0.82rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--croute);
+            opacity: 0.8;
+            margin-top: 0.3rem;
+        }
+        .avis-auteur {
+            font-family: var(--outfit);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--croute);
+            letter-spacing: 0.04em;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--croute);
+            color: var(--farine);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 3rem);
+            margin-top: clamp(2rem, 4vw, 3rem);
+            font-family: var(--outfit);
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        @media (max-width: 640px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+        }
+
+        .footer-brand {
+            font-family: var(--syne);
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand .footer-rouge {
+            color: var(--rouge-enseigne);
+        }
+
+        .footer-col a {
+            color: var(--farine);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.25s ease;
+        }
+        .footer-col a:hover,
+        .footer-col a:focus-visible {
+            opacity: 1;
+            color: #fff;
+        }
+        .footer-col a:focus-visible {
+            outline: 2px solid var(--rouge-enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        .footer-tagline {
+            font-family: var(--outfit);
+            font-size: 0.78rem;
+            opacity: 0.6;
+            margin-top: 0.5rem;
+            font-style: italic;
+            letter-spacing: 0.025em;
+        }
+
+        .footer-credit {
+            font-size: 0.72rem;
+            opacity: 0.5;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(250, 247, 242, 0.12);
+            padding-top: 1rem;
+            text-align: center;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== BADGE GOOGLE FLOTTANT ===== */
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border: 1px solid rgba(44, 36, 22, 0.12);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-family: var(--outfit);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--croute);
+            box-shadow: 0 2px 8px rgba(44, 36, 22, 0.06);
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .badge-google:hover {
+            box-shadow: 0 4px 16px rgba(44, 36, 22, 0.14);
+            transform: translateY(-1px);
+        }
+        .badge-google .star {
+            color: #f5a623;
+            font-size: 0.85rem;
+        }
+        .badge-google .note-chiffre {
+            font-family: var(--syne);
+            font-weight: 700;
+            color: var(--croute);
+        }
+
+        /* ===== PARTICULES / GRAIN ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 180px;
+        }
+
+        /* ===== FOCUS GLOBAL ===== */
+        :focus-visible {
+            outline: 2.5px solid var(--rouge-enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ===== UTILITAIRES ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .btn {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <a href="#" class="header-brand" aria-label="Giovanni — Accueil">
+            <span class="rouge-signature">Giovanni</span>
+            <span>— Boulangerie</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <div class="nav-overlay" id="navOverlay"></div>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#lessentiel">La boulangerie</a></li>
+                <li><a href="#carte">Pains & viennoiseries</a></li>
+                <li><a href="#venue">Horaires & venue</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="tel:+33145272905" class="header-cta header-cta-mobile">📞 01 45 27 29 05</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145272905" class="header-cta" aria-label="Appeler Giovanni">📞 01 45 27 29 05</a>
+    </header>
+
+    <!-- MAIN -->
+    <main id="mainContent">
+
+        <!-- HERO -->
+        <section class="hero-section" aria-labelledby="heroTitle" id="hero">
+            <div class="hero-image-wrapper">
+                <img src="assets/maps-1.jpg" alt="Vitrine de la boulangerie Giovanni, rue Chardon Lagache, Paris 16ᵉ" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-content">
+                <div class="hero-signature-line">
+                    <span class="prefix"></span>
+                </div>
+                <h1 id="heroTitle" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0.4em;">
+                    <span class="hero-giovanni">Giovanni</span>
+                    <span class="hero-rest-of-title">signe ses pains.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Farines anciennes, pur beurre AOP, façonnage sur place — une boulangerie contemporaine
+                    au cœur du 16ᵉ, du mardi au samedi, de 7&nbsp;h à 19&nbsp;h.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#carte" class="btn btn-primary">Voir la carte</a>
+                    <a href="#venue" class="btn btn-outline">Nous trouver</a>
+                </div>
+                <div style="margin-top:1.4rem;">
+                    <a href="#galerie" class="badge-google" aria-label="Note Google 4.3 sur 5 — 194 avis">
+                        <span class="star">★</span>
+                        <span class="note-chiffre">4.3</span>/5
+                        <span style="font-weight:400;opacity:0.7;">· 194 avis</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ESSENTIEL -->
+        <section class="section reveal" id="lessentiel" aria-labelledby="essentielTitle">
+            <span class="section-label">Notre engagement</span>
+            <h2 class="section-title" id="essentielTitle">La <span class="rouge-accent">boulangerie</span></h2>
+            <span class="filet-rouge" aria-hidden="true"></span>
+            <div class="essentiel-grid">
+                <div class="essentiel-image">
+                    <span class="filet-lateral" aria-hidden="true"></span>
+                    <img src="assets/maps-1.jpg" alt="Intérieur du fournil Giovanni — façonnage artisanal" loading="lazy">
+                </div>
+                <div class="essentiel-texte">
+                    <p>
+                        Ici, tout est fabriqué sur place, dans le fournil visible depuis la rue.
+                        Nos pains sont pétris à partir de farines issues de cultures raisonnées
+                        et de variétés anciennes — <strong>petit épeautre, blé de population, seigle</strong>.
+                    </p>
+                    <p>
+                        Nos viennoiseries sont intégralement réalisées au <strong>beurre AOP Poitou-Charente</strong>.
+                        Pas de congélation, pas de pré-mix, pas de raccourci.
+                    </p>
+                    <p style="font-weight:500;color:var(--rouge-enseigne);">
+                        — Giovanni
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARTE -->
+        <section class="section reveal" id="carte" aria-labelledby="carteTitle">
+            <div class="carte-intro">
+                <span class="section-label">La carte</span>
+                <h2 class="section-title" id="carteTitle">Pains & <span class="rouge-accent">viennoiseries</span></h2>
+                <span class="filet-rouge" aria-hidden="true"></span>
+                <p style="font-family:var(--outfit);font-weight:500;font-size:0.9rem;color:var(--pierre-parisienne);letter-spacing:0.04em;">
+                    Du mardi au samedi, dès 7&nbsp;h.
+                </p>
+            </div>
+            <div class="carte-grid">
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Pain au levain — croûte farinée" loading="lazy" style="object-position:center 60%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Pain au levain</h3>
+                        <p class="carte-item-desc">Farine de blé de population, levain naturel, longue fermentation. Croûte épaisse, mie alvéolée.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Pain petit épeautre" loading="lazy" style="object-position:center 30%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Petit épeautre</h3>
+                        <p class="carte-item-desc">Variété ancienne, farine semi-complète. Goût délicat de noisette, mie tendre.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Pain de seigle" loading="lazy" style="object-position:center 45%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Seigle noir</h3>
+                        <p class="carte-item-desc">Farine de seigle intégrale, mie dense, notes boisées. Idéal avec fromages et charcuteries.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Croissant pur beurre AOP" loading="lazy" style="object-position:center 20%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Croissant AOP</h3>
+                        <p class="carte-item-desc">Pur beurre Poitou-Charente AOP, feuilletage maison. Doré, croustillant, fondant à l'intérieur.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Pain au chocolat pur beurre" loading="lazy" style="object-position:center 50%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Pain au chocolat</h3>
+                        <p class="carte-item-desc">Deux barres de chocolat noir, pâte feuilletée au beurre AOP. Un classique exigeant.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+                <article class="carte-item">
+                    <div class="carte-item-image">
+                        <img src="assets/maps-1.jpg" alt="Formule déjeuner — sandwich artisanal" loading="lazy" style="object-position:center 55%;">
+                    </div>
+                    <div class="carte-item-body">
+                        <h3 class="carte-item-nom">Le salé du déjeuner</h3>
+                        <p class="carte-item-desc">Sandwichs, quiches et tartes salées — garnitures de saison, pain du jour.</p>
+                        <span class="carte-item-prix">Prix sur place</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- HORAIRES & VENUE -->
+        <section class="section reveal" id="venue" aria-labelledby="venueTitle">
+            <span class="section-label">Venir</span>
+            <h2 class="section-title" id="venueTitle">Rue Chardon Lagache, <span class="rouge-accent">Paris 16ᵉ</span></h2>
+            <span class="filet-rouge" aria-hidden="true"></span>
+            <div class="venue-grid">
+                <div class="venue-info">
+                    <address class="adresse-block">
+                        <strong>Giovanni — Boulangerie Contemporaine</strong>
+                        49 Rue Chardon Lagache<br>
+                        75016 Paris, France
+                    </address>
+                    <ul class="venue-horaires">
+                        <li><span class="jour">Lundi</span> <span class="heures">Fermé</span></li>
+                        <li><span class="jour">Mardi – Samedi</span> <span class="heures">7h – 19h</span></li>
+                        <li><span class="jour">Dimanche</span> <span class="heures">Fermé</span></li>
+                    </ul>
+                    <div class="venue-contact">
+                        <a href="tel:+33145272905">📞 01 45 27 29 05</a>
+                        <a href="mailto:Giovanni.boulangerie@gmail.com">✉️ Giovanni.boulangerie@gmail.com</a>
+                    </div>
+                    <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.75;line-height:1.6;">
+                        Au croisement du métro Église d'Auteuil et de la rue Chardon Lagache,
+                        à trois minutes de la station. <strong>La vitrine rouge ne se manque pas.</strong>
+                    </p>
+                </div>
+                <div class="venue-map">
+                    <iframe src="https://maps.google.com/maps?q=Giovanni+49+Rue+Chardon+Lagache%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Giovanni, 49 rue Chardon Lagache, Paris 16ᵉ"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE & AVIS -->
+        <section class="section reveal" id="galerie" aria-labelledby="galerieTitle">
+            <span class="section-label" style="display:none;">Galerie & avis</span>
+            <h2 class="section-title" id="galerieTitle" style="margin-bottom:0.4rem;">Dans le <span class="rouge-accent">fournil</span></h2>
+            <span class="filet-rouge" aria-hidden="true"></span>
+            <p style="font-family:var(--outfit);font-size:0.85rem;color:var(--pierre-parisienne);margin-bottom:1.8rem;letter-spacing:0.03em;">
+                Photos de la boulangerie, des produits, de l'équipe.
+            </p>
+            <div class="galerie-grid">
+                <div class="galerie-item span-2 span-row-2">
+                    <img src="assets/maps-1.jpg" alt="Vitrine de Giovanni — enseigne rouge lumineuse" loading="lazy" style="object-position:center 25%;">
+                </div>
+                <div class="galerie-item">
+                    <img src="assets/maps-1.jpg" alt="Intérieur chaleureux de la boulangerie" loading="lazy" style="object-position:center 60%;">
+                </div>
+                <div class="avis-card" aria-label="Avis Google — 4.3 sur 5 étoiles, 194 avis">
+                    <div class="avis-note">4.3<span style="font-size:1.2rem;">★</span></div>
+                    <div class="avis-stars">★★★★<span style="opacity:0.3;">★</span></div>
+                    <div class="avis-count">194 avis Google</div>
+                    <p class="avis-extrait">«&nbsp;Des pains exceptionnels, un accueil chaleureux. Le croissant pur beurre est une merveille.&nbsp;»</p>
+                    <span class="avis-auteur">— Marie D.</span>
+                    <p class="avis-extrait" style="margin-top:0.3rem;">«&nbsp;Enfin une vraie boulangerie de quartier avec du caractère. Le pain au levain est remarquable.&nbsp;»</p>
+                    <span class="avis-auteur">— Thomas L.</span>
+                </div>
+                <div class="galerie-item">
+                    <img src="assets/maps-1.jpg" alt="Pains alignés sur grille en acier brossé" loading="lazy" style="object-position:center 40%;">
+                </div>
+                <div class="galerie-item span-col-2">
+                    <img src="assets/maps-1.jpg" alt="Viennoiseries dorées en vitrine" loading="lazy" style="object-position:center 50%;">
+                </div>
+                <div class="galerie-item">
+                    <img src="assets/maps-1.jpg" alt="Façade haussmannienne rue Chardon Lagache" loading="lazy" style="object-position:center 15%;">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-brand"><span class="footer-rouge">Giovanni</span> — Boulangerie Contemporaine</div>
+                <p class="footer-tagline">Fait main, ici, depuis le fournil du 49 rue Chardon Lagache.</p>
+            </div>
+            <div class="footer-col">
+                <p><strong>Adresse</strong><br>49 Rue Chardon Lagache<br>75016 Paris, France</p>
+                <p style="margin-top:0.8rem;"><strong>Contact</strong><br>
+                    <a href="tel:+33145272905">01 45 27 29 05</a><br>
+                    <a href="mailto:Giovanni.boulangerie@gmail.com">Giovanni.boulangerie@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <p><strong>Horaires</strong><br>
+                    Lundi : Fermé<br>
+                    Mardi – Samedi : 7h – 19h<br>
+                    Dimanche : Fermé
+                </p>
+                <p style="margin-top:0.8rem;">
+                    <a href="#">Mentions légales</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-credit">
+            Site créé par Agence Mooo
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // === HEADER SCROLL ===
+            const header = document.getElementById('siteHeader');
+            let lastScrollY = 0;
+            const handleScroll = () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollY = scrollY;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // === MOBILE MENU ===
+            const toggle = document.getElementById('mobileMenuToggle');
+            const nav = document.getElementById('headerNav');
+            const overlay = document.getElementById('navOverlay');
+            const navLinks = nav.querySelectorAll('a');
+
+            const openMenu = () => {
+                nav.classList.add('open');
+                overlay.classList.add('active');
+                toggle.setAttribute('aria-expanded', 'true');
+                toggle.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            };
+            const closeMenu = () => {
+                nav.classList.remove('open');
+                overlay.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = '☰';
+                document.body.style.overflow = '';
+            };
+
+            toggle.addEventListener('click', () => {
+                if (nav.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('open')) {
+                        closeMenu();
+                    }
+                });
+            });
+
+            // === INTERSECTION OBSERVER POUR REVEALS ===
+            const revealEls = document.querySelectorAll('.section.reveal');
+            if (revealEls.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.12
+                });
+
+                revealEls.forEach(el => observer.observe(el));
+            } else {
+                // Si prefers-reduced-motion, tout afficher directement
+                revealEls.forEach(el => el.classList.add('visible'));
+            }
+
+            // === GESTION DU HERO ANIMATION (prefers-reduced-motion) ===
+            const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mqReduced.matches) {
+                document.querySelectorAll('.hero-giovanni, .hero-rest-of-title, .hero-signature-line .prefix, .hero-subtitle, .hero-buttons').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    el.style.animation = 'none';
+                });
+            }
+
+            // === FERMETURE MENU AU RESIZE ===
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 860 && nav.classList.contains('open')) {
+                    closeMenu();
+                }
+            });
+
+            // === TOUCHE ÉCHAP POUR MENU ===
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('open')) {
+                    closeMenu();
+                    toggle.focus();
+                }
+            });
+        })();
+    </script>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Giovanni — Boulangerie Contemporaine",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "49 Rue Chardon Lagache",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145272905",
+            "email": "Giovanni.boulangerie@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.3",
+                "reviewCount": "194"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00",
+                    "closes": "19:00" }
+            ],
+            "url": "https://agence.mooo.com/giovanni"
+        }
+    </script>
+</body>
+</html>
