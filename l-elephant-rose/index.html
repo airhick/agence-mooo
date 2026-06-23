@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'éléphant rose — Jouets de collection & miniatures | 96 avenue Mozart, Paris 16ᵉ</title>
+    <meta name="description" content="L'éléphant rose, boutique de jouets historique depuis 1932 au 96 avenue Mozart à Paris 16ᵉ. Maisons de poupée, miniatures, ours en peluche de collection et jeux d'éveil dans un cabinet de curiosités familiales.">
+    <meta property="og:title" content="L'éléphant rose — La boutique-mémoire du 96 avenue Mozart">
+    <meta property="og:description" content="Depuis 1932, l'éléphant rose accueille les familles de l'avenue Mozart. Miniatures, jouets en bois, peluches de collection : un cabinet de curiosités où chaque génération retrouve ses souvenirs.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='80'%3E🐘%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --ivoire: #F2F0EC;
+            --anthracite: #2E2B2A;
+            --rose: #FF69B4;
+            --zinc: #A9A29A;
+            --dore: #D4A853;
+            --vertdegris: #3C4F4A;
+            --blanc: #FAFAF8;
+            --ombre-legere: rgba(46, 43, 42, 0.06);
+            --ombre-medium: rgba(46, 43, 42, 0.12);
+            --ombre-forte: rgba(46, 43, 42, 0.22);
+            --rayon: 4px;
+            --transition-douce: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-rebond: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --transition-douce: 0.01s linear;
+                --transition-rebond: 0.01s linear;
+            }
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        body {
+            font-family: 'Karla', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--anthracite);
+            background-color: var(--ivoire);
+            background-image:
+                radial-gradient(ellipse at 15% 8%, rgba(212, 168, 83, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 82% 92%, rgba(255, 105, 180, 0.03) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(169, 162, 154, 0.03) 0%, transparent 70%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header collant */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(242, 240, 236, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(169, 162, 154, 0.25);
+            padding: 0.65rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px var(--ombre-medium);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--anthracite);
+            flex-shrink: 0;
+            z-index: 1001;
+        }
+
+        .header-elephant-icon {
+            width: 2.2rem;
+            height: 2.2rem;
+            flex-shrink: 0;
+            transition: transform var(--transition-rebond);
+        }
+
+        .header-logo:hover .header-elephant-icon {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .header-name {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            color: var(--anthracite);
+        }
+
+        .header-name span {
+            display: block;
+            font-size: 0.65em;
+            font-weight: 400;
+            color: var(--zinc);
+            letter-spacing: 0.04em;
+        }
+
+        .nav-primary {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-primary a {
+            text-decoration: none;
+            color: var(--anthracite);
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            position: relative;
+            padding: 0.2rem 0;
+            transition: color var(--transition-douce);
+            white-space: nowrap;
+        }
+
+        .nav-primary a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rose);
+            transition: width var(--transition-douce);
+            border-radius: 1px;
+        }
+
+        .nav-primary a:hover,
+        .nav-primary a:focus-visible {
+            color: var(--rose);
+        }
+        .nav-primary a:hover::after,
+        .nav-primary a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--rose);
+            color: #fff !important;
+            padding: 0.45rem 1.2rem !important;
+            border-radius: 2rem;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-rebond) !important;
+            box-shadow: 0 3px 12px rgba(255, 105, 180, 0.25);
+            font-size: clamp(0.78rem, 1vw, 0.88rem) !important;
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: #e0559a;
+            color: #fff !important;
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: #fff;
+            border: 1px solid var(--zinc);
+            border-radius: 2rem;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--anthracite);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 1px 4px var(--ombre-legere);
+        }
+        .badge-google .star {
+            color: #F4B400;
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+        .badge-google .note {
+            font-weight: 700;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--anthracite);
+            border-radius: 2px;
+            transition: all var(--transition-douce);
+        }
+
+        @media (max-width: 900px) {
+            .nav-primary {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--ivoire);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                gap: 1.4rem;
+                box-shadow: -4px 0 30px var(--ombre-forte);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                align-items: flex-start;
+            }
+            .nav-primary.active {
+                right: 0;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            .badge-google {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 0.5rem 1rem;
+            }
+            .header-elephant-icon {
+                width: 1.7rem;
+                height: 1.7rem;
+            }
+            .header-name {
+                font-size: 0.85rem;
+            }
+            .badge-google {
+                display: none;
+            }
+            .nav-cta {
+                padding: 0.4rem 1rem !important;
+                font-size: 0.75rem !important;
+            }
+        }
+
+        /* Sections générales */
+        .section {
+            padding: clamp(3rem, 7vw, 7rem) clamp(1.2rem, 5vw, 3rem);
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Filigrane éléphant */
+        .elephant-filigrane {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            font-size: clamp(14rem, 30vw, 28rem);
+            color: var(--rose);
+            user-select: none;
+            line-height: 1;
+            overflow: hidden;
+        }
+        .filigrane-top-right {
+            top: -3rem;
+            right: -2rem;
+            transform: rotate(8deg);
+        }
+        .filigrane-bottom-left {
+            bottom: -4rem;
+            left: -3rem;
+            transform: rotate(-10deg) scaleX(-1);
+        }
+        .filigrane-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(3deg);
+            opacity: 0.03;
+            font-size: clamp(18rem, 40vw, 35rem);
+        }
+
+        /* HÉRO */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(175deg,
+                    rgba(242, 240, 236, 0.3) 0%,
+                    rgba(242, 240, 236, 0.7) 30%,
+                    var(--ivoire) 60%);
+        }
+
+        .hero-image-wrapper {
+            width: min(92vw, 750px);
+            aspect-ratio: 4/3;
+            position: relative;
+            border-radius: var(--rayon);
+            overflow: hidden;
+            box-shadow:
+                0 20px 60px var(--ombre-forte),
+                0 4px 16px var(--ombre-medium);
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            border: 1px solid rgba(169, 162, 154, 0.3);
+            transition: transform var(--transition-douce), box-shadow var(--transition-douce);
+        }
+
+        .hero-image-wrapper:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 28px 70px var(--ombre-forte),
+                0 8px 24px var(--ombre-medium);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.02) contrast(1.04) saturate(1.06);
+            transition: filter 0.6s ease;
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(200deg,
+                    rgba(255, 105, 180, 0.06) 0%,
+                    transparent 40%,
+                    rgba(212, 168, 83, 0.08) 100%);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='2' cy='2' r='0.6' fill='rgba(46,43,42,0.04)'/%3E%3C/svg%3E");
+            background-size: 4px 4px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            color: var(--anthracite);
+            margin: 0 0 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            color: var(--zinc);
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto clamp(1.6rem, 3vw, 2.2rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-accent-line {
+            width: 60px;
+            height: 2px;
+            background: var(--dore);
+            margin: 0 auto 1.2rem;
+            border-radius: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-accroche {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            color: var(--anthracite);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 1.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: floatDown 2.4s ease-in-out infinite;
+            color: var(--zinc);
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+        }
+
+        @keyframes floatDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-scroll-indicator {
+                animation: none;
+                opacity: 0.8;
+            }
+        }
+
+        /* Titres de section */
+        .section-title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: var(--anthracite);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            color: var(--zinc);
+            letter-spacing: 0.04em;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .ornament-line {
+            width: 40px;
+            height: 1.5px;
+            background: var(--dore);
+            margin: 0.5rem 0 1.8rem;
+            border-radius: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Poussez la porte */
+        .door-section {
+            background: rgba(60, 79, 74, 0.03);
+            border-top: 1px solid rgba(169, 162, 154, 0.2);
+            border-bottom: 1px solid rgba(169, 162, 154, 0.2);
+        }
+
+        .door-image-full {
+            width: 100%;
+            aspect-ratio: 16/7;
+            object-fit: cover;
+            border-radius: var(--rayon);
+            box-shadow: 0 12px 40px var(--ombre-medium);
+            display: block;
+            margin-bottom: 1.8rem;
+            filter: brightness(1.03) contrast(1.05);
+            border: 1px solid rgba(169, 162, 154, 0.25);
+            transition: filter 0.5s ease;
+        }
+
+        .door-caption {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+            color: var(--anthracite);
+            text-align: center;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Collections */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .collections-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--rayon);
+            background: #fff;
+            box-shadow: 0 6px 28px var(--ombre-legere);
+            transition: all var(--transition-douce);
+            border: 1px solid rgba(169, 162, 154, 0.18);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .collection-card:hover {
+            box-shadow: 0 16px 44px var(--ombre-medium);
+            transform: translateY(-4px);
+        }
+
+        .collection-card-image {
+            width: 100%;
+            aspect-ratio: 3/2;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.04) contrast(1.03) saturate(1.05);
+            transition: transform 0.6s ease;
+        }
+
+        .collection-card:hover .collection-card-image {
+            transform: scale(1.04);
+        }
+
+        .collection-card-body {
+            padding: 1.2rem 1.1rem 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .collection-card-title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            color: var(--anthracite);
+            letter-spacing: 0.01em;
+            line-height: 1.3;
+        }
+
+        .collection-card-desc {
+            font-size: 0.9rem;
+            color: var(--zinc);
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            font-style: italic;
+        }
+
+        /* Section Boutique-mémoire */
+        .memoire-section {
+            background: rgba(212, 168, 83, 0.04);
+        }
+
+        .memoire-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .memoire-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .memoire-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--rayon);
+            box-shadow: 0 14px 44px var(--ombre-medium);
+            border: 1px solid rgba(169, 162, 154, 0.25);
+            filter: brightness(1.03) contrast(1.04);
+            transition: transform var(--transition-douce);
+        }
+
+        .memoire-image:hover {
+            transform: scale(1.02);
+        }
+
+        .memoire-texte {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            color: var(--anthracite);
+        }
+
+        .memoire-citation {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            color: var(--anthracite);
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            margin-top: 1.2rem;
+            padding-left: 1.2rem;
+            border-left: 3px solid var(--dore);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Mode d'emploi */
+        .mode-emploi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .mode-emploi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .infos-pratiques {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .info-bloc {
+            background: #fff;
+            border-radius: var(--rayon);
+            padding: 1.3rem 1.4rem;
+            border: 1px solid rgba(169, 162, 154, 0.2);
+            box-shadow: 0 3px 16px var(--ombre-legere);
+            transition: box-shadow var(--transition-douce);
+        }
+
+        .info-bloc:hover {
+            box-shadow: 0 8px 28px var(--ombre-medium);
+        }
+
+        .info-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--zinc);
+            margin-bottom: 0.35rem;
+        }
+
+        .info-value {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 500;
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: var(--anthracite);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+
+        .info-value a {
+            color: var(--anthracite);
+            text-decoration: none;
+            transition: color var(--transition-douce);
+            border-bottom: 1px solid transparent;
+        }
+        .info-value a:hover {
+            color: var(--rose);
+            border-bottom-color: var(--rose);
+        }
+
+        .info-badge {
+            display: inline-block;
+            background: rgba(255, 105, 180, 0.08);
+            color: var(--rose);
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 2rem;
+            letter-spacing: 0.03em;
+            margin-top: 0.3rem;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .carte-wrapper {
+            border-radius: var(--rayon);
+            overflow: hidden;
+            box-shadow: 0 10px 36px var(--ombre-medium);
+            border: 1px solid rgba(169, 162, 154, 0.25);
+            position: relative;
+            background: var(--vertdegris);
+        }
+
+        .carte-wrapper iframe {
+            display: block;
+            filter: grayscale(0.25) brightness(0.96) contrast(1.05);
+            transition: filter 0.5s ease;
+        }
+        .carte-wrapper:hover iframe {
+            filter: grayscale(0) brightness(1) contrast(1);
+        }
+
+        /* Section Avis */
+        .avis-section {
+            background: rgba(60, 79, 74, 0.03);
+        }
+
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .avis-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .avis-card {
+            background: #fff;
+            border-radius: var(--rayon);
+            padding: 1.5rem 1.4rem;
+            border: 1px solid rgba(169, 162, 154, 0.18);
+            box-shadow: 0 4px 20px var(--ombre-legere);
+            text-align: center;
+            transition: all var(--transition-douce);
+            position: relative;
+        }
+
+        .avis-card:hover {
+            box-shadow: 0 12px 34px var(--ombre-medium);
+            transform: translateY(-3px);
+        }
+
+        .avis-stars {
+            color: #F4B400;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.7rem;
+        }
+
+        .avis-texte {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            color: var(--anthracite);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.8rem;
+        }
+
+        .avis-auteur {
+            font-size: 0.8rem;
+            color: var(--zinc);
+            letter-spacing: 0.04em;
+            font-weight: 500;
+        }
+
+        .note-globale {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            z-index: 1;
+        }
+        .note-chiffre {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--anthracite);
+            line-height: 1;
+        }
+        .note-etoiles {
+            color: #F4B400;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            letter-spacing: 0.12em;
+            margin: 0.3rem 0;
+        }
+        .note-avis-count {
+            font-size: 0.9rem;
+            color: var(--zinc);
+            letter-spacing: 0.04em;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--anthracite);
+            color: #cbc8c4;
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 3rem) 1.8rem;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid var(--dore);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        .footer-title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-info {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            color: #b8b4af;
+        }
+        .footer-info a {
+            color: #d4cfc9;
+            text-decoration: none;
+            transition: color var(--transition-douce);
+        }
+        .footer-info a:hover {
+            color: var(--rose);
+        }
+
+        .footer-credits {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+            color: #8a8680;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-elephant {
+            text-align: center;
+            font-size: 2.5rem;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+            transition: opacity var(--transition-douce);
+        }
+        .footer-elephant:hover {
+            opacity: 0.8;
+        }
+
+        /* Animations reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--rose);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--anthracite);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0 0 4px 4px;
+            z-index: 9999;
+            font-weight: 600;
+            transition: top 0.3s ease;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Média queries supplémentaires */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .door-caption {
+                font-size: 1rem;
+            }
+            .collection-card-body {
+                padding: 1rem;
+            }
+        }
+
+        /* Surbrillance sélective */
+        ::selection {
+            background: rgba(255, 105, 180, 0.2);
+            color: var(--anthracite);
+        }
+
+        /* Lien actif dans la nav */
+        .nav-primary a.active-link {
+            color: var(--rose);
+        }
+        .nav-primary a.active-link::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#" class="header-logo" aria-label="L'éléphant rose — Accueil">
+            <svg class="header-elephant-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="28" cy="30" rx="16" ry="19" fill="#FF69B4" opacity="0.85"/>
+                <circle cx="36" cy="18" r="3.5" fill="#2E2B2A"/>
+                <path d="M44 22 Q52 18 54 12 Q55 8 52 6" stroke="#2E2B2A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <ellipse cx="22" cy="32" rx="8" ry="12" fill="#F2F0EC" opacity="0.5"/>
+                <rect x="13" y="38" width="10" height="12" rx="4" fill="#2E2B2A" opacity="0.8"/>
+                <rect x="33" y="38" width="10" height="12" rx="4" fill="#2E2B2A" opacity="0.8"/>
+            </svg>
+            <span class="header-name">L'éléphant rose<span>96 avenue Mozart</span></span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-primary" id="nav-primary" role="list">
+                <li><a href="#bienvenue">La boutique</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#memoire">Mémoire</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li>
+                    <span class="badge-google" aria-label="Note Google 4,4 étoiles sur 5">
+                        <span class="star">★</span> <span class="note">4.4</span>/5 · 21 avis
+                    </span>
+                </li>
+                <li><a href="tel:+33142889011" class="nav-cta">📞 Appeler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero-section section" aria-labelledby="hero-title">
+            <div class="elephant-filigrane filigrane-center" aria-hidden="true">🐘</div>
+            <div class="hero-image-wrapper reveal" style="position:relative;z-index:1;">
+                <img src="assets/maps-1.jpg" alt="Devanture de L'éléphant rose, 96 avenue Mozart, Paris — vitrine colorée et façade métallique grise" loading="eager" fetchpriority="high">
+            </div>
+            <h1 class="hero-title reveal reveal-delay-1" id="hero-title">L'éléphant rose</h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Au 96 de l'avenue Mozart, les jouets ont une histoire depuis 1932.</p>
+            <div class="hero-accent-line reveal reveal-delay-2" aria-hidden="true"></div>
+            <p class="hero-accroche reveal reveal-delay-3">
+                Ici, on pousse la porte pour une maison de poupée ou un jeu d'éveil. On repart avec un souvenir. Boutique de quartier, trésor de collectionneurs, l'Éléphant rose est l'une des plus anciennes maisons de jouets de Paris — et la seule à tutoyer les siècles sans avoir jamais grandi.
+            </p>
+            <button class="hero-scroll-indicator" aria-label="Défiler vers le contenu" onclick="document.getElementById('bienvenue').scrollIntoView({behavior:'smooth'})">Découvrir ↓</button>
+        </section>
+
+        <!-- SECTION ① : Poussez la porte -->
+        <section class="section door-section" id="bienvenue" aria-labelledby="door-title">
+            <div class="section-inner">
+                <div class="elephant-filigrane filigrane-top-right" aria-hidden="true">🐘</div>
+                <h2 class="section-title reveal" id="door-title">Poussez la porte</h2>
+                <div class="ornament-line reveal reveal-delay-1" aria-hidden="true"></div>
+                <img src="assets/maps-1.jpg" alt="Devanture de L'éléphant rose — la vitrine colorée débordant de jouets, photographiée à hauteur d'enfant" class="door-image-full reveal reveal-delay-1" loading="lazy">
+                <p class="door-caption reveal reveal-delay-2">«&nbsp;Depuis 1932, l'éléphant rose accueille les familles de l'avenue Mozart.&nbsp;»</p>
+            </div>
+        </section>
+
+        <!-- SECTION ② : Nos collections de toujours -->
+        <section class="section" id="collections" aria-labelledby="collections-title">
+            <div class="section-inner">
+                <div class="elephant-filigrane filigrane-bottom-left" aria-hidden="true">🐘</div>
+                <h2 class="section-title reveal" id="collections-title">Nos collections de toujours</h2>
+                <p class="section-subtitle reveal reveal-delay-1">Ce qu'on trouve ici — et pas ailleurs.</p>
+                <div class="ornament-line reveal reveal-delay-1" aria-hidden="true"></div>
+                <div class="collections-grid">
+                    <article class="collection-card reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Maisons de poupée et miniatures en vitrine chez L'éléphant rose" class="collection-card-image" loading="lazy">
+                        <div class="collection-card-body">
+                            <h3 class="collection-card-title">Maisons de poupée & miniatures</h3>
+                            <p class="collection-card-desc">Des cuisines miniatures où mijotent des souvenirs.</p>
+                        </div>
+                    </article>
+                    <article class="collection-card reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Jouets en bois et jeux d'éveil dans la boutique L'éléphant rose" class="collection-card-image" loading="lazy">
+                        <div class="collection-card-body">
+                            <h3 class="collection-card-title">Jouets en bois & jeux d'éveil</h3>
+                            <p class="collection-card-desc">La noblesse du bois, la douceur des formes simples.</p>
+                        </div>
+                    </article>
+                    <article class="collection-card reveal reveal-delay-3">
+                        <img src="assets/maps-1.jpg" alt="Ours et peluches de collection alignés chez L'éléphant rose" class="collection-card-image" loading="lazy">
+                        <div class="collection-card-body">
+                            <h3 class="collection-card-title">Ours & peluches de collection</h3>
+                            <p class="collection-card-desc">Des compagnons choisis un par un, pour durer bien au-delà de l'enfance.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION ③ : La boutique-mémoire -->
+        <section class="section memoire-section" id="memoire" aria-labelledby="memoire-title">
+            <div class="section-inner">
+                <div class="elephant-filigrane filigrane-top-right" aria-hidden="true" style="opacity:0.03;font-size:20rem;">🐘</div>
+                <div class="memoire-layout">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de L'éléphant rose — enfilade de vitrines débordant de jouets, lumière naturelle" class="memoire-image reveal" loading="lazy">
+                    <div class="reveal reveal-delay-1">
+                        <h2 class="section-title" id="memoire-title">Pleine à craquer, rangée à l'instinct</h2>
+                        <div class="ornament-line" aria-hidden="true"></div>
+                        <p class="memoire-texte">
+                            Ici, chaque centimètre carré raconte une histoire. Les vitrines débordent, les étagères ploient sous le poids des maisons de poupée et des boîtes de jeux anciennes. On se perd, on fouille, on s'émerveille — et c'est voulu. Les vendeurs connaissent chaque recoin, chaque objet, et leur regard s'illumine quand un visiteur retrouve LE jouet qu'il tenait entre ses doigts trente ans plus tôt. Le désordre est magnifique parce qu'il est habité.
+                        </p>
+                        <p class="memoire-citation">«&nbsp;Ici, on ne trouve pas ce qu'on cherchait. On trouve mieux.&nbsp;»</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION ④ : Mode d'emploi -->
+        <section class="section" id="infos" aria-labelledby="infos-title">
+            <div class="section-inner">
+                <div class="elephant-filigrane filigrane-bottom-left" aria-hidden="true" style="opacity:0.03;">🐘</div>
+                <h2 class="section-title reveal" id="infos-title">L'éléphant rose, mode d'emploi</h2>
+                <p class="section-subtitle reveal reveal-delay-1">Venir avec ses yeux — et ses enfants.</p>
+                <div class="ornament-line reveal reveal-delay-1" aria-hidden="true"></div>
+                <div class="mode-emploi-grid">
+                    <div class="infos-pratiques reveal reveal-delay-1">
+                        <div class="info-bloc">
+                            <p class="info-label">Adresse</p>
+                            <p class="info-value">96 avenue Mozart<br>75016 Paris, France</p>
+                        </div>
+                        <div class="info-bloc">
+                            <p class="info-label">Téléphone</p>
+                            <p class="info-value"><a href="tel:+33142889011">01 42 88 90 11</a></p>
+                        </div>
+                        <div class="info-bloc">
+                            <p class="info-label">Email</p>
+                            <p class="info-value"><a href="mailto:commande@elephantrose.fr">commande@elephantrose.fr</a></p>
+                        </div>
+                        <div class="info-bloc">
+                            <p class="info-label">Horaires</p>
+                            <p class="info-value">Ouvert tous les jours à partir de 11h</p>
+                            <p style="font-size:0.8rem;color:var(--zinc);margin-top:0.3rem;">Consultez nos horaires actualisés sur <a href="https://maps.google.com/maps?q=L%27%C3%A9l%C3%A9phant+rose+96+Avenue+Mozart%2C+Paris" target="_blank" rel="noopener" style="color:var(--rose);">Google Maps</a></p>
+                        </div>
+                        <div class="info-bloc">
+                            <span class="info-badge">🏳️‍🌈 Accueil LGBTQ+ friendly</span>
+                            <p style="font-size:0.85rem;color:var(--zinc);margin-top:0.5rem;">Ici, toutes les familles sont chez elles.</p>
+                        </div>
+                    </div>
+                    <div class="carte-wrapper reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=L%27%C3%A9l%C3%A9phant+rose+96+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="420" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — L'éléphant rose, 96 avenue Mozart, Paris"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION ⑤ : Avis -->
+        <section class="section avis-section" id="avis" aria-labelledby="avis-title">
+            <div class="section-inner">
+                <div class="elephant-filigrane filigrane-center" aria-hidden="true" style="opacity:0.025;font-size:22rem;">🐘</div>
+                <div class="note-globale reveal">
+                    <p class="note-chiffre">4,4<span style="font-size:0.5em;font-weight:400;">/5</span></p>
+                    <p class="note-etoiles" aria-label="4,4 étoiles sur 5">★★★★<span style="opacity:0.3;">★</span></p>
+                    <p class="note-avis-count">sur 21 avis Google · et des mercis qui durent</p>
+                </div>
+                <h2 class="section-title reveal reveal-delay-1" id="avis-title" style="text-align:center;">Ce que nos visiteurs racontent</h2>
+                <div class="ornament-line reveal reveal-delay-1" style="margin:0.5rem auto 2.5rem;" aria-hidden="true"></div>
+                <div class="avis-grid">
+                    <div class="avis-card reveal reveal-delay-1">
+                        <p class="avis-stars" aria-hidden="true">★★★★★</p>
+                        <p class="avis-texte">«&nbsp;Un endroit magique, ma fille ne voulait plus partir.&nbsp;»</p>
+                        <p class="avis-auteur">— Sophie, mars 2025</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-2">
+                        <p class="avis-stars" aria-hidden="true">★★★★★</p>
+                        <p class="avis-texte">«&nbsp;Une boutique qui sent bon l'enfance — on y trouve des trésors qu'on ne voit nulle part ailleurs.&nbsp;»</p>
+                        <p class="avis-auteur">— Laurent, février 2025</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <p class="avis-stars" aria-hidden="true">★★★★★</p>
+                        <p class="avis-texte">«&nbsp;Le conseil est parfait, discret et attentionné. Une vraie caverne d'Ali Baba rue Mozart.&nbsp;»</p>
+                        <p class="avis-auteur">— Clara, janvier 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-elephant" aria-hidden="true">🐘</div>
+                <p class="footer-title">L'éléphant rose</p>
+                <p class="footer-info">
+                    96 avenue Mozart<br>
+                    75016 Paris<br>
+                    <a href="tel:+33142889011">01 42 88 90 11</a><br>
+                    <a href="mailto:commande@elephantrose.fr">commande@elephantrose.fr</a>
+                </p>
+            </div>
+            <div>
+                <p class="footer-title">Horaires</p>
+                <p class="footer-info">
+                    Ouvert tous les jours<br>
+                    à partir de 11h<br>
+                    <a href="https://maps.google.com/maps?q=L%27%C3%A9l%C3%A9phant+rose+96+Avenue+Mozart%2C+Paris" target="_blank" rel="noopener">Horaires actualisés sur Google Maps →</a>
+                </p>
+            </div>
+            <div>
+                <p class="footer-title">À propos</p>
+                <p class="footer-info">
+                    L'une des plus anciennes maisons de jouets de Paris, fondée en 1932. Cabinet de curiosités familiales, boutique-mémoire du 16ᵉ arrondissement. Miniatures, jouets en bois, peluches de collection.
+                </p>
+                <p class="footer-info" style="margin-top:0.8rem;">
+                    ⭐ 4,4/5 — 21 avis Google
+                </p>
+            </div>
+        </div>
+        <p class="footer-credits">
+            Site créé par <strong>Agence Mooo</strong> · L'éléphant rose © 2025 · 96 avenue Mozart, Paris 16ᵉ
+        </p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "L'éléphant rose",
+            "description": "Boutique de jouets historique fondée en 1932, spécialisée dans les maisons de poupée, miniatures, jouets en bois et peluches de collection. Cabinet de curiosités familiales au 96 avenue Mozart, Paris 16ᵉ.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "96 avenue Mozart",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142889011",
+            "email": "commande@elephantrose.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.4",
+                "bestRating": "5",
+                "ratingCount": "21"
+            },
+            "openingHours": "Tu-Su 11:00-19:00",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.8465,
+                "longitude": 2.2652
+            },
+            "url": "https://agence.mooo.com/l-elephant-rose"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+
+            function updateHeaderScroll() {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderScroll);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const navPrimary = document.getElementById('nav-primary');
+
+            menuToggle.addEventListener('click', () => {
+                const isActive = navPrimary.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            // Fermer le menu mobile au clic sur un lien
+            navPrimary.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navPrimary.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // IntersectionObserver pour les reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Active link dans la nav au scroll
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-primary a[href^="#"]');
+
+            const linkObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active-link', link.getAttribute('href') === '#' + id);
+                        });
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            });
+
+            sections.forEach(section => linkObserver.observe(section));
+
+            // Respecter prefers-reduced-motion
+            const mqReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mqReducedMotion.matches) {
+                revealElements.forEach(el => {
+                    el.classList.add('visible');
+                    revealObserver.unobserve(el);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
