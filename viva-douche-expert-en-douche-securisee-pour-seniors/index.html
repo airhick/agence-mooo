@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVA DOUCHE – Expert en douche sécurisée pour seniors | Paris</title>
+    <meta name="description" content="Remplacez votre baignoire par une douche sécurisée sur mesure en 24h, sans démolir. Devis gratuit à Paris & proche banlieue. Note 4.7★ – VIVA DOUCHE, 27 Rue Raffet, Paris.">
+    <meta property="og:title" content="VIVA DOUCHE – Douche sécurisée pour seniors en 24h | Paris">
+    <meta property="og:description" content="Une douche ouverte, sans marche, installée le temps d'une journée. Votre salle de bains reste propre, votre vie reprend. Devis gratuit.">
+    <meta property="og:image" content="https://agence.mooo.com/viva-douche-expert-en-douche-securisee-pour-seniors/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚿%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --blanc-platre: #FAF8F5;
+            --anthracite: #2C2C2C;
+            --cuivre: #C17F59;
+            --acier-bleute: #7A8A98;
+            --sable-mat: #EBE2D7;
+            --cuivre-fonce: #A5683E;
+            --cuivre-clair: #D4A07A;
+            --blanc-pur: #FFFFFF;
+            --ombre-douce: rgba(44, 44, 44, 0.06);
+            --ombre-medium: rgba(44, 44, 44, 0.12);
+            --ombre-forte: rgba(44, 44, 44, 0.18);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --transition-fluide: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-vif: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 1.6vw, 18px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Jost', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--anthracite);
+            background-color: var(--blanc-platre);
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* === ANIMATION D'ENTRÉE : TRAIT LUMINEUX === */
+        .loading-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        .loading-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 120%;
+            height: 2px;
+            background: var(--cuivre);
+            box-shadow: 0 0 24px 6px rgba(193, 127, 89, 0.7), 0 0 60px 16px rgba(193, 127, 89, 0.35);
+            animation: ligneTraverse 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            border-radius: 1px;
+        }
+
+        .loading-line.fade-out {
+            animation: fadeOutOverlay 0.5s ease forwards 0.85s;
+        }
+
+        @keyframes ligneTraverse {
+            0% {
+                left: -120%;
+            }
+            60% {
+                left: 0%;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOutOverlay {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* === HEADER === */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.85);
+            backdrop-filter: blur(16px) saturate(140%);
+            -webkit-backdrop-filter: blur(16px) saturate(140%);
+            border-bottom: 1px solid rgba(193, 127, 89, 0.15);
+            transition: all var(--transition-fluide);
+            padding: 0.6rem 0;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 2px 24px var(--ombre-douce);
+            border-bottom-color: rgba(193, 127, 89, 0.25);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .header-logo-text {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+            letter-spacing: 0.06em;
+            color: var(--anthracite);
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .header-logo-accent {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.12em;
+            color: var(--cuivre);
+            text-transform: uppercase;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.6rem, 1.4vw, 1.4rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--anthracite);
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.78rem, 1vw, 0.9rem);
+            letter-spacing: 0.03em;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: color var(--transition-vif);
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre);
+            transition: width var(--transition-fluide);
+            border-radius: 1px;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--cuivre-fonce);
+        }
+
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--cuivre);
+            color: var(--blanc-pur);
+            text-decoration: none;
+            padding: 0.55rem 1.2rem;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1vw, 0.9rem);
+            letter-spacing: 0.04em;
+            transition: all var(--transition-fluide);
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(193, 127, 89, 0.25);
+            flex-shrink: 0;
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--cuivre-fonce);
+            box-shadow: 0 4px 20px rgba(193, 127, 89, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .header-cta:focus-visible {
+            outline: 3px solid var(--cuivre);
+            outline-offset: 3px;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: var(--blanc-pur);
+            border: 1px solid rgba(193, 127, 89, 0.3);
+            border-radius: 50px;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--anthracite);
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.02em;
+        }
+
+        .badge-google .stars {
+            color: #E8A838;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-google .note {
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+            }
+            .header-inner {
+                gap: 0.8rem;
+            }
+            .badge-google {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo-text {
+                font-size: 1.1rem;
+            }
+            .header-logo-accent {
+                font-size: 0.65rem;
+                letter-spacing: 0.08em;
+            }
+            .header-cta {
+                padding: 0.45rem 0.9rem;
+                font-size: 0.72rem;
+            }
+            .badge-google {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+
+        /* === SECTIONS GÉNÉRALES === */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-label {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--acier-bleute);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            color: var(--anthracite);
+            position: relative;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 320px;
+            height: 3px;
+            background-image: repeating-linear-gradient(to right,
+                    var(--cuivre) 0px,
+                    var(--cuivre) 28px,
+                    transparent 28px,
+                    transparent 36px);
+            border-radius: 2px;
+        }
+
+        /* === HÉRO === */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) saturate(0.7);
+            transform: scale(1.02);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg,
+                    rgba(44, 44, 44, 0.55) 0%,
+                    rgba(44, 44, 44, 0.25) 35%,
+                    rgba(193, 127, 89, 0.08) 60%,
+                    rgba(250, 248, 245, 0.15) 85%,
+                    rgba(250, 248, 245, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.25;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            padding: clamp(2rem, 5vw, 4rem);
+            margin-left: clamp(1rem, 6vw, 5rem);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cuivre-clair);
+            border: 1px solid rgba(193, 127, 89, 0.5);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            background: rgba(44, 44, 44, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            letter-spacing: 0.01em;
+            line-height: 1.08;
+            color: var(--blanc-pur);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 520px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--cuivre);
+            color: var(--blanc-pur);
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-fluide);
+            box-shadow: 0 4px 20px rgba(193, 127, 89, 0.35);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--cuivre-fonce);
+            box-shadow: 0 6px 28px rgba(193, 127, 89, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--blanc-pur);
+            outline-offset: 3px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--blanc-pur);
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            transition: all var(--transition-fluide);
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            border-color: var(--blanc-pur);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:focus-visible {
+            outline: 3px solid var(--blanc-pur);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+                text-align: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-bg img {
+                object-position: center 50%;
+            }
+            .hero-bg::after {
+                background: linear-gradient(180deg,
+                        rgba(44, 44, 44, 0.6) 0%,
+                        rgba(44, 44, 44, 0.3) 50%,
+                        rgba(250, 248, 245, 0.6) 100%);
+            }
+        }
+
+        /* === POURQUOI === */
+        .pourquoi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            align-items: stretch;
+        }
+
+        .pourquoi-card {
+            background: var(--blanc-pur);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.8rem, 3vw, 2.5rem);
+            position: relative;
+            box-shadow: 0 2px 20px var(--ombre-douce);
+            transition: all var(--transition-fluide);
+            border: 1px solid transparent;
+            overflow: hidden;
+        }
+
+        .pourquoi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--cuivre);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-fluide);
+            border-radius: 0 0 2px 2px;
+        }
+
+        .pourquoi-card:hover::before,
+        .pourquoi-card:focus-within::before {
+            transform: scaleX(1);
+        }
+
+        .pourquoi-card:hover {
+            box-shadow: 0 8px 36px var(--ombre-medium);
+            transform: translateY(-3px);
+            border-color: rgba(193, 127, 89, 0.2);
+        }
+
+        .pourquoi-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .pourquoi-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+            letter-spacing: 0.02em;
+            color: var(--anthracite);
+            margin-bottom: 0.6rem;
+        }
+
+        .pourquoi-card p {
+            font-size: 0.95rem;
+            color: #5A5A5A;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+        }
+
+        .pourquoi-highlight {
+            font-weight: 600;
+            color: var(--cuivre-fonce);
+        }
+
+        @media (max-width: 768px) {
+            .pourquoi-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        /* === TIMELINE === */
+        .timeline-horizontale {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+            position: relative;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .timeline-horizontale::before {
+            content: '';
+            position: absolute;
+            top: 3.8rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            height: 2px;
+            background: var(--sable-mat);
+            z-index: 0;
+            border-radius: 1px;
+        }
+
+        .timeline-step {
+            flex: 1;
+            min-width: 160px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        .timeline-numero {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            line-height: 1;
+            color: var(--cuivre);
+            opacity: 0.8;
+            letter-spacing: -0.02em;
+            display: block;
+            margin-bottom: 0.2rem;
+            transition: all var(--transition-fluide);
+        }
+
+        .timeline-step:hover .timeline-numero {
+            opacity: 1;
+            transform: scale(1.06);
+            color: var(--cuivre-fonce);
+        }
+
+        .timeline-step h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            color: var(--anthracite);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-step p {
+            font-size: 0.85rem;
+            color: #5A5A5A;
+            letter-spacing: 0.02em;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-horizontale {
+                flex-direction: column;
+                gap: 1.8rem;
+                padding-left: 2.5rem;
+            }
+            .timeline-horizontale::before {
+                top: 0;
+                bottom: 0;
+                left: 1.9rem;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+            .timeline-step {
+                text-align: left;
+                padding-left: 2rem;
+                position: relative;
+            }
+            .timeline-step::before {
+                content: '';
+                position: absolute;
+                left: -0.55rem;
+                top: 0.7rem;
+                width: 12px;
+                height: 12px;
+                background: var(--cuivre);
+                border-radius: 50%;
+                z-index: 2;
+                box-shadow: 0 0 0 4px var(--blanc-platre);
+            }
+            .timeline-numero {
+                font-size: 3rem;
+                display: inline-block;
+                margin-bottom: 0;
+                margin-right: 0.5rem;
+            }
+            .timeline-step h4 {
+                display: inline;
+            }
+        }
+
+        /* === GALERIE === */
+        .galerie {
+            background: var(--sable-mat);
+            padding: clamp(3rem, 7vw, 6rem) 0;
+            margin: 0;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .galerie-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5vw, 3rem);
+        }
+
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2.5vw, 2rem);
+        }
+
+        .galerie-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--blanc-platre);
+            box-shadow: 0 4px 24px var(--ombre-douce);
+            cursor: pointer;
+            transition: all var(--transition-fluide);
+            border: 1px solid rgba(193, 127, 89, 0.08);
+        }
+
+        .galerie-item:hover {
+            box-shadow: 0 12px 40px var(--ombre-medium);
+            transform: translateY(-4px);
+            border-color: rgba(193, 127, 89, 0.3);
+        }
+
+        .galerie-item-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .galerie-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #E8E3DB 0%, #D5CFC6 30%, #E0D9D0 60%, #CBC4B9 100%);
+            background-size: 300% 300%;
+            animation: textureShift 12s ease-in-out infinite;
+        }
+
+        @keyframes textureShift {
+            0%,
+            100% {
+                background-position: 0% 0%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
+        }
+
+        .galerie-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255, 255, 255, 0.25) 39px, rgba(255, 255, 255, 0.25) 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255, 255, 255, 0.2) 39px, rgba(255, 255, 255, 0.2) 40px);
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .galerie-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(193, 127, 89, 0.04);
+            z-index: 2;
+        }
+
+        .galerie-label {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 3;
+            background: rgba(44, 44, 44, 0.8);
+            color: var(--blanc-pur);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+        }
+
+        .galerie-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 3;
+            background: var(--cuivre);
+            color: var(--blanc-pur);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .galerie-avant-apres {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 3;
+        }
+
+        .galerie-avant,
+        .galerie-apres {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--blanc-pur);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .galerie-avant {
+            background: rgba(122, 138, 152, 0.5);
+            justify-content: flex-start;
+        }
+
+        .galerie-apres {
+            background: rgba(193, 127, 89, 0.5);
+            justify-content: flex-end;
+        }
+
+        .galerie-separateur {
+            width: 2px;
+            background: var(--blanc-pur);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            z-index: 4;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .galerie-grid {
+                grid-template-columns: 1fr;
+            }
+            .galerie-item {
+                aspect-ratio: 16/10;
+            }
+        }
+
+        /* === TÉMOIGNAGES === */
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .temoignage-card {
+            background: var(--blanc-pur);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.8rem, 3vw, 2.5rem);
+            box-shadow: 0 2px 20px var(--ombre-douce);
+            border-left: 4px solid var(--cuivre);
+            transition: all var(--transition-fluide);
+            position: relative;
+        }
+
+        .temoignage-card:hover {
+            box-shadow: 0 8px 32px var(--ombre-medium);
+            transform: translateY(-2px);
+        }
+
+        .temoignage-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            letter-spacing: 0.02em;
+            line-height: 1.35;
+            color: var(--anthracite);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .temoignage-quote::before {
+            content: '«\2009';
+            color: var(--cuivre);
+            font-weight: 700;
+        }
+
+        .temoignage-quote::after {
+            content: '\2009»';
+            color: var(--cuivre);
+            font-weight: 700;
+        }
+
+        .temoignage-auteur {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--acier-bleute);
+            letter-spacing: 0.03em;
+        }
+
+        .temoignage-ville {
+            font-size: 0.8rem;
+            color: #888;
+            letter-spacing: 0.04em;
+        }
+
+        .temoignage-video-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--cuivre);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 768px) {
+            .temoignages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === FAQ === */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .faq-item {
+            background: var(--blanc-pur);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 1px 8px var(--ombre-douce);
+            transition: all var(--transition-fluide);
+            border: 1px solid transparent;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(193, 127, 89, 0.2);
+            box-shadow: 0 3px 16px var(--ombre-douce);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.2rem 1.5rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: var(--anthracite);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color var(--transition-vif);
+        }
+
+        .faq-question:hover {
+            color: var(--cuivre-fonce);
+        }
+
+        .faq-question:focus-visible {
+            outline: 3px solid var(--cuivre);
+            outline-offset: -3px;
+            border-radius: var(--radius-md);
+        }
+
+        .faq-arrow {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            transition: transform var(--transition-fluide);
+            color: var(--cuivre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-reponse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.5s ease;
+            padding: 0 1.5rem;
+            font-size: 0.9rem;
+            color: #5A5A5A;
+            letter-spacing: 0.02em;
+            line-height: 1.55;
+        }
+
+        .faq-item.open .faq-reponse {
+            max-height: 300px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
+        /* === FORMULAIRE RAPPEL === */
+        .rappel-section {
+            background: var(--sable-mat);
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+            margin: 0;
+            max-width: 100%;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rappel-section::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--cuivre);
+            opacity: 0.5;
+        }
+
+        .rappel-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .rappel-form {
+            background: var(--blanc-pur);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.8rem, 4vw, 3rem);
+            box-shadow: 0 4px 28px var(--ombre-douce);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .rappel-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .rappel-form label {
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--anthracite);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .rappel-form input,
+        .rappel-form select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #D5CFC6;
+            border-radius: var(--radius-sm);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            background: var(--blanc-platre);
+            transition: all var(--transition-vif);
+            color: var(--anthracite);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .rappel-form input:focus,
+        .rappel-form select:focus {
+            outline: none;
+            border-color: var(--cuivre);
+            box-shadow: 0 0 0 4px rgba(193, 127, 89, 0.1);
+            background: var(--blanc-pur);
+        }
+
+        .rappel-form select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C17F59' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            padding-right: 2.5rem;
+        }
+
+        .rappel-form button {
+            grid-column: 1 / -1;
+            background: var(--cuivre);
+            color: var(--blanc-pur);
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: all var(--transition-fluide);
+            box-shadow: 0 4px 16px rgba(193, 127, 89, 0.3);
+        }
+
+        .rappel-form button:hover,
+        .rappel-form button:focus-visible {
+            background: var(--cuivre-fonce);
+            box-shadow: 0 6px 24px rgba(193, 127, 89, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .rappel-form button:focus-visible {
+            outline: 3px solid var(--cuivre);
+            outline-offset: 3px;
+        }
+
+        .rappel-horaires {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--acier-bleute);
+            letter-spacing: 0.03em;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .rappel-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--anthracite);
+            color: rgba(255, 255, 255, 0.85);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.04em;
+            color: var(--cuivre-clair);
+            margin-bottom: 1rem;
+        }
+
+        .footer p,
+        .footer a {
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--cuivre-clair);
+            text-decoration: underline;
+        }
+
+        .footer-map {
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-credits {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.04em;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* === REVEAL ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* === FOCUS GLOBAL === */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--cuivre);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* === SKIP LINK === */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--cuivre);
+            color: var(--blanc-pur);
+            padding: 0.5rem 1rem;
+            border-radius: 0 0 4px 4px;
+            z-index: 10000;
+            font-weight: 500;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* === CUIVRE ACCENTS SUR TEXTES === */
+        .cuivre-text {
+            color: var(--cuivre);
+            font-weight: 600;
+        }
+
+        /* === ESPACEMENTS FINS === */
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Animation d'entrée -->
+    <div class="loading-line" id="loadingLine" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="header" id="header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="header-logo" aria-label="VIVA DOUCHE – Retour à l'accueil">
+                <span class="header-logo-text">VIVA DOUCHE</span>
+                <span class="header-logo-accent">Expert Sénior</span>
+            </a>
+            <span class="badge-google" aria-label="Note Google 4.7 sur 5 basée sur 74 avis">
+                <span class="stars">★★★★★</span>
+                <span class="note">4.7</span>/5 · 74 avis
+            </span>
+            <nav aria-label="Navigation principale">
+                <ul class="header-nav">
+                    <li><a href="#pourquoi">Pourquoi</a></li>
+                    <li><a href="#timeline">En 24h</a></li>
+                    <li><a href="#galerie">Réalisations</a></li>
+                    <li><a href="#temoignages">Avis</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33800500805" class="header-cta" aria-label="Appeler VIVA DOUCHE au 0 800 50 08 05">
+                <span aria-hidden="true">📞</span> 0 800 50 08 05
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Showroom VIVA DOUCHE – 27 Rue Raffet, Paris" loading="eager" decoding="async" width="1200" height="800">
+            </div>
+            <div class="hero-grain" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="hero-tag">Douche sécurisée sur mesure</span>
+                <h1 class="hero-title" id="hero-title">Votre baignoire ne devrait plus dicter votre matinée.</h1>
+                <p class="hero-subtitle">Remplacez-la par une douche sécurisée sur mesure, en 24 heures, sans démolir. Devis gratuit — Paris & proche banlieue.</p>
+                <div class="hero-actions">
+                    <a href="#rappel" class="btn-primary">Demander un devis gratuit</a>
+                    <a href="tel:+33800500805" class="btn-secondary">Appeler maintenant</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- POURQUOI FAIRE LE PAS -->
+        <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
+            <span class="section-label reveal">Les avantages concrets</span>
+            <h2 class="section-title reveal reveal-delay-1" id="pourquoi-title">Pourquoi faire le pas&nbsp;?</h2>
+            <div class="pourquoi-grid">
+                <article class="pourquoi-card reveal reveal-delay-2" tabindex="0">
+                    <span class="pourquoi-icon" aria-hidden="true">🚶‍♂️</span>
+                    <h3>0 marche à franchir</h3>
+                    <p>Douche de <span class="pourquoi-highlight">plain-pied</span> avec receveur antidérapant. Aucun obstacle, aucun risque de chute. L'accès est fluide, même avec un déambulateur ou un fauteuil.</p>
+                </article>
+                <article class="pourquoi-card reveal reveal-delay-3" tabindex="0">
+                    <span class="pourquoi-icon" aria-hidden="true">🏠</span>
+                    <h3>Maintien dans son logement</h3>
+                    <p>Rester chez soi en toute <span class="pourquoi-highlight">autonomie</span> et sécurité. Nos installations sont conçues pour durer et s'adapter à l'évolution de vos besoins, sans déménager.</p>
+                </article>
+                <article class="pourquoi-card reveal reveal-delay-4" tabindex="0">
+                    <span class="pourquoi-icon" aria-hidden="true">💰</span>
+                    <h3>Crédit d'impôt de 25&nbsp;%</h3>
+                    <p>Vous bénéficiez d'un <span class="pourquoi-highlight">crédit d'impôt de 25&nbsp;%</span> sur le montant de l'installation, même si vous n'êtes pas imposable. Un avantage immédiat pour votre budget.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="section" id="timeline" aria-labelledby="timeline-title">
+            <span class="section-label reveal">Le parcours</span>
+            <h2 class="section-title reveal reveal-delay-1" id="timeline-title">Votre douche avant la nuit</h2>
+            <div class="timeline-horizontale">
+                <div class="timeline-step reveal reveal-delay-2">
+                    <span class="timeline-numero">01</span>
+                    <h4>RDV conseil</h4>
+                    <p>Un expert se déplace chez vous pour évaluer votre salle de bains, vos besoins et vos envies. Conseil gratuit et sans engagement.</p>
+                </div>
+                <div class="timeline-step reveal reveal-delay-3">
+                    <span class="timeline-numero">02</span>
+                    <h4>Choix des matériaux</h4>
+                    <p>Carrelage grand format, receveur antidérapant, barres d'appui chromées : vous choisissez parmi notre sélection de qualité.</p>
+                </div>
+                <div class="timeline-step reveal reveal-delay-4">
+                    <span class="timeline-numero">03</span>
+                    <h4>Pose en 24h</h4>
+                    <p>En une journée, votre baignoire est remplacée par une douche de plain-pied. Chantier propre, protégé, sans surprise.</p>
+                </div>
+                <div class="timeline-step reveal reveal-delay-5">
+                    <span class="timeline-numero">04</span>
+                    <h4>Sérénité</h4>
+                    <p>Vous profitez immédiatement de votre nouvelle douche. Garantie complète, service après-vente réactif.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE -->
+        <section class="galerie" id="galerie" aria-labelledby="galerie-title">
+            <div class="galerie-inner">
+                <span class="section-label reveal">Chantiers réels</span>
+                <h2 class="section-title reveal reveal-delay-1" id="galerie-title" style="color:var(--anthracite);">Nos installations réelles</h2>
+                <p class="reveal reveal-delay-2" style="margin-bottom:2rem;color:#5A5A5A;max-width:600px;letter-spacing:0.02em;">Chaque projet est unique. Voici quelques-unes de nos réalisations à Paris et en proche banlieue. <em>Photos de chantier — aucun cliché de stock.</em></p>
+                <div class="galerie-grid">
+                    <div class="galerie-item reveal reveal-delay-2" tabindex="0" aria-label="Installation avant/après – Paris 16ᵉ">
+                        <div class="galerie-item-inner">
+                            <div class="galerie-placeholder">
+                                <div class="galerie-avant-apres">
+                                    <div class="galerie-avant">Avant</div>
+                                    <div class="galerie-separateur" aria-hidden="true"></div>
+                                    <div class="galerie-apres">Après</div>
+                                </div>
+                            </div>
+                            <span class="galerie-label">Paris 16ᵉ — Salle de bains 5 m²</span>
+                            <span class="galerie-badge">Avant/Après</span>
+                        </div>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-3" tabindex="0" aria-label="Installation avant/après – Boulogne-Billancourt">
+                        <div class="galerie-item-inner">
+                            <div class="galerie-placeholder">
+                                <div class="galerie-avant-apres">
+                                    <div class="galerie-avant">Avant</div>
+                                    <div class="galerie-separateur" aria-hidden="true"></div>
+                                    <div class="galerie-apres">Après</div>
+                                </div>
+                            </div>
+                            <span class="galerie-label">Boulogne — Appartement T3</span>
+                            <span class="galerie-badge">Avant/Après</span>
+                        </div>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-4" tabindex="0" aria-label="Installation – Paris 12ᵉ">
+                        <div class="galerie-item-inner">
+                            <div class="galerie-placeholder">
+                                <div class="galerie-avant-apres">
+                                    <div class="galerie-avant">Avant</div>
+                                    <div class="galerie-separateur" aria-hidden="true"></div>
+                                    <div class="galerie-apres">Après</div>
+                                </div>
+                            </div>
+                            <span class="galerie-label">Paris 12ᵉ — Salle d'eau compacte</span>
+                            <span class="galerie-badge">Avant/Après</span>
+                        </div>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-5" tabindex="0" aria-label="Installation – Montreuil">
+                        <div class="galerie-item-inner">
+                            <div class="galerie-placeholder">
+                                <div class="galerie-avant-apres">
+                                    <div class="galerie-avant">Avant</div>
+                                    <div class="galerie-separateur" aria-hidden="true"></div>
+                                    <div class="galerie-apres">Après</div>
+                                </div>
+                            </div>
+                            <span class="galerie-label">Montreuil — Pavillon plain-pied</span>
+                            <span class="galerie-badge">Avant/Après</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="section" id="temoignages" aria-labelledby="temoignages-title">
+            <span class="section-label reveal">Paroles de clients</span>
+            <h2 class="section-title reveal reveal-delay-1" id="temoignages-title">Ils l'ont vécu</h2>
+            <div class="temoignages-grid">
+                <article class="temoignage-card reveal reveal-delay-2" tabindex="0">
+                    <p class="temoignage-quote">J'ai retrouvé mon autonomie en une journée. L'équipe a été formidable, tout était propre le soir même.</p>
+                    <p class="temoignage-auteur">Madame L.</p>
+                    <p class="temoignage-ville">Villemomble (93)</p>
+                    <div class="temoignage-video-placeholder" aria-hidden="true">
+                        <span>▶</span> Témoignage vidéo disponible
+                    </div>
+                </article>
+                <article class="temoignage-card reveal reveal-delay-3" tabindex="0">
+                    <p class="temoignage-quote">Un travail propre, rapide, et des artisans à l'écoute. Ma mère est rassurée, et moi aussi.</p>
+                    <p class="temoignage-auteur">Monsieur D.</p>
+                    <p class="temoignage-ville">Paris 16ᵉ (75)</p>
+                    <div class="temoignage-video-placeholder" aria-hidden="true">
+                        <span>▶</span> Témoignage vidéo disponible
+                    </div>
+                </article>
+                <article class="temoignage-card reveal reveal-delay-4" tabindex="0">
+                    <p class="temoignage-quote">Crédit d'impôt obtenu sans difficulté, douche impeccable. Je recommande sans hésiter.</p>
+                    <p class="temoignage-auteur">Madame & Monsieur T.</p>
+                    <p class="temoignage-ville">Boulogne-Billancourt (92)</p>
+                    <div class="temoignage-video-placeholder" aria-hidden="true">
+                        <span>▶</span> Témoignage vidéo disponible
+                    </div>
+                </article>
+                <article class="temoignage-card reveal reveal-delay-5" tabindex="0">
+                    <p class="temoignage-quote">En 24h chrono, ma salle de bains a été transformée. Je ne regrette absolument pas.</p>
+                    <p class="temoignage-auteur">Madame R.</p>
+                    <p class="temoignage-ville">Montreuil (93)</p>
+                    <div class="temoignage-video-placeholder" aria-hidden="true">
+                        <span>▶</span> Témoignage vidéo disponible
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq" aria-labelledby="faq-title">
+            <span class="section-label reveal">Questions fréquentes</span>
+            <h2 class="section-title reveal reveal-delay-1" id="faq-title">Des questions précises, des réponses courtes</h2>
+            <div class="faq-list">
+                <div class="faq-item reveal reveal-delay-2">
+                    <button class="faq-question" aria-expanded="false">
+                        Et si ma salle de bains est petite&nbsp;?
+                        <span class="faq-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Aucun souci. Nous concevons des douches adaptées aux espaces les plus compacts — à partir de 80 × 80 cm. Nos receveurs sur mesure s'ajustent à toutes les configurations, même les plus atypiques.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-3">
+                    <button class="faq-question" aria-expanded="false">
+                        Qu'est-ce qui est vraiment garanti&nbsp;?
+                        <span class="faq-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Nous garantissons l'étanchéité complète de l'installation pendant 10 ans. Les matériaux (receveur, parois, robinetterie) bénéficient de garanties fabricant de 2 à 5 ans. Notre intervention est couverte par une assurance décennale.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-4">
+                    <button class="faq-question" aria-expanded="false">
+                        Comment obtenir le crédit d'impôt&nbsp;?
+                        <span class="faq-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Le crédit d'impôt de 25&nbsp;% s'applique sur le montant total de l'installation (matériel + main-d'œuvre). Il suffit de déclarer la somme sur votre déclaration de revenus, dans la case dédiée aux aides à l'autonomie. Même sans impôt à payer, vous recevez un remboursement du Trésor public. Nous vous fournissons tous les justificatifs.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-5">
+                    <button class="faq-question" aria-expanded="false">
+                        Faut-il un permis de construire&nbsp;?
+                        <span class="faq-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Non. Le remplacement d'une baignoire par une douche dans une salle de bains existante ne nécessite aucune autorisation administrative. Aucune déclaration de travaux n'est requise pour ce type d'aménagement intérieur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RAPPEL & DEVIS -->
+        <section class="rappel-section" id="rappel" aria-labelledby="rappel-title">
+            <div class="rappel-inner">
+                <span class="section-label reveal">Contact</span>
+                <h2 class="section-title reveal reveal-delay-1" id="rappel-title" style="color:var(--anthracite);">Rappel & devis gratuit</h2>
+                <p class="reveal reveal-delay-2" style="text-align:center;margin-bottom:2rem;color:#5A5A5A;letter-spacing:0.02em;">Laissez-nous vos coordonnées, nous vous rappelons sous 24h ouvrées pour un devis personnalisé.</p>
+                <form class="rappel-form reveal reveal-delay-3" novalidate>
+                    <div>
+                        <label for="code-postal">Code postal</label>
+                        <input type="text" id="code-postal" name="code-postal" placeholder="75016" maxlength="5" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" required>
+                    </div>
+                    <div>
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel" required>
+                    </div>
+                    <div class="full-width">
+                        <label for="creneau">Créneau de rappel souhaité</label>
+                        <select id="creneau" name="creneau" required>
+                            <option value="" disabled selected>Choisissez un créneau</option>
+                            <option value="matin">Matin (9h – 12h)</option>
+                            <option value="apres-midi">Après-midi (14h – 18h)</option>
+                        </select>
+                    </div>
+                    <button type="submit">Recevoir mon devis gratuit</button>
+                </form>
+                <p class="rappel-horaires reveal reveal-delay-4">📅 Du lundi au vendredi, 9h – 18h. Appel gratuit depuis un fixe. <a href="tel:+33800500805" style="color:var(--cuivre);text-decoration:underline;font-weight:500;">0 800 50 08 05</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <h4>VIVA DOUCHE</h4>
+                <p>Expert en douche sécurisée pour seniors<br>
+                    27 Rue Raffet, 75016 Paris<br>
+                    <a href="tel:+33800500805">0 800 50 08 05</a><br>
+                    <a href="mailto:webmaster@viva-douche.fr">webmaster@viva-douche.fr</a></p>
+                <p style="margin-top:0.8rem;">
+                    <span class="badge-google" style="display:inline-flex;background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);">
+                        <span class="stars">★★★★★</span> <span class="note">4.7</span>/5 · 74 avis
+                    </span>
+                </p>
+            </div>
+            <div>
+                <h4>Horaires d'appel</h4>
+                <p>Lundi – Vendredi : 9h – 18h<br>
+                    Samedi : sur rendez-vous<br>
+                    Dimanche : fermé</p>
+                <p style="margin-top:0.8rem;font-size:0.8rem;color:rgba(255,255,255,0.5);">Horaires du showroom à confirmer par téléphone.</p>
+            </div>
+            <div>
+                <h4>Accès</h4>
+                <div class="footer-map">
+                    <iframe src="https://maps.google.com/maps?q=VIVA+DOUCHE+-+EXPERT+EN+DOUCHE+S%C3%89CURIS%C3%89E+POUR+SENIORS+27+Rue+Raffet%2C+Paris&output=embed" width="100%" height="220" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès VIVA DOUCHE – 27 Rue Raffet, Paris"></iframe>
+                </div>
+            </div>
+            <p class="footer-credits">© 2025 VIVA DOUCHE — Tous droits réservés. Site créé par Agence Mooo.</p>
+        </div>
+    </footer>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "VIVA DOUCHE - Expert en douche sécurisée pour seniors",
+            "description": "Remplacement de baignoire par douche sécurisée sur mesure en 24h à Paris et proche banlieue. Devis gratuit.",
+            "image": "https://agence.mooo.com/viva-douche-expert-en-douche-securisee-pour-seniors/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "27 Rue Raffet",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33800500805",
+            "email": "webmaster@viva-douche.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "74"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            "priceRange": "€€",
+            "url": "https://agence.mooo.com/viva-douche-expert-en-douche-securisee-pour-seniors"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Loading line animation
+            const loadingLine = document.getElementById('loadingLine');
+            if (loadingLine) {
+                loadingLine.addEventListener('animationend', function(e) {
+                    if (e.target === loadingLine && e.animationName === 'ligneTraverse') {
+                        loadingLine.classList.add('fade-out');
+                        setTimeout(function() {
+                            loadingLine.style.display = 'none';
+                        }, 600);
+                    }
+                });
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+                scrollTimeout = requestAnimationFrame(function() {
+                    if (window.scrollY > 40) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }, { passive: true });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.15
+                };
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // FAQ accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                const button = item.querySelector('.faq-question');
+                button.addEventListener('click', function() {
+                    const isOpen = item.classList.contains('open');
+                    // Close all items
+                    faqItems.forEach(function(otherItem) {
+                        otherItem.classList.remove('open');
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded',
+                            'false');
+                    });
+                    // Toggle current
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                // Keyboard support
+                button.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        button.click();
+                    }
+                });
+            });
+
+            // Form submission
+            const form = document.querySelector('.rappel-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const codePostal = document.getElementById('code-postal').value.trim();
+                    const telephone = document.getElementById('telephone').value.trim();
+                    const creneau = document.getElementById('creneau').value;
+
+                    if (!codePostal || !telephone || !creneau) {
+                        alert('Veuillez remplir tous les champs pour recevoir votre devis gratuit.');
+                        return;
+                    }
+
+                    if (!/^[0-9]{5}$/.test(codePostal)) {
+                        alert('Veuillez entrer un code postal valide (5 chiffres).');
+                        return;
+                    }
+
+                    // Simulate submission
+                    alert(
+                        'Merci ! Votre demande de devis gratuit a bien été enregistrée. Nous vous rappellerons au ' +
+                        (creneau === 'matin' ? 'matin (9h-12h)' : 'après-midi (14h-18h)') +
+                        ' dans les plus brefs délais.');
+                    form.reset();
+                });
+            }
+
+            // Smooth mobile menu (anchor links close any potential gap)
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window
+                            .pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
