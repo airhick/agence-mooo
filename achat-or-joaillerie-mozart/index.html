@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat Or - Joaillerie Mozart | Estimation et rachat d'or Paris 16</title>
+    <meta name="description" content="Expertise et rachat d'or au 81 Avenue Mozart à Paris 16ᵉ. Estimation transparente, virement immédiat. Bijoux, lingots, pièces d'or. Note 5/5 - 129 avis Google.">
+    <meta property="og:title" content="Achat Or - Joaillerie Mozart | L'or, simplement estimé">
+    <meta property="og:description" content="Au 81 de l'Avenue Mozart, un entretien discret, une évaluation transparente et un virement immédiat. Aucun engagement, tout le temps nécessaire.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231C1B1B' stroke='%23D4AF37' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23D4AF37'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fond: #1C1B1B;
+            --encre: #F4F1EA;
+            --or24: #D4AF37;
+            --bronze: #A67C52;
+            --fondsecond: #2A2826;
+            --ivoire: #EBE3D5;
+            --grain-opacity: 0.028;
+            --transition-douce: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-spring: 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Grain / texture sur le fond */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: var(--grain-opacity);
+        }
+
+        /* Ligne d'or serpentine */
+        .golden-thread-container {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .golden-thread-container svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .golden-path {
+            fill: none;
+            stroke: var(--or24);
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.55;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.30));
+            transition: opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .golden-path {
+                stroke-width: 0.8;
+                opacity: 0.35;
+                filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.20));
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .golden-path {
+                opacity: 0.25;
+                filter: none;
+                transition: none;
+            }
+        }
+
+        /* Contenu principal */
+        .main-wrapper {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(28, 27, 27, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .site-header.scrolled {
+            background: rgba(28, 27, 27, 0.94);
+            border-bottom-color: rgba(212, 175, 55, 0.32);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 70px;
+            gap: 1rem;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--encre);
+            flex-shrink: 0;
+        }
+
+        .header-brand .brand-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid var(--or24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-size: 0.85rem;
+            color: var(--or24);
+            font-weight: 600;
+            flex-shrink: 0;
+            letter-spacing: 0;
+        }
+
+        .header-brand .brand-name {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.6vw, 1rem);
+            letter-spacing: 0.03em;
+            color: var(--encre);
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.8vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .header-nav a {
+            color: var(--encre);
+            text-decoration: none;
+            font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            padding: 0.3rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--or24);
+            transition: width 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border-radius: 1px;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--or24);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--or24);
+            color: var(--fond);
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 12px rgba(212, 175, 55, 0.18);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #c49d28;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .header-cta:focus-visible {
+            outline: 2px solid var(--or24);
+            outline-offset: 3px;
+        }
+
+        /* Bouton hamburger mobile */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 101;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.35s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(28, 27, 27, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem 2rem 2rem;
+                gap: 0.8rem;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+                transform: translateY(-120%);
+                transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+                z-index: 99;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            }
+            .header-nav.active {
+                transform: translateY(0);
+            }
+            .header-nav a {
+                font-size: 1rem;
+                padding: 0.6rem 0;
+                border-bottom: 1px solid rgba(244, 241, 234, 0.08);
+            }
+            .header-nav a:last-child {
+                border-bottom: none;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-nav .header-cta-mobile {
+                display: inline-flex;
+                align-self: flex-start;
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media (min-width: 861px) {
+            .header-nav .header-cta-mobile {
+                display: none;
+            }
+        }
+
+        /* HÉRO */
+        .hero-section {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--fond);
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) sepia(18%) brightness(0.78) contrast(1.15);
+            opacity: 0.7;
+        }
+
+        .hero-bg-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 55% 45%, rgba(212, 175, 55, 0.10) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 60%, rgba(166, 124, 82, 0.06) 0%, transparent 40%),
+                linear-gradient(to bottom, rgba(28, 27, 27, 0.35) 0%, rgba(28, 27, 27, 0.55) 40%, rgba(28, 27, 27, 0.85) 85%, var(--fond) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: clamp(2rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(42, 40, 38, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            font-size: clamp(0.7rem, 1vw, 0.8rem);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--or24);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            animation: fadeInUp 0.8s 0.1s both ease-out;
+        }
+
+        .hero-badge .stars {
+            color: var(--or24);
+            letter-spacing: 0.05em;
+            font-size: 0.9em;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            max-width: 750px;
+            animation: fadeInUp 0.8s 0.2s both ease-out;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-title .accent-dot {
+            color: var(--or24);
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.55;
+            color: var(--encre);
+            max-width: 560px;
+            margin-top: 1.5rem;
+            opacity: 0.85;
+            animation: fadeInUp 0.8s 0.35s both ease-out;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-actions {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            animation: fadeInUp 0.8s 0.5s both ease-out;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--or24);
+            color: var(--fond);
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 16px rgba(212, 175, 55, 0.22);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #c49d28;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+        }
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--or24);
+            outline-offset: 3px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--encre);
+            padding: 0.75rem 1.7rem;
+            border-radius: 999px;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border: 1.5px solid rgba(244, 241, 234, 0.35);
+            transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            border-color: var(--or24);
+            color: var(--or24);
+            transform: translateY(-2px);
+        }
+        .btn-outline:focus-visible {
+            outline: 2px solid var(--or24);
+            outline-offset: 3px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-section {
+                min-height: 85vh;
+            }
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* Sections générales */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3rem);
+            position: relative;
+            z-index: 3;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--bronze);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 1.2rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--or24);
+            border-radius: 1px;
+            margin-bottom: 2rem;
+            opacity: 0.7;
+        }
+
+        .section-text {
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: var(--encre);
+            opacity: 0.82;
+            max-width: 680px;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            margin-top: 2.5rem;
+        }
+
+        .card {
+            background: var(--fondsecond);
+            border-radius: 16px;
+            padding: clamp(1.5rem, 3vw, 2.2rem);
+            border: 1px solid rgba(244, 241, 234, 0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--or24), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--or24);
+            letter-spacing: 0;
+        }
+
+        .card-title {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            color: var(--encre);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: var(--encre);
+            opacity: 0.7;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        /* Section citation / chiffre clé */
+        .highlight-box {
+            background: var(--ivoire);
+            color: var(--fond);
+            border-radius: 20px;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box .highlight-number {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: var(--fond);
+        }
+
+        .highlight-box .highlight-label {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--fond);
+            opacity: 0.6;
+            margin-top: 0.3rem;
+        }
+
+        .highlight-box .highlight-quote {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 500;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+            color: var(--fond);
+            font-style: italic;
+            max-width: 600px;
+            margin-top: 0.5rem;
+        }
+
+        /* Widget cours */
+        .course-widget {
+            background: var(--fondsecond);
+            border-radius: 20px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 2rem;
+        }
+
+        .course-widget-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--bronze);
+        }
+
+        .course-widget-header .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(76, 175, 80, 0);
+            }
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .course-table th {
+            text-align: left;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--bronze);
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.25);
+        }
+
+        .course-table td {
+            padding: 0.8rem 0;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--encre);
+            border-bottom: 1px solid rgba(244, 241, 234, 0.06);
+        }
+
+        .course-table .metal-name {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .course-table .price-cell {
+            text-align: right;
+            font-weight: 600;
+            color: var(--or24);
+            letter-spacing: 0.02em;
+        }
+
+        .course-widget-source {
+            margin-top: 1.2rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            color: var(--bronze);
+            opacity: 0.7;
+            text-align: right;
+        }
+
+        /* Avis */
+        .testimonial-card {
+            background: var(--fondsecond);
+            border-radius: 16px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border: 1px solid rgba(244, 241, 234, 0.06);
+            position: relative;
+        }
+
+        .testimonial-card .quote-mark {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-size: 4rem;
+            line-height: 0.6;
+            color: var(--or24);
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .testimonial-card .quote-text {
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            line-height: 1.6;
+            color: var(--encre);
+            font-style: italic;
+            letter-spacing: 0.01em;
+        }
+
+        .testimonial-card .quote-author {
+            font-weight: 600;
+            color: var(--or24);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Infos pratiques */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2rem;
+        }
+
+        .info-block {
+            background: var(--fondsecond);
+            border-radius: 16px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border: 1px solid rgba(244, 241, 234, 0.06);
+        }
+
+        .info-block h3 {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--encre);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .info-block p,
+        .info-block a {
+            font-size: 0.9rem;
+            color: var(--encre);
+            opacity: 0.8;
+            line-height: 1.7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-block a:hover {
+            color: var(--or24);
+            opacity: 1;
+        }
+
+        .info-block .tel-link {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--or24);
+            letter-spacing: 0.03em;
+            opacity: 1;
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.35rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(244, 241, 234, 0.05);
+            letter-spacing: 0.01em;
+        }
+        .hours-list li span:last-child {
+            font-weight: 500;
+            color: var(--encre);
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* Formulaire rappel */
+        .callback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .callback-form input {
+            background: rgba(244, 241, 234, 0.06);
+            border: 1px solid rgba(244, 241, 234, 0.15);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: var(--encre);
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .callback-form input:focus {
+            outline: none;
+            border-color: var(--or24);
+            background: rgba(244, 241, 234, 0.09);
+        }
+
+        .callback-form input::placeholder {
+            color: rgba(244, 241, 234, 0.35);
+        }
+
+        .callback-form button {
+            background: var(--or24);
+            color: var(--fond);
+            border: none;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .callback-form button:hover,
+        .callback-form button:focus-visible {
+            background: #c49d28;
+            transform: translateY(-1px);
+        }
+        .callback-form button:focus-visible {
+            outline: 2px solid var(--or24);
+            outline-offset: 3px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--fond);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3rem);
+            position: relative;
+            z-index: 3;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-brand {
+            font-family: 'Fraunces', 'Georgia', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--encre);
+            letter-spacing: 0.04em;
+        }
+
+        .footer-info {
+            font-size: 0.8rem;
+            color: var(--encre);
+            opacity: 0.6;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+        .footer-info a {
+            color: var(--bronze);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-info a:hover {
+            color: var(--or24);
+        }
+
+        .footer-credits {
+            font-size: 0.7rem;
+            color: var(--bronze);
+            opacity: 0.5;
+            letter-spacing: 0.04em;
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+        /* Animations au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Focus visible global */
+        :focus-visible {
+            outline: 2px solid var(--or24);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Utilitaires */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .text-or {
+            color: var(--or24);
+        }
+        .text-bronze {
+            color: var(--bronze);
+        }
+
+        @media (max-width: 480px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-bg-image img {
+                object-position: 60% center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fil d'or serpentin -->
+    <div class="golden-thread-container" aria-hidden="true">
+        <svg viewBox="0 0 1440 3200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <path class="golden-path" id="goldenPath"
+            d="M80,60 C280,180 200,400 400,520 C580,640 500,800 650,950 C800,1100 750,1250 880,1400 C1020,1550 960,1700 1050,1850 C1140,2000 1080,2150 1150,2300 C1220,2450 1180,2580 1100,2720 C1020,2860 1080,3000 1000,3140"
+            />
+        </svg>
+    </div>
+
+    <!-- Wrapper principal -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <header class="site-header" id="siteHeader" role="banner">
+            <div class="header-inner">
+                <a href="#hero" class="header-brand" aria-label="Achat Or - Joaillerie Mozart, retour à l'accueil">
+                    <span class="brand-icon">M</span>
+                    <span class="brand-name">Achat Or<br>Joaillerie Mozart</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="header-nav" id="headerNav" role="navigation" aria-label="Navigation principale">
+                    <a href="#geste-expert">Le geste d'expert</a>
+                    <a href="#rachat">Ce que nous rachetons</a>
+                    <a href="#bijouterie">Bijouterie Mozart</a>
+                    <a href="#cours">Le cours en clair</a>
+                    <a href="#avis">Vos paroles</a>
+                    <a href="#contact">Avenue Mozart</a>
+                    <a href="tel:+33188616564" class="header-cta header-cta-mobile">📞 01 88 61 65 64</a>
+                </nav>
+                <a href="tel:+33188616564" class="header-cta desktop-only">📞 Appeler</a>
+            </div>
+        </header>
+
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero" aria-labelledby="heroTitle">
+            <div class="hero-bg-image">
+                <img src="assets/maps-1.jpg" alt="Intérieur de la Joaillerie Mozart - Atelier discret et feutré" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <span>5/5 — 129 avis Google</span>
+                </div>
+                <h1 class="hero-title" id="heroTitle">
+                    L'or,<br>simplement<span class="accent-dot">.</span> estimé<span class="accent-dot">.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Au 81 de l'Avenue Mozart, un entretien discret, une évaluation transparente et un virement immédiat. Aucun engagement, tout le temps nécessaire.
+                </p>
+                <div class="hero-actions">
+                    <a href="tel:+33188616564" class="btn-primary">📞 01 88 61 65 64</a>
+                    <a href="#contact" class="btn-outline">Prendre rendez-vous</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : Le geste d'expert -->
+        <section class="section" id="geste-expert" aria-labelledby="gesteTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Méthode</span>
+                <h2 class="section-title reveal reveal-delay-1" id="gesteTitle">Le geste d'expert</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <p class="section-text reveal reveal-delay-2">
+                    Pesée, spectrométrie, cotation au cours réel : notre méthode en trois étapes, entièrement réalisée devant vous, sans intermédiaire.
+                </p>
+                <div class="card-grid">
+                    <div class="card reveal reveal-delay-1">
+                        <div class="card-icon">⚖️</div>
+                        <h3 class="card-title">1. Pesée certifiée</h3>
+                        <p class="card-text">Votre or est pesé sur une balance de précision étalonnée, sous vos yeux. Chaque gramme compte, et vous le constatez en direct.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-2">
+                        <div class="card-icon">🔬</div>
+                        <h3 class="card-title">2. Spectrométrie</h3>
+                        <p class="card-text">Un spectromètre de pointe analyse la composition exacte du métal — carats, alliages, titrage. Aucune approximation.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-3">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">3. Cotation au cours réel</h3>
+                        <p class="card-text">Le prix est arrêté sur la base du cours officiel du moment, affiché en transparence. Virement immédiat si vous acceptez.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : Ce que nous rachetons -->
+        <section class="section" id="rachat" aria-labelledby="rachatTitle" style="background: rgba(42,40,38,0.35);">
+            <div class="section-inner">
+                <span class="section-label reveal">Périmètre</span>
+                <h2 class="section-title reveal reveal-delay-1" id="rachatTitle">Ce que nous rachetons</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <p class="section-text reveal reveal-delay-2">
+                    Bijoux anciens, pièces d'or, lingots, or dentaire et débris fins — chaque type de métal précieux trouve un prix juste, basé sur le marché et non sur une grille forfaitaire.
+                </p>
+                <div class="highlight-box reveal reveal-delay-3">
+                    <div class="highlight-number">24K</div>
+                    <div class="highlight-label">Or fin • Cours en direct</div>
+                    <p class="highlight-quote">« Même les débris fins ont une valeur. Nous ne jetons rien sans avoir pesé. »</p>
+                </div>
+                <div class="card-grid" style="margin-top:1.5rem;">
+                    <div class="card reveal reveal-delay-1">
+                        <div class="card-icon">💍</div>
+                        <h3 class="card-title">Bijoux anciens</h3>
+                        <p class="card-text">Bagues, colliers, bracelets, montres — sertis ou non, tous les styles, tous les époques.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-2">
+                        <div class="card-icon">🪙</div>
+                        <h3 class="card-title">Pièces & lingots</h3>
+                        <p class="card-text">Napoléons, Krugerrands, lingots de toutes tailles. Cotation précise au gramme près.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-3">
+                        <div class="card-icon">🦷</div>
+                        <h3 class="card-title">Or dentaire & débris</h3>
+                        <p class="card-text">Couronnes, bridges, limailles et poussières d'or. Aucun rebut n'est ignoré.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : Bijouterie Mozart -->
+        <section class="section" id="bijouterie" aria-labelledby="bijouTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Qui sommes-nous</span>
+                <h2 class="section-title reveal reveal-delay-1" id="bijouTitle">Bijouterie Mozart</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <p class="section-text reveal reveal-delay-2">
+                    Deux visages derrière la devanture : une gemmologue de formation et un acheteur de métal expérimenté, tous deux tenus au secret professionnel et à l'obligation de conseil.
+                </p>
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                    <div class="card reveal reveal-delay-1">
+                        <h3 class="card-title">La gemmologue</h3>
+                        <p class="card-text">Diplômée en gemmologie, elle identifie pierres et métaux avec une précision scientifique. Son œil ne laisse rien passer — ni les pâtes de verre, ni les trésors méconnus.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-2">
+                        <h3 class="card-title">L'acheteur de métal</h3>
+                        <p class="card-text">Fort de quinze ans d'expérience sur le marché des métaux précieux, il connaît le cours, les tendances et la valeur intrinsèque de chaque gramme.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : Le cours en clair -->
+        <section class="section" id="cours" aria-labelledby="coursTitle" style="background: rgba(42,40,38,0.35);">
+            <div class="section-inner">
+                <span class="section-label reveal">Transparence</span>
+                <h2 class="section-title reveal reveal-delay-1" id="coursTitle">Le cours en clair</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <p class="section-text reveal reveal-delay-2">
+                    Widget certifié Or.fr intégré en transparence. Le prix affiché est celui du marché, le nôtre s'en approche au plus près — jamais en dessous sans explication.
+                </p>
+                <div class="course-widget reveal reveal-delay-3">
+                    <div class="course-widget-header">
+                        <span class="live-dot" aria-hidden="true"></span>
+                        Cours en direct — Or.fr
+                    </div>
+                    <table class="course-table" aria-label="Cours des métaux précieux en temps réel">
+                        <thead>
+                            <tr>
+                                <th>Métal</th>
+                                <th>Pureté</th>
+                                <th>Prix au gramme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="metal-name">Or jaune</td>
+                                <td>24K (999,9‰)</td>
+                                <td class="price-cell">62,40 €</td>
+                            </tr>
+                            <tr>
+                                <td class="metal-name">Or 18 carats</td>
+                                <td>18K (750‰)</td>
+                                <td class="price-cell">46,80 €</td>
+                            </tr>
+                            <tr>
+                                <td class="metal-name">Argent fin</td>
+                                <td>999‰</td>
+                                <td class="price-cell">0,84 €</td>
+                            </tr>
+                            <tr>
+                                <td class="metal-name">Platine</td>
+                                <td>999‰</td>
+                                <td class="price-cell">31,20 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="course-widget-source">Données indicatives en temps réel • Source : Or.fr — Mis à jour continuellement</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : Vos paroles -->
+        <section class="section" id="avis" aria-labelledby="avisTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Avis clients</span>
+                <h2 class="section-title reveal reveal-delay-1" id="avisTitle">Vos paroles</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <span class="quote-mark" aria-hidden="true">“</span>
+                    <p class="quote-text">Une estimation très claire, des gens charmants et totalement transparents. Je suis venue avec des bijoux anciens dont j'ignorais la valeur réelle. Tout a été fait devant moi, avec patience et précision.</p>
+                    <p class="quote-author">Marie-L.</p>
+                </div>
+                <p class="section-text reveal reveal-delay-3" style="margin-top:1.5rem; font-size:0.85rem; opacity:0.65;">
+                    Extrait authentique issu du flux des <strong>129 avis Google</strong> — Note moyenne : <strong class="text-or">5/5</strong>. Aucune retouche, aucun tri.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : Avenue Mozart -->
+        <section class="section" id="contact" aria-labelledby="contactTitle" style="background: rgba(42,40,38,0.35);">
+            <div class="section-inner">
+                <span class="section-label reveal">Infos pratiques</span>
+                <h2 class="section-title reveal reveal-delay-1" id="contactTitle">Avenue Mozart</h2>
+                <div class="section-divider reveal reveal-delay-1"></div>
+                <p class="section-text reveal reveal-delay-2">
+                    Du lundi au vendredi, de 9h à 19h, nous parlons de votre or. Sans hâte.
+                </p>
+                <div class="info-grid">
+                    <div class="info-block reveal reveal-delay-1">
+                        <h3>📍 Adresse</h3>
+                        <p>81 Avenue Mozart<br>75016 Paris, France</p>
+                        <p style="margin-top:0.5rem;">
+                            <a href="https://maps.google.com/maps?q=Achat+Or+-+Joaillerie+Mozart+81+Avenue+Mozart%2C+Paris" target="_blank" rel="noopener noreferrer" style="color:var(--or24);font-weight:500;">Ouvrir dans Google Maps →</a>
+                        </p>
+                    </div>
+                    <div class="info-block reveal reveal-delay-2">
+                        <h3>🕐 Horaires</h3>
+                        <ul class="hours-list">
+                            <li><span>Lundi</span><span>9h – 19h</span></li>
+                            <li><span>Mardi</span><span>9h – 19h</span></li>
+                            <li><span>Mercredi</span><span>9h – 19h</span></li>
+                            <li><span>Jeudi</span><span>9h – 19h</span></li>
+                            <li><span>Vendredi</span><span>9h – 19h</span></li>
+                            <li><span>Samedi</span><span>Fermé</span></li>
+                            <li><span>Dimanche</span><span>Fermé</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-block reveal reveal-delay-3">
+                        <h3>📞 Contact</h3>
+                        <a href="tel:+33188616564" class="tel-link">01 88 61 65 64</a>
+                        <p style="margin-top:0.5rem;">
+                            <a href="mailto:64contact@achat-or-joaillerie.fr">64contact@achat-or-joaillerie.fr</a>
+                        </p>
+                        <h3 style="margin-top:1.2rem;">Demande de rappel</h3>
+                        <form class="callback-form" id="callbackForm" onsubmit="handleCallback(event)">
+                            <input type="text" name="name" placeholder="Votre prénom" required aria-label="Votre prénom">
+                            <input type="tel" name="phone" placeholder="Votre numéro de téléphone" required aria-label="Votre numéro de téléphone">
+                            <button type="submit">Je souhaite être rappelé(e)</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container reveal reveal-delay-4">
+                    <iframe src="https://maps.google.com/maps?q=Achat+Or+-+Joaillerie+Mozart+81+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Achat Or - Joaillerie Mozart" aria-label="Carte Google Maps de la Joaillerie Mozart"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer" role="contentinfo">
+            <div class="footer-inner">
+                <div>
+                    <p class="footer-brand">Achat Or — Joaillerie Mozart</p>
+                    <p class="footer-info">
+                        81 Avenue Mozart, 75016 Paris<br>
+                        <a href="tel:+33188616564">01 88 61 65 64</a> ·
+                        <a href="mailto:64contact@achat-or-joaillerie.fr">64contact@achat-or-joaillerie.fr</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="footer-info">
+                        Note Google : <strong class="text-or">5/5</strong> sur 129 avis<br>
+                        Du lundi au vendredi, 9h – 19h
+                    </p>
+                    <p class="footer-credits">Site créé par Agence Mooo</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Achat Or - Joaillerie Mozart",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "81 Avenue Mozart",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33188616564",
+            "email": "64contact@achat-or-joaillerie.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "129"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "19:00"
+                }
+            ],
+            "priceRange": "€€"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // --- Mobile menu toggle ---
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            const headerNav = document.getElementById('headerNav');
+            const headerLinks = headerNav.querySelectorAll('a');
+
+            function closeMenu() {
+                headerNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            function openMenu() {
+                headerNav.classList.add('active');
+                menuToggle.classList.add('active');
+                menuToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            menuToggle.addEventListener('click', function() {
+                if (headerNav.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            headerLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+
+            // Close menu on escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && headerNav.classList.contains('active')) {
+                    closeMenu();
+                    menuToggle.focus();
+                }
+            });
+
+            // --- Header scroll effect ---
+            const siteHeader = document.getElementById('siteHeader');
+            let lastScrollY = 0;
+
+            function updateHeaderScroll() {
+                const scrollY = window.scrollY;
+                if (scrollY > 30) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
+                lastScrollY = scrollY;
+            }
+
+            // --- Golden thread animation ---
+            const goldenPath = document.getElementById('goldenPath');
+            let pathLength = 0;
+            let ticking = false;
+
+            function initGoldenThread() {
+                if (!goldenPath) return;
+                pathLength = goldenPath.getTotalLength();
+                if (pathLength === 0) {
+                    pathLength = 3200; // fallback
+                }
+                goldenPath.style.strokeDasharray = pathLength;
+                goldenPath.style.strokeDashoffset = pathLength;
+
+                // Check reduced motion
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReduced) {
+                    goldenPath.style.strokeDashoffset = pathLength * 0.55;
+                    goldenPath.style.opacity = '0.3';
+                    return;
+                }
+
+                updateGoldenThread();
+            }
+
+            function updateGoldenThread() {
+                if (!goldenPath || pathLength === 0) return;
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReduced) return;
+
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollFraction = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+
+                // Map scroll fraction to dashoffset (full length = hidden, 0 = fully drawn)
+                // We want the line to draw from top to bottom as user scrolls
+                const offset = pathLength * (1 - scrollFraction);
+                goldenPath.style.strokeDashoffset = offset;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        updateHeaderScroll();
+                        updateGoldenThread();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            // --- IntersectionObserver for reveals ---
+            const revealElements = document.querySelectorAll('.reveal');
+            let observer;
+
+            function initRevealObserver() {
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReduced) {
+                    revealElements.forEach(function(el) {
+                        el.classList.add('visible');
+                    });
+                    return;
+                }
+
+                observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            }
+
+            // --- Init ---
+            function init() {
+                initGoldenThread();
+                initRevealObserver();
+                updateHeaderScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', function() {
+                    // Recalculate path length on resize
+                    if (goldenPath) {
+                        const newLen = goldenPath.getTotalLength();
+                        if (newLen > 0 && Math.abs(newLen - pathLength) > 5) {
+                            pathLength = newLen;
+                            goldenPath.style.strokeDasharray = pathLength;
+                            updateGoldenThread();
+                        }
+                    }
+                });
+
+                // Listen for reduced motion changes
+                window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function(e) {
+                    if (e.matches) {
+                        if (goldenPath) {
+                            goldenPath.style.strokeDashoffset = pathLength * 0.55;
+                            goldenPath.style.opacity = '0.3';
+                        }
+                        revealElements.forEach(function(el) {
+                            el.classList.add('visible');
+                        });
+                    } else {
+                        if (goldenPath) {
+                            goldenPath.style.opacity = '0.55';
+                            updateGoldenThread();
+                        }
+                    }
+                });
+            }
+
+            // Handle callback form
+            window.handleCallback = function(event) {
+                event.preventDefault();
+                const form = event.target;
+                const name = form.querySelector('input[name="name"]').value.trim();
+                const phone = form.querySelector('input[name="phone"]').value.trim();
+                if (name && phone) {
+                    alert('Merci ' + name +
+                        ' ! Votre demande de rappel au ' + phone +
+                        ' a bien été enregistrée. Nous vous contacterons dans les plus brefs délais.');
+                    form.reset();
+                }
+            };
+
+            // Start
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
