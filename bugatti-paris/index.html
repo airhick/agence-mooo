@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUGATTI Paris — Concession exclusive à Neuilly-sur-Seine</title>
+    <meta name="description" content="BUGATTI Paris, galerie d'art privée au 181 Avenue Achille Peretti à Neuilly-sur-Seine. Configuration sur-mesure, essai privé et service agréé pour votre œuvre automobile.">
+    <meta property="og:title" content="BUGATTI Paris — Votre Bugatti prend vie à Neuilly-sur-Seine">
+    <meta property="og:description" content="Découvrez un lieu pensé pour une seule expérience : la configuration exclusive et l'essai privé de votre œuvre automobile. Mickaël Lagrange et son équipe vous accueillent au sein du Groupe Schumacher.">
+    <meta property="og:image" content="https://agence.mooo.com/bugatti-paris/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='none' stroke='%230A1128' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23234B74' stroke-width='0.6'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-weight='bold' fill='%230A1128'%3EB%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --blanc-craie: #F7F5F2;
+            --bleu-nuit: #0A1128;
+            --bleu-course: #234B74;
+            --titane-brosse: #C8C8C2;
+            --brun-sellier: #2B1E14;
+            --blanc-pur: #FFFFFF;
+            --grain-opacity: 0.025;
+            --transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-medium: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.05vw, 17px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Mulish', system-ui, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--bleu-nuit);
+            background-color: var(--blanc-craie);
+            cursor: none;
+            overflow-x: hidden;
+            letter-spacing: 0.015em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            body {
+                cursor: auto;
+            }
+        }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999;
+            width: 28px;
+            height: 28px;
+            transform: translate(-50%, -50%);
+            transition: width var(--transition-medium), height var(--transition-medium);
+            mix-blend-mode: difference;
+        }
+
+        #custom-cursor .cursor-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #custom-cursor .cursor-ring {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 1.2px solid var(--blanc-pur);
+            border-radius: 50%;
+            transition: width var(--transition-medium), height var(--transition-medium), border-color var(--transition-medium);
+        }
+
+        #custom-cursor .cursor-cross-h,
+        #custom-cursor .cursor-cross-v {
+            position: absolute;
+            background: var(--blanc-pur);
+            transition: background var(--transition-medium), width var(--transition-medium), height var(--transition-medium);
+        }
+
+        #custom-cursor .cursor-cross-h {
+            width: 8px;
+            height: 0.7px;
+        }
+
+        #custom-cursor .cursor-cross-v {
+            width: 0.7px;
+            height: 8px;
+        }
+
+        #custom-cursor.cursor-link .cursor-ring {
+            width: 34px;
+            height: 34px;
+            border-color: var(--bleu-course);
+            border-width: 1.6px;
+        }
+
+        #custom-cursor.cursor-link .cursor-cross-h,
+        #custom-cursor.cursor-link .cursor-cross-v {
+            background: var(--bleu-course);
+        }
+
+        #custom-cursor.cursor-link .cursor-cross-h {
+            width: 4px;
+        }
+
+        #custom-cursor.cursor-link .cursor-cross-v {
+            height: 4px;
+        }
+
+        #custom-cursor.cursor-hidden {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px),
+        (hover: none) and (pointer: coarse) {
+            #custom-cursor {
+                display: none;
+            }
+        }
+
+        /* Grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99990;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* Focus styles */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--bleu-course);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 24px;
+            background: var(--bleu-nuit);
+            color: var(--blanc-craie);
+            padding: 12px 20px;
+            z-index: 100000;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 0;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.4rem clamp(1.5rem, 6vw, 5rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background var(--transition-slow), padding var(--transition-slow);
+            background: transparent;
+            mix-blend-mode: difference;
+        }
+
+        .site-header.scrolled {
+            background: rgba(247, 245, 242, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            mix-blend-mode: normal;
+            padding: 0.9rem clamp(1.5rem, 6vw, 5rem);
+            box-shadow: 0 1px 0 rgba(10, 17, 40, 0.06);
+        }
+
+        .site-header.scrolled .header-brand,
+        .site-header.scrolled .nav-link {
+            color: var(--bleu-nuit);
+        }
+
+        .site-header.scrolled .header-cta {
+            color: var(--bleu-course);
+            border-color: var(--bleu-course);
+        }
+
+        .header-brand {
+            font-family: 'Marcellus', serif;
+            font-weight: 600;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blanc-pur);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            line-height: 1;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1.2rem, 3vw, 2.6rem);
+            list-style: none;
+        }
+
+        .nav-link {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bleu-course);
+            transition: width var(--transition-medium);
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--blanc-pur);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 0.55rem 1.3rem;
+            transition: all var(--transition-medium);
+            white-space: nowrap;
+            cursor: none;
+        }
+
+        .header-cta:hover {
+            background: var(--bleu-course);
+            border-color: var(--bleu-course);
+            color: var(--blanc-pur);
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.45rem 0.9rem;
+            }
+            .site-header {
+                padding: 1rem clamp(1rem, 4vw, 2rem);
+                mix-blend-mode: normal;
+                background: rgba(10, 17, 40, 0.85);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .site-header.scrolled {
+                background: rgba(247, 245, 242, 0.94);
+            }
+            .site-header .header-brand {
+                color: var(--blanc-pur);
+            }
+            .site-header.scrolled .header-brand {
+                color: var(--bleu-nuit);
+            }
+            .site-header .header-cta {
+                color: var(--blanc-pur);
+                border-color: rgba(255, 255, 255, 0.6);
+            }
+            .site-header.scrolled .header-cta {
+                color: var(--bleu-course);
+                border-color: var(--bleu-course);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: var(--bleu-nuit);
+        }
+
+        .hero-image-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.65) contrast(1.15) saturate(0.2);
+            transform: scale(1.04);
+            animation: hero-ken-burns 12s ease-out forwards;
+        }
+
+        @keyframes hero-ken-burns {
+            from {
+                transform: scale(1.12);
+            }
+            to {
+                transform: scale(1.04);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-wrap img {
+                animation: none;
+                transform: scale(1.04);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(10, 17, 40, 0.25) 0%,
+                    rgba(10, 17, 40, 0.08) 35%,
+                    rgba(10, 17, 40, 0.55) 70%,
+                    rgba(10, 17, 40, 0.88) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: clamp(3rem, 10vw, 8rem) clamp(1.5rem, 6vw, 5rem) clamp(3rem, 8vh, 6rem);
+            color: var(--blanc-pur);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+            opacity: 0;
+            animation: reveal-up 0.9s var(--ease-out-expo) 0.2s forwards;
+        }
+
+        .hero-badge .star {
+            color: #E8C44A;
+            font-size: 1rem;
+            letter-spacing: 0;
+        }
+
+        .hero-badge .badge-sep {
+            width: 1px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-family: 'Marcellus', serif;
+            font-weight: 500;
+            font-size: clamp(2.8rem, 9vw, 7.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.015em;
+            max-width: 11ch;
+            opacity: 0;
+            animation: reveal-up 1s var(--ease-out-expo) 0.45s forwards;
+        }
+
+        .hero-title .word-bugatti {
+            display: inline-block;
+            font-size: clamp(4rem, 12.5vw, 10.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 0.85;
+            margin-left: -0.03em;
+            position: relative;
+            transform: translateX(-0.015em);
+            color: #ffffff;
+            text-shadow: 0 0 120px rgba(35, 75, 116, 0.5), 0 2px 4px rgba(10, 17, 40, 0.6);
+        }
+
+        .hero-subtitle {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+            line-height: 1.7;
+            letter-spacing: 0.025em;
+            max-width: 46ch;
+            margin-top: clamp(1.2rem, 3vh, 2.2rem);
+            color: rgba(255, 255, 255, 0.82);
+            opacity: 0;
+            animation: reveal-up 0.9s var(--ease-out-expo) 0.7s forwards;
+        }
+
+        .hero-cta-wrap {
+            margin-top: clamp(1.8rem, 4vh, 3rem);
+            opacity: 0;
+            animation: reveal-up 0.9s var(--ease-out-expo) 0.9s forwards;
+        }
+
+        .hero-cta-btn {
+            display: inline-block;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--blanc-pur);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            padding: 0.9rem 2.2rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            cursor: none;
+            background: transparent;
+        }
+
+        .hero-cta-btn:hover {
+            background: var(--bleu-course);
+            border-color: var(--bleu-course);
+            color: #fff;
+            box-shadow: 0 0 60px rgba(35, 75, 116, 0.4);
+        }
+
+        @keyframes reveal-up {
+            from {
+                opacity: 0;
+                transform: translateY(32px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100svh;
+            }
+            .hero-title .word-bugatti {
+                font-size: clamp(3.2rem, 15vw, 6rem);
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+            .hero-cta-btn {
+                padding: 0.75rem 1.6rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Section Generics */
+        .section {
+            position: relative;
+            padding: clamp(4rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem);
+            z-index: 1;
+        }
+
+        .section-alt {
+            background: var(--titane-brosse);
+        }
+
+        .section-dark {
+            background: var(--brun-sellier);
+            color: var(--blanc-craie);
+        }
+
+        .section-label {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--bleu-course);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-dark .section-label {
+            color: var(--titane-brosse);
+        }
+
+        .section-title {
+            font-family: 'Marcellus', serif;
+            font-weight: 500;
+            font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+            max-width: 16ch;
+        }
+
+        .section-text {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            line-height: 1.85;
+            letter-spacing: 0.02em;
+            max-width: 52ch;
+            color: inherit;
+        }
+
+        .section-dark .section-text {
+            color: rgba(247, 245, 242, 0.85);
+        }
+
+        .section-text+.section-text {
+            margin-top: 1.2rem;
+        }
+
+        /* Filet décoratif */
+        .filet {
+            width: 60px;
+            height: 1px;
+            background: var(--bleu-course);
+            margin: 2rem 0;
+            opacity: 0.6;
+        }
+
+        .section-dark .filet {
+            background: var(--titane-brosse);
+        }
+
+        /* Reveal au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.25s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.4s;
+        }
+
+        /* Section Le Lieu */
+        .lieu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 8vw, 7rem);
+            align-items: start;
+        }
+
+        .lieu-visual {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: var(--bleu-nuit);
+        }
+
+        .lieu-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.2) saturate(0.15);
+            transition: filter var(--transition-slow);
+        }
+
+        .lieu-visual::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(35, 75, 116, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .lieu-address-block {
+            margin-top: 2rem;
+            padding: 1.6rem 2rem;
+            border-left: 2px solid var(--bleu-course);
+            background: rgba(200, 200, 194, 0.25);
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .lieu-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .lieu-visual {
+                aspect-ratio: 3/4;
+                order: -1;
+            }
+            .lieu-address-block {
+                padding: 1.2rem 1.4rem;
+                font-size: 0.82rem;
+            }
+        }
+
+        /* Section Atelier */
+        .atelier-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: clamp(3rem, 6vh, 5rem);
+        }
+
+        .atelier-feature-item {
+            padding: 2rem 0;
+            border-top: 1px solid var(--bleu-course);
+            opacity: 0.5;
+            transition: opacity var(--transition-medium);
+        }
+
+        .atelier-feature-item:hover {
+            opacity: 1;
+        }
+
+        .atelier-feature-item .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            color: var(--bleu-course);
+        }
+
+        .atelier-feature-item h4 {
+            font-family: 'Marcellus', serif;
+            font-weight: 500;
+            font-size: 1.3rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--bleu-nuit);
+        }
+
+        .atelier-feature-item p {
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(10, 17, 40, 0.75);
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 768px) {
+            .atelier-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .atelier-feature-item {
+                padding: 1.4rem 0;
+            }
+        }
+
+        /* Section Équipe */
+        .equipe-band {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 3vw, 2rem);
+            padding: clamp(2.5rem, 6vw, 5rem) 0;
+            border-top: 1px solid rgba(200, 200, 194, 0.5);
+            border-bottom: 1px solid rgba(200, 200, 194, 0.5);
+            margin-top: 2rem;
+        }
+
+        .equipe-personne {
+            text-align: left;
+            padding: 1.5rem 0;
+        }
+
+        .equipe-personne .personne-nom {
+            font-family: 'Marcellus', serif;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            letter-spacing: 0.03em;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.3rem;
+        }
+
+        .equipe-personne .personne-role {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bleu-course);
+            margin-bottom: 0.8rem;
+        }
+
+        .equipe-personne .personne-desc {
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: rgba(10, 17, 40, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .equipe-band {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 1.5rem 0;
+            }
+            .equipe-personne {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(200, 200, 194, 0.4);
+            }
+            .equipe-personne:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Section Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+
+        .contact-info-block {
+            padding: 2rem 0;
+        }
+
+        .contact-item {
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-item .contact-label {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bleu-course);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item .contact-value {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            color: var(--bleu-nuit);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a.contact-value:hover {
+            color: var(--bleu-course);
+        }
+
+        .contact-map {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            filter: grayscale(0.3) contrast(1.05);
+            border: 1px solid rgba(200, 200, 194, 0.6);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .horaire-note {
+            font-family: 'Mulish', sans-serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: rgba(10, 17, 40, 0.55);
+            margin-top: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .contact-map {
+                aspect-ratio: 4/3;
+                order: -1;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--brun-sellier);
+            color: var(--blanc-craie);
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 6vw, 5rem) 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            font-family: 'Marcellus', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--blanc-craie);
+        }
+
+        .footer-info {
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.85rem;
+            line-height: 2;
+            color: rgba(247, 245, 242, 0.7);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-info a {
+            color: rgba(247, 245, 242, 0.85);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-info a:hover {
+            color: var(--titane-brosse);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(247, 245, 242, 0.2);
+            padding-top: 1.5rem;
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            color: rgba(247, 245, 242, 0.45);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(247, 245, 242, 0.55);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--titane-brosse);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" aria-hidden="true">
+        <div class="cursor-inner">
+            <div class="cursor-ring"></div>
+            <div class="cursor-cross-h"></div>
+            <div class="cursor-cross-v"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="BUGATTI Paris — Retour à l'accueil">BUGATTI Paris</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#lieu" class="nav-link">Le Lieu</a></li>
+                <li><a href="#atelier" class="nav-link">Configuration</a></li>
+                <li><a href="#service" class="nav-link">Service</a></li>
+                <li><a href="#equipe" class="nav-link">L'Équipe</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="header-cta" data-cursor="link">Rendez-vous privé</a>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-image-wrap">
+                <img src="assets/maps-1.jpg" alt="BUGATTI Paris — Showroom confidentiel au 181 Avenue Achille Peretti, Neuilly-sur-Seine" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star" aria-hidden="true">★★★★</span> 4.4
+                    <span class="badge-sep" aria-hidden="true"></span>
+                    85 avis Google
+                </div>
+                <h1 class="hero-title" id="hero-title">
+                    Votre <span class="word-bugatti">Bugatti</span><br>prend vie à Neuilly-sur-Seine.
+                </h1>
+                <p class="hero-subtitle">
+                    Découvrez un lieu pensé pour une seule expérience&nbsp;: la configuration exclusive et l'essai privé de votre œuvre automobile. Mickaël Lagrange et son équipe vous accueillent au sein du Groupe Schumacher, dans le 16<sup>e</sup> arrondissement historique de l'élégance mécanique.
+                </p>
+                <div class="hero-cta-wrap">
+                    <a href="#contact" class="hero-cta-btn" data-cursor="link">Solliciter un rendez-vous privé</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1 : Le Lieu -->
+        <section class="section" id="lieu" aria-labelledby="lieu-title">
+            <div class="lieu-grid">
+                <div>
+                    <span class="section-label reveal">Le lieu</span>
+                    <h2 class="section-title reveal reveal-delay-1" id="lieu-title">Un écrin à l'abri des regards, au cœur de Neuilly.</h2>
+                    <div class="filet reveal reveal-delay-1"></div>
+                    <p class="section-text reveal reveal-delay-2">
+                        À deux pas du Bois de Boulogne, la concession Bugatti Paris occupe un espace confidentiel au 181 de l'Avenue Achille Peretti. Ici, la lumière francilienne caresse des volumes architecturaux et révèle des lignes qui ont fait l'histoire.
+                    </p>
+                    <p class="section-text reveal reveal-delay-2">
+                        Ce showroom n'est pas une boutique&nbsp;: c'est une galerie d'art privée où chaque détail — de l'assise à l'éclairage — a été conçu pour magnifier le galbe d'une carrosserie.
+                    </p>
+                    <div class="lieu-address-block reveal reveal-delay-3">
+                        <strong>BUGATTI Paris</strong><br>
+                        181 Avenue Achille Peretti<br>
+                        92200 Neuilly-sur-Seine<br>
+                        <a href="tel:+33175909806" style="color:var(--bleu-course);text-decoration:none;">01 75 90 98 06</a>
+                    </div>
+                </div>
+                <div class="lieu-visual reveal reveal-delay-2" aria-hidden="true">
+                    <img src="assets/maps-1.jpg" alt="" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 : L'Atelier -->
+        <section class="section section-alt" id="atelier" aria-labelledby="atelier-title">
+            <span class="section-label reveal">L'Atelier</span>
+            <h2 class="section-title reveal reveal-delay-1" id="atelier-title">L'expérience de la configuration.</h2>
+            <div class="filet reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">
+                Échantillons de cuir Sellier, essences de bois précieux, nuanciers de teintes de carrosserie historiques… Notre équipe vous guide à travers l'infinité de possibilités offertes par l'atelier de Molsheim. Définissez chaque millimètre de carbone, chaque couture, chaque nuance de votre hyper sportive. Un processus qui s'étire sur plusieurs mois, et qui commence ici, à Neuilly.
+            </p>
+            <div class="atelier-features">
+                <div class="atelier-feature-item reveal reveal-delay-1">
+                    <span class="feature-icon" aria-hidden="true">▣</span>
+                    <h4>Cuirs Sellier</h4>
+                    <p>Une palette infinie de cuirs pleine fleur, tannés et cousus main selon la tradition de la ganterie française.</p>
+                </div>
+                <div class="atelier-feature-item reveal reveal-delay-2">
+                    <span class="feature-icon" aria-hidden="true">◈</span>
+                    <h4>Fibre de carbone</h4>
+                    <p>Chaque panneau de carbone apparent est orienté, poli et verni à la main dans l'atelier de Molsheim.</p>
+                </div>
+                <div class="atelier-feature-item reveal reveal-delay-3">
+                    <span class="feature-icon" aria-hidden="true">⬡</span>
+                    <h4>Teintes historiques</h4>
+                    <p>Accédez aux nuanciers exclusifs Bugatti, du Bleu de France aux teintes sur-mesure développées pour votre seule automobile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 : Service & Entretien -->
+        <section class="section" id="service" aria-labelledby="service-title">
+            <span class="section-label reveal">Service & Entretien</span>
+            <h2 class="section-title reveal reveal-delay-1" id="service-title">La promesse d'une perfection mécanique.</h2>
+            <div class="filet reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">
+                Dirigé par Mickaël Lagrange, notre atelier de service agréé est le garant de l'intégrité de votre collection. Expertise technique, maintenance préventive et programme «&nbsp;Bugatti Certified&nbsp;» sont orchestrés depuis Paris pour maintenir la valeur absolue de votre icône.
+            </p>
+            <p class="section-text reveal reveal-delay-3">
+                Posséder une Bugatti est un art&nbsp;; en préserver l'âme est notre science.
+            </p>
+        </section>
+
+        <!-- Section 4 : L'Équipe -->
+        <section class="section section-alt" id="equipe" aria-labelledby="equipe-title">
+            <span class="section-label reveal">L'Équipe</span>
+            <h2 class="section-title reveal reveal-delay-1" id="equipe-title">Trois interlocuteurs, une direction.</h2>
+            <div class="filet reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">
+                Votre parcours au sein de Bugatti Paris est jalonné par trois figures expertes, sans intermédiaire superflu.
+            </p>
+            <div class="equipe-band reveal reveal-delay-3">
+                <div class="equipe-personne">
+                    <div class="personne-nom">Tomy Mendes</div>
+                    <div class="personne-role">Relation à la marque</div>
+                    <p class="personne-desc">Orchestre votre lien avec l'univers Bugatti et veille à la fluidité de chaque échange.</p>
+                </div>
+                <div class="equipe-personne">
+                    <div class="personne-nom">Suzie Gosselin</div>
+                    <div class="personne-role">Configuration</div>
+                    <p class="personne-desc">Affine chaque détail de votre hyper sportive, des échantillons de cuir aux nuances de carrosserie.</p>
+                </div>
+                <div class="equipe-personne">
+                    <div class="personne-nom">Mickaël Lagrange</div>
+                    <div class="personne-role">Direction & Service</div>
+                    <p class="personne-desc">Veille à l'éternité mécanique de votre œuvre et supervise l'atelier de service agréé.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 : Contact & Accès -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <span class="section-label reveal">Contact & Accès</span>
+            <h2 class="section-title reveal reveal-delay-1" id="contact-title">Accès sur rendez-vous uniquement.</h2>
+            <div class="filet reveal reveal-delay-1"></div>
+            <div class="contact-grid">
+                <div class="contact-info-block reveal reveal-delay-2">
+                    <p class="section-text" style="margin-bottom:2rem;">
+                        Les visites au 181, avenue Achille Peretti sont exclusivement privées, assurant une confidentialité absolue. Un créneau vous est intégralement dédié. Précisez l'objet de votre visite lors de votre appel, et nous préparerons votre accueil en amont.
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-label">Téléphone</div>
+                        <a href="tel:+33175909806" class="contact-value" data-cursor="link">01 75 90 98 06</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <a href="mailto:contact@bugatti-paris.fr" class="contact-value" data-cursor="link">contact@bugatti-paris.fr</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Adresse</div>
+                        <span class="contact-value">181 Avenue Achille Peretti, 92200 Neuilly-sur-Seine</span>
+                    </div>
+                    <p class="horaire-note">Horaires à confirmer lors de la prise de rendez-vous.</p>
+                </div>
+                <div class="contact-map reveal reveal-delay-3" aria-label="Carte de localisation BUGATTI Paris">
+                    <iframe src="https://maps.google.com/maps?q=BUGATTI+Paris+181+Avenue+Achille+Peretti%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte BUGATTI Paris — 181 Avenue Achille Peretti, Neuilly-sur-Seine"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">BUGATTI Paris</div>
+                <p class="footer-info">
+                    Galerie d'art privée — Concession exclusive Bugatti<br>
+                    181 Avenue Achille Peretti, 92200 Neuilly-sur-Seine<br>
+                    <a href="tel:+33175909806">01 75 90 98 06</a> —
+                    <a href="mailto:contact@bugatti-paris.fr">contact@bugatti-paris.fr</a>
+                </p>
+            </div>
+            <div>
+                <p class="footer-info">
+                    <strong>Navigation</strong><br>
+                    <a href="#lieu">Le Lieu</a><br>
+                    <a href="#atelier">Configuration</a><br>
+                    <a href="#service">Service</a><br>
+                    <a href="#equipe">L'Équipe</a><br>
+                    <a href="#contact">Contact</a>
+                </p>
+            </div>
+            <div>
+                <p class="footer-info">
+                    <strong>Google</strong><br>
+                    ★ 4.4 / 5 — 85 avis<br>
+                    <span style="font-size:0.8rem;opacity:0.6;">Note vérifiée</span>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© BUGATTI Paris — Tous droits réservés</span>
+            <span>Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BUGATTI Paris",
+            "image": "https://agence.mooo.com/bugatti-paris/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "181 Avenue Achille Peretti",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33175909806",
+            "email": "contact@bugatti-paris.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.4",
+                "reviewCount": "85"
+            },
+            "priceRange": "€€€€",
+            "url": "https://agence.mooo.com/bugatti-paris"
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        (function() {
+            // Custom cursor
+            const cursor = document.getElementById('custom-cursor');
+            const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+            const isMobile = window.innerWidth <= 768;
+
+            if (!isTouchDevice && !isMobile && cursor) {
+                let cursorX = window.innerWidth / 2;
+                let cursorY = window.innerHeight / 2;
+                let currentX = cursorX;
+                let currentY = cursorY;
+
+                document.addEventListener('mousemove', function(e) {
+                    cursorX = e.clientX;
+                    cursorY = e.clientY;
+                }, { passive: true });
+
+                function updateCursor() {
+                    currentX += (cursorX - currentX) * 0.25;
+                    currentY += (cursorY - currentY) * 0.25;
+                    cursor.style.left = currentX + 'px';
+                    cursor.style.top = currentY + 'px';
+                    requestAnimationFrame(updateCursor);
+                }
+                requestAnimationFrame(updateCursor);
+
+                // Detect link hover
+                const linkElements = document.querySelectorAll(
+                    'a, button, .header-cta, .hero-cta-btn, [data-cursor="link"], .nav-link, .contact-value');
+                linkElements.forEach(function(el) {
+                    el.addEventListener('mouseenter', function() {
+                        cursor.classList.add('cursor-link');
+                    });
+                    el.addEventListener('mouseleave', function() {
+                        cursor.classList.remove('cursor-link');
+                    });
+                });
+
+                // Hide cursor when leaving window
+                document.addEventListener('mouseleave', function() {
+                    cursor.classList.add('cursor-hidden');
+                });
+                document.addEventListener('mouseenter', function() {
+                    cursor.classList.remove('cursor-hidden');
+                });
+            } else if (cursor) {
+                cursor.style.display = 'none';
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) return;
+                scrollTimeout = setTimeout(function() {
+                    scrollTimeout = null;
+                    if (window.scrollY > 60) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }, 20);
+            }, { passive: true });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && revealElements.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback: show all immediately
+                revealElements.forEach(function(el) {
+                    el.classList.add('revealed');
+                });
+            }
+
+            // Smooth scroll for anchor links (respects prefers-reduced-motion)
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const headerHeight = header.offsetHeight + 20;
+                            const targetPosition = target.getBoundingClientRect().top + window
+                                .pageYOffset - headerHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+```
+### Design & UI/UX
+
+La page applique le concept "Sculptural Brut / Épure Monumentale" en traduisant l’atmosphère d’une galerie d’art privée à Neuilly. Voici les choix clés :
+
+- **Typographie sculpturale** : La *Marcellus* (display) est utilisée de manière monumentale pour les titres (H1 et sections), créant des blocs de texte-image imposants. La *Mulish* (corps) assure une lisibilité froide et précise, en contraste réfléchi.
+- **Palette chromatique ancrée** : Le fond `#F7F5F2` (Blanc Craie Architecturale) évoque un mur de galerie. Les presque-noirs teintés (`#0A1128`), les accents métalliques (`#C8C8C2`) et la profondeur du cuir (`#2B1E14`) en footer ancrent la page dans l'univers de l'automobile de luxe, loin des clichés.
+- **Composition asymétrique et respirée** : La grille est volontairement brisée (débordement du mot "Bugatti", disposition en quinconce). Les grandes zones de vide et les filets ultra-fins en Bleu Course Poli (`#234B74`) ponctuent la narration visuelle avec rigueur.
+- **Curseur signature "Point de Croix"** : Une réinterprétation minimaliste du macaron Bugatti en noir, qui se transforme en cible de précision bleue sur les liens, ajoutant une couche d'interaction surprenante et haut de gamme.
+
+---
+
+### Réponse et accessibilité
+
+- **Réactivité irréprochable** : Grilles CSS adaptatives, tailles fluides (`clamp()`), et menu optimisé pour mobile (adaptation du header, empilement des colonnes).
+- **Accessibilité (AA)** : Contrastes marqués entre le texte foncé et les fonds pâles, hiérarchie de titres (`h1` à `h4`), lien d'évitement ("skip link"), et alternatives textuelles sur les images.
+- **Animations respectueuses** : Les révélations au scroll sont désactivées si l'utilisateur a activé `prefers-reduced-motion`, et le curseur personnalisé est masqué sur les appareils tactiles.
+
+---
+
+### Organisation du code
+
+- **Structure sémantique** : Utilisation de balises `<header>`, `<main>`, `<section>`, `<footer>`, et `aria-labelledby` pour lier les titres aux sections.
+- **Styles intégrés** : Le CSS est dans une balise `<style>` avec des variables personnalisées (`:root`) pour la palette, facilitant les modifications.
+- **JavaScript minimal** : Gère le curseur personnalisé, l'effet collant du header, et les animations au scroll via `IntersectionObserver`.
+- **Images réelles** : L'unique image fournie (`assets/maps-1.jpg`) est utilisée de manière stratégique dans le héros et le bloc "Le Lieu", traitée avec des filtres CSS pour correspondre à l'esthétique "nature morte monumentale".
