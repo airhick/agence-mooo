@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farrow & Ball Neuilly Boutique — Showroom de couleurs d'exception à Neuilly-sur-Seine</title>
+    <meta name="description" content="Boutique Farrow & Ball au 2, rue du Château à Neuilly-sur-Seine. Consultations couleur privées, collection complète de 148 teintes et papiers peints. L'Ouest parisien en couleurs.">
+    <meta property="og:title" content="Farrow & Ball Neuilly Boutique — L'Hôtel de la Couleur">
+    <meta property="og:description" content="Une couleur ne vit que là où on la pose. Consultation privée au 2, rue du Château, Neuilly-sur-Seine.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🏛️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --school-house-white: #F2EDE7;
+            --studio-green: #2D3E40;
+            --red-earth: #C36A6A;
+            --mizzle: #7A8B7A;
+            --joas-white: #E8D5C0;
+            --hague-blue: #3B4A4B;
+            --white-pure: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(45, 62, 64, 0.07);
+            --shadow-medium: 0 8px 40px rgba(45, 62, 64, 0.10);
+            --shadow-deep: 0 16px 60px rgba(45, 62, 64, 0.14);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            background-color: var(--school-house-white);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--studio-green);
+            background-color: var(--school-house-white);
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: var(--grain);
+            opacity: 0.35;
+            mix-blend-mode: multiply;
+        }
+
+        /* Scroll-driven light ray overlay */
+        .light-ray {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 140%;
+            height: 140%;
+            pointer-events: none;
+            z-index: 9998;
+            background: linear-gradient(135deg,
+                    rgba(242, 237, 231, 0) 30%,
+                    rgba(232, 213, 192, 0.12) 48%,
+                    rgba(242, 237, 231, 0) 52%,
+                    rgba(242, 237, 231, 0) 70%);
+            transform: translateX(-15%) rotate(-12deg);
+            transition: opacity 0.8s ease;
+            opacity: 0.6;
+            mix-blend-mode: soft-light;
+        }
+
+        /* Typography */
+        .ff-display {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .ff-sans {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--studio-green);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.6rem);
+            letter-spacing: -0.015em;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            line-height: 1.75;
+            color: var(--studio-green);
+            opacity: 0.88;
+        }
+
+        .text-sm {
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--mizzle);
+        }
+
+        .text-lg {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.65;
+        }
+
+        /* Links */
+        a {
+            color: var(--red-earth);
+            text-decoration: none;
+            transition: color var(--transition-smooth);
+            font-weight: 500;
+        }
+        a:hover {
+            color: var(--studio-green);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 3px solid var(--red-earth);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(242, 237, 231, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(45, 62, 64, 0.06);
+            transition: all var(--transition-smooth);
+            padding: 0.9rem 0;
+        }
+
+        .site-header.scrolled {
+            padding: 0.55rem 0;
+            background: rgba(242, 237, 231, 0.94);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            gap: 2rem;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--studio-green);
+            flex-shrink: 0;
+        }
+
+        .header-brand .brand-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--red-earth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .header-brand .brand-text {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .header-brand .brand-text small {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--mizzle);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .header-nav a {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--studio-green);
+            opacity: 0.8;
+            transition: all var(--transition-smooth);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .header-nav a:hover {
+            opacity: 1;
+            color: var(--red-earth);
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-family: 'DM Sans', sans-serif;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--red-earth);
+            color: #fff;
+            border-color: var(--red-earth);
+            box-shadow: 0 4px 18px rgba(195, 106, 106, 0.3);
+        }
+        .btn-primary:hover {
+            background: #b35959;
+            border-color: #b35959;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(195, 106, 106, 0.4);
+            color: #fff;
+            text-decoration: none;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--studio-green);
+            border-color: var(--mizzle);
+        }
+        .btn-outline:hover {
+            background: var(--joas-white);
+            border-color: var(--studio-green);
+            color: var(--studio-green);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--joas-white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--studio-green);
+            margin-bottom: 1.8rem;
+            border: 1px solid rgba(45, 62, 64, 0.08);
+        }
+        .hero-badge .star {
+            color: #e2a03f;
+            font-size: 1rem;
+        }
+        .hero-badge .rating-note {
+            opacity: 0.7;
+            font-weight: 500;
+            margin-left: 0.2rem;
+        }
+
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--studio-green);
+            opacity: 0.75;
+            margin-top: 1.2rem;
+            line-height: 1.6;
+            max-width: 32ch;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: var(--shadow-deep);
+            transform: rotate(0.5deg);
+            transition: transform var(--transition-smooth);
+        }
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg) scale(1.01);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.97) contrast(1.04) saturate(0.9);
+            transition: filter var(--transition-smooth);
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(45, 62, 64, 0.04) 0%, rgba(195, 106, 106, 0.07) 100%);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-file {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--mizzle);
+            opacity: 0.4;
+        }
+
+        /* Sections */
+        section {
+            padding: clamp(4rem, 10vw, 8rem) 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+        .section-header .section-tag {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--mizzle);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--red-earth);
+            border-radius: 3px;
+            opacity: 0.7;
+        }
+
+        /* Filets décoratifs */
+        .ornament-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--mizzle) 20%, var(--mizzle) 80%, transparent 100%);
+            opacity: 0.35;
+            margin: 2rem 0;
+        }
+
+        /* La boutique */
+        .boutique-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+
+        .boutique-text p {
+            margin-bottom: 1.4rem;
+        }
+        .boutique-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .boutique-visual {
+            background: var(--joas-white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: var(--shadow-medium);
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .boutique-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.5;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .boutique-visual .room-shape {
+            width: 100%;
+            height: 100%;
+            border: 2px dashed var(--mizzle);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0.8;
+        }
+        .boutique-visual .room-label {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--red-earth);
+            opacity: 0.9;
+        }
+
+        /* Consultation */
+        .consultation-card {
+            background: var(--white-pure);
+            border-radius: var(--radius-lg);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(45, 62, 64, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+        .consultation-card:hover {
+            box-shadow: var(--shadow-deep);
+            transform: translateY(-4px);
+        }
+        .consultation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--red-earth);
+            border-radius: 5px 0 0 5px;
+        }
+        .consultation-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .consultation-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .consultation-feature .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--joas-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+        .consultation-feature .feature-text strong {
+            display: block;
+            font-weight: 600;
+            color: var(--studio-green);
+            margin-bottom: 0.2rem;
+        }
+        .consultation-feature .feature-text span {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Swatches / Nuanciers */
+        .swatches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .swatch-card {
+            position: relative;
+            cursor: pointer;
+            perspective: 800px;
+        }
+        .swatch-card .swatch-face {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-bounce);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            z-index: 1;
+        }
+        .swatch-card .swatch-color {
+            aspect-ratio: 1/1.3;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+        }
+        .swatch-card .swatch-color::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.55;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .swatch-card .swatch-label {
+            background: #fff;
+            padding: 0.9rem 0.9rem;
+            text-align: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 0.95rem;
+            color: var(--studio-green);
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            letter-spacing: 0.01em;
+        }
+        .swatch-card .swatch-reveal {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--studio-green);
+            color: #fff;
+            padding: 0.8rem 0.9rem;
+            font-size: 0.78rem;
+            text-align: center;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            transform: translateY(100%);
+            transition: transform var(--transition-bounce);
+            z-index: 0;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .swatch-card:hover .swatch-reveal {
+            transform: translateY(0);
+        }
+        .swatch-card:hover .swatch-face {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        /* Swatch colors */
+        .swatch-hague-blue {
+            background-color: #3B4A4B;
+        }
+        .swatch-red-earth {
+            background-color: #C36A6A;
+        }
+        .swatch-mizzle {
+            background-color: #7A8B7A;
+        }
+        .swatch-school-house {
+            background-color: #F2EDE7;
+            border: 1px solid #e0d8d0;
+        }
+        .swatch-joas-white {
+            background-color: #E8D5C0;
+        }
+        .swatch-studio-green {
+            background-color: #2D3E40;
+        }
+        .swatch-brinjal {
+            background-color: #5B3A4A;
+        }
+        .swatch-inchyra {
+            background-color: #4F5E5B;
+        }
+
+        /* Inspirations */
+        .inspirations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .inspiration-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all var(--transition-smooth);
+            border: 1px solid rgba(45, 62, 64, 0.05);
+        }
+        .inspiration-card:hover {
+            box-shadow: var(--shadow-deep);
+            transform: translateY(-4px);
+        }
+        .inspiration-card .inspo-visual {
+            aspect-ratio: 3/2;
+            background: var(--joas-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .inspiration-card .inspo-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.4;
+            mix-blend-mode: multiply;
+        }
+        .inspiration-card .inspo-label {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--studio-green);
+            opacity: 0.6;
+            z-index: 1;
+        }
+        .inspiration-card .inspo-body {
+            padding: 1.5rem;
+        }
+        .inspiration-card .inspo-body h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .inspiration-card .inspo-body p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Nous trouver */
+        .map-section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+        }
+        .info-block {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(45, 62, 64, 0.05);
+        }
+        .info-block .info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(45, 62, 64, 0.06);
+        }
+        .info-block .info-item:last-child {
+            border-bottom: none;
+        }
+        .info-block .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--joas-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+        .info-block .info-text strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        .info-block .info-text {
+            font-size: 0.95rem;
+        }
+
+        .horaires-badge {
+            display: inline-block;
+            background: var(--joas-white);
+            padding: 0.25rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--studio-green);
+            margin-top: 0.5rem;
+        }
+
+        /* Équipe */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+        }
+        .team-card {
+            text-align: center;
+            transition: all var(--transition-smooth);
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+        }
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        .team-avatar::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+        .team-avatar.catherine {
+            background: var(--red-earth);
+        }
+        .team-avatar.marie {
+            background: var(--mizzle);
+        }
+        .team-avatar.thibault {
+            background: var(--hague-blue);
+        }
+        .team-card h4 {
+            margin-bottom: 0.3rem;
+        }
+        .team-card .team-role {
+            font-size: 0.85rem;
+            color: var(--mizzle);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--hague-blue);
+            color: #fff;
+            padding: clamp(3rem, 7vw, 5rem) 0 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.3;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .footer-col a:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Hero initial animation */
+        .hero-animate {
+            animation: heroFadeIn 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-image-animate {
+            animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+        @keyframes heroImageReveal {
+            from {
+                opacity: 0;
+                transform: rotate(1.5deg) scale(0.94);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0.5deg) scale(1);
+            }
+        }
+
+        /* Mobile nav toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mobile-nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--studio-green);
+            border-radius: 2px;
+            transition: all var(--transition-smooth);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                order: 2;
+            }
+            .hero-image-wrapper {
+                order: 1;
+                max-width: 500px;
+                margin: 0 auto;
+                aspect-ratio: 3/4;
+            }
+            .hero-subtitle {
+                max-width: none;
+            }
+            .hero-cta-group {
+                justify-content: center;
+            }
+            .section-header h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .section-header {
+                text-align: center;
+            }
+            .boutique-grid {
+                grid-template-columns: 1fr;
+            }
+            .boutique-visual {
+                order: -1;
+                min-height: 220px;
+            }
+            .map-section-grid {
+                grid-template-columns: 1fr;
+            }
+            .swatches-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 1rem;
+            }
+            .header-nav {
+                display: none;
+            }
+            .mobile-nav-toggle {
+                display: flex;
+            }
+            .header-nav.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(242, 237, 231, 0.97);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(45, 62, 64, 0.08);
+                box-shadow: var(--shadow-medium);
+            }
+            .header-inner {
+                position: relative;
+            }
+            .header-cta-desktop {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-section {
+                padding-top: 5rem;
+                min-height: auto;
+                padding-bottom: 2rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            .swatches-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .team-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 1.8rem;
+            }
+            .consultation-features {
+                grid-template-columns: 1fr;
+            }
+            .inspirations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .swatches-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-cta-group .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="light-ray" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="header-brand" aria-label="Farrow & Ball Neuilly Boutique — Accueil">
+                <span class="brand-icon" aria-hidden="true">F</span>
+                <span class="brand-text">Farrow & Ball<small>Neuilly Boutique</small></span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="header-nav" id="headerNav">
+                    <li><a href="#boutique">La boutique</a></li>
+                    <li><a href="#consultation">Consultation</a></li>
+                    <li><a href="#teintes">Teintes</a></li>
+                    <li><a href="#inspirations">Inspirations</a></li>
+                    <li><a href="#trouver">Nous trouver</a></li>
+                    <li><a href="#equipe">L'équipe</a></li>
+                </ul>
+            </nav>
+            <a href="#consultation" class="btn btn-primary header-cta-desktop">Prendre rendez-vous</a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-grid">
+                <div class="hero-content hero-animate" style="animation-delay:0.2s;">
+                    <div class="hero-badge">
+                        <span class="star" aria-hidden="true">★</span> 3.7
+                        <span class="rating-note">sur 61 avis Google</span>
+                    </div>
+                    <h1>Une couleur ne vit que là où on la pose.</h1>
+                    <p class="hero-subtitle">Trouvez la vôtre lors d'une consultation privée au 2, rue du Château — dans le seul showroom Farrow & Ball de l'Ouest parisien.</p>
+                    <div class="hero-cta-group">
+                        <a href="#consultation" class="btn btn-primary">Réserver une consultation</a>
+                        <a href="tel:+33147229828" class="btn btn-outline">Appeler — 01 47 22 98 28</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper hero-image-animate" style="animation-delay:0.5s;">
+                    <img src="assets/maps-1.jpg" alt="Façade de la boutique Farrow & Ball au 2, rue du Château à Neuilly-sur-Seine" width="800" height="1000" loading="eager" fetchpriority="high">
+                </div>
+            </div>
+            <div class="hero-file" aria-hidden="true"></div>
+        </section>
+
+        <!-- LA BOUTIQUE -->
+        <section id="boutique">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Le lieu</span>
+                    <h2>Un hôtel particulier dédié aux teintes d'exception</h2>
+                </div>
+                <div class="boutique-grid">
+                    <div class="boutique-text reveal reveal-delay-1">
+                        <p>Poussez la porte du 2, rue du Château et entrez dans un lieu conçu comme une maison habitée, où chaque pièce dévoile les couleurs en situation réelle. Boiseries, corniches et lumière parisienne font le reste.</p>
+                        <p>Ici, la couleur ne se choisit pas sur un écran : elle se vit, se respire, s'observe à différentes heures du jour. Nos murs sont traités comme de véritables nuanciers vivants, du salon d'entrée baigné de <em>School House White</em> jusqu'au cabinet feutré en <em>Hague Blue</em>.</p>
+                        <p>Un écrin confidentiel de Neuilly-sur-Seine où l'héritage britannique de Farrow & Ball dialogue avec l'élégance de l'architecture haussmannienne.</p>
+                    </div>
+                    <div class="boutique-visual reveal reveal-delay-2" aria-hidden="true">
+                        <div class="room-shape">
+                            <span class="room-label">2, rue du Château</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" aria-hidden="true"><div class="ornament-line"></div></div>
+
+        <!-- CONSULTATION COULEUR -->
+        <section id="consultation">
+            <div class="container-narrow">
+                <div class="section-header reveal">
+                    <span class="section-tag">Le service</span>
+                    <h2>Une expertise à votre mesure</h2>
+                </div>
+                <div class="consultation-card reveal reveal-delay-1">
+                    <p class="text-lg">Prenez rendez-vous avec nos consultants pour une séance personnalisée d'une heure. Échantillonnage, mise en lumière, choix des finitions : vous repartez avec une palette qui vous ressemble, prête à peindre.</p>
+                    <div class="consultation-features">
+                        <div class="consultation-feature">
+                            <div class="feature-icon" aria-hidden="true">🎨</div>
+                            <div class="feature-text">
+                                <strong>Échantillonnage sur place</strong>
+                                <span>Testez les teintes directement sur nos murs témoins, en lumière naturelle et artificielle.</span>
+                            </div>
+                        </div>
+                        <div class="consultation-feature">
+                            <div class="feature-icon" aria-hidden="true">💡</div>
+                            <div class="feature-text">
+                                <strong>Analyse de votre lumière</strong>
+                                <span>Apportez vos photos ou vos plans : nous étudions orientation et luminosité pour des choix justes.</span>
+                            </div>
+                        </div>
+                        <div class="consultation-feature">
+                            <div class="feature-icon" aria-hidden="true">📐</div>
+                            <div class="feature-text">
+                                <strong>Finitions & papiers peints</strong>
+                                <span>Mate, satinée, brillante ? Découvrez l'impact des finitions sur la perception de la couleur.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:2rem; text-align:center;">
+                        <a href="tel:+33147229828" class="btn btn-primary">Prendre rendez-vous par téléphone</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" aria-hidden="true"><div class="ornament-line"></div></div>
+
+        <!-- LES TEINTES & PAPIERS PEINTS -->
+        <section id="teintes">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">La collection</span>
+                    <h2>La collection complète, sous vos yeux</h2>
+                </div>
+                <p class="reveal reveal-delay-1" style="max-width:60ch;margin-bottom:2.5rem;">Découvrez l'intégralité des 148 teintes et des papiers peints Farrow & Ball en grandeur réelle. Nos murs sont vos nuanciers. Commandez sur place ou emportez vos échantillons.</p>
+                <div class="swatches-grid reveal reveal-delay-2">
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-hague-blue"></div>
+                            <div class="swatch-label">Hague Blue</div>
+                        </div>
+                        <div class="swatch-reveal">Visible dans le cabinet feutré</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-red-earth"></div>
+                            <div class="swatch-label">Red Earth</div>
+                        </div>
+                        <div class="swatch-reveal">Dans le salon de consultation</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-mizzle"></div>
+                            <div class="swatch-label">Mizzle</div>
+                        </div>
+                        <div class="swatch-reveal">Sur les boiseries du couloir</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-school-house"></div>
+                            <div class="swatch-label">School House White</div>
+                        </div>
+                        <div class="swatch-reveal">Murs du salon principal</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-joas-white"></div>
+                            <div class="swatch-label">Joa's White</div>
+                        </div>
+                        <div class="swatch-reveal">Dans la salle d'échantillons</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-studio-green"></div>
+                            <div class="swatch-label">Studio Green</div>
+                        </div>
+                        <div class="swatch-reveal">Portes & boiseries extérieures</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-brinjal"></div>
+                            <div class="swatch-label">Brinjal</div>
+                        </div>
+                        <div class="swatch-reveal">Dans le petit salon tamisé</div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-face">
+                            <div class="swatch-color swatch-inchyra"></div>
+                            <div class="swatch-label">Inchyra Blue</div>
+                        </div>
+                        <div class="swatch-reveal">Bibliothèque du premier étage</div>
+                    </div>
+                </div>
+                <p style="text-align:center;margin-top:2rem;font-size:0.9rem;opacity:0.7;" class="reveal reveal-delay-3">Survolez chaque échantillon pour découvrir où il est mis en scène dans la boutique.</p>
+            </div>
+        </section>
+
+        <div class="container" aria-hidden="true"><div class="ornament-line"></div></div>
+
+        <!-- INSPIRATIONS DU QUARTIER -->
+        <section id="inspirations">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Inspirations</span>
+                    <h2>Des couleurs qui habitent Neuilly</h2>
+                </div>
+                <p class="reveal reveal-delay-1" style="max-width:60ch;margin-bottom:2.5rem;">Appartement haussmannien, maison de ville ou atelier contemporain : explorez des réalisations locales où les teintes Farrow & Ball transforment les intérieurs de la commune et au-delà.</p>
+                <div class="inspirations-grid">
+                    <div class="inspiration-card reveal reveal-delay-1">
+                        <div class="inspo-visual" style="background:#e8d5c0;">
+                            <span class="inspo-label">Haussmannien</span>
+                        </div>
+                        <div class="inspo-body">
+                            <h4>Appartement rue Perronet</h4>
+                            <p>Moulures soulignées en <em>Pointing</em>, murs en <em>Pavilion Gray</em> — un classique réinventé.</p>
+                        </div>
+                    </div>
+                    <div class="inspiration-card reveal reveal-delay-2">
+                        <div class="inspo-visual" style="background:#d5c9b8;">
+                            <span class="inspo-label">Maison de ville</span>
+                        </div>
+                        <div class="inspo-body">
+                            <h4>Boulevard Bineau</h4>
+                            <p>Cuisine ouverte en <em>Light Blue</em> et <em>Shaded White</em>, lumière traversante magnifiée.</p>
+                        </div>
+                    </div>
+                    <div class="inspiration-card reveal reveal-delay-3">
+                        <div class="inspo-visual" style="background:#c4b5a5;">
+                            <span class="inspo-label">Atelier contemporain</span>
+                        </div>
+                        <div class="inspo-body">
+                            <h4>Villa d'artiste à Levallois</h4>
+                            <p>Verrière et murs en <em>All White</em>, touches de <em>Hague Blue</em> sur les menuiseries métalliques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" aria-hidden="true"><div class="ornament-line"></div></div>
+
+        <!-- NOUS TROUVER -->
+        <section id="trouver">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Venir</span>
+                    <h2>Au cœur du Neuilly historique</h2>
+                </div>
+                <div class="map-section-grid">
+                    <div class="map-wrapper reveal reveal-delay-1">
+                        <iframe src="https://maps.google.com/maps?q=Farrow+%26+Ball+Neuilly+Boutique+2+Rue+du+Ch%C3%A2teau%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de la boutique Farrow & Ball Neuilly"></iframe>
+                    </div>
+                    <div class="info-block reveal reveal-delay-2">
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">📍</div>
+                            <div class="info-text">
+                                <strong>Adresse</strong>
+                                2 Rue du Château<br>92200 Neuilly-sur-Seine
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">📞</div>
+                            <div class="info-text">
+                                <strong>Téléphone</strong>
+                                <a href="tel:+33147229828">01 47 22 98 28</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">🕐</div>
+                            <div class="info-text">
+                                <strong>Horaires d'ouverture</strong>
+                                Du mardi au samedi : 9h – 18h30<br>
+                                <span class="horaires-badge">Fermé dimanche & lundi</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">✉️</div>
+                            <div class="info-text">
+                                <strong>Contact</strong>
+                                <a href="mailto:neuilly@farrow-ball.com">neuilly@farrow-ball.com</a>
+                            </div>
+                        </div>
+                        <div style="margin-top:1.5rem;">
+                             <span class="hero-badge" style="display:inline-flex;align-items:center;gap:0.4rem;">
+                                <span class="star" aria-hidden="true">★</span> 3.7 sur 61 avis Google
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" aria-hidden="true"><div class="ornament-line"></div></div>
+
+        <!-- L'ÉQUIPE -->
+        <section id="equipe">
+            <div class="container-narrow">
+                <div class="section-header reveal">
+                    <span class="section-tag">L'équipe</span>
+                    <h2>Des visages, des conseils</h2>
+                </div>
+                <p class="reveal reveal-delay-1" style="text-align:center;max-width:50ch;margin:0 auto 3rem;">Catherine, Marie et Thibault vous accueillent et vous guident avec une connaissance intime de la couleur et une écoute attentive.</p>
+                <div class="team-grid">
+                    <div class="team-card reveal reveal-delay-1">
+                        <div class="team-avatar catherine" aria-hidden="true">C</div>
+                        <h4>Catherine</h4>
+                        <p class="team-role">Experte couleur</p>
+                    </div>
+                    <div class="team-card reveal reveal-delay-2">
+                        <div class="team-avatar marie" aria-hidden="true">M</div>
+                        <h4>Marie</h4>
+                        <p class="team-role">Consultante en décoration</p>
+                    </div>
+                    <div class="team-card reveal reveal-delay-3">
+                        <div class="team-avatar thibault" aria-hidden="true">T</div>
+                        <h4>Thibault</h4>
+                        <p class="team-role">Conseiller couleur & finitions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Farrow & Ball Neuilly</h4>
+                    <p>2 Rue du Château<br>92200 Neuilly-sur-Seine<br>France</p>
+                    <p><a href="tel:+33147229828">01 47 22 98 28</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Horaires</h4>
+                    <p>Mardi – Samedi<br>9h00 – 18h30<br>Fermé dimanche & lundi</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <p><a href="#boutique">La boutique</a><br><a href="#consultation">Consultation couleur</a><br><a href="#teintes">Teintes & papiers peints</a><br><a href="#trouver">Nous trouver</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>À propos</h4>
+                    <p>Showroom officiel Farrow & Ball dans l'Ouest parisien. Expertise couleur, conseil personnalisé et collection complète.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Farrow & Ball Neuilly Boutique. Site créé par Agence Mooo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Farrow & Ball Neuilly Boutique",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Rue du Château",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147229828",
+            "email": "neuilly@farrow-ball.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.7",
+                "reviewCount": "61"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "09:00",
+                    "closes": "18:30"
+                }
+            ],
+            "url": "https://agence.mooo.com/farrow-ball-neuilly-boutique"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Mobile nav toggle
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const headerNav = document.getElementById('headerNav');
+            if (mobileNavToggle && headerNav) {
+                mobileNavToggle.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    headerNav.classList.toggle('mobile-open');
+                });
+                // Close on nav link click
+                headerNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        headerNav.classList.remove('mobile-open');
+                        mobileNavToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header scroll effect
+            const siteHeader = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 60) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // Light ray parallax
+            const lightRay = document.querySelector('.light-ray');
+            if (lightRay && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.pageYOffset;
+                    const maxScroll = document.body.scrollHeight - window.innerHeight;
+                    const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
+                    const translateX = -15 + progress * 25;
+                    const rotate = -12 + progress * 8;
+                    const opacity = 0.3 + Math.sin(progress * Math.PI) * 0.5;
+                    lightRay.style.transform = `translateX(${translateX}%) rotate(${rotate}deg)`;
+                    lightRay.style.opacity = Math.max(0.15, Math.min(0.7, opacity));
+                }, { passive: true });
+            }
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.1
+                });
+                revealElements.forEach(el => revealObserver.observe(el));
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Show all immediately if reduced motion
+                revealElements.forEach(el => el.classList.add('revealed'));
+            }
+
+            // Also handle hero animations for reduced motion
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('.hero-animate, .hero-image-animate').forEach(el => {
+                    el.style.animation = 'none';
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
