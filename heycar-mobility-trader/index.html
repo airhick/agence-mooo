@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heycar – Mobility Trader | Voitures d'occasion certifiées à Neuilly-sur-Seine</title>
+    <meta name="description" content="heycar Neuilly, votre Mobility Trader au 144 avenue Charles de Gaulle. Plus de 30 000 véhicules certifiés, garantie 36 mois. Essayez, achetez, reprenez — tout est déjà prêt.">
+    <meta property="og:title" content="heycar – Mobility Trader | Neuilly-sur-Seine">
+    <meta property="og:description" content="Concession confidentielle, expérience sans friction. Véhicules certifiés, reprise en 48h, financement intégré.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/heycar-mobility-trader">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231A1C20'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='34' font-family='Georgia,serif' fill='%23FF5500' font-weight='bold'%3Eh%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "heycar - Mobility Trader",
+            "description": "Mobility Trader haut de gamme à Neuilly-sur-Seine. Véhicules certifiés, reprise, financement.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "144 Avenue Charles de Gaulle",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "",
+            "email": "contact@heycar.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "1187"
+            },
+            "url": "https://agence.mooo.com/heycar-mobility-trader",
+            "openingHours": "Tu-Sa 09:00-19:00"
+        }
+    </script>
+    <style>
+        :root {
+            --asphalte: #1A1C20;
+            --craie: #F0EFEA;
+            --orange-signal: #FF5500;
+            --bleu-nuit: #0B1F3B;
+            --cuir-vuitton: #8B5E3C;
+            --titane: #4A5056;
+            --asphalte-elevated: #21242A;
+            --asphalte-surface: #282C33;
+            --halo-inner: rgba(240, 239, 234, 0.06);
+            --halo-outer: rgba(26, 28, 32, 0.95);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+            --duration-reveal: 0.9s;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--asphalte);
+            color: var(--craie);
+            font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--asphalte);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--titane);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cuir-vuitton);
+        }
+
+        /* ===== FOCUS ===== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--orange-signal);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 28, 32, 0.78);
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            border-bottom: 1px solid rgba(240, 239, 234, 0.06);
+            transition: background 0.4s var(--ease-out-expo), border-color 0.4s var(--ease-out-expo);
+            padding: 0 2rem;
+        }
+        .header.scrolled {
+            background: rgba(26, 28, 32, 0.94);
+            border-bottom-color: rgba(240, 239, 234, 0.12);
+        }
+        .header-inner {
+            max-width: 1340px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            gap: 2rem;
+        }
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            background: var(--orange-signal);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+        .logo-link:hover .logo-mark {
+            transform: scale(1.07);
+        }
+        .logo-text {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--craie);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        .logo-text span {
+            display: block;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            color: var(--titane);
+            text-transform: none;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            align-items: center;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: var(--titane);
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s var(--ease-out-expo);
+            position: relative;
+            white-space: nowrap;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cuir-vuitton);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--craie);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-cta {
+            text-decoration: none;
+            background: var(--orange-signal);
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            transition: background 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+            white-space: nowrap;
+            box-shadow: 0 0 0 0 rgba(255, 85, 0, 0);
+        }
+        .nav-cta:hover {
+            background: #e64d00;
+            box-shadow: 0 8px 28px rgba(255, 85, 0, 0.28);
+            transform: translateY(-1px);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 101;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--craie);
+            border-radius: 2px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 1024px) {
+            .header {
+                padding: 0 1.2rem;
+            }
+            .nav-list {
+                gap: 1.3rem;
+            }
+            .nav-link {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 860px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75vw;
+                max-width: 340px;
+                height: 100vh;
+                height: 100dvh;
+                background: var(--asphalte-elevated);
+                padding: 6rem 2rem 2rem;
+                transition: right 0.45s var(--ease-out-expo);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+                border-left: 1px solid rgba(240, 239, 234, 0.08);
+                z-index: 100;
+            }
+            .nav.open {
+                right: 0;
+            }
+            .nav-list {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: flex-start;
+            }
+            .nav-link {
+                font-size: 1.1rem;
+                letter-spacing: 0.05em;
+            }
+            .nav-cta {
+                font-size: 0.95rem;
+                padding: 0.75rem 1.8rem;
+            }
+        }
+
+        /* ===== SECTIONS GÉNÉRALES ===== */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 3.5rem 1.1rem;
+            }
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== FILET DE CUIR ===== */
+        .filet-cuir {
+            display: block;
+            width: 44px;
+            height: 2px;
+            background: var(--cuir-vuitton);
+            margin: 0.6rem 0 1.2rem 0;
+            border-radius: 1px;
+            transition: width 0.6s var(--ease-out-expo);
+        }
+        .revealed .filet-cuir {
+            width: 44px;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            color: var(--craie);
+            margin-bottom: 0.3rem;
+        }
+        .section-subtitle {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--titane);
+            letter-spacing: 0.03em;
+            line-height: 1.6;
+            max-width: 580px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem 5rem;
+            background: var(--asphalte);
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.38) saturate(0.5) contrast(1.1);
+            transform: scale(1.04);
+            transition: transform 1.8s var(--ease-out-expo);
+        }
+        .hero.visible .hero-bg img {
+            transform: scale(1);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 55% 40%, transparent 20%, var(--asphalte) 85%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-vignette {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(26, 28, 32, 0) 0%, rgba(26, 28, 32, 0.55) 45%, var(--asphalte) 85%),
+                linear-gradient(180deg, rgba(26, 28, 32, 0.3) 0%, transparent 30%, transparent 60%, rgba(26, 28, 32, 0.7) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s var(--ease-out-expo) 0.2s, transform 1s var(--ease-out-expo) 0.2s;
+        }
+        .hero.visible .hero-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(3rem, 8vw, 5.6rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--craie);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+        }
+        .hero-title .highlight {
+            color: var(--orange-signal);
+            letter-spacing: -0.02em;
+        }
+        .hero-subtitle {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            line-height: 1.7;
+            letter-spacing: 0.025em;
+            color: rgba(240, 239, 234, 0.82);
+            max-width: 620px;
+            margin: 0 auto 2.4rem;
+            text-wrap: balance;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--orange-signal);
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            letter-spacing: 0.04em;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.35s var(--ease-out-expo);
+            box-shadow: 0 4px 20px rgba(255, 85, 0, 0.2);
+            white-space: nowrap;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #e64d00;
+            box-shadow: 0 10px 34px rgba(255, 85, 0, 0.35);
+            transform: translateY(-2px);
+        }
+        .btn-ghost {
+            display: inline-block;
+            background: transparent;
+            color: var(--craie);
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            letter-spacing: 0.04em;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 1px solid rgba(240, 239, 234, 0.3);
+            transition: all 0.35s var(--ease-out-expo);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-ghost:hover {
+            border-color: var(--craie);
+            background: rgba(240, 239, 234, 0.05);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(11, 31, 59, 0.7);
+            border: 1px solid rgba(240, 239, 234, 0.12);
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            margin-bottom: 1.8rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--craie);
+            backdrop-filter: blur(10px);
+        }
+        .hero-badge .stars {
+            color: #f5b642;
+            letter-spacing: 0.08em;
+            font-size: 1rem;
+        }
+        .hero-badge .rating-note {
+            color: var(--titane);
+            font-weight: 300;
+            font-size: 0.78rem;
+        }
+
+        /* ===== REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity var(--duration-reveal) var(--ease-out-expo), transform var(--duration-reveal) var(--ease-out-expo);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+        .reveal-from-left {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity var(--duration-reveal) var(--ease-out-expo), transform var(--duration-reveal) var(--ease-out-expo);
+        }
+        .reveal-from-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+        .reveal-from-right {
+            opacity: 0;
+            transform: translateX(36px);
+            transition: opacity var(--duration-reveal) var(--ease-out-expo), transform var(--duration-reveal) var(--ease-out-expo);
+        }
+        .reveal-from-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        /* ===== SECTION SÉLECTION ===== */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2.6rem;
+        }
+        @media (max-width: 768px) {
+            .selection-grid {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+        }
+        .vehicle-card {
+            background: var(--asphalte-elevated);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(240, 239, 234, 0.06);
+            transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo), border-color 0.45s var(--ease-out-expo);
+            cursor: pointer;
+            position: relative;
+            group: true;
+        }
+        .vehicle-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(240, 239, 234, 0.16);
+        }
+        .vehicle-card-image-wrap {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: var(--asphalte-surface);
+        }
+        .vehicle-card-image-wrap .halo-cone {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(240, 239, 234, 0.08) 0%, rgba(26, 28, 32, 0.7) 70%, var(--asphalte-elevated) 100%);
+            z-index: 2;
+            pointer-events: none;
+            transition: opacity 0.6s var(--ease-out-expo);
+        }
+        .vehicle-card:hover .halo-cone {
+            opacity: 0.85;
+        }
+        .vehicle-card-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, #2a2d35 0%, #1f2229 50%, #1a1c20 100%);
+            position: relative;
+            filter: saturate(0.4) brightness(0.5);
+            transition: filter 0.6s var(--ease-out-expo);
+        }
+        .vehicle-card:hover .vehicle-card-placeholder {
+            filter: saturate(0.7) brightness(0.65);
+        }
+        .vehicle-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 3;
+            background: var(--bleu-nuit);
+            color: var(--craie);
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            border: 1px solid rgba(240, 239, 234, 0.15);
+        }
+        .vehicle-badge.price-drop {
+            background: rgba(255, 85, 0, 0.18);
+            border-color: rgba(255, 85, 0, 0.3);
+            color: var(--orange-signal);
+        }
+        .vehicle-card-body {
+            padding: 1.3rem 1.4rem 1.6rem;
+        }
+        .vehicle-card-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.55rem;
+            letter-spacing: -0.015em;
+            color: var(--craie);
+            margin-bottom: 0.2rem;
+        }
+        .vehicle-card-details {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--titane);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.9rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .vehicle-card-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .vehicle-card-details .dot-sep {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--cuir-vuitton);
+            align-self: center;
+        }
+        .vehicle-card-price {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: -0.01em;
+            color: var(--craie);
+        }
+        .vehicle-card-monthly {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: var(--titane);
+            letter-spacing: 0.03em;
+            margin-top: 0.15rem;
+        }
+        .vehicle-card-monthly strong {
+            color: var(--craie);
+            font-weight: 500;
+        }
+
+        /* ===== SECTION EXPÉRIENCE ===== */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 900px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 2.4rem;
+            }
+        }
+        .experience-card {
+            background: var(--asphalte-surface);
+            border-radius: 14px;
+            padding: 2.2rem 2rem;
+            border: 1px solid rgba(240, 239, 234, 0.05);
+            transition: border-color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+            position: relative;
+        }
+        .experience-card:hover {
+            border-color: rgba(139, 94, 60, 0.3);
+            transform: translateY(-3px);
+        }
+        .experience-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--cuir-vuitton);
+            opacity: 0.8;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(139, 94, 60, 0.1);
+        }
+        .experience-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -0.01em;
+            color: var(--craie);
+            margin-bottom: 0.6rem;
+        }
+        .experience-card p {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--titane);
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== SECTION VENDRE ===== */
+        .vendre-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 860px) {
+            .vendre-wrap {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .vendre-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 14px;
+            background: var(--asphalte-surface);
+        }
+        .vendre-image .placeholder-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35) saturate(0.3);
+            background: linear-gradient(160deg, #1e2128 0%, #15171c 50%, #0f1115 100%);
+            transition: filter 0.7s var(--ease-out-expo);
+        }
+        .vendre-image:hover .placeholder-img {
+            filter: brightness(0.5) saturate(0.5);
+        }
+        .vendre-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, transparent 10%, rgba(26, 28, 32, 0.6) 70%);
+        }
+        .vendre-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .vendre-form input,
+        .vendre-form select,
+        .vendre-form textarea {
+            background: var(--asphalte-surface);
+            border: 1px solid rgba(240, 239, 234, 0.1);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            color: var(--craie);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: border-color 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
+            width: 100%;
+        }
+        .vendre-form input:focus,
+        .vendre-form select:focus,
+        .vendre-form textarea:focus {
+            border-color: var(--cuir-vuitton);
+            box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.12);
+            outline: none;
+        }
+        .vendre-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .vendre-form .btn-submit {
+            align-self: flex-start;
+            background: var(--orange-signal);
+            color: #fff;
+            border: none;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+            box-shadow: 0 4px 18px rgba(255, 85, 0, 0.18);
+        }
+        .vendre-form .btn-submit:hover {
+            background: #e64d00;
+            box-shadow: 0 10px 30px rgba(255, 85, 0, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* ===== SECTION AVIS ===== */
+        .avis-slider {
+            display: flex;
+            gap: 1.8rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 1.5rem 0 1rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin-top: 2rem;
+        }
+        .avis-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .avis-card {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: var(--asphalte-surface);
+            border-radius: 14px;
+            padding: 1.8rem;
+            border: 1px solid rgba(240, 239, 234, 0.05);
+            transition: border-color 0.4s var(--ease-out-expo);
+            min-width: 280px;
+        }
+        .avis-card:hover {
+            border-color: rgba(240, 239, 234, 0.15);
+        }
+        .avis-stars {
+            color: #f5b642;
+            letter-spacing: 0.06em;
+            font-size: 0.9rem;
+            margin-bottom: 0.7rem;
+        }
+        .avis-text {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--craie);
+            letter-spacing: 0.02em;
+            font-style: italic;
+            margin-bottom: 1rem;
+            quotes: "«\00A0" "\00A0»";
+        }
+        .avis-text::before {
+            content: '« ';
+            color: var(--cuir-vuitton);
+            font-style: normal;
+            font-weight: 600;
+        }
+        .avis-text::after {
+            content: ' »';
+            color: var(--cuir-vuitton);
+            font-style: normal;
+            font-weight: 600;
+        }
+        .avis-author {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--titane);
+            letter-spacing: 0.03em;
+        }
+        .avis-author span {
+            font-weight: 300;
+            font-size: 0.75rem;
+            color: var(--titane);
+            opacity: 0.7;
+        }
+
+        /* ===== SECTION CONCESSION ===== */
+        .concession-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 860px) {
+            .concession-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .concession-map {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(240, 239, 234, 0.08);
+            height: 360px;
+        }
+        .concession-map iframe {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(0.3) brightness(0.8) contrast(1.1);
+        }
+        .concession-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+        .concession-info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .concession-info-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(139, 94, 60, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--cuir-vuitton);
+        }
+        .concession-info-text {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--craie);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .concession-info-text strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            color: var(--titane);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+        }
+        .concession-info-text a {
+            color: var(--craie);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .concession-info-text a:hover {
+            border-bottom-color: var(--cuir-vuitton);
+        }
+        .concession-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 600px) {
+            .concession-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .concession-gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--asphalte-surface);
+            border: 1px solid rgba(240, 239, 234, 0.04);
+            transition: transform 0.4s var(--ease-out-expo), border-color 0.4s var(--ease-out-expo);
+        }
+        .concession-gallery-item:hover {
+            transform: scale(1.03);
+            border-color: rgba(240, 239, 234, 0.2);
+        }
+        .concession-gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.5) saturate(0.3);
+            background: linear-gradient(140deg, #25282e 0%, #1a1c22 50%, #16181d 100%);
+            transition: filter 0.5s;
+        }
+        .concession-gallery-item:hover .concession-gallery-placeholder {
+            filter: brightness(0.65) saturate(0.5);
+        }
+
+        /* ===== SECTION ACTUALITÉS ===== */
+        .actus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2.5rem;
+        }
+        .actus-card {
+            background: var(--asphalte-surface);
+            border-radius: 14px;
+            padding: 1.8rem;
+            border: 1px solid rgba(240, 239, 234, 0.05);
+            transition: border-color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .actus-card:hover {
+            border-color: rgba(240, 239, 234, 0.15);
+            transform: translateY(-3px);
+        }
+        .actus-tag {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cuir-vuitton);
+            align-self: flex-start;
+            border: 1px solid rgba(139, 94, 60, 0.25);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+        }
+        .actus-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            color: var(--craie);
+            line-height: 1.25;
+        }
+        .actus-card p {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: var(--titane);
+            line-height: 1.6;
+        }
+
+        /* ===== SECTION FAQ ===== */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 2.5rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(240, 239, 234, 0.06);
+            padding: 1.4rem 0;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .faq-item:hover {
+            border-bottom-color: rgba(139, 94, 60, 0.3);
+        }
+        .faq-question {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            color: var(--craie);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-question .faq-icon {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(240, 239, 234, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--cuir-vuitton);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            border-color: var(--cuir-vuitton);
+            background: rgba(139, 94, 60, 0.12);
+        }
+        .faq-answer {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--titane);
+            letter-spacing: 0.02em;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s var(--ease-out-expo), margin-top 0.5s var(--ease-out-expo);
+            margin-top: 0;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            margin-top: 0.8rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--asphalte-elevated);
+            border-top: 1px solid rgba(240, 239, 234, 0.06);
+            padding: 3rem 2rem 1.8rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            color: var(--craie);
+            margin-bottom: 0.8rem;
+        }
+        .footer-logo span {
+            color: var(--orange-signal);
+        }
+        .footer-nap {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: var(--titane);
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+        }
+        .footer-nap a {
+            color: var(--craie);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-nap a:hover {
+            color: var(--orange-signal);
+        }
+        .footer-credit {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.72rem;
+            color: var(--titane);
+            margin-top: 1.5rem;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo-link" aria-label="heycar Mobility Trader – Accueil">
+                <div class="logo-mark">h</div>
+                <div class="logo-text">heycar<span>Mobility Trader · Neuilly</span></div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#selection" class="nav-link">Sélection</a></li>
+                    <li><a href="#experience" class="nav-link">Expérience</a></li>
+                    <li><a href="#vendre" class="nav-link">Vendre</a></li>
+                    <li><a href="#avis" class="nav-link">Avis</a></li>
+                    <li><a href="#concession" class="nav-link">Concession</a></li>
+                    <li><a href="#rendezvous" class="nav-cta">Prendre rendez-vous</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Showroom heycar Neuilly – ambiance feutrée" loading="eager" decoding="async">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-vignette"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="stars">★★★★★</span> 4.8
+                <span class="rating-note">· 1187 avis Google</span>
+            </div>
+            <h1 class="hero-title">Votre prochaine voiture n'est plus un <span class="highlight">compromis</span>.</h1>
+            <p class="hero-subtitle">Plus de 30&nbsp;000 véhicules certifiés, une concession confidentielle au 144 avenue Charles de Gaulle. Essayez, achetez, faites reprendre l'ancienne — tout est déjà prêt.</p>
+            <div class="hero-buttons">
+                <a href="#selection" class="btn-primary">Voir les occasions à Neuilly</a>
+                <a href="#rendezvous" class="btn-ghost">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SÉLECTION ===== -->
+    <section class="section" id="selection">
+        <div class="container">
+            <div class="reveal" style="--reveal-delay: 0ms;">
+                <h2 class="section-title">Notre sélection à Neuilly</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Des véhicules choisis, disponibles en concession. Chaque modèle est certifié, révisé et éligible à nos solutions de financement.</p>
+            </div>
+            <div class="selection-grid">
+                <div class="vehicle-card reveal" style="--reveal-delay: 100ms;">
+                    <div class="vehicle-card-image-wrap">
+                        <div class="halo-cone"></div>
+                        <div class="vehicle-card-placeholder" style="background: linear-gradient(145deg, #2c3140 0%, #1a1e28 40%, #12151c 100%);" aria-label="Berline premium"></div>
+                        <span class="vehicle-badge">Éligible crédit</span>
+                    </div>
+                    <div class="vehicle-card-body">
+                        <div class="vehicle-card-name">Berline Premium · 2022</div>
+                        <div class="vehicle-card-details"><span>28 400 km</span><span class="dot-sep"></span><span>Automatique</span><span class="dot-sep"></span><span>Essence</span></div>
+                        <div class="vehicle-card-price">À partir de 31 900 €</div>
+                        <div class="vehicle-card-monthly">Soit <strong>~445 €/mois</strong> avec apport</div>
+                    </div>
+                </div>
+                <div class="vehicle-card reveal" style="--reveal-delay: 180ms;">
+                    <div class="vehicle-card-image-wrap">
+                        <div class="halo-cone"></div>
+                        <div class="vehicle-card-placeholder" style="background: linear-gradient(160deg, #252a35 0%, #1c1f28 50%, #14171d 100%);" aria-label="SUV urbain"></div>
+                        <span class="vehicle-badge price-drop">Baisse de prix</span>
+                    </div>
+                    <div class="vehicle-card-body">
+                        <div class="vehicle-card-name">SUV Urbain · 2023</div>
+                        <div class="vehicle-card-details"><span>15 200 km</span><span class="dot-sep"></span><span>Automatique</span><span class="dot-sep"></span><span>Hybride</span></div>
+                        <div class="vehicle-card-price">À partir de 38 500 €</div>
+                        <div class="vehicle-card-monthly">Soit <strong>~535 €/mois</strong> avec apport</div>
+                    </div>
+                </div>
+                <div class="vehicle-card reveal" style="--reveal-delay: 260ms;">
+                    <div class="vehicle-card-image-wrap">
+                        <div class="halo-cone"></div>
+                        <div class="vehicle-card-placeholder" style="background: linear-gradient(135deg, #2e3340 0%, #1b1e27 45%, #11131a 100%);" aria-label="Compacte électrique"></div>
+                        <span class="vehicle-badge">Éligible crédit</span>
+                    </div>
+                    <div class="vehicle-card-body">
+                        <div class="vehicle-card-name">Compacte Électrique · 2024</div>
+                        <div class="vehicle-card-details"><span>6 800 km</span><span class="dot-sep"></span><span>Auto</span><span class="dot-sep"></span><span>Électrique</span></div>
+                        <div class="vehicle-card-price">À partir de 27 200 €</div>
+                        <div class="vehicle-card-monthly">Soit <strong>~380 €/mois</strong> avec apport</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPÉRIENCE ===== -->
+    <section class="section" id="experience" style="background: var(--asphalte-elevated);">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">L'expérience heycar</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Un Mobility Trader n'est pas une concession : c'est un lieu où la transparence du digital rencontre l'exigence du service.</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card reveal" style="--reveal-delay: 0ms;">
+                    <div class="experience-icon">🛡️</div>
+                    <h3>Acheter en toute sérénité</h3>
+                    <p>Garantie 36 mois, contrôles multipoints, historique complet. Chaque véhicule est certifié avant d'être exposé. Vous signez en 15 minutes.</p>
+                </div>
+                <div class="experience-card reveal" style="--reveal-delay: 120ms;">
+                    <div class="experience-icon">🕰️</div>
+                    <h3>Essayer à votre rythme</h3>
+                    <p>Rendez-vous privé, sans pression. Venez essayer le modèle qui vous intéresse, seul ou accompagné de notre conseiller, selon vos disponibilités.</p>
+                </div>
+                <div class="experience-card reveal" style="--reveal-delay: 240ms;">
+                    <div class="experience-icon">📋</div>
+                    <h3>Services inclus</h3>
+                    <p>Reprise de votre ancien véhicule, financement sur mesure, livraison à domicile. Toutes les démarches administratives sont prises en charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VENDRE ===== -->
+    <section class="section" id="vendre">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Vendre votre véhicule</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Estimation gratuite en 48h. Simple, rapide, sans engagement.</p>
+            </div>
+            <div class="vendre-wrap">
+                <div class="vendre-image reveal-from-left" style="--reveal-delay: 150ms;">
+                    <div class="vendre-image-overlay"></div>
+                    <div class="placeholder-img" style="background: linear-gradient(155deg, #1e222a 0%, #13161d 50%, #0d0f14 100%); width:100%; height:100%; display:block;" aria-label="Véhicule en contre-jour"></div>
+                </div>
+                <div class="vendre-form reveal-from-right" style="--reveal-delay: 250ms;">
+                    <input type="text" placeholder="Marque et modèle" aria-label="Marque et modèle du véhicule">
+                    <input type="text" placeholder="Année de mise en circulation" aria-label="Année">
+                    <input type="text" placeholder="Kilométrage estimé" aria-label="Kilométrage">
+                    <input type="email" placeholder="Votre adresse email" aria-label="Email">
+                    <textarea placeholder="Informations complémentaires (optionnel)" aria-label="Détails supplémentaires"></textarea>
+                    <button type="button" class="btn-submit">Obtenir une estimation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AVIS ===== -->
+    <section class="section" id="avis" style="background: var(--asphalte-elevated);">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Les avis de nos clients</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Note de 4.8 sur Google — 1187 avis. La preuve par l'expérience vécue.</p>
+            </div>
+            <div class="avis-slider reveal" style="--reveal-delay: 100ms;">
+                <div class="avis-card">
+                    <div class="avis-stars">★★★★★</div>
+                    <p class="avis-text">Enfin une concession où je n'ai pas senti la pression. Achat en une heure, tout était prêt.</p>
+                    <div class="avis-author">Marc L. <span>· il y a 3 semaines</span></div>
+                </div>
+                <div class="avis-card">
+                    <div class="avis-stars">★★★★★</div>
+                    <p class="avis-text">Transparence totale sur l'historique du véhicule. La reprise de mon ancienne voiture s'est faite en 48h, sans complication.</p>
+                    <div class="avis-author">Sophie D. <span>· il y a 1 mois</span></div>
+                </div>
+                <div class="avis-card">
+                    <div class="avis-stars">★★★★★</div>
+                    <p class="avis-text">Le rendez-vous privé change tout. J'ai pu essayer trois modèles sans être bousculée. Service impeccable.</p>
+                    <div class="avis-author">Philippe R. <span>· il y a 2 mois</span></div>
+                </div>
+                <div class="avis-card">
+                    <div class="avis-stars">★★★★☆</div>
+                    <p class="avis-text">Livraison à domicile le jour convenu. Véhicule conforme, propre, avec un plein d'essence. Belle expérience.</p>
+                    <div class="avis-author">Claire M. <span>· il y a 2 mois</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONCESSION ===== -->
+    <section class="section" id="concession">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">La concession</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">144 avenue Charles de Gaulle, Neuilly-sur-Seine. Un écrin discret pour une mobilité repensée.</p>
+            </div>
+            <div class="concession-grid">
+                <div class="concession-map reveal-from-left" style="--reveal-delay: 0ms;">
+                    <iframe src="https://maps.google.com/maps?q=heycar+-+Mobility+Trader+144+Avenue+Charles+de+Gaulle%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès heycar Neuilly"></iframe>
+                </div>
+                <div class="concession-info reveal-from-right" style="--reveal-delay: 150ms;">
+                    <div class="concession-info-item">
+                        <div class="concession-info-icon">📍</div>
+                        <div class="concession-info-text">
+                            <strong>Adresse</strong>
+                            144 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine
+                        </div>
+                    </div>
+                    <div class="concession-info-item">
+                        <div class="concession-info-icon">📞</div>
+                        <div class="concession-info-text">
+                            <strong>Téléphone</strong>
+                            <a href="tel:">Nous contacter par téléphone</a><br>
+                            <span style="font-size:0.82rem;color:var(--titane);">(Numéro à confirmer — prenez rendez-vous en ligne)</span>
+                        </div>
+                    </div>
+                    <div class="concession-info-item">
+                        <div class="concession-info-icon">✉️</div>
+                        <div class="concession-info-text">
+                            <strong>Email</strong>
+                            <a href="mailto:contact@heycar.com">contact@heycar.com</a>
+                        </div>
+                    </div>
+                    <div class="concession-info-item">
+                        <div class="concession-info-icon">🕐</div>
+                        <div class="concession-info-text">
+                            <strong>Horaires</strong>
+                            Horaires à confirmer.<br>Les rendez-vous sont recommandés pour un accueil personnalisé.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="concession-gallery reveal" style="--reveal-delay: 200ms; margin-top: 2.5rem;">
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(135deg, #1f222a 0%, #171920 50%, #101218 100%);" aria-label="Comptoir d'accueil"></div>
+                </div>
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(145deg, #262a34 0%, #1a1d25 40%, #13151b 100%);" aria-label="Espace d'attente"></div>
+                </div>
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(160deg, #1e222c 0%, #16181f 50%, #0f1117 100%);" aria-label="Véhicule exposé"></div>
+                </div>
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(140deg, #242830 0%, #191c23 50%, #12141a 100%);" aria-label="Détail volant"></div>
+                </div>
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(150deg, #2a2e38 0%, #1b1e26 40%, #14161c 100%);" aria-label="Showroom"></div>
+                </div>
+                <div class="concession-gallery-item">
+                    <div class="concession-gallery-placeholder" style="background: linear-gradient(130deg, #1d2028 0%, #15171e 50%, #0e1016 100%);" aria-label="Bureau de signature"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACTUALITÉS ===== -->
+    <section class="section" id="actus" style="background: var(--asphalte-elevated);">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Actualités & conseils</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Les sujets qui comptent pour l'automobiliste en Île-de-France.</p>
+            </div>
+            <div class="actus-grid">
+                <div class="actus-card reveal" style="--reveal-delay: 0ms;">
+                    <span class="actus-tag">Mobilité</span>
+                    <h3>Zones à faibles émissions : ce qui change en 2026 pour le Grand Paris</h3>
+                    <p>Crit'Air, calendrier des restrictions, aides à la conversion : on fait le point pour les résidents de l'ouest parisien.</p>
+                </div>
+                <div class="actus-card reveal" style="--reveal-delay: 100ms;">
+                    <span class="actus-tag">Financement</span>
+                    <h3>Crédit auto ou LOA : quel montage choisir quand on roule peu ?</h3>
+                    <p>Comparaison chiffrée, pièges à éviter, et l'impact de la décote sur votre budget réel.</p>
+                </div>
+                <div class="actus-card reveal" style="--reveal-delay: 200ms;">
+                    <span class="actus-tag">Conseil</span>
+                    <h3>Revendre son véhicule en Île-de-France : les 3 options les plus rentables</h3>
+                    <p>Particulier, professionnel, plateforme : nous avons analysé les délais et les prix obtenus sur 200 transactions récentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">FAQ Neuilly</h2>
+                <span class="filet-cuir"></span>
+                <p class="section-subtitle">Des réponses concrètes pour préparer votre visite.</p>
+            </div>
+            <div class="faq-list reveal" style="--reveal-delay: 0ms;">
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        Puis-je réserver en ligne et finaliser en concession ?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Oui, vous signez chez nous en 15 minutes. La réservation en ligne bloque le véhicule 48h, le temps de votre visite.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        Quels documents dois-je apporter pour finaliser l'achat ?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Pièce d'identité, justificatif de domicile, permis de conduire, et un RIB si vous optez pour le prélèvement. Pour un financement, les trois derniers bulletins de salaire suffisent.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        La reprise de mon ancien véhicule est-elle possible le jour même ?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Absolument. L'estimation est gratuite et ferme sous 48h. Vous pouvez repartir avec votre nouveau véhicule et nous laisser l'ancien le jour de la signature.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        Y a-t-il des frais cachés ?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Aucun. Le prix affiché est le prix payé, hors carte grise. Les frais de mise à la route et la garantie 36 mois sont inclus. Aucuns frais de dossier.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">hey<span>car</span></div>
+            <div class="footer-nap">
+                <strong>Mobility Trader · Neuilly-sur-Seine</strong><br>
+                144 Avenue Charles de Gaulle, 92200 Neuilly-sur-Seine<br>
+                <a href="mailto:contact@heycar.com">contact@heycar.com</a> · Note Google : 4.8★ (1187 avis)
+            </div>
+            <p class="footer-credit">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        (function() {
+            // === Hero visible class ===
+            const hero = document.getElementById('hero');
+            if (hero) {
+                requestAnimationFrame(() => {
+                    hero.classList.add('visible');
+                });
+            }
+
+            // === Header scroll effect ===
+            const header = document.getElementById('header');
+            let lastScrollY = 0;
+            const handleScroll = () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollY = scrollY;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // === Mobile menu ===
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('nav');
+            let menuOpen = false;
+
+            const openMenu = () => {
+                menuOpen = true;
+                nav.classList.add('open');
+                mobileMenuBtn.classList.add('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            };
+            const closeMenu = () => {
+                menuOpen = false;
+                nav.classList.remove('open');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
+
+            mobileMenuBtn.addEventListener('click', () => {
+                if (menuOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close menu on nav link click
+            const navLinks = nav.querySelectorAll('.nav-link, .nav-cta');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuOpen) closeMenu();
+                });
+            });
+
+            // Close menu on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menuOpen) {
+                    closeMenu();
+                    mobileMenuBtn.focus();
+                }
+            });
+
+            // === Intersection Observer for reveals ===
+            const revealElements = document.querySelectorAll('.reveal, .reveal-from-left, .reveal-from-right');
+            if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12,
+                };
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(el => revealObserver.observe(el));
+            } else {
+                // Fallback: reveal all immediately
+                revealElements.forEach(el => el.classList.add('revealed'));
+            }
+
+            // === FAQ accordion ===
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    // Close all
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    // Open this one if it wasn't open
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        question.setAttribute('aria-expanded', 'true');
+                    } else {
+                        question.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        question.click();
+                    }
+                });
+            });
+
+            // === Smooth active nav link on scroll ===
+            const sectionIds = ['selection', 'experience', 'vendre', 'avis', 'concession', 'actus', 'faq'];
+            const navLinkElements = document.querySelectorAll('.nav-link');
+            const updateActiveNav = () => {
+                let currentId = '';
+                sectionIds.forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 120 && rect.bottom >= 120) {
+                            currentId = id;
+                        }
+                    }
+                });
+                navLinkElements.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === '#' + currentId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            updateActiveNav();
+
+            // === Vehicle card hover: simulate halo pulse ===
+            const vehicleCards = document.querySelectorAll('.vehicle-card');
+            vehicleCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const halo = card.querySelector('.halo-cone');
+                    if (halo) {
+                        halo.style.transition = 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+                        halo.style.opacity = '1';
+                    }
+                });
+                card.addEventListener('mouseleave', () => {
+                    const halo = card.querySelector('.halo-cone');
+                    if (halo) {
+                        halo.style.opacity = '0.65';
+                        halo.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    }
+                });
+            });
+
+            // === Form submit prevention (demo) ===
+            const formSubmitBtn = document.querySelector('.btn-submit');
+            if (formSubmitBtn) {
+                formSubmitBtn.addEventListener('click', () => {
+                    const inputs = document.querySelectorAll('.vendre-form input, .vendre-form textarea');
+                    const allFilled = Array.from(inputs).every(inp => inp.value.trim() !== '' || inp.getAttribute('placeholder')?.includes('optionnel'));
+                    if (!allFilled) {
+                        alert('Veuillez remplir tous les champs obligatoires pour recevoir votre estimation.');
+                    } else {
+                        alert('Merci. Nous vous transmettons une estimation sous 48h à l\'adresse indiquée.');
+                    }
+                });
+            }
+
+            // === CTA buttons scroll ===
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth',
+                        });
+                    }
+                });
+            });
+
+            // === Rendez-vous CTA (hero et nav) ===
+            const rendezvousBtns = document.querySelectorAll(
+                'a[href="#rendezvous"], .nav-cta[href="#rendezvous"]');
+            rendezvousBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const vendreSection = document.getElementById('vendre');
+                    if (vendreSection) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = vendreSection.getBoundingClientRect().top + window
+                            .pageYOffset - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth',
+                        });
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
