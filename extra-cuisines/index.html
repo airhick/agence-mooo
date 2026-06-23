@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Cuisines — Cuisiniste à Issy-les-Moulineaux | Atelier & Showroom depuis 1995</title>
+    <meta name="description" content="Extra Cuisines, cuisiniste familial à Issy-les-Moulineaux depuis 1995. Conception artisanale sur mesure, fabrication française. Viens toucher les matières au 30 avenue Victor Cresson.">
+    <meta property="og:title" content="Extra Cuisines — Ta cuisine n'est pas un catalogue">
+    <meta property="og:description" content="Depuis 30 ans, on la conçoit avec toi, à Issy. Atelier & showroom au 30 avenue Victor Cresson.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' x='-.05em' font-size='95' font-family='serif'%3E%E2%8C%82%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Extra Cuisines",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "30 Avenue Victor Cresson",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33609703477",
+            "email": "contact@freepixel.net",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "49",
+                "bestRating": "5",
+                "worstRating": "1"
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --fond-principal: #F7F4EF;
+            --encre: #2C2A28;
+            --surface-brute: #E3DCD3;
+            --matiere-chaude: #B45F3A;
+            --contraste-froid: #5A6268;
+            --signaletique: #D94838;
+            --blanc: #FAF8F5;
+            --ombre-subtile: 0 2px 12px rgba(44, 42, 40, 0.07);
+            --ombre-profonde: 0 8px 32px rgba(44, 42, 40, 0.12);
+            --filet: 1px;
+            --transition-lente: 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-rapide: 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+            --font-display: 'Unbounded', 'Trebuchet MS', sans-serif;
+            --font-body: 'Albert Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --max-width: 1340px;
+            --marge-laterale: clamp(1.5rem, 5vw, 5rem);
+            --fil-gauche: 1.75rem;
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                --fil-gauche: clamp(2.5rem, 7vw, 6rem);
+            }
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--fond-principal);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.125rem);
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ---- Fil à plomb rouge (colonne gauche) ---- */
+        .fil-a-plomb {
+            position: fixed;
+            top: 0;
+            left: calc(var(--fil-gauche) - 1px);
+            width: 2px;
+            height: 100%;
+            background: var(--signaletique);
+            z-index: 9998;
+            pointer-events: none;
+            transform-origin: top center;
+            transition: opacity var(--transition-rapide);
+            opacity: 0.7;
+        }
+        .fil-a-plomb.pulse-actif {
+            animation: pulse-fil 1.2s ease-in-out infinite;
+            opacity: 1;
+        }
+        @keyframes pulse-fil {
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleY(1.006);
+            }
+        }
+
+        /* ---- Cotes chiffrées (arrière-plan sections) ---- */
+        .cote-bg {
+            position: absolute;
+            right: clamp(1rem, 3vw, 4rem);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(6rem, 16vw, 18rem);
+            color: var(--encre);
+            opacity: 0.06;
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            z-index: 0;
+            white-space: nowrap;
+        }
+        .cote-bg.visible {
+            opacity: 0.08;
+            transform: translateY(-48%);
+        }
+        .cote-bg.sortie {
+            opacity: 0;
+            transform: translateY(-40%);
+        }
+
+        /* ---- Header ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            background: rgba(247, 244, 239, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(227, 220, 211, 0.7);
+            transition: background var(--transition-rapide), box-shadow var(--transition-rapide);
+            padding: 0.6rem var(--marge-laterale);
+        }
+        .site-header.scrolled {
+            background: rgba(247, 244, 239, 0.94);
+            box-shadow: 0 1px 8px rgba(44, 42, 40, 0.06);
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .site-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+        .site-logo span {
+            color: var(--matiere-chaude);
+        }
+        .nav-principale {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+        .nav-principale a {
+            color: var(--encre);
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color var(--transition-rapide), color var(--transition-rapide);
+            padding-bottom: 2px;
+            white-space: nowrap;
+        }
+        .nav-principale a:hover,
+        .nav-principale a:focus-visible {
+            border-bottom-color: var(--signaletique);
+            color: var(--signaletique);
+            outline: none;
+        }
+        .nav-principale a:focus-visible {
+            outline: 2px solid var(--signaletique);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+        .cta-header {
+            background: var(--signaletique);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            transition: background var(--transition-rapide), transform var(--transition-rapide), box-shadow var(--transition-rapide);
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        .cta-header:hover,
+        .cta-header:focus-visible {
+            background: #c23f2e;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(217, 72, 56, 0.35);
+            outline: none;
+        }
+        .cta-header:focus-visible {
+            outline: 3px solid var(--signaletique);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 640px) {
+            .nav-principale {
+                gap: 0.6rem;
+                font-size: 0.78rem;
+            }
+            .cta-header {
+                padding: 0.4rem 0.9rem;
+                font-size: 0.78rem;
+            }
+            .site-header {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* ---- Sections communes ---- */
+        section {
+            position: relative;
+            padding: clamp(4rem, 10vw, 8rem) var(--marge-laterale);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            z-index: 1;
+        }
+        .section-avec-cote {
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+        }
+        h1 {
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+        }
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            margin-bottom: 1.2rem;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            font-weight: 600;
+        }
+
+        .sous-titre {
+            font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+            color: var(--contraste-froid);
+            font-weight: 400;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all var(--transition-rapide);
+            border: none;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.8rem;
+            text-align: center;
+        }
+        .btn-primaire {
+            background: var(--signaletique);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(217, 72, 56, 0.25);
+        }
+        .btn-primaire:hover,
+        .btn-primaire:focus-visible {
+            background: #c23f2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 72, 56, 0.4);
+            outline: none;
+        }
+        .btn-primaire:focus-visible {
+            outline: 3px solid var(--signaletique);
+            outline-offset: 3px;
+        }
+        .btn-secondaire {
+            background: transparent;
+            color: var(--encre);
+            border: 1.5px solid var(--encre);
+        }
+        .btn-secondaire:hover,
+        .btn-secondaire:focus-visible {
+            background: var(--encre);
+            color: var(--fond-principal);
+            outline: none;
+        }
+
+        .bloc-texte {
+            max-width: 620px;
+            color: var(--encre);
+            line-height: 1.7;
+            letter-spacing: -0.005em;
+            font-weight: 400;
+        }
+        .bloc-texte strong {
+            font-weight: 600;
+            color: var(--matiere-chaude);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--surface-brute);
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 120px;
+        }
+
+        /* ---- HÉRO ---- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        @media (max-width: 860px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: 6rem;
+            }
+        }
+        .hero-texte {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-texte h1 {
+            margin-bottom: 0.3rem;
+        }
+        .hero-texte .sous-titre {
+            margin-bottom: 1.8rem;
+            max-width: 480px;
+        }
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        .hero-badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            border: 1px solid var(--surface-brute);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--encre);
+            box-shadow: var(--ombre-subtile);
+            white-space: nowrap;
+        }
+        .hero-badge-google .star {
+            color: #f4b400;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--ombre-profonde);
+            background: var(--surface-brute);
+            filter: grayscale(0.35) contrast(1.06) brightness(0.96);
+            transition: filter var(--transition-lente), transform var(--transition-lente);
+        }
+        .hero-image-wrapper:hover {
+            filter: grayscale(0.1) contrast(1.1) brightness(1);
+            transform: scale(1.015);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 42, 40, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ---- Section Atelier ---- */
+        .section-atelier .bloc-texte {
+            margin-top: 0.5rem;
+        }
+
+        /* ---- Section Savoir-faire ---- */
+        .grille-matieres {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .carte-matiere {
+            border-top: 3px solid var(--matiere-chaude);
+            padding-top: 1.2rem;
+            transition: transform var(--transition-rapide), box-shadow var(--transition-rapide);
+        }
+        .carte-matiere:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(44, 42, 40, 0.08);
+        }
+        .carte-matiere h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--encre);
+        }
+        .carte-matiere p {
+            font-size: 0.9rem;
+            color: var(--contraste-froid);
+            line-height: 1.5;
+        }
+
+        /* ---- Galerie Projets ---- */
+        .galerie-projets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .carte-projet {
+            position: relative;
+            background: var(--surface-brute);
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            filter: grayscale(1) contrast(1.08);
+            transition: filter var(--transition-lente), transform var(--transition-lente);
+            box-shadow: var(--ombre-subtile);
+        }
+        .carte-projet:hover,
+        .carte-projet:focus-within {
+            filter: grayscale(0.2) contrast(1.1);
+            transform: translateY(-3px);
+            box-shadow: var(--ombre-profonde);
+        }
+        .carte-projet img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .carte-projet-legende {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(44, 42, 40, 0.85));
+            padding: 2rem 1.2rem 1.2rem;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+        }
+        .carte-projet-legende strong {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* ---- Parcours client ---- */
+        .etapes-parcours {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            counter-reset: etape;
+        }
+        .etape {
+            position: relative;
+            padding-left: 3.5rem;
+            border-left: 2px solid var(--surface-brute);
+            transition: border-color var(--transition-rapide);
+        }
+        .etape:hover {
+            border-left-color: var(--signaletique);
+        }
+        .etape::before {
+            counter-increment: etape;
+            content: counter(etape);
+            position: absolute;
+            left: -1.4rem;
+            top: 0;
+            background: var(--fond-principal);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--signaletique);
+            width: 2.8rem;
+            height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--signaletique);
+            border-radius: 50%;
+            line-height: 1;
+        }
+        .etape h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .etape p {
+            color: var(--contraste-froid);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ---- Avis ---- */
+        .bloc-avis {
+            background: #fff;
+            border: 1px solid var(--surface-brute);
+            padding: 2.5rem;
+            border-radius: 4px;
+            box-shadow: var(--ombre-subtile);
+            max-width: 700px;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .bloc-avis blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--encre);
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+            quotes: "« " " »";
+            font-weight: 400;
+        }
+        .bloc-avis blockquote::before {
+            content: "« ";
+            color: var(--matiere-chaude);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        .bloc-avis blockquote::after {
+            content: " »";
+            color: var(--matiere-chaude);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        .bloc-avis .auteur {
+            font-weight: 600;
+            color: var(--encre);
+            font-size: 0.9rem;
+        }
+        .bloc-avis .google-link {
+            font-size: 0.85rem;
+            color: var(--contraste-froid);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+        .bloc-avis .google-link:hover {
+            color: var(--signaletique);
+        }
+
+        /* ---- Contact ---- */
+        .grille-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .grille-contact {
+                grid-template-columns: 1fr;
+            }
+        }
+        .infos-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .infos-contact .tel {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--signaletique);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            transition: color var(--transition-rapide);
+        }
+        .infos-contact .tel:hover {
+            color: #c23f2e;
+        }
+        .infos-contact .adresse {
+            font-weight: 500;
+            color: var(--encre);
+        }
+        .carte-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--ombre-profonde);
+            background: var(--surface-brute);
+            aspect-ratio: 4/3;
+            height: auto;
+        }
+        .carte-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---- Footer ---- */
+        .site-footer {
+            border-top: 1px solid var(--surface-brute);
+            padding: 3rem var(--marge-laterale);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--contraste-froid);
+            background: #f0ede7;
+            letter-spacing: 0.01em;
+        }
+        .site-footer .footer-nap {
+            font-weight: 500;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+        }
+        .site-footer a {
+            color: var(--matiere-chaude);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+        .site-footer .credits {
+            margin-top: 1rem;
+            opacity: 0.7;
+            font-size: 0.78rem;
+        }
+
+        /* ---- Animations reveals ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* focus visible global */
+        :focus-visible {
+            outline: 2px solid var(--signaletique);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Accessibilité contraste */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 480px) {
+            .bloc-avis {
+                padding: 1.5rem;
+            }
+            .bloc-avis blockquote {
+                font-size: 1rem;
+            }
+            .etape {
+                padding-left: 2.8rem;
+            }
+            .etape::before {
+                left: -1.2rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fil-a-plomb" id="fil-a-plomb" aria-hidden="true"></div>
+
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="site-logo" aria-label="Extra Cuisines — retour à l'accueil">Extra<span>.</span>Cuisines</a>
+            <nav class="nav-principale" aria-label="Navigation principale">
+                <a href="#atelier">L'atelier</a>
+                <a href="#savoir-faire">Savoir-faire</a>
+                <a href="#projets">Projets</a>
+                <a href="#parcours">Visite</a>
+                <a href="#avis">Avis</a>
+                <a href="#contact" class="cta-header">On s'appelle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-grid">
+                <div class="hero-texte reveal">
+                    <h1>Ta cuisine n'est pas un catalogue.</h1>
+                    <p class="sous-titre">Depuis 30 ans, on la conçoit avec toi, à Issy. Viens toucher les matières au 30 avenue Victor Cresson.</p>
+                    <div class="hero-cta-group">
+                        <a href="tel:+33609703477" class="btn btn-primaire">Prendre rendez-vous à l'atelier</a>
+                        <div class="hero-badge-google" aria-label="Note Google 5 étoiles sur 5, 49 avis">
+                            <span class="star" aria-hidden="true">★★★★★</span> 5/5 &mdash; 49 avis
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Façade d'Extra Cuisines au 30 Avenue Victor Cresson à Issy-les-Moulineaux" width="800" height="600" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- ATELIER -->
+        <section class="section-avec-cote section-atelier" id="atelier" aria-labelledby="titre-atelier">
+            <div class="cote-bg" data-cote="1995" aria-hidden="true">1995</div>
+            <div class="reveal">
+                <h2 id="titre-atelier">30, avenue Victor Cresson.
+                    Là où tout commence.</h2>
+            </div>
+            <div class="bloc-texte reveal reveal-delay-1">
+                <p>Depuis 1995, la famille Extra conçoit et implante des cuisines à Issy-les-Moulineaux. Ici, pas de vente en ligne&nbsp;: on discute, on mesure, on trace, on choisit les matériaux ensemble. Ton projet démarre dans notre <strong>atelier-showroom</strong>, et nulle part ailleurs.</p>
+            </div>
+        </section>
+
+        <!-- SAVOIR-FAIRE -->
+        <section class="section-avec-cote" id="savoir-faire" aria-labelledby="titre-savoir">
+            <div class="cote-bg" data-cote="320" aria-hidden="true">320</div>
+            <div class="reveal">
+                <h2 id="titre-savoir">La matière a du caractère.
+                    On la travaille.</h2>
+                <p class="sous-titre">Noyer, chêne, stratifié technique, acier laqué… Dans nos ateliers, chaque plan de travail est débité et chaque façade est fraisée en fonction de tes espaces. Fabrication française intégrale. Pas de compromis sur l'ajustement.</p>
+            </div>
+            <div class="grille-matieres reveal reveal-delay-2">
+                <div class="carte-matiere">
+                    <h3>Noyer américain</h3>
+                    <p>Chaleureux, huilé main, veinage profond. Pour une cuisine qui vit et patine avec élégance.</p>
+                </div>
+                <div class="carte-matiere">
+                    <h3>Chêne massif</h3>
+                    <p>Robuste et intemporel. Sélectionné sur échantillon, finition soyeuse.</p>
+                </div>
+                <div class="carte-matiere">
+                    <h3>Stratifié technique</h3>
+                    <p>Ultra-résistant, entretien facile. Large gamme de textures pour un rendu pierre ou béton.</p>
+                </div>
+                <div class="carte-matiere">
+                    <h3>Acier laqué</h3>
+                    <p>Façades nettes, teintes satinées. L'esprit atelier, jusque dans le choix du grain de laque.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS VÉCUS -->
+        <section class="section-avec-cote" id="projets" aria-labelledby="titre-projets">
+            <div class="cote-bg" data-cote="4.2" aria-hidden="true">4.2</div>
+            <div class="reveal">
+                <h2 id="titre-projets">Imaginées ici, installées chez toi.</h2>
+                <p class="sous-titre">Chaque projet raconte une implantation locale. Des cuisines qui naissent d'un plan et d'une discussion, jamais d'un catalogue.</p>
+            </div>
+            <div class="galerie-projets reveal reveal-delay-2">
+                <figure class="carte-projet">
+                    <img src="assets/maps-1.jpg" alt="Projet cuisine ouverte à Issy, noyer américain, plan Dekton" width="600" height="600" loading="lazy">
+                    <figcaption class="carte-projet-legende">
+                        <strong>Cuisine ouverte sur séjour, Issy</strong>
+                        Noyer américain, plan Dekton. Projet 12m² optimisé.
+                    </figcaption>
+                </figure>
+                <figure class="carte-projet">
+                    <img src="assets/maps-1.jpg" alt="Projet cuisine avec îlot central à Boulogne" width="600" height="600" loading="lazy">
+                    <figcaption class="carte-projet-legende">
+                        <strong>Îlot central, Boulogne</strong>
+                        Chêne massif, façade acier laqué blanc. Linéaire 4,2m.
+                    </figcaption>
+                </figure>
+                <figure class="carte-projet">
+                    <img src="assets/maps-1.jpg" alt="Projet cuisine compacte à Vanves" width="600" height="600" loading="lazy">
+                    <figcaption class="carte-projet-legende">
+                        <strong>Cuisine compacte, Vanves</strong>
+                        Stratifié technique effet béton. 8m² optimisés.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- PARCOURS CLIENT -->
+        <section class="section-avec-cote" id="parcours" aria-labelledby="titre-parcours">
+            <div class="cote-bg" data-cote="3" aria-hidden="true">3</div>
+            <div class="reveal">
+                <h2 id="titre-parcours">De l'idée au plan, en trois étapes.</h2>
+            </div>
+            <div class="etapes-parcours reveal reveal-delay-2">
+                <div class="etape">
+                    <h3>Tu nous parles de ton projet</h3>
+                    <p>Envies, contraintes, budget&nbsp;: on écoute tout. Ce premier échange pose les bases de ta future cuisine.</p>
+                </div>
+                <div class="etape">
+                    <h3>On relève tes cotes et on esquisse</h3>
+                    <p>Prise de mesures au millimètre, croquis des volumes. On trace ensemble les premières lignes de ton implantation.</p>
+                </div>
+                <div class="etape">
+                    <h3>Tu repars avec des matières à toucher</h3>
+                    <p>Échantillons, premier croquis&nbsp;: rien n'est signé avant d'avoir vu les matériaux dans ta propre lumière.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section id="avis" aria-labelledby="titre-avis">
+            <div class="reveal">
+                <h2 id="titre-avis">Une note de 5/5, ça se mérite.</h2>
+            </div>
+            <div class="bloc-avis reveal reveal-delay-1">
+                <blockquote>Accueil très professionnel et sympathique, à l'écoute de nos besoins. Travail soigné, je recommande les yeux fermés.</blockquote>
+                <p class="auteur">— Marie L.</p>
+                <a href="https://maps.google.com/maps?q=Extra+Cuisines+30+Avenue+Victor+Cresson%2C+Issy-les-Moulineaux" target="_blank" rel="noopener noreferrer" class="google-link" aria-label="Lire les 49 avis Google sur Extra Cuisines">Lire les 49 avis sur Google <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" aria-labelledby="titre-contact">
+            <div class="reveal">
+                <h2 id="titre-contact">On parle de ton projet&nbsp;?</h2>
+                <p class="sous-titre">Appelle-nous ou passe à l'atelier. On est là pour répondre à tes questions, sans pression.</p>
+            </div>
+            <div class="grille-contact reveal reveal-delay-1">
+                <div class="infos-contact">
+                    <a href="tel:+33609703477" class="tel" aria-label="Appeler Extra Cuisines au 06 09 70 34 77">06 09 70 34 77</a>
+                    <p class="adresse">
+                        <strong>Extra Cuisines</strong><br>
+                        30 Avenue Victor Cresson<br>
+                        92130 Issy-les-Moulineaux
+                    </p>
+                    <p style="color:var(--contraste-froid);">
+                        <a href="mailto:contact@freepixel.net" style="color:var(--matiere-chaude);text-decoration:underline;text-underline-offset:3px;font-weight:500;">contact@freepixel.net</a>
+                    </p>
+                    <p style="font-size:0.9rem; color:var(--contraste-froid); border-left: 3px solid var(--surface-brute); padding-left: 1rem;">
+                        Horaires à confirmer — n'hésite pas à nous appeler avant de passer.
+                    </p>
+                </div>
+                <div class="carte-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Extra+Cuisines+30+Avenue+Victor+Cresson%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps d'Extra Cuisines à Issy-les-Moulineaux"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-nap">
+            Extra Cuisines — 30 Avenue Victor Cresson, 92130 Issy-les-Moulineaux — <a href="tel:+33609703477">06 09 70 34 77</a>
+        </p>
+        <p>© Extra Cuisines — Depuis 1995, l'atelier de la cuisine vivante.</p>
+        <p class="credits">Site créé par <a href="https://agence.mooo.com/extra-cuisines" target="_blank" rel="noopener noreferrer">Agence Mooo</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll state
+            const header = document.getElementById('header');
+            const fil = document.getElementById('fil-a-plomb');
+
+            function updateHeaderScroll() {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+            updateHeaderScroll();
+
+            // Fil à plomb pulse sur hover des CTA
+            const ctas = document.querySelectorAll('.btn-primaire, .cta-header, a[href^="tel:"]');
+            ctas.forEach(cta => {
+                cta.addEventListener('mouseenter', () => fil.classList.add('pulse-actif'));
+                cta.addEventListener('mouseleave', () => fil.classList.remove('pulse-actif'));
+                cta.addEventListener('focus', () => fil.classList.add('pulse-actif'));
+                cta.addEventListener('blur', () => fil.classList.remove('pulse-actif'));
+            });
+
+            // IntersectionObserver pour reveals
+            const reveals = document.querySelectorAll('.reveal');
+            const observerReveal = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observerReveal.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+            reveals.forEach(el => observerReveal.observe(el));
+
+            // Cotes chiffrées — apparition/disparition au scroll
+            const cotesBg = document.querySelectorAll('.cote-bg');
+            const observerCotes = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const cote = entry.target;
+                    if (entry.isIntersecting) {
+                        cote.classList.add('visible');
+                        cote.classList.remove('sortie');
+                    } else {
+                        cote.classList.add('sortie');
+                        cote.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -80px 0px'
+            });
+            cotesBg.forEach(el => observerCotes.observe(el));
+
+            // Gestion prefers-reduced-motion : pas de pulse si réduit
+            const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mqReduced.matches) {
+                fil.classList.remove('pulse-actif');
+            }
+            mqReduced.addEventListener('change', (e) => {
+                if (e.matches) {
+                    fil.classList.remove('pulse-actif');
+                }
+            });
+
+            // Liaison nav ancres douce (déjà gérée par CSS scroll-behavior)
+        })();
+    </script>
+</body>
+</html>
