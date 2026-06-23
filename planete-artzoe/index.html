@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Planète ArtZoé – Concept-store éthique pour enfants 0-12 ans à Issy-les-Moulineaux</title>
+  <meta name="description" content="Planète ArtZoé, le concept-store éco-chic à Issy-les-Moulineaux. Achetez, vendez ou louez des vêtements seconde main et marques éthiques pour enfants de 0 à 12 ans. Note 5★ – 41 avis.">
+  <meta property="og:title" content="Planète ArtZoé – Le concept-store qui change la mode des enfants">
+  <meta property="og:description" content="Seconde main, créateurs locaux, marques éthiques : tout pour un dressing 0-12 ans qui fait du bien, à deux pas d'Issy.">
+  <meta property="og:image" content="assets/maps-1.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fond: #FBF8F2;
+      --encre: #3E3A37;
+      --corail: #F2856D;
+      --vert-sauge: #8BA888;
+      --beige-sable: #D9D2C7;
+      --bleu-jean: #506E7A;
+      --brun-clair: #6B6058;
+      --blanc-casse: #FAF7F2;
+      --ombre-douce: 0 8px 24px rgba(62, 58, 55, 0.08);
+      --transition-lente: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --courbe-couture: 0px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--fond);
+    }
+
+    body {
+      font-family: 'Karla', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: clamp(1rem, 0.95rem + 0.2vw, 1.1rem);
+      line-height: 1.6;
+      color: var(--encre);
+      background: var(--fond);
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* LIGNE DE COUTURE décorative (fil narratif) */
+    .ligne-couture {
+      position: relative;
+      width: 100%;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--beige-sable) 0px, var(--beige-sable) 6px, transparent 6px, transparent 12px);
+      opacity: 0.7;
+      margin: 0;
+      border: none;
+    }
+
+    .ligne-couture::after {
+      content: '✄';
+      position: absolute;
+      right: 24px;
+      top: -10px;
+      font-size: 1.1rem;
+      color: var(--corail);
+      opacity: 0.8;
+      transform: rotate(20deg);
+    }
+
+    /* HEADER collant */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(251, 248, 242, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(217, 210, 199, 0.45);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      transition: var(--transition-lente);
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 2px 18px rgba(62, 58, 55, 0.06);
+    }
+
+    .logo-nom {
+      font-family: 'Libre Baskerville', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.6rem);
+      color: var(--encre);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-nom span {
+      background: var(--corail);
+      color: #fff;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav-principale {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-principale a {
+      font-family: 'Karla', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--encre);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-principale a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--corail);
+      transition: width var(--transition-lente);
+    }
+
+    .nav-principale a:hover::after,
+    .nav-principale a:focus-visible::after {
+      width: 100%;
+    }
+
+    .btn-header {
+      background: var(--corail);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background var(--transition-lente), transform var(--transition-bounce);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .btn-header:hover {
+      background: #e0785c;
+      transform: scale(1.03);
+    }
+
+    .btn-header:focus-visible {
+      outline: 2px solid var(--corail);
+      outline-offset: 3px;
+    }
+
+    /* HÉRO */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(251,248,242,0.9) 0%, rgba(251,248,242,0.4) 100%);
+    }
+
+    .hero-texte {
+      padding: 3rem 2rem 3rem 3rem;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .hero-texte h1 {
+      font-family: 'Libre Baskerville', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 1.8rem + 3vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--encre);
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      position: relative;
+    }
+
+    .hero-texte h1::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(242,133,109,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-sous-titre {
+      font-family: 'Karla', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.3rem);
+      color: var(--brun-clair);
+      max-width: 500px;
+      line-height: 1.5;
+      text-wrap: balance;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primaire {
+      background: var(--corail);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.85rem 1.9rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      transition: background var(--transition-lente), transform var(--transition-bounce), box-shadow 0.3s;
+      box-shadow: 0 4px 14px rgba(242, 133, 109, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primaire:hover {
+      background: #e0785c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(242, 133, 109, 0.35);
+    }
+
+    .btn-secondaire {
+      background: transparent;
+      color: var(--encre);
+      font-weight: 500;
+      padding: 0.85rem 1.9rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      border: 1.5px solid var(--beige-sable);
+      transition: border-color var(--transition-lente), background 0.3s, transform var(--transition-bounce);
+    }
+
+    .btn-secondaire:hover {
+      border-color: var(--corail);
+      background: rgba(242, 133, 109, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      position: relative;
+      height: 100%;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.03) contrast(0.98) saturate(0.95);
+      mix-blend-mode: normal;
+      border-radius: 0 0 0 120px;
+      box-shadow: inset 0 0 0 1px rgba(251,248,242,0.2);
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(35deg, rgba(139,168,136,0.15) 0%, transparent 50%);
+      pointer-events: none;
+      border-radius: 0 0 0 120px;
+    }
+
+    /* BADGE NOTE GOOGLE */
+    .badge-google {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      box-shadow: var(--ombre-douce);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--encre);
+      margin-top: 0.3rem;
+      width: fit-content;
+      border: 1px solid rgba(217,210,199,0.5);
+      letter-spacing: 0.01em;
+    }
+
+    .badge-google .stars {
+      color: #f4b400;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .section-interieure {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .titre-section {
+      font-family: 'Libre Baskerville', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 1.6rem + 1.8vw, 2.8rem);
+      color: var(--encre);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+      position: relative;
+    }
+
+    .sous-titre-section {
+      font-family: 'Karla', sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--brun-clair);
+      max-width: 640px;
+      margin-bottom: 2.8rem;
+    }
+
+    /* PROMESSE */
+    .promesse-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .promesse-texte {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--encre);
+    }
+
+    .bloc-illustration {
+      background: rgba(139, 168, 136, 0.08);
+      border-radius: 40px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border: 1px dashed var(--vert-sauge);
+      position: relative;
+    }
+
+    .bloc-illustration::before {
+      content: '🧵';
+      position: absolute;
+      top: -22px;
+      left: 30px;
+      font-size: 2rem;
+      background: var(--fond);
+      padding: 0 12px;
+      border-radius: 50%;
+    }
+
+    /* TROIS PILIERS (Cartes) */
+    .cartes-piliers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .carte-pilier {
+      background: #fff;
+      border-radius: 32px;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--ombre-douce);
+      transition: transform var(--transition-bounce), box-shadow 0.4s;
+      position: relative;
+      border: 1px solid rgba(217, 210, 199, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .carte-pilier:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 38px rgba(62, 58, 55, 0.1);
+    }
+
+    .carte-pilier .emoji-pilier {
+      font-size: 2.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .carte-pilier h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--encre);
+    }
+
+    .carte-pilier p {
+      color: var(--brun-clair);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    /* GALERIE AMBIANCE */
+    .galerie-ambiance {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .galerie-item {
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background: var(--beige-sable);
+      aspect-ratio: 4/3;
+    }
+
+    .galerie-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .galerie-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* AVIS */
+    .avis-blocs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avis-moyenne {
+      background: #fff;
+      border-radius: 40px;
+      padding: 2.2rem;
+      text-align: center;
+      box-shadow: var(--ombre-douce);
+      min-width: 180px;
+    }
+
+    .avis-moyenne .note {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: var(--corail);
+      line-height: 1;
+    }
+
+    .avis-moyenne .stars {
+      color: #f4b400;
+      font-size: 1.5rem;
+      margin: 0.3rem 0;
+    }
+
+    /* INFOS PRATIQUES */
+    .infos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .carte-contact {
+      background: #fff;
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: var(--ombre-douce);
+      border: 1px solid rgba(217, 210, 199, 0.4);
+    }
+
+    .carte-contact p {
+      margin: 0.6rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .carte-contact a {
+      color: var(--encre);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted var(--corail);
+      transition: color 0.2s;
+    }
+
+    .carte-contact a:hover {
+      color: var(--corail);
+    }
+
+    .horaires {
+      background: rgba(139, 168, 136, 0.07);
+      border-radius: 20px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .map-container {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--ombre-douce);
+      border: 1px solid rgba(217, 210, 199, 0.4);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fff;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--beige-sable);
+      text-align: center;
+      color: var(--brun-clair);
+      font-size: 0.9rem;
+    }
+
+    footer .footer-grille {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.15, 0.85, 0.35, 1), transform 0.8s cubic-bezier(0.15, 0.85, 0.35, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+    .reveal-delay-2 {
+      transition-delay: 0.25s;
+    }
+    .reveal-delay-3 {
+      transition-delay: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-texte {
+        padding: 2.5rem 1.5rem 1.5rem;
+      }
+      .hero-image {
+        order: -1;
+        height: 280px;
+      }
+      .hero-image img {
+        border-radius: 0 0 0 60px;
+      }
+      .promesse-grid {
+        grid-template-columns: 1fr;
+      }
+      .infos-grid {
+        grid-template-columns: 1fr;
+      }
+      .galerie-ambiance {
+        grid-template-columns: 1fr;
+      }
+      .site-header {
+        padding: 0.6rem 1rem;
+      }
+      .nav-principale {
+        gap: 0.8rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--corail);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="header">
+    <a href="#" class="logo-nom" aria-label="Planète ArtZoé - Accueil">
+      <span>✧</span> Planète ArtZoé
+    </a>
+    <nav class="nav-principale" aria-label="Navigation principale">
+      <a href="#promesse">Promesse</a>
+      <a href="#piliers">Services</a>
+      <a href="#galerie">Ambiance</a>
+      <a href="#infos">Infos</a>
+      <a href="tel:+33772060897" class="btn-header">📞 Appeler</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HÉRO -->
+    <section class="hero-section" style="padding:0;">
+      <div class="hero-texte reveal">
+        <h1>Planète ArtZoé,<br>le concept‑store qui change la mode des enfants</h1>
+        <p class="hero-sous-titre">Ici, c’est la planète où les kids habillent l’avenir. Seconde main, créateurs locaux, marques éthiques : tout pour un dressing 0‑12 ans qui fait du bien, à deux pas d’Issy.</p>
+        <div class="badge-google reveal reveal-delay-1">
+          <span class="stars">★★★★★</span> 5/5 • 41 avis Google
+        </div>
+        <div class="hero-cta reveal reveal-delay-2">
+          <a href="#infos" class="btn-primaire">Je découvre la boutique</a>
+          <a href="#piliers" class="btn-secondaire">Je vends mes vêtements</a>
+          <a href="https://agence.mooo.com/planete-artzoe" class="btn-secondaire" target="_blank" rel="noopener">Je visite l’e‑shop</a>
+        </div>
+      </div>
+      <div class="hero-image reveal reveal-delay-3">
+        <img src="assets/maps-1.jpg" alt="Intérieur chaleureux de Planète ArtZoé – vêtements enfants et décoration éthique" loading="eager" width="800" height="600">
+      </div>
+    </section>
+
+    <div class="ligne-couture"></div>
+
+    <!-- PROMESSE -->
+    <section id="promesse">
+      <div class="section-interieure promesse-grid">
+        <div class="reveal">
+          <h2 class="titre-section">Un lieu pensé pour vos enfants…<br>et pour la planète</h2>
+          <p class="promesse-texte">Chez nous, chaque vêtement a déjà une histoire. On sélectionne, on chine, on valorise les pépites de seconde main et les jeunes marques éthiques pour habiller vos kids de 0 à 12 ans. Dans notre cocon d’Issy-les-Moulineaux, tu trouves bien plus qu’un dressing : un état d’esprit.</p>
+        </div>
+        <div class="bloc-illustration reveal reveal-delay-1">
+          <p style="font-style:italic;color:var(--bleu-jean);">« On a pensé ce lieu comme un atelier de créateur, où chaque pièce raconte une nouvelle chance. »</p>
+          <p style="font-size:0.9rem;color:var(--brun-clair);">— L’équipe ArtZoé</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ligne-couture"></div>
+
+    <!-- TROIS PILIERS -->
+    <section id="piliers" style="background: rgba(139,168,136,0.04);">
+      <div class="section-interieure">
+        <h2 class="titre-section reveal">Nos trois piliers</h2>
+        <p class="sous-titre-section reveal reveal-delay-1">Acheter, vendre, louer : trois gestes malins pour un dressing qui tourne rond.</p>
+        <div class="cartes-piliers">
+          <div class="carte-pilier reveal reveal-delay-1">
+            <span class="emoji-pilier">🛍️</span>
+            <h3>Acheter futé</h3>
+            <p>Seconde main triée sur le volet, marques éthiques et créateurs locaux : des vêtements 0-12 ans qui ont du style et du sens.</p>
+          </div>
+          <div class="carte-pilier reveal reveal-delay-2">
+            <span class="emoji-pilier">💰</span>
+            <h3>Vendre malin</h3>
+            <p>Dépose les vêtements trop petits de tes kids et repars avec un bon d’achat ou de l’argent. On valorise chaque pièce.</p>
+          </div>
+          <div class="carte-pilier reveal reveal-delay-3">
+            <span class="emoji-pilier">📦</span>
+            <h3>Louer pratique</h3>
+            <p>Besoin ponctuel ? Location de vêtements et accessoires pour enfants : économique, écologique, sans encombrer les placards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ligne-couture"></div>
+
+    <!-- GALERIE AMBIANCE -->
+    <section id="galerie">
+      <div class="section-interieure">
+        <h2 class="titre-section reveal">L’atelier éco‑chic</h2>
+        <p class="sous-titre-section reveal reveal-delay-1">Un carnet de croquis vivant, entre coton bio, bois clair et lumière zénithale. Viens voir.</p>
+        <div class="galerie-ambiance reveal reveal-delay-2">
+          <div class="galerie-item">
+            <img src="assets/maps-1.jpg" alt="Espace boutique Planète ArtZoé avec vêtements suspendus" loading="lazy" width="600" height="450">
+          </div>
+          <div class="galerie-item" style="background: var(--vert-sauge); display:flex; align-items:center; justify-content:center; padding:2rem; color:#fff; font-family:'Libre Baskerville',serif; font-size:1.2rem; text-align:center;">
+            « Ici, le lin rencontre le sourire. »
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ligne-couture"></div>
+
+    <!-- AVIS -->
+    <section style="background: rgba(242,133,109,0.03);">
+      <div class="section-interieure">
+        <h2 class="titre-section reveal">Ce qu’en disent les parents</h2>
+        <div class="avis-blocs reveal reveal-delay-1">
+          <div class="avis-moyenne">
+            <div class="note">5,0</div>
+            <div class="stars">★★★★★</div>
+            <p style="font-weight:500;">41 avis Google</p>
+          </div>
+          <div style="max-width:500px;">
+            <p style="font-style:italic;font-size:1.1rem;color:var(--encre);">« Un accueil adorable, des vêtements impeccables et un vrai engagement. On se sent bien chez ArtZoé, et nos enfants adorent ! »</p>
+            <p style="margin-top:0.6rem;color:var(--brun-clair);">— Une maman d’Issy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ligne-couture"></div>
+
+    <!-- INFOS PRATIQUES -->
+    <section id="infos">
+      <div class="section-interieure infos-grid">
+        <div class="carte-contact reveal">
+          <h2 class="titre-section" style="font-size:1.8rem;">Nous trouver</h2>
+          <p><strong>📍 Adresse :</strong> 22 Rue Diderot, 92130 Issy-les-Moulineaux</p>
+          <p><strong>📞 Téléphone :</strong> <a href="tel:+33772060897">07 72 06 08 97</a></p>
+          <p><strong>✉️ Email :</strong> <a href="mailto:contact@planete-artzoe.com">contact@planete-artzoe.com</a></p>
+          <div class="horaires">
+            <p style="font-weight:600;margin-bottom:0.4rem;">🕒 Horaires d’ouverture</p>
+            <p style="font-size:0.9rem;color:var(--brun-clair);">Les horaires peuvent varier. N’hésite pas à appeler avant de passer – l’équipe est toujours ravie de te renseigner. Horaires à confirmer directement en boutique.</p>
+          </div>
+        </div>
+        <div class="map-container reveal reveal-delay-1">
+          <iframe src="https://maps.google.com/maps?q=Plan%C3%A8te+ArtZo%C3%A9+22+Rue+Diderot%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;border-radius:28px;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Planète ArtZoé Issy-les-Moulineaux"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grille">
+      <div>
+        <p style="font-weight:600;color:var(--encre);">Planète ArtZoé</p>
+        <p>22 Rue Diderot, Issy-les-Moulineaux</p>
+        <p>07 72 06 08 97 · contact@planete-artzoe.com</p>
+      </div>
+      <div>
+        <p>Site créé par <a href="https://agence.mooo.com" style="color:var(--corail);text-decoration:none;">Agence Mooo</a></p>
+        <p style="font-size:0.8rem;opacity:0.7;">© 2025 Planète ArtZoé</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Planète ArtZoé",
+      "image": "assets/maps-1.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "22 Rue Diderot",
+        "addressLocality": "Issy-les-Moulineaux",
+        "postalCode": "92130",
+        "addressCountry": "FR"
+      },
+      "telephone": "+33772060897",
+      "email": "contact@planete-artzoe.com",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "41"
+      },
+      "url": "https://agence.mooo.com/planete-artzoe"
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Header scroll effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Intersection Observer pour reveals
+      const reveals = document.querySelectorAll('.reveal');
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.15
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      reveals.forEach(el => revealObserver.observe(el));
+
+      // Ajout d'une petite animation d'entrée initiale rapide pour le héros (déjà géré par reveal + CSS)
+      const heroTexte = document.querySelector('.hero-texte');
+      if (heroTexte) {
+        heroTexte.style.transitionDelay = '0.05s';
+      }
+    });
+  </script>
+</body>
+</html>
