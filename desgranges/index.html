@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boulangerie Desgranges — Boulangerie artisanale à Auteuil, Paris 16e</title>
+    <meta name="description" content="Boulangerie Desgranges au 68 rue Jean de la Fontaine, Paris 16e. Boulangerie artisanale de quartier sous l'auvent vert d'Auteuil. Pain au levain, viennoiseries, pâtisseries.">
+    <meta property="og:title" content="Boulangerie Desgranges — Le pain juste, à Auteuil">
+    <meta property="og:description" content="Boulangerie artisanale au 68 rue Jean de la Fontaine, Paris 16e. Une maison discrète, un savoir-faire précis.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🥖</text></svg>">
+    <style>
+        :root {
+            --farine: #FBF7F2;
+            --ecorce: #392E27;
+            --vert-auvent: #8B9A80;
+            --sous-bois: #1F1A17;
+            --mie-doree: #C3B09A;
+            --vert-auvent-15: rgba(139, 154, 128, 0.15);
+            --vert-auvent-25: rgba(139, 154, 128, 0.25);
+            --ecorce-08: rgba(57, 46, 39, 0.08);
+            --ecorce-50: rgba(57, 46, 39, 0.5);
+            --farine-90: rgba(251, 247, 242, 0.9);
+            --farine-95: rgba(251, 247, 242, 0.95);
+            --max-width: 1280px;
+            --header-h: clamp(56px, 7vh, 72px);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-h);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--farine);
+            color: var(--ecorce);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.1rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Grain de texture global */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.032;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--ecorce);
+            color: var(--farine);
+            padding: 10px 18px;
+            border-radius: 6px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.25s;
+        }
+        .skip-link:focus {
+            top: 10px;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-h);
+            background: var(--farine-95);
+            backdrop-filter: blur(14px) saturate(1.4);
+            -webkit-backdrop-filter: blur(14px) saturate(1.4);
+            border-bottom: 1px solid var(--ecorce-08);
+            display: flex;
+            align-items: center;
+            transition: background 0.35s, border-color 0.35s;
+        }
+        .site-header.scrolled {
+            background: var(--farine-90);
+            border-bottom-color: var(--vert-auvent-25);
+            box-shadow: 0 1px 8px rgba(31, 26, 23, 0.04);
+        }
+        .header-inner {
+            width: min(var(--max-width), 100% - clamp(24px, 5vw, 56px));
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .header-brand {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+            letter-spacing: -0.02em;
+            color: var(--ecorce);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .header-brand:hover {
+            color: var(--vert-auvent);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2.5vw, 28px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--ecorce);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.015em;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--vert-auvent);
+            transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border-radius: 1px;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--vert-auvent);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 28px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--ecorce);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(31, 26, 23, 0.18);
+        }
+
+        /* Menu toggle mobile */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+            width: 34px;
+            height: 28px;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--ecorce);
+            border-radius: 2px;
+            transition: all 0.3s;
+            transform-origin: center;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                position: fixed;
+                top: var(--header-h);
+                left: 0;
+                right: 0;
+                background: var(--farine-95);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.45s;
+                border-bottom: 1px solid transparent;
+                box-shadow: none;
+            }
+            .header-nav.open {
+                max-height: 420px;
+                padding: 20px 0 16px;
+                border-bottom-color: var(--ecorce-08);
+                box-shadow: 0 8px 24px rgba(31, 26, 23, 0.06);
+            }
+            .header-nav a {
+                padding: 14px 24px;
+                font-size: 1rem;
+                width: 100%;
+                border-bottom: 1px solid var(--ecorce-08);
+                display: block;
+            }
+            .header-nav a:last-of-type {
+                border-bottom: none;
+            }
+            .header-nav a::after {
+                display: none;
+            }
+            .header-cta {
+                margin: 8px 24px 0;
+                justify-content: center;
+                border-radius: 30px;
+                width: auto;
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .header-inner>.header-cta {
+                display: none;
+            }
+        }
+        @media (min-width: 769px) {
+            .header-nav .header-cta-mobile {
+                display: none;
+            }
+        }
+
+        /* Sections */
+        .section {
+            width: min(var(--max-width), 100% - clamp(24px, 5vw, 56px));
+            margin: 0 auto;
+            padding: clamp(56px, 10vh, 100px) 0;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: var(--header-h);
+            position: relative;
+            width: 100%;
+            min-height: calc(100vh - var(--header-h));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--sous-bois);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) contrast(1.05) saturate(0.7);
+            transition: filter 0.6s;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(31, 26, 23, 0.35) 0%,
+                    rgba(31, 26, 23, 0.15) 30%,
+                    rgba(31, 26, 23, 0.45) 70%,
+                    rgba(31, 26, 23, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 720px;
+            padding: 0 clamp(20px, 4vw, 40px);
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mie-doree);
+            border: 1.5px solid var(--vert-auvent);
+            padding: 8px 22px;
+            border-radius: 30px;
+            margin-bottom: clamp(18px, 3vh, 28px);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            background: rgba(31, 26, 23, 0.3);
+        }
+        .hero-title {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw + 1rem, 6.5rem);
+            letter-spacing: -0.04em;
+            line-height: 1.0;
+            color: #fff;
+            margin: 0 0 clamp(10px, 2vh, 20px);
+            text-shadow: 0 2px 12px rgba(31, 26, 23, 0.25);
+        }
+        .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.2rem + 0.4vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.88);
+            margin: 0 0 clamp(28px, 5vh, 40px);
+            line-height: 1.5;
+        }
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--vert-auvent);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 32px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.025em;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(31, 26, 23, 0.2);
+        }
+        .hero-btn:hover,
+        .hero-btn:focus-visible {
+            background: var(--ecorce);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(31, 26, 23, 0.3);
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: clamp(20px, 4vh, 36px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: floatDown 2.6s ease-in-out infinite;
+        }
+        .hero-scroll-indicator span {
+            display: block;
+            width: 22px;
+            height: 22px;
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            transform: rotate(45deg);
+        }
+        @keyframes floatDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* Section titles */
+        .section-eyebrow {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.78rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--vert-auvent);
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw + 0.8rem, 2.8rem);
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            color: var(--ecorce);
+            margin-bottom: clamp(16px, 3vh, 24px);
+        }
+        .section-rule {
+            width: 48px;
+            height: 3px;
+            background: var(--vert-auvent);
+            border-radius: 2px;
+            margin-bottom: clamp(20px, 3.5vh, 32px);
+            border: none;
+        }
+
+        /* About section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(32px, 6vw, 64px);
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 1.2em;
+            font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.08rem);
+            line-height: 1.7;
+            color: var(--ecorce);
+        }
+        .about-text .highlight {
+            display: inline-block;
+            background: var(--vert-auvent-15);
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .about-visual {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: var(--mie-doree);
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 0 0 var(--vert-auvent), 0 8px 30px rgba(31, 26, 23, 0.08);
+        }
+        .about-visual-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 18px,
+                    rgba(139, 154, 128, 0.1) 18px,
+                    rgba(139, 154, 128, 0.1) 19px),
+                linear-gradient(160deg, var(--farine) 0%, var(--mie-doree) 50%, var(--vert-auvent-25) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .about-visual-inner .emblem {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 5vw + 1rem, 5rem);
+            letter-spacing: -0.03em;
+            color: var(--ecorce);
+            opacity: 0.18;
+            text-align: center;
+            line-height: 0.9;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .about-visual {
+                aspect-ratio: 3/2;
+                order: -1;
+                max-height: 280px;
+            }
+        }
+
+        /* Offer section */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 32px);
+        }
+        .offer-card {
+            background: #fff;
+            border-radius: 2px;
+            padding: clamp(24px, 4vw, 36px);
+            box-shadow: 0 1px 0 0 var(--vert-auvent-25), 0 4px 16px rgba(31, 26, 23, 0.04);
+            transition: box-shadow 0.4s, transform 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-card:hover {
+            box-shadow: 0 2px 0 0 var(--vert-auvent), 0 12px 32px rgba(31, 26, 23, 0.1);
+            transform: translateY(-3px);
+        }
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--vert-auvent);
+            border-radius: 0 0 1px 1px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .offer-card:hover::before {
+            opacity: 1;
+        }
+        .offer-icon {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+            display: block;
+            line-height: 1;
+        }
+        .offer-card h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+            color: var(--ecorce);
+        }
+        .offer-card p {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--ecorce-50);
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Reviews */
+        .reviews-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 48px);
+            align-items: center;
+            background: #fff;
+            border-radius: 2px;
+            padding: clamp(28px, 5vw, 48px);
+            box-shadow: 0 1px 0 0 var(--vert-auvent-25), 0 6px 22px rgba(31, 26, 23, 0.05);
+            position: relative;
+        }
+        .reviews-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+        .reviews-stars {
+            font-size: 2.8rem;
+            letter-spacing: 4px;
+            color: #e2b94b;
+            line-height: 1;
+        }
+        .reviews-note {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            letter-spacing: -0.04em;
+            color: var(--ecorce);
+            line-height: 1;
+        }
+        .reviews-count {
+            font-size: 0.9rem;
+            color: var(--ecorce-50);
+            letter-spacing: 0.02em;
+        }
+        .reviews-quote {
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ecorce);
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid var(--vert-auvent);
+        }
+        .reviews-quote cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--vert-auvent);
+        }
+        @media (max-width: 600px) {
+            .reviews-block {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                text-align: center;
+            }
+            .reviews-quote {
+                text-align: left;
+            }
+        }
+
+        /* Infos pratiques */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 48px);
+            align-items: start;
+        }
+        .infos-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .infos-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+        .infos-list .infos-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--vert-auvent-15);
+            border-radius: 50%;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+        .infos-list a {
+            color: var(--ecorce);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--vert-auvent-25);
+            transition: text-decoration-color 0.3s;
+        }
+        .infos-list a:hover {
+            text-decoration-color: var(--vert-auvent);
+        }
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 0 0 var(--vert-auvent), 0 8px 28px rgba(31, 26, 23, 0.08);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+            background: var(--mie-doree);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .horaires-note {
+            display: inline-block;
+            background: var(--vert-auvent-15);
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--ecorce);
+            margin-top: 4px;
+        }
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .map-wrapper {
+                aspect-ratio: 16/10;
+                min-height: 240px;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--sous-bois);
+            color: rgba(251, 247, 242, 0.75);
+            padding: clamp(32px, 6vh, 56px) 0;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            border-top: 3px solid var(--vert-auvent);
+        }
+        .footer-inner {
+            width: min(var(--max-width), 100% - clamp(24px, 5vw, 56px));
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 28px;
+            align-items: flex-start;
+        }
+        .footer-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: -0.01em;
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .footer-info a {
+            color: rgba(251, 247, 242, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-info a:hover {
+            color: #fff;
+        }
+        .footer-credit {
+            width: 100%;
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(251, 247, 242, 0.12);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            color: rgba(251, 247, 242, 0.5);
+        }
+
+        /* Animations reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Hero reveal au chargement */
+        .hero-title,
+        .hero-subtitle,
+        .hero-tag,
+        .hero-btn {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: heroReveal 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+        .hero-tag {
+            animation-delay: 0.15s;
+        }
+        .hero-title {
+            animation-delay: 0.3s;
+        }
+        .hero-subtitle {
+            animation-delay: 0.5s;
+        }
+        .hero-btn {
+            animation-delay: 0.7s;
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+            .hero-title,
+            .hero-subtitle,
+            .hero-tag,
+            .hero-btn {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .hero-scroll-indicator {
+                animation: none;
+            }
+            .offer-card {
+                transition: none;
+            }
+            .offer-card:hover {
+                transform: none;
+            }
+            .hero-btn:hover {
+                transform: none;
+            }
+            .header-cta:hover {
+                transform: none;
+            }
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2.5px solid var(--vert-auvent);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+        .hero-btn:focus-visible,
+        .header-cta:focus-visible {
+            outline-color: #fff;
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+
+    <header class="site-header" id="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="header-brand" aria-label="Boulangerie Desgranges — Accueil">DESGRANGES</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-nav" id="header-nav" role="navigation" aria-label="Navigation principale">
+                <a href="#a-propos">À propos</a>
+                <a href="#offre">Nos pains</a>
+                <a href="#avis">Avis</a>
+                <a href="#infos">Infos pratiques</a>
+                <a href="tel:+33145272384" class="header-cta header-cta-mobile">📞 Appeler</a>
+            </nav>
+            <a href="tel:+33145272384" class="header-cta" aria-label="Appeler la boulangerie Desgranges">📞 Appeler</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Devanture de la boulangerie Desgranges, rue Jean de la Fontaine à Paris, sous l'auvent vert" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-tag">68 rue Jean de la Fontaine, Paris 16ᵉ</span>
+                <h1 class="hero-title" id="hero-title">LE PAIN JUSTE.</h1>
+                <p class="hero-subtitle">Boulangerie Desgranges — au 68 de la rue Jean de la Fontaine, comme une évidence.</p>
+                <a href="#infos" class="hero-btn">Nous découvrir ↓</a>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span></span>
+                Défiler
+            </div>
+        </section>
+
+        <!-- À PROPOS -->
+        <section class="section" id="a-propos" aria-labelledby="about-title">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="section-eyebrow">01 &mdash; La maison</p>
+                    <h2 class="section-title" id="about-title">Une boulangerie d'angle, à l'abri de son auvent vert</h2>
+                    <div class="section-rule" aria-hidden="true"></div>
+                    <p>Nichée au cœur du quartier d'Auteuil, la boulangerie <span class="highlight">Desgranges</span> est un repère discret depuis des générations. Ici, on ne crie pas pour exister : la <strong>croûte qui chante</strong> à la sortie du four et l'odeur du levain suffisent à fidéliser les habitués.</p>
+                    <p>La façade en bois, l'auvent vert pâle et la lumière tamisée de la rue Jean de la Fontaine composent un décor à la fois <strong>familier et feutré</strong>. Chaque matin, les gestes sont les mêmes : précis, patients, justes.</p>
+                </div>
+                <div class="about-visual reveal reveal-delay-2" aria-hidden="true">
+                    <div class="about-visual-inner">
+                        <span class="emblem">DESGRANGES<br>DEPUIS<br>TOUJOURS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFRE -->
+        <section class="section" id="offre" aria-labelledby="offer-title">
+            <p class="section-eyebrow reveal">02 &mdash; Le fournil</p>
+            <h2 class="section-title reveal reveal-delay-1" id="offer-title">Des produits de tradition, sans raccourci</h2>
+            <div class="section-rule reveal reveal-delay-1" aria-hidden="true"></div>
+            <div class="offer-grid">
+                <article class="offer-card reveal reveal-delay-2">
+                    <span class="offer-icon" aria-hidden="true">🥖</span>
+                    <h4>Pains au levain</h4>
+                    <p>Façonnés à la main, fermentation lente, farines de meule sélectionnées. Une mie alvéolée, une croûte caramel.</p>
+                </article>
+                <article class="offer-card reveal reveal-delay-3">
+                    <span class="offer-icon" aria-hidden="true">🥐</span>
+                    <h4>Viennoiseries</h4>
+                    <p>Croissants et pains au chocolat feuilletés au beurre AOP Charentes-Poitou. Dorés à point, légers et croustillants.</p>
+                </article>
+                <article class="offer-card reveal reveal-delay-4">
+                    <span class="offer-icon" aria-hidden="true">🍰</span>
+                    <h4>Pâtisseries de saison</h4>
+                    <p>Tartes aux fruits, éclairs, flans pâtissiers — une carte qui suit le rythme des producteurs et des saisons.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis" aria-labelledby="reviews-title">
+            <p class="section-eyebrow reveal">03 &mdash; L'avis du quartier</p>
+            <h2 class="section-title reveal reveal-delay-1" id="reviews-title">Ce qu'en disent les habitués</h2>
+            <div class="section-rule reveal reveal-delay-1" aria-hidden="true"></div>
+            <div class="reviews-block reveal reveal-delay-2">
+                <div class="reviews-badge">
+                    <span class="reviews-stars" aria-label="3 étoiles sur 5">★★★☆☆</span>
+                    <span class="reviews-note">3<small style="font-size:0.5em;font-weight:400;">/5</small></span>
+                    <span class="reviews-count">101 avis Google</span>
+                </div>
+                <blockquote class="reviews-quote">
+                    <p>« Une boulangerie de quartier comme on les aime. Le pain est bon, l'accueil sincère. On y retourne pour la baguette tradition, jamais déçue. »</p>
+                    <cite>— Une cliente du 16ᵉ, avis Google</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section" id="infos" aria-labelledby="infos-title">
+            <p class="section-eyebrow reveal">04 &mdash; Venir</p>
+            <h2 class="section-title reveal reveal-delay-1" id="infos-title">Infos pratiques</h2>
+            <div class="section-rule reveal reveal-delay-1" aria-hidden="true"></div>
+            <div class="infos-grid reveal reveal-delay-2">
+                <div>
+                    <ul class="infos-list">
+                        <li>
+                            <span class="infos-icon" aria-hidden="true">📍</span>
+                            <span><strong>Adresse</strong><br>68 Rue Jean de la Fontaine<br>75016 Paris, France</span>
+                        </li>
+                        <li>
+                            <span class="infos-icon" aria-hidden="true">📞</span>
+                            <span><strong>Téléphone</strong><br><a href="tel:+33145272384">01 45 27 23 84</a></span>
+                        </li>
+                        <li>
+                            <span class="infos-icon" aria-hidden="true">✉️</span>
+                            <span><strong>Email</strong><br><a href="mailto:contact@maisondesgranges.com">contact@maisondesgranges.com</a></span>
+                        </li>
+                        <li>
+                            <span class="infos-icon" aria-hidden="true">🕐</span>
+                            <span><strong>Horaires</strong><br><span class="horaires-note">Horaires à confirmer</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Desgranges+68+Rue+Jean+de+la+Fontaine%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de la boulangerie Desgranges" aria-label="Carte Google Maps de la boulangerie"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">DESGRANGES</div>
+            <div class="footer-info">
+                <span>68 Rue Jean de la Fontaine, 75016 Paris</span>
+                <a href="tel:+33145272384">01 45 27 23 84</a>
+                <a href="mailto:contact@maisondesgranges.com">contact@maisondesgranges.com</a>
+            </div>
+            <div class="footer-credit">Site créé par Agence Mooo</div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Boulangerie Desgranges",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "68 Rue Jean de la Fontaine",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145272384",
+            "email": "contact@maisondesgranges.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3",
+                "reviewCount": "101"
+            },
+            "priceRange": "€",
+            "currenciesAccepted": "EUR",
+            "openingHours": "Horaires à confirmer"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const header = document.getElementById('site-header');
+
+            if (menuToggle && headerNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isOpen = headerNav.classList.toggle('open');
+                    menuToggle.classList.toggle('active');
+                    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                // Fermer le menu au clic sur un lien
+                headerNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        headerNav.classList.remove('open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Fermer au clic hors menu
+                document.addEventListener('click', function(e) {
+                    if (!headerNav.contains(e.target) && !menuToggle.contains(e.target) && headerNav
+                        .classList.contains('open')) {
+                        headerNav.classList.remove('open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // Header scroll state
+            function updateHeaderScroll() {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+            updateHeaderScroll();
+
+            // IntersectionObserver pour les reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.18,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealEls.forEach(el => observer.observe(el));
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Rendre tout visible immédiatement si reduced motion
+                revealEls.forEach(el => el.classList.add('visible'));
+            }
+
+            // Fermer menu si resize au-dessus du breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && headerNav.classList.contains('open')) {
+                    headerNav.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
