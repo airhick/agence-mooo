@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie Rémusat – Distributeur ResMed & Médical Z – Paris 16e</title>
+    <meta name="description" content="Pharmacie Rémusat, votre officine de quartier experte depuis 1997. Distributeur agréé ResMed, compression médicale, dépistage, vaccination. Carole et Elsa vous reçoivent au 14 rue de Rémusat, Paris 16e. Télétransmission et livraison en 24h.">
+    <meta property="og:title" content="Pharmacie Rémusat – Votre santé écoute, depuis 1997.">
+    <meta property="og:description" content="Une pharmacie experte à deux pas de chez vous, ouverte sur le monde. Distributeur ResMed, Médical Z, Cerecare. Dépistage, vaccination, livraison en 24h.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚕</text></svg>">
+    <style>
+        :root {
+            --fond-page: #F9F6F0;
+            --encre: #2A2B28;
+            --vert: #2D5640;
+            --laiton: #C0944C;
+            --neutre: #EDE7DD;
+            --alerte: #BF4E45;
+            --blanc: #FFFFFF;
+            --transparent: rgba(249, 246, 240, 0.85);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond-page);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ------ TYPO ------ */
+        h1,
+        h2,
+        h3,
+        .display,
+        .chiffres,
+        .nav-brand {
+            font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            color: var(--encre);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.35em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 500;
+            margin-bottom: 0.4em;
+        }
+
+        .subtitle-display {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--vert);
+            letter-spacing: 0.01em;
+        }
+
+        .chiffres {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ------ HEADER ------ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(249, 246, 240, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(42, 43, 40, 0.06);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(42, 43, 40, 0.06);
+        }
+
+        .nav-brand {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--encre);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            display: inline-block;
+            transition: transform 0.35s ease, color 0.3s ease;
+        }
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .logo-icon .cross-stroke {
+            stroke: var(--laiton);
+            transition: stroke 0.4s ease;
+        }
+        .logo-icon .wave-path {
+            stroke: var(--vert);
+            transition: stroke 0.4s ease;
+        }
+
+        .nav-brand:hover .logo-icon {
+            transform: rotate(2deg) scale(1.04);
+        }
+        .nav-brand:hover .cross-stroke {
+            stroke: var(--vert);
+        }
+        .nav-brand:hover .wave-path {
+            stroke: var(--laiton);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--encre);
+            letter-spacing: 0.015em;
+            position: relative;
+            padding-bottom: 2px;
+            transition: color 0.25s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--vert);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--vert);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background: var(--vert);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .cta-header:hover {
+            background: #1f3f2e;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            transition: 0.3s;
+        }
+
+        /* ------ HERO ------ */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--neutre);
+            color: var(--encre);
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            color: var(--encre);
+            font-weight: 400;
+            max-width: 460px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            padding: 0.75rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--vert);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #1f3f2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(45, 86, 64, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--vert);
+            border: 1.5px solid var(--vert);
+        }
+        .btn-outline:hover {
+            background: var(--vert);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(42, 43, 40, 0.1);
+            aspect-ratio: 4/3;
+            background: var(--neutre);
+            transform: rotate(0.5deg);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(25%) contrast(1.05) brightness(0.98);
+            display: block;
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(249, 246, 240, 0.15) 0%, rgba(45, 86, 64, 0.08) 100%);
+            pointer-events: none;
+        }
+
+        .floating-motif {
+            position: absolute;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 1;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle at 30% 30%, var(--vert) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            top: 15%;
+            right: -5%;
+        }
+
+        .floating-motif2 {
+            position: absolute;
+            opacity: 0.05;
+            pointer-events: none;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle at 50% 60%, var(--laiton) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(35px);
+            bottom: 10%;
+            left: -3%;
+        }
+
+        /* ------ SECTIONS COMMUNES ------ */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--laiton);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .card {
+            background: var(--blanc);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(42, 43, 40, 0.04);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border: 1px solid rgba(237, 231, 221, 0.6);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(42, 43, 40, 0.08);
+        }
+
+        .card-watermark {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            font-family: 'Fraunces', serif;
+            color: var(--vert);
+            line-height: 1;
+            user-select: none;
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--vert);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4a4b47;
+            line-height: 1.6;
+        }
+
+        /* ------ SERMENT ------ */
+        .serment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .serment-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: #3a3b37;
+        }
+
+        .portraits {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .portrait-placeholder {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--neutre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--encre);
+            border: 2px solid var(--laiton);
+        }
+
+        .note-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border-radius: 30px;
+            padding: 0.5rem 1.2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .stars {
+            color: var(--laiton);
+            letter-spacing: 2px;
+        }
+
+        /* ------ HORAIRES ------ */
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        .horaires-table td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid rgba(42, 43, 40, 0.06);
+        }
+        .horaires-table td:first-child {
+            font-weight: 500;
+            color: var(--encre);
+            white-space: nowrap;
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            color: #4a4b47;
+        }
+        .fermeture-exception {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--alerte);
+            font-style: italic;
+        }
+
+        /* ------ CARTE ------ */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(42, 43, 40, 0.08);
+            margin-top: 1.5rem;
+        }
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        /* ------ FOOTER ------ */
+        .site-footer {
+            background: var(--encre);
+            color: #d4d3ce;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .footer-grid a {
+            color: var(--laiton);
+            text-decoration: none;
+        }
+        .footer-brand {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+        .footer-credits {
+            max-width: 1300px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* ------ REVEAL ------ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ------ RESPONSIVE ------ */
+        @media (max-width: 900px) {
+            .hero-grid,
+            .serment-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(249, 246, 240, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 6rem 2rem;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                z-index: 999;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.08);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .hero-image-wrapper {
+                aspect-ratio: 16/10;
+                transform: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header {
+                padding: 0.6rem 1rem;
+            }
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .hero-ctas {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="header">
+        <a href="#" class="nav-brand" aria-label="Pharmacie Rémusat – Accueil">
+            <span class="logo-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="16" y="4" width="8" height="32" rx="2" class="cross-stroke" stroke-width="2.5" fill="none"/>
+                    <rect x="4" y="16" width="32" height="8" rx="2" class="cross-stroke" stroke-width="2.5" fill="none"/>
+                    <path d="M28 8 Q34 16 28 24" class="wave-path" stroke-width="2" fill="none" stroke-dasharray="3 2"/>
+                </svg>
+            </span>
+            Pharmacie Rémusat
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#serment">Notre serment</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#rendezvous">Rendez-vous</a></li>
+                <li><a href="#parapharmacie">Parapharmacie</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+33145251850" class="cta-header">📞 01 45 25 18 50</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="floating-motif" aria-hidden="true"></div>
+            <div class="floating-motif2" aria-hidden="true"></div>
+            <div class="hero-grid">
+                <div class="hero-text reveal">
+                    <span class="hero-badge">Depuis 1997 · Paris 16ᵉ</span>
+                    <h1>Votre santé écoute, depuis&nbsp;1997.</h1>
+                    <p class="hero-subtitle">Une pharmacie experte à deux pas de chez vous, ouverte sur le monde. Carole et Elsa, docteurs en pharmacie, vous reçoivent avec l'exigence d'un diagnostic médical et la chaleur d'une officine familiale.</p>
+                    <div class="hero-ctas">
+                        <a href="#rendezvous" class="btn btn-primary">Prendre rendez-vous</a>
+                        <a href="#urgences" class="btn btn-outline">Voir les urgences du jour</a>
+                    </div>
+                    <div style="margin-top:1.5rem;">
+                        <span class="note-google-badge">
+                            <span class="stars">★★★★☆</span> 3,4/5 · 148 avis
+                        </span>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Pharmacie Rémusat – Officine de quartier rue de Rémusat Paris 16e" loading="eager" width="800" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE SERMENT -->
+        <section class="section" id="serment">
+            <span class="section-label reveal">Notre serment de quartier</span>
+            <div class="serment-grid">
+                <div class="serment-text reveal reveal-delay-1">
+                    <h2>L'apothicaire moderne du&nbsp;16ᵉ</h2>
+                    <p><strong>Carole et Elsa, docteures en pharmacie</strong>, vous reçoivent dans leur officine familiale de la rue de Rémusat depuis plus de 25 ans. Un service à l'écoute, une expertise médicale reconnue, et ce supplément d'âme propre aux pharmacies de famille.</p>
+                    <p>Nous connaissons nos patients par leur prénom. Nous prenons le temps qu'il faut. Votre sommeil, votre confort, votre ordonnance : chaque sujet est traité avec la rigueur scientifique et la discrétion qui caractérisent notre métier.</p>
+                    <div class="portraits">
+                        <div class="portrait-placeholder" aria-label="Carole">C</div>
+                        <div class="portrait-placeholder" aria-label="Elsa">E</div>
+                        <span style="font-size:0.9rem;color:#4a4b47;">Carole & Elsa, pharmaciennes titulaires</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2" style="background:var(--neutre);border-radius:24px;padding:2rem;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:280px;">
+                    <p style="font-family:'Fraunces',serif;font-size:1.8rem;font-style:italic;color:var(--vert);">«&nbsp;La confiance se construit chaque jour, une ordonnance après l'autre.&nbsp;»</p>
+                    <p style="font-size:0.9rem;margin-top:1rem;color:#4a4b47;">— L'équipe de la Pharmacie Rémusat</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGIES -->
+        <section class="section" id="technologies">
+            <span class="section-label reveal">Technologies au service du quotidien</span>
+            <h2 class="reveal">ResMed · Compression Médical Z · Cerecare</h2>
+            <p class="reveal reveal-delay-1" style="max-width:720px;margin-bottom:1rem;">Apnée du sommeil, insuffisance veineuse, chaussures orthopédiques : nous sommes distributeur agréé ResMed et vous accompagnons de la prescription à l'adaptation sur mesure.</p>
+            <div class="card-grid">
+                <div class="card reveal reveal-delay-2">
+                    <div class="card-watermark">R</div>
+                    <span class="card-icon">🌬️</span>
+                    <h3>ResMed – Apnée du sommeil</h3>
+                    <p>Distributeur agréé, nous assurons le suivi complet : diagnostic, appareillage, adaptation du masque et contrôle à distance. Votre confort nocturne est notre priorité.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <div class="card-watermark">Z</div>
+                    <span class="card-icon">🦵</span>
+                    <h3>Compression Médical Z</h3>
+                    <p>Bas, collants et manchons de compression sur mesure. Nous prenons les mesures et vous guidons vers le dispositif le plus adapté à votre pathologie veineuse.</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <div class="card-watermark">C</div>
+                    <span class="card-icon">👟</span>
+                    <h3>Cerecare – Orthopédie</h3>
+                    <p>Chaussures orthopédiques et semelles correctrices. Nous évaluons votre posture et collaborons avec les podologues du quartier pour un suivi coordonné.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RENDEZ-VOUS -->
+        <section class="section" id="rendezvous">
+            <span class="section-label reveal">Vos rendez-vous sans attente</span>
+            <h2 class="reveal">Vaccination, dépistage, suivi</h2>
+            <p class="reveal reveal-delay-1" style="max-width:650px;margin-bottom:1rem;">COVID & grippe, test TROD angine, dépistage streptocoque : des créneaux ouverts tous les jours, <strong>sans rendez-vous</strong>. Protégez-vous en confiance, nous assurons le suivi.</p>
+            <div class="card-grid">
+                <div class="card reveal reveal-delay-2" style="border-left:4px solid var(--alerte);">
+                    <span class="card-icon">💉</span>
+                    <h3>Vaccination</h3>
+                    <p>COVID-19, grippe saisonnière, rappels. Venez sans rendez-vous aux horaires d'ouverture. Nous tenons votre carnet de vaccination à jour.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <span class="card-icon">🧪</span>
+                    <h3>Test TROD angine</h3>
+                    <p>Dépistage rapide de l'angine bactérienne. Résultat en quelques minutes. Orientation et traitement si nécessaire, en lien avec votre médecin traitant.</p>
+                </div>
+                <div class="card reveal reveal-delay-4" id="urgences">
+                    <span class="card-icon">🩺</span>
+                    <h3>Dépistage streptocoque</h3>
+                    <p>Détection précoce pour éviter les complications. Un geste simple, rapide, réalisé par nos pharmaciennes formées.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARAPHARMACIE -->
+        <section class="section" id="parapharmacie">
+            <span class="section-label reveal">La parapharmacie qui vous ressemble</span>
+            <h2 class="reveal">Solgar · Weleda · Epitact · Scholl…</h2>
+            <p class="reveal reveal-delay-1" style="max-width:650px;margin-bottom:1rem;">Notre sélection est pensée pour chaque membre de la famille. Besoin d'un conseil personnalisé ? Appelez-nous, nous préparons votre commande avec soin.</p>
+            <div class="card-grid">
+                <div class="card reveal reveal-delay-2">
+                    <span class="card-icon">🌿</span>
+                    <h3>Compléments alimentaires</h3>
+                    <p>Solgar, Weleda, Arkopharma… Nous sélectionnons des marques reconnues pour leur qualité et leur traçabilité. Conseil personnalisé en officine.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <span class="card-icon">🧴</span>
+                    <h3>Soins & confort</h3>
+                    <p>Epitact, Scholl, Avène, La Roche-Posay. Des solutions pour les petits maux du quotidien, les peaux sensibles, les pieds fatigués.</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <span class="card-icon">📦</span>
+                    <h3>Commande préparée</h3>
+                    <p>Un coup de fil, et nous rassemblons vos produits. Passez les récupérer sans attendre ou recevez-les chez vous sous 24h.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORDONNANCE -->
+        <section class="section" id="ordonnance" style="background:var(--neutre);border-radius:32px;margin:3rem auto;max-width:1200px;padding:3rem 2rem;">
+            <span class="section-label reveal">Votre ordonnance, où que vous soyez</span>
+            <h2 class="reveal">Télétransmission sécurisée & livraison express</h2>
+            <p class="reveal reveal-delay-1" style="max-width:700px;margin-bottom:1.5rem;">Télétransmission sécurisée, envoi par fax ou formulaire en ligne. Nous livrons votre traitement <strong>en Europe et jusqu'au Maghreb en 24&nbsp;h via DHL Express</strong>. À Paris, livraison offerte dès 50&nbsp;€ d'achats dans le 16ᵉ.</p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;" class="reveal reveal-delay-2">
+                <span style="background:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;">🇪🇺 Europe</span>
+                <span style="background:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;">🇲🇦 Maghreb</span>
+                <span style="background:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;">🚚 Paris 16ᵉ – offert dès 50€</span>
+                <span style="background:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;">⏱️ 24h DHL Express</span>
+            </div>
+        </section>
+
+        <!-- HORAIRES & CONTACT -->
+        <section class="section" id="contact">
+            <span class="section-label reveal">Horaires et contact</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;" class="reveal reveal-delay-1">
+                <div>
+                    <h2 style="font-size:1.8rem;">14 rue de Rémusat, 75016 Paris</h2>
+                    <p style="font-size:1.1rem;margin-bottom:0.5rem;">
+                        <a href="tel:+33145251850" style="color:var(--encre);text-decoration:none;font-weight:600;" class="chiffres">01 45 25 18 50</a>
+                    </p>
+                    <p style="margin-bottom:1.5rem;">
+                        <a href="mailto:pharmacieremusat@gmail.com" style="color:var(--vert);text-decoration:underline;">pharmacieremusat@gmail.com</a>
+                    </p>
+                    <table class="horaires-table">
+                        <tbody>
+                            <tr><td>Lundi</td><td>8h45 – 13h · 14h30 – 20h</td></tr>
+                            <tr><td>Mardi</td><td>8h45 – 13h · 14h30 – 20h</td></tr>
+                            <tr><td>Mercredi</td><td>8h45 – 13h · 14h30 – 20h</td></tr>
+                            <tr><td>Jeudi</td><td>8h45 – 13h · 14h30 – 20h</td></tr>
+                            <tr><td>Vendredi</td><td>8h45 – 13h · 14h30 – 20h</td></tr>
+                            <tr><td>Samedi</td><td>8h45 – 13h</td></tr>
+                            <tr><td>Dimanche</td><td>Fermé</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="fermeture-exception">📅 Jours fériés : horaires à confirmer en officine ou par téléphone. Nous communiquons nos fermetures exceptionnelles sur place.</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Pharmacie+R%C3%A9musat+-+Distributeur+ResMed%2FM%C3%A9dical+Z%2FCerecare+14+Rue+de+R%C3%A9musat%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – Pharmacie Rémusat Paris 16e"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <p class="footer-brand">Pharmacie Rémusat</p>
+                <p style="margin-top:0.5rem;">Distributeur ResMed · Médical Z · Cerecare<br>14 rue de Rémusat, 75016 Paris</p>
+            </div>
+            <div>
+                <p><strong>Contact</strong></p>
+                <p><a href="tel:+33145251850">01 45 25 18 50</a><br>
+                    <a href="mailto:pharmacieremusat@gmail.com">pharmacieremusat@gmail.com</a></p>
+            </div>
+            <div>
+                <p><strong>Liens</strong></p>
+                <p><a href="#serment">Notre serment</a><br><a href="#technologies">Technologies</a><br><a href="#contact">Horaires</a></p>
+            </div>
+        </div>
+        <div class="footer-credits">
+            © 2025 Pharmacie Rémusat – Tous droits réservés. Site créé par Agence Mooo.
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Pharmacy",
+            "name": "Pharmacie Rémusat - Distributeur ResMed/Médical Z/Cerecare",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "14 Rue de Rémusat",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145251850",
+            "email": "pharmacieremusat@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.4",
+                "ratingCount": "148"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:45", "closes": "13:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:30", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:45", "closes": "13:00" }
+            ],
+            "url": "https://agence.mooo.com/pharmacie-remusat-distributeur-resmed-medical-z-cerecare"
+        }
+    </script>
+
+    <script>
+        (function() {
+            const header = document.getElementById('header');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const allNavLinks = navLinks.querySelectorAll('a');
+
+            // Header scroll shadow
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const expanded = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close menu on link click (mobile)
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for scroll reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            revealElements.forEach(el => observer.observe(el));
+
+            // Respect prefers-reduced-motion
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+
+</body>
+</html>
