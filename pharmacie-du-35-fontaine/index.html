@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie du 35 Fontaine — Pharmacie de quartier au cœur du 16e arrondissement, Paris</title>
+    <meta name="description" content="Pharmacie du 35 Fontaine — Ordonnances prêtes en 20 minutes, pharmaciens de garde, messagerie instantanée et conseils au 35 rue Jean de la Fontaine, Paris 16e. Votre santé, notre quartier.">
+    <meta property="og:title" content="Pharmacie du 35 Fontaine — Au cœur du 16e">
+    <meta property="og:description" content="Des ordonnances prêtes en 20 minutes, une équipe de quartier disponible sans rendez-vous. Vaccination, tests, conseils — au 35 rue Jean de la Fontaine.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='26' y='8' width='12' height='48' rx='4' fill='%2300B894'/%3E%3Crect x='8' y='26' width='48' height='12' rx='4' fill='%2300B894'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23F8F6F2'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Pharmacy",
+            "name": "Pharmacie du 35 Fontaine",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "35 Rue Jean de la Fontaine",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145270162",
+            "email": "contact@pharmacie35fontaine.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "37"
+            },
+            "openingHours": [
+                "Mo-Fr 08:30-20:00",
+                "Sa 09:00-19:30"
+            ],
+            "currenciesAccepted": "EUR",
+            "priceRange": "€€"
+        }
+    </script>
+    <style>
+        :root {
+            --blanc-ordonnance: #F8F6F2;
+            --encre-profonde: #2B2B2B;
+            --gris-froid: #6E7B7C;
+            --vert-fluo: #00B894;
+            --vert-sombre: #004D4A;
+            --blanc-eclatant: #FFFFFF;
+            --font-display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--blanc-ordonnance);
+            color: var(--encre-profonde);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Texture papier + croix filigrane */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg opacity='0.7'%3E%3Crect x='35' y='18' width='10' height='44' rx='3' fill='%236E7B7C'/%3E%3Crect x='18' y='35' width='44' height='10' rx='3' fill='%236E7B7C'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            transition: opacity 0.8s ease;
+        }
+        body.croix-revealed::before {
+            opacity: 0.055;
+        }
+
+        /* Grain subtil */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.03;
+            background: repeating-conic-gradient(#2B2B2B 0% 25%, transparent 0% 50%) 50% / 3px 3px;
+            mix-blend-mode: multiply;
+        }
+
+        /* ---- LOADING OVERLAY ---- */
+        #loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--blanc-ordonnance);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            pointer-events: all;
+        }
+        #loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-cross {
+            width: clamp(60px, 10vw, 90px);
+            height: clamp(60px, 10vw, 90px);
+            position: relative;
+            animation: pulse-cross 1.2s ease-in-out infinite;
+        }
+        .loader-cross::before,
+        .loader-cross::after {
+            content: '';
+            position: absolute;
+            background: var(--vert-fluo);
+            border-radius: 6px;
+        }
+        .loader-cross::before {
+            top: 18%;
+            left: 42%;
+            width: 16%;
+            height: 64%;
+        }
+        .loader-cross::after {
+            top: 42%;
+            left: 18%;
+            width: 64%;
+            height: 16%;
+        }
+        @keyframes pulse-cross {
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 6px rgba(0, 184, 148, 0.5));
+            }
+            50% {
+                transform: scale(1.25);
+                filter: drop-shadow(0 0 22px rgba(0, 184, 148, 0.85));
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .loader-cross {
+                animation: none;
+                filter: drop-shadow(0 0 8px rgba(0, 184, 148, 0.4));
+            }
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 9000;
+            background: rgba(248, 246, 242, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(110, 123, 124, 0.18);
+            padding: 0.75rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(248, 246, 242, 0.96);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--encre-profonde);
+            flex-shrink: 0;
+        }
+        .header-cross-icon {
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .header-cross-icon::before,
+        .header-cross-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--vert-fluo);
+            border-radius: 3px;
+        }
+        .header-cross-icon::before {
+            top: 20%;
+            left: 43%;
+            width: 14%;
+            height: 60%;
+        }
+        .header-cross-icon::after {
+            top: 43%;
+            left: 20%;
+            width: 60%;
+            height: 14%;
+        }
+        .header-brand span {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+        }
+        .header-brand small {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+            color: var(--gris-froid);
+            text-transform: uppercase;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 2vw, 1.5rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+            color: var(--encre-profonde);
+            letter-spacing: 0.01em;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--vert-fluo);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--vert-fluo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vert-fluo);
+            color: var(--blanc-eclatant);
+            text-decoration: none;
+            padding: 0.5rem 1.1rem;
+            border-radius: 2rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #00a07f;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(0, 184, 148, 0.35);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--vert-fluo);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                gap: 0.6rem;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 0.3rem;
+                border-top: 1px solid rgba(110, 123, 124, 0.12);
+                margin-top: 0.2rem;
+            }
+            .header-nav a {
+                font-size: 0.75rem;
+            }
+            .header-cta {
+                font-size: 0.78rem;
+                padding: 0.4rem 0.9rem;
+            }
+        }
+
+        /* ---- MAIN ---- */
+        main {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ---- HERO ---- */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 85vh;
+            align-items: center;
+            gap: 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--blanc-ordonnance);
+        }
+        .hero-content {
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1rem, 2.5vw, 1.8rem);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--blanc-eclatant);
+            border: 1.5px solid rgba(110, 123, 124, 0.3);
+            border-radius: 2rem;
+            padding: 0.4rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--encre-profonde);
+            width: fit-content;
+            letter-spacing: 0.02em;
+        }
+        .hero-badge .stars {
+            color: #f0b429;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+        .hero-badge .rating-note {
+            color: var(--gris-froid);
+            font-size: 0.7rem;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            color: var(--encre-profonde);
+        }
+        .hero-title .accent-fluo {
+            display: inline;
+            color: var(--vert-fluo);
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            letter-spacing: -0.03em;
+            text-shadow: 0 0 60px rgba(0, 184, 148, 0.25), 0 0 120px rgba(0, 184, 148, 0.12);
+            line-height: 0.85;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            color: var(--gris-froid);
+            line-height: 1.55;
+            max-width: 38ch;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--vert-fluo);
+            color: var(--blanc-eclatant);
+            text-decoration: none;
+            padding: 0.75rem 1.6rem;
+            border-radius: 2.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+            letter-spacing: 0.02em;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #00a07f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 184, 148, 0.4);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--vert-fluo);
+            outline-offset: 3px;
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--encre-profonde);
+            text-decoration: none;
+            padding: 0.75rem 1.6rem;
+            border-radius: 2.5rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+            letter-spacing: 0.02em;
+            border: 1.5px solid rgba(43, 43, 43, 0.25);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            border-color: var(--vert-fluo);
+            background: rgba(0, 184, 148, 0.05);
+        }
+        .hero-image-wrapper {
+            position: relative;
+            height: 100%;
+            min-height: 50vh;
+            overflow: hidden;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(0.15) contrast(1.04) brightness(1.02);
+            transition: filter 0.6s ease;
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(248, 246, 242, 0.25) 0%, transparent 40%, transparent 70%, rgba(0, 77, 74, 0.3) 100%);
+            pointer-events: none;
+        }
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.015) 2px, rgba(255, 255, 255, 0.015) 4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero-image-wrapper {
+                order: -1;
+                min-height: 40vh;
+                max-height: 55vh;
+            }
+            .hero-content {
+                padding: 2rem 1.2rem 3rem;
+                text-align: center;
+            }
+            .hero-badge {
+                margin: 0 auto;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-title .accent-fluo {
+                font-size: clamp(2.8rem, 10vw, 4.5rem);
+            }
+        }
+
+        /* ---- SECTION GENERICS ---- */
+        .section-block {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+            position: relative;
+            z-index: 2;
+        }
+        .section-block.dark-bg {
+            background: var(--vert-sombre);
+            color: var(--blanc-eclatant);
+        }
+        .section-block.dark-bg .section-eyebrow {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .section-block.dark-bg .section-desc {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .section-eyebrow {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gris-froid);
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.12;
+            letter-spacing: -0.015em;
+            margin-bottom: 1rem;
+        }
+        .section-title .fluo-keyword {
+            color: var(--vert-fluo);
+            font-weight: 700;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            display: inline;
+            letter-spacing: -0.03em;
+            text-shadow: 0 0 40px rgba(0, 184, 148, 0.3);
+            line-height: 0.9;
+        }
+        .section-desc {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            color: var(--gris-froid);
+            line-height: 1.6;
+            max-width: 48ch;
+        }
+        .dark-bg .section-title {
+            color: var(--blanc-eclatant);
+        }
+
+        /* ---- REVEAL ON SCROLL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---- SERVICES EXPRESS ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1.2rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--vert-fluo);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .service-card .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+        .dark-bg .service-card h3 {
+            color: var(--blanc-eclatant);
+        }
+
+        /* ---- ÉQUIPE ---- */
+        .equipe-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .equipe-visual {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: var(--vert-sombre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(110, 123, 124, 0.2);
+        }
+        .equipe-visual-inner {
+            text-align: center;
+            color: var(--blanc-eclatant);
+            padding: 2rem;
+        }
+        .equipe-visual-inner .big-number {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: clamp(6rem, 12vw, 10rem);
+            line-height: 0.85;
+            color: rgba(255, 255, 255, 0.08);
+            letter-spacing: -0.04em;
+            user-select: none;
+        }
+        .equipe-visual-inner .label-under {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: -0.5rem;
+        }
+        @media (max-width: 768px) {
+            .equipe-layout {
+                grid-template-columns: 1fr;
+            }
+            .equipe-visual {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ---- HORAIRES ---- */
+        .horaires-table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-family: var(--font-body);
+        }
+        .horaires-table td {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(110, 123, 124, 0.2);
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .horaires-note {
+            font-size: 0.78rem;
+            color: var(--gris-froid);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+        .badge-garde {
+            display: inline-block;
+            background: var(--vert-fluo);
+            color: var(--blanc-eclatant);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-left: 0.4rem;
+        }
+
+        /* ---- COMPTOIR DIGITAL ---- */
+        .digital-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .digital-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .digital-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-family: var(--font-body);
+            font-size: clamp(0.9rem, 1.3vw, 1rem);
+            line-height: 1.5;
+        }
+        .digital-steps .step-number {
+            flex-shrink: 0;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            background: var(--vert-fluo);
+            color: var(--blanc-eclatant);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            font-family: var(--font-display);
+        }
+        .digital-visual {
+            background: rgba(0, 184, 148, 0.06);
+            border-radius: 1.5rem;
+            padding: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            border: 1px dashed rgba(0, 184, 148, 0.25);
+        }
+        .digital-visual .phone-mock {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .digital-visual p {
+            font-size: 0.85rem;
+            color: var(--gris-froid);
+        }
+        @media (max-width: 768px) {
+            .digital-layout {
+                grid-template-columns: 1fr;
+            }
+            .digital-visual {
+                order: -1;
+            }
+        }
+
+        /* ---- ANCRAGE & MAP ---- */
+        .map-wrapper {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            border: 1px solid rgba(110, 123, 124, 0.2);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+        .ancrage-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gris-froid);
+        }
+        .ancrage-details strong {
+            color: var(--encre-profonde);
+            display: block;
+            font-weight: 600;
+        }
+
+        /* ---- ACTUALITÉS ---- */
+        .chroniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 2rem;
+        }
+        .chronique-card {
+            background: var(--blanc-eclatant);
+            border: 1px solid rgba(110, 123, 124, 0.18);
+            border-radius: 1rem;
+            padding: clamp(1.2rem, 2.5vw, 1.8rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .chronique-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+        .chronique-card .chronique-date {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gris-froid);
+            margin-bottom: 0.5rem;
+        }
+        .chronique-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .chronique-card p {
+            font-size: 0.85rem;
+            color: var(--gris-froid);
+            line-height: 1.5;
+        }
+        .chronique-card .signature {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 0.78rem;
+            color: var(--vert-sombre);
+            letter-spacing: 0.02em;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--encre-profonde);
+            color: rgba(255, 255, 255, 0.8);
+            padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 3rem);
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--blanc-eclatant);
+            letter-spacing: -0.01em;
+        }
+        .footer-brand span {
+            color: var(--vert-fluo);
+        }
+        .footer-info p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin: 0.3rem 0;
+        }
+        .footer-info a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        .footer-info a:hover {
+            color: var(--vert-fluo);
+        }
+        .footer-credits {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.45);
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+        .footer-credits a {
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        .footer-credits a:hover {
+            color: var(--vert-fluo);
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--vert-fluo);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ---- BACK TO TOP FLOATING ---- */
+        .back-to-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 8000;
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            background: var(--vert-fluo);
+            color: var(--blanc-eclatant);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.35);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        .back-to-top:hover {
+            background: #00a07f;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loading-overlay" aria-hidden="true">
+        <div class="loader-cross"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <a href="#" class="header-brand" aria-label="Pharmacie du 35 Fontaine — Accueil">
+            <div class="header-cross-icon" aria-hidden="true"></div>
+            <span>Pharmacie du 35<small>Jean de la Fontaine</small></span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#digital">Ordonnance</a></li>
+                <li><a href="#ancrage">Accès</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145270162" class="header-cta" aria-label="Appeler la pharmacie au 01 45 27 01 62">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            01 45 27 01 62
+        </a>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge reveal" aria-label="Note Google : 4,2 étoiles sur 5, 37 avis">
+                    <span class="stars">★★★★☆</span> 4,2
+                    <span class="rating-note">sur 37 avis</span>
+                </div>
+                <h1 class="hero-title reveal reveal-delay-1">
+                    Des ordonnances prêtes en <span class="accent-fluo">20 minutes</span>, au cœur du 16<sup>e</sup>
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-2">
+                    Pharmaciens de garde, messagerie instantanée et conseils au 35 rue Jean de la Fontaine — votre santé, notre quartier.
+                </p>
+                <div class="hero-actions reveal reveal-delay-3">
+                    <a href="#digital" class="btn-primary">Envoyer mon ordonnance</a>
+                    <a href="#ancrage" class="btn-ghost">Venir au 35</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal reveal-delay-1">
+                <img src="assets/maps-1.jpg" alt="Vitrine de la Pharmacie du 35 Fontaine, rue Jean de la Fontaine à Paris 16e" loading="eager" width="800" height="1000">
+            </div>
+        </section>
+
+        <!-- SERVICES EXPRESS -->
+        <section class="section-block dark-bg" id="services">
+            <p class="section-eyebrow reveal">À portée de clic</p>
+            <h2 class="section-title reveal reveal-delay-1">
+                Votre pharmacie, <span class="fluo-keyword">à portée</span> de clic
+            </h2>
+            <p class="section-desc reveal reveal-delay-2">
+                Envoyez votre ordonnance, prenez rendez-vous, posez une question. On vous répond en temps réel.
+            </p>
+            <div class="services-grid">
+                <div class="service-card reveal reveal-delay-1">
+                    <span class="card-icon" aria-hidden="true">📸</span>
+                    <h3>Scan d'ordonnance</h3>
+                    <p>Photographiez votre ordonnance, nous la préparons sans délai. Un SMS vous avertit dès que tout est prêt.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <span class="card-icon" aria-hidden="true">💉</span>
+                    <h3>Vaccination sans RDV</h3>
+                    <p>Grippe, COVID, rappels — passez nous voir. Nos pharmaciens sont habilités et disponibles.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <span class="card-icon" aria-hidden="true">💬</span>
+                    <h3>Messagerie instantanée</h3>
+                    <p>Une question sur un traitement ? Échangez en direct avec un pharmacien, par message ou par téléphone.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <span class="card-icon" aria-hidden="true">🕐</span>
+                    <h3>Garde & urgences</h3>
+                    <p>Pharmacies de garde affichées en temps réel. Nous vous orientons 24h/24 en cas d'urgence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉQUIPE -->
+        <section class="section-block" id="equipe">
+            <div class="equipe-layout">
+                <div class="reveal">
+                    <p class="section-eyebrow">Qui se cache derrière le comptoir ?</p>
+                    <h2 class="section-title">
+                        L'équipe du <span class="fluo-keyword">35 Fontaine</span>
+                    </h2>
+                    <p class="section-desc">
+                        Des pharmaciens de conseil, disponibles sans rendez-vous pour la vaccination, les tests et vos traitements. Une officine familiale dans l'âme, ancrée dans le quartier depuis des décennies. Nous connaissons nos patients par leur prénom — et c'est exactement comme ça que nous aimons travailler.
+                    </p>
+                    <p class="section-desc" style="margin-top:0.8rem;">
+                        Chaque membre de l'équipe partage la même conviction : la santé de proximité est la plus précieuse. Alors on prend le temps d'écouter, d'expliquer, de rassurer.
+                    </p>
+                </div>
+                <div class="equipe-visual reveal reveal-delay-2">
+                    <div class="equipe-visual-inner">
+                        <div class="big-number" aria-hidden="true">35</div>
+                        <div class="label-under">RUE JEAN DE LA FONTAINE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAIRES -->
+        <section class="section-block dark-bg" id="horaires">
+            <p class="section-eyebrow reveal">Ouvert quand vous avez besoin de nous</p>
+            <h2 class="section-title reveal reveal-delay-1">
+                Des horaires <span class="fluo-keyword">larges</span>, toute la semaine
+            </h2>
+            <table class="horaires-table reveal reveal-delay-2" aria-label="Horaires d'ouverture de la pharmacie">
+                <tbody>
+                    <tr><td>Lundi</td><td>8h30 – 20h</td></tr>
+                    <tr><td>Mardi</td><td>8h30 – 20h</td></tr>
+                    <tr><td>Mercredi</td><td>8h30 – 20h</td></tr>
+                    <tr><td>Jeudi</td><td>8h30 – 20h</td></tr>
+                    <tr><td>Vendredi</td><td>8h30 – 20h</td></tr>
+                    <tr><td>Samedi</td><td>9h – 19h30</td></tr>
+                    <tr><td>Dimanche</td><td>Fermé <span class="badge-garde">Garde affichée</span></td></tr>
+                </tbody>
+            </table>
+            <p class="horaires-note reveal reveal-delay-3">
+                Pharmacies de garde affichées en temps réel sur notre vitrine et en messagerie. En cas d'urgence nocturne, composez le 15.
+            </p>
+        </section>
+
+        <!-- COMPTOIR DIGITAL -->
+        <section class="section-block" id="digital">
+            <div class="digital-layout">
+                <div class="reveal">
+                    <p class="section-eyebrow">Le comptoir digital</p>
+                    <h2 class="section-title">
+                        Votre ordonnance, <span class="fluo-keyword">avant même</span> de quitter le métro
+                    </h2>
+                    <p class="section-desc">
+                        Prenez-la en photo, nous préparons vos produits. Un SMS vous prévient, vous passez au 35. Simple, rapide, sans attente.
+                    </p>
+                    <ol class="digital-steps">
+                        <li><span class="step-number">1</span> Photographiez votre ordonnance avec votre téléphone.</li>
+                        <li><span class="step-number">2</span> Envoyez-la via notre messagerie ou par email.</li>
+                        <li><span class="step-number">3</span> Recevez un SMS de confirmation. Vos produits sont prêts.</li>
+                        <li><span class="step-number">4</span> Passez au 35 rue Jean de la Fontaine — nous vous attendons.</li>
+                    </ol>
+                </div>
+                <div class="digital-visual reveal reveal-delay-2">
+                    <div class="phone-mock" aria-hidden="true">📱</div>
+                    <p style="font-weight:600;color:var(--encre-profonde);font-size:1rem;">Envoyez-nous votre ordonnance</p>
+                    <p>contact@pharmacie35fontaine.fr</p>
+                    <a href="mailto:contact@pharmacie35fontaine.fr" class="btn-primary" style="margin-top:1rem;display:inline-flex;">Envoyer maintenant</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANCRAGE 16e & PLAN -->
+        <section class="section-block dark-bg" id="ancrage">
+            <p class="section-eyebrow reveal">Rue Jean de la Fontaine, entre la Seine et vous</p>
+            <h2 class="section-title reveal reveal-delay-1">
+                À <span class="fluo-keyword">3 minutes</span> du métro Jasmin
+            </h2>
+            <p class="section-desc reveal reveal-delay-2" style="color:rgba(255,255,255,0.8);">
+                Notre pharmacie est idéalement située dans le 16<sup>e</sup> arrondissement, à deux pas de la Maison de la Radio et des jardins du Ranelagh. La rue Jean de la Fontaine est une artère vivante et commerçante — nous en sommes l'un des repères de santé depuis des générations.
+            </p>
+            <div class="ancrage-details reveal reveal-delay-2">
+                <div><strong>Adresse</strong> 35 Rue Jean de la Fontaine, 75016 Paris</div>
+                <div><strong>Métro</strong> Jasmin (ligne 9) — 3 min à pied</div>
+                <div><strong>Bus</strong> Lignes 22, 52, 70 — arrêt Jasmin</div>
+                <div><strong>Téléphone</strong> <a href="tel:+33145270162" style="color:var(--vert-fluo);text-decoration:none;">01 45 27 01 62</a></div>
+            </div>
+            <div class="map-wrapper reveal reveal-delay-3">
+                <iframe src="https://maps.google.com/maps?q=Pharmacie+du+35+fontaine+35+Rue+Jean+de+la+Fontaine%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de la Pharmacie du 35 Fontaine" aria-label="Carte Google Maps de la pharmacie"></iframe>
+            </div>
+        </section>
+
+        <!-- ACTUALITÉS SANTÉ -->
+        <section class="section-block" id="conseils">
+            <p class="section-eyebrow reveal">Les conseils de votre pharmacie</p>
+            <h2 class="section-title reveal reveal-delay-1">
+                Trois chroniques <span class="fluo-keyword">santé</span> par l'équipe
+            </h2>
+            <div class="chroniques-grid">
+                <article class="chronique-card reveal reveal-delay-1">
+                    <span class="chronique-date">Novembre 2024</span>
+                    <h3>Bien se préparer à l'hiver : les gestes qui comptent</h3>
+                    <p>Vitamine D, rappels vaccinaux et hydratation : nos pharmaciens vous rappellent les trois piliers pour traverser la saison froide en pleine forme. Passez nous voir pour un bilan personnalisé.</p>
+                    <span class="signature">— L'équipe du 35</span>
+                </article>
+                <article class="chronique-card reveal reveal-delay-2">
+                    <span class="chronique-date">Octobre 2024</span>
+                    <h3>Votre ordonnance sur votre téléphone : mode d'emploi</h3>
+                    <p>Depuis cette année, les ordonnances numériques se généralisent. On vous explique comment les recevoir, les stocker et nous les transmettre en toute sécurité, sans papier.</p>
+                    <span class="signature">— Dr. Sophie M., pharmacienne</span>
+                </article>
+                <article class="chronique-card reveal reveal-delay-3">
+                    <span class="chronique-date">Septembre 2024</span>
+                    <h3>Tests rapides : lesquels choisir pour la rentrée ?</h3>
+                    <p>Grippe, COVID, angine bactérienne — les tests disponibles en pharmacie sont nombreux. Notre guide pour savoir lequel correspond à vos symptômes et quand consulter.</p>
+                    <span class="signature">— Le comptoir conseil</span>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <p class="footer-brand">Pharmacie du <span>35</span> Fontaine</p>
+                <div class="footer-info" style="margin-top:0.8rem;">
+                    <p>35 Rue Jean de la Fontaine</p>
+                    <p>75016 Paris</p>
+                    <p><a href="tel:+33145270162">01 45 27 01 62</a></p>
+                    <p><a href="mailto:contact@pharmacie35fontaine.fr">contact@pharmacie35fontaine.fr</a></p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p style="font-weight:600;color:var(--blanc-eclatant);margin-bottom:0.5rem;">Horaires</p>
+                <p>Lun – Ven : 8h30 – 20h</p>
+                <p>Samedi : 9h – 19h30</p>
+                <p>Dimanche : fermé</p>
+                <p style="margin-top:0.5rem;font-size:0.78rem;">⭐ 4,2/5 — 37 avis Google</p>
+            </div>
+            <div class="footer-info">
+                <p style="font-weight:600;color:var(--blanc-eclatant);margin-bottom:0.5rem;">Navigation</p>
+                <p><a href="#services">Services express</a></p>
+                <p><a href="#equipe">L'équipe</a></p>
+                <p><a href="#horaires">Horaires</a></p>
+                <p><a href="#digital">Comptoir digital</a></p>
+                <p><a href="#ancrage">Plan & accès</a></p>
+            </div>
+        </div>
+        <p class="footer-credits">
+            Site créé par <a href="https://agence.mooo.com/pharmacie-du-35-fontaine" target="_blank" rel="noopener">Agence Mooo</a> — Refonte direction artistique 2025
+        </p>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page" title="Retour en haut">
+        ↑
+    </button>
+
+    <script>
+        (function() {
+            // --- LOADING OVERLAY ---
+            const overlay = document.getElementById('loading-overlay');
+            const minLoadTime = 1400;
+            const startTime = performance.now();
+
+            function hideOverlay() {
+                const elapsed = performance.now() - startTime;
+                const remaining = Math.max(0, minLoadTime - elapsed);
+                setTimeout(function() {
+                    overlay.classList.add('hidden');
+                    // Remove overlay from DOM after transition
+                    setTimeout(function() {
+                        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                    }, 700);
+                }, remaining);
+            }
+
+            // Hide overlay when page is fully loaded (or after minimum time)
+            if (document.readyState === 'complete') {
+                hideOverlay();
+            } else {
+                window.addEventListener('load', hideOverlay);
+                // Fallback: hide after 3 seconds max
+                setTimeout(hideOverlay, 3000);
+            }
+
+            // --- HEADER SCROLL EFFECT ---
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 40) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // --- CROIX REVEAL ON SCROLL ---
+            let croixTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!croixTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 300) {
+                            document.body.classList.add('croix-revealed');
+                        } else {
+                            document.body.classList.remove('croix-revealed');
+                        }
+                        croixTicking = false;
+                    });
+                    croixTicking = true;
+                }
+            }, { passive: true });
+
+            // --- INTERSECTION OBSERVER FOR REVEALS ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // --- BACK TO TOP BUTTON ---
+            const backToTopBtn = document.getElementById('back-to-top');
+            let bttTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!bttTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 600) {
+                            backToTopBtn.classList.add('visible');
+                        } else {
+                            backToTopBtn.classList.remove('visible');
+                        }
+                        bttTicking = false;
+                    });
+                    bttTicking = true;
+                }
+            }, { passive: true });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- SMOOTH ANCHOR SCROLLING (fallback for older browsers) ---
+            document.querySelectorAll('.header-nav a[href^="#"], .hero-actions a[href^="#"]').forEach(function(
+            anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1) {
+                        var target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            var headerHeight = header.offsetHeight + 16;
+                            var targetPosition = target.getBoundingClientRect().top + window
+                                .pageYOffset - headerHeight;
+                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            // --- INIT: trigger reveals for elements already in view ---
+            setTimeout(function() {
+                revealElements.forEach(function(el) {
+                    var rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('revealed');
+                        revealObserver.unobserve(el);
+                    }
+                });
+            }, 200);
+        })();
+    </script>
+</body>
+</html>
