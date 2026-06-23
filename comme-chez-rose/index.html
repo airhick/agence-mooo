@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comme Chez Rose — Cuisine franco-libanaise au Fort d'Issy | Plats du jour & mezze maison</title>
+    <meta name="description" content="Chez Rose, la cuisine du jour a plusieurs accents. Plats français de saison, mezze libanais maison et crêpes au sarrasin au 170 Promenade du Verger, Issy-les-Moulineaux. Note 4,6★ — À emporter, livraison ou sur place.">
+    <meta property="og:title" content="Comme Chez Rose — Cuisine franco-libanaise au Fort d'Issy">
+    <meta property="og:description" content="Plats français de saison, mezze libanais maison et crêpes au sarrasin. Une table d'hôtes sincère au cœur du Fort d'Issy.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coquille-oeuf: #FAF6EF;
+            --brou-noix: #2B1E16;
+            --sumac: #9B2C2C;
+            --pistache: #93B49A;
+            --pierre-issy: #DFD3C3;
+            --cuivre-rose: #B5725C;
+            --white-soft: #FEFCF8;
+            --shadow-sm: 0 1px 3px rgba(43, 30, 22, 0.06);
+            --shadow-md: 0 4px 16px rgba(43, 30, 22, 0.08);
+            --shadow-lg: 0 12px 32px rgba(43, 30, 22, 0.10);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--coquille-oeuf);
+            color: var(--brou-noix);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(ellipse at 15% 10%, rgba(147, 180, 154, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 85% 80%, rgba(181, 114, 92, 0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(223, 211, 195, 0.04) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+
+        /* Texture subtile de papier */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 246, 239, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(223, 211, 195, 0.6);
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 1px 12px rgba(43, 30, 22, 0.07);
+        }
+
+        .header-logo {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 600;
+            color: var(--brou-noix);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .header-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--cuivre-rose);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .header-logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-weight: 500;
+            color: var(--brou-noix);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.25s ease;
+            position: relative;
+            padding: 0.35em 0;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--sumac);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s ease;
+        }
+
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--sumac);
+        }
+
+        .header-cta {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            background: var(--sumac);
+            color: #fff;
+            border: none;
+            padding: 0.55em 1.3em;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(155, 44, 44, 0.18);
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #7a2323;
+            box-shadow: 0 4px 16px rgba(155, 44, 44, 0.28);
+            transform: translateY(-1px);
+        }
+
+        .header-cta:focus-visible {
+            outline: 2px solid var(--sumac);
+            outline-offset: 3px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 2.5px;
+            background: var(--brou-noix);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .hamburger {
+                display: flex;
+            }
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--coquille-oeuf);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                gap: 1.2rem;
+                transition: right 0.4s ease;
+                box-shadow: -4px 0 24px rgba(43, 30, 22, 0.12);
+                z-index: 100;
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+            }
+            .header-cta {
+                font-size: 0.9rem;
+                padding: 0.6em 1.4em;
+            }
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            min-height: 85vh;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(147, 180, 154, 0.10) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -40px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(181, 114, 92, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            color: var(--brou-noix);
+            background: rgba(223, 211, 195, 0.5);
+            padding: 0.45em 1em;
+            border-radius: 24px;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(181, 114, 92, 0.25);
+        }
+
+        .hero-badge .star {
+            color: #e8a838;
+            font-size: 1.1em;
+            letter-spacing: -0.05em;
+        }
+
+        .hero-badge .rating-note {
+            font-weight: 400;
+            opacity: 0.7;
+            font-size: 0.85em;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: 0.015em;
+            color: var(--brou-noix);
+            margin-bottom: 0.45em;
+            position: relative;
+        }
+
+        .hero h1 .accent-line {
+            display: block;
+            width: 1.2em;
+            height: 4px;
+            background: var(--sumac);
+            margin: 0.25em 0 0.15em;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(43, 30, 22, 0.78);
+            margin-bottom: 2rem;
+            max-width: 460px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            background: var(--sumac);
+            color: #fff;
+            padding: 0.7em 1.8em;
+            border-radius: 30px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            box-shadow: 0 3px 12px rgba(155, 44, 44, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #7a2323;
+            box-shadow: 0 6px 20px rgba(155, 44, 44, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            background: transparent;
+            color: var(--brou-noix);
+            padding: 0.65em 1.8em;
+            border-radius: 30px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border: 1.5px solid var(--pierre-issy);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            border-color: var(--cuivre-rose);
+            color: var(--cuivre-rose);
+            background: rgba(181, 114, 92, 0.04);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/3;
+            max-height: 580px;
+            transform: rotate(0.6deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: sepia(0.08) brightness(1.04) contrast(1.06);
+            transition: filter 0.6s ease;
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(250, 246, 239, 0.12) 0%, transparent 40%, rgba(181, 114, 92, 0.08) 100%);
+            pointer-events: none;
+        }
+
+        /* Motif carreaux en filigrane sur le hero */
+        .hero-pattern {
+            position: absolute;
+            top: 15%;
+            left: 5%;
+            width: 180px;
+            height: 180px;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+            background: repeating-conic-gradient(var(--pistache) 0% 25%, transparent 0% 50%) 0 0 / 36px 36px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 3rem 1.2rem 2.5rem;
+                gap: 2rem;
+            }
+            .hero-content {
+                order: 1;
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero h1 .accent-line {
+                margin: 0.25em auto 0.15em;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-image-wrapper {
+                order: 0;
+                max-height: 340px;
+                transform: none;
+                border-radius: var(--radius-md);
+            }
+            .hero-badge {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ===== SECTIONS GENERAL ===== */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--cuivre-rose);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            color: var(--brou-noix);
+            margin-bottom: 0.8em;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 2.2em;
+            height: 3px;
+            background: var(--sumac);
+            margin-top: 0.3em;
+            border-radius: 1.5px;
+        }
+
+        .section-text {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.75;
+            color: rgba(43, 30, 22, 0.8);
+            max-width: 640px;
+        }
+
+        /* ===== CUISINE DU JOUR ===== */
+        .cuisine-section {
+            background: rgba(223, 211, 195, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cuisine-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-conic-gradient(var(--pistache) 0% 12.5%, transparent 0% 50%) 0 0 / 80px 80px;
+            opacity: 0.025;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cuisine-section .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .cuisine-card {
+            background: var(--coquille-oeuf);
+            border: 1px solid rgba(223, 211, 195, 0.6);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .cuisine-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .cuisine-card .card-accent {
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            width: 40px;
+            height: 4px;
+            background: var(--sumac);
+            border-radius: 0 0 3px 3px;
+        }
+
+        .cuisine-card h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            color: var(--brou-noix);
+            letter-spacing: 0.02em;
+        }
+
+        .cuisine-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(43, 30, 22, 0.75);
+        }
+
+        .cuisine-card .highlight-list {
+            list-style: none;
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .highlight-list li {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(147, 180, 154, 0.15);
+            color: var(--brou-noix);
+            padding: 0.35em 0.9em;
+            border-radius: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .cuisine-illustration {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            max-height: 420px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cuisine-illustration .placeholder-art {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--pierre-issy) 0%, var(--pistache) 40%, var(--cuivre-rose) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cuisine-illustration .placeholder-art::before {
+            content: '🍲';
+            font-size: 5rem;
+            filter: grayscale(0.3);
+            z-index: 1;
+        }
+
+        .cuisine-illustration .placeholder-art::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255, 255, 255, 0.03) 8px, rgba(255, 255, 255, 0.03) 10px);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cuisine-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .cuisine-illustration {
+                max-height: 280px;
+            }
+        }
+
+        /* ===== GALETTES & CREPES ===== */
+        .galettes-section {
+            background: var(--coquille-oeuf);
+        }
+
+        .galettes-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .galettes-content .feature-box {
+            background: rgba(147, 180, 154, 0.08);
+            border-left: 3px solid var(--pistache);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-top: 1.5rem;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: rgba(43, 30, 22, 0.75);
+            margin: 0;
+        }
+
+        .feature-box strong {
+            color: var(--brou-noix);
+            font-weight: 600;
+        }
+
+        .galettes-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            max-height: 460px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .galettes-visual .placeholder-crepe {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, #f0e6d3 0%, #e8d5b8 30%, #d4b896 70%, #c9a87c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .galettes-visual .placeholder-crepe::before {
+            content: '🥞';
+            font-size: 4.5rem;
+            z-index: 1;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
+
+        @media (max-width: 768px) {
+            .galettes-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .galettes-visual {
+                max-height: 300px;
+                order: -1;
+            }
+        }
+
+        /* ===== COMMANDER ===== */
+        .commander-section {
+            background: rgba(223, 211, 195, 0.2);
+            text-align: center;
+        }
+
+        .commander-section .section-title::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .commander-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .commander-card {
+            background: var(--coquille-oeuf);
+            border: 1px solid rgba(223, 211, 195, 0.5);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.8rem;
+            flex: 1 1 240px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .commander-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            border-color: var(--cuivre-rose);
+        }
+
+        .commander-card .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .commander-card h4 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            color: var(--brou-noix);
+        }
+
+        .commander-card p {
+            font-size: 0.88rem;
+            color: rgba(43, 30, 22, 0.7);
+            line-height: 1.6;
+        }
+
+        .commander-card .card-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--sumac);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.25s;
+        }
+
+        .commander-card .card-link:hover {
+            color: #7a2323;
+        }
+
+        /* ===== ESPRIT ROSE ===== */
+        .esprit-section {
+            background: var(--coquille-oeuf);
+        }
+
+        .esprit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .esprit-quote {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--brou-noix);
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid var(--cuivre-rose);
+        }
+
+        .esprit-quote::before {
+            content: '“';
+            position: absolute;
+            top: -0.5em;
+            left: -0.3em;
+            font-size: 5rem;
+            color: rgba(181, 114, 92, 0.15);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .esprit-details {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: rgba(43, 30, 22, 0.78);
+        }
+
+        @media (max-width: 768px) {
+            .esprit-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ===== INFOS PRATIQUES ===== */
+        .infos-section {
+            background: rgba(223, 211, 195, 0.22);
+        }
+
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 2rem;
+        }
+
+        .infos-block {
+            background: var(--coquille-oeuf);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(223, 211, 195, 0.5);
+        }
+
+        .infos-block h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--brou-noix);
+            letter-spacing: 0.02em;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+            color: rgba(43, 30, 22, 0.8);
+        }
+
+        .info-item .info-icon {
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+            color: var(--sumac);
+            font-weight: 600;
+        }
+
+        .info-item a {
+            color: var(--brou-noix);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--cuivre-rose);
+            transition: color 0.25s, border-color 0.25s;
+        }
+
+        .info-item a:hover {
+            color: var(--sumac);
+            border-color: var(--sumac);
+        }
+
+        .horaires-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: rgba(43, 30, 22, 0.75);
+            line-height: 1.8;
+        }
+
+        .horaires-list li {
+            display: flex;
+            justify-content: space-between;
+            max-width: 280px;
+        }
+
+        .horaires-list .day {
+            font-weight: 500;
+        }
+
+        .rating-block {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(232, 168, 56, 0.08);
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(232, 168, 56, 0.2);
+        }
+
+        .rating-block .stars {
+            color: #e8a838;
+            letter-spacing: -0.05em;
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-top: 1rem;
+        }
+
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .map-wrapper iframe {
+                height: 260px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--brou-noix);
+            color: rgba(250, 246, 239, 0.8);
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.2rem, 5vw, 4rem);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--coquille-oeuf);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .footer-address {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            color: rgba(250, 246, 239, 0.65);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: rgba(250, 246, 239, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.25s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cuivre-rose);
+        }
+
+        .footer-credit {
+            font-size: 0.78rem;
+            color: rgba(250, 246, 239, 0.4);
+            margin-top: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Animation ardoise du jour */
+        .ardoise-reveal {
+            opacity: 0;
+            filter: blur(6px);
+            transition: opacity 0.9s ease, filter 0.9s ease;
+        }
+
+        .ardoise-reveal.visible {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        /* Focus styles */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--sumac);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <a href="#hero" class="header-logo">Comme Chez Rose</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#cuisine">Notre cuisine</a></li>
+                <li><a href="#galettes">Galettes & crêpes</a></li>
+                <li><a href="#commander">Commander</a></li>
+                <li><a href="#esprit">L'esprit Rose</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+                <li><a href="tel:+33145348476" class="header-cta">📞 Appeler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-pattern" aria-hidden="true"></div>
+            <div class="hero-content reveal">
+                <span class="hero-badge">
+                    <span class="star">★</span> 4,6 <span class="rating-note">/5 — 140 avis Google</span>
+                </span>
+                <h1>Chez Rose, la cuisine du jour a plusieurs accents<span class="accent-line"></span></h1>
+                <p class="hero-subtitle">Plats français de saison, mezze libanais maison et crêpes au sarrasin — à emporter, en livraison ou sur place, au 170 Promenade du Verger, dans le Fort d'Issy.</p>
+                <div class="hero-actions">
+                    <a href="tel:+33145348476" class="btn-primary">📞 Appeler Rose</a>
+                    <a href="#commander" class="btn-outline">Commander en ligne</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal reveal-delay-2">
+                <img src="assets/maps-1.jpg" alt="Comme Chez Rose — Façade du restaurant au 170 Promenade du Verger, Issy-les-Moulineaux" loading="eager" width="800" height="600">
+            </div>
+        </section>
+
+        <!-- NOTRE CUISINE DU JOUR -->
+        <section class="section cuisine-section" id="cuisine">
+            <div class="section-inner">
+                <span class="section-label reveal">La carte éphémère</span>
+                <h2 class="section-title ardoise-reveal">Aujourd'hui, on prépare…</h2>
+                <div class="cuisine-grid">
+                    <div class="cuisine-card reveal reveal-delay-1">
+                        <div class="card-accent" aria-hidden="true"></div>
+                        <h3>Les plats mijotés du moment</h3>
+                        <p>Chaque matin, Rose sélectionne les produits du marché pour composer ses plats du jour. Tajine d'agneau aux pruneaux, poulet aux olives, moussaka libanaise… La carte évolue au gré des saisons et des arrivages.</p>
+                        <ul class="highlight-list">
+                            <li>Plats mijotés</li>
+                            <li>Salades méditerranéennes</li>
+                            <li>Mezzés incontournables</li>
+                            <li>Revisitations du jour</li>
+                        </ul>
+                    </div>
+                    <div class="cuisine-illustration reveal reveal-delay-2" aria-hidden="true">
+                        <div class="placeholder-art"></div>
+                    </div>
+                </div>
+                <p class="section-text reveal reveal-delay-3" style="margin-top:1.8rem;">Carte visible en ligne ou au comptoir — nous la renouvelons chaque matin avec le souci du fait-maison et des épices justement dosées.</p>
+            </div>
+        </section>
+
+        <!-- GALETTES & CREPES -->
+        <section class="section galettes-section" id="galettes">
+            <div class="section-inner">
+                <span class="section-label reveal">Midi & goûter</span>
+                <h2 class="section-title ardoise-reveal">Sarrasin Breton, garnitures du Levant</h2>
+                <div class="galettes-grid">
+                    <div class="galettes-content reveal reveal-delay-1">
+                        <p class="section-text">Galettes au blé noir bio garnies généreusement, crêpes sucrées dorées à la commande. À déguster sur place ou à emporter pour une pause déjeuner rapide. Rose marie la tradition bretonne aux saveurs méditerranéennes : zaatar, labneh, légumes confits...</p>
+                        <div class="feature-box">
+                            <p><strong>Blé noir bio</strong> — Farine de sarrasin IGP, galettes croustillantes et légères, préparées minute.</p>
+                        </div>
+                        <div class="feature-box" style="border-left-color:var(--cuivre-rose); margin-top:0.8rem;">
+                            <p><strong>Crêpes sucrées</strong> — À la confiture de rose, miel d'oranger, ou simplement citron-sucre pour le goûter.</p>
+                        </div>
+                    </div>
+                    <div class="galettes-visual reveal reveal-delay-2" aria-hidden="true">
+                        <div class="placeholder-crepe"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMANDER EN LIGNE -->
+        <section class="section commander-section" id="commander">
+            <div class="section-inner">
+                <span class="section-label reveal">Sans friction</span>
+                <h2 class="section-title ardoise-reveal">Votre repas, sans friction</h2>
+                <p class="section-text reveal reveal-delay-1" style="max-width:600px; margin:0 auto 1rem;">Choisissez vos plats directement sur Deliveroo ou appelez-nous pour une commande sur mesure. Nous préparons, vous retirez ou vous faites livrer — pas de formulaire à remplir.</p>
+                <div class="commander-options">
+                    <div class="commander-card reveal reveal-delay-2">
+                        <span class="card-icon">🛵</span>
+                        <h4>Deliveroo</h4>
+                        <p>Commandez en quelques clics et suivez votre livraison en temps réel.</p>
+                        <a href="https://deliveroo.fr" class="card-link" target="_blank" rel="noopener">Commander sur Deliveroo →</a>
+                    </div>
+                    <div class="commander-card reveal reveal-delay-3">
+                        <span class="card-icon">📞</span>
+                        <h4>Par téléphone</h4>
+                        <p>Appelez Rose pour une commande sur mesure, adaptée à vos envies.</p>
+                        <a href="tel:+33145348476" class="card-link">01 45 34 84 76 →</a>
+                    </div>
+                    <div class="commander-card reveal reveal-delay-4">
+                        <span class="card-icon">🏃</span>
+                        <h4>À emporter</h4>
+                        <p>Passez au 170 Promenade du Verger et repartez avec votre repas.</p>
+                        <a href="#infos" class="card-link">Voir l'adresse →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ESPRIT ROSE -->
+        <section class="section esprit-section" id="esprit">
+            <div class="section-inner">
+                <span class="section-label reveal">La maison</span>
+                <h2 class="section-title ardoise-reveal">Une maison de quartier, ouverte sur la Méditerranée</h2>
+                <div class="esprit-grid">
+                    <div class="esprit-quote reveal reveal-delay-1">
+                        Depuis le Fort d'Issy, Rose cuisine comme pour sa famille : des recettes françaises réconfortantes, des épices libanaises rapportées de Beyrouth, et un accueil qui fait dire à nos clients « on se sent comme à la maison ».
+                    </div>
+                    <div class="esprit-details reveal reveal-delay-2">
+                        <p>Ici, pas de carte figée ni de chichi. Les fourneaux de Rose racontent une double culture : le mijoté français côtoie le taboulé libanais, la galette bretonne s'habille de zaatar et d'huile d'olive. Tout est fait maison, avec les produits du marché et le sourire.</p>
+                        <p style="margin-top:0.8rem;">Une table d'hôtes sincère, où l'on vient pour la cuisine… et où l'on revient pour l'ambiance.</p>
+                        <div class="rating-block">
+                            <span class="stars">★★★★☆</span> 4,6/5 — 140 avis Google
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section infos-section" id="infos">
+            <div class="section-inner">
+                <span class="section-label reveal">Venez</span>
+                <h2 class="section-title ardoise-reveal">Venez pousser la porte</h2>
+                <div class="infos-grid">
+                    <div class="infos-block reveal reveal-delay-1">
+                        <h3>Coordonnées</h3>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>170 Promenade du Verger,<br>92130 Issy-les-Moulineaux</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <a href="tel:+33145348476">01 45 34 84 76</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <a href="mailto:contact@commechezrose.fr">contact@commechezrose.fr</a>
+                        </div>
+                        <div class="rating-block" style="margin-top:1rem;">
+                            <span class="stars">★★★★☆</span> 4,6/5 — 140 avis Google
+                        </div>
+                    </div>
+                    <div class="infos-block reveal reveal-delay-2">
+                        <h3>Horaires d'ouverture</h3>
+                        <ul class="horaires-list">
+                            <li><span class="day">Lundi</span> <span>11h30 – 20h00</span></li>
+                            <li><span class="day">Mardi</span> <span>11h30 – 20h00</span></li>
+                            <li><span class="day">Mercredi</span> <span>11h30 – 20h00</span></li>
+                            <li><span class="day">Jeudi</span> <span>11h30 – 20h00</span></li>
+                            <li><span class="day">Vendredi</span> <span>11h30 – 20h00</span></li>
+                            <li><span class="day">Samedi</span> <span>Fermé</span></li>
+                            <li><span class="day">Dimanche</span> <span>Fermé</span></li>
+                        </ul>
+                        <p style="font-size:0.8rem; color:rgba(43,30,22,0.55); margin-top:0.5rem;">Horaires indicatifs — susceptibles d'évoluer.</p>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-3" style="margin-top:2rem;">
+                    <iframe src="https://maps.google.com/maps?q=Comme+Chez+Rose+170+Promenade+du+Verger%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Comme Chez Rose, 170 Promenade du Verger, Issy-les-Moulineaux"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-name">Comme Chez Rose</p>
+            <p class="footer-address">170 Promenade du Verger, 92130 Issy-les-Moulineaux<br>01 45 34 84 76 — contact@commechezrose.fr</p>
+            <div class="footer-links">
+                <a href="tel:+33145348476">Appeler</a>
+                <a href="mailto:contact@commechezrose.fr">Écrire</a>
+                <a href="https://deliveroo.fr" target="_blank" rel="noopener">Deliveroo</a>
+                <a href="#hero">Accueil</a>
+            </div>
+            <p class="footer-credit">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Comme Chez Rose",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "170 Promenade du Verger",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145348476",
+            "email": "contact@commechezrose.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "140"
+            },
+            "servesCuisine": ["French", "Lebanese", "Mediterranean"],
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "11:30", "closes": "20:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            const scrollHandler = () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            scrollHandler();
+
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('headerNav');
+            hamburger.addEventListener('click', () => {
+                const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !expanded);
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // Close nav on link click (mobile)
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal, .ardoise-reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
