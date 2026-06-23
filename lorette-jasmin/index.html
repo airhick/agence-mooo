@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorette & Jasmin — Dépôt-vente nomade, estimation à domicile | Paris 16e</title>
+    <meta name="description" content="Lorette & Jasmin — Estimation à domicile, dépôt-vente et location de sacs de luxe, sans vitrine, sur rendez-vous au cœur du 16e arrondissement de Paris. Chanel, Hermès, Dior, Vuitton.">
+    <meta property="og:title" content="Lorette & Jasmin — Le luxe sans adresse">
+    <meta property="og:description" content="Votre dressing parle. Lorette l'écoute. Estimation à domicile, dépôt-vente & location de sacs de luxe — sans vitrine, sur rendez-vous.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='54' font-size='54'>👜</text></svg>">
+    <style>
+        :root {
+            --pierre-de-liais: #F2EFE9;
+            --platre-cire: #EAE4DB;
+            --noir-fer: #1A1A1A;
+            --brun-bois: #4A3F35;
+            --laiton-eteint: #A0845C;
+            --suie: #2F2A24;
+            --texture-grain: rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--pierre-de-liais);
+        }
+
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--pierre-de-liais);
+            color: var(--noir-fer);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal {
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+
+        /* ---------- TYPOGRAPHIE ---------- */
+        h1,
+        h2,
+        h3,
+        .display-font {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 8vw, 5.8rem);
+            line-height: 0.95;
+            color: var(--noir-fer);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            color: var(--noir-fer);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+            line-height: 1.25;
+            color: var(--noir-fer);
+        }
+
+        .text-display {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .text-body {
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+        }
+
+        .text-small {
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+            color: var(--brun-bois);
+            font-weight: 400;
+        }
+
+        .text-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            color: var(--brun-bois);
+        }
+
+        .accent-link {
+            color: var(--laiton-eteint);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+        }
+
+        .accent-link:hover {
+            border-bottom-color: var(--laiton-eteint);
+            color: var(--laiton-eteint);
+        }
+
+        /* ---------- HEADER ---------- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(242, 239, 233, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(74, 63, 53, 0.1);
+            padding: 0.9rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            background: rgba(242, 239, 233, 0.96);
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .header-brand {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--noir-fer);
+            text-decoration: none;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-nav a {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--brun-bois);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--laiton-eteint);
+            transition: width 0.3s ease;
+        }
+
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--noir-fer);
+        }
+
+        .btn-rdv {
+            display: inline-block;
+            background: var(--suie);
+            color: var(--pierre-de-liais);
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.6rem 1.3rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-rdv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--laiton-eteint);
+            transition: left 0.35s ease;
+            z-index: 0;
+        }
+
+        .btn-rdv:hover::before {
+            left: 0;
+        }
+        .btn-rdv span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--noir-fer);
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--pierre-de-liais);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid rgba(74, 63, 53, 0.15);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .site-header {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                padding: 6rem 3rem;
+            }
+        }
+        @media (min-width: 1400px) {
+            .section {
+                padding: 7rem 4rem;
+            }
+        }
+
+        .container-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .container-wide {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ---------- WATERMARK ARABESQUE ---------- */
+        .arabesque-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            mix-blend-mode: darken;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath d='M300 50 C200 100 100 200 150 300 C200 400 300 450 300 550 C300 450 400 400 450 300 C500 200 400 100 300 50Z' fill='none' stroke='%231A1A1A' stroke-width='1.5'/%3E%3Cpath d='M300 80 C220 130 140 210 180 300 C220 380 300 420 300 500 C300 420 380 380 420 300 C460 210 380 130 300 80Z' fill='none' stroke='%231A1A1A' stroke-width='1'/%3E%3Ccircle cx='300' cy='300' r='80' fill='none' stroke='%231A1A1A' stroke-width='0.8'/%3E%3Ccircle cx='300' cy='300' r='140' fill='none' stroke='%231A1A1A' stroke-width='0.6'/%3E%3Cpath d='M200 200 Q300 150 400 200 T400 400 Q300 450 200 400 T200 200Z' fill='none' stroke='%231A1A1A' stroke-width='0.7'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: var(--pierre-de-liais);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3.2rem, 9vw, 6.2rem);
+            font-weight: 500;
+            line-height: 0.92;
+            letter-spacing: -0.03em;
+            color: var(--noir-fer);
+            margin-bottom: 1.2rem;
+            position: relative;
+            left: -0.5%;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                max-width: 120%;
+                margin-left: -4%;
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Geist', sans-serif;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--brun-bois);
+            max-width: 540px;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 520px;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.5;
+            mix-blend-mode: multiply;
+            filter: saturate(0.7) brightness(0.95);
+            border-radius: 2px;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-image {
+                display: block;
+                right: -40px;
+                width: 380px;
+                height: 500px;
+            }
+        }
+        @media (min-width: 1300px) {
+            .hero-image {
+                right: 0;
+                width: 450px;
+                height: 560px;
+            }
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background: var(--suie);
+            color: var(--pierre-de-liais);
+            font-family: 'Geist', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 0.85rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+        .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--laiton-eteint);
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+        .btn-hero:hover::before {
+            left: 0;
+        }
+        .btn-hero span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---------- ESPRIT ---------- */
+        .esprit-section {
+            background: var(--platre-cire);
+            position: relative;
+            overflow: hidden;
+        }
+        .esprit-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+            font-weight: 400;
+            line-height: 1.35;
+            max-width: 700px;
+            letter-spacing: -0.01em;
+            color: var(--noir-fer);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .service-card {
+            background: var(--platre-cire);
+            padding: 2.2rem 1.8rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(74, 63, 53, 0.08);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--laiton-eteint);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        }
+        .service-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.4rem, 2vw, 1.7rem);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.8rem;
+            color: var(--noir-fer);
+        }
+        .service-card p {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: var(--brun-bois);
+            font-weight: 400;
+        }
+
+        /* ---------- COLLECTION ---------- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: 2fr 1fr 1.5fr;
+                grid-template-rows: auto auto;
+                gap: 1.2rem;
+            }
+            .gallery-item:first-child {
+                grid-row: span 2;
+                grid-column: 1;
+            }
+            .gallery-item:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .gallery-item:nth-child(3) {
+                grid-column: 3;
+                grid-row: 1;
+            }
+            .gallery-item:nth-child(4) {
+                grid-column: 2 / 4;
+                grid-row: 2;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: var(--platre-cire);
+            aspect-ratio: 4/3;
+        }
+        .gallery-item:first-child {
+            aspect-ratio: 3/4;
+        }
+        @media (min-width: 1024px) {
+            .gallery-item:first-child {
+                aspect-ratio: 3/4;
+            }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) saturate(0.85);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            filter: brightness(1) saturate(1);
+            transform: scale(1.03);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(242, 239, 233, 0.88);
+            padding: 0.4rem 0.9rem;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--noir-fer);
+            backdrop-filter: blur(4px);
+        }
+
+        .gallery-placeholder {
+            background: var(--platre-cire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            color: var(--brun-bois);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px dashed rgba(74, 63, 53, 0.25);
+            aspect-ratio: 4/3;
+        }
+
+        /* ---------- TEMOIGNAGES ---------- */
+        .testimonial-block {
+            background: var(--platre-cire);
+            padding: 3rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            border: 1px solid rgba(74, 63, 53, 0.08);
+        }
+        .testimonial-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--noir-fer);
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+        .testimonial-author {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--brun-bois);
+        }
+        .stars {
+            color: var(--laiton-eteint);
+            letter-spacing: 0.15em;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--pierre-de-liais);
+            padding: 0.3rem 0.8rem;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--brun-bois);
+            margin-bottom: 1rem;
+        }
+        .google-badge .note {
+            font-weight: 600;
+            color: var(--noir-fer);
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .contact-info p {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--brun-bois);
+            margin-bottom: 0.4rem;
+        }
+        .contact-info strong {
+            color: var(--noir-fer);
+            font-weight: 500;
+        }
+        .contact-info a {
+            color: var(--laiton-eteint);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .contact-info a:hover {
+            border-bottom-color: var(--laiton-eteint);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--brun-bois);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.95rem;
+            border: 1px solid rgba(74, 63, 53, 0.25);
+            background: var(--pierre-de-liais);
+            color: var(--noir-fer);
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--laiton-eteint);
+        }
+        .btn-submit {
+            display: inline-block;
+            background: var(--suie);
+            color: var(--pierre-de-liais);
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 2rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.35s ease;
+        }
+        .btn-submit:hover {
+            background: var(--laiton-eteint);
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(74, 63, 53, 0.15);
+        }
+
+        /* ---------- FOOTER ---------- */
+        .site-footer {
+            background: var(--suie);
+            color: var(--pierre-de-liais);
+            padding: 2.5rem 2rem;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            align-items: center;
+        }
+        .footer-brand {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--pierre-de-liais);
+            text-decoration: none;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        .footer-credit {
+            opacity: 0.6;
+            font-size: 0.75rem;
+        }
+        .footer-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ---------- ANIMATIONS REVEAL ---------- */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.8s ease-out;
+        }
+        .reveal-hidden {
+            transform: translateY(8px);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-hidden {
+                transform: none;
+            }
+        }
+
+        /* ---------- SECTION HEADERS ---------- */
+        .section-label {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--laiton-eteint);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ---------- FOCUS ---------- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--laiton-eteint);
+            outline-offset: 3px;
+        }
+
+        /* ---------- HORAIRES ---------- */
+        .horaires-note {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            color: var(--brun-bois);
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+
+        /* ---------- RESPONSIVE FINE TUNING ---------- */
+        @media (max-width: 480px) {
+            .section {
+                padding: 3.5rem 1rem;
+            }
+            .hero-section {
+                padding: 7rem 1rem 3rem;
+            }
+            .service-card {
+                padding: 1.5rem;
+            }
+            .testimonial-block {
+                padding: 2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-brand">Lorette & Jasmin</a>
+        <button class="mobile-menu-toggle" aria-label="Menu" id="mobileMenuToggle">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="headerNav">
+            <a href="#esprit">L'esprit</a>
+            <a href="#services">Services</a>
+            <a href="#collection">Collection</a>
+            <a href="#avis">Avis</a>
+            <a href="#contact" class="btn-rdv"><span>Prendre rendez-vous</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="arabesque-watermark" aria-hidden="true"></div>
+            <img src="assets/maps-1.jpg" alt="Lorette & Jasmin — façade discrète rue François Millet" class="hero-image reveal" loading="eager">
+            <div class="hero-content reveal">
+                <h1 class="hero-title">Votre dressing parle.<br>Lorette l'écoute.</h1>
+                <p class="hero-subtitle">Estimation à domicile, dépôt-vente & location de sacs de luxe — sans vitrine, sur rendez-vous, au cœur du 16<sup>e</sup> arrondissement.</p>
+                <a href="#contact" class="btn-hero"><span>Prendre rendez-vous</span></a>
+            </div>
+        </section>
+
+        <!-- ESPRIT -->
+        <section class="section esprit-section" id="esprit">
+            <div class="container-inner reveal reveal-hidden">
+                <span class="section-label">L'esprit</span>
+                <p class="esprit-text">Née dans une rue paisible à deux pas de la Maison de Radio France, la maison cultive depuis 2020 un luxe à échelle humaine, loin des devantures.</p>
+            </div>
+            <div class="arabesque-watermark" aria-hidden="true" style="opacity:0.03;"></div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services">
+            <div class="container-inner">
+                <span class="section-label reveal reveal-hidden">Services</span>
+                <h2 class="reveal reveal-hidden" style="margin-bottom:2.5rem;">Trois manières de vous accompagner</h2>
+                <div class="services-grid">
+                    <div class="service-card reveal reveal-hidden">
+                        <h3>Estimation à domicile</h3>
+                        <p>Lorette se déplace chez vous pour expertiser vos pièces Chanel, Hermès, Céline, Dior, Vuitton. Un regard affûté, une cotation juste, dans la discrétion de votre salon.</p>
+                    </div>
+                    <div class="service-card reveal reveal-hidden">
+                        <h3>Dépôt-vente & achat comptant</h3>
+                        <p>Confiez-nous vos sacs, vêtements et bijoux de marque. Règlement sous 48&nbsp;h après accord, sans tracas.</p>
+                    </div>
+                    <div class="service-card reveal reveal-hidden">
+                        <h3>Location de sacs</h3>
+                        <p>Accédez à la collection via l'application Dresswing — du cabas au clutch, pour une soirée ou une semaine, en toute liberté.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTION -->
+        <section class="section" id="collection" style="background:var(--platre-cire);">
+            <div class="container-wide">
+                <span class="section-label reveal reveal-hidden">Collection</span>
+                <h2 class="reveal reveal-hidden" style="margin-bottom:2.5rem;">Natures mortes</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal reveal-hidden">
+                        <img src="assets/maps-1.jpg" alt="Sac de luxe Lorette & Jasmin" loading="lazy">
+                        <span class="gallery-caption">Chanel — Timeless</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-hidden">
+                        <img src="assets/maps-1.jpg" alt="Bijou de marque dépôt-vente" loading="lazy">
+                        <span class="gallery-caption">Hermès — Kelly 28</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-hidden">
+                        <img src="assets/maps-1.jpg" alt="Accessoire luxe estimation Paris" loading="lazy">
+                        <span class="gallery-caption">Dior — Saddle</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-hidden">
+                        <img src="assets/maps-1.jpg" alt="Pièce de collection Lorette Jasmin" loading="lazy">
+                        <span class="gallery-caption">Vuitton — Keepall</span>
+                    </div>
+                </div>
+                <p class="text-small reveal reveal-hidden" style="margin-top:1.5rem; text-align:right; max-width:100%;">Photographies traitées — chaque pièce est unique, contactez-nous pour les disponibilités.</p>
+            </div>
+            <div class="arabesque-watermark" aria-hidden="true" style="opacity:0.025; width:500px;height:500px;"></div>
+        </section>
+
+        <!-- TEMOIGNAGES -->
+        <section class="section" id="avis">
+            <div class="container-inner">
+                <span class="section-label reveal reveal-hidden">Avis</span>
+                <div class="testimonial-block reveal reveal-hidden">
+                    <div class="google-badge">
+                        <span>Google</span>
+                        <span class="note">4.6★</span>
+                        <span>(64 avis)</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">« Une expertise rare et une discrétion absolue. Lorette a su estimer mon sac Hermès avec une précision remarquable, le tout dans un échange d'une grande élégance. Je recommande les yeux fermés. »</p>
+                    <p class="testimonial-author">— Sophie M., Paris 16<sup>e</sup></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact" style="background:var(--platre-cire);">
+            <div class="container-inner">
+                <span class="section-label reveal reveal-hidden">Contact & rendez-vous</span>
+                <h2 class="reveal reveal-hidden" style="margin-bottom:2rem;">Sur rendez-vous uniquement</h2>
+                <div class="contact-grid">
+                    <div class="contact-info reveal reveal-hidden">
+                        <p><strong>Lorette & Jasmin</strong></p>
+                        <p>6 Rue François Millet, 75016 Paris</p>
+                        <p>Téléphone : <a href="tel:+33614080622">06 14 08 06 22</a></p>
+                        <p>Email : <a href="mailto:loretteetjasmin@gmail.com">loretteetjasmin@gmail.com</a></p>
+                        <p class="horaires-note">Horaires : sur rendez-vous. Contactez-nous pour convenir d'un créneau.</p>
+                        <div style="margin-top:1.2rem;">
+                            <a href="https://www.instagram.com" class="accent-link footer-instagram" target="_blank" rel="noopener">@loretteetjasmin</a>
+                        </div>
+                    </div>
+                    <form class="reveal reveal-hidden" id="estimationForm" action="#" method="post">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre demande</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Décrivez la pièce que vous souhaitez faire estimer (marque, modèle, état...)"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                    </form>
+                </div>
+                <div class="map-container reveal reveal-hidden">
+                    <iframe src="https://maps.google.com/maps?q=Lorette+%26+Jasmin+6+Rue+Fran%C3%A7ois+Millet%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Emplacement de Lorette & Jasmin"></iframe>
+                </div>
+            </div>
+            <div class="arabesque-watermark" aria-hidden="true" style="opacity:0.025; width:450px;height:450px;"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Lorette & Jasmin</div>
+            <div class="footer-links">
+                <a href="#esprit">L'esprit</a>
+                <a href="#services">Services</a>
+                <a href="#collection">Collection</a>
+                <a href="#avis">Avis</a>
+                <a href="#">CGV</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" class="footer-instagram">Instagram ↗</a>
+            </div>
+            <p class="footer-credit">Dépôt-vente nomade depuis 2020 — 6 Rue François Millet, Paris 16<sup>e</sup> — Sur rendez-vous uniquement<br>Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobileMenuToggle');
+            const nav = document.getElementById('headerNav');
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                });
+                // Fermer le menu au clic sur un lien
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                    });
+                });
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Reveal on scroll
+            const reveals = document.querySelectorAll('.reveal-hidden');
+            if (reveals.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.12,
+                };
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove('reveal-hidden');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                reveals.forEach(el => revealObserver.observe(el));
+
+                // Fallback : afficher tout après 2 secondes si jamais
+                setTimeout(() => {
+                    reveals.forEach(el => el.classList.remove('reveal-hidden'));
+                }, 2500);
+            } else {
+                // Si prefers-reduced-motion, on enlève tout de suite la classe
+                reveals.forEach(el => el.classList.remove('reveal-hidden'));
+            }
+
+            // Formulaire : empêcher l'envoi réel (démo)
+            const form = document.getElementById('estimationForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Demande envoyée — merci !';
+                    btn.style.background = 'var(--laiton-eteint)';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = 'var(--suie)';
+                    }, 3000);
+                    form.reset();
+                });
+            }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Lorette & Jasmin",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "6 Rue François Millet",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33614080622",
+            "email": "loretteetjasmin@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "64"
+            },
+            "description": "Estimation à domicile, dépôt-vente et location de sacs de luxe — sans vitrine, sur rendez-vous au cœur du 16e arrondissement de Paris.",
+            "url": "https://agence.mooo.com/lorette-jasmin",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "description": "Sur rendez-vous uniquement"
+            }
+        }
+    </script>
+</body>
+</html>
