@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMP Pont de Neuilly – Achat OR / Rachat OR / Vente OR – Rachat Bijoux OR | Neuilly-sur-Seine</title>
+    <meta name="description" content="LMP Pont de Neuilly, votre comptoir d'expertise et de rachat d'or, bijoux, pièces et lingots au 203 avenue Charles de Gaulle à Neuilly-sur-Seine. Estimation gratuite, paiement immédiat. Note 4.9★.">
+    <meta property="og:title" content="LMP Pont de Neuilly – Achat & Rachat d'Or | Neuilly-sur-Seine">
+    <meta property="og:description" content="Sandrine, votre experte de quartier, estime et rachète votre or en toute confidentialité au 203 avenue Charles de Gaulle. Estimation gratuite, paiement immédiat.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪙</text></svg>">
+    <style>
+        :root {
+            --fond: #F7F4ED;
+            --fond-sombre: #262220;
+            --encre: #2B241D;
+            --or-mordore: #C8A45C;
+            --pin-sylvestre: #374F45;
+            --lin: #E1D9CB;
+            --chanvre-rgb: 247, 244, 237;
+            --ebene-rgb: 38, 34, 32;
+            --or-rgb: 200, 164, 92;
+            --pin-rgb: 55, 79, 69;
+            --transition-base: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-spring: 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --shadow-soft: 0 2px 24px rgba(43, 36, 29, 0.06);
+            --shadow-card: 0 4px 32px rgba(43, 36, 29, 0.09);
+            --shadow-elevated: 0 12px 48px rgba(43, 36, 29, 0.14);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --max-width: 1240px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* Filigrane lingotin */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='44' viewBox='0 0 80 44' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3' y='5' width='74' height='34' rx='5' fill='none' stroke='%23C8A45C' stroke-width='0.6' opacity='0.18'/%3E%3Crect x='3' y='5' width='74' height='34' rx='5' fill='%23C8A45C' opacity='0.03'/%3E%3Cline x1='22' y1='14' x2='58' y2='14' stroke='%23C8A45C' stroke-width='0.4' opacity='0.14'/%3E%3Cline x1='25' y1='20' x2='55' y2='20' stroke='%23C8A45C' stroke-width='0.35' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 140px 80px;
+            background-position: 5% 10%;
+            opacity: 0.55;
+            transition: opacity 0.8s ease;
+        }
+
+        body.scrolled-deep::before {
+            opacity: 0.28;
+            background-position: 5% 12%;
+        }
+
+        /* Filet décoratif global subtil */
+        .global-filigree {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, var(--or-mordore) 8%, var(--or-mordore) 12%, transparent 20%);
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        body.scrolled-past-hero .global-filigree {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 244, 237, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--lin);
+            padding: 0 clamp(16px, 3vw, 48px);
+            transition: box-shadow 0.4s ease, background 0.4s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: var(--shadow-soft);
+            background: rgba(247, 244, 237, 0.94);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: clamp(56px, 7vh, 72px);
+            gap: 20px;
+        }
+
+        .header-brand {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-brand span {
+            display: block;
+            font-size: 0.65em;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--pin-sylvestre);
+            text-transform: uppercase;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2vw, 28px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--encre);
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--or-mordore);
+            transition: width var(--transition-base);
+        }
+
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-nav a:hover {
+            color: var(--pin-sylvestre);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--pin-sylvestre);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.03em;
+            transition: all var(--transition-spring);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid transparent;
+        }
+
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--or-mordore);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            border-radius: 30px;
+            z-index: 0;
+        }
+
+        .header-cta:hover::before,
+        .header-cta:focus-visible::before {
+            opacity: 1;
+        }
+
+        .header-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-cta:hover {
+            border-color: var(--or-mordore);
+            box-shadow: 0 4px 20px rgba(200, 164, 92, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .header-cta:focus-visible {
+            outline: 3px solid var(--or-mordore);
+            outline-offset: 3px;
+        }
+
+        .badge-google-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--encre);
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+        }
+
+        .badge-google-header .stars {
+            color: #FBBC04;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .badge-google-header .note {
+            color: var(--pin-sylvestre);
+            font-weight: 700;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            position: relative;
+            min-height: clamp(520px, 78vh, 760px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--fond-sombre);
+            isolation: isolate;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) saturate(0.8) contrast(1.05);
+            animation: hero-img-reveal 1.6s cubic-bezier(0.25, 0.1, 0.15, 1) forwards;
+        }
+
+        @keyframes hero-img-reveal {
+            from {
+                transform: scale(1.06);
+                filter: brightness(0.3) saturate(0.5) contrast(1.1) blur(4px);
+            }
+            to {
+                transform: scale(1);
+                filter: brightness(0.55) saturate(0.8) contrast(1.05) blur(0);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 55% 40%, rgba(38, 34, 32, 0.15) 0%, rgba(38, 34, 32, 0.7) 70%, rgba(38, 34, 32, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: clamp(24px, 5vw, 60px) clamp(20px, 4vw, 48px);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(18px, 3vh, 32px);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(200, 164, 92, 0.35);
+            border-radius: 30px;
+            padding: 8px 18px;
+            color: #fff;
+            font-size: clamp(0.78rem, 1vw, 0.88rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            width: fit-content;
+            animation: fade-in-up 0.8s 0.2s cubic-bezier(0.25, 0.1, 0.15, 1) both;
+        }
+
+        .hero-badge .stars {
+            color: #FBBC04;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+        }
+
+        .hero-badge .note-hero {
+            font-weight: 700;
+            color: var(--or-mordore);
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5.5vw, 4rem);
+            line-height: 1.12;
+            color: #fff;
+            letter-spacing: -0.015em;
+            max-width: 750px;
+            animation: fade-in-up 0.8s 0.35s cubic-bezier(0.25, 0.1, 0.15, 1) both;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--or-mordore);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 620px;
+            line-height: 1.55;
+            font-weight: 400;
+            letter-spacing: 0.015em;
+            animation: fade-in-up 0.8s 0.5s cubic-bezier(0.25, 0.1, 0.15, 1) both;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            animation: fade-in-up 0.8s 0.65s cubic-bezier(0.25, 0.1, 0.15, 1) both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--pin-sylvestre);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            letter-spacing: 0.03em;
+            transition: all var(--transition-spring);
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 60%;
+            height: 1.5px;
+            background: var(--or-mordore);
+            transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origin: center;
+        }
+
+        .btn-primary:hover::after,
+        .btn-primary:focus-visible::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .btn-primary:hover {
+            border-color: var(--or-mordore);
+            box-shadow: 0 6px 28px rgba(200, 164, 92, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--or-mordore);
+            outline-offset: 4px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            letter-spacing: 0.03em;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            transition: all var(--transition-base);
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--or-mordore);
+            background: rgba(200, 164, 92, 0.1);
+            color: var(--or-mordore);
+        }
+
+        .btn-outline:focus-visible {
+            outline: 3px solid var(--or-mordore);
+            outline-offset: 4px;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== SECTIONS GÉNÉRALES ========== */
+        .section {
+            padding: clamp(48px, 8vh, 96px) clamp(20px, 4vw, 48px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: var(--fond-sombre);
+            color: #F7F4ED;
+        }
+
+        .section-dark .section-label {
+            color: var(--or-mordore);
+        }
+
+        .section-dark .section-title {
+            color: #F7F4ED;
+        }
+
+        .section-dark .section-text {
+            color: rgba(247, 244, 237, 0.8);
+        }
+
+        .section-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(0.72rem, 0.9vw, 0.8rem);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--pin-sylvestre);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            line-height: 1.18;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: clamp(12px, 2vh, 20px);
+        }
+
+        .section-text {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: rgba(43, 36, 29, 0.78);
+            max-width: 680px;
+        }
+
+        .section-dark .section-text {
+            color: rgba(247, 244, 237, 0.75);
+        }
+
+        /* Filet coulissant décoratif */
+        .ornament-line {
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--or-mordore);
+            margin: 0 0 24px 0;
+            transition: width 1s cubic-bezier(0.25, 0.1, 0.15, 1);
+            border-radius: 1px;
+        }
+
+        .ornament-line.revealed {
+            width: clamp(40px, 8vw, 90px);
+        }
+
+        /* ========== SECTION 1 : Votre or, notre expertise ========== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(32px, 6vw, 64px);
+            align-items: center;
+        }
+
+        .expertise-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .expertise-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 50%;
+            transition: transform 0.6s ease;
+        }
+
+        .expertise-visual:hover img {
+            transform: scale(1.03);
+        }
+
+        .expertise-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(200, 164, 92, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* ========== SECTION 2 : Étapes ========== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 36px);
+        }
+
+        .step-card {
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: var(--radius-md);
+            padding: clamp(24px, 4vw, 36px);
+            position: relative;
+            transition: all var(--transition-base);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--or-mordore);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .step-card:hover::before,
+        .step-card:focus-within::before {
+            transform: scaleX(1);
+        }
+
+        .step-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elevated);
+            border-color: var(--or-mordore);
+        }
+
+        .step-number {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: var(--or-mordore);
+            line-height: 1;
+            opacity: 0.7;
+            margin-bottom: 8px;
+            letter-spacing: -0.03em;
+        }
+
+        .step-card h3 {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+            color: var(--encre);
+            margin-bottom: 8px;
+            letter-spacing: -0.005em;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            color: rgba(43, 36, 29, 0.7);
+            line-height: 1.6;
+        }
+
+        /* ========== SECTION 3 : Sandrine ========== */
+        .sandrine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: center;
+        }
+
+        .sandrine-portrait {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            aspect-ratio: 1;
+            max-width: 360px;
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: var(--shadow-elevated);
+            border: 4px solid var(--lin);
+            transition: border-color 0.4s ease;
+        }
+
+        .sandrine-portrait:hover {
+            border-color: var(--or-mordore);
+        }
+
+        .sandrine-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: sepia(0.12) saturate(0.9) contrast(1.04);
+            transition: filter 0.5s ease;
+        }
+
+        .sandrine-portrait:hover img {
+            filter: sepia(0.05) saturate(1) contrast(1.06);
+        }
+
+        .sandrine-quote {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 500;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.5;
+            color: var(--encre);
+            font-style: italic;
+            position: relative;
+            padding-left: 28px;
+            border-left: 3px solid var(--or-mordore);
+        }
+
+        /* ========== SECTION 4 : Rachat ========== */
+        .rachat-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            list-style: none;
+        }
+
+        .rachat-list li {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(200, 164, 92, 0.25);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all var(--transition-base);
+            color: #F7F4ED;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+        }
+
+        .rachat-list li:hover {
+            background: rgba(200, 164, 92, 0.1);
+            border-color: var(--or-mordore);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== SECTION 5 : Cours ========== */
+        .cours-highlight {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 36px);
+        }
+
+        .cours-card {
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: var(--radius-md);
+            padding: clamp(20px, 3vw, 32px);
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cours-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 50%;
+            height: 1.5px;
+            background: var(--or-mordore);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .cours-card:hover::after,
+        .cours-card:focus-within::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .cours-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-elevated);
+            border-color: var(--or-mordore);
+        }
+
+        .cours-card .metal-icon {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .cours-card h4 {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--encre);
+            margin-bottom: 4px;
+        }
+
+        .cours-card .cours-note {
+            font-size: 0.85rem;
+            color: var(--pin-sylvestre);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* ========== SECTION 6 : Avis ========== */
+        .avis-block {
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: var(--radius-lg);
+            padding: clamp(28px, 5vw, 48px);
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+
+        .avis-block .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: 24px;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+        }
+
+        .avis-block .google-badge .stars-lg {
+            color: #FBBC04;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .avis-block .google-badge .note-lg {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--pin-sylvestre);
+        }
+
+        .avis-quote {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 500;
+            font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+            line-height: 1.45;
+            color: var(--encre);
+            font-style: italic;
+            max-width: 700px;
+            position: relative;
+            padding-left: 32px;
+            border-left: 3px solid var(--or-mordore);
+        }
+
+        .avis-author {
+            font-size: 0.9rem;
+            color: rgba(43, 36, 29, 0.65);
+            margin-top: 10px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* ========== SECTION 7 : RDV ========== */
+        .rdv-card {
+            background: #fff;
+            border: 1px solid var(--lin);
+            border-radius: var(--radius-lg);
+            padding: clamp(28px, 5vw, 48px);
+            box-shadow: var(--shadow-card);
+            text-align: center;
+        }
+
+        .rdv-card .horaires-bloc {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: var(--encre);
+            background: rgba(247, 244, 237, 0.6);
+            border-radius: var(--radius-md);
+            padding: 16px 24px;
+            letter-spacing: 0.02em;
+        }
+
+        .rdv-card .horaires-bloc strong {
+            color: var(--pin-sylvestre);
+        }
+
+        /* ========== SECTION 8 : Comptoir ========== */
+        .comptoir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: start;
+        }
+
+        .comptoir-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comptoir-info .info-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--encre);
+            line-height: 1.5;
+        }
+
+        .comptoir-info .info-line .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--or-mordore);
+        }
+
+        .comptoir-info a {
+            color: var(--pin-sylvestre);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .comptoir-info a:hover {
+            color: var(--or-mordore);
+        }
+
+        .comptoir-info a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--or-mordore);
+            transition: width var(--transition-base);
+        }
+
+        .comptoir-info a:hover::after {
+            width: 100%;
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            border: 1px solid var(--lin);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--fond-sombre);
+            color: rgba(247, 244, 237, 0.7);
+            padding: clamp(32px, 5vh, 56px) clamp(20px, 4vw, 48px);
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+
+        .site-footer .footer-brand {
+            font-family: 'Fraunces', 'Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #F7F4ED;
+            margin-bottom: 8px;
+        }
+
+        .site-footer a {
+            color: var(--or-mordore);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: #F7F4ED;
+        }
+
+        .site-footer .credits {
+            margin-top: 20px;
+            font-size: 0.78rem;
+            opacity: 0.6;
+        }
+
+        /* ========== REVEAL OBSERVER CLASSES ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.15, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.15, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 767px) {
+            .header-nav {
+                display: none;
+            }
+            .header-cta {
+                padding: 8px 14px;
+                font-size: 0.78rem;
+            }
+            .badge-google-header {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+            .badge-google-header .stars {
+                font-size: 0.7rem;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            .expertise-visual {
+                order: -1;
+                aspect-ratio: 3/2;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .step-number {
+                font-size: 2.5rem;
+            }
+            .sandrine-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .sandrine-portrait {
+                max-width: 240px;
+                margin: 0 auto;
+            }
+            .sandrine-quote {
+                text-align: left;
+                padding-left: 20px;
+                font-size: 1rem;
+            }
+            .cours-highlight {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .comptoir-grid {
+                grid-template-columns: 1fr;
+            }
+            .rachat-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: clamp(1.6rem, 7vw, 2.4rem);
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+            .step-number {
+                font-size: 3rem;
+            }
+            .cours-highlight {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+            .sandrine-grid {
+                grid-template-columns: 1fr 1.2fr;
+            }
+            .sandrine-portrait {
+                max-width: 280px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .expertise-visual {
+                aspect-ratio: 5/4;
+            }
+            .sandrine-portrait {
+                max-width: 380px;
+            }
+        }
+
+        /* Focus global */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2.5px solid var(--or-mordore);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--pin-sylvestre);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 0 0 6px 6px;
+            z-index: 200;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="global-filigree" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="header-brand" aria-label="LMP Pont de Neuilly – Accueil">
+                LMP Pont de Neuilly
+                <span>Or & Métaux Précieux</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="header-nav">
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#sandrine">Votre experte</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#comptoir">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="badge-google-header" aria-label="Note Google 4.9 sur 5">
+                <span class="stars">★★★★★</span>
+                <span class="note">4.9</span>
+                <span>(212 avis)</span>
+            </div>
+            <a href="#rdv" class="header-cta"><span>Prendre RDV</span></a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Comptoir LMP Pont de Neuilly – Intérieur chaleureux avec boiseries et balance de précision" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-badge" aria-label="Note Google 4.9 sur 5 – 212 avis">
+                    <span class="stars">★★★★★</span>
+                    <span class="note-hero">4.9</span>
+                    <span>• 212 avis Google</span>
+                </div>
+                <h1 id="hero-title">Vos bijoux &amp; métaux précieux ont leur adresse à <em>Neuilly</em></h1>
+                <p class="hero-subtitle">Sandrine, votre experte de quartier, estime et rachète votre or en toute confidentialité, au 203 de l'avenue Charles de Gaulle. Estimation gratuite, paiement immédiat.</p>
+                <div class="hero-actions">
+                    <a href="#rdv" class="btn-primary">Prendre rendez-vous</a>
+                    <a href="tel:+33189710965" class="btn-outline">📞 01 89 71 09 65</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : Votre or, notre expertise -->
+        <section class="section" id="expertise" aria-labelledby="expertise-title">
+            <div class="section-inner">
+                <span class="ornament-line" aria-hidden="true"></span>
+                <div class="expertise-grid">
+                    <div class="reveal">
+                        <span class="section-label">Notre métier</span>
+                        <h2 class="section-title" id="expertise-title">Votre or,<br>notre expertise</h2>
+                        <p class="section-text">Depuis notre comptoir de l'avenue Charles de Gaulle, nous accompagnons les Neuilléens dans l'estimation et la vente de leurs bijoux, pièces et lingots depuis plus de 10 ans. Une expertise de proximité, sans intermédiaire, avec des cours certifiés.</p>
+                    </div>
+                    <div class="expertise-visual reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Intérieur du comptoir LMP Pont de Neuilly – ambiance feutrée, balance professionnelle" loading="lazy" width="600" height="450">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : Parcours étape par étape -->
+        <section class="section section-dark" id="parcours" aria-labelledby="parcours-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Déroulé</span>
+                <h2 class="section-title reveal reveal-delay-1" id="parcours-title">Votre parcours,<br>étape par étape</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom: clamp(24px, 4vh, 40px);">Un processus simple et transparent, pensé pour votre sérénité.</p>
+                <div class="steps-grid">
+                    <div class="step-card reveal reveal-delay-1">
+                        <div class="step-number">1</div>
+                        <h3>Prenez rendez-vous</h3>
+                        <p>En ligne ou passez nous voir directement au comptoir. Nous sommes ouverts du mardi au samedi, avec une amplitude horaire qui s'adapte à votre emploi du temps.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-2">
+                        <div class="step-number">2</div>
+                        <h3>Estimation transparente</h3>
+                        <p>Sandrine procède à une estimation gratuite et transparente devant vous, balances et poinçons à l'appui. Chaque gramme est pesé, chaque titre vérifié.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-3">
+                        <div class="step-number">3</div>
+                        <h3>Paiement immédiat</h3>
+                        <p>Vous repartez avec votre paiement immédiat ou un devoir de réflexion, selon votre choix. Aucune pression, uniquement de la confiance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : Sandrine -->
+        <section class="section" id="sandrine" aria-labelledby="sandrine-title">
+            <div class="section-inner">
+                <div class="sandrine-grid">
+                    <div class="sandrine-portrait reveal">
+                        <img src="assets/maps-1.jpg" alt="Portrait de Sandrine, votre experte dédiée chez LMP Pont de Neuilly" loading="lazy" width="400" height="400">
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <span class="section-label">Votre interlocutrice</span>
+                        <h2 class="section-title" id="sandrine-title">Sandrine, votre experte dédiée</h2>
+                        <p class="section-text">Avec un œil formé à l'orfèvrerie et une parfaite connaissance du marché, Sandrine vous reçoit personnellement. Pas de guichet automate : un échange humain, de la transparence, et un engagement écrit du prix proposé.</p>
+                        <blockquote class="sandrine-quote reveal reveal-delay-2" style="margin-top:20px;">
+                            « Chaque bijou a une histoire. Mon rôle est de l'estimer avec justesse, dans le respect de celle ou celui qui me le confie. »
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : Nous rachetons -->
+        <section class="section section-dark" id="rachat" aria-labelledby="rachat-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Notre périmètre</span>
+                <h2 class="section-title reveal reveal-delay-1" id="rachat-title">Nous rachetons<br>en toute sérénité</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom: clamp(24px, 4vh, 40px);">Chaque objet est testé et pesé devant vous, au prix réel des métaux précieux.</p>
+                <ul class="rachat-list reveal reveal-delay-3">
+                    <li>💍 Bijoux en or<br><small>18K, 14K, 9K</small></li>
+                    <li>🪙 Pièces d'or<br><small>20F Napoléon, 50 pesos…</small></li>
+                    <li>🏗️ Lingots &amp; lingotins</li>
+                    <li>🥈 Argent</li>
+                    <li>🔬 Platine</li>
+                    <li>💎 Diamants</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : Cours certifiés -->
+        <section class="section" id="cours" aria-labelledby="cours-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Transparence</span>
+                <h2 class="section-title reveal reveal-delay-1" id="cours-title">Cours certifiés,<br>transparence absolue</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom: clamp(24px, 4vh, 40px);">Les cours de l'or, de l'argent et du platine sont actualisés en temps réel. Nous affichons nos prix de rachat en vitrine et sur cette page. Consultez notre FAQ pour comprendre le mécanisme d'un rachat.</p>
+                <div class="cours-highlight">
+                    <div class="cours-card reveal reveal-delay-1">
+                        <span class="metal-icon" aria-hidden="true">🪙</span>
+                        <h4>Or</h4>
+                        <p class="cours-note">Cours en temps réel</p>
+                        <p style="font-size:0.85rem;color:rgba(43,36,29,0.6);">Affiché en vitrine</p>
+                    </div>
+                    <div class="cours-card reveal reveal-delay-2">
+                        <span class="metal-icon" aria-hidden="true">🥈</span>
+                        <h4>Argent</h4>
+                        <p class="cours-note">Cours en temps réel</p>
+                        <p style="font-size:0.85rem;color:rgba(43,36,29,0.6);">Affiché en vitrine</p>
+                    </div>
+                    <div class="cours-card reveal reveal-delay-3">
+                        <span class="metal-icon" aria-hidden="true">🔬</span>
+                        <h4>Platine</h4>
+                        <p class="cours-note">Cours en temps réel</p>
+                        <p style="font-size:0.85rem;color:rgba(43,36,29,0.6);">Affiché en vitrine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : Avis -->
+        <section class="section section-dark" id="avis" aria-labelledby="avis-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Témoignages</span>
+                <h2 class="section-title reveal reveal-delay-1" id="avis-title">Ce que nos voisins<br>disent de nous</h2>
+                <div class="avis-block reveal reveal-delay-2">
+                    <div class="google-badge" aria-label="Note Google 4.9 sur 5 – 212 avis">
+                        <span class="stars-lg">★★★★★</span>
+                        <span class="note-lg">4.9</span>
+                        <span>/5 • 212 avis Google</span>
+                    </div>
+                    <blockquote class="avis-quote">
+                        « Accueil très professionnel, estimation claire, je suis reparti avec un chèque en moins de 20 minutes. »
+                    </blockquote>
+                    <p class="avis-author">— Marie L., Neuilly-sur-Seine</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7 : RDV -->
+        <section class="section" id="rdv" aria-labelledby="rdv-title">
+            <div class="section-inner">
+                <div class="rdv-card reveal">
+                    <span class="section-label">Agenda</span>
+                    <h2 class="section-title" id="rdv-title" style="margin-bottom:8px;">Prenez rendez-vous avec Sandrine</h2>
+                    <p class="section-text" style="margin:0 auto 20px;max-width:560px;">Choisissez un créneau directement dans notre agenda en ligne.</p>
+                    <div class="horaires-bloc">
+                        <span><strong>Ouvert</strong> du mardi au samedi</span>
+                        <span><strong>10h – 13h</strong> et <strong>14h – 19h</strong></span>
+                        <span>Samedi sans interruption</span>
+                    </div>
+                    <div style="margin-top:20px;">
+                        <a href="tel:+33189710965" class="btn-primary">📞 Appeler pour un RDV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8 : Venir au comptoir -->
+        <section class="section section-dark" id="comptoir" aria-labelledby="comptoir-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Accès</span>
+                <h2 class="section-title reveal reveal-delay-1" id="comptoir-title">Venir au comptoir</h2>
+                <div class="comptoir-grid">
+                    <div class="comptoir-info reveal reveal-delay-2">
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <span><strong>203 Avenue Charles de Gaulle</strong><br>92200 Neuilly-sur-Seine</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">🚇</span>
+                            <span>À 3 minutes du métro <strong>Pont de Neuilly</strong> (ligne 1)</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">🅿️</span>
+                            <span>Parking souterrain à proximité</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">📞</span>
+                            <span><a href="tel:+33189710965">01 89 71 09 65</a></span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">✉️</span>
+                            <span><a href="mailto:contact@lesmetauxprecieux.com">contact@lesmetauxprecieux.com</a></span>
+                        </div>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-3">
+                        <iframe src="https://maps.google.com/maps?q=LMP+Pont+de+Neuilly+-+Achat+OR+%2F+Rachat+OR+%2F+Vente+OR+-+Rachat+Bijoux+OR+203+Avenue+Charles+de+Gaulle%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – LMP Pont de Neuilly"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-brand">LMP Pont de Neuilly</div>
+        <p>Achat OR / Rachat OR / Vente OR – Rachat Bijoux OR</p>
+        <p>203 Avenue Charles de Gaulle, 92200 Neuilly-sur-Seine</p>
+        <p>
+            <a href="tel:+33189710965">01 89 71 09 65</a> &nbsp;·&nbsp;
+            <a href="mailto:contact@lesmetauxprecieux.com">contact@lesmetauxprecieux.com</a>
+        </p>
+        <p class="credits">Site créé par <a href="https://agence.mooo.com/lmp-pont-de-neuilly-achat-or-rachat-or-vente-or-rachat-bijoux-or" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "LMP Pont de Neuilly – Achat OR / Rachat OR / Vente OR – Rachat Bijoux OR",
+            "description": "Comptoir d'expertise et de rachat d'or, bijoux, pièces et lingots. Estimation gratuite, paiement immédiat. Sandrine, votre experte dédiée.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "203 Avenue Charles de Gaulle",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33189710965",
+            "email": "contact@lesmetauxprecieux.com",
+            "url": "https://agence.mooo.com/lmp-pont-de-neuilly-achat-or-rachat-or-vente-or-rachat-bijoux-or",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "212"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "14:00",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // IntersectionObserver pour les reveals au scroll
+            const revealEls = document.querySelectorAll('.reveal');
+            const ornamentLine = document.querySelector('.ornament-line');
+            const globalFiligree = document.querySelector('.global-filigree');
+            const siteHeader = document.getElementById('site-header');
+            const heroSection = document.getElementById('hero');
+            const body = document.body;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // Observer spécifique pour le filet décoratif de la section expertise
+            const expertiseSection = document.getElementById('expertise');
+            if (expertiseSection && ornamentLine) {
+                const ornamentObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            ornamentLine.classList.add('revealed');
+                            ornamentObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 });
+                ornamentObserver.observe(expertiseSection);
+            }
+
+            // Gestion du scroll pour le header et le filigrane global
+            let scrollTicking = false;
+            const scrollHandler = () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        const scrollY = window.scrollY;
+                        const heroHeight = heroSection ? heroSection.offsetHeight : 600;
+
+                        if (scrollY > 60) {
+                            siteHeader.classList.add('scrolled');
+                        } else {
+                            siteHeader.classList.remove('scrolled');
+                        }
+
+                        if (scrollY > heroHeight * 0.5) {
+                            body.classList.add('scrolled-past-hero');
+                        } else {
+                            body.classList.remove('scrolled-past-hero');
+                        }
+
+                        if (scrollY > heroHeight * 0.8) {
+                            body.classList.add('scrolled-deep');
+                        } else {
+                            body.classList.remove('scrolled-deep');
+                        }
+
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            };
+
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            scrollHandler();
+
+            // Animation d'entrée pour les éléments du héro (déjà gérée par les keyframes CSS)
+            // Gestion du focus pour les liens d'ancrage
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Mettre le focus sur la section pour l'accessibilité
+                        target.setAttribute('tabindex', '-1');
+                        target.focus({ preventScroll: true });
+                        setTimeout(() => target.removeAttribute('tabindex'), 1000);
+                    }
+                });
+            });
+
+            // Réinitialiser l'ornement line si on remonte
+            if (ornamentLine && expertiseSection) {
+                const resetOrnamentObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting && ornamentLine.classList.contains('revealed')) {
+                            ornamentLine.classList.remove('revealed');
+                            // Réobserver pour la prochaine fois
+                            const reObserve = new IntersectionObserver((e2) => {
+                                if (e2[0].isIntersecting) {
+                                    ornamentLine.classList.add('revealed');
+                                    reObserve.disconnect();
+                                }
+                            }, { threshold: 0.25 });
+                            reObserve.observe(expertiseSection);
+                            resetOrnamentObserver.disconnect();
+                        }
+                    });
+                }, { threshold: 0.05 });
+                resetOrnamentObserver.observe(expertiseSection);
+            }
+        })();
+    </script>
+</body>
+</html>
