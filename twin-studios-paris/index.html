@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Studios Paris — Studio d'enregistrement Paris 16ᵉ | Musique & IA</title>
+    <meta name="description" content="Dans le silence du 16ᵉ, l'écho des plus grands. Studio d'enregistrement mythique à Paris — musique, broadcast, intelligence artificielle, événements et label. SSL, mastering, doublage.">
+    <meta property="og:title" content="Twin Studios Paris — Studio d'enregistrement Paris 16ᵉ">
+    <meta property="og:description" content="Derrière une porte discrète, au cœur d'un lieu mythique, vos projets prennent leur pleine mesure — du disque d'or au deep learning.">
+    <meta property="og:image" content="https://agence.mooo.com/twin-studios-paris/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230F0E17' stroke='%23C9A44B' stroke-width='1.5'/%3E%3Cpath d='M9 20 Q12 10 16 13 Q20 16 23 12' fill='none' stroke='%23C9A44B' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Twin Studios Paris",
+            "description": "Studio d'enregistrement mythique dans le 16ᵉ arrondissement de Paris — musique, broadcast, IA, événements, label.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Avenue du Maréchal Maunoury",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145040044",
+            "email": "info@twinstudiosparis.com",
+            "image": "https://agence.mooo.com/twin-studios-paris/assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.9",
+                "reviewCount": "51",
+                "bestRating": "5"
+            },
+            "openingHours": "Mo-Fr 10:00-19:00",
+            "url": "https://agence.mooo.com/twin-studios-paris"
+        }
+    </script>
+    <style>
+        :root {
+            --fond: #0F0E17;
+            --surface: #1A1A24;
+            --encre: #E8E4DC;
+            --or: #C9A44B;
+            --or-muted: #a88a3a;
+            --chene: #5C3A21;
+            --diode: #2F6B5A;
+            --diode-glow: #3d8a73;
+            --grain-opacity: 0.04;
+            --transition-slow: 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-medium: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-fast: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            background-color: var(--fond);
+            color: var(--encre);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Karla', system-ui, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            background-color: var(--fond);
+            color: var(--encre);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 1.5rem;
+            background: rgba(15, 14, 23, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(201, 164, 75, 0.12);
+            transition: padding var(--transition-medium), background var(--transition-medium);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .header--scrolled {
+            padding: 0.6rem 1.5rem;
+            background: rgba(15, 14, 23, 0.94);
+            border-bottom-color: rgba(201, 164, 75, 0.22);
+        }
+
+        .header__brand {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            letter-spacing: 0.04em;
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: color var(--transition-fast);
+        }
+        .header__brand span {
+            color: var(--or);
+        }
+        .header__brand:hover {
+            color: var(--or);
+        }
+        .header__brand:hover span {
+            color: var(--encre);
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header__nav a {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--encre);
+            text-decoration: none;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color var(--transition-fast);
+            white-space: nowrap;
+        }
+        .header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--or);
+            transition: width var(--transition-medium);
+        }
+        .header__nav a:hover,
+        .header__nav a:focus-visible {
+            color: var(--or);
+        }
+        .header__nav a:hover::after,
+        .header__nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header__cta {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--fond);
+            background: var(--or);
+            border: none;
+            padding: 0.55em 1.3em;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        .header__cta:hover {
+            background: #d4b35c;
+            box-shadow: 0 0 28px rgba(201, 164, 75, 0.35);
+            transform: translateY(-1px);
+        }
+        .header__cta:focus-visible {
+            outline: 2px solid var(--or);
+            outline-offset: 3px;
+        }
+        .header__cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        .header__cta:hover::before {
+            transform: translateX(100%);
+        }
+
+        .header__burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            flex-shrink: 0;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+            width: 32px;
+        }
+        .header__burger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 1px;
+            transition: transform var(--transition-medium), opacity var(--transition-medium);
+        }
+        .header__burger--open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .header__burger--open span:nth-child(2) {
+            opacity: 0;
+        }
+        .header__burger--open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile nav overlay */
+        .mobile-nav {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(15, 14, 23, 0.97);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-medium);
+        }
+        .mobile-nav--open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-nav a {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: color var(--transition-fast);
+        }
+        .mobile-nav a:hover {
+            color: var(--or);
+        }
+        .mobile-nav__cta {
+            margin-top: 1rem;
+            font-family: 'Karla', sans-serif !important;
+            font-size: 1rem !important;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--fond) !important;
+            background: var(--or);
+            padding: 0.7em 2em;
+            border-radius: 3px;
+        }
+        .mobile-nav__cta:hover {
+            background: #d4b35c !important;
+            color: var(--fond) !important;
+        }
+
+        @media (max-width: 860px) {
+            .header__nav {
+                display: none;
+            }
+            .header__burger {
+                display: flex;
+            }
+            .header__cta.desktop-only {
+                display: none;
+            }
+        }
+        @media (min-width: 861px) {
+            .header__cta.mobile-only {
+                display: none;
+            }
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 6rem 1.5rem 4rem;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.35) contrast(1.15) saturate(0.6);
+            transform: scale(1.04);
+        }
+        .hero__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 55% 40%, rgba(15, 14, 23, 0.3) 0%, rgba(15, 14, 23, 0.75) 50%, rgba(15, 14, 23, 0.95) 100%);
+        }
+        .hero__vignette {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(15, 14, 23, 0.55) 70%, rgba(15, 14, 23, 0.9) 100%);
+            pointer-events: none;
+        }
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .hero__overline {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--or);
+            opacity: 0;
+            animation: fadeUp 0.8s 0.15s forwards;
+        }
+        .hero__title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+            max-width: 900px;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.3s forwards;
+        }
+        .hero__title em {
+            font-style: italic;
+            color: var(--or);
+        }
+        .hero__subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height: 1.6;
+            color: rgba(232, 228, 220, 0.78);
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.5s forwards;
+        }
+        .hero__wave {
+            margin-top: 0.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.65s forwards;
+        }
+        .hero__wave svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+        .hero__wave path {
+            stroke: var(--or);
+            stroke-width: 1.6;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 10px rgba(201, 164, 75, 0.5));
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: drawWave 2.2s 0.7s forwards cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        @keyframes drawWave {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero__title,
+            .hero__subtitle,
+            .hero__overline,
+            .hero__wave {
+                animation: none;
+                opacity: 1;
+            }
+            .hero__wave path {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Rating badge */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Karla', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--encre);
+            background: var(--surface);
+            border: 1px solid rgba(201, 164, 75, 0.3);
+            padding: 0.4em 0.9em;
+            border-radius: 20px;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.7s forwards;
+            align-self: flex-start;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+        .rating-badge:hover {
+            border-color: var(--or);
+            box-shadow: 0 0 18px rgba(201, 164, 75, 0.2);
+        }
+        .rating-badge__stars {
+            color: var(--or);
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
+        }
+        .rating-badge__count {
+            color: rgba(232, 228, 220, 0.6);
+            font-weight: 400;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section__title {
+            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 7vw, 6.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.03em;
+            color: var(--encre);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .section__title--offset {
+            text-indent: -0.08em;
+            padding-left: 0.08em;
+        }
+        @media (min-width: 768px) {
+            .section__title--offset {
+                margin-left: clamp(0px, 5vw, 80px);
+            }
+        }
+        .section__wave-divider {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 1.5rem 0 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section__wave-divider--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section__wave-divider path {
+            stroke: var(--or);
+            stroke-width: 1.4;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 8px rgba(201, 164, 75, 0.45));
+        }
+        .section__text {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.75;
+            color: rgba(232, 228, 220, 0.82);
+            max-width: 680px;
+        }
+        .section__text strong {
+            color: var(--encre);
+            font-weight: 600;
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 900px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.4rem;
+            }
+            .cards-grid .card:nth-child(4) {
+                grid-column: 1 / 3;
+            }
+            .cards-grid .card:nth-child(5) {
+                grid-column: 2 / 4;
+            }
+        }
+        @media (min-width: 1100px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem;
+            }
+            .cards-grid .card:nth-child(4) {
+                grid-column: 1 / 3;
+            }
+            .cards-grid .card:nth-child(5) {
+                grid-column: 2 / 4;
+            }
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid rgba(201, 164, 75, 0.1);
+            padding: 2rem 1.6rem;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color var(--transition-medium), box-shadow var(--transition-medium), transform var(--transition-medium);
+            isolation: isolate;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .card--visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s ease, transform 0.7s ease, border-color var(--transition-medium), box-shadow var(--transition-medium);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--or);
+            transition: height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            z-index: -1;
+        }
+        .card:hover::before {
+            height: 100%;
+        }
+        .card:hover {
+            border-color: rgba(201, 164, 75, 0.4);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 164, 75, 0.15) inset;
+            transform: translateY(-3px);
+        }
+        .card__indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--diode);
+            box-shadow: 0 0 10px var(--diode-glow), 0 0 20px rgba(47, 107, 90, 0.5);
+            margin-bottom: 1rem;
+            animation: diodePulse 3s ease-in-out infinite;
+        }
+        @keyframes diodePulse {
+            0%,
+            100% {
+                box-shadow: 0 0 8px var(--diode-glow), 0 0 16px rgba(47, 107, 90, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 16px var(--diode-glow), 0 0 32px rgba(47, 107, 90, 0.7);
+            }
+        }
+        .card__title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.7rem;
+        }
+        .card__text {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(232, 228, 220, 0.7);
+        }
+        .card__accent {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--or);
+            transition: color var(--transition-fast);
+        }
+        .card:hover .card__accent {
+            color: #d4b35c;
+        }
+
+        /* Preuve sociale - artist gallery */
+        .artists-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            margin-top: 2rem;
+            align-items: baseline;
+        }
+        .artists-gallery__name {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 500;
+            font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            position: relative;
+            transition: color var(--transition-medium);
+            cursor: default;
+            line-height: 1.2;
+        }
+        .artists-gallery__name::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--or);
+            transition: width var(--transition-medium);
+        }
+        .artists-gallery__name:hover {
+            color: var(--or);
+        }
+        .artists-gallery__name:hover::after {
+            width: 100%;
+        }
+        .artists-gallery__separator {
+            color: rgba(201, 164, 75, 0.5);
+            font-size: 1.4rem;
+            align-self: center;
+            font-family: 'Libre Baskerville', serif;
+            display: none;
+        }
+        @media (min-width: 600px) {
+            .artists-gallery__separator {
+                display: inline;
+            }
+        }
+
+        /* Le lieu */
+        .lieu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 768px) {
+            .lieu-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: start;
+            }
+        }
+        .lieu-grid__specs {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .lieu-grid__specs li {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(232, 228, 220, 0.78);
+            padding-left: 1.4rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .lieu-grid__specs li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--diode);
+            box-shadow: 0 0 8px var(--diode-glow);
+        }
+        .lieu-grid__image-wrapper {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(201, 164, 75, 0.15);
+        }
+        .lieu-grid__image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5) contrast(1.2) sepia(0.2) saturate(0.5);
+            transition: filter var(--transition-slow), transform var(--transition-slow);
+        }
+        .lieu-grid__image-wrapper:hover img {
+            filter: brightness(0.65) contrast(1.1) sepia(0.15) saturate(0.6);
+            transform: scale(1.03);
+        }
+        .lieu-grid__image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(201, 164, 75, 0.12) 0%, transparent 50%, rgba(15, 14, 23, 0.4) 100%);
+            pointer-events: none;
+        }
+
+        /* Infos pratiques */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .infos-block h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: var(--or);
+            margin-bottom: 0.8rem;
+        }
+        .infos-block p,
+        .infos-block a {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(232, 228, 220, 0.78);
+            line-height: 1.6;
+            text-decoration: none;
+            display: block;
+            transition: color var(--transition-fast);
+        }
+        .infos-block a:hover {
+            color: var(--or);
+        }
+        .infos-block__tel {
+            font-family: 'Libre Baskerville', serif !important;
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem) !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.02em !important;
+            color: var(--encre) !important;
+        }
+        .infos-block__tel:hover {
+            color: var(--or) !important;
+        }
+        .infos-block .hours-note {
+            font-style: italic;
+            font-size: 0.85rem;
+            color: rgba(232, 228, 220, 0.55);
+            margin-top: 0.4rem;
+        }
+
+        /* Contact form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 2px;
+            border: 1px solid rgba(201, 164, 75, 0.12);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.8em 1em;
+            background: rgba(15, 14, 23, 0.6);
+            border: 1px solid rgba(232, 228, 220, 0.15);
+            color: var(--encre);
+            border-radius: 2px;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--or);
+            box-shadow: 0 0 0 3px rgba(201, 164, 75, 0.1);
+        }
+        .contact-form textarea {
+            min-height: 120px;
+        }
+        .contact-form button {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--fond);
+            background: var(--or);
+            border: none;
+            padding: 0.8em 2em;
+            border-radius: 3px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+        }
+        .contact-form button:hover {
+            background: #d4b35c;
+            box-shadow: 0 0 22px rgba(201, 164, 75, 0.3);
+            transform: translateY(-1px);
+        }
+        .contact-form button:focus-visible {
+            outline: 2px solid var(--or);
+            outline-offset: 3px;
+        }
+
+        /* Map */
+        .map-wrapper {
+            margin-top: 2rem;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 164, 75, 0.15);
+            position: relative;
+        }
+        .map-wrapper iframe {
+            display: block;
+            filter: grayscale(60%) brightness(0.7) contrast(1.1);
+            transition: filter var(--transition-medium);
+        }
+        .map-wrapper:hover iframe {
+            filter: grayscale(30%) brightness(0.8) contrast(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 1.5rem;
+            border-top: 1px solid rgba(201, 164, 75, 0.15);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .footer__nap {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(232, 228, 220, 0.6);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .footer__nap strong {
+            color: var(--encre);
+            font-weight: 600;
+        }
+        .footer__credit {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(232, 228, 220, 0.35);
+            letter-spacing: 0.04em;
+        }
+        .footer__credit a {
+            color: rgba(232, 228, 220, 0.5);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        .footer__credit a:hover {
+            color: var(--or);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .card {
+                opacity: 1;
+                transform: none;
+            }
+            .card--visible {
+                transition: none;
+            }
+        }
+
+        /* Focus styles */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--or);
+            outline-offset: 3px;
+        }
+
+        /* Selection */
+        ::selection {
+            background: rgba(201, 164, 75, 0.35);
+            color: var(--encre);
+        }
+        ::-moz-selection {
+            background: rgba(201, 164, 75, 0.35);
+            color: var(--encre);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header" role="banner">
+        <a href="#" class="header__brand" aria-label="Twin Studios Paris — retour à l'accueil">Twin <span>Studios</span> Paris</a>
+        <nav class="header__nav" aria-label="Navigation principale">
+            <a href="#histoire">À propos</a>
+            <a href="#piliers">Expertises</a>
+            <a href="#confiance">Artistes</a>
+            <a href="#lieu">Le lieu</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="tel:+33145040044" class="header__cta desktop-only" aria-label="Appeler Twin Studios Paris">Appeler</a>
+        <button class="header__burger" id="burger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile nav overlay -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <a href="#histoire">À propos</a>
+        <a href="#piliers">Expertises</a>
+        <a href="#confiance">Artistes</a>
+        <a href="#lieu">Le lieu</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+33145040044" class="mobile-nav__cta">Appeler</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="hero__bg">
+            <img src="assets/maps-1.jpg" alt="Twin Studios Paris — intérieur du studio" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero__vignette"></div>
+        <div class="hero__content">
+            <p class="hero__overline">Studio d'enregistrement · Paris 16ᵉ</p>
+            <h1 class="hero__title" id="heroTitle">Dans le silence du&nbsp;16ᵉ, <em>l'écho</em> des plus&nbsp;grands.</h1>
+            <p class="hero__subtitle">Derrière une porte discrète, au cœur d'un lieu mythique, vos projets prennent leur pleine mesure — du disque d'or au deep learning.</p>
+            <div class="hero__wave" aria-hidden="true">
+                <svg viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0,28 C15,8 30,48 45,28 C60,8 75,50 90,30 C105,10 120,46 135,28 C150,10 165,52 180,32 C195,12 210,44 225,28 C240,12 255,50 270,30 C285,10 300,48 315,28 C330,8 345,46 360,26 C375,6 390,50 405,30 C420,10 435,44 450,27 C465,10 480,48 495,28 C510,8 525,46 540,26 C555,6 570,50 585,30 C600,10 615,44 630,27 C645,10 660,48 675,28 C690,8 700,42 700,30"/>
+                </svg>
+            </div>
+            <div class="rating-badge" aria-label="Note Google 3.9 étoiles sur 5 basée sur 51 avis">
+                <span class="rating-badge__stars">★★★★☆</span> 3.9
+                <span class="rating-badge__count">· 51 avis</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1 — L'histoire -->
+    <section class="section" id="histoire" aria-labelledby="histoireTitle">
+        <div class="section__inner">
+            <h2 class="section__title section__title--offset reveal" id="histoireTitle">Un lieu, une&nbsp;lignée</h2>
+            <svg class="section__wave-divider reveal" viewBox="0 0 500 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,20 C30,4 60,36 90,20 C120,4 150,38 180,20 C210,2 240,34 270,18 C300,2 330,36 360,20 C390,4 420,38 450,20 C480,2 500,30 500,20"/>
+            </svg>
+            <p class="section__text reveal">Depuis le milieu des années 1990, <strong>Twin Studios Paris</strong> cultive l'exception dans la quiétude du 16ᵉ arrondissement. Chaque surface, chaque micro, chaque câble témoigne d'un héritage technique jalousement entretenu. Ici, <strong>Rihanna, Lenny Kravitz ou Aya Nakamura</strong> ont confié leur voix à nos murs — et leur silence à notre discrétion.</p>
+        </div>
+    </section>
+
+    <!-- Section 2 — Cinq piliers -->
+    <section class="section" id="piliers" aria-labelledby="piliersTitle">
+        <div class="section__inner">
+            <h2 class="section__title reveal" id="piliersTitle">Cinq territoires, une&nbsp;exigence</h2>
+            <svg class="section__wave-divider reveal" viewBox="0 0 500 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,18 C25,5 50,35 75,18 C100,1 125,32 150,17 C175,2 200,34 225,18 C250,2 275,36 300,19 C325,2 350,33 375,18 C400,3 425,35 450,18 C475,1 500,28 500,18"/>
+            </svg>
+            <div class="cards-grid">
+                <div class="card reveal" style="transition-delay: 0s;">
+                    <span class="card__indicator" aria-hidden="true"></span>
+                    <h3 class="card__title">Music</h3>
+                    <p class="card__text">Des writing camps au mastering, notre console SSL accueille vos projets les plus exigeants, 24 heures sur 24.</p>
+                    <span class="card__accent">SSL · Mastering · Writing camps</span>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <span class="card__indicator" aria-hidden="true"></span>
+                    <h3 class="card__title">Broadcast</h3>
+                    <p class="card__text">Doublage, voix-off, post-synchronisation : nous gérons castings, direction d'acteurs et mixage, de la régie à la livraison broadcast.</p>
+                    <span class="card__accent">Doublage · Voix-off · Mixage</span>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <span class="card__indicator" aria-hidden="true"></span>
+                    <h3 class="card__title">A.I.</h3>
+                    <p class="card__text">Bases de données vocales multilingues, enregistrements en conditions contrôlées pour le machine learning : confidentialité absolue et protocoles de sauvegarde redondants.</p>
+                    <span class="card__accent">Machine learning · Multilingue · Redondance</span>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <span class="card__indicator" aria-hidden="true"></span>
+                    <h3 class="card__title">Event</h3>
+                    <p class="card__text">Privatisation d'un lieu rare pour showcases, écoutes presse ou lancements : jusqu'à 80 personnes dans un écrin acoustique unique.</p>
+                    <span class="card__accent">Showcases · Écoutes presse · Jusqu'à 80 pers.</span>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.4s;">
+                    <span class="card__indicator" aria-hidden="true"></span>
+                    <h3 class="card__title">Label</h3>
+                    <p class="card__text">Twin Studios est aussi maison de production et d'édition : un accompagnement de la prise de son à la publication.</p>
+                    <span class="card__accent">Production · Édition · Publication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 — Preuve sociale -->
+    <section class="section" id="confiance" aria-labelledby="confianceTitle">
+        <div class="section__inner">
+            <h2 class="section__title section__title--offset reveal" id="confianceTitle">Voix d'or, passages&nbsp;discrets</h2>
+            <svg class="section__wave-divider reveal" viewBox="0 0 500 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,22 C20,6 40,34 60,20 C80,6 100,36 120,21 C140,6 160,35 180,20 C200,5 220,34 240,19 C260,4 280,36 300,20 C320,4 340,35 360,20 C380,5 400,33 420,19 C440,5 460,35 480,20 C500,5 500,28 500,20"/>
+            </svg>
+            <div class="artists-gallery reveal">
+                <span class="artists-gallery__name">Rihanna</span>
+                <span class="artists-gallery__separator" aria-hidden="true">·</span>
+                <span class="artists-gallery__name">Lenny Kravitz</span>
+                <span class="artists-gallery__separator" aria-hidden="true">·</span>
+                <span class="artists-gallery__name">Aya Nakamura</span>
+                <span class="artists-gallery__separator" aria-hidden="true">·</span>
+                <span class="artists-gallery__name">DJ Snake</span>
+                <span class="artists-gallery__separator" aria-hidden="true">·</span>
+                <span class="artists-gallery__name">Matt Pokora</span>
+            </div>
+            <p class="section__text reveal" style="margin-top:1.5rem;">Ils ont choisi la discrétion de nos murs pour poser leur voix. Par respect pour leur confiance, nous n'en disons pas davantage.</p>
+        </div>
+    </section>
+
+    <!-- Section 4 — Le lieu -->
+    <section class="section" id="lieu" aria-labelledby="lieuTitle">
+        <div class="section__inner">
+            <h2 class="section__title reveal" id="lieuTitle">La technique en&nbsp;silence</h2>
+            <svg class="section__wave-divider reveal" viewBox="0 0 500 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,20 C28,3 56,37 84,20 C112,3 140,38 168,20 C196,2 224,34 252,18 C280,2 308,36 336,20 C364,4 392,38 420,20 C448,2 476,34 500,19"/>
+            </svg>
+            <div class="lieu-grid">
+                <div>
+                    <p class="section__text reveal">Un cadre chaleureux et apaisant où la technologie disparaît au profit de l'intention. Studios acoustiquement indépendants, console SSL, monitoring Dynaudio. Quatre niveaux de sauvegarde (dont Time Capsule et RAID 5) pour que vos données survivent à tout — sans que vous ayez jamais à y penser.</p>
+                    <ul class="lieu-grid__specs reveal" style="margin-top:1.5rem;">
+                        <li>Studios acoustiquement indépendants</li>
+                        <li>Console SSL · Monitoring Dynaudio</li>
+                        <li>Sauvegarde : Time Capsule + RAID 5 (4 niveaux)</li>
+                        <li>Climatisation silencieuse · Accès 24/7 sur réservation</li>
+                    </ul>
+                </div>
+                <div class="lieu-grid__image-wrapper reveal">
+                    <img src="assets/maps-1.jpg" alt="Twin Studios Paris — ambiance studio" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5 — Infos pratiques & Contact -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+        <div class="section__inner">
+            <h2 class="section__title reveal" id="contactTitle">Franchissez la&nbsp;porte</h2>
+            <svg class="section__wave-divider reveal" viewBox="0 0 500 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,18 C22,7 44,33 66,18 C88,3 110,35 132,19 C154,3 176,34 198,18 C220,2 242,36 264,20 C286,4 308,33 330,18 C352,3 374,35 396,19 C418,3 440,34 462,18 C484,2 500,30 500,18"/>
+            </svg>
+            <div class="infos-grid">
+                <div class="infos-block reveal">
+                    <h3>Coordonnées</h3>
+                    <p><strong>Twin Studios Paris</strong></p>
+                    <p>2 Avenue du Maréchal Maunoury<br>75016 Paris, France</p>
+                    <a href="tel:+33145040044" class="infos-block__tel" style="margin-top:0.8rem;">01 45 04 00 44</a>
+                    <a href="mailto:info@twinstudiosparis.com">info@twinstudiosparis.com</a>
+                    <a href="mailto:rh@twinstudiosparis.com" style="font-size:0.85rem;">rh@twinstudiosparis.com</a>
+                    <p style="margin-top:1rem;"><strong>Bureau :</strong> Lun–Ven 10h–19h</p>
+                    <p class="hours-note">Sessions 24h/24 7j/7 sur réservation</p>
+                    <p style="margin-top:0.8rem;font-size:0.85rem;color:rgba(232,228,220,0.5);">Métro : Porte Maillot · Bus : PC1, 43, 82, 244</p>
+                </div>
+                <div class="infos-block reveal">
+                    <h3>Nous écrire</h3>
+                    <form class="contact-form" action="#" method="post">
+                        <input type="text" name="nom" placeholder="Votre nom" required aria-label="Votre nom">
+                        <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
+                        <input type="tel" name="telephone" placeholder="Téléphone (optionnel)" aria-label="Votre téléphone">
+                        <textarea name="message" placeholder="Décrivez votre projet — musique, broadcast, IA, événement, label…" required aria-label="Votre message"></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-wrapper reveal" style="margin-top:2.5rem;">
+                <iframe src="https://maps.google.com/maps?q=Twin+Studios+Paris+2+Avenue+du+Mar%C3%A9chal+Maunoury%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de Twin Studios Paris" aria-label="Plan d'accès à Twin Studios Paris"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <p class="footer__nap"><strong>Twin Studios Paris</strong> · 2 Avenue du Maréchal Maunoury, 75016 Paris · <a href="tel:+33145040044">01 45 04 00 44</a> · <a href="mailto:info@twinstudiosparis.com">info@twinstudiosparis.com</a></p>
+            <p class="footer__credit">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener noreferrer">Agence Mooo</a></p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+            const scrollHandler = () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 60) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+                lastScroll = currentScroll;
+            };
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        scrollHandler();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Mobile nav
+            const burger = document.getElementById('burger');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileLinks = mobileNav.querySelectorAll('a');
+            let navOpen = false;
+
+            const closeNav = () => {
+                navOpen = false;
+                burger.classList.remove('header__burger--open');
+                burger.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('mobile-nav--open');
+                mobileNav.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            const openNav = () => {
+                navOpen = true;
+                burger.classList.add('header__burger--open');
+                burger.setAttribute('aria-expanded', 'true');
+                mobileNav.classList.add('mobile-nav--open');
+                mobileNav.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            burger.addEventListener('click', () => {
+                if (navOpen) closeNav();
+                else openNav();
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeNav();
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            const cardEls = document.querySelectorAll('.card');
+            const waveDividers = document.querySelectorAll('.section__wave-divider');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal--visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('card--visible');
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
+
+            cardEls.forEach(el => cardObserver.observe(el));
+
+            const waveObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section__wave-divider--visible');
+                        waveObserver.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.15 });
+
+            waveDividers.forEach(el => waveObserver.observe(el));
+
+            // Smooth scroll for anchor links (fallback for older browsers)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Initial scroll check
+            scrollHandler();
+        })();
+    </script>
+</body>
+</html>
