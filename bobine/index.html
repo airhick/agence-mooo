@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobine — Vêtements bébé & cadeaux de naissance à Neuilly-sur-Seine | Atelier d'artisan textile</title>
+    <meta name="description" content="Bobine, atelier d'artisan textile à Neuilly-sur-Seine. Vêtements bébé, broderies personnalisées et cadeaux de naissance depuis 1989. Retrait en boutique offert en 2h, livraison France dès 65€.">
+    <meta property="og:title" content="Bobine — Le fil de l'âge tendre | Neuilly-sur-Seine">
+    <meta property="og:description" content="Vêtements, broderies et premiers trésors pour bébé. Depuis notre atelier de Neuilly, chaque pièce est choisie comme un don, emballée comme une promesse.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/bobine">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='20' r='10' fill='none' stroke='%23E5989B' stroke-width='3'/%3E%3Crect x='26' y='28' width='12' height='20' rx='3' fill='%23E5989B'/%3E%3Cline x1='32' y1='20' x2='32' y2='48' stroke='%23C98B6B' stroke-width='1.5' stroke-dasharray='2 3'/%3E%3Ccircle cx='32' cy='20' r='3' fill='%23C98B6B'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fond-lin: #FBF7F2;
+            --encre-ardoise: #3A3C3E;
+            --rose-fil: #E5989B;
+            --vert-sauge: #B0B6A7;
+            --cuivre-file: #C98B6B;
+            --utilitaire: #5A5C5E;
+            --blanc: #FDFAF6;
+            --ombre-douce: rgba(58, 60, 62, 0.08);
+            --ombre-cuivre: rgba(201, 139, 107, 0.18);
+            --radius-doux: 1.25rem;
+            --radius-carte: 1.5rem;
+            --transition-soyeuse: 0.4s cubic-bezier(0.33, 0.66, 0.45, 0.94);
+            --transition-lente: 0.7s cubic-bezier(0.25, 0.4, 0.25, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.05vw, 17px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond-lin);
+            color: var(--encre-ardoise);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+            background-image:
+                radial-gradient(ellipse at 12% 8%, rgba(201, 139, 107, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 22%, rgba(176, 182, 167, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 60%, rgba(229, 152, 155, 0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Texture grain subtile */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.026;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ============ FIL DE COUTURE SVG ============ */
+        #fil-couture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 998;
+            opacity: 0.5;
+        }
+        #fil-couture path {
+            fill: none;
+            stroke: var(--rose-fil);
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 0 300;
+            transition: stroke-dasharray 0.5s ease-out;
+        }
+        #fil-couture .point-couture {
+            fill: var(--cuivre-file);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        #fil-couture .point-couture.visible {
+            opacity: 0.7;
+        }
+
+        /* ============ WATERMARK ============ */
+        .watermark {
+            position: absolute;
+            font-family: 'Marcellus', serif;
+            font-size: clamp(6rem, 12vw, 14rem);
+            color: var(--encre-ardoise);
+            opacity: 0.025;
+            line-height: 0.85;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: 0.05em;
+            mix-blend-mode: multiply;
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(251, 247, 242, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(229, 152, 155, 0.15);
+            transition: all var(--transition-soyeuse);
+            padding: 0.5rem 0;
+        }
+        .header.scrolled {
+            box-shadow: 0 2px 24px rgba(58, 60, 62, 0.07);
+            border-bottom-color: rgba(229, 152, 155, 0.25);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            min-height: 58px;
+        }
+        .header-macaron {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--cuivre-file);
+            background: rgba(201, 139, 107, 0.08);
+            padding: 0.3rem 0.7rem;
+            border-radius: 2rem;
+            white-space: nowrap;
+            font-family: 'Mulish', sans-serif;
+            border: 1px solid rgba(201, 139, 107, 0.2);
+            flex-shrink: 0;
+        }
+        .header-macaron svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+        .header-logo {
+            font-family: 'Marcellus', serif;
+            font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+            font-weight: 600;
+            color: var(--encre-ardoise);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            line-height: 1;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .header-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--rose-fil);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-soyeuse);
+        }
+        .header-logo:hover::after {
+            transform: scaleX(1);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--utilitaire);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: color var(--transition-soyeuse);
+            position: relative;
+            padding: 0.2rem 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--rose-fil);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-soyeuse);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--encre-ardoise);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--rose-fil);
+            color: #fff;
+            padding: 0.6rem 1.3rem;
+            border-radius: 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.84rem;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-soyeuse);
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(229, 152, 155, 0.25);
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #d98287;
+            box-shadow: 0 6px 22px rgba(229, 152, 155, 0.35);
+            transform: translateY(-1px);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--cuivre-file);
+            outline-offset: 3px;
+        }
+        .header-badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--utilitaire);
+            background: rgba(176, 182, 167, 0.14);
+            padding: 0.3rem 0.75rem;
+            border-radius: 2rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.02em;
+        }
+        .header-badge-google .star {
+            color: #e2a740;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+        .header-group-right {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+            .header-inner {
+                gap: 0.7rem;
+                padding: 0 1rem;
+                min-height: 50px;
+            }
+            .header-nav {
+                gap: 0.8rem;
+                font-size: 0.78rem;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 0.3rem;
+                border-top: 1px solid rgba(229, 152, 155, 0.12);
+            }
+            .header-nav a {
+                font-size: 0.76rem;
+            }
+            .header-cta {
+                font-size: 0.74rem;
+                padding: 0.5rem 1rem;
+            }
+            .header-macaron {
+                font-size: 0.62rem;
+                padding: 0.25rem 0.55rem;
+            }
+            .header-badge-google {
+                font-size: 0.66rem;
+                padding: 0.22rem 0.6rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .header-group-right {
+                gap: 0.4rem;
+            }
+            .header-cta {
+                padding: 0.45rem 0.8rem;
+                font-size: 0.7rem;
+            }
+            .header-logo {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ============ SECTIONS ============ */
+        .section {
+            position: relative;
+            padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2.5rem);
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .section-label {
+            font-family: 'Mulish', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cuivre-file);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 22px;
+            height: 1px;
+            background: var(--cuivre-file);
+            flex-shrink: 0;
+        }
+
+        /* ============ HÉRO ============ */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 5rem;
+            background: var(--fond-lin);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(1.04) saturate(0.9) contrast(1.02);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg,
+                    rgba(251, 247, 242, 0.25) 0%,
+                    rgba(251, 247, 242, 0.55) 40%,
+                    rgba(251, 247, 242, 0.82) 75%,
+                    rgba(251, 247, 242, 0.96) 100%);
+        }
+        .hero-texture {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.06;
+            background-image: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(201, 139, 107, 0.3) 2px,
+                    rgba(201, 139, 107, 0.3) 2.5px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem 1.5rem;
+        }
+        .hero-title {
+            font-family: 'Marcellus', serif;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-weight: 500;
+            color: var(--encre-ardoise);
+            letter-spacing: 0.03em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(22px);
+            animation: revealUp 0.9s 0.2s cubic-bezier(0.22, 0.54, 0.18, 1) forwards;
+        }
+        .hero-subtitle {
+            font-family: 'Mulish', sans-serif;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            font-weight: 400;
+            color: var(--utilitaire);
+            letter-spacing: 0.03em;
+            line-height: 1.7;
+            max-width: 580px;
+            margin: 0 auto 1.8rem;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: revealUp 0.9s 0.45s cubic-bezier(0.22, 0.54, 0.18, 1) forwards;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: revealUp 0.9s 0.65s cubic-bezier(0.22, 0.54, 0.18, 1) forwards;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            transition: all var(--transition-soyeuse);
+            cursor: pointer;
+            border: none;
+            font-family: 'Mulish', sans-serif;
+        }
+        .btn-primaire {
+            background: var(--rose-fil);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(229, 152, 155, 0.3);
+        }
+        .btn-primaire:hover,
+        .btn-primaire:focus-visible {
+            background: #d98287;
+            box-shadow: 0 8px 26px rgba(229, 152, 155, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-secondaire {
+            background: transparent;
+            color: var(--encre-ardoise);
+            border: 1.5px solid var(--rose-fil);
+        }
+        .btn-secondaire:hover,
+        .btn-secondaire:focus-visible {
+            background: rgba(229, 152, 155, 0.08);
+            border-color: #d98287;
+            color: #2a2c2e;
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--cuivre-file);
+            outline-offset: 3px;
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============ NOUVEAUTÉS ============ */
+        .nouveautes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .carte-nouveaute {
+            background: var(--blanc);
+            border-radius: var(--radius-carte);
+            overflow: hidden;
+            box-shadow: 0 2px 16px var(--ombre-douce), 0 0 0 2px rgba(229, 152, 155, 0.0);
+            transition: all var(--transition-lente);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .carte-nouveaute.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.7s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .carte-nouveaute:hover {
+            box-shadow: 0 12px 34px var(--ombre-cuivre), 0 0 0 2px rgba(229, 152, 155, 0.18);
+            transform: translateY(-4px);
+        }
+        .carte-nouveaute-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .carte-nouveaute-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.22, 0.54, 0.18, 1);
+            filter: brightness(0.98) contrast(1.03);
+        }
+        .carte-nouveaute:hover .carte-nouveaute-img img {
+            transform: scale(1.07);
+        }
+        .carte-nouveaute-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--rose-fil);
+            border-radius: var(--radius-carte) var(--radius-carte) 0 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity var(--transition-soyeuse);
+        }
+        .carte-nouveaute:hover .carte-nouveaute-img::after {
+            opacity: 0.5;
+        }
+        .carte-nouveaute-body {
+            padding: 1.3rem 1.4rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .carte-nouveaute-body h3 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--encre-ardoise);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.03em;
+        }
+        .carte-nouveaute-body .tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cuivre-file);
+            background: rgba(201, 139, 107, 0.07);
+            padding: 0.2rem 0.65rem;
+            border-radius: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .carte-nouveaute-body p {
+            font-size: 0.82rem;
+            color: var(--utilitaire);
+            line-height: 1.55;
+        }
+
+        @media (max-width: 640px) {
+            .nouveautes-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .carte-nouveaute-body {
+                padding: 0.9rem 1rem 1.1rem;
+            }
+            .carte-nouveaute-body h3 {
+                font-size: 0.95rem;
+            }
+            .carte-nouveaute-body p {
+                font-size: 0.72rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .nouveautes-grid {
+                grid-template-columns: 1fr;
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ============ CADEAU PERSONNALISÉ ============ */
+        .cadeau-section {
+            background: rgba(176, 182, 167, 0.07);
+            border-top: 1px solid rgba(229, 152, 155, 0.15);
+            border-bottom: 1px solid rgba(229, 152, 155, 0.15);
+        }
+        .cadeau-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .cadeau-visuel {
+            position: relative;
+            border-radius: var(--radius-carte);
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            box-shadow: 0 8px 30px var(--ombre-cuivre);
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .cadeau-visuel.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .cadeau-visuel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+        }
+        .cadeau-visuel::after {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 2px solid var(--rose-fil);
+            border-radius: calc(var(--radius-carte) - 8px);
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.5;
+        }
+        .cadeau-texte {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .cadeau-texte.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .cadeau-texte h2 {
+            font-family: 'Marcellus', serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 500;
+            color: var(--encre-ardoise);
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+        }
+        .cadeau-texte p {
+            color: var(--utilitaire);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+        .cadeau-livraison {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--cuivre-file);
+            background: rgba(201, 139, 107, 0.06);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 768px) {
+            .cadeau-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .cadeau-visuel {
+                aspect-ratio: 4/3;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .cadeau-visuel,
+            .cadeau-texte {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            .cadeau-visuel.visible,
+            .cadeau-texte.visible {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ============ ADRESSES ============ */
+        .adresses-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .carte-adresse {
+            background: var(--blanc);
+            border-radius: var(--radius-carte);
+            padding: 2rem;
+            box-shadow: 0 3px 18px var(--ombre-douce);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .carte-adresse.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .carte-adresse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--rose-fil);
+            opacity: 0.6;
+        }
+        .carte-adresse h3 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--encre-ardoise);
+            margin-bottom: 0.6rem;
+        }
+        .carte-adresse .adresse-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--utilitaire);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .carte-adresse .adresse-ligne svg {
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            color: var(--cuivre-file);
+        }
+        .carte-adresse .tel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--rose-fil);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color var(--transition-soyeuse);
+        }
+        .carte-adresse .tel-link:hover {
+            color: #c97a82;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .carte-adresse .btn-retrait {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vert-sauge);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-soyeuse);
+            border: none;
+            cursor: pointer;
+            font-family: 'Mulish', sans-serif;
+        }
+        .carte-adresse .btn-retrait:hover {
+            background: #9ba392;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(176, 182, 167, 0.35);
+        }
+        .carte-map {
+            border-radius: var(--radius-carte);
+            overflow: hidden;
+            box-shadow: 0 3px 18px var(--ombre-douce);
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .carte-map.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .carte-map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            .adresses-grid {
+                grid-template-columns: 1fr;
+            }
+            .carte-map iframe {
+                min-height: 280px;
+            }
+        }
+
+        /* ============ QUALITÉ ============ */
+        .qualite-bloc {
+            background: var(--blanc);
+            border-radius: var(--radius-carte);
+            padding: 2.5rem 2rem;
+            box-shadow: 0 3px 18px var(--ombre-douce);
+            position: relative;
+            overflow: hidden;
+        }
+        .qualite-bloc::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(229, 152, 155, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .qualite-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .qualite-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .qualite-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .qualite-icone {
+            font-size: 2.6rem;
+            margin-bottom: 0.7rem;
+            display: block;
+            color: var(--cuivre-file);
+            letter-spacing: 0;
+        }
+        .qualite-item h4 {
+            font-family: 'Marcellus', serif;
+            font-size: 1rem;
+            color: var(--encre-ardoise);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.03em;
+        }
+        .qualite-item p {
+            font-size: 0.8rem;
+            color: var(--utilitaire);
+            line-height: 1.5;
+        }
+
+        /* ============ TÉMOIGNAGES ============ */
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .carte-temoignage {
+            background: var(--blanc);
+            border-radius: var(--radius-carte);
+            padding: 2rem;
+            box-shadow: 0 3px 16px var(--ombre-douce);
+            position: relative;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: all 0.65s cubic-bezier(0.22, 0.54, 0.18, 1);
+        }
+        .carte-temoignage.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .carte-temoignage::before {
+            content: '"';
+            position: absolute;
+            top: 0.3rem;
+            left: 1.2rem;
+            font-family: 'Marcellus', serif;
+            font-size: 5rem;
+            color: var(--rose-fil);
+            opacity: 0.18;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .carte-temoignage p {
+            font-style: italic;
+            color: var(--encre-ardoise);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .carte-temoignage .auteur {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--cuivre-file);
+            letter-spacing: 0.03em;
+            font-style: normal;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--encre-ardoise);
+            color: rgba(251, 247, 242, 0.8);
+            padding: 2.5rem 2rem 1.8rem;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid var(--rose-fil);
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer h4 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.1rem;
+            color: rgba(251, 247, 242, 0.95);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+        .footer p,
+        .footer a {
+            font-size: 0.84rem;
+            color: rgba(251, 247, 242, 0.7);
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color var(--transition-soyeuse);
+        }
+        .footer a:hover {
+            color: var(--rose-fil);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(251, 247, 242, 0.1);
+            font-size: 0.74rem;
+            color: rgba(251, 247, 242, 0.45);
+            letter-spacing: 0.04em;
+        }
+        .footer-bottom a {
+            color: rgba(251, 247, 242, 0.55);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ============ UTILITAIRES ============ */
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--cuivre-file);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIL DE COUTURE SVG -->
+    <svg id="fil-couture" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+            <filter id="grain-fin">
+                <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" result="noise" />
+                <feColorMatrix type="saturate" values="0" in="noise" result="gray" />
+                <feBlend in="SourceGraphic" in2="gray" mode="multiply" result="blended" />
+            </filter>
+        </defs>
+        <path id="fil-path" d="M0,0 C100,200 300,100 500,300 C700,500 900,200 1100,400 C1300,600 1500,300 1700,500" />
+        <circle cx="0" cy="0" r="3" class="point-couture" id="point-1" />
+        <circle cx="500" cy="300" r="3" class="point-couture" id="point-2" />
+        <circle cx="1100" cy="400" r="3" class="point-couture" id="point-3" />
+        <circle cx="1700" cy="500" r="3" class="point-couture" id="point-4" />
+    </svg>
+
+    <!-- HEADER -->
+    <header class="header" id="header" role="banner">
+        <div class="header-inner">
+            <span class="header-macaron" aria-label="Boutique de quartier depuis 1989">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 22v-4a6 6 0 0 1 12 0v4"/></svg>
+                Depuis 1989
+            </span>
+            <a href="#top" class="header-logo" aria-label="Bobine — Retour en haut">Bobine</a>
+            <div class="header-group-right">
+                <span class="header-badge-google" aria-label="Note Google 3.8 sur 5 basée sur 23 avis">
+                    <span class="star">★</span> 3.8 <span style="font-weight:400;opacity:0.7;">(23)</span>
+                </span>
+                <a href="tel:+33146410445" class="header-cta" aria-label="Appeler Bobine au 01 46 41 04 45">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    01 46 41 04 45
+                </a>
+            </div>
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a href="#nouveautes">Nouveautés</a>
+                <a href="#cadeau">Cadeau</a>
+                <a href="#adresses">Boutique</a>
+                <a href="#qualite">Qualité</a>
+                <a href="#temoignages">Avis</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HÉRO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Intérieur de la boutique Bobine — pierre apparente et lumière tamisée" loading="eager" decoding="async">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-texture"></div>
+        <!-- Watermark -->
+        <span class="watermark" style="top:15%;left:5%;font-size:clamp(5rem,14vw,16rem);" aria-hidden="true">Bobine</span>
+        <span class="watermark" style="bottom:8%;right:3%;font-size:clamp(4rem,10vw,11rem);transform:rotate(-3deg);" aria-hidden="true">Tendre</span>
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">Le fil de l'âge tendre</h1>
+            <p class="hero-subtitle">Vêtements, broderies et premiers trésors pour bébé.<br>Depuis notre atelier de Neuilly, chaque pièce est choisie comme un don, emballée comme une promesse.</p>
+            <div class="hero-cta-group">
+                <a href="#cadeau" class="btn btn-primaire">Personnaliser mon cadeau</a>
+                <a href="#adresses" class="btn btn-secondaire">Visiter la boutique</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOUVEAUTÉS -->
+    <section class="section" id="nouveautes" aria-labelledby="titre-nouveautes">
+        <div class="section-inner">
+            <span class="section-label">Collection</span>
+            <h2 id="titre-nouveautes" style="font-family:'Marcellus',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:500;color:var(--encre-ardoise);letter-spacing:0.03em;">Nouveautés de saison</h2>
+            <p style="color:var(--utilitaire);max-width:620px;margin-top:0.5rem;line-height:1.7;">Des looks d'été brodés main, des ponchos en laine et cachemire, et la toute première collection à strass délicats. Découvrez ce que nous venons de créer pour les tout-petits.</p>
+            <div class="nouveautes-grid">
+                <div class="carte-nouveaute" data-delay="0">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Body brodé main — collection été" loading="lazy" style="object-position:center 25%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Nouveau</span>
+                        <h3>Body brodé main</h3>
+                        <p>Coton bio Oeko-Tex, point de feston, prénom brodé au fil de soie.</p>
+                    </div>
+                </div>
+                <div class="carte-nouveaute" data-delay="100">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Poncho cachemire bébé" loading="lazy" style="object-position:center 60%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Exclusivité</span>
+                        <h3>Poncho en cachemire</h3>
+                        <p>Laine et cachemire mérinos, ourlet roulotté, teintes naturelles.</p>
+                    </div>
+                </div>
+                <div class="carte-nouveaute" data-delay="200">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Bavoir à strass délicats" loading="lazy" style="object-position:center 40%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Édition limitée</span>
+                        <h3>Bavoir strass délicat</h3>
+                        <p>Première collection à strass, finition main, lavable en machine.</p>
+                    </div>
+                </div>
+                <div class="carte-nouveaute" data-delay="300">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Cape de bain brodée" loading="lazy" style="object-position:center 50%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Coup de cœur</span>
+                        <h3>Cape de bain brodée</h3>
+                        <p>Éponge double face, capuche doublée, broderie prénom offerte.</p>
+                    </div>
+                </div>
+                <div class="carte-nouveaute" data-delay="400">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Ensemble lin lavé" loading="lazy" style="object-position:center 30%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Essentiel</span>
+                        <h3>Ensemble lin lavé</h3>
+                        <p>Lin européen certifié, coupe ample, disponible du 0 au 24 mois.</p>
+                    </div>
+                </div>
+                <div class="carte-nouveaute" data-delay="500">
+                    <div class="carte-nouveaute-img"><img src="assets/maps-1.jpg" alt="Boîte à doudous personnalisée" loading="lazy" style="object-position:center 55%;"></div>
+                    <div class="carte-nouveaute-body">
+                        <span class="tag">Cadeau</span>
+                        <h3>Boîte à doudous</h3>
+                        <p>Coffret en bois gravé, doudou assorti, emballage raffiné offert.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CADEAU PERSONNALISÉ -->
+    <section class="section cadeau-section" id="cadeau" aria-labelledby="titre-cadeau">
+        <div class="section-inner">
+            <div class="cadeau-grid">
+                <div class="cadeau-visuel" data-reveal="left">
+                    <img src="assets/maps-1.jpg" alt="Détail d'une broderie prénom sur tissu — atelier Bobine" loading="lazy" style="object-position:center 35%;">
+                </div>
+                <div class="cadeau-texte" data-reveal="right">
+                    <span class="section-label">Service d'atelier</span>
+                    <h2 id="titre-cadeau">L'art du cadeau personnalisé</h2>
+                    <p>Une broderie prénom sur un bavoir, une cape de bain, une boîte à doudous : ici, chaque présent devient un jalon d'histoire familiale. Nos brodeuses travaillent au point de feston, avec des fils de soie ou de coton, dans notre atelier de Neuilly.</p>
+                    <div class="cadeau-livraison">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        Emballage raffiné offert — Livraison France dès 65€ d'achat
+                    </div>
+                    <a href="tel:+33146410445" class="btn btn-primaire">Personnaliser mon cadeau</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADRESSES -->
+    <section class="section" id="adresses" aria-labelledby="titre-adresses">
+        <div class="section-inner">
+            <span class="section-label">Venir nous voir</span>
+            <h2 id="titre-adresses" style="font-family:'Marcellus',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:500;color:var(--encre-ardoise);letter-spacing:0.03em;">Nos adresses à Paris & Neuilly</h2>
+            <p style="color:var(--utilitaire);max-width:600px;margin-top:0.5rem;line-height:1.7;">Venez toucher les matières, essayer les tailles, rencontrer nos conseillères. Retrait en boutique offert en 2h — vos articles vous attendent déjà emballés.</p>
+            <div class="adresses-grid">
+                <div class="carte-adresse" data-reveal="up">
+                    <h3>Neuilly-sur-Seine</h3>
+                    <div class="adresse-ligne">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>11 Rue Paul Chatrousse<br>92200 Neuilly-sur-Seine</span>
+                    </div>
+                    <div class="adresse-ligne">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Horaires à confirmer — appelez-nous</span>
+                    </div>
+                    <a href="tel:+33146410445" class="tel-link" style="margin-top:0.5rem;display:inline-flex;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        01 46 41 04 45
+                    </a>
+                    <br>
+                    <a href="#" class="btn-retrait" aria-label="Je récupère en boutique — retrait en 2h offert">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        Je récupère en boutique
+                    </a>
+                </div>
+                <div class="carte-map" data-reveal="up">
+                    <iframe src="https://maps.google.com/maps?q=Bobine+11+Rue+Paul+Chatrousse%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Bobine Neuilly-sur-Seine"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUALITÉ -->
+    <section class="section" id="qualite" aria-labelledby="titre-qualite">
+        <div class="section-inner">
+            <div class="qualite-bloc">
+                <span class="section-label">Savoir-faire</span>
+                <h2 id="titre-qualite" style="font-family:'Marcellus',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:500;color:var(--encre-ardoise);letter-spacing:0.03em;">Qualité & conseils d'entretien</h2>
+                <p style="color:var(--utilitaire);max-width:620px;margin-top:0.5rem;line-height:1.7;">Coton bio, lin lavé, laine mérinos, cachemire : nous vous expliquons comment conserver la douceur originelle, lavage après lavage. Parce qu'un vêtement bien aimé dure au-delà des premiers mois.</p>
+                <div class="qualite-grid">
+                    <div class="qualite-item" data-reveal="up">
+                        <span class="qualite-icone" aria-hidden="true">🧵</span>
+                        <h4>Coton bio Oeko-Tex</h4>
+                        <p>Lavage à 30°, séchage à plat. Le coton s'assouplit avec le temps.</p>
+                    </div>
+                    <div class="qualite-item" data-reveal="up" style="transition-delay:0.1s;">
+                        <span class="qualite-icone" aria-hidden="true">🌿</span>
+                        <h4>Lin lavé européen</h4>
+                        <p>Lavable en machine, repassage tiède. Plus beau après chaque lavage.</p>
+                    </div>
+                    <div class="qualite-item" data-reveal="up" style="transition-delay:0.2s;">
+                        <span class="qualite-icone" aria-hidden="true">🧶</span>
+                        <h4>Laine mérinos</h4>
+                        <p>Programme laine à 20°, lessive spéciale. Conservation en housse coton.</p>
+                    </div>
+                    <div class="qualite-item" data-reveal="up" style="transition-delay:0.3s;">
+                        <span class="qualite-icone" aria-hidden="true">✨</span>
+                        <h4>Cachemire</h4>
+                        <p>Lavage main ou pressing. Rangez à plat, jamais sur cintre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TÉMOIGNAGES -->
+    <section class="section" id="temoignages" aria-labelledby="titre-temoignages">
+        <div class="section-inner">
+            <span class="section-label">Vos mots doux</span>
+            <h2 id="titre-temoignages" style="font-family:'Marcellus',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:500;color:var(--encre-ardoise);letter-spacing:0.03em;">Ce que vous partagez</h2>
+            <div class="temoignages-grid">
+                <div class="carte-temoignage" data-reveal="up">
+                    <p>Un écrin de douceur à deux pas de la rue du Bac. Le paquet était si beau que je n'osais plus l'ouvrir.</p>
+                    <span class="auteur">— Marie, maman d'Apolline</span>
+                </div>
+                <div class="carte-temoignage" data-reveal="up" style="transition-delay:0.1s;">
+                    <p>Des conseillères adorables, des matières somptueuses. Mon bébé porte le plus beau body de toute la crèche !</p>
+                    <span class="auteur">— Camille, maman de Gabriel</span>
+                </div>
+                <div class="carte-temoignage" data-reveal="up" style="transition-delay:0.2s;">
+                    <p>J'ai commandé une broderie prénom pour une naissance. Le résultat est exquis, le cadeau a ému toute la famille.</p>
+                    <span class="auteur">— Sophie, marraine de Juliette</span>
+                </div>
+            </div>
+        </div>
+        <!-- Watermark discret -->
+        <span class="watermark" style="bottom:-2%;right:2%;font-size:clamp(3rem,8vw,9rem);" aria-hidden="true">Bobine</span>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <h4>Bobine</h4>
+                <p>Atelier d'artisan textile<br>Vêtements bébé & cadeaux de naissance<br>Neuilly-sur-Seine depuis 1989</p>
+            </div>
+            <div>
+                <h4>Boutique</h4>
+                <p>11 Rue Paul Chatrousse<br>92200 Neuilly-sur-Seine</p>
+                <p><a href="tel:+33146410445">01 46 41 04 45</a></p>
+                <p><a href="mailto:contact@bobine.fr">contact@bobine.fr</a></p>
+            </div>
+            <div>
+                <h4>Liens</h4>
+                <p><a href="#nouveautes">Nouveautés</a></p>
+                <p><a href="#cadeau">Cadeau personnalisé</a></p>
+                <p><a href="#adresses">Boutique</a></p>
+                <p><a href="#qualite">Conseils d'entretien</a></p>
+            </div>
+            <div>
+                <h4>Service client</h4>
+                <p>Compte client</p>
+                <p>Mentions légales</p>
+                <p>Retrait en boutique 2h</p>
+                <p>Livraison France dès 65€</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 1989–2025 Bobine — <a href="https://agence.mooo.com" target="_blank" rel="noopener">Site créé par Agence Mooo</a></p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bobine",
+            "description": "Atelier d'artisan textile — Vêtements bébé, broderies personnalisées et cadeaux de naissance à Neuilly-sur-Seine depuis 1989.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "11 Rue Paul Chatrousse",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146410445",
+            "email": "contact@bobine.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "23"
+            },
+            "url": "https://agence.mooo.com/bobine"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+            const handleScroll = () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+                // Fil de couture animation
+                updateFilCouture();
+            };
+
+            // IntersectionObserver pour les animations au scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Si l'élément a un délai personnalisé
+                        const delay = entry.target.getAttribute('data-delay');
+                        if (delay) {
+                            entry.target.style.transitionDelay = delay + 'ms';
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observer les cartes nouveautés
+            document.querySelectorAll('.carte-nouveaute').forEach(el => observer.observe(el));
+            // Observer les éléments avec data-reveal
+            document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+            // Observer les cartes témoignages
+            document.querySelectorAll('.carte-temoignage').forEach(el => observer.observe(el));
+            // Observer les items qualité
+            document.querySelectorAll('.qualite-item').forEach(el => observer.observe(el));
+            // Observer les cartes adresse et map
+            document.querySelectorAll('.carte-adresse, .carte-map').forEach(el => observer.observe(el));
+
+            // Fil de couture animation
+            const filPath = document.getElementById('fil-path');
+            const filCouture = document.getElementById('fil-couture');
+            const points = document.querySelectorAll('.point-couture');
+            let pathLength = 0;
+
+            function updateFilCouture() {
+                if (!filPath) return;
+                if (pathLength === 0) {
+                    pathLength = filPath.getTotalLength ? filPath.getTotalLength() : 2000;
+                }
+                const scrollPercent = window.pageYOffset / (document.documentElement.scrollHeight - window
+                    .innerHeight);
+                const clampedPercent = Math.max(0, Math.min(1, scrollPercent));
+                const drawLength = pathLength * clampedPercent;
+                filPath.setAttribute('stroke-dasharray', drawLength + ' ' + (pathLength - drawLength + 200));
+
+                // Points de couture
+                const pointTriggers = [0.08, 0.28, 0.52, 0.78];
+                points.forEach((point, i) => {
+                    if (clampedPercent > pointTriggers[i]) {
+                        point.classList.add('visible');
+                    } else {
+                        point.classList.remove('visible');
+                    }
+                });
+            }
+
+            // Initial update
+            updateFilCouture();
+
+            // Écouteur de scroll
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        handleScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Déclenchement initial pour le header
+            handleScroll();
+
+            // Force l'observation initiale pour les éléments déjà visibles
+            setTimeout(() => {
+                document.querySelectorAll('.carte-nouveaute, [data-reveal], .carte-temoignage, .qualite-item, .carte-adresse, .carte-map')
+                    .forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            el.classList.add('visible');
+                            const delay = el.getAttribute('data-delay');
+                            if (delay) el.style.transitionDelay = delay + 'ms';
+                        }
+                    });
+            }, 300);
+        })();
+    </script>
+</body>
+</html>
