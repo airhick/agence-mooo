@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Bijoutier d'ICI · Issy-les-Moulineaux · Estimations, achats, créations</title>
+    <meta name="description" content="Bijouterie experte de quartier à Issy-les-Moulineaux. Estimations gratuites, achat d'or, dépôt-vente, création sur mesure, réparations. Deux boutiques, 223 avis 5★. Authenticité et savoir-faire.">
+    <meta property="og:title" content="Mon Bijoutier d'ICI · L'écrin de vos bijoux à Issy">
+    <meta property="og:description" content="Ici, on estime, on répare, on crée. Deux boutiques chaleureuses, expertise de l'ancien, achat d'or, dépôt-vente. 223 avis 5★.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A8B7C'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='38' fill='%23FAF8F5'%3E💎%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <style>
+        :root {
+            --blanc-craie: #FAF8F5;
+            --beige-tilleul: #D3B8AE;
+            --noir-graphite: #1C1C1C;
+            --vert-serre: #7A8B7C;
+            --or-effleure: #C9A96E;
+            --blanc-optique: #FFFFFF;
+            --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+            --font-body: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            background-color: var(--blanc-craie);
+            color: var(--noir-graphite);
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            background-color: var(--blanc-craie);
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: var(--grain);
+            opacity: 0.25;
+        }
+
+        /* Focus */
+        :focus-visible {
+            outline: 2px solid var(--vert-serre);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(28, 28, 28, 0.06);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            padding: 0.75rem 0;
+        }
+
+        .site-header.scrolled {
+            background: rgba(250, 248, 245, 0.96);
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--noir-graphite);
+            text-decoration: none;
+            line-height: 1.1;
+            white-space: nowrap;
+            transition: color 0.25s ease;
+        }
+
+        .logo span {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.6em;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--vert-serre);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--noir-graphite);
+            font-weight: 470;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--vert-serre);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        .nav-links a:hover {
+            color: var(--vert-serre);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .btn-header {
+            background: var(--vert-serre);
+            color: var(--blanc-optique);
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 560;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(122, 139, 124, 0.18);
+        }
+
+        .btn-header:hover {
+            background: var(--noir-graphite);
+            box-shadow: 0 8px 22px rgba(28, 28, 28, 0.22);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile nav toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1100;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--noir-graphite);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 360px;
+                height: 100vh;
+                background: var(--blanc-craie);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 2.2rem;
+                transition: right 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06);
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .btn-header {
+                padding: 0.6rem 1.1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 6rem 2rem 4rem;
+            overflow: hidden;
+            background-color: var(--noir-graphite);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(0.7) contrast(1.05);
+            z-index: 0;
+            mix-blend-mode: normal;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(36deg, rgba(28, 28, 28, 0.7) 0%, rgba(28, 28, 28, 0.2) 50%, rgba(122, 139, 124, 0.12) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 740px;
+            color: var(--blanc-optique);
+            animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-body);
+            font-weight: 450;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+            color: var(--or-effleure);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .hero-eyebrow::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--or-effleure);
+            opacity: 0.7;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 5.2rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: var(--blanc-optique);
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--or-effleure);
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-weight: 380;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.2rem;
+            max-width: 540px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background: var(--vert-serre);
+            color: var(--blanc-optique);
+            padding: 0.9rem 2.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 570;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 28px rgba(122, 139, 124, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-hero:hover {
+            background: var(--or-effleure);
+            color: var(--noir-graphite);
+            box-shadow: 0 14px 32px rgba(201, 169, 110, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.55rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--blanc-optique);
+            margin-left: 1.2rem;
+            vertical-align: middle;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .badge-google .stars {
+            color: var(--or-effleure);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+            .badge-google {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: inline-flex;
+            }
+        }
+
+        /* Sections générales */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-family: var(--font-body);
+            font-weight: 450;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: var(--vert-serre);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 1.2px;
+            background: var(--vert-serre);
+            opacity: 0.7;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--noir-graphite);
+            margin-bottom: 2.2rem;
+        }
+
+        /* Expertises */
+        .expertises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .exp-card {
+            background: var(--blanc-optique);
+            border-radius: 14px;
+            padding: 2rem 1.6rem 1.8rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s ease;
+            position: relative;
+            border: 1px solid rgba(28, 28, 28, 0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(122, 139, 124, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-color: var(--vert-serre);
+        }
+
+        .exp-icon {
+            font-size: 2rem;
+            color: var(--vert-serre);
+            margin-bottom: 0.3rem;
+            opacity: 0.85;
+        }
+
+        .exp-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: var(--noir-graphite);
+        }
+
+        .exp-card p {
+            font-size: 0.95rem;
+            color: #3a3a3a;
+            line-height: 1.55;
+            font-weight: 380;
+        }
+
+        /* Sélection */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.2rem;
+        }
+
+        .piece-card {
+            background: var(--blanc-optique);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(211, 184, 174, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .piece-card:hover {
+            box-shadow: 0 20px 38px rgba(122, 139, 124, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .piece-visual {
+            height: 220px;
+            background: linear-gradient(145deg, #eae3db 0%, #f2ede7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .piece-visual::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(201, 169, 110, 0.18) 0%, rgba(211, 184, 174, 0.1) 70%);
+            filter: blur(16px);
+        }
+
+        .piece-initial {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--noir-graphite);
+            opacity: 0.15;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.04em;
+            user-select: none;
+        }
+
+        .piece-info {
+            padding: 1.3rem 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .piece-info h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+        }
+
+        .piece-desc {
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            line-height: 1.5;
+        }
+
+        .piece-link {
+            margin-top: auto;
+            align-self: flex-start;
+            color: var(--vert-serre);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s;
+            padding-bottom: 2px;
+        }
+
+        .piece-link:hover {
+            border-bottom-color: var(--vert-serre);
+        }
+
+        .piece-price {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--or-effleure);
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Boutiques */
+        .boutiques-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .boutique-block {
+            background: var(--blanc-optique);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(211, 184, 174, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .boutique-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .boutique-details {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .boutique-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+        }
+
+        .boutique-adresse {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--noir-graphite);
+        }
+
+        .horaires {
+            font-size: 0.9rem;
+            color: #3f3f3f;
+            line-height: 1.6;
+            background: #fbf9f7;
+            padding: 0.9rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+        }
+
+        .boutique-placeholder {
+            background: linear-gradient(135deg, #e2d9d0 0%, #d5c7bb 100%);
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--noir-graphite);
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 750px) {
+            .boutiques-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Carte */
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+
+        /* Avis */
+        .avis-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            background: var(--blanc-optique);
+            padding: 2rem 2.2rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.03);
+            margin: 2rem 0 1rem;
+            border: 1px solid rgba(211, 184, 174, 0.3);
+        }
+
+        .avis-score {
+            font-family: var(--font-display);
+            font-size: 3.4rem;
+            font-weight: 500;
+            color: var(--noir-graphite);
+            line-height: 1;
+        }
+
+        .avis-stars {
+            color: var(--or-effleure);
+            font-size: 1.8rem;
+            letter-spacing: 0.06em;
+        }
+
+        .avis-count {
+            font-weight: 470;
+            color: #444;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--noir-graphite);
+            color: var(--blanc-craie);
+            padding: 3.5rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-inner a {
+            color: var(--or-effleure);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-inner a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-credit {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.65;
+            text-align: right;
+            grid-column: span 2;
+        }
+
+        @media (max-width: 600px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-credit {
+                grid-column: span 1;
+                text-align: left;
+            }
+        }
+
+        /* Animations scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.25s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.55s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-content {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Mon Bijoutier d'ICI - Accueil">
+                Mon Bijoutier d'ICI
+                <span>Issy-les-Moulineaux</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#expertises">Services</a></li>
+                    <li><a href="#selection">Sélection</a></li>
+                    <li><a href="#boutiques">Boutiques</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:+33141907201" class="btn-header">📞 01 41 90 72 01</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <img src="assets/maps-1.jpg" alt="Façade de Mon Bijoutier d'ICI avec ses plantes vertes encadrant l'entrée" class="hero-bg" loading="eager">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Issy-les-Moulineaux · Depuis toujours</p>
+                <h1>Ici, on estime,<br>on <em>répare</em>, on crée.</h1>
+                <p class="hero-sub">Deux boutiques à Issy-les-Moulineaux. Expertise de l'ancien, achat d'or, dépôt-vente, création sur mesure. Votre bijou trouve ici bien plus qu'un écrin.</p>
+                <a href="#contact" class="btn-hero">Prendre rendez-vous pour une estimation</a>
+                <span class="badge-google">
+                    <span class="stars">★★★★★</span> 5,0 · 223 avis
+                </span>
+            </div>
+        </section>
+
+        <!-- EXPERTISES -->
+        <section id="expertises" style="background: var(--blanc-craie);">
+            <div class="section-inner">
+                <div class="section-tag reveal">Ce que nous faisons, ici</div>
+                <h2 class="section-title reveal reveal-delay-1">Estimations, achats, créations, réparations</h2>
+                <div class="expertises-grid">
+                    <div class="exp-card reveal reveal-delay-1">
+                        <div class="exp-icon">🔍</div>
+                        <h3>Expertise gratuite</h3>
+                        <p>Vos bijoux anciens examinés avec soin, sans rendez-vous. Estimation transparente, conseil honnête.</p>
+                    </div>
+                    <div class="exp-card reveal reveal-delay-2">
+                        <div class="exp-icon">🌿</div>
+                        <h3>Achat d'or & pierres</h3>
+                        <p>Or, diamants, pierres fines. Rachat immédiat ou dépôt-vente, au juste prix du marché.</p>
+                    </div>
+                    <div class="exp-card reveal reveal-delay-1">
+                        <div class="exp-icon">✨</div>
+                        <h3>Création sur mesure</h3>
+                        <p>En atelier, nous imaginons avec vous la pièce unique qui vous ressemble. Croquis, choix des pierres, fonte.</p>
+                    </div>
+                    <div class="exp-card reveal reveal-delay-2">
+                        <div class="exp-icon">🛠️</div>
+                        <h3>Réparation toutes marques</h3>
+                        <p>Ressoudure, rhodiage, changement de pile. Votre bijou remis en état dans nos règles de l'art.</p>
+                    </div>
+                    <div class="exp-card reveal reveal-delay-3">
+                        <div class="exp-icon">🤝</div>
+                        <h3>Dépôt-vente signé</h3>
+                        <p>Pièces signées ou non, nous les mettons en lumière pour trouver leur prochain écrin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉLECTION -->
+        <section id="selection" style="background: #f4f1ed;">
+            <div class="section-inner">
+                <div class="section-tag reveal">Ce que nous aimons en ce moment</div>
+                <h2 class="section-title reveal reveal-delay-1">Le choix du bijoutier</h2>
+                <div class="selection-grid">
+                    <div class="piece-card reveal reveal-delay-1">
+                        <div class="piece-visual"><span class="piece-initial">A</span></div>
+                        <div class="piece-info">
+                            <h4>Bague Art déco</h4>
+                            <p class="piece-desc">Platine & diamants taillés anciens · vers 1925</p>
+                            <a href="#contact" class="piece-link">Renseignez-vous</a>
+                        </div>
+                    </div>
+                    <div class="piece-card reveal reveal-delay-2">
+                        <div class="piece-visual"><span class="piece-initial">B</span></div>
+                        <div class="piece-info">
+                            <h4>Collier victorien</h4>
+                            <p class="piece-desc">Or jaune 18k & perles fines · Angleterre, 1880</p>
+                            <span class="piece-price">1 250 €</span>
+                        </div>
+                    </div>
+                    <div class="piece-card reveal reveal-delay-3">
+                        <div class="piece-visual"><span class="piece-initial">C</span></div>
+                        <div class="piece-info">
+                            <h4>Bracelet gourmette</h4>
+                            <p class="piece-desc">Or rose 18k, mailles polies · sur mesure atelier</p>
+                            <a href="#contact" class="piece-link">Renseignez-vous</a>
+                        </div>
+                    </div>
+                    <div class="piece-card reveal reveal-delay-1">
+                        <div class="piece-visual"><span class="piece-initial">D</span></div>
+                        <div class="piece-info">
+                            <h4>Broche rétro</h4>
+                            <p class="piece-desc">Or gris & saphirs · signée, vers 1945</p>
+                            <span class="piece-price">780 €</span>
+                        </div>
+                    </div>
+                    <div class="piece-card reveal reveal-delay-2">
+                        <div class="piece-visual"><span class="piece-initial">E</span></div>
+                        <div class="piece-info">
+                            <h4>Pendentif géorgien</h4>
+                            <p class="piece-desc">Argent & topaze impériale · début XIXᵉ</p>
+                            <a href="#contact" class="piece-link">Renseignez-vous</a>
+                        </div>
+                    </div>
+                    <div class="piece-card reveal reveal-delay-3">
+                        <div class="piece-visual"><span class="piece-initial">F</span></div>
+                        <div class="piece-info">
+                            <h4>Alliance double or</h4>
+                            <p class="piece-desc">Or blanc & or jaune · création contemporaine</p>
+                            <span class="piece-price">520 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOUTIQUES -->
+        <section id="boutiques" style="background: var(--blanc-craie);">
+            <div class="section-inner">
+                <div class="section-tag reveal">Issy, deux adresses</div>
+                <h2 class="section-title reveal reveal-delay-1">2 Avenue Jean Jaurès & 7 rue André Chenier</h2>
+                <div class="boutiques-row">
+                    <div class="boutique-block reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Boutique 2 Avenue Jean Jaurès" class="boutique-img" loading="lazy">
+                        <div class="boutique-details">
+                            <h3>2 Avenue Jean Jaurès</h3>
+                            <p class="boutique-adresse">92130 Issy-les-Moulineaux</p>
+                            <div class="horaires">
+                                <strong>Horaires :</strong><br>
+                                Lundi : 14h–19h · Mardi–Samedi : 10h–19h<br>
+                                Dimanche : fermé
+                            </div>
+                            <a href="tel:+33141907201" style="color:var(--vert-serre);font-weight:500;">01 41 90 72 01</a>
+                        </div>
+                    </div>
+                    <div class="boutique-block reveal reveal-delay-2">
+                        <div class="boutique-placeholder">
+                            <span>7 rue André Chenier</span>
+                        </div>
+                        <div class="boutique-details">
+                            <h3>7 rue André Chenier</h3>
+                            <p class="boutique-adresse">92130 Issy-les-Moulineaux</p>
+                            <div class="horaires">
+                                <strong>Horaires :</strong><br>
+                                Mardi–Samedi : 10h–13h, 14h–19h<br>
+                                Lundi & Dimanche : fermé
+                            </div>
+                            <span style="color:var(--vert-serre);font-weight:500;">Même téléphone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS & CARTE -->
+        <section id="contact" style="background: #f4f1ed; padding-top: 3rem;">
+            <div class="section-inner">
+                <div class="avis-highlight reveal">
+                    <div>
+                        <div class="avis-score">5,0</div>
+                        <div class="avis-stars">★★★★★</div>
+                        <div class="avis-count">223 avis Google · vérifiés</div>
+                    </div>
+                    <div style="font-style:italic;font-size:1.05rem;color:#2c2c2c;">« Un accueil rare, une expertise précise, et toujours le sourire. Ma bijouterie de quartier depuis des années. »</div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-1">
+                    <iframe src="https://maps.google.com/maps?q=Mon+Bijoutier+d%27ICI+2+Avenue+Jean+Jaur%C3%A8s%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Mon Bijoutier d'ICI"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;">Mon Bijoutier d'ICI</p>
+                <p>2 Avenue Jean Jaurès, 92130 Issy-les-Moulineaux</p>
+                <p>7 rue André Chenier, 92130 Issy-les-Moulineaux</p>
+                <p><a href="tel:+33141907201">01 41 90 72 01</a></p>
+                <p><a href="mailto:monbijoutierdici@gmail.com">monbijoutierdici@gmail.com</a></p>
+            </div>
+            <div>
+                <p style="font-weight:500;">Nos services</p>
+                <p>Expertise gratuite · Achat d'or · Dépôt-vente<br>Création sur mesure · Réparation<br>Bijoux anciens & contemporains</p>
+                <p style="margin-top:1rem;">LGBTQ+ friendly · Accueil chaleureux</p>
+            </div>
+            <div class="footer-credit">
+                Site créé par Agence Mooo
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Mon Bijoutier d'ICI",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Avenue Jean Jaurès",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33141907201",
+            "email": "monbijoutierdici@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "223"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Menu mobile
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('navLinks');
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', !expanded);
+                    nav.classList.toggle('active');
+                });
+                // Fermer le menu au clic sur un lien
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header scroll
+            const header = document.getElementById('siteHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // IntersectionObserver pour reveals
+            const reveals = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+                reveals.forEach(el => observer.observe(el));
+            } else {
+                // Fallback pour navigateurs sans support
+                reveals.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+</body>
+</html>
