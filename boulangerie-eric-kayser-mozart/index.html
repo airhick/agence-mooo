@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boulangerie Eric Kayser - Mozart | Pains au levain naturel, Paris 16e</title>
+    <meta name="description" content="Boulangerie Eric Kayser au 79 avenue Mozart à Paris 16e. Pains au levain naturel, pâtisseries d'aujourd'hui et service de quartier depuis 7h. Commandez en ligne ou par téléphone.">
+    <meta property="og:title" content="Boulangerie Eric Kayser - Mozart | Le levain du 16e">
+    <meta property="og:description" content="Pains au levain naturel, pâtisseries d'aujourd'hui et service de quartier au 79 avenue Mozart. Ouvert du mardi au dimanche, 7h-20h.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='56' font-size='56'>🥖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fond: #FAF8F5;
+            --encre: #2C2C2C;
+            --accent-chaud: #DDBF8F;
+            --accent-froid: #8F9AA3;
+            --chair: #EBE5DC;
+            --blanc: #FFFFFF;
+            --ombre-douce: 0 2px 16px rgba(44, 44, 44, 0.06);
+            --ombre-profonde: 0 8px 40px rgba(44, 44, 44, 0.09);
+            --radius: 3px;
+            --transition-lente: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-rapide: 0.22s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --header-h: clamp(56px, 8vw, 72px);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            position: relative;
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            letter-spacing: 0.01em;
+        }
+
+        /* Grain / texture globale */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--encre);
+            color: var(--fond);
+            padding: 8px 16px;
+            z-index: 10001;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 8px;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(16px, 4vw, 48px);
+            background: rgba(250, 248, 245, 0.82);
+            backdrop-filter: blur(14px) saturate(1.2);
+            -webkit-backdrop-filter: blur(14px) saturate(1.2);
+            border-bottom: 1px solid rgba(143, 154, 163, 0.18);
+            transition: all var(--transition-lente);
+        }
+        .site-header.scrolled {
+            box-shadow: 0 1px 0 rgba(143, 154, 163, 0.1), var(--ombre-douce);
+            background: rgba(250, 248, 245, 0.94);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 0.35em;
+            text-decoration: none;
+            color: var(--encre);
+            flex-shrink: 0;
+            line-height: 1.15;
+        }
+        .header-brand .brand-main {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+            letter-spacing: -0.02em;
+            color: var(--encre);
+        }
+        .header-brand .brand-sep {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 300;
+            color: var(--accent-froid);
+            font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+        }
+        .header-brand .brand-local {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+            color: var(--accent-froid);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 2vw, 28px);
+            list-style: none;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--transition-rapide);
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent-chaud);
+            transition: width var(--transition-rapide);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--accent-chaud);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--encre);
+            color: var(--fond);
+            text-decoration: none;
+            padding: clamp(6px, 1vw, 9px) clamp(12px, 2vw, 20px);
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1vw, 0.85rem);
+            letter-spacing: 0.03em;
+            transition: all var(--transition-rapide);
+            white-space: nowrap;
+            border: 1.5px solid transparent;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--accent-chaud);
+            color: var(--encre);
+            border-color: var(--accent-chaud);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(221, 191, 143, 0.35);
+        }
+
+        .header-burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .header-burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all var(--transition-rapide);
+        }
+        .header-burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .header-burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .header-burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--fond);
+                padding: 100px 32px 40px;
+                gap: 24px;
+                align-items: flex-start;
+                transition: right var(--transition-lente);
+                box-shadow: -4px 0 30px rgba(44, 44, 44, 0.12);
+                z-index: 999;
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-burger {
+                display: flex;
+            }
+            .header-cta-mobile {
+                display: inline-flex !important;
+            }
+        }
+        @media (min-width: 861px) {
+            .header-cta-mobile {
+                display: none !important;
+            }
+            .header-cta.desktop-only {
+                display: inline-flex;
+            }
+        }
+        .header-cta-mobile {
+            display: none;
+            align-items: center;
+            gap: 4px;
+            background: var(--encre);
+            color: var(--fond);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            border: 1.5px solid transparent;
+        }
+
+        /* ========== MAIN ========== */
+        main {
+            padding-top: var(--header-h);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            min-height: calc(100svh - var(--header-h));
+            overflow: hidden;
+            background: var(--chair);
+        }
+        @media (min-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr 1.1fr;
+                grid-template-rows: 1fr;
+                min-height: calc(100svh - var(--header-h));
+            }
+        }
+
+        .hero-visual {
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            background: var(--chair);
+        }
+        @media (min-width: 768px) {
+            .hero-visual {
+                min-height: 0;
+                order: 2;
+            }
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) saturate(0.85) contrast(1.04);
+            transition: filter 1.2s ease;
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(195deg,
+                    rgba(235, 229, 220, 0.35) 0%,
+                    rgba(221, 191, 143, 0.18) 40%,
+                    rgba(44, 44, 44, 0.03) 80%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .hero-visual .grain-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.4'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            z-index: 2;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(32px, 6vw, 80px) clamp(20px, 6vw, 60px);
+            position: relative;
+            z-index: 3;
+            gap: clamp(18px, 3vw, 32px);
+        }
+        @media (min-width: 768px) {
+            .hero-content {
+                order: 1;
+                padding-right: clamp(20px, 4vw, 40px);
+            }
+        }
+
+        .hero-tag {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-froid);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-tag::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--accent-chaud);
+            flex-shrink: 0;
+        }
+
+        .hero-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5.5vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+        }
+        .hero-title em {
+            font-style: normal;
+            color: var(--accent-chaud);
+            position: relative;
+        }
+        .hero-title em::after {
+            content: '';
+            position: absolute;
+            bottom: 0.04em;
+            left: 0;
+            width: 100%;
+            height: 0.06em;
+            background: var(--accent-chaud);
+            opacity: 0.4;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            line-height: 1.55;
+            color: #4a4a4a;
+            max-width: 480px;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-badge-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--blanc);
+            padding: 8px 14px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            color: var(--encre);
+            box-shadow: var(--ombre-douce);
+            border: 1px solid rgba(143, 154, 163, 0.2);
+            transition: all var(--transition-rapide);
+            text-decoration: none;
+        }
+        .google-badge:hover {
+            box-shadow: var(--ombre-profonde);
+            transform: translateY(-2px);
+        }
+        .google-badge .star {
+            color: #e4a82e;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        .google-badge .note {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+        }
+        .google-badge .count {
+            color: var(--accent-froid);
+            font-weight: 400;
+            font-size: 0.78rem;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: clamp(10px, 1.4vw, 14px) clamp(18px, 2.5vw, 28px);
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-rapide);
+            font-family: 'Albert Sans', sans-serif;
+            border: 1.5px solid transparent;
+        }
+        .btn-primary {
+            background: var(--encre);
+            color: var(--fond);
+            border-color: var(--encre);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--accent-chaud);
+            color: var(--encre);
+            border-color: var(--accent-chaud);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(221, 191, 143, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--encre);
+            border-color: var(--accent-froid);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            border-color: var(--encre);
+            background: rgba(44, 44, 44, 0.03);
+            transform: translateY(-2px);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: clamp(48px, 8vw, 100px) clamp(16px, 6vw, 64px);
+            position: relative;
+        }
+        .section-label {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-froid);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: clamp(10px, 2vw, 16px);
+        }
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(143, 154, 163, 0.25);
+            max-width: 60px;
+        }
+
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            margin-bottom: clamp(14px, 2.5vw, 24px);
+        }
+        .section-text {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: #3d3d3d;
+            max-width: 620px;
+        }
+
+        /* Grille adresse */
+        .adresse-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 4vw, 48px);
+        }
+        @media (min-width: 768px) {
+            .adresse-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+        }
+        .adresse-card {
+            background: var(--blanc);
+            border-radius: var(--radius);
+            padding: clamp(20px, 3vw, 36px);
+            box-shadow: var(--ombre-douce);
+            border: 1px solid rgba(143, 154, 163, 0.12);
+            position: relative;
+            transition: all var(--transition-lente);
+        }
+        .adresse-card:hover {
+            box-shadow: var(--ombre-profonde);
+        }
+        .adresse-card .card-icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .adresse-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            color: var(--encre);
+        }
+        .adresse-card p,
+        .adresse-card li {
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            line-height: 1.65;
+            color: #3d3d3d;
+        }
+        .adresse-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .adresse-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(143, 154, 163, 0.1);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .adresse-card ul li:last-child {
+            border-bottom: none;
+        }
+        .adresse-card ul li .day {
+            font-weight: 500;
+            color: var(--encre);
+        }
+        .adresse-card ul li .time {
+            color: var(--accent-froid);
+            font-weight: 400;
+        }
+        .adresse-card .tel-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+            color: var(--encre);
+            text-decoration: none;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            letter-spacing: 0.02em;
+            transition: color var(--transition-rapide);
+        }
+        .adresse-card .tel-link:hover {
+            color: var(--accent-chaud);
+        }
+
+        /* Section fournil */
+        .fournil-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 5vw, 56px);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .fournil-layout {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .fournil-image-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--ombre-profonde);
+            aspect-ratio: 4/3;
+            background: var(--chair);
+        }
+        .fournil-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9) saturate(0.8) contrast(1.05);
+        }
+        .fournil-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg,
+                    rgba(235, 229, 220, 0.3) 0%,
+                    rgba(221, 191, 143, 0.12) 50%,
+                    rgba(44, 44, 44, 0.02) 100%);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+        .fournil-caption {
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent-froid);
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* Section carte */
+        .carte-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(14px, 2vw, 20px);
+            max-width: 700px;
+        }
+        @media (min-width: 500px) {
+            .carte-list {
+                grid-template-columns: 1fr 1fr;
+                gap: clamp(18px, 3vw, 28px);
+            }
+        }
+        .carte-item {
+            background: var(--blanc);
+            border-radius: var(--radius);
+            padding: clamp(18px, 2.5vw, 28px);
+            box-shadow: var(--ombre-douce);
+            border: 1px solid rgba(143, 154, 163, 0.1);
+            transition: all var(--transition-lente);
+            position: relative;
+            overflow: hidden;
+        }
+        .carte-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-chaud);
+            opacity: 0;
+            transition: opacity var(--transition-rapide);
+        }
+        .carte-item:hover {
+            box-shadow: var(--ombre-profonde);
+            transform: translateY(-3px);
+        }
+        .carte-item:hover::before {
+            opacity: 1;
+        }
+        .carte-item h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 4px;
+        }
+        .carte-item p {
+            font-size: 0.85rem;
+            color: var(--accent-froid);
+            line-height: 1.5;
+        }
+
+        /* Section commander */
+        .commander-block {
+            background: var(--chair);
+            border-radius: var(--radius);
+            padding: clamp(28px, 5vw, 56px);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+            border: 1px solid rgba(143, 154, 163, 0.08);
+        }
+        .commander-block .section-title {
+            margin-bottom: 10px;
+        }
+        .commander-block .section-text {
+            margin: 0 auto clamp(20px, 3vw, 32px);
+            max-width: 520px;
+            color: #3d3d3d;
+        }
+        .commander-block .btn-primary {
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            padding: clamp(12px, 1.6vw, 16px) clamp(24px, 3.5vw, 40px);
+        }
+
+        /* Section map */
+        .map-section {
+            padding: 0;
+            position: relative;
+        }
+        .map-wrapper {
+            width: 100%;
+            height: clamp(300px, 40vw, 420px);
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(143, 154, 163, 0.2);
+            border-bottom: 1px solid rgba(143, 154, 163, 0.2);
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* Infos pratiques */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(18px, 3vw, 28px);
+        }
+        @media (min-width: 600px) {
+            .infos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .info-mini-card {
+            background: var(--blanc);
+            border-radius: var(--radius);
+            padding: clamp(16px, 2vw, 24px);
+            box-shadow: var(--ombre-douce);
+            border: 1px solid rgba(143, 154, 163, 0.1);
+            text-align: center;
+            transition: all var(--transition-rapide);
+        }
+        .info-mini-card:hover {
+            box-shadow: var(--ombre-profonde);
+            transform: translateY(-2px);
+        }
+        .info-mini-card .mini-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .info-mini-card h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 4px;
+        }
+        .info-mini-card p,
+        .info-mini-card a {
+            font-size: 0.85rem;
+            color: #3d3d3d;
+            text-decoration: none;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        .info-mini-card a:hover {
+            color: var(--accent-chaud);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--encre);
+            color: #c4bfb4;
+            padding: clamp(24px, 4vw, 40px) clamp(16px, 6vw, 64px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+        .site-footer .footer-nap {
+            line-height: 1.7;
+        }
+        .site-footer .footer-nap strong {
+            color: var(--fond);
+            font-weight: 600;
+        }
+        .site-footer .footer-credit {
+            color: var(--accent-froid);
+            font-size: 0.75rem;
+        }
+        .site-footer a {
+            color: var(--accent-chaud);
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+        .site-footer a:hover {
+            color: var(--fond);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        .hero-content>* {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroReveal 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        .hero-content>*:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+        .hero-content>*:nth-child(2) {
+            animation-delay: 0.28s;
+        }
+        .hero-content>*:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .hero-content>*:nth-child(4) {
+            animation-delay: 0.52s;
+        }
+        .hero-content>*:nth-child(5) {
+            animation-delay: 0.64s;
+        }
+
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== FOCUS & ACCESSIBILITY ========== */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible {
+            outline: 2.5px solid var(--accent-chaud);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        .header-cta:focus-visible,
+        .btn-primary:focus-visible {
+            outline-color: var(--accent-chaud);
+            outline-offset: 4px;
+        }
+
+        /* ========== REDUCED MOTION ========== */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal,
+            .hero-content>* {
+                opacity: 1;
+                transform: none;
+                animation: none;
+                transition: none;
+            }
+            .hero-content>* {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .carte-item,
+            .adresse-card,
+            .info-mini-card,
+            .btn,
+            .header-cta,
+            .google-badge {
+                transition: none;
+            }
+            .carte-item:hover,
+            .adresse-card:hover,
+            .info-mini-card:hover,
+            .btn:hover,
+            .header-cta:hover,
+            .google-badge:hover {
+                transform: none;
+                box-shadow: var(--ombre-douce);
+            }
+        }
+
+        /* ========== RESPONSIVE FINE-TUNING ========== */
+        @media (max-width: 480px) {
+            .hero {
+                min-height: auto;
+            }
+            .hero-visual {
+                min-height: 220px;
+                max-height: 280px;
+            }
+            .hero-content {
+                padding: 24px 16px 32px;
+                gap: 12px;
+            }
+            .hero-title {
+                font-size: clamp(1.7rem, 8vw, 2.2rem);
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            .header-brand .brand-sep {
+                display: none;
+            }
+            .header-brand {
+                gap: 4px;
+            }
+            .adresse-card ul li {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <header class="site-header" id="site-header">
+        <a href="#" class="header-brand" aria-label="Boulangerie Eric Kayser - Mozart, retour à l'accueil">
+            <span class="brand-main">Eric Kayser</span>
+            <span class="brand-sep">·</span>
+            <span class="brand-local">Mozart</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav" id="header-nav">
+                <li><a href="#adresse">L'adresse</a></li>
+                <li><a href="#fournil">Le fournil</a></li>
+                <li><a href="#carte">La carte</a></li>
+                <li><a href="#commander">Commander</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33142880329" class="header-cta desktop-only" aria-label="Appeler la boulangerie au 01 42 88 03 29">
+            <span aria-hidden="true">📞</span> 01 42 88 03 29
+        </a>
+        <a href="tel:+33142880329" class="header-cta-mobile" aria-label="Appeler la boulangerie">
+            <span aria-hidden="true">📞</span>
+        </a>
+        <button class="header-burger" id="header-burger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-visual">
+                <img src="assets/maps-1.jpg" alt="Façade de la boulangerie Eric Kayser au 79 avenue Mozart à Paris" loading="eager" width="800" height="600">
+                <div class="grain-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-tag">Boulangerie de quartier</p>
+                <h1 class="hero-title" id="hero-title">Le levain du&nbsp;16<sup style="font-size:0.45em;vertical-align:super;font-weight:400;">e</sup> s'éveille au&nbsp;<em>79&nbsp;Mozart</em>.</h1>
+                <p class="hero-subtitle">Pains au levain naturel, pâtisseries d'aujourd'hui et service de quartier — depuis 7&nbsp;h, juste en bas de chez vous.</p>
+                <div class="hero-badge-row">
+                    <a href="#infos" class="google-badge" aria-label="Note Google : 3,9 étoiles sur 5, basée sur 205 avis">
+                        <span class="star" aria-hidden="true">★</span>
+                        <span class="note">3.9</span>
+                        <span class="count">/ 5 · 205 avis</span>
+                    </a>
+                </div>
+                <div class="hero-cta-row">
+                    <a href="#commander" class="btn btn-primary">Commander en ligne</a>
+                    <a href="tel:+33142880329" class="btn btn-outline">Appeler · 01 42 88 03 29</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADRESSE -->
+        <section class="section" id="adresse" aria-labelledby="adresse-title">
+            <span class="section-label reveal">79 avenue Mozart</span>
+            <h2 class="section-title reveal reveal-delay-1" id="adresse-title">Poussez la porte, on est là.</h2>
+            <div class="adresse-grid">
+                <div class="adresse-card reveal reveal-delay-2">
+                    <span class="card-icon" aria-hidden="true">🕖</span>
+                    <h3>Horaires d'ouverture</h3>
+                    <ul>
+                        <li><span class="day">Mardi – Vendredi</span> <span class="time">7 h – 20 h</span></li>
+                        <li><span class="day">Samedi – Dimanche</span> <span class="time">7 h – 20 h</span></li>
+                        <li><span class="day">Lundi</span> <span class="time">Fermé</span></li>
+                    </ul>
+                    <p style="margin-top:10px;font-size:0.8rem;color:var(--accent-froid);">Horaires susceptibles de varier les jours fériés.</p>
+                </div>
+                <div class="adresse-card reveal reveal-delay-3">
+                    <span class="card-icon" aria-hidden="true">📍</span>
+                    <h3>Contact &amp; adresse</h3>
+                    <p style="margin-bottom:8px;"><strong>79 Avenue Mozart</strong><br>75016 Paris, France</p>
+                    <a href="tel:+33142880329" class="tel-link">📞 01 42 88 03 29</a>
+                    <p style="margin-top:10px;font-size:0.85rem;">
+                        <a href="mailto:maisonkayser@painvincompany.com" style="color:var(--encre);text-decoration:underline;text-underline-offset:3px;">maisonkayser@painvincompany.com</a>
+                    </p>
+                    <p style="font-size:0.8rem;color:var(--accent-froid);margin-top:6px;">Commandez par téléphone ou passez directement nous voir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOURNIL -->
+        <section class="section" id="fournil" aria-labelledby="fournil-title">
+            <span class="section-label reveal">Notre fournil de quartier</span>
+            <div class="fournil-layout">
+                <div class="fournil-image-wrap reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="Vitrine et entrée de la boulangerie Eric Kayser avenue Mozart" loading="lazy" width="600" height="450">
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <h2 class="section-title" id="fournil-title">Une équipe à taille humaine, un fournil qui vit.</h2>
+                    <p class="section-text">
+                        Derrière la vitrine, une équipe à taille humaine pétrit, façonne et cuit sur place pains, viennoiseries et pâtisseries dans la pure tradition Kayser. Ici, pas de laboratoire distant : chaque baguette, chaque croissant sort du fournil attenant, dans le respect du levain naturel et des saisons.
+                    </p>
+                    <p class="section-text" style="margin-top:12px;">
+                        Nous connaissons nos habitués par leur prénom, et les nouveaux visages sont toujours les bienvenus. La boulangerie du 79 Mozart, c'est un repère de trottoir — une adresse où le pain redevient une conversation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARTE -->
+        <section class="section" id="carte" aria-labelledby="carte-title">
+            <span class="section-label reveal">La carte du moment</span>
+            <h2 class="section-title reveal reveal-delay-1" id="carte-title">Ce qui sort du four en ce moment.</h2>
+            <p class="section-text reveal reveal-delay-1" style="margin-bottom:clamp(20px,3vw,32px);">
+                Tous nos produits sont disponibles en boutique et en commande click &amp; collect. Voici quelques incontournables de saison&nbsp;:
+            </p>
+            <ul class="carte-list">
+                <li class="carte-item reveal reveal-delay-2">
+                    <h4>Tarte cappuccino</h4>
+                    <p>Crème onctueuse au café, fine couche de chocolat, éclats de fève tonka. L'alliée des pauses de 16 h.</p>
+                </li>
+                <li class="carte-item reveal reveal-delay-2">
+                    <h4>Cœur framboise-vanille</h4>
+                    <p>Biscuit moelleux, insert framboise acidulée, mousse vanille de Madagascar. Un classique réjouissant.</p>
+                </li>
+                <li class="carte-item reveal reveal-delay-3">
+                    <h4>Pain du mois</h4>
+                    <p>Une création éphémère qui change au fil des saisons : farines anciennes, graines toastées, longue fermentation. Demandez-le au comptoir&nbsp;!</p>
+                </li>
+                <li class="carte-item reveal reveal-delay-3">
+                    <h4>Viennoiseries pur beurre</h4>
+                    <p>Croissants, pains au chocolat, escargots aux raisins — feuilletage maison, beurre AOP Charentes-Poitou.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- COMMANDER -->
+        <section class="section" id="commander" aria-labelledby="commander-title">
+            <div class="commander-block reveal">
+                <span class="section-label" style="justify-content:center;">Commander en ligne</span>
+                <h2 class="section-title" id="commander-title">Votre commande, prête en boutique.</h2>
+                <p class="section-text">
+                    Choisissez vos produits sur notre plateforme click &amp; collect, passez commande avant 18 h, et venez retirer votre panier le lendemain matin — frais, chaud, sans attente.
+                </p>
+                <a href="https://www.maison-kayser.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Accéder au click &amp; collect
+                    <span aria-hidden="true">→</span>
+                </a>
+                <p style="margin-top:14px;font-size:0.8rem;color:var(--accent-froid);">
+                    Service disponible du mardi au dimanche. Paiement en ligne sécurisé.
+                </p>
+            </div>
+        </section>
+
+        <!-- MAP -->
+        <section class="map-section" aria-label="Carte de localisation">
+            <div class="map-wrapper">
+                <iframe src="https://maps.google.com/maps?q=Boulangerie+Eric+Kayser+-+Mozart+79+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localisation de la boulangerie Eric Kayser au 79 avenue Mozart, Paris 16e"></iframe>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section" id="infos" aria-labelledby="infos-title">
+            <span class="section-label reveal">Infos pratiques</span>
+            <h2 class="section-title reveal reveal-delay-1" id="infos-title">Tout ce qu'il faut savoir avant de passer.</h2>
+            <div class="infos-grid" style="margin-top:clamp(20px,3vw,32px);">
+                <div class="info-mini-card reveal reveal-delay-2">
+                    <span class="mini-icon" aria-hidden="true">🚇</span>
+                    <h4>Métro le plus proche</h4>
+                    <p>Jasmin (ligne 9) à 3 minutes à pied. Station Ranelagh à 6 minutes.</p>
+                </div>
+                <div class="info-mini-card reveal reveal-delay-3">
+                    <span class="mini-icon" aria-hidden="true">💳</span>
+                    <h4>Moyens de paiement</h4>
+                    <p>Carte bancaire, espèces, sans contact, tickets restaurant (carte).</p>
+                </div>
+                <div class="info-mini-card reveal reveal-delay-4">
+                    <span class="mini-icon" aria-hidden="true">⭐</span>
+                    <h4>Avis Google</h4>
+                    <p><strong>3.9 / 5</strong> sur 205 avis<br>— La parole est à nos clients du quartier.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-nap">
+            <strong>Boulangerie Eric Kayser - Mozart</strong><br>
+            79 Avenue Mozart, 75016 Paris<br>
+            <a href="tel:+33142880329">01 42 88 03 29</a> ·
+            <a href="mailto:maisonkayser@painvincompany.com">maisonkayser@painvincompany.com</a>
+        </div>
+        <div class="footer-credit">
+            Site créé par <a href="https://agence.mooo.com/boulangerie-eric-kayser-mozart" target="_blank" rel="noopener">Agence Mooo</a>
+        </div>
+    </footer>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Bakery",
+            "name": "Boulangerie Eric Kayser - Mozart",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "79 Avenue Mozart",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142880329",
+            "email": "maisonkayser@painvincompany.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.9",
+                "reviewCount": "205"
+            },
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:00",
+                "closes": "20:00"
+            }, {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "07:00",
+                "closes": "20:00"
+            }],
+            "priceRange": "€",
+            "servesCuisine": "Boulangerie, Pâtisserie",
+            "url": "https://agence.mooo.com/boulangerie-eric-kayser-mozart"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // === HEADER SCROLL ===
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+            const onScroll = () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 20) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // === BURGER MENU ===
+            const burger = document.getElementById('header-burger');
+            const nav = document.getElementById('header-nav');
+            const navLinks = nav.querySelectorAll('a');
+            let menuOpen = false;
+
+            const closeMenu = () => {
+                menuOpen = false;
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
+
+            const openMenu = () => {
+                menuOpen = true;
+                nav.classList.add('active');
+                burger.classList.add('active');
+                burger.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            };
+
+            burger.addEventListener('click', () => {
+                if (menuOpen) closeMenu();
+                else openMenu();
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuOpen) closeMenu();
+                });
+            });
+
+            // Fermer au clic extérieur
+            document.addEventListener('click', (e) => {
+                if (menuOpen && !nav.contains(e.target) && !burger.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            // === INTERSECTION OBSERVER (reveals au scroll) ===
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealEls.forEach(el => revealObserver.observe(el));
+            }
+
+            // === FERMER MENU SUR ÉCHAP ===
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menuOpen) {
+                    closeMenu();
+                    burger.focus();
+                }
+            });
+
+            // === RESIZE : fermer menu si on repasse en desktop ===
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 860 && menuOpen) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
