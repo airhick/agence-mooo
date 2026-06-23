@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boulangerie Le Panier — Artisan boulanger à Neuilly-sur-Seine. Pain au levain, viennoiseries feuilletées et pâtisseries de saison. Découvrez le goût du vrai au 25 Rue du Château.">
+    <title>Boulangerie Le Panier | Pain artisanal & Viennoiseries | Neuilly-sur-Seine</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Boulangerie Le Panier | Pain artisanal & Viennoiseries | Neuilly-sur-Seine">
+    <meta property="og:description" content="Chaque matin, notre fournil façonne des pains au levain, des viennoiseries feuilletées et des pâtisseries inspirées des saisons. Découvrez le goût du vrai, en plein cœur de Neuilly.">
+    <meta property="og:image" content="https://agence.mooo.com/boulangerie-le-panier/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥖</text></svg>">
+
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blanc-fournil: #F9F6F0;
+            --brun-croute: #2C2416;
+            --dore: #E2B56B;
+            --vert-menthe: #A3C9B2;
+            --bois-miel: #C1A27B;
+            --beige-paille: #E5E0D7;
+            --dore-fonce: #c99a3e;
+            --brun-clair: #4a3d2a;
+            --ombre-douce: rgba(44, 36, 22, 0.07);
+            --ombre-medium: rgba(44, 36, 22, 0.13);
+            --shadow-card: 0 2px 20px rgba(44, 36, 22, 0.06), 0 8px 40px rgba(44, 36, 22, 0.04);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition-douce: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--blanc-fournil);
+            color: var(--brun-croute);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Texture grain subtile sur tout le fond */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(249, 246, 240, 0.82);
+            backdrop-filter: blur(16px) saturate(1.4);
+            -webkit-backdrop-filter: blur(16px) saturate(1.4);
+            border-bottom: 1px solid rgba(44, 36, 22, 0.06);
+            transition: box-shadow var(--transition-douce), background var(--transition-douce);
+            padding: 0;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(44, 36, 22, 0.08);
+            background: rgba(249, 246, 240, 0.94);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(16px, 3vw, 40px);
+            height: 68px;
+            gap: clamp(12px, 2vw, 24px);
+        }
+        .brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            letter-spacing: 0.04em;
+            color: var(--brun-croute);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.15;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color var(--transition-douce);
+        }
+        .brand:hover {
+            color: var(--dore-fonce);
+        }
+        .brand-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--dore);
+            color: var(--blanc-fournil);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: background var(--transition-douce), transform var(--transition-bounce);
+        }
+        .brand:hover .brand-icon {
+            background: var(--dore-fonce);
+            transform: rotate(-12deg) scale(1.05);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 1.6vw, 20px);
+            list-style: none;
+            flex-wrap: nowrap;
+        }
+        .nav-links a {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+            color: var(--brun-croute);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--transition-douce);
+            white-space: nowrap;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dore);
+            border-radius: 2px;
+            transition: width var(--transition-douce);
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--dore-fonce);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+            letter-spacing: 0.03em;
+            color: var(--blanc-fournil);
+            background: var(--dore);
+            padding: 10px clamp(14px, 2vw, 20px);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background var(--transition-douce), transform var(--transition-bounce), box-shadow var(--transition-douce);
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(226, 181, 107, 0.3);
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--dore-fonce);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(226, 181, 107, 0.4);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--brun-croute);
+            outline-offset: 3px;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--brun-croute);
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: color var(--transition-douce);
+        }
+        .mobile-menu-btn:hover {
+            color: var(--dore-fonce);
+        }
+
+        /* ---- HÉROS ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--brun-croute);
+            margin-top: 0;
+            padding-top: 68px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+            filter: brightness(0.6) saturate(0.85);
+            transform: scale(1.04);
+            animation: hero-zoom 8s ease-out forwards;
+        }
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.12);
+            }
+            to {
+                transform: scale(1.04);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg,
+                    rgba(44, 36, 22, 0.55) 0%,
+                    rgba(44, 36, 22, 0.3) 40%,
+                    rgba(44, 36, 22, 0.45) 100%);
+        }
+        /* Motif écaille en filigrane sur le héros */
+        .hero-ecaille {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.06;
+            background:
+                radial-gradient(ellipse 18px 26px at 25% 30%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 37% 30%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 31% 44%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 55% 20%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 67% 20%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 61% 34%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 75% 38%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 87% 38%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 81% 52%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 42% 58%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 54% 58%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 48% 72%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 20% 70%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 32% 70%, #fff 40%, transparent 41%),
+                radial-gradient(ellipse 18px 26px at 26% 84%, #fff 40%, transparent 41%);
+            background-size: 220px 180px;
+            background-repeat: repeat;
+            animation: ecaille-drift 20s linear infinite;
+        }
+        @keyframes ecaille-drift {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 220px 180px;
+            }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 780px;
+            padding: clamp(24px, 5vw, 48px) clamp(16px, 4vw, 32px);
+            animation: hero-reveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        @keyframes hero-reveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 246, 240, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--brun-croute);
+            letter-spacing: 0.02em;
+            margin-bottom: clamp(20px, 3vw, 28px);
+            box-shadow: 0 4px 16px rgba(44, 36, 22, 0.1);
+            border: 1px solid rgba(226, 181, 107, 0.4);
+        }
+        .hero-badge .stars {
+            color: #e8b84b;
+            letter-spacing: 2px;
+            font-size: 0.95rem;
+        }
+        .hero-badge .rating-note {
+            opacity: 0.7;
+            font-size: 0.78rem;
+            font-weight: 400;
+        }
+        .hero h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #fff;
+            margin-bottom: clamp(14px, 2vw, 20px);
+            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+            text-wrap: balance;
+        }
+        .hero h1 .highlight {
+            color: var(--dore);
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--dore);
+            border-radius: 3px;
+            opacity: 0.5;
+        }
+        .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto clamp(24px, 4vw, 32px);
+            text-wrap: balance;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+            letter-spacing: 0.03em;
+            color: var(--brun-croute);
+            background: var(--dore);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all var(--transition-douce);
+            box-shadow: 0 4px 18px rgba(226, 181, 107, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--dore-fonce);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(226, 181, 107, 0.5);
+            color: var(--blanc-fournil);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+            letter-spacing: 0.03em;
+            color: #fff;
+            background: transparent;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: all var(--transition-douce);
+        }
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-secondary:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+        }
+
+        /* ---- SECTIONS COMMUNES ---- */
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: clamp(50px, 8vw, 90px) clamp(16px, 4vw, 40px);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--dore-fonce);
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--brun-croute);
+            margin-bottom: clamp(12px, 2vw, 18px);
+            text-wrap: balance;
+        }
+        .section-text {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+            line-height: 1.75;
+            color: var(--brun-clair);
+            max-width: 640px;
+            text-wrap: pretty;
+        }
+
+        /* ---- FILE DÉCORATIF ---- */
+        .filet-dore {
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--dore);
+            border-radius: 3px;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        /* ---- SECTION SAVOIR-FAIRE ---- */
+        .savoir-faire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 60px);
+            align-items: center;
+            margin-top: clamp(24px, 4vw, 36px);
+        }
+        .sf-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-card);
+            background: var(--beige-paille);
+        }
+        .sf-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .sf-image-wrapper:hover img {
+            transform: scale(1.04);
+        }
+        .sf-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(226, 181, 107, 0.25);
+            pointer-events: none;
+        }
+        .sf-badge-flottant {
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            background: var(--dore);
+            color: var(--brun-croute);
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            padding: 10px 18px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(226, 181, 107, 0.4);
+            z-index: 2;
+        }
+        .sf-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .sf-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--brun-clair);
+            line-height: 1.5;
+        }
+        .sf-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            margin-top: 6px;
+            background: var(--dore);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(226, 181, 107, 0.15);
+        }
+
+        /* ---- SECTION OFFRES ---- */
+        .offres-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(16px, 2.5vw, 28px);
+            margin-top: clamp(24px, 4vw, 36px);
+        }
+        .offre-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 30px);
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(44, 36, 22, 0.05);
+            transition: all var(--transition-douce);
+            position: relative;
+            overflow: hidden;
+        }
+        .offre-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--dore);
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+            opacity: 0;
+            transition: opacity var(--transition-douce);
+        }
+        .offre-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(44, 36, 22, 0.1);
+        }
+        .offre-card:hover::before {
+            opacity: 1;
+        }
+        .offre-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-md);
+            background: rgba(163, 201, 178, 0.2);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            transition: background var(--transition-douce), transform var(--transition-bounce);
+        }
+        .offre-card:hover .offre-icon {
+            background: rgba(163, 201, 178, 0.35);
+            transform: scale(1.08);
+        }
+        .offre-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            color: var(--brun-croute);
+            margin-bottom: 8px;
+        }
+        .offre-card p {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--brun-clair);
+            line-height: 1.6;
+        }
+
+        /* ---- SECTION AMBIANCE ---- */
+        .ambiance-wrapper {
+            position: relative;
+            background: var(--beige-paille);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-top: clamp(24px, 4vw, 36px);
+            box-shadow: var(--shadow-card);
+        }
+        .ambiance-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+            min-height: 400px;
+        }
+        .ambiance-visuel {
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+        }
+        .ambiance-visuel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+        .ambiance-visuel:hover img {
+            transform: scale(1.05);
+        }
+        .ambiance-texte {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(24px, 4vw, 40px);
+        }
+        .ambiance-texte .section-text {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .ambiance-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .ambiance-tag {
+            display: inline-block;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.82rem;
+            color: var(--brun-croute);
+            background: rgba(163, 201, 178, 0.25);
+            padding: 8px 16px;
+            border-radius: 50px;
+            letter-spacing: 0.02em;
+            transition: background var(--transition-douce);
+        }
+        .ambiance-tag:hover {
+            background: rgba(163, 201, 178, 0.45);
+        }
+
+        /* ---- SECTION AVIS ---- */
+        .avis-card {
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: clamp(24px, 4vw, 40px);
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(44, 36, 22, 0.05);
+            margin-top: clamp(24px, 4vw, 36px);
+            text-align: center;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .avis-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(226, 181, 107, 0.08);
+            pointer-events: none;
+        }
+        .avis-etoiles {
+            font-size: 2rem;
+            letter-spacing: 6px;
+            color: #e8b84b;
+            margin-bottom: 12px;
+        }
+        .avis-note-grande {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: var(--brun-croute);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .avis-sur {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 1.4rem;
+            color: var(--brun-clair);
+            opacity: 0.6;
+        }
+        .avis-nb {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--brun-clair);
+            margin-top: 6px;
+        }
+        .avis-nb span {
+            font-weight: 700;
+            color: var(--brun-croute);
+        }
+        .avis-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--brun-clair);
+            margin-top: 16px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(163, 201, 178, 0.15);
+        }
+
+        /* ---- SECTION INFOS PRATIQUES ---- */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 4vw, 40px);
+            margin-top: clamp(24px, 4vw, 36px);
+        }
+        .info-bloc {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 28px);
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(44, 36, 22, 0.04);
+        }
+        .info-bloc h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            color: var(--brun-croute);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-bloc h3 .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(226, 181, 107, 0.2);
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .info-bloc p,
+        .info-bloc a {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--brun-clair);
+            line-height: 1.7;
+            text-decoration: none;
+            transition: color var(--transition-douce);
+        }
+        .info-bloc a:hover {
+            color: var(--dore-fonce);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1.5px;
+            text-decoration-color: var(--dore);
+        }
+        .horaires-message {
+            display: inline-block;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--dore-fonce);
+            background: rgba(226, 181, 107, 0.12);
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-top: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ---- CARTE ---- */
+        .carte-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            margin-top: clamp(24px, 4vw, 36px);
+            border: 1px solid rgba(44, 36, 22, 0.05);
+        }
+        .carte-wrapper iframe {
+            display: block;
+            filter: grayscale(10%) contrast(1.02);
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--brun-croute);
+            color: rgba(249, 246, 240, 0.85);
+            padding: clamp(30px, 5vw, 50px) clamp(16px, 4vw, 40px);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .footer-inner .brand {
+            color: var(--dore);
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+        .footer-inner .brand:hover {
+            color: #fff;
+        }
+        .footer-inner .brand .brand-icon {
+            background: var(--dore);
+            color: var(--brun-croute);
+        }
+        .footer-inner p {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+        .footer-inner a {
+            color: var(--dore);
+            text-decoration: none;
+            transition: color var(--transition-douce);
+        }
+        .footer-inner a:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .footer-credits {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            opacity: 0.5;
+            letter-spacing: 0.03em;
+        }
+
+        /* ---- REVEAL AU SCROLL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: translateY(0);
+                transition: none;
+            }
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2.5px solid var(--dore-fonce);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(249, 246, 240, 0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                padding: 20px;
+                border-bottom: 1px solid rgba(44, 36, 22, 0.08);
+                box-shadow: 0 12px 30px rgba(44, 36, 22, 0.1);
+                gap: 14px;
+                z-index: 999;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 8px 12px;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .savoir-faire-grid {
+                grid-template-columns: 1fr;
+            }
+            .sf-image-wrapper {
+                order: -1;
+                aspect-ratio: 3/2;
+            }
+            .sf-badge-flottant {
+                bottom: -10px;
+                right: -10px;
+                font-size: 0.7rem;
+                padding: 8px 14px;
+            }
+            .offres-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .ambiance-inner {
+                grid-template-columns: 1fr;
+            }
+            .ambiance-visuel {
+                min-height: 240px;
+                aspect-ratio: 4/3;
+            }
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-cta span {
+                display: none;
+            }
+            .header-cta {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: clamp(1.7rem, 7vw, 2.2rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+            .avis-note-grande {
+                font-size: 2.6rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .brand span.brand-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="Boulangerie Le Panier - Accueil">
+                <span class="brand-icon">🥖</span>
+                <span class="brand-text">LE PANIER</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#savoir-faire">Savoir-faire</a></li>
+                    <li><a href="#offres">Nos créations</a></li>
+                    <li><a href="#ambiance">L'ambiance</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#infos">Infos pratiques</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33146245135" class="header-cta" aria-label="Appeler la boulangerie">
+                📞 <span>Nous appeler</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- HÉROS -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <img
+            src="assets/maps-1.jpg"
+            alt="Boulangerie Le Panier — Façade lumineuse au 25 Rue du Château, Neuilly-sur-Seine"
+            loading="eager"
+            fetchpriority="high"
+            >
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-ecaille" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="stars">★★★★☆</span>
+                <span>4,0</span>
+                <span class="rating-note">sur 626 avis Google</span>
+            </div>
+            <h1>Le pain qui raconte<br>une histoire. <span class="highlight">La vôtre.</span></h1>
+            <p class="hero-subtitle">
+                Chaque matin, notre fournil façonne des pains au levain, des viennoiseries feuilletées
+                et des pâtisseries inspirées des saisons. Découvrez le goût du vrai, en plein cœur de Neuilly.
+            </p>
+            <div class="hero-actions">
+                <a href="#infos" class="btn-primary">📍 Venir nous voir</a>
+                <a href="tel:+33146245135" class="btn-secondary">📞 01 46 24 51 35</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAVOIR-FAIRE -->
+    <section class="section" id="savoir-faire">
+        <span class="section-label reveal">Notre savoir-faire</span>
+        <h2 class="section-title reveal reveal-delay-1">L'artisanat au cœur<br>de chaque geste</h2>
+        <hr class="filet-dore reveal reveal-delay-1" aria-hidden="true">
+        <div class="savoir-faire-grid">
+            <div class="reveal reveal-delay-2">
+                <p class="section-text">
+                    Au Panier, le pain n'est pas un produit, c'est une promesse. Celle d'un pétrissage lent,
+                    d'une fermentation longue au levain naturel, d'une croûte dorée qui chante à la sortie du four.
+                    Chaque matin avant l'aube, notre équipe allume les fours et perpétue les gestes qui font
+                    la différence : l'autolyse respectée, le pointage patient, la pince maîtrisée.
+                </p>
+                <ul class="sf-list">
+                    <li>Farines de meule sélectionnées auprès de producteurs français</li>
+                    <li>Levain naturel entretenu chaque jour depuis l'ouverture</li>
+                    <li>Pétrissage lent et façonnage à la main</li>
+                    <li>Cuisson sur sole de pierre pour une croûte parfaite</li>
+                </ul>
+            </div>
+            <div class="sf-image-wrapper reveal reveal-delay-2">
+                <img
+                src="assets/maps-1.jpg"
+                alt="Intérieur de la Boulangerie Le Panier — Fournil et présentation des pains"
+                loading="lazy"
+                >
+                <span class="sf-badge-flottant">Depuis 2010</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFRES -->
+    <section class="section" id="offres">
+        <span class="section-label reveal">Nos créations</span>
+        <h2 class="section-title reveal reveal-delay-1">Le meilleur du fournil,<br>chaque jour</h2>
+        <hr class="filet-dore reveal reveal-delay-1" aria-hidden="true">
+        <div class="offres-grid">
+            <div class="offre-card reveal reveal-delay-1">
+                <div class="offre-icon">🍞</div>
+                <h3>Pains au levain</h3>
+                <p>
+                    Du classique pain de campagne à la tourte de meule, nos pains au levain
+                    développent une mie alvéolée et une croûte croustillante qui se bonifie
+                    jusqu'au lendemain.
+                </p>
+            </div>
+            <div class="offre-card reveal reveal-delay-2">
+                <div class="offre-icon">🥐</div>
+                <h3>Viennoiseries</h3>
+                <p>
+                    Croissants feuilletés, pains au chocolat généreux, escargots briochés…
+                    Le beurre AOP Charentes-Poitou et un tourage minutieux font toute la différence.
+                </p>
+            </div>
+            <div class="offre-card reveal reveal-delay-3">
+                <div class="offre-icon">🍰</div>
+                <h3>Pâtisseries saisonnières</h3>
+                <p>
+                    Tartes aux fruits de saison, éclairs, flans pâtissiers et créations
+                    éphémères qui suivent le rythme du marché et l'inspiration de notre chef pâtissier.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMBIANCE -->
+    <section class="section" id="ambiance">
+        <span class="section-label reveal">L'ambiance</span>
+        <h2 class="section-title reveal reveal-delay-1">Une devanture lumineuse,<br>un repère de quartier</h2>
+        <hr class="filet-dore reveal reveal-delay-1" aria-hidden="true">
+        <div class="ambiance-wrapper reveal reveal-delay-2">
+            <div class="ambiance-inner">
+                <div class="ambiance-visuel">
+                    <img
+                    src="assets/maps-1.jpg"
+                    alt="Façade de la Boulangerie Le Panier rue du Château à Neuilly-sur-Seine"
+                    loading="lazy"
+                    >
+                </div>
+                <div class="ambiance-texte">
+                    <p class="section-text">
+                        Poussez la porte du 25 rue du Château et laissez-vous envelopper par
+                        l'odeur chaude du pain frais. Bois pâle, carrelage blanc en écailles,
+                        lumière douce : tout ici respire l'authenticité lumineuse qui fait
+                        la signature du Panier. On y vient pour son quotidien, on y revient
+                        pour le sourire de l'équipe et le plaisir du choix.
+                    </p>
+                    <div class="ambiance-details">
+                        <span class="ambiance-tag">Bois pâle</span>
+                        <span class="ambiance-tag">Carrelage écaille</span>
+                        <span class="ambiance-tag">Lumière chaude</span>
+                        <span class="ambiance-tag">Accueil soigné</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section" id="avis">
+        <span class="section-label reveal">Ce que vous en dites</span>
+        <h2 class="section-title reveal reveal-delay-1">La note de nos clients</h2>
+        <hr class="filet-dore reveal reveal-delay-1" aria-hidden="true">
+        <div class="avis-card reveal reveal-delay-2">
+            <div class="avis-etoiles" aria-label="4 étoiles sur 5">★★★★☆</div>
+            <div class="avis-note-grande">4<span class="avis-sur">/5</span></div>
+            <p class="avis-nb">
+                Basé sur <span>626 avis</span> Google
+            </p>
+            <div class="avis-source">
+                <span>🔗</span> Google Business Profile
+            </div>
+        </div>
+    </section>
+
+    <!-- INFOS PRATIQUES -->
+    <section class="section" id="infos">
+        <span class="section-label reveal">Informations pratiques</span>
+        <h2 class="section-title reveal reveal-delay-1">Trouvez-nous facilement</h2>
+        <hr class="filet-dore reveal reveal-delay-1" aria-hidden="true">
+        <div class="infos-grid reveal reveal-delay-2">
+            <div class="info-bloc">
+                <h3><span class="info-icon">📍</span> Adresse</h3>
+                <p>25 Rue du Château<br>92200 Neuilly-sur-Seine</p>
+            </div>
+            <div class="info-bloc">
+                <h3><span class="info-icon">📞</span> Téléphone</h3>
+                <p><a href="tel:+33146245135">01 46 24 51 35</a></p>
+            </div>
+            <div class="info-bloc">
+                <h3><span class="info-icon">✉️</span> Email</h3>
+                <p>
+                    <a href="mailto:contact@boulangerielepanier.fr">contact@boulangerielepanier.fr</a><br>
+                    <a href="mailto:levallois@boulangerielepanier.fr">levallois@boulangerielepanier.fr</a>
+                </p>
+            </div>
+            <div class="info-bloc">
+                <h3><span class="info-icon">🕐</span> Horaires</h3>
+                <p>Horaires à confirmer</p>
+                <span class="horaires-message">N'hésitez pas à nous contacter pour plus d'informations</span>
+            </div>
+        </div>
+        <!-- Carte Google Maps -->
+        <div class="carte-wrapper reveal reveal-delay-2">
+            <iframe
+            src="https://maps.google.com/maps?q=BOULANGERIE+LE+PANIER+25+Rue+du+Ch%C3%A2teau%2C+Neuilly-sur-Seine&output=embed"
+            width="100%"
+            height="360"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Carte de localisation de la Boulangerie Le Panier"
+        ></iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <a href="#" class="brand" aria-label="Boulangerie Le Panier - Haut de page">
+            <span class="brand-icon">🥖</span>
+            LE PANIER
+        </a>
+        <p>
+            25 Rue du Château, 92200 Neuilly-sur-Seine<br>
+            <a href="tel:+33146245135">01 46 24 51 35</a> —
+            <a href="mailto:contact@boulangerielepanier.fr">contact@boulangerielepanier.fr</a>
+        </p>
+        <p class="footer-credits">Site créé par Agence Mooo</p>
+    </div>
+</footer>
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Boulangerie Le Panier",
+        "image": "https://agence.mooo.com/boulangerie-le-panier/assets/maps-1.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "25 Rue du Château",
+            "addressLocality": "Neuilly-sur-Seine",
+            "postalCode": "92200",
+            "addressCountry": "FR"
+        },
+        "telephone": "+33146245135",
+        "email": "contact@boulangerielepanier.fr",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.0",
+            "reviewCount": "626"
+        },
+        "url": "https://agence.mooo.com/boulangerie-le-panier"
+    }
+</script>
+
+<script>
+    // Header scroll effect
+    const header = document.getElementById('siteHeader');
+    let lastScroll = 0;
+    function handleScroll() {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 30) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        lastScroll = currentScroll;
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileMenuBtn.addEventListener('click', () => {
+        const isActive = navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', isActive);
+        mobileMenuBtn.textContent = isActive ? '✕' : '☰';
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.textContent = '☰';
+        });
+    });
+
+    // IntersectionObserver pour reveals au scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.1
+        };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        revealEls.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback pour navigateurs sans IntersectionObserver
+        revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // Fermer le menu mobile si on clique en dehors
+    document.addEventListener('click', (e) => {
+        if (!header.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.textContent = '☰';
+        }
+    });
+</script>
+</body>
+</html>
