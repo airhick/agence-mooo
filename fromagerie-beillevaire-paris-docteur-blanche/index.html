@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fromagerie Beillevaire Paris Docteur Blanche — Fromagerie, crèmerie, épicerie fine au 28 rue du Docteur Blanche, Paris 16ᵉ</title>
+    <meta name="description" content="Fromagerie Beillevaire au 28 rue du Docteur Blanche, Paris 16ᵉ. Comptoir de quartier, fromages affinés, plateaux sur mesure. Ouvert du mardi au samedi. 4.9★ — 31 avis.">
+    <meta property="og:title" content="Fromagerie Beillevaire Paris Docteur Blanche">
+    <meta property="og:description" content="Pas un jour sans un plateau. Fromagerie, crèmerie, épicerie fine au 28 rue du Docteur Blanche, Paris 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='56' font-size='56'>🧀</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --craie: #FDFBF7;
+            --bois: #D4B896;
+            --ardoise: #2E2B28;
+            --brique: #A54A3A;
+            --creme: #EED9B7;
+            --bleu-lait: #6B8E7B;
+            --craie-rgb: 253, 251, 247;
+            --ardoise-rgb: 46, 43, 40;
+            --brique-rgb: 165, 74, 58;
+            --font-display: 'Bricolage Grotesque', 'Georgia', 'Times New Roman', serif;
+            --font-texte: 'Hanken Grotesk', 'Helvetica Neue', 'Segoe UI', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 1vw + 14px, 18px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-texte);
+            background-color: var(--craie);
+            color: var(--ardoise);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") repeat;
+        }
+
+        /* ========== TYPOGRAPHIE ========== */
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw + 1rem, 4.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3vw + 0.6rem, 2.6rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.5rem);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        p,
+        li,
+        span,
+        a {
+            font-family: var(--font-texte);
+            font-weight: 400;
+        }
+
+        .text-large {
+            font-size: clamp(1.05rem, 1.2vw + 0.4rem, 1.35rem);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .text-caption {
+            font-size: clamp(0.8rem, 0.7vw + 0.3rem, 0.9rem);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* ========== HEADER STICKY ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(var(--craie-rgb), 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--creme);
+            padding: 0.6rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            min-height: 3.4rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(var(--ardoise-rgb), 0.06);
+        }
+
+        .header-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            text-decoration: none;
+            color: var(--ardoise);
+            flex-shrink: 0;
+        }
+
+        .header-brand .brand-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1rem, 1.5vw + 0.3rem, 1.25rem);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            color: var(--ardoise);
+        }
+
+        .header-brand .brand-loc {
+            font-family: var(--font-texte);
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--brique);
+            line-height: 1;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.6rem, 2vw, 1.5rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--ardoise);
+            font-size: clamp(0.78rem, 0.8vw + 0.2rem, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.25s ease;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bleu-lait);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--brique);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--brique);
+            color: var(--craie);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #8d3f30;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(var(--brique-rgb), 0.3);
+        }
+
+        .header-cta:active {
+            transform: translateY(0);
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: var(--ardoise);
+            color: var(--craie);
+            padding: 0.35rem 0.7rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .badge-google .star {
+            color: #f5b342;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        @media(max-width:768px) {
+            .site-header {
+                padding: 0.5rem 1rem;
+                gap: 0.5rem;
+            }
+            .header-nav {
+                gap: 0.5rem;
+                order: 3;
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 0.25rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .header-nav::-webkit-scrollbar {
+                display: none;
+            }
+            .header-nav a {
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+            .header-cta {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.78rem;
+            }
+            .badge-google {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.55rem;
+            }
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            min-height: 75vh;
+            overflow: hidden;
+            background: var(--ardoise);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            z-index: 0;
+            filter: brightness(0.85) contrast(1.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(46, 43, 40, 0.25) 0%,
+                    rgba(46, 43, 40, 0.08) 40%,
+                    rgba(46, 43, 40, 0.45) 75%,
+                    rgba(46, 43, 40, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.2rem, 5vw, 4rem);
+            color: var(--craie);
+            grid-row: 1 / -1;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            margin-bottom: 0.6rem;
+            animation: heroReveal 0.9s ease-out both;
+            animation-delay: 0.15s;
+        }
+
+        .hero-content .hero-sub {
+            font-size: clamp(1rem, 1.4vw + 0.4rem, 1.25rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            animation: heroReveal 0.9s ease-out both;
+            animation-delay: 0.35s;
+        }
+
+        .hero-badge-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            animation: heroReveal 0.9s ease-out both;
+            animation-delay: 0.5s;
+        }
+
+        .hero-badge-row .badge-google {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 0.45rem 0.9rem;
+        }
+
+        .hero-barrel {
+            position: absolute;
+            z-index: 1;
+            border-radius: 49% 51% 48% 52% / 52% 47% 53% 48%;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+        }
+        .hero-barrel.hb1 {
+            width: clamp(120px, 18vw, 220px);
+            height: clamp(120px, 18vw, 220px);
+            top: 12%;
+            right: 8%;
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+        .hero-barrel.hb2 {
+            width: clamp(60px, 9vw, 110px);
+            height: clamp(60px, 9vw, 110px);
+            top: 25%;
+            right: 22%;
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width:600px) {
+            .hero {
+                min-height: 60vh;
+            }
+            .hero-content {
+                padding: 1.5rem 1rem 2rem;
+            }
+            .hero-barrel.hb1 {
+                top: 8%;
+                right: -8%;
+                width: 100px;
+                height: 100px;
+            }
+            .hero-barrel.hb2 {
+                display: none;
+            }
+        }
+
+        /* ========== BARREL CIRCLE MOTIF (global) ========== */
+        .barrel-circle {
+            display: inline-block;
+            border-radius: 48% 52% 47% 53% / 51% 48% 52% 49%;
+            border: 2px solid var(--bois);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .barrel-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .barrel-circle.bc-sm {
+            width: clamp(70px, 12vw, 110px);
+            height: clamp(70px, 12vw, 110px);
+        }
+        .barrel-circle.bc-md {
+            width: clamp(140px, 22vw, 240px);
+            height: clamp(140px, 22vw, 240px);
+        }
+        .barrel-circle.bc-lg {
+            width: clamp(200px, 30vw, 360px);
+            height: clamp(200px, 30vw, 360px);
+        }
+
+        /* ========== SECTIONS GÉNÉRALES ========== */
+        section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 4rem);
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== CHALKBOARD TITLES (H2) ========== */
+        .chalk-title {
+            display: inline-block;
+            background: var(--ardoise);
+            color: var(--craie);
+            padding: 0.7rem 1.6rem;
+            margin-bottom: 2rem;
+            position: relative;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.8vw + 0.4rem, 2.2rem);
+            letter-spacing: -0.01em;
+            border-radius: 2px;
+        }
+
+        .chalk-title .chalk-line {
+            position: absolute;
+            bottom: 6px;
+            left: 12px;
+            right: 12px;
+            height: 1.5px;
+            background: var(--craie);
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border-radius: 1px;
+            opacity: 0.75;
+        }
+
+        .chalk-title.animated .chalk-line {
+            transform: scaleX(1);
+        }
+
+        .chalk-title::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            right: -6px;
+            bottom: -4px;
+            border: 1px dashed rgba(253, 251, 247, 0.2);
+            border-radius: 2px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease 0.3s;
+        }
+        .chalk-title.animated::before {
+            opacity: 1;
+        }
+
+        /* ========== SECTION 1 — COMPTOIR DU JOUR ========== */
+        .section-comptoir {
+            background: var(--craie);
+        }
+        .section-comptoir .comptoir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .section-comptoir .comptoir-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .section-comptoir .comptoir-text p {
+            font-size: clamp(1rem, 1.1vw + 0.3rem, 1.2rem);
+            line-height: 1.75;
+            color: var(--ardoise);
+        }
+        .section-comptoir .comptoir-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .section-comptoir .barrel-circle.bc-lg {
+            box-shadow: 0 8px 32px rgba(var(--ardoise-rgb), 0.12);
+        }
+
+        .barrel-ghost {
+            position: absolute;
+            border-radius: 47% 53% 49% 51% / 52% 48% 51% 49%;
+            border: 1.5px dashed var(--bois);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .barrel-ghost.bg1 {
+            width: 130%;
+            height: 130%;
+            top: -15%;
+            left: -15%;
+        }
+        .barrel-ghost.bg2 {
+            width: 75%;
+            height: 75%;
+            bottom: -10%;
+            right: -10%;
+            border-color: var(--creme);
+            opacity: 0.4;
+        }
+
+        @media(max-width:768px) {
+            .section-comptoir .comptoir-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .section-comptoir .comptoir-visual {
+                order: -1;
+            }
+            .section-comptoir .barrel-circle.bc-lg {
+                width: clamp(160px, 50vw, 260px);
+                height: clamp(160px, 50vw, 260px);
+            }
+        }
+
+        /* ========== SECTION 2 — BOUTIQUE ========== */
+        .section-boutique {
+            background: var(--creme);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-boutique::before {
+            content: '';
+            position: absolute;
+            width: clamp(200px, 35vw, 400px);
+            height: clamp(200px, 35vw, 400px);
+            border-radius: 48% 52% 47% 53% / 52% 47% 53% 48%;
+            border: 2px solid rgba(var(--ardoise-rgb), 0.06);
+            top: -10%;
+            right: -8%;
+            pointer-events: none;
+        }
+        .section-boutique .boutique-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .section-boutique .boutique-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .section-boutique .barrel-circle.bc-md {
+            box-shadow: 0 6px 24px rgba(var(--ardoise-rgb), 0.1);
+        }
+        .section-boutique .boutique-text p {
+            font-size: clamp(1rem, 1.1vw + 0.3rem, 1.2rem);
+            line-height: 1.8;
+            color: var(--ardoise);
+            margin-bottom: 1rem;
+        }
+        .section-boutique .boutique-text .highlight {
+            display: inline-block;
+            background: var(--craie);
+            padding: 0.15rem 0.5rem;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        @media(max-width:768px) {
+            .section-boutique .boutique-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .section-boutique .boutique-visual {
+                order: -1;
+            }
+            .section-boutique .barrel-circle.bc-md {
+                width: clamp(120px, 40vw, 180px);
+                height: clamp(120px, 40vw, 180px);
+            }
+        }
+
+        /* ========== SECTION 3 — VENIR & GOÛTER ========== */
+        .section-venir {
+            background: var(--craie);
+        }
+        .section-venir .venir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+        .section-venir .venir-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .section-venir .venir-left h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--brique);
+            font-size: clamp(1.1rem, 1.4vw + 0.3rem, 1.4rem);
+        }
+        .section-venir .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: clamp(0.9rem, 0.9vw + 0.2rem, 1rem);
+            line-height: 1.6;
+        }
+        .section-venir .info-item .info-icon {
+            flex-shrink: 0;
+            width: 1.3rem;
+            height: 1.3rem;
+            color: var(--brique);
+            margin-top: 0.15rem;
+        }
+        .section-venir .info-item a {
+            color: var(--ardoise);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--bois);
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+        .section-venir .info-item a:hover {
+            color: var(--brique);
+            text-decoration-color: var(--brique);
+        }
+        .section-venir .horaires-block {
+            background: var(--creme);
+            padding: 1.2rem 1.5rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .section-venir .horaires-block strong {
+            color: var(--brique);
+        }
+        .section-venir .venir-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            background: var(--ardoise);
+            color: var(--craie);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border-radius: 4px;
+            position: relative;
+        }
+        .section-venir .venir-right h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.4vw + 0.3rem, 1.4rem);
+            color: var(--creme);
+        }
+        .section-venir .venir-right p {
+            line-height: 1.7;
+            font-size: clamp(0.9rem, 0.9vw + 0.2rem, 1rem);
+            color: rgba(253, 251, 247, 0.9);
+        }
+        .section-venir .venir-right .tel-big {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2vw + 0.5rem, 2rem);
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+        }
+        .section-venir .venir-right .tel-big:hover {
+            color: var(--creme);
+        }
+        .section-venir .map-wrap {
+            margin-top: 2rem;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(var(--ardoise-rgb), 0.08);
+            border: 2px solid var(--creme);
+        }
+        .section-venir .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 320px;
+            border: 0;
+        }
+
+        @media(max-width:768px) {
+            .section-venir .venir-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .section-venir .map-wrap iframe {
+                height: 240px;
+            }
+        }
+
+        /* ========== SECTION 4 — QUATRE MÉTIERS ========== */
+        .section-metiers {
+            background: var(--bois);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-metiers::after {
+            content: '';
+            position: absolute;
+            width: clamp(150px, 25vw, 280px);
+            height: clamp(150px, 25vw, 280px);
+            border-radius: 49% 51% 47% 53% / 53% 47% 52% 48%;
+            border: 2px solid rgba(253, 251, 247, 0.25);
+            bottom: -8%;
+            left: -5%;
+            pointer-events: none;
+        }
+        .section-metiers .metiers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(1rem, 2.5vw, 2rem);
+            margin-bottom: 2rem;
+        }
+        .section-metiers .metier-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(253, 251, 247, 0.5);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            transition: background 0.3s ease, transform 0.25s ease;
+        }
+        .section-metiers .metier-card:hover {
+            background: rgba(253, 251, 247, 0.75);
+            transform: translateY(-3px);
+        }
+        .section-metiers .metier-card svg {
+            width: clamp(36px, 4vw, 48px);
+            height: clamp(36px, 4vw, 48px);
+            color: var(--brique);
+            flex-shrink: 0;
+        }
+        .section-metiers .metier-card .metier-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 0.9vw + 0.2rem, 1rem);
+            color: var(--ardoise);
+            letter-spacing: 0.01em;
+        }
+        .section-metiers .metiers-texte {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(0.95rem, 1vw + 0.2rem, 1.1rem);
+            line-height: 1.75;
+            color: var(--ardoise);
+        }
+        @media(max-width:768px) {
+            .section-metiers .metiers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        @media(max-width:400px) {
+            .section-metiers .metiers-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.7rem;
+            }
+            .section-metiers .metier-card {
+                padding: 1rem 0.6rem;
+            }
+        }
+
+        /* ========== SECTION 5 — PLATEAU DE L'IMMEUBLE ========== */
+        .section-plateau {
+            background: var(--craie);
+        }
+        .section-plateau .plateau-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .section-plateau .plateau-visual {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .section-plateau .barrel-circle.bc-lg {
+            background: var(--bois);
+            box-shadow: 0 8px 32px rgba(var(--ardoise-rgb), 0.12);
+        }
+        .section-plateau .plateau-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .section-plateau .plateau-text p {
+            font-size: clamp(1rem, 1.1vw + 0.3rem, 1.2rem);
+            line-height: 1.75;
+            color: var(--ardoise);
+        }
+        .section-plateau .plateau-phone-callout {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 1.6vw + 0.4rem, 1.6rem);
+            color: var(--brique);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+        }
+        .section-plateau .plateau-phone-callout:hover {
+            color: #8d3f30;
+        }
+
+        @media(max-width:768px) {
+            .section-plateau .plateau-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .section-plateau .plateau-visual {
+                order: -1;
+            }
+            .section-plateau .barrel-circle.bc-lg {
+                width: clamp(160px, 50vw, 260px);
+                height: clamp(160px, 50vw, 260px);
+            }
+        }
+
+        /* ========== SECTION 6 — AVIS ========== */
+        .section-avis {
+            background: var(--creme);
+            position: relative;
+        }
+        .section-avis .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: clamp(1rem, 2vw, 1.8rem);
+        }
+        .section-avis .avis-card {
+            background: var(--craie);
+            padding: 1.5rem 1.5rem 1.8rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            box-shadow: 0 3px 12px rgba(var(--ardoise-rgb), 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+        }
+        .section-avis .avis-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(var(--ardoise-rgb), 0.1);
+        }
+        .section-avis .avis-card .avis-stars {
+            color: #c7943b;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .section-avis .avis-card .avis-quote {
+            font-style: italic;
+            line-height: 1.65;
+            color: var(--ardoise);
+            font-size: clamp(0.9rem, 0.9vw + 0.2rem, 1rem);
+        }
+        .section-avis .avis-card .avis-author {
+            font-weight: 600;
+            color: var(--brique);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+        .section-avis .avis-summary {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: clamp(0.95rem, 1vw + 0.2rem, 1.1rem);
+            color: var(--ardoise);
+        }
+        .section-avis .avis-summary strong {
+            color: var(--brique);
+            font-family: var(--font-display);
+            font-size: 1.3em;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--ardoise);
+            color: var(--craie);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 4rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            width: clamp(180px, 28vw, 300px);
+            height: clamp(180px, 28vw, 300px);
+            border-radius: 48% 52% 47% 53% / 53% 47% 52% 48%;
+            border: 2px solid rgba(253, 251, 247, 0.08);
+            top: -15%;
+            right: -6%;
+            pointer-events: none;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--creme);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner p,
+        .footer-inner a {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: rgba(253, 251, 247, 0.8);
+            text-decoration: none;
+        }
+        .footer-inner a:hover {
+            color: var(--creme);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .footer-credits {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(253, 251, 247, 0.45);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(253, 251, 247, 0.1);
+            letter-spacing: 0.03em;
+        }
+        @media(max-width:768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        /* ========== SCROLL REVEALS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== FOCUS VISIBLE ========== */
+        :focus-visible {
+            outline: 2.5px solid var(--brique);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ========== SKIP LINK ========== */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--ardoise);
+            color: var(--craie);
+            padding: 0.6rem 1.2rem;
+            z-index: 10000;
+            border-radius: 0 0 4px 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ========== UTILITIES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#" class="header-brand" aria-label="Fromagerie Beillevaire Paris Docteur Blanche — Accueil">
+            <span class="brand-name">Beillevaire</span>
+            <span class="brand-loc">Docteur Blanche</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#comptoir">Comptoir</a></li>
+                <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#venir">Venir</a></li>
+                <li><a href="#metiers">Savoir-faire</a></li>
+                <li><a href="#plateau">Plateaux</a></li>
+                <li><a href="#avis">Avis</a></li>
+            </ul>
+        </nav>
+        <span class="badge-google" aria-label="Note Google 4.9 sur 5 basée sur 31 avis"><span class="star">★</span> 4.9 <span style="opacity:0.7;">· 31 avis</span></span>
+        <a href="tel:+33142152826" class="header-cta" aria-label="Appeler la fromagerie au 01 42 15 28 26">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Appeler
+        </a>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <img src="assets/maps-1.jpg" alt="Devanture de la Fromagerie Beillevaire au 28 rue du Docteur Blanche, Paris 16ᵉ — tonneaux en façade, enseigne lumineuse" class="hero-image" loading="eager" fetchpriority="high">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-barrel hb1" aria-hidden="true"></div>
+            <div class="hero-barrel hb2" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 id="hero-heading">Pas un jour sans un plateau.</h1>
+                <p class="hero-sub">Fromagerie, crèmerie, épicerie fine — la maison Beillevaire au 28 rue du Docteur&nbsp;Blanche, Paris&nbsp;16ᵉ. Ouverte du mardi au samedi.</p>
+                <div class="hero-badge-row">
+                    <span class="badge-google" aria-label="Note Google 4.9 sur 5 basée sur 31 avis"><span class="star">★</span> 4.9 · 31 avis Google</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 — LE COMPTOIR DU JOUR -->
+        <section class="section-comptoir" id="comptoir" aria-labelledby="comptoir-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="comptoir-heading">Le comptoir du jour<span class="chalk-line" aria-hidden="true"></span></h2>
+                <div class="comptoir-grid">
+                    <div class="comptoir-text reveal">
+                        <p>Ce matin au 28 : <strong>Saint-Nectaire fermier, Comté 36 mois, Chabichou du Poitou, et un Brie de Melun tout juste affiné.</strong> La carte change chaque semaine selon les arrivages de nos caves. Passez voir ce qui vient d'arriver — on vous fait goûter avant même que vous ne posiez la question.</p>
+                    </div>
+                    <div class="comptoir-visual reveal reveal-delay-2">
+                        <div class="barrel-circle bc-lg" style="position:relative;">
+                            <img src="assets/maps-1.jpg" alt="Vue du comptoir de la fromagerie Beillevaire" loading="lazy" style="object-position:center 40%;">
+                        </div>
+                        <div class="barrel-ghost bg1" aria-hidden="true"></div>
+                        <div class="barrel-ghost bg2" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 — UNE BOUTIQUE, PAS UNE VITRINE -->
+        <section class="section-boutique" id="boutique" aria-labelledby="boutique-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="boutique-heading">Une boutique, pas une vitrine<span class="chalk-line" aria-hidden="true"></span></h2>
+                <div class="boutique-grid">
+                    <div class="boutique-visual reveal">
+                        <div class="barrel-circle bc-md">
+                            <img src="assets/maps-1.jpg" alt="Intérieur de la fromagerie — l'équipe derrière le comptoir" loading="lazy" style="object-position:center 55%;">
+                        </div>
+                    </div>
+                    <div class="boutique-text reveal reveal-delay-2">
+                        <p>Ici, on vous reçoit <span class="highlight">comme dans notre cuisine</span>. On vous fait goûter avant d'acheter. On vous explique l'affinage, l'origine, la saison. Vous repartez avec un conseil — et souvent un peu plus que prévu.</p>
+                        <p>Pas de discours tout fait : juste un crémier qui connaît ses producteurs et qui aime son métier. La porte est ouverte, entrez.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 — VENIR & GOÛTER -->
+        <section class="section-venir" id="venir" aria-labelledby="venir-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="venir-heading">Venir &amp; goûter<span class="chalk-line" aria-hidden="true"></span></h2>
+                <div class="venir-grid">
+                    <div class="venir-left reveal">
+                        <h3>Infos pratiques</h3>
+                        <div class="info-item">
+                            <svg class="info-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span><strong>Adresse :</strong> 28 Rue du Docteur Blanche, 75016 Paris</span>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span><strong>Téléphone :</strong> <a href="tel:+33142152826">01 42 15 28 26</a></span>
+                        </div>
+                        <div class="horaires-block">
+                            <strong>Horaires d'ouverture</strong>
+                            <span>Mardi – Samedi : 10h – 13h / 15h – 20h</span>
+                            <span style="opacity:0.7;">Fermé dimanche et lundi</span>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="10" y2="8"/><line x1="6" y1="12" x2="14" y2="12"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+                            <span><strong>Métro :</strong> Jasmin (ligne 9) — à 300 mètres</span>
+                        </div>
+                    </div>
+                    <div class="venir-right reveal reveal-delay-2">
+                        <h3>Click &amp; Collect</h3>
+                        <p>Appelez-nous avant midi, on vous prépare votre plateau, vous passez le chercher dans l'après-midi. Simple comme un coup de fil.</p>
+                        <a href="tel:+33142152826" class="tel-big">01 42 15 28 26</a>
+                        <p style="font-size:0.8rem;opacity:0.7;">Pas de site e-commerce compliqué : un appel, et on s'occupe du reste.</p>
+                    </div>
+                </div>
+                <div class="map-wrap reveal reveal-delay-3" aria-label="Carte Google Maps de la fromagerie">
+                    <iframe src="https://maps.google.com/maps?q=Fromagerie+Beillevaire+Paris+Docteur+Blanche+28+Rue+du+Docteur+Blanche%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à la Fromagerie Beillevaire Paris Docteur Blanche"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 — LES QUATRE MÉTIERS -->
+        <section class="section-metiers" id="metiers" aria-labelledby="metiers-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="metiers-heading">Les quatre métiers, au service du quartier<span class="chalk-line" aria-hidden="true"></span></h2>
+                <div class="metiers-grid">
+                    <div class="metier-card reveal">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-3 6-8 8-8 14a8 8 0 0 0 16 0c0-6-5-8-8-14z"/><circle cx="24" cy="28" r="2" fill="currentColor"/></svg>
+                        <span class="metier-label">Fabricant</span>
+                    </div>
+                    <div class="metier-card reveal reveal-delay-1">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 38V10a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28"/><path d="M2 38h44"/><path d="M16 26a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v12H16V26z"/></svg>
+                        <span class="metier-label">Affineur</span>
+                    </div>
+                    <div class="metier-card reveal reveal-delay-2">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4C14 4 6 12 6 22s8 18 18 18c2 0 4-.3 6-.8L38 44l-2-8.5c3-3.5 5-8.2 5-13.5C41 12 34 4 24 4z"/><circle cx="24" cy="22" r="3" fill="currentColor"/></svg>
+                        <span class="metier-label">Dénicheur</span>
+                    </div>
+                    <div class="metier-card reveal reveal-delay-3">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="20" width="36" height="20" rx="2"/><line x1="6" y1="28" x2="42" y2="28"/><circle cx="14" cy="34" r="2" fill="currentColor"/><circle cx="22" cy="34" r="2" fill="currentColor"/><circle cx="30" cy="34" r="2" fill="currentColor"/></svg>
+                        <span class="metier-label">Marchand</span>
+                    </div>
+                </div>
+                <p class="metiers-texte reveal reveal-delay-4">Fabricant, affineur, dénicheur, marchand : ces quatre métiers, hérités de Pascal Beillevaire, prennent tout leur sens au 28 rue du Docteur Blanche. Chaque fromage raconte une ferme, une cave, un savoir-faire. Nous le transmettons au comptoir, sans raccourci.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5 — LE PLATEAU DE L'IMMEUBLE -->
+        <section class="section-plateau" id="plateau" aria-labelledby="plateau-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="plateau-heading">Le plateau de l'immeuble<span class="chalk-line" aria-hidden="true"></span></h2>
+                <div class="plateau-grid">
+                    <div class="plateau-visual reveal">
+                        <div class="barrel-circle bc-lg" style="background:var(--bois);">
+                            <img src="assets/maps-1.jpg" alt="Plateau de fromages composé pour une réception" loading="lazy" style="object-position:center 45%;mix-blend-mode:multiply;opacity:0.85;">
+                        </div>
+                    </div>
+                    <div class="plateau-text reveal reveal-delay-2">
+                        <p>Vous recevez dans le quartier ? Nous composons des <strong>plateaux sur mesure</strong> pour vos soirées. À partir de 6 personnes. Commande 48h à l'avance.</p>
+                        <a href="tel:+33142152826" class="plateau-phone-callout">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            01 42 15 28 26
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 — VOS AVIS -->
+        <section class="section-avis" id="avis" aria-labelledby="avis-heading">
+            <div class="section-inner">
+                <h2 class="chalk-title" id="avis-heading">Vos avis nous poussent la porte<span class="chalk-line" aria-hidden="true"></span></h2>
+                <p class="avis-summary reveal">Nos clients parlent de nous. <strong>4.9★ sur 31 avis Google</strong> — ça nous touche, et ça nous oblige.</p>
+                <div class="avis-grid">
+                    <div class="avis-card reveal">
+                        <div class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="avis-quote">« Une fromagerie comme on n'en fait plus. Accueil adorable, produits sublimes. »</p>
+                        <span class="avis-author">Marie L.</span>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-1">
+                        <div class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="avis-quote">« Des conseils toujours justes, un Comté 36 mois exceptionnel, et une équipe qui se souvient de vous. »</p>
+                        <span class="avis-author">Pierre D.</span>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-2">
+                        <div class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="avis-quote">« J'ai découvert le Chabichou ici. Depuis, je ne peux plus m'en passer. Merci ! »</p>
+                        <span class="avis-author">Camille R.</span>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <div class="avis-stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+                        <p class="avis-quote">« Très belle sélection, prix justes pour la qualité. Le plateau commandé pour notre dîner était parfait. »</p>
+                        <span class="avis-author">Jean-Marc T.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <h4>Fromagerie Beillevaire</h4>
+                <p>28 Rue du Docteur Blanche<br>75016 Paris</p>
+                <p><a href="tel:+33142152826">01 42 15 28 26</a></p>
+                <p><a href="mailto:contact@beillevaire.com">contact@beillevaire.com</a></p>
+            </div>
+            <div>
+                <h4>Horaires</h4>
+                <p>Mardi – Samedi<br>10h – 13h / 15h – 20h<br>Fermé dimanche et lundi</p>
+            </div>
+            <div>
+                <h4>Liens utiles</h4>
+                <p><a href="https://www.google.com/maps/dir/?api=1&destination=Fromagerie+Beillevaire+28+Rue+du+Docteur+Blanche+75016+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a></p>
+                <p><a href="https://www.beillevaire.com/nos-produits" target="_blank" rel="noopener">Nos produits — beillevaire.com</a></p>
+            </div>
+            <p class="footer-credits">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Fromagerie Beillevaire Paris Docteur Blanche",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 Rue du Docteur Blanche",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142152826",
+            "email": "contact@beillevaire.com",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "13:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "15:00",
