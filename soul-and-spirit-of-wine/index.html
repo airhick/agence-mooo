@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul and Spirit of Wine — Cave & Bar à Vins | 61 Avenue Mozart, Paris 16</title>
+    <meta name="description" content="Cave-bar de quartier au cœur d'Auteuil. 500 cuvées d'auteur, épicerie fine, dégustations et conseils d'œnologue. Soul and Spirit of Wine, 61 Avenue Mozart, Paris 16e.">
+    <meta property="og:title" content="Soul and Spirit of Wine — L'âme du vin à Auteuil">
+    <meta property="og:description" content="Débusquer le terroir, au culot. Cave, bar à vins et épicerie fine au 61 Avenue Mozart, Paris 16.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' filter='url(%23grain-fav)' font-family='serif'>🍷</text></svg>">
+
+    <style>
+        :root {
+            --pierre: #F4EFE8;
+            --sepias: #31261C;
+            --bleu-nuit: #1B2430;
+            --accent-cuvee: #732C3F;
+            --laiton: #A78B71;
+            --laiton-clair: #C4A98A;
+            --pierre-fonce: #E8E0D4;
+            --pierre-tres-clair: #FAF7F3;
+            --shadow-soft: 0 4px 24px rgba(27, 36, 48, 0.07);
+            --shadow-medium: 0 12px 40px rgba(27, 36, 48, 0.12);
+            --radius-sm: 3px;
+            --radius-md: 6px;
+            --radius-lg: 16px;
+            --transition-slow: 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-medium: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-fast: 0.25s ease-out;
+            --font-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+            --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--pierre);
+            color: var(--sepias);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.15vw, 1.2rem);
+            position: relative;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+        }
+
+        /* ---- GRAIN GLOBAL ---- */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9997;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 220px 220px;
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent-cuvee);
+            outline-offset: 3px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ---- REDUCED MOTION ---- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ============ HEADER ============ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            transition: background var(--transition-medium), box-shadow var(--transition-medium), padding var(--transition-medium);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+        }
+
+        .site-header.scrolled {
+            background: rgba(244, 239, 232, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 2px 24px rgba(27, 36, 48, 0.06);
+            padding: 0.7rem 2rem;
+        }
+
+        .header-brand {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+            color: var(--bleu-nuit);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            line-height: 1.15;
+            transition: color var(--transition-fast);
+            z-index: 1002;
+        }
+        .header-brand span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.65em;
+            letter-spacing: 0.08em;
+            color: var(--laiton);
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--sepias);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            transition: color var(--transition-fast);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent-cuvee);
+            transition: width var(--transition-medium);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--accent-cuvee);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent-cuvee);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            box-shadow: 0 4px 16px rgba(115, 44, 63, 0.25);
+            white-space: nowrap;
+        }
+        .header-cta:hover {
+            background: #5c2332;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(115, 44, 63, 0.35);
+        }
+        .header-cta:active {
+            transform: scale(0.97);
+        }
+
+        .burger-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1002;
+            width: 40px;
+            height: 32px;
+            justify-content: center;
+        }
+        .burger-btn span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--bleu-nuit);
+            border-radius: 2px;
+            transition: transform var(--transition-fast), opacity var(--transition-fast);
+            transform-origin: center;
+        }
+        .burger-btn.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .burger-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger-btn.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 36, 48, 0.95);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-medium);
+        }
+        .mobile-nav.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-nav a {
+            color: var(--pierre);
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color var(--transition-fast);
+        }
+        .mobile-nav a:hover {
+            color: var(--laiton-clair);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                display: none;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .burger-btn {
+                display: flex;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+            .site-header {
+                padding: 0.8rem 1.2rem;
+            }
+            .site-header.scrolled {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+        @media (min-width: 861px) {
+            .mobile-nav {
+                display: none !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 3rem;
+        }
+
+        .hero-image-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) saturate(0.8);
+            transform: scale(1.03);
+            animation: hero-zoom 8s ease-out forwards;
+        }
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.15);
+            }
+            to {
+                transform: scale(1.03);
+            }
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(27, 36, 48, 0.55) 0%,
+                    rgba(27, 36, 48, 0.35) 35%,
+                    rgba(49, 38, 28, 0.5) 65%,
+                    rgba(244, 239, 232, 0.85) 95%,
+                    rgba(244, 239, 232, 1) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: auto 0 4rem;
+            animation: hero-reveal 1.2s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.3s;
+        }
+        @keyframes hero-reveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content .etiquette-memoire {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--laiton-clair);
+            border: 1.5px solid rgba(167, 139, 113, 0.5);
+            padding: 0.3rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            background: rgba(27, 36, 48, 0.3);
+        }
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        }
+        .hero-content .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            max-width: 560px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+        }
+        .hero-content .hero-subtitle strong {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--pierre);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            animation: bounce-hint 2.5s ease-in-out infinite;
+        }
+        .hero-scroll-hint span {
+            width: 28px;
+            height: 44px;
+            border: 2px solid rgba(244, 239, 232, 0.5);
+            border-radius: 14px;
+            position: relative;
+        }
+        .hero-scroll-hint span::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 10px;
+            background: var(--pierre);
+            border-radius: 2px;
+            animation: scroll-dot 2.5s ease-in-out infinite;
+        }
+        @keyframes bounce-hint {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+        @keyframes scroll-dot {
+            0%,
+            100% {
+                top: 8px;
+                opacity: 0.8;
+            }
+            50% {
+                top: 22px;
+                opacity: 0.2;
+            }
+        }
+
+        /* ============ SECTIONS GÉNÉRIQUES ============ */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--laiton);
+            display: inline-block;
+            border: 1.5px solid var(--laiton);
+            padding: 0.25rem 0.8rem;
+            border-radius: 2px;
+            margin-bottom: 1.2rem;
+            background: rgba(244, 239, 232, 0.6);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            font-weight: 600;
+            color: var(--bleu-nuit);
+            line-height: 1.12;
+            letter-spacing: -0.015em;
+            margin-bottom: 2.5rem;
+        }
+
+        .section h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            font-weight: 600;
+            color: var(--bleu-nuit);
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        /* ---- Brume reveal ---- */
+        .reveal-brume {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
+        }
+        .reveal-brume.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-brume-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+        }
+        .reveal-brume-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            transition: filter var(--transition-slow);
+        }
+        .reveal-brume-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            background: linear-gradient(to bottom,
+                    var(--pierre) 0%,
+                    var(--pierre) 50%,
+                    rgba(244, 239, 232, 0.7) 80%,
+                    transparent 100%);
+            transition: transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 1.6s ease-out;
+            transform: translateY(0);
+            opacity: 1;
+            border-radius: var(--radius-md);
+        }
+        .reveal-brume-img.revealed::after {
+            transform: translateY(-105%);
+            opacity: 0;
+        }
+
+        /* ---- Filets décoratifs ---- */
+        .filet-laiton {
+            width: 60px;
+            height: 1.5px;
+            background: var(--laiton);
+            margin: 1.5rem 0;
+            border-radius: 1px;
+        }
+        .filet-laiton.long {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        /* ============ SECTION 1 : CAVE OUVERTE ============ */
+        #cave {
+            background: var(--pierre);
+            padding-top: 6rem;
+            padding-bottom: 5rem;
+        }
+        .adresses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .adresse-card {
+            background: var(--pierre-tres-clair);
+            border: 1px solid rgba(167, 139, 113, 0.2);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.8rem;
+            position: relative;
+            transition: box-shadow var(--transition-medium), transform var(--transition-medium);
+            box-shadow: var(--shadow-soft);
+        }
+        .adresse-card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-4px);
+        }
+        .adresse-card.principale {
+            border-left: 4px solid var(--accent-cuvee);
+            background: #fff;
+            box-shadow: var(--shadow-medium);
+        }
+        .adresse-card .pin-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--laiton);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .adresse-card.principale .pin-icon {
+            background: var(--accent-cuvee);
+        }
+        .adresse-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.3rem;
+        }
+        .adresse-card .rue {
+            font-size: 0.9rem;
+            color: var(--laiton);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+        .adresse-card .horaires-mini {
+            font-size: 0.8rem;
+            color: var(--sepias);
+            opacity: 0.7;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .adresse-card .badge-principale {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--accent-cuvee);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ============ SECTION 2 : BAR À VINS ============ */
+        #bar {
+            background: var(--pierre-fonce);
+            position: relative;
+            overflow: hidden;
+        }
+        #bar::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -80px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(167, 139, 113, 0.08);
+            z-index: 0;
+            pointer-events: none;
+        }
+        #bar .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        #bar .bar-texte {
+            padding-right: 1rem;
+        }
+        #bar .bar-visuel {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: var(--bleu-nuit);
+            box-shadow: var(--shadow-medium);
+        }
+        #bar .bar-visuel .placeholder-ambiance {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg,
+                    #1B2430 0%,
+                    #2a3542 30%,
+                    #3d4048 60%,
+                    #732C3F 85%,
+                    #4a1a25 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bar .bar-visuel .placeholder-ambiance::after {
+            content: '';
+            position: absolute;
+            inset: 20%;
+            border: 2px solid rgba(167, 139, 113, 0.3);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+        #bar .bar-visuel .placeholder-ambiance .inner-glow {
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(244, 239, 232, 0.08) 0%, transparent 70%);
+            position: relative;
+            z-index: 1;
+        }
+        #bar .btn-reserver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-cuvee);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            margin-top: 1.5rem;
+            transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            box-shadow: 0 6px 20px rgba(115, 44, 63, 0.3);
+        }
+        #bar .btn-reserver:hover {
+            background: #5c2332;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(115, 44, 63, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            #bar .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            #bar .bar-visuel {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+            #bar .bar-texte {
+                padding-right: 0;
+            }
+        }
+
+        /* ============ SECTION 3 : ÉPICERIE ============ */
+        #epicerie {
+            background: var(--pierre);
+            position: relative;
+        }
+        #epicerie .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        #epicerie .epicerie-visuel {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            background: var(--pierre-fonce);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #epicerie .epicerie-visuel .mosaic-hint {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 3px;
+            width: 80%;
+            height: 80%;
+            opacity: 0.5;
+        }
+        #epicerie .epicerie-visuel .mosaic-hint div {
+            background: var(--laiton);
+            border-radius: 2px;
+            opacity: 0.25;
+        }
+        #epicerie .epicerie-visuel .mosaic-hint div:nth-child(1) {
+            background: var(--accent-cuvee);
+            opacity: 0.35;
+        }
+        #epicerie .epicerie-visuel .mosaic-hint div:nth-child(3) {
+            background: var(--bleu-nuit);
+            opacity: 0.3;
+        }
+        #epicerie .btn-coffret {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--accent-cuvee);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            margin-top: 1.5rem;
+            border: 2px solid var(--accent-cuvee);
+            transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+        }
+        #epicerie .btn-coffret:hover {
+            background: var(--accent-cuvee);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            #epicerie .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            #epicerie .epicerie-visuel {
+                aspect-ratio: 2/1;
+                order: -1;
+            }
+        }
+
+        /* ============ SECTION 4 : ÉQUIPE ============ */
+        #equipe {
+            background: var(--bleu-nuit);
+            color: var(--pierre);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem;
+        }
+        #equipe::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(115, 44, 63, 0.15);
+            z-index: 0;
+            pointer-events: none;
+        }
+        #equipe .section-inner {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+        }
+        #equipe .section-label {
+            color: var(--laiton-clair);
+            border-color: var(--laiton-clair);
+            background: rgba(27, 36, 48, 0.4);
+        }
+        #equipe h2 {
+            color: #fff;
+        }
+        #equipe .citation-equipe {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            font-style: italic;
+            line-height: 1.7;
+            color: rgba(244, 239, 232, 0.85);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+        #equipe .citation-equipe::before {
+            content: '«';
+            font-size: 5rem;
+            position: absolute;
+            top: -2.5rem;
+            left: -1.5rem;
+            color: var(--accent-cuvee);
+            opacity: 0.5;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+        #equipe .signature {
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.06em;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* ============ FOOTER ============ */
+        #contact {
+            background: var(--pierre);
+            padding: 5rem 2rem 3rem;
+            border-top: 1.5px solid rgba(167, 139, 113, 0.25);
+            position: relative;
+            z-index: 1;
+        }
+        #contact .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        #contact h2 {
+            margin-bottom: 1.5rem;
+        }
+        .infos-bloc {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .infos-bloc .info-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--sepias);
+        }
+        .infos-bloc .info-ligne .ico {
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+            color: var(--laiton);
+            font-weight: 600;
+        }
+        .infos-bloc a {
+            color: var(--accent-cuvee);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        .infos-bloc a:hover {
+            color: #5c2332;
+            text-decoration: underline;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            border: 1.5px solid rgba(167, 139, 113, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--sepias);
+            box-shadow: var(--shadow-soft);
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+        .google-badge .stars {
+            color: #e4a825;
+            letter-spacing: 2px;
+        }
+        .carte-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1.5px solid rgba(167, 139, 113, 0.2);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+        }
+        .carte-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        .horaires-bloc {
+            background: var(--pierre-tres-clair);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border: 1px solid rgba(167, 139, 113, 0.2);
+            margin-top: 1rem;
+        }
+        .horaires-bloc h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--bleu-nuit);
+        }
+        .horaires-bloc .horaire-ligne {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px dotted rgba(167, 139, 113, 0.2);
+            color: var(--sepias);
+        }
+        .horaires-bloc .note-horaires {
+            font-size: 0.75rem;
+            color: var(--laiton);
+            margin-top: 0.8rem;
+            font-style: italic;
+            letter-spacing: 0.03em;
+        }
+        .footer-credits {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(167, 139, 113, 0.2);
+            font-size: 0.8rem;
+            color: var(--laiton);
+            letter-spacing: 0.04em;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            #contact .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .carte-wrapper {
+                aspect-ratio: 16/9;
+                min-height: 220px;
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 600px) {
+            .section {
+                padding: 3rem 1.2rem;
+            }
+            #hero {
+                padding: 5rem 1.2rem 2rem;
+            }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 8vw, 3.2rem);
+            }
+            .adresses-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            #bar,
+            #epicerie,
+            #equipe {
+                padding: 3.5rem 1.2rem;
+            }
+            #contact {
+                padding: 3rem 1.2rem 2rem;
+            }
+            .header-cta.mobile-cta {
+                display: inline-flex;
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+        @media (min-width: 601px) {
+            .header-cta.mobile-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <a href="#hero" class="header-brand">
+            Soul &amp; Spirit of Wine
+            <span>Âme & Esprit du Vin</span>
+        </a>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="#cave">Nos caves</a></li>
+                <li><a href="#bar">Bar à vins</a></li>
+                <li><a href="#epicerie">Épicerie</a></li>
+                <li><a href="#equipe">L'équipe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145256681" class="header-cta desktop-only" aria-label="Appeler Soul and Spirit of Wine">📞 Appeler</a>
+        <button class="burger-btn" id="burger-btn" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#cave" class="mobile-nav-link">Nos caves</a>
+        <a href="#bar" class="mobile-nav-link">Bar à vins</a>
+        <a href="#epicerie" class="mobile-nav-link">Épicerie</a>
+        <a href="#equipe" class="mobile-nav-link">L'équipe</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="tel:+33145256681" class="header-cta" style="margin-top:1.5rem;">📞 Appeler</a>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-image-wrapper reveal-brume-img" id="hero-img-wrapper">
+                <img src="assets/maps-1.jpg" alt="Soul and Spirit of Wine — Cave et bar à vins, 61 Avenue Mozart, Paris 16" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-content">
+                <div class="etiquette-memoire">Robe</div>
+                <h1>Débusquer le terroir,<br>au culot.</h1>
+                <p class="hero-subtitle">
+                    À deux pas du Ranelagh, notre <strong>cave-bar</strong> vous ouvre les portes de <strong>500 cuvées d'auteur</strong> et d'une épicerie fine comme on n'en fait plus. Poussez, l'œnologue est au comptoir.
+                </p>
+            </div>
+            <div class="hero-scroll-hint">
+                <span></span>
+                Découvrir
+            </div>
+        </section>
+
+        <!-- SECTION 1 : LA CAVE OUVERTE -->
+        <section class="section" id="cave">
+            <div class="section-inner">
+                <span class="section-label reveal-brume">Terres</span>
+                <h2 class="reveal-brume">Nos caves de quartier,<br>à l'ouest et au nord</h2>
+                <div class="adresses-grid">
+                    <div class="adresse-card principale reveal-brume">
+                        <span class="badge-principale">Adresse principale</span>
+                        <div class="pin-icon">🍷</div>
+                        <h4>Mozart</h4>
+                        <p class="rue">61 Avenue Mozart, Paris 16<sup>e</sup></p>
+                        <p class="horaires-mini">Cave & bar à vins — Conseil sur mesure, dégustations, épicerie fine.</p>
+                    </div>
+                    <div class="adresse-card reveal-brume">
+                        <div class="pin-icon">📍</div>
+                        <h4>Cadet</h4>
+                        <p class="rue">Rue Cadet, Paris 9<sup>e</sup></p>
+                        <p class="horaires-mini">Cave de quartier historique, sélection pointue.</p>
+                    </div>
+                    <div class="adresse-card reveal-brume">
+                        <div class="pin-icon">📍</div>
+                        <h4>Maubeuge</h4>
+                        <p class="rue">Rue de Maubeuge, Paris 9<sup>e</sup></p>
+                        <p class="horaires-mini">Proche gare du Nord, cave de passage et de conseil.</p>
+                    </div>
+                    <div class="adresse-card reveal-brume">
+                        <div class="pin-icon">📍</div>
+                        <h4>Fontaine</h4>
+                        <p class="rue">Rue Fontaine, Paris 9<sup>e</sup></p>
+                        <p class="horaires-mini">Au cœur de la Nouvelle Athènes, cave intimiste.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : BAR À VINS -->
+        <section class="section" id="bar">
+            <div class="section-inner">
+                <div class="bar-texte reveal-brume">
+                    <span class="section-label">Accord</span>
+                    <h2>L'heure de l'apéritif, à deux rues du Ranelagh</h2>
+                    <div class="filet-laiton"></div>
+                    <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1rem;">
+                        Ici, on débouche autant qu'on conseille. Asseyez-vous face aux casiers, laissez-vous tenter par une planche de nos commerçants de quartier et un verre de ce qui vient d'arriver.
+                    </p>
+                    <p style="font-size:0.9rem;color:var(--laiton);letter-spacing:0.03em;">
+                        Service du soir — planches, fromages affinés, charcuteries d'artisans, et le verre juste à température.
+                    </p>
+                    <a href="tel:+33145256681" class="btn-reserver">Réserver une table à Mozart →</a>
+                </div>
+                <div class="bar-visuel reveal-brume-img">
+                    <div class="placeholder-ambiance">
+                        <div class="inner-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : ÉPICERIE -->
+        <section class="section" id="epicerie">
+            <div class="section-inner">
+                <div class="epicerie-visuel reveal-brume-img">
+                    <div class="mosaic-hint">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
+                <div class="reveal-brume">
+                    <span class="section-label">Nez</span>
+                    <h2>Une épicerie qui assume ses goûts</h2>
+                    <div class="filet-laiton"></div>
+                    <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1rem;">
+                        Cafés de torréfacteur, thés rares, truffes et condiments d'exception : chaque produit est choisi avec la même exigence que nos cuvées. Le petit luxe quotidien, celui qui change un dîner.
+                    </p>
+                    <p style="font-size:0.9rem;color:var(--laiton);letter-spacing:0.03em;">
+                        Service de <strong>caisse-cadeau bois</strong> sur mesure — pour arriver les mains pleines, sans effort.
+                    </p>
+                    <a href="mailto:contact@aevin.com" class="btn-coffret">Composer un coffret →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : ÉQUIPE -->
+        <section class="section" id="equipe">
+            <div class="section-inner reveal-brume">
+                <span class="section-label">Terre</span>
+                <h2>Stéphane et les siens,<br>le métier dans le sang</h2>
+                <div class="filet-laiton" style="margin:1.5rem auto;background:var(--laiton-clair);"></div>
+                <p class="citation-equipe">
+                    Chez Âme &amp; Esprit du Vin, on ne vous lit pas une fiche technique. On vous parle du vigneron, de la parcelle, de la journée où on a aimé cette bouteille-là.
+                </p>
+                <p class="signature">— Stéphane, œnologue & caviste</p>
+                <div class="google-badge" style="margin:2rem auto 0;display:inline-flex;">
+                    <span class="stars">★★★★★</span> 4.9/5 — 45 avis Google
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / CONTACT -->
+        <footer id="contact">
+            <div class="section-inner">
+                <div>
+                    <span class="section-label reveal-brume">Venir</span>
+                    <h2 class="reveal-brume">Venir, appeler,<br>commander</h2>
+                    <div class="infos-bloc reveal-brume">
+                        <div class="info-ligne">
+                            <span class="ico">📍</span>
+                            <span><strong>Soul and Spirit of Wine</strong><br>61 Avenue Mozart, 75016 Paris</span>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="ico">📞</span>
+                            <a href="tel:+33145256681">01 45 25 66 81</a>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="ico">✉️</span>
+                            <a href="mailto:contact@aevin.com">contact@aevin.com</a>
+                        </div>
+                        <div class="google-badge reveal-brume">
+                            <span class="stars">★★★★★</span> 4.9/5 — 45 avis Google
+                        </div>
+                    </div>
+                    <div class="horaires-bloc reveal-brume">
+                        <h4>Horaires d'ouverture</h4>
+                        <div class="horaire-ligne"><span>Mardi – Vendredi</span><span>10h – 13h / 15h – 20h30</span></div>
+                        <div class="horaire-ligne"><span>Samedi</span><span>10h – 20h</span></div>
+                        <div class="horaire-ligne"><span>Dimanche</span><span>10h – 13h</span></div>
+                        <div class="horaire-ligne"><span>Lundi</span><span>Fermé</span></div>
+                        <p class="note-horaires">Horaires indicatifs — veuillez nous contacter pour confirmation.</p>
+                    </div>
+                </div>
+                <div class="carte-wrapper reveal-brume-img">
+                    <iframe src="https://maps.google.com/maps?q=Soul+and+Spirit+of+Wine+61+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Soul and Spirit of Wine, 61 Avenue Mozart Paris"></iframe>
+                </div>
+                <p class="footer-credits">© Soul and Spirit of Wine — 61 Avenue Mozart, Paris 16<sup>e</sup> &nbsp;|&nbsp; Site créé par Agence Mooo</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Soul and Spirit of Wine",
+            "alternateName": "Âme et Esprit du Vin",
+            "description": "Cave-bar de quartier au cœur d'Auteuil. 500 cuvées d'auteur, épicerie fine, dégustations et conseils d'œnologue.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "61 Avenue Mozart",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145256681",
+            "email": "contact@aevin.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "45"
+            },
+            "url": "https://agence.mooo.com/soul-and-spirit-of-wine",
+            "priceRange": "€€"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // ---- HEADER SCROLL ----
+            const header = document.getElementById('site-header');
+            const heroImgWrapper = document.getElementById('hero-img-wrapper');
+            let scrollTicking = false;
+
+            function updateHeader() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeader);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ---- BURGER MENU ----
+            const burgerBtn = document.getElementById('burger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const mobileLinks = mobileNav.querySelectorAll('.mobile-nav-link');
+            let menuOpen = false;
+
+            function openMenu() {
+                menuOpen = true;
+                mobileNav.classList.add('active');
+                burgerBtn.classList.add('active');
+                burgerBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                menuOpen = false;
+                mobileNav.classList.remove('active');
+                burgerBtn.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            burgerBtn.addEventListener('click', () => {
+                if (menuOpen) closeMenu();
+                else openMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+
+            // Fermer au clic sur le fond sombre
+            mobileNav.addEventListener('click', (e) => {
+                if (e.target === mobileNav) closeMenu();
+            });
+
+            // ---- INTERSECTION OBSERVER pour reveals ----
+            const revealElements = document.querySelectorAll('.reveal-brume, .reveal-brume-img');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        // Ne pas unobserve pour les éléments .reveal-brume-img
+                        // afin que l'effet de brume reste actif
+                        if (!entry.target.classList.contains('reveal-brume-img')) {
+                            revealObserver.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // ---- HERO IMAGE : reveal immédiat après chargement ----
+            if (heroImgWrapper) {
+                // La classe revealed sera ajoutée par l'observer,
+                // mais on s'assure que l'image est chargée
+                const heroImg = heroImgWrapper.querySelector('img');
+                if (heroImg && heroImg.complete) {
+                    // Déjà chargée, on peut révéler rapidement
+                    setTimeout(() => {
+                        heroImgWrapper.classList.add('revealed');
+                    }, 400);
+                } else if (heroImg) {
+                    heroImg.addEventListener('load', () => {
+                        setTimeout(() => {
+                            heroImgWrapper.classList.add('revealed');
+                        }, 400);
+                    });
+                }
+            }
+
+            // ---- TOUCHE ÉCHAP pour fermer le menu ----
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menuOpen) {
+                    closeMenu();
+                }
+            });
+
+            // ---- FERMETURE MENU SI REDIMENSIONNEMENT > 860px ----
+            let resizeDebounce;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeDebounce);
+                resizeDebounce = setTimeout(() => {
+                    if (window.innerWidth > 860 && menuOpen) {
+                        closeMenu();
+                    }
+                }, 200);
+            });
+
+            // ---- DÉFILAGE FLUIDE POUR LES ANCRES (fallback pour anciens navigateurs) ----
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 20;
+                        const targetPosition = targetEl.getBoundingClientRect().top + window
+                            .scrollY - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
