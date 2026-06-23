@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores 19 — Stores, fenêtres, portes sur mesure à Issy-les-Moulineaux</title>
+    <meta name="description" content="Fabricant-installateur familial depuis 1987 à Issy-les-Moulineaux. Stores, fenêtres, portes d'entrée et volets roulants sur mesure. Certification Qualibat RGE. Devis gratuit.">
+    <meta property="og:title" content="Stores 19 — L'ombre juste, depuis 1987">
+    <meta property="og:description" content="Fabrication française dans notre atelier à Issy-les-Moulineaux. Pose certifiée Qualibat RGE chez vous, de Paris à Clamart.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='20' width='48' height='4' rx='1' fill='%232C4C5B'/%3E%3Crect x='8' y='28' width='48' height='4' rx='1' fill='%232C4C5B'/%3E%3Crect x='8' y='36' width='48' height='4' rx='1' fill='%232C4C5B'/%3E%3Ccircle cx='32' cy='14' r='6' fill='none' stroke='%232C4C5B' stroke-width='3'/%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Stores 19 - OuvertureS Issy-les-Moulineaux",
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "43 Rue Pierre Brossolette",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146382755",
+            "email": "info@stores19.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4",
+                "reviewCount": "32",
+                "bestRating": "5"
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --fond-coquille: #F2EDE4;
+            --encre: #1F1A16;
+            --gris-acier: #6E7E7B;
+            --tilleul-sourd: #C8D3C0;
+            --accent-bleu: #2C4C5B;
+            --accent-bleu-hover: #1e3741;
+            --blanc-chaud: #FAF8F5;
+            --ombre-legere: rgba(31, 26, 22, 0.06);
+            --ombre-medium: rgba(31, 26, 22, 0.12);
+            --ombre-forte: rgba(31, 26, 22, 0.22);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-douce: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-rapide: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --max-width: 1320px;
+            --header-height: 68px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + 20px);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', system-ui, sans-serif;
+            background-color: var(--fond-coquille);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ===== FOCUS VISIBLE ===== */
+        :focus-visible {
+            outline: 2px solid var(--accent-bleu);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent-bleu);
+            outline-offset: 3px;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(242, 237, 228, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(110, 126, 123, 0.25);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            transition: background var(--transition-douce), box-shadow var(--transition-douce);
+        }
+
+        .site-header.scrolled {
+            background: rgba(242, 237, 228, 0.96);
+            box-shadow: 0 2px 24px var(--ombre-legere);
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 clamp(16px, 3vw, 40px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            color: var(--encre);
+        }
+
+        .logo-mark {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            white-space: nowrap;
+            color: var(--encre);
+            position: relative;
+        }
+
+        .logo-mark::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-bleu);
+            margin-top: 1px;
+            border-radius: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 2vw, 20px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gris-acier);
+            font-weight: 500;
+            font-size: clamp(0.82rem, 1.3vw, 0.9rem);
+            letter-spacing: 0.02em;
+            transition: color var(--transition-rapide);
+            white-space: nowrap;
+            padding: 4px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-bleu);
+            transition: width var(--transition-rapide);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--encre);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-bleu);
+            color: var(--blanc-chaud);
+            padding: 9px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1.2vw, 0.85rem);
+            letter-spacing: 0.03em;
+            transition: background var(--transition-rapide), transform var(--transition-rapide);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .header-cta:hover {
+            background: var(--accent-bleu-hover);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 6px;
+            }
+            .nav-links a {
+                font-size: 0.75rem;
+                letter-spacing: 0.01em;
+            }
+            .header-cta {
+                padding: 7px 13px;
+                font-size: 0.73rem;
+            }
+            .logo-mark {
+                font-size: 1.1rem;
+            }
+            .header-inner {
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .nav-links .hide-on-mobile {
+                display: none;
+            }
+            .header-inner {
+                gap: 4px;
+            }
+        }
+
+        /* ===== MOTIF LIGNES PARALLÈLES ===== */
+        .stripe-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stripe-pattern::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -15%;
+            width: 180%;
+            height: 160%;
+            background: repeating-linear-gradient(112deg,
+                    transparent,
+                    transparent 28px,
+                    rgba(110, 126, 123, 0.07) 28px,
+                    rgba(110, 126, 123, 0.07) 30px);
+            pointer-events: none;
+            z-index: 0;
+            mask-image: linear-gradient(to bottom,
+                    transparent 0%,
+                    rgba(0, 0, 0, 0.5) 20%,
+                    rgba(0, 0, 0, 0.7) 50%,
+                    rgba(0, 0, 0, 0.5) 80%,
+                    transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom,
+                    transparent 0%,
+                    rgba(0, 0, 0, 0.5) 20%,
+                    rgba(0, 0, 0, 0.7) 50%,
+                    rgba(0, 0, 0, 0.5) 80%,
+                    transparent 100%);
+        }
+
+        .section-divider-stripes {
+            width: 100%;
+            height: 60px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            opacity: 0.55;
+        }
+
+        .section-divider-stripes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 130%;
+            height: 100%;
+            background: repeating-linear-gradient(118deg,
+                    transparent,
+                    transparent 22px,
+                    rgba(110, 126, 123, 0.15) 22px,
+                    rgba(110, 126, 123, 0.15) 24px);
+            pointer-events: none;
+        }
+
+        /* ===== HÉRO ===== */
+        .hero-section {
+            padding-top: var(--header-height);
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--fond-coquille);
+        }
+
+        .hero-grid {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: clamp(40px, 8vw, 80px) clamp(16px, 3vw, 40px);
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: clamp(32px, 6vw, 72px);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(16px, 2.5vw, 24px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1vw, 0.78rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-bleu);
+            background: rgba(44, 76, 91, 0.08);
+            padding: 6px 14px;
+            border-radius: 50px;
+            align-self: flex-start;
+            border: 1px solid rgba(44, 76, 91, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            color: var(--encre);
+            text-wrap: balance;
+            position: relative;
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-bleu);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-bleu);
+            opacity: 0.4;
+            border-radius: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            font-weight: 400;
+            color: var(--gris-acier);
+            line-height: 1.7;
+            max-width: 460px;
+            text-wrap: balance;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-bleu);
+            color: var(--blanc-chaud);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.3vw, 0.95rem);
+            letter-spacing: 0.02em;
+            transition: background var(--transition-rapide), transform var(--transition-rapide), box-shadow var(--transition-rapide);
+            box-shadow: 0 4px 18px rgba(44, 76, 91, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-bleu-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(44, 76, 91, 0.35);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--encre);
+            padding: 13px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.3vw, 0.95rem);
+            letter-spacing: 0.02em;
+            border: 2px solid var(--gris-acier);
+            transition: border-color var(--transition-rapide), color var(--transition-rapide), transform var(--transition-rapide);
+            cursor: pointer;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-bleu);
+            color: var(--accent-bleu);
+            transform: translateY(-1px);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 5/4;
+            box-shadow: 0 20px 60px var(--ombre-forte);
+            transform: rotate(-0.5deg);
+            transition: transform var(--transition-douce);
+        }
+
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: sepia(0.06) brightness(1.03) contrast(1.06);
+            transition: filter var(--transition-douce);
+        }
+
+        .hero-image-wrapper .grain-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px;
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                text-align: center;
+            }
+            .hero-content {
+                align-items: center;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-tag {
+                align-self: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-image-wrapper {
+                aspect-ratio: 4/3;
+                max-width: 540px;
+                margin: 0 auto;
+                transform: rotate(0deg);
+            }
+        }
+
+        /* ===== ANIMATIONS D'ENTRÉE ===== */
+        .reveal-on-load {
+            opacity: 0;
+            animation: fadeSlideUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        .reveal-on-load:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+        .reveal-on-load:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .reveal-on-load:nth-child(3) {
+            animation-delay: 0.35s;
+        }
+        .reveal-on-load:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+        .reveal-on-load:nth-child(5) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger:nth-child(1) {
+            transition-delay: 0s;
+        }
+        .reveal-stagger:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .reveal-stagger:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+        .reveal-stagger:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+        .reveal-stagger:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+
+        /* ===== SECTIONS COMMUNES ===== */
+        .section {
+            padding: clamp(48px, 8vw, 96px) clamp(16px, 3vw, 40px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.68rem, 0.95vw, 0.75rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-bleu);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+            margin-bottom: clamp(16px, 2.5vw, 24px);
+            text-wrap: balance;
+        }
+
+        .section-desc {
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: var(--gris-acier);
+            max-width: 620px;
+            line-height: 1.75;
+            margin-bottom: clamp(32px, 5vw, 48px);
+            text-wrap: balance;
+        }
+
+        /* ===== BADGE GOOGLE ===== */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blanc-chaud);
+            border: 1px solid rgba(110, 126, 123, 0.3);
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre);
+            text-decoration: none;
+            transition: box-shadow var(--transition-rapide), transform var(--transition-rapide);
+            white-space: nowrap;
+        }
+
+        .google-badge:hover {
+            box-shadow: 0 4px 20px var(--ombre-medium);
+            transform: translateY(-1px);
+        }
+
+        .google-stars {
+            color: #e8b730;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CARTES MÉTIERS ===== */
+        .metiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(16px, 2.5vw, 24px);
+        }
+
+        .metier-card {
+            background: var(--blanc-chaud);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 2px 12px var(--ombre-legere);
+            transition: box-shadow var(--transition-douce), transform var(--transition-douce);
+            position: relative;
+            cursor: default;
+        }
+
+        .metier-card:hover {
+            box-shadow: 0 12px 40px var(--ombre-medium);
+            transform: translateY(-4px);
+        }
+
+        .metier-card-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .metier-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.04) brightness(1.02) contrast(1.05);
+            transition: filter var(--transition-douce), transform var(--transition-douce);
+        }
+
+        .metier-card:hover .metier-card-image img {
+            filter: sepia(0.02) brightness(1.05) contrast(1.08);
+            transform: scale(1.03);
+        }
+
+        .metier-card-body {
+            padding: 16px 18px 20px;
+        }
+
+        .metier-card-body h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 4px;
+        }
+
+        .metier-card-body p {
+            font-size: 0.88rem;
+            color: var(--gris-acier);
+            line-height: 1.55;
+        }
+
+        /* ===== POURQUOI ===== */
+        .pourquoi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(20px, 3vw, 32px);
+        }
+
+        .pourquoi-card {
+            background: var(--tilleul-sourd);
+            border-radius: var(--radius-md);
+            padding: clamp(24px, 4vw, 36px);
+            position: relative;
+            transition: background var(--transition-douce), box-shadow var(--transition-douce);
+            border: 1px solid rgba(110, 126, 123, 0.18);
+        }
+
+        .pourquoi-card:hover {
+            background: #d4dcc9;
+            box-shadow: 0 8px 30px var(--ombre-legere);
+        }
+
+        .pourquoi-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .pourquoi-card h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 8px;
+        }
+
+        .pourquoi-card p {
+            font-size: 0.9rem;
+            color: var(--gris-acier);
+            line-height: 1.65;
+        }
+
+        /* ===== SHOWROOM ===== */
+        .showroom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 5vw, 48px);
+            align-items: center;
+        }
+
+        .showroom-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 12px;
+        }
+
+        .showroom-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            filter: sepia(0.05) brightness(1.03) contrast(1.05);
+            box-shadow: 0 8px 28px var(--ombre-medium);
+            transition: transform var(--transition-douce), box-shadow var(--transition-douce);
+        }
+
+        .showroom-images img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 14px 40px var(--ombre-forte);
+        }
+
+        .showroom-images img:first-child {
+            grid-row: span 2;
+            aspect-ratio: 3/4;
+        }
+
+        .showroom-images img:nth-child(2) {
+            aspect-ratio: 16/10;
+        }
+        .showroom-images img:nth-child(3) {
+            aspect-ratio: 16/10;
+        }
+
+        .showroom-info h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: var(--encre);
+        }
+
+        .showroom-info .horaires {
+            list-style: none;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--gris-acier);
+            line-height: 1.8;
+        }
+
+        .showroom-info .horaires li {
+            display: flex;
+            justify-content: space-between;
+            max-width: 320px;
+            border-bottom: 1px dotted rgba(110, 126, 123, 0.3);
+            padding: 4px 0;
+        }
+
+        .showroom-info .horaires li span {
+            font-weight: 500;
+            color: var(--encre);
+        }
+
+        @media (max-width: 768px) {
+            .showroom-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .showroom-images {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .showroom-images img:first-child {
+                grid-row: span 1;
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* ===== GALERIE MASONRY ===== */
+        .masonry-grid {
+            columns: 3;
+            column-gap: 16px;
+        }
+
+        .masonry-grid .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 16px var(--ombre-legere);
+            transition: box-shadow var(--transition-douce), transform var(--transition-douce);
+            cursor: default;
+        }
+
+        .masonry-grid .masonry-item:hover {
+            box-shadow: 0 12px 36px var(--ombre-medium);
+            transform: translateY(-3px);
+        }
+
+        .masonry-grid .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: sepia(0.05) brightness(1.03) contrast(1.05);
+        }
+
+        .masonry-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 14px;
+            background: linear-gradient(transparent, rgba(31, 26, 22, 0.75));
+            color: var(--blanc-chaud);
+            font-weight: 500;
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 900px) {
+            .masonry-grid {
+                columns: 2;
+                column-gap: 10px;
+            }
+            .masonry-grid .masonry-item {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .masonry-grid {
+                columns: 1;
+                column-gap: 0;
+            }
+            .masonry-grid .masonry-item {
+                margin-bottom: 12px;
+            }
+        }
+
+        /* ===== AVIS ===== */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(16px, 2.5vw, 24px);
+        }
+
+        .avis-card {
+            background: var(--blanc-chaud);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: 0 2px 12px var(--ombre-legere);
+            border-left: 3px solid var(--accent-bleu);
+            transition: box-shadow var(--transition-douce), transform var(--transition-douce);
+        }
+
+        .avis-card:hover {
+            box-shadow: 0 8px 30px var(--ombre-medium);
+            transform: translateY(-2px);
+        }
+
+        .avis-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .avis-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--tilleul-sourd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent-bleu);
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .avis-name {
+            font-weight: 600;
+            color: var(--encre);
+            font-size: 0.9rem;
+        }
+
+        .avis-stars {
+            color: #e8b730;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .avis-text {
+            font-size: 0.88rem;
+            color: var(--gris-acier);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ===== FORMULAIRE DEVIS ===== */
+        .devis-section {
+            background: var(--tilleul-sourd);
+            border-radius: var(--radius-lg);
+            padding: clamp(32px, 6vw, 56px);
+            margin: 0 clamp(0px, 2vw, 20px);
+            position: relative;
+            border: 1px solid rgba(110, 126, 123, 0.2);
+        }
+
+        .devis-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 700px;
+        }
+
+        .devis-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .devis-form input,
+        .devis-form select {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            border: 2px solid rgba(110, 126, 123, 0.3);
+            background: var(--blanc-chaud);
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: var(--encre);
+            transition: border-color var(--transition-rapide), box-shadow var(--transition-rapide);
+        }
+
+        .devis-form input:focus,
+        .devis-form select:focus {
+            border-color: var(--accent-bleu);
+            box-shadow: 0 0 0 4px rgba(44, 76, 91, 0.1);
+            outline: none;
+        }
+
+        .devis-form label {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .btn-submit {
+            grid-column: 1 / -1;
+            background: var(--accent-bleu);
+            color: var(--blanc-chaud);
+            padding: 15px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            border: none;
+            cursor: pointer;
+            transition: background var(--transition-rapide), transform var(--transition-rapide), box-shadow var(--transition-rapide);
+            box-shadow: 0 4px 18px rgba(44, 76, 91, 0.25);
+            font-family: 'Hanken Grotesk', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-bleu-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(44, 76, 91, 0.35);
+        }
+
+        @media (max-width: 600px) {
+            .devis-form {
+                grid-template-columns: 1fr;
+            }
+            .devis-form .full-width {
+                grid-column: 1;
+            }
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 5vw, 48px);
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 12px;
+            color: var(--encre);
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            color: var(--gris-acier);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: var(--accent-bleu);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-rapide);
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-bleu-hover);
+            text-decoration: underline;
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 8px 32px var(--ombre-medium);
+            border: 1px solid rgba(110, 126, 123, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--encre);
+            color: var(--blanc-chaud);
+            padding: clamp(32px, 5vw, 48px) clamp(16px, 3vw, 40px);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .footer-inner a {
+            color: var(--tilleul-sourd);
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+
+        .footer-inner a:hover {
+            color: #fff;
+        }
+
+        .footer-credit {
+            opacity: 0.6;
+            font-size: 0.78rem;
+            margin-top: 16px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ===== UTILITIES ===== */
+        .text-accent {
+            color: var(--accent-bleu);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="logo-link" aria-label="Stores 19 - Accueil">
+                <span class="logo-mark">Stores&nbsp;19</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links">
+                    <li><a href="#metiers" class="hide-on-mobile">Métiers</a></li>
+                    <li><a href="#showroom">Showroom</a></li>
+                    <li><a href="#realisations" class="hide-on-mobile">Réalisations</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="tel:+33146382755" class="header-cta">📞 01 46 38 27 55</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero-section stripe-pattern" id="hero" aria-labelledby="hero-title">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag reveal-on-load">Fabricant-installateur depuis 1987</span>
+                    <h1 class="hero-title reveal-on-load" id="hero-title">Des stores, des fenêtres, des portes. <span class="highlight">L'ombre juste</span>, depuis 1987.</h1>
+                    <p class="hero-subtitle reveal-on-load">Fabrication française dans notre atelier à Issy-les-Moulineaux. Pose certifiée Qualibat RGE chez vous, de Paris à Clamart.</p>
+                    <div class="hero-actions reveal-on-load">
+                        <a href="#devis" class="btn-primary">Demandez un devis</a>
+                        <a href="tel:+33146382755" class="btn-outline">Nous appeler</a>
+                    </div>
+                    <a href="https://maps.google.com/maps?q=Stores+19+-+OuvertureS+Issy-les-Moulineaux+43+Rue+Pierre+Brossolette%2C+Issy-les-Moulineaux" target="_blank" rel="noopener" class="google-badge reveal-on-load" aria-label="Note Google 4 sur 5, 32 avis">
+                        <span class="google-stars">★★★★☆</span> 4/5 — 32 avis Google
+                    </a>
+                </div>
+                <div class="hero-image-wrapper reveal-on-load">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop" alt="Vitrine Stores 19 — stores et menuiseries sur mesure" loading="eager" width="600" height="480">
+                    <div class="grain-overlay" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- NOS MÉTIERS -->
+        <section class="section" id="metiers" aria-labelledby="metiers-title">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Nos métiers</span>
+                <h2 class="section-title reveal-on-scroll" id="metiers-title">Tout part de l'atelier</h2>
+                <p class="section-desc reveal-on-scroll">Chaque produit est fabriqué sur mesure dans notre atelier d'Issy-les-Moulineaux, posé par nos équipes certifiées. Voici ce qu'on façonne pour vous.</p>
+                <div class="metiers-grid">
+                    <article class="metier-card reveal-on-scroll reveal-stagger">
+                        <div class="metier-card-image">
+                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format&fit=crop&crop=top" alt="Stores & Bannes sur mesure" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="metier-card-body">
+                            <h3>Stores & Bannes</h3>
+                            <p>Toiles Dickson, bras articulés, motorisation Somfy. L'ombre exacte pour votre terrasse ou votre façade.</p>
+                        </div>
+                    </article>
+                    <article class="metier-card reveal-on-scroll reveal-stagger">
+                        <div class="metier-card-image">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Fenêtres sur mesure" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="metier-card-body">
+                            <h3>Fenêtres sur mesure</h3>
+                            <p>Alu laqué anthracite, double vitrage haute performance. Des ouvertures qui durent et isolent.</p>
+                        </div>
+                    </article>
+                    <article class="metier-card reveal-on-scroll reveal-stagger">
+                        <div class="metier-card-image">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&auto=format&fit=crop" alt="Volets roulants" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="metier-card-body">
+                            <h3>Volets roulants</h3>
+                            <p>Isolation thermique et phonique, commande filaire ou connectée. Sécurité et confort au quotidien.</p>
+                        </div>
+                    </article>
+                    <article class="metier-card reveal-on-scroll reveal-stagger">
+                        <div class="metier-card-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop" alt="Portes d'entrée et de garage" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="metier-card-body">
+                            <h3>Portes d'entrée & garage</h3>
+                            <p>Sécurité renforcée, design coordonné. Portails coulissants, portes blindées, finitions laquées.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- POURQUOI STORES 19 -->
+        <section class="section" id="pourquoi" aria-labelledby="pourquoi-title" style="background: var(--blanc-chaud);">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Pourquoi Stores 19</span>
+                <h2 class="section-title reveal-on-scroll" id="pourquoi-title">Fabricant-installateur familial</h2>
+                <p class="section-desc reveal-on-scroll">On ne sous-traite rien. Nos menuiseries naissent dans notre atelier, sont posées par nos mains. C'est plus simple, plus fiable, et ça dure.</p>
+                <div class="pourquoi-grid">
+                    <div class="pourquoi-card reveal-on-scroll reveal-stagger">
+                        <span class="pourquoi-icon">🛠️</span>
+                        <h3>Plus de 35 ans de savoir-faire</h3>
+                        <p>Depuis 1987, on fabrique et on pose des stores, fenêtres et portes dans le même atelier. Les gestes se transmettent, la qualité aussi.</p>
+                    </div>
+                    <div class="pourquoi-card reveal-on-scroll reveal-stagger">
+                        <span class="pourquoi-icon">🏭</span>
+                        <h3>Fabrication dans notre atelier d'Issy</h3>
+                        <p>Pas d'intermédiaire, pas de produit standard. Chaque pièce est coupée, assemblée et contrôlée au 43 rue Pierre Brossolette.</p>
+                    </div>
+                    <div class="pourquoi-card reveal-on-scroll reveal-stagger">
+                        <span class="pourquoi-icon">✅</span>
+                        <h3>Certification Qualibat RGE</h3>
+                        <p>Une certification reconnue qui atteste de notre sérieux technique. Elle ouvre droit aux aides pour vos travaux de rénovation énergétique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- LE SHOWROOM -->
+        <section class="section" id="showroom" aria-labelledby="showroom-title">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Le showroom</span>
+                <h2 class="section-title reveal-on-scroll" id="showroom-title">Touchez, actionnez, choisissez</h2>
+                <div class="showroom-grid">
+                    <div class="showroom-images reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Intérieur du showroom Stores 19" loading="lazy" width="400" height="500">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80&auto=format&fit=crop" alt="Présentation de stores" loading="lazy" width="400" height="250">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&q=80&auto=format&fit=crop" alt="Démonstration de volets" loading="lazy" width="400" height="250">
+                    </div>
+                    <div class="showroom-info reveal-on-scroll">
+                        <h3>Venez tester nos installations</h3>
+                        <p style="color:var(--gris-acier);line-height:1.7;margin-bottom:8px;">Dans notre showroom au 43 rue Pierre Brossolette, tout fonctionne : les stores descendent, les portails coulissent, les volets se ferment. On vous explique chaque mécanisme, chaque matériau.</p>
+                        <ul class="horaires">
+                            <li><span>Lundi – Jeudi</span> 8h30 – 18h</li>
+                            <li><span>Vendredi</span> 8h30 – 17h</li>
+                            <li><span>Samedi</span> 10h – 13h <em>(sur RDV)</em></li>
+                            <li><span>Dimanche</span> Fermé</li>
+                        </ul>
+                        <p style="margin-top:12px;font-size:0.85rem;color:var(--gris-acier);">Fermé le dimanche — on recharge les batteries, comme vous.</p>
+                        <a href="tel:+33146382755" class="btn-outline" style="margin-top:12px;">Prendre RDV au showroom</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- RÉALISATIONS LOCALES -->
+        <section class="section" id="realisations" aria-labelledby="realisations-title" style="background: var(--blanc-chaud);">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Réalisations locales</span>
+                <h2 class="section-title reveal-on-scroll" id="realisations-title">De Clamart à Meudon-la-Forêt</h2>
+                <p class="section-desc reveal-on-scroll">Nos chantiers récents, posés chez vos voisins. Stores bannes, baies vitrées, volets roulants isolants — chaque projet est unique.</p>
+                <div class="masonry-grid">
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=500&q=80&auto=format&fit=crop&crop=bottom" alt="Store banne posé à Clamart" loading="lazy" width="400" height="280">
+                        <span class="masonry-caption">Clamart — Store banne motorisé</span>
+                    </div>
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80&auto=format&fit=crop" alt="Baie vitrée à Meudon" loading="lazy" width="400" height="320">
+                        <span class="masonry-caption">Meudon-la-Forêt — Baie vitrée coulissante</span>
+                    </div>
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&q=80&auto=format&fit=crop" alt="Volet roulant à Issy" loading="lazy" width="400" height="350">
+                        <span class="masonry-caption">Issy-les-Moulineaux — Volets roulants isolants</span>
+                    </div>
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80&auto=format&fit=crop" alt="Store intérieur à Boulogne" loading="lazy" width="400" height="260">
+                        <span class="masonry-caption">Boulogne — Stores intérieurs film</span>
+                    </div>
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=500&q=80&auto=format&fit=crop&crop=center" alt="Porte d'entrée à Vanves" loading="lazy" width="400" height="300">
+                        <span class="masonry-caption">Vanves — Porte d'entrée laquée</span>
+                    </div>
+                    <div class="masonry-item reveal-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80&auto=format&fit=crop&crop=bottom" alt="Portail à Sèvres" loading="lazy" width="400" height="290">
+                        <span class="masonry-caption">Sèvres — Portail coulissant motorisé</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- AVIS -->
+        <section class="section" id="avis" aria-labelledby="avis-title">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Ils nous font confiance</span>
+                <h2 class="section-title reveal-on-scroll" id="avis-title">Vos retours après la pose</h2>
+                <p class="section-desc reveal-on-scroll">Des avis authentiques, laissés sur Google par nos clients. Votre satisfaction est notre meilleure certification.</p>
+                <div class="avis-grid">
+                    <blockquote class="avis-card reveal-on-scroll reveal-stagger">
+                        <div class="avis-header">
+                            <div class="avis-avatar" aria-hidden="true">MC</div>
+                            <div>
+                                <div class="avis-name">Marie-Claire D.</div>
+                                <div class="avis-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="avis-text">"Store banne posé en une journée. L'équipe a pris le temps de tout m'expliquer. Le résultat est magnifique, et l'ombre bien réglée."</p>
+                    </blockquote>
+                    <blockquote class="avis-card reveal-on-scroll reveal-stagger">
+                        <div class="avis-header">
+                            <div class="avis-avatar" aria-hidden="true">PL</div>
+                            <div>
+                                <div class="avis-name">Pierre L.</div>
+                                <div class="avis-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="avis-text">"Trois fenêtres changées en plein hiver, chantier propre et rapide. L'isolation a vraiment fait la différence cet été."</p>
+                    </blockquote>
+                    <blockquote class="avis-card reveal-on-scroll reveal-stagger">
+                        <div class="avis-header">
+                            <div class="avis-avatar" aria-hidden="true">SB</div>
+                            <div>
+                                <div class="avis-name">Sophie B.</div>
+                                <div class="avis-stars">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="avis-text">"Très bon accueil au showroom, on a pu manipuler les stores et choisir la toile tranquillement. Pose impec, juste le délai un peu long."</p>
+                    </blockquote>
+                </div>
+                <p style="margin-top:20px;text-align:center;">
+                    <a href="https://maps.google.com/maps?q=Stores+19+-+OuvertureS+Issy-les-Moulineaux+43+Rue+Pierre+Brossolette%2C+Issy-les-Moulineaux" target="_blank" rel="noopener" class="google-badge" style="font-size:0.9rem;">
+                        <span class="google-stars">★★★★☆</span> Voir les 32 avis Google — Note 4/5
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- DEVIS GRATUIT -->
+        <section class="section" id="devis" aria-labelledby="devis-title">
+            <div class="section-inner">
+                <div class="devis-section reveal-on-scroll">
+                    <span class="section-label">Devis gratuit</span>
+                    <h2 class="section-title" id="devis-title" style="font-size:clamp(1.5rem, 3.5vw, 2.2rem);">On vient chez vous mesurer</h2>
+                    <p class="section-desc" style="margin-bottom:24px;">Laissez-nous vos coordonnées, on vous rappelle sous 24h pour convenir d'un rendez-vous. C'est sans engagement, et c'est nous qui nous déplaçons.</p>
+                    <form class="devis-form" aria-label="Formulaire de demande de devis">
+                        <div>
+                            <label for="devis-nom">Votre nom</label>
+                            <input type="text" id="devis-nom" name="nom" placeholder="Ex : Dupont" required autocomplete="name">
+                        </div>
+                        <div>
+                            <label for="devis-tel">Téléphone</label>
+                            <input type="tel" id="devis-tel" name="tel" placeholder="06 12 34 56 78" required autocomplete="tel">
+                        </div>
+                        <div class="full-width">
+                            <label for="devis-rue">Rue / Ville</label>
+                            <input type="text" id="devis-rue" name="rue" placeholder="Ex : 15 rue de Paris, Clamart" required autocomplete="street-address">
+                        </div>
+                        <div class="full-width">
+                            <label for="devis-projet">Type de projet</label>
+                            <select id="devis-projet" name="projet">
+                                <option value="">— Choisissez —</option>
+                                <option value="store-banne">Store banne</option>
+                                <option value="fenetres">Fenêtres</option>
+                                <option value="volets">Volets roulants</option>
+                                <option value="porte-entree">Porte d'entrée</option>
+                                <option value="porte-garage">Porte de garage</option>
+                                <option value="autre">Autre / multiple</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit">Demandez un devis</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-stripes" aria-hidden="true"></div>
+
+        <!-- CONTACT & ATELIER -->
+        <section class="section" id="contact" aria-labelledby="contact-title" style="background: var(--blanc-chaud);">
+            <div class="section-inner">
+                <span class="section-label reveal-on-scroll">Contact & atelier</span>
+                <h2 class="section-title reveal-on-scroll" id="contact-title">Poussez la porte</h2>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-on-scroll">
+                        <h3>Stores 19 — OuvertureS</h3>
+                        <p>📍 <strong>43 Rue Pierre Brossolette</strong><br>92130 Issy-les-Moulineaux</p>
+                        <p>📞 <a href="tel:+33146382755">01 46 38 27 55</a></p>
+                        <p>✉️ <a href="mailto:info@stores19.fr">info@stores19.fr</a></p>
+                        <p style="margin-top:12px;font-size:0.88rem;color:var(--gris-acier);">Rayon d'intervention : <strong>20 km autour d'Issy</strong> — Paris, Clamart, Meudon, Boulogne, Vanves, Sèvres et toutes les communes limitrophes.</p>
+                        <p style="font-size:0.82rem;color:var(--gris-acier);">Fermé le dimanche.</p>
+                    </div>
+                    <div class="map-wrapper reveal-on-scroll">
+                        <iframe src="https://maps.google.com/maps?q=Stores+19+-+OuvertureS+Issy-les-Moulineaux+43+Rue+Pierre+Brossolette%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation Stores 19"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <strong>Stores 19 — OuvertureS</strong><br>
+                43 Rue Pierre Brossolette, 92130 Issy-les-Moulineaux<br>
+                <a href="tel:+33146382755">01 46 38 27 55</a> · <a href="mailto:info@stores19.fr">info@stores19.fr</a>
+            </div>
+            <div>
+                <a href="#metiers">Métiers</a> · <a href="#showroom">Showroom</a> · <a href="#realisations">Réalisations</a><br>
+                <a href="#avis">Avis</a> · <a href="#devis">Devis</a> · <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-credit">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+            const handleScroll = () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 20) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // IntersectionObserver pour les reveals au scroll
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.1
+                });
+                revealElements.forEach(el => observer.observe(el));
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Afficher immédiatement sans animation
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+
+            // Gestion formulaire devis
+            const devisForm = document.querySelector('.devis-form');
+            if (devisForm) {
+                devisForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = devisForm.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ Demande envoyée !';
+                    btn.style.background = '#3a6b4a';
+                    btn.disabled = true;
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        devisForm.reset();
+                    }, 3000);
+                });
+            }
+
+            // Fermeture menu mobile si click sur lien (au cas où)
+            document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    // Smooth scroll déjà géré par CSS, rien de plus
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
