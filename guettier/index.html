@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie Guettier — Librairie de quartier, spiritualité & jeunesse, Paris 16ᵉ</title>
+    <meta name="description" content="Depuis plus de quarante ans, la librairie Guettier vous accueille au 66 avenue Théophile Gautier à Paris. Spiritualité, jeunesse, belles lectures et objets religieux — un lieu de conseil et de confiance.">
+    <meta property="og:title" content="Librairie Guettier — Des livres et de l'Esprit">
+    <meta property="og:description" content="Une librairie de quartier où l'on prend le temps de vous conseiller. Spiritualité, jeunesse et belles lectures au cœur du 16ᵉ arrondissement.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/guettier">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E📖%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parchemin: #F7F2E9;
+            --bois-chene: #8B5A2B;
+            --ombre-douce: #5A4A3A;
+            --vitrail: #2C5F6E;
+            --dorure: #C4A44A;
+            --dorure-pale: rgba(196, 164, 74, 0.25);
+            --bois-fonce: #3E2C1C;
+            --bois-tres-fonce: #2A1A0E;
+            --parchemin-fonce: #EBE3D4;
+            --transition-douce: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-volet: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            line-height: 1.7;
+            color: var(--ombre-douce);
+            background-color: var(--parchemin);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ----- HEADER ----- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(247, 242, 233, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--dorure-pale);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(42, 26, 14, 0.12);
+        }
+        .header-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            text-decoration: none;
+            color: var(--bois-chene);
+            flex-shrink: 0;
+        }
+        .header-brand .brand-name {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
+            letter-spacing: -0.02em;
+            color: var(--bois-chene);
+            line-height: 1;
+        }
+        .header-brand .brand-sub {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ombre-douce);
+            opacity: 0.7;
+            white-space: nowrap;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--ombre-douce);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--vitrail);
+            transition: width var(--transition-douce);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--vitrail);
+            outline: none;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: #fff;
+            background: var(--vitrail);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all var(--transition-douce);
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--bois-chene);
+            color: #fff;
+            outline: none;
+            box-shadow: 0 4px 16px rgba(44, 95, 110, 0.3);
+        }
+        .header-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dorure);
+            background: rgba(196, 164, 74, 0.08);
+            padding: 0.3rem 0.7rem;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+        .header-google-badge .star {
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.6rem 1rem;
+                gap: 0.5rem;
+            }
+            .header-nav {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+            .header-nav a {
+                font-size: 0.78rem;
+            }
+            .header-cta {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.9rem;
+            }
+            .header-google-badge {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-nav {
+                gap: 0.6rem;
+            }
+            .header-nav a {
+                font-size: 0.7rem;
+            }
+            .header-brand .brand-name {
+                font-size: 1.1rem;
+            }
+            .header-brand .brand-sub {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* ----- HÉRO ----- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            overflow: hidden;
+            background: var(--parchemin);
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.85) saturate(0.9);
+            opacity: 0.75;
+            mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            animation: heroReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+        }
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content .hero-label {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--vitrail);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .hero-content h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--bois-chene);
+            margin-bottom: 1.5rem;
+        }
+        .hero-content .hero-sub {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            line-height: 1.6;
+            color: var(--ombre-douce);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            letter-spacing: 0.01em;
+        }
+        .hero-content .hero-btn {
+            display: inline-block;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background: var(--vitrail);
+            padding: 0.85rem 2.2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all var(--transition-douce);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .hero-content .hero-btn:hover,
+        .hero-content .hero-btn:focus-visible {
+            background: var(--bois-chene);
+            box-shadow: 0 6px 24px rgba(44, 95, 110, 0.35);
+            outline: none;
+            transform: translateY(-2px);
+        }
+        .hero-phone {
+            margin-top: 1.5rem;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--ombre-douce);
+            letter-spacing: 0.02em;
+        }
+        .hero-phone a {
+            color: var(--vitrail);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            border-bottom: 1px dotted var(--vitrail);
+        }
+        .hero-phone a:hover,
+        .hero-phone a:focus-visible {
+            color: var(--bois-chene);
+            border-bottom-color: var(--bois-chene);
+            outline: none;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.25rem 3rem;
+                min-height: auto;
+            }
+            .hero-bg {
+                width: 100%;
+                height: 40%;
+                top: auto;
+                bottom: 0;
+                opacity: 0.5;
+            }
+            .hero-bg img {
+                mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.05) 80%);
+                -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.05) 80%);
+            }
+            .hero-content h1 {
+                font-size: clamp(2rem, 7vw, 3.5rem);
+            }
+            .hero-content .hero-sub {
+                font-size: 1rem;
+            }
+        }
+
+        /* ----- SECTIONS GÉNÉRALES ----- */
+        .section {
+            position: relative;
+            padding: 5rem 2rem;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1.25rem;
+            }
+        }
+
+        /* ----- Animation volet bois ----- */
+        .volet-bois {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    var(--bois-fonce) 0%,
+                    var(--bois-chene) 30%,
+                    #6B4226 60%,
+                    var(--bois-fonce) 100%);
+            z-index: 10;
+            transform: translateY(0);
+            transition: transform var(--transition-volet);
+            pointer-events: none;
+        }
+        .volet-bois.revealed {
+            transform: translateY(-105%);
+        }
+        .volet-bois::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(255, 255, 255, 0.015) 3px,
+                    rgba(255, 255, 255, 0.015) 4px),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(0, 0, 0, 0.03) 40px,
+                    rgba(0, 0, 0, 0.03) 41px);
+            pointer-events: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .volet-bois {
+                transition: none;
+                opacity: 0;
+            }
+            .volet-bois.revealed {
+                opacity: 0;
+                transform: translateY(-105%);
+            }
+        }
+
+        /* ----- TITRES DE SECTION ----- */
+        .section-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--bois-chene);
+            margin-bottom: 1.5rem;
+        }
+        .section-title .accent-dore {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2px;
+            background: var(--dorure);
+            vertical-align: middle;
+            margin-right: 1rem;
+            position: relative;
+            top: -0.3rem;
+        }
+        .section-text {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            line-height: 1.8;
+            color: var(--ombre-douce);
+            max-width: 700px;
+            letter-spacing: 0.01em;
+        }
+
+        /* ----- SECTION LIEU ----- */
+        .section-lieu {
+            background: var(--parchemin-fonce);
+            position: relative;
+        }
+        .section-lieu .grid-lieu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .section-lieu .grid-lieu .img-col {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 8px 32px rgba(42, 26, 14, 0.18);
+        }
+        .section-lieu .grid-lieu .img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) contrast(1.05);
+        }
+        @media (max-width: 768px) {
+            .section-lieu .grid-lieu {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ----- SECTION SÉLECTION ----- */
+        .section-selection {
+            background: var(--parchemin);
+        }
+        .selection-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .selection-card {
+            padding: 2rem;
+            border-left: 3px solid var(--dorure);
+            background: rgba(247, 242, 233, 0.7);
+            transition: all var(--transition-douce);
+            position: relative;
+        }
+        .selection-card:hover {
+            background: rgba(196, 164, 74, 0.06);
+            border-left-color: var(--vitrail);
+        }
+        .selection-card h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            color: var(--bois-chene);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+        .selection-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--ombre-douce);
+        }
+        @media (max-width: 768px) {
+            .selection-cols {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .selection-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ----- ÉTAGÈRE DU MOMENT ----- */
+        .section-etagere {
+            background: var(--parchemin-fonce);
+            position: relative;
+        }
+        .etagere-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .etagere-card {
+            background: #fff;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(42, 26, 14, 0.08);
+            transition: all var(--transition-douce);
+            display: flex;
+            flex-direction: column;
+        }
+        .etagere-card:hover {
+            box-shadow: 0 8px 28px rgba(42, 26, 14, 0.16);
+            transform: translateY(-4px);
+        }
+        .etagere-card .card-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--parchemin-fonce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .etagere-card .card-img .book-spine {
+            width: 70%;
+            height: 85%;
+            background: linear-gradient(135deg, #6B3A2E 0%, #4A2618 40%, #8B5A3C 100%);
+            border-radius: 2px 6px 6px 2px;
+            position: relative;
+            box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.3), 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .etagere-card .card-img .book-spine::after {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: rgba(196, 164, 74, 0.5);
+        }
+        .etagere-card .card-img .book-spine.var1 {
+            background: linear-gradient(135deg, #2C5F6E 0%, #1A3D47 40%, #3A6B7A 100%);
+        }
+        .etagere-card .card-img .book-spine.var2 {
+            background: linear-gradient(135deg, #8B5A2B 0%, #5A3A1A 40%, #A07040 100%);
+        }
+        .etagere-card .card-img .book-spine.var3 {
+            background: linear-gradient(135deg, #4A3A2A 0%, #2A1A0E 40%, #6B5A4A 100%);
+        }
+        .etagere-card .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .etagere-card .card-body h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--bois-chene);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+        .etagere-card .card-body .author {
+            font-size: 0.85rem;
+            color: var(--ombre-douce);
+            opacity: 0.75;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+        .etagere-card .card-body .comment {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--ombre-douce);
+            flex: 1;
+        }
+        .etagere-card .card-body .comment::before {
+            content: '« ';
+            color: var(--dorure);
+            font-weight: 700;
+        }
+        .etagere-card .card-body .comment::after {
+            content: ' »';
+            color: var(--dorure);
+            font-weight: 700;
+        }
+
+        /* ----- OBJETS RELIGIEUX ----- */
+        .section-objets {
+            background: var(--parchemin);
+        }
+        .objets-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .objet-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(247, 242, 233, 0.8);
+            border-radius: 2px;
+            transition: all var(--transition-douce);
+            border: 1px solid transparent;
+        }
+        .objet-item:hover {
+            border-color: var(--dorure-pale);
+            background: rgba(196, 164, 74, 0.05);
+        }
+        .objet-item .objet-icone {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .objet-item h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--bois-chene);
+            letter-spacing: 0.01em;
+        }
+        .objet-item p {
+            font-size: 0.85rem;
+            color: var(--ombre-douce);
+            margin-top: 0.4rem;
+            opacity: 0.8;
+        }
+
+        /* ----- MUR DE LIVRES (signature) ----- */
+        .mur-livres {
+            position: relative;
+            padding: 6rem 2rem;
+            background: var(--bois-tres-fonce);
+            overflow: hidden;
+            text-align: center;
+        }
+        .mur-livres::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(196, 164, 74, 0.04) 2px,
+                    rgba(196, 164, 74, 0.04) 3px),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 30px,
+                    rgba(255, 255, 255, 0.015) 30px,
+                    rgba(255, 255, 255, 0.015) 31px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .mur-livres .mur-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .mur-livres .mur-citation {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #F7F2E9;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+        .mur-livres .mur-auteur {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--dorure);
+        }
+        @media (max-width: 768px) {
+            .mur-livres {
+                padding: 4rem 1.5rem;
+            }
+            .mur-livres .mur-citation {
+                font-size: clamp(1.3rem, 4vw, 2rem);
+            }
+        }
+
+        /* ----- INFOS PRATIQUES ----- */
+        .section-infos {
+            background: var(--parchemin-fonce);
+        }
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .infos-coordonnees {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .infos-coordonnees .info-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--ombre-douce);
+        }
+        .infos-coordonnees .info-ligne .info-icone {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+        .infos-coordonnees a {
+            color: var(--vitrail);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--vitrail);
+            transition: all 0.3s;
+        }
+        .infos-coordonnees a:hover,
+        .infos-coordonnees a:focus-visible {
+            color: var(--bois-chene);
+            border-bottom-color: var(--bois-chene);
+            outline: none;
+        }
+        .horaires-bloc {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 2px;
+            border: 1px solid var(--dorure-pale);
+            box-shadow: 0 2px 8px rgba(42, 26, 14, 0.05);
+        }
+        .horaires-bloc h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--bois-chene);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+        .horaires-bloc .horaire-ligne {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            border-bottom: 1px dotted rgba(90, 74, 58, 0.15);
+            color: var(--ombre-douce);
+        }
+        .horaires-bloc .horaire-ligne:last-child {
+            border-bottom: none;
+        }
+        .horaires-note {
+            font-size: 0.8rem;
+            color: var(--ombre-douce);
+            opacity: 0.7;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+        .carte-container {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(42, 26, 14, 0.15);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+        }
+        .carte-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .carte-container {
+                aspect-ratio: 16/9;
+                min-height: 250px;
+            }
+        }
+
+        /* ----- AVIS ----- */
+        .section-avis {
+            background: var(--parchemin);
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .avis-card {
+            background: #fff;
+            padding: 1.75rem;
+            border-radius: 2px;
+            border: 1px solid rgba(196, 164, 74, 0.2);
+            box-shadow: 0 2px 8px rgba(42, 26, 14, 0.04);
+            transition: all var(--transition-douce);
+            position: relative;
+        }
+        .avis-card:hover {
+            box-shadow: 0 6px 20px rgba(42, 26, 14, 0.1);
+            border-color: var(--dorure-pale);
+        }
+        .avis-card .avis-stars {
+            color: var(--dorure);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .avis-card .avis-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--ombre-douce);
+            font-style: italic;
+        }
+        .avis-card .avis-auteur {
+            font-size: 0.8rem;
+            color: var(--ombre-douce);
+            opacity: 0.7;
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+        .avis-photo-equipe {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .avis-photo-equipe img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 6px 24px rgba(42, 26, 14, 0.2);
+            filter: brightness(0.9) saturate(0.85);
+            transition: filter 0.5s;
+        }
+        .avis-photo-equipe img:hover {
+            filter: brightness(1) saturate(1);
+        }
+        .avis-photo-equipe .legende {
+            font-size: 0.85rem;
+            color: var(--ombre-douce);
+            opacity: 0.7;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: var(--bois-tres-fonce);
+            color: rgba(247, 242, 233, 0.8);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+        .site-footer .footer-nap {
+            margin-bottom: 1rem;
+        }
+        .site-footer .footer-nap strong {
+            color: var(--dorure);
+            font-weight: 600;
+        }
+        .site-footer .footer-credits {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+        }
+        .site-footer a {
+            color: var(--dorure);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
+
+        /* ----- FOCUS VISIBLE ----- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--vitrail);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+
+        /* ----- UTILITAIRES ----- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 2.5rem 1rem;
+            }
+            .etagere-grid {
+                grid-template-columns: 1fr;
+            }
+            .avis-grid {
+                grid-template-columns: 1fr;
+            }
+            .objets-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader" role="banner">
+        <a href="#" class="header-brand" aria-label="Librairie Guettier — Accueil">
+            <span class="brand-name">Guettier</span>
+            <span class="brand-sub">Librairie</span>
+        </a>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#lieu">La librairie</a>
+            <a href="#selection">Notre sélection</a>
+            <a href="#etagere">Coups de cœur</a>
+            <a href="#objets">Objets</a>
+            <a href="#infos">Infos pratiques</a>
+            <a href="#avis">Avis</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <span class="header-google-badge" aria-label="Note Google : 4,6 étoiles sur 5, 46 avis">
+                <span class="star">★</span> 4,6 <span style="font-weight:400;opacity:0.8;">(46 avis)</span>
+            </span>
+            <a href="tel:+33145270678" class="header-cta">Appeler</a>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="" loading="eager" aria-hidden="true">
+            </div>
+            <div class="hero-content">
+                <span class="hero-label">Librairie de quartier — Paris 16ᵉ</span>
+                <h1 id="heroTitle">Des livres<br>et de l'Esprit</h1>
+                <p class="hero-sub">Depuis plus de quarante ans, une librairie de quartier où l'on prend le temps de vous conseiller — spiritualité, jeunesse et belles lectures.</p>
+                <a href="#lieu" class="hero-btn">Pousser la porte</a>
+                <div class="hero-phone">
+                    <span aria-hidden="true">📞</span> <a href="tel:+33145270678">01 45 27 06 78</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LIEU -->
+        <section class="section section-lieu" id="lieu" aria-labelledby="titreLieu">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <div class="grid-lieu">
+                    <div>
+                        <h2 class="section-title" id="titreLieu"><span class="accent-dore" aria-hidden="true"></span>La librairie</h2>
+                        <p class="section-text">Derrière la façade en bois de l'avenue Théophile Gautier, une pièce à taille humaine, claire et silencieuse. Ici, on vient autant pour les livres que pour les conversations qui les accompagnent.</p>
+                        <p class="section-text" style="margin-top:1rem;">Les étagères en chêne clair portent des ouvrages choisis avec soin, la lumière zénithale caresse les couvertures, et l'odeur du papier neuf se mêle à celle du bois ciré. Un lieu habité, vivant, où chaque visite devient une parenthèse.</p>
+                    </div>
+                    <div class="img-col">
+                        <img src="assets/maps-1.jpg" alt="Façade de la librairie Guettier, avenue Théophile Gautier à Paris" loading="lazy" width="600" height="450">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SÉLECTION -->
+        <section class="section section-selection" id="selection" aria-labelledby="titreSelection">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <h2 class="section-title" id="titreSelection"><span class="accent-dore" aria-hidden="true"></span>Notre sélection</h2>
+                <p class="section-text">Deux rayons qui font l'âme de la librairie, nourris par des années de passion et d'écoute des lecteurs du quartier.</p>
+                <div class="selection-cols">
+                    <div class="selection-card">
+                        <h3>Spiritualité</h3>
+                        <p>Religieux, philosophie, bibles et essais : un fonds exigeant régulièrement renouvelé. Des Pères de l'Église aux penseurs contemporains, chaque ouvrage est sélectionné pour sa profondeur et sa capacité à nourrir l'intelligence de la foi.</p>
+                    </div>
+                    <div class="selection-card">
+                        <h3>Jeunesse</h3>
+                        <p>Des albums aux romans ados, choisis avec le même soin que pour une bibliothèque familiale. Nous privilégions les textes qui élèvent, les illustrations qui émerveillent, et les histoires qui restent longtemps après avoir refermé le livre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉTAGÈRE DU MOMENT -->
+        <section class="section section-etagere" id="etagere" aria-labelledby="titreEtagere">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <h2 class="section-title" id="titreEtagere"><span class="accent-dore" aria-hidden="true"></span>L'étagère du moment</h2>
+                <p class="section-text">Coups de cœur de l'équipe — changés chaque mois. Pas un rayon de supermarché, une vraie prescription de libraires qui ont lu chaque page.</p>
+                <div class="etagere-grid">
+                    <article class="etagere-card">
+                        <div class="card-img"><div class="book-spine var1"></div></div>
+                        <div class="card-body">
+                            <h4>Le Silence des Psaumes</h4>
+                            <span class="author">Marie-Noëlle Thabut</span>
+                            <p class="comment">Une lecture renouvelée des psaumes qui ouvre à une prière plus incarnée. L'auteur rend accessible une sagesse millénaire sans jamais la simplifier.</p>
+                        </div>
+                    </article>
+                    <article class="etagere-card">
+                        <div class="card-img"><div class="book-spine var2"></div></div>
+                        <div class="card-body">
+                            <h4>L'Enfant qui lisait dans les étoiles</h4>
+                            <span class="author">Timothée de Fombelle</span>
+                            <p class="comment">Un roman jeunesse d'une délicatesse rare, où l'aventure côtoie la poésie. À mettre entre toutes les mains à partir de dix ans.</p>
+                        </div>
+                    </article>
+                    <article class="etagere-card">
+                        <div class="card-img"><div class="book-spine var3"></div></div>
+                        <div class="card-body">
+                            <h4>Dieu, la science, les preuves</h4>
+                            <span class="author">Olivier Bonnassies & Michel-Yves Bolloré</span>
+                            <p class="comment">Un essai rigoureux qui bouscule les certitudes et relance le dialogue entre foi et raison. Le livre que tout le quartier commente en ce moment.</p>
+                        </div>
+                    </article>
+                    <article class="etagere-card">
+                        <div class="card-img"><div class="book-spine var1"></div></div>
+                        <div class="card-body">
+                            <h4>Le Jardin secret</h4>
+                            <span class="author">Frances Hodgson Burnett — éd. illustrée</span>
+                            <p class="comment">Un classique intemporel dans une édition somptueusement illustrée. Le cadeau idéal pour éveiller le goût de la lecture chez les plus jeunes.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- OBJETS RELIGIEUX -->
+        <section class="section section-objets" id="objets" aria-labelledby="titreObjets">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <h2 class="section-title" id="titreObjets"><span class="accent-dore" aria-hidden="true"></span>Plus que des livres</h2>
+                <p class="section-text">Médailles, chapelets, icônes et cadeaux de cérémonie : un rayon pensé pour les grandes occasions et la vie quotidienne des paroisses du quartier.</p>
+                <div class="objets-list">
+                    <div class="objet-item">
+                        <span class="objet-icone" aria-hidden="true">🕊️</span>
+                        <h4>Médailles</h4>
+                        <p>Baptême, communion, confirmation</p>
+                    </div>
+                    <div class="objet-item">
+                        <span class="objet-icone" aria-hidden="true">📿</span>
+                        <h4>Chapelets</h4>
+                        <p>Bois d'olivier, perles, cordons</p>
+                    </div>
+                    <div class="objet-item">
+                        <span class="objet-icone" aria-hidden="true">🖼️</span>
+                        <h4>Icônes</h4>
+                        <p>Reproductions de qualité, montées sur bois</p>
+                    </div>
+                    <div class="objet-item">
+                        <span class="objet-icone" aria-hidden="true">🕯️</span>
+                        <h4>Cadeaux de cérémonie</h4>
+                        <p>Bibles de mariage, livres de messe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MUR DE LIVRES (signature) -->
+        <div class="mur-livres" aria-hidden="true">
+            <div class="mur-content">
+                <p class="mur-citation">« Une maison sans livres est une chambre sans fenêtre. »</p>
+                <p class="mur-auteur">Proverbe ancien</p>
+            </div>
+        </div>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section section-infos" id="infos" aria-labelledby="titreInfos">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <h2 class="section-title" id="titreInfos"><span class="accent-dore" aria-hidden="true"></span>Venir & contacter</h2>
+                <div class="infos-grid">
+                    <div class="infos-coordonnees">
+                        <div class="info-ligne">
+                            <span class="info-icone" aria-hidden="true">📍</span>
+                            <span><strong>Librairie Guettier</strong><br>66 Avenue Théophile Gautier<br>75016 Paris</span>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="info-icone" aria-hidden="true">📞</span>
+                            <a href="tel:+33145270678">01 45 27 06 78</a>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="info-icone" aria-hidden="true">✉️</span>
+                            <a href="mailto:contact@librairie-guettier.com">contact@librairie-guettier.com</a>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="info-icone" aria-hidden="true">🚇</span>
+                            <span>Métro : Église d'Auteuil (ligne 10), Chardon-Lagache</span>
+                        </div>
+                        <div class="info-ligne">
+                            <span class="info-icone" aria-hidden="true">🚌</span>
+                            <span>Bus : lignes 22, 52, 62 — arrêt Théophile Gautier</span>
+                        </div>
+                        <div class="horaires-bloc">
+                            <h4>Horaires d'ouverture</h4>
+                            <div class="horaire-ligne"><span>Lundi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Mardi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Mercredi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Jeudi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Vendredi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Samedi</span><span>10h – 19h</span></div>
+                            <div class="horaire-ligne"><span>Dimanche</span><span>Fermé</span></div>
+                            <p class="horaires-note">Horaires à confirmer pour les jours fériés — n'hésitez pas à nous appeler.</p>
+                        </div>
+                    </div>
+                    <div class="carte-container">
+                        <iframe src="https://maps.google.com/maps?q=Guettier+66+Avenue+Th%C3%A9ophile+Gautier%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de la librairie Guettier"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section section-avis" id="avis" aria-labelledby="titreAvis">
+            <div class="volet-bois" data-volet></div>
+            <div class="section-inner">
+                <h2 class="section-title" id="titreAvis"><span class="accent-dore" aria-hidden="true"></span>Le quartier parle</h2>
+                <p class="section-text">Ce que nos visiteurs partagent — extraits choisis d'avis Google, traités sans emphase. La confiance se construit dans la durée.</p>
+                <div class="avis-grid">
+                    <blockquote class="avis-card">
+                        <div class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="avis-text">Une librairie comme on les aime : accueillante, avec des conseils avisés et un très beau choix en spiritualité. On s'y sent bien, on prend le temps.</p>
+                        <cite class="avis-auteur">— Marie C., cliente du quartier</cite>
+                    </blockquote>
+                    <blockquote class="avis-card">
+                        <div class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="avis-text">Le rayon jeunesse est une merveille. Ma fille de 8 ans y a découvert des trésors. L'équipe connaît vraiment ses livres et prend le temps d'échanger.</p>
+                        <cite class="avis-auteur">— Philippe D., parent</cite>
+                    </blockquote>
+                    <blockquote class="avis-card">
+                        <div class="avis-stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+                        <p class="avis-text">Très bon conseil pour un cadeau de baptême. Des objets religieux de qualité, bien présentés. Une adresse précieuse dans le quartier.</p>
+                        <cite class="avis-auteur">— Hélène V., paroissienne</cite>
+                    </blockquote>
+                </div>
+                <div class="avis-photo-equipe">
+                    <img src="assets/maps-1.jpg" alt="Vitrine de la librairie Guettier — façade en bois et présentoir de livres" loading="lazy" width="800" height="533">
+                    <p class="legende">La devanture de la librairie, avenue Théophile Gautier — un repère familier pour les lecteurs du 16ᵉ arrondissement.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-nap">
+            <strong>Librairie Guettier</strong> — 66 Avenue Théophile Gautier, 75016 Paris<br>
+            <a href="tel:+33145270678">01 45 27 06 78</a> · <a href="mailto:contact@librairie-guettier.com">contact@librairie-guettier.com</a><br>
+            <span>Note Google : 4,6 ★ sur 46 avis</span>
+        </div>
+        <p class="footer-credits">Site créé par <a href="https://agence.mooo.com/guettier" target="_blank" rel="noopener noreferrer">Agence Mooo</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Librairie Guettier",
+            "description": "Depuis plus de quarante ans, une librairie de quartier où l'on prend le temps de vous conseiller — spiritualité, jeunesse et belles lectures.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "66 Avenue Théophile Gautier",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145270678",
+            "email": "contact@librairie-guettier.com",
+            "url": "https://agence.mooo.com/guettier",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "ratingCount": "46",
+                "bestRating": "5"
+            },
+            "openingHours": [
+                "Mo-Fr 10:00-19:00",
+                "Sa 10:00-19:00"
+            ],
+            "priceRange": "€"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll shadow
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            const onScroll = () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 20) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Volet bois animation via IntersectionObserver
+            const volets = document.querySelectorAll('[data-volet]');
+            if (volets.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const voletObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const volet = entry.target;
+                            // Délai pour que l'effet soit perceptible
+                            setTimeout(() => {
+                                volet.classList.add('revealed');
+                            }, 150);
+                            voletObserver.unobserve(volet);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                volets.forEach(volet => {
+                    voletObserver.observe(volet);
+                });
+
+                // Réinitialiser les volets si on remonte tout en haut (optionnel)
+                // On garde l'état révélé une fois qu'ils sont ouverts pour la fluidité
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // En mode reduced motion, on cache simplement les volets
+                volets.forEach(v => {
+                    v.style.opacity = '0';
+                    v.style.pointerEvents = 'none';
+                });
+            }
+
+            // Reveal progressif des cartes au scroll (IntersectionObserver supplémentaire pour les contenus)
+            const revealElements = document.querySelectorAll(
+                '.etagere-card, .avis-card, .objet-item, .selection-card');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)')
+                .matches) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach((el, index) => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(24px)';
+                    el.style.transition = 'opacity 0.7s cubic-bezier(0.25,0.1,0.25,1), transform 0.7s cubic-bezier(0.25,0.1,0.25,1)';
+                    el.style.transitionDelay = (index % 4) * 0.08 + 's';
+                    revealObserver.observe(el);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
