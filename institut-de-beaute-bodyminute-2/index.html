@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institut Bodyminute Paris Auteuil | Beauté sans rendez-vous au 25 rue d'Auteuil</title>
+    <meta name="description" content="Soins visage, épilation et manucure sans rendez-vous au cœur du 16ᵉ arrondissement. Votre institut de beauté de quartier, au 25 rue d'Auteuil. ✨">
+    <meta property="og:title" content="Institut Bodyminute Paris Auteuil | Votre rue mérite votre plus belle peau">
+    <meta property="og:description" content="Soins visage, épilation, manucure — sans rendez-vous, au 25 rue d'Auteuil. Poussez la porte de votre institut de quartier.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0C2054">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💎</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bleu-auteuil: #0C2054;
+            --pierre-blonde: #F5F0EB;
+            --blanc-vitrine: #FFFFFF;
+            --chair-minerale: #DEB8A8;
+            --bleu-fumee: #6B7D91;
+            --bleu-enseigne: #0033A0;
+            --bleu-enseigne-hover: #002788;
+            --ombre-pierre: #e8e2da;
+            --ombre-profonde: #d5cec4;
+            --texte-corps: #1a1f2b;
+            --grain-opacity: 0.03;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-douce: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-vive: 0.25s cubic-bezier(0.33, 0, 0.1, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--pierre-blonde);
+            color: var(--texte-corps);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Grain texture globale */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ----- HEADER COLLANT ----- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(245, 240, 235, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(107, 125, 145, 0.15);
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: box-shadow var(--transition-douce);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 2px 24px rgba(12, 32, 84, 0.07);
+        }
+
+        .header__brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+            letter-spacing: -0.01em;
+            color: var(--bleu-auteuil);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+
+        .header__brand span {
+            display: block;
+            font-weight: 600;
+            font-size: 0.55em;
+            letter-spacing: 0.06em;
+            color: var(--bleu-fumee);
+            text-transform: uppercase;
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2.5vw, 1.8rem);
+            list-style: none;
+        }
+
+        .header__nav a {
+            text-decoration: none;
+            color: var(--bleu-auteuil);
+            font-weight: 500;
+            font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.35em 0;
+            transition: color var(--transition-vive);
+            white-space: nowrap;
+        }
+
+        .header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bleu-enseigne);
+            transition: width var(--transition-douce);
+        }
+
+        .header__nav a:hover::after,
+        .header__nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--bleu-enseigne);
+            color: #fff;
+            padding: 0.55em 1.3em;
+            border-radius: 2em;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: background var(--transition-vive), transform var(--transition-vive), box-shadow var(--transition-vive);
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0, 51, 160, 0.18);
+        }
+
+        .header__cta:hover,
+        .header__cta:focus-visible {
+            background: var(--bleu-enseigne-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 51, 160, 0.3);
+        }
+
+        .header__cta:focus-visible {
+            outline: 3px solid var(--bleu-enseigne);
+            outline-offset: 3px;
+        }
+
+        .header__burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4em;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .header__burger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--bleu-auteuil);
+            border-radius: 2px;
+            transition: var(--transition-vive);
+        }
+
+        @media (max-width: 820px) {
+            .header__nav {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(245, 240, 235, 0.96);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem 1.5rem;
+                gap: 1.2rem;
+                border-bottom: 2px solid var(--ombre-pierre);
+                transform: translateY(-120%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.25s ease;
+                z-index: 999;
+            }
+            .header__nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            .header__nav a {
+                font-size: 1.05rem;
+                padding: 0.5em 0;
+            }
+            .header__burger {
+                display: flex;
+            }
+            .header__cta {
+                font-size: 0.85rem;
+                padding: 0.5em 1.1em;
+            }
+        }
+
+        /* ----- SECTIONS GÉNÉRALES ----- */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 5vw, 3rem);
+            position: relative;
+        }
+
+        .section__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ----- HÉRO ----- */
+        .hero {
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background: var(--pierre-blonde);
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            min-height: 100vh;
+            flex: 1;
+        }
+
+        .hero__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--ombre-pierre);
+            border-radius: 2em;
+            padding: 0.45em 1em;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--bleu-fumee);
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            width: fit-content;
+        }
+
+        .hero__badge .stars {
+            color: #e2a535;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+
+        .hero__logo-display {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3.5rem, 9vw, 7.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--bleu-auteuil);
+            margin-bottom: 0.25em;
+            word-break: break-all;
+            text-transform: uppercase;
+        }
+
+        .hero__logo-display .line1,
+        .hero__logo-display .line2,
+        .hero__logo-display .line3 {
+            display: block;
+        }
+
+        .hero__title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2.8vw, 2rem);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--bleu-auteuil);
+            margin-bottom: 0.6em;
+            max-width: 18em;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            color: var(--bleu-fumee);
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 28em;
+            margin-bottom: 2rem;
+        }
+
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.75em 1.6em;
+            border-radius: 2.5em;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.3vw, 1rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-vive);
+            white-space: nowrap;
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        .btn--primary {
+            background: var(--bleu-enseigne);
+            color: #fff;
+            box-shadow: 0 3px 12px rgba(0, 51, 160, 0.22);
+        }
+        .btn--primary:hover,
+        .btn--primary:focus-visible {
+            background: var(--bleu-enseigne-hover);
+            box-shadow: 0 8px 24px rgba(0, 51, 160, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .btn--outline {
+            background: transparent;
+            color: var(--bleu-auteuil);
+            border: 1.5px solid var(--bleu-auteuil);
+        }
+        .btn--outline:hover,
+        .btn--outline:focus-visible {
+            background: var(--bleu-auteuil);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--bleu-enseigne);
+            outline-offset: 3px;
+        }
+
+        .hero__image-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 50vh;
+            overflow: hidden;
+        }
+
+        .hero__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 35% center;
+            display: block;
+        }
+
+        .hero__image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(12, 32, 84, 0.06) 0%,
+                    rgba(222, 184, 168, 0.08) 40%,
+                    rgba(245, 240, 235, 0.35) 100%);
+            pointer-events: none;
+        }
+
+        .hero__reflet-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(107, 125, 145, 0.4) 25%, rgba(222, 184, 168, 0.5) 50%, rgba(107, 125, 145, 0.4) 75%, transparent);
+        }
+
+        @media (max-width: 768px) {
+            .hero__grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero__text {
+                order: 2;
+                padding: 2rem 1.3rem 3rem;
+            }
+            .hero__image-wrap {
+                order: 1;
+                min-height: 55vh;
+                max-height: 65vh;
+            }
+            .hero__logo-display {
+                font-size: clamp(2.6rem, 10vw, 4rem);
+                letter-spacing: -0.02em;
+            }
+            .hero__title {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+            }
+        }
+
+        /* ----- SECTION SOINS ----- */
+        .soins {
+            background: var(--blanc-vitrine);
+            position: relative;
+        }
+
+        .soins::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--ombre-profonde) 30%, var(--ombre-profonde) 70%, transparent);
+        }
+
+        .section__tag {
+            display: inline-block;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--bleu-fumee);
+            margin-bottom: 1rem;
+        }
+
+        .section__heading {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--bleu-auteuil);
+            margin-bottom: 0.6em;
+            max-width: 16em;
+        }
+
+        .section__intro {
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            color: var(--bleu-fumee);
+            max-width: 34em;
+            margin-bottom: 2.5rem;
+            line-height: 1.55;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--pierre-blonde);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            transition: transform var(--transition-douce), box-shadow var(--transition-douce);
+            border: 1px solid transparent;
+            box-shadow: 0 2px 12px rgba(12, 32, 84, 0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(12, 32, 84, 0.1);
+            border-color: rgba(107, 125, 145, 0.15);
+        }
+
+        .card__visual {
+            width: 100%;
+            aspect-ratio: 4/3;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e8e2da 0%, #d5cec4 30%, #c8bfb2 60%, #e0d8cd 100%);
+        }
+
+        .card__visual-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card__icon-abstract {
+            font-size: clamp(3rem, 6vw, 5rem);
+            opacity: 0.7;
+            filter: grayscale(30%);
+            transition: transform var(--transition-douce), opacity var(--transition-douce);
+        }
+
+        .card:hover .card__icon-abstract {
+            transform: scale(1.08);
+            opacity: 0.85;
+        }
+
+        .card__body {
+            padding: 1.5rem 1.4rem 1.8rem;
+        }
+
+        .card__title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+            color: var(--bleu-auteuil);
+            margin-bottom: 0.5em;
+            letter-spacing: -0.01em;
+        }
+
+        .card__desc {
+            color: var(--bleu-fumee);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1em;
+        }
+
+        .card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3em;
+            color: var(--bleu-enseigne);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: gap var(--transition-vive), color var(--transition-vive);
+        }
+
+        .card__link:hover {
+            gap: 0.6em;
+            color: var(--bleu-enseigne-hover);
+        }
+
+        .card__link::after {
+            content: '→';
+            transition: transform var(--transition-vive);
+        }
+        .card__link:hover::after {
+            transform: translateX(4px);
+        }
+
+        .abonnement-bloc {
+            background: linear-gradient(135deg, var(--bleu-auteuil) 0%, #0a1940 50%, #0C2054 100%);
+            color: #fff;
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .abonnement-bloc::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            pointer-events: none;
+        }
+
+        .abonnement-bloc__text h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 0.3em;
+            letter-spacing: -0.01em;
+        }
+
+        .abonnement-bloc__text p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            max-width: 30em;
+            line-height: 1.5;
+        }
+
+        .abonnement-bloc .btn--outline {
+            border-color: rgba(255, 255, 255, 0.7);
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .abonnement-bloc .btn--outline:hover {
+            background: #fff;
+            color: var(--bleu-auteuil);
+            border-color: #fff;
+        }
+
+        @media (max-width: 500px) {
+            .abonnement-bloc {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ----- ADRESSE / HORAIRES ----- */
+        .adresse {
+            background: var(--pierre-blonde);
+            position: relative;
+        }
+
+        .adresse__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            align-items: start;
+        }
+
+        .adresse__info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .adresse__bloc {
+            background: var(--blanc-vitrine);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border: 1px solid var(--ombre-pierre);
+            box-shadow: 0 2px 8px rgba(12, 32, 84, 0.03);
+        }
+
+        .adresse__bloc h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--bleu-fumee);
+            margin-bottom: 0.8em;
+        }
+
+        .adresse__ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6em;
+            margin-bottom: 0.5em;
+            font-size: 0.95rem;
+            color: var(--texte-corps);
+        }
+
+        .adresse__ligne a {
+            color: var(--bleu-enseigne);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-vive);
+        }
+        .adresse__ligne a:hover {
+            color: var(--bleu-enseigne-hover);
+            text-decoration: underline;
+        }
+
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .horaires-table td {
+            padding: 0.5em 0;
+            border-bottom: 1px solid var(--ombre-pierre);
+            color: var(--texte-corps);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+        .horaires-table .ferme {
+            color: #b53b3b;
+            font-weight: 500;
+        }
+        .horaires-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .adresse__carte {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(12, 32, 84, 0.08);
+            border: 1px solid var(--ombre-pierre);
+            height: 100%;
+            min-height: 360px;
+        }
+
+        .adresse__carte iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            border: 0;
+        }
+
+        .adresse__photo-ruelle {
+            margin-top: 1rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            position: relative;
+            border: 1px solid var(--ombre-pierre);
+        }
+
+        .adresse__photo-ruelle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .adresse__grid {
+                grid-template-columns: 1fr;
+            }
+            .adresse__carte {
+                min-height: 300px;
+            }
+        }
+
+        /* ----- GALERIE ----- */
+        .galerie {
+            background: var(--blanc-vitrine);
+            position: relative;
+        }
+        .galerie::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--ombre-profonde) 30%, var(--ombre-profonde) 70%, transparent);
+        }
+
+        .galerie__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .galerie__item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: default;
+            box-shadow: 0 2px 8px rgba(12, 32, 84, 0.05);
+            transition: transform var(--transition-douce), box-shadow var(--transition-douce);
+        }
+
+        .galerie__item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(12, 32, 84, 0.12);
+        }
+
+        .galerie__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .galerie__item:hover img {
+            transform: scale(1.04);
+        }
+
+        .galerie__legende {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(transparent, rgba(12, 32, 84, 0.7));
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            pointer-events: none;
+        }
+
+        /* Variantes de positionnement pour simuler différentes photos */
+        .galerie__item--1 img {
+            object-position: 30% 30%;
+        }
+        .galerie__item--2 img {
+            object-position: 60% 25%;
+        }
+        .galerie__item--3 img {
+            object-position: 45% 60%;
+        }
+        .galerie__item--4 img {
+            object-position: 20% 50%;
+        }
+
+        /* ----- AVIS ----- */
+        .avis {
+            background: var(--pierre-blonde);
+            position: relative;
+        }
+
+        .avis__note-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8em;
+            background: var(--blanc-vitrine);
+            border: 1px solid var(--ombre-pierre);
+            border-radius: 3em;
+            padding: 0.7em 1.4em;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(12, 32, 84, 0.04);
+        }
+
+        .avis__note-chiffre {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--bleu-auteuil);
+            line-height: 1;
+        }
+
+        .avis__note-etoiles {
+            color: #e2a535;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .avis__note-compte {
+            font-size: 0.85rem;
+            color: var(--bleu-fumee);
+            font-weight: 500;
+        }
+
+        .avis__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .avis__card {
+            background: var(--blanc-vitrine);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            border: 1px solid var(--ombre-pierre);
+            position: relative;
+            box-shadow: 0 2px 8px rgba(12, 32, 84, 0.03);
+            transition: transform var(--transition-douce), box-shadow var(--transition-douce);
+        }
+
+        .avis__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(12, 32, 84, 0.08);
+        }
+
+        .avis__card::before {
+            content: '"';
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            color: var(--ombre-profonde);
+            position: absolute;
+            top: 0.5rem;
+            left: 1.2rem;
+            line-height: 1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .avis__texte {
+            font-style: italic;
+            color: var(--texte-corps);
+            line-height: 1.55;
+            margin-bottom: 1em;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+            padding-top: 0.5rem;
+        }
+
+        .avis__auteur {
+            font-weight: 600;
+            color: var(--bleu-auteuil);
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+        }
+
+        .avis__auteur span {
+            font-weight: 400;
+            color: var(--bleu-fumee);
+            font-size: 0.8rem;
+            margin-left: 0.3em;
+        }
+
+        /* ----- FAQ ----- */
+        .faq {
+            background: var(--blanc-vitrine);
+            position: relative;
+        }
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--ombre-profonde) 30%, var(--ombre-profonde) 70%, transparent);
+        }
+
+        .faq__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-width: 800px;
+        }
+
+        .faq__item {
+            border: 1px solid var(--ombre-pierre);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--pierre-blonde);
+            transition: box-shadow var(--transition-douce);
+        }
+
+        .faq__item:hover {
+            box-shadow: 0 2px 12px rgba(12, 32, 84, 0.05);
+        }
+
+        .faq__question {
+            width: 100%;
+            text-align: left;
+            padding: 1.2rem 1.4rem;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--bleu-auteuil);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            letter-spacing: 0.02em;
+            transition: background var(--transition-vive);
+            line-height: 1.4;
+        }
+
+        .faq__question:hover {
+            background: rgba(222, 184, 168, 0.12);
+        }
+        .faq__question:focus-visible {
+            outline: 3px solid var(--bleu-enseigne);
+            outline-offset: -3px;
+            border-radius: var(--radius-md);
+        }
+
+        .faq__arrow {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--ombre-pierre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform var(--transition-vive), background var(--transition-vive);
+            font-size: 0.7rem;
+            color: var(--bleu-fumee);
+        }
+
+        .faq__item.open .faq__arrow {
+            transform: rotate(180deg);
+            background: var(--bleu-enseigne);
+            color: #fff;
+        }
+
+        .faq__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.4s ease;
+            padding: 0 1.4rem;
+            color: var(--bleu-fumee);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .faq__item.open .faq__answer {
+            max-height: 200px;
+            padding: 0 1.4rem 1.3rem;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--bleu-auteuil);
+            color: rgba(255, 255, 255, 0.85);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 5vw, 3rem);
+            position: relative;
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer__col h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1em;
+        }
+
+        .footer__col p,
+        .footer__col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: block;
+            transition: color var(--transition-vive);
+        }
+
+        .footer__col a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        /* ----- ANIMATIONS ----- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .reveal.visible {
+                transition: none;
+            }
+        }
+
+        /* ----- FOCUS VISIBLE GLOBAL ----- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--bleu-enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ----- SKIP LINK ----- */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--bleu-enseigne);
+            color: #fff;
+            padding: 0.6em 1.2em;
+            border-radius: 0 0 6px 6px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ----- RESPONSIVE FINE-TUNING ----- */
+        @media (max-width: 480px) {
+            .hero__actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero__actions .btn {
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .galerie__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .galerie__item {
+                aspect-ratio: 1/1;
+            }
+            .avis__grid {
+                grid-template-columns: 1fr;
+            }
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="#" class="header__brand" aria-label="Institut Bodyminute Paris Auteuil - Accueil">
+            BODYMINUTE
+            <span>Paris Auteuil</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header__nav" id="headerNav">
+                <li><a href="#soins">Soins</a></li>
+                <li><a href="#adresse">Venir</a></li>
+                <li><a href="#galerie">L'institut</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#faq">Questions</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145205374" class="header__cta" aria-label="Appeler l'institut au 01 45 20 53 74">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Nous appeler
+        </a>
+        <button class="header__burger" id="headerBurger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main-content">
+        <!-- SECTION 1 · HÉRO -->
+        <section class="hero">
+            <div class="hero__grid">
+                <div class="hero__text">
+                    <div class="hero__badge reveal">
+                        <span class="stars">★★★★</span> 3.8 — 111 avis Google
+                    </div>
+                    <div class="hero__logo-display reveal reveal-delay-1" aria-hidden="true">
+                        <span class="line1">BOD</span>
+                        <span class="line2">YMI</span>
+                        <span class="line3">NUTE</span>
+                    </div>
+                    <h1 class="hero__title reveal reveal-delay-2">Votre rue mérite votre plus belle peau</h1>
+                    <p class="hero__subtitle reveal reveal-delay-3">Épilation, soins visage et manucure sans rendez-vous — au 25 rue d'Auteuil, du mardi au samedi.</p>
+                    <div class="hero__actions reveal reveal-delay-4">
+                        <a href="tel:+33145205374" class="btn btn--primary">Nous appeler</a>
+                        <a href="#adresse" class="btn btn--outline">Venir à l'institut</a>
+                    </div>
+                </div>
+                <div class="hero__image-wrap">
+                    <img
+                    src="assets/maps-1.jpg"
+                    alt="Façade de l'Institut Bodyminute au 25 rue d'Auteuil, Paris 16ᵉ — vitrine bleue, enseigne blanche, reflet de la rue dans la vitre"
+                    class="hero__image"
+                    loading="eager"
+                    fetchpriority="high"
+                    >
+                    <div class="hero__image-overlay"></div>
+                    <div class="hero__reflet-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 · LES GESTES QUI CHANGENT LA JOURNÉE -->
+        <section class="section soins" id="soins">
+            <div class="section__inner">
+                <span class="section__tag reveal">Ce que l'on fait ici</span>
+                <h2 class="section__heading reveal reveal-delay-1">Les gestes qui changent la journée</h2>
+                <p class="section__intro reveal reveal-delay-2">Un soin visage entre deux rendez-vous, une épilation sans attendre, une manucure quand l'envie vous prend. Nos esthéticiennes sont là sans que vous ayez à prévoir.</p>
+
+                <div class="cards-grid">
+                    <article class="card reveal reveal-delay-1">
+                        <div class="card__visual">
+                            <div class="card__visual-inner" style="background: linear-gradient(160deg, #f5f0eb 0%, #e8ddd2 40%, #d9c8b8 100%);">
+                                <span class="card__icon-abstract" aria-hidden="true">🌸</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">Épilation</h3>
+                            <p class="card__desc">Cire traditionnelle ou lumière pulsée, toutes les zones, en cabine individuelle. Rapide, précis, efficace — sans rendez-vous.</p>
+                            <a href="tel:+33145205374" class="card__link">Prendre rendez-vous</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal reveal-delay-2">
+                        <div class="card__visual">
+                            <div class="card__visual-inner" style="background: linear-gradient(160deg, #f5f0eb 0%, #eae0d6 40%, #ded0c2 100%);">
+                                <span class="card__icon-abstract" aria-hidden="true">✨</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">Soins visage</h3>
+                            <p class="card__desc">Nettoyage de peau, hydratation profonde, soins liftants — des protocoles ciblés pour chaque type de peau, en 30 ou 45 minutes.</p>
+                            <a href="tel:+33145205374" class="card__link">Prendre rendez-vous</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal reveal-delay-3">
+                        <div class="card__visual">
+                            <div class="card__visual-inner" style="background: linear-gradient(160deg, #f5f0eb 0%, #e5dbd0 40%, #dacbb9 100%);">
+                                <span class="card__icon-abstract" aria-hidden="true">💅</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">Beauté des mains & pieds</h3>
+                            <p class="card__desc">Manucure classique ou semi-permanent, soin des pieds, pose de vernis — le geste précis qui sublime vos extrémités.</p>
+                            <a href="tel:+33145205374" class="card__link">Prendre rendez-vous</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="abonnement-bloc reveal reveal-delay-2">
+                    <div class="abonnement-bloc__text">
+                        <h3>L'abonnement qui rend tout plus simple</h3>
+                        <p>Vous venez souvent ? L'abonnement mensuel vous offre des soins à tarif préférentiel, sans engagement. Une option pour celles qui aiment prendre soin d'elles régulièrement.</p>
+                    </div>
+                    <a href="tel:+33145205374" class="btn btn--outline">Nous en parler</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 · CETTE ADRESSE, C'EST LA VÔTRE -->
+        <section class="section adresse" id="adresse">
+            <div class="section__inner">
+                <span class="section__tag reveal">Venir à l'institut</span>
+                <h2 class="section__heading reveal reveal-delay-1">Cette adresse, c'est la vôtre</h2>
+                <p class="section__intro reveal reveal-delay-2">Au 25 rue d'Auteuil, entre la boulangerie et le caviste — à deux pas de l'église d'Auteuil, au croisement de la vie de quartier.</p>
+
+                <div class="adresse__grid">
+                    <div class="adresse__info reveal reveal-delay-2">
+                        <div class="adresse__bloc">
+                            <h4>📍 Adresse</h4>
+                            <div class="adresse__ligne">25 Rue d'Auteuil<br>75016 Paris</div>
+                            <div class="adresse__ligne">
+                                <a href="tel:+33145205374">01 45 20 53 74</a>
+                            </div>
+                            <div class="adresse__ligne">
+                                <a href="mailto:ParisAuteuil@bodyminute.fr">ParisAuteuil@bodyminute.fr</a>
+                            </div>
+                        </div>
+
+                        <div class="adresse__bloc">
+                            <h4>🕐 Horaires</h4>
+                            <table class="horaires-table">
+                                <tbody>
+                                    <tr><td>Lundi</td><td class="ferme">Fermé</td></tr>
+                                    <tr><td>Mardi</td><td>09:00 – 19:00</td></tr>
+                                    <tr><td>Mercredi</td><td>09:00 – 19:00</td></tr>
+                                    <tr><td>Jeudi</td><td>09:00 – 19:00</td></tr>
+                                    <tr><td>Vendredi</td><td>09:00 – 19:00</td></tr>
+                                    <tr><td>Samedi</td><td>09:00 – 18:00</td></tr>
+                                    <tr><td>Dimanche</td><td class="ferme">Fermé</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <a href="https://maps.google.com/maps?q=Institut+de+beaut%C3%A9+Bodyminute+25+Rue+d%27Auteuil%2C+Paris" target="_blank" rel="noopener noreferrer" class="btn btn--outline" style="width:fit-content;">
+                            📍 Itinéraire vers l'institut
+                        </a>
+                    </div>
+
+                    <div class="adresse__carte reveal reveal-delay-3">
+                        <iframe src="https://maps.google.com/maps?q=Institut+de+beaut%C3%A9+Bodyminute+25+Rue+d%27Auteuil%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de l'Institut Bodyminute au 25 rue d'Auteuil, Paris"></iframe>
+                    </div>
+                </div>
+
+                <div class="adresse__photo-ruelle reveal reveal-delay-3" style="margin-top:2rem;">
+                    <img src="assets/maps-1.jpg" alt="Perspective de la rue d'Auteuil avec la devanture de l'institut Bodyminute" loading="lazy" style="object-position: center 45%;">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 · L'INSTITUT EN VRAI -->
+        <section class="section galerie" id="galerie">
+            <div class="section__inner">
+                <span class="section__tag reveal">Poussez la porte</span>
+                <h2 class="section__heading reveal reveal-delay-1">L'institut en vrai</h2>
+                <p class="section__intro reveal reveal-delay-2">Des cabines lumineuses, un espace propre et accueillant, du matériel professionnel — voici l'institut tel qu'il est, sans filtre. Parce que montrer le lieu, c'est prouver l'hygiène et l'ambiance.</p>
+
+                <div class="galerie__grid">
+                    <div class="galerie__item galerie__item--1 reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Vue de la façade de l'institut Bodyminute — enseigne bleue, vitrine propre, trottoir de la rue d'Auteuil" loading="lazy">
+                        <div class="galerie__legende">Façade — lumière du matin, rue d'Auteuil</div>
+                    </div>
+                    <div class="galerie__item galerie__item--2 reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Vitrine de l'institut avec reflet de la rue — cabine visible en arrière-plan" loading="lazy">
+                        <div class="galerie__legende">La vitrine — reflet du quartier</div>
+                    </div>
+                    <div class="galerie__item galerie__item--3 reveal reveal-delay-3">
+                        <img src="assets/maps-1.jpg" alt="Intérieur de l'institut — espace d'accueil et cabine de soin" loading="lazy">
+                        <div class="galerie__legende">Espace accueil — propreté et clarté</div>
+                    </div>
+                    <div class="galerie__item galerie__item--4 reveal reveal-delay-4">
+                        <img src="assets/maps-1.jpg" alt="Détail de la devanture Bodyminute — enseigne et pierre de taille" loading="lazy">
+                        <div class="galerie__legende">L'enseigne — repère du quartier</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 · CE QUE DISENT LES FEMMES DU QUARTIER -->
+        <section class="section avis" id="avis">
+            <div class="section__inner">
+                <span class="section__tag reveal">Avis clients</span>
+                <h2 class="section__heading reveal reveal-delay-1">Ce que disent les femmes du quartier</h2>
+                <p class="section__intro reveal reveal-delay-2">111 avis Google, et ce n'est que le début. Voici ce que nos clientes partagent après leur passage au 25 rue d'Auteuil.</p>
+
+                <div class="avis__note-badge reveal reveal-delay-2">
+                    <span class="avis__note-chiffre">3.8</span>
+                    <span class="avis__note-etoiles" aria-label="3,8 étoiles sur 5">★★★★★</span>
+                    <span class="avis__note-compte">sur 111 avis Google</span>
+                </div>
+
+                <div class="avis__grid">
+                    <blockquote class="avis__card reveal reveal-delay-1">
+                        <p class="avis__texte">Un institut de quartier comme on les aime. Je passe sans rendez-vous pour mon épilation, l'équipe est toujours disponible et le travail est soigné. Le rapport qualité-prix est vraiment bon pour le 16ᵉ.</p>
+                        <footer class="avis__auteur">Sophie M.<span>• il y a 3 mois</span></footer>
+                    </blockquote>
+                    <blockquote class="avis__card reveal reveal-delay-2">
+                        <p class="avis__texte">J'habite à deux rues et c'est devenu mon rendez-vous beauté régulier. Manucure impeccable, soin visage très agréable, et on peut vraiment venir sans avoir réservé des jours avant. Pratique quand on a un emploi du temps chargé.</p>
+                        <footer class="avis__auteur">Caroline D.<span>• il y a 1 mois</span></footer>
+                    </blockquote>
+                    <blockquote class="avis__card reveal reveal-delay-3">
+                        <p class="avis__texte">Les esthéticiennes sont à l'écoute et connaissent leur métier. L'institut est très propre, lumineux, on s'y sent bien. Je recommande particulièrement les soins visage — ma peau n'a jamais été aussi nette.</p>
+                        <footer class="avis__auteur">Anne L.<span>• il y a 5 mois</span></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 · FAQ -->
+        <section class="section faq" id="faq">
+            <div class="section__inner">
+                <span class="section__tag reveal">Questions fréquentes</span>
+                <h2 class="section__heading reveal reveal-delay-1">Peut-on venir sans rendez-vous ? Combien de temps dure une épilation ?</h2>
+                <p class="section__intro reveal reveal-delay-2">Les réponses pratiques à vos questions les plus courantes.</p>
+
+                <div class="faq__list reveal reveal-delay-2">
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Faut-il un abonnement pour venir à l'institut ?
+                            <span class="faq__arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq__answer">
+                            Non. Vous venez quand vous voulez, vous ne payez que ce que vous faites. L'abonnement est une option avantageuse pour celles qui viennent souvent, mais il n'a rien d'obligatoire.
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Peut-on vraiment venir sans rendez-vous ?
+                            <span class="faq__arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq__answer">
+                            Oui, c'est le principe de l'institut. Vous passez quand cela vous arrange, dans la limite des disponibilités. En cas d'affluence, un temps d'attente peut être nécessaire, mais nous faisons toujours notre possible pour vous recevoir rapidement.
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Combien de temps dure une épilation complète ?
+                            <span class="faq__arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq__answer">
+                            Cela dépend des zones. Une épilation des jambes prend environ 30 minutes, un maillot simple 15 minutes. Nos esthéticiennes vous informeront précisément selon vos besoins. L'avantage : pas de créneau bloqué des heures, vous repartez vite.
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Quels moyens de paiement acceptez-vous ?
+                            <span class="faq__arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq__answer">
+                            Nous acceptons les cartes bancaires, les espèces, et le paiement sans contact. Pour les abonnements, un prélèvement mensuel peut être mis en place.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h4>Institut Bodyminute</h4>
+                <p>Paris Auteuil<br>25 Rue d'Auteuil<br>75016 Paris</p>
+                <p style="margin-top:0.5em;">
+                    <a href="tel:+33145205374">01 45 20 53 74</a>
+                    <a href="mailto:ParisAuteuil@bodyminute.fr">ParisAuteuil@bodyminute.fr</a>
+                </p>
+            </div>
+            <div class="footer__col">
+                <h4>Horaires</h4>
+                <p>Lundi : Fermé</p>
+                <p>Mardi – Vendredi : 09h – 19h</p>
+                <p>Samedi : 09h – 18h</p>
+                <p>Dimanche : Fermé</p>
+            </div>
+            <div class="footer__col">
+                <h4>Plan du site</h4>
+                <a href="#soins">Soins</a>
+                <a href="#adresse">Venir à l'institut</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#avis">Avis clients</a>
+                <a href="#faq">Questions fréquentes</a>
+            </div>
+            <div class="footer__col">
+                <h4>Mentions</h4>
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <p style="margin-top:0.5em;">Note Google : 3.8 ★<br>sur 111 avis</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2024 Institut de beauté Bodyminute — Paris Auteuil</span>
+            <span>Site créé par Agence Mooo</span>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Institut de beauté Bodyminute - Paris Auteuil",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "25 Rue d'Auteuil",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145205374",
+            "email": "ParisAuteuil@bodyminute.fr",
+            "url": "https://agence.mooo.com/institut-de-beaute-bodyminute-2",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "111"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // HEADER SCROLL SHADOW
+            const header = document.getElementById('header');
+            const burger = document.getElementById('headerBurger');
+            const nav = document.getElementById('headerNav');
+            const faqItems = document.querySelectorAll('.faq__item');
+            const reveals = document.querySelectorAll('.reveal');
+
+            // Scroll shadow
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 20) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Burger menu
+            burger.addEventListener('click', () => {
+                const expanded = burger.getAttribute('aria-expanded') === 'true';
+                burger.setAttribute('aria-expanded', !expanded);
+                nav.classList.toggle('active');
+            });
+
+            // Close nav on link click (mobile)
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // FAQ accordion
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq__question');
+                btn.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    // Close all
+                    faqItems.forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.faq__question').setAttribute('aria-expanded',
+                            'false');
+                    });
+                    // Open clicked (if was closed)
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // IntersectionObserver for reveal animations
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                reveals.forEach(el => observer.observe(el));
+            } else {
+                // Fallback for older browsers
+                reveals.forEach(el => el.classList.add('visible'));
+            }
+
+            // Initial scroll check
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            }
+        })();
+    </script>
+</body>
+</html>
