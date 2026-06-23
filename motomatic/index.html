@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motomatic – Lavage moto haute pression Paris 16e | Note 4.9★</title>
+    <meta name="description" content="Motomatic, lavage automatique haute pression pour motos à Paris 16e. 6 protocoles experts, de l'Express à la Renaissance Intégrale. 43 Avenue de Versailles. Note 4.9/5 sur 143 avis.">
+    <meta property="og:title" content="Motomatic – La mécanique a son spa. Vous avez un rendez-vous.">
+    <meta property="og:description" content="Lavage automatique haute pression en cabine, soins manuels et protocoles experts. Votre deux-roues ressort du 16e comme au premier jour.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230055FF'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fond: #F4F6F9;
+            --encre: #1E1E1E;
+            --accent: #0055FF;
+            --metal: #C8CCD0;
+            --grondul: #878C93;
+            --alerte: #FF3B30;
+            --display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+            --body: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(244, 246, 249, 0.82);
+            backdrop-filter: blur(16px) saturate(140%);
+            -webkit-backdrop-filter: blur(16px) saturate(140%);
+            border-bottom: 1px solid var(--metal);
+            transition: background 0.35s ease, border-color 0.35s ease;
+            padding: 0 1.5rem;
+        }
+
+        .header.scrolled {
+            background: rgba(244, 246, 249, 0.94);
+            border-bottom-color: rgba(200, 204, 208, 0.7);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .logo-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: inline-block;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(0, 85, 255, 0.5);
+            animation: dotPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 8px rgba(0, 85, 255, 0.45);
+            }
+            50% {
+                box-shadow: 0 0 18px rgba(0, 85, 255, 0.85);
+            }
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.6rem, 2vw, 1.8rem);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--grondul);
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.2vw, 0.88rem);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--encre);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent) !important;
+            color: #fff !important;
+            padding: 0.45rem 1.1rem !important;
+            border-radius: 3px;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em !important;
+            transition: background 0.25s ease, transform 0.2s ease !important;
+            text-transform: uppercase;
+            font-size: clamp(0.72rem, 1.1vw, 0.8rem) !important;
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover {
+            background: #0044dd !important;
+            transform: translateY(-1px);
+            color: #fff !important;
+        }
+
+        .burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .burger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .burger {
+                display: flex;
+            }
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(244, 246, 249, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.6rem;
+                padding: 5rem 2rem 2rem;
+                transition: right 0.35s ease;
+                border-left: 1px solid var(--metal);
+                z-index: 999;
+            }
+            .nav-list.active {
+                right: 0;
+            }
+            .header-inner {
+                height: 56px;
+            }
+        }
+
+        /* SECTIONS */
+        .section {
+            position: relative;
+            padding: clamp(3rem, 8vw, 7rem) 1.5rem;
+        }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 5rem 1.5rem 3rem;
+            overflow: hidden;
+            background: var(--encre);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) contrast(1.15) saturate(0.7);
+            opacity: 0.85;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(30, 30, 30, 0.55) 0%,
+                    rgba(30, 30, 30, 0.25) 40%,
+                    rgba(30, 30, 30, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            padding: 0.4rem 1rem;
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+        }
+        .hero-badge .star {
+            color: #FFD93D;
+            font-size: 1.1em;
+        }
+
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            animation-delay: 0.15s;
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.2rem;
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            animation-delay: 0.3s;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            animation-delay: 0.45s;
+        }
+        .btn {
+            display: inline-block;
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 85, 255, 0.35);
+        }
+        .btn-primary:hover {
+            background: #0044dd;
+            box-shadow: 0 6px 28px rgba(0, 85, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+        }
+        .btn-outline:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 1.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounceDown 2s ease-in-out infinite;
+            opacity: 0.7;
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: var(--body);
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .hero-scroll-indicator span {
+            display: block;
+            width: 1px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* SECTION PROTOCOLE */
+        .protocole-section {
+            background: var(--fond);
+            position: relative;
+            overflow: hidden;
+        }
+        .protocole-section .section-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .giant-number {
+            position: absolute;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(12rem, 28vw, 22rem);
+            line-height: 0.75;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--accent);
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+            letter-spacing: -0.04em;
+        }
+        .giant-number.n1 {
+            top: -3rem;
+            left: -2rem;
+        }
+        .giant-number.n6 {
+            bottom: -4rem;
+            right: -2rem;
+            -webkit-text-stroke-color: var(--metal);
+        }
+
+        .section-label {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1vw, 0.78rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.6rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            color: var(--grondul);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .protocole-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.8rem;
+        }
+
+        .protocole-card {
+            background: #fff;
+            border: 1px solid var(--metal);
+            border-radius: 2px;
+            padding: 1.8rem 1.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        .protocole-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .protocole-card:hover::before {
+            transform: scaleX(1);
+        }
+        .protocole-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        .protocole-card .card-num {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.25;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .protocole-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.4rem;
+            color: var(--encre);
+        }
+        .protocole-card .price {
+            font-family: var(--body);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--alerte);
+            margin-bottom: 0.6rem;
+        }
+        .protocole-card p {
+            font-family: var(--body);
+            font-size: 0.9rem;
+            color: var(--grondul);
+            line-height: 1.55;
+        }
+        .protocole-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 4px 24px rgba(0, 85, 255, 0.08);
+        }
+        .protocole-card.featured::before {
+            transform: scaleX(1);
+            height: 4px;
+        }
+
+        /* Brume animation */
+        .mist-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .mist-reveal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(244, 246, 249, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 3;
+            pointer-events: none;
+            transition: opacity 1.2s ease, backdrop-filter 1.2s ease;
+            opacity: 1;
+        }
+        .mist-reveal.revealed::after {
+            opacity: 0;
+            backdrop-filter: blur(0px);
+        }
+
+        /* DIPTYQUE AVANT/APRES */
+        .diptyque-section {
+            padding: 0;
+            background: var(--encre);
+            overflow: hidden;
+        }
+        .diptyque-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 60vh;
+            position: relative;
+        }
+        .diptyque-pane {
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+        .diptyque-pane img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .diptyque-pane.avant img {
+            filter: grayscale(100%) contrast(1.35) brightness(0.7);
+            object-position: center 30%;
+        }
+        .diptyque-pane.apres img {
+            filter: saturate(1.2) contrast(1.05) brightness(1.05);
+            object-position: center 30%;
+        }
+        .diptyque-divider {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+            z-index: 3;
+            transform: translateX(-50%);
+            box-shadow: 0 0 14px rgba(0, 85, 255, 0.5);
+        }
+        .diptyque-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 85, 255, 0.6);
+        }
+        .diptyque-label {
+            position: absolute;
+            bottom: 1.5rem;
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            z-index: 2;
+            background: rgba(30, 30, 30, 0.7);
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            backdrop-filter: blur(6px);
+        }
+        .diptyque-pane.avant .diptyque-label {
+            right: 1.5rem;
+        }
+        .diptyque-pane.apres .diptyque-label {
+            left: 1.5rem;
+        }
+        .diptyque-caption {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            font-family: var(--display);
+            font-weight: 500;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            letter-spacing: 0.02em;
+            pointer-events: none;
+        }
+
+        @media (max-width: 680px) {
+            .diptyque-wrap {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+            }
+            .diptyque-divider {
+                left: 0;
+                right: 0;
+                top: 50%;
+                bottom: auto;
+                width: 100%;
+                height: 2px;
+                transform: translateY(-50%);
+            }
+            .diptyque-divider::after {
+                width: 32px;
+                height: 32px;
+            }
+            .diptyque-caption {
+                bottom: auto;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* AMBIANCE SECTION */
+        .ambiance-section {
+            background: #fff;
+            position: relative;
+        }
+        .ambiance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .ambiance-text h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--encre);
+        }
+        .ambiance-text .highlight-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .highlight-list li {
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--grondul);
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .highlight-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 6px rgba(0, 85, 255, 0.4);
+        }
+        .ambiance-visual {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            min-height: 260px;
+            border: 1px solid var(--metal);
+        }
+        .ambiance-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        @media (max-width: 720px) {
+            .ambiance-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* AVIS SECTION */
+        .avis-section {
+            background: var(--fond);
+        }
+        .avis-header-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .avis-big-note {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5rem);
+            color: var(--accent);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        .avis-stars-sub {
+            font-family: var(--body);
+            font-weight: 500;
+            color: var(--grondul);
+            font-size: 0.9rem;
+        }
+        .avis-stars-sub .stars-gold {
+            color: #FFD93D;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+        .avis-card {
+            background: #fff;
+            border: 1px solid var(--metal);
+            border-radius: 2px;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .avis-card .avis-author {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+        }
+        .avis-card .avis-location {
+            font-size: 0.75rem;
+            color: var(--grondul);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.7rem;
+        }
+        .avis-card .avis-text {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--grondul);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .avis-card .avis-stars {
+            color: #FFD93D;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        /* INFOS + MAP */
+        .infos-section {
+            background: #fff;
+        }
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .infos-details h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            color: var(--encre);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+            font-family: var(--body);
+            font-size: 0.95rem;
+            color: var(--grondul);
+        }
+        .info-item strong {
+            color: var(--encre);
+            font-weight: 600;
+            min-width: 90px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .info-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .info-item a:hover {
+            color: #0044dd;
+            text-decoration: underline;
+        }
+        .map-wrap {
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--metal);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+        .horaires-note {
+            font-family: var(--body);
+            font-size: 0.8rem;
+            color: var(--grondul);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 720px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-wrap iframe {
+                height: 280px;
+            }
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--encre);
+            color: var(--metal);
+            padding: 2.5rem 1.5rem;
+            font-family: var(--body);
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-credit {
+            color: var(--grondul);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* REVEAL ON SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* FOCUS */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+
+        /* FILEtS */
+        .ruled-line {
+            width: 100%;
+            height: 1px;
+            background: var(--metal);
+            margin: 1.5rem 0;
+            opacity: 0.6;
+        }
+        .ruled-line.accent {
+            background: var(--accent);
+            opacity: 0.4;
+            height: 1.5px;
+        }
+
+        /* Utility */
+        .text-accent {
+            color: var(--accent);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-dot" aria-hidden="true"></span>Motomatic
+            </a>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#protocole">Protocole</a></li>
+                    <li><a href="#lavages">Formules</a></li>
+                    <li><a href="#diptyque">Avant/Après</a></li>
+                    <li><a href="#ambiance">Le Box</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#infos">Infos</a></li>
+                    <li><a href="tel:+33177170450" class="nav-cta">Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Motomatic – Cabine de lavage à Paris 16e" loading="eager" width="1600" height="1100">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star">★</span> 4.9 sur 143 avis Google
+                </div>
+                <h1 class="hero-title">La mécanique a son spa.<br>Vous avez un rendez-vous.</h1>
+                <p class="hero-subtitle">Lavage automatique haute pression en cabine, soins manuels et protocoles experts. Votre deux-roues ressort du 16e comme au premier jour.</p>
+                <div class="hero-cta-row">
+                    <a href="#lavages" class="btn btn-primary">Découvrir les formules</a>
+                    <a href="tel:+33177170450" class="btn btn-outline">01 77 17 04 50</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                Défiler<span></span>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : LE PROTOCOLE MOTOMATIC -->
+        <section class="section protocole-section mist-reveal" id="protocole">
+            <span class="giant-number n1" aria-hidden="true">01</span>
+            <span class="giant-number n6" aria-hidden="true">06</span>
+            <div class="section-inner">
+                <span class="section-label reveal">Le Protocole Motomatic</span>
+                <h2 class="section-title reveal reveal-delay-1">6 formules de lavage,<br>pensées pour chaque besoin.</h2>
+                <p class="section-desc reveal reveal-delay-2">De la pluie battante au retour de track-day. Prélavage à la brosse, pression calibrée, chimie douce — chaque protocole est une séquence précise, exécutée sans compromis.</p>
+                <div class="ruled-line accent"></div>
+                <div class="protocole-grid">
+                    <div class="protocole-card reveal reveal-delay-1">
+                        <div class="card-num">01</div>
+                        <h3>Express</h3>
+                        <div class="price">19€</div>
+                        <p>Le coup de propre essentiel. Lavage automatique seul, pour une moto qui respire la fraîcheur au quotidien. Rapide, efficace, sans superflu.</p>
+                    </div>
+                    <div class="protocole-card reveal reveal-delay-2">
+                        <div class="card-num">02</div>
+                        <h3>Confort</h3>
+                        <div class="price">29€</div>
+                        <p>Lavage automatique + séchage air chaud. Idéal après une semaine de trajets urbains. Votre carénage retrouve son éclat sans une goutte résiduelle.</p>
+                    </div>
+                    <div class="protocole-card reveal reveal-delay-3">
+                        <div class="card-num">03</div>
+                        <h3>Premium</h3>
+                        <div class="price">45€</div>
+                        <p>Lavage, séchage et prélavage manuel des zones sensibles. Jantes, carters et parties basses reçoivent une attention particulière avant le passage en cabine.</p>
+                    </div>
+                    <div class="protocole-card reveal reveal-delay-1">
+                        <div class="card-num">04</div>
+                        <h3>Track-Day</h3>
+                        <div class="price">65€</div>
+                        <p>Le retour de piste mérite un vrai débrief. Dégraissage ciblé, chimie renforcée sur les points d'impact, rinçage longue durée. Votre machine oublie le circuit.</p>
+                    </div>
+                    <div class="protocole-card reveal reveal-delay-2">
+                        <div class="card-num">05</div>
+                        <h3>Intégrale</h3>
+                        <div class="price">79€</div>
+                        <p>Protocole complet avec polish éclair et protection silicone. Chaque surface est traitée — carénage, optiques, bulle, jantes. La moto sort sublimée.</p>
+                    </div>
+                    <div class="protocole-card featured reveal reveal-delay-3">
+                        <div class="card-num">06</div>
+                        <h3>Renaissance Intégrale</h3>
+                        <div class="price">99€</div>
+                        <p>Notre protocole le plus exigeant : lavage, polish rapide, séchage, silicone, jantes et 20 minutes de finitions manuelles par notre technicien. Le résultat d'un détailleur, en un passage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : LAVAGES & SOINS (cartes tarifaires focus) -->
+        <section class="section" id="lavages" style="background:#fff;">
+            <div class="section-inner">
+                <span class="section-label reveal">Lavages & Soins</span>
+                <h2 class="section-title reveal reveal-delay-1">Deux extrêmes,<br>une même obsession.</h2>
+                <p class="section-desc reveal reveal-delay-2">De la remise en forme express à la cure de jouvence intégrale, chaque formule répond à un moment de vie de votre deux-roues. Voici les deux pôles de notre gamme.</p>
+                <div class="ruled-line"></div>
+                <div class="protocole-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="protocole-card reveal reveal-delay-1" style="border-left: 4px solid var(--metal);">
+                        <div class="card-num" style="color:var(--grondul);">Carte 1</div>
+                        <h3>Express</h3>
+                        <div class="price">19€</div>
+                        <p>Le coup de propre essentiel. Lavage automatique seul, pour une moto qui respire la fraîcheur au quotidien. Pression calibrée, chimie douce, résultat immédiat. <strong>10 minutes, pas une de plus.</strong></p>
+                    </div>
+                    <div class="protocole-card featured reveal reveal-delay-2" style="border-left: 4px solid var(--accent);">
+                        <div class="card-num">Carte 6</div>
+                        <h3>Renaissance Intégrale</h3>
+                        <div class="price">99€</div>
+                        <p>Notre protocole le plus exigeant : lavage, polish rapide, séchage, silicone, jantes et <strong>20 minutes de finitions manuelles</strong> par notre technicien. La moto ressort comme au premier jour — constaté, pas promis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : DIPTYQUE AVANT/APRES -->
+        <section class="diptyque-section" id="diptyque">
+            <div class="diptyque-wrap">
+                <div class="diptyque-pane avant">
+                    <img src="assets/maps-1.jpg" alt="Avant lavage – Moto en état d'usage" loading="lazy" width="800" height="600">
+                    <span class="diptyque-label">Avant</span>
+                </div>
+                <div class="diptyque-pane apres">
+                    <img src="assets/maps-1.jpg" alt="Après lavage – Moto restaurée par le protocole Motomatic" loading="lazy" width="800" height="600">
+                    <span class="diptyque-label">Après</span>
+                </div>
+                <div class="diptyque-divider" aria-hidden="true"></div>
+                <div class="diptyque-caption reveal">Le résultat parle.</div>
+            </div>
+            <div style="background:var(--encre);padding:2rem 1.5rem;text-align:center;">
+                <p style="color:var(--metal);font-family:var(--body);font-size:clamp(0.9rem,1.6vw,1.05rem);max-width:600px;margin:0 auto;line-height:1.6;">
+                    L'eau déminéralisée et le soufflage d'air chaud restaurent les plastiques et font disparaître les traces d'insectes — sans une goutte laissée.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : LE SEUL BOX -->
+        <section class="section ambiance-section" id="ambiance">
+            <div class="section-inner">
+                <span class="section-label reveal">Le seul box qui ne vous fait pas perdre de temps</span>
+                <div class="ambiance-grid">
+                    <div class="ambiance-text reveal reveal-delay-1">
+                        <h3>Traversez Paris, garez votre machine, lancez le protocole.</h3>
+                        <ul class="highlight-list">
+                            <li><strong>10 minutes de pause obligatoire</strong> — le temps que la cabine opère sa magie.</li>
+                            <li>Machine à café, wifi haut débit et sélection de produits pour passionnés à disposition dans l'espace client.</li>
+                            <li>Un écrin technique au cœur du 16e arrondissement, pensé pour les motards exigeants.</li>
+                            <li>43 Avenue de Versailles — à deux pas de la porte de Saint-Cloud.</li>
+                        </ul>
+                    </div>
+                    <div class="ambiance-visual reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Espace client Motomatic – Box de lavage" loading="lazy" width="700" height="440">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : AVIS -->
+        <section class="section avis-section" id="avis">
+            <div class="section-inner">
+                <span class="section-label reveal">Preuve sociale</span>
+                <div class="avis-header-row reveal reveal-delay-1">
+                    <span class="avis-big-note">4.9</span>
+                    <div class="avis-stars-sub">
+                        <span class="stars-gold">★★★★★</span><br>
+                        sur 143 avis Google
+                    </div>
+                </div>
+                <div class="avis-grid">
+                    <div class="avis-card reveal reveal-delay-1">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="avis-text">« Un accueil au top et une machine qui fait le job magnifiquement. J'y retourne dès que la météo le permet. »</p>
+                        <p class="avis-author">Marc D.</p>
+                        <p class="avis-location">Paris 16e</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-2">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="avis-text">« Incroyable. Ma moto n'a jamais été aussi propre. Le résultat est bluffant, on dirait qu'elle sort de concession. »</p>
+                        <p class="avis-author">Thomas L.</p>
+                        <p class="avis-location">Boulogne-Billancourt</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="avis-text">« Rapide, efficace, et le technicien connaît vraiment son métier. Les finitions manuelles font toute la différence. »</p>
+                        <p class="avis-author">Sophie R.</p>
+                        <p class="avis-location">Paris 15e</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : INFOS PRATIQUES -->
+        <section class="section infos-section" id="infos">
+            <div class="section-inner">
+                <span class="section-label reveal">Infos pratiques</span>
+                <div class="infos-grid">
+                    <div class="infos-details reveal reveal-delay-1">
+                        <h3>Motomatic</h3>
+                        <div class="info-item">
+                            <strong>Adresse</strong>
+                            <span>43 Avenue de Versailles<br>75016 Paris, France</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Téléphone</strong>
+                            <a href="tel:+33177170450">01 77 17 04 50</a>
+                        </div>
+                        <div class="info-item">
+                            <strong>Email</strong>
+                            <a href="mailto:motomatic.paris@gmail.com">motomatic.paris@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <strong>Note</strong>
+                            <span>★ 4.9/5 — 143 avis Google</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Horaires</strong>
+                            <span>Horaires à confirmer — contactez-nous</span>
+                        </div>
+                        <p class="horaires-note">Nous vous recommandons d'appeler avant votre venue pour vérifier la disponibilité de la cabine.</p>
+                    </div>
+                    <div class="map-wrap reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Motomatic+43+Avenue+de+Versailles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Motomatic Paris 16e"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span><strong>Motomatic</strong> — 43 Avenue de Versailles, 75016 Paris — <a href="tel:+33177170450">01 77 17 04 50</a></span>
+            <span class="footer-credit">Site créé par <a href="https://agence.mooo.com/motomatic" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Motomatic",
+            "description": "Lavage automatique haute pression pour motos à Paris 16e. 6 protocoles experts, de l'Express à la Renaissance Intégrale.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "43 Avenue de Versailles",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33177170450",
+            "email": "motomatic.paris@gmail.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "143"
+            },
+            "url": "https://agence.mooo.com/motomatic",
+            "priceRange": "€€"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const burger = document.getElementById('burger');
+            const navList = document.getElementById('navList');
+
+            function onScroll() {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Burger menu
+            burger.addEventListener('click', function() {
+                const isActive = navList.classList.toggle('active');
+                burger.classList.toggle('active');
+                burger.setAttribute('aria-expanded', isActive);
+            });
+
+            // Close nav on link click (mobile)
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    burger.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveal on scroll
+            const revealEls = document.querySelectorAll('.reveal');
+            const mistReveal = document.querySelector('.mist-reveal');
+
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+                revealEls.forEach(el => revealObserver.observe(el));
+
+                // Mist reveal for protocole section
+                if (mistReveal) {
+                    const mistObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                    mistReveal.classList.add('revealed');
+                                }, 400);
+                                mistObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.25 });
+                    mistObserver.observe(mistReveal);
+                }
+            } else {
+                // Fallback: show all
+                revealEls.forEach(el => el.classList.add('visible'));
+                if (mistReveal) mistReveal.classList.add('revealed');
+            }
+
+            // Smooth scroll for all anchor links (ensuring consistent behavior)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
