@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Des Petits Hauts — Boutique de prêt-à-porter à Neuilly-sur-Seine</title>
+    <meta name="description" content="Des Petits Hauts, boutique de prêt-à-porter féminin au 46 bis avenue Charles de Gaulle à Neuilly-sur-Seine. Une sélection raffinée de hauts, pulls et blouses dans un écrin chaleureux, du mardi au samedi.">
+    <meta property="og:title" content="Des Petits Hauts — Boutique à Neuilly-sur-Seine">
+    <meta property="og:description" content="L'art du haut, à l'angle de l'avenue. Découvrez notre boutique de Neuilly, un boudoir où chaque pièce est choisie pour tomber juste.">
+    <meta property="og:image" content="https://agence.mooo.com/des-petits-hauts/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/des-petits-hauts">
+    <meta name="theme-color" content="#F7F3ED">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.85em' font-size='85'>🧵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --craie: #F7F3ED;
+            --lin: #EAE0D5;
+            --fil-brun: #3B322C;
+            --rose-poudre: #D2B4B1;
+            --ardoise: #5C6B73;
+            --cuir: #C29B7D;
+            --blanc-tisse: #FFFDF9;
+            --ombre-tissu: 0 2px 14px rgba(59, 50, 44, 0.07);
+            --ombre-carte: 0 4px 20px rgba(59, 50, 44, 0.09);
+            --rayon-liseret: 2px;
+            --transition-douce: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-printemps: 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--fil-brun);
+            background-color: var(--craie);
+            overflow-x: hidden;
+            position: relative;
+            letter-spacing: 0.01em;
+        }
+
+        /* Texture grain global */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.022;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.75'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* Mot "Hauts" vertical géant en filigrane */
+        .watermark-hauts {
+            position: fixed;
+            left: clamp(0.5rem, 2vw, 2rem);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 12vw, 9rem);
+            letter-spacing: 0.08em;
+            color: var(--fil-brun);
+            opacity: 0.025;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            line-height: 0.85;
+        }
+        .watermark-hauts.visible {
+            opacity: 0.055;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(247, 243, 237, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(59, 50, 44, 0.06);
+            padding: 0.7rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 1px 10px rgba(59, 50, 44, 0.05);
+        }
+        .header-brand {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+            letter-spacing: 0.03em;
+            color: var(--fil-brun);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.35em;
+        }
+        .header-brand .picto-fil {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.6rem, 2vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--fil-brun);
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color var(--transition-douce);
+            position: relative;
+            padding: 0.2em 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--rose-poudre);
+            transition: width var(--transition-douce);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--ardoise);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--ardoise);
+            color: #FFFAF5;
+            text-decoration: none;
+            padding: 0.5em 1.2em;
+            border-radius: 2em;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: background var(--transition-douce), transform 0.2s;
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #4a565c;
+            transform: translateY(-1px);
+            outline: 2px solid var(--rose-poudre);
+            outline-offset: 3px;
+        }
+        .btn-burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4em;
+            color: var(--fil-brun);
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        @media (max-width: 860px) {
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(247, 243, 237, 0.96);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 1rem 2rem;
+                gap: 0.8rem;
+                border-bottom: 1px solid rgba(59, 50, 44, 0.06);
+                box-shadow: var(--ombre-carte);
+            }
+            .header-nav.open {
+                display: flex;
+            }
+            .btn-burger {
+                display: block;
+            }
+            .header-cta {
+                margin-left: auto;
+                margin-right: 0.5rem;
+            }
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: clamp(3rem, 8vh, 7rem) clamp(1rem, 5vw, 4rem);
+        }
+        .section-alt {
+            background-color: var(--lin);
+        }
+        .section-label {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ardoise);
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.6em;
+        }
+        .section-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1em;
+            height: 1px;
+            background: var(--rose-poudre);
+            transform: translateY(-50%);
+        }
+
+        /* ========== FIL DE COUTURE ========== */
+        .sewing-thread {
+            position: relative;
+            z-index: 2;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .sewing-thread .thread-line {
+            width: 0%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--rose-poudre) 15%, var(--rose-poudre) 85%, transparent 100%);
+            transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+            position: relative;
+        }
+        .sewing-thread .thread-line.drawn {
+            width: 70%;
+        }
+        .sewing-thread .thread-knot {
+            position: absolute;
+            right: calc(15% - 12px);
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.6s 0.6s;
+        }
+        .sewing-thread .thread-line.drawn+.thread-knot {
+            opacity: 1;
+        }
+        .thread-knot svg {
+            display: block;
+            width: 18px;
+            height: 14px;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            padding-top: clamp(1.5rem, 3vh, 3rem);
+            padding-bottom: clamp(3rem, 6vh, 5rem);
+        }
+        @media (min-width: 768px) {
+            .hero {
+                grid-template-columns: 1.1fr 1fr;
+                gap: clamp(2rem, 5vw, 4rem);
+            }
+        }
+        .hero-image-wrapper {
+            position: relative;
+            grid-row: 1;
+        }
+        .hero-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+            border: 5px solid #FFFDF9;
+            outline: 1px solid rgba(59, 50, 44, 0.08);
+            outline-offset: -3px;
+            box-shadow: var(--ombre-carte);
+            transition: border-color var(--transition-douce), box-shadow var(--transition-douce);
+            filter: brightness(1.02) contrast(1.04) saturate(0.95);
+        }
+        .hero-image-wrapper:hover .hero-image {
+            border-color: var(--rose-poudre);
+            box-shadow: 0 6px 28px rgba(210, 180, 177, 0.2);
+        }
+        .hero-badge-google {
+            position: absolute;
+            bottom: clamp(0.6rem, 2vw, 1.2rem);
+            left: clamp(0.6rem, 2vw, 1.2rem);
+            background: rgba(255, 253, 249, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.35em 0.8em;
+            border-radius: 2em;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--fil-brun);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+            letter-spacing: 0.02em;
+            z-index: 2;
+        }
+        .hero-badge-google .star {
+            color: #e4a853;
+            font-size: 1.1em;
+            line-height: 1;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1;
+        }
+        .hero-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 6vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--fil-brun);
+        }
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height: 1.55;
+            color: #5a504a;
+            max-width: 38ch;
+        }
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.4rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--ardoise);
+            color: #FFFAF5;
+            text-decoration: none;
+            padding: 0.65em 1.5em;
+            border-radius: 2em;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.02em;
+            transition: background var(--transition-douce), transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #4a565c;
+            transform: translateY(-1px);
+            outline: 2px solid var(--rose-poudre);
+            outline-offset: 3px;
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: transparent;
+            color: var(--ardoise);
+            text-decoration: none;
+            padding: 0.65em 1.5em;
+            border-radius: 2em;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.02em;
+            border: 1px solid var(--ardoise);
+            transition: background var(--transition-douce), color var(--transition-douce), transform 0.2s;
+            cursor: pointer;
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            background: var(--ardoise);
+            color: #FFFAF5;
+            transform: translateY(-1px);
+            outline: 2px solid var(--rose-poudre);
+            outline-offset: 3px;
+        }
+
+        /* ========== CARTES & ENCARTS ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(1.2rem, 3vw, 2rem);
+        }
+        @media (min-width: 600px) {
+            .card-grid.cols-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card-grid.cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 960px) {
+            .card-grid.cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .card {
+            background: var(--lin);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--ombre-tissu);
+            transition: box-shadow var(--transition-douce), transform var(--transition-douce);
+            position: relative;
+        }
+        .card:hover {
+            box-shadow: var(--ombre-carte);
+            transform: translateY(-2px);
+        }
+        .card-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid var(--blanc-tisse);
+            transition: border-color var(--transition-douce);
+        }
+        .card:hover .card-image {
+            border-bottom-color: var(--rose-poudre);
+        }
+        .card-body {
+            padding: 1rem 1.1rem 1.3rem;
+        }
+        .card-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cuir);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .card-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            color: var(--fil-brun);
+            margin-bottom: 0.2rem;
+        }
+        .card-desc {
+            font-size: 0.9rem;
+            color: #5a504a;
+            line-height: 1.45;
+        }
+
+        /* ========== IMAGE PATCHWORK (liseré tissu) ========== */
+        .patchwork-frame {
+            position: relative;
+            display: inline-block;
+        }
+        .patchwork-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 5px solid #FFFDF9;
+            outline: 2px dashed rgba(59, 50, 44, 0.1);
+            outline-offset: 2px;
+            box-shadow: var(--ombre-tissu);
+            transition: border-color var(--transition-douce), outline-color var(--transition-douce), box-shadow var(--transition-printemps);
+        }
+        .patchwork-frame:hover img {
+            border-color: var(--rose-poudre);
+            outline-color: rgba(210, 180, 177, 0.35);
+            box-shadow: 0 6px 24px rgba(210, 180, 177, 0.18);
+        }
+
+        /* ========== SECTION TITRES ========== */
+        .section-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            letter-spacing: -0.01em;
+            color: var(--fil-brun);
+            margin-bottom: 0.3em;
+        }
+        .section-lede {
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            color: #5a504a;
+            max-width: 50ch;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* ========== TEAM ========== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 600px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .team-card {
+            text-align: center;
+            background: var(--blanc-tisse);
+            padding: 1.5rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: var(--ombre-tissu);
+            transition: box-shadow var(--transition-douce);
+        }
+        .team-card:hover {
+            box-shadow: var(--ombre-carte);
+        }
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 0.8rem;
+            display: block;
+            filter: grayscale(1) contrast(1.1) brightness(1.02);
+            border: 3px solid var(--lin);
+            transition: border-color var(--transition-douce), filter 0.4s;
+        }
+        .team-card:hover .team-avatar {
+            border-color: var(--rose-poudre);
+            filter: grayscale(0.6) contrast(1.05);
+        }
+        .team-name {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--fil-brun);
+        }
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--ardoise);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.03em;
+        }
+        .team-quote {
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #5a504a;
+            line-height: 1.5;
+        }
+
+        /* ========== HORAIRES ========== */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+        }
+        .hours-table td {
+            padding: 0.7em 0;
+            border-bottom: 1px solid rgba(59, 50, 44, 0.08);
+            vertical-align: top;
+        }
+        .hours-table td:first-child {
+            font-weight: 500;
+            color: var(--fil-brun);
+            padding-right: 2em;
+            white-space: nowrap;
+        }
+        .hours-table td:last-child {
+            color: #5a504a;
+        }
+        .hours-table tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight-day {
+            display: inline-block;
+            background: var(--cuir);
+            color: #FFFDF9;
+            font-size: 0.7rem;
+            padding: 0.15em 0.6em;
+            border-radius: 1em;
+            margin-left: 0.4em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            vertical-align: middle;
+        }
+
+        /* ========== MAP ========== */
+        .map-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--ombre-carte);
+            border: 3px solid var(--blanc-tisse);
+            transition: border-color var(--transition-douce);
+        }
+        .map-wrapper:hover {
+            border-color: var(--rose-poudre);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ========== FORMULAIRE ========== */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 520px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.8em 1em;
+            border: 1px solid rgba(59, 50, 44, 0.15);
+            border-radius: 6px;
+            background: var(--blanc-tisse);
+            color: var(--fil-brun);
+            transition: border-color var(--transition-douce), box-shadow var(--transition-douce);
+            resize: vertical;
+            letter-spacing: 0.02em;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--rose-poudre);
+            box-shadow: 0 0 0 3px rgba(210, 180, 177, 0.15);
+        }
+        .contact-form button {
+            align-self: flex-start;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--lin);
+            padding: 2.5rem clamp(1rem, 5vw, 4rem);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5a504a;
+            border-top: 1px solid rgba(59, 50, 44, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+        }
+        .site-footer a {
+            color: var(--ardoise);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+            color: var(--fil-brun);
+        }
+        .footer-credits {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.4rem;
+        }
+
+        /* ========== REVEAL ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Fade-in au chargement */
+        .fade-on-load {
+            opacity: 0;
+            animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+        .fade-on-load-d1 {
+            animation-delay: 0.2s;
+        }
+        .fade-on-load-d2 {
+            animation-delay: 0.4s;
+        }
+        .fade-on-load-d3 {
+            animation-delay: 0.6s;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ========== FOCUS VISIBLE ========== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--rose-poudre);
+            outline-offset: 3px;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+        .gap-1 {
+            gap: 1rem;
+        }
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Watermark "Hauts" -->
+    <div class="watermark-hauts" id="watermarkHauts" aria-hidden="true">Hauts</div>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-brand" aria-label="Des Petits Hauts — Accueil">
+            <svg class="picto-fil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 21c1.5-2 3-5 4-8l2-6c.5-1 1.5-2 2.5-2s2 1 2.5 2l2 6c1 3 2.5 6 4 8"/><circle cx="12" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg>
+            Des Petits Hauts
+        </a>
+        <button class="btn-burger" id="btnBurger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+        <nav>
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#esprit">L'esprit</a></li>
+                <li><a href="#equipe">L'équipe</a></li>
+                <li><a href="#vestiaire">Le vestiaire</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33175440587" class="header-cta" aria-label="Appeler la boutique">
+            <span aria-hidden="true">&#9742;</span> 01 75 44 05 87
+        </a>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="section hero" id="hero">
+            <div class="hero-image-wrapper fade-on-load" style="grid-row:1;">
+                <img src="assets/maps-1.jpg" alt="Façade de la boutique Des Petits Hauts, 46 bis avenue Charles de Gaulle à Neuilly-sur-Seine" class="hero-image" width="800" height="600" loading="eager">
+                <div class="hero-badge-google" aria-label="Note Google 4.2 sur 5 basée sur 19 avis">
+                    <span class="star">&#9733;</span> 4.2 <span style="opacity:0.7;">(19 avis)</span>
+                </div>
+            </div>
+            <div class="hero-content fade-on-load fade-on-load-d2">
+                <h1 class="hero-title">L'art du haut,<br>à l'angle de l'avenue</h1>
+                <p class="hero-subtitle">Dans notre boutique de Neuilly, chaque pièce est choisie pour tomber juste. Passez la porte en bois peint, on s'occupe du reste.</p>
+                <div class="hero-cta-row">
+                    <a href="#vestiaire" class="btn-primary">Découvrir le vestiaire</a>
+                    <a href="#horaires" class="btn-ghost">Venir en boutique</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread1"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 1 : L'esprit du lieu -->
+        <section class="section" id="esprit">
+            <span class="section-label reveal">La boutique</span>
+            <h2 class="section-title reveal reveal-delay-1">L'esprit du lieu</h2>
+            <div class="card-grid cols-2" style="align-items:center;">
+                <div class="patchwork-frame reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Façade en bois peint de Des Petits Hauts" width="600" height="450" loading="lazy">
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <p class="section-lede" style="margin-bottom:0.8rem;">Depuis son ouverture, notre boutique du <strong>46 bis Charles de Gaulle</strong> cultive le beau comme une promesse tenue. Ici, les collections ne sont pas alignées par hasard&nbsp;: chaque haut, chaque pull, chaque blouse a été touché, pesé, essayé avant de trouver sa place sur nos portants.</p>
+                    <p style="color:#5a504a;line-height:1.6;">Le bois ciré du comptoir, la lumière tamisée des appliques, le murmure des cintres qu'on écarte&nbsp;: tout a été pensé pour que l'essayage devienne un moment à soi, loin de la frénésie des grands magasins.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread2"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 2 : Celles qui vous accueillent -->
+        <section class="section section-alt" id="equipe">
+            <span class="section-label reveal">L'équipe</span>
+            <h2 class="section-title reveal reveal-delay-1">Celles qui vous accueillent</h2>
+            <p class="section-lede reveal reveal-delay-2">Des conseillères passionnées qui connaissent leurs clientes par leur prénom — et leur taille par cœur.</p>
+            <div class="team-grid">
+                <div class="team-card reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="" class="team-avatar" loading="lazy" style="object-position:center 20%;">
+                    <div class="team-name">Pauline</div>
+                    <div class="team-role">Responsable de boutique</div>
+                    <p class="team-quote">«&nbsp;J'aime quand une cliente repart avec LA blouse qu'elle n'osait pas essayer.&nbsp;»</p>
+                </div>
+                <div class="team-card reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="" class="team-avatar" loading="lazy" style="object-position:center 35%;">
+                    <div class="team-name">Sophie</div>
+                    <div class="team-role">Conseillère de vente</div>
+                    <p class="team-quote">«&nbsp;Un cardigan bien choisi change une silhouette — et une journée.&nbsp;»</p>
+                </div>
+                <div class="team-card reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="" class="team-avatar" loading="lazy" style="object-position:center 50%;">
+                    <div class="team-name">Camille</div>
+                    <div class="team-role">Retouches & ajustements</div>
+                    <p class="team-quote">«&nbsp;Un ourlet bien fait, c'est la signature d'un vêtement qui vous appartient.&nbsp;»</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread3"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 3 : Le vestiaire du moment -->
+        <section class="section" id="vestiaire">
+            <span class="section-label reveal">En boutique</span>
+            <h2 class="section-title reveal reveal-delay-1">Le vestiaire du moment</h2>
+            <p class="section-lede reveal reveal-delay-2">Notre sélection de six pièces phares, disponibles en boutique. Chaque article est livré avec un conseil d'association — comme si on était à côté de vous.</p>
+            <div class="card-grid cols-3">
+                <div class="card reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 15%; filter: brightness(1.06) saturate(0.9) contrast(1.03);">
+                    <div class="card-body">
+                        <span class="card-tag">Laine mérinos</span>
+                        <h3 class="card-title">Cardigan Nuage</h3>
+                        <p class="card-desc">Parfait sur votre jean blanc. Longueur mi-cuisse, boutons gansés de nacre.</p>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 30%; filter: brightness(1.04) saturate(0.85) contrast(1.05);">
+                    <div class="card-body">
+                        <span class="card-tag">Soie lavée</span>
+                        <h3 class="card-title">Blouse Aurore</h3>
+                        <p class="card-desc">Col lavallière et poignets boutonnés. Glissée dans un pantalon tailleur, elle fait des merveilles.</p>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 45%; filter: brightness(1.05) saturate(0.92) contrast(1.02);">
+                    <div class="card-body">
+                        <span class="card-tag">Coton bio</span>
+                        <h3 class="card-title">T-shirt Épure</h3>
+                        <p class="card-desc">La coupe parfaite. Col rond, manches légèrement tombantes. Disponible en 6 teintes.</p>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 60%; filter: brightness(1.07) saturate(0.88) contrast(1.04);">
+                    <div class="card-body">
+                        <span class="card-tag">Alpaga &amp; soie</span>
+                        <h3 class="card-title">Pull Brume</h3>
+                        <p class="card-desc">Doux comme un nuage. Porté sur une jupe midi plissée, il crée une silhouette aérienne.</p>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 75%; filter: brightness(1.03) saturate(0.9) contrast(1.06);">
+                    <div class="card-body">
+                        <span class="card-tag">Lin français</span>
+                        <h3 class="card-title">Blouse Estelle</h3>
+                        <p class="card-desc">Manches ballon et col Claudine. Idéale avec un short en coton pour les beaux jours.</p>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 90%; filter: brightness(1.04) saturate(0.91) contrast(1.03);">
+                    <div class="card-body">
+                        <span class="card-tag">Mérinos &amp; cachemire</span>
+                        <h3 class="card-title">Gilet Ambre</h3>
+                        <p class="card-desc">Le gilet qui va avec tout. Boutons en corozo, poches discrètes. On l'emporte partout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread4"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 4 : Horaires & Itinéraire -->
+        <section class="section section-alt" id="horaires">
+            <span class="section-label reveal">Infos pratiques</span>
+            <h2 class="section-title reveal reveal-delay-1">Horaires &amp; Itinéraire</h2>
+            <div class="card-grid cols-2 reveal reveal-delay-2">
+                <div>
+                    <p class="section-lede" style="margin-bottom:1.2rem;">On est ouverts du mardi au samedi, et même le dimanche matin en décembre.</p>
+                    <table class="hours-table">
+                        <tbody>
+                            <tr><td>Lundi</td><td>Fermé</td></tr>
+                            <tr><td>Mardi</td><td>10h00 – 19h00</td></tr>
+                            <tr><td>Mercredi</td><td>10h00 – 19h00</td></tr>
+                            <tr><td>Jeudi</td><td>10h00 – 19h00</td></tr>
+                            <tr><td>Vendredi</td><td>10h00 – 19h00</td></tr>
+                            <tr><td>Samedi</td><td>10h00 – 19h00</td></tr>
+                            <tr><td>Dimanche</td><td>10h00 – 13h00 <span class="highlight-day">En décembre</span></td></tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top:1rem;font-size:0.85rem;color:#5a504a;">
+                        <span aria-hidden="true">&#128222;</span> <a href="tel:+33175440587" style="color:var(--ardoise);font-weight:500;text-decoration:none;">01 75 44 05 87</a>
+                        &nbsp;·&nbsp;
+                        <span aria-hidden="true">&#9993;</span> <a href="mailto:eshop@despetitshauts.com" style="color:var(--ardoise);font-weight:500;text-decoration:none;">eshop@despetitshauts.com</a>
+                    </p>
+                    <p style="font-size:0.8rem;color:#8a7e76;margin-top:0.3rem;">46 bis avenue Charles de Gaulle, 92200 Neuilly-sur-Seine</p>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-3">
+                    <iframe src="https://maps.google.com/maps?q=Des+Petits+Hauts+46Bis+Avenue+Charles+de+Gaulle%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à la boutique Des Petits Hauts"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread5"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 5 : Ce que vous ne trouverez nulle part ailleurs -->
+        <section class="section" id="details">
+            <span class="section-label reveal">L'attention au détail</span>
+            <h2 class="section-title reveal reveal-delay-1">Ce que vous ne trouverez nulle part ailleurs</h2>
+            <p class="section-lede reveal reveal-delay-2">Des retouches sur mesure, des conseils sans précipitation et un café serré si l'envie vous en dit.</p>
+            <div class="card-grid cols-3 reveal reveal-delay-3">
+                <div class="card">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 10%; aspect-ratio:4/3;">
+                    <div class="card-body">
+                        <h3 class="card-title">Le comptoir en bois</h3>
+                        <p class="card-desc">Un meuble d'ébéniste qui a vu défiler des générations de Neuilléennes. On y pose son sac, on y déplie un pull, on y refait le monde.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 55%; aspect-ratio:4/3;">
+                    <div class="card-body">
+                        <h3 class="card-title">Le panier retouches</h3>
+                        <p class="card-desc">Ourlets, ajustements de manches, reprises délicates&nbsp;: notre retoucheuse travaille sur place, dans un atelier attenant à la boutique.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/maps-1.jpg" alt="" class="card-image" loading="lazy" style="object-position:center 80%; aspect-ratio:4/3;">
+                    <div class="card-body">
+                        <h3 class="card-title">La sélection de bijoux</h3>
+                        <p class="card-desc">Colliers, bracelets et boucles d'oreilles choisis avec la même exigence que nos hauts. De quoi parfaire une tenue en un clin d'œil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fil de couture -->
+        <div class="sewing-thread" aria-hidden="true">
+            <div class="thread-line" id="thread6"></div>
+            <span class="thread-knot">
+                <svg viewBox="0 0 20 16" fill="none" stroke="#D2B4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3-3 5-1 8 0s5-3 8 0"/><circle cx="10" cy="8" r="1.5" fill="#D2B4B1" stroke="none"/></svg>
+            </span>
+        </div>
+
+        <!-- SECTION 6 : On reste en contact -->
+        <section class="section section-alt" id="contact">
+            <span class="section-label reveal">Contact</span>
+            <h2 class="section-title reveal reveal-delay-1">On reste en contact</h2>
+            <p class="section-lede reveal reveal-delay-2">Envie de réserver une pièce pour l'essayage&nbsp;? Un simple appel et c'est fait.</p>
+            <div class="card-grid cols-2 reveal reveal-delay-3" style="align-items:start;">
+                <form class="contact-form" id="contactForm" action="#" method="post" onsubmit="event.preventDefault(); window.location.href='mailto:eshop@despetitshauts.com?subject=Demande%20depuis%20le%20site&body=' + encodeURIComponent(document.getElementById('msgBody').value || 'Bonjour, je souhaite réserver une pièce pour un essayage.');">
+                    <label for="nom" class="sr-only">Votre nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    <label for="email" class="sr-only">Votre email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    <label for="msgBody" class="sr-only">Votre message</label>
+                    <textarea id="msgBody" name="message" rows="4" placeholder="Dites-nous ce que vous cherchez, on vous répond rapidement." required></textarea>
+                    <button type="submit" class="btn-primary">Envoyer</button>
+                </form>
+                <div style="display:flex;flex-direction:column;gap:1.2rem;padding:1rem 0;">
+                    <div>
+                        <p style="font-weight:500;color:var(--fil-brun);margin-bottom:0.2em;">Par téléphone</p>
+                        <a href="tel:+33175440587" style="font-size:1.1rem;color:var(--ardoise);text-decoration:none;font-weight:500;">01 75 44 05 87</a>
+                        <p style="font-size:0.8rem;color:#8a7e76;">Du mardi au samedi, 10h–19h</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:500;color:var(--fil-brun);margin-bottom:0.2em;">Par email</p>
+                        <a href="mailto:eshop@despetitshauts.com" style="font-size:1rem;color:var(--ardoise);text-decoration:none;font-weight:500;">eshop@despetitshauts.com</a>
+                    </div>
+                    <div>
+                        <p style="font-weight:500;color:var(--fil-brun);margin-bottom:0.2em;">Sur place</p>
+                        <p style="font-size:0.9rem;color:#5a504a;">46 bis avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><strong>Des Petits Hauts</strong> — 46 bis avenue Charles de Gaulle, 92200 Neuilly-sur-Seine</p>
+        <p>
+            <a href="tel:+33175440587">01 75 44 05 87</a>
+            &nbsp;·&nbsp;
+            <a href="mailto:eshop@despetitshauts.com">eshop@despetitshauts.com</a>
+            &nbsp;·&nbsp;
+            <span>Google 4.2&#9733; (19 avis)</span>
+        </p>
+        <p class="footer-credits">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Des Petits Hauts",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "46 Bis Avenue Charles de Gaulle",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33175440587",
+            "email": "eshop@despetitshauts.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "19"
+            },
+            "image": "https://agence.mooo.com/des-petits-hauts/assets/maps-1.jpg",
+            "url": "https://agence.mooo.com/des-petits-hauts",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "19:00" }
+            ]
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        (function() {
+            // Burger menu
+            const btnBurger = document.getElementById('btnBurger');
+            const headerNav = document.getElementById('headerNav');
+            if (btnBurger && headerNav) {
+                btnBurger.addEventListener('click', function() {
+                    const expanded = headerNav.classList.toggle('open');
+                    btnBurger.setAttribute('aria-expanded', expanded);
+                    btnBurger.innerHTML = expanded ? '&#10005;' : '&#9776;';
+                });
+                // Fermer le menu au clic sur un lien
+                headerNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        headerNav.classList.remove('open');
+                        btnBurger.setAttribute('aria-expanded', 'false');
+                        btnBurger.innerHTML = '&#9776;';
+                    });
+                });
+            }
+
+            // Header scroll shadow
+            const siteHeader = document.getElementById('siteHeader');
+            if (siteHeader) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 40) {
+                        siteHeader.classList.add('scrolled');
+                    } else {
+                        siteHeader.classList.remove('scrolled');
+                    }
+                }, { passive: true });
+            }
+
+            // Watermark opacity au scroll
+            const watermark = document.getElementById('watermarkHauts');
+            if (watermark) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 200) {
+                        watermark.classList.add('visible');
+                    } else {
+                        watermark.classList.remove('visible');
+                    }
+                }, { passive: true });
+            }
+
+            // IntersectionObserver pour les reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            const threadLines = document.querySelectorAll('.thread-line');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // Observer pour les fils de couture
+            const threadObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('drawn');
+                        threadObserver.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.2 });
+
+            threadLines.forEach(function(line) {
+                threadObserver.observe(line);
+            });
+
+            // Fermer le menu burger si clic à l'extérieur
+            document.addEventListener('click', function(e) {
+                if (headerNav && headerNav.classList.contains('open')) {
+                    if (!headerNav.contains(e.target) && e.target !== btnBurger) {
+                        headerNav.classList.remove('open');
+                        btnBurger.setAttribute('aria-expanded', 'false');
+                        btnBurger.innerHTML = '&#9776;';
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
