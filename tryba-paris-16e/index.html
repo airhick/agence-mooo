@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYBA Paris 16e — L'atelier des transparences | Menuiseries sur mesure</title>
+    <meta name="description" content="Showroom TRYBA Paris 16e : fenêtres, portes, verrières dessinées à votre mesure. Conseil et pose dans notre atelier de l'Avenue de Versailles — devis transparent sous 48h.">
+    <meta property="og:title" content="TRYBA Paris 16e — L'atelier des transparences">
+    <meta property="og:description" content="Fenêtres, portes et verrières dessinées à votre mesure — conseil, conception et pose dans notre atelier de l'Avenue de Versailles.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪟</text></svg>">
+    <style>
+        :root {
+            --coquille: #FAF7F2;
+            --encre: #112D47;
+            --bois: #CBB99B;
+            --ardoise: #5E636B;
+            --bronze: #3A5045;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 12px rgba(17, 45, 71, 0.06);
+            --shadow-md: 0 8px 32px rgba(17, 45, 71, 0.08);
+            --shadow-lg: 0 20px 48px rgba(17, 45, 71, 0.12);
+            --radius-xs: 2px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --transition-smooth: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-display: 'Fraunces', 'Times New Roman', serif;
+            --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+            --grain-opacity: 0.25;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            background: var(--coquille);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--encre);
+            background-color: var(--coquille);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Grain subtil */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
+            mix-blend-mode: multiply;
+        }
+
+        /* Typographie */
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-underline {
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            height: 2px;
+            background-color: var(--bois);
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transform-origin: left;
+            will-change: width;
+        }
+
+        .section-underline.visible {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--encre);
+        }
+
+        p {
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            font-weight: 400;
+            color: var(--ardoise);
+            margin-bottom: 1.2rem;
+            max-width: 62ch;
+            line-height: 1.7;
+        }
+
+        .text-large {
+            font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--encre);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--bronze);
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(203, 185, 155, 0.25);
+            transition: all 0.4s ease;
+            padding: 0.8rem 0;
+        }
+
+        .site-header.scrolled {
+            background: rgba(250, 247, 242, 0.96);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: var(--ardoise);
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--ardoise);
+            position: relative;
+            padding: 0.25rem 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bois);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bronze);
+            color: var(--white) !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: var(--font-body);
+        }
+
+        .cta-btn:hover {
+            background: #2d4038;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(58, 80, 69, 0.25);
+            color: var(--white) !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 110;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-alt {
+            background: rgba(203, 185, 155, 0.08);
+            border-radius: var(--radius-lg);
+            margin: 2rem auto;
+            padding: 4rem 2rem;
+            max-width: 1240px;
+        }
+
+        /* Héro */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 1.5rem 4rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s forwards;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/3;
+            background: var(--bois);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-accent {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--bois);
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--white);
+            border: 1px solid rgba(203, 185, 155, 0.4);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--encre);
+            margin-top: 1.2rem;
+            box-shadow: var(--shadow-sm);
+            letter-spacing: 0.01em;
+        }
+
+        .badge-google .star {
+            color: #f0b400;
+            font-size: 1rem;
+        }
+
+        .subtitle-hero {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--ardoise);
+            font-weight: 400;
+            max-width: 48ch;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+            font-family: var(--font-body);
+        }
+
+        .filet-decor {
+            width: 60px;
+            height: 2px;
+            background: var(--bois);
+            margin: 1.8rem 0;
+        }
+
+        /* Grille images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .image-grid .grid-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--bois);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .image-grid .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .image-grid .grid-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.05) contrast(1.02);
+        }
+
+        .image-grid .grid-item .overlay-nuancier {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(17, 45, 71, 0.85), transparent);
+            color: var(--white);
+            padding: 1.5rem 1rem 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            font-family: var(--font-body);
+        }
+
+        .image-grid .grid-item:hover .overlay-nuancier {
+            transform: translateY(0);
+        }
+
+        .nuancier-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        /* Two columns */
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        .col-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--encre);
+            border-bottom: 1px solid var(--bois);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .col-content p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Formulaire */
+        .form-devis {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+            position: relative;
+            border: 1px solid rgba(203, 185, 155, 0.3);
+        }
+
+        .form-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--encre);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+        }
+
+        .form-field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .form-field label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(203, 185, 155, 0.5);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            background: var(--coquille);
+            color: var(--encre);
+            transition: all 0.3s ease;
+            outline: none;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--bois);
+            box-shadow: 0 0 0 3px rgba(203, 185, 155, 0.15);
+            background: var(--white);
+        }
+
+        .submit-btn {
+            background: var(--encre);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--bronze);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(17, 45, 71, 0.2);
+        }
+
+        .submit-btn:focus-visible {
+            outline: 3px solid var(--bois);
+            outline-offset: 3px;
+        }
+
+        /* Map */
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(203, 185, 155, 0.25);
+        }
+
+        .info-block {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+            border-left: 3px solid var(--bois);
+        }
+
+        .info-block .horaires {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--ardoise);
+        }
+
+        .info-block .horaires .day {
+            font-weight: 600;
+            color: var(--encre);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--encre);
+            color: var(--coquille);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+
+        .site-footer a {
+            color: var(--bois);
+            font-weight: 500;
+        }
+
+        .site-footer .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--bois);
+            margin: 1rem auto;
+        }
+
+        /* Animations reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Focus */
+        :focus-visible {
+            outline: 2px solid var(--bronze);
+            outline-offset: 4px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-section {
+                flex-direction: column;
+                gap: 2rem;
+                padding-top: 6rem;
+                min-height: auto;
+            }
+            .hero-visual {
+                width: 100%;
+            }
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .two-cols {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(250, 247, 242, 0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid var(--bois);
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 3.5rem 1.2rem;
+            }
+            .section-alt {
+                padding: 2.5rem 1rem;
+                margin: 1rem;
+            }
+            .form-devis {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: clamp(2rem, 5vw, 2.8rem);
+            }
+            .hero-accent {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="TRYBA Paris 16e — Accueil">
+                TRYBA Paris 16e
+                <span>L'atelier des transparences</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#latelier">L'atelier</a>
+                <a href="#menuiseries">Menuiseries</a>
+                <a href="#copropriete">Copropriété</a>
+                <a href="#devis">Devis</a>
+                <a href="#rendezvous">Rendez-vous</a>
+                <a href="tel:+33159301228" class="cta-btn">Appeler</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="filet-decor" style="margin-top:0;"></div>
+                <h1>Le 16e sous votre regard.</h1>
+                <p class="subtitle-hero">Fenêtres, portes et verrières dessinées à votre mesure — conseil, conception et pose dans notre atelier de l'Avenue de Versailles.</p>
+                <div class="badge-google">
+                    <span class="star">★</span> 4.1/5 · 32 avis
+                </div>
+                <div style="margin-top:1.5rem;">
+                    <a href="#devis" class="cta-btn" style="font-size:0.95rem; padding:0.9rem 2rem;">Demander un devis</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="assets/maps-1.jpg" alt="Showroom TRYBA Paris 16e — lumière naturelle, baies vitrées" loading="eager" width="600" height="450">
+                </div>
+                <div class="hero-accent"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : L'ATELIER DU 16E -->
+        <section class="section" id="latelier">
+            <div class="section-title-wrapper reveal">
+                <h2>L'atelier du 16e.</h2>
+                <div class="section-underline" id="underlineAtelier"></div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <p class="text-large">Un espace de 200m² entièrement voué au conseil. Venez manipuler des échantillons de bois, d'aluminium et de PVC, tester une baie en conditions réelles, et bâtir votre projet avec une équipe qui connaît chaque immeuble du quartier.</p>
+            </div>
+            <div class="image-grid reveal reveal-delay-2">
+                <div class="grid-item">
+                    <img src="assets/maps-2.jpg" alt="Intérieur du showroom — échantillons et présentoirs" loading="lazy" width="400" height="300">
+                    <div class="overlay-nuancier">
+                        <span class="nuancier-tag">Bois chêne clair</span>
+                        <span class="nuancier-tag">Alu brossé</span>
+                        <span class="nuancier-tag">PVC blanc</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/maps-3.jpg" alt="Présentoirs de matériaux — bois, alu, PVC" loading="lazy" width="400" height="300">
+                    <div class="overlay-nuancier">
+                        <span class="nuancier-tag">Noyer foncé</span>
+                        <span class="nuancier-tag">Alu laqué</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/maps-4.jpg" alt="Façade du showroom Avenue de Versailles" loading="lazy" width="400" height="300">
+                    <div class="overlay-nuancier">
+                        <span class="nuancier-tag">Vitrage clair</span>
+                        <span class="nuancier-tag">Métal bronze</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : MENUISERIES SUR PAROLE -->
+        <section class="section section-alt" id="menuiseries">
+            <div class="section-title-wrapper reveal">
+                <h2>Menuiseries sur parole.</h2>
+                <div class="section-underline" id="underlineMenuiseries"></div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <p class="text-large">Le catalogue s'efface derrière votre besoin. Fenêtres, portes d'entrée, vérandas ou volets : nous partons de votre vue, de votre étage, de votre orientation pour vous proposer les gammes TRYBA qui y répondent vraiment.</p>
+            </div>
+            <div class="two-cols reveal reveal-delay-2" style="margin-top:2.5rem;">
+                <div>
+                    <span class="col-label">Votre vue</span>
+                    <p>Sur cour ou sur rue, chaque ouverture dialogue avec la lumière parisienne. Nous analysons l'exposition, les vis-à-vis, et les ombres portées pour choisir avec vous le type de vitrage et la menuiserie qui captent le meilleur de votre paysage quotidien.</p>
+                </div>
+                <div>
+                    <span class="col-label">Votre seuil</span>
+                    <p>Une porte d'entrée, c'est la transition entre la ville et l'intime. Bois massif, aluminium thermolaqué ou mixte : nous dessinons ce seuil en fonction de votre immeuble, de son style, et des exigences acoustiques de votre rue.</p>
+                </div>
+                <div>
+                    <span class="col-label">Votre terrasse</span>
+                    <p>Baies coulissantes, vérandas, verrières : prolonger votre espace de vie vers l'extérieur demande une réflexion sur les charges, les vents dominants et l'ensoleillement. Nous posons les bonnes questions avant de poser les profilés.</p>
+                </div>
+                <div>
+                    <span class="col-label">Vos volets</span>
+                    <p>Battants, roulants, persiennes : le volet est une mécanique discrète qui doit s'accorder aux contraintes de votre façade et aux règles de votre copropriété, sans jamais trahir le caractère haussmannien de l'ensemble.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : L'ŒIL COPROPRIÉTÉ -->
+        <section class="section" id="copropriete">
+            <div class="section-title-wrapper reveal">
+                <h2>L'œil copropriété.</h2>
+                <div class="section-underline" id="underlineCopropriete"></div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <p class="text-large">Remplacer des fenêtres sur cour ou sur rue dans un immeuble haussmannien obéit à des règles précises. Nous préparons avec vous le dossier pour l'assemblée générale, réalisons les plans et calepinages exigés, et dialoguons directement avec votre syndic.</p>
+            </div>
+            <div class="two-cols reveal reveal-delay-2" style="margin-top:2rem;">
+                <div>
+                    <span class="col-label">Contraintes</span>
+                    <div class="col-content">
+                        <p>Prescriptions de façade (teintes, matériaux, modénatures).</p>
+                        <p>Autorisation préalable de l'assemblée générale.</p>
+                        <p>Respect des dimensions et proportions d'origine.</p>
+                        <p>Coordination avec le syndic pour les parties communes.</p>
+                        <p>Normes acoustiques et thermiques en vigueur à Paris.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="col-label">Solutions concrètes</span>
+                    <div class="col-content">
+                        <p>Constitution du dossier technique complet (plans, échantillons, notes descriptives).</p>
+                        <p>Rédaction de la résolution à soumettre au vote.</p>
+                        <p>Rendez-vous sur place avec le syndic si nécessaire pour expliquer le projet.</p>
+                        <p>Suivi du calendrier de l'assemblée et relances.</p>
+                        <p>Garantie de conformité esthétique avec l'existant haussmannien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : DEVIS TRANSPARENT -->
+        <section class="section section-alt" id="devis">
+            <div class="section-title-wrapper reveal">
+                <h2>Devis transparent.</h2>
+                <div class="section-underline" id="underlineDevis"></div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <p class="text-large">En moins de trente secondes, décrivez votre projet. Vous recevez sous 48h une estimation claire, basée sur nos relevés réels — pas un prix moyen statistique.</p>
+            </div>
+            <div class="form-devis reveal reveal-delay-2">
+                <form id="devisForm" action="#" method="post">
+                    <div class="form-step">
+                        <div class="step-number">1</div>
+                        <div class="form-field">
+                            <label for="projet">Votre projet</label>
+                            <select id="projet" name="projet">
+                                <option value="">Sélectionnez...</option>
+                                <option>Fenêtres</option>
+                                <option>Porte d'entrée</option>
+                                <option>Baie vitrée / Véranda</option>
+                                <option>Volets</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-step">
+                        <div class="step-number">2</div>
+                        <div class="form-field">
+                            <label for="description">Décrivez en quelques mots</label>
+                            <input type="text" id="description" name="description" placeholder="Ex : remplacer 3 fenêtres sur rue, 4e étage, immeuble 1930">
+                        </div>
+                    </div>
+                    <div class="form-step">
+                        <div class="step-number">3</div>
+                        <div class="form-field">
+                            <label for="contact">Votre email ou téléphone</label>
+                            <input type="text" id="contact" name="contact" placeholder="Pour recevoir l'estimation sous 48h">
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Recevoir mon estimation</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : RENDEZ-VOUS ICI -->
+        <section class="section" id="rendezvous">
+            <div class="section-title-wrapper reveal">
+                <h2>Rendez-vous ici.</h2>
+                <div class="section-underline" id="underlineRendezvous"></div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <p class="text-large">TRYBA Paris 16e. 15 Avenue de Versailles. À huit minutes à pied de la Maison de la Radio, au cœur du quartier du Stade Jean-Bouin. Parking public à 50 mètres.</p>
+            </div>
+            <div class="info-block reveal reveal-delay-2">
+                <h3 style="margin-bottom:1rem;">Horaires d'ouverture</h3>
+                <div class="horaires">
+                    <span class="day">Lundi</span><span>14h – 19h</span>
+                    <span class="day">Mardi – Samedi</span><span>10h – 19h30</span>
+                    <span class="day">Dimanche</span><span>Fermé</span>
+                </div>
+                <p style="margin-top:1rem;">
+                    <a href="tel:+33159301228" style="font-weight:600;">01 59 30 12 28</a> · 
+                    <a href="mailto:privacy@tryba.fr">privacy@tryba.fr</a>
+                </p>
+            </div>
+            <div class="map-wrapper reveal reveal-delay-3">
+                <iframe src="https://maps.google.com/maps?q=TRYBA+Paris+16e+15+Avenue+de+Versailles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte du showroom TRYBA Paris 16e"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p style="color:var(--coquille);">TRYBA Paris 16e — 15 Avenue de Versailles, Paris</p>
+        <p><a href="tel:+33159301228">01 59 30 12 28</a></p>
+        <div class="footer-divider"></div>
+        <p style="font-size:0.75rem; opacity:0.7;">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "TRYBA Paris 16e",
+            "description": "Showroom de menuiseries : fenêtres, portes, verrières sur mesure. Conseil et pose dans le 16e arrondissement.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "15 Avenue de Versailles",
+                "addressLocality": "Paris",
+                "postalCode": "75016"
+            },
+            "telephone": "+33159301228",
+            "email": "privacy@tryba.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "32"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "14:00",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "19:30"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll
+            const header = document.getElementById('siteHeader');
+            const scrollHandler = () => {
+                if (window.scrollY > 20) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            scrollHandler();
+
+            // Mobile menu
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('active'));
+            });
+
+            // Intersection Observer pour reveals et underlines
+            const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+            const revealElements = document.querySelectorAll('.reveal');
+            const underlineElements = document.querySelectorAll('.section-underline');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => observer.observe(el));
+
+            // Underlines spécifiques avec IDs
+            const underlineIds = ['underlineAtelier', 'underlineMenuiseries', 'underlineCopropriete', 'underlineDevis',
+                'underlineRendezvous'
+            ];
+            underlineIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const sectionObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                el.classList.add('visible');
+                            }
+                        });
+                    }, { threshold: 0.3 });
+                    const parentSection = el.closest('section') || el.closest('.section-alt');
+                    if (parentSection) sectionObserver.observe(parentSection);
+                }
+            });
+
+            // Formulaire (ne pas recharger la page)
+            const devisForm = document.getElementById('devisForm');
+            if (devisForm) {
+                devisForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert(
+                        'Merci. Votre demande a bien été enregistrée. Nous vous répondrons sous 48h avec une estimation précise.');
+                    devisForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
