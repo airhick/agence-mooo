@@ -1,92 +1,53 @@
-# BRIEF CRÉATIF — Restaurtapis  
-**Site vitrine haut de gamme | Paris 16e**
+# BRIEF CRÉATIF — RESTAURTAPIS
 
----
+## 1. Concept & positionnement
+Restaurtapis n’est pas un simple dégraisseur de tapis, c’est une **maison d’art textile** où chaque pièce ancienne retrouve son aura. Le site sera **une galerie à part entière**, où les tapis sont exposés comme des tableaux, avec la même exigence que celle d’un antiquaire de la rue de la Pompe. On retiendra : *“Un atelier d’art pour vos tapis d’Orient, depuis trois générations.”*
 
-## 1. CONCEPT & POSITIONNEMENT
+## 2. Direction artistique
+**Parti pris : « Galerie d’artisanat oriental, entre modernité radicale et mémoire des motifs. »**  
+Les photos réelles montrent un empilement de tapis aux motifs complexes dans une lumière naturelle diffuse, presque muséale. On traduit cela par une mise en page **éditoriale sévère, aérée, qui encadre la profusion des décors textiles sans la concurrencer**.  
+Les titres en Bricolage Grotesque (display) claquent avec une autorité contemporaine sur de grands aplats de couleur sourde ; le texte en Hanken Grotesk (body) reste limpide, technique, sans fioriture.  
+La surface du site joue le rôle d’un **carton à dessin d’artiste** : fond toile chaude, cadres discrets, touches d’or usé. Aucun remplissage décoratif superflu — c’est la texture du tapis lui-même qui devient l’illustration.
 
-Restaurtapis n’est pas un pressing de tapis. C’est le dernier atelier familial de la rue de la Pompe où, depuis trois générations, on répare à la main ce que le temps a défait. Le site sera le **carnet d’atelier numérique** de cette maison : un écrin éditorial qui documente le geste, magnifie la matière, et restaure la confiance avant même le premier coup de fil. On ne vend pas un service — on transmet un regard.
+## 3. Palette  
+Tirée des teintes réelles repérées sur place (beige laine, bleu profond des motifs, rouge brique des bordures, ocre du vieillissement, et un noir chaud pour l’encre). On rejette le blanc froid et le gris mécanique.
 
----
+| Rôle | HEX | Description |
+|------|-----|-------------|
+| Fond principal | `#F4EFE6` | Toile écrue, chaleureuse comme un fil de laine non blanchi |
+| Encre | `#1C2331` | Bleu nuit très dense, remplace le noir pur |
+| Accent principal | `#AF2C2C` | Rouge brique profond, ponctue les CTA et les filets |
+| Accent secondaire | `#CC7722` | Ocre safrané, pour les détails (icônes, survols) |
+| Accent métal | `#B6945A` | Laiton vieilli, pour les traits fins, les bordures d’images |
+| Surface claire | `#FFFDF8` | Blanc cassé presque diaphane, pour les cartes ou les fonds d’avis |
 
-## 2. DIRECTION ARTISTIQUE
+## 4. Ton éditorial  
+Une voix **d’expert passionné**, qui parle de son métier avec précision (on nomme les techniques : *nouage, teinture au bain-marie, chaîne et trame, ourdissage*) mais sans jargonner.  
+Le registre est **élégant sans être distant** : tutoiement non, vouvoiement chaleureux, quelques images poétiques mais jamais mièvres.  
+Le récit familial est central mais bref, raconté comme une transmission de gestes plus que d’états d’âme.  
+Pas de superlatifs vides ni kilos de mots-clés : chaque phrase apporte une information concrète (bénéfice, processus, prix, zone géographique).
 
-**Parti pris : « L’Atelier méridien » — sobre, charnel, lettré.**
+## 5. Accroche héro  
+**Titre :** *Chaque tapis cache un jardin que trois générations savent faire refleurir*  
+**Sous-titre :** Restauration, réparation, nettoyage de tapis d’Orient — Paris 16, Neuilly, Versailles et Île-de-France. Devis gratuit, savoir-faire familial depuis 1950.  
+**CTA unique :** *Demander un diagnostic personnel* (bouton en rouge brique).
 
-On emprunte au carnet de route d’un artisan voyageur : la typographie un peu brute (Bricolage Grotesque) évoque les tampons d’atelier et les étiquettes de ballots de laine ; la mise en page alterne pleine page contemplative et zooms chirurgicaux sur le détail textile. La lumière est celle des photos réelles du commerce — naturelle, tamisée, traversée par les rouges indiens, les bleus indigo, les beiges de laine brute qui dorment sur les étagères du 76. Aucun artifice numérique : la matière guide tout.
+## 6. Sections ordonnées  
+1. **Héro** — Visuel pleine page d’un fragment de tapis à hauteur de loupe, avec l’accroche ci-dessus. Le panneau arrière de la boutique (les couches de tapis) sert de toile de fond floutée.
+2. **« Le geste d’une lignée »** — Histoire de la famille Marias en trois dates clés, sur fond de photo de l’atelier. Phrase : *« De Georges à aujourd’hui, la même nudité du fil réparé à la main. »*
+3. **« Quatre soins pour vos tapis »** — Grille de services (icônes en ocre) :  
+   *Restauration d’art* — Reconstituer les zones effilochées, fixer les couleurs d’origine.  
+   *Réparation invisible* — Border, remplacer un panneau usé, stopper une déchirure.  
+   *Nettoyage profond* — Lavage à l’eau, dégraissage natural, traitement anti-acariens.  
+   *Tapisserie d’ameublement* — Rembourrage et retapissage de fauteuils, rideaux, têtes de lit.  
+   Chaque carte est cliquable et renvoie à une page service dédiée.
+4. **« Avant / Après — la matière révélée »** — Galerie à double curseur (slider comparatif) avec 4 à 6 binômes de photos réelles, légendées du type de lésion et du nombre d’heures de travail.
+5. **« Ce qu’ils en disent »** — Intégration visuelle des 11 avis Google (5/5) avec photo de profil, nom, étoiles, et verbatim marquant. Phrase d’introduction : *« La note 5.0 ne nous monte pas à la tête. Vos mots, si. »*
+6. **« L’atelier en mouvement »** — Reportage photo en noir et blanc légèrement chaud de l’artisan au travail (fil, ciseaux, métier à tisser) avec citations techniques en alternance.
+7. **« Paris et l’Orient à votre porte »** — Carte du secteur d’intervention (Paris 75, Oise 95, Val-d’Oise 60, Versailles 78) et adresse complète. Phrase : *« Déplacement gratuit pour tout diagnostic à domicile dans un rayon de 30 km autour du 16e. »*
+8. **« Votre tapis mérite mieux qu’un devis standard »** — Formulaire enrichi avec : nom, téléphone, email, type de tapis (menu déroulant), service souhaité (cases à cocher), champ libre pour description, et surtout **upload de photos** (jusqu’à 3). Bouton : *Envoyer ma demande — réponse sous 24 h*.
+9. **Pied de page** — Nom Restaurtapis, adresse, téléphone, email, liens rapides, horaires visibles (Fermé ⋅ Ouvre à 10:00 comme sur Maps), et un petit motif de tapis en filigrane discret.
 
----
-
-## 3. PALETTE
-
-| Rôle | Nom | HEX |
-|------|-----|-----|
-| Fond de page | Laine brute | `#F7F2EC` |
-| Fond alterné / cartes | Craie d’atelier | `#FEFCF9` |
-| Encre (texte) | Brou de noix | `#2B1E16` |
-| Accent chaud | Rouge d’Anatolie | `#8C2A14` |
-| Accent froid | Indigo de Kashan | `#1A3A4A` |
-| Filets, séparateurs discrets | Bois de loupe | `#5A4A3A` |
-
-> La palette s’abstient de tout gris neutre, de tout terracotta générique, de tout blanc numérique. Chaque teinte est extraite d’un tapis, d’un outil ou d’un mur de l’atelier réel.
-
----
-
-## 4. TON ÉDITORIAL
-
-Voix du petit-fils qui a grandi sous les tapis suspendus.  
-**Registre :** français soigné, sans jargon inutile. On vouvoie. On explique le geste, le nœud, la teinture, la laine, comme on le ferait à un client qui entre dans l’atelier — avec la passion de l’expert et la patience du pédagogue.  
-**Bannir :** superlatifs vides, bourrage de mots-clés, formules de prospectus.  
-**Travailler :** la précision des verbes (carder, nouer, fixer le velours, raviver un motif), la sincérité d’un carnet de bord familial.
-
----
-
-## 5. ACCROCHE HÉRO
-
-**Titre :**  
-La main qui répare, le fil qui raconte.
-
-**Sous-titre :**  
-Depuis trois générations, rue de la Pompe, nous redonnons à vos tapis d’Orient leur mémoire et leur éclat. Devis gratuit, déplacement sur Paris et Île-de-France.
-
----
-
-## 6. SECTIONS (ordre du site)
-
-### ① Le geste – À propos  
-*Titre :* Trois générations, deux mains, un atelier.  
-*Contenu :* Le grand-père Georges Marias a posé son premier métier rue de la Pompe. Aujourd’hui, dans le même atelier aux murs tapissés de motifs persans et de laines teintes à l’ancienne, chaque nœud arraché est renoué à la main, chaque frange refixée fil à fil. Nous ne sous-traitons rien.
-
-### ② Avant / Après – La preuve par la matière  
-*Titre :* Ce que le temps défait, nous le refaisons.  
-*Contenu :* Une galerie de duos photographiques légendés (tapis déchiré vs tapis restauré, velours élimé vs velours reravivé), prises sur l’établi réel. Le visiteur glisse un curseur pour comparer. Aucune retouche excessive : la vérité de l’artisan, pas celle du photo-montage.
-
-### ③ Ce que nous faisons – L’offre sans mots-clés  
-*Titre :* Ce que nous savons faire, simplement.  
-*Contenu :* Quatre courtes fiches, sans icônes superflues :  
-**Restauration de tapis d’Orient** — Remaillage, renouage, réfection de franges et bordures.  
-**Réparation & consolidation** — Déchirures, trous de mites, ourlets défaits, coutures à vif.  
-**Nettoyage en profondeur** — Dépoussiérage manuel, lavage par immersion, séchage contrôlé.  
-**Tapisserie & sièges** — Rembourrage traditionnel de fauteuils, assises cannelées, garnissage crin.
-
-### ④ Demandez l’expertise – Formulaire de devis complet  
-*Titre :* Décrivez votre tapis, nous vous répondons sous 48 heures.  
-*Contenu :* Un formulaire à 6 champs — nom, téléphone, email, type de tapis, description libre (dimensions, état), et surtout : **possibilité de joindre une photo**. Le bouton unique dit « Envoyer ma demande de devis », pas « Nous contacter » en boucle. Promesse claire de délai.
-
-### ⑤ L’adresse — Venir, appeler, écrire  
-*Titre :* Poussez la porte au 76, rue de la Pompe.  
-*Contenu :* Adresse cliquable vers Google Maps, horaires réels (à renseigner), numéro de téléphone en lien `tel:` cliquable sur tout le site. Une photo chaleureuse de la devanture avec l’enseigne en fer forgé.
-
----
-
-## 7. SIGNATURE VISUELLE
-
-**Le tampon-étiquette** — Bricolage Grotesque est utilisée en lettres capitales étroites, simulée en encre tamponnée, pour « certifier » chaque section d’un mot technique (RENOUAGE, BAIN DE TEINTURE, LAINE MÉRINOS) comme on apposerait un cachet d’expertise en marge d’un carnet.
-
-**Le motif-filigrane** — Un motif géométrique tiré d’un vrai tapis de l’atelier (octogone persan ou médaillon floral) apparaît en filigrane très atténué dans les fonds de section, comme une marque de fabrique discrète, visible seulement en y prêtant attention. Il ne décore pas, il signe.
-
-**L’animation du geste** — Au survol des vignettes Avant/Après, le curseur se transforme en silhouette de main stylisée (rappel discret du geste artisanal). Au scroll, les sections apparaissent avec un dévoilement progressif et lent, comme on déroule un tapis.
-
----
-
-*Ce brief créatif répond directement à chaque faiblesse de l’audit : hiérarchie clarifiée, storytelling mis en scène, formulaire réparé, horaires à intégrer, couleurs ancrées dans le réel du commerce, photos avant/après valorisées, tonalité experte et incitative sans remplissage. Prêt pour la maquette.*
+## 7. Signature visuelle
+- **Motif dynamique au scroll** : une frise abstraite, inspirée d’un motif de tapis (géométrie à étoiles), se déroule horizontalement entre les sections comme un fil continu. Elle change subtilement de couleur selon le fond rencontré.
+- **Typographie surdimensionnée en bord perdu** : certains titres de section (display) débordent hors du viewport en version desktop, créant un effet d’affiche artisitique, et ne se révèlent entièrement qu’au scroll lent — un rappel du geste long de la restauration.
