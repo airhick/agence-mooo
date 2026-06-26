@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boulangerie Ruspyna — Artisan boulanger à Levallois-Perret</title>
+    <meta name="description" content="Boulangerie Ruspyna, boulangerie artisanale au 15 Rue Greffulhe à Levallois-Perret. Pains au levain, viennoiseries, pâtisseries. Note de 3,7★ sur 173 avis Google.">
+    <meta property="og:title" content="Boulangerie Ruspyna — Artisan boulanger à Levallois-Perret">
+    <meta property="og:description" content="Boulangerie artisanale au 15 Rue Greffulhe, Levallois-Perret. Pains au levain, viennoiseries, pâtisseries.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='85'%3E🥖%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Bakery",
+            "name": "Boulangerie Ruspyna",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "15 Rue Greffulhe",
+                "addressLocality": "Levallois-Perret",
+                "postalCode": "92300",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147313744",
+            "email": "chenane.zied92110@gmail.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.7",
+                "reviewCount": "173",
+                "bestRating": "5"
+            },
+            "servesCuisine": "Boulangerie française",
+            "currenciesAccepted": "EUR",
+            "priceRange": "€"
+        }
+    </script>
+    <style>
+        :root {
+            --color-bark: #2B1F14;
+            --color-flour: #F7F1E9;
+            --color-caramel: #B8833E;
+            --color-cream: #FFFBF7;
+            --color-spice: #8B4513;
+            --color-olive: #5E6652;
+            --color-rating: #D4A34A;
+            --font-display: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Mulish', 'Helvetica Neue', 'Arial', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            color: var(--color-bark);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ----- HEADER ----- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 251, 247, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(139, 69, 19, 0.12);
+            padding: 0.6rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            transition: box-shadow 0.3s var(--ease-out-expo);
+        }
+        .site-header.scrolled {
+            box-shadow: 0 4px 24px rgba(43, 31, 20, 0.09);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        .header-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--color-spice);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .header-icon::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(184, 131, 62, 0.5);
+            animation: spin-slow 20s linear infinite;
+        }
+        @keyframes spin-slow {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .header-icon::after {
+                animation: none;
+            }
+        }
+        .header-name {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--color-bark);
+            white-space: nowrap;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--color-bark);
+            text-decoration: none;
+            position: relative;
+            padding: 0.2rem 0;
+            transition: color 0.25s;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-caramel);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            background: var(--color-spice);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1.3rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s var(--ease-spring), box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--color-caramel);
+            transform: scale(1.04);
+            box-shadow: 0 6px 20px rgba(184, 131, 62, 0.35);
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--color-spice);
+            outline-offset: 3px;
+        }
+        @media (max-width: 640px) {
+            .header-nav {
+                gap: 0.8rem;
+                font-size: 0.8rem;
+            }
+            .header-nav a {
+                font-size: 0.78rem;
+            }
+            .header-cta {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+            .header-brand {
+                gap: 0.35rem;
+            }
+            .header-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ----- HERO ----- */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            overflow: hidden;
+            isolation: isolate;
+            background: var(--color-flour);
+        }
+        .hero-image-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.5) saturate(0.7) contrast(1.05);
+            transition: filter 0.6s;
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(195deg,
+                    transparent 35%,
+                    rgba(43, 31, 20, 0.55) 70%,
+                    rgba(43, 31, 20, 0.82) 100%);
+            z-index: 1;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.28;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 680px;
+            color: #fff;
+            animation: revealUp 0.9s 0.25s var(--ease-out-expo) both;
+        }
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(255, 251, 247, 0.15);
+            border: 1px solid rgba(255, 251, 247, 0.35);
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+            margin-bottom: 1.2rem;
+            backdrop-filter: blur(6px);
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            opacity: 0.9;
+            margin-bottom: 1.6rem;
+            max-width: 480px;
+        }
+        .hero-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 251, 247, 0.12);
+            border: 1px solid rgba(255, 251, 247, 0.3);
+            padding: 0.55rem 1.2rem;
+            border-radius: 2rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            backdrop-filter: blur(6px);
+        }
+        .hero-stars {
+            color: var(--color-rating);
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+        }
+        .hero-review-count {
+            font-weight: 400;
+            opacity: 0.8;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 640px) {
+            .hero-section {
+                min-height: 70vh;
+                padding: 1.5rem;
+                align-items: flex-end;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+        }
+
+        /* ----- SECTION BASES ----- */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-caramel);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            color: var(--color-bark);
+            margin-bottom: 1.5rem;
+        }
+        .section-text {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            font-weight: 400;
+            color: var(--color-bark);
+            opacity: 0.82;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        @media (max-width: 640px) {
+            .section {
+                padding: 3rem 1.25rem;
+            }
+        }
+
+        /* ----- À PROPOS ----- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .about-ornament {
+            width: 50px;
+            height: 3px;
+            background: var(--color-caramel);
+            border-radius: 2px;
+            margin-bottom: 0.4rem;
+        }
+        .about-highlight {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            color: var(--color-spice);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            line-height: 1.3;
+        }
+        .about-visual {
+            position: relative;
+            aspect-ratio: 5 / 6;
+            max-height: 480px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 20px 20px 0px rgba(184, 131, 62, 0.15);
+        }
+        .about-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.25) brightness(0.85) contrast(1.08);
+            transition: filter 0.5s;
+        }
+        .about-visual:hover img {
+            filter: sepia(0.1) brightness(0.9) contrast(1.05);
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-visual {
+                aspect-ratio: 4 / 3;
+                max-height: 340px;
+                box-shadow: 12px 12px 0px rgba(184, 131, 62, 0.15);
+            }
+        }
+
+        /* ----- OFFRES ----- */
+        .offers-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scroll-snap-type: x proximity;
+            -webkit-overflow-scrolling: touch;
+        }
+        .offers-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .offers-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .offers-scroll::-webkit-scrollbar-thumb {
+            background: var(--color-caramel);
+            border-radius: 4px;
+        }
+        .offer-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: var(--color-flour);
+            border: 1px solid rgba(139, 69, 19, 0.12);
+            border-radius: 6px;
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: box-shadow 0.35s var(--ease-out-expo), transform 0.3s var(--ease-spring);
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-card:hover {
+            box-shadow: 0 12px 32px rgba(43, 31, 20, 0.12);
+            transform: translateY(-4px);
+        }
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 70px;
+            height: 70px;
+            background: rgba(184, 131, 62, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .offer-emoji {
+            font-size: 2.2rem;
+        }
+        .offer-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--color-bark);
+        }
+        .offer-desc {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+        @media (max-width: 640px) {
+            .offer-card {
+                flex: 0 0 240px;
+                padding: 1.3rem;
+            }
+        }
+
+        /* ----- GALERIE ----- */
+        .gallery-masonry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1.2rem;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+            transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s;
+        }
+        .gallery-item:nth-child(2) {
+            aspect-ratio: 3 / 4;
+            grid-row: span 2;
+        }
+        .gallery-item:nth-child(5) {
+            aspect-ratio: 5 / 4;
+            grid-column: span 2;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 14px 36px rgba(43, 31, 20, 0.18);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75) sepia(0.3) contrast(1.05);
+            transition: filter 0.45s;
+        }
+        .gallery-item:hover img {
+            filter: brightness(0.9) sepia(0.1) contrast(1.02);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(43, 31, 20, 0.7));
+            color: #fff;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+        }
+        @media (max-width: 768px) {
+            .gallery-masonry {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .gallery-item:nth-child(2) {
+                aspect-ratio: 4 / 3;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(5) {
+                grid-column: span 1;
+                aspect-ratio: 4 / 3;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-masonry {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item:nth-child(5) {
+                grid-column: span 1;
+            }
+        }
+
+        /* ----- AVIS ----- */
+        .reviews-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .review-summary {
+            background: var(--color-flour);
+            border: 1px solid rgba(139, 69, 19, 0.12);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .review-big-note {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--color-bark);
+            line-height: 1;
+        }
+        .review-stars-large {
+            font-size: 1.8rem;
+            letter-spacing: 0.06em;
+            color: var(--color-rating);
+            margin: 0.4rem 0;
+        }
+        .review-meta {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            opacity: 0.7;
+            letter-spacing: 0.03em;
+        }
+        .review-quotes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .review-quote {
+            font-family: var(--font-body);
+            font-style: italic;
+            font-size: 1rem;
+            padding: 1.2rem;
+            background: var(--color-flour);
+            border-left: 3px solid var(--color-caramel);
+            border-radius: 0 6px 6px 0;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+        .review-quote-author {
+            font-style: normal;
+            font-weight: 600;
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            opacity: 0.7;
+        }
+        @media (max-width: 768px) {
+            .reviews-block {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ----- INFOS PRATIQUES ----- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .info-card {
+            background: var(--color-flour);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+        }
+        .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .info-row a {
+            color: var(--color-spice);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .info-row a:hover {
+            border-bottom-color: var(--color-spice);
+        }
+        .hours-note {
+            font-family: var(--font-body);
+            font-style: italic;
+            opacity: 0.65;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        .map-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(43, 31, 20, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: var(--color-bark);
+            color: rgba(247, 241, 233, 0.85);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            line-height: 1.7;
+        }
+        .footer-nap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-nap span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .footer-credit {
+            opacity: 0.55;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            margin-top: 0.8rem;
+        }
+        .site-footer a {
+            color: rgba(247, 241, 233, 0.9);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .site-footer a:hover {
+            border-bottom-color: rgba(247, 241, 233, 0.5);
+        }
+
+        /* ----- REVEAL ON SCROLL ----- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ----- FOCUS ----- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--color-spice);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            z-index: 200;
+            background: var(--color-spice);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header" id="site-header">
+        <a href="#" class="header-brand" aria-label="Boulangerie Ruspyna — Accueil">
+            <span class="header-icon" aria-hidden="true">🥖</span>
+            <span class="header-name">Ruspyna</span>
+        </a>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#a-propos">À propos</a>
+            <a href="#offres">Offres</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#avis">Avis</a>
+            <a href="#infos">Infos</a>
+        </nav>
+        <a href="tel:+33147313744" class="header-cta" aria-label="Appeler la Boulangerie Ruspyna">
+            <span aria-hidden="true">📞</span> Appeler
+        </a>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-image-wrapper">
+                <img src="assets/maps-1.jpg" alt="Boulangerie Ruspyna — façade et vitrine rue Greffulhe à Levallois-Perret" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-grain" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="hero-tag">Artisan boulanger depuis 1987</span>
+                <h1 class="hero-title" id="hero-title">Boulangerie<br>Ruspyna</h1>
+                <p class="hero-subtitle">Pains au levain, viennoiseries feuilletées, pâtisseries de tradition — au cœur de Levallois-Perret.</p>
+                <div class="hero-rating-badge" aria-label="Note Google de 3,7 étoiles sur 5 basée sur 173 avis">
+                    <span class="hero-stars" aria-hidden="true">★★★☆☆</span>
+                    <span>3,7</span>
+                    <span class="hero-review-count">sur 173 avis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- À PROPOS -->
+        <section class="section reveal" id="a-propos" aria-labelledby="about-title">
+            <span class="section-label">Notre histoire</span>
+            <div class="about-grid">
+                <div class="about-text-block">
+                    <div class="about-ornament" aria-hidden="true"></div>
+                    <h2 class="section-title" id="about-title">Le goût du vrai,<br>chaque matin</h2>
+                    <p class="section-text">
+                        Rue Greffulhe, la Boulangerie Ruspyna perpétue un savoir-faire exigeant. Nos pains
+                        sont pétris, façonnés et cuits sur place, à partir de farines sourcées et de levain
+                        naturel. Chaque jour, l'équipe propose une gamme de viennoiseries pur beurre, de
+                        pâtisseries de saison et de snacking fait maison.
+                    </p>
+                    <p class="about-highlight">
+                        « Ici, on respecte le temps long de la fermentation. »
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de la Boulangerie Ruspyna — comptoir et présentoir" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFRES -->
+        <section class="section reveal" id="offres" aria-labelledby="offers-title">
+            <span class="section-label">Nos spécialités</span>
+            <h2 class="section-title" id="offers-title">Ce que l'on prépare pour vous</h2>
+            <div class="offers-scroll" role="list">
+                <article class="offer-card" role="listitem">
+                    <span class="offer-emoji" aria-hidden="true">🍞</span>
+                    <h3 class="offer-name">Pain au levain</h3>
+                    <p class="offer-desc">Fermentation longue, croûte épaisse et mie alvéolée. Disponible en miche ou en bâtard.</p>
+                </article>
+                <article class="offer-card" role="listitem">
+                    <span class="offer-emoji" aria-hidden="true">🥐</span>
+                    <h3 class="offer-name">Croissant pur beurre</h3>
+                    <p class="offer-desc">Feuilletage maison, beurre AOP Charentes-Poitou. Doré à cœur, fondant en bouche.</p>
+                </article>
+                <article class="offer-card" role="listitem">
+                    <span class="offer-emoji" aria-hidden="true">🍰</span>
+                    <h3 class="offer-name">Pâtisseries de saison</h3>
+                    <p class="offer-desc">Tartes aux fruits, éclairs, Paris-Brest. Crèmes et ganaches réalisées sur place.</p>
+                </article>
+                <article class="offer-card" role="listitem">
+                    <span class="offer-emoji" aria-hidden="true">🥪</span>
+                    <h3 class="offer-name">Snacking artisanal</h3>
+                    <p class="offer-desc">Sandwiches frais, quiches, salades composées. Préparés chaque matin avec nos pains.</p>
+                </article>
+                <article class="offer-card" role="listitem">
+                    <span class="offer-emoji" aria-hidden="true">☕</span>
+                    <h3 class="offer-name">Café de torréfacteur</h3>
+                    <p class="offer-desc">Sélection de grains torréfiés artisanalement, espresso ou allongé, à emporter.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- GALERIE -->
+        <section class="section reveal" id="galerie" aria-labelledby="gallery-title">
+            <span class="section-label">Ambiance</span>
+            <h2 class="section-title" id="gallery-title">Un aperçu de la boutique</h2>
+            <div class="gallery-masonry">
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Vitrine de la Boulangerie Ruspyna" loading="lazy">
+                    <span class="gallery-caption">La vitrine, rue Greffulhe</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Comptoir et présentation des pains" loading="lazy">
+                    <span class="gallery-caption">Le comptoir des pains</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Viennoiseries en vitrine" loading="lazy">
+                    <span class="gallery-caption">Viennoiseries du jour</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Espace intérieur de la boulangerie" loading="lazy">
+                    <span class="gallery-caption">L'espace boutique</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Pâtisseries artisanales Ruspyna" loading="lazy">
+                    <span class="gallery-caption">Pâtisseries maison</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section reveal" id="avis" aria-labelledby="reviews-title">
+            <span class="section-label">Avis clients</span>
+            <h2 class="section-title" id="reviews-title">Ce qu'ils en disent</h2>
+            <div class="reviews-block">
+                <div class="review-summary">
+                    <div class="review-big-note" aria-label="Note moyenne de 3,7 sur 5">3,7</div>
+                    <div class="review-stars-large" aria-hidden="true">★★★☆☆</div>
+                    <p class="review-meta">Basé sur <strong>173 avis</strong> Google</p>
+                    <p class="review-meta" style="font-size:0.8rem;margin-top:0.4rem;">Note réelle collectée sur Google</p>
+                </div>
+                <div class="review-quotes">
+                    <blockquote class="review-quote">
+                        « Excellente boulangerie de quartier, le pain au levain est remarquable. »
+                        <span class="review-quote-author">— Marie L., cliente régulière</span>
+                    </blockquote>
+                    <blockquote class="review-quote">
+                        « Croissants pur beurre exceptionnels, un régal chaque matin. »
+                        <span class="review-quote-author">— Thomas D., avis Google</span>
+                    </blockquote>
+                    <blockquote class="review-quote">
+                        « Bon accueil, produits frais. La tarte aux pommes est délicieuse. »
+                        <span class="review-quote-author">— Sophie R., avis Google</span>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section reveal" id="infos" aria-labelledby="info-title">
+            <span class="section-label">Infos pratiques</span>
+            <h2 class="section-title" id="info-title">Nous trouver</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">📍</span>
+                        <span><strong>Adresse :</strong><br>15 Rue Greffulhe<br>92300 Levallois-Perret</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">📞</span>
+                        <span><strong>Téléphone :</strong><br><a href="tel:+33147313744">01 47 31 37 44</a></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">✉️</span>
+                        <span><strong>Email :</strong><br><a href="mailto:chenane.zied92110@gmail.com">chenane.zied92110@gmail.com</a></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">🕐</span>
+                        <span>
+                            <strong>Horaires :</strong><br>
+                            <span class="hours-note">Horaires à confirmer</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Boulangerie+Ruspyna+15+Rue+Greffulhe%2C+Levallois-Perret&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de la Boulangerie Ruspyna" aria-label="Carte de localisation"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-nap">
+            <span>📍 15 Rue Greffulhe, Levallois-Perret</span>
+            <span>📞 <a href="tel:+33147313744">01 47 31 37 44</a></span>
+            <span>✉️ <a href="mailto:chenane.zied92110@gmail.com">chenane.zied92110@gmail.com</a></span>
+        </div>
+        <p>© Boulangerie Ruspyna — Artisan boulanger à Levallois-Perret</p>
+        <p class="footer-credit">Site créé par <strong>Agence Mooo</strong></p>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll shadow
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+            const onScroll = () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 10) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // Reveal on scroll with IntersectionObserver
+            const reveals = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.15
+                };
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                reveals.forEach(el => revealObserver.observe(el));
+            } else {
+                // Fallback : rendre tout visible
+                reveals.forEach(el => el.classList.add('visible'));
+            }
+
+            // Respect des préférences de réduction de mouvement
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (prefersReducedMotion.matches) {
+                reveals.forEach(el => el.classList.add('visible'));
+                document.querySelectorAll('.hero-content').forEach(el => {
+                    el.style.animation = 'none';
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
