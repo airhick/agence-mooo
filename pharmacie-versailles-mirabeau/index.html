@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie Versailles Mirabeau — Pharmacie de garde, orthopédie, Paris 16ᵉ</title>
+    <meta name="description" content="Pharmacie Versailles Mirabeau — Votre pharmacie de quartier au 38 avenue de Versailles, Paris 16ᵉ. Orthopédie, aromathérapie, conseils personnalisés, garde. Une vraie équipe à votre écoute.">
+    <meta property="og:title" content="Pharmacie Versailles Mirabeau — Santé & proximité, Paris 16ᵉ">
+    <meta property="og:description" content="Pharmacie de garde, orthopédie, conseils personnalisés. Une vraie équipe à votre écoute, 38 avenue de Versailles, Paris 16ᵉ.">
+    <meta property="og:image" content="https://agence.mooo.com/pharmacie-versailles-mirabeau/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/pharmacie-versailles-mirabeau">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='42' y='12' width='16' height='76' rx='2' fill='%2300FF00'/><rect x='12' y='42' width='76' height='16' rx='2' fill='%2300FF00'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-vitrine: #FFFFFF;
+            --beige-vitrine: #F5F5DC;
+            --vert-neon: #00FF00;
+            --anthracite: #1E1E1E;
+            --vert-sombre: #0A5C36;
+            --metal-verre: #D4D4D4;
+            --glass-bg: rgba(255, 255, 255, 0.18);
+            --glass-border: rgba(212, 212, 212, 0.45);
+            --glass-blur: 18px;
+            --shadow-neon: 0 0 8px #00FF00, 0 0 22px #00FF00, 0 0 48px rgba(0, 255, 0, 0.55), 0 0 80px rgba(0, 255, 0, 0.3);
+            --radius-card: 2px;
+            --transition-link: 180ms ease-out;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--anthracite);
+            background: var(--blanc-vitrine);
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+
+        /* === ACCESSIBILITY === */
+        :focus-visible {
+            outline: 2px solid var(--vert-neon);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* === REDUCED MOTION === */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--metal-verre);
+            padding: 0 clamp(1rem, 3vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .header-brand {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.35vw, 1.15rem);
+            letter-spacing: -0.02em;
+            color: var(--anthracite);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+        .header-brand span {
+            color: var(--vert-sombre);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.6vw, 1.6rem);
+            flex-wrap: wrap;
+            font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: -0.005em;
+        }
+        .header-nav a {
+            color: var(--anthracite);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition-link), color var(--transition-link);
+            padding-bottom: 2px;
+            white-space: nowrap;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--vert-sombre);
+            border-bottom-color: var(--vert-sombre);
+        }
+        .header-cta {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 0.9vw, 0.88rem);
+            color: var(--blanc-vitrine);
+            background: var(--vert-sombre);
+            text-decoration: none;
+            padding: 0.5em 1.3em;
+            border-radius: 3px;
+            letter-spacing: 0.01em;
+            transition: background var(--transition-link), box-shadow var(--transition-link);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #0d6e44;
+            box-shadow: 0 0 0 3px rgba(10, 92, 54, 0.2);
+        }
+        .header-badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: clamp(0.72rem, 0.82vw, 0.8rem);
+            font-weight: 500;
+            color: var(--anthracite);
+            background: #fff;
+            border: 1px solid var(--metal-verre);
+            border-radius: 20px;
+            padding: 0.25em 0.7em;
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            flex-shrink: 0;
+        }
+        .header-badge-google .stars {
+            color: #f5b342;
+            font-size: 0.85em;
+            letter-spacing: -1px;
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.5rem 1rem;
+                min-height: 56px;
+                gap: 0.4rem;
+            }
+            .header-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 0.6rem 0.9rem;
+                font-size: 0.75rem;
+                padding-bottom: 0.35rem;
+                border-top: 1px solid var(--metal-verre);
+                padding-top: 0.4rem;
+                margin-top: -2px;
+            }
+            .header-badge-google {
+                font-size: 0.7rem;
+                padding: 0.2em 0.55em;
+            }
+            .header-cta {
+                font-size: 0.75rem;
+                padding: 0.4em 1em;
+            }
+        }
+        @media (max-width: 420px) {
+            .header-brand {
+                font-size: 0.78rem;
+            }
+            .header-nav {
+                gap: 0.35rem 0.55rem;
+                font-size: 0.7rem;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.35em 0.8em;
+            }
+            .header-badge-google {
+                font-size: 0.65rem;
+                padding: 0.15em 0.45em;
+            }
+        }
+
+        /* === HERO === */
+        .hero {
+            position: relative;
+            min-height: clamp(420px, 72vh, 680px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #1a1a1a;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2) brightness(0.55);
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.35) 100%);
+            z-index: 1;
+        }
+        .hero-glass {
+            position: relative;
+            z-index: 2;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
+            max-width: 720px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+        }
+        .hero-title {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4.5vw, 3.8rem);
+            letter-spacing: -0.03em;
+            color: var(--vert-neon);
+            text-shadow: var(--shadow-neon);
+            line-height: 1.15;
+            position: relative;
+            display: inline-block;
+            animation: neonFlickerIn 3.5s ease-out forwards;
+        }
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            top: -5%;
+            left: -120%;
+            width: 60%;
+            height: 110%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.08) 20%,
+                    rgba(255, 255, 255, 0.55) 45%,
+                    rgba(255, 255, 255, 0.7) 50%,
+                    rgba(255, 255, 255, 0.55) 55%,
+                    rgba(255, 255, 255, 0.08) 80%,
+                    transparent 100%);
+            pointer-events: none;
+            z-index: 5;
+            animation: neonSweep 2s 0.25s ease-out forwards;
+        }
+        .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+            color: #e8e8e8;
+            margin-top: 1.2em;
+            letter-spacing: 0.005em;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 0.9s 1.6s ease-out forwards;
+        }
+        .hero-cta-row {
+            margin-top: 1.6em;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 0.9s 2s ease-out forwards;
+        }
+        .hero-cta-row .btn-primary {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            padding: 0.7em 1.8em;
+            background: var(--vert-neon);
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 3px;
+            letter-spacing: 0.01em;
+            transition: background var(--transition-link), box-shadow var(--transition-link);
+            border: none;
+            cursor: pointer;
+        }
+        .hero-cta-row .btn-primary:hover,
+        .hero-cta-row .btn-primary:focus-visible {
+            background: #33ff33;
+            box-shadow: 0 0 18px rgba(0, 255, 0, 0.5);
+        }
+        .hero-cta-row .btn-secondary {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            padding: 0.7em 1.6em;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 3px;
+            letter-spacing: 0.01em;
+            transition: background var(--transition-link), border-color var(--transition-link);
+        }
+        .hero-cta-row .btn-secondary:hover,
+        .hero-cta-row .btn-secondary:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        @keyframes neonSweep {
+            0% {
+                left: -120%;
+                opacity: 0;
+            }
+            8% {
+                opacity: 1;
+            }
+            45% {
+                left: 110%;
+                opacity: 1;
+            }
+            55% {
+                left: 110%;
+                opacity: 0;
+            }
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        @keyframes neonFlickerIn {
+            0% {
+                opacity: 0;
+                text-shadow: 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent;
+            }
+            15% {
+                opacity: 0.4;
+                text-shadow: 0 0 6px #00FF00, 0 0 14px #00FF00, 0 0 30px rgba(0, 255, 0, 0.4), 0 0 50px rgba(0, 255, 0, 0.15);
+            }
+            25% {
+                opacity: 0.85;
+                text-shadow: var(--shadow-neon);
+            }
+            28% {
+                opacity: 0.55;
+                text-shadow: 0 0 4px #00FF00, 0 0 10px #00FF00, 0 0 22px rgba(0, 255, 0, 0.35);
+            }
+            30% {
+                opacity: 0.9;
+                text-shadow: var(--shadow-neon);
+            }
+            34% {
+                opacity: 0.6;
+                text-shadow: 0 0 5px #00FF00, 0 0 14px #00FF00, 0 0 28px rgba(0, 255, 0, 0.4);
+            }
+            36% {
+                opacity: 0.95;
+                text-shadow: var(--shadow-neon);
+            }
+            50% {
+                opacity: 0.75;
+                text-shadow: 0 0 7px #00FF00, 0 0 18px #00FF00, 0 0 35px rgba(0, 255, 0, 0.45);
+            }
+            55% {
+                opacity: 1;
+                text-shadow: var(--shadow-neon);
+            }
+            65% {
+                opacity: 0.8;
+                text-shadow: 0 0 6px #00FF00, 0 0 16px #00FF00, 0 0 30px rgba(0, 255, 0, 0.4);
+            }
+            70% {
+                opacity: 1;
+                text-shadow: var(--shadow-neon);
+            }
+            100% {
+                opacity: 1;
+                text-shadow: var(--shadow-neon);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === SECTIONS GÉNÉRIQUES === */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem);
+            position: relative;
+        }
+        .section--white {
+            background: var(--blanc-vitrine);
+        }
+        .section--beige {
+            background: var(--beige-vitrine);
+        }
+        .section__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section__label {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--vert-sombre);
+            margin-bottom: 0.6em;
+        }
+        .section__title {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            color: var(--anthracite);
+            margin-bottom: 0.5em;
+        }
+        .section__text {
+            font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+            color: #3a3a3a;
+            max-width: 680px;
+            line-height: 1.75;
+        }
+
+        /* === REVEAL === */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-item--delay1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-item--delay2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-item--delay3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-item--delay4 {
+            transition-delay: 0.4s;
+        }
+
+        /* === SERVICES === */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: clamp(1rem, 2vw, 1.6rem);
+            margin-top: 2.5rem;
+        }
+        .service-card {
+            background: #fdfdfd;
+            border: 1px solid var(--metal-verre);
+            border-radius: var(--radius-card);
+            padding: clamp(1.3rem, 2.5vw, 1.8rem);
+            position: relative;
+            transition: border-color var(--transition-link), box-shadow var(--transition-link);
+        }
+        .service-card:hover {
+            border-color: #b0b0b0;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+        }
+        .service-card__icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+        .service-card__title {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.05vw, 1rem);
+            letter-spacing: -0.015em;
+            color: var(--anthracite);
+            margin-bottom: 0.3em;
+        }
+        .service-card__desc {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.55;
+        }
+        .service-card__filet {
+            position: absolute;
+            top: 0;
+            left: 1.3rem;
+            right: 1.3rem;
+            height: 2px;
+            background: var(--metal-verre);
+            opacity: 0.6;
+        }
+
+        /* === ÉQUIPE === */
+        .equipe-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .equipe-image-wrapper {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border: 1px solid var(--metal-verre);
+        }
+        .equipe-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.15) brightness(0.85);
+            display: block;
+        }
+        .equipe-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .equipe-text h3 {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6em;
+            color: var(--anthracite);
+        }
+        .equipe-text p {
+            font-size: clamp(0.88rem, 1vw, 1rem);
+            color: #3a3a3a;
+            line-height: 1.7;
+        }
+        @media (max-width: 700px) {
+            .equipe-block {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .equipe-image-wrapper {
+                aspect-ratio: 16/9;
+                max-height: 300px;
+            }
+        }
+
+        /* === HORAIRES === */
+        .horaires-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-top: 2rem;
+            align-items: start;
+        }
+        .horaires-table {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6em;
+        }
+        .horaires-table li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.55em 0;
+            border-bottom: 1px solid var(--metal-verre);
+            font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+        }
+        .horaires-table .jour {
+            font-weight: 500;
+            color: var(--anthracite);
+            letter-spacing: -0.005em;
+        }
+        .horaires-table .heures {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+            letter-spacing: -0.03em;
+            color: var(--anthracite);
+            text-align: right;
+            white-space: nowrap;
+        }
+        .garde-card {
+            background: var(--vert-sombre);
+            color: #fff;
+            border-radius: 3px;
+            padding: clamp(1.5rem, 3vw, 2.2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.6em;
+        }
+        .garde-card__label {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.8;
+        }
+        .garde-card__date {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            color: var(--vert-neon);
+            text-shadow: 0 0 12px rgba(0, 255, 0, 0.5);
+        }
+        .garde-card__phone {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .garde-card__phone a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            transition: border-color var(--transition-link);
+        }
+        .garde-card__phone a:hover {
+            border-bottom-color: #fff;
+        }
+        @media (max-width: 600px) {
+            .horaires-block {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* === RENDEZ-VOUS === */
+        .rdv-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+            background: #fff;
+            border: 1px solid var(--metal-verre);
+            border-radius: 3px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .rdv-info {
+            flex: 1;
+            min-width: 240px;
+        }
+        .rdv-info h3 {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.3rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5em;
+            color: var(--anthracite);
+        }
+        .rdv-info p {
+            color: #3a3a3a;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .rdv-btn {
+            flex-shrink: 0;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            padding: 0.8em 2em;
+            background: var(--vert-sombre);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            letter-spacing: 0.01em;
+            transition: background var(--transition-link), box-shadow var(--transition-link);
+            text-align: center;
+        }
+        .rdv-btn:hover,
+        .rdv-btn:focus-visible {
+            background: #0d6e44;
+            box-shadow: 0 0 0 3px rgba(10, 92, 54, 0.2);
+        }
+
+        /* === ACTUALITÉS === */
+        .actus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 2.5rem;
+        }
+        .actus-card {
+            background: #fff;
+            border: 1px solid var(--metal-verre);
+            border-radius: var(--radius-card);
+            padding: clamp(1.2rem, 2vw, 1.6rem);
+            transition: border-color var(--transition-link);
+            cursor: default;
+        }
+        .actus-card:hover {
+            border-color: #aaa;
+        }
+        .actus-card__tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--vert-sombre);
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+        .actus-card__title {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.88rem, 1vw, 0.95rem);
+            letter-spacing: -0.015em;
+            color: var(--anthracite);
+            margin-bottom: 0.3em;
+            line-height: 1.3;
+        }
+        .actus-card__excerpt {
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* === CONTACT === */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-top: 2rem;
+            align-items: start;
+        }
+        .contact-infos {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2em;
+        }
+        .contact-infos .adresse-grand {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            letter-spacing: -0.02em;
+            color: var(--anthracite);
+            line-height: 1.3;
+        }
+        .contact-infos a {
+            color: var(--anthracite);
+            text-decoration: none;
+            border-bottom: 1px solid var(--metal-verre);
+            transition: border-color var(--transition-link);
+            font-weight: 500;
+        }
+        .contact-infos a:hover {
+            border-bottom-color: var(--vert-sombre);
+        }
+        .contact-map {
+            border: 1px solid var(--metal-verre);
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            min-height: 300px;
+            background: #eaeaea;
+        }
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 650px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .contact-map {
+                aspect-ratio: 16/9;
+                min-height: 240px;
+            }
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--anthracite);
+            color: #c8c8c8;
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 3vw, 3rem);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .footer-neon {
+            font-family: 'Unbounded', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+            letter-spacing: -0.015em;
+            color: var(--vert-neon);
+            text-shadow: 0 0 6px rgba(0, 255, 0, 0.45), 0 0 14px rgba(0, 255, 0, 0.2);
+            animation: footerPulse 4s ease-in-out infinite;
+            display: inline-block;
+            margin-bottom: 0.6em;
+        }
+        @keyframes footerPulse {
+            0%,
+            100% {
+                opacity: 0.7;
+                text-shadow: 0 0 4px rgba(0, 255, 0, 0.35), 0 0 10px rgba(0, 255, 0, 0.15);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 8px rgba(0, 255, 0, 0.55), 0 0 20px rgba(0, 255, 0, 0.28);
+            }
+        }
+        .footer-infos {
+            margin: 0.8em 0;
+            color: #aaa;
+        }
+        .footer-infos a {
+            color: #ddd;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: border-color var(--transition-link);
+        }
+        .footer-infos a:hover {
+            border-bottom-color: #fff;
+        }
+        .footer-credit {
+            margin-top: 1.2em;
+            font-size: 0.75rem;
+            color: #777;
+            letter-spacing: 0.02em;
+        }
+
+        /* === UTILITIES === */
+        .text-center {
+            text-align: center;
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" role="banner">
+        <a href="#" class="header-brand" aria-label="Pharmacie Versailles Mirabeau — Retour en haut de page">
+            Pharmacie <span>Versailles Mirabeau</span>
+        </a>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#services">Services</a>
+            <a href="#equipe">Équipe</a>
+            <a href="#horaires">Horaires</a>
+            <a href="#rdv">Rendez-vous</a>
+            <a href="#actus">Actualités</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-badge-google" aria-label="Note Google 4.5 étoiles sur 5, 58 avis">
+            <span class="stars">★★★★☆</span> 4.5<span aria-hidden="true">/5</span> · 58 avis
+        </div>
+        <a href="tel:+33145272956" class="header-cta" aria-label="Appeler la pharmacie au 01 45 27 29 56">📞 Appeler</a>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <img src="assets/maps-1.jpg" alt="Devanture de la Pharmacie Versailles Mirabeau, 38 avenue de Versailles à Paris"
+            class="hero-bg" loading="eager" fetchpriority="high">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-glass">
+                <h1 class="hero-title" id="hero-heading">Pharmacie<br>Versailles Mirabeau</h1>
+                <p class="hero-subtitle">
+                    Votre santé, à deux pas du métro Mirabeau.<br>
+                    Pharmacie de garde, orthopédie, conseils personnalisés — une vraie équipe à votre écoute,
+                    38 avenue de Versailles, Paris 16ᵉ.
+                </p>
+                <div class="hero-cta-row">
+                    <a href="#rdv" class="btn-primary">Prendre rendez-vous</a>
+                    <a href="#contact" class="btn-secondary">Venir nous voir</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section section--white" id="services" aria-labelledby="services-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Ce que l'on fait pour vous</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="services-title">Services & spécialités</h2>
+                <p class="section__text reveal-item reveal-item--delay1">Un accompagnement complet, avec ou sans ordonnance, ancré dans l'expertise de votre pharmacie de quartier.</p>
+                <div class="services-grid">
+                    <article class="service-card reveal-item reveal-item--delay1">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">🦴</span>
+                        <h3 class="service-card__title">Orthopédie</h3>
+                        <p class="service-card__desc">Attelles, ceintures, bas de contention et conseils adaptés à votre morphologie.</p>
+                    </article>
+                    <article class="service-card reveal-item reveal-item--delay2">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">🌿</span>
+                        <h3 class="service-card__title">Aromathérapie & phytothérapie</h3>
+                        <p class="service-card__desc">Huiles essentielles, plantes médicinales et préparations personnalisées.</p>
+                    </article>
+                    <article class="service-card reveal-item reveal-item--delay2">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">🏠</span>
+                        <h3 class="service-card__title">Maintien à domicile</h3>
+                        <p class="service-card__desc">Matériel médico-chirurgical, location et vente pour le confort à la maison.</p>
+                    </article>
+                    <article class="service-card reveal-item reveal-item--delay3">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">🍼</span>
+                        <h3 class="service-card__title">Puériculture</h3>
+                        <p class="service-card__desc">Lait infantile, soins bébé, accessoires et conseils pour jeunes parents.</p>
+                    </article>
+                    <article class="service-card reveal-item reveal-item--delay3">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">💉</span>
+                        <h3 class="service-card__title">Vaccination & tests</h3>
+                        <p class="service-card__desc">Tests antigéniques, vaccination sur rendez-vous, dépistages rapides.</p>
+                    </article>
+                    <article class="service-card reveal-item reveal-item--delay4">
+                        <span class="service-card__filet" aria-hidden="true"></span>
+                        <span class="service-card__icon">💊</span>
+                        <h3 class="service-card__title">Conseils personnalisés</h3>
+                        <p class="service-card__desc">Écoute, suivi et expertise pharmaceutique — comme au comptoir, depuis plus de 10 ans.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉQUIPE -->
+        <section class="section section--beige" id="equipe" aria-labelledby="equipe-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Vos pharmaciens, vos voisins</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="equipe-title">L'équipe</h2>
+                <div class="equipe-block">
+                    <div class="equipe-image-wrapper reveal-item reveal-item--delay1">
+                        <img src="assets/maps-1.jpg" alt="Vitrine de la Pharmacie Versailles Mirabeau" loading="lazy">
+                    </div>
+                    <div class="equipe-text reveal-item reveal-item--delay2">
+                        <h3>Des visages, des prénoms, une confiance qui se lit au quotidien.</h3>
+                        <p>
+                            M. Denonain et son équipe de professionnels de santé vous reçoivent avec le même engagement
+                            depuis plus de 10 ans. Chaque membre de l'équipe connaît le quartier, ses habitants, leurs
+                            histoires — parce qu'une pharmacie de proximité, c'est avant tout une relation humaine.
+                            Ici, on prend le temps d'écouter, d'expliquer et de conseiller, sans jargon, sans hâte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAIRES & GARDE -->
+        <section class="section section--white" id="horaires" aria-labelledby="horaires-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Ouvert quand vous avez besoin</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="horaires-title">Horaires & garde</h2>
+                <div class="horaires-block">
+                    <ul class="horaires-table reveal-item reveal-item--delay1">
+                        <li><span class="jour">Lundi</span> <span class="heures">14h – 19h30</span></li>
+                        <li><span class="jour">Mardi</span> <span class="heures">9h – 19h30</span></li>
+                        <li><span class="jour">Mercredi</span> <span class="heures">9h – 19h30</span></li>
+                        <li><span class="jour">Jeudi</span> <span class="heures">9h – 19h30</span></li>
+                        <li><span class="jour">Vendredi</span> <span class="heures">9h – 19h30</span></li>
+                        <li><span class="jour">Samedi</span> <span class="heures">9h – 19h30</span></li>
+                        <li><span class="jour">Dimanche</span> <span class="heures">Fermé*</span></li>
+                    </ul>
+                    <div class="garde-card reveal-item reveal-item--delay2" id="garde-card">
+                        <span class="garde-card__label">Prochaine garde</span>
+                        <span class="garde-card__date" id="garde-date">—</span>
+                        <span class="garde-card__phone">
+                            Urgence : <a href="tel:+33145272956">01 45 27 29 56</a> — toujours actif
+                        </span>
+                        <small style="opacity:0.7;margin-top:0.3em;display:block;">*Hors garde : contactez-nous pour connaître la pharmacie de garde la plus proche.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RENDEZ-VOUS -->
+        <section class="section section--beige" id="rdv" aria-labelledby="rdv-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Un créneau, simplement</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="rdv-title">Prendre rendez-vous</h2>
+                <div class="rdv-block reveal-item reveal-item--delay2">
+                    <div class="rdv-info">
+                        <h3>Tests antigéniques, vaccination, entretien orthopédique…</h3>
+                        <p>Réservez en ligne en quelques clics sur Doctolib. Ou passez nous voir au 38 avenue de Versailles, on trouve toujours une solution.</p>
+                    </div>
+                    <a href="https://www.doctolib.fr/" class="rdv-btn" target="_blank" rel="noopener noreferrer" aria-label="Prendre rendez-vous sur Doctolib (nouvelle fenêtre)">
+                        Réserver sur Doctolib →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTUALITÉS -->
+        <section class="section section--white" id="actus" aria-labelledby="actus-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Des conseils de saison</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="actus-title">Actualités santé</h2>
+                <p class="section__text reveal-item reveal-item--delay1">Des articles courts, écrits par votre pharmacie, adaptés aux besoins du quartier — sans blabla.</p>
+                <div class="actus-grid">
+                    <article class="actus-card reveal-item reveal-item--delay1">
+                        <span class="actus-card__tag">Saison</span>
+                        <h3 class="actus-card__title">Allergies printanières : les bons gestes</h3>
+                        <p class="actus-card__excerpt">Antihistaminiques, lavages de nez, huiles essentielles… nos conseils pour traverser la saison des pollens.</p>
+                    </article>
+                    <article class="actus-card reveal-item reveal-item--delay2">
+                        <span class="actus-card__tag">Bien-être</span>
+                        <h3 class="actus-card__title">Sommeil et stress : en parler avec son pharmacien</h3>
+                        <p class="actus-card__excerpt">Phytothérapie, mélatonine, hygiène du sommeil — des solutions existent, venez en discuter.</p>
+                    </article>
+                    <article class="actus-card reveal-item reveal-item--delay3">
+                        <span class="actus-card__tag">Prévention</span>
+                        <h3 class="actus-card__title">Trousse de premiers secours : l'essentiel</h3>
+                        <p class="actus-card__excerpt">Pansements, antiseptiques, antalgiques… ce qu'il faut avoir chez soi, validé par votre pharmacie.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section section--beige" id="contact" aria-labelledby="contact-title">
+            <div class="section__inner">
+                <p class="section__label reveal-item">Venir / Contact</p>
+                <h2 class="section__title reveal-item reveal-item--delay1" id="contact-title">38 avenue de Versailles, 75016 Paris</h2>
+                <div class="contact-grid">
+                    <div class="contact-infos reveal-item reveal-item--delay1">
+                        <p class="adresse-grand">38 avenue de Versailles<br>75016 Paris</p>
+                        <p>
+                            📞 <a href="tel:+33145272956">01 45 27 29 56</a>
+                        </p>
+                        <p>
+                            ✉️ <a href="mailto:pharmacieversaillesmirabeau@pharmodel.com">pharmacieversaillesmirabeau@pharmodel.com</a>
+                        </p>
+                        <p style="font-size:0.85rem;color:#555;">
+                            Métro Mirabeau (ligne 10) — à 2 minutes à pied.<br>
+                            Une pharmacie ancrée dans la vie du 16ᵉ.
+                        </p>
+                    </div>
+                    <div class="contact-map reveal-item reveal-item--delay2">
+                        <iframe src="https://maps.google.com/maps?q=Pharmacie+Versailles+Mirabeau+38+Avenue+de+Versailles%2C+Paris&output=embed"
+                        width="100%" height="360" style="border:0;" loading="lazy"
+                        allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                        title="Plan d'accès à la Pharmacie Versailles Mirabeau"
+                    aria-label="Carte Google Maps de la Pharmacie Versailles Mirabeau"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <p class="footer-neon" aria-hidden="true">Pharmacie Versailles Mirabeau</p>
+    <div class="footer-infos">
+        <strong>Pharmacie Versailles Mirabeau</strong><br>
+        38 avenue de Versailles, 75016 Paris<br>
+        Tél. : <a href="tel:+33145272956">01 45 27 29 56</a> ·
+        <a href="mailto:pharmacieversaillesmirabeau@pharmodel.com">pharmacieversaillesmirabeau@pharmodel.com</a><br>
+        Note Google : 4.5★ sur 58 avis
+    </div>
+    <p class="footer-credit">Site créé par Agence Mooo</p>
+</footer>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Pharmacie Versailles Mirabeau",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "38 Avenue de Versailles",
+            "addressLocality": "Paris",
+            "postalCode": "75016",
+            "addressCountry": "FR"
+        },
+        "telephone": "+33145272956",
+        "email": "pharmacieversaillesmirabeau@pharmodel.com",
+        "image": "https://agence.mooo.com/pharmacie-versailles-mirabeau/assets/maps-1.jpg",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "58"
+        },
+        "url": "https://agence.mooo.com/pharmacie-versailles-mirabeau",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Monday",
+                "opens": "14:00",
+                "closes": "19:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "19:30"
+            }
+        ]
+    }
+</script>
+
+<script>
+    (function() {
+        // === PROCHAINE GARDE (dimanche) ===
+        function getProchaineGarde() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0 = dimanche
+            let target;
+            if (dayOfWeek === 0) {
+                // Aujourd'hui est dimanche : la garde est aujourd'hui
+                target = today;
+            } else {
+                const daysUntil = 7 - dayOfWeek;
+                target = new Date(today);
+                target.setDate(today.getDate() + daysUntil);
+            }
+            const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+            return target.toLocaleDateString('fr-FR', options);
+        }
+        const gardeDateEl = document.getElementById('garde-date');
+        if (gardeDateEl) {
+            gardeDateEl.textContent = getProchaineGarde();
+        }
+
+        // === INTERSECTION OBSERVER (reveals au scroll) ===
+        const revealEls = document.querySelectorAll('.reveal-item');
+        if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
+        } else if (revealEls.length > 0) {
+            // Fallback : tout révéler immédiatement
+            revealEls.forEach(el => el.classList.add('revealed'));
+        }
+
+        // === FOCUS VISIBLE POUR NAV AU CLAVIER ===
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+    })();
+</script>
+</body>
+</html>
