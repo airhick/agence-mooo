@@ -3,30 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wolford Victor Hugo • Boutique collants & prêt-à-porter • Paris 16ᵉ</title>
-    <meta name="description" content="Boutique Wolford au 140 avenue Victor Hugo, Paris 16ᵉ. Essayages privés sur rendez-vous, collants, corps & prêt-à-porter. Conseil de précision depuis 1950.">
-    <meta property="og:title" content="Wolford Victor Hugo • La transparence à l'adresse juste">
-    <meta property="og:description" content="Boutique Wolford au 140 avenue Victor Hugo, Paris 16ᵉ. Essayages privés sur rendez-vous. Une architecture claire, une lumière froide qui sublime tout.">
+    <title>Wolford Victor Hugo — Boutique de luxe Paris 16ᵉ | Collants, Lingerie, Prêt-à-porter</title>
+    <meta name="description" content="Découvrez la boutique Wolford au 140 Avenue Victor Hugo, Paris 16ᵉ. Conseils d'essayage privés, collections exclusives. Une adresse, une signature pour votre allure.">
+    <meta property="og:title" content="Wolford Victor Hugo — Le drapé trouve sa juste ligne">
+    <meta property="og:description" content="Conseils d'essayage privés, collections exclusives et savoir-faire technique au cœur du 16ᵉ arrondissement. Une adresse. Une signature pour votre allure.">
     <meta property="og:image" content="assets/maps-1.jpg">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⬩%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 4h14v2h-5l-2 8-2-8H5V4zm2 12h2l1-4 1 4h2l1.5-6H16v-2H8v2h1.5L11 18z' fill='%230B0B0B'/%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Wolford Victor Hugo",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "140 Avenue Victor Hugo",
+                "addressLocality": "Paris",
+                "postalCode": "75116",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33155730102",
+            "email": "service.france@wolford.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "10"
+            },
+            "openingHours": "Mo-Sa 10:00-19:00",
+            "priceRange": "€€€",
+            "url": "https://agence.mooo.com/wolford-victor-hugo"
+        }
+    </script>
     <style>
         :root {
-            --blanc-optique: #FFFFFF;
-            --noir-absolu: #0D0D0D;
-            --beige-cendre: #F4F2EE;
-            --argent-bruni: #C8CCCE;
-            --carmin-wolford: #9E1B2E;
-            --filet: rgba(200, 204, 206, 0.45);
-            --ombre-douce: 0 1px 0 rgba(13, 13, 13, 0.06), 0 4px 20px rgba(13, 13, 13, 0.03);
-            --transition-rapide: 220ms cubic-bezier(0.33, 0, 0.2, 1);
-            --transition-medium: 380ms cubic-bezier(0.33, 0, 0.2, 1);
-            --transition-lente: 620ms cubic-bezier(0.22, 0, 0.1, 1);
-            --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --white: #FFFFFF;
+            --noir: #0B0B0B;
+            --pearl: #DCD5C6;
+            --pewter: #A8A29A;
+            --pewter-text: #7D7770;
+            --plaster: #E8E4DF;
+            --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+            --font-body: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+            --filet-width: 1px;
+            --grain-opacity: 0.035;
         }
 
         *,
@@ -43,8 +68,6 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
-            background-color: var(--blanc-optique);
-            color: var(--noir-absolu);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -57,838 +80,1195 @@
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
-                animation-delay: 0.01ms !important;
             }
         }
 
         body {
-            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-body);
             font-weight: 400;
             line-height: 1.6;
-            letter-spacing: 0.005em;
-            background-color: var(--blanc-optique);
-            color: var(--noir-absolu);
+            color: var(--noir);
+            background-color: var(--white);
             overflow-x: hidden;
+            position: relative;
             min-height: 100vh;
+            letter-spacing: -0.01em;
         }
 
-        /* ----- HEADER ----- */
-        .site-header {
+        /* Grain texture globale */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* Filet-Ourlet principal — fixe à gauche */
+        .filet-couture {
+            position: fixed;
+            top: 0;
+            left: clamp(1.25rem, 4vw, 3.5rem);
+            width: 1px;
+            height: 100vh;
+            z-index: 9000;
+            pointer-events: none;
+        }
+        .filet-couture svg {
+            width: 1px;
+            height: 100%;
+            display: block;
+        }
+        .filet-couture .fil {
+            stroke: var(--pearl);
+            stroke-width: 1;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: coudre 2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+        }
+        @keyframes coudre {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Filet secondaire droit (desktop) */
+        .filet-droit {
+            position: fixed;
+            top: 0;
+            right: clamp(1.25rem, 4vw, 3.5rem);
+            width: 1px;
+            height: 100vh;
+            z-index: 9000;
+            pointer-events: none;
+            display: none;
+        }
+        .filet-droit svg {
+            width: 1px;
+            height: 100%;
+            display: block;
+        }
+        .filet-droit .fil {
+            stroke: var(--pearl);
+            stroke-width: 1;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: coudre 2s cubic-bezier(0.4, 0, 0.2, 1) 0.75s forwards;
+        }
+
+        /* Header */
+        .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(18px) saturate(1.4);
-            -webkit-backdrop-filter: blur(18px) saturate(1.4);
-            border-bottom: 1px solid var(--filet);
-            transition: background var(--transition-rapide), border-color var(--transition-rapide);
-            padding: 0 clamp(1rem, 4vw, 3rem);
-            height: 64px;
+            z-index: 8000;
+            padding: 1.25rem clamp(1.25rem, 4vw, 3.5rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+            background-color: transparent;
         }
-
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        }
         .header-logo {
-            font-family: 'Instrument Serif', 'Times New Roman', serif;
-            font-weight: 600;
-            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-            letter-spacing: 0.03em;
-            color: var(--noir-absolu);
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--noir);
             text-decoration: none;
-            white-space: nowrap;
             line-height: 1;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            white-space: nowrap;
+            z-index: 2;
         }
-        .header-logo span {
-            color: var(--carmin-wolford);
-            font-weight: 700;
-            font-size: 1.15em;
-            line-height: 0;
-            display: inline-block;
-            transform: translateY(-1px);
-        }
-
         .header-nav {
             display: flex;
             align-items: center;
-            gap: clamp(0.5rem, 2vw, 1.6rem);
+            gap: clamp(1rem, 2.5vw, 2rem);
             list-style: none;
-            flex-wrap: nowrap;
+            font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--pewter-text);
         }
         .header-nav a {
-            font-family: 'Geist', sans-serif;
-            font-weight: 500;
-            font-size: clamp(0.7rem, 1.2vw, 0.82rem);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--noir-absolu);
+            color: var(--pewter-text);
             text-decoration: none;
+            transition: color 0.3s ease;
             position: relative;
-            padding: 0.25rem 0;
-            transition: color var(--transition-rapide);
             white-space: nowrap;
         }
         .header-nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -3px;
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--carmin-wolford);
-            transition: width var(--transition-rapide);
+            background: var(--pearl);
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .header-nav a:hover,
         .header-nav a:focus-visible {
-            color: var(--carmin-wolford);
-            outline: none;
+            color: var(--noir);
         }
         .header-nav a:hover::after,
         .header-nav a:focus-visible::after {
             width: 100%;
         }
         .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.55rem 1.3rem;
-            background: var(--carmin-wolford);
-            color: #fff;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.7rem, 1.1vw, 0.78rem);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            font-family: var(--font-body);
+            font-size: clamp(0.78rem, 1.1vw, 0.85rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--white);
+            background-color: var(--noir);
+            border: none;
+            padding: 0.6rem 1.3rem;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 0;
-            transition: background var(--transition-rapide), box-shadow var(--transition-rapide);
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
             white-space: nowrap;
             line-height: 1;
-            border: none;
-            cursor: pointer;
+            border-radius: 0;
+            position: relative;
+            z-index: 2;
         }
         .header-cta:hover,
         .header-cta:focus-visible {
-            background: #7a1524;
-            box-shadow: 0 0 0 3px rgba(158, 27, 46, 0.18);
+            background-color: #2a2a2a;
+            box-shadow: 0 4px 20px rgba(11, 11, 11, 0.18);
             outline: none;
         }
         .header-cta:focus-visible {
-            outline: 2px solid var(--carmin-wolford);
-            outline-offset: 2px;
+            outline: 2px solid var(--noir);
+            outline-offset: 3px;
+        }
+        .header-mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 2;
+            flex-direction: column;
+            gap: 5px;
+            width: 28px;
+        }
+        .header-mobile-menu-btn span {
+            display: block;
+            height: 1.5px;
+            background: var(--noir);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .header-mobile-menu-btn.open span:nth-child(1) {
+            transform: translateY(3.5px) rotate(45deg);
+        }
+        .header-mobile-menu-btn.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .header-mobile-menu-btn.open span:nth-child(3) {
+            transform: translateY(-3.5px) rotate(-45deg);
         }
 
-        @media (max-width: 768px) {
-            .header-nav .hide-mobile {
+        @media (max-width: 860px) {
+            .header-nav {
                 display: none;
             }
-            .header-nav {
-                gap: 0.6rem;
+            .header-mobile-menu-btn {
+                display: flex;
             }
-            .header-cta {
-                padding: 0.5rem 1rem;
-                font-size: 0.7rem;
+            .header-nav.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 2rem clamp(1.25rem, 4vw, 3.5rem);
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--plaster);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             }
-            .site-header {
-                height: 56px;
-                padding: 0 1rem;
+            .header-cta.desktop-only {
+                display: none;
             }
         }
-        @media (max-width: 420px) {
-            .header-nav a {
-                font-size: 0.65rem;
-            }
-            .header-cta {
-                padding: 0.45rem 0.8rem;
-                font-size: 0.65rem;
+        @media (min-width: 861px) {
+            .header-cta.mobile-only {
+                display: none;
             }
         }
 
-        /* ----- HERO ----- */
-        .hero {
+        /* Sections communes */
+        .section {
             position: relative;
+            padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 4vw, 3.5rem);
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HÉRO */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding: 6rem clamp(1.5rem, 6vw, 5rem) 4rem;
+            position: relative;
+            padding-top: 6rem;
+            padding-bottom: 3rem;
             overflow: hidden;
-            background: var(--blanc-optique);
-            isolation: isolate;
         }
-
-        .hero-image-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 52%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            /* Effet de transparence au chargement : overlay qui se retire */
-        }
-        .hero-image-container::after {
-            content: '';
+        .hero-bg {
             position: absolute;
             inset: 0;
-            background: var(--blanc-optique);
-            z-index: 3;
-            animation: revealSweep 1.5s var(--easing-out-expo) 0.4s forwards;
-            pointer-events: none;
+            z-index: 0;
         }
-        @keyframes revealSweep {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(105%);
-            }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .hero-image-container::after {
-                animation: none;
-                transform: translateY(105%);
-            }
-        }
-        .hero-image-container img {
+        .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 30%;
-            display: block;
-            filter: grayscale(0.25) contrast(1.06) brightness(1.02);
-            mix-blend-mode: normal;
-            animation: imageFadeIn 0.9s var(--easing-out-expo) 0.55s both;
+            object-position: center 40%;
+            filter: brightness(1.05) contrast(1.02);
         }
-        @keyframes imageFadeIn {
-            from {
-                opacity: 0.75;
-                filter: grayscale(0.5) contrast(1.12) brightness(1.08);
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .hero-image-container img {
-                animation: none;
-            }
-        }
-
-        /* Texture calque transparent – superposition d'une trame fine */
-        .hero-texture-overlay {
+        /* Overlay verre — façade vitrée numérique */
+        .hero-verre {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 52%;
-            height: 100%;
-            z-index: 2;
+            inset: 0;
+            z-index: 3;
             pointer-events: none;
-            opacity: 0.14;
-            background-image: repeating-linear-gradient(0deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(200, 204, 206, 0.55) 2px,
-                    rgba(200, 204, 206, 0.55) 2.5px),
-                repeating-linear-gradient(90deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(200, 204, 206, 0.35) 2px,
-                    rgba(200, 204, 206, 0.35) 2.5px);
-            animation: textureFadeIn 1.8s var(--easing-out-expo) 0.7s both;
+            background:
+                linear-gradient(155deg,
+                    rgba(255, 255, 255, 0.28) 0%,
+                    rgba(255, 255, 255, 0.04) 18%,
+                    rgba(255, 255, 255, 0.00) 35%,
+                    rgba(220, 213, 198, 0.10) 55%,
+                    rgba(255, 255, 255, 0.22) 72%,
+                    rgba(255, 255, 255, 0.06) 100%);
+            transition: opacity 0.5s ease;
+            opacity: 1;
+            mix-blend-mode: soft-light;
         }
-        @keyframes textureFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 0.14;
-            }
+        .hero-verre::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(195deg,
+                    transparent 40%,
+                    rgba(255, 255, 255, 0.15) 50%,
+                    transparent 52%),
+                linear-gradient(15deg,
+                    transparent 62%,
+                    rgba(220, 213, 198, 0.12) 68%,
+                    transparent 74%);
+            pointer-events: none;
         }
-        @media (prefers-reduced-motion: reduce) {
-            .hero-texture-overlay {
-                animation: none;
-                opacity: 0.14;
-            }
+        .hero-verre.dissipe {
+            opacity: 0.35;
         }
-
         .hero-content {
             position: relative;
-            z-index: 4;
-            max-width: 600px;
-            padding-right: 1rem;
-        }
-        .hero-label {
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.65rem, 1vw, 0.75rem);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--carmin-wolford);
-            margin-bottom: 1.2rem;
-            display: block;
-        }
-        .hero-title {
-            font-family: 'Instrument Serif', 'Times New Roman', serif;
-            font-weight: 600;
-            font-style: italic;
-            font-size: clamp(3.2rem, 9vw, 7.5rem);
-            line-height: 0.92;
-            letter-spacing: -0.015em;
-            color: var(--noir-absolu);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeUp 0.8s var(--easing-out-expo) 0.15s forwards;
-        }
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .hero-title {
-                animation: none;
-                opacity: 1;
-            }
-        }
-        .hero-subtitle {
-            font-family: 'Geist', sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            line-height: 1.55;
-            letter-spacing: 0.01em;
-            color: var(--noir-absolu);
-            max-width: 420px;
-            opacity: 0;
-            animation: fadeUp 0.8s var(--easing-out-expo) 0.3s forwards;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .hero-subtitle {
-                animation: none;
-                opacity: 1;
-            }
+            z-index: 5;
+            max-width: 700px;
+            padding-left: clamp(2.5rem, 7vw, 6rem);
         }
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 2rem;
-            padding: 0.5rem 1rem;
-            background: var(--beige-cendre);
-            border: 1px solid var(--argent-bruni);
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-family: var(--font-body);
+            font-size: clamp(0.75rem, 1vw, 0.8rem);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--noir);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0.4rem 0.9rem;
+            margin-bottom: 1.8rem;
+            line-height: 1;
+            border: 1px solid rgba(220, 213, 198, 0.4);
+        }
+        .hero-badge .star {
+            color: #c4a44a;
+            font-size: 1em;
+            letter-spacing: 0;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            color: var(--noir);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 60px rgba(255, 255, 255, 0.6);
+        }
+        .hero-sous-titre {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height: 1.7;
+            color: #3a3530;
+            max-width: 480px;
+            letter-spacing: 0.01em;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+        }
+        .hero-cta-row {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-primaire {
+            font-family: var(--font-body);
+            font-size: clamp(0.85rem, 1.1vw, 0.9rem);
+            font-weight: 500;
             letter-spacing: 0.04em;
-            color: var(--noir-absolu);
+            color: var(--white);
+            background: var(--noir);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            cursor: pointer;
             text-decoration: none;
-            transition: border-color var(--transition-rapide), box-shadow var(--transition-rapide);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            line-height: 1;
+            display: inline-block;
         }
-        .hero-badge .stars {
-            color: var(--carmin-wolford);
-            letter-spacing: 0.08em;
-            font-size: 1.05em;
+        .btn-primaire:hover,
+        .btn-primaire:focus-visible {
+            background: #2a2a2a;
+            box-shadow: 0 6px 25px rgba(11, 11, 11, 0.2);
+            outline: none;
         }
-        .hero-badge:hover {
-            border-color: var(--carmin-wolford);
-            box-shadow: 0 0 0 2px rgba(158, 27, 46, 0.08);
+        .btn-primaire:focus-visible {
+            outline: 2px solid var(--noir);
+            outline-offset: 3px;
+        }
+        .btn-secondaire {
+            font-family: var(--font-body);
+            font-size: clamp(0.85rem, 1.1vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--noir);
+            background: transparent;
+            border: 1px solid var(--pearl);
+            padding: 0.8rem 1.8rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            line-height: 1;
+            display: inline-block;
+        }
+        .btn-secondaire:hover,
+        .btn-secondaire:focus-visible {
+            background: rgba(220, 213, 198, 0.2);
+            border-color: var(--noir);
+            outline: none;
+        }
+        .btn-secondaire:focus-visible {
+            outline: 2px solid var(--noir);
+            outline-offset: 3px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .hero {
-                flex-direction: column;
-                padding-top: 7rem;
-                min-height: auto;
-                gap: 2rem;
-            }
-            .hero-image-container {
-                position: relative;
-                width: 100%;
-                height: 50vh;
-                min-height: 340px;
-                order: -1;
-                right: auto;
-                top: auto;
-            }
-            .hero-texture-overlay {
-                width: 100%;
-                height: 100%;
-                right: auto;
-                top: auto;
+                min-height: 90vh;
+                align-items: flex-end;
+                padding-bottom: 4rem;
             }
             .hero-content {
-                max-width: 100%;
-                padding-right: 0;
-                text-align: left;
+                padding-left: clamp(1rem, 3vw, 2rem);
+            }
+            .hero h1 {
+                font-size: clamp(2.2rem, 9vw, 3.2rem);
             }
         }
 
-        /* ----- SECTIONS GÉNÉRALES ----- */
-        .section {
-            padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+        /* Section Le Goût du Conseil */
+        .section-expertise {
+            background: var(--white);
+            padding-top: clamp(4rem, 9vw, 8rem);
+        }
+        .section-expertise .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: start;
+        }
+        .section-expertise .col-gauche {
             position: relative;
         }
-        .section-alt {
-            background: var(--beige-cendre);
+        .section-expertise .filet-section {
+            width: 1px;
+            height: 120px;
+            background: var(--pearl);
+            margin-bottom: 2rem;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .section-title {
-            font-family: 'Instrument Serif', 'Times New Roman', serif;
+        .section-expertise .filet-section.revealed {
+            transform: scaleY(1);
+        }
+        .section-expertise .numero {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
             font-weight: 600;
-            font-style: italic;
-            font-size: clamp(2.8rem, 8vw, 7.5rem);
-            line-height: 0.94;
+            letter-spacing: 0.15em;
+            color: var(--pewter);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .section-expertise h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 500;
+            line-height: 1.2;
             letter-spacing: -0.01em;
-            color: var(--noir-absolu);
-            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-            word-break: break-word;
+            color: var(--noir);
+            margin-bottom: 1.5rem;
         }
-        .section-body {
-            font-family: 'Geist', sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-            line-height: 1.65;
-            letter-spacing: 0.008em;
-            color: var(--noir-absolu);
-            max-width: 640px;
+        .section-expertise .col-droite {
+            padding-top: clamp(1rem, 3vw, 2rem);
         }
-        .section-body+.section-body {
-            margin-top: 1rem;
+        .section-expertise p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            line-height: 1.75;
+            color: var(--pewter-text);
+            max-width: 420px;
+            letter-spacing: 0.01em;
         }
-        .inline-accent {
-            color: var(--carmin-wolford);
-            font-weight: 600;
-        }
-
-        /* Filets / séparateurs */
-        .filet {
-            height: 1px;
-            background: var(--argent-bruni);
-            width: 100%;
-            margin: clamp(1.5rem, 3vw, 2.5rem) 0;
-            opacity: 0.7;
-        }
-        .filet-accent {
-            height: 2px;
-            background: var(--carmin-wolford);
-            width: 3rem;
-            margin: 1.5rem 0 2rem;
+        @media (max-width: 768px) {
+            .section-expertise .section-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .section-expertise .filet-section {
+                height: 60px;
+                margin-bottom: 1.2rem;
+            }
+            .section-expertise p {
+                max-width: 100%;
+            }
         }
 
-        /* Cartes / encarts */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: clamp(1rem, 2.5vw, 2rem);
-            margin-top: 2rem;
-        }
-        .card {
-            background: var(--blanc-optique);
-            border: 1px solid var(--argent-bruni);
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            transition: box-shadow var(--transition-rapide), border-color var(--transition-rapide);
+        /* Section Une Adresse, des Collections */
+        .section-collections {
+            background: var(--plaster);
             position: relative;
             overflow: hidden;
-            cursor: default;
         }
-        .card:hover {
-            border-color: var(--carmin-wolford);
-            box-shadow: 0 8px 30px rgba(13, 13, 13, 0.05), 0 0 0 1px rgba(158, 27, 46, 0.08);
-        }
-        .card::before {
+        .section-collections::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background-image: repeating-linear-gradient(0deg,
-                    transparent,
-                    transparent 1px,
-                    rgba(200, 204, 206, 0.15) 1px,
-                    rgba(200, 204, 206, 0.15) 1.5px);
-            opacity: 0;
-            transition: opacity var(--transition-medium);
-            pointer-events: none;
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background: linear-gradient(270deg, rgba(232, 228, 223, 0) 0%, rgba(232, 228, 223, 0.6) 50%, var(--plaster) 100%);
             z-index: 1;
+            pointer-events: none;
         }
-        .card:hover::before {
-            opacity: 1;
+        .section-collections .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
-        .card-title {
-            font-family: 'Instrument Serif', 'Times New Roman', serif;
-            font-weight: 600;
-            font-style: italic;
-            font-size: clamp(1.4rem, 2.5vw, 2rem);
+        .section-collections h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--noir);
+            margin-bottom: 1.5rem;
+        }
+        .section-collections p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            line-height: 1.75;
+            color: var(--pewter-text);
             letter-spacing: 0.01em;
-            color: var(--noir-absolu);
-            margin-bottom: 0.6rem;
-            position: relative;
-            z-index: 2;
         }
-        .card-text {
-            font-family: 'Geist', sans-serif;
+        .collections-liste {
+            list-style: none;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .collections-liste li {
+            font-family: var(--font-body);
             font-weight: 400;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: var(--noir-absolu);
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.03em;
+            color: var(--noir);
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(168, 162, 154, 0.3);
+            transition: border-color 0.4s ease;
+            cursor: default;
+        }
+        .collections-liste li:hover {
+            border-bottom-color: var(--pearl);
+        }
+        .collections-visuel {
             position: relative;
-            z-index: 2;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid rgba(168, 162, 154, 0.2);
+        }
+        .collections-visuel .placeholder-texture {
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(220, 213, 198, 0.25) 2px,
+                    rgba(220, 213, 198, 0.25) 4px),
+                linear-gradient(180deg,
+                    rgba(232, 228, 223, 0.4) 0%,
+                    rgba(255, 255, 255, 0.6) 50%,
+                    rgba(220, 213, 198, 0.3) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--pewter);
+            letter-spacing: 0.06em;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .section-collections .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .collections-visuel {
+                aspect-ratio: 3/4;
+                order: -1;
+            }
+            .section-collections::before {
+                display: none;
+            }
         }
 
-        /* ----- GOOGLE BADGE ----- */
-        .google-badge-inline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.03em;
-            color: var(--noir-absolu);
-            background: var(--blanc-optique);
-            border: 1px solid var(--argent-bruni);
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            transition: border-color var(--transition-rapide);
+        /* Section La Lumière du 16ᵉ */
+        .section-ambiance {
+            background: var(--white);
+            position: relative;
         }
-        .google-badge-inline .stars {
-            color: var(--carmin-wolford);
+        .section-ambiance .section-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(2rem, 6vw, 6rem);
+            align-items: start;
+        }
+        .section-ambiance .bloc-ambiance {
+            position: relative;
+            padding: clamp(2rem, 5vw, 4rem);
+            background: var(--plaster);
+            border: 1px solid rgba(168, 162, 154, 0.15);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-ambiance .bloc-ambiance::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--pearl);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section-ambiance .bloc-ambiance.revealed::before {
+            transform: scaleX(1);
+        }
+        .section-ambiance h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--noir);
+            margin-bottom: 1.5rem;
+        }
+        .section-ambiance p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            line-height: 1.75;
+            color: var(--pewter-text);
+            letter-spacing: 0.01em;
+            max-width: 400px;
+        }
+        .section-ambiance .citation {
+            margin-top: 2rem;
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            font-style: italic;
+            color: var(--noir);
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .section-ambiance .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .section-ambiance .bloc-ambiance {
+                min-height: auto;
+                padding: 2rem;
+            }
+        }
+
+        /* Section Prendre le Temps */
+        .section-infos {
+            background: var(--noir);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-infos .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: start;
+        }
+        .section-infos h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .section-infos p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.01em;
+            margin-bottom: 2rem;
+        }
+        .infos-bloc {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(220, 213, 198, 0.2);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        .infos-bloc h3 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--pearl);
+            margin-bottom: 0.8rem;
+        }
+        .infos-bloc p,
+        .infos-bloc a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.1vw, 0.95rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            display: block;
+        }
+        .infos-bloc a {
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        .infos-bloc a:hover,
+        .infos-bloc a:focus-visible {
+            color: var(--pearl);
+        }
+        .infos-bloc .tel-link {
+            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: 0.04em;
+        }
+        .section-infos .btn-primaire {
+            background: var(--white);
+            color: var(--noir);
+            margin-top: 0.5rem;
+        }
+        .section-infos .btn-primaire:hover,
+        .section-infos .btn-primaire:focus-visible {
+            background: var(--pearl);
+            box-shadow: 0 6px 25px rgba(220, 213, 198, 0.3);
+        }
+        @media (max-width: 768px) {
+            .section-infos .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Carte */
+        .section-carte {
+            padding: 0;
+            background: var(--white);
+            position: relative;
+        }
+        .section-carte .carte-wrapper {
+            width: 100%;
+            height: clamp(300px, 40vw, 420px);
+            position: relative;
+            border-top: 1px solid var(--plaster);
+            border-bottom: 1px solid var(--plaster);
+        }
+        .section-carte iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(15%) contrast(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--noir);
+            color: rgba(255, 255, 255, 0.55);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3.5rem);
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            border-top: 1px solid rgba(220, 213, 198, 0.1);
+        }
+        .footer .footer-adresse {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.4rem;
+            font-weight: 400;
+        }
+        .footer a {
+            color: var(--pearl);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: var(--white);
+        }
+        .footer .footer-credit {
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            opacity: 0.5;
             letter-spacing: 0.06em;
         }
 
-        /* ----- MAP ----- */
-        .map-wrapper {
-            width: 100%;
-            border: 1px solid var(--argent-bruni);
-            overflow: hidden;
-            margin-top: 1rem;
-        }
-        .map-wrapper iframe {
-            display: block;
-            width: 100%;
-            height: 360px;
-            border: 0;
-            filter: grayscale(0.15) contrast(1.03);
-        }
-
-        /* ----- REVEAL AU SCROLL ----- */
+        /* Animations reveal au scroll */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s var(--easing-out-expo), transform 0.7s var(--easing-out-expo);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        .reveal.visible {
+        .reveal.revealed {
             opacity: 1;
             transform: translateY(0);
         }
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                opacity: 1;
-                transform: none;
-                transition: none;
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Focus global */
+        :focus-visible {
+            outline: 2px solid var(--noir);
+            outline-offset: 4px;
+            border-radius: 1px;
+        }
+        .section-infos :focus-visible {
+            outline-color: var(--pearl);
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            z-index: 99999;
+            background: var(--noir);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+
+        @media (min-width: 861px) {
+            .filet-droit {
+                display: block;
             }
         }
-
-        /* ----- FOOTER ----- */
-        .site-footer {
-            background: var(--beige-cendre);
-            border-top: 1px solid var(--argent-bruni);
-            padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 6vw, 5rem);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            font-family: 'Geist', sans-serif;
-            font-size: 0.85rem;
-            line-height: 1.7;
-            color: var(--noir-absolu);
-            letter-spacing: 0.01em;
-        }
-        .site-footer strong {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-        .site-footer a {
-            color: var(--noir-absolu);
-            text-decoration: none;
-            transition: color var(--transition-rapide);
-        }
-        .site-footer a:hover,
-        .site-footer a:focus-visible {
-            color: var(--carmin-wolford);
-            outline: none;
-        }
-        .footer-credit {
-            grid-column: 1/-1;
-            text-align: center;
-            font-size: 0.75rem;
-            color: rgba(13, 13, 13, 0.55);
-            letter-spacing: 0.05em;
-            border-top: 1px solid var(--argent-bruni);
-            padding-top: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        /* ----- ACCESSIBILITÉ ----- */
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--carmin-wolford);
-            outline-offset: 3px;
-        }
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* ----- LIENS TÉLÉPHONE/EMAIL ----- */
-        .contact-link {
-            font-weight: 600;
-            color: var(--carmin-wolford);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color var(--transition-rapide);
-        }
-        .contact-link:hover,
-        .contact-link:focus-visible {
-            border-bottom-color: var(--carmin-wolford);
-            outline: none;
+        @media (max-width: 480px) {
+            .filet-couture {
+                left: 0.6rem;
+            }
+            .hero-content {
+                padding-left: 1.5rem;
+            }
+            .hero h1 {
+                font-size: clamp(1.9rem, 8vw, 2.4rem);
+            }
         }
     </style>
 </head>
 <body>
-    <header class="site-header" role="banner">
-        <a href="#hero" class="header-logo" aria-label="Wolford Victor Hugo – retour à l'accueil">
-            W<span>·</span>VH
-        </a>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <!-- Filet-Ourlet principal gauche -->
+    <div class="filet-couture" aria-hidden="true">
+        <svg viewBox="0 0 1 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <line class="fil" x1="0.5" y1="1000" x2="0.5" y2="0" stroke="#DCD5C6" stroke-width="1" stroke-linecap="round" />
+        </svg>
+    </div>
+    <!-- Filet secondaire droit -->
+    <div class="filet-droit" aria-hidden="true">
+        <svg viewBox="0 0 1 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <line class="fil" x1="0.5" y1="1000" x2="0.5" y2="0" stroke="#DCD5C6" stroke-width="1" stroke-linecap="round" />
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#" class="header-logo" aria-label="Wolford Victor Hugo — Retour à l'accueil">Wolford <span style="font-weight:300;">Victor Hugo</span></a>
         <nav aria-label="Navigation principale">
-            <ul class="header-nav">
-                <li><a href="#lieu" class="hide-mobile">Le lieu</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#selection">Sélection</a></li>
-                <li><a href="#venir">Venir</a></li>
+            <ul class="header-nav" id="mainNav">
+                <li><a href="#expertise">Le Conseil</a></li>
+                <li><a href="#collections">Les Collections</a></li>
+                <li><a href="#ambiance">La Boutique</a></li>
+                <li><a href="#infos">Prendre Rendez-vous</a></li>
             </ul>
         </nav>
-        <a href="#rendezvous" class="header-cta">Réserver</a>
+        <a href="#infos" class="header-cta desktop-only">Réserver un essayage</a>
+        <a href="tel:+33155730102" class="header-cta mobile-only" style="font-size:0.75rem;padding:0.5rem 0.9rem;">Appeler</a>
+        <button class="header-mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <main id="hero">
+    <main id="main-content">
         <!-- HÉRO -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-image-container">
-                <img src="assets/maps-1.jpg" alt="Boutique Wolford Victor Hugo – façade parisienne lumineuse" loading="eager" width="1200" height="1600">
+        <section class="hero section" id="accueil">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Façade de la boutique Wolford au 140 Avenue Victor Hugo, Paris 16ᵉ" loading="eager" width="1600" height="1100">
             </div>
-            <div class="hero-texture-overlay" aria-hidden="true"></div>
-            <div class="hero-content">
-                <span class="hero-label">Boutique Wolford • Paris 16ᵉ</span>
-                <h1 class="hero-title" id="hero-title">La transparence<br>à l'adresse juste</h1>
-                <p class="hero-subtitle">Collants, corps & prêt-à-porter – 140 avenue Victor Hugo. Essayages privés sur rendez-vous.</p>
-                <a href="https://search.google.com/local/reviews?placeid=ChIJ______w" target="_blank" rel="noopener" class="hero-badge" aria-label="Note Google 4.1 sur 5 étoiles, 10 avis">
-                    <span class="stars" aria-hidden="true">★★★★☆</span> 4.1/5 — 10 avis
-                </a>
-            </div>
-        </section>
-
-        <!-- SECTION 1 : LE LIEU -->
-        <section class="section" id="lieu" aria-labelledby="titre-lieu">
-            <h2 class="section-title reveal" id="titre-lieu">L'écrin Victor Hugo</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <p class="section-body reveal">Une architecture claire, des cabines pensées comme des loges, une lumière froide qui ne pardonne rien – et sublime tout. Dans le calme de l'avenue, à deux pas du Trocadéro.</p>
-            <p class="section-body reveal">Ici, l'essayage devient un luxe discret. Les murs blancs, le verre et le métal brossé composent une atmosphère de galerie d'art contemporain où chaque silhouette trouve sa juste lecture.</p>
-        </section>
-
-        <!-- SECTION 2 : SERVICES SUR PLACE -->
-        <section class="section section-alt" id="services" aria-labelledby="titre-services">
-            <h2 class="section-title reveal" id="titre-services">Conseil et précision</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <div class="card-grid">
-                <div class="card reveal">
-                    <div class="card-title">Essayage accompagné</div>
-                    <p class="card-text">Une conseillère dédiée vous guide en cabine privée. Aucune pression de vente : un regard formé à la ligne, pas au chiffre.</p>
+            <div class="hero-verre" id="heroVerre" aria-hidden="true"></div>
+            <div class="hero-content reveal" data-reveal>
+                <div class="hero-badge">
+                    <span class="star">★</span> 4.1 — 10 avis Google
                 </div>
-                <div class="card reveal" style="animation-delay: 0.1s;">
-                    <div class="card-title">Retouches minute</div>
-                    <p class="card-text">Ourlets, ajustements, reprises délicates effectués sur place avec la précision d'un atelier de couture.</p>
-                </div>
-                <div class="card reveal" style="animation-delay: 0.2s;">
-                    <div class="card-title">Repigmentation</div>
-                    <p class="card-text">Vos collants retrouvent leur profondeur. Un bain de couleur froide, maîtrisé, pour prolonger la vie de chaque pièce.</p>
-                </div>
-                <div class="card reveal" style="animation-delay: 0.3s;">
-                    <div class="card-title">Diagnostic de silhouette</div>
-                    <p class="card-text">Une analyse nette et bienveillante pour identifier les coupes, les matières et les constructions qui servent votre ligne.</p>
+                <h1>Le drapé trouve<br>sa juste ligne.</h1>
+                <p class="hero-sous-titre">Conseils d'essayage privés, collections exclusives et savoir-faire technique vous attendent au cœur du 16ᵉ arrondissement. Une adresse. Une signature pour votre allure.</p>
+                <div class="hero-cta-row">
+                    <a href="#infos" class="btn-primaire">Prendre rendez-vous</a>
+                    <a href="tel:+33155730102" class="btn-secondaire">01 55 73 01 02</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3 : SÉLECTION DU MOIS -->
-        <section class="section" id="selection" aria-labelledby="titre-selection">
-            <h2 class="section-title reveal" id="titre-selection">Les pièces de cabine</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <p class="section-body reveal">Une édition resserrée, renouvelée chaque saison. Non pas un inventaire, mais ce que l'on aime voir porté : la robe drappée Icon, le body transparent Pure, les bas autofixants en mérinos.</p>
-            <p class="section-body reveal">Chaque pièce est sélectionnée pour sa tenue, sa transparence maîtrisée et sa capacité à devenir une <span class="inline-accent">seconde peau</span> – sans couture, sans compromis.</p>
-            <div class="filet" aria-hidden="true"></div>
-            <p class="section-body reveal" style="font-style: italic; color: rgba(13,13,13,0.65);">La sélection complète se découvre en boutique. Prenez rendez-vous pour un essayage privé.</p>
-        </section>
-
-        <!-- SECTION 4 : HORAIRES & ACCÈS -->
-        <section class="section section-alt" id="venir" aria-labelledby="titre-venir">
-            <h2 class="section-title reveal" id="titre-venir">Venir</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="card reveal">
-                    <div class="card-title">Adresse</div>
-                    <p class="card-text">140 Avenue Victor Hugo<br>75016 Paris<br>France</p>
-                    <p class="card-text" style="margin-top:0.8rem;">Station de métro <span class="inline-accent">Victor Hugo</span> (ligne 2).<br>Parking public à 80 m.<br>Entrée sur rue, niveau trottoir.</p>
+        <!-- SECTION 1 : Le Goût du Conseil -->
+        <section class="section section-expertise" id="expertise">
+            <div class="section-inner">
+                <div class="col-gauche reveal-left" data-reveal>
+                    <div class="filet-section" aria-hidden="true"></div>
+                    <span class="numero">01 — L'expertise</span>
+                    <h2>Le vêtement n'est rien sans l'essayage.</h2>
                 </div>
-                <div class="card reveal" style="animation-delay: 0.15s;">
-                    <div class="card-title">Horaires d'ouverture</div>
-                    <p class="card-text">Mardi – Samedi<br><span class="inline-accent">10h – 19h</span></p>
-                    <p class="card-text" style="margin-top:0.8rem; font-size:0.8rem; color:rgba(13,13,13,0.6);">Dimanche et lundi fermés.<br>Jours fériés : horaires à confirmer.</p>
+                <div class="col-droite reveal-right" data-reveal>
+                    <p>La transparence d'un collant, la structure d'un body, la fluidité d'une robe se jugent sur votre silhouette, jamais sur une image. Nos expertes vous reçoivent pour un diagnostic précis, sans engagement. Un savoir-faire qui transforme l'achat en certitude.</p>
                 </div>
             </div>
-            <div class="map-wrapper reveal" style="margin-top:2rem;">
-                <iframe src="https://maps.google.com/maps?q=Wolford+Victor+Hugo+140+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – Wolford Victor Hugo, 140 Avenue Victor Hugo, Paris"></iframe>
+        </section>
+
+        <!-- SECTION 2 : Une Adresse, des Collections -->
+        <section class="section section-collections" id="collections">
+            <div class="section-inner">
+                <div class="reveal-left" data-reveal>
+                    <span class="numero" style="font-family:var(--font-body);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;color:var(--pewter);text-transform:uppercase;margin-bottom:0.5rem;display:block;">02 — L'offre boutique</span>
+                    <h2>Avenue Victor Hugo,<br>la coupe parisienne.</h2>
+                    <p>Ce n'est pas un catalogue. C'est une sélection pensée pour l'élégance architecturale de la Parisienne. Retrouvez ici, en exclusivité, les pièces de prêt-à-porter, de lingerie gainante et les collants d'exception qui ne se dévoilent qu'en boutique.</p>
+                    <ul class="collections-liste">
+                        <li>Collants d'exception &amp; voiles invisibles</li>
+                        <li>Bodys structurants &amp; lingerie gainante</li>
+                        <li>Prêt-à-porter fluide &amp; robes signatures</li>
+                        <li>Accessoires — gants, chaussettes, soieries</li>
+                    </ul>
+                </div>
+                <div class="collections-visuel reveal-right" data-reveal aria-hidden="true">
+                    <div class="placeholder-texture">
+                        Pièces exclusives<br>dévoilées en boutique
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- SECTION 5 : PRENDRE RENDEZ-VOUS -->
-        <section class="section" id="rendezvous" aria-labelledby="titre-rdv">
-            <h2 class="section-title reveal" id="titre-rdv">Un essayage privé</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <p class="section-body reveal">Réservez votre créneau pour une heure de conseil exclusif, seule ou accompagnée. La cabine vous attend, la lumière est réglée, le silence de l'avenue fait le reste.</p>
-            <p class="section-body reveal" style="margin-top:1.5rem;">
-                <a href="tel:+33155730102" class="contact-link">01 55 73 01 02</a><br>
-                <span style="font-size:0.85rem; color:rgba(13,13,13,0.6);">ou</span><br>
-                <a href="mailto:service.france@wolford.com" class="contact-link">service.france@wolford.com</a>
-            </p>
-            <div class="filet" aria-hidden="true"></div>
-            <p class="section-body reveal" style="font-size:0.85rem; color:rgba(13,13,13,0.55);">Téléphonez également au <a href="tel:+33788660954" class="contact-link" style="font-weight:400;">07 88 66 09 54</a> pour une réservation directe avec l'équipe de la boutique.</p>
+        <!-- SECTION 3 : La Lumière du 16ᵉ -->
+        <section class="section section-ambiance" id="ambiance">
+            <div class="section-inner">
+                <div class="bloc-ambiance reveal" data-reveal>
+                    <span class="numero" style="font-family:var(--font-body);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;color:var(--pewter);text-transform:uppercase;margin-bottom:0.5rem;display:block;">03 — L'ambiance</span>
+                    <h2>Derrière la transparence du verre.</h2>
+                    <p>À la fois galerie épurée et boudoir contemporain, la boutique baigne dans une lumière naturelle vive. On y vient pour le calme, on y reste pour la précision du geste et la qualité du regard.</p>
+                </div>
+                <div class="reveal-right" data-reveal style="display:flex;align-items:center;">
+                    <p class="citation">Une parenthèse luxueuse, loin du tumulte. La précision du geste, la qualité du regard — c'est cela, l'expérience Wolford Victor Hugo.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- SECTION 6 : LA MAISON WOLFORD -->
-        <section class="section section-alt" id="maison" aria-labelledby="titre-maison">
-            <h2 class="section-title reveal" id="titre-maison">Depuis 1950</h2>
-            <div class="filet-accent reveal" aria-hidden="true"></div>
-            <p class="section-body reveal">Une histoire de fils, de mailles et d'émancipation. Nos collants sont tricotés en Europe, nos finitions sont sans couture. La boutique Victor Hugo est l'une de nos adresses historiques à Paris.</p>
-            <p class="section-body reveal">Chaque pièce Wolford incarne une promesse de <span class="inline-accent">netteté</span> : la maille ne se relâche pas, la transparence ne triche pas, la coupe ne pardonne que l'essentiel. Depuis plus de soixante-dix ans, nous habillons les jambes et les corps avec la même exigence architecturale.</p>
-            <div style="margin-top:2rem;">
-                <a href="https://search.google.com/local/reviews?placeid=ChIJ______w" target="_blank" rel="noopener" class="google-badge-inline reveal" aria-label="Note Google 4.1 sur 5 étoiles, 10 avis">
-                    <span class="stars" aria-hidden="true">★★★★☆</span> 4.1/5 • 10 avis Google
-                </a>
+        <!-- SECTION 4 : Prendre le Temps -->
+        <section class="section section-infos" id="infos">
+            <div class="section-inner">
+                <div class="reveal-left" data-reveal>
+                    <span class="numero" style="font-family:var(--font-body);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;color:var(--pearl);text-transform:uppercase;margin-bottom:0.5rem;display:block;">04 — Prendre le temps</span>
+                    <h2>Une réservation,<br>une attention complète.</h2>
+                    <p>Prenez rendez-vous pour un essayage privé. Vous serez seule, écoutée, conseillée. Chaque rendez-vous est un moment dédié, sans interférence, dans l'écrin confidentiel de la boutique.</p>
+                    <a href="tel:+33155730102" class="btn-primaire" style="display:inline-block;">Réserver par téléphone</a>
+                </div>
+                <div class="reveal-right" data-reveal>
+                    <div class="infos-bloc">
+                        <h3>Adresse</h3>
+                        <p>140 Avenue Victor Hugo<br>Paris 16ᵉ, France</p>
+                    </div>
+                    <div class="infos-bloc">
+                        <h3>Téléphone</h3>
+                        <a href="tel:+33155730102" class="tel-link">01 55 73 01 02</a>
+                    </div>
+                    <div class="infos-bloc">
+                        <h3>Horaires d'ouverture</h3>
+                        <p>Lundi – Samedi : 10h00 – 19h00</p>
+                        <p style="font-size:0.75rem;opacity:0.6;margin-top:0.3rem;">Horaires à confirmer lors de la réservation.</p>
+                    </div>
+                    <div class="infos-bloc">
+                        <h3>Email</h3>
+                        <a href="mailto:service.france@wolford.com">service.france@wolford.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carte -->
+        <section class="section-carte" aria-label="Carte de localisation">
+            <div class="carte-wrapper">
+                <iframe src="https://maps.google.com/maps?q=Wolford+Victor+Hugo+140+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localisation de la boutique Wolford Victor Hugo sur Google Maps"></iframe>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
-        <div>
-            <strong>Wolford Victor Hugo</strong>
-            140 Avenue Victor Hugo<br>
-            75016 Paris<br>
-            France
-        </div>
-        <div>
-            <strong>Contact</strong>
-            <a href="tel:+33155730102">01 55 73 01 02</a><br>
-            <a href="mailto:service.france@wolford.com">service.france@wolford.com</a><br>
-            <a href="mailto:quality@wolford.com">quality@wolford.com</a>
-        </div>
-        <div>
-            <strong>Horaires</strong>
-            Mardi – Samedi<br>
-            10h – 19h<br>
-            <span style="font-size:0.75rem; color:rgba(13,13,13,0.5);">Dimanche et lundi fermés</span>
-        </div>
-        <div>
-            <strong>Liens</strong>
-            <a href="#lieu">Le lieu</a><br>
-            <a href="#services">Services</a><br>
-            <a href="#rendezvous">Rendez-vous</a>
-        </div>
-        <div class="footer-credit">
-            Site créé par Agence Mooo • <a href="https://agence.mooo.com/wolford-victor-hugo" style="color:inherit;">agence.mooo.com/wolford-victor-hugo</a>
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-adresse">Wolford Victor Hugo — 140 Avenue Victor Hugo, Paris 16ᵉ</p>
+        <p><a href="tel:+33155730102">01 55 73 01 02</a> · <a href="mailto:service.france@wolford.com">service.france@wolford.com</a></p>
+        <p class="footer-credit">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></p>
     </footer>
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Wolford Victor Hugo",
-            "image": "assets/maps-1.jpg",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "140 Avenue Victor Hugo",
-                "postalCode": "75016",
-                "addressLocality": "Paris",
-                "addressCountry": "FR"
-            },
-            "telephone": "+33155730102",
-            "email": "service.france@wolford.com",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.1",
-                "reviewCount": "10"
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
-                ],
-                "opens": "10:00",
-                "closes": "19:00"
-            },
-            "url": "https://agence.mooo.com/wolford-victor-hugo"
-        }
-    </script>
 
     <script>
         (function() {
-            // IntersectionObserver pour les reveals au scroll
-            const reveals = document.querySelectorAll('.reveal');
-            if (reveals.length === 0) return;
+            // Références DOM
+            const header = document.getElementById('header');
+            const heroVerre = document.getElementById('heroVerre');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const filetsSection = document.querySelectorAll('.filet-section');
+            const reveals = document.querySelectorAll('[data-reveal]');
+            const blocAmbiance = document.querySelector('.bloc-ambiance');
 
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                const isOpen = mainNav.classList.toggle('mobile-open');
+                mobileMenuBtn.classList.toggle('open');
+                mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            // Fermer le menu mobile au clic sur un lien
+            mainNav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (mainNav.classList.contains('mobile-open')) {
+                        mainNav.classList.remove('mobile-open');
+                        mobileMenuBtn.classList.remove('open');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Header scroll state
+            function updateHeaderScroll() {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+
+            // Effet verre — dissipation au scroll
+            function updateVerreOpacity() {
+                if (!heroVerre) return;
+                const scrollY = window.scrollY;
+                const maxScroll = window.innerHeight * 0.7;
+                const progress = Math.min(scrollY / maxScroll, 1);
+                if (progress > 0.15) {
+                    heroVerre.classList.add('dissipe');
+                } else {
+                    heroVerre.classList.remove('dissipe');
+                }
+                // Affiner l'opacité
+                const opacity = 1 - progress * 0.75;
+                heroVerre.style.opacity = Math.max(opacity, 0.28);
+            }
+
+            // Scroll handler combiné
+            let ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        updateHeaderScroll();
+                        updateVerreOpacity();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // IntersectionObserver pour les reveals
             const observerOptions = {
                 root: null,
                 rootMargin: '0px 0px -40px 0px',
                 threshold: 0.12
             };
 
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        obs.unobserve(entry.target);
+                        entry.target.classList.add('revealed');
+                        // Si c'est un filet-section, on l'anime aussi
+                        const filet = entry.target.querySelector('.filet-section');
+                        if (filet) {
+                            filet.classList.add('revealed');
+                        }
+                        // Si c'est le bloc-ambiance
+                        if (entry.target === blocAmbiance || entry.target.contains(blocAmbiance)) {
+                            if (blocAmbiance) blocAmbiance.classList.add('revealed');
+                        }
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            reveals.forEach(el => observer.observe(el));
+            reveals.forEach(function(el) {
+                observer.observe(el);
+            });
 
-            // Nettoyage de l'animation de balayage du héros pour éviter des bugs de cache
-            const heroOverlay = document.querySelector('.hero-image-container::after');
-            // L'animation CSS gère déjà le retrait ; rien de plus nécessaire.
+            // Observer séparé pour le bloc ambiance
+            if (blocAmbiance && !blocAmbiance.hasAttribute('data-reveal')) {
+                const ambianceObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            blocAmbiance.classList.add('revealed');
+                            ambianceObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                ambianceObserver.observe(blocAmbiance);
+            }
+
+            // Initial check
+            updateHeaderScroll();
+            updateVerreOpacity();
+
+            // Smooth scroll pour les ancres (fallback pour navigateurs sans support)
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Respect prefers-reduced-motion
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+                    el.classList.add('revealed');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    el.style.transition = 'none';
+                });
+                document.querySelectorAll('.filet-section').forEach(function(el) {
+                    el.classList.add('revealed');
+                });
+                if (blocAmbiance) blocAmbiance.classList.add('revealed');
+                if (heroVerre) heroVerre.style.transition = 'none';
+            }
         })();
     </script>
 </body>
