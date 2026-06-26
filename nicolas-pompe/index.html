@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Pompe — Caviste · Paris 16ᵉ</title>
+    <meta name="description" content="Cave confidentielle au 69 Rue de la Pompe, Paris 16ᵉ. Laurence et Maxime vous accueillent pour une sélection pointue de vins et champagnes, conseils sur mesure. Note 4.8★ — 30 avis.">
+    <meta property="og:title" content="Nicolas Pompe — Caviste · Paris 16ᵉ">
+    <meta property="og:description" content="La cave qui aime votre table. Sélection personnelle, conseil sur mesure au 69 Rue de la Pompe. Note 4.8★.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/nicolas-pompe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.82em%22 font-size=%2288%22>🍷</text></svg>">
+    <style>
+        :root {
+            --papier: #FAF5EB;
+            --lie-de-vin: #2C1A14;
+            --laque: #9B1B30;
+            --laiton: #D4A843;
+            --sable: #EFE4D3;
+            --laiton-pale: #e8cf8a;
+            --laiton-fonce: #b8912e;
+            --text-muted: #5c4033;
+            --shadow-soft: 0 4px 20px rgba(44, 26, 20, 0.08);
+            --shadow-card: 0 8px 32px rgba(44, 26, 20, 0.12);
+            --shadow-gold: 0 2px 16px rgba(212, 168, 67, 0.25);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --header-h: 72px;
+            --transition-smooth: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-h);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+            background-color: var(--papier);
+            color: var(--lie-de-vin);
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 25% 10%, rgba(212, 168, 67, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 90%, rgba(155, 27, 48, 0.03) 0%, transparent 55%),
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(44, 26, 20, 0.008) 2px,
+                    rgba(44, 26, 20, 0.008) 4px);
+            background-attachment: fixed;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-h);
+            background: rgba(250, 245, 235, 0.85);
+            backdrop-filter: blur(14px) saturate(130%);
+            -webkit-backdrop-filter: blur(14px) saturate(130%);
+            border-bottom: 1px solid rgba(212, 168, 67, 0.18);
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(1.25rem, 4vw, 3rem);
+            gap: 1.5rem;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(44, 26, 20, 0.10);
+            border-bottom-color: rgba(212, 168, 67, 0.35);
+        }
+        .header-brand {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            letter-spacing: 0.03em;
+            color: var(--lie-de-vin);
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: color 0.3s;
+        }
+        .header-brand:hover {
+            color: var(--laque);
+        }
+        .header-brand span {
+            color: var(--laiton);
+            font-weight: 600;
+            margin: 0 0.15em;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.6rem, 1.8vw, 1.5rem);
+            flex: 1;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+            color: var(--lie-de-vin);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            position: relative;
+            padding: 0.3em 0;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--laiton);
+            transition: width var(--transition-smooth);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--laque);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            letter-spacing: 0.03em;
+            padding: 0.55em 1.3em;
+            border-radius: 2em;
+            text-decoration: none;
+            background: var(--laque);
+            color: #fff;
+            border: 2px solid var(--laque);
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .btn-call:hover,
+        .btn-call:focus-visible {
+            background: var(--lie-de-vin);
+            border-color: var(--lie-de-vin);
+            color: #fff;
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-1px);
+        }
+        .btn-call:focus-visible {
+            outline: 3px solid var(--laiton);
+            outline-offset: 3px;
+        }
+        .badge-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            background: var(--sable);
+            color: var(--lie-de-vin);
+            padding: 0.35em 0.8em;
+            border-radius: 2em;
+            letter-spacing: 0.02em;
+            border: 1px solid rgba(212, 168, 67, 0.4);
+            white-space: nowrap;
+        }
+        .badge-note .star {
+            color: var(--laiton-fonce);
+            font-size: 1.1em;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-shrink: 0;
+            color: var(--lie-de-vin);
+            font-size: 1.6rem;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .menu-toggle:hover {
+            color: var(--laque);
+        }
+
+        @media (max-width: 900px) {
+            .header-nav {
+                position: fixed;
+                top: var(--header-h);
+                left: 0;
+                right: 0;
+                background: rgba(250, 245, 235, 0.96);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+                transform: translateY(-110%);
+                opacity: 0;
+                transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease;
+                pointer-events: none;
+                box-shadow: 0 20px 40px rgba(44, 26, 20, 0.15);
+            }
+            .header-nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .header-nav a {
+                font-size: 1rem;
+                padding: 0.4em 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .header-cta .badge-note {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-cta .btn-call {
+                padding: 0.5em 1em;
+                font-size: 0.78rem;
+                gap: 0.3em;
+            }
+            .header-brand {
+                font-size: 1rem;
+            }
+        }
+
+        /* ---- GOLDEN SECTION DIVIDER ---- */
+        .golden-divider {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--laiton) 2%, var(--laiton) 98%, transparent 100%);
+            margin: 0 auto;
+            transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+            max-width: 80%;
+            opacity: 0.7;
+        }
+        .golden-divider.charged {
+            width: 80%;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--header-h) + 2rem) clamp(1.5rem, 6vw, 4rem) 4rem;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.85) sepia(0.25);
+            opacity: 0.65;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 55% 40%, rgba(250, 245, 235, 0.2) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(44, 26, 20, 0.55) 0%, rgba(44, 26, 20, 0.35) 40%, rgba(44, 26, 20, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(250, 245, 235, 0.015) 3px,
+                    rgba(250, 245, 235, 0.015) 6px);
+            pointer-events: none;
+        }
+        .hero-giant-number {
+            position: absolute;
+            z-index: 3;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(9rem, 24vw, 22rem);
+            color: rgba(250, 245, 235, 0.09);
+            letter-spacing: -0.04em;
+            line-height: 0.8;
+            pointer-events: none;
+            right: clamp(-1rem, 2vw, 2rem);
+            top: 50%;
+            transform: translateY(-50%);
+            user-select: none;
+            transition: color 0.8s ease;
+        }
+        .hero-giant-number.lit {
+            color: rgba(212, 168, 67, 0.18);
+            text-shadow: 0 0 80px rgba(212, 168, 67, 0.3), 0 0 200px rgba(212, 168, 67, 0.15);
+        }
+        .hero-light-ray {
+            position: absolute;
+            z-index: 4;
+            top: 30%;
+            right: 5%;
+            width: clamp(120px, 18vw, 280px);
+            height: 65%;
+            background: linear-gradient(165deg,
+                    transparent 0%,
+                    rgba(212, 168, 67, 0.12) 30%,
+                    rgba(232, 207, 138, 0.06) 50%,
+                    transparent 70%);
+            pointer-events: none;
+            transform: skewX(-12deg);
+            filter: blur(30px);
+            animation: ray-shift 8s ease-in-out infinite alternate;
+        }
+        @keyframes ray-shift {
+            0% {
+                opacity: 0.5;
+                transform: skewX(-12deg) translateY(0);
+            }
+            100% {
+                opacity: 0.9;
+                transform: skewX(-12deg) translateY(-4%);
+            }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 750px;
+            text-align: left;
+            margin-right: auto;
+            margin-left: clamp(1rem, 5vw, 5rem);
+            padding: 2.5rem clamp(1.5rem, 5vw, 3rem);
+            background: rgba(250, 245, 235, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            box-shadow: var(--shadow-card);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s forwards;
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 5.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--lie-de-vin);
+            margin-bottom: 0.6em;
+        }
+        .hero-content h1 em {
+            font-style: normal;
+            color: var(--laque);
+            position: relative;
+        }
+        .hero-content h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: 0.05em;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--laiton);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+        .hero-content .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+            line-height: 1.65;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+        .hero-content .subtitle .stars-inline {
+            color: var(--laiton-fonce);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        @media (max-width: 700px) {
+            .hero {
+                min-height: 90vh;
+                align-items: flex-end;
+                padding-bottom: 3rem;
+            }
+            .hero-content {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                text-align: center;
+                padding: 1.8rem 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: clamp(1.7rem, 7vw, 2.6rem);
+            }
+            .hero-giant-number {
+                font-size: clamp(6rem, 30vw, 16rem);
+                right: -1rem;
+                top: 20%;
+                transform: translateY(0);
+            }
+            .hero-light-ray {
+                top: 10%;
+                right: -5%;
+                width: 150px;
+                height: 50%;
+            }
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            position: relative;
+            padding: clamp(3rem, 8vh, 7rem) clamp(1.25rem, 6vw, 4rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-label {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--laiton-fonce);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 0.8em;
+            color: var(--lie-de-vin);
+            position: relative;
+            display: inline-block;
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.2em;
+            left: 0;
+            width: 2.5em;
+            height: 2px;
+            background: var(--laiton);
+            border-radius: 2px;
+            opacity: 0.7;
+        }
+        .section p,
+        .section .text-block {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.75;
+            color: var(--text-muted);
+            max-width: 65ch;
+            letter-spacing: 0.015em;
+        }
+        .section .text-block+.text-block {
+            margin-top: 1.2em;
+        }
+
+        /* ---- HERITAGE ---- */
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .heritage-ornament {
+            position: relative;
+            aspect-ratio: 1 / 1.1;
+            background: var(--sable);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 60px rgba(44, 26, 20, 0.06);
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(5rem, 12vw, 10rem);
+            color: rgba(155, 27, 48, 0.12);
+            letter-spacing: -0.04em;
+            user-select: none;
+            background-image:
+                radial-gradient(circle at 30% 40%, rgba(212, 168, 67, 0.08) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(44, 26, 20, 0.015) 8px, rgba(44, 26, 20, 0.015) 9px);
+        }
+        .heritage-ornament::after {
+            content: '69';
+            position: absolute;
+            font-size: inherit;
+            color: inherit;
+        }
+        @media (max-width: 700px) {
+            .heritage-grid {
+                grid-template-columns: 1fr;
+            }
+            .heritage-ornament {
+                aspect-ratio: 2/1;
+                font-size: clamp(4rem, 16vw, 7rem);
+                order: -1;
+            }
+        }
+
+        /* ---- CAVISTES ---- */
+        .cavistes-layout {
+            display: flex;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        .caviste-card {
+            flex: 1 1 280px;
+            background: var(--sable);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            position: relative;
+            box-shadow: var(--shadow-soft);
+            transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+        }
+        .caviste-card:hover {
+            box-shadow: var(--shadow-card);
+            transform: translateY(-4px);
+        }
+        .caviste-card .initials {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 5vw, 4rem);
+            color: var(--laque);
+            opacity: 0.25;
+            line-height: 1;
+            margin-bottom: 0.3em;
+            letter-spacing: -0.03em;
+        }
+        .caviste-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            color: var(--lie-de-vin);
+            margin-bottom: 0.5em;
+        }
+        .caviste-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ---- SELECTION ---- */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+        }
+        .wine-card {
+            background: #fffbf5;
+            border-radius: var(--radius-md);
+            padding: clamp(1.3rem, 2vw, 1.8rem);
+            border: 1px solid rgba(212, 168, 67, 0.35);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .wine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--laque), var(--laiton));
+            opacity: 0.75;
+        }
+        .wine-card:hover {
+            box-shadow: var(--shadow-card);
+            transform: translateY(-3px);
+            border-color: rgba(212, 168, 67, 0.6);
+        }
+        .wine-card .wine-name {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            color: var(--lie-de-vin);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        .wine-card .wine-details {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .wine-card .wine-price {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--laque);
+            letter-spacing: 0.02em;
+            margin-top: auto;
+            padding-top: 0.4em;
+            border-top: 1px dotted rgba(212, 168, 67, 0.4);
+        }
+        .wine-badge {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--laiton);
+            color: #fff;
+            padding: 0.25em 0.7em;
+            border-radius: 3px;
+            align-self: flex-start;
+        }
+
+        /* ---- SERVICES ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1rem, 2vw, 1.8rem);
+        }
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--sable);
+            border-radius: var(--radius-md);
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            transition: all var(--transition-smooth);
+        }
+        .service-item:hover {
+            background: #fffbf5;
+            box-shadow: var(--shadow-soft);
+            border-color: rgba(212, 168, 67, 0.5);
+        }
+        .service-icon {
+            flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(212, 168, 67, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--laiton-fonce);
+        }
+        .service-text strong {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--lie-de-vin);
+            margin-bottom: 0.2em;
+        }
+        .service-text span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ---- AVIS ---- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+        }
+        .review-card {
+            background: #fffbf5;
+            border-radius: var(--radius-md);
+            padding: clamp(1.3rem, 2vw, 1.8rem);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            position: relative;
+            box-shadow: var(--shadow-soft);
+            transition: all var(--transition-smooth);
+        }
+        .review-card:hover {
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+        .review-card .review-stars {
+            color: var(--laiton-fonce);
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.6rem;
+        }
+        .review-card .review-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            quotes: "«\00A0" "\00A0»";
+        }
+        .review-card .review-text::before {
+            content: open-quote;
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            color: var(--laiton);
+            line-height: 0.5;
+            vertical-align: -0.3em;
+            margin-right: 0.1em;
+        }
+        .review-card .review-author {
+            margin-top: 0.8em;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--lie-de-vin);
+            letter-spacing: 0.03em;
+        }
+
+        /* ---- HORAIRES ---- */
+        .horaires-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .horaires-info {
+            background: var(--sable);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+        }
+        .horaires-info h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1em;
+            color: var(--lie-de-vin);
+        }
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .horaires-table td {
+            padding: 0.5em 0;
+            border-bottom: 1px dotted rgba(212, 168, 67, 0.35);
+            color: var(--text-muted);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+            color: var(--lie-de-vin);
+        }
+        .horaires-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 1em;
+            font-style: italic;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            min-height: 320px;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+        }
+        @media (max-width: 700px) {
+            .horaires-layout {
+                grid-template-columns: 1fr;
+            }
+            .map-wrapper {
+                min-height: 280px;
+            }
+            .map-wrapper iframe {
+                min-height: 280px;
+            }
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--lie-de-vin);
+            color: rgba(250, 245, 235, 0.85);
+            padding: clamp(2rem, 5vh, 4rem) clamp(1.25rem, 6vw, 4rem);
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--laiton), transparent);
+            opacity: 0.6;
+        }
+        .site-footer .footer-brand {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.6em;
+            letter-spacing: 0.04em;
+        }
+        .site-footer a {
+            color: var(--laiton-pale);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .site-footer .footer-credit {
+            margin-top: 1.5em;
+            font-size: 0.75rem;
+            opacity: 0.55;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        a:focus-visible,
+        button:focus-visible,
+        .btn-call:focus-visible {
+            outline: 2px solid var(--laiton);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ---- REDUCED MOTION ---- */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .section {
+                opacity: 1;
+                transform: none;
+            }
+            .golden-divider {
+                width: 80%;
+                transition: none;
+            }
+            .hero-content {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ---- UTILITY ---- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-accent {
+            color: var(--laque);
+            font-weight: 500;
+        }
+        .text-gold {
+            color: var(--laiton-fonce);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Nicolas Pompe — Accueil">Nicolas<span>·</span>Pompe</a>
+        <nav class="header-nav" id="mainNav" aria-label="Navigation principale">
+            <a href="#heritage">La cave</a>
+            <a href="#cavistes">Cavistes</a>
+            <a href="#selection">Sélection</a>
+            <a href="#services">Services</a>
+            <a href="#avis">Avis</a>
+            <a href="#horaires">Horaires</a>
+        </nav>
+        <div class="header-cta">
+            <span class="badge-note"><span class="star">★</span> 4.8 — 30 avis</span>
+            <a href="tel:+33145042297" class="btn-call" aria-label="Appeler Nicolas Pompe">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Appeler
+            </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </header>
+
+    <main id="hero">
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Nicolas Pompe — cave à vins, intérieur chaleureux" loading="eager" decoding="async">
+            </div>
+            <div class="hero-giant-number" id="giant69" aria-hidden="true">69</div>
+            <div class="hero-light-ray" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 id="heroTitle">La cave qui aime <em>votre table</em>.</h1>
+                <p class="subtitle">Laurence et Maxime ouvrent pour vous 69 Rue de la Pompe — sélection personnelle, conseil sur mesure et une note de <span class="stars-inline">4.8 ★</span> méritée un verre après l'autre.</p>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="heritage" aria-hidden="true"></div>
+
+        <section class="section" id="heritage" aria-labelledby="heritageTitle">
+            <span class="section-label">Héritage</span>
+            <h2 id="heritageTitle">Une maison au nom de rue</h2>
+            <div class="heritage-grid">
+                <div class="text-block">
+                    <p>Depuis toujours au 69 Rue de la Pompe, notre cave est celle d'un immeuble, d'une famille, d'une adresse. Ici le vin ne se vend pas, il se partage.</p>
+                    <p>Laurence et Maxime vous accueillent du mardi au dimanche, avec l'exigence tranquille des passionnés. Chaque bouteille en rayon a été goûtée, discutée, choisie — pour qu'à votre table, tout soit juste.</p>
+                </div>
+                <div class="heritage-ornament" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="cavistes" aria-hidden="true"></div>
+
+        <section class="section" id="cavistes" aria-labelledby="cavistesTitle">
+            <span class="section-label">Les cavistes</span>
+            <h2 id="cavistesTitle">Vos cavistes, tout simplement</h2>
+            <div class="cavistes-layout">
+                <div class="caviste-card">
+                    <div class="initials" aria-hidden="true">L.</div>
+                    <h3>Laurence</h3>
+                    <p>Disponible, l'œil pétillant, elle marie chaque bouteille à votre repas, votre budget, votre curiosité. Pas de grande théorie, que des conseils sur mesure — et toujours le mot juste pour vous donner envie d'ouvrir.</p>
+                </div>
+                <div class="caviste-card">
+                    <div class="initials" aria-hidden="true">M.</div>
+                    <h3>Maxime</h3>
+                    <p>Fin connaisseur des terroirs, il anime cette cave comme on tient salon. À l'écoute, précis, il sait dénicher la pépite qui manquait à votre cave personnelle — et vous raconter son histoire.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="selection" aria-hidden="true"></div>
+
+        <section class="section" id="selection" aria-labelledby="selectionTitle">
+            <span class="section-label">La sélection du moment</span>
+            <h2 id="selectionTitle">Dans notre verre actuellement</h2>
+            <p style="margin-bottom:2rem;">Trois vins et un champagne, choisis chaque semaine par la maison. Affichés ici avec leur prix, leurs accords et la raison du choix. Pas le catalogue du web, le carnet intime de la cave.</p>
+            <div class="selection-grid">
+                <article class="wine-card">
+                    <span class="wine-badge">Rouge</span>
+                    <div class="wine-name">Morgon « Côte du Py » 2022 — Domaine des Terres Dorées</div>
+                    <div class="wine-details">Beaujolais racé, fruits noirs et épices douces. Accord : volaille rôtie, fromages affinés. Choisi pour sa fraîcheur et sa profondeur.</div>
+                    <div class="wine-price">18,50 €</div>
+                </article>
+                <article class="wine-card">
+                    <span class="wine-badge">Blanc</span>
+                    <div class="wine-name">Sancerre « Grande Cuvée » 2023 — Domaine Vacheron</div>
+                    <div class="wine-details">Sauvignon blanc d'exception, minéral et vif. Accord : fruits de mer, chèvre frais. Choisi pour sa pureté cristalline.</div>
+                    <div class="wine-price">24,00 €</div>
+                </article>
+                <article class="wine-card">
+                    <span class="wine-badge">Rosé</span>
+                    <div class="wine-name">Bandol Rosé 2023 — Château de Pibarnon</div>
+                    <div class="wine-details">Rosé de garde, structure et finesse. Accord : cuisine provençale, grillades. Choisi pour son élégance solaire.</div>
+                    <div class="wine-price">21,00 €</div>
+                </article>
+                <article class="wine-card">
+                    <span class="wine-badge">Champagne</span>
+                    <div class="wine-name">Champagne Brut « Cuvée Nicolas » — Maison Tarlant</div>
+                    <div class="wine-details">Assemblage maison, bulle fine et longue. Accord : apéritif, huîtres, moment précieux. Choisi pour sa constance et son panache.</div>
+                    <div class="wine-price">36,00 €</div>
+                </article>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="services" aria-hidden="true"></div>
+
+        <section class="section" id="services" aria-labelledby="servicesTitle">
+            <span class="section-label">Services</span>
+            <h2 id="servicesTitle">À votre service, avant, pendant, après le repas</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">📦</div>
+                    <div class="service-text"><strong>Click &amp; collect en 2h</strong><span>Commandez par téléphone, passez chercher vos bouteilles.</span></div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">🍽️</div>
+                    <div class="service-text"><strong>Conseils accords mets &amp; vins</strong><span>En boutique, nous accordons chaque vin à votre menu.</span></div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">🧊</div>
+                    <div class="service-text"><strong>Glaçons en dépannage</strong><span>Un imprévu ? Passez nous voir, on a ce qu'il faut.</span></div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">🎁</div>
+                    <div class="service-text"><strong>Emballage cadeau offert</strong><span>Vos bouteilles emballées avec soin, sans supplément.</span></div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">💳</div>
+                    <div class="service-text"><strong>Carte de fidélité Nicolas</strong><span>Accumulez des avantages à chaque achat.</span></div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">📞</div>
+                    <div class="service-text"><strong>Commande par téléphone</strong><span>Appelez-nous, nous préparons votre sélection.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="avis" aria-hidden="true"></div>
+
+        <section class="section" id="avis" aria-labelledby="avisTitle">
+            <span class="section-label">Avis</span>
+            <h2 id="avisTitle">4.8 ★ — ce sont eux qui le disent</h2>
+            <p style="margin-bottom:2rem;">Extraits choisis des avis Google. Preuve sociale transparente, non filtrée, visible immédiatement.</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars" aria-hidden="true">★★★★★</div>
+                    <p class="review-text">Une cave comme on n'en fait plus. Laurence a pris le temps de comprendre ce que je cherchais et m'a conseillé un vin parfait pour mon dîner. Je reviens chaque semaine.</p>
+                    <div class="review-author">— Claire B.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars" aria-hidden="true">★★★★★</div>
+                    <p class="review-text">Maxime est intarissable sur les terroirs, et toujours avec justesse. La sélection est pointue, les prix honnêtes. Ma cave de confiance depuis 5 ans.</p>
+                    <div class="review-author">— Thomas D.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars" aria-hidden="true">★★★★★</div>
+                    <p class="review-text">Un service impeccable, des conseils précis, et ce petit supplément d'âme qui fait qu'on a envie de rester discuter. Le champagne conseillé était une merveille.</p>
+                    <div class="review-author">— Sophie M.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="golden-divider" data-charge-on="horaires" aria-hidden="true"></div>
+
+        <section class="section" id="horaires" aria-labelledby="horairesTitle">
+            <span class="section-label">Venir</span>
+            <h2 id="horairesTitle">On vous voit quand ?</h2>
+            <div class="horaires-layout">
+                <div class="horaires-info">
+                    <h3>Nicolas Pompe</h3>
+                    <p style="margin-bottom:0.8em;">69 Rue de la Pompe<br>75016 Paris</p>
+                    <p style="margin-bottom:0.3em;"><a href="tel:+33145042297" style="color:var(--lie-de-vin);text-decoration:none;font-weight:500;">01 45 04 22 97</a></p>
+                    <p style="margin-bottom:1.2em;"><a href="mailto:cave.pompe@nicolas.com" style="color:var(--lie-de-vin);text-decoration:none;">cave.pompe@nicolas.com</a></p>
+                    <table class="horaires-table" aria-label="Horaires d'ouverture">
+                        <tbody>
+                            <tr><td>Mardi — Vendredi</td><td>10h00 – 20h00</td></tr>
+                            <tr><td>Samedi</td><td>10h00 – 20h00</td></tr>
+                            <tr><td>Dimanche</td><td>10h00 – 13h00</td></tr>
+                            <tr><td>Lundi</td><td>Fermé</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="horaires-note">Horaires indicatifs — n'hésitez pas à nous appeler pour confirmer. Un créneau conseil privé peut être réservé par téléphone.</p>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Nicolas+Pompe+69+Rue+de+la+Pompe%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Nicolas Pompe"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-brand">Nicolas Pompe</div>
+        <p>69 Rue de la Pompe — 75016 Paris</p>
+        <p><a href="tel:+33145042297">01 45 04 22 97</a> — <a href="mailto:cave.pompe@nicolas.com">cave.pompe@nicolas.com</a></p>
+        <p>Note Google : <strong>4.8 ★</strong> sur 30 avis</p>
+        <p class="footer-credit">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nicolas Pompe",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "69 Rue de la Pompe",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145042297",
+            "email": "cave.pompe@nicolas.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "30"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "13:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // IntersectionObserver pour les sections et les dividers dorés
+            const observerOptions = { threshold: 0.18, rootMargin: '0px 0px -40px 0px' };
+
+            const revealSections = document.querySelectorAll('.section');
+            const goldenDividers = document.querySelectorAll('.golden-divider');
+            const giantNumber = document.getElementById('giant69');
+            const header = document.getElementById('header');
+
+            // Observer pour les sections
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        sectionObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealSections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Observer pour les lignes dorées — se chargent quand la section précédente est visible
+            const dividerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const divider = entry.target;
+                        const chargeOn = divider.getAttribute('data-charge-on');
+                        if (chargeOn) {
+                            const targetSection = document.getElementById(chargeOn);
+                            if (targetSection) {
+                                // On vérifie si la section cible est révélée
+                                const checkSection = new IntersectionObserver((secEntries) => {
+                                    secEntries.forEach(secEntry => {
+                                        if (secEntry.isIntersecting) {
+                                            divider.classList.add('charged');
+                                            checkSection.unobserve(targetSection);
+                                        }
+                                    });
+                                }, { threshold: 0.25 });
+                                checkSection.observe(targetSection);
+                            }
+                        }
+                        dividerObserver.unobserve(divider);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            goldenDividers.forEach(divider => {
+                dividerObserver.observe(divider);
+            });
+
+            // Effet de lumière sur le 69 au scroll
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && giantNumber) {
+                const heroObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            giantNumber.classList.add('lit');
+                        } else {
+                            giantNumber.classList.remove('lit');
+                        }
+                    });
+                }, { threshold: [0, 0.5] });
+                heroObserver.observe(heroSection);
+
+                // Parallaxe subtil sur le 69
+                window.addEventListener('scroll', () => {
+                    const rect = heroSection.getBoundingClientRect();
+                    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                        const scrollFraction = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                        const moveY = scrollFraction * 30;
+                        giantNumber.style.transform = `translateY(calc(-50% + ${moveY}px))`;
+                    }
+                }, { passive: true });
+            }
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { passive: true });
+
+            // Menu mobile toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    const isOpen = mainNav.classList.toggle('open');
+                    menuToggle.setAttribute('aria-expanded', isOpen);
+                    menuToggle.textContent = isOpen ? '✕' : '☰';
+                });
+                // Fermer le menu au clic sur un lien
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.textContent = '☰';
+                    });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
