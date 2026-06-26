@@ -1,103 +1,68 @@
-# BRIEF CRÉATIF
-## Bread And Chocolate — Store Baby — Paris 16
+## Brief créatif — Tartine et Chocolat, boutique bébé Paris 16
 
----
+### 1. Concept & positionnement  
+Ici, on ne vend pas des vêtements d’enfant : on ouvre un ciel de douceur au-dessus du 16e arrondissement. La boutique réelle, avec ses nuages suspendus, son lettrage doré et sa lumière vive, devient le cœur du site. Le positionnement : **une maison de quartier chic**, où l’élégance parisienne se met au service des tout‑petits et de leurs parents, bien loin de la froideur d’un catalogue national. On retient l’image d’un **cocon lumineux** où le conseil, la personnalisation et la proximité comptent autant que les produits.
 
-### 1. CONCEPT & POSITIONNEMENT
+### 2. Direction artistique  
+**PARTI PRIS : UNE ÉLÉGANCE CÉLESTE, ANCRÉE DANS LE RÉEL**
 
-**L’idée forte :** Cette boutique du 16ᵉ arrondissement n’est pas un showroom anonyme, c’est une maison de famille où l’on pousse la porte pour confier ce qu’on a de plus précieux. Le site ne vend pas des vêtements — il donne envie de venir, de toucher les matières, de croiser le regard des conseillères qui connaissent les prénoms des enfants.
+Le style est directement extrait de l’énergie visuelle de la boutique photographiée :
+- **Le bleu marine profond** de la façade et des cadres métalliques structure l’ensemble – il apporte sérieux et luxe discret.
+- **Le blanc cassé et le beige** des murs et des tissus réchauffent l’atmosphère, évitant le minimalisme clinique.
+- **La lumière éclatante** des vitrines se traduit par une interface aérée, avec des fonds clairs et des respirations généreuses.
+- **Les nuages décoratifs** deviennent le fil narratif : une signature poétique, jamais kitsch, qui évoque l’enfance et le rêve sans tomber dans l’enfantillisme.
+- **Les touches de doré**, relevées sur l’enseigne, sont utilisées avec parcimonie en signalétique, en icônes ou en filets, comme un bijou discret.
 
-**Ce qu’on retient :** Tartine et Chocolat possède déjà un site e-commerce national. Ici, on crée l’écrin numérique d’une boutique de quartier haut de gamme, où l’expérience en ligne valide ce qu’on vit au 60 avenue Paul Doumer : un luxe feutré, attentif, à échelle humaine. Le site est la *porte d’entrée* vers le magasin, pas l’inverse.
+L’ensemble conjugue **rigueur graphique parisienne** et **tendresse maîtrisée**, reflétant une clientèle familiale exigeante, habituée aux belles choses.
 
-**Positionnement :** Une vitrine locale pour une clientèle qui ne cherche pas « un body à -30 % » sur un moteur de recherche, mais un conseil, une certitude de qualité, et une adresse où retourner les yeux fermés.
+### 3. Palette  
+| Rôle          | HEX       | Nom                | Usage |
+|---------------|-----------|--------------------|--------------------------------------------------------------------------|
+| Fond principal| `#F5F5DC` | Blanc cassé        | Arrière‑plans, grandes zones de texte |
+| Encre         | `#003366` | Bleu marine profond| Texte, titres, éléments structurants, footer |
+| Accent chaud  | `#C5A35F` | Doré voilé         | Boutons, liens, icônes, filets décoratifs, survols |
+| Ciel diurne   | `#A3C6E1` | Bleu layette       | Nuages, éléments de service, badges, animations |
+| Touche douce  | `#E8E0D5` | Beige nuageux     | Fond alternatif pour cartes ou témoignages |
+| Contraste     | `#1A2B3C` | Presque‑noir teinté | Texte sur fond clair, variations de l’encre |
 
----
+La palette évite le duo crème+terracotta et le noir+gris mécanique. Le doré remplace tout orange ou vert acide, et le bleu layette vient adoucir sans tomber dans le pastel générique.
 
-### 2. DIRECTION ARTISTIQUE
+### 4. Ton éditorial  
+**Voix :** une maîtresse de maison de confiance, chaleureuse et cultivée, qui connaît ses clientes par leur prénom.  
+**Niveau de langue :** courant, avec un vocabulaire précis et quelques pointes de poésie mesurée. Pas de jargon commercial, pas de fausse familiarité.  
+**Registre :** proximité élégante – on parle de « notre boutique », « votre quartier », « vous et votre enfant ». Les textes sont informatifs, jamais vendeurs, et rassurent sur la qualité du conseil et du service.
 
-**Parti pris esthétique : Trousseau de baptême contemporain.**
+### 5. Accroche héro  
+**Titre :** Le ciel des tout‑petits, au cœur du 16e  
+**Sous‑titre :** Depuis plus de vingt ans, notre boutique avenue Paul Doumer accompagne l’éveil des enfants avec une sélection exigeante, des conseils précieux et un service de personnalisation unique.
 
-L’univers est celui d’une layette d’exception : broderie anglaise, coton longues fibres, cachemire, toiles de Jouy. On traduit cette douceur matérielle par un design qui évoque le geste précis des ateliers — une forme de retenue luxueuse, jamais démonstrative.
+Un CTA principal : **« Pousser la porte »** (avec icône nuage), et un CTA secondaire **« Nous appeler »** – deux ancres locales pour corriger l’absence totale de conversion physique du site actuel.
 
-La DA repose sur trois piliers :
+### 6. Sections  
 
-- **Le blanc travaillé comme une matière, pas comme un vide.** C’est le blanc du coton peigné, du papier vergé des faire-part, des boîtes de naissance. Il respire par des respirations généreuses et des nuances thermiques (blanc cassé, blanc optique, blanc chaud).
-- **La photographie comme seul spectacle.** Les images sont frontales, sans artifices, traitées en tons continus avec des noirs profonds et des blancs sans écrêtage. Pas de fonds distrayants ni de mises en scène narratives — on voit le point de broderie, le fil, le tombé du tissu. La lumière est douce mais directionnelle comme celle d’un atelier de couture parisien.
-- **La typographie donne le caractère là où la couleur se tait.** *Bricolage Grotesque* (display) impose une personnalité affirmée mais jamais criarde. *Hanken Grotesk* (texte) assure une lisibilité irréprochable dans la densité de l’information pratique.
+1. **Un écrin avenue Paul Doumer**  
+   *Poussez la porte de notre boutique bébé et changez d’atmosphère : un cocon chaleureux, baigné de lumière, où les nuages se suspendent aux murs et où le temps prend des allures de parenthèse. Ici, on prend le temps de vous conseiller, de la naissance aux 14 ans.*
 
----
+2. **Nos services de quartier**  
+   *Commandez en ligne et venez retirer votre paquet sous 2 heures – nous préparons vos articles avec soin. Vous rêvez d’un cadeau unique ? Notre atelier brode prénoms et messages sur place, pour rendre chaque vêtement aussi personnel qu’une première étoile.*
 
-### 3. PALETTE
+3. **La boutique en images**  
+   *Galerie photo immersive : la vitrine, les nuages, l’atelier de personnalisation, l’équipe souriante. Des vues réelles qui rassurent avant même de passer le pas de la porte.*
 
-Ancrée dans les teintes réelles de l’univers Tartine et Chocolat et l’identité du 16ᵉ arrondissement (pierre de taille, ciel d’Île-de-France, dorures discrètes des devantures).
+4. **Paroles de parents du 16e**  
+   *Intégration des avis Google Maps (note 4,1★ – 29 avis) : témoignages de clientes du quartier, qui parlent de la qualité d’accueil, de la beauté des lieux et des conseils reçus. Une preuve sociale locale, absente du site national.*
 
-| Rôle | HEX | Nom | Usage |
-|------|-----|-----|-------|
-| Fond principal | `#F7F4EF` | Blanc chaud | Arrière-plan de page, donne la chaleur du coton |
-| Encre | `#2B2D2A` | Noir couture | Texte courant, ancrage solide sans être un noir pur agressif |
-| Accent | `#C5B5A3` | Beige poudré | Filets, séparateurs, éléments UI discrets — la teinte exacte du cachemire non teint |
-| Soutien | `#DCE4E7` | Bleu ciel | Cartouches, arrière-plans d’appel — le bleu signature de la layette garçon classique |
-| Point | `#9F8A7C` | Tonalité pierre | Bordures photographiques, cadres, un clin d’œil à la pierre de taille haussmannienne |
-| Réserve | `#FFFFFF` | Blanc optique | Fond pour les fiches produits, les cartes d’information, contraste maximal pour la lecture |
+5. **Nous trouver, nous joindre**  
+   *60 avenue Paul Doumer, 75016 Paris*  
+   *Ouvert du mardi au samedi, 10h–19h*  
+   *Téléphone : 01 45 04 08 94 • email : contact@tartine-et-chocolat.com*  
+   *Plan interactif, calcul d’itinéraire, formulaire de contact rapide.*
 
-**Dominante :** Clair, chaud, sans fadeur. On évite le blanc pur généralisé ; on dose les blancs pour créer de la profondeur sans quitter l’élégance.
+6. **(Pied de page) Un lien vers la collection en ligne**  
+   *Notre boutique en ligne reste ouverte 24h/24 pour les envois dans toute l’Europe. Retrouvez l’intégralité de la collection Tartine et Chocolat sur tartine-et-chocolat.com.*
 
----
+### 7. Signature visuelle  
+- **Nuages animés en parallaxe** : des nuages stylisés (reprenant la forme réelle des nuages suspendus de la boutique) traversent l’écran au scroll, donnant une impression de légèreté et de mouvement. Leur vitesse est modeste, en harmonie avec le calme du lieu.  
+- **Le médaillon “nuage doré”** : un nuage finement dessiné, cerclé d’un trait doré, sert de séparateur de section, de motif sur les cartes ou d’icône de chargement. Il encode immédiatement l’identité « ciel et luxe » sans un mot.
 
-### 4. TON ÉDITORIAL
-
-**Voix :** Une conseillère de confiance, celle qui a vu grandir les enfants, qui connaît les collections sur le bout des doigts et qui appelle les clients par leur nom.
-
-**Registre :** Soutenu sans être guindé. Le vocabulaire est précis (on parle de *layette*, de *broderie*, de *toile de Jouy*), mais on s’adresse aux parents et grands-parents avec simplicité et chaleur.
-
-**Règle d’écriture :** On n’écrit jamais « nous sommes ravis de vous proposer ». On écrit ce qui importe : *quoi*, *comment*, *quand*, *où*. Les adjectifs sont des preuves, pas des enjolivements. Le ton feutré donne confiance ; il n’écrase pas le visiteur.
-
----
-
-### 5. ACCROCHE HÉRO
-
-**Titre :** Toute une enfance au 60 de l’Avenue Paul Doumer.
-**Sous-titre :** Vêtements, layette et cadeaux de naissance depuis 1977. Conseils de mères en filles, dans les règles de l’art.
-
-**Note :** Le titre ancre immédiatement le lieu et la promesse dans la durée. Le sous-titre donne le métier, la légitimité historique et le ton familial — tout ce que le site e-commerce national ne dit pas.
-
----
-
-### 6. SECTIONS
-
-1. **À propos de la boutique**
-   *Titre :* Une maison, pas un passage.
-   *Contenu :* Notre adresse du 16ᵉ arrondissement abrite le plus beau du savoir-faire Tartine et Chocolat : toiles de Jouy, broderies, cachemires. Ici, les collections se découvrent à hauteur d’enfant et les parents trouvent une écoute rare. De la première brassière au manteau de cérémonie, chaque pièce est choisie avec vous, en confiance.
-
-2. **La collection du moment**
-   *Titre :* En boutique, en ce moment.
-   *Contenu :* (Cette section affiche une sélection photo de 8 à 12 pièces disponibles au magasin ce mois-ci, avec la mention « Essayage et retrait au 60 avenue Paul Doumer ». Les prix ne sont pas affichés : le conseil passe par l’échange, pas par un panier.)
-
-3. **Services & savoir-faire**
-   *Titre :* Des services qui changent tout.
-   *Contenu :* Conseil personnalisé en cabine • Personnalisation de broderie sur place (prénom, initiales, date) • Retouches ajustées en 48 h • Click & collect depuis le site national • Expédition en messagerie soignée sur demande • Liste de naissance suivie par nos conseillères.
-
-4. **Venir nous voir**
-   *Titre :* 60 Avenue Paul Doumer, le 16ᵉ côté jardin.
-   *Contenu :* Proche des Jardins du Trocadéro et de la Place de la Porte de Saint-Cloud. Notre vitrine donne sur l’Avenue Paul Doumer, à deux pas du métro Jasmin (ligne 9). Ouvert du mardi au samedi de 10 h à 19 h sans interruption. Téléphone en boutique : 01 45 04 08 94. Pour une demande urgente ou un rendez-vous en dehors des heures, appelez-nous directement — nous nous arrangerons.
-
-5. **Ce que les familles en disent**
-   *Titre :* L’avis de celles qui connaissent la maison.
-   *Contenu :* (Quatre courts témoignages anonymisés mais réels issus des retours Google Maps, centrés sur la qualité de l’accueil, des conseils et la pérennité des vêtements. Chaque citation est attribuée à un prénom et un quartier, pas à une note.)
-
-6. **Contact & premiers mots**
-   *Titre :* Un projet, une question, un cadeau pressé ?
-   *Contenu :* Laissez-nous vos coordonnées et quelques mots sur votre besoin (naissance, baptême, anniversaire, liste). Une conseillère de la boutique vous rappelle dans la demi-journée, au moment qui vous convient. Formulaire court : prénom, téléphone, message libre. Bouton : « Qu’on me rappelle du 16ᵉ ».
-
----
-
-### 7. SIGNATURE VISUELLE
-
-- **Le motif Toile de Jouy** — discret mais présent. Utilisé en filigrane ultra-doux derrière les sections « À propos » et « Services », il rappelle l’ADN de la marque sans alourdir la lecture. Il n’apparaît jamais sur les photos de produits pour ne pas créer de redondance.
-- **La typographie Bricolage Grotesque en lettres capitales écartées** — réservée aux titres de section et à l’accroche, elle installe un double registre : la modernité d’une grotesque assumée et la solennité d’un faire-part gravé. L’interlettrage généreux transforme les mots en repères élégants sans introduire de numérotation artificielle.
-- **Le traitement photographique « blanc sur blanc »** : les silhouettes des vêtements sont détourées mais posées sur un fond du même blanc que la page, seule l’ombre portée indique où s’arrête le produit. Cet effet donne l’illusion que les pièces flottent légèrement, accentuant leur légèreté et la préciosité des matières.
-
----
-
-**Rappel des corrections apportées à l’audit :**
-- H1 installé (accroche) • Adresse et téléphone visibles dès le premier écran • Click & collect proposé en alternative au panier e-commerce • Balisage Schema.org LocalBusiness intégré • Numéro de téléphone synchronisé entre le site et la fiche Google • Photographie éditoriale remplaçant la grille produit impersonnelle • Pas de prix barrés ni de promotion tonitruante — la boutique locale vend du conseil et de la qualité, pas une chasse aux soldes.
+Ces deux détails rendent le site immédiatement reconnaissable, loin d’une DA interchangeable, et ancrent la visite dans une expérience sensorielle cohérente avec la boutique réelle.
