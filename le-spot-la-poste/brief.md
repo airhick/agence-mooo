@@ -1,74 +1,73 @@
-# BRIEF CRÉATIF — Le Spot La Poste
+**Brief créatif — Le Spot La Poste**  
+*Conçu pour un site vitrine dédié, autonome et immersif*
 
 ---
 
-## 1. Concept & positionnement
-Le Spot n’est pas un showroom, c’est un laboratoire vivant. Là où le site actuel aligne des communiqués, nous racontons un lieu où l’innovation se touche, se teste et se discute. La promesse du site : donner envie de pousser la porte, quel que soit son âge ou son bagage tech. On remplace le ton institutionnel par une voix directe, curieuse et généreuse — celle de l’équipe qui accueille.
+### 1. Concept & positionnement
+Le Spot n’est pas un bureau de poste, c’est une **fenêtre ouverte sur les innovations qui façonnent déjà notre quotidien**. On pousse une porte, on traverse un sas, et on se retrouve acteur de la ville de demain — en testant, en échangeant, sans réunion PowerPoint. Le site doit restituer cette **proximité augmentée** entre le citoyen, la technologie et le facteur humain, et transformer la visite virtuelle en une invitation irrésistible à passer la vraie porte du 7 rue du Colonel Pierre Avia.
 
 ---
 
-## 2. Direction artistique
-**« Brutalisme hospitalier »** —  
-Structure assumée, typographie à fort caractère, blocs découpés et filets francs d’un côté. Lumière lin, palette chaleureuse, photos de vrais visiteurs en pleine manipulation de l’autre. Le jaune postal historique devient un accent solaire et ponctuel, jamais placardé ; le bleu s’approfondit en encre nocturne élégante. L’ensemble respire la maquette, le prototype bienveillant — un site qui donne à voir l’interactivité avant même qu’on ait cliqué.
+### 2. Direction artistique
+**Parti pris : « Brut numérique chaleureux »**  
+On évite le high-tech aseptisé et l’institutionnel fade. L’univers visuel naît d’une tension entre la donnée froide (circuits, trames, pixels) et la chaleur humaine du quartier (bois clair, lumière tamisée, mobilier modulable). L’esthétique évoque un laboratoire ouvert, où les écrans côtoient le béton ciré et où l’on vient autant pour manipuler un exosquelette que pour boire un café. La typographie Bricolage Grotesque, aux formes volontairement imparfaites, incarne cette technologie accessible, presque artisanale ; Hanken Grotesk lui apporte la rigueur indispensable à la lisibilité des informations pratiques.
 
 ---
 
-## 3. Palette
+### 3. Palette
+Ancrée dans l’identité du groupe sans la plagier, avec une atmosphère nocturne qui met en valeur la lumière des écrans et des interactions.
 
-| Rôle | Hex | Nom |
-|---|---|---|
-| Fond principal | `#FBF8F2` | Lin chaud |
-| Encre primaire | `#1A1E2B` | Bleu nuit |
-| Accent principal | `#FFDA1A` | Jaune solaire |
-| Bleu signalétique | `#0046AD` | Bleu poste modernisé |
-| Accent digital | `#FF5C39` | Corail vif |
-| Gris structurel | `#E5DDD3` | Pierre douce |
+| Rôle               | Hex       | Nom              |
+|--------------------|-----------|------------------|
+| Fond principal     | `#0C1B2A` | Bleu nuit profond |
+| Surface / cartes   | `#162A3D` | Bleu pétrole moyen |
+| Accent primaire    | `#FFD100` | Jaune signalétique (La Poste) |
+| Accent interactif  | `#00D4FF` | Cyan électronique |
+| Texte principal    | `#F2F5F8` | Blanc polaire |
+| Texte secondaire   | `#94A3B8` | Gris clair sourd |
 
-Le site s’affiche en mode clair mais jamais froid. Le corail et le jaune se partagent les interactions (hover, focus, CTA), le bleu nuit ancre la lecture, le lin détend l’œil sur les longues sections.
-
----
-
-## 4. Ton éditorial
-Vouvoiement élégant et sobre, phrases courtes rythmées, verbes d’action. Aucun jargon institutionnel, aucun superlatif vide. On parle comme on accueille au Spot : avec enthousiasme et précision. Les témoignages Google sont intégrés tels quels pour faire entendre la voix des vrais visiteurs. Exemple : *« Ici, on trifouille l’IA, on teste le métavers, on décode la cybersécurité. Et vous, vous venez quand ? »*
+Le fond sombre évoque l’univers des données, le jaune et le cyan guident le visiteur vers les actions clés et les informations vitales. Le contraste est fort sans être agressif, pensé pour l’accessibilité (normes WCAG AA sur les textes).
 
 ---
 
-## 5. Accroche héro
-**Titre** (Bricolage Grotesque, brisé sur deux lignes) :  
-> Et si l’innovation  
-> se touchait du doigt ?
-
-**Sous-titre** (Hanken Grotesk, corps 20/24) :  
-> Bienvenue au Spot, le laboratoire d’idées de La Poste.  
-> Ici, vous ne faites pas que regarder : vous expérimentez, jouez et questionnez le futur.  
-> Ouvert à tous, au cœur du 15ᵉ — sans badge, sans prérequis.
+### 4. Ton éditorial
+**Voix :** On s’adresse à un voisin curieux, à un professionnel du quartier, à un parent avec enfant. On dit « vous », on emploie des phrases courtes, des questions directes (« Et si vous testiez un robot facteur ? »), et on bannit les mots en « -tion » et les « enjeux stratégiques ».  
+**Registre :** Dynamique, concret, légèrement ludique, jamais infantilisant. Chaque section répond à « Qu’est-ce que j’y gagne ? » ou « Comment je fais pour venir ? ».
 
 ---
 
-## 6. Sections ordonnées
+### 5. Accroche héro
+**Titre (H1) :**  
+*Le futur a une adresse.*
 
-### ① Le lieu
-**Titre** : 200 m² d’expériences, de jeu et de dialogue  
-**Contenu** : Un showroom pensé comme un terrain d’exploration, conçu pour tous les publics : postiers, pros, riverains, familles ou simples curieux. Chaque visite est unique parce qu’elle se construit avec vous.  
-*Galerie immersive pleine largeur : photos de visiteurs en action, pas de poses figées.*
-
----
-
-### ② Les expériences
-**Titre** : 11 modules interactifs pour comprendre demain  
-**Contenu** : Intelligence artificielle, métavers, cybersécurité, impact environnemental… Autant de sujets complexes rendus accessibles par le jeu et la manipulation. Les thématiques se renouvellent tous les 18 mois pour coller au pouls du monde.  
-*Grille visuelle en 3 colonnes : chaque module illustré par une icône sur fond corail, un titre bref et 10 mots de description. Animation hover qui soulève la carte.*
+**Sous-titre :**  
+À deux pas d’Issy et du 15ᵉ, poussez la porte du Spot. 200 m² d’expériences interactives, d’IA, de ville connectée — à toucher, tester, discuter. Curieux, familles, professionnels : c’est ouvert, c’est gratuit, et ça vous attend.
 
 ---
 
-### ③ Vous êtes les bienvenus
-**Titre** : Pas de badge, pas de barrière  
-**Contenu** : Équipes La Poste, partenaires tech, étudiants, familles du quartier ou passants du boulevard périphérique… le Spot est gratuit et ouvert à tous. Passez quand vous voulez pendant les heures d’ouverture, ou réservez un créneau pour un groupe.  
-*Photos de différents publics (collaborateurs, enfants, étudiants) en mosaïque chaleureuse.*
+### 6. Sections
+1. **Le lieu**  
+   *Un ancien hall réinventé en laboratoire vivant. Ici, on ne vous parle pas d’innovation : vous la manipulez. Smart city, impact environnemental, réalité virtuelle… chaque expérience est renouvelée pour rester en prise directe avec vos usages.*
+
+2. **Expérimentez**  
+   *Pilotez un drone, dialoguez avec une IA, simulez un quartier bas carbone. Le Spot, c’est une vingtaine de démonstrateurs en accès libre, sans rendez-vous. Présenté par La Poste, mais pensé pour vous.*
+
+3. **La programmation** (titre dynamique : « En ce moment au Spot »)  
+   *Tous les 18 mois, une nouvelle thématique. Actuellement : « Impact(s) » — comment le numérique et les services postaux peuvent réduire leur empreinte. Ateliers, débats, visites guidées chaque semaine.*
+
+4. **Infos pratiques**  
+   *Adresse, horaires, accès (métro, tram, parking), accessibilité. Un module carte et un bouton d’itinéraire. Aucun texte superflu : l’information pure.*
+
+5. **Réservez votre visite**  
+   *Un formulaire minimal et un calendrier pour les visites de groupe, les privatisations professionnelles ou les ateliers scolaires. Enfin un vrai CTA.*
+
+6. **Galerie immersive**  
+   *Photos et vidéos en plein écran, révélées au scroll, montrant le lieu sous tous les angles : la lumière, les écrans, les visiteurs en action. Pas de stock photos corporate.*
 
 ---
 
-### ④ L’ambiance (bloc témoignages)
-**Titre** : Et les visiteurs en parlent mieux que nous  
-**Contenu** :  
-> *« Une matinée au top avec l’équipe du Spot et deux belles interventions. Sans oublier l’accueil parfait d’une équipe dynamique. »* — Julien Nic
+### 7. Signature visuelle
+- **Trames de données animées :** En fond des sections, une grille algorithmique subtile se déforme au survol des cartes, comme une matière vivante. Elle rappelle les flux postaux et les réseaux sans jamais distraire.
+- **Typographie à la limite de la casse :** Certains titres de section utilisent Bricolage Grotesque dans un corps surdimensionné, partiellement masqué par un conteneur d’image, créant un effet de « hors-champ » qui invite à scroller.
+- **Le curseur « interactif » :** Sur les éléments cliquables, le curseur se transforme en un point lumineux cyan qui pulse, évoquant une interface tactile — un clin d’œil aux écrans du lieu réel.
+- **Pas de slider fade :** Une animation au défilement où les images s’empilent avec un effet de parallaxe inverse, créant une profondeur de champ et une sensation de traversée physique de l’espace.

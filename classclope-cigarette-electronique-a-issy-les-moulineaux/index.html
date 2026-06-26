@@ -3,1191 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASS'CLOPE : Cigarette électronique à Issy-les-Moulineaux | Salon de conseil</title>
-    <meta name="description" content="CLASS'CLOPE à Issy-les-Moulineaux — bien plus qu'un magasin de cigarette électronique. Un salon de conseil expert et bienveillant, note 4.9★. E-liquides, pods, conseils personnalisés. 29 Rue Ernest Renan.">
-    <meta property="og:title" content="CLASS'CLOPE : Cigarette électronique à Issy-les-Moulineaux">
-    <meta property="og:description" content="Salon de conseil expert en cigarette électronique. L'élégance de l'arrêt du tabac.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>CLASS'CLOPE — Cigarette électronique à Issy-les-Moulineaux | Vapotez avec classe</title>
+    <meta name="description" content="CLASS'CLOPE : le fumoir du XXIᵉ siècle à Issy-les-Moulineaux. Conseils sur-mesure, e-liquides d'exception et matériel testé en boutique. 4.9★ — 216 avis. 29 rue Ernest Renan.">
+    <meta property="og:title" content="CLASS'CLOPE — Vapotez avec classe à Issy-les-Moulineaux">
+    <meta property="og:description" content="Un fumoir d'un nouveau genre vous accompagne pour dire adieu à la fumée — sans renoncer au style, aux saveurs ni au conseil.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#F9F6F2">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231C1B1A'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='40' font-family='serif' fill='%23C49A6C'%3EC%3C/text%3E%3Ccircle cx='48' cy='22' r='8' fill='none' stroke='%23C49A6C' stroke-width='2.5'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --fond: #F9F6F2;
-            --texte: #1C1C1C;
-            --accent-vert: #1A3A32;
-            --accent-or: #B89B6E;
-            --texte-second: #6B6257;
-            --fond-sombre: #1F2124;
-            --blanc-casse: #F4F1EB;
-            --ombre-douce: 0 2px 24px rgba(28, 28, 28, 0.06);
-            --ombre-profonde: 0 8px 40px rgba(26, 58, 50, 0.12);
-            --rayon-carte: 1.25rem;
-            --transition-fluide: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-            --transition-rapide: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--texte);
-            background-color: var(--fond);
-            letter-spacing: 0.01em;
-            overflow-x: hidden;
-            min-height: 100vh;
-            background-image:
-                radial-gradient(ellipse at 20% 5%, rgba(184, 155, 110, 0.04) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 30%, rgba(26, 58, 50, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 90%, rgba(107, 98, 87, 0.03) 0%, transparent 50%);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            .reveal,
-            .reveal-delay,
-            .reveal-stagger>*,
-            .float-on-hover,
-            .hero-visual,
-            .grain-overlay,
-            .vapor-layer {
-                animation: none !important;
-                transition: none !important;
-                opacity: 1 !important;
-                transform: none !important;
-            }
-        }
-
-        /* ===== Header collant ===== */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 0.9rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
-            background: rgba(249, 246, 242, 0.78);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid transparent;
-        }
-
-        .site-header.is-scrolled {
-            background: rgba(249, 246, 242, 0.94);
-            box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05), 0 4px 20px rgba(28, 28, 28, 0.04);
-            padding: 0.6rem 2rem;
-        }
-
-        .brand-mark {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 600;
-            font-size: clamp(1.3rem, 2.2vw, 1.65rem);
-            letter-spacing: 0.03em;
-            color: var(--accent-vert);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            line-height: 1;
-            transition: color var(--transition-rapide);
-        }
-
-        .brand-mark:hover {
-            color: #2d5a4a;
-        }
-        .brand-mark span {
-            color: var(--accent-or);
-            font-weight: 500;
-            font-size: 0.85em;
-        }
-
-        .nav-primary {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-primary a {
-            text-decoration: none;
-            color: var(--texte-second);
-            font-family: 'Geist', sans-serif;
-            font-weight: 500;
-            font-size: 0.88rem;
-            letter-spacing: 0.02em;
-            transition: color var(--transition-rapide);
-            position: relative;
-            padding: 0.3rem 0;
-        }
-
-        .nav-primary a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--accent-or);
-            transition: width var(--transition-fluide);
-        }
-        .nav-primary a:hover,
-        .nav-primary a:focus-visible {
-            color: var(--accent-vert);
-        }
-        .nav-primary a:hover::after,
-        .nav-primary a:focus-visible::after {
-            width: 100%;
-        }
-
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent-vert);
-            color: #fff;
-            padding: 0.55rem 1.3rem;
-            border-radius: 2.5rem;
-            text-decoration: none;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.02em;
-            transition: all var(--transition-fluide);
-            border: 1.5px solid var(--accent-vert);
-            white-space: nowrap;
-        }
-        .header-cta:hover,
-        .header-cta:focus-visible {
-            background: #fff;
-            color: var(--accent-vert);
-            border-color: var(--accent-vert);
-            box-shadow: var(--ombre-profonde);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            flex-direction: column;
-            gap: 5px;
-            z-index: 1001;
-        }
-        .hamburger span {
-            display: block;
-            width: 26px;
-            height: 2px;
-            background: var(--accent-vert);
-            transition: var(--transition-fluide);
-            border-radius: 1px;
-        }
-
-        /* ===== HÉRO ===== */
-        .hero {
-            padding: 8rem 2rem 4rem;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(184, 155, 110, 0.15);
-            color: var(--accent-vert);
-            padding: 0.4rem 1rem 0.4rem 0.8rem;
-            border-radius: 2rem;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.82rem;
-            letter-spacing: 0.03em;
-            margin-bottom: 1.8rem;
-            border: 1px solid rgba(184, 155, 110, 0.3);
-        }
-        .hero-badge .star-gold {
-            color: #d4a843;
-            font-size: 1rem;
-        }
-
-        .hero h1 {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 500;
-            font-size: clamp(2.6rem, 6vw, 4.2rem);
-            line-height: 1.08;
-            color: var(--accent-vert);
-            letter-spacing: -0.01em;
-            margin-bottom: 1.4rem;
-        }
-        .hero h1 em {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--accent-or);
-            position: relative;
-        }
-
-        .hero-subtitle {
-            font-family: 'Geist', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-            color: var(--texte-second);
-            max-width: 28rem;
-            line-height: 1.7;
-            margin-bottom: 2.2rem;
-            letter-spacing: 0.02em;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: var(--accent-vert);
-            color: #fff;
-            padding: 0.85rem 1.8rem;
-            border-radius: 2.5rem;
-            text-decoration: none;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.92rem;
-            letter-spacing: 0.02em;
-            transition: all var(--transition-fluide);
-            border: 1.5px solid var(--accent-vert);
-        }
-        .btn-primary:hover,
-        .btn-primary:focus-visible {
-            background: #fff;
-            color: var(--accent-vert);
-            box-shadow: var(--ombre-profonde);
-        }
-
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: transparent;
-            color: var(--accent-vert);
-            padding: 0.85rem 1.8rem;
-            border-radius: 2.5rem;
-            text-decoration: none;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.92rem;
-            letter-spacing: 0.02em;
-            transition: all var(--transition-fluide);
-            border: 1.5px solid rgba(26, 58, 50, 0.3);
-        }
-        .btn-ghost:hover,
-        .btn-ghost:focus-visible {
-            border-color: var(--accent-vert);
-            background: rgba(26, 58, 50, 0.04);
-            box-shadow: var(--ombre-douce);
-        }
-
-        .hero-visual {
-            position: relative;
-            border-radius: var(--rayon-carte);
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            box-shadow: var(--ombre-profonde);
-            background: #e0d9cf;
-        }
-        .hero-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .hero-visual:hover img {
-            transform: scale(1.04);
-        }
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(26, 58, 50, 0.18) 0%, transparent 50%, rgba(184, 155, 110, 0.12) 100%);
-            pointer-events: none;
-            mix-blend-mode: multiply;
-        }
-        .hero-visual .vapor-overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 30% 40%, rgba(249, 246, 242, 0.3) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-            animation: vapor-drift 10s ease-in-out infinite alternate;
-        }
-
-        @keyframes vapor-drift {
-            0% {
-                opacity: 0.5;
-                transform: translateX(-2%) translateY(0);
-            }
-            100% {
-                opacity: 0.8;
-                transform: translateX(2%) translateY(-1%);
-            }
-        }
-
-        /* ===== Decorative filigree ===== */
-        .filigree {
-            position: absolute;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.06;
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(6rem, 15vw, 14rem);
-            color: var(--accent-vert);
-            letter-spacing: -0.04em;
-            line-height: 0.8;
-            user-select: none;
-        }
-        .filigree.top-right {
-            top: -4%;
-            right: -2%;
-            transform: rotate(8deg);
-        }
-        .filigree.bottom-left {
-            bottom: -6%;
-            left: -2%;
-            transform: rotate(-5deg);
-            font-size: clamp(4rem, 10vw, 9rem);
-        }
-
-        /* ===== SECTION commune ===== */
-        .section {
-            padding: 5rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent-or);
-            margin-bottom: 0.8rem;
-            position: relative;
-            display: inline-block;
-        }
-        .section-label::before {
-            content: '';
-            display: inline-block;
-            width: 1.8rem;
-            height: 1px;
-            background: var(--accent-or);
-            margin-right: 0.7rem;
-            vertical-align: middle;
-            opacity: 0.6;
-        }
-
-        h2 {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 500;
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            line-height: 1.15;
-            color: var(--accent-vert);
-            letter-spacing: -0.01em;
-            margin-bottom: 1rem;
-        }
-        h3 {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 500;
-            font-size: clamp(1.4rem, 3vw, 1.9rem);
-            color: var(--accent-vert);
-            letter-spacing: 0.01em;
-        }
-
-        .text-body {
-            font-family: 'Geist', sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-            color: var(--texte-second);
-            line-height: 1.75;
-            letter-spacing: 0.02em;
-            max-width: 38rem;
-        }
-
-        /* ===== À PROPOS ===== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        .about-text .highlight-box {
-            background: rgba(184, 155, 110, 0.08);
-            border-left: 3px solid var(--accent-or);
-            padding: 1.5rem 1.8rem;
-            border-radius: 0 var(--rayon-carte) var(--rayon-carte) 0;
-            margin-top: 2rem;
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            color: var(--accent-vert);
-            letter-spacing: 0.01em;
-            line-height: 1.5;
-        }
-        .about-visual {
-            position: relative;
-            border-radius: var(--rayon-carte);
-            overflow: hidden;
-            aspect-ratio: 3/4;
-            box-shadow: var(--ombre-douce);
-            background: #e8e2d8;
-        }
-        .about-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .about-visual .grain-overlay {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.04'/%3E%3C/svg%3E");
-        }
-
-        /* ===== OFFRE ===== */
-        .offre-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .offre-card {
-            background: #fff;
-            border-radius: var(--rayon-carte);
-            padding: 2rem 1.6rem;
-            box-shadow: var(--ombre-douce);
-            transition: all var(--transition-fluide);
-            border: 1px solid rgba(184, 155, 110, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        .offre-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--ombre-profonde);
-            border-color: rgba(26, 58, 50, 0.2);
-        }
-        .offre-card::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(184, 155, 110, 0.06);
-            pointer-events: none;
-            transition: all var(--transition-fluide);
-        }
-        .offre-card:hover::before {
-            transform: scale(1.4);
-            opacity: 0.5;
-        }
-        .offre-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-        .offre-card h4 {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 500;
-            font-size: 1.3rem;
-            color: var(--accent-vert);
-            margin-bottom: 0.6rem;
-            position: relative;
-            z-index: 1;
-        }
-        .offre-card p {
-            font-size: 0.9rem;
-            color: var(--texte-second);
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ===== GALERIE ===== */
-        .gallery-masonry {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-            margin-top: 3rem;
-        }
-        .gallery-item {
-            border-radius: var(--rayon-carte);
-            overflow: hidden;
-            aspect-ratio: 1/1;
-            position: relative;
-            cursor: pointer;
-            box-shadow: var(--ombre-douce);
-            background: #e8e2d8;
-            transition: all var(--transition-fluide);
-        }
-        .gallery-item:nth-child(2) {
-            aspect-ratio: 3/4;
-            grid-row: span 1;
-        }
-        .gallery-item:nth-child(4) {
-            aspect-ratio: 4/3;
-            grid-row: span 1;
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: var(--ombre-profonde);
-            z-index: 2;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.7s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(26, 58, 50, 0.25) 100%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity var(--transition-rapide);
-        }
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* ===== AVIS ===== */
-        .avis-block {
-            background: var(--fond-sombre);
-            color: #e8e2d8;
-            border-radius: var(--rayon-carte);
-            padding: 3rem 2.5rem;
-            margin-top: 3rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-        .avis-block::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: -60px;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            background: rgba(184, 155, 110, 0.07);
-            pointer-events: none;
-        }
-        .avis-left .big-note {
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(4rem, 8vw, 6rem);
-            font-weight: 600;
-            color: var(--accent-or);
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-        .avis-left .star-row {
-            font-size: 1.6rem;
-            letter-spacing: 0.1em;
-            color: #d4a843;
-        }
-        .avis-left .avis-count {
-            font-family: 'Geist', sans-serif;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #b0a89b;
-            margin-top: 0.4rem;
-        }
-        .avis-right {
-            max-width: 26rem;
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-            line-height: 1.6;
-            color: #d5cfc4;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ===== INFOS PRATIQUES ===== */
-        .infos-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        .info-card {
-            background: #fff;
-            border-radius: var(--rayon-carte);
-            padding: 2rem;
-            box-shadow: var(--ombre-douce);
-            border: 1px solid rgba(184, 155, 110, 0.12);
-        }
-        .info-card h3 {
-            margin-bottom: 1.3rem;
-        }
-        .info-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-        .info-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            font-size: 0.95rem;
-            color: var(--texte-second);
-            line-height: 1.5;
-        }
-        .info-list li strong {
-            font-weight: 600;
-            color: var(--texte);
-            min-width: 90px;
-            flex-shrink: 0;
-        }
-        .info-list a {
-            color: var(--accent-vert);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--transition-rapide);
-            border-bottom: 1px solid transparent;
-        }
-        .info-list a:hover {
-            color: var(--accent-or);
-            border-bottom-color: var(--accent-or);
-        }
-        .map-container {
-            border-radius: var(--rayon-carte);
-            overflow: hidden;
-            box-shadow: var(--ombre-douce);
-            margin-top: 2rem;
-            border: 1px solid rgba(184, 155, 110, 0.15);
-        }
-        .map-container iframe {
-            display: block;
-            width: 100%;
-        }
-
-        /* ===== FOOTER ===== */
-        .site-footer {
-            background: var(--fond-sombre);
-            color: #b0a89b;
-            padding: 3rem 2rem 2rem;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            letter-spacing: 0.02em;
-        }
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .footer-brand {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.5rem;
-            color: #e8e2d8;
-            letter-spacing: 0.03em;
-            font-weight: 500;
-        }
-        .footer-credits {
-            font-size: 0.8rem;
-            color: #7a7265;
-            margin-top: 1rem;
-        }
-        .footer-credits a {
-            color: var(--accent-or);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .footer-credits a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== REVEAL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
-        }
-        .reveal-stagger>* {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-stagger.is-visible>*:nth-child(1) {
-            transition-delay: 0.05s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.is-visible>*:nth-child(2) {
-            transition-delay: 0.15s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.is-visible>*:nth-child(3) {
-            transition-delay: 0.25s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.is-visible>*:nth-child(4) {
-            transition-delay: 0.35s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.is-visible>*:nth-child(5) {
-            transition-delay: 0.45s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.is-visible>*:nth-child(6) {
-            transition-delay: 0.55s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                text-align: center;
-            }
-            .hero-subtitle {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-visual {
-                order: -1;
-                aspect-ratio: 4/3;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            .offre-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-masonry {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-            .infos-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .avis-block {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-            }
-            .nav-primary {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: var(--fond);
-                flex-direction: column;
-                padding: 6rem 2rem 2rem;
-                gap: 1.5rem;
-                transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.12);
-                z-index: 1000;
-            }
-            .nav-primary.is-open {
-                right: 0;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .header-cta.desktop-only {
-                display: none;
-            }
-            .nav-primary .header-cta {
-                display: inline-flex;
-                margin-top: 0.5rem;
-            }
-            .filigree {
-                display: none;
-            }
-            .section {
-                padding: 3.5rem 1.5rem;
-            }
-        }
-
-        @media (min-width: 901px) {
-            .nav-primary .header-cta.mobile-only {
-                display: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .gallery-masonry {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.6rem;
-            }
-            .gallery-item:nth-child(2),
-            .gallery-item:nth-child(4) {
-                aspect-ratio: 1/1;
-            }
-            .hero {
-                padding: 7rem 1rem 2.5rem;
-                min-height: auto;
-            }
-            .hero h1 {
-                font-size: clamp(2rem, 8vw, 2.6rem);
-            }
-            .site-header {
-                padding: 0.7rem 1.2rem;
-            }
-            .site-header.is-scrolled {
-                padding: 0.5rem 1.2rem;
-            }
-            .btn-primary,
-            .btn-ghost {
-                padding: 0.7rem 1.3rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* ===== FOCUS ===== */
-        :focus-visible {
-            outline: 2.5px solid var(--accent-or);
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-        .btn-primary:focus-visible,
-        .btn-ghost:focus-visible,
-        .header-cta:focus-visible {
-            outline-offset: 2px;
-        }
-
-        /* ===== SKIP LINK ===== */
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: var(--accent-vert);
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            z-index: 9999;
-            border-radius: 0 0 8px 8px;
-            font-family: 'Geist', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            transition: top 0.3s;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-    </style>
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-    <header class="site-header" id="site-header">
-        <a href="#" class="brand-mark" aria-label="CLASS'CLOPE — Accueil">CLASS'CLOPE<span>•</span></a>
-        <button class="hamburger" aria-label="Menu de navigation" aria-expanded="false" id="hamburger-btn">
-            <span></span><span></span><span></span>
-        </button>
-        <nav>
-            <ul class="nav-primary" id="nav-primary">
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#offre">Notre offre</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <li><a href="#infos">Infos pratiques</a></li>
-                <li><a href="tel:+33987054928" class="header-cta mobile-only">📞 Appeler</a></li>
-            </ul>
-        </nav>
-        <a href="tel:+33987054928" class="header-cta desktop-only">📞 09 87 05 49 28</a>
-    </header>
-
-    <main id="main-content">
-        <!-- HÉRO -->
-        <section class="hero" id="hero">
-            <div class="filigree top-right" aria-hidden="true">écoute</div>
-            <div class="filigree bottom-left" aria-hidden="true">précision</div>
-            <div class="hero-inner">
-                <div class="hero-content reveal">
-                    <div class="hero-badge">
-                        <span class="star-gold">★</span> 4.9/5 — 216 avis
-                    </div>
-                    <h1>Le <em>salon</em> de la cigarette électronique à Issy</h1>
-                    <p class="hero-subtitle">
-                        Expertise artisanale et écoute bienveillante. Nous vous accompagnons pas à pas vers une transition
-                        réussie, avec des solutions sur mesure.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="tel:+33987054928" class="btn-primary">📞 Appeler maintenant</a>
-                        <a href="#infos" class="btn-ghost">📍 Venir en boutique</a>
-                    </div>
-                </div>
-                <div class="hero-visual reveal reveal-delay-2">
-                    <div class="vapor-overlay" aria-hidden="true"></div>
-                    <img src="assets/maps-1.jpg" alt="Intérieur de CLASS'CLOPE à Issy-les-Moulineaux — atmosphère chaleureuse et conseil personnalisé" loading="eager" width="800" height="600">
-                </div>
-            </div>
-        </section>
-
-        <!-- À PROPOS -->
-        <section class="section" id="apropos">
-            <div class="section-inner">
-                <span class="section-label reveal">Notre philosophie</span>
-                <div class="about-grid">
-                    <div class="about-text reveal reveal-delay-1">
-                        <h2>L'élégance de l'arrêt du tabac</h2>
-                        <p class="text-body">
-                            Chez CLASS'CLOPE, nous croyons que la transition vers la vape est un chemin qui mérite attention
-                            et respect. Notre boutique à Issy-les-Moulineaux a été pensée comme un <strong>salon de
-                                conseil</strong> : prenez le temps de vous asseoir, d'échanger avec nos experts, et de
-                            découvrir les saveurs et les dispositifs qui correspondent vraiment à vos besoins.
-                        </p>
-                        <p class="text-body" style="margin-top:1rem;">
-                            Pas de vente impersonnelle, pas de jargon technique inaccessible. Juste une équipe passionnée,
-                            des produits rigoureusement sélectionnés, et une promesse : <strong>vous repartez avec la
-                                solution qui vous va</strong>.
-                        </p>
-                        <div class="highlight-box">
-                            «&nbsp;Le luxe de l'écoute, la rigueur de l'artisan.&nbsp;»
-                        </div>
-                    </div>
-                    <div class="about-visual reveal reveal-delay-2">
-                        <div class="grain-overlay" aria-hidden="true"></div>
-                        <img src="assets/maps-2.jpg" alt="Conseil personnalisé chez CLASS'CLOPE — un expert présente un dispositif" loading="lazy" width="600" height="800">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- OFFRE -->
-        <section class="section" id="offre" style="background:rgba(184,155,110,0.04);">
-            <div class="section-inner">
-                <span class="section-label reveal">Ce que nous proposons</span>
-                <h2 class="reveal reveal-delay-1">Un accompagnement complet</h2>
-                <div class="offre-grid reveal-stagger">
-                    <div class="offre-card">
-                        <span class="offre-icon">💨</span>
-                        <h4>Cigarettes électroniques</h4>
-                        <p>Pods, mods, clearomiseurs — une sélection exigeante des meilleures marques, adaptée aux débutants comme aux utilisateurs avancés.</p>
-                    </div>
-                    <div class="offre-card">
-                        <span class="offre-icon">🍃</span>
-                        <h4>E-liquides & saveurs</h4>
-                        <p>Des dizaines de références, des classiques aux créations rares. Fruits, tabacs, menthes, gourmands — goûtez avant de choisir.</p>
-                    </div>
-                    <div class="offre-card">
-                        <span class="offre-icon">🎓</span>
-                        <h4>Conseil personnalisé</h4>
-                        <p>Nous prenons le temps d'analyser vos habitudes pour vous proposer le matériel et le dosage idéaux. Pédagogie, patience, sourire.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GALERIE -->
-        <section class="section" id="galerie">
-            <div class="section-inner">
-                <span class="section-label reveal">Ambiance</span>
-                <h2 class="reveal reveal-delay-1">Découvrez notre écrin</h2>
-                <p class="text-body reveal reveal-delay-2" style="margin-bottom:0.5rem;">
-                    Une parenthèse paisible au cœur d'Issy-les-Moulineaux. Notre boutique allie la chaleur du bois,
-                    la transparence du verre et une lumière tamisée propice à la détente et au conseil.
-                </p>
-                <div class="gallery-masonry reveal-stagger">
-                    <div class="gallery-item">
-                        <img src="assets/maps-3.jpg" alt="Vitrine de CLASS'CLOPE avec présentoirs design" loading="lazy" width="400" height="400">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/maps-4.jpg" alt="Comptoir d'accueil en bois et étagères de flacons" loading="lazy" width="400" height="533">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/maps-5.jpg" alt="Espace de dégustation et conseil" loading="lazy" width="400" height="400">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/maps-6.jpg" alt="Sélection de e-liquides premium" loading="lazy" width="400" height="300">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AVIS -->
-        <section class="section" id="avis">
-            <div class="section-inner">
-                <span class="section-label reveal">Avis clients</span>
-                <h2 class="reveal reveal-delay-1">La parole à ceux qui comptent</h2>
-                <div class="avis-block reveal reveal-delay-2">
-                    <div class="avis-left">
-                        <div class="big-note">4.9</div>
-                        <div class="star-row">★★★★★</div>
-                        <div class="avis-count">216 avis vérifiés sur Google</div>
-                    </div>
-                    <div class="avis-right">
-                        «&nbsp;Un accueil exceptionnel, des conseils précis et une patience rare. On sent que l'équipe
-                        maîtrise son sujet et prend le temps d'expliquer. Je recommande sans hésiter.&nbsp;»
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INFOS PRATIQUES -->
-        <section class="section" id="infos" style="background:rgba(184,155,110,0.04);">
-            <div class="section-inner">
-                <span class="section-label reveal">Venir & contacter</span>
-                <h2 class="reveal reveal-delay-1">Infos pratiques</h2>
-                <div class="infos-grid">
-                    <div class="info-card reveal reveal-delay-2">
-                        <h3>Coordonnées</h3>
-                        <ul class="info-list">
-                            <li>
-                                <strong>📍 Adresse</strong>
-                                <span>29 Rue Ernest Renan<br>92130 Issy-les-Moulineaux</span>
-                            </li>
-                            <li>
-                                <strong>📞 Téléphone</strong>
-                                <a href="tel:+33987054928">09 87 05 49 28</a>
-                            </li>
-                            <li>
-                                <strong>✉️ Email</strong>
-                                <a href="mailto:contact@classclope.fr">contact@classclope.fr</a>
-                            </li>
-                            <li>
-                                <strong>⭐ Note</strong>
-                                <span>4.9/5 sur Google (216 avis)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="info-card reveal reveal-delay-3">
-                        <h3>Horaires d'ouverture</h3>
-                        <p class="text-body" style="max-width:100%;">
-                            Les horaires exacts peuvent varier. Nous vous invitons à nous <a href="tel:+33987054928"
-                                style="color:var(--accent-vert);font-weight:600;">appeler</a> ou à
-                            consulter notre fiche Google pour connaître les horaires actualisés.
-                        </p>
-                        <p style="margin-top:1rem;font-size:0.9rem;color:var(--texte-second);font-style:italic;">
-                            Horaires à confirmer — la boutique est généralement ouverte du mardi au samedi.
-                        </p>
-                    </div>
-                </div>
-                <div class="map-container reveal reveal-delay-4">
-                    <iframe src="https://maps.google.com/maps?q=CLASS%E2%80%99CLOPE+%3A+Cigarette+%C3%A9lectronique+%C3%A0+Issy+Les+Moulineaux+29+Rue+Ernest+Renan%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — CLASS'CLOPE, 29 Rue Ernest Renan, Issy-les-Moulineaux"></iframe>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div>
-                <div class="footer-brand">CLASS'CLOPE</div>
-                <p style="margin-top:0.3rem;">Cigarette électronique à Issy-les-Moulineaux</p>
-                <p>29 Rue Ernest Renan, 92130 Issy-les-Moulineaux</p>
-                <p>📞 <a href="tel:+33987054928" style="color:#b0a89b;">09 87 05 49 28</a> — ✉️ <a href="mailto:contact@classclope.fr" style="color:#b0a89b;">contact@classclope.fr</a></p>
-                <div class="footer-credits">
-                    Site créé par <a href="https://agence.mooo.com/classclope-cigarette-electronique-a-issy-les-moulineaux" target="_blank" rel="noopener">Agence Mooo</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "CLASS'CLOPE : Cigarette électronique à Issy Les Moulineaux",
-            "image": "assets/maps-1.jpg",
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "29 Rue Ernest Renan",
@@ -1202,106 +35,1579 @@
                 "ratingValue": "4.9",
                 "reviewCount": "216"
             },
-            "url": "https://agence.mooo.com/classclope-cigarette-electronique-a-issy-les-moulineaux"
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:30",
+                    "closes": "14:30"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "15:30",
+                    "closes": "19:30"
+                }
+            ]
         }
     </script>
+    <style>
+        :root {
+            --charbon: #1C1B1A;
+            --ivoire: #F3EFE9;
+            --cuivre: #C49A6C;
+            --vert-bouteille: #2F4F4F;
+            --cuir-brule: #292624;
+            --taupe-fumee: #8A7E72;
+            --display-font: 'Instrument Serif', 'Times New Roman', serif;
+            --body-font: 'Geist', 'Helvetica Neue', 'Arial', sans-serif;
+            --header-h: clamp(56px, 7vw, 72px);
+            --section-pad: clamp(3rem, 8vw, 7rem);
+            --container-max: 1280px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
-    <script>
-        (function() {
-            // Header scroll effect
-            const header = document.getElementById('site-header');
-            let scrollTicking = false;
-            const updateHeader = () => {
-                if (window.scrollY > 40) {
-                    header.classList.add('is-scrolled');
-                } else {
-                    header.classList.remove('is-scrolled');
-                }
-                scrollTicking = false;
-            };
-            window.addEventListener('scroll', () => {
-                if (!scrollTicking) {
-                    requestAnimationFrame(updateHeader);
-                    scrollTicking = true;
-                }
-            }, { passive: true });
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            // Hamburger menu
-            const hamburger = document.getElementById('hamburger-btn');
-            const navPrimary = document.getElementById('nav-primary');
-            const navLinks = navPrimary.querySelectorAll('a');
-            let menuOpen = false;
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cuivre) var(--charbon);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-            const toggleMenu = () => {
-                menuOpen = !menuOpen;
-                navPrimary.classList.toggle('is-open', menuOpen);
-                hamburger.setAttribute('aria-expanded', menuOpen);
-                if (menuOpen) {
-                    hamburger.setAttribute('aria-label', 'Fermer le menu de navigation');
-                } else {
-                    hamburger.setAttribute('aria-label', 'Menu de navigation');
-                }
-            };
-
-            hamburger.addEventListener('click', toggleMenu);
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (menuOpen) {
-                        toggleMenu();
-                    }
-                });
-            });
-
-            // Close menu on Escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && menuOpen) {
-                    toggleMenu();
-                    hamburger.focus();
-                }
-            });
-
-            // IntersectionObserver for reveal animations
-            const revealElements = document.querySelectorAll(
-                '.reveal, .reveal-stagger');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.12
-            };
-
-            const revealCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(revealCallback, observerOptions);
-            revealElements.forEach(el => observer.observe(el));
-
-            // Respect reduced motion
-            const mqReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-            if (mqReducedMotion.matches) {
-                revealElements.forEach(el => {
-                    el.classList.add('is-visible');
-                    observer.unobserve(el);
-                });
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
             }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .cursor-line {
+                display: none !important;
+            }
+            .volute-container {
+                display: none !important;
+            }
+        }
 
-            // Smooth focus management for skip link
-            const skipLink = document.querySelector('.skip-link');
-            skipLink.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.setAttribute('tabindex', '-1');
-                    target.focus({ preventScroll: true });
-                    setTimeout(() => target.removeAttribute('tabindex'), 1000);
-                }
-            });
-        })();
-    </script>
-</body>
-</html>
+        body {
+            font-family: var(--body-font);
+            background-color: var(--charbon);
+            color: var(--ivoire);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            cursor: auto;
+        }
+
+        ::selection {
+            background: var(--cuivre);
+            color: var(--charbon);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--charbon);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cuivre);
+            border-radius: 3px;
+        }
+
+        /* ===== CURSOR COPPER LINE ===== */
+        .cursor-line {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 40px;
+            height: 1.5px;
+            background: var(--cuivre);
+            border-radius: 1px;
+            opacity: 0;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            transition: opacity 0.3s ease, width 0.25s var(--ease-out-expo);
+            filter: drop-shadow(0 0 6px rgba(196, 154, 108, 0.6));
+            will-change: transform, opacity, left, top;
+        }
+        .cursor-line.visible {
+            opacity: 0.8;
+        }
+        .cursor-line.on-interactive {
+            width: 60px;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(196, 154, 108, 0.9));
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-h);
+            background: rgba(28, 27, 26, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(196, 154, 108, 0.15);
+            transition: background 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            align-items: center;
+        }
+        .site-header.scrolled {
+            background: rgba(28, 27, 26, 0.96);
+            border-bottom-color: rgba(196, 154, 108, 0.35);
+        }
+        .header-inner {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .header-brand {
+            font-family: var(--display-font);
+            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+            font-weight: 600;
+            color: var(--ivoire);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .header-brand:hover {
+            color: var(--cuivre);
+        }
+        .header-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cuivre);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-brand:hover::after {
+            width: 100%;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: var(--body-font);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--taupe-fumee);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.3em 0;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--cuivre);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            padding: 0.45em 1.1em;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--charbon);
+            background: var(--cuivre);
+            border-radius: 3px;
+            transition: all 0.3s var(--ease-out-expo);
+            white-space: nowrap;
+            border: 1.5px solid transparent;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: transparent;
+            color: var(--cuivre);
+            border-color: var(--cuivre);
+            box-shadow: 0 0 20px rgba(196, 154, 108, 0.3);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            color: var(--ivoire);
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--ivoire);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: min(320px, 80vw);
+                height: 100vh;
+                background: rgba(28, 27, 26, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 5rem 2.5rem;
+                gap: 1.5rem;
+                transition: right 0.4s var(--ease-out-expo);
+                border-left: 1px solid rgba(196, 154, 108, 0.2);
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1rem;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .header-cta {
+                font-size: 0.75rem;
+                padding: 0.4em 0.8em;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            isolation: isolate;
+            padding-top: var(--header-h);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.35) saturate(0.6) contrast(1.15);
+            transform: scale(1.04);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 55% 40%, transparent 30%, rgba(28, 27, 26, 0.7) 70%, rgba(28, 27, 26, 0.92) 100%);
+            background-blend-mode: multiply;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.18;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 2rem clamp(1rem, 4vw, 3rem);
+            max-width: 900px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(196, 154, 108, 0.12);
+            border: 1px solid rgba(196, 154, 108, 0.35);
+            border-radius: 50px;
+            padding: 0.4em 1.2em;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--cuivre);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(6px);
+            transition: all 0.4s ease;
+        }
+        .hero-badge .stars {
+            color: var(--cuivre);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        .hero-badge:hover {
+            background: rgba(196, 154, 108, 0.22);
+            border-color: rgba(196, 154, 108, 0.6);
+            box-shadow: 0 0 25px rgba(196, 154, 108, 0.2);
+        }
+        .hero-title {
+            font-family: var(--display-font);
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+            color: var(--ivoire);
+            margin: 0 0 0.5rem;
+            -webkit-text-stroke: 1.5px rgba(196, 154, 108, 0.5);
+            text-stroke: 1.5px rgba(196, 154, 108, 0.5);
+            paint-order: stroke fill;
+            text-shadow: 0 0 80px rgba(28, 27, 26, 0.5), 0 4px 30px rgba(0, 0, 0, 0.4);
+            animation: hero-title-in 1.2s var(--ease-out-expo) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        @keyframes hero-title-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-subtitle {
+            font-family: var(--body-font);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: var(--taupe-fumee);
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            animation: hero-sub-in 1.2s 0.25s var(--ease-out-expo) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes hero-sub-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            animation: hero-sub-in 1.2s 0.4s var(--ease-out-expo) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.75em 2em;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--charbon);
+            background: var(--cuivre);
+            border: 2px solid var(--cuivre);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--ivoire);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.45s var(--ease-out-expo);
+            z-index: 0;
+            border-radius: 1px;
+        }
+        .btn-primary:hover::before,
+        .btn-primary:focus-visible::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+        .btn-primary:hover span,
+        .btn-primary:focus-visible span {
+            color: var(--charbon);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            border-color: var(--ivoire);
+            box-shadow: 0 8px 30px rgba(196, 154, 108, 0.3);
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.75em 2em;
+            font-family: var(--body-font);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ivoire);
+            background: transparent;
+            border: 2px solid rgba(243, 239, 233, 0.4);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+            position: relative;
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            border-color: var(--cuivre);
+            color: var(--cuivre);
+            box-shadow: 0 4px 20px rgba(196, 154, 108, 0.15);
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            width: 28px;
+            height: 44px;
+            border: 2px solid rgba(196, 154, 108, 0.5);
+            border-radius: 14px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 8px;
+            animation: hero-scroll-bob 2.5s ease-in-out infinite;
+        }
+        .hero-scroll-indicator::after {
+            content: '';
+            width: 3px;
+            height: 10px;
+            background: var(--cuivre);
+            border-radius: 2px;
+            animation: hero-scroll-dot 2.5s ease-in-out infinite;
+        }
+        @keyframes hero-scroll-bob {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        @keyframes hero-scroll-dot {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(8px);
+            }
+        }
+
+        /* ===== VOLUTE DECORATIVE SVG (global) ===== */
+        .volute-decor {
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.8s var(--ease-out-expo);
+        }
+        .volute-decor.active {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+        .volute-decor svg {
+            width: 100%;
+            height: 100%;
+        }
+        .volute-decor svg path {
+            stroke: var(--cuivre);
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            transition: stroke-dashoffset 1.4s var(--ease-out-expo);
+        }
+        .volute-decor.active svg path {
+            stroke-dashoffset: 0;
+        }
+
+        /* ===== SECTION BASE ===== */
+        .section {
+            padding: var(--section-pad) clamp(1rem, 4vw, 2.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--body-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--display-font);
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+            color: var(--ivoire);
+            margin-bottom: 1rem;
+        }
+        .section-text {
+            font-family: var(--body-font);
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            color: var(--taupe-fumee);
+            max-width: 680px;
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+        .accent-line {
+            width: clamp(50px, 8vw, 90px);
+            height: 1.5px;
+            background: var(--cuivre);
+            margin: 1.5rem 0;
+            border-radius: 1px;
+        }
+
+        /* ===== REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.65s;
+        }
+
+        /* ===== SECTION 1 — NOTRE ANTRE ===== */
+        .antre-section {
+            background: var(--cuir-brule);
+            position: relative;
+        }
+        .antre-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196, 154, 108, 0.5), transparent);
+        }
+        .antre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .antre-image-wrap {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .antre-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) sepia(0.25) contrast(1.1);
+            transition: filter 0.6s ease;
+        }
+        .antre-image-wrap:hover img {
+            filter: brightness(0.65) sepia(0.15) contrast(1.05);
+        }
+        .antre-image-frame {
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(196, 154, 108, 0.4);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 2;
+            transition: border-color 0.5s ease, inset 0.5s var(--ease-out-expo);
+        }
+        .antre-image-wrap:hover .antre-image-frame {
+            border-color: rgba(196, 154, 108, 0.7);
+            inset: 8px;
+        }
+        .antre-content {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .antre-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .antre-image-wrap {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ===== SECTION 2 — DÉBUTER ===== */
+        .debuter-section {
+            background: var(--charbon);
+            position: relative;
+        }
+        .debuter-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        .debuter-card {
+            background: var(--cuir-brule);
+            border: 1px solid rgba(138, 126, 114, 0.2);
+            border-radius: 4px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            text-align: center;
+            transition: all 0.45s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .debuter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--cuivre);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+        .debuter-card:hover::before,
+        .debuter-card:focus-within::before {
+            transform: scaleX(1);
+        }
+        .debuter-card:hover {
+            border-color: rgba(196, 154, 108, 0.4);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px);
+        }
+        .debuter-card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: grayscale(0.3);
+            transition: filter 0.4s;
+        }
+        .debuter-card:hover .debuter-card-icon {
+            filter: grayscale(0);
+        }
+        .debuter-card h4 {
+            font-family: var(--display-font);
+            font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+            color: var(--ivoire);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.03em;
+        }
+        .debuter-card p {
+            color: var(--taupe-fumee);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 640px) {
+            .debuter-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 3 — SAVEURS ===== */
+        .saveurs-section {
+            background: var(--cuir-brule);
+            position: relative;
+        }
+        .saveurs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(47, 79, 79, 0.5), transparent);
+        }
+        .saveurs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 2.5rem;
+        }
+        .saveur-card {
+            background: var(--charbon);
+            border: 1px solid rgba(138, 126, 114, 0.25);
+            border-radius: 4px;
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+            transition: all 0.5s var(--ease-out-expo);
+            cursor: pointer;
+        }
+        .saveur-card:hover {
+            border-color: rgba(196, 154, 108, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: translateY(-6px);
+        }
+        .saveur-flacon {
+            width: clamp(50px, 8vw, 70px);
+            height: clamp(80px, 13vw, 110px);
+            margin: 0 auto 1.2rem;
+            border-radius: 8px 8px 3px 3px;
+            position: relative;
+            transition: transform 0.5s var(--ease-spring);
+        }
+        .saveur-card:hover .saveur-flacon {
+            transform: translateY(-8px);
+        }
+        .saveur-flacon.classic {
+            background: linear-gradient(180deg, #3a2f28 0%, #1a1410 60%, #8B6914 60%, #6B4F12 100%);
+        }
+        .saveur-flacon.fruite {
+            background: linear-gradient(180deg, #4a2030 0%, #2a1020 55%, #C44A6C 55%, #9A3050 100%);
+        }
+        .saveur-flacon.gourmand {
+            background: linear-gradient(180deg, #3d2a1a 0%, #1f150b 55%, #C49A6C 55%, #8B6914 100%);
+        }
+        .saveur-flacon.frais {
+            background: linear-gradient(180deg, #1a2f2f 0%, #0f1f1f 55%, #2F9F9F 55%, #1F7F7F 100%);
+        }
+        .saveur-flacon.menthe {
+            background: linear-gradient(180deg, #1f2f1f 0%, #101f10 55%, #4FAF4F 55%, #2F8F2F 100%);
+        }
+        .saveur-flacon.epice {
+            background: linear-gradient(180deg, #2f1f1a 0%, #1a0f0a 55%, #C47A3A 55%, #9A5A2A 100%);
+        }
+        .saveur-flacon::after {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            width: 40%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .saveur-card h4 {
+            font-family: var(--display-font);
+            font-size: 1.3rem;
+            color: var(--ivoire);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.04em;
+        }
+        .saveur-card .saveur-note {
+            font-size: 0.8rem;
+            color: var(--cuivre);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .saveur-card p {
+            color: var(--taupe-fumee);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .saveur-volute {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 90px;
+            height: 90px;
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 0.7s var(--ease-out-expo);
+            z-index: 1;
+        }
+        .saveur-card:hover .saveur-volute {
+            opacity: 0.6;
+            transform: scale(1);
+        }
+        @media (max-width: 768px) {
+            .saveurs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .saveurs-grid {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ===== SECTION 4 — MATÉRIEL ===== */
+        .materiel-section {
+            background: var(--charbon);
+            position: relative;
+        }
+        .materiel-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 2.5rem;
+            align-items: stretch;
+        }
+        .materiel-card {
+            background: var(--cuir-brule);
+            border: 1px solid rgba(138, 126, 114, 0.2);
+            border-radius: 4px;
+            padding: clamp(1.5rem, 3vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.45s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .materiel-card:hover {
+            border-color: rgba(196, 154, 108, 0.4);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+        }
+        .materiel-card .materiel-illustration {
+            width: 100%;
+            height: clamp(140px, 20vw, 200px);
+            object-fit: cover;
+            border-radius: 3px;
+            filter: brightness(0.5) sepia(0.3) contrast(1.1);
+            transition: filter 0.5s ease;
+        }
+        .materiel-card:hover .materiel-illustration {
+            filter: brightness(0.6) sepia(0.15) contrast(1.05);
+        }
+        .materiel-card h4 {
+            font-family: var(--display-font);
+            font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+            color: var(--ivoire);
+            letter-spacing: 0.03em;
+        }
+        .materiel-card p {
+            color: var(--taupe-fumee);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            flex-grow: 1;
+        }
+        .materiel-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+            border: 1px solid rgba(196, 154, 108, 0.4);
+            padding: 0.3em 0.8em;
+            border-radius: 50px;
+            align-self: flex-start;
+            transition: all 0.3s;
+        }
+        .materiel-card:hover .materiel-tag {
+            background: rgba(196, 154, 108, 0.1);
+        }
+        @media (max-width: 640px) {
+            .materiel-duo {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 5 — AVIS ===== */
+        .avis-section {
+            background: var(--cuir-brule);
+            position: relative;
+        }
+        .avis-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196, 154, 108, 0.4), transparent);
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        .avis-card {
+            background: #24211f;
+            border: 1px solid rgba(138, 126, 114, 0.15);
+            border-radius: 4px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .avis-card:hover {
+            border-color: rgba(196, 154, 108, 0.35);
+            background: #272422;
+        }
+        .avis-card::before {
+            content: '"';
+            font-family: var(--display-font);
+            font-size: 5rem;
+            color: rgba(196, 154, 108, 0.25);
+            position: absolute;
+            top: 0.5rem;
+            left: 1.5rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .avis-stars {
+            color: var(--cuivre);
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .avis-text {
+            color: var(--ivoire);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .avis-author {
+            color: var(--taupe-fumee);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .avis-badge-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6em;
+            background: rgba(196, 154, 108, 0.08);
+            border: 1px solid rgba(196, 154, 108, 0.3);
+            border-radius: 50px;
+            padding: 0.5em 1.4em;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--cuivre);
+            margin-bottom: 1.5rem;
+        }
+        .avis-badge-large .big-stars {
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+        }
+        @media (max-width: 640px) {
+            .avis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 6 — VENIR ===== */
+        .venir-section {
+            background: var(--charbon);
+            position: relative;
+        }
+        .venir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 2rem;
+        }
+        .venir-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .venir-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .venir-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(196, 154, 108, 0.1);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            border: 1px solid rgba(196, 154, 108, 0.25);
+        }
+        .venir-info-item h5 {
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+            margin-bottom: 0.2rem;
+        }
+        .venir-info-item p,
+        .venir-info-item a {
+            color: var(--ivoire);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .venir-info-item a:hover {
+            color: var(--cuivre);
+            text-decoration: underline;
+            text-decoration-color: var(--cuivre);
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+        }
+        .status-ouvert {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            padding: 0.3em 0.8em;
+            border-radius: 50px;
+            margin-top: 0.3rem;
+        }
+        .status-ouvert.open {
+            color: #5cb878;
+            background: rgba(92, 184, 120, 0.1);
+            border: 1px solid rgba(92, 184, 120, 0.3);
+        }
+        .status-ouvert.closed {
+            color: #c97a6a;
+            background: rgba(201, 122, 106, 0.1);
+            border: 1px solid rgba(201, 122, 106, 0.3);
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-dot.open {
+            background: #5cb878;
+            box-shadow: 0 0 10px rgba(92, 184, 120, 0.6);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        .status-dot.closed {
+            background: #c97a6a;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 6px rgba(92, 184, 120, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 16px rgba(92, 184, 120, 0.9);
+            }
+        }
+        .venir-map {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(138, 126, 114, 0.3);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            min-height: 300px;
+        }
+        .venir-map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+        }
+        @media (max-width: 768px) {
+            .venir-grid {
+                grid-template-columns: 1fr;
+            }
+            .venir-map {
+                order: -1;
+                min-height: 260px;
+            }
+            .venir-map iframe {
+                min-height: 260px;
+            }
+        }
+
+        /* ===== SECTION 7 — ÉQUIPE ===== */
+        .equipe-section {
+            background: var(--cuir-brule);
+            position: relative;
+        }
+        .equipe-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(47, 79, 79, 0.5), transparent);
+        }
+        .equipe-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .equipe-image {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+        .equipe-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.6) brightness(0.55) contrast(1.15);
+            transition: filter 0.6s ease;
+        }
+        .equipe-image:hover img {
+            filter: grayscale(0.3) brightness(0.6) contrast(1.1);
+        }
+        .equipe-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(196, 154, 108, 0.3);
+            border-radius: 4px;
+            pointer-events: none;
+            transition: border-color 0.5s;
+        }
+        .equipe-image:hover::after {
+            border-color: rgba(196, 154, 108, 0.6);
+        }
+        @media (max-width: 768px) {
+            .equipe-content {
+                grid-template-columns: 1fr;
+            }
+            .equipe-image {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--charbon);
+            border-top: 1px solid rgba(138, 126, 114, 0.2);
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2.5rem);
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+        .footer-brand {
+            font-family: var(--display-font);
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--ivoire);
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+        .footer-nap {
+            color: var(--taupe-fumee);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .footer-nap a {
+            color: var(--taupe-fumee);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-nap a:hover {
+            color: var(--cuivre);
+        }
+        .footer-credit {
+            font-size: 0.7rem;
+            color: rgba(138, 126, 114, 0.5);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+        .footer-credit a {
+            color: var(--cuivre);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .footer-credit a:hover {
+            opacity: 0.7;
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            backdrop-filter: blur(2px);
+            transition: opacity 0.4s ease;
+        }
+        .nav-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 860px) {
+            .header-nav .header-cta-mobile {
+                display: inline-flex;
+                margin-top: 1rem;
+            }
+        }
+        @media (min-width: 861px) {
+            .header-cta-mobile {
+                display: none;
+            }
+        }
+
+        /* ===== FOCUS VISIBLE ===== */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Copper cursor line -->
+    <div class="cursor-line" id="cursorLine" aria-hidden="true"></div>
+
+    <!-- Mobile nav overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="header-inner">
+            <a href="#hero" class="header-brand" aria-label="CLASS'CLOPE — Accueil">CLASS'CLOPE</a>
+            <nav class="header-nav" id="headerNav" role="navigation" aria-label="Navigation principale">
+                <a href="#antre">L'antre</a>
+                <a href="#debuter">Débuter</a>
+                <a href="#saveurs">Saveurs</a>
+                <a href="#materiel">Matériel</a>
+                <a href="#avis">Avis</a>
+                <a href="#venir">Venir</a>
+                <a href="tel:+33987054928" class="header-cta header-cta-mobile">📞 Appeler</a>
+            </nav>
+            <a href="tel:+33987054928" class="header-cta" aria-label="Appeler CLASS'CLOPE">📞 09 87 05 49 28</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80&auto=format&fit=crop" alt="Vitrine CLASS'CLOPE — matériel et e-liquides" loading="eager" width="1920" height="1280">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-content">
+            <div class="hero-badge reveal" aria-label="Note Google : 4.9 sur 5 — 216 avis">
+                <span class="stars">★★★★★</span> 4.9 — 216 avis
+            </div>
+            <h1 class="hero-title" id="heroTitle">Vapotez avec classe.</h1>
+            <p class="hero-subtitle">À Issy‑les‑Moulineaux, un fumoir d'un nouveau genre vous accompagne pour dire adieu à la fumée — sans renoncer au style, aux saveurs ni au conseil.</p>
+            <div class="hero-actions">
+                <a href="#venir" class="btn-primary"><span>Nous trouver</span></a>
+                <a href="tel:+33987054928" class="btn-ghost">📞 Appeler</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== SECTION 1 — NOTRE ANTRE ===== -->
+    <section class="section antre-section" id="antre" aria-labelledby="antreTitle">
+        <div class="section-inner antre-grid">
+            <div class="antre-image-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Intérieur de la boutique CLASS'CLOPE — comptoir en bois sombre" loading="lazy" width="1200" height="900">
+                <div class="antre-image-frame"></div>
+            </div>
+            <div class="antre-content">
+                <span class="section-label reveal reveal-delay-1">Le lieu</span>
+                <h2 class="section-title reveal reveal-delay-1" id="antreTitle">Notre antre,<br>votre refuge.</h2>
+                <div class="accent-line reveal reveal-delay-2"></div>
+                <p class="section-text reveal reveal-delay-2">Poussez la porte du <strong>29 rue Ernest Renan</strong>. Ici, on écoute votre rapport à la cigarette, vos goûts, vos doutes… et on compose avec vous l'équipement qui tournera la page. Loin des catalogues impersonnels, chaque visite est un moment d'échange — dans un cadre feutré où le bois sombre et l'acier brossé donnent le ton.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 — DÉBUTER ===== -->
+    <section class="section debuter-section" id="debuter" aria-labelledby="debuterTitle">
+        <div class="section-inner">
+            <span class="section-label reveal">Accompagnement</span>
+            <h2 class="section-title reveal reveal-delay-1" id="debuterTitle">Débuter sans trembler.</h2>
+            <div class="accent-line reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">Vous n'y connaissez rien ? C'est une excellente nouvelle. Nous vous guidons pas à pas, en boutique ou via notre guide en ligne.</p>
+            <div class="debuter-cards">
+                <div class="debuter-card reveal reveal-delay-2">
+                    <span class="debuter-card-icon" aria-hidden="true">🔋</span>
+                    <h4>Première e-cig</h4>
+                    <p>On vous aide à choisir le matériel adapté à votre profil : tirage serré ou aérien, autonomie, discrétion.</p>
+                </div>
+                <div class="debuter-card reveal reveal-delay-3">
+                    <span class="debuter-card-icon" aria-hidden="true">💧</span>
+                    <h4>Premier e-liquide</h4>
+                    <p>Dégustez nos références coup de cœur. Classic, fruité, gourmand ou frais — trouvez celui qui vous correspond.</p>
+                </div>
+                <div class="debuter-card reveal reveal-delay-4">
+                    <span class="debuter-card-icon" aria-hidden="true">📖</span>
+                    <h4>Lexique simple</h4>
+                    <p>Ohm, watt, DIY, MTL, DL… On traduit tout en français. Pas de jargon inaccessible, juste ce qu'il faut savoir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 — SAVEURS & FLACONS ===== -->
+    <section class="section saveurs-section" id="saveurs" aria-labelledby="saveursTitle">
+        <div class="section-inner">
+            <span class="section-label reveal">La carte</span>
+            <h2 class="section-title reveal reveal-delay-1" id="saveursTitle">Saveurs & flacons.</h2>
+            <div class="accent-line reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">Classic, fruité, gourmand ou frais : nos arômes sont notés, commentés et conseillés par l'équipe. Pas de catalogue interminable, seulement ce que nous aimons vraiment.</p>
+            <div class="saveurs-grid">
+                <div class="saveur-card reveal reveal-delay-2">
+                    <div class="saveur-flacon classic"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 75 C10 55 30 40 30 25 C30 10 10 5 25 5 C45 5 55 20 55 40 C55 60 70 70 70 85" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Classic Blend</h4>
+                    <span class="saveur-note">★ 4.8 — L'incontournable</span>
+                    <p>Un tabac blond subtilement vanillé. Élégant, rond, parfait pour la transition.</p>
+                </div>
+                <div class="saveur-card reveal reveal-delay-3">
+                    <div class="saveur-flacon fruite"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 70 C15 45 35 35 35 20 C35 8 20 8 28 5 C45 5 50 25 50 45 C50 65 65 75 65 88" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Fruit du Soleil</h4>
+                    <span class="saveur-note">★ 4.7 — Fraîcheur fruitée</span>
+                    <p>Mangue, passion et une pointe de menthe. Vif, juteux, ensoleillé.</p>
+                </div>
+                <div class="saveur-card reveal reveal-delay-4">
+                    <div class="saveur-flacon gourmand"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 72 C12 50 28 38 28 22 C28 9 14 6 22 4 C40 4 48 22 48 42 C48 62 62 72 62 86" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Caramel Beurre</h4>
+                    <span class="saveur-note">★ 4.9 — Coup de cœur</span>
+                    <p>Caramel au beurre salé, biscuit tiède. Une pâtisserie à vapoter.</p>
+                </div>
+                <div class="saveur-card reveal reveal-delay-3">
+                    <div class="saveur-flacon frais"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 73 C11 52 32 39 32 24 C32 10 13 6 23 4 C42 4 49 23 49 43 C49 63 64 73 64 87" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Brise Glacée</h4>
+                    <span class="saveur-note">★ 4.6 — Fraîcheur pure</span>
+                    <p>Menthe polaire, eucalyptus, souffle givré. Net, tonique, désaltérant.</p>
+                </div>
+                <div class="saveur-card reveal reveal-delay-4">
+                    <div class="saveur-flacon menthe"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 74 C13 53 30 41 30 26 C30 11 15 7 24 5 C43 5 51 24 51 44 C51 64 66 74 66 88" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Vergers de Loire</h4>
+                    <span class="saveur-note">★ 4.5 — Pomme & fruits blancs</span>
+                    <p>Pomme reinette, poire williams, une touche de miel. Délicat et authentique.</p>
+                </div>
+                <div class="saveur-card reveal reveal-delay-5">
+                    <div class="saveur-flacon epice"></div>
+                    <div class="saveur-volute" aria-hidden="true">
+                        <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 71 C14 49 29 37 29 21 C29 8 12 5 21 3 C39 3 47 21 47 41 C47 61 61 71 61 85" stroke="currentColor" stroke-width="1.5" fill="none" style="stroke:#C49A6C;stroke-dasharray:200;stroke-dashoffset:0;"/>
+                        </svg>
+                    </div>
+                    <h4>Cannelle & Muscade</h4>
+                    <span class="saveur-note">★ 4.6 — Épices douces</span>
+                    <p>Un automne en flacon. Cannelle, muscade, zeste d'orange confite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 — MATÉRIEL ===== -->
+    <section class="section materiel-section" id="materiel" aria-labelledby="materielTitle">
+        <div class="section-inner">
+            <span class="section-label reveal">Équipement</span>
+            <h2 class="section-title reveal reveal-delay-1" id="materielTitle">Matériel choisi pour vous.</h2>
+            <div class="accent-line reveal reveal-delay-1"></div>
+            <p class="section-text reveal reveal-delay-2">Du premier kit à la box expert, chaque référence est testée en boutique. On vous explique la différence entre inhalation directe et indirecte… en français.</p>
+            <div class="materiel-duo">
+                <div class="materiel-card reveal reveal-delay-2">
+                    <img class="materiel-illustration" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Kits complets pour débuter" loading="lazy" width="600" height="400">
+                    <span class="materiel-tag">Idéal débutant</span>
+                    <h4>Kits complets</h4>
+                    <p>Tout ce qu'il faut dans une boîte : batterie, réservoir, résistances et chargeur. On s'occupe du montage avec vous et on règle la puissance idéale avant votre départ.</p>
+                </div>
+                <div class="materiel-card reveal reveal-delay-3">
+                    <img class="materiel-illustration" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop" alt="Pods nomades et discrets" loading="lazy" width="600" height="400">
+                    <span class="materiel-tag">Nomade & discret</span>
+                    <h4>Pods compacts</h4>
+                    <p>Discrets, légers, sans réglage : glissez-les dans votre poche. Parfaits pour garder le geste sans l'encombrement, avec un tirage serré proche de la cigarette traditionnelle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 — AVIS ===== -->
+    <section class="section avis-section" id="avis" aria-labelledby="avisTitle">
+        <div class="section-inner">
+            <span class="section-label reveal">Réputation</span>
+            <div class="avis-badge-large reveal reveal-delay-1" aria-label="4.9 étoiles sur 5, basé sur 216 avis Google">
+                <span class="big-stars">★★★★★</span> 4.9 — 216 avis Google
+            </div>
+            <h2 class="section-title reveal reveal-delay-1" id="avisTitle">Ce que disent nos habitués.</h2>
+            <div class="accent-line reveal reveal-delay-2"></div>
+            <p class="section-text reveal reveal-delay-2">La plus belle récompense, c'est votre fidélité. Voici quelques extraits choisis parmi les 216 avis qui font notre fierté.</p>
+            <div class="avis-grid">
+                <div class="avis-card reveal reveal-delay-2">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p class="avis-text">« Un accueil incroyable. L'équipe prend le temps d'expliquer, de faire goûter, de conseiller sans jamais pousser à la vente. J'ai trouvé exactement ce qu'il me fallait pour arrêter la cigarette. »</p>
+                    <span class="avis-author">— Sophie M., Issy-les-Moulineaux</span>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p class="avis-text">« Boutique élégante, conseils pointus. On sent que chaque produit a été testé. Le choix d'e-liquides est restreint mais parfaitement sélectionné. Je ne vais nulle part ailleurs. »</p>
+                    <span class="avis-author">— Thomas R., Paris 15ᵉ</span>
+                </div>
+                <div class="avis-card reveal reveal-delay-4">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p class="avis-text">« Je n'y connaissais absolument rien. On m'a guidée pas à pas, sans jargon, avec une patience remarquable. Aujourd'hui, ça fait 8 mois que je n'ai pas touché une cigarette. Merci ! »</p>
+                    <span class="avis-author">— Karine L., Boulogne-Billancourt</span>
+                </div>
+                <div class="avis-card reveal reveal-delay-5">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p class="avis-text">« Le service est d'une gentillesse rare. On se sent comme dans un club privé. Les gérants connaissent leurs clients par leur prénom. C'est mon adresse depuis 3 ans. »</p>
+                    <span class="avis-author">— Pierre D., Meudon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 — VENIR ===== -->
+    <section class="section venir-section" id="venir" aria-labelledby="venirTitle">
+        <div class="section-inner">
+            <span class="section-label reveal">Infos pratiques</span>
+            <h2 class="section-title reveal reveal-delay-1" id="venirTitle">Venir, appeler, commander.</h2>
+            <div class="accent-line reveal reveal-delay-1"></div>
+            <div class="venir-grid">
+                <div class="venir-info reveal reveal-delay-2">
+                    <div class="venir-info-item">
+                        <div class="venir-icon" aria-hidden="true">📍</div>
+                        <div>
+                            <h5>Adresse</h5>
+                            <p>29 Rue Ernest Renan<br>

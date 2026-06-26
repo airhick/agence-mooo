@@ -1,105 +1,100 @@
-# BRIEF CRÉATIF — La Gorgone
+# BRIEF CRÉATIF — LA GORGONE
 
 ---
 
-## 1. Concept & positionnement
+## 1. CONCEPT & POSITIONNEMENT
 
-La Gorgone ne vend pas des objets : elle arrête le passant. Son nom — emprunté à la créature mythologique dont le regard pétrifie — devient ici une promesse : celle d'une boutique où l'on reste figé d'envie devant des curiosités dénichées une à une. Nous renversons la malédiction : à La Gorgone, on n'est pas changé en pierre par effroi, mais par émerveillement. Le site sera l'écrin numérique de ce *cabinet de trésors de quartier*, entre bazar parisien et collection privée — populaire sans être vulgaire, animé sans être criard.
-
-Barre à tenir : faire oublier radicalement le blog politique actuel. Le visiteur qui arrive doit sentir l'odeur du papier, le vert profond de la façade, la chaleur d'un commerce qui tient la rue de la Convention depuis des années.
+Une boutique de quartier qui porte le nom de la créature mythologique la plus fascinante de la Méditerranée ne peut pas être anodine. **La Gorgone est un arrêt sur image** : ce que vous apercevez en passant rue de la Convention vous fige — au sens noble. On entre ici comme on entre dans une collection particulière, un capharnaüm savant où chaque objet a traversé le regard exigeant d'un marchand qui ne cède rien à la mode rapide. Ce n'est pas une boutique, c'est un **œil**. L'œil de quelqu'un qui déniche, choisit, refuse, et ne garde que ce qui mérite de pétrifier l'attention.
 
 ---
 
-## 2. Direction artistique
+## 2. DIRECTION ARTISTIQUE
 
-**« Cabinet mythologique de quartier »**
+**PARTI PRIS : WUNDERKAMMER MINÉRALE**
 
-Un parti pris ancré dans le réel de la boutique : la façade vert profond (#4A7C59) et sa sculpture en relief sont le point d'encrage visuel. On bâtit une ambiance de *collectionneur-épicier* — bois patiné, métal des vitrines, papier des cartes postales. L'esthétique mêle la solennité un brin théâtrale du nom « Gorgone » à la familiarité chaleureuse d'un commerce de rue parisien. On évoque un petit musée personnel, une vitrine d'apothicaire revisitée, un étal qui déborde sur le trottoir.
+Un cabinet de curiosités contemporain, ancré dans la pierre de Paris. L'énergie visuelle ne vient pas de photos Google Maps inexistantes, mais du **nom lui-même** — La Gorgone — croisé avec le quartier Convention (15ᵉ, haussmannien, solide, bourgeois sans ostentation).
 
-Les images seront traitées comme des *planches de collection* : bordures douces, ombres portées subtiles, jamais de saturation agressive. Le fond du site n'est pas blanc — il est crème vieux papier, comme les cartes postales qu'on vend ici. L'écran doit donner envie de pousser la porte.
+On imagine un intérieur à la fois dense et ordonné, comme une collection privée : étagères en bois sombre, objets chinés, lumière dirigée plutôt que diffuse, matières brutes (pierre, métal patiné, bois ciré, verre ancien). L'esthétique est celle d'un **naturaliste rentré de voyage** : spécimens, minéraux, curiosités archéologiques, artisanats lointains — tout ce qui a une histoire avant d'avoir un prix.
 
----
-
-## 3. Palette
-
-| Rôle | Nom | Hex | Usage |
-|------|-----|-----|-------|
-| Accent principal | Vert Gorgone | `#3D6B4A` | Boutons forts, filets, icônes, hover states |
-| Accent secondaire | Terre cuite | `#8B3E2F` | Liens, soulignements, puces, prix, détails chauds |
-| Fond principal | Crème carte postale | `#F7ECD5` | Fond de page, arrière-plan des blocs |
-| Fond alternatif | Bois brut | `#E8D5C0` | Fond de cartes, sections différenciées |
-| Texte | Encre bistre | `#1E1814` | Texte courant, titres secondaires |
-| Surbrillance | Or vieilli | `#B8993A` | Éléments précieux, guillemets, témoignages, cadres étroits |
-
-La palette est **chaude et enveloppante**, jamais terne. Le vert Gorgone est la couleur signature — il apparaît dès le hero, en aplat ou en surimpression. Le crème domine, le bois structure, la terre cuite réveille. L'or est parcimonieux : il signale ce qui est rare.
+Le site doit respirer cette même densité maîtrisée : fond très sombre, typographie qui taille la lumière, images traitées comme des planches d'herbier ou des clichés d'archives.
 
 ---
 
-## 4. Ton éditorial
+## 3. PALETTE
 
-**Chaleureux, direct, avec un sourire en coin.** On vouvoie le visiteur, mais sans distance compassée. Le ton assume une pointe de malice mythologique (on file la métaphore de la Gorgone sans la surjouer), tout en restant celui d'un commerçant de quartier qui connaît ses clients par leur prénom. Pas de jargon, pas de snobisme — on est rue de la Convention, pas au Palais-Royal.
+| Rôle | Hex | Nom |
+|------|-----|-----|
+| Fond principal | `#1C1A18` | Obsidienne |
+| Fond secondaire | `#292522` | Basalte |
+| Texte & clarté | `#F2EDE4` | Calcaire chaud |
+| Accent froid | `#6B8E7B` | Vert-de-gris minéral |
+| Accent chaud | `#C49A6C` | Laiton oxydé |
+| Signalétique | `#A65D3D` | Terre cuite |
 
-Niveau de langue : français courant, quelques tours oraux maîtrisés. On s'adresse autant à la voisine du 15e qu'au touriste de passage qui cherche une carte postale qui a du caractère.
-
----
-
-## 5. Accroche héro
-
-**Titre :**
-> Arrêtez-vous. C'est fait exprès.
-
-**Sous-titre :**
-> Depuis plus de vingt ans, La Gorgone pétrifie les passants rue de la Convention — pas de frayeur, juste de la curiosité. Cartes postales, souvenirs et cadeaux qui ne demandent qu'à être regardés.
-
-**Texte découverte (tag ou label flottant) :**
-> Boutique de quartier · Note 4,6 ★ · Ouvert du mardi au samedi
+Ambiance **sombre et enveloppante** — pas de blanc pur. La clarté vient d'un calcaire tiède. L'accent est double : un vert-de-gris minéral (rappel des bronzes antiques, des pierres semi-précieuses) et un laiton patiné pour la chaleur. Le tout évoque une vitrine éclairée le soir dans une rue de pierre blonde parisienne.
 
 ---
 
-## 6. Sections
+## 4. TON ÉDITORIAL
 
-### ① Héro
-**Titre :** Arrêtez-vous. C'est fait exprès.
-**Contenu visuel :** Photo pleine largeur de la façade verte avec sa sculpture en relief, le pas-de-porte garni de présentoirs à cartes postales. L'image est enveloppée d'un calque subtil vert Gorgone à 15 %. Le titre est en Libre Baskerville, corps surdimensionné, crème sur fond sombre.
+**Voix :** savante sans être doctorale, confidentielle sans être élitiste. On parle comme le ferait le propriétaire à un client qui entre pour la troisième fois : **précision du regard, plaisir de la trouvaille, sous-entendu de rareté**.
 
----
-
-### ② La boutique
-**Titre :** Une gorgone à la Convention
-**Contenu :** Un texte à deux colonnes. À gauche, l'histoire : « Il fallait un nom à la hauteur de l'effet produit. Quand on passe devant le 15 rue de la Convention, on ralentit. On s'arrête. On regarde. Une Gorgone, en somme — mais de la plus accueillante espèce. » À droite, une photo pleine colonne de l'intérieur de la boutique : étagères en bois, objets exposés, lumière chaude. On parle du quartier, de la clientèle, de l'âme du lieu.
+**Registre :** soigné, tutoiement de confiance si en phase avec l'accueil réel, ou vouvoiement chaleureux. Phrases courtes, vocabulaire des matières et des provenances. Aucune formule marketing vide — le nom Gorgone impose une exigence de caractère. On dit ce que c'est, d'où ça vient, pourquoi c'est là.
 
 ---
 
-### ③ Les trésors
-**Titre :** Ce que vous trouverez (si vous restez assez longtemps)
-**Contenu :** Une grille de 4 à 6 vignettes illustrant les catégories phares — cartes postales (Paris et au-delà), souvenirs de la capitale, petits cadeaux, papeterie, objets de curiosité. Chaque vignette est une photo soignée sur fond Bois brut, avec un titre en Karla bold et une courte description. Exemple : « Cartes postales — Paris, mais pas que. Des vues qu'on ne trouve pas partout, imprimées sur du vrai papier. »
+## 5. ACCROCHE HÉRO
+
+**TITRE :**
+> LA BEAUTÉ QUI ARRÊTE
+
+**SOUS-TITRE :**
+> Curiosités, objets et trouvailles chinées aux quatre coins du monde.
+> Une collection Rue de la Convention, depuis [année réelle].
+
+Pas de superlatif. Un constat. Le nom « Gorgone » est assez puissant pour qu'on lui réponde par un titre qui transforme la métaphore du regard pétrifiant en promesse esthétique.
 
 ---
 
-### ④ Le quartier nous trouve
-**Titre :** Rue de la Convention, 15e
-**Contenu :** Carte Google Maps intégrée (si le devis le permet) ou illustration du plan de métro local. Adresse complète, horaires clairs, stations de métro les plus proches (Convention, Boucicaut). Un bloc texte : « À deux pas du métro Convention, entre la boulangerie et le fleuriste. Regardez la façade verte : vous ne pouvez pas la rater. » Téléphone cliquable, email visible.
+## 6. SECTIONS
+
+### 1. LE REGARD — À propos / Manifeste
+**Titre :** Ce que vous voyez existe
+**Contenu :** Un texte en trois phrases qui raconte le fondateur-chineur, son œil, sa quête. Pas de biographie — un manifeste. « Chaque objet dans cette boutique a été choisi par un regard qui refuse l'ordinaire. Pas de série, pas de catalogue. Ce qui entre ici a traversé un filtre : celui de la main qui l'a fabriqué, du matériau qui le porte, du voyage qu'il raconte. »
+
+### 2. LE CABINET — Collection / Objets phares
+**Titre :** Pièces d'exception
+**Contenu :** Une galerie en grille irrégulière (masonry ou grille cassée), chaque objet photographié en gros plan sur fond noir, éclairé latéralement. Légende sobre : « Vase berbère — terre cuite émaillée — Maroc, années 1940 ». Pas de prix sur le site vitrine (ou sur demande), mais une indication de rareté : « Pièce unique », « Série limitée », « Attribué à… »
+
+### 3. L'ŒIL DU CHINEUR — Sélection de la semaine / Nouveautés
+**Titre :** Dernières arrivées
+**Contenu :** Un carrousel ou une frise de 4 à 6 objets mis en avant, avec une légende qui raconte la trouvaille. Ton de carnet de voyage : « Déniché dans une vente privée à Bruxelles. Un nécessaire de voyage en galuchat, intact. Le galuchat, cette peau de raie qu'on croyait perdue… »
+
+### 4. LA MAIN — Savoir-faire / Artisans
+**Titre :** Ceux qui fabriquent
+**Contenu :** Mise en avant des artisans et filières. La Gorgone ne vend pas des « produits » mais le travail de personnes identifiées. Court portrait de 2-3 artisans ou ateliers avec photo en noir et blanc, grain visible, lumière naturelle.
+
+### 5. L'ÉCRIN — Le lieu / La boutique
+**Titre :** Rue de la Convention
+**Contenu :** Une description sensorielle du lieu physique. Lumière de la rue, sonnette de la porte, odeur de cire et de bois. Horaires clairs, plan de quartier stylisé, mention du 15ᵉ arrondissement comme fierté d'ancrage. Photo du store baissé, de la vitrine de nuit, d'un détail de poignée.
+
+### 6. LE MOT — Avis / Livre d'or
+**Titre :** Ce qu'ils en disent
+**Contenu :** Citation de 2 ou 3 vrais avis Google (4,6/5), retranscrits avec soin, sans guillemets décoratifs — juste la voix des clients. Exemple : « Une caverne d'Ali Baba version poétique. J'y suis entrée par hasard, j'y retourne exprès. » — Marie, mars 2025.
+
+### 7. LE SIGNE — Contact
+**Titre :** Passez la porte
+**Contenu :** Adresse, téléphone (01 45 78 03 62), email, horaires. Formulaire minimal. Une phrase : « Nous sommes là. Poussez la porte. »
 
 ---
 
-### ⑤ Avis
-**Titre :** 4,6 étoiles — c'est vous qui le dites
-**Contenu :** Trois vrais avis Google (anonymisés mais fidèles dans l'esprit) mis en page comme des citations, avec guillemets en Or vieilli, sur fond Bois brut. Pas de fausses attributions : on écrit « — Client Google, octobre 2024 » ou équivalent. Un bouton « Lire tous les avis » renvoie vers la fiche Google Maps.
+## 7. SIGNATURE VISUELLE
 
----
+### La pétrification polie
+Les images sont livrées en **noir et blanc très contrasté** sur fond obsidienne, avec une transition au scroll : elles s'illuminent légèrement au passage du doigt (effet de révélation douce, comme si la vitre s'éclaircissait). Pas de couleur dans les photos produit — le monochrome renforce le sérieux de la collection. Les accents de la palette (vert-de-gris, terre cuite) n'apparaissent que dans les bordures, les filets, les icônes — jamais en aplats photo.
 
-### ⑥ Contact
-**Titre :** Poussez la porte — ou écrivez-nous
-**Contenu :** Formulaire simple (nom, email, message) sur fond crème. Rappel du téléphone et de l'adresse. Photo de la vitrine vue de trois-quarts, comme si on s'apprêtait à entrer.
+### L'œil comme motif discret
+Un **sceau** (dessiné, pas une emoji) apparaît en signature du site, en fond filigrané sur les pages intérieures : une interprétation abstraite de l'œil de Méduse — quelques traits géométriques, une pupille en losange. Il ne se voit pas immédiatement, mais une fois repéré, il devient la marque de fabrique. Il sert de favicon et de séparateur entre les sections.
 
----
-
-## 7. Signature visuelle
-
-**1. Le motif « Œil de Gorgone » —** Un ornement graphique discret, inspiré du motif sculpté sur la façade, décliné en filet de section ou en séparateur. Il apparaît entre chaque grand bloc, tracé en Terre cuite ou en Or vieilli, fin comme une gravure. Pas de tête de Méduse littérale : on suggère, on ne montre pas.
-
-**2. Le traitement « carte postale » des images —** Toute photo de produit ou d'ambiance reçoit un cadre léger (une ombre douce + un liseré Bois brut de 2 px) qui évoque une carte postale ancienne posée sur une table. Au survol, l'image se soulève légèrement (translateY de 4 px + ombre accentuée) — comme si on la décollait du présentoir. Ce micro-mouvement est le seul geste d'animation superflu : il sert le propos.
-
----
-
-**Ce brief annule et remplace intégralement le site actuel.** Tout le contenu en arabe disparaît. Le nouveau site est intégralement en français, photographié *dans* le commerce réel, écrit pour ses vrais clients. La Gorgone mérite mieux qu'un agrégateur de news — elle mérite le site qui lui ressemble.
+### Typographie en tension
+**Libre Baskerville** (titres) utilisée en romain, jamais en italique — sa dignité classique ancre le sérieux. **Karla** (texte) apporte la respiration contemporaine. Le contraste est assumé : grands titres centrés ou alignés à gauche avec un espacement généreux, corps de texte compact et lisible. Les titres ne crient pas — ils énoncent sobrement, en lettres assez grandes pour qu'on les lise comme des enseignes de bronze au-dessus d'une vitrine.

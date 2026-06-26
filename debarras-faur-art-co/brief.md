@@ -1,164 +1,50 @@
-# BRIEF CRÉATIF — Débarras Faur'Art & Co
+**BRIEF CRÉATIF — Débarras Faur’Art & Co**
 
 ---
 
-## 1. Concept & positionnement
+**1. Concept & positionnement**
+Le débarras réinventé comme un artisanat d’excellence. Faur’Art & Co ne se contente pas d’évacuer : il révèle l’espace, préserve la mémoire des lieux et assure une traçabilité exemplaire. On ne vend pas du vide, mais une sérénité architecturée, un savoir-faire discret hérité des métiers d’art. Le site doit incarner cette haute couture du débarras parisien, à mi-chemin entre la galerie d’antiquaire et la conciergerie de luxe.
 
-**L'élégance du vide.** On ne vide pas, on libère. On n'évacue pas, on transmet. Faur'Art & Co traite chaque débarras comme un inventaire sentimental : trier, recycler, valoriser — avec le soin qu'on réserve à ce qui compte. Pour les familles du 15e arrondissement et au-delà, l'entreprise incarne un service haut de gamme où la traçabilité éco-responsable rencontre la discrétion d'un expert de confiance.
+**2. Direction artistique : *Hôtel particulier – Atelier d’ébéniste***
+Un parti pris de raffinement sobre, ancré dans les matières et la lumière du 185 rue Saint Charles. On évoque l’atmosphère d’un petit hôtel particulier du 15e arrondissement : parquet en chevrons, moulures discrètes, miroir ancien, lumière tamisée par des voilages. L’esprit atelier apporte la chaleur du bois brut, la précision de l’outil, l’ordre serein des établis. Dominante claire mais jamais fade : un blanc cassé enveloppant, des bruns élégants, et des touches de laiton pour la signature. Playfair Display apporte l’élégance intemporelle ; Source Sans 3, sa modernité fonctionnelle et sa lisibilité exemplaire.
 
-En deux mots : **débarras hauussmannien** — l'alliance d'un savoir-faire artisanal et d'une sensibilité patrimoniale. On entre chez vous comme on entre dans un appartement chargé d'histoire : avec respect, méthode et une pointe de déférence.
+**3. Palette**
+- `#F7F3EC` (Blanc-Sein) – Fond principal, lumineux sans froideur, rappel du crépi parisien.  
+- `#3B2F2A` (Brun-Cachou) – Encre, titres, ancrage. Un brun profond et chaleureux, issu du bois vieilli et du café.  
+- `#8D7967` (Gris-Taupe) – Textes secondaires, filets, séparateurs discrets.  
+- `#C4A96A` (Laiton-Miroir) – Accent unique, boutons, icônes, liens actifs. Écho direct au grand miroir doré de la boutique.  
+- `#E5DCCF` (Lin-Poussière) – Fond alternatif pour cartes, blocs de réassurance.  
+- `#6D8471` (Vert-Sauge) – Touche optionnelle pour badges écoresponsables, rappel du végétal urbain et de la traçabilité verte.
 
----
+*Banni le blanc pur (#FFFFFF) et le gris machine. Chaque teinte possède une chaleur organique.*
 
-## 2. Direction artistique
+**4. Ton éditorial**
+Chaleureux, rassurant, précis. On tutoie le client avec élégance, comme un artisan de confiance. Le registre est soutenu sans être distant : des phrases courtes, un vocabulaire concret, jamais de jargon. On évoque le « savoir-vider » avec autant de respect que l’ébénisterie. L’adresse exacte et les horaires sont donnés comme des évidences naturelles.
 
-**« Inventaire domestique » — un minimalisme chaud à la parisienne.**
+**5. Accroche héro**
+**« L’espace retrouvé est un luxe silencieux. »**  
+*Débarras haut de gamme à Paris — appartements, maisons, successions. Chaque objet à sa juste place, jusqu’au dernier carton.*
 
-Le parti pris est celui du **classeur d'inventaire réinventé** : rigueur éditoriale (grilles, légendes, numérotation subtile), mais traitée sur des textures de papier ancien et de bois patiné. On évoque l'univers feutré d'un commissaire-priseur, le soin d'un archiviste, la chaleur d'un intérieur haussmannien baigné de lumière naturelle.
+**6. Sections**
+1. **Faur’Art, l’artisan du débarras**  
+*Depuis 2010, Nicolas et son équipe signent des débarras d’exception dans le 15e arrondissement. Notre atelier, installé au 185 rue Saint Charles, allie l’exigence du geste artisanal à une logistique sans couture.*
 
-Visuellement, cela se traduit par :
-- Des fonds en blanc cassé légèrement grainé, comme du papier vergé.
-- Des photographies d'objets traitées en **natures mortes contemporaines** — jamais de clichés « avant/après » brutaux, mais des compositions posées (une pile de livres sur un parquet, un vase sur un guéridon, un trousseau de clés sur un sous-main).
-- Une géométrie douce : cadres, filets discrets, espaces respirés.
-- La lumière : chaude, latérale, comme une fin d'après-midi dans un appartement traversant de la rue Saint-Charles.
+2. **Ce que vous confiez, nous le traitons avec soin**  
+*Appartement, maison, cave, succession, syndrome de Diogène — chaque mission bénéficie d’une méthode dédiée. Vidage, tri, recyclage, jusqu’à la remise des clés sur un sol balayé.*
 
-Le minimalisme ici n'est pas froid — il est habité.
+3. **Notre charte : transparence et traçabilité**  
+*Devis clair sous 24h, intervention en 2 à 4 jours. Vos déchets suivent une filière écoresponsable documentée. Nous vous épargnons l’administratif, les appels aux encombrants, les allers-retours en déchèterie.*
 
----
+4. **Avant / Après — la métamorphose en images**  
+*Galerie de réalisations récentes dans Paris. Cliquez sur une photo pour révéler l’état initial. La vérité de notre travail, sans filtre.*
 
-## 3. Palette chromatique
+5. **Les clients en parlent mieux que nous**  
+*Avis vérifiés Google — 4,8/5 pour plus de 60 témoignages. « Équipe très professionnelle, très sympathique », « Prix au m³ tout à fait raisonnable », « Je recommande les yeux fermés. »*
 
-**Nommée « Carnet d'inventaire » — 6 teintes ancrées dans l'univers réel du commerce :**
+6. **Faur’Art & Co, mode d’emploi**  
+*Appelez Nicolas au 06 02 10 70 14 ou remplissez le formulaire pour un devis gratuit. Puis nous fixons une visite technique au 185 rue Saint Charles, Paris 15e. Ouvert du mardi au samedi, 9h-19h. Deux numéros pour un même service : 09 81 12 59 48 en complément.*
 
-| Nom | Hex | Rôle |
-|---|---|---|
-| Papier registre | `#FAF5F0` | Fond principal (remplace le blanc clinique) |
-| Encre noyer | `#3C2A1E` | Texte courant, titres — un brun profond chaleureux, jamais noir |
-| Bronze serrure | `#5B7B5E` | Accent principal — le vert-gris du laiton oxydé, évoque la recyclerie, les serrures anciennes, le réemploi |
-| Chêne ciré | `#C4956A` | Accent chaud — bois clair des meubles qu'on vide, touches pour les CTA et les soulignés |
-| Pierre de taille | `#E8DDD0` | Fond secondaire, séparateurs — la pierre blonde des façades du 15e |
-| Bleu tampon | `#2A3B4C` | Touche administrative subtile — filets, icônes, dates, encres de tampon encreur |
-
-**Pourquoi ces couleurs :**
-Le blanc cassé papyrus (`#FAF5F0`) remplace le fade `#FFFFFF` signalé dans l'audit comme générique. Le brun encre (`#3C2A1E`) apporte distinction et lisibilité sans froideur. Le bronze (`#5B7B5E`) encode le recyclage éco-responsable (mentionné dans la fiche Google) de façon symbolique plutôt que littérale. On évite absolument le duo « crème + terracotta » — ici le chêne ciré reste sobre, presque tabac blond.
-
----
-
-## 4. Ton éditorial
-
-**Voix :** Distinguée, discrète, empathique sans familiarité.
-
-- Vouvoiement systématique, mais jamais guindé.
-- On se tutoie comme un tapissier de quartier qu'on connaît depuis vingt ans.
-- Les verbes sont choisis : on ne « jette » pas, on **confie**, on **transmet**, on **oriente** ; on ne « débarrasse » pas — on **accompagne**.
-- Niveau de langue soutenu sans jargon. Une phrase sur deux est courte, une sur trois a du souffle.
-- L'émotion est dans la retenue (surtout pour les sujets délicats : décès, Diogène).
-
-**Exemple de ton :**
-> *Un appartement qu'on vide, c'est un chapitre qu'on tourne. Nous sommes là pour que le geste soit juste — respectueux des lieux, des objets et des personnes.*
-
----
-
-## 5. Accroche héro (pleine page, premier écran)
-
-**Titre (Playfair Display, Display Black, 4rem+) :**
-> L'art de vider sans effacer.
-
-**Sous-titre (Source Sans 3, 1.25rem) :**
-> Débarras éco-responsable à Paris & en Île-de-France — devis gratuit, intervention en 2 à 4 jours, traçabilité complète de vos biens.
-
-**CTA principal :**
-> Demander mon devis
-
-**Signature discrète en bas de hero :**
-> Depuis 2010 · 4,9★ sur 76 avis · 185 rue Saint-Charles, Paris 15e
-
----
-
-## 6. Sections & contenu (ordre de la page)
-
-### Section 1 — Propriétaire / Confiance
-**Titre :** *Vous nous confiez bien plus qu'un espace.*
-
-**Contenu :**
-> Depuis 2010, Nicolas et son équipe accompagnent les familles parisiennes avec le même engagement : discrétion, respect et traçabilité. Nous intervenons pour tous types de débarras — appartement, maison, succession, syndrome de Diogène — et nous assurons le recyclage éco-responsable de chaque objet.
->
-> **450+ débarras réalisés** · Note moyenne de 4,9★ · Membre de [éco-organisme/local si pertinent]
-
-### Section 2 — Les 4 étapes (séquence structurée, numérotation éditoriale)
-
-**Titre :** *De votre appel à la remise des clés, en quatre temps.*
-
-| Étape | Titre | Contenu réel |
-|---|---|---|
-| 01 | **Premier contact** | Appelez au 06 02 10 70 14 ou remplissez notre formulaire. Nicolas se déplace pour un devis gratuit, sur place ou sur photo, sous 24 h. |
-| 02 | **Inventaire & tri** | Ensemble, nous identifions ce qui doit être recyclé, donné, vendu ou détruit. Chaque filière est documentée. |
-| 03 | **Débarras** | L'équipe intervient en 2 à 4 jours. Meubles, archives, coffres-forts, pianos — nous manions tout, avec soin et rapidité. |
-| 04 | **Vous refermez la porte** | Le lieu est vidé, balayé, prêt pour sa prochaine vie. Vous recevez un bordereau de traçabilité pour vos déchets. |
-
-### Section 3 — Spécialités (cartes visuelles en grille)
-
-**Titre :** *Chaque situation mérite sa méthode.*
-
-Six cartes sans photo, avec icône discrète + titre :
-
-1. **Appartement** — Du studio à l'appartement familial, nous vidons chaque pièce avec méthode.
-2. **Maison** — Débarras complet, cave et grenier compris.
-3. **Succession** — Nous collaborons avec vos notaires. Estimation, rachat et vente aux enchères possibles.
-4. **Syndrome de Diogène** — Intervention spécialisée, respectueuse des personnes et des lieux.
-5. **Décès** — Un accompagnement discret, dans l'urgence ou en différé.
-6. **Express** — Intervention sous 48 h pour les situations critiques.
-
-### Section 4 — Services annexes (accordéon)
-
-**Titre :** *Au-delà du débarras, une gamme de services complémentaires.*
-
-- Rachat de succession
-- Vente aux enchères
-- Destruction d'archives confidentielles
-- Stockage & transport
-- Débarras de piano, coffre-fort, cave
-
-Chaque item se déplie en un court paragraphe. Pas de liste noyante comme signalé dans l'audit.
-
-### Section 5 — Réalisations (galerie éditoriale)
-
-**Titre :** *Ce que nous avons confié à une nouvelle vie.*
-
-Une grille de 6 photographies, traitées comme des natures mortes (pas d'avant/après côte à côte agressif). Légende discrète sous chaque image : « Appartement 3 pièces — Paris 7e — Mars 2025 ».
-
-### Section 6 — Avis (sélection éditoriale, pas un flux brut)
-
-**Titre :** *Ils nous ont confié leur intérieur.*
-
-Trois avis mis en page avec guillemets surdimensionnés (Playfair Display, 8rem, bronze, en filigrane). Exemple :
-
-> *« Merci à Nicolas et son équipe pour leur professionnalisme et leur sérieux. Ma mère âgée a fait appel à eux pour deux prestations : un déménagement et un débarras d'appartement. Les prix sont très corrects et les devis faits rapidement. »*
-> — Virginie O., Paris 15e
-
-### Section 7 — Contact (pied de page élargi)
-
-**Titre :** *Prenons le temps d'en parler.*
-
-- Adresse : 185 Rue Saint-Charles, 75015 Paris
-- Téléphone principal : 06 02 10 70 14
-- Téléphone secondaire : 09 81 12 59 48
-- Horaires : Lun-Sam · 09:00–20:00
-- Email : nicolas@faurart.com
-- Formulaire de contact intégré (champs : Nom, Téléphone, Type de débarras, Adresse concernée, Photo optionnelle)
-
----
-
-## 7. Signature visuelle & détails mémorables
-
-### 1. Le filigrane d'inventaire
-Chaque photo de la galerie « Réalisations » porte en surimpression un numéro d'inventaire manuscrit (style calligraphie fine, en `#C4956A` avec opacité 0.3) : *N° 487 — Appt. 3 pièces — Paris 15e — Fév. 2025.* Ce traitement transforme les clichés utilitaires en archives de collectionneur. Réminiscence du registre d'huissier, du catalogue de commissaire-priseur.
-
-### 2. L'animation de traçabilité (section Éco-responsable)
-Dans la section « Spécialités », une ligne de filets animés (css stroke-dashoffset) relie chaque service à une petite étiquette : *→ Recyclerie du 15e*, *→ Emmaüs Paris Centre*, *→ Déchèterie agréée*. Ces fils apparaissent au scroll — encodage visuel de la promesse de traçabilité.
-
-### 3. Typographie display en contre-forme
-Le mot « Faur'Art » est traité en Playfair Display Display Black (800), lettres espacées de 0.15em, avec le « A » majuscule de « Art » décalé vers le haut de 4px — micro-rupture qui signe le nom sans logo. Dans le footer, ce bloc typographique devient un sceau : centré, en `#3C2A1E`, souligné d'un filet double `#5B7B5E`.
-
-### 4. Le curseur inventaire (mobile & desktop)
-Au survol des liens de la navigation principale, le curseur se transforme en un petit filet horizontal (20px), couleur `#
+7. **Signature visuelle**
+- **Le motif chevron** : repris en filigrane sur les arrière-plans, en séparateur animé, en ombre portée discrète sur les photos. Clin d’œil au parquet du lieu, il devient le symbole graphique de l’ordre et du soin.
+- **Le cadre laiton** : chaque image “avant/après” est contenue dans un filet doré (#C4A96A) de 1px, qui s’illumine au survol. La galerie se feuillette horizontalement comme un portfolio d’architecte.
+- **Animation de révérence** : au scroll, les blocs de texte apparaissent par un voile qui se lève du bas, rappelant le geste de découvrir un meuble précieux.

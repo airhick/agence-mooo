@@ -1,38 +1,84 @@
-1. **Concept & positionnement**  
-M.R.Optic’ n’est pas une chaîne : c’est l’alliance, rare, d’une précision optique chirurgicale et d’un lieu à l’élégance minérale, ancré dans le quotidien d’Issy-les-Moulineaux. Le site ne se contente pas de présenter des lunettes — il transpose l’expérience boutique : le contraste entre la pierre noire brute du comptoir et la chaleur du bois clair, la lumière vive qui ne laisse passer aucun flou, l’accueil sur-mesure. On retient le slogan implicite : *La justesse du regard, au cœur d’Issy.*
+**BRIEF CRÉATIF**  
+*M.R.Optic’ Issy-les-Moulineaux – Opticien 92 | Site vitrine haut de gamme*
 
-2. **Direction artistique**  
-**”Contraste minéral & précision boisée”** — un parti pris chic et brut directement tiré du mur en pierre noire qui signature le magasin. La direction oppose une toile de fond sombre, presque minérale, à des éclats de bois doré et des touches de rouge optique. Le design n’est ni clinique ni aseptisé : il assume une ambiance galerie contemporaine avec des respirations texturées, où la typographie DM Serif Display apporte une élégance intemporelle, et la DM Sans une lisibilité nette.
+---
 
-3. **Palette**  
-- `#0D0D0D` Noir minéral — fond principal, évoque la pierre noire signature du comptoir.  
-- `#F5F0E8` Blanc chaux — fond des zones de lecture, clarté chaude sans fadeur.  
-- `#C29B6D` Bois doré — accent principal, liens, filets, icônes, rappel des étagères en bois clair.  
-- `#C41E3A` Rouge optique — boutons CTA, accents interactifs très limités (rappel du rouge de l’enseigne).  
-- `#2A2A2A` Gris carbone — cartes, surfaces secondaires pour varier les profondeurs.  
-- `#8C6E4A` Bois moyen — détails décoratifs, filets fins.
+## 1. Concept & positionnement
+**L’opticien qui remet la clarté au centre.**  
+Dans un quartier où le temps manque et la précision domine (cadres, familles exigeantes, vies à 100 à l’heure), M.R.Optic’ d’Issy se positionne comme un atelier d’optique de poche : artisan de la vision, il va au-devant de ses clients (domicile, entreprise) avec la même exigence qu’au 33 rue Ernest Renan. On ne vend pas des lunettes, on rend la vue fluide et élégante, sur place ou là où vous êtes. Le site vitrine sera l’incarnation numérique de cette promesse : rigueur optique, geste artisanal et élégance de quartier.
 
-4. **Ton éditorial**  
-Vouvoiement élégant mais direct, sans jargon opaque. La voix est celle d’un opticien expert qui connaît ses clients par leur prénom, parle du quartier et de la vraie vie. Aucune hyperbole commerciale : des faits, une présence rassurante. Exemple : *“Nous sommes rue Ernest Renan depuis 2013, et nous prenons le temps qu’il faut pour chaque paire.”*
+## 2. Direction artistique
+**Parti pris : « Précision transparente » — Un minimalisme chaleureux ancré dans l’optique de verre.**  
+On part de l’énergie réelle du quartier : Issy-les-Moulineaux, un centre-ville ni trop neuf ni trop vieux, des rues commerçantes vivantes, une clientèle qui apprécie le bon goût sans ostentation. Les opticiens sont des manipulateurs de lumière et de netteté. La DA traduira cela par :
 
-5. **Accroche héro**  
-- **Titre :** La justesse du regard, au cœur d’Issy  
-- **Sous-titre :** Opticien indépendant depuis 2013 — lunettes, lentilles, domicile & entreprise — rue Ernest Renan, Issy-les-Moulineaux.
+- Une ambiance **cristal, verre, clarté**, sans être froide : des fonds blancs teintés d’un blanc verre (infime reflet bleu / vert d’eau) pour simuler la transparence des lentilles.
+- Une typographie DM Serif Display (titres) utilisée comme des coupes nettes, dans des tailles généreuses, associée à des textes DM Sans aérés pour une lisibilité parfaite.
+- Des photos réelles du magasin d’Issy prises en lumière naturelle froide du matin (façade, intérieur avec les présentoirs, les outils d’atelier), contrastant avec des arrière-plans purs. Les montures et verres sont photographiés en macro sur fond blanc, comme flottant dans le vide.
+- Des touches de matière : cadres en bois/chêne clair pour les CTA (rappel des plateaux d’atelier), filets dorés fins pour signaler un détail (monture haut de gamme).
+- Un jeu de netteté/flou dans les animations : au scroll, des zones de texte deviennent nettes comme ajustées à la vue. L’interface évoque une expérience de correction visuelle.
 
-6. **Sections** (ordre, titres et phrase de contenu réelle)  
-- **Notre philosophie** — *“Une vision qui compte, une écoute qui change tout.”*  
-  Depuis 2013, Marwan Rahmani et son équipe accueillent chaque client avec la même promesse : trouver la correction parfaite et la monture qui lui ressemble, sans concession. Ici, on ne vend pas des lunettes, on ajuste un regard.  
-- **L’expérience boutique** — *“Un écrin minéral, une sélection pointue.”*  
-  Le mur en pierre noire du comptoir donne le ton : une atmosphère contemporaine, une lumière précise, et partout la chaleur du bois clair. Les présentoirs mettent en scène des montures triées sur le volet, pour un essayage confortable et sans hâte.  
-- **Services nomades** — *“Votre opticien, partout avec vous.”*  
-  MR Optic’ se déplace à votre domicile, en entreprise et dans les résidences seniors d’Issy et des alentours. Sélection de lunettes, conseils personnalisés, prise de mesures — le même soin qu’en boutique, là où vous êtes. Nous assurons aussi un service Relais Colis pour les retouches et ajustements.  
-- **Marques & savoir-faire** — *“Des montures & verres qui ont du caractère.”*  
-  Une curation exigeante de marques françaises et internationales, des verres minéraux aux traitements haute performance. Nous défendons des produits que nous aimons porter.  
-- **Ce que nos clients d’Issy disent de nous** — *“4.6/5 pour 112 avis, et la confiance qui va avec.”*  
-  Des témoignages authentiques, extraits de notre fiche Google, sans filtres. Parce qu’à Issy, le bouche-à-oreille ne ment pas.  
-- **Prêts à voir plus clair ?** — *Prenez rendez-vous ou passez nous voir.*  
-  Horaires, plan interactif de la rue Ernest Renan, téléphone, email et prise de rendez-vous en ligne en deux clics. Nous sommes ouverts du mardi au samedi — toutes les informations pratiques pour ne plus jamais hésiter.  
+## 3. Palette
+**6 couleurs ancrées dans le monde de l’optique et du quartier :**  
+- **#F6F9FC** (fond principal, blanc verre légèrement teinté bleu optique)  
+- **#1C2D3D** (encre profonde, presque marine, pour le texte principal ; évoque la séreuse rétinienne et l’élégance des montures écaille foncée)  
+- **#C7A86B** (accent doré chaleureux, rappel des charnières métalliques haut de gamme et des reflets sur les verres multicouches)  
+- **#8B9DAF** (gris bleuté moyen, pour les textes secondaires et filets discrets)  
+- **#E2EAF2** (fond alternatif très doux, pour cartes et encarts, légèrement froid)  
+- **#FFFFFF** (blanc pur pour les blocs de contraste maximum, comme un test de vue)
 
-7. **Signature visuelle**  
-- **Texture minérale** : Le fond noir n’est jamais un aplat uniforme — il porte en filigrane ou en bordure un détail texturé rappelant le grain de la pierre noire du comptoir (traitement par masque ou gradient texturé).  
-- **Cercle optique / mise au point** : En animation d’entrée, un grand cercle flouté (comme un verre non corrigé) gagne en netteté au scroll pour révéler le contenu — métaphore directe de la correction visuelle et signature mémorable de l’expertise.
+## 4. Ton éditorial
+**« Vous », de l’expert rassurant au voisin de quartier.**  
+Voix : tutoiement impossible, mais un « vous » de proximité. Le fondateur Marwan Rahmani s’exprime en son nom ou au nom de l’équipe, avec une rigueur artisanale et une pointe de fierté discrète.  
+- Niveau de langue : soutenu accessible — des phrases courtes, précises, jamais de jargon médical non expliqué.  
+- Registre : « On parle vision comme on taille un verre : net, sur mesure, avec soin. »  
+- Accroches concrètes, jamais vendeuses : on explique le service à domicile comme on le ferait à un client au téléphone.
+
+## 5. Accroche héro
+**Titre principal**  
+`Voir Issy, voir juste`  
+
+**Sous-titre**  
+`Opticien depuis 2013 au cœur d’Issy-les-Moulineaux — en boutique, à domicile, en entreprise. Une vision sur mesure, du test de vue aux verres de précision.`
+
+## 6. Sections ordonnées
+1. **Le magasin d’Issy**  
+   `À deux pas de la Mairie, un atelier d’optique à taille humaine.`  
+   Photo réelle de la façade rue Ernest Renan, carte intégrée, horaires du jour affichés dynamiquement. Bouton itinéraire et appel.
+
+2. **Qui sommes-nous ?**  
+   `Marwan Rahmani et son équipe — 10 ans d’expertise en optique de précision.`  
+   Portrait en lumière naturelle, outil en main (lunette d’essai, meule). Texte concis : la passion du métier, l’indépendance, le conseil personnalisé.
+
+3. **Nos services**  
+   `Boutique, domicile, entreprise : vos yeux, notre priorité partout dans le 92.`  
+   Trois cartes illustrées : Opticien classique (boutique), À domicile (visuel d’un opticien avec mallette), En entreprise (détail d’un salon dédié). CTA « Prendre rendez-vous » distinct pour chaque service.
+
+4. **Vos lunettes, de l’essayage au montage**  
+   `Essayez, choisissez, ajustez : un parcours guidé par nos opticiens.`  
+   Galerie photo du magasin réel : présentoirs, client en train d’essayer, atelier de montage avec verres en cours de découpe. Légendes discrètes, pas de faux témoignages.
+
+5. **Nos marques & verres**  
+   `Ray-Ban, Oakley, Tom Ford, Vuitton… et des verres en stock pour toutes les corrections.`  
+   Grille de logos épurée + photographies en éclaté de verres progressifs, antireflet, amincis. Pas de prix précis inventé, mais mention « Devis gratuit sous 24h ».
+
+6. **Ce que vos voisins disent de nous**  
+   `4,6/5 sur 110 avis Google. Voici pourquoi Issy nous fait confiance.`  
+   Module dynamique tirant les 3 derniers avis réels Google (via API ou copie manuelle, mais toujours authentiques). Pas de faux texte.
+
+7. **Contact & accès**  
+   `33 Rue Ernest Renan, 92130 Issy-les-Moulineaux. Tel : 01 58 88 24 58.`  
+   Plan interactif, formulaire simple. Rappel des horaires (à recueillir précisément) et des zones couvertes à domicile (communes du 92 listées).
+
+## 7. Signature visuelle
+- **Animation de netteté** : Lors du chargement, les titres apparaissent flous puis deviennent nets (effet d’accommodation). Au scroll, un test de vue minimal (cercle de verre) suit l’utilisateur, avec un jeu de réfraction sur les images.
+- **Liseré doré sur les images** : Chaque photographie de monture ou de visage reçoit un cadre intérieur fin doré (#C7A86B), comme une charnière discrète qui signe l’élégance. Ce liseré se retrouve en souligné des liens actifs et en séparation des blocs clés.
+
+---
+
+**Ce brief répond point par point aux faiblesses de l’audit :**  
+- Recentrage local (H1 « Voir Issy, voir juste », pas de mention du 94)  
+- Horaires, carte, photos réelles intégrées  
+- Ton de proximité avec le « vous » et l’artisan Marwan Rahmani  
+- Distinction claire des services à domicile/entreprise par rapport à la boutique  
+- Correction de la faute d’orthographe et hiérarchie limpide  
+- Signature mémorable en lien direct avec le métier (netteté, verre, dorure)

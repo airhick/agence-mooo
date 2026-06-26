@@ -92,14 +92,14 @@ def describe_images(image_paths, prompt: str, *, model: str | None = None,
 
 
 def image_edit(image_path, prompt: str, *, model: str | None = None,
-               size: str = "1024x1024", max_retries: int = 4,
-               timeout: int = 300) -> bytes:
+               size: str = "1024x1024", quality: str = "low",
+               max_retries: int = 4, timeout: int = 300) -> bytes:
     """Edit `image_path` with gpt-image-2 and return the resulting PNG bytes."""
     key = config.require_openai_key()
     url = f"{config.OPENAI_BASE_URL}/images/edits"
     headers = {"Authorization": f"Bearer {key}"}
     data = {"model": model or config.OPENAI_IMAGE_MODEL, "prompt": prompt,
-            "size": size, "n": 1}
+            "size": size, "quality": quality, "n": 1}
     last: Exception | None = None
     for attempt in range(max_retries):
         try:

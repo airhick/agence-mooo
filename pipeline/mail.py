@@ -90,7 +90,8 @@ BOARD_PROMPT = (
     "Nous c'est Mooo, on aime bien votre boite,\n"
     "donc on vous a fait un nouveau site :)\"\n\n"
     "Keep it readable but clearly hand-written and natural. Do not add any other "
-    "text, logos or watermarks."
+    "text, logos or watermarks. Keep the people's faces imperfect and unretouched, "
+    "as if it were a Friday afternoon — natural, relaxed, candid facial expressions."
 )
 
 

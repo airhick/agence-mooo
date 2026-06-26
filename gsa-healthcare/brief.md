@@ -1,77 +1,74 @@
-# BRIEF CRÉATIF — GSA Healthcare
+**1. Concept & positionnement**
 
-## 1. Concept & positionnement
-**GSA Healthcare n’est pas un cabinet de conseil de plus.** C’est un atelier de stratégie commerciale pour les industries de santé, où chaque mission est traitée avec la rigueur d’un protocole de recherche et l’attention d’un artisan. Le site doit incarner cette double promesse : *l’intelligence méthodique et l’engagement humain*, loin du jargon institutionnel et des visuels aseptisés. On retient l’idée d’un **carnet de laboratoire stratégique** — un espace où l’on documente, on analyse, on conçoit sur mesure, et où la transparence de la méthode devient un argument de confiance.
+« L’humain au levier du business santé. » GSA Healthcare n’est pas un simple prestataire de force de vente externalisée : c’est un architecte de la relation commerciale, qui transforme une exigence réglementaire et scientifique en performance durable. Face à une audience de directeurs commerciaux et marketing exigeants, le site abandonne la vitrine institutionnelle vieillissante pour incarner la précision d’un conseil sur mesure et l’engagement d’un partenaire de terrain. En pleine lumière, la méthodologie propriétaire *Listen Adapt Develop* devient le fil narratif, et l’expérience de 35 ans se lit dans chaque étude de cas incarnée, chaque visage d’équipe, chaque résultat chiffré. Le tout ancré dans un Paris sérieux mais non dénué d’élégance fonctionnelle.
 
-## 2. Direction artistique : « Carnet de stratégie contemporain »
-**Parti pris esthétique** — Un minimalisme éditorial texturé, évoquant les carnets de notes des chercheurs et les rapports confidentiels de haut niveau. L’ambiance est *studieuse, feutrée, précise*, avec des accents de cuivre chauds qui rappellent les instruments d’antan et les locaux haussmanniens du 15e arrondissement (rue Cauchy, quartier calme et sérieux).  
-La direction se construit autour de **matières** : papier vergé, toile de reliure, encre dense, filets métalliques. Pas de photos d’illustration génériques ; on utilise des détails photographiés en noir et blanc chaud (main qui écrit, surface de bureau, architecture du quartier) et des schémas épurés pour expliquer les processus. La typographie est traitée comme un élément graphique à part entière — Marcellus pour les titres, avec son dessin gravé raffiné, donne l’autorité et l’élégance ; Mulish pour le texte courant assure une lisibilité contemporaine sans froideur.
+---
 
-## 3. Palette
-La palette est extraite de l’univers réel du conseil haut de gamme et du quartier : la pierre blonde des immeubles, le cuivre des poignées de porte, le vert profond des boiseries de bibliothèque.
+**2. Direction artistique**
 
-| Rôle             | Code HEX   | Description |
-|------------------|------------|-------------|
-| Fond principal   | `#F7F5F0`  | Blanc cassé chaud, type papier vergé |
-| Encre (texte)    | `#1A1F24`  | Bleu nuit presque noir, dense |
-| Accent primaire  | `#C2A053`  | Cuivre/laiton — boutons, filets, icônes |
-| Accent secondaire| `#3D5A5B`  | Vert sauge profond — arrière-plans, surlignages, bandeaux |
-| Cartes & bordures| `#E8E4DD`  | Gris beige très clair — contraste doux |
-| Alerte/CTA fort  | `#D94E34`  | Rouge brique — notes urgentes, pastilles, appels critiques |
+La direction artistique emprunte au **minimalisme technique chaleureux**, comme une version contemporaine de l’édition scientifique haut de gamme. Elle traduit l’univers de la santé B2B en un espace de confiance où le détail compte : papiers mats texturés, grilles d’exposition rigoureuses, rapport au blanc architecturé plutôt que vide. Aucune froideur clinique ; au contraire, des touches humaines photographiées en lumière naturelle montrent des conseillers en action. L’énergie du quartier Cauchy (15ᵉ arrondissement, entre bureaux discrets et brasseries feutrées) nourrit une sobriété parisienne assumée, sans ostentation. Les photos (d’équipe, de moments de work session, d’environnement pharmaceutique stylisé) sont traitées en noir & blanc légèrement chaud, le seul canal colorimétrique fort étant réservé aux éléments graphiques fonctionnels et aux accents de navigation. La typographie Marcellus (titres) apporte une gravité moderne, tandis que Mulish (texte) incarne la lisibilité sans sacrifier la personnalité.
 
-**Ambiance lumineuse : claire, chaude, enveloppante** — tirée de la lumière parisienne tamisée qui entre par les fenêtres haussmanniennes. Le fond blanc cassé évite le blanc clinique ; l’encre sombre évite le noir pur. Le cuivre réchauffe sans agressivité.
+---
 
-## 4. Ton éditorial
-**Voix : direct, précis, partenaire.** On s’adresse au dirigeant d’une industrie de santé qui n’a pas de temps à perdre en langue de bois. Le registre est *professionnel mais chaleureux* — on tutoie le visiteur, on utilise des phrases courtes et des verbes d’action. Pas de superlatifs vides ; on explique concrètement ce que GSA fait et pourquoi c’est utile. Quand on parle méthode, on cite le processus « Listen. Adapt. Develop. » comme une signature de rigueur.  
-**Niveau de langue** : français courant soutenu, sans jargon excessif. On traduit les anglicismes du secteur (*sell-in/sell-out* devient « de la promotion terrain à la distribution ») pour rendre l’expertise accessible.
+**3. Palette**
 
-## 5. Accroche héro
-**Titre (H1)** :  
-*Votre stratégie santé mérite mieux qu’un plan de bataille.*
+| Rôle | Hex | Nom | Usage |
+|------|-----|-----|-------|
+| Fond principal | `#F8F7F4` | Pierre de Caen | Blanc cassé tirant vers le calcaire parisien, évite le blanc hôpital. Fond des pages, aplats d’arrière-plan. |
+| Encre / texte | `#2B3B42` | Bleu graphite | Teinte profonde (bleu nuit désaturé) pour le corps du texte et les titres, évoque l’encre de qualité et la rigueur sans noir pur. |
+| Accent fonctionnel | `#1C7C88` | Canard pragmatique | Vert-bleu affirmé servant de couleur de lien, boutons, icônes et graphiques. Référence au monde de la santé mais détournée du stéréotype. |
+| Accent chaleur | `#C58B59` | Cuivre humain | Touche métallique chaleureuse pour les hover, les filets fins, certains motifs, ou les citations. Évoque la connexion humaine au sein de processus techniques. |
+| Fond froid (zones neutres) | `#F1EFEA` | Lin | Fond secondaire pour blocs de témoignages, bordures d’étude de cas. Très légèrement plus chaud que le fond principal. |
+| Utilitaires / Alertes | `#E47A46` | Sienne signal | Uniquement pour des CTA très importants ou des badges « résultats », jamais en aplat. Contraste maîtrisé avec le canard. |
 
-**Sous-titre** :  
-Nous façonnons avec vous des solutions commerciales sur mesure — de la mise sur le marché à l’exécution terrain — avec la rigueur d’un laboratoire et l’agilité d’une équipe dédiée.
+---
 
-**CTA principal** : [ Parlons de vos enjeux ]
+**4. Ton éditorial**
 
-## 6. Sections (ordre et contenu réel)
+Voix : Expliquer plutôt que vendre. Le registre est celui d’un consultant qui parle à un décideur : direct, documenté, jamais jargonné sans explication. Le vouvoiement est maintenu, mais les tournures sont actives (« Nous avons réduit de 18 % le time-to-market… »). Les adjectifs sont concrets (pilotage, modélisation, terrain) ; les superlatifs sont bannis. Chaque terme technique est contextualisé. Les citations de clients ou d’équipes sont authentiques, avec prénom et fonction réels. Le français est irréprochable, sans aucun saut vers l’anglais dans les titres.
 
-### Section 1 — Héro
-- **Titre** : *Votre stratégie santé mérite mieux qu’un plan de bataille.*
-- **Contenu** : Nous façonnons avec vous des solutions commerciales sur mesure — de la mise sur le marché à l’exécution terrain — avec la rigueur d’un laboratoire et l’agilité d’une équipe dédiée.  
-*(Photographie d’ambiance : bureau de travail avec un carnet ouvert, plume, tasse de café, lumière naturelle.)*
+---
 
-### Section 2 — La méthode GSA
-- **Titre** : Listen. Adapt. Develop.
-- **Contenu** : Une méthodologie éprouvée en trois temps pour transformer vos objectifs en résultats mesurables.  
-  *Listen* — Nous écoutons vos enjeux, votre marché, votre organisation.  
-  *Adapt* — Nous concevons une approche sur mesure, alignée à votre réalité terrain.  
-  *Develop* — Nous déployons avec vos équipes et pilotons jusqu’à l’atteinte des objectifs.  
-*(Disposition en trois colonnes avec icônes tracées au trait, numérotation discrète.)*
+**5. Accroche héro**
 
-### Section 3 — Pôles d’expertise
-- **Titre** : Trois pôles, un seul objectif : votre performance commerciale.
-- **Contenu** :  
-  **Consulting** — Accès marché, stratégie marketing et commerciale, enregistrement, prix, distribution France & Belgique.  
-  **Promotion** — Information promotionnelle, développement commercial, relation clients, plateforme digitale, médias.  
-  **HR Solutions** — Attirer les talents, accompagner leur développement, optimiser votre organisation commerciale.  
-*(Cartes texturées avec accent cuivre au survol, schéma de complémentarité entre pôles.)*
+**Titre (H1, Marcellus) :**  
+*Vos objectifs commerciaux en santé méritent plus qu’un plan. Ils méritent une méthode.*
 
-### Section 4 — Cas concrets
-- **Titre** : Nos résultats parlent pour nous.
-- **Contenu** : Exemples anonymisés mais précis de missions récentes — lancement d’un dispositif médical en France, restructuration d’une force de vente Belgique, mise en conformité prix et transparence pour un laboratoire. Chaque cas inclut le défi, l’action GSA, le résultat chiffré.  
-*(Pas de faux témoignages clients ; des schémas “avant/après” pour illustrer les gains.)*
+**Sous-titre (p en Mulish) :**  
+De la stratégie à l’exécution terrain, GSA Healthcare met 35 ans d’expertise B2B santé au service d’une croissance mesurable. En France, en Belgique, partout où vos patients vous attendent.
 
-### Section 5 — Qui sommes-nous
-- **Titre** : Des experts à votre écoute, au cœur du 15e.
-- **Contenu** : GSA Healthcare est implanté rue Cauchy, à Paris, depuis [année de création]. Notre équipe réunit des consultants seniors issus des industries de santé, rompus aux enjeux B2B et aux spécificités du marché français et belge. Une adresse, un visage, un engagement.  
-*(Photos réelles de l’équipe ou a minima des locaux — crédibilité locale.)*
+**CTA principal (bouton) :**  
+*Prendre un rendez-vous de diagnostic* (lien vers un formulaire court).
 
-### Section 6 — Contact & prise de rendez-vous
-- **Titre** : Prenons rendez-vous.
-- **Contenu** : Un formulaire simple (nom, société, email, message), le téléphone cliquable, l’adresse avec carte Google Maps, les horaires d’ouverture. Liens vers l’espace pharmacies GSA Connect et l’espace candidats Job Center, clairement séparés.  
-*(Le formulaire est mis en avant comme le CTA principal de conversion.)*
+---
 
-## 7. Signature visuelle
-1. **Trame millimétrée** — Un motif de fond très discret, visible sur certaines sections au scroll : une grille de carnet millimétré ou un papier vergé filigrané, comme une rémanence de l’esprit « laboratoire de stratégie ».  
-2. **Filets cuivrés soulignant les titres** — Chaque titre de section est accompagné d’un filet horizontal couleur cuivre,
+**6. Sections ordonnées**
+
+**A. Phrase de valeur – « Piloter la complexité sans perdre l’humain »**  
+*Contenu* : Trois paragraphes incarnés. À gauche, un visuel en noir & blanc d’un échange entre un délégué médical et un pharmacien, éclairé par une lumière oblique. À droite, un texte bref qui repositionne GSA comme le trait d’union entre les laboratoires et la réalité du marché.
+
+**B. Méthodologie – « Listen · Adapt · Develop : la méthode qui structure notre engagement »**  
+*Contenu* : Trois cartes horizontales, non numérotées (mais avec un filet cuivre progressif reliant l’ensemble). Chaque carte détaille une phase en une phrase concrète :
+- *Listen* : « Nous modélisons vos enjeux à travers un audit terrain : équipes, prescriptions, accès marché. »
+- *Adapt* : « Nous co-construisons le dispositif commercial et marketing sur mesure, sans copier-coller. »
+- *Develop* : « Nous déployons, mesurons et optimisons chaque point de contact jusqu’au résultat. »  
+Le visiteur peut cliquer sur chaque carte pour accéder à un cas détaillé.
+
+**C. Expertises – « Trois leviers pour un seul déploiement »**  
+*Contenu* : Trois blocs interchangeable avec titre (Marcellus) : Consulting, Promotion, HR Solutions. Chaque bloc est un cartouche qui s’étend au survol pour révéler un exemple chiffré en un paragraphe (ex. : « Pour un laboratoire belge en hématologie : +31 % de parts de prescription en 14 mois. »). Pas de liste de mots-clés, seulement une promesse concrète par pôle.
+
+**D. Preuves & études de cas – « Ce que notre partenariat a rendu possible »**  
+*Contenu* : Une frise horizontale de trois études de cas anonymisées mais détaillées (ex. : « Laboratoire mid-size, secteur oncologie, objectif accès marché hospitalier »). Pour chaque cas, une mini fiche indiquant le défi, la solution GSA, le résultat clé (en pourcentage ou en durée). Un bouton « Voir toutes les études de cas » mène à une page dédiée. Sous la frise, une citation de client vérifiée, avec photo et logo de l’entreprise si autorisé, en typo Mulish légèrement plus grande.
+
+**E. Visages de l’expertise – « L’expérience a un visage »**  
+*Contenu* : Une galerie sobre de portraits en noir & blanc de collaborateurs clés (associés, directeurs de pôle), avec prénom, fonction et une phrase sur leur engagement. Cela brise l’anonymat du site actuel. Possibilité d’un lien vers la page « Qui sommes-nous ? ».
+
+**F. Confiance renforcée – « Partenaires et territoires »**  
+*Contenu* : Affichage clair et actualisé du NAP (27 Rue Cauchy, 75015 Paris) et des coordonnées locales, avec horaires de standard téléphonique. Un encart explique l’engagement qualité (réactivité sous 24h, équipe dédiée par projet), avec un lien direct vers un formulaire de contact simplifié. Pas de mention sur la note Google, mais une invitation discrète : « Découvrez comment nos clients parlent de nous » pointant vers des témoignages vérifiés. L’email de contact devient un bouton visible au-dessus de la ligne de flottaison dans le footer et le menu fixe.
+
+---
+
+**7. Signature visuelle**
+
+- **Photographie en noir & blanc chaud, cadrage documentaire** : tous les visuels sont détourés avec un ombrage très léger, et l’accent cuivre est réservé aux éléments graphiques (filets, icônes, données chiffrées). Cela crée une tension entre la vérité documentaire de l’image et la précision des données, signature mémorable.  
+- **Animation discrète au scroll : le « fil d’écoute »** : un trait cuivre d’épaisseur 1px, situé à gauche du contenu principal sur desktop, progresse verticalement en synchronisation avec la section *Listen Adapt Develop*. Il s’interrompt pile au-dessus du footer, comme une onde de pouls stylisé — rappel du milieu de la santé et de l’écoute continue, sans être littéral.

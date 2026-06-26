@@ -21,8 +21,10 @@ a full outreach funnel in one command:
 4. **Build** — **DeepSeek v4** builds a new premium single-page site **from that
    audit** (+ research + real photos), placed at the repo root (`<slug>/index.html`)
    so it serves at `agence.mooo.com/<slug>`. `pipeline/generate.py`.
-5. **Publish** — push every new site to GitHub once, then confirm it's live.
-   `pipeline/publish.py`.
+5. **Publish** — rebuild the portfolio (a screenshot per site + `sites.json`),
+   then push every new site to GitHub once and confirm it's live. Each deploy
+   therefore updates the landing snippet and the `realisations.html` gallery
+   automatically. `pipeline/publish.py` (+ `pipeline/portfolio.py`).
 6. **Email** — prepare a personalized package per lead in `outbox/<slug>/` (copy
    written by **gpt-4o**, team **whiteboard photo** edited by **gpt-image-2** to
    handwrite a message with the company name, embedded **inline** in the HTML body
@@ -105,6 +107,9 @@ funnel:
 | Path | What | Deployed? |
 |------|------|-----------|
 | `<slug>/index.html` + `<slug>/assets/` | Generated site (+ real Maps photos) | ✅ `agence.mooo.com/<slug>` |
+| `<slug>/assets/thumb.jpg` | Auto screenshot of the live site (portfolio card) | ✅ |
+| `sites.json` | Portfolio manifest (all sites, newest first) | ✅ |
+| `realisations.html` | Public gallery of every deployed site | ✅ `agence.mooo.com/realisations.html` |
 | `<slug>/brief.md` | Creative brief used to build it | ✅ (harmless) |
 | `audits/<slug>/audit.md` | DeepSeek audit feeding the build | ❌ local only |
 | `outbox/<slug>/email.json` + `whiteboard.png` | Email draft package | ❌ local only |
@@ -123,7 +128,8 @@ funnel:
 - `generate.py` — two-pass build chained from the audit → `index.html` + `brief.md`.
 - `mail.py` — gpt-4o copy + gpt-image-2 whiteboard → `outbox/<slug>/` package.
 - `gmail_client.py` — Gmail API: one-time OAuth (`auth`) + create inline-image drafts.
-- `publish.py` — push root `<slug>` sites to GitHub + liveness check.
+- `portfolio.py` — screenshot each live site (`<slug>/assets/thumb.jpg`, incremental) + build `sites.json`. Feeds the landing snippet and `realisations.html`.
+- `publish.py` — rebuild the portfolio, then push root `<slug>` sites to GitHub + liveness check.
 - `run.py` — funnel orchestrator + CLI.
 
 ## Notes

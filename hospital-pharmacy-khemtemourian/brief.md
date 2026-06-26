@@ -1,50 +1,39 @@
-Parfait. Voici le brief créatif.
+## Brief créatif — Hospital Pharmacy Khemtemourian
 
----
+### 1. Concept & positionnement
+Révéler la **pharmacie de famille** qui se cache derrière la vitrine générique de « LeaderSanté ». Le site cesse d’être un catalogue e‑commerce anonyme pour incarner un lieu réel : une officine de quartier où chaque habitant d’Issy‑les‑Moulineaux est reconnu, écouté et conseillé. On passe de la plateforme froide à **l’écrin chaleureux d’un savoir‑faire pharmaceutique transmis**, signé Khemtemourian.
 
-## 1. Concept & positionnement
+### 2. Direction artistique
+**« Herboristerie de quartier contemporaine »** — L’univers visuel épouse l’énergie d’une pharmacie de proximité haut de gamme, ancrée dans la rue Ernest Renan. On cultive une atmosphère feutrée, presque confidentielle, qui évoque les anciennes officines parisiennes, mais épurée pour le confort mobile. **Parti pris :** matières nobles (bois de comptoir, verre ambré, cuivre patiné) traduites en ombres douces, textures de papier vergé et touches végétales séchées. La lumière est celle d’une devanture un soir d’automne — tamisée, dorée, rassurante. Aucune photo froide de laboratoire : on place le visiteur derrière le comptoir ou dans la zone de confidentialité.
 
-**La confiance qui se voit.** La Pharmacie de l’Hôpital n’est pas une plateforme de vente en ligne interchangeable. C’est un lieu physique, ancré au 19 bis de la rue Ernest Renan, où le sérieux de l’officine rencontre l’attention concrète d’un commerce de quartier. Le site abandonne entièrement la logique de catalogue pour incarner **la précision du geste pharmaceutique et la chaleur discrète du conseil personnalisé**. On ne feuillette pas des rayons, on pousse la porte d’une pharmacie.
+### 3. Palette
+La couleur naît des teintes réelles d’une officine traditionnelle revisitée, sans tomber dans le vert cru ou le blanc clinique.
 
-## 2. Direction artistique
+| Rôle | HEX | Nom évocateur |
+|------|-----|----------------|
+| Fond principal | `#FDFAF3` | Blanc d’Etiquette |
+| Encre / texte | `#2B2B2A` | Encre de Dispensaire |
+| Accent chaleureux (boutons, liens) | `#C47E3B` | Cuivre Comptoir |
+| Surface carte / tuiles | `#F4ECDC` | Papier Kraft |
+| Profondeur froide (pied de page, filets) | `#3D4F45` | Vert Pharmacopée |
+| Signalétique douce (prix, disponibilité) | `#A65D3C` | Terre de Sienne |
 
-**Parti pris : “Apothicaire contemporain”** — Un minimalisme clinique, hérité de l’univers hospitalier, mais réchauffé par des matières nobles et une typographie savante. On emprunte aux anciennes pharmacies leur rigueur graphique (étiquettes, bocaux, marbré), pour les traduire en langage contemporain : larges aplats blancs optiques, écritures hiératiques, éclats de verre et de métal. L’ambiance froide et fluorescente des photos Google Maps est volontairement transcendée : la lumière devient un blanc pur et enveloppant, rythmé par des accents verts profonds, presque botaniques. La pharmacie ne vend pas, elle veille.
+L’ensemble construit un clair‑obscur sophistiqué où le fond clair reste doux (pas de blanc éclatant) et où l’accent cuivre apporte la chaleur sans le piège terracotta. Le Vert Pharmacopée remplace le vert vif attendu ; il est utilisé avec parcimonie, en touches d’ancrage institutionnel.
 
-## 3. Palette
+### 4. Ton éditorial
+**Voix :** une pharmacienne de quartier qui vouvoie avec bienveillance, jamais condescendante. Le registre est celui du conseil intime, parfois teinté d’un humour discret (l’esprit « comptoir »). Niveau de langue courant, phrases brèves, sans jargon médical brut. On tutoie l’urgence mais jamais l’angoisse. L’adresse locale est partout : « Notre équipe de la rue Ernest Renan », « À deux pas de la mairie », « Livraison à Issy et aux alentours ».
 
-Couleur | Rôle
----|---
-`#F4F6F5` | Fond principal – blanc-gris glacé, lumière d’officine adoucie
-`#1B2A2B` | Encre – bleu-noir pétrole, solennel, lisible, remplace le noir pur
-`#2D5A47` | Accent primaire – vert pharmacie profond, évoque les plantes médicinales
-`#DCE5E1` | Surface secondaire – gris-vert brume, pour les cartouches et séparateurs
-`#B08060` | Accent chaud – cuir / laiton oxydé, pour les micro-éléments (icônes, filets)
-`#FFFFFF` | Fond alternatif – pour le contenu haute lisibilité (articles, services)
+### 5. Accroche héro
+**Titre :** *Votre pharmacie de quartier a un nom.*  
+**Sous‑titre :** *Khemtemourian. Depuis [trois générations], nous préparons vos ordonnances, écoutons vos doutes et livrons vos essentiels dans le même jour — au 19 bis, rue Ernest Renan, comme toujours.*
 
-Pas de terracotta, pas de “presque-noir + vert acide”. La couleur naît du métier.
+### 6. Sections ordonnées
+1.  **Notre officine** — « Poussez la porte du 19 bis. Nous sommes une pharmacie à taille humaine, indépendante, où le pharmacien se souvient de votre prénom et de votre traitement. Pas un entrepôt, pas une ligne téléphonique anonyme : une équipe de quartier, formée et disponible. »  
+2.  **Ce que nous vous devons** — « Livraison à vélo dans l’heure, click & collect avant 19h, entretien de médication au comptoir, dépistage rapide… et toujours un conseil gratuit, que vous ayez une ordonnance ou non. Chez Khemtemourian, le service n’est pas une option. »  
+3.  **La préparation du jour** — « Nous sélectionnons nos produits de parapharmacie comme nos médicaments : avec rigueur. Retrouvez ici les marques que nous utilisons pour nos propres familles, des soins naturels aux références dermatologiques, sans surenchère. »  
+4.  **Le conseil de la semaine (blog local)** — « Parce que la santé se discute au coin de la rue. Nos pharmaciens prennent la parole sur les maux de l’hiver, les allergies du printemps ou l’hydratation des tout‑petits — toujours en lien avec la vie à Issy. »  
+5.  **Venir & joindre** — « Arrêt Corentin‑Celton à 4 minutes, station Vélib’ devant la porte, parking de la mairie à deux pas. Ouvert du lundi au samedi, même entre midi et deux. Votre temps est précieux, notre accueil aussi. »
 
-## 4. Ton éditorial
-
-Une voix posée, qui nomme les choses avec justesse. Le niveau de langue est professionnel sans jargon médical opaque ; parfois littéraire dans l’évocation du quartier, jamais publicitaire. On dit “nous” — l’équipe officinale — et “vous” — le riverain, le patient. Le texte sait s’effacer pour laisser place à l’information critique (horaires, ordonnance, téléphone) mais il injecte dans chaque phrase une tenue élégante.
-
-## 5. Accroche héro
-
-**Titre :** Délivrer, conseiller, écouter.  
-**Sous-titre :** Rue Ernest Renan, une pharmacie héritière du soin hospitalier, ouverte à la conversation du quartier.
-
-Pas de slogan. Juste une définition concrète de l’endroit.
-
-## 6. Sections du site
-
-1. **Héro** – Accroche ci-dessus + une photographie en noir et blanc très contrasté du mortier en pierre du comptoir ou de la main d’un préparateur tenant une pipette. Animation subtile d’apparition des mots “Délivrer, conseiller, écouter” en séquence, comme inscrits au fer sur un cartouche.
-2. **L’officine** – Titre : « Une seconde d’attention vaut toutes les molécules. » Une colonne de texte sobre : “Depuis plus d’un demi-siècle, notre pharmacie assure la permanence du soin rue Ernest Renan. Héritiers de la culture hospitalière, nous préparons, vérifions et expliquons vos traitements — en prenant ce temps que la chaîne n’accorde plus.”
-3. **Le quartier, notre patientèle** – Titre : « Issy, des halles aux frênes. » (clin d’œil historique aux halles d’Issy). Brève contextualisation : la géographie, les bus, la proximité de l’hôpital Corentin Celton, les visages fidèles. Photo en extérieur de la devanture, traitée en duotone (vert d’accent + encre).
-4. **Services** – Titre : « Au comptoir comme à distance. » Trois piliers : **Ordonnance & préparation** (envoyez, nous préparons, vous retirez sous 1 heure). **Matériel & location** (orthopédie, maintien à domicile, sur conseil). **Entretien pharmaceutique** (RDV pour bilans de médication, vaccination, tests). Chaque pilier porté par un pictogramme gravé façon étiquette d’apothicaire.
-5. **L’équipe** – Titre : « Vos pharmaciens. » Portraits posés, en blouse blanche, fond clair. Nom, prénom, spécialité. Les avis Google positifs viennent se poser en cartouches latéraux, sans surjouer la preuve sociale.
-6. **Conseils** – Titre : « La lecture du pharmacien. » 2-3 articles rédigés par l’équipe (ex. : « Le lavage nasal chez l’enfant : geste et sérum », « Reconnaître une mycose unguéale »). Format long, typographie Mulish aérée, notes marginales façon annotations de laboratoire.
-7. **Pied de page épais** – Titre : « Rue Ernest Renan, le soin est ouvert. » Adresse complète, téléphone, email, horaires en clair (avec distinction jours/horaires), lien vers Google Maps, formulaire d’envoi d’ordonnance. Intégration discrète du sélecteur LeaderSanté pour la commande en ligne, mais relégué à un bouton “Commander en ligne” sobre — le site reste d’abord vitrine du lieu physique.
-
-## 7. Signature visuelle
-
-- **Le cartouche gravé.** Chaque titre principal s’inscrit dans un fin liseré imitant une étiquette d’apothicaire en creux (filet simple, couleur encre). Au survol, le filet se teinte de l’accent chaud `#B08060`, comme un cuivre frotté.
-- **Animation du scrupule.** En bas à droite du viewport, un petit indicateur de “précision pharmaceutique” : un mortier simplifié dont le pilon bat imperceptiblement au scroll, comme la pulsation d’un lieu vivant et attentif.
+### 7. Signature visuelle
+- **Le tampon Khemtemourian** : un monogramme « K » manuscrit, travaillé comme un sceau d’apothicaire, visible dans le menu, sur les fiches produits et en amorce de chaque page. Il rappelle les étiquettes de tiroirs d’officine et ancre le nom de famille dans la mémoire.
+- **La frise herbacée** : un fin motif linéaire de plantes médicinales (mélisse, camomille, sauge) court horizontalement comme un filigrane entre les sections — clin d’œil aux anciens almanachs de santé sans verser dans le « bien-être générique ». Il s’anime au scroll par un tracé progressif discret, comme une infusion qui libère sa couleur.

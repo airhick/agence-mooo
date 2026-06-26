@@ -1,42 +1,66 @@
-**1. Concept & positionnement**  
-« Superse » n’est pas qu’un e‑commerce iranien : c’est d’abord l’épicerie de quartier que tout le 15ᵉ connaît. Le site devient la vitrine numérique de ce lieu ouvert jusqu’à minuit, où les habitants viennent chercher du safran comme du pain lavash, et où l’on vous sert avec le sourire. L’idée forte : transformer la profusion visuelle d’un bazar en une expérience éditoriale élégante et lumineuse, capable d’accueillir aussi bien le chaland pressé que le curieux qui veut commander en ligne.
+**BRIEF CRÉATIF – Superse**  
+*12 Avenue Émile Zola, Paris 15e*
 
-**2. Direction artistique**  
-Parti pris : **« Bazar épuré »** – une alliance entre l’abondance graphique des produits persans (épices, fruits secs, pains, bocaux) et la simplicité architecturale de la boutique (murs blancs, verre, métal). Le design repose sur une photographie grands formats, des aplats blancs généreux et une grille très nette, réveillée par des touches épicées de rouge brique et de jaune safran. L’ambiance reste chaleureuse, familiale, jamais froide, avec des détails métalliques qui rappellent les présentoirs, les paniers ou les couvercles des samovars.
+---
 
-**3. Palette**  
-- Fond principal : `#FCF9F6` (blanc cassé des murs éclairés au naturel)  
-- Encre primaire : `#1C2D27` (vert profond, intense, comme les herbes fraîches et les feuilles de vigne)  
-- Accent franc : `#C5452A` (rouge brique, chaleureux, qui rappelle le sumac, les piments doux et l’enseigne réelle)  
-- Accent lumineux : `#E5A73C` (safran doré, pour les CTA et les petits éclats)  
-- Soutien : `#5C7A6E` (vert sauge medium, icônes, filets secondaires)  
-- Métallique : `#C8C2B6` (gris-beige zinc, pour les séparations fines et les arrière-plans de cartes)
+### 1. Concept & positionnement
+**L’épicerie de la rue Émile Zola, entre Paris et l’Iran.**  
+Superse est un supermarché de quartier qui fait le pont entre l’intensité des saveurs persanes et le quotidien parisien. On y vient pour trouver le safran, les dattes ou le riz parfumé qu’on ne trouve pas ailleurs, mais aussi pour l’échange, le conseil et la régularité d’un commerce de proximité. Le site ne doit pas vendre de l’exotisme générique : il doit incarner l’adresse précise, la vitrine, l’odeur des épices et le visage des commerçants — un lieu hybride où le 15e arrondissement dialogue avec Téhéran, sans folklore.
 
-**4. Ton éditorial**  
-Chaleureux, direct, un brin complice. On tutoie le visiteur comme on le ferait derrière le comptoir. Le français est simple, concret, ancré dans le quartier (« à deux pas de la Seine », « ouvert jusqu’à minuit »). Pas de jargon marketing : on parle de produits, de fraîcheur, d’origine, de service. Chaque phrase pourrait être prononcée par le commerçant lui-même.
+### 2. Direction artistique
+**« Brut parisien épuré, ponctué de précision persane »**  
+On rejette le piège orientaliste (terracotta + or) et le minimalisme froid. Le parti pris est celui d’un fond de boutique contemporain : matériaux bruts (bois clair légèrement huilé, acier brossé, verre), lignes nettes, mais réchauffés par les teintes profondes des produits — le rouge du sumac, le vert amande des pistaches, le jaune‑ocre du curcuma. La typographie Fraunces, aux courbes douces et aux empattements organiques, évoque la rondeur de l’écriture persane sans l’imiter ; Manrope apporte l’assise géométrique du Paris moderne. Des motifs simplifiés de moucharabieh ou de géométrie safavide n’apparaissent que comme filtres graphiques discrets (séparateurs, ombres portées), jamais en décor gratuit. La lumière est celle d’une belle journée sur l’avenue, ni trop clinique ni tamisée.
 
-**5. Accroche héro**  
-**Titre (Fraunces, grande taille) :**  
-*Votre épicerie iranienne, ouverte jusqu’à minuit.*  
+### 3. Palette
+Le nuancier découle des couleurs réelles d’un étal : des tons d’épices, de fruits secs et de métal urbain.
 
-**Sous-titre (Manrope) :**  
-Chez Superse, on trouve le meilleur de la Perse – safran, pistaches, pains frais – en plein cœur du 15ᵉ.  
-Passez nous voir au 12 avenue Émile Zola, ou commandez en ligne et récupérez vos courses sans attendre.
+- **Encre** : `#1E1B18` — noir‑brun charbonneux (titres, textes principaux)
+- **Fond clair** : `#F9F6F0` — blanc lin naturel, légèrement chaud (arrière‑plan principal)
+- **Accent safran** : `#D98C2A` — jaune profond et épicé (boutons, surlignements, prix)
+- **Matière sumac** : `#A63A3A` — rouge brique terreux (ancres, filets, tags)
+- **Vert pistache** : `#546E3F` — vert amande mûre (éléments de confiance : note Google, badge livraison)
+- **Métal Émile Zola** : `#8A8A85` — gris acier clair (séparateurs, icônes, fonds alternés)
 
-**6. Sections ordonnées**  
-1. **Héro** – Photo pleine largeur de la devanture du magasin au crépuscule, avec l’enseigne allumée. Texte centré. Bouton CTA « Découvrir nos produits ».  
-2. **Le magasin** – *Une épicerie de quartier, un voyage immobile.*  
-   Texte sur l’histoire de Superse, la passion des produits iraniens, l’accueil personnalisé. Photo d’équipe sous une lumière naturelle.  
-3. **Les incontournables du moment** – *Nos coups de cœur.*  
-   Grille 3 colonnes (desktop) : photo en situation (un bocal de pistaches ouvert, un pain lavash sur une planche, des sachets de safran). Chaque produit est nommé en français avec une courte description gustative.  
-4. **Venir nous voir** – *Juste à côté.*  
-   Intégration Google Maps, adresse, horaires (Ouvert ⋅ Ferme à 00:00) mis en valeur dans un bloc traité comme une étiquette en métal. Plan et photo de la vitrine de jour.  
-5. **Commander en ligne** – *Faites vos courses, on s’occupe du reste.*  
-   Explication simple du parcours : sélectionnez vos produits, payez en ligne, choisissez la livraison ou le retrait au magasin. Chaque étape numérotée avec une icône (un panier, une enveloppe, un sac).  
-6. **Ce que disent nos clients** – *Plus de 90 avis nous donnent 4,7 étoiles.*  
-   Citations réelles (traduites) mises en page comme des petites cartes, avec étoiles et nom/prénom.  
-7. **Pied de page** – Rappel du téléphone (09 81 09 09 77), email, liens vers la boutique en ligne, réseaux sociaux. Inscription à la newsletter « Les trésors de la semaine ».
+### 4. Ton éditorial
+*Niveau de langue :* courant, chaleureux, précis, jamais vendeur agressif.  
+*Registre :* « votre épicerie de quartier » — on tutoie le visiteur, on l’accueille comme un habitué de la rue. Les textes parlent d’ingrédients, de provenance, de conseils d’utilisation, et rappellent que la boutique physique existe à deux pas. Pas de superlatifs creux ; des noms de produits, des anecdotes de sélection, des suggestions d’accords.
 
-**7. Signature visuelle**  
-- **Animation « ouverture de bocal »** : au défilement, les grilles de produits apparaissent avec un effet de couvercle qui se dévisse (un cercle ou une forme en verre qui glisse vers le haut), révélant l’image et le texte. Ce motif donne une dimension tactile et reconnaissable entre toutes.  
-- **Filets verticaux** : un système de lignes fines métalliques (couleur `#C8C2B6`) traverse les sections 2, 3 et 5, évoquant les étagères de la boutique ou les armatures des vitrines. Ils structurent discrètement la composition et signent l’identité du site.
+### 5. Accroche héro
+**Grand titre :**  
+*Un morceau d’Iran, au bout de l’avenue.*
+
+**Sous‑titre :**  
+Épicerie fine, produits du quotidien et saveurs persanes — à deux pas de la station Charles Michels.
+
+### 6. Sections
+1. **Notre boutique**  
+   → *Poussez la porte du 12 avenue Émile Zola.*  
+   Texte : Un vrai commerce de quartier où l’odeur des épices, le choix des riz rares et les conseils de Mahdi et son équipe vous accueillent 6 jours sur 7. Ici, on remplit son panier comme on discute recettes.
+
+2. **Qu’est‑ce qu’on trouve chez Superse ?**  
+   → *Des essentiels de là‑bas dans votre quotidien d’ici.*  
+   Accroche de section : Riz parfumé, safran, dattes fraîches, conserves, pains traditionnels, yaourts, et tous les produits iraniens introuvables ailleurs dans le 15e.
+
+3. **Notre sélection du moment**  
+   → *En ce moment, on craque pour…*  
+   Trois à quatre produits phares (visuels soignés, packaging mis en scène), avec un mot sur leur provenance et une idée de préparation. Pas de prix précis pour éviter le périmé visuel ; plutôt une mention « En rayon cette semaine ».
+
+4. **Commandez en ligne, retirez chez nous**  
+   → *Le click & collect, comme on en rêvait.*  
+   Explication claire : commandez sur notre site, passez récupérer votre panier au 12 avenue Émile Zola dans la journée. Frais, rapide, sans attente — on prépare tout.
+
+5. **Ils en parlent autour d’eux**  
+   → *4,7 étoiles sur 90 avis, ça compte.*  
+   Intégration visuelle de la note Google, avec trois courts verbatim anonymisés (extraits réels des avis). Ton de la recommandation de voisin.
+
+6. **Infos & horaires**  
+   → *Venez quand vous voulez, on est là.*  
+   Horaires complets, plan embarqué, téléphone cliquable, email. Une phrase : « Le samedi matin, c’est jour de pain frais — arrivez tôt. »
+
+### 7. Signature visuelle
+- **Motif génératif persan en quasi‑filigrane** : à l’arrière‑plan des larges blocs de contenu (fond `#F9F6F0`), un réseau très léger de polygones étoilés et d’arcs entrecroisés — inspiré des plafonds à muqarnas — apparaît avec une opacité de 4 %. Il ancre l’identité culturelle sans alourdir, et crée une texture presque tactile qui distingue immédiatement le site.  
+- **Dispositif typographique display par-dessus les photos** : les photos de produits en gros plan (en macro, matière visible) sont surmontées du nom du produit en Fraunces étendu, lettres crème sur fond sombre transparent, avec un effet de masque qui laisse transparaître la texture. Ce traitement transforme chaque photo en affiche éditoriale mémorable.
+
+---
+
+*Ce brief doit guider l’intégralité de la conception graphique et rédactionnelle du nouveau site vitrine. Il corrige systématiquement les faiblesses identifiées dans l’ancien site (langue, ancrage local, confiance, lisibilité) et affirme un positionnement unique : la supérette persane de votre rue.*

@@ -1,55 +1,69 @@
-**BRIEF CRÉATIF — Laura PUJOL | Design graphique**  
-*Site vitrine sur-mesure, écrit et conçu en français — août 2025*
+## BRIEF CRÉATIF – Laura PUJOL | Design graphique
+
+### 1. Concept & positionnement  
+Un écrin de papier fait site. On entre dans l’atelier mental de Laura comme on ouvre un tiroir à papier de soie : tout y est question de texture, de retenue, de point juste. Le site ne se visite pas, il se feuillette — entre faire-part au grammage murmuré, empreintes de cire et silence des beiges tons. Positionnement : le graphisme comme artisanat de luxe discret, le contraire du bruit numérique.
+
+### 2. Direction artistique  
+**« Papier précieux / cabinet d’estampes ».**  
+Une esthétique qui emprunte au portfolios de paper-art, à la reliure main et aux intérieurs japonais mats. La lumière est tamisée, les ombres inexistantes — tout se joue sur la densité des blancs, la fibre visible, la trace du geste. Aucune photo trop léchée ni rendu 3D : on reste dans le grain photographique réel des papiers, des végétaux secs, des cires brisées. Le vide est matière : marges généreuses, blocs typographiques posés comme des papillons sur une feuille de vélin.
+
+| Police | Rôle | Graisses utilisées |
+|--------|------|---------------------|
+| **Marcellus** | Titres, accroches, noms de sections | Regular (400) uniquement — son dessin de pinceau suffit |
+| **Mulish** | Corps, menus, légendes | Light (300) et Regular (400) |
+
+L’intention typographique : Marcellus apporte le geste artisanal, la trempe ; Mulish en Light donne des textes aérés qui respirent sans concurrencer.
+
+### 3. Palette (6 couleurs HEX)
+
+| Rôle | Nom | HEX | Utilisation |
+|------|-----|-----|-------------|
+| Fond principal | Lin brut | `#F9F6F0` | Arrière-plans larges, cartouches |
+| Fond alternatif | Papier de chanvre | `#F3EDE2` | Sections alternées, fonds de vignettes |
+| Encre | Sépia dense | `#3A3226` | Texte courant, icônes |
+| Encre légère | Sépia lavis | `#706659` | Textes secondaires, filets, légendes |
+| Accent | Cire à cacheter | `#A2342C` | Call-to-action, soulignés, puces, liens |
+| Touche chaude | Blé d’or | `#C4A86B` | Hover délicats, bordures d’images, filets or discrets |
+
+- La palette est claire, mate, jamais blafarde.  
+- Le rouge cire est l’unique accent franc — il évoque le cachet, le sceau, l’engagement.  
+- Pas de terracotta générique ni de vert artificiel.
+
+### 4. Ton éditorial  
+Un français précis et doux, qui tutoie avec élégance (« vous »). Phrases brèves, ponctuation rare mais intentionnelle. Niveau de langue soutenu sans raideur — on évite le jargon technique, on préfère le vocabulaire des papetiers : grammage, filigrane, vergeur, empreinte, tranchefile… Le ton doit rassurer un couple qui prépare son mariage, séduire une marque qui cherche une identité délicate, et faire sentir que chaque projet est unique, jamais reproduit.
+
+### 5. Accroche héro  
+
+**Des papiers qui vous ressemblent**  
+*Direction artistique & graphisme sur mesure — Paris 15ᵉ*
+
+(Le sous-titre reste très sobre, car c’est le traitement visuel d’ouverture qui porte la thèse : un gros plan en noir et blanc texturé sur une presse à cacheter, ou une feuille de papier vergé effleurée par la lumière.)
+
+### 6. Sections (ordre réel, titres, contenu)
+
+1. **Ce que je fais**  
+   *Identité visuelle, papeterie de mariage, faire-part, objets imprimés. Chaque projet naît d’une écoute, d’un accident de matière, d’un nuancier qu’on ouvre à quatre mains.*
+
+2. **Pour qui**  
+   *Couples qui ne veulent pas de faire-part standard. Artisans, créateurs, petites maisons qui cherchent une empreinte graphique juste, jamais interchangeable.*
+
+3. **Comment je travaille**  
+   *Rendez-vous dans l’atelier du 15ᵉ ou à distance. On parle, on touche les papiers, on teste les gaufrages, on ajuste jusqu’à l’évidence. Livraison soignée, délais tenus.*
+
+4. **Le portfolio**  
+   *Galeries séparées : Mariage / Identité visuelle / Imprimés d’art. Chaque image est une pièce unique, légendée du prénom des clients et du contexte (sans faux témoignages).*
+
+5. **Les mots qu’on me laisse**  
+   *Extraits réels des avis Google, incarnés : prénom, date, verbatim. Ex. : « Laura s’est occupée de toute la papeterie de notre mariage. Tout est parfait. » — Anaïs*
+
+6. **Me joindre**  
+   *Téléphone, email, formulaire, plan dans le 15ᵉ. Mention « Définitivement fermé » absente du site si l’activité perdure ; sinon, une page-écran « L’atelier a fermé ses portes — merci pour ces années » cohérente avec l’audit.*
+
+### 7. Signature visuelle  
+
+- **Le filigrane animé** : en fond de page, un dessin au trait très pâle de brindilles séchées ou d’un motif végétal abstrait, qui se révèle par transparence au scroll lent (effet papier de soie qu’on soulève).  
+- **Le cachet-accroche** : le rouge « cire » est systématiquement utilisé pour les puces, les boutons, et pour une animation discrète au survol des liens — le texte s’assombrit et une « ombre cire » passante (sans littéralité) le souligne.  
+- **La typo en tension** : dans les titres de section, Marcellus est utilisée en graisse régulière mais en corps volontairement grand (type 4rem) avec un interlignage serré ; le décalage entre la délicatesse du dessin et la taille imposante crée un trouble élégant, mémorable.
 
 ---
-
-### 1. Concept & positionnement
-Le site ne se contente pas de montrer un portfolio : il incarne l’intimité d’un atelier de papeterie d’art, où chaque projet est traité comme un rituel sur papier. **« La poésie sous enveloppe »** cristallise le propos : on entre dans un univers sensible et artisanal, à l’opposé des templates lisses, où le temps se suspend entre fibres, pampas et encres délicates. L’expérience rend hommage au travail manuel et à l’émotion contenue dans un faire-part, une identité visuelle ou un objet imprimé.
-
-### 2. Direction artistique
-**« Bohème botanique épurée »** — loin du « bohème générique », ce parti pris est directement extrait des photos réelles du commerce : la lumière chaude et mate sur le bois clair et la texture du papier, les compositions florales séchées (pampas, gypsophile) disposées avec une nonchalance chic, les blancs qui cassent sans jamais paraître froids. L’ensemble évoque un atelier parisien au fond d’une cour du 15e, où la nature se glisse dans l’ordre du design.
-
-*Traduction visuelle* : la trame du site repose sur une sophistication organique. Les matières dominent — fond blanc coquille légèrement tramé, aplats beige sablé évoquant le papier recyclé premium, filets ultra-fins couleur terre. Les images sont traitées en tons sépia-doux et ne sont jamais clinquantes. La mise en page alterne des pleines largeurs aérées et des galeries à l’équerre, avec des marges généreuses comme sur une planche de tendance. Aucun slide agressif : tout se dévoile au fil d’un scroll doux, rythmé par des césures botaniques.
-
-### 3. Palette *(extraite des teintes réelles des photos)*
-- **Fond principal** : `#FBF7F2` – Blanc coquille chaud, lumineux sans éblouir (évoque le papier vergé mat).
-- **Encre principale (texte)** : `#4A3B32` – Brun sépia profond, chaud, plus sensible qu’un noir typographique.
-- **Accent chaud** : `#C59B6D` – Terre de Sienne pâle, couleur de pampa fumée, subtilement terracotta mais dans une nuance sablonneuse et élégante.
-- **Accent végétal** : `#8B9A7B` – Vert sauge granité, tiré des tiges séchées et des feuillages discrets.
-- **Soutien foncé** : `#2C241E` – Brun café torréfié, utilisé avec parcimonie pour les filets de signature ou les éléments de navigation actifs.
-- **Teinte florale délicate** : `#E0C1B3` – Rose poudré éteint (comme certaines fleurs de carthame séchées), réservé aux zones de hover très spécifiques ou aux ornements botaniques discrets.
-
-### 4. Ton éditorial
-Une voix artisanale et poétique qui tutoie la sensation, jamais le client. On parle d’« atelier », de « geste », de « matières », de « récit ». Le registre est celui de la confidence d’artisan, avec des phrases brèves et enveloppantes, sans jargon marketing. L’écriture respire — elle suggère plus qu’elle ne vend, tout en restant concrète sur les prestations.
-
-### 5. Accroche héro
-**« La poésie sous enveloppe »**  
-*Papeterie de mariage, direction artistique & design sensible, entièrement pensé depuis l’atelier du 15e arrondissement.*
-
-Le mot « enveloppe » est à double sens : l’objet papier, et ce qui entoure un événement unique. L’accroche ancre le geste artisanal et géographique.
-
-### 6. Sections du site *(ordre, titres réels, contenu esquissé)*
-1. **Atelier**  
-   *« Laura Pujol imagine et compose une papeterie sur mesure depuis son atelier-boutique du 15e. Ici, chaque projet est un dialogue à quatre mains entre votre envie et la matière : papier de création, typographie douce, pression à sec et impressions au ton juste. »*
-
-2. **Papeterie de mariage**  
-   *« Faire-part, menus, marque-places, remerciements… Le fil narratif de votre jour J commence sur le papier. Laura vous guide à travers les choix de grammages, les typographies Marcellus & Mulish (ou d’autres joyaux typographiques), les teintes naturelles et les finitions d’art. »*
-
-3. **Design graphique & branding**  
-   *« Pour les marques et les indépendants en quête d’une identité sensible, nous créons des logotypes, des chartes éditoriales et des objets imprimés qui portent une vraie présence. Loin des standards, au plus près de votre singularité. »*
-
-4. **Le geste & les matières**  
-   *« De la première esquisse sur papier froissé à l’envoi en colissimo soigneusement cacheté, nous suivons un chemin artisanal. Nos papiers sont sourcés en France et en Italie, nos tirages se font en petite série sur des presses numériques de haute définition, et nos découpes sont souvent retouchées à la main. »*
-
-5. **Ce qu’ils en disent**  
-   *Témoignages réels extraits des avis Google (réécrits dans le ton) :*  
-   *« Un travail sublime, d’une délicatesse rare. » — Marion*  
-   *« Professionnalisme sans faille et œil éclairé pour la mise en page. » — Thanh Xuan*  
-   *« Tout était parfait, à l’écoute et réactive. » — Anaïs*
-
-6. **Parlons de votre projet**  
-   *Contact direct, sans formulaire robotisé : téléphone, email, et adresse de l’atelier (94 rue Balard, Paris 15ᵉ). Un plan Google Maps discret. Mention « Nous répondons sous 24h ouvrées, le temps de préparer une belle réponse. »*
-
-### 7. Signature visuelle
-- **Un motif botanique animé en filigrane** : un détail floral dérivé des pampas présentes dans ses photos réelles apparaît en transparence sur les fonds de section, avec un mouvement ultra-lent au scroll (parallaxe) — comme une fleur conservée sous verre. Il est unique au site et reprend les teintes de la palette (vert sauge + rose poudré).
-- **La typographie Marcellus traitée en grand format chevauchant deux sections** : un mot-clé (« poésie », « faire-part », « matières ») en capitale de 180 px vient dialoguer avec une image, créant une tension élégante et identifiable immédiatement. Cet usage retenu de la display contraste avec la finesse du filet terre sous le titre pour ancrer un style à la fois pur et affirmé.
+*Ce brief créatif est livré prêt pour la conception graphique et l’intégration front-end. Il corrige point par point l’absence de site constatée dans l’audit et ancre le projet dans l’énergie réelle du commerce, sans plaguer de style générique.*

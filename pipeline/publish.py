@@ -21,6 +21,7 @@ from pathlib import Path
 import requests
 
 from . import config
+from . import portfolio
 
 
 def _git(*args: str) -> str:
@@ -50,15 +51,22 @@ def verify_live(url: str, attempts: int = 6, delay: int = 10) -> bool:
 
 
 def push_sites(message: str | None = None, remote: str = "origin",
-               branch: str = "main") -> list[Path]:
+               branch: str = "main", build_portfolio: bool = True) -> list[Path]:
     """Stage every root <slug>/index.html site, commit, and push. Returns the
     list of published folders (empty if there was nothing new)."""
     folders = site_folders()
     if not folders:
         return []
+    # Refresh the public portfolio (thumbnails + sites.json) so the landing
+    # snippet and realisations.html always reflect the sites being pushed.
+    if build_portfolio:
+        portfolio.build()
     for f in folders:
         _git("add", f.name)
-    _git("add", "README.md", ".gitignore", "requirements.txt", "pipeline")
+    extras = ["README.md", ".gitignore", "requirements.txt", "pipeline",
+              "index.html", "realisations.html", "sites.json"]
+    present = [p for p in extras if (config.ROOT / p).exists()]
+    _git("add", *present)
     if not _git("status", "--porcelain"):
         return folders  # already committed previously; treat as published
     msg = message or f"Publish {len(folders)} site(s) — {datetime.now():%Y-%m-%d %H:%M}"
@@ -82,6 +90,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("-m", "--message", default=None)
     ap.add_argument("--remote", default="origin")
     ap.add_argument("--branch", default="main")
+    ap.add_argument("--no-portfolio", action="store_true",
+                    help="skip rebuilding thumbnails + sites.json before pushing")
     args = ap.parse_args(argv)
 
     folders = site_folders()
@@ -97,7 +107,8 @@ def main(argv: list[str] | None = None) -> int:
         print("\n(dry-run) nothing staged or pushed.")
         return 0
 
-    push_sites(message=args.message, remote=args.remote, branch=args.branch)
+    push_sites(message=args.message, remote=args.remote, branch=args.branch,
+               build_portfolio=not args.no_portfolio)
     print(f"\nPushed to {args.remote}/{args.branch}. Live shortly at {config.SITE_BASE_URL}/<slug>")
     return 0
 

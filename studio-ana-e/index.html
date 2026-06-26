@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Ana'e — Salon de coiffure inclusif à Paris | Expertises textures naturelles</title>
-    <meta name="description" content="Studio Ana'e, salon de coiffure expert à Paris 15. Du lisse au crépu, nous sublimons chaque texture capillaire avec des soins sur-mesure. Note 4.9★ — 57 avis. Prenez rendez-vous au 01 44 18 04 21.">
-    <meta property="og:title" content="Studio Ana'e — La beauté est plurielle">
-    <meta property="og:description" content="Salon de coiffure inclusif à Paris. Expertise sur-mesure pour cheveux lisses, bouclés, frisés et crépus. Note 4.9★ sur 57 avis.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>Studio Ana'e — Coiffeur expert à Paris 15e · Diversité capillaire</title>
+    <meta name="description" content="Studio Ana'e - Salon de coiffure expert à Paris 15e. Coupe, soin, couleur pour tous types de cheveux. Note 4.9/5. Nous sommes tous beaux.">
+    <meta property="og:title" content="Studio Ana'e — Coiffeur expert à Paris 15e">
+    <meta property="og:description" content="Studio Ana'e célèbre la diversité des beautés. Salons experts à Paris, pour tous les types de cheveux.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌿</text></svg>">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>💈</text></svg>">
     <style>
         :root {
-            --ivoire: #F7F4EF;
-            --bronze: #2B2621;
-            --vert: #6B8E23;
-            --chene: #A17249;
-            --laiton: #C5B9A5;
-            --mousse: #EAF0DA;
-            --vert-fonce: #4A6B14;
-            --bronze-clair: #3E3831;
+            --coquille: #F9F4F0;
+            --rose-poudre: #EADDD3;
+            --brun-profond: #2C231B;
+            --cuivre: #B86B4A;
+            --vert-sauge: #4A6B5D;
+            --ocre-rose: #D98C5F;
+            --grain: rgba(44, 35, 27, 0.03);
         }
 
         *,
@@ -39,7 +35,7 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: 100%;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -48,6 +44,7 @@
             html {
                 scroll-behavior: auto;
             }
+
             *,
             *::before,
             *::after {
@@ -58,1368 +55,1233 @@
         }
 
         body {
-            font-family: 'Karla', system-ui, -apple-system, sans-serif;
+            font-family: 'Karla', sans-serif;
             font-weight: 400;
-            line-height: 1.7;
-            color: var(--bronze);
-            background-color: var(--ivoire);
+            line-height: 1.6;
+            color: var(--brun-profond);
+            background-color: var(--coquille);
+            background-image:
+                radial-gradient(ellipse at 15% 10%, rgba(184, 107, 74, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 85% 90%, rgba(74, 107, 93, 0.03) 0%, transparent 55%);
+            background-attachment: fixed;
             overflow-x: hidden;
             letter-spacing: 0.01em;
         }
 
-        /* ===== UTILITIES ===== */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 clamp(1.25rem, 4vw, 3rem);
-        }
-
-        .container--narrow {
-            max-width: 880px;
-        }
-
-        /* ===== HEADER ===== */
-        .header {
+        /* ---- HEADER ---- */
+        .site-header {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             z-index: 1000;
-            background: rgba(247, 244, 239, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--laiton);
-            transition: box-shadow 0.35s ease, background 0.35s ease;
-            padding: 0;
+            background: rgba(249, 244, 240, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(44, 35, 27, 0.07);
+            transition: transform 0.35s ease, background 0.35s ease;
+            padding: 0.75rem 0;
         }
 
-        .header.scrolled {
-            box-shadow: 0 2px 24px rgba(43, 38, 33, 0.08);
-            background: rgba(247, 244, 239, 0.95);
+        .site-header.header-hidden {
+            transform: translateY(-100%);
         }
 
-        .header__inner {
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.25rem, 4vw, 3rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: clamp(0.75rem, 1.5vw, 1.1rem) clamp(1.25rem, 4vw, 3rem);
             gap: 1.5rem;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
 
-        .header__brand {
-            font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+        .header-logo {
+            font-family: 'Libre Baskerville', serif;
             font-weight: 600;
-            font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-            letter-spacing: 0.02em;
-            color: var(--bronze);
+            font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+            color: var(--brun-profond);
             text-decoration: none;
+            letter-spacing: 0.04em;
             white-space: nowrap;
-            line-height: 1.2;
-            transition: color 0.3s ease;
+            line-height: 1.1;
         }
 
-        .header__brand:hover {
-            color: var(--vert);
+        .header-logo span {
+            color: var(--cuivre);
         }
 
-        .header__brand span {
-            color: var(--vert);
-            font-weight: 700;
-        }
-
-        .header__nav {
+        .nav-links {
             display: flex;
             align-items: center;
-            gap: clamp(0.75rem, 1.8vw, 1.6rem);
+            gap: clamp(0.8rem, 2.5vw, 1.8rem);
             list-style: none;
             flex-wrap: wrap;
-            justify-content: flex-end;
         }
 
-        .header__nav a {
+        .nav-links a {
+            text-decoration: none;
+            color: var(--brun-profond);
             font-family: 'Karla', sans-serif;
             font-weight: 500;
-            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            color: var(--bronze);
-            text-decoration: none;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.02em;
+            transition: color 0.25s ease;
             position: relative;
-            padding: 0.35em 0;
-            transition: color 0.3s ease;
-            white-space: nowrap;
+            padding-bottom: 3px;
         }
 
-        .header__nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1.5px;
-            background: var(--vert);
-            transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            height: 2px;
+            background: var(--cuivre);
+            transition: width 0.3s ease;
+            border-radius: 1px;
         }
 
-        .header__nav a:hover,
-        .header__nav a:focus-visible {
-            color: var(--vert);
-            outline-offset: 4px;
-            outline: 2px solid var(--vert);
-            outline-offset: 6px;
-            border-radius: 2px;
-        }
-
-        .header__nav a:hover::after,
-        .header__nav a:focus-visible::after {
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
             width: 100%;
         }
 
-        .header__cta {
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--cuivre);
+            outline: none;
+        }
+
+        .nav-links a:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .badge-google {
             display: inline-flex;
             align-items: center;
-            gap: 0.5em;
+            gap: 0.35rem;
+            background: var(--coquille);
+            border: 1px solid rgba(44, 35, 27, 0.15);
+            border-radius: 2rem;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--brun-profond);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .badge-google:hover {
+            border-color: var(--cuivre);
+            background: rgba(184, 107, 74, 0.06);
+            color: var(--cuivre);
+        }
+
+        .badge-google .star {
+            color: #e7b42c;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: var(--cuivre);
+            color: #fff;
             font-family: 'Karla', sans-serif;
             font-weight: 600;
-            font-size: clamp(0.78rem, 1.1vw, 0.85rem);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #fff;
-            background: var(--vert);
-            border: none;
-            padding: 0.6em 1.4em;
-            border-radius: 2em;
-            cursor: pointer;
+            font-size: clamp(0.82rem, 1.3vw, 0.9rem);
+            padding: 0.6rem 1.3rem;
+            border-radius: 2.5rem;
             text-decoration: none;
-            transition: background 0.3s ease, transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1.2), box-shadow 0.3s ease;
-            white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(107, 142, 35, 0.22);
-        }
-
-        .header__cta:hover {
-            background: var(--vert-fonce);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(107, 142, 35, 0.35);
-        }
-        .header__cta:focus-visible {
-            outline: 3px solid var(--vert);
-            outline-offset: 4px;
-        }
-
-        .header__mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-            flex-direction: column;
-            gap: 5px;
-            width: 32px;
-        }
-        .header__mobile-toggle span {
-            display: block;
-            height: 2px;
-            background: var(--bronze);
-            border-radius: 2px;
+            letter-spacing: 0.03em;
             transition: all 0.3s ease;
-            width: 100%;
-        }
-        .header__mobile-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .header__mobile-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .header__mobile-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
+            border: 1.5px solid var(--cuivre);
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(184, 107, 74, 0.2);
         }
 
-        @media (max-width: 768px) {
-            .header__mobile-toggle {
-                display: flex;
-            }
-            .header__nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                max-width: 340px;
-                height: 100vh;
-                background: var(--ivoire);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 5rem 2rem 2rem;
-                gap: 1.4rem;
-                transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-                box-shadow: -8px 0 30px rgba(43, 38, 33, 0.12);
-                z-index: 1000;
-                border-left: 1px solid var(--laiton);
-            }
-            .header__nav.open {
-                right: 0;
-            }
-            .header__nav a {
-                font-size: 1rem;
-            }
-            .header__cta {
-                font-size: 0.85rem;
-                padding: 0.7em 1.6em;
-            }
+        .btn-cta:hover,
+        .btn-cta:focus-visible {
+            background: #a05a3b;
+            border-color: #a05a3b;
+            box-shadow: 0 6px 20px rgba(184, 107, 74, 0.35);
+            transform: translateY(-1px);
+            outline: none;
         }
 
-        /* ===== SECTION BASE ===== */
-        .section {
-            padding: clamp(3.5rem, 8vw, 7rem) 0;
-            position: relative;
+        .btn-cta:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
         }
 
-        .section--hero {
-            padding-top: clamp(6rem, 11vw, 9rem);
-            padding-bottom: clamp(3rem, 6vw, 5rem);
+        .btn-outline {
+            background: transparent;
+            color: var(--cuivre);
+            border: 1.5px solid var(--cuivre);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--cuivre);
+            color: #fff;
+        }
+
+        /* ---- HÉRO ---- */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-        }
-
-        /* ===== DECORATIVE ELEMENTS ===== */
-        .decorative-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 1.5px solid var(--laiton);
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.5;
-        }
-
-        .decorative-dot {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--vert);
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .section-divider {
-            width: clamp(60px, 8vw, 100px);
-            height: 2px;
-            background: var(--chene);
-            margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
-            border-radius: 2px;
-            opacity: 0.7;
-        }
-
-        /* ===== HERO ===== */
-        .hero__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero__text {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero__overline {
-            font-family: 'Karla', sans-serif;
-            font-weight: 500;
-            font-size: clamp(0.75rem, 1.1vw, 0.85rem);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--vert);
-            margin-bottom: clamp(0.6rem, 1.2vw, 1rem);
-            display: flex;
-            align-items: center;
-            gap: 0.8em;
-        }
-
-        .hero__overline::before {
-            content: '';
-            display: block;
-            width: clamp(20px, 3vw, 32px);
-            height: 1.5px;
-            background: var(--chene);
-            border-radius: 1px;
-        }
-
-        .hero__title {
-            font-family: 'Libre Baskerville', 'Georgia', serif;
-            font-weight: 600;
-            font-size: clamp(2.4rem, 6.5vw, 5rem);
-            line-height: 1.08;
-            letter-spacing: -0.015em;
-            color: var(--bronze);
-            margin-bottom: clamp(0.8rem, 1.5vw, 1.25rem);
-        }
-
-        .hero__title .highlight {
-            color: var(--vert);
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero__title .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 0.05em;
-            left: 0;
-            width: 100%;
-            height: 0.25em;
-            background: var(--mousse);
-            border-radius: 2px;
-            z-index: -1;
-            opacity: 0.7;
-        }
-
-        .hero__subtitle {
-            font-family: 'Karla', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
-            line-height: 1.65;
-            color: var(--bronze-clair);
-            margin-bottom: clamp(1.8rem, 3vw, 2.5rem);
-            max-width: 480px;
-        }
-
-        .hero__ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: clamp(0.8rem, 1.4vw, 1.2rem);
-            align-items: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55em;
-            font-family: 'Karla', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.82rem, 1.1vw, 0.9rem);
-            letter-spacing: 0.045em;
-            text-transform: uppercase;
-            padding: 0.85em 1.8em;
-            border-radius: 2.5em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.15);
-            border: none;
-            position: relative;
-            white-space: nowrap;
-        }
-
-        .btn--primary {
-            background: var(--vert);
-            color: #fff;
-            box-shadow: 0 3px 14px rgba(107, 142, 35, 0.28);
-        }
-        .btn--primary:hover {
-            background: var(--vert-fonce);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 26px rgba(107, 142, 35, 0.4);
-        }
-        .btn--primary:focus-visible {
-            outline: 3px solid var(--vert);
-            outline-offset: 5px;
-        }
-
-        .btn--outline {
-            background: transparent;
-            color: var(--bronze);
-            border: 1.5px solid var(--chene);
-        }
-        .btn--outline:hover {
-            border-color: var(--vert);
-            color: var(--vert);
-            background: rgba(107, 142, 35, 0.04);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(107, 142, 35, 0.1);
-        }
-        .btn--outline:focus-visible {
-            outline: 3px solid var(--vert);
-            outline-offset: 5px;
-        }
-
-        .hero__visual {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
             justify-content: center;
-        }
-
-        .hero__medallion {
-            width: clamp(260px, 38vw, 480px);
-            height: clamp(260px, 38vw, 480px);
-            border-radius: 50%;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(43, 38, 33, 0.15), 0 4px 12px rgba(43, 38, 33, 0.08);
-            border: 3px solid var(--laiton);
+            padding: 7rem 2rem 3rem;
+            background: var(--coquille);
+            isolation: isolate;
         }
 
-        .hero__medallion img {
+        .hero-bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
+            opacity: 0.28;
+            filter: grayscale(70%) sepia(15%) brightness(1.05) contrast(0.9);
+            transform: scale(1.03);
+            animation: heroImgBreath 14s ease-in-out infinite alternate;
         }
 
-        .hero__medallion:hover img {
-            transform: scale(1.04);
-        }
-
-        .hero__medallion-ring {
-            position: absolute;
-            inset: -18px;
-            border-radius: 50%;
-            border: 1.5px solid var(--laiton);
-            pointer-events: none;
-            opacity: 0.55;
-            animation: ringPulse 6s ease-in-out infinite;
-        }
-
-        @keyframes ringPulse {
-            0%,
+        @keyframes heroImgBreath {
+            0% {
+                transform: scale(1.03);
+            }
             100% {
-                inset: -18px;
-                opacity: 0.55;
-            }
-            50% {
-                inset: -10px;
-                opacity: 0.3;
+                transform: scale(1.07);
             }
         }
 
-        .hero__leaf-accent {
+        .hero-grain {
             position: absolute;
-            pointer-events: none;
-            z-index: 3;
-            font-size: clamp(100px, 16vw, 180px);
-            color: var(--mousse);
-            opacity: 0.5;
-            transform: rotate(-15deg);
-            top: -8%;
-            left: 5%;
-        }
-
-        .hero__badge-google {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45em;
-            background: #fff;
-            border: 1px solid var(--laiton);
-            padding: 0.5em 1em;
-            border-radius: 2em;
-            font-family: 'Karla', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.72rem, 0.95vw, 0.8rem);
-            color: var(--bronze);
-            position: absolute;
-            bottom: clamp(1rem, 2.5vw, 2rem);
-            right: clamp(0.5rem, 2vw, 1.5rem);
-            z-index: 5;
-            box-shadow: 0 4px 16px rgba(43, 38, 33, 0.1);
-            letter-spacing: 0.02em;
-        }
-        .hero__badge-google .stars {
-            color: #e8a317;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            .hero__grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero__text {
-                order: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .hero__visual {
-                order: 0;
-                margin-bottom: 1.5rem;
-            }
-            .hero__medallion {
-                width: clamp(180px, 55vw, 300px);
-                height: clamp(180px, 55vw, 300px);
-            }
-            .hero__subtitle {
-                max-width: 100%;
-                text-align: center;
-            }
-            .hero__ctas {
-                justify-content: center;
-            }
-            .hero__overline {
-                justify-content: center;
-            }
-            .hero__badge-google {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                margin-top: 1rem;
-            }
-            .hero__leaf-accent {
-                top: -15%;
-                left: -10%;
-                font-size: clamp(70px, 20vw, 120px);
-            }
-        }
-
-        /* ===== PHILOSOPHIE ===== */
-        .philo__inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .philo__text-block {
-            position: relative;
-        }
-
-        .section-label {
-            font-family: 'Karla', sans-serif;
-            font-weight: 500;
-            font-size: clamp(0.72rem, 1vw, 0.8rem);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--vert);
-            margin-bottom: clamp(0.6rem, 1vw, 0.9rem);
-            display: flex;
-            align-items: center;
-            gap: 0.7em;
-        }
-        .section-label::after {
-            content: '';
-            display: block;
-            width: clamp(24px, 3vw, 40px);
-            height: 1px;
-            background: var(--chene);
-            border-radius: 1px;
-        }
-
-        .section-title {
-            font-family: 'Libre Baskerville', 'Georgia', serif;
-            font-weight: 600;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-            color: var(--bronze);
-            margin-bottom: clamp(1rem, 1.8vw, 1.5rem);
-        }
-
-        .section-text {
-            font-family: 'Karla', sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-            line-height: 1.75;
-            color: var(--bronze-clair);
-            max-width: 560px;
-        }
-
-        .philo__decor {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .philo__circle-stack {
-            position: relative;
-            width: clamp(200px, 28vw, 320px);
-            height: clamp(200px, 28vw, 320px);
-        }
-
-        .philo__circle {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid var(--laiton);
-            background: transparent;
-        }
-        .philo__circle--1 {
             inset: 0;
-            background: var(--mousse);
-            opacity: 0.6;
+            z-index: 1;
+            opacity: 0.45;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.6'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            mix-blend-mode: overlay;
         }
-        .philo__circle--2 {
-            inset: 12%;
-            border-color: var(--chene);
-            border-width: 1.5px;
-            opacity: 0.5;
-        }
-        .philo__circle--3 {
-            inset: 25%;
-            background: var(--ivoire);
-            border-color: var(--vert);
-            border-width: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(3rem, 5vw, 4.5rem);
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            line-height: 1.1;
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 600;
-            color: var(--vert);
-        }
-
-        @media (max-width: 768px) {
-            .philo__inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .philo__text-block {
-                order: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .philo__decor {
-                order: 0;
-                margin-bottom: 1rem;
-            }
-            .section-text {
-                max-width: 100%;
-                text-align: center;
-            }
-            .section-label {
-                justify-content: center;
-            }
-            .philo__circle-stack {
-                width: clamp(150px, 45vw, 220px);
-                height: clamp(150px, 45vw, 220px);
-            }
-        }
-
-        /* ===== EXPERTISES ===== */
-        .expertises__header {
-            text-align: center;
-            margin-bottom: clamp(2.5rem, 5vw, 4rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .expertises__grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: clamp(1rem, 2.5vw, 1.8rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .expertise-card {
-            background: #fff;
-            border-radius: 1.5rem;
-            padding: clamp(1.5rem, 2.5vw, 2.2rem) clamp(1rem, 1.8vw, 1.5rem);
-            text-align: center;
-            border: 1px solid var(--laiton);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.15);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(43, 38, 33, 0.04);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--vert);
-            border-radius: 0 0 4px 4px;
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.15);
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(43, 38, 33, 0.1);
-            border-color: var(--vert);
-        }
-        .expertise-card:hover::before {
-            transform: scaleX(0.7);
-        }
-
-        .expertise-card__icon {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            margin-bottom: 0.4rem;
-            transition: transform 0.4s ease;
-            display: block;
-        }
-        .expertise-card:hover .expertise-card__icon {
-            transform: scale(1.1) rotate(-4deg);
-        }
-
-        .expertise-card__title {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 600;
-            font-size: clamp(1rem, 1.3vw, 1.15rem);
-            color: var(--bronze);
-            letter-spacing: 0.01em;
-        }
-
-        .expertise-card__desc {
-            font-family: 'Karla', sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.8rem, 1vw, 0.9rem);
-            color: var(--bronze-clair);
-            line-height: 1.5;
-        }
-
-        @media (max-width: 900px) {
-            .expertises__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 500px) {
-            .expertises__grid {
-                grid-template-columns: 1fr;
-                max-width: 380px;
-                margin: 0 auto;
-            }
-        }
-
-        /* ===== SALONS ===== */
-        .salons__header {
-            text-align: center;
-            margin-bottom: clamp(2.5rem, 5vw, 4rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .salons__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1.2rem, 2.5vw, 2rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .salon-card {
-            background: #fff;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            border: 1px solid var(--laiton);
-            box-shadow: 0 4px 20px rgba(43, 38, 33, 0.04);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.15);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .salon-card:hover {
-            box-shadow: 0 14px 36px rgba(43, 38, 33, 0.1);
-            transform: translateY(-4px);
-            border-color: var(--chene);
-        }
-
-        .salon-card__top {
-            background: var(--mousse);
-            padding: clamp(1rem, 1.8vw, 1.6rem);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            border-bottom: 1px solid var(--laiton);
-        }
-
-        .salon-card__pin {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--vert);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .salon-card__location {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 600;
-            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-            color: var(--bronze);
-            letter-spacing: 0.01em;
-        }
-        .salon-card__address {
-            font-family: 'Karla', sans-serif;
-            font-weight: 400;
-            font-size: 0.85rem;
-            color: var(--bronze-clair);
-            line-height: 1.4;
-        }
-
-        .salon-card__body {
-            padding: clamp(1rem, 1.8vw, 1.5rem);
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            flex: 1;
-        }
-
-        .salon-card__hours {
-            font-family: 'Karla', sans-serif;
-            font-size: 0.85rem;
-            color: var(--bronze-clair);
-            line-height: 1.6;
-        }
-        .salon-card__hours strong {
-            color: var(--bronze);
-            font-weight: 600;
-        }
-
-        .salon-card__cta {
-            align-self: flex-start;
-            margin-top: auto;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4em;
-            font-family: 'Karla', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--vert);
-            text-decoration: none;
-            padding: 0.5em 1.2em;
-            border: 1.5px solid var(--vert);
-            border-radius: 2em;
-            transition: all 0.3s ease;
-        }
-        .salon-card__cta:hover {
-            background: var(--vert);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(107, 142, 35, 0.25);
-        }
-        .salon-card__cta:focus-visible {
-            outline: 3px solid var(--vert);
-            outline-offset: 4px;
-        }
-
-        @media (max-width: 700px) {
-            .salons__grid {
-                grid-template-columns: 1fr;
-                max-width: 460px;
-                margin: 0 auto;
-            }
-        }
-
-        /* ===== PRODUITS ===== */
-        .produits__inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .produits__brands {
-            display: flex;
-            flex-wrap: wrap;
-            gap: clamp(1rem, 2vw, 1.8rem);
-            align-items: center;
-        }
-
-        .produits__brand-badge {
-            background: #fff;
-            border: 1.5px solid var(--laiton);
-            border-radius: 2.5rem;
-            padding: 0.7em 1.6em;
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 600;
-            font-size: clamp(0.9rem, 1.3vw, 1.1rem);
-            color: var(--bronze);
-            letter-spacing: 0.02em;
-            transition: all 0.35s ease;
-            white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(43, 38, 33, 0.03);
-        }
-        .produits__brand-badge:hover {
-            border-color: var(--vert);
-            color: var(--vert);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(107, 142, 35, 0.12);
-        }
-
-        .produits__text-block .section-text {
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .produits__inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .produits__text-block {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .produits__brands {
-                justify-content: center;
-            }
-            .produits__text-block .section-text {
-                text-align: center;
-                max-width: 100%;
-            }
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: #fff;
-            border-top: 1px solid var(--laiton);
-            padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.5rem, 2.5vw, 2rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 4vw, 3rem);
-            margin-bottom: clamp(2rem, 3vw, 2.5rem);
-        }
-
-        .footer__info h3 {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 600;
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            color: var(--bronze);
-            margin-bottom: 1rem;
-            letter-spacing: 0.01em;
-        }
-        .footer__info p,
-        .footer__info a {
-            font-family: 'Karla', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--bronze-clair);
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease;
-        }
-        .footer__info a:hover {
-            color: var(--vert);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-        .footer__info .footer__phone {
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: var(--bronze);
-        }
-
-        .footer__map {
-            border-radius: 1.2rem;
-            overflow: hidden;
-            border: 2px solid var(--laiton);
-            box-shadow: 0 6px 24px rgba(43, 38, 33, 0.08);
-        }
-        .footer__map iframe {
-            display: block;
+            max-width: 900px;
             width: 100%;
-            height: 320px;
-            border: 0;
         }
 
-        .footer__bottom {
-            border-top: 1px solid var(--laiton);
-            padding-top: clamp(1.2rem, 2vw, 1.5rem);
-            text-align: center;
-            font-family: 'Karla', sans-serif;
-            font-size: 0.8rem;
-            color: var(--bronze-clair);
-            letter-spacing: 0.03em;
-        }
-        .footer__bottom a {
-            color: var(--vert);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .footer__bottom a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 650px) {
-            .footer__grid {
-                grid-template-columns: 1fr;
-            }
-            .footer__map iframe {
-                height: 240px;
-            }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        .reveal {
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(3.5rem, 10vw, 8.5rem);
+            line-height: 0.88;
+            color: var(--brun-profond);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.3em;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal--delay1 {
-            transition-delay: 0.1s;
-        }
-        .reveal--delay2 {
-            transition-delay: 0.2s;
-        }
-        .reveal--delay3 {
-            transition-delay: 0.3s;
-        }
-        .reveal--delay4 {
-            transition-delay: 0.4s;
+            animation: revealTitle 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.05em;
         }
 
-        .fade-in-onload {
-            animation: fadeSlideIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        .hero-title .line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .hero-title .line span {
+            display: block;
+            animation: slideUpWord 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            animation-delay: var(--d, 0s);
             opacity: 0;
-            transform: translateY(20px);
-        }
-        .fade-in-onload--1 {
-            animation-delay: 0.1s;
-        }
-        .fade-in-onload--2 {
-            animation-delay: 0.3s;
-        }
-        .fade-in-onload--3 {
-            animation-delay: 0.5s;
-        }
-        .fade-in-onload--4 {
-            animation-delay: 0.65s;
+            transform: translateY(110%);
         }
 
-        @keyframes fadeSlideIn {
+        @keyframes slideUpWord {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
+        @keyframes revealTitle {
+            to {
                 opacity: 1;
-                transform: none;
-                transition: none;
-            }
-            .fade-in-onload {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
-            .hero__medallion-ring {
-                animation: none;
-            }
-            .expertise-card:hover {
-                transform: none;
-            }
-            .salon-card:hover {
-                transform: none;
-            }
-            .btn:hover {
-                transform: none;
             }
         }
 
-        /* ===== GLOBAL DECORATIVE ELEMENTS ===== */
-        .bg-texture {
-            position: fixed;
+        .hero-subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            color: var(--brun-profond);
+            opacity: 0.8;
+            max-width: 560px;
+            margin: 1.2rem auto 2.2rem;
+            letter-spacing: 0.02em;
+            line-height: 1.55;
+            opacity: 0;
+            animation: revealSub 0.9s 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        @keyframes revealSub {
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        .hero-cta-wrap {
+            opacity: 0;
+            animation: revealSub 0.9s 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-cta-wrap .btn-cta {
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+        }
+
+        /* ---- SCROLL INDICATOR ---- */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            width: 32px;
+            height: 50px;
+            border: 2px solid var(--brun-profond);
+            border-radius: 20px;
+            opacity: 0.45;
+            animation: revealSub 0.9s 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            opacity: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 4px;
+            height: 10px;
+            background: var(--brun-profond);
+            border-radius: 4px;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDot {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(14px);
+                opacity: 1;
+            }
+        }
+
+        /* ---- SECTIONS GÉNÉRALES ---- */
+        .section {
+            padding: clamp(3.5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--vert-sauge);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            color: var(--brun-profond);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            color: var(--brun-profond);
+            opacity: 0.85;
+            max-width: 680px;
+            line-height: 1.7;
+        }
+
+        /* ---- ONDE CAPILLAIRE ---- */
+        .onde-bg {
+            position: absolute;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.025;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='0.6' fill='%232B2621'/%3E%3C/svg%3E");
-            background-size: 40px 40px;
+            opacity: 0.05;
+            overflow: hidden;
         }
 
-        .decorative-leaves {
+        .onde-bg svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .onde-cards {
             position: absolute;
+            inset: 0;
             pointer-events: none;
             z-index: 0;
-            color: var(--mousse);
-            opacity: 0.35;
-            font-size: clamp(80px, 12vw, 140px);
+            opacity: 0.06;
+            overflow: hidden;
+            transition: opacity 0.5s ease;
+        }
+
+        /* ---- MANIFESTE ---- */
+        #manifeste {
+            background: var(--rose-poudre);
+            position: relative;
+            isolation: isolate;
+        }
+
+        #manifeste .section-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            #manifeste .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .manifeste-visuel {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(44, 35, 27, 0.15);
+        }
+
+        .manifeste-visuel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(60%) sepia(10%) brightness(0.95) contrast(1.05);
+            transition: filter 0.6s ease;
+        }
+
+        .manifeste-visuel:hover img {
+            filter: grayscale(20%) sepia(5%) brightness(1) contrast(1);
+        }
+
+        .manifeste-texte .section-title {
+            font-size: clamp(2.2rem, 4.5vw, 2.8rem);
+            margin-bottom: 1rem;
+        }
+
+        /* ---- SALONS ---- */
+        #salons .section-inner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .salon-card {
+            background: var(--coquille);
+            border: 1px solid rgba(44, 35, 27, 0.08);
+            border-radius: 14px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(44, 35, 27, 0.05);
+            cursor: default;
+            z-index: 1;
+        }
+
+        .salon-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(44, 35, 27, 0.12);
+            border-color: var(--cuivre);
+        }
+
+        .salon-card .onde-cards {
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .salon-card:hover .onde-cards {
+            opacity: 0.08;
+            animation: ondeFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes ondeFloat {
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-4px) scale(1.02);
+            }
+        }
+
+        .salon-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .salon-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--brun-profond);
+        }
+
+        .salon-card .adresse {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .salon-card .horaires {
+            font-size: 0.85rem;
+            opacity: 0.65;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .salon-card .card-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        /* ---- PRESTATIONS ---- */
+        #prestations {
+            background: var(--coquille);
+        }
+
+        .prestations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .presta-item {
+            background: var(--rose-poudre);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.35s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .presta-item:hover {
+            border-color: var(--cuivre);
+            background: #fdf9f6;
+            box-shadow: 0 10px 30px rgba(44, 35, 27, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .presta-item h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: var(--brun-profond);
+        }
+
+        .presta-item p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* ---- PRODUITS ---- */
+        #produits {
+            background: var(--rose-poudre);
+            position: relative;
+            isolation: isolate;
+        }
+
+        #produits .section-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            #produits .section-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .produits-visuel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            aspect-ratio: 1/1;
+        }
+
+        .produits-visuel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: grayscale(40%) sepia(8%) brightness(0.95);
+            transition: filter 0.5s ease;
+        }
+
+        .produits-visuel img:hover {
+            filter: grayscale(0%) sepia(0%) brightness(1);
+        }
+
+        .marques-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .marque-tag {
+            background: var(--coquille);
+            border: 1px solid rgba(44, 35, 27, 0.1);
+            padding: 0.4rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--brun-profond);
+            letter-spacing: 0.02em;
+        }
+
+        /* ---- AVIS ---- */
+        #avis .section-inner {
+            text-align: center;
+        }
+
+        .avis-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--coquille);
+            border: 1.5px solid rgba(44, 35, 27, 0.12);
+            border-radius: 3rem;
+            padding: 0.5rem 1.4rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--brun-profond);
+        }
+
+        .avis-note .big-star {
+            font-size: 1.5rem;
+            color: #e7b42c;
+            line-height: 1;
+        }
+
+        .avis-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .avis-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.8rem;
+            text-align: left;
+            border: 1px solid rgba(44, 35, 27, 0.06);
+            box-shadow: 0 6px 25px rgba(44, 35, 27, 0.04);
+            transition: all 0.35s ease;
+        }
+
+        .avis-card:hover {
+            box-shadow: 0 14px 40px rgba(44, 35, 27, 0.1);
+            transform: translateY(-4px);
+            border-color: var(--cuivre);
+        }
+
+        .avis-card .client-name {
+            font-weight: 600;
+            color: var(--brun-profond);
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .avis-card .client-type {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-bottom: 0.7rem;
+            font-style: italic;
+        }
+
+        .avis-card .avis-stars {
+            color: #e7b42c;
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+        }
+
+        .avis-card .avis-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ---- NEWSLETTER ---- */
+        #newsletter {
+            background: var(--vert-sauge);
+            color: #fff;
+            position: relative;
+            isolation: isolate;
+            text-align: center;
+            padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 6vw, 3rem);
+        }
+
+        #newsletter .section-title {
+            color: #fff;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        #newsletter .section-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto 2rem;
+            max-width: 500px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.6rem;
+            max-width: 440px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1 1 240px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 3rem;
+            border: none;
+            font-family: 'Karla', sans-serif;
+            font-size: 0.95rem;
+            background: #fff;
+            color: var(--brun-profond);
+            letter-spacing: 0.02em;
+        }
+
+        .newsletter-form input:focus {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 2px;
+        }
+
+        .newsletter-form .btn-cta {
+            flex: 0 0 auto;
+            background: #fff;
+            color: var(--vert-sauge);
+            border-color: #fff;
+            font-weight: 700;
+            box-shadow: none;
+        }
+
+        .newsletter-form .btn-cta:hover {
+            background: var(--coquille);
+            border-color: var(--coquille);
+            color: var(--vert-sauge);
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---- MAP ---- */
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(44, 35, 27, 0.1);
+            margin-top: 1.5rem;
+            border: 1px solid rgba(44, 35, 27, 0.06);
+        }
+
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: #dce8e3;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 6vw, 3rem) 2rem;
+            color: var(--brun-profond);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-col h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--brun-profond);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            display: block;
+            color: var(--brun-profond);
+            opacity: 0.75;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: opacity 0.25s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+            color: var(--cuivre);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(44, 35, 27, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-bottom a {
+            color: var(--brun-profond);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ---- REVEAL AU SCROLL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4.5rem);
+                line-height: 0.92;
+            }
+
+            .header-inner {
+                gap: 0.7rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .badge-google {
+                font-size: 0.72rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .btn-cta {
+                font-size: 0.78rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .produits-visuel {
+                grid-template-columns: 1fr;
+                aspect-ratio: auto;
+                max-height: 350px;
+            }
+
+            .salon-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .header-logo {
+                font-size: 1rem;
+            }
+
+            .badge-google {
+                display: none;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="bg-texture" aria-hidden="true"></div>
-
-    <!-- ===== HEADER ===== -->
-    <header class="header" id="header" role="banner">
-        <div class="header__inner">
-            <a href="#" class="header__brand" aria-label="Studio Ana'e — Retour à l'accueil">Studio <span>Ana'e</span></a>
-
-            <button class="header__mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-
-            <nav class="header__nav" id="mainNav" role="navigation" aria-label="Navigation principale">
-                <a href="#philosophie">Philosophie</a>
-                <a href="#expertises">Expertises</a>
-                <a href="#salons">Salons</a>
-                <a href="#produits">Produits</a>
-                <a href="tel:+33144180421" class="header__cta" aria-label="Appeler le Studio Ana'e au 01 44 18 04 21">
-                    <span aria-hidden="true">📞</span> Appeler
-                </a>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#hero" class="header-logo">Studio <span>Ana'e</span></a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links">
+                    <li><a href="#manifeste">Manifeste</a></li>
+                    <li><a href="#salons">Salon</a></li>
+                    <li><a href="#prestations">Prestations</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
+            <div style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <a href="https://maps.google.com/maps?q=Studio+Ana%27e+9+Rue+Balard%2C+Paris" target="_blank" rel="noopener" class="badge-google" aria-label="Note Google 4.9 sur 5">
+                    <span class="star">★</span> 4.9 <span style="font-weight:400;opacity:0.7;">(57 avis)</span>
+                </a>
+                <a href="tel:+33144180421" class="btn-cta">Prendre RDV</a>
+            </div>
         </div>
     </header>
 
-    <!-- ===== MAIN ===== -->
-    <main id="main-content">
-
-        <!-- HERO -->
-        <section class="section section--hero" aria-labelledby="hero-title">
-            <div class="container">
-                <div class="hero__grid">
-                    <div class="hero__text">
-                        <p class="hero__overline fade-in-onload fade-in-onload--1">Paris · Note 4.9★</p>
-                        <h1 class="hero__title fade-in-onload fade-in-onload--2" id="hero-title">
-                            La beauté est <span class="highlight">plurielle</span>.
-                        </h1>
-                        <p class="hero__subtitle fade-in-onload fade-in-onload--3">
-                            Studio Ana'e révèle la beauté naturelle de chaque texture de cheveux — du lisse au crépu — avec une expertise sur-mesure, au cœur de Paris.
-                        </p>
-                        <div class="hero__ctas fade-in-onload fade-in-onload--4">
-                            <a href="tel:+33144180421" class="btn btn--primary">Prendre rendez-vous</a>
-                            <a href="#expertises" class="btn btn--outline">Découvrir nos expertises</a>
-                        </div>
-                    </div>
-                    <div class="hero__visual fade-in-onload fade-in-onload--3">
-                        <div class="hero__medallion" aria-hidden="true">
-                            <div class="hero__medallion-ring"></div>
-                            <img src="assets/maps-1.jpg" alt="Intérieur du Studio Ana'e — salon lumineux avec plantes et miroirs" loading="eager" width="480" height="480">
-                        </div>
-                        <div class="hero__badge-google" aria-label="Note Google : 4.9 sur 5 étoiles, basée sur 57 avis">
-                            <span class="stars" aria-hidden="true">★★★★★</span> 4.9/5 &nbsp;·&nbsp; 57 avis
-                        </div>
-                        <span class="hero__leaf-accent" aria-hidden="true">🌿</span>
-                    </div>
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg-img">
+                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80&auto=format&fit=crop" alt="" loading="eager" aria-hidden="true">
+            </div>
+            <div class="hero-grain" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="line"><span style="--d:0.05s;">Nous</span></span>
+                    <span class="line"><span style="--d:0.2s;">sommes</span></span>
+                    <span class="line"><span style="--d:0.35s;">tous</span></span>
+                    <span class="line"><span style="--d:0.5s;">beaux.</span></span>
+                </h1>
+                <p class="hero-subtitle">Studio Ana'e — Salons experts à Paris &amp; Lyon.<br>Coupe, soin, couleur : une déclaration d'amour à la diversité des cheveux.</p>
+                <div class="hero-cta-wrap">
+                    <a href="tel:+33144180421" class="btn-cta">Prendre rendez-vous</a>
+                    <a href="#salons" class="btn-cta btn-outline">Découvrir le salon</a>
                 </div>
             </div>
-            <!-- Decorative elements -->
-            <div class="decorative-ring" style="width:160px;height:160px;top:12%;right:6%;opacity:0.3;" aria-hidden="true"></div>
-            <div class="decorative-dot" style="width:30px;height:30px;bottom:15%;left:8%;" aria-hidden="true"></div>
+            <div class="scroll-indicator" aria-hidden="true"></div>
         </section>
 
-        <!-- PHILOSOPHIE -->
-        <section class="section" id="philosophie" aria-labelledby="philo-title">
-            <div class="container container--narrow">
-                <div class="philo__inner">
-                    <div class="philo__text-block reveal">
-                        <span class="section-label">Notre philosophie</span>
-                        <h2 class="section-title" id="philo-title">Une déclaration d'amour à la diversité</h2>
-                        <p class="section-text">
-                            Dans nos salons, chaque texture capillaire est comprise, respectée et sublimée. Cheveux lisses, bouclés, frisés ou crépus : nous adaptons notre gestuelle, nos produits et nos soins à votre nature propre. Une approche experte, éthique et inclusive, portée par des professionnels formés en continu.
-                        </p>
-                    </div>
-                    <div class="philo__decor reveal reveal--delay2" aria-hidden="true">
-                        <div class="philo__circle-stack">
-                            <div class="philo__circle philo__circle--1"></div>
-                            <div class="philo__circle philo__circle--2"></div>
-                            <div class="philo__circle philo__circle--3">4.9<span style="font-size:0.5em;display:block;font-weight:400;">★</span></div>
-                        </div>
-                    </div>
-                </div>
+        <!-- MANIFESTE -->
+        <section class="section" id="manifeste">
+            <div class="onde-bg" aria-hidden="true">
+                <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 400 Q150 320 300 400 Q450 480 600 400 Q750 320 900 400 Q1050 480 1200 400 L1200 800 L0 800 Z" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5" style="color:var(--brun-profond);"/>
+                    <path d="M0 440 Q200 350 400 440 Q600 530 800 440 Q1000 350 1200 440 L1200 800 L0 800 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" style="color:var(--brun-profond);"/>
+                    <path d="M0 480 Q250 400 500 480 Q750 560 1000 480 Q1100 440 1200 480 L1200 800 L0 800 Z" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.25" style="color:var(--brun-profond);"/>
+                </svg>
             </div>
-            <div class="decorative-dot" style="width:18px;height:18px;top:25%;right:12%;" aria-hidden="true"></div>
-        </section>
-
-        <!-- EXPERTISES -->
-        <section class="section" id="expertises" aria-labelledby="expertises-title" style="background:var(--mousse);">
-            <div class="container">
-                <div class="expertises__header reveal">
-                    <span class="section-label" style="justify-content:center;">Nos savoir-faire</span>
-                    <h2 class="section-title" id="expertises-title" style="text-align:center;">Des soins pensés pour chaque texture</h2>
-                    <div class="section-divider"></div>
+            <div class="section-inner">
+                <div class="manifeste-visuel reveal">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Intérieur du salon Studio Ana'e" loading="lazy">
                 </div>
-                <div class="expertises__grid">
-                    <article class="expertise-card reveal reveal--delay1">
-                        <span class="expertise-card__icon" aria-hidden="true">✨</span>
-                        <h3 class="expertise-card__title">Cheveux lisses</h3>
-                        <p class="expertise-card__desc">Brillance miroir et mouvement fluide grâce à des soins légers qui respectent la fibre capillaire.</p>
-                    </article>
-                    <article class="expertise-card reveal reveal--delay2">
-                        <span class="expertise-card__icon" aria-hidden="true">🌀</span>
-                        <h3 class="expertise-card__title">Cheveux bouclés</h3>
-                        <p class="expertise-card__desc">Hydratation nourrissante et définition des boucles pour un ressort parfait, sans frisottis.</p>
-                    </article>
-                    <article class="expertise-card reveal reveal--delay3">
-                        <span class="expertise-card__icon" aria-hidden="true">🌊</span>
-                        <h3 class="expertise-card__title">Cheveux frisés</h3>
-                        <p class="expertise-card__desc">Démêlage doux et soins gainants pour discipliner sans casser, révéler le motif naturel.</p>
-                    </article>
-                    <article class="expertise-card reveal reveal--delay4">
-                        <span class="expertise-card__icon" aria-hidden="true">☁️</span>
-                        <h3 class="expertise-card__title">Cheveux crépus</h3>
-                        <p class="expertise-card__desc">Hydratation intense et définition des boucles sans alourdir, pour une chevelure resplendissante.</p>
-                    </article>
+                <div class="manifeste-texte reveal reveal-delay-1">
+                    <span class="section-label">Notre manifeste</span>
+                    <h2 class="section-title">Chaque texture mérite un soin qui la comprend.</h2>
+                    <p class="section-text">Frisés, bouclés, raides, crépus : depuis 2018, Studio Ana'e met son expertise au service de tous les cheveux, sans exception. Nous croyons que la beauté n'a pas de standard — elle a des visages, des histoires, des boucles. Notre engagement est simple : offrir à chaque personne un accueil inconditionnel et des soins sur-mesure, dans un cadre pensé pour votre bien-être.</p>
                 </div>
             </div>
         </section>
 
         <!-- SALONS -->
-        <section class="section" id="salons" aria-labelledby="salons-title">
-            <div class="container">
-                <div class="salons__header reveal">
-                    <span class="section-label" style="justify-content:center;">Où nous trouver</span>
-                    <h2 class="section-title" id="salons-title" style="text-align:center;">Votre Ana'e, à deux pas de chez vous</h2>
-                    <div class="section-divider"></div>
+        <section class="section" id="salons">
+            <div class="section-inner">
+                <div style="grid-column:1/-1;margin-bottom:0.5rem;" class="reveal">
+                    <span class="section-label">Votre salon Ana'e</span>
+                    <h2 class="section-title">Un écrin au cœur de Paris</h2>
+                    <p class="section-text" style="margin-bottom:2rem;">Quatre adresses pensées pour vous accueillir, du mardi au samedi, de 10h à 19h. Chaque espace est conçu pour votre confort et votre intimité. Voici notre adresse principale :</p>
                 </div>
-                <div class="salons__grid">
-                    <article class="salon-card reveal reveal--delay1">
-                        <div class="salon-card__top">
-                            <div class="salon-card__pin" aria-hidden="true">📍</div>
-                            <div>
-                                <div class="salon-card__location">Paris 15 — Balard</div>
-                                <div class="salon-card__address">9 Rue Balard, 75015 Paris</div>
-                            </div>
-                        </div>
-                        <div class="salon-card__body">
-                            <p class="salon-card__hours">
-                                <strong>Horaires :</strong> à confirmer<br>
-                                <small style="color:var(--bronze-clair);">Contactez-nous pour prendre rendez-vous</small>
-                            </p>
-                            <a href="tel:+33144180421" class="salon-card__cta">Prendre RDV ici →</a>
-                        </div>
-                    </article>
-                    <article class="salon-card reveal reveal--delay2">
-                        <div class="salon-card__top">
-                            <div class="salon-card__pin" aria-hidden="true">📍</div>
-                            <div>
-                                <div class="salon-card__location">Paris 4 — Le Marais</div>
-                                <div class="salon-card__address">Adresse à confirmer</div>
-                            </div>
-                        </div>
-                        <div class="salon-card__body">
-                            <p class="salon-card__hours"><strong>Horaires :</strong> à confirmer</p>
-                            <a href="tel:+33144180421" class="salon-card__cta">Prendre RDV ici →</a>
-                        </div>
-                    </article>
-                    <article class="salon-card reveal reveal--delay3">
-                        <div class="salon-card__top">
-                            <div class="salon-card__pin" aria-hidden="true">📍</div>
-                            <div>
-                                <div class="salon-card__location">Paris 5 — Quartier Latin</div>
-                                <div class="salon-card__address">Adresse à confirmer</div>
-                            </div>
-                        </div>
-                        <div class="salon-card__body">
-                            <p class="salon-card__hours"><strong>Horaires :</strong> à confirmer</p>
-                            <a href="tel:+33144180421" class="salon-card__cta">Prendre RDV ici →</a>
-                        </div>
-                    </article>
-                    <article class="salon-card reveal reveal--delay4">
-                        <div class="salon-card__top">
-                            <div class="salon-card__pin" aria-hidden="true">📍</div>
-                            <div>
-                                <div class="salon-card__location">Lyon 2 — Bellecour</div>
-                                <div class="salon-card__address">Adresse à confirmer</div>
-                            </div>
-                        </div>
-                        <div class="salon-card__body">
-                            <p class="salon-card__hours"><strong>Horaires :</strong> à confirmer</p>
-                            <a href="tel:+33144180421" class="salon-card__cta">Prendre RDV ici →</a>
-                        </div>
-                    </article>
+
+                <article class="salon-card reveal reveal-delay-1">
+                    <div class="onde-cards" aria-hidden="true">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 150 Q80 100 160 150 Q240 200 320 150 Q360 130 400 150 L400 300 L0 300 Z" fill="none" stroke="currentColor" stroke-width="2" opacity="0.6" style="color:var(--brun-profond);"/>
+                            <path d="M0 170 Q100 130 200 170 Q300 210 400 170 L400 300 L0 300 Z" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4" style="color:var(--brun-profond);"/>
+                        </svg>
+                    </div>
+                    <h3>Paris 15<sup>e</sup> — Balard</h3>
+                    <p class="adresse">9 rue Balard, 75015 Paris<br>Métro Balard (ligne 8)</p>
+                    <p class="horaires">Mar–Sam · 10h–19h<br><em>Horaires indicatifs, veuillez confirmer.</em></p>
+                    <div class="card-actions">
+                        <a href="tel:+33144180421" class="btn-cta" style="font-size:0.85rem;padding:0.5rem 1.1rem;">Prendre RDV</a>
+                        <a href="#contact" class="btn-cta btn-outline" style="font-size:0.85rem;padding:0.5rem 1.1rem;">Découvrir le salon</a>
+                    </div>
+                </article>
+
+                <article class="salon-card reveal reveal-delay-2" style="opacity:0.7;">
+                    <h3>Paris 5<sup>e</sup> — Carmes</h3>
+                    <p class="adresse">11 bis rue des Carmes, 75005 Paris</p>
+                    <p class="horaires">Mar–Sam · 10h–19h<br><em>Ouverture prochaine — nous consulter.</em></p>
+                    <div class="card-actions">
+                        <span style="font-size:0.85rem;opacity:0.6;font-style:italic;">Bientôt disponible</span>
+                    </div>
+                </article>
+
+                <article class="salon-card reveal reveal-delay-3" style="opacity:0.7;">
+                    <h3>Paris 4<sup>e</sup> — Pont Louis-Philippe</h3>
+                    <p class="adresse">4 rue du Pont Louis-Philippe, 75004 Paris</p>
+                    <p class="horaires">Mar–Sam · 10h–19h<br><em>Ouverture prochaine — nous consulter.</em></p>
+                    <div class="card-actions">
+                        <span style="font-size:0.85rem;opacity:0.6;font-style:italic;">Bientôt disponible</span>
+                    </div>
+                </article>
+
+                <article class="salon-card reveal reveal-delay-4" style="opacity:0.7;">
+                    <h3>Lyon 2<sup>e</sup> — Le Plat</h3>
+                    <p class="adresse">9 rue du Plat, 69002 Lyon</p>
+                    <p class="horaires">Mar–Sam · 10h–19h<br><em>Ouverture prochaine — nous consulter.</em></p>
+                    <div class="card-actions">
+                        <span style="font-size:0.85rem;opacity:0.6;font-style:italic;">Bientôt disponible</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PRESTATIONS -->
+        <section class="section" id="prestations">
+            <div class="section-inner">
+                <div class="reveal">
+                    <span class="section-label">Des soins sur-mesure</span>
+                    <h2 class="section-title">L'expertise au service de vos cheveux</h2>
+                    <p class="section-text">Coupe à sec, soin profond, couleur végétale, atelier « Apprendre à aimer ses boucles », coaching capillaire enfant. Nos tarifs s'adaptent à la nature de vos cheveux et à la technicité requise.</p>
                 </div>
-                <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--bronze-clair);font-style:italic;z-index:1;position:relative;">
-                    Le Studio Ana'e s'agrandit — les adresses complémentaires seront bientôt disponibles. Pour toute information, appelez-nous.
-                </p>
+                <div class="prestations-grid reveal reveal-delay-1">
+                    <div class="presta-item">
+                        <h4>Coupe à sec</h4>
+                        <p>Respect de votre texture naturelle, sans shampooing préalable. Pour cheveux bouclés à crépus.</p>
+                    </div>
+                    <div class="presta-item">
+                        <h4>Soin profond</h4>
+                        <p>Hydratation intense et reconstruction de la fibre capillaire avec des produits clean.</p>
+                    </div>
+                    <div class="presta-item">
+                        <h4>Couleur végétale</h4>
+                        <p>Coloration douce sans ammoniaque, à base de plantes, pour un résultat lumineux et naturel.</p>
+                    </div>
+                    <div class="presta-item">
+                        <h4>Atelier boucles</h4>
+                        <p>« Apprendre à aimer ses boucles » : une séance personnalisée pour maîtriser votre routine.</p>
+                    </div>
+                    <div class="presta-item">
+                        <h4>Coaching enfant</h4>
+                        <p>Des soins adaptés aux plus jeunes, dans la bienveillance et la pédagogie.</p>
+                    </div>
+                </div>
+                <div style="margin-top:2rem;text-align:center;" class="reveal reveal-delay-2">
+                    <a href="#" class="btn-cta btn-outline">Voir tous les tarifs</a>
+                </div>
             </div>
         </section>
 
         <!-- PRODUITS -->
-        <section class="section" id="produits" aria-labelledby="produits-title" style="background:#fff;">
-            <div class="container container--narrow">
-                <div class="produits__inner">
-                    <div class="produits__text-block reveal">
-                        <span class="section-label">Nos partenaires</span>
-                        <h2 class="section-title" id="produits-title">Des soins qui ont du sens</h2>
-                        <p class="section-text">
-                            Nous sélectionnons des marques qui partagent notre philosophie : respect du cheveu, formules propres et efficacité prouvée. Chaque produit utilisé au Studio Ana'e est choisi pour sa capacité à sublimer les textures naturelles sans les dénaturer.
-                        </p>
-                        <div class="produits__brands">
-                            <span class="produits__brand-badge">Davines</span>
-                            <span class="produits__brand-badge">Kalia Nature</span>
-                        </div>
+        <section class="section" id="produits">
+            <div class="onde-bg" aria-hidden="true">
+                <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 350 Q180 290 360 350 Q540 410 720 350 Q900 290 1080 350 Q1140 370 1200 350 L1200 800 L0 800 Z" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.45" style="color:var(--brun-profond);"/>
+                    <path d="M0 390 Q220 340 440 390 Q660 440 880 390 Q1040 360 1200 390 L1200 800 L0 800 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3" style="color:var(--brun-profond);"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <div class="reveal">
+                    <span class="section-label">Ce que nous utilisons</span>
+                    <h2 class="section-title">Des marques engagées</h2>
+                    <p class="section-text">Davines, Kalia Nature, Activilong, Revlon… Nous sélectionnons des marques engagées (B Corp, formulations clean) pour prendre soin de vos cheveux comme de la planète. Découvrez nos produits fétiches, disponibles au salon.</p>
+                    <div class="marques-list">
+                        <span class="marque-tag">Davines</span>
+                        <span class="marque-tag">Kalia Nature</span>
+                        <span class="marque-tag">Activilong</span>
+                        <span class="marque-tag">Revlon</span>
+                        <span class="marque-tag">B Corp</span>
+                        <span class="marque-tag">Clean beauty</span>
                     </div>
-                    <div class="reveal reveal--delay2" style="display:flex;justify-content:center;" aria-hidden="true">
-                        <div style="width:clamp(140px,20vw,200px);height:clamp(140px,20vw,200px);border-radius:50%;background:var(--mousse);display:flex;align-items:center;justify-content:center;font-size:clamp(3rem,5vw,5rem);border:2px solid var(--laiton);">
-                            🌱
-                        </div>
-                    </div>
+                </div>
+                <div class="produits-visuel reveal reveal-delay-1">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop" alt="Devanture du Studio Ana'e" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Produits utilisés au salon" loading="lazy">
                 </div>
             </div>
         </section>
 
+        <!-- AVIS -->
+        <section class="section" id="avis">
+            <div class="section-inner">
+                <div class="reveal">
+                    <span class="section-label">Ils nous font confiance</span>
+                    <h2 class="section-title">4.9/5 — la parole à nos clients</h2>
+                </div>
+                <div class="avis-note reveal reveal-delay-1">
+                    <span class="big-star">★</span> 4.9/5 <span style="font-weight:400;opacity:0.7;">· 57 avis Google vérifiés</span>
+                </div>
+                <div class="avis-carousel reveal reveal-delay-2">
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="client-name">Fatoumata</p>
+                        <p class="client-type">Cheveux crépus</p>
+                        <p class="avis-text">« Enfin un salon qui comprend mes cheveux ! La coupe à sec est bluffante de précision. Je recommande les yeux fermés. »</p>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="client-name">Camille</p>
+                        <p class="client-type">Cheveux bouclés</p>
+                        <p class="avis-text">« L'atelier boucles a changé ma vie. On m'a appris à aimer mes ondulations au lieu de les lisser. Un accueil formidable. »</p>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p class="client-name">Marc</p>
+                        <p class="client-type">Cheveux lisses</p>
+                        <p class="avis-text">« Je viens pour la couleur végétale — résultat naturel, produits sains, et une équipe aux petits soins. »</p>
+                    </div>
+                </div>
+                <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+                    <a href="https://maps.google.com/maps?q=Studio+Ana%27e+9+Rue+Balard%2C+Paris" target="_blank" rel="noopener" class="btn-cta btn-outline">Lire tous les avis Google</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / MAP -->
+        <section class="section" id="contact">
+            <div class="section-inner reveal">
+                <span class="section-label">Nous trouver</span>
+                <h2 class="section-title">9 rue Balard, Paris 15<sup>e</sup></h2>
+                <p class="section-text" style="margin-bottom:1.5rem;">Métro Balard (ligne 8). Téléphone : <a href="tel:+33144180421" style="color:var(--cuivre);text-decoration:none;font-weight:500;">01 44 18 04 21</a> · Email : <a href="mailto:contact@studioanae.com" style="color:var(--cuivre);text-decoration:none;font-weight:500;">contact@studioanae.com</a></p>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Studio+Ana%27e+9+Rue+Balard%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte du Studio Ana'e"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section id="newsletter">
+            <div class="section-inner reveal">
+                <h2 class="section-title">10 % sur votre prochain rendez-vous</h2>
+                <p class="section-text">Inscrivez-vous pour recevoir nos conseils, nos actualités et une réduction de bienvenue.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci ! Votre inscription a bien été prise en compte.')">
+                    <input type="email" placeholder="votre@email.com" required aria-label="Votre adresse email">
+                    <button type="submit" class="btn-cta">Je m'inscris</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__info reveal">
-                    <h3>Studio Ana'e</h3>
-                    <p>
-                        <strong>Adresse :</strong> 9 Rue Balard, 75015 Paris<br>
-                        <strong>Téléphone :</strong> <a href="tel:+33144180421" class="footer__phone">01 44 18 04 21</a><br>
-                        <strong>Email :</strong> <a href="mailto:contact@studioanae.com">contact@studioanae.com</a><br>
-                        <strong>Note Google :</strong> 4.9★ / 5 — 57 avis
-                    </p>
-                    <p style="margin-top:0.6rem;font-size:0.85rem;font-style:italic;">Horaires à confirmer — contactez-nous pour prendre rendez-vous.</p>
-                </div>
-                <div class="footer__map reveal reveal--delay2">
-                    <iframe src="https://maps.google.com/maps?q=Studio+Ana%27e+9+Rue+Balard%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Studio Ana'e, 9 Rue Balard, Paris"></iframe>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Studio Ana'e</h4>
+                <p>9 rue Balard<br>75015 Paris<br>France</p>
+                <p><a href="tel:+33144180421">01 44 18 04 21</a></p>
+                <p><a href="mailto:contact@studioanae.com">contact@studioanae.com</a></p>
             </div>
-            <div class="footer__bottom">
-                <p>© <span id="currentYear"></span> Studio Ana'e — Tous droits réservés. Site créé par <a href="https://agence.mooo.com/studio-ana-e" target="_blank" rel="noopener">Agence Mooo</a>.</p>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Mardi – Samedi<br>10h – 19h<br><em style="opacity:0.6;">Horaires à confirmer</em></p>
             </div>
+            <div class="footer-col">
+                <h4>Liens</h4>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Mentions légales</a></p>
+                <p><a href="#">Politique de confidentialité</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Note Google</h4>
+                <p style="font-size:1.4rem;font-weight:700;">★ 4.9/5</p>
+                <p style="opacity:0.7;">57 avis vérifiés</p>
+                <a href="https://maps.google.com/maps?q=Studio+Ana%27e+9+Rue+Balard%2C+Paris" target="_blank" rel="noopener" style="color:var(--cuivre);font-weight:500;">Voir sur Google</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Studio Ana'e. Tous droits réservés.</span>
+            <span>Site créé par <a href="https://agence.mooo.com/studio-ana-e" target="_blank" rel="noopener">Agence Mooo</a></span>
         </div>
     </footer>
 
-    <!-- ===== SCHEMA.ORG ===== -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -1434,107 +1296,102 @@
             },
             "telephone": "+33144180421",
             "email": "contact@studioanae.com",
-            "image": "assets/maps-1.jpg",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
-                "reviewCount": "57",
-                "bestRating": "5"
+                "reviewCount": "57"
             },
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop",
             "url": "https://agence.mooo.com/studio-ana-e",
-            "description": "Salon de coiffure inclusif expert en textures naturelles à Paris. Du lisse au crépu, soins sur-mesure."
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            }
         }
     </script>
 
-    <!-- ===== SCRIPTS ===== -->
     <script>
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const mainNav = document.getElementById('mainNav');
+        (function() {
+            // ---- HEADER HIDE ON SCROLL ----
+            const header = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            let ticking = false;
 
-        mobileToggle.addEventListener('click', function() {
-            const isOpen = mainNav.classList.toggle('open');
-            mobileToggle.classList.toggle('active');
-            mobileToggle.setAttribute('aria-expanded', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
+            function updateHeader() {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll <= 80) {
+                    header.classList.remove('header-hidden');
+                } else if (currentScroll > lastScroll && currentScroll > 120) {
+                    header.classList.add('header-hidden');
+                } else if (currentScroll < lastScroll) {
+                    header.classList.remove('header-hidden');
+                }
+                lastScroll = currentScroll;
+                ticking = false;
+            }
 
-        // Close mobile menu on nav link click
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('open');
-                mobileToggle.classList.remove('active');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateHeader);
+                    ticking = true;
+                }
+            }, { passive: true });
 
-        // Header scroll shadow
-        const header = document.getElementById('header');
-        let scrollTicking = false;
-        window.addEventListener('scroll', () => {
-            if (!scrollTicking) {
-                requestAnimationFrame(() => {
-                    if (window.scrollY > 40) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                    scrollTicking = false;
+            // ---- REVEAL AU SCROLL (IntersectionObserver) ----
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.18,
+                    rootMargin: '0px 0px -40px 0px'
                 });
-                scrollTicking = true;
+
+                revealEls.forEach(el => observer.observe(el));
+            } else {
+                // Fallback pour les navigateurs sans IntersectionObserver
+                revealEls.forEach(el => el.classList.add('revealed'));
             }
-        });
 
-        // IntersectionObserver for reveal animations
-        const revealEls = document.querySelectorAll('.reveal');
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -60px 0px',
-            threshold: 0.15
-        };
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
+            // ---- ONDE ANIMATION AU SURVOL DES CARTES SALON ----
+            const salonCards = document.querySelectorAll('.salon-card');
+            salonCards.forEach(card => {
+                const ondeEl = card.querySelector('.onde-cards');
+                if (!ondeEl) return;
+                card.addEventListener('mouseenter', () => {
+                    ondeEl.style.opacity = '0.09';
+                });
+                card.addEventListener('mouseleave', () => {
+                    ondeEl.style.opacity = '0';
+                });
             });
-        }, observerOptions);
 
-        revealEls.forEach(el => revealObserver.observe(el));
-
-        // Current year for footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Close mobile menu on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mainNav.classList.contains('open')) {
-                mainNav.classList.remove('open');
-                mobileToggle.classList.remove('active');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-                mobileToggle.focus();
-            }
-        });
-
-        // Trap focus within mobile menu when open
-        mainNav.addEventListener('keydown', function(e) {
-            if (e.key === 'Tab' && mainNav.classList.contains('open')) {
-                const focusableEls = mainNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-                const firstFocusable = focusableEls[0];
-                const lastFocusable = focusableEls[focusableEls.length - 1];
-                if (e.shiftKey && document.activeElement === firstFocusable) {
-                    e.preventDefault();
-                    lastFocusable.focus();
-                } else if (!e.shiftKey && document.activeElement === lastFocusable) {
-                    e.preventDefault();
-                    firstFocusable.focus();
-                }
-            }
-        });
+            // ---- SMOOTH ANCHOR SCROLL (offset header) ----
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight;
+                        window.scrollTo({
+                            top: targetPos,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
     </script>
-
 </body>
 </html>
