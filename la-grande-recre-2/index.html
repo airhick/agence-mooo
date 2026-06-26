@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Grande Récré Paris Beaugrenelle — Magasin de jouets au 38 rue Linois, Paris 15ᵉ</title>
+    <meta name="description" content="Magasin de jouets de référence au cœur de Beaugrenelle, Paris 15ᵉ. 500 m² de jeux, jouets, peluches, LEGO®, Playmobil®, jeux de société. Click & Collect, emballage cadeau offert. Ouvert du lundi au samedi jusqu'à 20h.">
+    <meta property="og:title" content="La Grande Récré Paris Beaugrenelle — Le plus grand choix de jeux et jouets du 15ᵉ">
+    <meta property="og:description" content="500 m² de sourires au cœur du Centre Commercial Beaugrenelle. De la peluche au jeu de société, du jouet d'éveil aux univers sous licence. Une équipe de passionnés vous accueille.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='24' height='24' rx='3' fill='%23D94B4B'/%3E%3Crect x='36' y='4' width='24' height='24' rx='3' fill='%23F5D94E'/%3E%3Crect x='4' y='36' width='24' height='24' rx='3' fill='%236B9E85'/%3E%3Crect x='36' y='36' width='24' height='24' rx='3' fill='%232E4057'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivoire: #F9F6F0;
+            --ardoise: #2E4057;
+            --rouge: #D94B4B;
+            --jaune: #F5D94E;
+            --vert: #6B9E85;
+            --beige-sable: #EBE1CE;
+            --ardoise-light: #3d5672;
+            --ardoise-dark: #1c2a3a;
+            --rouge-deep: #b83a3a;
+            --shadow-sm: 0 1px 3px rgba(30, 40, 50, 0.06);
+            --shadow-md: 0 4px 16px rgba(30, 40, 50, 0.10);
+            --shadow-lg: 0 12px 40px rgba(30, 40, 50, 0.14);
+            --shadow-xl: 0 24px 64px rgba(30, 40, 50, 0.18);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+            --font-body: 'Karla', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--ivoire);
+            color: var(--ardoise);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== MOTIF CUBE EN FILIGRANE ========== */
+        .cube-pattern-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect x='2' y='2' width='34' height='34' rx='3' fill='none' stroke='%232E4057' stroke-width='0.6' stroke-opacity='0.07'/%3E%3Crect x='44' y='2' width='34' height='34' rx='3' fill='none' stroke='%232E4057' stroke-width='0.6' stroke-opacity='0.05'/%3E%3Crect x='2' y='44' width='34' height='34' rx='3' fill='none' stroke='%232E4057' stroke-width='0.6' stroke-opacity='0.04'/%3E%3Crect x='44' y='44' width='34' height='34' rx='3' fill='none' stroke='%232E4057' stroke-width='0.6' stroke-opacity='0.06'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 80px 80px;
+            transition: opacity 1.8s ease-out;
+        }
+        .cube-pattern-layer.visible {
+            opacity: 1;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.6rem 1.2rem;
+            background: rgba(249, 246, 240, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(46, 64, 87, 0.07);
+            transition: box-shadow 0.4s ease, background 0.4s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(249, 246, 240, 0.96);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--ardoise);
+            flex-shrink: 0;
+        }
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            background: var(--beige-sable);
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            color: var(--ardoise);
+        }
+        .brand-name span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--rouge);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.4rem, 2vw, 1.4rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            color: var(--ardoise);
+            letter-spacing: 0.02em;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rouge);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--rouge);
+        }
+        .header-cta {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.1rem;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-smooth);
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--rouge);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(217, 75, 75, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--rouge-deep);
+            box-shadow: 0 6px 20px rgba(217, 75, 75, 0.35);
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--ardoise);
+            border: 1.5px solid var(--ardoise);
+        }
+        .btn-outline:hover {
+            background: var(--ardoise);
+            color: var(--ivoire);
+            border-color: var(--ardoise);
+            transform: translateY(-1px);
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--vert);
+            outline-offset: 3px;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 1.5rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) saturate(0.6);
+            transform: scale(1.03);
+            transition: transform 2.5s ease-out;
+        }
+        .hero.loaded .hero-bg-img img {
+            transform: scale(1);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(30, 40, 50, 0.55) 0%, rgba(30, 40, 50, 0.35) 40%, rgba(249, 246, 240, 0.7) 85%, rgba(249, 246, 240, 0.95) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: heroReveal 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--jaune);
+            color: var(--ardoise-dark);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: clamp(0.7rem, 1vw, 0.8rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 5.5vw, 4.2rem);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            max-width: 560px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .hero-actions .btn {
+            padding: 0.75rem 1.6rem;
+            font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+        }
+        .hero-actions .btn-primary {
+            background: #fff;
+            color: var(--ardoise-dark);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .hero-actions .btn-primary:hover {
+            background: var(--jaune);
+            color: var(--ardoise-dark);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+        }
+        .hero-actions .btn-outline {
+            border-color: rgba(255, 255, 255, 0.7);
+            color: #fff;
+        }
+        .hero-actions .btn-outline:hover {
+            background: #fff;
+            color: var(--ardoise-dark);
+            border-color: #fff;
+        }
+        .hero-star-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: clamp(0.75rem, 1vw, 0.85rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        .hero-star-badge .stars {
+            color: var(--jaune);
+            letter-spacing: 2px;
+        }
+
+        /* ========== SECTION COMMUNES ========== */
+        .section-padding {
+            padding: clamp(3rem, 8vw, 7rem) 1.5rem;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.95vw, 0.8rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--rouge);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--ardoise);
+            margin-bottom: 1.5rem;
+        }
+        .section-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.75;
+            color: var(--ardoise-light);
+            max-width: 640px;
+        }
+
+        /* ========== REVEAL ANIMATION ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.25s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== SECTION : UNE PLACE POUR JOUER ========== */
+        .place-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .place-image-wrap {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+        .place-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+            filter: brightness(0.9) contrast(1.05) saturate(0.7);
+            transition: transform 1.2s ease-out;
+        }
+        .place-image-wrap:hover img {
+            transform: scale(1.04);
+        }
+        .place-image-accent {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            width: clamp(60px, 10vw, 100px);
+            height: clamp(60px, 10vw, 100px);
+            background: var(--jaune);
+            border-radius: var(--radius-md);
+            z-index: 2;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .place-text .section-title {
+            position: relative;
+        }
+        .place-text .section-title::before {
+            content: '';
+            position: absolute;
+            top: -0.3em;
+            left: -0.6em;
+            width: 0.5em;
+            height: 0.5em;
+            background: var(--jaune);
+            border-radius: 3px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* ========== SECTION : CE QUI VOUS ATTEND ========== */
+        .offre-bg {
+            background: var(--beige-sable);
+            position: relative;
+        }
+        .offre-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect x='5' y='5' width='40' height='40' rx='4' fill='none' stroke='%232E4057' stroke-width='0.5' stroke-opacity='0.04'/%3E%3Crect x='55' y='5' width='40' height='40' rx='4' fill='none' stroke='%232E4057' stroke-width='0.5' stroke-opacity='0.03'/%3E%3Crect x='5' y='55' width='40' height='40' rx='4' fill='none' stroke='%232E4057' stroke-width='0.5' stroke-opacity='0.05'/%3E%3Crect x='55' y='55' width='40' height='40' rx='4' fill='none' stroke='%232E4057' stroke-width='0.5' stroke-opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .offre-bg .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .offre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+        .offre-card {
+            background: var(--ivoire);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(46, 64, 87, 0.06);
+            transition: all var(--transition-bounce);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+        .offre-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--vert);
+            transition: height 0.4s ease;
+            border-radius: 0 0 4px 0;
+        }
+        .offre-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(46, 64, 87, 0.12);
+        }
+        .offre-card:hover::after {
+            height: 100%;
+        }
+        .offre-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+        .offre-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            color: var(--ardoise);
+            margin-bottom: 0.3rem;
+        }
+        .offre-card p {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--ardoise-light);
+            line-height: 1.5;
+        }
+
+        /* ========== SECTION : SERVICES ========== */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: var(--ivoire);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(46, 64, 87, 0.07);
+            transition: all var(--transition-smooth);
+        }
+        .service-item:hover {
+            border-color: var(--rouge);
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+        .service-icon-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--rouge);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .service-item h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ardoise);
+            margin-bottom: 0.2rem;
+        }
+        .service-item p {
+            font-size: 0.85rem;
+            color: var(--ardoise-light);
+            line-height: 1.5;
+        }
+
+        /* ========== SECTION : HORAIRES & ACCÈS ========== */
+        .horaires-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+        }
+        .horaires-card {
+            background: var(--ivoire);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(46, 64, 87, 0.06);
+        }
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            background: var(--beige-sable);
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        .status-dot.open {
+            background: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+        }
+        .status-dot.closed {
+            background: #c0a8a0;
+            box-shadow: none;
+            animation: none;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 16px rgba(76, 175, 80, 0.7);
+            }
+        }
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .horaires-table td {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(46, 64, 87, 0.06);
+            color: var(--ardoise-light);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+            color: var(--ardoise);
+        }
+        .map-wrap {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(46, 64, 87, 0.08);
+            height: 100%;
+            min-height: 360px;
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+        }
+        .acces-info {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: var(--ardoise-light);
+            line-height: 1.6;
+        }
+        .acces-info strong {
+            color: var(--ardoise);
+            font-weight: 600;
+        }
+
+        /* ========== SECTION : CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+        .contact-card {
+            background: var(--ardoise);
+            color: var(--ivoire);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .contact-card .section-label {
+            color: var(--jaune);
+        }
+        .contact-card .section-title {
+            color: #fff;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--ivoire);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.6rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .contact-link:hover {
+            color: var(--jaune);
+            padding-left: 0.5rem;
+        }
+        .contact-link-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+        .contact-image-wrap {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        .contact-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 50%;
+            filter: sepia(0.2) brightness(0.85) contrast(1.05);
+            transition: transform 1.5s ease-out;
+        }
+        .contact-image-wrap:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ========== SECTION : VITRINE DU MOMENT ========== */
+        .vitrine-bg {
+            background: var(--beige-sable);
+            position: relative;
+            overflow: hidden;
+        }
+        .vitrine-showcase {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+            margin-top: 2rem;
+        }
+        .vitrine-large-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 5/4;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+        }
+        .vitrine-large-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.88) contrast(1.08) saturate(0.65);
+            transition: transform 2s ease-out;
+        }
+        .vitrine-large-img:hover img {
+            transform: scale(1.03);
+        }
+        .vitrine-text-block {
+            padding: 1rem 0;
+        }
+        .vitrine-text-block .section-title {
+            font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+        }
+        .vitrine-quote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            color: var(--ardoise);
+            line-height: 1.5;
+            padding-left: 1.5rem;
+            border-left: 4px solid var(--rouge);
+            margin: 1.5rem 0;
+        }
+
+        /* ========== AVIS GOOGLE BADGE (flottant) ========== */
+        .google-badge-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 90;
+            background: var(--ivoire);
+            border-radius: var(--radius-md);
+            padding: 0.8rem 1.2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(46, 64, 87, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: default;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: floatIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1.5s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        @keyframes floatIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .google-badge-float:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        .google-badge-float .stars {
+            color: #f4a41e;
+            letter-spacing: 1px;
+        }
+        .google-badge-float .note {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--ardoise);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--ardoise-dark);
+            color: var(--beige-sable);
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer-inner h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner p,
+        .footer-inner a {
+            font-size: 0.85rem;
+            color: var(--beige-sable);
+            line-height: 1.6;
+            text-decoration: none;
+            display: block;
+        }
+        .footer-inner a:hover {
+            color: var(--jaune);
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.78rem;
+            color: rgba(235, 225, 206, 0.6);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-bottom a {
+            color: var(--jaune);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(1.5rem, 7vw, 2.4rem);
+            }
+            .place-grid,
+            .horaires-grid,
+            .contact-grid,
+            .vitrine-showcase {
+                grid-template-columns: 1fr;
+            }
+            .place-image-wrap {
+                order: -1;
+                aspect-ratio: 16/10;
+            }
+            .place-image-accent {
+                bottom: -0.8rem;
+                right: -0.8rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.3rem;
+            }
+            .header-inner {
+                gap: 0.6rem;
+            }
+            .nav-links {
+                gap: 0.6rem;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+            .header-cta {
+                order: 2;
+            }
+            .brand {
+                order: 1;
+            }
+            .google-badge-float {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.6rem 0.9rem;
+                font-size: 0.75rem;
+            }
+            .offre-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.8rem;
+            }
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+            .map-wrap,
+            .map-wrap iframe {
+                min-height: 280px;
+            }
+            .contact-card {
+                padding: 1.8rem;
+            }
+            .vitrine-large-img {
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 90vh;
+                padding: 5rem 1rem 2rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .header-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .brand-name {
+                font-size: 0.8rem;
+            }
+            .nav-links a {
+                font-size: 0.7rem;
+            }
+            .btn {
+                padding: 0.45rem 0.8rem;
+                font-size: 0.7rem;
+            }
+            .offre-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .offre-card {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: clamp(1.3rem, 6vw, 2rem);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cube-pattern-layer" id="cubePattern" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="La Grande Récré — Accueil">
+                <div class="brand-icon">🧸</div>
+                <div class="brand-name">La Grande Récré<span>Paris Beaugrenelle</span></div>
+            </a>
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="#place">Le magasin</a>
+                <a href="#offre">Univers</a>
+                <a href="#services">Services</a>
+                <a href="#horaires">Horaires</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:+33145781106" class="btn btn-primary" aria-label="Appeler La Grande Récré">📞 Nous appeler</a>
+                <a href="#horaires" class="btn btn-outline">📍 Itinéraire</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content" id="mainContent">
+        <!-- HERO -->
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
+            <div class="hero-bg-img">
+                <img src="assets/maps-1.jpg" alt="La Grande Récré Paris Beaugrenelle — Façade du magasin" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content" style="max-width:1100px;margin:0 auto;width:100%;padding:0 1.5rem;">
+                <div class="hero-star-badge">
+                    <span class="stars">★★★★</span> 3.8/5 — 715 avis Google
+                </div>
+                <span class="hero-badge">Centre Commercial Beaugrenelle — Paris 15ᵉ</span>
+                <h1 id="heroTitle">Le plus grand choix de jeux et jouets du 15ᵉ,<br>à deux pas de votre canapé.</h1>
+                <p class="hero-subtitle">Magasin de référence au cœur de Beaugrenelle. 500&nbsp;m² de sourires, de la peluche au jeu de société, du jouet d'éveil aux univers sous licence. Ouvert du lundi au samedi jusqu'à 20h.</p>
+                <div class="hero-actions">
+                    <a href="tel:+33145781106" class="btn btn-primary">📞 01 45 78 11 06</a>
+                    <a href="#horaires" class="btn btn-outline">📍 Venir au magasin</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNE PLACE POUR JOUER -->
+        <section class="section-padding" id="place" aria-labelledby="placeTitle">
+            <div class="section-inner place-grid">
+                <div class="place-text reveal">
+                    <span class="section-label">Une place pour jouer</span>
+                    <h2 class="section-title" id="placeTitle">Notre magasin n'est pas un entrepôt.</h2>
+                    <p class="section-text">C'est un lieu où l'on prend le temps de conseiller, de tester et d'emballer avec soin. Une équipe de passionnés vous accueille au 38 rue Linois, dans l'enceinte lumineuse du Centre Commercial Beaugrenelle. Ici, chaque rayon raconte une histoire et chaque jouet trouve sa place sous les yeux des enfants… et des parents.</p>
+                    <p class="section-text" style="margin-top:0.8rem;">500&nbsp;m² dédiés au jeu sous toutes ses formes, dans une ambiance qui rappelle les grands magasins parisiens d'autrefois, avec la chaleur d'une boutique de quartier.</p>
+                </div>
+                <div class="place-image-wrap reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="Intérieur du magasin La Grande Récré Beaugrenelle" loading="lazy">
+                    <div class="place-image-accent" aria-hidden="true">🧩</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CE QUI VOUS ATTEND -->
+        <section class="section-padding offre-bg" id="offre" aria-labelledby="offreTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Ce qui vous attend</span>
+                <h2 class="section-title reveal reveal-delay-1" id="offreTitle">Des univers entiers à portée de main.</h2>
+                <p class="section-text reveal reveal-delay-1">LEGO<sup>®</sup>, Playmobil<sup>®</sup>, jeux de société, poupées, peluches, loisirs créatifs, jeux d'extérieur… La promesse d'une grande récréation, quel que soit l'âge ou l'occasion. Découvrez aussi notre sélection de jouets en bois et nos exclusivités.</p>
+                <div class="offre-grid">
+                    <div class="offre-card reveal reveal-delay-1">
+                        <div class="offre-card-icon">🧱</div>
+                        <h3>LEGO<sup>®</sup> & construction</h3>
+                        <p>Des classiques aux éditions exclusives, tout l'univers de la brique.</p>
+                    </div>
+                    <div class="offre-card reveal reveal-delay-2">
+                        <div class="offre-card-icon">🏰</div>
+                        <h3>Playmobil<sup>®</sup></h3>
+                        <p>Figurines, châteaux et véhicules pour des heures d'histoires.</p>
+                    </div>
+                    <div class="offre-card reveal reveal-delay-2">
+                        <div class="offre-card-icon">🎲</div>
+                        <h3>Jeux de société</h3>
+                        <p>Stratégie, coopération, rapidité : une sélection pour toute la famille.</p>
+                    </div>
+                    <div class="offre-card reveal reveal-delay-3">
+                        <div class="offre-card-icon">🎀</div>
+                        <h3>Poupées & peluches</h3>
+                        <p>Des compagnons tendres à câliner, des marques de confiance.</p>
+                    </div>
+                    <div class="offre-card reveal reveal-delay-3">
+                        <div class="offre-card-icon">🎨</div>
+                        <h3>Loisirs créatifs</h3>
+                        <p>Dessin, peinture, pâte à modeler : tout pour éveiller l'artiste.</p>
+                    </div>
+                    <div class="offre-card reveal reveal-delay-3">
+                        <div class="offre-card-icon">🌳</div>
+                        <h3>Jouets en bois & plein air</h3>
+                        <p>Jeux d'extérieur et jouets en bois pour renouer avec l'essentiel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SUR PLACE -->
+        <section class="section-padding" id="services" aria-labelledby="servicesTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Services sur place</span>
+                <h2 class="section-title reveal reveal-delay-1" id="servicesTitle">Parce qu'un cadeau, ça se prépare.</h2>
+                <p class="section-text reveal reveal-delay-1">Click &amp; Collect sous 2&nbsp;h, emballage cadeau offert, liste de naissance, carte de fidélité gratuite. Et une équipe formée pour vous aider à trouver le cadeau parfait — même en dernière minute.</p>
+                <div class="services-list">
+                    <div class="service-item reveal reveal-delay-1">
+                        <div class="service-icon-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Click &amp; Collect sous 2&nbsp;h</h3>
+                            <p>Commandez en ligne et récupérez votre article rapidement au magasin.</p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal reveal-delay-1">
+                        <div class="service-icon-dot" aria-hidden="true" style="background:var(--jaune);"></div>
+                        <div>
+                            <h3>Emballage cadeau offert</h3>
+                            <p>Un service soigné pour que chaque présent soit prêt à offrir.</p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal reveal-delay-2">
+                        <div class="service-icon-dot" aria-hidden="true" style="background:var(--vert);"></div>
+                        <div>
+                            <h3>Liste de naissance</h3>
+                            <p>Créez une liste personnalisée pour célébrer les nouveaux arrivants.</p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal reveal-delay-2">
+                        <div class="service-icon-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Carte de fidélité gratuite</h3>
+                            <p>Profitez d'avantages exclusifs et cumulez des points à chaque visite.</p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal reveal-delay-3">
+                        <div class="service-icon-dot" aria-hidden="true" style="background:var(--jaune);"></div>
+                        <div>
+                            <h3>Conseil personnalisé</h3>
+                            <p>Une équipe de passionnés formés pour dénicher le jouet idéal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAIRES & ACCÈS -->
+        <section class="section-padding offre-bg" id="horaires" aria-labelledby="horairesTitle">
+            <div class="section-inner horaires-grid">
+                <div class="reveal">
+                    <span class="section-label">Horaires &amp; accès</span>
+                    <h2 class="section-title" id="horairesTitle" style="font-size:clamp(1.5rem,3.5vw,2.6rem);">On vous ouvre la porte.</h2>
+                    <div class="horaires-card">
+                        <div class="status-indicator" id="statusIndicator">
+                            <span class="status-dot" id="statusDot"></span>
+                            <span id="statusText">Vérification…</span>
+                        </div>
+                        <table class="horaires-table" aria-label="Horaires d'ouverture">
+                            <tbody>
+                                <tr><td>Lundi</td><td>10h – 20h</td></tr>
+                                <tr><td>Mardi</td><td>10h – 20h</td></tr>
+                                <tr><td>Mercredi</td><td>10h – 20h</td></tr>
+                                <tr><td>Jeudi</td><td>10h – 20h</td></tr>
+                                <tr><td>Vendredi</td><td>10h – 20h</td></tr>
+                                <tr><td>Samedi</td><td>10h – 20h</td></tr>
+                                <tr><td>Dimanche</td><td>Fermé</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="acces-info" style="margin-top:1.2rem;">
+                            <p><strong>Adresse :</strong> 38 Rue Linois, Centre Commercial Beaugrenelle, 75015 Paris</p>
+                            <p><strong>Métro :</strong> Charles Michels (ligne 10)</p>
+                            <p><strong>Bus :</strong> 42, 70, 88</p>
+                            <p><strong>Parking :</strong> Beaugrenelle accessible</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrap reveal reveal-delay-1">
+                    <iframe src="https://maps.google.com/maps?q=La+Grande+R%C3%A9cr%C3%A9+38+Rue+Linois+C.C%2C+Paris&output=embed" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — La Grande Récré Paris Beaugrenelle"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section-padding" id="contact" aria-labelledby="contactTitle">
+            <div class="section-inner contact-grid">
+                <div class="contact-card reveal">
+                    <span class="section-label">Contact &amp; réservation</span>
+                    <h2 class="section-title" id="contactTitle">On est juste à côté.</h2>
+                    <p style="color:rgba(255,255,255,0.8);margin-bottom:1.5rem;line-height:1.6;">Passez nous voir — on est juste à côté du Printemps. Ou appelez-nous, on adore parler jouets.</p>
+                    <a href="tel:+33145781106" class="contact-link">
+                        <span class="contact-link-icon">📞</span>
+                        01 45 78 11 06
+                    </a>
+                    <a href="mailto:paris.beaugrenelle@lagranderecre.com" class="contact-link">
+                        <span class="contact-link-icon">✉️</span>
+                        paris.beaugrenelle@lagranderecre.com
+                    </a>
+                    <a href="#horaires" class="contact-link">
+                        <span class="contact-link-icon">📍</span>
+                        38 Rue Linois, 75015 Paris
+                    </a>
+                </div>
+                <div class="contact-image-wrap reveal reveal-delay-1">
+                    <img src="assets/maps-1.jpg" alt="La Grande Récré — Accueil chaleureux au 38 rue Linois" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- LA VITRINE DU MOMENT -->
+        <section class="section-padding vitrine-bg" id="vitrine" aria-labelledby="vitrineTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">La vitrine du moment</span>
+                <h2 class="section-title reveal reveal-delay-1" id="vitrineTitle" style="font-size:clamp(1.6rem,4vw,3rem);">Comme une devanture qui change chaque saison.</h2>
+                <div class="vitrine-showcase">
+                    <div class="vitrine-large-img reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Nouveautés et exclusivités — La Grande Récré Beaugrenelle" loading="lazy">
+                    </div>
+                    <div class="vitrine-text-block reveal reveal-delay-2">
+                        <p class="section-text">Retrouvez ici les nouveautés, les exclusivités et les coups de cœur de l'équipe. Des jouets sélectionnés avec soin, mis en scène dans notre magasin, loin des banques d'images génériques.</p>
+                        <blockquote class="vitrine-quote">
+                            «&nbsp;Chaque jouet a une histoire. Nous sommes là pour vous aider à écrire la vôtre.&nbsp;»
+                        </blockquote>
+                        <p class="section-text" style="font-size:0.9rem;">Venez découvrir notre sélection du moment en magasin. Nos vitrines changent au rythme des saisons, des fêtes et des nouvelles collections.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <h3>La Grande Récré</h3>
+                <p>Paris Beaugrenelle<br>38 Rue Linois, C.C. Beaugrenelle<br>75015 Paris</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <a href="tel:+33145781106">01 45 78 11 06</a>
+                <a href="mailto:paris.beaugrenelle@lagranderecre.com">paris.beaugrenelle@lagranderecre.com</a>
+                <a href="mailto:rgpd@lagranderecre.com">rgpd@lagranderecre.com</a>
+            </div>
+            <div>
+                <h3>Horaires</h3>
+                <p>Lundi – Samedi : 10h – 20h<br>Dimanche : Fermé</p>
+            </div>
+            <div>
+                <h3>Liens</h3>
+                <a href="#place">Le magasin</a>
+                <a href="#offre">Univers</a>
+                <a href="#services">Services</a>
+                <a href="#horaires">Accès</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 La Grande Récré — Tous droits réservés.</span>
+            <span>Site créé par <a href="https://agence.mooo.com/la-grande-recre-2" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <div class="google-badge-float" id="googleBadge" aria-label="Note Google : 3.8 sur 5 basée sur 715 avis">
+        <span style="font-size:1.2rem;">⭐</span>
+        <span class="note">3.8</span>/5
+        <span style="color:var(--ardoise-light);font-size:0.78rem;">(715 avis)</span>
+    </div>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "La Grande Récré",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "38 Rue Linois, Centre Commercial Beaugrenelle",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145781106",
+            "email": "paris.beaugrenelle@lagranderecre.com",
+            "url": "https://agence.mooo.com/la-grande-recre-2",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "715"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00",
+                    "closes": "20:00" }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.8481,
+                "longitude": 2.2784
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            const cubePattern = document.getElementById('cubePattern');
+            let lastScrollY = 0;
+
+            function onScroll() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                // Show cube pattern after scrolling past hero
+                if (scrollY > window.innerHeight * 0.5) {
+                    cubePattern.classList.add('visible');
+                } else {
+                    cubePattern.classList.remove('visible');
+                }
+                lastScrollY = scrollY;
+            }
+
+            // IntersectionObserver for reveal animations
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // Hero loaded class for image transform
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                setTimeout(() => hero.classList.add('loaded'), 150);
+            }
+
+            // Dynamic opening status
+            function updateStatus() {
+                const now = new Date();
+                const day = now.getDay(); // 0=dimanche, 1=lundi, ..., 6=samedi
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const currentTime = hour * 60 + minute;
+                const openTime = 10 * 60; // 10h00
+                const closeTime = 20 * 60; // 20h00
+
+                const statusDot = document.getElementById('statusDot');
+                const statusText = document.getElementById('statusText');
+
+                let isOpen = false;
+                if (day >= 1 && day <= 6) {
+                    // Lundi à samedi
+                    if (currentTime >= openTime && currentTime < closeTime) {
+                        isOpen = true;
+                    }
+                }
+
+                if (isOpen) {
+                    statusDot.className = 'status-dot open';
+                    statusText.textContent = 'Ouvert — jusqu\'à 20h';
+                } else {
+                    statusDot.className = 'status-dot closed';
+                    if (day === 0) {
+                        statusText.textContent = 'Fermé — réouverture lundi 10h';
+                    } else if (currentTime < openTime && day >= 1 && day <= 6) {
+                        statusText.textContent = 'Fermé — ouvre à 10h';
+                    } else if (currentTime >= closeTime && day >= 1 && day <= 6) {
+                        const tomorrow = day === 6 ? 'lundi' : 'demain';
+                        statusText.textContent = 'Fermé — réouverture ' + tomorrow + ' 10h';
+                    } else {
+                        statusText.textContent = 'Fermé — réouverture lundi 10h';
+                    }
+                }
+            }
+            updateStatus();
+            setInterval(updateStatus, 60000);
+
+            // Scroll listener
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Google badge hide on scroll for mobile (optional subtle behavior)
+            const googleBadge = document.getElementById('googleBadge');
+            let badgeTimeout;
+            window.addEventListener('scroll', () => {
+                if (badgeTimeout) clearTimeout(badgeTimeout);
+                googleBadge.style.opacity = '0.5';
+                googleBadge.style.transition = 'opacity 0.5s ease';
+                badgeTimeout = setTimeout(() => {
+                    googleBadge.style.opacity = '1';
+                }, 800);
+            }, { passive: true });
+
+            // Smooth scroll offset for fixed header
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window
+                            .pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
