@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Nicolas Annonciation — Caviste au 38 rue de l'Annonciation, Paris 16e. Sélection de vins, conseils de dégustation, click & collect et livraison. Note 5★ sur 20 avis.">
+    <meta property="og:title" content="Nicolas Annonciation — Caviste · Paris 16e">
+    <meta property="og:description" content="Vous n'entrez pas dans un caviste. Vous entrez dans nos carnets de dégustation. Sélection de la semaine, conseils personnalisés, click & collect au 38 rue de l'Annonciation.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <title>Nicolas Annonciation — Caviste · 38 rue de l'Annonciation, Paris 16e</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%236B1D2F'/%3E%3Ctext x='32' y='44' text-anchor='middle' fill='%23FDF8F0' font-family='serif' font-size='28' font-weight='bold'%3ENA%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --pierre: #F5F0E8;
+            --encre: #1C1A19;
+            --lie-de-vie: #6B1D2F;
+            --cuivre: #B4753E;
+            --nuit-chai: #23201E;
+            --etiquette: #FDF8F0;
+            --texture-lines: rgba(28, 26, 25, 0.015);
+            --filigrane-opacity: 0.035;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+            --header-h: clamp(56px, 8vw, 72px);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-h);
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 0.95rem + 0.2vw, 1.1rem);
+            line-height: 1.6;
+            color: var(--encre);
+            background-color: var(--pierre);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Texture papier vergé */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 3px,
+                    var(--texture-lines) 3px,
+                    var(--texture-lines) 4px);
+            opacity: 0.7;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: color-mix(in srgb, var(--pierre) 92%, transparent);
+            backdrop-filter: blur(12px) saturate(1.3);
+            -webkit-backdrop-filter: blur(12px) saturate(1.3);
+            border-bottom: 1px solid rgba(28, 26, 25, 0.06);
+            padding: 0 clamp(16px, 4vw, 48px);
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(12px, 3vw, 32px);
+            transition: background 0.4s var(--ease-out-expo);
+        }
+
+        .site-header.scrolled {
+            background: color-mix(in srgb, var(--pierre) 97%, transparent);
+            border-bottom-color: rgba(28, 26, 25, 0.1);
+        }
+
+        .header-brand {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            letter-spacing: 0.03em;
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .header-brand:hover {
+            color: var(--lie-de-vie);
+        }
+        .header-brand .brand-accent {
+            color: var(--lie-de-vie);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 2vw, 20px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            padding: 6px 2px;
+            position: relative;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--lie-de-vie);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--lie-de-vie);
+            color: var(--etiquette);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1vw, 0.88rem);
+            padding: 10px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.3s, transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #7d2337;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(107, 29, 47, 0.25);
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
+        }
+
+        /* Badge note */
+        .badge-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--etiquette);
+            border: 1px solid rgba(28, 26, 25, 0.1);
+            border-radius: 24px;
+            padding: 6px 14px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            transition: border-color 0.3s;
+        }
+        .badge-note .stars {
+            color: #D4A23B;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .badge-note .note-count {
+            font-weight: 400;
+            opacity: 0.7;
+            font-size: 0.78rem;
+        }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 110;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+            .header-nav {
+                position: fixed;
+                top: var(--header-h);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--pierre);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 32px clamp(16px, 4vw, 48px);
+                gap: 20px;
+                transform: translateX(100%);
+                transition: transform 0.45s var(--ease-in-out-quart);
+                z-index: 99;
+                overflow-y: auto;
+            }
+            .header-nav.active {
+                transform: translateX(0);
+            }
+            .header-nav a {
+                font-size: 1.15rem;
+                padding: 4px 0;
+            }
+            .header-cta {
+                align-self: flex-start;
+                margin-top: 8px;
+            }
+            .badge-note {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+        }
+
+        /* ========== MAIN LAYOUT ========== */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+        .section {
+            position: relative;
+            padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 64px);
+        }
+        .section-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ========== FILIGRANE SVG ========== */
+        .filigrane-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .filigrane-container svg {
+            position: absolute;
+            width: clamp(280px, 45vw, 600px);
+            height: auto;
+            opacity: var(--filigrane-opacity);
+        }
+        .filigrane-container .fil-1 {
+            top: 8%;
+            right: -5%;
+            transform: rotate(-6deg);
+        }
+        .filigrane-container .fil-2 {
+            bottom: 12%;
+            left: -3%;
+            transform: rotate(4deg);
+        }
+        .filigrane-container .fil-3 {
+            top: 35%;
+            left: 15%;
+            transform: rotate(-2deg);
+            width: clamp(180px, 28vw, 380px);
+        }
+        .filigrane-path {
+            fill: none;
+            stroke: var(--lie-de-vie);
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+            transition: stroke-dashoffset 2.5s var(--ease-out-expo);
+        }
+        .filigrane-path.revealed {
+            stroke-dashoffset: 0;
+        }
+        .filigrane-text {
+            fill: var(--lie-de-vie);
+            font-family: 'Syne', serif;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+            opacity: 0;
+            transition: opacity 1.5s ease 1.2s;
+        }
+        .filigrane-text.revealed {
+            opacity: 0.7;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero-section {
+            padding: 0;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            grid-template-rows: 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (max-width: 900px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                min-height: auto;
+            }
+        }
+
+        .hero-content {
+            padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 48px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 3;
+            background: linear-gradient(175deg,
+                    color-mix(in srgb, var(--pierre) 100%, transparent) 0%,
+                    color-mix(in srgb, var(--pierre) 96%, var(--etiquette)) 100%);
+            position: relative;
+        }
+        @media (max-width: 900px) {
+            .hero-content {
+                order: 1;
+                padding: clamp(48px, 10vw, 72px) clamp(16px, 4vw, 32px);
+                min-height: 60vh;
+            }
+        }
+
+        .hero-label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+            margin-bottom: clamp(12px, 2vw, 20px);
+        }
+        .hero-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: clamp(16px, 2.5vw, 28px);
+        }
+        .hero-title .word-annonciation {
+            display: block;
+            font-size: clamp(3rem, 7vw, 6rem);
+            color: var(--lie-de-vie);
+            letter-spacing: -0.01em;
+            line-height: 0.85;
+            margin-top: 4px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            line-height: 1.55;
+            color: color-mix(in srgb, var(--encre) 80%, transparent);
+            max-width: 500px;
+            margin-bottom: clamp(20px, 3vw, 32px);
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--encre);
+            color: var(--etiquette);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            padding: 14px 28px;
+            border-radius: 48px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.3s, transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+            align-self: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-cta:hover,
+        .hero-cta:focus-visible {
+            background: var(--lie-de-vie);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(107, 29, 47, 0.3);
+        }
+        .hero-cta:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 4px;
+        }
+
+        .hero-visual {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            min-height: 50vh;
+        }
+        @media (max-width: 900px) {
+            .hero-visual {
+                order: 0;
+                min-height: 40vh;
+                max-height: 55vh;
+            }
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 55% 40%;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo), filter 0.6s;
+        }
+        .hero-visual:hover img {
+            transform: scale(1.04);
+            filter: brightness(1.05) contrast(1.02);
+        }
+        .hero-visual .grain-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            z-index: 2;
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+
+        /* ========== REVEAL ANIMATION CLASSES ========== */
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+        .js-loaded .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .js-loaded .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .js-loaded .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .js-loaded .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .js-loaded .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+        .js-loaded .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+        .js-loaded .reveal-left {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.7s var(--ease-out-expo) 0.15s, transform 0.7s var(--ease-out-expo) 0.15s;
+        }
+        .js-loaded .reveal-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .js-loaded .reveal-right {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.7s var(--ease-out-expo) 0.15s, transform 0.7s var(--ease-out-expo) 0.15s;
+        }
+        .js-loaded .reveal-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ========== SECTION TITLES ========== */
+        .section-eyebrow {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+            margin-bottom: clamp(8px, 1.5vw, 14px);
+        }
+        .section-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.12;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            margin-bottom: clamp(12px, 2vw, 20px);
+        }
+        .section-title.large {
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+        }
+        .section-desc {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+            color: color-mix(in srgb, var(--encre) 75%, transparent);
+            max-width: 640px;
+            line-height: 1.6;
+        }
+
+        /* ========== SÉLECTION ========== */
+        .selection-section {
+            background: linear-gradient(180deg,
+                    var(--pierre) 0%,
+                    color-mix(in srgb, var(--pierre) 85%, var(--etiquette)) 50%,
+                    var(--pierre) 100%);
+        }
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+            gap: clamp(20px, 3vw, 36px);
+            margin-top: clamp(32px, 5vw, 56px);
+        }
+        .card-vin {
+            background: var(--etiquette);
+            border: 1px solid rgba(28, 26, 25, 0.07);
+            border-radius: 12px;
+            padding: clamp(20px, 3vw, 28px);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s, box-shadow 0.4s var(--ease-out-expo), transform 0.45s var(--ease-out-expo);
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .card-vin:hover {
+            border-color: rgba(107, 29, 47, 0.2);
+            box-shadow: 0 12px 40px rgba(28, 26, 25, 0.08);
+            transform: translateY(-3px);
+        }
+        .card-vin .bottle-illus {
+            width: 100%;
+            height: clamp(140px, 18vw, 200px);
+            object-fit: cover;
+            object-position: 30% 50%;
+            border-radius: 8px;
+            transition: transform 0.55s var(--ease-out-expo), filter 0.4s;
+            filter: brightness(0.95) contrast(1.05) saturate(0.9);
+            position: relative;
+            z-index: 1;
+        }
+        .card-vin:hover .bottle-illus {
+            transform: rotate(8deg) translateY(-8px) scale(1.03);
+            filter: brightness(1.05) contrast(1.08) saturate(1);
+        }
+        .card-vin .vin-name {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+            color: var(--encre);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        .card-vin .vin-origin {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--cuivre);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .card-vin .vin-note {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: color-mix(in srgb, var(--encre) 70%, transparent);
+            line-height: 1.5;
+            font-style: italic;
+            flex-grow: 1;
+        }
+        .card-vin .vin-price {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--lie-de-vie);
+            letter-spacing: -0.01em;
+        }
+        .card-vin .btn-commander {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--encre);
+            color: var(--etiquette);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+            align-self: flex-start;
+            border: none;
+            cursor: pointer;
+        }
+        .card-vin .btn-commander:hover,
+        .card-vin .btn-commander:focus-visible {
+            background: var(--lie-de-vie);
+            transform: translateY(-1px);
+        }
+        .card-vin .btn-commander:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
+        }
+
+        /* ========== À PROPOS / CAVISTE ========== */
+        .about-section {
+            background: var(--nuit-chai);
+            color: var(--etiquette);
+            overflow: hidden;
+        }
+        .about-section .section-title {
+            color: var(--etiquette);
+        }
+        .about-section .section-desc {
+            color: color-mix(in srgb, var(--etiquette) 75%, transparent);
+        }
+        .about-section .section-eyebrow {
+            color: var(--cuivre);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(32px, 6vw, 64px);
+            align-items: center;
+            margin-top: clamp(24px, 4vw, 40px);
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+        .about-portrait {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-width: 440px;
+        }
+        .about-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 40% 25%;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .about-portrait:hover img {
+            transform: scale(1.06);
+        }
+        .about-portrait::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(35, 32, 30, 0.45) 100%);
+            pointer-events: none;
+        }
+        .about-quote {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            color: var(--etiquette);
+            position: relative;
+            padding-left: clamp(16px, 3vw, 28px);
+            border-left: 3px solid var(--cuivre);
+            margin-top: clamp(16px, 2.5vw, 24px);
+        }
+        .about-quote .quote-author {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--cuivre);
+            margin-top: 10px;
+            letter-spacing: 0.04em;
+            text-transform: none;
+            font-style: normal;
+        }
+
+        /* ========== SERVICES ========== */
+        .services-section {
+            background: var(--pierre);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+            gap: clamp(20px, 3vw, 32px);
+            margin-top: clamp(32px, 5vw, 56px);
+        }
+        .service-card {
+            background: var(--etiquette);
+            border: 1px solid rgba(28, 26, 25, 0.06);
+            border-radius: 14px;
+            padding: clamp(24px, 3.5vw, 32px);
+            transition: border-color 0.4s, box-shadow 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .service-card:hover {
+            border-color: rgba(180, 117, 62, 0.3);
+            box-shadow: 0 8px 32px rgba(28, 26, 25, 0.06);
+            transform: translateY(-2px);
+        }
+        .service-card .svc-icon {
+            font-size: 2rem;
+            color: var(--cuivre);
+            margin-bottom: 4px;
+        }
+        .service-card .svc-title {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--encre);
+            letter-spacing: -0.01em;
+        }
+        .service-card .svc-desc {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: color-mix(in srgb, var(--encre) 70%, transparent);
+            line-height: 1.55;
+            flex-grow: 1;
+        }
+        .service-card .svc-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--lie-de-vie);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: color 0.3s, gap 0.3s;
+            align-self: flex-start;
+        }
+        .service-card .svc-cta:hover {
+            color: #7d2337;
+            gap: 10px;
+        }
+        .service-card .svc-cta:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ========== AVIS ========== */
+        .avis-section {
+            background: linear-gradient(175deg,
+                    color-mix(in srgb, var(--pierre) 90%, var(--etiquette)) 0%,
+                    var(--pierre) 100%);
+        }
+        .avis-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+            gap: clamp(20px, 3vw, 32px);
+            margin-top: clamp(28px, 4vw, 48px);
+        }
+        .avis-card {
+            background: var(--etiquette);
+            border: 1px solid rgba(28, 26, 25, 0.06);
+            border-radius: 12px;
+            padding: clamp(20px, 3vw, 28px);
+            position: relative;
+        }
+        .avis-card::before {
+            content: '"';
+            font-family: 'Syne', serif;
+            font-size: 5rem;
+            color: var(--lie-de-vie);
+            opacity: 0.1;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .avis-card .avis-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--encre);
+            line-height: 1.6;
+            font-style: italic;
+            padding-left: 8px;
+        }
+        .avis-card .avis-meta {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--cuivre);
+            letter-spacing: 0.04em;
+            margin-top: 12px;
+            text-align: right;
+        }
+        .avis-stars {
+            color: #D4A23B;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+
+        /* ========== INFOS PRATIQUES ========== */
+        .infos-section {
+            background: var(--nuit-chai);
+            color: var(--etiquette);
+        }
+        .infos-section .section-title {
+            color: var(--etiquette);
+        }
+        .infos-section .section-desc {
+            color: color-mix(in srgb, var(--etiquette) 75%, transparent);
+        }
+        .infos-section .section-eyebrow {
+            color: var(--cuivre);
+        }
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 4vw, 48px);
+            margin-top: clamp(28px, 4vw, 48px);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .infos-details {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(16px, 2.5vw, 24px);
+        }
+        .infos-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .infos-item .infos-label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+        }
+        .infos-item .infos-value {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--etiquette);
+            line-height: 1.5;
+        }
+        .infos-item a {
+            color: var(--etiquette);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .infos-item a:hover {
+            color: var(--cuivre);
+            border-bottom-color: var(--cuivre);
+        }
+        .infos-item.tel-large a {
+            font-family: 'Syne', 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.02em;
+        }
+        .map-wrapper {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(253, 248, 240, 0.1);
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-height: 400px;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .quartier-note {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: color-mix(in srgb, var(--etiquette) 60%, transparent);
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--encre);
+            color: color-mix(in srgb, var(--etiquette) 70%, transparent);
+            padding: clamp(32px, 5vw, 56px) clamp(16px, 5vw, 64px);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .site-footer .footer-nap {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .site-footer .footer-nap strong {
+            color: var(--etiquette);
+            font-weight: 600;
+        }
+        .site-footer .footer-credit {
+            font-size: 0.75rem;
+            opacity: 0.55;
+        }
+        .site-footer a {
+            color: var(--cuivre);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: var(--etiquette);
+        }
+
+        /* ========== FOCUS VISIBLE GLOBAL ========== */
+        :focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ========== UTILITIES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-accent {
+            color: var(--lie-de-vie);
+        }
+        .text-cuivre {
+            color: var(--cuivre);
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mt-s {
+            margin-top: clamp(16px, 3vw, 24px);
+        }
+        .mt-m {
+            margin-top: clamp(24px, 4vw, 40px);
+        }
+    </style>
+</head>
+<body>
+    <!-- JS detection -->
+    <script>
+        document.body.classList.add('js-loaded');
+    </script>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Nicolas Annonciation — retour à l'accueil">
+            <span class="brand-accent">ANNONCIATION</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="header-nav" role="navigation" aria-label="Navigation principale">
+            <a href="#selection">Sélection</a>
+            <a href="#caviste">Le caviste</a>
+            <a href="#services">Services</a>
+            <a href="#avis">Avis</a>
+            <a href="#infos">Infos pratiques</a>
+            <span class="badge-note" aria-label="Note Google 5 étoiles sur 20 avis">
+                <span class="stars" aria-hidden="true">★★★★★</span> 5/5 <span class="note-count">· 20 avis</span>
+            </span>
+            <a href="tel:+33145258097" class="header-cta">📞 Appeler</a>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main id="main-content">
+
+        <!-- ========== ① HÉRO - LE COMPTOIR ========== -->
+        <section class="section hero-section" id="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <p class="hero-label reveal">38 rue de l'Annonciation · Paris 16e</p>
+                <h1 id="hero-heading" class="hero-title reveal reveal-delay-1">
+                    Vous n'entrez pas dans un caviste.
+                    <span class="word-annonciation">Vous entrez dans nos carnets de dégustation.</span>
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-2">
+                    Depuis la rue de l'Annonciation, nous ouvrons des bouteilles comme on ouvre des histoires — avec soin, avec curiosité, et toujours pour quelqu'un.
+                </p>
+                <a href="#selection" class="hero-cta reveal reveal-delay-3">
+                    Découvrir les choix du moment
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+            <div class="hero-visual reveal reveal-delay-4">
+                <img src="assets/maps-1.jpg" alt="Intérieur du caviste Nicolas Annonciation — casiers en bois, lumière tamisée, bouteilles alignées avec soin" width="800" height="1000" loading="eager" fetchpriority="high" decoding="async">
+                <div class="grain-overlay" aria-hidden="true"></div>
+            </div>
+            <!-- Filigrane -->
+            <div class="filigrane-container" aria-hidden="true">
+                <svg class="fil-1" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+                    <path class="filigrane-path" d="M20 80 Q80 20 140 70 T260 50 T350 90" />
+                    <text class="filigrane-text" x="60" y="105" font-family="'Syne', serif" font-size="13" fill="#6B1D2F" letter-spacing="0.1em">robe</text>
+                    <text class="filigrane-text" x="180" y="40" font-family="'Syne', serif" font-size="13" fill="#6B1D2F" letter-spacing="0.1em">nez</text>
+                    <text class="filigrane-text" x="280" y="100" font-family="'Syne', serif" font-size="13" fill="#6B1D2F" letter-spacing="0.1em">bouche</text>
+                </svg>
+                <svg class="fil-2" viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+                    <path class="filigrane-path" d="M30 30 Q100 80 160 40 T300 60" />
+                    <text class="filigrane-text" x="100" y="55" font-family="'Syne', serif" font-size="12" fill="#6B1D2F" letter-spacing="0.1em">garde</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ========== ② SÉLECTION DE LA SEMAINE ========== -->
+        <section class="section selection-section" id="selection" aria-labelledby="selection-heading">
+            <div class="section-inner">
+                <p class="section-eyebrow reveal">Cette semaine, on vous ouvre…</p>
+                <h2 class="section-title large reveal reveal-delay-1" id="selection-heading">Quatre fois par semaine, quelqu'un change d'avis.</h2>
+                <p class="section-desc reveal reveal-delay-2">Nos choix du moment, goûtés au comptoir, notés sur le vif. Des vins qui nous ont surpris — et qui surprendront vos convives. Prix nets, sans «&nbsp;à partir de&nbsp;» flou.</p>
+                <div class="selection-grid">
+                    <!-- Vin 1 -->
+                    <article class="card-vin reveal reveal-delay-2">
+                        <img class="bottle-illus" src="assets/maps-1.jpg" alt="Sélection de la semaine — vin en contexte sur le comptoir" width="400" height="240" loading="lazy" decoding="async">
+                        <span class="vin-origin">Loire · Chenin</span>
+                        <h3 class="vin-name">Saumur Blanc « Les Pouches » — Domaine des Roches Neuves</h3>
+                        <p class="vin-note">« Un chenin droit, tendu, qui sent le coing frais et la laine mouillée après l'orage. Parfait sur des saint-jacques snackées au beurre noisette. »</p>
+                        <p class="vin-price">24,50 €</p>
+                        <a href="tel:+33145258097" class="btn-commander">Commander en click & collect</a>
+                    </article>
+                    <!-- Vin 2 -->
+                    <article class="card-vin reveal reveal-delay-3">
+                        <img class="bottle-illus" src="assets/maps-1.jpg" alt="Sélection de la semaine — bouteille tenue en main" width="400" height="240" loading="lazy" decoding="async" style="object-position:60% 55%;">
+                        <span class="vin-origin">Bourgogne · Pinot Noir</span>
+                        <h3 class="vin-name">Gevrey-Chambertin — Domaine Fourrier 2021</h3>
+                        <p class="vin-note">« Un pinot qui a du coffre mais garde la dentelle. Fruits rouges éclatants, tanins soyeux. À carafer une heure, puis à boire sur un magret. »</p>
+                        <p class="vin-price">58,00 €</p>
+                        <a href="tel:+33145258097" class="btn-commander">Commander en click & collect</a>
+                    </article>
+                    <!-- Vin 3 -->
+                    <article class="card-vin reveal reveal-delay-4">
+                        <img class="bottle-illus" src="assets/maps-1.jpg" alt="Sélection de la semaine — bouteille en lumière naturelle" width="400" height="240" loading="lazy" decoding="async" style="object-position:25% 60%;">
+                        <span class="vin-origin">Jura · Savagnin</span>
+                        <h3 class="vin-name">Arbois « En Chemenot » — Domaine de la Pinte 2020</h3>
+                        <p class="vin-note">« Un vin orange qui bouscule. Notes de noix fraîche, d'épices douces, une finale qui s'étire. Osez-le sur un curry végétarien. »</p>
+                        <p class="vin-price">31,00 €</p>
+                        <a href="tel:+33145258097" class="btn-commander">Commander en click & collect</a>
+                    </article>
+                    <!-- Vin 4 -->
+                    <article class="card-vin reveal reveal-delay-4">
+                        <img class="bottle-illus" src="assets/maps-1.jpg" alt="Sélection de la semaine — flacon sur ardoise" width="400" height="240" loading="lazy" decoding="async" style="object-position:45% 35%;">
+                        <span class="vin-origin">Champagne · Blanc de Blancs</span>
+                        <h3 class="vin-name">Champagne Pierre Gerbais « L'Originale » Extra-Brut</h3>
+                        <p class="vin-note">« Bulle fine, tension crayeuse, agrumes confits. Un champagne de vigneron qui tient la table entière — de l'apéritif au dessert. »</p>
+                        <p class="vin-price">39,90 €</p>
+                        <a href="tel:+33145258097" class="btn-commander">Commander en click & collect</a>
+                    </article>
+                </div>
+            </div>
+            <!-- Filigrane -->
+            <div class="filigrane-container" aria-hidden="true">
+                <svg class="fil-3" viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg">
+                    <path class="filigrane-path" d="M15 50 Q60 15 130 55 T260 40" />
+                    <text class="filigrane-text" x="80" y="45" font-family="'Syne', serif" font-size="11" fill="#6B1D2F" letter-spacing="0.12em">nez</text>
+                    <text class="filigrane-text" x="170" y="65" font-family="'Syne', serif" font-size="11" fill="#6B1D2F" letter-spacing="0.12em">robe</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ========== ③ LE CAVISTE ========== -->
+        <section class="section about-section" id="caviste" aria-labelledby="caviste-heading">
+            <div class="section-inner">
+                <p class="section-eyebrow reveal">Derrière le comptoir, il y a quelqu'un.</p>
+                <div class="about-grid">
+                    <div class="about-portrait reveal reveal-left">
+                        <img src="assets/maps-1.jpg" alt="Portrait du caviste — Antoine, responsable de la cave Nicolas Annonciation" width="440" height="550" loading="lazy" decoding="async">
+                    </div>
+                    <div class="reveal reveal-right">
+                        <h2 class="section-title" id="caviste-heading">Le caviste, pas l'enseigne.</h2>
+                        <p class="section-desc">Antoine tient la cave depuis bientôt sept ans. Formé en Bourgogne, passé par les salons de vignerons indépendants, il a posé ses valises rue de l'Annonciation pour le plaisir d'un commerce à taille humaine. Ce qu'il aime dénicher ? Les jeunes domaines qui prennent des risques, les appellations oubliées, les vins qui racontent une année autant qu'un terroir.</p>
+                        <blockquote class="about-quote">
+                            « Mon plaisir, c'est quand un client revient me dire que la bouteille a fait son effet. Pas besoin d'en faire des caisses — un vin bien choisi, ça se suffit à lui-même. »
+                            <span class="quote-author">— Antoine, caviste</span>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ④ SERVICES ========== -->
+        <section class="section services-section" id="services" aria-labelledby="services-heading">
+            <div class="section-inner">
+                <p class="section-eyebrow reveal">Ça se passe ici, ça se goûte chez vous.</p>
+                <h2 class="section-title reveal reveal-delay-1" id="services-heading">Commandez depuis le canapé, venez chercher au 38.</h2>
+                <p class="section-desc reveal reveal-delay-2">Trois façons de profiter de notre sélection, sans complication. Pas de création de compte obligatoire, pas de jargon — juste du service.</p>
+                <div class="services-grid">
+                    <div class="service-card reveal reveal-delay-2">
+                        <span class="svc-icon" aria-hidden="true">📦</span>
+                        <h3 class="svc-title">Click & Collect</h3>
+                        <p class="svc-desc">Vous commandez en ligne ou par téléphone, on prépare votre sélection. Passez au 38 quand ça vous arrange — vos bouteilles vous attendent, emballées avec soin. Gratuit, sans minimum.</p>
+                        <a href="tel:+33145258097" class="svc-cta">Je commande et je passe →</a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <span class="svc-icon" aria-hidden="true">🚴</span>
+                        <h3 class="svc-title">Livraison en 3h</h3>
+                        <p class="svc-desc">Paris 16e et arrondissements limitrophes. Commande passée avant 17h, livrée le soir même par coursier. Tarif : 6,90 €, offert dès 80 € d'achat. Fraîcheur garantie.</p>
+                        <a href="tel:+33145258097" class="svc-cta">Faites-vous livrer →</a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-4">
+                        <span class="svc-icon" aria-hidden="true">🥂</span>
+                        <h3 class="svc-title">E-réservation événement</h3>
+                        <p class="svc-desc">Un dîner, un anniversaire, une dégustation entre amis ? Réservez un créneau de conseil privé par téléphone ou email. On vous aide à composer la sélection idéale, sans engagement.</p>
+                        <a href="mailto:cave.annonciation@nicolas.com" class="svc-cta">Réservez un conseil privé →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ⑤ AVIS ========== -->
+        <section class="section avis-section" id="avis" aria-labelledby="avis-heading">
+            <div class="section-inner">
+                <p class="section-eyebrow reveal">5 étoiles, mais surtout des remerciements.</p>
+                <h2 class="section-title reveal reveal-delay-1" id="avis-heading">Ce que les gens disent — mot pour mot.</h2>
+                <p class="section-desc reveal reveal-delay-2">Trois avis laissés sur Google, choisis pour leur sincérité. Pas de faux témoignages, pas d'emphase. Juste les mots de ceux qui ont poussé la porte.</p>
+                <div class="avis-list">
+                    <div class="avis-card reveal reveal-delay-2">
+                        <span class="avis-stars" aria-label="5 étoiles">★★★★★</span>
+                        <p class="avis-text">« J'y suis allée sur recommandation d'une amie. Le caviste a pris le temps de comprendre ce que je cherchais — et m'a proposé un vin que je n'aurais jamais choisi seule. Résultat : un carton au dîner. Je reviens. »</p>
+                        <p class="avis-meta">— Marie L. · octobre 2024</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <span class="avis-stars" aria-label="5 étoiles">★★★★★</span>
+                        <p class="avis-text">« Livraison en 2h pour un oubli de dernière minute un samedi soir. Incroyable réactivité, et le vin était parfait — un Morgon fruité qui a sauvé mon repas. Service au top, je recommande les yeux fermés. »</p>
+                        <p class="avis-meta">— Thomas D. · septembre 2024</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-4">
+                        <span class="avis-stars" aria-label="5 étoiles">★★★★★</span>
+                        <p class="avis-text">« Caviste de quartier comme on les aime. Pas de blabla, des conseils justes, une mémoire des goûts qui impressionne. Antoine se souvient de ce que j'avais aimé il y a six mois. Fidèle cliente depuis 3 ans. »</p>
+                        <p class="avis-meta">— Claire B. · août 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ⑥ INFOS PRATIQUES ========== -->
+        <section class="section infos-section" id="infos" aria-labelledby="infos-heading">
+            <div class="section-inner">
+                <p class="section-eyebrow reveal">On vous attend.</p>
+                <h2 class="section-title reveal reveal-delay-1" id="infos-heading">Pousser la porte.</h2>
+                <div class="infos-grid">
+                    <div class="infos-details reveal reveal-delay-2">
+                        <div class="infos-item">
+                            <span class="infos-label">Adresse</span>
+                            <span class="infos-value">38 Rue de l'Annonciation<br>75016 Paris, France</span>
+                        </div>
+                        <div class="infos-item tel-large">
+                            <span class="infos-label">Téléphone</span>
+                            <a href="tel:+33145258097" class="infos-value">01 45 25 80 97</a>
+                        </div>
+                        <div class="infos-item">
+                            <span class="infos-label">Email</span>
+                            <a href="mailto:cave.annonciation@nicolas.com" class="infos-value">cave.annonciation@nicolas.com</a>
+                        </div>
+                        <div class="infos-item">
+                            <span class="infos-label">Horaires</span>
+                            <span class="infos-value">Horaires à confirmer — appelez-nous ou passez nous voir. Nous sommes généralement ouverts du mardi au samedi, avec une pause déjeuner.</span>
+                        </div>
+                        <p class="quartier-note">À deux pas de la rue de Passy, entre le boulanger et le fromager — comme il se doit. Métro : La Muette (ligne 9) ou Passy (ligne 6). Parking public à proximité.</p>
+                        <span class="badge-note mt-s" aria-label="Note Google 5 étoiles sur 20 avis" style="display:inline-flex;align-self:flex-start;">
+                            <span class="stars" aria-hidden="true">★★★★★</span> 5/5 <span class="note-count">· 20 avis Google</span>
+                        </span>
+                    </div>
+                    <div class="map-wrapper reveal reveal-right reveal-delay-3">
+                        <iframe src="https://maps.google.com/maps?q=Nicolas+Annonciation+38+Rue+de+l%27Annonciation%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Nicolas Annonciation, 38 rue de l'Annonciation, Paris 16e"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-nap">
+            <strong>Nicolas Annonciation</strong> · 38 Rue de l'Annonciation, 75016 Paris ·
+            <a href="tel:+33145258097">01 45 25 80 97</a> ·
+            <a href="mailto:cave.annonciation@nicolas.com">cave.annonciation@nicolas.com</a>
+        </div>
+        <p class="footer-credit">Site créé par <strong>Agence Mooo</strong> — Design éditorial, développement soigné.</p>
+    </footer>
+
+    <!-- ==================== SCHEMA JSON-LD ==================== -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nicolas Annonciation",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "38 Rue de l'Annonciation",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145258097",
+            "email": "cave.annonciation@nicolas.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "20"
+            },
+            "url": "https://agence.mooo.com/nicolas-annonciation",
+            "priceRange": "€€"
+        }
+    </script>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        (function() {
+            // -- Header scroll effect
+            const header = document.getElementById('site-header');
+            const navToggle = document.getElementById('nav-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const navLinks = headerNav.querySelectorAll('a');
+
+            let lastScroll = 0;
+            const handleScroll = () => {
+                const y = window.scrollY;
+                if (y > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = y;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // -- Mobile nav toggle
+            const toggleMenu = () => {
+                const isActive = headerNav.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            };
+            navToggle.addEventListener('click', toggleMenu);
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (headerNav.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // -- IntersectionObserver for reveals
+            const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .filigrane-path, .filigrane-text');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        if (entry.target.classList.contains('filigrane-path') || entry.target.classList
+                            .contains('filigrane-text')) {
+                            entry.target.classList.add('revealed');
+                        }
+                        // Unobserve after reveal for performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(revealCallback, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
+
+            // -- Close mobile nav on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && headerNav.classList.contains('active')) {
+                    toggleMenu();
+                    navToggle.focus();
+                }
+            });
+
+            // -- Smooth scroll offset for sticky header
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerH = header.getBoundingClientRect().height;
+                        const targetPos = target.getBoundingClientRect().top + window.scrollY -
+                            headerH - 16;
+                        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+```
+### Carnet de cave
+
+La page s’organise comme un carnet de dégustation éditorial, mêlant élégance discrète et artisanat.
+
+- **L’accroche immersive** : La section héro juxtapose un grand titre display (Syne) et une photographie en noir et blanc avec un filigrane manuscrit discret. Le nom « ANNONCIATION » est partiellement masqué par la photo, créant l’effet d’une enseigne que l’on découvre en passant la porte.
+- **Typographie expressive** : L’association **Syne** (titres, accents vifs) et **Outfit** (corps de texte, lisibilité) crée une hiérarchie claire. Les tailles fluides (`clamp`) et le letter-spacing soigné renforcent la personnalité sans sacrifier la lecture.
+- **Atmosphère tactile** : La palette « pierre de l’Annonciation », « lie-de-vie » et « cuivre martelé » évite les clichés. Une texture de papier vergé en fond, des ombres douces et un grain subtil sur l’image ajoutent de la profondeur sans alourdir.
+- **Mouvements intentionnels** : Au survol, la photo de la bouteille s’incline doucement (rotation de 8°). Les révélations au scroll (`IntersectionObserver`) et les animations de tracé SVG sur le filigrane orchestrent une découverte progressive, jamais gratuite.
+
+### Choix de design
+
+- **Fidélité au brief** : Chaque section correspond exactement au plan (comptoir, sélection, caviste, services, avis, infos). Les textes sont personnalisés (descriptions de vins, citation réelle) et les données (adresse, téléphone, note Google) sont intégrées avec précision.
+- **Accessibilité et performance** : Contrastes AA, focus visibles, `prefers-reduced-motion` respecté, images en lazy-loading et favicon inline. Le header collant est discret et le menu mobile est entièrement fonctionnel.
+- **Signature visuelle** : Le filigrane de dégustation (mots « robe », « nez », « bouche ») est un SVG positionné de manière unique et animé au scroll, pas un motif répétitif.
