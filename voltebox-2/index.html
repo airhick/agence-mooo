@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLTEBOX — Compteurs électriques, centrales Modbus & transformateurs à Issy-les-Moulineaux</title>
+    <meta name="description" content="VOLTEBOX, magasin d'électricité à Issy-les-Moulineaux. Compteurs certifiés MID, centrales de mesure Modbus, transformateurs de courant. Conseil expert, stock disponible, 5★ sur Google.">
+    <meta property="og:title" content="VOLTEBOX — Vos mesures commencent rue de Verdun">
+    <meta property="og:description" content="Compteurs certifiés MID, centrales Modbus et transformateurs au meilleur prix — avec une équipe qui vous répond en vrai, à Issy-les-Moulineaux.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231B5E8A'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='36' font-weight='700' fill='%23F9F7F2' font-family='sans-serif'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --papier-dielectrique: #F9F7F2;
+            --bleu-jauge: #1E262E;
+            --bakelite-claire: #ECE5DA;
+            --bleu-MID: #1B5E8A;
+            --orange-securite: #E05A1F;
+            --rouge-sectionneur: #C04414;
+            --display: 'Libre Baskerville', 'Times New Roman', serif;
+            --body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+            --grain-opacity: 0.03;
+            --shadow-subtle: 0 1px 3px rgba(30, 38, 46, 0.06), 0 1px 2px rgba(30, 38, 46, 0.04);
+            --shadow-card: 0 4px 16px rgba(30, 38, 46, 0.07), 0 1px 4px rgba(30, 38, 46, 0.05);
+            --shadow-elevated: 0 8px 32px rgba(30, 38, 46, 0.1), 0 2px 8px rgba(30, 38, 46, 0.06);
+            --radius-sm: 3px;
+            --radius-md: 6px;
+            --radius-lg: 10px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--papier-dielectrique);
+            color: var(--bleu-jauge);
+            font-family: var(--body);
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--bleu-MID);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(249, 247, 242, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--bakelite-claire);
+            padding: 0 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: var(--shadow-subtle);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 1.5rem;
+        }
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--bleu-MID);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+        }
+        .logo-text {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--bleu-jauge);
+            letter-spacing: 0.03em;
+            line-height: 1;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-list a {
+            display: inline-block;
+            padding: 0.45rem 0.8rem;
+            text-decoration: none;
+            color: var(--bleu-jauge);
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s ease, color 0.2s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            background: var(--bakelite-claire);
+            color: var(--bleu-MID);
+        }
+        .nav-cta {
+            background: var(--orange-securite) !important;
+            color: #fff !important;
+            font-weight: 600 !important;
+            padding: 0.55rem 1.1rem !important;
+            border-radius: var(--radius-md) !important;
+            transition: background 0.25s ease, transform 0.15s ease !important;
+            letter-spacing: 0.03em !important;
+            box-shadow: 0 2px 10px rgba(224, 90, 31, 0.25);
+        }
+        .nav-cta:hover {
+            background: var(--rouge-sectionneur) !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(224, 90, 31, 0.35);
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--bleu-jauge);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .nav-list {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(249, 247, 242, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0.3rem;
+                border-bottom: 2px solid var(--bakelite-claire);
+                transform: translateY(-120%);
+                transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+                z-index: 999;
+                box-shadow: var(--shadow-elevated);
+            }
+            .nav-list.open {
+                transform: translateY(0);
+            }
+            .nav-list a {
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: var(--bleu-jauge);
+            color: #fff;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) contrast(1.05) saturate(0.6);
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(30, 38, 46, 0.75) 0%, rgba(27, 94, 138, 0.5) 50%, rgba(30, 38, 46, 0.7) 100%);
+            mix-blend-mode: multiply;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.015) 2px, rgba(255, 255, 255, 0.015) 4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            width: 100%;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(249, 247, 242, 0.12);
+            border: 1px solid rgba(249, 247, 242, 0.25);
+            border-radius: 30px;
+            padding: 0.45rem 1.2rem;
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(6px);
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .hero-badge .star {
+            color: #FFB74D;
+            font-size: 1rem;
+        }
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(2.4rem, 7vw, 4.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.015em;
+            margin-bottom: 1.2rem;
+            max-width: 800px;
+            animation: fadeInUp 0.8s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero-title em {
+            font-style: normal;
+            color: var(--orange-securite);
+            position: relative;
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            line-height: 1.55;
+            max-width: 640px;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.015em;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--orange-securite);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(224, 90, 31, 0.4);
+        }
+        .btn-primary:hover {
+            background: var(--rouge-sectionneur);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(224, 90, 31, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounceDown 2s ease-in-out infinite;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .hero-scroll-indicator span {
+            display: block;
+            width: 1px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* ========== SECTION GENERICS ========== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bleu-MID);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--bleu-jauge);
+            margin-bottom: 1rem;
+        }
+        .section-intro {
+            font-family: var(--body);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: rgba(30, 38, 46, 0.75);
+            max-width: 640px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        .divider-accent {
+            width: 60px;
+            height: 3px;
+            background: var(--orange-securite);
+            border-radius: 2px;
+            margin: 0.5rem 0 2rem;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== SECTION 1 : LE MAGASIN ========== */
+        .magasin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .magasin-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            aspect-ratio: 4/3;
+        }
+        .magasin-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .magasin-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(30, 38, 46, 0.08);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        .magasin-image-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--rouge-sectionneur);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            z-index: 2;
+            box-shadow: 0 3px 12px rgba(192, 68, 20, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .magasin-content .google-badge-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: 20px;
+            padding: 0.35rem 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            color: var(--bleu-jauge);
+            box-shadow: var(--shadow-subtle);
+        }
+        .magasin-content .google-badge-inline .star {
+            color: #F9A825;
+            font-size: 1rem;
+        }
+        .magasin-content p {
+            margin-bottom: 1.2rem;
+            color: rgba(30, 38, 46, 0.8);
+            line-height: 1.7;
+        }
+        .magasin-address-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bakelite-claire);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--bleu-jauge);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .magasin-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .magasin-image-wrapper {
+                aspect-ratio: 3/2;
+            }
+        }
+
+        /* ========== SECTION 2 : GUIDES ========== */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .guide-card {
+            background: #fff;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.6rem;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .guide-card:hover {
+            box-shadow: var(--shadow-card);
+            transform: translateY(-3px);
+            border-color: var(--bleu-MID);
+        }
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1.6rem;
+            right: 1.6rem;
+            height: 2px;
+            background: var(--bleu-MID);
+            border-radius: 0 0 2px 2px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .guide-card:hover::before {
+            opacity: 1;
+        }
+        .guide-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bakelite-claire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--bleu-MID);
+            flex-shrink: 0;
+        }
+        .guide-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+            color: var(--bleu-jauge);
+            letter-spacing: 0.01em;
+        }
+        .guide-card p {
+            font-size: 0.9rem;
+            color: rgba(30, 38, 46, 0.7);
+            line-height: 1.55;
+            flex-grow: 1;
+        }
+        .guide-card .btn-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--bleu-MID);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            align-self: flex-start;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .guide-card .btn-link:hover {
+            color: var(--orange-securite);
+        }
+        .guide-card .btn-link::after {
+            content: '→';
+            transition: transform 0.25s ease;
+        }
+        .guide-card .btn-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ========== SECTION 3 : UNIVERS TECHNIQUES ========== */
+        .univers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .univers-card {
+            background: #fff;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .univers-card:hover {
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+        .univers-card-image {
+            aspect-ratio: 3/2;
+            background: var(--bakelite-claire);
+            position: relative;
+            overflow: hidden;
+        }
+        .univers-card-image .placeholder-product {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #d5d0c8 0%, #e8e3da 50%, #d5d0c8 100%);
+            font-size: 3rem;
+            color: var(--bleu-MID);
+            opacity: 0.6;
+        }
+        .univers-card-body {
+            padding: 1.6rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .univers-card-body h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--bleu-jauge);
+            letter-spacing: 0.01em;
+        }
+        .univers-card-body p {
+            font-size: 0.9rem;
+            color: rgba(30, 38, 46, 0.7);
+            line-height: 1.55;
+            flex-grow: 1;
+        }
+        .univers-card-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-sm-outline {
+            border: 1.5px solid var(--bleu-MID);
+            color: var(--bleu-MID);
+            background: transparent;
+        }
+        .btn-sm-outline:hover {
+            background: var(--bleu-MID);
+            color: #fff;
+        }
+        .btn-sm-ghost {
+            color: var(--orange-securite);
+            background: transparent;
+            font-weight: 500;
+        }
+        .btn-sm-ghost:hover {
+            color: var(--rouge-sectionneur);
+        }
+        .certif-badge {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--bakelite-claire);
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--bleu-jauge);
+        }
+        .certif-badge .cert-icon {
+            color: var(--bleu-MID);
+            font-weight: 700;
+        }
+
+        @media (max-width: 860px) {
+            .univers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 560px) {
+            .univers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION 4 : AVIS ========== */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .avis-card {
+            background: #fff;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.6rem;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .avis-card:hover {
+            box-shadow: var(--shadow-card);
+        }
+        .avis-card .stars {
+            color: #F9A825;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+        .avis-card blockquote {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 0.95rem;
+            color: rgba(30, 38, 46, 0.85);
+            line-height: 1.5;
+            margin: 0;
+            flex-grow: 1;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 2px solid var(--bleu-MID);
+        }
+        .avis-card .author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu-jauge);
+            letter-spacing: 0.02em;
+        }
+        .avis-card .author-role {
+            font-size: 0.75rem;
+            color: rgba(30, 38, 46, 0.55);
+        }
+
+        /* ========== SECTION 5 : CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-info-block {
+            background: #fff;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-subtle);
+        }
+        .contact-info-block h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--bleu-jauge);
+        }
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--bleu-jauge);
+        }
+        .info-row .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--bakelite-claire);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--bleu-MID);
+            margin-top: 2px;
+        }
+        .info-row a {
+            color: var(--bleu-MID);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .info-row a:hover {
+            color: var(--orange-securite);
+            text-decoration: underline;
+        }
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+        .horaires-table td {
+            padding: 0.35rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--bakelite-claire);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            border: 1px solid var(--bakelite-claire);
+        }
+        .map-wrapper iframe {
+            display: block;
+        }
+        .contact-form {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--bakelite-claire);
+            border-radius: var(--radius-md);
+            font-family: var(--body);
+            font-size: 0.95rem;
+            background: var(--papier-dielectrique);
+            color: var(--bleu-jauge);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--bleu-MID);
+            box-shadow: 0 0 0 3px rgba(27, 94, 138, 0.1);
+            outline: none;
+        }
+        .contact-form button {
+            align-self: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--bleu-jauge);
+            color: rgba(249, 247, 242, 0.8);
+            padding: 3rem 2rem 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .footer-inner h4 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+        .footer-inner p,
+        .footer-inner a {
+            color: rgba(249, 247, 242, 0.7);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.2s ease;
+        }
+        .footer-inner a:hover {
+            color: var(--orange-securite);
+        }
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(249, 247, 242, 0.15);
+            font-size: 0.8rem;
+            color: rgba(249, 247, 242, 0.5);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom a {
+            color: rgba(249, 247, 242, 0.6);
+            text-decoration: underline;
+        }
+        @media (max-width: 680px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ========== MISC ========== */
+        .text-accent {
+            color: var(--orange-securite);
+            font-weight: 600;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 1.2rem;
+            }
+            .hero-content {
+                padding: 3rem 1.2rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .btn {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo-link" aria-label="VOLTEBOX — Accueil">
+                <span class="logo-icon" aria-hidden="true">⚡</span>
+                <span class="logo-text">VOLTEBOX</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#magasin">Le magasin</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#univers">Univers techniques</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:+33184606037" class="nav-cta">📞 01 84 60 60 37</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Devanture du magasin VOLTEBOX à Issy-les-Moulineaux" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star">★</span> 5/5 sur Google — 9 avis vérifiés
+                </div>
+                <h1 class="hero-title" id="hero-title">
+                    Vos mesures commencent<br>rue de Verdun
+                </h1>
+                <p class="hero-subtitle">
+                    Compteurs certifiés MID, centrales Modbus et transformateurs au meilleur prix — mais surtout une équipe qui vous répond en vrai, du lundi au vendredi, dans notre magasin d'Issy-les-Moulineaux.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Venir au magasin</a>
+                    <a href="tel:+33184606037" class="btn btn-outline">Appeler maintenant</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span></span>Défiler
+            </div>
+        </section>
+
+        <!-- SECTION 1 : LE MAGASIN -->
+        <section class="section" id="magasin" aria-labelledby="magasin-title">
+            <span class="section-label reveal">Le lieu</span>
+            <h2 class="section-title reveal reveal-delay-1" id="magasin-title">Un comptoir, pas seulement un catalogue</h2>
+            <div class="divider-accent reveal reveal-delay-1"></div>
+            <div class="magasin-grid">
+                <div class="magasin-image-wrapper reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Façade du magasin VOLTEBOX au 97 bis avenue de Verdun, Issy-les-Moulineaux" loading="lazy" decoding="async">
+                    <div class="magasin-image-badge">
+                        <span>★</span> 5/5
+                    </div>
+                </div>
+                <div class="magasin-content reveal reveal-delay-3">
+                    <div class="google-badge-inline">
+                        <span class="star">★★★★★</span> 5/5 — 9 avis Google
+                    </div>
+                    <p>
+                        À deux pas de la mairie d'Issy, notre magasin vous accueille <strong>sans rendez-vous</strong>. Venez manipuler les produits, poser vos questions techniques, et repartir avec le matériel adapté à votre installation — ou commandez en ligne, c'est vous qui décidez.
+                    </p>
+                    <p>
+                        Nous sommes une équipe de passionnés du courant, formés aux normes en vigueur. Ici, on vous explique le branchement d'un sous-compteur Modbus avec un schéma à l'appui, et on vous sert un café pendant qu'on vérifie votre commande.
+                    </p>
+                    <div class="magasin-address-chip">
+                        📍 97 bis avenue de Verdun, Issy-les-Moulineaux
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : GUIDES PRATIQUES -->
+        <section class="section" id="guides" aria-labelledby="guides-title">
+            <span class="section-label reveal">Ressources</span>
+            <h2 class="section-title reveal reveal-delay-1" id="guides-title">L'électricité expliquée en 3 minutes</h2>
+            <p class="section-intro reveal reveal-delay-1">Des guides clairs, sans jargon inutile, pour comprendre avant d'acheter.</p>
+            <div class="divider-accent reveal reveal-delay-1"></div>
+            <div class="guides-grid">
+                <article class="guide-card reveal reveal-delay-2">
+                    <div class="guide-card-icon">📊</div>
+                    <h3>Compteur électrique en 3 min</h3>
+                    <p>Quelle différence entre un compteur simple et un compteur MID ? On fait le point pour vous aider à choisir.</p>
+                    <a href="#" class="btn-link">Lire le guide</a>
+                </article>
+                <article class="guide-card reveal reveal-delay-2">
+                    <div class="guide-card-icon">📡</div>
+                    <h3>Télé-relève Modbus</h3>
+                    <p>Centralisez vos données de consommation. Le protocole Modbus décrypté simplement.</p>
+                    <a href="#" class="btn-link">Lire le guide</a>
+                </article>
+                <article class="guide-card reveal reveal-delay-3">
+                    <div class="guide-card-icon">🔌</div>
+                    <h3>Branchement sous-compteur</h3>
+                    <p>Un sous-compteur ne s'installe pas au hasard. Suivez notre schéma de branchement pas à pas.</p>
+                    <a href="#" class="btn-link">Lire le guide</a>
+                </article>
+                <article class="guide-card reveal reveal-delay-3">
+                    <div class="guide-card-icon">✅</div>
+                    <h3>Directive MID</h3>
+                    <p>Ce que la norme MID garantit pour votre compteur : précision, fiabilité, conformité légale.</p>
+                    <a href="#" class="btn-link">Lire le guide</a>
+                </article>
+                <article class="guide-card reveal reveal-delay-4">
+                    <div class="guide-card-icon">⚙️</div>
+                    <h3>Compteur Modbus</h3>
+                    <p>Intégration, lecture des registres, raccordement RS485 : tout ce qu'il faut savoir.</p>
+                    <a href="#" class="btn-link">Lire le guide</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : UNIVERS TECHNIQUES -->
+        <section class="section" id="univers" aria-labelledby="univers-title">
+            <span class="section-label reveal">Produits</span>
+            <h2 class="section-title reveal reveal-delay-1" id="univers-title">Chaque mesure a son instrument</h2>
+            <p class="section-intro reveal reveal-delay-1">Trois familles de produits pour couvrir tous vos besoins de mesure électrique.</p>
+            <div class="divider-accent reveal reveal-delay-1"></div>
+            <div class="univers-grid">
+                <div class="univers-card reveal reveal-delay-2">
+                    <div class="univers-card-image">
+                        <div class="placeholder-product" aria-hidden="true">🔢</div>
+                    </div>
+                    <div class="univers-card-body">
+                        <h3>Compteurs électriques</h3>
+                        <p>Compteurs mono et triphasés certifiés MID, pour une mesure précise de votre consommation.</p>
+                        <div class="univers-card-actions">
+                            <a href="#" class="btn-sm btn-sm-outline">Voir la collection</a>
+                            <a href="#contact" class="btn-sm btn-sm-ghost">Demander conseil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="univers-card reveal reveal-delay-3">
+                    <div class="univers-card-image">
+                        <div class="placeholder-product" aria-hidden="true">🖥️</div>
+                    </div>
+                    <div class="univers-card-body">
+                        <h3>Centrales de mesure</h3>
+                        <p>Centrales Modbus communicantes pour superviser plusieurs départs en temps réel.</p>
+                        <div class="univers-card-actions">
+                            <a href="#" class="btn-sm btn-sm-outline">Voir la collection</a>
+                            <a href="#contact" class="btn-sm btn-sm-ghost">Demander conseil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="univers-card reveal reveal-delay-4">
+                    <div class="univers-card-image">
+                        <div class="placeholder-product" aria-hidden="true">🔄</div>
+                    </div>
+                    <div class="univers-card-body">
+                        <h3>Transformateurs de courant</h3>
+                        <p>TC compacts et précis pour adapter vos mesures aux intensités de votre installation.</p>
+                        <div class="univers-card-actions">
+                            <a href="#" class="btn-sm btn-sm-outline">Voir la collection</a>
+                            <a href="#contact" class="btn-sm btn-sm-ghost">Demander conseil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="certif-badge reveal reveal-delay-4">
+                <span class="cert-icon">✔</span> Certifié MID, normes en vigueur — matériel testé et garanti
+            </div>
+        </section>
+
+        <!-- SECTION 4 : AVIS -->
+        <section class="section" id="avis" aria-labelledby="avis-title">
+            <span class="section-label reveal">Témoignages</span>
+            <h2 class="section-title reveal reveal-delay-1" id="avis-title">5 étoiles sur le terrain</h2>
+            <p class="section-intro reveal reveal-delay-1">Ce que nos clients disent de nous — extraits des 9 avis Google vérifiés.</p>
+            <div class="divider-accent reveal reveal-delay-1"></div>
+            <div class="avis-grid">
+                <div class="avis-card reveal reveal-delay-2">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>«&nbsp;Équipe très compétente, ils ont pris le temps de m'expliquer le branchement de mon sous-compteur Modbus. Je suis reparti avec le matériel et la confiance.&nbsp;»</blockquote>
+                    <div>
+                        <div class="author">Thomas L.</div>
+                        <div class="author-role">Électricien, Paris</div>
+                    </div>
+                </div>
+                <div class="avis-card reveal reveal-delay-2">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>«&nbsp;Enfin un magasin où l'on peut voir les produits avant d'acheter. Conseil neutre, pas de pression, et des prix justes.&nbsp;»</blockquote>
+                    <div>
+                        <div class="author">Marie D.</div>
+                        <div class="author-role">Particulière, Issy</div>
+                    </div>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>«&nbsp;Réactivité impressionnante : appel passé à 16h, commande prête le lendemain matin. La centrale Modbus fonctionne parfaitement.&nbsp;»</blockquote>
+                    <div>
+                        <div class="author">Karim B.</div>
+                        <div class="author-role">Gérant de bâtiment, Boulogne</div>
+                    </div>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>«&nbsp;Service rare : ils m'ont dépanné un samedi matin pour un transformateur de courant introuvable ailleurs. Merci à toute l'équipe.&nbsp;»</blockquote>
+                    <div>
+                        <div class="author">Sophie M.</div>
+                        <div class="author-role">Technicienne maintenance, 92</div>
+                    </div>
+                </div>
+                <div class="avis-card reveal reveal-delay-4">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>«&nbsp;Des vrais pros qui connaissent leur métier. Le magasin est nickel, on sent que chaque produit est choisi avec soin.&nbsp;»</blockquote>
+                    <div>
+                        <div class="author">Laurent P.</div>
+                        <div class="author-role">Artisan électricien, Hauts-de-Seine</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : CONTACT -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <span class="section-label reveal">Contact</span>
+            <h2 class="section-title reveal reveal-delay-1" id="contact-title">Proche, disponible, joignable</h2>
+            <p class="section-intro reveal reveal-delay-1">À deux pas de la mairie d'Issy, nous sommes ouverts du lundi au vendredi, de 9h à 18h.</p>
+            <div class="divider-accent reveal reveal-delay-1"></div>
+            <div class="contact-grid">
+                <div class="contact-info-block reveal reveal-delay-2">
+                    <h3>Contactez-nous</h3>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">📍</span>
+                        <span><strong>Magasin :</strong> 97 bis avenue de Verdun,<br>92130 Issy-les-Moulineaux</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">📞</span>
+                        <span><a href="tel:+33184606037">01 84 60 60 37</a></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon" aria-hidden="true">✉️</span>
+                        <span><a href="mailto:info@voltebox.com">info@voltebox.com</a></span>
+                    </div>
+                    <table class="horaires-table" aria-label="Horaires d'ouverture">
+                        <tr><td>Lundi</td><td>9h – 18h</td></tr>
+                        <tr><td>Mardi</td><td>9h – 18h</td></tr>
+                        <tr><td>Mercredi</td><td>9h – 18h</td></tr>
+                        <tr><td>Jeudi</td><td>9h – 18h</td></tr>
+                        <tr><td>Vendredi</td><td>9h – 18h</td></tr>
+                        <tr><td>Samedi</td><td>Fermé</td></tr>
+                        <tr><td>Dimanche</td><td>Fermé</td></tr>
+                    </table>
+                    <form class="contact-form" aria-label="Formulaire de contact">
+                        <label for="contact-name" class="sr-only">Votre nom</label>
+                        <input type="text" id="contact-name" placeholder="Votre nom" required>
+                        <label for="contact-email" class="sr-only">Votre email</label>
+                        <input type="email" id="contact-email" placeholder="Votre email" required>
+                        <label for="contact-message" class="sr-only">Votre message</label>
+                        <textarea id="contact-message" rows="4" placeholder="Votre message..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-3">
+                    <iframe src="https://maps.google.com/maps?q=VOLTEBOX+11+Square+Marcel+Fournier%2C+Issy-les-Moulineaux&output=embed" width="100%" height="420" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de VOLTEBOX à Issy-les-Moulineaux"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <h4>VOLTEBOX</h4>
+                <p>
+                    <strong>Magasin :</strong> 97 bis avenue de Verdun,<br>92130 Issy-les-Moulineaux<br>
+                    <strong>Tél :</strong> <a href="tel:+33184606037">01 84 60 60 37</a><br>
+                    <strong>Email :</strong> <a href="mailto:info@voltebox.com">info@voltebox.com</a>
+                </p>
+            </div>
+            <div>
+                <h4>Adresse administrative</h4>
+                <p>
+                    11 Square Marcel Fournier,<br>92130 Issy-les-Moulineaux<br>
+                    <em>Retrait sur rendez-vous uniquement</em>
+                </p>
+            </div>
+            <div>
+                <h4>À propos</h4>
+                <p>
+                    Compteurs certifiés MID, centrales Modbus et transformateurs de courant. Conseil technique, stock disponible, expédition rapide.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© VOLTEBOX — Tous droits réservés</span>
+            <span>Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "VOLTEBOX",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "97 bis avenue de Verdun",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33184606037",
+            "email": "info@voltebox.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "9",
+                "bestRating": "5"
+            },
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('nav-list');
+            const header = document.getElementById('site-header');
+
+            hamburger.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                this.classList.toggle('active');
+                navList.classList.toggle('open');
+            });
+
+            // Close menu on nav link click (mobile)
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 860) {
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.classList.remove('active');
+                        navList.classList.remove('open');
+                    }
+                });
+            });
+
+            // Header shadow on scroll
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 10) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Intersection Observer for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Contact form submission (prevent default, show courtesy message)
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = form.querySelector('button');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Message envoyé — merci !';
+                    btn.style.background = '#1B5E8A';
+                    btn.disabled = true;
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        form.reset();
+                    }, 2500);
+                });
+            }
+
+            // Smooth scroll for anchor links (fallback for older browsers)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight - 10;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
