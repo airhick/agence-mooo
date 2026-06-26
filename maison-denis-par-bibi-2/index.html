@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Denis Par Bibi — Bar, Cantine & Traiteur à Malakoff</title>
+    <meta name="description" content="Maison Denis Par Bibi, bar, cantine et traiteur au 29 boulevard de Stalingrad à Malakoff. Cuisine française, vins de soif, plateaux traiteur. Ouvert du lundi au vendredi, 9h-22h. Note 4.8/5.">
+    <meta property="og:title" content="Maison Denis Par Bibi — Bar, Cantine & Traiteur à Malakoff">
+    <meta property="og:description" content="Ici, c'est Bibi qui régale. Bar, cantine & traiteur depuis toujours au 29 boulevard de Stalingrad, Malakoff. Et on accepte les Tickets Resto.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHRleHQgeT0iMjQiIGZvbnQtc2l6ZT0iMjIiPvCflLY8L3RleHQ+PC9zdmc+">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-nappe: #FDFAF5;
+            --ardoise: #1E2321;
+            --vert-doucereux: #3F5142;
+            --zinc-patine: #B76D4E;
+            --bleu-comptoir: #4E6275;
+            --creme-battue: #F3EBDA;
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--blanc-nappe);
+            color: var(--ardoise);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: var(--grain);
+            opacity: 0.4;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal,
+            .reveal-delayed,
+            .reveal-stagger>*,
+            .rideau-fer-container,
+            .hero-visual,
+            .hero-texte>* {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                clip-path: none !important;
+            }
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(253, 250, 245, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(30, 35, 33, 0.07);
+            transition: box-shadow 0.3s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(30, 35, 33, 0.08);
+        }
+
+        .header-logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 2.4vw, 1.3rem);
+            letter-spacing: -0.02em;
+            color: var(--ardoise);
+            text-decoration: none;
+            line-height: 1.1;
+        }
+        .header-logo span {
+            color: var(--zinc-patine);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            list-style: none;
+        }
+        .header-nav a {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--ardoise);
+            text-decoration: none;
+            transition: color 0.2s;
+            letter-spacing: 0.01em;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--zinc-patine);
+            outline: none;
+        }
+        .header-nav a:focus-visible {
+            outline: 2px solid var(--zinc-patine);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+        .btn-header {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.5rem 1.1rem;
+            background: var(--zinc-patine);
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            letter-spacing: 0.02em;
+        }
+        .btn-header:hover {
+            background: #9e5a3c;
+            transform: translateY(-1px);
+        }
+        .btn-header:focus-visible {
+            outline: 2px solid var(--ardoise);
+            outline-offset: 3px;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 6px;
+            z-index: 1001;
+        }
+        .burger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--ardoise);
+            border-radius: 1px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 800px) {
+            .burger {
+                display: flex;
+            }
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--blanc-nappe);
+                padding: 5rem 2rem 2rem;
+                gap: 1.6rem;
+                border-left: 1px solid rgba(30, 35, 33, 0.08);
+                transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06);
+                z-index: 1000;
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.05rem;
+            }
+            .btn-header {
+                align-self: flex-start;
+            }
+        }
+
+        /* ---- MAIN ---- */
+        main {
+            margin-top: 0;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            padding-top: 4.5rem;
+        }
+        .hero-visual {
+            position: relative;
+            flex: 1;
+            min-height: 55vh;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+        }
+        .hero-img-wrap {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.82) saturate(0.9);
+            animation: hero-zoom 1.6s cubic-bezier(0.25, 0, 0.1, 1) forwards;
+        }
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.08);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(30, 35, 33, 0.25) 0%, rgba(30, 35, 33, 0.55) 60%, rgba(30, 35, 33, 0.7) 100%);
+            pointer-events: none;
+        }
+        .hero-texte {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2.5rem 1.8rem 3.5rem;
+            z-index: 2;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+        .hero-texte h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 7vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.6rem;
+            max-width: 700px;
+            color: #fff;
+        }
+        .hero-texte h1 em {
+            font-style: normal;
+            color: var(--zinc-patine);
+            text-shadow: 0 2px 8px rgba(183, 109, 78, 0.4);
+        }
+        .hero-texte .sous-titre {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
+            color: #f0e6d8;
+            letter-spacing: 0.02em;
+            max-width: 520px;
+            margin-bottom: 1rem;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #fff;
+            letter-spacing: 0.03em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hero-badge .star {
+            color: #f0c060;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero-visual {
+                min-height: 50vh;
+            }
+            .hero-texte {
+                padding: 1.5rem 1.2rem 2.5rem;
+            }
+            .hero-texte h1 {
+                font-size: clamp(1.8rem, 9vw, 3rem);
+            }
+        }
+
+        /* ---- TAMPON SVG ---- */
+        .tampon-bibi {
+            display: block;
+            width: 90px;
+            height: 90px;
+            opacity: 0.3;
+            margin: 0 auto 1.5rem;
+            pointer-events: none;
+            flex-shrink: 0;
+        }
+        .tampon-bibi.large {
+            width: 130px;
+            height: 130px;
+            opacity: 0.18;
+            position: absolute;
+            top: -40px;
+            right: -20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: 4.5rem 1.5rem;
+            position: relative;
+        }
+        @media (min-width: 900px) {
+            .section {
+                padding: 6rem 3rem;
+            }
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-titre {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--ardoise);
+            margin-bottom: 1.8rem;
+        }
+        .section-titre.accent {
+            color: var(--zinc-patine);
+        }
+        .section-texte {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            line-height: 1.7;
+            color: var(--ardoise);
+            max-width: 680px;
+        }
+        .section-texte+.section-texte {
+            margin-top: 0.8rem;
+        }
+
+        /* ---- ESPRIT MAISON ---- */
+        .esprit-maison {
+            background: var(--creme-battue);
+            position: relative;
+            overflow: hidden;
+        }
+        .esprit-maison::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+        .esprit-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        @media (min-width: 800px) {
+            .esprit-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+        .esprit-visuel {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(30, 35, 33, 0.18);
+        }
+        .esprit-visuel img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            filter: brightness(0.88) contrast(1.05);
+        }
+        .esprit-visuel .tache-cuivre {
+            position: absolute;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            height: 4px;
+            background: var(--zinc-patine);
+            border-radius: 0 0 4px 4px;
+        }
+
+        /* ---- SERVICES ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+        @media (min-width: 700px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid rgba(30, 35, 33, 0.07);
+            padding: 2rem 1.6rem;
+            border-radius: 4px;
+            position: relative;
+            transition: box-shadow 0.3s, transform 0.25s;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 40px;
+            background: var(--zinc-patine);
+            border-radius: 0 0 3px 0;
+        }
+        .service-card:hover {
+            box-shadow: 0 16px 40px rgba(30, 35, 33, 0.1);
+            transform: translateY(-4px);
+        }
+        .service-card h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            color: var(--ardoise);
+        }
+        .service-card p {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--ardoise);
+            opacity: 0.8;
+        }
+
+        /* ---- CARTE ---- */
+        .carte-bg {
+            background: var(--vert-doucereux);
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+        .carte-bg .section-titre {
+            color: #fff;
+        }
+        .carte-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+        .carte-liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2.5rem;
+            margin: 2rem 0;
+            list-style: none;
+        }
+        @media (max-width: 600px) {
+            .carte-liste {
+                grid-template-columns: 1fr;
+            }
+        }
+        .carte-liste li {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .carte-liste li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--zinc-patine);
+            flex-shrink: 0;
+        }
+        .btn-carte {
+            display: inline-block;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.7rem 1.6rem;
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .btn-carte:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .btn-carte:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        /* ---- ADRESSE ---- */
+        .adresse-bloc {
+            background: var(--bleu-comptoir);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .adresse-bloc .section-titre {
+            color: #fff;
+        }
+        .adresse-bloc::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--grain);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        .adresse-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 750px) {
+            .adresse-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: start;
+            }
+        }
+        .adresse-infos {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .adresse-infos strong {
+            font-weight: 700;
+            display: block;
+            margin-top: 0.6rem;
+            color: #f0e6d8;
+            letter-spacing: 0.02em;
+        }
+        .adresse-infos .tel {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #f0e6d8;
+            text-decoration: none;
+        }
+        .adresse-infos .tel:hover {
+            text-decoration: underline;
+        }
+        .map-wrap {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        /* ---- AVIS ---- */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 700px) {
+            .avis-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .avis-card {
+            background: #fff;
+            border: 1px solid rgba(30, 35, 33, 0.06);
+            padding: 1.8rem 1.5rem;
+            border-radius: 4px;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(30, 35, 33, 0.04);
+        }
+        .avis-card::before {
+            content: '\201C';
+            font-family: 'Bricolage Grotesque', serif;
+            font-size: 3rem;
+            color: var(--zinc-patine);
+            opacity: 0.35;
+            position: absolute;
+            top: 0.4rem;
+            left: 1rem;
+            line-height: 1;
+        }
+        .avis-card p {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--ardoise);
+            padding-top: 0.8rem;
+        }
+        .avis-stars {
+            color: #d4a040;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 0.3rem;
+        }
+
+        /* ---- RIDEAU DE FER ---- */
+        .rideau-fer-wrapper {
+            position: relative;
+        }
+        .rideau-fer-container {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+            background: var(--ardoise);
+            margin-top: -1px;
+            z-index: 5;
+        }
+        .rideau-fer-barres {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 16px 0;
+            transform: translateY(-100%);
+            transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rideau-fer-container.revele .rideau-fer-barres {
+            transform: translateY(0);
+        }
+        .rideau-fer-barre {
+            height: 5px;
+            background: linear-gradient(180deg, #5a5a5a 0%, #3a3a3a 40%, #5a5a5a 100%);
+            border-radius: 1px;
+            width: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ---- CONTACT ---- */
+        .contact-bloc {
+            background: var(--blanc-nappe);
+            position: relative;
+        }
+        .form-contact {
+            display: grid;
+            gap: 1.2rem;
+            max-width: 600px;
+        }
+        .form-contact input,
+        .form-contact select,
+        .form-contact textarea {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(30, 35, 33, 0.2);
+            border-radius: 3px;
+            background: #fff;
+            color: var(--ardoise);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+        .form-contact input:focus,
+        .form-contact select:focus,
+        .form-contact textarea:focus {
+            outline: none;
+            border-color: var(--zinc-patine);
+            box-shadow: 0 0 0 3px rgba(183, 109, 78, 0.1);
+        }
+        .form-contact textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .btn-submit {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 2rem;
+            background: var(--zinc-patine);
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            letter-spacing: 0.02em;
+            transition: background 0.3s, transform 0.15s;
+            justify-self: start;
+        }
+        .btn-submit:hover {
+            background: #9e5a3c;
+            transform: translateY(-1px);
+        }
+        .btn-submit:focus-visible {
+            outline: 2px solid var(--ardoise);
+            outline-offset: 3px;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--ardoise);
+            color: #b0b8b3;
+            padding: 2.5rem 1.5rem;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        .site-footer a {
+            color: #d0c8b8;
+            text-decoration: none;
+        }
+        .site-footer a:hover {
+            color: var(--zinc-patine);
+        }
+        .footer-tampon {
+            display: block;
+            width: 60px;
+            height: 60px;
+            opacity: 0.25;
+            margin: 0 auto 1rem;
+        }
+
+        /* ---- REVEAL ANIMATIONS ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0, 0.1, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delayed {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease 0.15s, transform 0.7s cubic-bezier(0.25, 0, 0.1, 1) 0.15s;
+        }
+        .reveal-delayed.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger>* {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 0, 0.1, 1);
+        }
+        .reveal-stagger.visible>*:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+        .reveal-stagger.visible>*:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+        .reveal-stagger.visible>*:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+        .reveal-stagger.visible>*:nth-child(4) {
+            transition-delay: 0.35s;
+        }
+        .reveal-stagger.visible>*:nth-child(5) {
+            transition-delay: 0.45s;
+        }
+        .reveal-stagger.visible>*:nth-child(6) {
+            transition-delay: 0.55s;
+        }
+        .reveal-stagger.visible>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---- TAMPON FILIGRANE REUTILISABLE ---- */
+        .tampon-filigrane {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.14;
+        }
+        .tampon-filigrane svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ---- FILET DECORATIF ---- */
+        .filet-cuivre {
+            width: 50px;
+            height: 3px;
+            background: var(--zinc-patine);
+            margin: 1rem 0 1.8rem;
+            border-radius: 1px;
+        }
+
+        /* ---- SKIP LINK ---- */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background: var(--ardoise);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            z-index: 10000;
+            border-radius: 3px;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .skip-link:focus {
+            top: 10px;
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Maison Denis Par Bibi",
+            "description": "Bar, cantine et traiteur à Malakoff. Cuisine française, vins de soif, plateaux traiteur sur commande.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "29 Boulevard de Stalingrad",
+                "addressLocality": "Malakoff",
+                "postalCode": "92240",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147356736",
+            "email": "maisondenisparbibi@outlook.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "29"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "22:00"
+            },
+            "servesCuisine": "French",
+            "priceRange": "€€"
+        }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header" id="header">
+        <a href="#" class="header-logo">MAISON DENIS<br><span>PAR BIBI</span></a>
+        <button class="burger" id="burger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="header-nav" id="nav">
+                <li><a href="#esprit">L'esprit</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#carte">Carte</a></li>
+                <li><a href="#adresse">Infos</a></li>
+                <li><a href="#contact" class="btn-header">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero">
+            <div class="hero-visual">
+                <div class="hero-img-wrap">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de la Maison Denis Par Bibi — comptoir, ambiance chaleureuse, boulevard de Stalingrad" loading="eager">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-texte">
+                    <h1>Ici, c'est <em>Bibi</em> qui régale.</h1>
+                    <p class="sous-titre">Bar, cantine & traiteur — depuis toujours au 29 boulevard de Stalingrad, Malakoff. Et on accepte les Tickets Resto.</p>
+                    <div class="hero-badge"><span class="star">★</span> 4,8 sur 5 — 29 avis Google</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPRIT MAISON -->
+        <section class="section esprit-maison" id="esprit">
+            <div class="section-inner esprit-grid">
+                <div class="reveal">
+                    <h2 class="section-titre">Vous êtes au 29 boulevard de Stalingrad.<br>Pas dans une chaîne.</h2>
+                    <div class="filet-cuivre"></div>
+                    <p class="section-texte">Une adresse de quartier tenue à quatre mains, où le bar prolonge la cuisine et où l'on prépare vos plateaux traiteur avec le même soin que les assiettes du déjeuner.</p>
+                    <p class="section-texte">Ouvert depuis le matin pour le café, jusqu'au soir pour l'apéro. On ne fait pas dans le concept : on fait dans le bon.</p>
+                </div>
+                <div class="esprit-visuel reveal-delayed">
+                    <img src="assets/maps-1.jpg" alt="Ambiance Maison Denis Par Bibi — salle et comptoir" loading="lazy">
+                    <div class="tache-cuivre"></div>
+                    <!-- Tampon filigrane -->
+                    <div class="tampon-filigrane" style="top: -25px; right: -30px; width: 120px; height: 120px;">
+                        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="60" cy="60" rx="55" ry="45" fill="none" stroke="var(--ardoise)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                            <text x="60" y="50" text-anchor="middle" font-family="'Bricolage Grotesque', sans-serif" font-weight="700" font-size="9" fill="var(--ardoise)" letter-spacing="2">MAISON</text>
+                            <text x="60" y="63" text-anchor="middle" font-family="'Bricolage Grotesque', sans-serif" font-weight="700" font-size="13" fill="var(--ardoise)" letter-spacing="1">BIBI</text>
+                            <text x="60" y="76" text-anchor="middle" font-family="'Hanken Grotesk', sans-serif" font-weight="500" font-size="6" fill="var(--ardoise)" letter-spacing="1.5">MALAKOFF</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services">
+            <div class="section-inner">
+                <h2 class="section-titre reveal">Trois façons d'en profiter</h2>
+                <div class="filet-cuivre reveal"></div>
+                <div class="services-grid reveal-stagger">
+                    <div class="service-card">
+                        <h3>Le bar</h3>
+                        <p>Vins de soif, bières de caractère et cocktails sans chiqué. On s'attable au comptoir ou en terrasse, on refait le boulevard.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>La cantine</h3>
+                        <p>Une formule déjeuner qui change selon le marché. Cuisine française de tous les jours, exécutée avec sérieux.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Le traiteur</h3>
+                        <p>Plateaux, buffets et plats à emporter sur commande. Pour vos déjeuners d'équipe ou vos dîners à la maison. On livre dans le coin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARTE -->
+        <section class="section carte-bg" id="carte">
+            <div class="section-inner">
+                <h2 class="section-titre reveal">Dans l'assiette cette semaine</h2>
+                <div class="filet-cuivre reveal" style="background:#f0e6d8;"></div>
+                <ul class="carte-liste reveal-stagger">
+                    <li>Œufs mayo maison</li>
+                    <li>Dos de lieu jaune, beurre citronné</li>
+                    <li>Blanquette de veau à l'ancienne</li>
+                    <li>Paris-Brest individuel</li>
+                    <li>Tarte fine aux pommes</li>
+                    <li>Assiette de fromages affinés</li>
+                </ul>
+                <a href="#" class="btn-carte reveal-delayed">Voir la carte complète (PDF)</a>
+            </div>
+        </section>
+
+        <!-- ADRESSE & HORAIRES -->
+        <section class="section adresse-bloc" id="adresse">
+            <div class="section-inner adresse-grid">
+                <div class="reveal">
+                    <h2 class="section-titre">On est là. Vraiment.</h2>
+                    <div class="filet-cuivre" style="background:#f0e6d8;"></div>
+                    <div class="adresse-infos">
+                        <p><strong>Adresse</strong>29 Boulevard de Stalingrad, 92240 Malakoff</p>
+                        <p><strong>Téléphone</strong><a href="tel:+33147356736" class="tel">01 47 35 67 36</a></p>
+                        <p><strong>Horaires</strong>Ouvert du lundi au vendredi, de 9h à 22h.<br>Service déjeuner 12h–14h. Bar continu.</p>
+                        <p><strong>Accessibilité</strong>Établissement accessible aux personnes à mobilité réduite.</p>
+                    </div>
+                </div>
+                <div class="map-wrap reveal-delayed">
+                    <iframe src="https://maps.google.com/maps?q=Maison+Denis+Par+Bibi+29+Boulevard+de+Stalingrad%2C+Malakoff&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de la Maison Denis Par Bibi"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis">
+            <div class="section-inner">
+                <h2 class="section-titre reveal">4,8 sur 5. Pas mal pour un petit boulevard.</h2>
+                <div class="filet-cuivre reveal"></div>
+                <div class="avis-grid reveal-stagger">
+                    <div class="avis-card">
+                        <p>« Le vrai bistrot de quartier. On y mange bien, on y boit mieux, et Bibi connaît tout le monde par son prénom. »</p>
+                        <div class="avis-stars">★★★★★</div>
+                    </div>
+                    <div class="avis-card">
+                        <p>« Plateau traiteur impeccable pour 20 personnes. Présentation soignée, livraison ponctuelle. Merci Bibi ! »</p>
+                        <div class="avis-stars">★★★★★</div>
+                    </div>
+                    <div class="avis-card">
+                        <p>« On s'y sent chez soi. L'accueil, la déco, l'assiette : tout est juste. Une adresse qu'on garde pour soi. »</p>
+                        <div class="avis-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIDEAU DE FER -->
+        <div class="rideau-fer-wrapper">
+            <div class="rideau-fer-container" id="rideau-fer">
+                <div class="rideau-fer-barres">
+                    <div class="rideau-fer-barre"></div>
+                    <div class="rideau-fer-barre"></div>
+                    <div class="rideau-fer-barre"></div>
+                    <div class="rideau-fer-barre"></div>
+                    <div class="rideau-fer-barre"></div>
+                    <div class="rideau-fer-barre"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <section class="section contact-bloc" id="contact">
+            <div class="section-inner">
+                <h2 class="section-titre reveal">Une table ? Un plateau ? Un mot doux ?</h2>
+                <div class="filet-cuivre reveal"></div>
+                <p class="section-texte reveal" style="margin-bottom:1.8rem;">On vous répond dans la journée. Même les jours de marché.</p>
+                <form class="form-contact reveal-stagger" action="#" method="post">
+                    <input type="text" name="nom" placeholder="Votre nom" required aria-label="Votre nom">
+                    <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
+                    <input type="tel" name="telephone" placeholder="Votre téléphone" aria-label="Votre téléphone">
+                    <select name="objet" aria-label="Objet du message">
+                        <option value="">Objet du message</option>
+                        <option value="reservation">Réservation</option>
+                        <option value="commande-traiteur">Commande traiteur</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <textarea name="message" placeholder="Votre message..." required aria-label="Votre message"></textarea>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <svg class="footer-tampon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="50" rx="45" ry="38" fill="none" stroke="#b0b8b3" stroke-width="1.2" stroke-dasharray="3 2"/>
+            <text x="50" y="42" text-anchor="middle" font-family="'Bricolage Grotesque', sans-serif" font-weight="700" font-size="7" fill="#b0b8b3" letter-spacing="2">MAISON</text>
+            <text x="50" y="54" text-anchor="middle" font-family="'Bricolage Grotesque', sans-serif" font-weight="700" font-size="11" fill="#b0b8b3" letter-spacing="1">BIBI</text>
+            <text x="50" y="65" text-anchor="middle" font-family="'Hanken Grotesk', sans-serif" font-weight="500" font-size="5" fill="#b0b8b3" letter-spacing="1.5">MALAKOFF</text>
+        </svg>
+        <p>Maison Denis Par Bibi — 29 Boulevard de Stalingrad, 92240 Malakoff<br>
+            <a href="tel:+33147356736">01 47 35 67 36</a> — <a href="mailto:maisondenisparbibi@outlook.fr">maisondenisparbibi@outlook.fr</a></p>
+        <p style="margin-top:0.6rem;">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            // BURGER MENU
+            const burger = document.getElementById('burger');
+            const nav = document.getElementById('nav');
+            const header = document.getElementById('header');
+            const navLinks = nav.querySelectorAll('a');
+
+            function toggleMenu() {
+                const isOpen = nav.classList.toggle('active');
+                burger.classList.toggle('active');
+                burger.setAttribute('aria-expanded', isOpen);
+            }
+            burger.addEventListener('click', toggleMenu);
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // HEADER SCROLL SHADOW
+            function onScroll() {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // INTERSECTION OBSERVER
+            const reveals = document.querySelectorAll('.reveal, .reveal-delayed, .reveal-stagger');
+            const rideau = document.getElementById('rideau-fer');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(el => observer.observe(el));
+
+            // RIDEAU DE FER OBSERVER
+            if (rideau) {
+                const rideauObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            rideau.classList.add('revele');
+                            rideauObserver.unobserve(rideau);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                rideauObserver.observe(rideau);
+            }
+
+            // PREFERS-REDUCED-MOTION
+            const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mq.matches) {
+                document.querySelectorAll('.reveal, .reveal-delayed, .reveal-stagger>*').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    el.style.transition = 'none';
+                });
+                if (rideau) {
+                    rideau.querySelector('.rideau-fer-barres').style.transform = 'translateY(0)';
+                    rideau.querySelector('.rideau-fer-barres').style.transition = 'none';
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
