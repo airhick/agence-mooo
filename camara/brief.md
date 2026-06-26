@@ -1,47 +1,80 @@
-**BRIEF CRÉATIF — CAMARA PARIS 15**
+**BRIEF CRÉATIF — Camara Paris 15**
 
-**1. Concept & positionnement**  
-Camara n’est pas un simple distributeur de matériel, c’est le labo d’images du quartier. On y vient avec une idée floue et on en repart avec un projet révélé, entre les mains d’experts qui partagent leur passion. Le site vitrine assume ce rôle d’atelier-conseil de proximité : loin du catalogue froid, il devient le rendez-vous numérique de tous les amoureux de la photo du 15ᵉ arrondissement.
+---
 
-**2. Direction artistique**  
-« Studio Noir » — un minimalisme optique habité, entre rigueur du boîtier et chaleur de la chambre noire. L’ambiance visuelle est dictée par les codes intrinsèques de la photographie : fonds obscurs pour magnifier la lumière des images, compositions en cadrage serré rappelant le viseur, contrastes francs, grain très fin. L’ADN du commerce (conseil, technicité, passion) se traduit par une mise en page précise, sans superflu, où le moindre élément graphique — filet, marge, typographie — évoque la mécanique d’un appareil de précision.
+### 1. Concept & positionnement
+**Le commerce de l’image qui met l’humain au point.**
+Camara Paris 15 n’est pas une boutique, c’est le repaire des passionnés d’image du quartier Saint-Charles. Ici, on ne pousse pas au panier : on conseille, on prête, on dépanne, on développe, on répare. Le site ne doit plus singer un e-commerce national — il doit devenir la porte d’entrée numérique d’un lieu physique qu’on a envie de pousser, parce qu’on sait qu’à l’intérieur, quelqu’un nous parlera photo avec les mots justes.
 
-**3. Palette**  
-La palette ancre le visiteur dans l’univers du labo photo, sans pastiche vintage.  
-- **Fond principal** : `#0F0F0F` (Noir velours — évoque l’obscurité du boîtier et la chambre noire)  
-- **Fond secondaire** : `#1C1C1C` (Gris anthracite — nuances de zinc, métal brossé)  
-- **Encre** : `#F2ECE4` (Sépia clair — rappelle le tirage baryté, lisible et doux)  
-- **Accent chaud** : `#D94A38` (Rouge inactinique — la seule couleur vive, celle de la lampe de labo, utilisée parcimonieusement sur les CTA et les animations)  
-- **Teinte de contraste froide** : `#2A5A6B` (Bleu-vert optique — verre traité, reflet d’objectif, pour les infos secondaires ou icônes)  
-- **Surlignage** : `#E8B24B` (Or des contacts d’appareil — détails très fins, puces, séparateurs)
+---
 
-**4. Ton éditorial**  
-Une voix d’expert accessible, sans jargon inutile. Le ton est celui du passionné qui accueille un ami photographe au comptoir : précis mais jamais condescendant, chaleureux sans familiarité excessive. On évite les superlatifs vides pour privilégier les informations concrètes et le conseil éclairé. Niveau de langue courant, parfois technique quand le sujet l’impose, toujours au service d’une compréhension immédiate.
+### 2. Direction artistique
+**« Labo technique de quartier »** — un parti pris esthétique qui fusionne la rigueur de l’optique et la chaleur du commerce de proximité. Les matières réelles du magasin (métal, verre, bois) dictent l’atmosphère : fonds clairs et nets comme une table lumineuse, noirs denses comme un boîtier reflex, touches de rouge signalétique comme l’enseigne historique. La composition respire la précision : tout est affaire de focale, de cadrage, de netteté. On évacue le bruit visuel du site actuel pour ne garder que l’essentiel — exactement comme on choisit son point en photographie.
 
-**5. Accroche héro**  
-**Titre** : *Toutes les photos naissent ici*  
-**Sous-titre** : Du développement argentique au conseil expert, nous accompagnons chaque image, chaque projet, chaque déclic. Votre magasin Camara, au 158 rue Saint-Charles, 15ᵉ.
+---
 
-**6. Sections**  
+### 3. Palette
+Couleurs directement extraites de l’identité réelle du magasin, affinées pour le web :
 
-- **L’Officine** (*ce que l’on fait vraiment*)  
-  *Nos services* : *Le Touch & Try* — essayez le boîtier de vos rêves avant de l’adopter. *Studio d’identité* — des photos aux normes officielles, sans rendez-vous, en 10 minutes. *Labo argentique* — développement pellicule 35 mm et 120, tirage sur place. *Nettoyage capteur* — intervention en 48 h, à partir de 39 €. *Occasions garanties* — du matériel révisé et prêt à shooter. Chaque service est un engagement, pas une option.
+| Rôle | Hex | Nom d’usage |
+|------|-----|-------------|
+| Fond de page | `#F5F5F5` | Blanc labo |
+| Surface / carte | `#FFFFFF` | Blanc optique |
+| Encre primaire | `#000000` | Noir boîtier |
+| Encre secondaire | `#333333` | Gris diaphragme |
+| Accent fort | `#FF0000` | Rouge Camara |
+| Filets discrets | `#E0E0E0` | Verre dépoli |
 
-- **Le Comptoir** (*l’équipe et l’accueil*)  
-  *Des visages, pas des vendeurs* : *Ici, on ne pousse pas à l’achat, on écoute, on conseille et on partage. Rencontrez ceux qui réparent, expliquent et transmettent leur passion du déclenchement, du lundi au samedi.*
+Pas de gris froids ni de dégradés. La palette est volontairement dure et contrastée : elle évoque le rendu d’une photo argentique bien tirée. Le rouge n’est jamais décoratif — il signale l’action, l’appel, le repère.
 
-- **Instantanés d’atelier** (*galerie d’ambiance réelle*)  
-  Une série de 4 à 5 photos de la boutique, de l’équipe au travail, du comptoir de conseil, du recoin argentique. Traitement noir et blanc contrasté, grain léger. Légende possible : « Dans notre atelier, chaque outil raconte une histoire. »
+---
 
-- **Ce que l’on dit de nous** (*preuve sociale traitée avec honnêteté*)  
-  *Avis de nos clients* : Afficher 3 avis extraits de Google (sans note générique), mixant retour positif sincère et une réponse de l’équipe à un avis moins bon, avec le vrai prénom du répondant. Objectif : humaniser et montrer que l’écoute existe. Bouton « Tous les avis » renvoyant vers la fiche Google.
+### 4. Ton éditorial
+**Savoir-faire + bienveillance de quartier.**
+Nous parlons photo avec exactitude, sans snobisme. Nous tutoyons les passionnés, vouvoyons les premiers visiteurs. Le registre est celui d’un commerçant qui connaît ses clients par leur prénom et leur boîtier, et qui sait expliquer une focale fixe à un débutant sans le faire fuir. Pas de jargon vide, pas d’emphase commerciale : des faits, des conseils, des services concrets. La promesse implicite : *ici, vous ne serez jamais seul face à une fiche produit.*
 
-- **Venir, appeler, écrire** (*conversion locale, tout ce qui manquait*)  
-  *Horaires lisibles* en grille claire. Boutons CTA proéminents : **Appeler** (lien tel:) et **Itinéraire** (lien Google Maps). Adresse et stations de métro. Mention « Parking public Charles Michels à 200 m ». Formulaire de pré-réservation pour les services rapides (photo d’identité, nettoyage capteur) avec sélection de créneau simplifié.
+---
 
-- **Le Journal des optiques** (*optionnel — blog / actualités*)  
-  *Conseils, tests et promenades photo* : un article récent comme « 3 itinéraires pour shooter le 15ᵉ comme un photoreporter » ou « Pourquoi choisir un 50 mm aujourd’hui ». Un seul article visible, avec lien vers le site national si le contenu existe, mais surtout avec un ancrage local fort.
+### 5. Accroche héro
+**Titre :** « La photo se discute, se touche, s’essaie — pas seulement en ligne. »
+**Sous-titre :** « Camara Paris 15, votre magasin de matériel, de développement et de conseil au cœur de Saint-Charles. Depuis toujours au 158. »
 
-**7. Signature visuelle**  
-- **Le cadrage en amorce** — un filet d’angle (viseur rectangulaire) discret, tracé dans le coin supérieur gauche des images clés, qui pulse doucement au survol.  
-- **La typographie en strate** — le mot « Camara » en Syne, massif et espacé, trône en haut à gauche comme une plaque d’immatriculation d’appareil. Sous lui, un filet rouge inactinique de 1 px sépare le logo du reste de la page, rappelant le trait de lumière rouge du labo. Cette ligne rouge court en haut du header sur tout le site et sert de repère de navigation.
+Un bouton principal : **« Passez nous voir »** (ancre vers la section adresse + carte) et un bouton secondaire : **« Appelez-nous »** (`tel:0145582013`). Le téléphone devient enfin cliquable et prioritaire.
+
+---
+
+### 6. Sections
+L’ordre des sections résulte directement des faiblesses identifiées dans l’audit : on commence par ce qui manque le plus cruellement — la preuve que ce magasin est un lieu vivant, pas un entrepôt. La mécanique e-commerce est repoussée au second plan.
+
+**① Le magasin (visuel + preuve sociale immédiate)**
+*Titre :* « 158 rue Saint-Charles, ce n’est pas un numéro. C’est une adresse. »
+*Contenu :* Galerie pleine largeur de photos intérieures réelles (comptoir en bois clair, vitrines d’objectifs, boîtiers en libre essai, labo visible). La note Google 3.6/5 (41 avis) est affichée sans détour, accompagnée d’un extrait d’avis réel — choisi pour sa précision, pas pour sa note. Exemple : *« Accueil très pro, ils m’ont sauvé un développement urgent. »*
+
+**② Services — ce que vous ne trouverez jamais en ligne**
+*Titre :* « Ce qu’on fait ici (et qu’un algorithme ne fera jamais) »
+*Contenu :* Six cartes claires, une par service phare, avec un verbe d’action en titre et une phrase d’explication concrète. Pas de liste en vrac.
+- **Essayer** — « Touch & Try : nos boîtiers et optiques sont en libre accès. Prenez-les en main, comparez, déclenchez. »
+- **Développer** — « Labo argentique : développement négatif, diapo, noir et blanc. Délais express. »
+- **Numériser** — « Vos films, diapos, photos papier transformés en fichiers haute définition. »
+- **Réparer** — « SAV agréé, devis gratuit. Votre matériel entre de bonnes mains. »
+- **Garantir** — « Garantie 2+1 an sur le neuf. Reprise de votre ancien matériel. »
+- **Dépanner** — « Photo d’identité ANTS, clé USB, piles, housses : le petit nécessaire qui sauve. »
+
+**③ Équipe & philosophie**
+*Titre :* « Des photographes avant d’être des commerçants. »
+*Contenu :* Texte court présentant l’équipe (sans photo nominative si non disponible, mais avec une photo de groupe en magasin ou en situation). Mise en avant de la passion commune pour l’image, de la formation continue, de l’ancrage dans le quartier. *« Certains clients nous confient leurs boîtiers depuis vingt ans. Ça crée des liens. »*
+
+**④ Infos pratiques + carte**
+*Titre :* « Venez, c’est facile. »
+*Contenu :* Carte Google Maps intégrée (données structurées `LocalBusiness` en place, métros Lourmel et Charles Michel visibles). Horaires lisibles, incluant une mention proactive pour les jours fériés. Bouton itinéraire. Adresse, téléphone, email. Accessibilité métro/bus explicitée. Le tout structuré pour le SEO local : `Magasin photo Paris 15`, `matériel photo 75015`, `développement photo Paris 15` en balises sémantiques.
+
+**⑤ Marques de confiance**
+*Titre :* « Nos partenaires techniques. »
+*Contenu :* Logos ou simples noms des marques phares distribuées — Canon, Nikon, Sony, Fujifilm, Panasonic, OM System — et des services labo (Ilford, Kodak, etc.). Pas de slider inutile : une grille sobre. L’enjeu est de rassurer sur la légitimité du magasin comme revendeur agréé.
+
+---
+
+### 7. Signature visuelle
+Deux détails mémorables qui signent l’identité du site et le rendent impossible à confondre avec un autre commerce :
+
+- **Le cercle optique animé** — en haut à gauche, à la place d’un logo statique, un diaphragme d’objectif stylisé (rouge `#FF0000`) qui s’ouvre et se ferme doucement au chargement de la page, puis reste
