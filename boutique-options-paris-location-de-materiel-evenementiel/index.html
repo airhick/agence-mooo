@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique Options Paris — Location de matériel événementiel | 21 rue Gros, Paris 16e</title>
-    <meta name="description" content="Boutique Options Paris — Marie-Caroline de Ribet vous reçoit au 21 rue Gros pour composer la vaisselle, le mobilier et le nappage de vos réceptions sur mesure. Location de matériel événementiel haut de gamme à Paris.">
-    <meta property="og:title" content="Boutique Options Paris — Location de matériel événementiel">
-    <meta property="og:description" content="Dresser votre table est un métier. Depuis le 21 rue Gros, Marie-Caroline de Ribet imagine l'ambiance de vos réceptions.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>Boutique Options Paris | Location de matériel événementiel à Paris 16e</title>
+    <meta name="description" content="Boutique Options Paris — Location de matériel événementiel au 21 Rue Gros, Paris. Conseil personnalisé, sélection exigeante pour vos réceptions. ✦ 3.8★ sur 54 avis.">
+    <meta property="og:title" content="Boutique Options Paris | Location de matériel événementiel">
+    <meta property="og:description" content="Atelier de style parisien où la table devient une composition intime. Conseil humain pointu, sélection matérielle exigeante, exécution irréprochable.">
+    <meta property="og:image" content="https://agence.mooo.com/boutique-options-paris-location-de-materiel-evenementiel/assets/maps-1.jpg">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><text y='32' font-size='32'>🍽️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232BB5C4'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23FFFFFF' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FFFFFF'/%3E%3C/svg%3E">
     <style>
         :root {
-            --noir-carbone: #1A1A1A;
-            --creme-coquillage: #F6F2ED;
-            --turquoise: #2AC0B4;
-            --sable-pale: #E8E4DF;
-            --chene-brut: #C5A880;
-            --anthracite: #3D3D3D;
-            --turquoise-glow: rgba(42, 192, 180, 0.25);
-            --turquoise-subtle: rgba(42, 192, 180, 0.08);
-            --font-display: 'DM Serif Display', 'Times New Roman', serif;
-            --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --porcelaine: #F8F5F0;
+            --noir: #1C1C1C;
+            --turquoise: #2BB5C4;
+            --bleu-nuit: #24323E;
+            --bois: #C29F7D;
+            --blanc: #FFFFFF;
+            --display: 'DM Serif Display', serif;
+            --body: 'DM Sans', sans-serif;
+            --grain-opacity: 0.028;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         *,
@@ -40,732 +39,982 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 5rem;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--noir-carbone);
-            color: var(--sable-pale);
+            font-family: var(--body);
+            background-color: var(--porcelaine);
+            color: var(--noir);
             line-height: 1.6;
-            font-weight: 300;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-            counter-reset: geste-counter;
-        }
-
-        /* ========== FILIGRANE TURQUOISE ========== */
-        .filigrane {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: clamp(3rem, 6vw, 7rem);
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            padding-bottom: clamp(2rem, 5vh, 4rem);
-            padding-right: clamp(1rem, 3vw, 2.5rem);
-        }
-        .filigrane-inner {
-            width: clamp(24px, 3.5vw, 44px);
-            height: clamp(24px, 3.5vw, 44px);
-            border: 2px solid var(--turquoise);
-            border-radius: 50%;
-            opacity: 0.55;
-            animation: pulse-filigrane 5s ease-in-out infinite;
-            transition: transform 0.6s var(--ease-out-expo), opacity 0.6s;
+            font-weight: 400;
+            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+            letter-spacing: 0.01em;
             position: relative;
-        }
-        .filigrane-inner::after {
-            content: '';
-            position: absolute;
-            inset: -6px;
-            border: 1px solid var(--turquoise);
-            border-radius: 50%;
-            opacity: 0.35;
-            animation: pulse-filigrane-outer 5s ease-in-out infinite;
-            animation-delay: 0.6s;
-        }
-        @keyframes pulse-filigrane {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.55;
-            }
-            40% {
-                transform: scale(1.22);
-                opacity: 0.85;
-            }
-            70% {
-                transform: scale(1.05);
-                opacity: 0.65;
-            }
-        }
-        @keyframes pulse-filigrane-outer {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.25;
-            }
-            50% {
-                transform: scale(1.35);
-                opacity: 0.55;
-            }
-        }
-        .filigrane-inner:hover,
-        .filigrane-inner.active {
-            transform: scale(1.5);
-            opacity: 0.9;
+            overflow-x: hidden;
         }
 
-        /* ========== HEADER ========== */
-        .site-header {
+        /* Grain texture overlay */
+        body::after {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(26, 26, 26, 0.82);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(61, 61, 61, 0.5);
-            padding: 0 clamp(1rem, 4vw, 3rem);
-            height: clamp(3.5rem, 7vh, 5rem);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--turquoise);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s var(--ease-out-expo);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: clamp(1rem, 2vw, 1.6rem) clamp(1.5rem, 5vw, 4rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            transition: background 0.4s;
+            transition: background-color 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo), padding 0.45s var(--ease-out-expo);
+            background-color: transparent;
         }
-        .site-header.scrolled {
-            background: rgba(26, 26, 26, 0.95);
-            border-bottom-color: rgba(42, 192, 180, 0.2);
+
+        .header.scrolled {
+            background-color: rgba(248, 245, 240, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(28, 28, 28, 0.06);
+            padding: 0.7rem clamp(1.5rem, 5vw, 4rem);
         }
-        .header-brand {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 2.2vw, 1.35rem);
-            font-weight: 400;
-            color: var(--creme-coquillage);
-            letter-spacing: 0.03em;
-            white-space: nowrap;
-            text-decoration: none;
-            line-height: 1.1;
-        }
-        .header-brand span {
-            color: var(--turquoise);
-            font-style: italic;
-        }
-        .header-nav {
-            display: none;
-            gap: clamp(1rem, 2.5vw, 2.2rem);
+
+        .header-logo {
+            font-family: var(--display);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--blanc);
+            transition: color 0.45s var(--ease-out-expo);
+            position: relative;
+            z-index: 1001;
+            display: flex;
             align-items: center;
+            gap: 0.5rem;
+        }
+        .header.scrolled .header-logo {
+            color: var(--noir);
+        }
+        .header-logo-dot {
+            display: inline-block;
+            width: 0.45em;
+            height: 0.45em;
+            border-radius: 50%;
+            background-color: var(--turquoise);
+            flex-shrink: 0;
+            margin-top: 0.15em;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1.4rem, 3vw, 2.6rem);
             list-style: none;
         }
         .header-nav a {
-            color: var(--sable-pale);
-            text-decoration: none;
-            font-size: 0.825rem;
-            font-weight: 400;
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.9rem;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            transition: color 0.3s;
+            color: var(--blanc);
+            transition: color 0.3s var(--ease-out-expo);
             position: relative;
-            white-space: nowrap;
+            padding: 0.25em 0;
+        }
+        .header.scrolled .header-nav a {
+            color: var(--noir);
         }
         .header-nav a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -2px;
             left: 0;
             width: 0;
             height: 1.5px;
-            background: var(--turquoise);
-            transition: width 0.4s var(--ease-out-expo);
+            background-color: var(--turquoise);
+            transition: width 0.35s var(--ease-out-expo);
         }
         .header-nav a:hover::after,
         .header-nav a:focus-visible::after {
             width: 100%;
         }
-        .header-nav a:hover,
-        .header-nav a:focus-visible {
+        .header-nav a:hover {
             color: var(--turquoise);
         }
+
         .header-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background: var(--turquoise);
-            color: var(--noir-carbone);
-            text-decoration: none;
+            gap: 0.45em;
+            font-family: var(--body);
             font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            padding: 0.55rem 1.2rem;
+            padding: 0.65em 1.5em;
             border-radius: 2px;
-            transition: background 0.3s, transform 0.3s var(--ease-spring);
+            background-color: var(--turquoise);
+            color: var(--blanc);
+            transition: background-color 0.35s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
             white-space: nowrap;
-            font-family: var(--font-body);
-        }
-        .header-cta:hover,
-        .header-cta:focus-visible {
-            background: #3dd5ca;
-            transform: translateY(-1px);
-            outline: none;
-        }
-        .header-cta:focus-visible {
-            box-shadow: 0 0 0 3px var(--turquoise-glow);
-        }
-        .mobile-menu-btn {
-            background: none;
+            position: relative;
+            z-index: 1001;
             border: none;
-            color: var(--sable-pale);
             cursor: pointer;
-            padding: 0.5rem;
-            display: flex;
+        }
+        .header-cta:hover {
+            background-color: #239eac;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(43, 181, 196, 0.3);
+        }
+        .header.scrolled .header-cta {
+            background-color: var(--turquoise);
+            color: var(--blanc);
+        }
+
+        /* Hamburger menu */
+        .menu-toggle {
+            display: none;
             flex-direction: column;
             gap: 5px;
-            z-index: 101;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 4px;
+            width: 30px;
+            height: 24px;
+            justify-content: center;
+            align-items: center;
         }
-        .mobile-menu-btn span {
+        .menu-toggle span {
             display: block;
-            width: 22px;
-            height: 1.5px;
-            background: var(--sable-pale);
-            transition: all 0.3s;
+            width: 26px;
+            height: 2px;
+            background-color: var(--blanc);
+            transition: all 0.35s var(--ease-out-expo);
             border-radius: 1px;
         }
-        .mobile-menu-btn.open span:nth-child(1) {
-            transform: translateY(6.5px) rotate(45deg);
+        .header.scrolled .menu-toggle span {
+            background-color: var(--noir);
         }
-        .mobile-menu-btn.open span:nth-child(2) {
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
             opacity: 0;
+            transform: scaleX(0);
         }
-        .mobile-menu-btn.open span:nth-child(3) {
-            transform: translateY(-6.5px) rotate(-45deg);
-        }
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 26, 26, 0.97);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 99;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s;
-            list-style: none;
-        }
-        .mobile-nav.open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .mobile-nav a {
-            color: var(--creme-coquillage);
-            text-decoration: none;
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 5vw, 2.6rem);
-            letter-spacing: 0.02em;
-            transition: color 0.3s;
-        }
-        .mobile-nav a:hover {
-            color: var(--turquoise);
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        /* ========== SECTIONS ========== */
-        .section {
-            position: relative;
-            z-index: 1;
-            padding: clamp(3rem, 8vh, 7rem) clamp(1.2rem, 5vw, 3rem);
-        }
-        .section-light {
-            background-color: var(--creme-coquillage);
-            color: var(--noir-carbone);
-        }
-        .section-light .section-rule {
-            background: var(--anthracite);
-        }
-        .section-dark {
-            background-color: var(--noir-carbone);
-            color: var(--sable-pale);
-        }
-        .section-rule {
-            width: clamp(40px, 6vw, 70px);
-            height: 2px;
-            background: var(--turquoise);
-            margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
-            border: none;
-        }
-        .section-tag {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--turquoise);
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-        .section-light .section-tag {
-            color: #1a8a80;
+        @media (max-width: 768px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 340px;
+                height: 100vh;
+                background-color: var(--bleu-nuit);
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 5rem 2.5rem;
+                gap: 2rem;
+                transition: right 0.45s var(--ease-out-expo);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+                color: var(--blanc) !important;
+                letter-spacing: 0.06em;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .header-cta {
+                font-size: 0.78rem;
+                padding: 0.55em 1.2em;
+            }
         }
 
-        /* ========== HERO ========== */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+            .header-nav {
+                position: static;
+                flex-direction: row;
+                background: none;
+                box-shadow: none;
+                width: auto;
+                height: auto;
+                padding: 0;
+                gap: clamp(1.4rem, 3vw, 2.6rem);
+            }
+            .header-nav.open {
+                right: auto;
+            }
+        }
+
+        /* ===== HERO ===== */
         .hero {
+            position: relative;
+            width: 100%;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            padding-top: clamp(4rem, 10vh, 7rem);
-            padding-bottom: clamp(2rem, 5vh, 4rem);
+            align-items: flex-end;
             overflow: hidden;
+            background-color: var(--bleu-nuit);
         }
-        .hero-bg {
+        .hero-image {
             position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg img {
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 35%;
-            filter: brightness(0.5) saturate(0.7);
-            opacity: 0.85;
+            z-index: 0;
+            filter: brightness(0.55) saturate(0.85);
+            transform: scale(1.05);
         }
-        .hero-bg::after {
-            content: '';
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-image {
+                animation: hero-zoom 8s var(--ease-out-expo) forwards;
+            }
+            @keyframes hero-zoom {
+                0% {
+                    transform: scale(1.12);
+                }
+                100% {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        .hero-overlay {
             position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 55% 40%, transparent 30%, rgba(26, 26, 26, 0.7) 80%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(28, 28, 28, 0.25) 0%,
+                    rgba(28, 28, 28, 0.05) 35%,
+                    rgba(28, 28, 28, 0.55) 70%,
+                    rgba(28, 28, 28, 0.82) 100%);
             z-index: 1;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
-            padding: 0 clamp(1rem, 4vw, 3rem);
+            padding: clamp(3rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .hero-file {
+            display: inline-block;
+            width: clamp(40px, 6vw, 72px);
+            height: 2px;
+            background-color: var(--turquoise);
+            margin-bottom: 0.5rem;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-file {
+                animation: file-reveal 1.2s 0.15s var(--ease-out-expo) forwards;
+                transform-origin: left;
+                transform: scaleX(0);
+            }
+            @keyframes file-reveal {
+                to {
+                    transform: scaleX(1);
+                }
+            }
         }
         .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.6rem, 7vw, 6.5rem);
-            font-weight: 400;
-            line-height: 0.95;
+            font-family: var(--display);
+            font-size: clamp(2.6rem, 6vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.05;
             letter-spacing: -0.015em;
-            color: var(--creme-coquillage);
-            margin-bottom: clamp(1rem, 2.5vh, 2rem);
-            text-wrap: balance;
+            color: var(--blanc);
+            max-width: 800px;
         }
-        .hero-title em {
-            font-style: italic;
-            color: var(--turquoise);
-            display: block;
-            font-size: 0.7em;
-            letter-spacing: 0.01em;
-            margin-top: 0.1em;
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-title {
+                animation: reveal-up 1s 0.3s var(--ease-out-expo) forwards;
+                opacity: 0;
+                transform: translateY(30px);
+            }
         }
         .hero-subtitle {
-            font-family: var(--font-body);
-            font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-            font-weight: 300;
-            line-height: 1.7;
-            color: var(--sable-pale);
-            max-width: 560px;
-            margin-bottom: clamp(1.8rem, 4vh, 2.8rem);
-            text-wrap: balance;
+            font-family: var(--body);
+            font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 520px;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
         }
-        .hero-cta {
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-subtitle {
+                animation: reveal-up 1s 0.5s var(--ease-out-expo) forwards;
+                opacity: 0;
+                transform: translateY(24px);
+            }
+        }
+        .hero-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-badge-row {
+                animation: reveal-up 1s 0.65s var(--ease-out-expo) forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+        .hero-badge-google {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--turquoise);
-            color: var(--noir-carbone);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: clamp(0.85rem, 1.5vw, 1rem);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 0.85rem 2rem;
-            border-radius: 2px;
-            transition: background 0.3s, transform 0.3s var(--ease-spring), box-shadow 0.3s;
-            font-family: var(--font-body);
-            position: relative;
-            z-index: 3;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5em 1em;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--blanc);
+            letter-spacing: 0.03em;
         }
-        .hero-cta:hover,
-        .hero-cta:focus-visible {
-            background: #3dd5ca;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px var(--turquoise-glow);
-            outline: none;
+        .hero-badge-stars {
+            color: #F9A825;
+            letter-spacing: 0.08em;
+            font-size: 1rem;
         }
-        .hero-scroll-hint {
-            position: absolute;
-            bottom: clamp(1.5rem, 4vh, 2.5rem);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
+        .hero-cta-group {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            opacity: 0.7;
-            animation: bounce-hint 2.5s ease-in-out infinite;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.8rem;
         }
-        .hero-scroll-hint span {
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--sable-pale);
-        }
-        .hero-scroll-hint svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--turquoise);
-            fill: none;
-            stroke-width: 1.5;
-        }
-        @keyframes bounce-hint {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-cta-group {
+                animation: reveal-up 1s 0.8s var(--ease-out-expo) forwards;
+                opacity: 0;
+                transform: translateY(18px);
             }
-            50% {
-                transform: translateX(-50%) translateY(10px);
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.85em 2em;
+            border-radius: 2px;
+            background-color: var(--turquoise);
+            color: var(--blanc);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.35s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+            text-align: center;
+        }
+        .btn-primary:hover {
+            background-color: #239eac;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(43, 181, 196, 0.35);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.85em 2em;
+            border-radius: 2px;
+            background-color: transparent;
+            color: var(--blanc);
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+            transition: border-color 0.35s var(--ease-out-expo), color 0.35s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+            text-align: center;
+        }
+        .btn-outline:hover {
+            border-color: var(--turquoise);
+            color: var(--turquoise);
+            transform: translateY(-2px);
+        }
+
+        @keyframes reveal-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* ========== TITRES DE SECTION ========== */
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: clamp(4rem, 8vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Section labels */
+        .section-label {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--turquoise);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 1.6em;
+            height: 1.5px;
+            background-color: var(--turquoise);
+            flex-shrink: 0;
+        }
+
         .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5.5vw, 4.5rem);
-            font-weight: 400;
-            line-height: 1.05;
+            font-family: var(--display);
+            font-size: clamp(2rem, 4.5vw, 3.6rem);
+            font-weight: 600;
+            line-height: 1.12;
             letter-spacing: -0.01em;
-            margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
-            text-wrap: balance;
-        }
-        .section-light .section-title {
-            color: var(--noir-carbone);
-        }
-        .section-dark .section-title {
-            color: var(--creme-coquillage);
+            color: var(--noir);
+            margin-bottom: 1.5rem;
         }
         .section-text {
-            font-family: var(--font-body);
-            font-size: clamp(0.95rem, 1.7vw, 1.15rem);
-            font-weight: 300;
-            line-height: 1.75;
-            max-width: 620px;
-            text-wrap: balance;
-        }
-        .section-light .section-text {
-            color: #3a3530;
-        }
-        .section-dark .section-text {
-            color: #cbc7c2;
+            font-family: var(--body);
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.7;
+            color: rgba(28, 28, 28, 0.8);
+            max-width: 600px;
+            letter-spacing: 0.015em;
         }
 
-        /* ========== GRID LAYOUTS ========== */
-        .grid-2col {
+        /* ===== ABOUT ===== */
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(2rem, 5vh, 4rem);
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 7vw, 6rem);
             align-items: start;
         }
-        @media (min-width: 768px) {
-            .grid-2col {
-                grid-template-columns: 1fr 1fr;
-            }
-            .grid-2col.reverse {
-                direction: rtl;
-            }
-            .grid-2col.reverse>* {
-                direction: ltr;
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
         }
-        .grid-3col {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(1.5rem, 3vh, 2.5rem);
-        }
-        @media (min-width: 640px) {
-            .grid-3col {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* ========== BLOCS GESTES ========== */
-        .geste-block {
-            position: relative;
-            padding: clamp(1.8rem, 4vh, 3rem);
-            border: 1px solid var(--anthracite);
-            background: rgba(26, 26, 26, 0.6);
-            transition: border-color 0.5s, background 0.5s;
-            counter-increment: geste-counter;
-        }
-        .geste-block::before {
-            content: counter(geste-counter);
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 7vw, 6rem);
-            color: var(--turquoise);
-            opacity: 0.3;
-            position: absolute;
-            top: -0.15em;
-            left: 0.25em;
-            line-height: 1;
-            pointer-events: none;
-            transition: opacity 0.5s;
-        }
-        .geste-block:hover {
-            border-color: var(--turquoise);
-            background: rgba(42, 192, 180, 0.05);
-        }
-        .geste-block:hover::before {
-            opacity: 0.6;
-        }
-        .geste-block h4 {
-            font-family: var(--font-display);
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            font-weight: 400;
-            color: var(--creme-coquillage);
-            margin-bottom: 0.6rem;
-            position: relative;
-            z-index: 1;
-        }
-        .geste-block p {
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            color: #b0aca7;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ========== HORAIRES ========== */
-        .horaires-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 700px;
-        }
-        @media (min-width: 500px) {
-            .horaires-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        .horaires-card {
-            background: rgba(246, 242, 237, 0.04);
-            border: 1px solid var(--anthracite);
-            padding: clamp(1.2rem, 2.5vh, 2rem);
-            border-radius: 1px;
-        }
-        .horaires-card h4 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--creme-coquillage);
-            margin-bottom: 0.5rem;
-        }
-        .horaires-card p {
-            font-size: 0.85rem;
-            color: #b0aca7;
-            line-height: 1.6;
-        }
-
-        /* ========== GALERIE AMBIANCE ========== */
-        .galerie-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-        @media (min-width: 768px) {
-            .galerie-grid {
-                grid-template-columns: 2fr 1fr;
-                min-height: 70vh;
-            }
-        }
-        .galerie-main {
+        .about-accent-block {
+            background-color: var(--bleu-nuit);
+            padding: clamp(2rem, 4vw, 3.5rem);
+            border-radius: 2px;
             position: relative;
             overflow: hidden;
-            min-height: clamp(280px, 50vh, 500px);
+            color: var(--blanc);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-self: stretch;
+            min-height: 280px;
+            justify-content: center;
         }
-        .galerie-main img {
+        .about-accent-block::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid rgba(43, 181, 196, 0.3);
+            pointer-events: none;
+        }
+        .about-accent-block .big-number {
+            font-family: var(--display);
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1;
+            color: var(--turquoise);
+            letter-spacing: -0.02em;
+        }
+        .about-accent-block p {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== OFFER ===== */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: clamp(1.2rem, 2vw, 2rem);
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        .offer-card {
+            background: var(--blanc);
+            padding: clamp(1.8rem, 3vw, 2.8rem);
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+            border: 1px solid rgba(28, 28, 28, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .offer-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(28, 28, 28, 0.1);
+        }
+        .offer-card.card-span-4 {
+            grid-column: span 4;
+        }
+        .offer-card.card-span-6 {
+            grid-column: span 6;
+        }
+        .offer-card.card-span-3 {
+            grid-column: span 3;
+        }
+        @media (max-width: 900px) {
+            .offer-card.card-span-4,
+            .offer-card.card-span-6,
+            .offer-card.card-span-3 {
+                grid-column: span 6;
+            }
+        }
+        @media (max-width: 768px) {
+            .offer-card.card-span-4,
+            .offer-card.card-span-6,
+            .offer-card.card-span-3 {
+                grid-column: span 1;
+            }
+        }
+        .offer-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(43, 181, 196, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--turquoise);
+            flex-shrink: 0;
+            transition: background-color 0.4s var(--ease-out-expo);
+        }
+        .offer-card:hover .offer-card-icon {
+            background-color: rgba(43, 181, 196, 0.18);
+        }
+        .offer-card h3 {
+            font-family: var(--display);
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-weight: 600;
+            letter-spacing: -0.005em;
+            color: var(--noir);
+            line-height: 1.2;
+        }
+        .offer-card p {
+            font-family: var(--body);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(28, 28, 28, 0.7);
+            letter-spacing: 0.015em;
+        }
+        .offer-card .card-file {
+            width: 28px;
+            height: 1.5px;
+            background-color: var(--turquoise);
+            margin-top: auto;
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .offer-card:hover .card-file {
+            width: 48px;
+        }
+
+        /* ===== AMBIANCE ===== */
+        .ambiance-wrapper {
+            position: relative;
+            width: 100%;
+            background-color: var(--bleu-nuit);
+            overflow: hidden;
+            padding: clamp(3rem, 5vw, 5rem) 0;
+        }
+        .ambiance-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .ambiance-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .ambiance-image-frame {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+        .ambiance-image-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 30%;
             display: block;
-            transition: transform 1.2s var(--ease-out-expo);
+            transition: transform 0.6s var(--ease-out-expo);
         }
-        .galerie-main:hover img {
+        .ambiance-image-frame:hover img {
             transform: scale(1.04);
         }
-        .galerie-side {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: clamp(1.5rem, 4vh, 3rem);
-            background: var(--noir-carbone);
-            gap: 1.5rem;
-        }
-        .galerie-legend {
-            font-family: var(--font-display);
-            font-size: clamp(1.4rem, 3vw, 2.2rem);
-            font-weight: 400;
-            color: var(--creme-coquillage);
-            line-height: 1.2;
-            letter-spacing: -0.005em;
-        }
-        .galerie-legend span {
-            color: var(--turquoise);
-            font-style: italic;
-        }
-        .galerie-detail {
-            font-size: 0.85rem;
-            color: #a09b95;
-            line-height: 1.7;
-            font-family: var(--font-body);
-            font-weight: 300;
-        }
-
-        /* ========== AVIS / BADGE ========== */
-        .badge-avis {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(42, 192, 180, 0.08);
-            border: 1px solid rgba(42, 192, 180, 0.3);
-            padding: 0.7rem 1.2rem;
-            border-radius: 2px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            color: var(--creme-coquillage);
-            transition: border-color 0.4s, background 0.4s;
-        }
-        .badge-avis:hover {
-            border-color: var(--turquoise);
-            background: rgba(42, 192, 180, 0.14);
-        }
-        .badge-avis .stars {
-            color: #f0c040;
-            letter-spacing: 0.05em;
-            font-size: 1rem;
-        }
-        .badge-avis .note {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* ========== CARTE ========== */
-        .map-wrapper {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            max-height: 420px;
-            overflow: hidden;
-            border: 1px solid var(--anthracite);
-            border-radius: 1px;
-            position: relative;
-        }
-        .map-wrapper iframe {
+        .ambiance-image-frame::after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 16px;
             width: 100%;
             height: 100%;
-            border: 0;
-            filter: grayscale(30%) brightness(0.9);
-            transition: filter 0.5s;
+            border: 2px solid rgba(43, 181, 196, 0.4);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: -1;
         }
-        .map-wrapper:hover iframe {
-            filter: grayscale(0%) brightness(1);
+        .ambiance-text-block {
+            color: var(--blanc);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .ambiance-text-block .section-label {
+            color: var(--turquoise);
+        }
+        .ambiance-text-block .section-label::before {
+            background-color: var(--turquoise);
+        }
+        .ambiance-text-block h2 {
+            font-family: var(--display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 600;
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            color: var(--blanc);
+        }
+        .ambiance-text-block p {
+            font-family: var(--body);
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.02em;
+            max-width: 460px;
+        }
+        .ambiance-decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(43, 181, 196, 0.25);
+            pointer-events: none;
+        }
+        .ambiance-decor-circle.c1 {
+            width: 180px;
+            height: 180px;
+            top: -60px;
+            right: -40px;
+        }
+        .ambiance-decor-circle.c2 {
+            width: 80px;
+            height: 80px;
+            bottom: 40px;
+            left: 8%;
+            border-color: rgba(194, 159, 125, 0.35);
         }
 
-        /* ========== FOOTER ========== */
-        .site-footer {
-            background: #111111;
-            border-top: 1px solid var(--anthracite);
-            padding: clamp(2rem, 5vh, 4rem) clamp(1.2rem, 5vw, 3rem);
+        /* ===== REVIEWS ===== */
+        .reviews-section {
+            background-color: var(--blanc);
+        }
+        .review-badge-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--porcelaine);
+            border: 1px solid rgba(28, 28, 28, 0.08);
+            padding: 2rem 2.5rem;
+            border-radius: 3px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .review-score {
+            font-family: var(--display);
+            font-size: clamp(3rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--noir);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .review-stars {
+            color: #F9A825;
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+        }
+        .review-count {
+            font-family: var(--body);
+            font-size: 0.9rem;
+            color: rgba(28, 28, 28, 0.6);
+            letter-spacing: 0.03em;
+        }
+        .review-quote {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: rgba(28, 28, 28, 0.75);
+            line-height: 1.5;
+            max-width: 500px;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--turquoise);
+        }
+
+        /* ===== INFOS PRATIQUES ===== */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        .infos-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-family: var(--body);
+            font-size: 1rem;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+        }
+        .info-item-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(43, 181, 196, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: var(--turquoise);
+        }
+        .info-item strong {
+            display: block;
+            font-weight: 600;
+            color: var(--noir);
+            margin-bottom: 0.2em;
+        }
+        .info-item span,
+        .info-item a {
+            color: rgba(28, 28, 28, 0.75);
+            transition: color 0.3s;
+        }
+        .info-item a:hover {
+            color: var(--turquoise);
+        }
+        .horaires-note {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--bois);
+            background: rgba(194, 159, 125, 0.1);
+            padding: 0.3em 0.8em;
+            border-radius: 2px;
+            margin-top: 0.3em;
+        }
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(28, 28, 28, 0.1);
+            height: 100%;
+            min-height: 360px;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            border: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--bleu-nuit);
+            color: rgba(255, 255, 255, 0.75);
+            padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 5vw, 4rem);
             position: relative;
             z-index: 1;
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 1000px;
+        .footer-inner {
+            max-width: 1100px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
-        @media (min-width: 600px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr 1fr;
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         .footer-brand {
-            font-family: var(--font-display);
+            font-family: var(--display);
             font-size: 1.3rem;
-            color: var(--creme-coquillage);
+            font-weight: 600;
+            color: var(--blanc);
+            letter-spacing: -0.005em;
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+        .footer-dot {
+            width: 0.4em;
+            height: 0.4em;
+            border-radius: 50%;
+            background: var(--turquoise);
+            display: inline-block;
+        }
+        .footer p,
+        .footer a {
+            font-size: 0.9rem;
+            line-height: 1.7;
             letter-spacing: 0.02em;
-        }
-        .footer-info {
-            font-size: 0.8rem;
-            color: #8a8580;
-            line-height: 1.8;
-        }
-        .footer-info strong {
-            color: #b5b0aa;
-            font-weight: 500;
-        }
-        .footer-info a {
-            color: var(--turquoise);
-            text-decoration: none;
+            color: rgba(255, 255, 255, 0.65);
             transition: color 0.3s;
         }
-        .footer-info a:hover {
-            color: #3dd5ca;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+        .footer a:hover {
+            color: var(--turquoise);
         }
-        .footer-credit {
-            font-size: 0.7rem;
-            color: #555;
-            margin-top: 2rem;
+        .footer-credits {
+            grid-column: 1/-1;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.4);
             text-align: center;
-            letter-spacing: 0.03em;
         }
 
-        /* ========== REVEAL ANIMATIONS ========== */
+        /* ===== REVEAL ===== */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(36px);
             transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
         }
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         .reveal-delay-1 {
             transition-delay: 0.1s;
@@ -779,350 +1028,257 @@
         .reveal-delay-4 {
             transition-delay: 0.4s;
         }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-        }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-        }
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .hero-title-reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            animation: hero-reveal 1s var(--ease-out-expo) forwards;
-            animation-delay: 0.2s;
-        }
-        .hero-sub-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: hero-reveal 0.8s var(--ease-out-expo) forwards;
-            animation-delay: 0.5s;
-        }
-        .hero-cta-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: hero-reveal 0.7s var(--ease-out-expo) forwards;
-            animation-delay: 0.75s;
-        }
-        @keyframes hero-reveal {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+
         @media (prefers-reduced-motion: reduce) {
             .reveal,
             .reveal-left,
-            .reveal-right,
-            .hero-title-reveal,
-            .hero-sub-reveal,
-            .hero-cta-reveal {
+            .reveal-right {
                 opacity: 1;
                 transform: none;
-                animation: none;
                 transition: none;
             }
-        }
-
-        /* ========== FOCUS ========== */
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--turquoise);
-            outline-offset: 3px;
-        }
-
-        /* ========== RESPONSIVE FINE-TUNING ========== */
-        @media (min-width: 900px) {
-            .header-nav {
-                display: flex;
+            .hero-image {
+                animation: none;
             }
-            .mobile-menu-btn {
-                display: none;
+            .hero-title,
+            .hero-subtitle,
+            .hero-badge-row,
+            .hero-cta-group,
+            .hero-file {
+                animation: none;
+                opacity: 1;
+                transform: none;
             }
-            .section {
-                padding-left: clamp(2rem, 7vw, 5rem);
-                padding-right: clamp(2rem, 7vw, 5rem);
+            .offer-card:hover {
+                transform: none;
             }
-            .hero-content {
-                padding-left: clamp(2rem, 7vw, 5rem);
+            .ambiance-image-frame:hover img {
+                transform: none;
             }
-        }
-        @media (max-width: 899px) {
-            .header-nav {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: flex;
-            }
-            .hero-title {
-                font-size: clamp(2rem, 8vw, 3.5rem);
-            }
-            .filigrane {
-                right: -0.5rem;
-                width: 3.5rem;
-            }
-            .filigrane-inner {
-                width: 22px;
-                height: 22px;
+            html {
+                scroll-behavior: auto;
             }
         }
 
-        /* ========== SUPERPOSITION TYPO ========== */
-        .superposition-block {
-            position: relative;
-            overflow: hidden;
-            min-height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .superposition-block img {
+        /* ===== UTILITIES ===== */
+        .sr-only {
             position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 40%;
-            z-index: 0;
-        }
-        .superposition-overlay {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            mix-blend-mode: difference;
-            color: #fff;
-            padding: 2rem;
-        }
-        .superposition-overlay .section-title {
-            color: #fff;
-            font-size: clamp(2.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            letter-spacing: -0.02em;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Filigrane turquoise fixe -->
-    <div class="filigrane" aria-hidden="true">
-        <div class="filigrane-inner" id="filigraneEl"></div>
-    </div>
 
-    <!-- Header -->
-    <header class="site-header" id="siteHeader">
-        <a href="#hero" class="header-brand">Options <span>Paris</span></a>
-        <nav>
+    <!-- HEADER -->
+    <header class="header" id="header" role="banner">
+        <a href="#hero" class="header-logo" aria-label="Options Paris - Accueil">
+            <span class="header-logo-dot" aria-hidden="true"></span> Options Paris
+        </a>
+        <nav aria-label="Navigation principale">
             <ul class="header-nav" id="headerNav">
-                <li><a href="#esprit">Le lieu</a></li>
-                <li><a href="#composer">Composer</a></li>
-                <li><a href="#gestes">En pratique</a></li>
-                <li><a href="#ambiances">Ambiances</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#offer">Offre</a></li>
+                <li><a href="#ambiance">Ambiance</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="header-cta">Prendre rendez-vous</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-            <span></span><span></span><span></span>
+        <a href="tel:+33142241100" class="header-cta" aria-label="Appeler Options Paris">
+            <span aria-hidden="true">&#9990;</span> Appeler
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </header>
 
-    <!-- Mobile nav -->
-    <ul class="mobile-nav" id="mobileNav">
-        <li><a href="#esprit" data-nav-close>Le lieu</a></li>
-        <li><a href="#composer" data-nav-close>Composer</a></li>
-        <li><a href="#gestes" data-nav-close>En pratique</a></li>
-        <li><a href="#ambiances" data-nav-close>Ambiances</a></li>
-        <li><a href="#contact" data-nav-close>Contact</a></li>
-    </ul>
+    <!-- MAIN -->
+    <main id="main-content">
 
-    <main>
         <!-- HERO -->
-        <section class="hero" id="hero">
-            <div class="hero-bg">
-                <img src="assets/maps-1.jpg" alt="Boutique Options Paris — showroom au 21 rue Gros" loading="eager">
-            </div>
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
+            <img src="assets/maps-1.jpg" alt="Boutique Options Paris - Intérieur de la boutique au 21 Rue Gros, Paris" class="hero-image" loading="eager" fetchpriority="high">
+            <div class="hero-overlay" aria-hidden="true"></div>
             <div class="hero-content">
-                <h1 class="hero-title hero-title-reveal">Dresser votre table<br><em>est un métier.</em></h1>
-                <p class="hero-subtitle hero-sub-reveal">Depuis le 21 rue Gros, Marie-Caroline de Ribet imagine l'ambiance de vos réceptions et orchestre chaque détail — assiette, verre, pli de nappe — autour de votre histoire.</p>
-                <a href="#contact" class="hero-cta hero-cta-reveal">Prendre rendez-vous</a>
-            </div>
-            <div class="hero-scroll-hint" aria-hidden="true">
-                <span>Découvrir</span>
-                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                <span class="hero-file" aria-hidden="true"></span>
+                <h1 class="hero-title" id="heroTitle">L'atelier de style<br>pour vos réceptions</h1>
+                <p class="hero-subtitle">Conseil humain pointu, sélection matérielle exigeante et exécution irréprochable — Options Paris révèle le caractère unique de chaque table.</p>
+                <div class="hero-badge-row">
+                    <span class="hero-badge-google" aria-label="Note Google 3.8 sur 5 basée sur 54 avis">
+                        <span class="hero-badge-stars" aria-hidden="true">★★★★☆</span> 3.8<span aria-hidden="true">/</span>5<span aria-hidden="true"> · </span>54 avis
+                    </span>
+                </div>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-primary">Nous contacter</a>
+                    <a href="tel:+33142241100" class="btn-outline">01 42 24 11 00</a>
+                </div>
             </div>
         </section>
 
-        <!-- SECTION 1 : L'esprit du lieu -->
-        <section class="section section-dark" id="esprit">
-            <div class="grid-2col">
-                <div>
-                    <span class="section-tag reveal">Le 16<sup>e</sup> arrondissement</span>
-                    <h2 class="section-title reveal reveal-delay-1">L'esprit<br>du lieu</h2>
-                    <hr class="section-rule reveal reveal-delay-2">
-                    <p class="section-text reveal reveal-delay-2">La boutique du 16<sup>e</sup> arrondissement n'est pas un entrepôt. C'est un espace de consultation feutré où chaque pièce — assiette turquoise, table en chêne brut, verre à pied — se touche, s'essaie et s'assemble devant vous.</p>
+        <!-- ABOUT -->
+        <section class="section" id="about" aria-labelledby="aboutTitle">
+            <div class="section-inner about-grid">
+                <div class="reveal-left">
+                    <span class="section-label">Notre philosophie</span>
+                    <h2 class="section-title" id="aboutTitle">Le luxe du choix juste, pas la froideur d'un catalogue</h2>
+                    <p class="section-text">Nichée au 21 rue Gros, Options Paris n'est pas une plateforme logistique : c'est un atelier de style où chaque table devient une composition intime, un manifeste visuel. Nous vous accompagnons avec un regard affûté pour que chaque pièce — assiette, verre, set — dialogue avec votre événement.</p>
                 </div>
-                <div class="reveal-right reveal-delay-3" style="display:flex;align-items:center;justify-content:center;">
-                    <div style="width:100%;aspect-ratio:4/3;background:var(--anthracite);position:relative;overflow:hidden;border-radius:1px;">
-                        <img src="assets/maps-1.jpg" alt="Showroom Options Paris" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:brightness(0.75) contrast(1.1);">
-                        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(42,192,180,0.15) 0%, transparent 60%);pointer-events:none;"></div>
+                <div class="about-accent-block reveal-right reveal-delay-2">
+                    <span class="big-number">21</span>
+                    <p>Rue Gros, Paris — une adresse confidentielle où la lumière naturelle baigne notre sélection de céramiques, de bois clair et de pièces graphiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFER -->
+        <section class="section" id="offer" aria-labelledby="offerTitle" style="background-color:var(--porcelaine);">
+            <div class="section-inner">
+                <span class="section-label reveal">Nos services</span>
+                <h2 class="section-title reveal reveal-delay-1" id="offerTitle">Une curation matérielle d'exception</h2>
+                <div class="offer-grid">
+                    <div class="offer-card card-span-4 reveal reveal-delay-1">
+                        <div class="offer-card-icon" aria-hidden="true">◆</div>
+                        <h3>Location de vaisselle</h3>
+                        <p>Assiettes turquoise brillantes, couverts contemporains, verres délicats — chaque pièce est choisie pour sa tenue et son éclat.</p>
+                        <span class="card-file" aria-hidden="true"></span>
+                    </div>
+                    <div class="offer-card card-span-4 reveal reveal-delay-2">
+                        <div class="offer-card-icon" aria-hidden="true">◈</div>
+                        <h3>Arts de la table</h3>
+                        <p>Sets graphiques noir & blanc, nappes en lin, chemins de table — nous composons des harmonies qui structurent l'espace.</p>
+                        <span class="card-file" aria-hidden="true"></span>
+                    </div>
+                    <div class="offer-card card-span-4 reveal reveal-delay-3">
+                        <div class="offer-card-icon" aria-hidden="true">◇</div>
+                        <h3>Conseil personnalisé</h3>
+                        <p>Un regard humain pointu pour accorder les matières, les teintes et les volumes à l'esprit de votre réception.</p>
+                        <span class="card-file" aria-hidden="true"></span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2 : La main qui compose -->
-        <section class="section section-light" id="composer">
-            <div class="grid-2col reverse">
-                <div>
-                    <span class="section-tag reveal">Sur rendez-vous</span>
-                    <h2 class="section-title reveal reveal-delay-1">La main<br>qui compose</h2>
-                    <hr class="section-rule reveal reveal-delay-2">
-                    <p class="section-text reveal reveal-delay-2">Marie-Caroline de Ribet et son équipe vous reçoivent sur rendez-vous pour écouter votre projet, proposer des lignes de vaisselle cohérentes et construire une ambiance qui ressemble à votre événement.</p>
+        <!-- AMBIANCE -->
+        <section class="ambiance-wrapper" id="ambiance" aria-labelledby="ambianceTitle">
+            <div class="ambiance-decor-circle c1" aria-hidden="true"></div>
+            <div class="ambiance-decor-circle c2" aria-hidden="true"></div>
+            <div class="ambiance-inner">
+                <div class="ambiance-image-frame reveal-left">
+                    <img src="assets/maps-1.jpg" alt="Ambiance de la boutique Options Paris" loading="lazy" width="600" height="450">
                 </div>
-                <div class="reveal-left reveal-delay-3" style="display:flex;align-items:center;justify-content:center;">
-                    <div style="width:100%;aspect-ratio:1/1;max-width:380px;background:var(--chene-brut);position:relative;overflow:hidden;border-radius:1px;">
-                        <img src="assets/maps-1.jpg" alt="Composition de table" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:sepia(0.3) brightness(0.9);mix-blend-mode:multiply;opacity:0.7;">
-                        <div style="position:absolute;inset:0;background:rgba(197,168,128,0.25);pointer-events:none;"></div>
+                <div class="ambiance-text-block reveal-right reveal-delay-2">
+                    <span class="section-label">L'écrin</span>
+                    <h2 id="ambianceTitle">Céramique & Contraste</h2>
+                    <p>La boutique est pensée comme une composition vivante : lignes franches, bois clair ciré, et la vibration solaire du turquoise signature. Ici, chaque objet respire la précision contemporaine et la confiance joyeuse. Aucun pastel, aucun effet patiné — juste l'éclat lustré d'une sélection qui assume son caractère.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section reviews-section" id="avis" aria-labelledby="reviewsTitle">
+            <div class="section-inner">
+                <span class="section-label reveal">Ce que l'on dit de nous</span>
+                <h2 class="section-title reveal reveal-delay-1" id="reviewsTitle">La parole à nos clients</h2>
+                <div class="review-badge-large reveal reveal-delay-2">
+                    <div>
+                        <span class="review-score">3.8</span>
+                        <span style="font-size:1.2rem;color:rgba(28,28,28,0.5);">/5</span>
+                    </div>
+                    <div>
+                        <span class="review-stars" aria-label="3.8 étoiles sur 5">★★★★☆</span>
+                        <br>
+                        <span class="review-count">Basé sur <strong>54 avis</strong> Google</span>
+                    </div>
+                </div>
+                <p class="review-quote reveal reveal-delay-3" style="margin-top:2rem;">« Un accueil chaleureux et un choix de pièces remarquable. On sent le soin apporté à chaque détail. »</p>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section" id="infos" aria-labelledby="infosTitle" style="background-color:var(--porcelaine);">
+            <div class="section-inner">
+                <span class="section-label reveal">Infos pratiques</span>
+                <h2 class="section-title reveal reveal-delay-1" id="infosTitle">Nous trouver</h2>
+                <div class="infos-grid">
+                    <div class="infos-details reveal-left reveal-delay-2" id="contact">
+                        <div class="info-item">
+                            <div class="info-item-icon" aria-hidden="true">&#9906;</div>
+                            <div>
+                                <strong>Adresse</strong>
+                                <span>21 Rue Gros, 75016 Paris</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon" aria-hidden="true">&#9743;</div>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <a href="tel:+33142241100">01 42 24 11 00</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon" aria-hidden="true">&#9993;</div>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:boutique.paris@options.net">boutique.paris@options.net</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon" aria-hidden="true">&#9716;</div>
+                            <div>
+                                <strong>Horaires d'ouverture</strong>
+                                <span>Horaires à confirmer</span>
+                                <span class="horaires-note">Nous vous invitons à nous contacter</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-wrapper reveal-right reveal-delay-3" aria-label="Carte Google Maps de la boutique">
+                        <iframe src="https://maps.google.com/maps?q=Boutique+Options+Paris+-+location+de+mat%C3%A9riel+%C3%A9v%C3%A8nementiel+21+Rue+Gros%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localisation de la Boutique Options Paris sur Google Maps"></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3 : Ce que l'on loue vraiment -->
-        <section class="section section-dark">
-            <span class="section-tag reveal">Location sur mesure</span>
-            <h2 class="section-title reveal reveal-delay-1">Ce que l'on loue<br>vraiment</h2>
-            <hr class="section-rule reveal reveal-delay-2">
-            <p class="section-text reveal reveal-delay-2" style="max-width:680px;">Vaisselle contemporaine ou classique, nappage haute tenue, mobilier de réception et accessoires traiteur. Nous ne listons pas des références : nous vous guidons parmi les collections adaptées à votre jauge, votre lieu et votre goût.</p>
-        </section>
-
-        <!-- SECTION 4 : En trois gestes -->
-        <section class="section section-dark" id="gestes">
-            <span class="section-tag reveal">Mode d'emploi</span>
-            <h2 class="section-title reveal reveal-delay-1">En trois gestes</h2>
-            <hr class="section-rule reveal reveal-delay-2">
-            <div class="grid-3col" style="margin-top:1rem;">
-                <div class="geste-block reveal reveal-delay-1">
-                    <h4>Prenez rendez-vous</h4>
-                    <p>Un appel ou un email suffit. Nous convenons d'un créneau pour vous recevoir au 21 rue Gros, dans le 16<sup>e</sup> arrondissement.</p>
-                </div>
-                <div class="geste-block reveal reveal-delay-2">
-                    <h4>Venez composer sur place</h4>
-                    <p>Vous touchez les matières, comparez les lignes, ajustez les quantités. Tout s'assemble devant vous, sans catalogue abstrait.</p>
-                </div>
-                <div class="geste-block reveal reveal-delay-3">
-                    <h4>Nous livrons, dressez, recevez</h4>
-                    <p>Livraison coordonnée, conseils de dressage si vous le souhaitez. Vous n'avez plus qu'à accueillir vos invités.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5 : Avant / après la réception -->
-        <section class="section section-light">
-            <span class="section-tag reveal">Organisation</span>
-            <h2 class="section-title reveal reveal-delay-1">Avant & après<br>la réception</h2>
-            <hr class="section-rule reveal reveal-delay-2">
-            <div class="horaires-grid reveal reveal-delay-3">
-                <div class="horaires-card" style="background:rgba(26,26,26,0.04);border-color:#d5cfc8;">
-                    <h4 style="color:var(--noir-carbone);">Service commercial</h4>
-                    <p style="color:#3a3530;">Du lundi au vendredi<br>9h – 18h<br><em>Consultation sur rendez-vous</em></p>
-                </div>
-                <div class="horaires-card" style="background:rgba(26,26,26,0.04);border-color:#d5cfc8;">
-                    <h4 style="color:var(--noir-carbone);">Enlèvements & retours</h4>
-                    <p style="color:#3a3530;">Sur rendez-vous uniquement<br><em>Coordonné avec votre événement</em></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6 : Ambiances (galerie) -->
-        <section class="section section-dark" id="ambiances" style="padding:0;">
-            <div class="galerie-grid">
-                <div class="galerie-main reveal">
-                    <img src="assets/maps-1.jpg" alt="Assiettes turquoise, nappe en lin brut, couverts satinés" loading="lazy">
-                </div>
-                <div class="galerie-side reveal reveal-delay-2">
-                    <p class="galerie-legend">Assiettes <span>turquoise</span>, nappe en lin brut, couverts satinés.</p>
-                    <p class="galerie-detail">Chaque composition raconte une histoire. La vôtre commence ici, au 21 rue Gros.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION SUPERPOSITION -->
-        <section class="superposition-block">
-            <img src="assets/maps-1.jpg" alt="" loading="lazy" aria-hidden="true">
-            <div class="superposition-overlay reveal">
-                <p class="section-title" style="font-size:clamp(2rem,7vw,6rem);">Une table<br>ne se dresse pas<br>au hasard.</p>
-            </div>
-        </section>
-
-        <!-- SECTION 7 : Au 21 rue Gros -->
-        <section class="section section-dark" id="contact">
-            <span class="section-tag reveal">Nous trouver</span>
-            <h2 class="section-title reveal reveal-delay-1">Au 21 rue Gros</h2>
-            <hr class="section-rule reveal reveal-delay-2">
-            <div class="grid-2col" style="align-items:start;">
-                <div class="reveal reveal-delay-2">
-                    <p class="section-text" style="margin-bottom:1.5rem;">Entre l'Arc de Triomphe et le Trocadéro, dans un quartier calme du 16<sup>e</sup> arrondissement. Poussez la porte : tout se décide ici, autour des matières et des couleurs.</p>
-                    <p style="font-family:var(--font-body);font-size:0.95rem;color:#b0aca7;line-height:1.7;margin-bottom:0.6rem;">
-                        <strong style="color:#cbc7c2;">Téléphone :</strong> <a href="tel:+33142241100" style="color:var(--turquoise);text-decoration:none;">01 42 24 11 00</a>
-                    </p>
-                    <p style="font-family:var(--font-body);font-size:0.95rem;color:#b0aca7;line-height:1.7;margin-bottom:1.5rem;">
-                        <strong style="color:#cbc7c2;">Email :</strong> <a href="mailto:boutique.paris@options.net" style="color:var(--turquoise);text-decoration:none;">boutique.paris@options.net</a>
-                    </p>
-                    <div class="badge-avis reveal reveal-delay-3" style="margin-bottom:1.5rem;">
-                        <span class="stars">★★★★☆</span>
-                        <span class="note">3.8 / 5</span>
-                        <span style="color:#a09b95;">— 54 avis Google</span>
-                    </div>
-                    <p style="font-size:0.8rem;color:#777;font-style:italic;">Lisez les avis, ils racontent mieux que nous.</p>
-                </div>
-                <div class="reveal-right reveal-delay-3">
-                    <div class="map-wrapper">
-                        <iframe src="https://maps.google.com/maps?q=Boutique+Options+Paris+-+location+de+mat%C3%A9riel+%C3%A9v%C3%A8nementiel+21+Rue+Gros%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Boutique Options Paris"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">Options Paris</div>
-            <div class="footer-info">
-                <strong>Adresse</strong><br>
-                21 Rue Gros<br>
-                75016 Paris<br>
-                France
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <span class="footer-brand">Options Paris <span class="footer-dot" aria-hidden="true"></span></span>
+                <p style="margin-top:0.8rem;">Location de matériel événementiel<br>21 Rue Gros, 75016 Paris</p>
             </div>
-            <div class="footer-info">
-                <strong>Contact</strong><br>
-                <a href="tel:+33142241100">01 42 24 11 00</a><br>
-                <a href="mailto:boutique.paris@options.net">boutique.paris@options.net</a><br>
-                Note Google : 3.8 ★ (54 avis)
+            <div>
+                <p><strong style="color:rgba(255,255,255,0.9);">Contact</strong><br>
+                    <a href="tel:+33142241100">01 42 24 11 00</a><br>
+                    <a href="mailto:boutique.paris@options.net">boutique.paris@options.net</a>
+                </p>
             </div>
+            <div>
+                <p><strong style="color:rgba(255,255,255,0.9);">Google</strong><br>
+                    3.8★ — 54 avis<br>
+                    Horaires à confirmer
+                </p>
+            </div>
+            <p class="footer-credits">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5);">Agence Mooo</a></p>
         </div>
-        <p class="footer-credit">Site créé par Agence Mooo</p>
     </footer>
 
-    <!-- Schema.org -->
+    <!-- SCHEMA.ORG -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Boutique Options Paris — location de matériel événementiel",
-            "description": "Location de vaisselle, nappage, mobilier de réception et accessoires traiteur. Marie-Caroline de Ribet vous reçoit sur rendez-vous au 21 rue Gros, Paris 16e.",
-            "image": "assets/maps-1.jpg",
+            "name": "Boutique Options Paris - location de matériel évènementiel",
+            "description": "Atelier de style parisien spécialisé dans la location de matériel événementiel : vaisselle, arts de la table et conseil personnalisé pour vos réceptions.",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "21 Rue Gros",
@@ -1132,103 +1288,124 @@
             },
             "telephone": "+33142241100",
             "email": "boutique.paris@options.net",
+            "image": "https://agence.mooo.com/boutique-options-paris-location-de-materiel-evenementiel/assets/maps-1.jpg",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "3.8",
                 "reviewCount": "54"
             },
-            "url": "https://agence.mooo.com/boutique-options-paris-location-de-materiel-evenementiel"
+            "url": "https://agence.mooo.com/boutique-options-paris-location-de-materiel-evenementiel",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "description": "Horaires à confirmer. Veuillez contacter la boutique."
+            }
         }
     </script>
 
+    <!-- SCRIPTS -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        const navCloseLinks = document.querySelectorAll('[data-nav-close]');
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const menuToggle = document.getElementById('menuToggle');
+            const headerNav = document.getElementById('headerNav');
+            const navLinks = headerNav.querySelectorAll('a');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = mobileNav.classList.contains('open');
-            mobileNav.classList.toggle('open', !isOpen);
-            mobileMenuBtn.classList.toggle('open', !isOpen);
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-        });
+            function updateHeader() {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
 
-        navCloseLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('open');
-                mobileMenuBtn.classList.remove('open');
+            // Mobile menu toggle
+            function toggleMenu() {
+                const isOpen = headerNav.classList.toggle('open');
+                menuToggle.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                if (isOpen) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+
+            function closeMenu() {
+                headerNav.classList.remove('open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (headerNav.classList.contains('open')) {
+                        closeMenu();
+                    }
+                });
             });
-        });
 
-        // Header scroll effect
-        const siteHeader = document.getElementById('siteHeader');
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            if (scrollY > 60) {
-                siteHeader.classList.add('scrolled');
-            } else {
-                siteHeader.classList.remove('scrolled');
-            }
-            lastScroll = scrollY;
-
-            // Animate filigrane on scroll
-            const filigraneEl = document.getElementById('filigraneEl');
-            if (filigraneEl) {
-                const scrollPercent = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
-                const rotation = scrollPercent * 90;
-                const scale = 1 + scrollPercent * 0.4;
-                filigraneEl.style.transform = `rotate(${rotation}deg) scale(${scale})`;
-            }
-        });
-
-        // IntersectionObserver for reveal animations
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -60px 0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+            // Close menu on outside click
+            document.addEventListener('click', function(e) {
+                if (headerNav.classList.contains('open') &&
+                    !headerNav.contains(e.target) &&
+                    !menuToggle.contains(e.target)) {
+                    closeMenu();
                 }
             });
-        }, observerOptions);
 
-        revealElements.forEach(el => observer.observe(el));
+            // Scroll listener
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        updateHeader();
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }, { passive: true });
 
-        // Filigrane hover interaction with nav links
-        const filigraneEl = document.getElementById('filigraneEl');
-        const allAnchors = document.querySelectorAll('a[href^="#"]');
-        allAnchors.forEach(anchor => {
-            anchor.addEventListener('mouseenter', () => {
-                filigraneEl.classList.add('active');
-            });
-            anchor.addEventListener('mouseleave', () => {
-                filigraneEl.classList.remove('active');
-            });
-            anchor.addEventListener('focus', () => {
-                filigraneEl.classList.add('active');
-            });
-            anchor.addEventListener('blur', () => {
-                filigraneEl.classList.remove('active');
-            });
-        });
+            updateHeader();
 
-        // CTA buttons also trigger filigrane pulse
-        const ctaButtons = document.querySelectorAll('.header-cta, .hero-cta');
-        ctaButtons.forEach(btn => {
-            btn.addEventListener('mouseenter', () => filigraneEl.classList.add('active'));
-            btn.addEventListener('mouseleave', () => filigraneEl.classList.remove('active'));
-            btn.addEventListener('focus', () => filigraneEl.classList.add('active'));
-            btn.addEventListener('blur', () => filigraneEl.classList.remove('active'));
-        });
+            // IntersectionObserver for reveals
+            if ('IntersectionObserver' in window) {
+                const revealOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.12
+                };
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, revealOptions);
+
+                document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // Escape key to close menu
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && headerNav.classList.contains('open')) {
+                    closeMenu();
+                    menuToggle.focus();
+                }
+            });
+        })();
     </script>
 </body>
 </html>
