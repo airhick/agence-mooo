@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monceau Fleurs Paris 15 - Fleuriste local, fraîcheur & conseil</title>
+    <meta name="description" content="Monceau Fleurs, fleuriste au 56 rue de la Convention, Paris 15ᵉ. Bouquets de saison, compositions sur mesure, livraison 7j/7. Un vrai commerce de quartier, sans chichi.">
+    <meta property="og:title" content="Monceau Fleurs - Le bouquet du coin, sans chichi">
+    <meta property="og:description" content="Fleurs fraîches, du lundi au dimanche, à deux pas de la Convention. Boutique ouverte, livraison Paris, conseil sur mesure.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221em%22 font-size=%2290%22>🌸</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fond-principal: #FDFAF6;
+            --encre: #2D3A2C;
+            --surface: #F4EEE4;
+            --accent: #C75B39;
+            --saison: #8EAC5A;
+            --sombre: #1C261B;
+            --texture-kraft: rgba(244, 238, 228, 0.8);
+            --shadow-soft: 0 8px 30px rgba(28, 38, 27, 0.08);
+            --shadow-deep: 0 12px 40px rgba(28, 38, 27, 0.15);
+            --border-radius: 1.25rem;
+            --transition-smooth: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+            --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--fond-principal);
+            font-size: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--fond-principal);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- TEXTURE GLOBALE LÉGÈRE (grain) --- */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- HEADER / NAV --- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 250, 246, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(45, 58, 44, 0.08);
+            padding: 0.75rem 0;
+            transition: var(--transition-smooth);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--encre);
+            letter-spacing: -0.5px;
+            line-height: 1;
+            text-decoration: none;
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+        }
+        .logo span {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-left: 2px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .cta-header {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 3rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(199, 91, 57, 0.25);
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .cta-header:hover {
+            background: #b5432a;
+            box-shadow: 0 6px 20px rgba(199, 91, 57, 0.4);
+        }
+        .badge-google {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-soft);
+            color: var(--encre);
+        }
+        .badge-google svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0 4rem;
+            min-height: 70vh;
+        }
+        .hero-content {
+            padding-right: 1rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.6rem, 8vw, 4.5rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: 1.2rem;
+            text-wrap: balance;
+        }
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-weight: 400;
+            color: #2D3A2C;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        .hero-image {
+            position: relative;
+            border-radius: 2rem 2rem 2rem 0.5rem;
+            overflow: hidden;
+            box-shadow: 20px 20px 0px rgba(199, 91, 57, 0.15), 0 20px 40px rgba(0,0,0,0.2);
+            transform: rotate(0.5deg);
+            transition: transform 0.4s;
+            aspect-ratio: 4/4.2;
+        }
+        .hero-image:hover {
+            transform: rotate(0deg) scale(1.01);
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.05) saturate(1.1);
+            transition: filter 0.3s;
+        }
+        .hero-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(130deg, rgba(45,58,44,0.2) 0%, rgba(142,172,90,0.15) 50%, rgba(199,91,57,0.1) 100%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .tige-motif {
+            position: absolute;
+            bottom: -15px;
+            left: -10px;
+            width: 130px;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><path d="M5,45 Q25,20 40,30 T75,15 T115,25" stroke="%23C75B39" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/><circle cx="75" cy="13" r="3" fill="%23C75B39" opacity="0.6"/></svg>') no-repeat;
+            pointer-events: none;
+            z-index: 2;
+            animation: tige-grow 2s ease-out forwards;
+        }
+        @keyframes tige-grow {
+            from { opacity: 0; transform: scaleX(0.5); }
+            to { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* --- SECTIONS GENERALES --- */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        .section-accent {
+            background: var(--surface);
+            border-radius: 2.5rem;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: inset 0 0 0 1px rgba(45,58,44,0.05);
+        }
+        h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70%;
+            height: 3px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 6" xmlns="http://www.w3.org/2000/svg"><path d="M2,5 Q30,1 50,3 T98,2" stroke="%23C75B39" stroke-width="2" fill="none" opacity="0.7"/></svg>') no-repeat;
+            background-size: contain;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .text-large {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--encre);
+        }
+        .price-tag {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2D3A2C 0%, #C75B39 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        /* -- SAISON BLOCKS -- */
+        .saison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .saison-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(45,58,44,0.05);
+        }
+        .saison-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-deep);
+        }
+        .saison-card::before {
+            content: "🌸";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 4rem;
+            opacity: 0;
+            transform: rotate(20deg);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+        }
+        .saison-card:hover::before {
+            opacity: 0.25;
+            top: 10px;
+            right: 10px;
+            transform: rotate(0deg);
+        }
+        .badge-saison {
+            background: var(--saison);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- AVIS --- */
+        .avis-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            font-style: italic;
+            position: relative;
+        }
+        .avis-card::before {
+            content: "“";
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            line-height: 1;
+        }
+
+        /* --- MAP --- */
+        .map-container {
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            margin-top: 2rem;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: var(--sombre);
+            color: #F4EEE4;
+            padding: 3rem 0 2rem;
+            margin-top: auto;
+        }
+        .footer a {
+            color: #E8B4A0;
+            text-decoration: none;
+        }
+
+        /* --- ANIMATIONS SCROLL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .hero-image, .saison-card, .tige-motif {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                order: 1;
+                padding-right: 0;
+            }
+            .hero-image {
+                order: 0;
+                max-width: 80%;
+                margin: 0 auto 2rem;
+            }
+            .nav-links {
+                gap: 0.8rem;
+            }
+            .header-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Monceau<span>🌿</span></a>
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="#boutique">Boutique</a>
+                <a href="#saison">Saison</a>
+                <a href="#commander">Commander</a>
+                <a href="#avis">Avis</a>
+                <a href="#infos">Infos</a>
+                <a href="tel:+33145779191" class="cta-header">📞 01 45 77 91 91</a>
+                <div class="badge-google" aria-label="Note Google 3.8 sur 5">
+                    <svg viewBox="0 0 24 24" fill="#EAB308"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    3.8★ (95)
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero container reveal">
+            <div class="hero-content">
+                <h1>Des fleurs fraîches, du lundi au dimanche — à deux pas de la Convention</h1>
+                <p class="subtitle">Boutique ouverte, livraison 7j/7 sur Paris. Des compositions de saison, un conseil sur mesure, et souvent un café si vous passez. Pas d’usine, juste nous.</p>
+                <a href="tel:+33145779191" style="display: inline-block; background: var(--accent); color: white; padding: 1rem 2.5rem; border-radius: 3rem; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(199,91,57,0.3);">Appelez-nous</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/maps-1.jpg" alt="Monceau Fleurs, boutique rue de la Convention, étal de fleurs fraîches" loading="eager" width="600" height="750">
+                <div class="tige-motif"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : Boutique -->
+        <section id="boutique" class="container reveal">
+            <h2>Ici, c’est la jungle du 15ᵉ</h2>
+            <div class="grid-2">
+                <div>
+                    <p class="text-large">Depuis plus de 15 ans, l’équipe de Monceau Convention vous accueille avec des fleurs coupées le matin même, des plantes vivantes et des idées pour toutes les occasions. Venez sentir, toucher, repartir avec le bouquet qui vous ressemble.</p>
+                    <p style="margin-top:1rem;">On connaît nos habitués par leur prénom — les nouveaux sont toujours les bienvenus. Pas de chichis, juste de belles tiges et le sourire.</p>
+                </div>
+                <div style="background: var(--surface); padding: 2rem; border-radius: 2rem; text-align: center;">
+                    <span style="font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--accent);">56</span>
+                    <p style="font-weight: 300;">Rue de la Convention<br>75015 Paris</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : Saison -->
+        <section id="saison" class="container reveal">
+            <h2>Nos coups de cœur de saison</h2>
+            <p style="max-width: 600px; margin-bottom: 2rem;">En ce moment, la pivoine est reine. On vous la met en bouquet, en solo ou à prix doux.</p>
+            <div class="saison-grid">
+                <div class="saison-card">
+                    <span class="badge-saison">Jusqu'au 14 juin</span>
+                    <div class="price-tag">6,99 €</div>
+                    <p style="font-size: 1.2rem; font-weight: 600;">Les 5 tiges de pivoines</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Fraîcheur garantie, couleurs éclatantes.</p>
+                </div>
+                <div class="saison-card">
+                    <span class="badge-saison">Nouveau</span>
+                    <p style="font-size: 1.5rem; font-weight: 700; font-family: var(--font-display);">Renoncules & premières roses</p>
+                    <p>Craquez pour les compositions « Petit prix » qui changent chaque semaine. Pas de catalogue figé : affichez vos envies au comptoir.</p>
+                </div>
+                <div class="saison-card">
+                    <span class="badge-saison">Coup de cœur</span>
+                    <p style="font-size: 1.3rem; font-weight: 600;">Bouquet du fleuriste</p>
+                    <p>Laissez-nous vous surprendre avec le meilleur du jour.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : Commander -->
+        <section id="commander" class="container reveal section-accent">
+            <h2>Un clic, un bouquet</h2>
+            <div class="grid-2">
+                <p class="text-large">Choisissez parmi nos créations en ligne, on vous les prépare dans l’heure. Passez les chercher dans notre boutique rue de la Convention (ou on vous les livre dans Paris, en mains propres).</p>
+                <div style="font-weight: 500; background: white; padding: 1.5rem; border-radius: 1.5rem;">
+                    <p>📞 <strong>Le numéro direct :</strong> <a href="tel:+33145779191" style="color: var(--accent);">01 45 77 91 91</a></p>
+                    <p style="margin-top: 0.5rem;">Pas de serveur vocal, juste nous. Appelez, on s’occupe de tout.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : Avis -->
+        <section id="avis" class="container reveal">
+            <h2>Ils viennent du 15ᵉ, d’ici ou d’ailleurs</h2>
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="avis-card">
+                    <p>« Toujours un bon conseil et des fleurs qui tiennent. L’équipe est adorable ! »</p>
+                    <strong style="display: block; margin-top: 1rem;">— Marie K.</strong>
+                </div>
+                <div class="avis-card">
+                    <p>« Mon fleuriste de quartier depuis des années. Ils connaissent mes goûts, jamais déçue. »</p>
+                    <strong style="display: block; margin-top: 1rem;">— Julien D.</strong>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">Note Google : 3.8 ★ sur 95 avis — des vrais clients, des vrais retours.</p>
+        </section>
+
+        <!-- SECTION 5 : Services -->
+        <section id="services" class="container reveal section-accent">
+            <h2>Deuils, mariages, remerciements : on est là</h2>
+            <p class="text-large">Une composition pour un être cher, une arche fleurie pour votre cérémonie, un simple bouquet pour dire merci : appelez-nous ou passez, on écoute et on crée. Livraison en mains propres 7j/7 sur Paris et proche banlieue.</p>
+            <p style="margin-top: 1rem;">🌿 Service sur mesure, devis gratuit.</p>
+        </section>
+
+        <!-- SECTION 6 : Infos pratiques -->
+        <section id="infos" class="container reveal">
+            <h2>Venez ou appelez, c’est simple</h2>
+            <div class="grid-2">
+                <div>
+                    <p><strong>📍 Adresse :</strong><br>56 Rue de la Convention, 75015 Paris</p>
+                    <p style="margin-top: 1rem;"><strong>🕒 Horaires :</strong><br>Lundi au samedi : 9h – 20h30<br>Dimanche : 9h – 19h</p>
+                    <p style="margin-top: 1rem;"><strong>📞 Téléphone :</strong> <a href="tel:+33145779191">01 45 77 91 91</a><br>
+                    <strong>✉️ Email :</strong> <a href="mailto:service.consommateurs@monceaufleurs.com">service.consommateurs@monceaufleurs.com</a></p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Monceau+56+Rue+de+la+Convention%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Monceau Fleurs"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="font-family: var(--font-display); font-size: 1.8rem;">Monceau</p>
+                <p>56 Rue de la Convention, 75015 Paris<br>01 45 77 91 91</p>
+            </div>
+            <div style="text-align: right;">
+                <p>Site créé par Agence Mooo</p>
+                <p style="opacity: 0.7; font-size: 0.8rem;">© 2025 Monceau Fleurs — Le bouquet du coin, sans chichi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Intersection Observer pour reveals
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Animation subtile au survol des cartes saison (pétale flottant géré en CSS)
+            // Pas de JS supplémentaire nécessaire, CSS only pour l'effet hover.
+        })();
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Monceau Fleurs",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "56 Rue de la Convention",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145779191",
+            "email": "service.consommateurs@monceaufleurs.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "95"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                    "opens": "09:00",
+                    "closes": "20:30"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "09:00",
+                    "closes": "19:00"
+                }
+            ]
+        }
+    </script>
+</body>
+</html>
