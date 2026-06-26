@@ -1,103 +1,87 @@
-# BRIEF CRÉATIF — PHARMACIE DE LA RIVE GAUCHE
+## BRIEF CRÉATIF — PHARMACIE DE LA RIVE GAUCHE
 
 ---
 
-## 1. Concept & positionnement
+### 1. Concept & positionnement
 
-La Pharmacie de la Rive Gauche n'est pas un point de vente, c'est un **confident de quartier**. Dans un 15e arrondissement élégant et familial, elle incarne une santé de proximité qui prend le temps : écouter, expliquer, rassurer. Le site sera la transposition numérique de ce pas-de-porte haussmannien – ni clinique, ni corporate, mais habité.
-
-L'idée force : **« Votre santé a un visage. »** Chaque page donne à voir l'équipe, le lieu, le soin concret, loin des templates silencieux.
-
----
-
-## 2. Direction artistique
-
-**Parti pris : « Apothicaire confidentiel ».**
-
-Un minimalisme chaleureux, ancré dans les matières réelles du commerce : la pierre blonde de l'Avenue Émile Zola, le bois ciré des présentoirs, le verre épais des flacons, la lumière douce d'une officine de quartier. L'esthétique emprunte au **carnet de santé éditorial** : mise en page aérée, respirations généreuses, photographies en noir et blanc tiède sur fonds texturés, comme feuilletées dans un ouvrage de référence.
-
-Pas d'effets numériques agressifs : le site respire le calme et la compétence. La typographie display Fraunces, aux empattements organiques, évoque la gravure ancienne des enseignes parisiennes, tandis que Manrope apporte une lisibilité contemporaine sans froideur.
+**L’officine de santé, pas la grande surface du médicament.**  
+On quitte le template institutionnel Giphar pour incarner une véritable pharmacie de quartier du 15ᵉ arrondissement : un lieu où l’on entre pour une ordonnance, et où l’on revient pour le conseil. Le site devient un prolongement numérique de l’accueil humain salué dans les avis — précis, chaleureux, jamais impersonnel. Le parti pris : transposer le sérieux clinique dans une esthétique éditoriale sobre, où chaque information est calibrée pour rassurer et guider.
 
 ---
 
-## 3. Palette chromatique
+### 2. Direction artistique
 
-Tirée des teintes réelles d'une pharmacie haussmannienne élégante :
+**Parti pris : « Apothicaire contemporain »**  
+Une esthétique qui marie la rigueur du médical à la chaleur d’un commerce de proximité parisien. On évoque le bois clair des étagères, le verre dépoli des flacons de préparation, le carrelage métro blanc cassé, et le laiton discret des poignées de tiroirs d’officine. L’image n’est ni aseptisée ni rustique : elle est *habitée*, ordonnée, avec une lumière douce de devanture haussmannienne. La typographie display Fraunces apporte des empattements organiques qui adoucissent la froideur clinique ; Manrope en body assure une lisibilité nette, presque pharmaceutique. Pas d’effets gratuits : chaque élément visuel sert la clarté de l’information de santé.
 
-| Rôle | HEX | Nom |
+---
+
+### 3. Palette
+
+| Rôle | Hex | Nom |
 |------|-----|-----|
-| Fond principal | `#F8F4EF` | Pierre chaude |
-| Encre / texte | `#2C2B2B` | Carbone profond |
-| Accent primaire | `#3A5F4B` | Vert officinal |
-| Accent secondaire | `#C4A35A` | Laiton patiné |
-| Fond alternatif | `#EDE8E1` | Lin écru |
-| Accent chaud | `#9B4E3F` | Terre cuite médicinale |
+| Encre principale (textes) | `#1C3A3A` | Vert nuit profond |
+| Fond principal | `#F9F6F0` | Blanc coquille chaud |
+| Accent chaud & CTA | `#C57B4A` | Cuivre officinal |
+| Vert de soutien (badges, filets) | `#5D7B6F` | Sauge médicinale |
+| Fond secondaire (blocs alternés) | `#EEEAE0` | Beige pierre |
+| Très clair (bordures, séparateurs) | `#D6D0C4` | Lin |
 
-**Dominante claire** (fond pierre), mais avec une densité assumée dans les zones d'encre. Le vert officinal rappelle les plantes médicinales et les croix d'apothicaires ; le laiton patiné évoque les balances anciennes, les détails de devanture. Le terre cuite est utilisé avec parcimonie, en touches chaudes (boutons, icônes).
-
-**Aucun blanc pur, aucun gris froid.** Même les bordures respireront une neutralité chaude.
+**Principe :** fond blanc coquille majoritaire, jamais blanc pur. Le vert nuit pour le texte, pas de noir. Le cuivre pour les boutons et liens — chaud, distinctif, jamais agressif. La sauge pour les pastilles de service et les filets fins. Palette claire, respirante, qui évoque la propreté sans froideur.
 
 ---
 
-## 4. Ton éditorial
+### 4. Ton éditorial
 
-**Voix :** humaine, posée, experte. Une pharmacienne ou un pharmacien parle à un patient qu'il connaît.
-
-**Niveau de langue :** courant soutenu, accessible sans vulgarité. Vouvoiement systématique (respect médical), mais sans distance – ponctué de questions concrètes, d'adresses directes.
-
-**Registre :** celui du conseil en tête-à-tête. On n'hésite pas à dire « Vous avez des appréhensions ? C'est normal. Voyons ensemble ce qui est possible. » (dans la droite ligne du message Google Maps sur l'asthme et le sport).
-
-**Éviter :** la tonalité institutionnelle, les énumérations froides, le jargon non explicité, les superlatifs vides.
+**Voix :** une pharmacienne compétente qui vous connaît par votre prénom.  
+**Registre :** professionnel sans jargon, chaleureux sans familiarité excessive. Précision médicale (noms de tests, pathologies, dispositifs) contrebalancée par une syntaxe fluide et des adresses directes (« vous », « votre ordonnance », « votre pharmacien »). Pas de superlatifs vendeurs ; des faits, des services concrets, un ton rassurant. Le “nous” est utilisé avec parcimonie — on préfère nommer l’équipe, les pharmaciens, pour humaniser.
 
 ---
 
-## 5. Accroche héro
+### 5. Accroche héro
 
-**Titre :**  
-# Votre santé a un visage.  
-*Le nôtre, au 4 avenue Émile Zola.*
+**Titre (H1) :**  
+*Votre santé, à deux pas de l’avenue Émile Zola*
 
 **Sous-titre :**  
-Pharmaciens, préparateurs, orthopédiste… toute une équipe vous connaît par votre prénom — et par votre dernière ordonnance. Conseils, vaccins, suivi chronique, médecines naturelles : prenez la porte à gauche, on s'occupe de tout.
+Ordonnances, conseils personnalisés, tests rapides — une équipe de pharmaciens à votre écoute, au cœur du 15ᵉ.
 
 ---
 
-## 6. Sections ordonnées
+### 6. Sections
 
-**① Équipe — « Ceux qui vous soignent »**  
-*Photo de groupe réelle en noir et blanc chaud, prénoms, rôles, une phrase de chacun sur sa vision du métier. Ex : « Julie, pharmacienne titulaire — "Je ne signe jamais une ordonnance sans avoir posé trois questions." »*
+**① Présentation — « Une pharmacie de quartier, vraiment »**  
+*Texte :* Au 4 avenue Émile Zola depuis plus de vingt ans, la Pharmacie de la Rive Gauche est une officine indépendante du réseau Giphar. Nous pratiquons une pharmacie de santé : vaccination, tests rapides (angine, cystite, grippe, COVID) avec délivrance d’antibiotiques si nécessaire, entretiens pharmaceutiques personnalisés. Ici, vous êtes connu, conseillé, suivi.
 
-**② Services — « Tout ce qu'on peut faire ensemble »**  
-*Ordonnance en ligne, rendez-vous de vaccination, entretiens chroniques (diabète, asthme), livraison Click & Collect, test angine/cystite sans ordonnance. Chaque service est décrit en une phrase plus ses modalités concrètes (créneaux, délais, gratuité).*
+**② Spécialités — « Des compétences qui font la différence »**  
+*Texte :* Aromathérapie scientifique, micronutrition, homéopathie, diététique adulte et pédiatrique, orthopédie — nos pharmaciens se sont formés pour vous accompagner au-delà de la délivrance. Chaque conseil s’appuie sur un entretien et votre historique.
 
-**③ Spécialités — « Nos approches, vos préférences »**  
-*Aromathérapie, homéopathie, phytothérapie, accompagnement sportif. Pas de définitions Wikipédia : pour chaque spécialité, un court texte qui commence par un cas patient. Ex : « Vous cherchez un somnifère ? Et si on essayait la mélisse ? »*
+**③ Services — « Tout ce qu’une pharmacie peut faire pour vous »**  
+*Texte :* Vaccination (grippe, COVID, HPV, zona…), tests rapides (angine, cystite, grippe, dépistage COVID), entretiens pour pathologies chroniques (diabète, asthme, cardio, cancer), suivi de traitement. Liste réelle des actes pratiqués, avec pour chacun le mode de prise de rendez-vous.
 
-**④ Accessibilité — « Entrez sans obstacle »**  
-*Rampe PMR, porte large, espace intérieur fluide. Photo réelle de l'accès. Mention explicite : un fauteuil roulant passe partout, le comptoir est abaissé, on peut vous accueillir en langue des signes (si vrai) — tout ce qui montre qu'on y a pensé.*
+**④ Ordonnance en ligne — « Envoyez votre ordonnance en un geste »**  
+*Call to action principal.* Texte : Déposez votre ordonnance via notre formulaire sécurisé. Nous préparons vos médicaments et vous prévenons dès que tout est prêt. Click & Collect disponible.
 
-**⑤ Le quartier — « Notre bout d'avenue »**  
-*Courte histoire de l'Émile Zola, les marchés, les écoles à proximité, pourquoi cette pharmacie est un repère depuis [année]. Une carte dessinée ou une photo de la devanture légendée.*
+**⑤ L’équipe — « Celles et ceux qui vous accueillent »**  
+*Texte :* [Prénom(s) réel(s) à compléter] — pharmaciens titulaires et adjoints, préparatrices. Une courte phrase par personne, avec photo portrait en noir & blanc chaleureux (lumière douce, fond coquille). Corrige l’absence totale d’humain du site actuel.
 
-**⑥ Avis patients — « Ce qu'ils disent de nous »**  
-*Sélection de 3-4 avis Google récents, retranscrits en citations éditoriales, avec prénom et date, pas de note. Pas de faux avis. On assume que ce sont de vrais mots, on les met en scène.*
+**⑥ Actualité santé — « La santé en pratique »**  
+*Texte :* Un bloc éditorial pour les conseils saisonniers, comme l’article sur le don du sang déjà présent (excellent, à conserver et étendre). Ton magazine de santé de quartier, pas blog corporate.
 
-**⑦ Contact & horaires — « On vous répond »**  
-*Téléphone cliquable, email, formulaire d'ordonnance. Horaires jour par jour mais avec mention des jours fériés/ponts. Carte Google Maps intégrée proprement.*
+**⑦ Avis — « La parole à nos patients »**  
+*Texte :* Extraits choisis des 51 avis Google, mise en page sobre avec guillemets surdimensionnés en Fraunces. Pas de faux témoignages : curation honnête de verbatims réels.
 
----
-
-## 7. Signature visuelle
-
-**Animation clé :**  
-Au chargement, le titre héro se dessine lentement en Fraunces, tracé par un filet de couleur laiton, comme une enseigne qu'on dévoile. Image d'équipe en parallax subtil au scroll.
-
-**Traitement photo :**  
-Toutes les photographies réelles reçoivent un **duotone noir et blanc tiède** (carbone + pierre chaude), avec un accent de vert officinal réservé à certains éléments (un flacon, une plante, un tissu). Cela crée une signature immédiatement reconnaissable, chaleureuse sans être vintage.
-
-**Motif récurrent :**  
-Un filet vertical vert officinal (2px) apparaît en bordure gauche des sections importantes, rappelant le repère visuel d'une ordonnance papier ou d'un carnet de rendez-vous. Ce filet se prolonge en animation au scroll, comme un marque-page digital.
+**⑧ Infos pratiques — « Venez nous voir »**  
+*Texte :* Horaires complets (avec statut dynamique “Ouvert / Fermé”), téléphone cliquable (`tel:`), adresse avec lien itinéraire, parking le plus proche, accessibilité PMR (rampe mentionnée dans un avis, à vérifier et mettre en avant si réelle). Plan intégré discret.
 
 ---
 
-**Ce brief ancre la Pharmacie de la Rive Gauche dans ce qu'elle est réellement : une pharmacie de quartier où l'on entre pour un conseil et où l'on revient pour un visage.**
+### 7. Signature visuelle
+
+**1. Motif moléculaire & botanique.**  
+Un motif de fond très discret, visible par transparence sur les blocs alternés : un entrelacs inspiré des formules chimiques (cycles, liaisons) et des silhouettes de plantes médicinales (sauge, camomille, arnica). Dessiné au trait fin couleur lin `#D6D0C4`, il ne se voit presque pas mais confère une texture organique et savante à l’ensemble. Utilisé en filigrane sur la section “Spécialités” et en fond du footer.
+
+**2. Animation de chargement — « pulsation officinale ».**  
+Au scroll, les titres en Fraunces apparaissent avec un très léger effet de “dévoilement” (masque glissant verticalement), évoquant l’ouverture d’un volet de pharmacie ou le tiroir d’un comptoir ancien. Les CTA cuivre ont une micro-interaction au hover : un souligné qui se dessine de gauche à droite, comme un trait de stylo sur une ordonnance.
+
+**Typographie en grand format :** Sur la section “Spécialités”, les noms de spécialités sont composés en Fraunces à une échelle généreuse (4rem+), avec un jeu de graisse (Light pour le nom, Regular pour un sous-titre descriptif). La typo porte littéralement la valeur ajoutée de l’officine — elle n’est jamais un simple habillage.
