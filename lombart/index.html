@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lombart — Maison de gourmandises au chocolat | Neuilly-sur-Seine</title>
+    <meta name="description" content="Lombart, atelier de cookies pensés comme des chocolats à Neuilly-sur-Seine. Façonné main, sélectionné par La Grande Épicerie. Commandez directement à l'atelier.">
+    <meta property="og:title" content="Lombart — Maison de gourmandises au chocolat | Neuilly-sur-Seine">
+    <meta property="og:description" content="Des cookies pensés comme des chocolats. Atelier artisanal à Neuilly-sur-Seine, sélectionné par La Grande Épicerie. Commandez en direct.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Lombart",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "52 bis Rue Charles Laffitte",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33640251926",
+            "email": "commandes@lombart.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "9"
+            },
+            "servesCuisine": "Chocolaterie, Pâtisserie",
+            "description": "Maison de gourmandises au chocolat. Cookies artisanaux pensés comme des chocolats, façonnés à Neuilly-sur-Seine et sélectionnés par La Grande Épicerie."
+        }
+    </script>
+    <style>
+        :root {
+            --coquille-oeuf: #F4F0E9;
+            --chocolat-amer: #3A241A;
+            --kraft-brut: #C8A27A;
+            --feve-torrefiee: #6B3A2A;
+            --cuivre-oxyde: #B76D4C;
+            --blanc-farine: #FAF7F2;
+            --filet: #6B3A2A;
+            --ombre-douce: rgba(58, 36, 26, 0.08);
+            --ombre-medium: rgba(58, 36, 26, 0.16);
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.5vw, 17px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Karla', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--chocolat-amer);
+            background-color: var(--coquille-oeuf);
+            background-image: var(--grain);
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* ----- TYPOGRAPHIE ----- */
+        h1,
+        h2,
+        h3,
+        .display-font {
+            font-family: 'Libre Baskerville', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.015em;
+            line-height: 1.12;
+            color: var(--chocolat-amer);
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.05;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2vw, 1.55rem);
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        p {
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            font-weight: 400;
+            color: var(--chocolat-amer);
+        }
+
+        .karla-light {
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+        .karla-bold {
+            font-weight: 600;
+        }
+
+        /* ----- FILEtS ----- */
+        .filet {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--filet);
+            opacity: 0.3;
+            border: none;
+            margin: 0;
+        }
+        .filet-court {
+            display: block;
+            width: clamp(60px, 8vw, 100px);
+            height: 2px;
+            background: var(--feve-torrefiee);
+            border: none;
+            margin: 0.75rem 0 1.25rem;
+            opacity: 0.7;
+        }
+
+        /* ----- HEADER COLLANT ----- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(244, 240, 233, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(58, 36, 26, 0.08);
+            padding: 0.85rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: box-shadow 0.4s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px var(--ombre-douce);
+        }
+        .header-logo {
+            font-family: 'Libre Baskerville', 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--chocolat-amer);
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--chocolat-amer);
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre-oxyde);
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-block;
+            background: var(--feve-torrefiee);
+            color: var(--blanc-farine);
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.6rem 1.3rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 1px 6px rgba(107, 58, 42, 0.18);
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--cuivre-oxyde);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(107, 58, 42, 0.28);
+        }
+        @media (max-width: 768px) {
+            .header-nav {
+                gap: 0.8rem;
+            }
+            .header-nav a {
+                font-size: 0.78rem;
+                letter-spacing: 0.03em;
+            }
+            .header-cta {
+                font-size: 0.78rem;
+                padding: 0.5rem 0.9rem;
+            }
+            .header-logo {
+                font-size: 1.25rem;
+            }
+        }
+        @media (max-width: 540px) {
+            .site-header {
+                padding: 0.7rem 1rem;
+                gap: 0.6rem;
+            }
+            .header-nav a {
+                font-size: 0.7rem;
+                letter-spacing: 0.02em;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.45rem 0.75rem;
+            }
+            .header-logo {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ----- SECTIONS ----- */
+        .section {
+            padding: clamp(3rem, 8vh, 6rem) clamp(1rem, 5vw, 3rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ----- HÉRO ----- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            position: relative;
+            background: var(--coquille-oeuf);
+            overflow: hidden;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5vw, 3rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+            width: 100%;
+        }
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            margin-bottom: 1.2rem;
+        }
+        .hero-text .sous-titre {
+            font-family: 'Karla', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+            line-height: 1.5;
+            color: var(--chocolat-amer);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            letter-spacing: 0.015em;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--feve-torrefiee);
+            color: var(--blanc-farine);
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.85rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(107, 58, 42, 0.22);
+            position: relative;
+            z-index: 2;
+        }
+        .hero-cta:hover,
+        .hero-cta:focus-visible {
+            background: var(--cuivre-oxyde);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(107, 58, 42, 0.3);
+        }
+        .hero-visuel {
+            position: relative;
+            z-index: 1;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(58, 36, 26, 0.2);
+            aspect-ratio: 4/3;
+            background: var(--kraft-brut);
+        }
+        .hero-visuel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.85) contrast(1.05);
+            mix-blend-mode: normal;
+            transition: filter 0.6s ease;
+        }
+        .hero-visuel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(107, 58, 42, 0.25) 0%, rgba(58, 36, 26, 0.05) 50%, rgba(200, 162, 122, 0.15) 100%);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+        .hero-visuel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            background-image: var(--grain);
+            background-size: 200px 200px;
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+            .hero-text .sous-titre {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 420px;
+            }
+            .hero-visuel {
+                aspect-ratio: 3/2;
+                max-width: 500px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: 8rem;
+                padding-bottom: 3rem;
+            }
+        }
+
+        /* ----- BADGE GOOGLE ----- */
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blanc-farine);
+            border: 1px solid rgba(200, 162, 122, 0.5);
+            border-radius: 2px;
+            padding: 0.5rem 1rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--chocolat-amer);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 1px 4px var(--ombre-douce);
+            white-space: nowrap;
+        }
+        .badge-google .stars {
+            color: #e67e22;
+            letter-spacing: 0.05em;
+            font-size: 1rem;
+        }
+        .badge-google .note {
+            font-weight: 700;
+            color: var(--feve-torrefiee);
+        }
+        @media (max-width: 768px) {
+            .badge-google {
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+            }
+        }
+
+        /* ----- CARTES / BLOCS ----- */
+        .bloc-kraft {
+            background: var(--blanc-farine);
+            border: 1px solid rgba(200, 162, 122, 0.3);
+            border-radius: 2px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: 0 2px 16px var(--ombre-douce);
+            position: relative;
+            transition: box-shadow 0.4s ease, transform 0.3s ease;
+        }
+        .bloc-kraft:hover {
+            box-shadow: 0 6px 28px var(--ombre-medium);
+            transform: translateY(-2px);
+        }
+        .bloc-kraft .filet-court {
+            margin: 0.5rem 0 1rem;
+        }
+
+        .adresse-bloc {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+        .adresse-bloc a {
+            color: var(--feve-torrefiee);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+        .adresse-bloc a:hover {
+            color: var(--cuivre-oxyde);
+        }
+
+        /* ----- GRILLE OÙ TROUVER ----- */
+        .grille-trouver {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2rem;
+        }
+        @media (max-width: 700px) {
+            .grille-trouver {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ----- SECTION COMMANDER ----- */
+        .commander-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .btn-commander {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--feve-torrefiee);
+            color: var(--blanc-farine);
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.6rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(107, 58, 42, 0.2);
+        }
+        .btn-commander:hover,
+        .btn-commander:focus-visible {
+            background: var(--cuivre-oxyde);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 58, 42, 0.28);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--feve-torrefiee);
+            border: 2px solid var(--feve-torrefiee);
+            box-shadow: none;
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: var(--feve-torrefiee);
+            color: var(--blanc-farine);
+            box-shadow: 0 4px 14px rgba(107, 58, 42, 0.2);
+        }
+
+        /* ----- CARTE MAPS ----- */
+        .carte-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px var(--ombre-douce);
+            border: 1px solid rgba(200, 162, 122, 0.3);
+            margin-top: 2rem;
+        }
+        .carte-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ----- ANIMATIONS ----- */
+        .reveal-image {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-image.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-text.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-image,
+            .reveal-text {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: var(--chocolat-amer);
+            color: var(--coquille-oeuf);
+            padding: clamp(2rem, 5vh, 3.5rem) clamp(1rem, 5vw, 3rem);
+            font-family: 'Karla', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            position: relative;
+        }
+        .site-footer a {
+            color: var(--kraft-brut);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        .site-footer a:hover {
+            color: var(--cuivre-oxyde);
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .footer-credits {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(244, 240, 233, 0.15);
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-align: center;
+            opacity: 0.7;
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 600px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ----- FOCUS VISIBLE ----- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--cuivre-oxyde);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+
+        /* ----- TEXTURE DÉCORATIVE ----- */
+        .texture-strip {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(6rem, 15vw, 14rem);
+            font-weight: 700;
+            color: var(--chocolat-amer);
+            letter-spacing: -0.05em;
+            line-height: 1;
+            user-select: none;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <a href="#top" class="header-logo">Lombart</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#atelier">L'Atelier</a></li>
+                <li><a href="#gamme">La Gamme</a></li>
+                <li><a href="#trouver">Où nous trouver</a></li>
+                <li><a href="#commander" class="header-cta">Commander</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top">
+        <!-- HÉRO -->
+        <section class="hero section">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="badge-google" aria-label="Note Google 3.8 sur 5 basée sur 9 avis">
+                        <span class="stars">★★★★</span>
+                        <span class="note">3.8</span>
+                        <span>· 9 avis</span>
+                    </div>
+                    <h1>Des cookies pensés comme des chocolats</h1>
+                    <p class="sous-titre">Atelier de gourmandises au chocolat. Façonné à Neuilly-sur-Seine — sélectionné par La Grande Épicerie.</p>
+                    <a href="#commander" class="hero-cta">Commander en atelier</a>
+                </div>
+                <div class="hero-visuel reveal-image" data-reveal>
+                    <img src="assets/maps-1.jpg" alt="Lombart — Atelier de gourmandises au chocolat à Neuilly-sur-Seine" loading="eager" width="600" height="450">
+                </div>
+            </div>
+            <div class="texture-strip" style="top:15%;right:-5%;transform:rotate(-8deg);" aria-hidden="true">cacao</div>
+        </section>
+
+        <hr class="filet" aria-hidden="true">
+
+        <!-- L'ATELIER -->
+        <section class="section" id="atelier">
+            <div class="section-inner">
+                <div class="reveal-text" data-reveal>
+                    <h2>La main, la fève, le cookie.</h2>
+                    <div class="filet-court" aria-hidden="true"></div>
+                </div>
+                <div class="reveal-text" data-reveal style="transition-delay: 0.1s;">
+                    <p style="max-width:680px;">Lombart est né à Neuilly d'une obsession pour le chocolat de couverture et la texture parfaite. Chaque cookie est façonné à la main dans notre atelier de la rue Charles Laffitte, en petites fournées, sans compromis sur les beurres ni les origines de cacao.</p>
+                </div>
+                <div class="reveal-text" data-reveal style="transition-delay: 0.2s;margin-top:1.5rem;">
+                    <p style="font-size:0.9rem;opacity:0.7;font-style:italic;">Horaires d'atelier : à confirmer — nous contacter pour un retrait ou une livraison.</p>
+                </div>
+            </div>
+            <div class="texture-strip" style="bottom:5%;left:-3%;transform:rotate(2deg);opacity:0.03;" aria-hidden="true">fève</div>
+        </section>
+
+        <hr class="filet" aria-hidden="true">
+
+        <!-- LA GAMME -->
+        <section class="section" id="gamme" style="background:var(--blanc-farine);">
+            <div class="section-inner">
+                <div class="reveal-text" data-reveal>
+                    <h2>Nos signatures chocolatées</h2>
+                    <div class="filet-court" aria-hidden="true"></div>
+                </div>
+                <div class="reveal-text" data-reveal style="transition-delay: 0.1s;">
+                    <p style="max-width:680px;">Cookies épais à cœur moelleux, déclinés en plusieurs intensités — chocolat noir Venezuela, chocolat au lait fleur de sel, chocolat blanc & noix de pécan torréfiées. Chaque création porte une empreinte : généreuse, élégante, jamais sucrée d'avance. Demandez notre carte des gourmandises au moment de commander.</p>
+                </div>
+            </div>
+            <div class="texture-strip" style="top:10%;right:-8%;transform:rotate(5deg);opacity:0.025;" aria-hidden="true">noir</div>
+        </section>
+
+        <hr class="filet" aria-hidden="true">
+
+        <!-- OÙ NOUS TROUVER -->
+        <section class="section" id="trouver">
+            <div class="section-inner">
+                <div class="reveal-text" data-reveal>
+                    <h2>L'atelier & les maisons</h2>
+                    <div class="filet-court" aria-hidden="true"></div>
+                </div>
+                <div class="reveal-text" data-reveal style="transition-delay: 0.1s;">
+                    <p style="max-width:680px;margin-bottom:2rem;">Deux façons de goûter Lombart. Commandez directement à l'atelier de Neuilly (retrait sur place ou livraison locale) — ou retrouvez nos boîtes dans les sélections exigeantes de La Grande Épicerie Rive Gauche (VIIᵉ) et Passy (XVIᵉ).</p>
+                </div>
+                <div class="grille-trouver">
+                    <div class="bloc-kraft reveal-text" data-reveal style="transition-delay:0.15s;">
+                        <h3>L'Atelier — Neuilly</h3>
+                        <div class="filet-court" aria-hidden="true"></div>
+                        <address class="adresse-bloc">
+                            <span>52 bis Rue Charles Laffitte</span>
+                            <span>92200 Neuilly-sur-Seine</span>
+                            <a href="tel:+33640251926">06 40 25 19 26</a>
+                            <a href="mailto:commandes@lombart.fr">commandes@lombart.fr</a>
+                        </address>
+                    </div>
+                    <div class="bloc-kraft reveal-text" data-reveal style="transition-delay:0.25s;">
+                        <h3>La Grande Épicerie</h3>
+                        <div class="filet-court" aria-hidden="true"></div>
+                        <address class="adresse-bloc">
+                            <span>38 rue de Sèvres, 75007 Paris</span>
+                            <span style="margin-top:0.6rem;">80 rue de Passy, 75016 Paris</span>
+                        </address>
+                        <p style="font-size:0.85rem;margin-top:0.8rem;opacity:0.7;">Sélectionnés par les épiciers les plus exigeants de Paris.</p>
+                    </div>
+                </div>
+                <div class="carte-wrapper reveal-text" data-reveal style="transition-delay:0.3s;">
+                    <iframe src="https://maps.google.com/maps?q=Lombart+52+bis+Rue+Charles+Laffitte%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localisation de l'atelier Lombart à Neuilly-sur-Seine"></iframe>
+                </div>
+            </div>
+            <div class="texture-strip" style="bottom:8%;left:-6%;transform:rotate(-4deg);opacity:0.03;" aria-hidden="true">épicerie</div>
+        </section>
+
+        <hr class="filet" aria-hidden="true">
+
+        <!-- COMMANDER -->
+        <section class="section" id="commander" style="background:var(--blanc-farine);">
+            <div class="section-inner">
+                <div class="reveal-text" data-reveal>
+                    <h2>Passez commande directement</h2>
+                    <div class="filet-court" aria-hidden="true"></div>
+                </div>
+                <div class="reveal-text" data-reveal style="transition-delay: 0.1s;">
+                    <p style="max-width:620px;">Aucun intermédiaire entre vous et l'atelier. Écrivez-nous pour obtenir notre carte du moment, composer votre boîte, ou convenir d'un retrait. Nous vous répondons dans la journée.</p>
+                </div>
+                <div class="commander-cta-group reveal-text" data-reveal style="transition-delay:0.2s;">
+                    <a href="mailto:commandes@lombart.fr" class="btn-commander">
+                        <span aria-hidden="true">✉</span> commandes@lombart.fr
+                    </a>
+                    <a href="tel:+33640251926" class="btn-commander btn-outline">
+                        <span aria-hidden="true">📞</span> 06 40 25 19 26
+                    </a>
+                </div>
+            </div>
+            <div class="texture-strip" style="top:18%;right:-4%;transform:rotate(3deg);opacity:0.025;" aria-hidden="true">commande</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p style="font-family:'Libre Baskerville',serif;font-size:1.3rem;font-weight:600;margin-bottom:0.5rem;color:var(--blanc-farine);">Lombart</p>
+                <p>Maison de gourmandises au chocolat<br>52 bis Rue Charles Laffitte, 92200 Neuilly-sur-Seine</p>
+                <p style="margin-top:0.6rem;">
+                    <a href="tel:+33640251926">06 40 25 19 26</a> · <a href="mailto:commandes@lombart.fr">commandes@lombart.fr</a>
+                </p>
+            </div>
+            <div>
+                <p style="font-weight:500;margin-bottom:0.4rem;color:var(--kraft-brut);">Sélectionné par</p>
+                <p>La Grande Épicerie — Rive Gauche (VIIᵉ)<br>La Grande Épicerie — Passy (XVIᵉ)</p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;opacity:0.8;">
+                    Note Google : 3.8 ★ (9 avis)
+                </p>
+            </div>
+            <div class="footer-credits">
+                Site créé par Agence Mooo — <a href="https://agence.mooo.com/lombart" target="_blank" rel="noopener">agence.mooo.com/lombart</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 40) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('[data-reveal]');
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.15
+                };
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback pour navigateurs sans IntersectionObserver
+                revealElements.forEach(function(el) {
+                    el.classList.add('revealed');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
