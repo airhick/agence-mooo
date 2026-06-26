@@ -1,98 +1,111 @@
-# BRIEF CRÉATIF — Nicolas Annonciation
+Voici le brief créatif pour **Nicolas Annonciation**, caviste au 38 rue de l’Annonciation (Paris 16e), avec la police Syne en display et Outfit en texte courant.
 
 ---
 
-## 1. CONCEPT & POSITIONNEMENT
+## 1. Concept & positionnement
 
-Un caviste de quartier ne vend pas des bouteilles, il ouvre des portes. Ici, dans l’écrin discret de la rue de l’Annonciation, chaque flacon est une introduction — à un vigneron têtu, à un terroir oublié, à un accord qui surprendra vos convives. **Le site ne sera pas un catalogue, mais le carnet de bord d’un passeur.** On y vient pour la curiosité, on y reste pour la confiance, on y revient pour le plaisir.
+Ici, on n’est pas face à un énième Nicolas interchangeable. La rue de l’Annonciation est une des dernières rues-village de Paris, pavés et platanes, où tout le monde se connaît. Le concept : **incarner le caviste de quartier**, celui qui vous reconnaît, vous conseille et que vos voisins notent 5 étoiles sans qu’on le leur demande. Le site doit donner envie de pousser la porte, pas de parcourir un catalogue national.
 
-**Idée-force :** *Le vin commence avant la première gorgée — dans le geste du caviste qui tend une bouteille inconnue, confiant que vous saurez l’apprécier.*
-
----
-
-## 2. DIRECTION ARTISTIQUE
-
-**Parti pris : « Carnet de cave habité » — un éditorial de quartier entre luxe discret et artisanat assumé.**
-
-On part des signaux réels : la rue de l’Annonciation, artère gastronomique du 16e arrondissement, ses immeubles haussmanniens, ses commerces de bouche exigeants, la clientèle fidèle qui note le lieu 5/5 sans emphase — parce que l’excellence y est quotidienne. À l’intérieur, les photos (réelles, Google Maps) montrent un espace tamisé, des casiers en bois sombre jusqu’au plafond, un sol en pierre, des bouteilles alignées avec soin, des ardoises manuscrites, la lumière chaude d’un plafonnier qui caresse les étiquettes. Rien de rustique, rien de clinquant : une élégance silencieuse, patinée par l’usage.
-
-La DA transpose cette matière en numérique : fonds texturés évoquant le papier vergé ou la pierre de taille, typographie display qui claque comme une étiquette gravée, corps de texte aéré et lisible qui respire la confiance. On évite le piège « cave voûtée + rouge sang » ; on vise une sophistication sobre, presque monastique, où la couleur du vin n’apparaît que par touches stratégiques — comme un souvenir de dégustation.
+Le rôle du site vitrine est simple : **montrer le visage des cavistes, affirmer la note parfaite, et rendre la visite inévitable**.
 
 ---
 
-## 3. PALETTE
+## 2. Direction artistique
 
-| Rôle | Nom | HEX | Usage |
+**Parti pris : « Cave de village haussmannien ».**
+
+On croise l’élégance architecturale du quartier (pierre blonde, ferronneries, hauteurs sous plafond) avec la chaleur organique d’une cave à vin de confiance. Le design est **éditorial, épuré, ancré dans la matière** : on pense « magazine de quartier haut de gamme » plutôt que « chaîne nationale ».
+
+- **Ambiance** : chaleureuse, feutrée, lumineuse comme une boutique un matin de semaine, quand le soleil traverse la vitrine.
+- **Matières visuelles** : pierre blonde, verre dépoli, étiquettes artisanales, bois de casiers, cuivre des poignées.
+- **Rythme** : compositions aérées, grandes respirations, photos en noir & blanc avec une pointe de sépia froid — ou des clichés couleur désaturés pour laisser vivre quelques taches de rouge lie-de-vin.
+- **Contre-point à l’audit** : zéro surcharge, zéro navigation catalogue. Le site est une **page unique fluide**, centrée sur le magasin et son équipe. Les liens vers nicolas.com sont secondaires.
+
+---
+
+## 3. Palette
+
+Cinq couleurs nommées, extraites de l’imaginaire visuel du commerce et du quartier :
+
+| Rôle | Nom | Hex | Usage |
 |------|-----|-----|-------|
-| Fond principal | Pierre de l’Annonciation | `#F5F0E8` | Fond de page, grandes surfaces claires — un blanc cassé minéral, ni crème ni gris |
-| Texte & encre | Encre de cave | `#1C1A19` | Corps de texte, titres secondaires — un noir chaud, jamais pur |
-| Accent principal | Lie-de-vie | `#6B1D2F` | Boutons, liens, filets, grandes typographies display — un rouge profond, vinifié, pas vif |
-| Accent secondaire | Cuivre martelé | `#B4753E` | Icônes, soulignés, éléments interactifs au hover — chaleur métallique sans dorure ostentatoire |
-| Fond sombre | Nuit de chai | `#23201E` | Sections immersives, footer, cartes de service — un brun-noir enveloppant |
-| Touche claire | Étiquette ancienne | `#FDF8F0` | Cartes produits, blocs de citation — presque blanc, légèrement vieilli |
+| Fond principal | **Pierre de Passy** | `#F3EFE9` | Arrière-plans, grandes surfaces claires |
+| Encre | **Brou de cuve** | `#1F1B18` | Texte courant, titres profonds (jamais de noir pur) |
+| Accent fort | **Lie-de-vin** | `#7B1E30` | Boutons, liens, chiffres clés (comme le 5/5) |
+| Sourdine chaude | **Chêne miel** | `#B8956E` | Filets, icônes, séparateurs doux |
+| Accent froid | **Ardoise humide** | `#4B5360` | Textes secondaires, légendes, éléments discrets |
+| Fond alternatif | **Craie grasse** | `#EBE5DA` | Cartes, blocs différenciés, tuiles |
 
-**Ambiance globale : claire et minérale, traversée d’accents vineux profonds. Jamais fade, jamais criard.**
-
----
-
-## 4. TON ÉDITORIAL
-
-**Voix :** Celle du caviste qui connaît vos goûts, pas celle d’une enseigne nationale. On tutoie le visiteur — pas par familiarité, mais par proximité de comptoir. On nomme les vignerons par leur prénom, on raconte le gel de printemps qui a failli tout gâcher, on suggère un accord parce qu’on a goûté le vin la veille avec du comté de 24 mois.
-
-**Niveau de langue :** Soutenu sans jargon, chaleureux sans familiarité excessive. Aucune phrase bateau type « Petites ou grandes occasions ». Chaque mot est choisi, comme on choisirait une bouteille.
-
-**Règle :** Si la phrase pourrait être écrite par le siège de Nicolas pour 200 magasins, elle dégage.
+Le fond principal n’est pas blanc pur — il évoque la pierre blonde du 16e arrondissement, ni trop crème ni trop gris. L’accent lie-de-vin est sobre, jamais « rouge Nicolas ». L’ardoise humide rappelle les toits parisiens vus de la rue piétonne.
 
 ---
 
-## 5. ACCROCHE HÉRO
+## 4. Ton éditorial
 
-**Titre (Syne, display, grande échelle) :**
-> Vous n’entrez pas dans un caviste. Vous entrez dans nos carnets de dégustation.
-
-**Sous-titre (Outfit, corps) :**
-> Depuis la rue de l’Annonciation, nous ouvrons des bouteilles comme on ouvre des histoires — avec soin, avec curiosité, et toujours pour quelqu’un.
-
-**Texte d’accompagnement (bouton CTA) :**
-> Découvrir les choix du moment
+- **Niveau de langue** : courant, chaleureux, avec un soupçon d’élégance décontractée. On vouvoie (usage du quartier), mais on parle comme un commerçant qui connaît ses habitués.
+- **Registre** : personnel, direct, jamais institutionnel. Pas de « Bienvenue chez votre caviste Nicolas » générique — on dit **« Anne vous conseille un beau Morgon »** ou **« L’équipe de la rue de l’Annonciation »**.
+- **Manifeste** : pas de jargon marketing. Chaque phrase raconte un fait vrai, une présence humaine, un avis client, une sélection du moment.
+- **Règle** : les vins ne sont jamais listés avec des prix ; on invite à venir en parler, à téléphoner, à réserver.
 
 ---
 
-## 6. SECTIONS (ordre, titres réels, contenu réel)
+## 5. Accroche héro
 
-### ① **Le comptoir** (héro)
-*Contenu : accroche ci-dessus + photographie pleine largeur de la devanture ou de l’intérieur, en lumière naturelle, avec une bouteille en amorce tenue par une main humaine — pas un shot produit sur fond blanc. Le nom « ANNONCIATION » apparaît en display Syne, immense, ancré à gauche, partiellement masqué par la photo — comme une enseigne qu’on découvre en passant la porte.*
+**Titre (H1, display, Syne en corps 4xl sur desktop)** :
+> 5 étoiles, 20 avis.  
+> Le village vous connaît.
 
-### ② **Quatre fois par semaine, quelqu’un change d’avis** (sélection de la semaine)
-*Titre réel :* « Cette semaine, on vous ouvre… »
-*Contenu :* 3 à 6 vins réellement sélectionnés par le caviste, avec prix affichés (sans « à partir de » flou), une phrase de dégustation personnelle (« Un chenin de Loire qui sent le coing et la laine mouillée — parfait sur des saint-jacques snackées »), et un bouton « Commander en click & collect » sans obligation de création de compte préalable. Photos des bouteilles en contexte (sur le comptoir, en main, jamais détourées).
+**Sous-titre (Outfit, corps xl)** :
+> Rue de l’Annonciation, au cœur de Passy, votre caviste Nicolas n’est pas un numéro.  
+> Il est Anne, Lucas et toute une équipe que le quartier a déjà notée.
 
-### ③ **Le caviste, pas l’enseigne** (à propos / équipe)
-*Titre réel :* « Derrière le comptoir, il y a quelqu’un. »
-*Contenu :* Portrait photo du ou de la responsable du magasin, prénom, depuis combien de temps ici, ce qu’il ou elle aime dénicher. Une citation vraie : « Mon plaisir, c’est quand un client revient me dire que la bouteille a fait son effet. » Pas de biographie corporate. Pas de faux avis clients fabriqués.
-
-### ④ **Ça se passe ici, ça se goûte chez vous** (services)
-*Titre réel :* « Commandez depuis le canapé, venez chercher au 38. »
-*Contenu :* Trois cartes de service (Click & Collect, Livraison en 3h, E-réservation pour événement) avec explication claire et sans jargon : comment ça marche, combien ça coûte, sous quel délai. Chaque carte a un CTA unique (« Je commande et je passe », « Faites-vous livrer », « Réservez un conseil privé »). Le numéro de téléphone est cliquable.
-
-### ⑤ **Ce que les gens disent — mot pour mot**
-*Titre réel :* « 5 étoiles, mais surtout des remerciements. »
-*Contenu :* 3 vrais avis Google Maps (anonymisés mais datés), sélectionnés pour leur sincérité et leur précision. Pas de faux témoignages. Pas d’emphase marketing. Juste les mots des clients, traités comme des citations éditoriales (grands guillemets Syne, fond étiquette ancienne).
-
-### ⑥ **Pousser la porte** (infos pratiques)
-*Titre réel :* « On vous attend. »
-*Contenu :* Adresse complète, horaires lisibles en liste, plan statique intégré (pas de redirection Google Maps forcée), téléphone cliquable, email cliquable. Mention du quartier : « À deux pas de la rue de Passy, entre le boulanger et le fromager — comme il se doit. » Une phrase sur l’accessibilité (métro, parking).
+**Traitement visuel** : le chiffre « 5 » en Syne, immense, couleur lie-de-vin, légèrement superposé à une photo en noir & blanc de la devanture ou d’un détail de main tenant une bouteille. Le sous-titre est ancré à gauche, en drapeau, respiration maximale.
 
 ---
 
-## 7. SIGNATURE VISUELLE
+## 6. Sections ordonnées
 
-### Détail 1 — Le filigrane de dégustation
-En fond de certaines sections (héro, sélection, citations), un motif discret rappelle les annotations manuscrites d’un carnet de dégustation : courbes légères, mots illisibles en français (« robe », « nez », « bouche », « garde ») tracés à l’encre lie-de-vie avec une opacité de 4 %. Ce n’est pas un wallpaper répétitif, mais un élément positionné de façon unique sur chaque page, comme une trace laissée par le caviste. Au scroll, certaines annotations se révèlent progressivement (animation de tracé SVG).
+### Section 1 — **Héro** (titre + sous-titre ci-dessus)
+- Photo pleine largeur de la devanture ou d’un détail marquant (enseigne, porte ouverte, intérieur).  
+- Bouton CTA : **« Appeler le caviste »** (numéro cliquable en `tel:`), juste sous le sous-titre.
 
-### Détail 2 — La bouteille qui s’incline
-Sur les fiches produits ou la section « sélection », un effet au hover (desktop) ou au tap (mobile) incline doucement la bouteille comme si on la sortait partiellement de son casier — rotation de 8° avec un léger décalage vertical. L’effet est subtil, presque invisible au premier coup d’œil, mais il crée une sensation physique de manipulation. Pas d’animation parasite : un seul mouvement par interaction.
+### Section 2 — **Note de confiance**
+- **Titre** : « Ce que le quartier en dit »  
+- **Contenu** : le badge Google Maps 5/5 affiché proprement avec le nombre d’avis, et deux ou trois avis réels courts en citation, traités comme des témoignages éditoriaux (pas de slider tape-à-l’œil).  
+- **Animation** : le compteur « 20 avis » s’affiche avec un reveal élégant au scroll.
+
+### Section 3 — **L’équipe**
+- **Titre** : « Vos cavistes, pas un algorithme »  
+- **Contenu** : photo(s) réelle(s) de l’équipe (sourire, comptoir) avec les prénoms. Une phrase personnelle par personne, ex. : « Anne vous trouve le rouge qui change un dîner sans faire trembler le budget. » Pas de bio LinkedIn — juste l’humain.
+
+### Section 4 — **La sélection du moment**
+- **Titre** : « En ce moment au 38 »  
+- **Contenu** : trois à quatre vins ou spiritueux choisis par l’équipe, présentés sans prix, avec une description de conseil (pas une fiche technique) et un bouton « Demander à Anne » qui ouvre le téléphone ou un formulaire de rappel.  
+- **Design** : layout en cartes claires avec une ligne de couleur lie-de-vin en tête de carte, photo de la bouteille en traitement sobre.
+
+### Section 5 — **Services de quartier**
+- **Titre** : « À deux pas, et même sans sortir de chez vous »  
+- **Contenu** : explications claires pour « Call & Pay » (comment ça marche, numéro), « E-réservation », livraison de quartier, demande de disponibilité. Chaque service en 2 lignes max, icône couleur chêne miel.
+
+### Section 6 — **Les horaires en clair**
+- **Titre** : « Poussez la porte »  
+- **Contenu** : tableau des horaires joli, en Syne pour les jours (abrégés : lun, mar, mer…) et Outfit pour les créneaux. Fermeture lundi clairement affichée, ouverture 10:00-20:00, dimanche matin.  
+- **Format mobile** : liste simple, lisible d’un coup d’œil.
+
+### Section 7 — **Pied de page pratique**
+- Adresse complète, plan Google Maps embarqué (pas de lien externe vers Maps sans carte visible).  
+- Téléphone cliquable, email.  
+- Lien Instagram/Facebook discrets mais fonctionnels.  
+- Mention discrète : « Nicolas — cave du réseau Nicolas, ancrée à Passy. »
 
 ---
 
-**Ce brief est spécifique, ancré dans le lieu, et répond point par point aux faiblesses de l’audit :** personnalisation radicale, contact humain prioritaire, parcours de conversion simplifié, mobile-first avec viewport obligatoire, contenu réel sans placeholder ni bug, ton éditorial habité.
+## 7. Signature visuelle
+
+1. **Traitement photographique** : toutes les photos sont passées en noir & blanc légèrement teinté (virage sépia froid à 5 %), avec un **calque de texture « pierre »** extrêmement discret pour unifier l’ensemble et évoquer la façade haussmannienne. On ne voit jamais de photo générique de bouteille sur fond blanc. Même les bouteilles sont photographiées sur le comptoir en bois du magasin, avec l’arrière-plan réel.
+
+2. **Typographie signature** : Syne est utilisée pour un chiffre unique et monumental (le 5 de la note) qui devient un élément graphique récurrent. On le retrouve en filigrane sur les blocs de service, ou comme séparateur de section, décliné en transparence (opacité 5 % en fond). Le chiffre 5 devient le blason du site — subtil, mais mémorable.
+
+---
+
+*Ce brief transforme un site corporate noyé de 188 liens en une page unique, à hauteur d’humain, où l’on sent les pavés de la rue et le sourire du caviste.*

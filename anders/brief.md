@@ -1,57 +1,83 @@
-**BRIEF CRÉATIF — ANDERS**  
-*Site vitrine – Mobilier sur mesure pour l’enfance et l’adolescence*
+# BRIEF CRÉATIF — ANDERS
+
+## 1. Concept & positionnement
+
+Anders n’est pas un magasin de meubles pour enfants : c’est un atelier confidentiel du 16e arrondissement où chaque pièce naît d’un échange entre des parents exigeants et un savoir-faire d’ébéniste. Le site sera la vitrine numérique de cette adresse rare — une galerie domestique où l’on vient chercher bien plus qu’un lit : un premier meuble de design, pensé pour durer, configuré dans ses moindres détails.
+
+On retient : **le sur-mesure a enfin son adresse.**
 
 ---
 
-### 1. Concept & positionnement
-Anders n’est pas un simple magasin de meubles pour enfants. C’est un atelier de possibles où chaque pièce raconte une histoire à construire ensemble. La promesse : **du bois, des couleurs, du temps long** — des meubles qui grandissent avec l’enfant, imaginés depuis plus de 20 ans dans un écrin chaleureux du 16e arrondissement. Le site sera une invitation à prendre rendez-vous et à venir toucher, choisir, personnaliser en boutique, car l’expérience sensible est au cœur de la marque.
+## 2. Direction artistique
 
-### 2. Direction artistique
-**Parti pris : « Atelier habité »**  
-Un équilibre précis entre le raffinement d’un appartement parisien (moulures, parquet, lumière naturelle) et la vitalité ludique d’un atelier de création. Le design évoque une grande table d’architecte où l’on dessine sa chambre idéale : matières brutes mais nobles, couleurs en nuancier, outils de mesure, lumière du jour qui caresse le bois. Ni trop enfantin, ni trop froid. Une élégance accessible qui respire la confiance et la durée.
+### « Galerie d’atelier »
 
-### 3. Palette chromatique
-Tirée des teintes naturelles du bois, des nuanciers de la boutique et de l’ambiance lumineuse du 16e.
+Le parti pris est celui d’une galerie d’art minimale installée dans un ancien atelier de la pierre. On emprunte au lieu réel — murs en pierre apparente du 16e, volumes généreux, lumière naturelle franche — pour créer une ambiance de « white cube » chaleureux, où le bois massif réchauffe la minéralité des fonds.
+
+Les codes sont ceux du design éditorial haut de gamme : compositions aérées, images au format généreux traitées comme des tirages, filets ultra-fins en guise de ponctuation. Rien de puéril ni de coloré : l’enfance est évoquée par la forme des objets, non par un imaginaire criard. La noblesse des matières (bois, pierre, verre) raconte la qualité du produit sans avoir à la crier.
+
+---
+
+## 3. Palette
+
+Toutes les teintes sont extraites des photos réelles de la boutique.
 
 | Rôle | Hex | Nom |
 |------|-----|-----|
-| Fond principal (chaud) | `#F7F2EB` | Coquille d’œuf |
-| Texte & ancrage | `#2B2B28` | Encre noisette |
-| Accent bois | `#C4A882` | Chêne brut |
-| Accent couleur vive | `#4A7C82` | Bleu Anders |
-| Accent doux | `#E8D5C4` | Nuancier poudré |
-| Fond secondaire (sombre) | `#3D4A46` | Vert atelier (pour des blocs inversés, en contraste) |
+| Fond principal | `#F7F3EC` | Crème pierre chaud (murs intérieurs) |
+| Blocs contrastants | `#D9C9B8` | Beige pierre soutenu (parement, zones de citation) |
+| Encre (texte) | `#3E2A1E` | Brun bois brûlé — profond sans être noir |
+| Accent principal | `#5D6E5F` | Vert cèdre grisé (plantes, patine discrète de la boutique) |
+| Support / filets | `#E8E0D6` | Sable clair (séparateurs, fonds alternatifs) |
+| Survol / CTA actif | `#8B7355` | Brun chaud — ni terracotta, ni orange ; évoque le cuir et le bois ciré |
 
-La couleur majeure de navigation sera le *Bleu Anders*, ponctué par des touches *Chêne brut* pour les filets, séparations, et icônes peintes. Pas de gris froid : les ombres sont des variations de beige et de vert sourd.
+L’accent vert cèdre (`#5D6E5F`) est suffisamment retenu pour ne pas voler la vedette au mobilier, et suffisamment identifiable pour guider l’œil vers les CTA. On ne cède ni au « crème + terracotta » ni au « presque noir + vert acide ».
 
-### 4. Ton éditorial
-Une voix rassurante, précise et légèrement complice. Le vouvoiement élégant, des phrases bien construites, un vocabulaire d’artisan (bois massif, tenons, panneaux rainurés, lasure à l’eau) mêlé à la tendresse du parent. On tutoie l’émotion sans mièvrerie. Registre : haut de gamme accessible, ni luxe intimidant ni familier banal.
+---
 
-### 5. Accroche héro
-**Titre :** *La chambre se dessine ici, en bois et en couleurs*  
-**Sous-titre :** *Depuis plus de 20 ans, nous fabriquons des meubles sur mesure pour les enfants et les ados, à découvrir et personnaliser dans notre boutique-atelier du 16e.*
+## 4. Ton éditorial
 
-### 6. Sections (ordre et contenu réel)
+**Vous** de courtoisie, chaleureux sans familiarité. La voix est celle d’un artisan conseil qui connaît son métier et parle à des parents avertis. Aucun jargon technique gratuit : chaque terme (bois massif, 30 teintes, délais de fabrication) vient poser une preuve concrète.
 
-1. **Le nuancier des possibles**  
-   *Plus de 30 couleurs de lasure, des essences de bois massif, des dimensions adaptées à chaque espace. Venez composer le meuble qui ressemble à votre enfant.*
+On ne « vante » pas : on explique, on montre, on précise. Les phrases sont courtes et cadencées pour la lecture mobile, mais le vocabulaire reste celui d’une belle maison de famille.
 
-2. **Les collections**  
-   Présentation en mosaïque des grandes familles de lits (mezzanine, superposés, baldaquin…) avec une phrase évocatrice pour chacune, par ex. : *Lits mezzanine – La cabane en l’air, à partir de 6 ans*.
+---
 
-3. **L’esprit de l’atelier**  
-   *Un mobilier fait pour durer. Nous travaillons le hêtre et le chêne, assemblés dans nos ateliers partenaires. Chaque commande est contrôlée avant livraison, et nous assurons le SAV pour les années à venir.*
+## 5. Accroche héro
 
-4. **La boutique comme une maison**  
-   *96 avenue Paul Doumer, Paris 16. Poussez la porte de notre espace clair et spacieux. Installez-vous, touchez les matières, feuilletez les nuanciers. Nous vous recevons avec ou sans rendez-vous, du mardi au samedi.*
+### Titre
+**Vos enfants méritent mieux qu’un meuble standard**
 
-5. **Ils ont imaginé avec nous**  
-   Témoignages authentiques extraits des 95 avis Google (4.1 étoiles), mis en page sobrement. Exemple : *« Une qualité et un conseil rares. Nous avons pu choisir chaque détail du lit de notre fils, et le rendu est magnifique. » — Sophie M.*
+### Sous-titre
+Depuis plus de 20 ans, nous concevons et fabriquons à Paris des chambres sur mesure — du berceau au premier bureau d’écolier. Choisissez le bois, la teinte, les dimensions. Nous faisons le reste.
 
-6. **Contact & rendez-vous**  
-   Formulaire épuré pour demander un devis, plan d’accès, numéro de téléphone et incitation forte : *Prenez rendez-vous pour une consultation personnalisée en boutique, en journée ou en soirée.*
+### CTA principal
+**Prendre rendez-vous à la boutique** (juste en dessous — car le commerce fonctionne principalement sur rendez-vous, comme le confirment les horaires atypiques relevés dans l’audit.)
 
-### 7. Signature visuelle
-- **Typographie display assumée** : Bricolage Grotesque utilisée en titres à forte graisse, parfois détourée ou superposée à des nuanciers, avec des mots clés en Bleu Anders.
-- **Animation clé** : Au scroll, des filets de couleur « dessinent » des contours de meubles (un lit, une bibliothèque) en SVG, comme un croquis d’architecte qui prend vie.
-- **Traitement des images** : Photos posées dans un cadre boisé ou sur fond coquille d’œuf, jamais en pleine page banalement. Les produits sont photographiés en contexte chaleureux, avec une lumière douce et des ombres naturelles, comme dans un intérieur habité.
+---
+
+## 6. Sections
+
+### 1. Une adresse, une signature
+*À propos*
+> Au 96 de l’avenue Paul Doumer, Anders tient boutique depuis deux décennies dans un espace clair et généreux entièrement dédié au mobilier d’enfance. Ici, chaque meuble est une pièce unique : bois massif sélectionné, fabrication européenne, trente couleurs au choix. Nous savons qu’un lit d’enfant ne s’achète pas comme un écran ; il se projette, se discute, se transmet.
+
+### 2. Le bois dans tous ses états
+*Collections* (galerie visuelle en grille aérée)
+> De la couchette Montessori au lit mezzanine pour adolescent, découvrez nos lignes emblématiques. Chaque modèle exposé ici est un point de départ : changez l’essence, la finition, la largeur du couchage — nous adaptons.
+*(Suit une grille d’images avec les catégories fusionnées et clarifiées : Lits bébé / Lits enfant & junior / Lits mezzanine & superposés / Bureaux & rangements. Fini la duplication du menu dans le corps de page.)*
+
+### 3. La personnalisation pas à pas
+*Comment commander*
+> 1. **Prenez rendez-vous** (en boutique ou par téléphone) — nous bloquons un créneau rien que pour vous.
+> 2. **Choisissez le modèle** parmi nos lignes, du lit baldaquin au bureau d’angle.
+> 3. **Définissez votre version** : essence de bois, teinte parmi 30 nuanciers, dimensions exactes, options de rangement.
+> 4. **Nous fabriquons** en atelier. Comptez six à huit semaines pour une livraison chez vous, montée avec soin.
+
+### 4. La preuve par ceux qui dorment bien
+*Avis clients & réalisations*
+> (Carrousel d’extraits d’avis Google — note 4,1/5 sur 95 avis — avec prénom et initiale, accompagnés de photos réelles de chambres livrées. Mention visible : « Voir les 95 avis sur Google Maps », avec lien direct. Enfin une preuve sociale qui corrige le « ils parlent de nous » vide signalé par l’audit.)
+
+### 5. La boutique
+*Infos pratiques*
+> Adresse, plan Google Maps intégré (corrige l’absence de carte),

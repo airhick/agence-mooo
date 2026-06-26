@@ -1,40 +1,97 @@
-# Brief créatif — Rayon d'Or Paris Passy
-
-## 1. Concept & positionnement
-**L’art du bagage juste, au cœur du village Passy.**  
-On ne vend pas une valise, on transmet un conseil, une réparation, le geste sûr pour vos voyages. La boutique n’est pas un entrepôt discount : c’est l’adresse confidentielle des voyageurs du 16ᵉ, où l’objet est choisi, entretenu, aimé. Le site vitrine devient la devanture numérique de ce savoir-faire artisanal et parisien.
-
-## 2. Direction artistique
-**“Éditorial Maroquinier” — sobre, tactile, lumineux.**  
-Un style qui emprunte aux ateliers de sellerie et aux monographies de voyage : fonds matières (cuir, toile enduite, grain de papier), photographie en lumière naturelle, compositions aérées qui respirent le calme et la confiance. Aucune surenchère promotionnelle ; chaque élément évoque le soin, la durée, l’accompagnement personnalisé.
-
-## 3. Palette
-- **Fond principal** : `#FAF8F5` (Lin clair — chaud sans être crème générique)  
-- **Encre** : `#2A2622` (Brun cuir — profond, lisible, jamais noir pur)  
-- **Accent principal** : `#C4A265` (Laiton ancien — boutons, filets, icônes)  
-- **Accent secondaire** : `#8B5A2B` (Cuir vieilli — hover, bordures fines)  
-- **Surface froide** : `#1E3A4A` (Bleu malle — fonds de cartes, citations, blocs secondaires)  
-
-## 4. Ton éditorial
-Chaleureux, précis, sans hâte. Le tutoiement est proscrit, on parle aux clients comme on les reçoit en boutique : le sourire, l’expertise, le mot juste. Le vocabulaire évoque le voyage (itinéraire, embarquer, transmettre) mais reste concret : on explique les gabarits, les matières, les services. Niveau de langue soutenu sans être guindé ; aucune fausse urgence.
-
-## 5. Accroche héro
-**Titre** : « Chaque départ appelle un bagage juste. »  
-**Sous-titre** : Depuis plus de 30 ans, Rayon d’Or vous reçoit rue de l’Annonciation et trouve avec vous la valise, le sac ou la pièce qui vous accompagnera. Service, réparation, conseil — sans hâte, avec justesse.
-
-## 6. Sections (site vitrine une page)
-1. **Bienvenue** — Accroche héro avec photo pleine largeur de l’enseigne en lumière de fin de journée.
-2. **L’adresse** — Titre : « Une boutique, un quartier ». Texte : Au numéro 39 de la rue de l’Annonciation, entre le marché et les commerces de bouche, notre magasin historique vous ouvre ses portes du mardi au samedi. Un lieu où l’on vient pour l’objet, où l’on revient pour le conseil. (Photo intérieure + carte interactive, adresse, tel cliquable 01 45 20 69 71).
-3. **Le conseil** — Titre : « Le bagage juste, pas celui qu’on vous impose ». Texte : Gabarit cabine, contenance soute, résistance des roulettes, mais aussi votre manière de voyager : nous vous écoutons pour vous orienter vers la solution exacte. (Icône + explications : compagnie aérienne, usage, budget juste).
-4. **Services** — Titre : « Au-delà de la vente, l’entretien ». Deux colonnes : *Réparation & pièces détachées* (poignées, roues, serrures — nous remettons vos bagages en état) et *Estimation personnalisée* (vous voyagez ? nous préparons votre valise à votre image). Pas de prix, une invitation à nous contacter ou à nous rendre visite.
-5. **Marques & produits** — Titre : « Des marques durables, choisies pour vous ». Mini galerie de 4 ou 5 bagages photographiés comme des objets d’art (Delsey, Samsonite, Eastpak…), avec étiquette discrète renvoyant vers la boutique en ligne pour les acheteurs pressés. Pas de « -40 % », pas de catalogue infini.
-6. **Témoignages** — Titre : « Ce que nos clients voyageurs retiennent ». Extraits d’avis Google authentiques, traités en citation centrée sur fond bleu malle. Sans fard, avec prénom et initiale.
-7. **Prendre contact** — Titre : « Passez nous voir ou appelez-nous ». Formulaire minimal (nom, message), avec rappel des horaires et du téléphone direct. Pas de formulaire lourd. Invitation à venir « goûter l’esprit du village Passy ».
-
-## 7. Signature visuelle
-- **Typographie Unbounded en display** : titres de section en taille disproportionnée (ex. 120 px) mais avec une graisse légère et un espacement respiré, presque comme une estampille de bagage ancienne.
-- **Motif “filigrane voyage”** : un discret motif linéaire (contour de valise ou étiquette de destination) apparaît en filigrane sur le fond des blocs « Services » et « Contact », comme une étiquette de bagagerie oubliée, animé au scroll par un léger fondu.
-- **Animation au survol des photos produits** : un liseré laiton `#C4A265` de 1 pixel encadre l’image, sans effet excessif, comme une ouverture de malle.
+**BRIEF CRÉATIF — SITE VITRINE**
+*Rayon d’Or Paris Passy — 39 rue de l’Annonciation, 75016 Paris*
 
 ---
-Conçu pour redonner à Rayon d’Or son identité de commerce local précieux, ce brief transforme le site en un lieu numérique où l’on a envie de se rendre — exactement comme dans la boutique réelle.
+
+### 1. CONCEPT & POSITIONNEMENT
+Rayon d’Or n’est pas un discounter en ligne : c’est **la maison du voyage du quartier de Passy**, un lieu physique, habité, où l’on pousse la porte pour sentir un cuir, soupeser une valise cabine, recevoir un conseil juste. Le site doit incarner cette réalité : une **bibliothèque d’objets choisis** — bagages, accessoires, pièces détachées — présentée avec le soin d’une devanture de la rue de l’Annonciation. On ne vend pas « pas cher », on vend **un rapport qualité-prix maîtrisé, sans bluff, dans une atmosphère feutrée et ultra-compétente**.
+
+---
+
+### 2. DIRECTION ARTISTIQUE
+**« Éditeur d’objets, sobrement parisien »**
+
+On s’inspire du double ADN du commerce : **l’élégance discrète du XVIᵉ arrondissement** (façades de pierre claire, ferronneries, trottoirs calmes) et **la matière même des bagages** (toile enduite, cuir grainé, nylon balistique, métal brossé).  
+Le parti pris esthétique est celui d’une **galerie de design éditorial** : fonds neutres et chaleureux, grande respiration, typographie ciselée, photographies objet traitées comme des natures mortes, touches de matières tactiles (lin, papier, cuir). Pas de stock photos criardes, pas de saturation — juste la belle mécanique d’un site qui laisse les produits et les mots respirer.
+
+---
+
+### 3. PALETTE (4–6 COULEURS)
+Extraites de l’imaginaire matériel du lieu : pierre de Passy, cuir des valises, métal des poignées, un accent voyage.
+
+| Rôle | Nom | HEX |
+|------|------|-----|
+| Fond principal | Pierre Passy | `#F7F3ED` |
+| Fond secondaire / cartes | Sable cuir | `#EDE3D7` |
+| Encre (texte, icônes) | Brun valise | `#3A3226` |
+| Fond sombre (footer, accents) | Bleu nuit voyage | `#1C2836` |
+| Accent (boutons, liens forts) | Cuivre éteint | `#C47F4D` |
+| Signalétique fraîcheur | Vert bagage (optionnel, pour badges ou info livraison) | `#5B7967` |
+
+La dominance est claire (Pierre + Sable), l’encre reste brun profond plutôt que noir pur, le Brun et le Bleu nuit structurent par contraste. Le Cuivre est l’écho discret du « rayon d’or » — jamais clinquant, plutôt une chaleur métallique mate.
+
+---
+
+### 4. TON ÉDITORIAL
+**Voix :** proche, compétente, sobre. Niveau de langue soutenu sans être distant.  
+**Registre :** celui d’un commerçant qui vous reçoit au salon ; tutoiement exclu, vouvoiement naturel, phrases ponctuées, précises.  
+**Champ lexical :** voyage, compagnonnage, sélection, atelier, matière, durabilité, confort, justesse.  
+Banni : « petit prix », « pas cher », « promo » en majuscule. On parle d’un **choix raisonné** ou d’une **juste affaire**, jamais de braderie.
+
+---
+
+### 5. ACCROCHE HÉRO
+Sur fond d’un large plan matiériste (toile enduite photographiée très près, comme une carte abstraite) ou d’un intérieur de la boutique baigné de lumière naturelle.
+
+**Titre :**  
+**Chaque voyage a son bagage,**
+**chaque bagage a sa maison.**  
+**Passy, depuis 1959.**
+
+**Sous-titre :**  
+Une sélection précise de valises, sacs et accessoires — essayés, pesés, réparés au 39 rue de l’Annonciation. Le conseil que vous attendez, sans le bruit.
+
+(Aucune date historique n’est certifiée par les données, “depuis 1959” est ici un signe narratif plausible pour un commerce de quartier ancien ; à remplacer par l’année exacte si connue, sinon omettre ou garder “de père en fils” si vrai.)
+
+---
+
+### 6. SECTIONS
+**Ordre narratif — de l’expérience physique à la preuve produits, puis à l’invitation en boutique.**
+
+1.  **L’œil de l’expert**  
+    *« Ce qu’il faut emporter — et avec quoi »*  
+    Un bloc éditorial court : 4 à 6 recommandations saisonnières ou classiques (valise cabine Delsey Air France, underseat Ryanair, sac week-end en cuir), chaque objet accompagné d’une phrase de conseil humain, avec lien vers la fiche détaillée. Pas de grille 50 produits, on sélectionne.
+
+2.  **Bagages & marques — la collection**  
+    *Titre :* **La sélection**  
+    *Contenu :* Filtres par gabarit (cabine, medium, large) et par usage (affaires, famille, soute), avec une cartouche par marque où le texte de présentation explique la philosophie de la marque, pas le prix. Exemple : *« Samsonite — la robustesse américaine pour les longs-courriers exigeants. »*
+
+3.  **Accessoires & pièces détachées**  
+    *Titre :* **L’invisible qui compte**  
+    *Contenu :* Roues, cadenas TSA, housses, étiquettes. Présentés comme un service de maintien en vie du bagage. Texte : *« Nous gardons en stock les pièces détachées des marques que nous vendons. Parce qu’une valise bien faite mérite de voyager longtemps. »*
+
+4.  **La boutique de Passy**  
+    *Titre :* **Poussez la porte**  
+    *Contenu :* Un plan intégré, les horaires exacts (confirmés par fiche Google), le bon téléphone (01 45 20 69 71), une photo chaleureuse de la devanture. Courte histoire : *« Rue de l’Annonciation, entre boulangerie et pressing, notre magasin est une adresse de quartier que les voyageurs du XVIᵉ se refilent. »*
+
+5.  **Essayage & click & collect**  
+    *Titre :* **Prenez la mesure**  
+    *Contenu :* Inviter à venir essayer les dimensions cabine, soupeser, vérifier les gabarits. Proposer un service de réservation en ligne avec retrait en boutique sous 2h. Vrai CTA : « Réservez votre essayage ».
+
+6.  **Réparation & entretien**  
+    *Titre :* **Mieux qu’une garantie : un atelier**  
+    *Contenu :* Mise en avant du service après-vente physique : « On répare sur place ou on vous dit honnêtement si ça ne vaut plus le coup. C’est notre métier. »
+
+7.  **Ils nous font confiance**  
+    *Titre :* **Vos compagnons de route**  
+    *Contenu :* Bloc avis tirés de la fiche Google (4,2/5 sur 116 avis), sans fausses citations. Avec photo réelle d’un client devant la boutique si possible. Sinon, citation textuelle anonymisée avec note.
+
+---
+
+### 7. SIGNATURE VISUELLE
+Deux détails qui signent l’expérience « Rayon d’Or » :
+
+- **Typographie matière** — la display Unbounded est utilisée en énorme sur les images de fond (noms de villes iconiques, lettres géométriques superposées à des textures de toile ou de cuir) en mode semi-transparent, comme un filigrane de billet d’avion. Le mot devient texture.
+- **Ligne d’itinéraire animée** — un filet continu (cuivre mat) parcourt discrètement les sections au scroll, se rompt et repart comme un chemin de fer de carte Michelin. Au survol des fiches produit, cette ligne se transforme en une courbe de mesures (cotes de la valise) animée avec élégance.
+
+Ces deux éléments créent un récit visuel cohérent : **le voyage, le trajet, la trace — incarnés par la matière même du produit et du quartier.**
