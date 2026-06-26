@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alban Kuntz Paris — Pâtisserie d'auteur au cœur du 16ᵉ arrondissement</title>
+    <meta name="description" content="Croissants feuilletés main 48h, tartes d'époque, chocolats de couverture pure origine. Alban Kuntz, artisan pâtissier rue Guy de Maupassant — Paris 16, Paris 8, Versailles. Salon de thé & terrasse.">
+    <meta property="og:title" content="Alban Kuntz Paris — Le temps de la belle pâtisserie">
+    <meta property="og:description" content="Croissants feuilletés main 48h, tartes d'époque, chocolats de couverture pure origine. Au cœur du 16ᵉ arrondissement.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🥐%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Alban Kuntz Paris",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Rue Guy de Maupassant",
+                "addressLocality": "Paris",
+                "postalCode": "75116",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145042171",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.3",
+                "reviewCount": "288"
+            },
+            "servesCuisine": "Pâtisserie française",
+            "priceRange": "€€"
+        }
+    </script>
+    <style>
+        :root {
+            --fond: #FAF7F2;
+            --encre: #1A1A1A;
+            --bois-miel: #C19A6B;
+            --chocolat: #5C3A21;
+            --perle: #F0EBE3;
+            --amarena: #A83128;
+            --bois-fonce: #3E2C1C;
+            --dore-clair: #D4B896;
+            --craie: #E8E4DA;
+            --tableau: #2A241D;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--perle);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: box-shadow 0.4s ease, background 0.4s ease;
+            will-change: transform;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(26, 26, 26, 0.06);
+            background: rgba(250, 247, 242, 0.95);
+        }
+        .header-brand {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(1.2rem, 2vw, 1.55rem);
+            font-weight: 500;
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .header-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bois-miel);
+            transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .header-brand:hover::after {
+            width: 100%;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+        .header-nav a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            position: relative;
+            padding: 0.35rem 0;
+            transition: color 0.3s;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--bois-miel);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .header-nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-cta {
+            background: var(--chocolat);
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.35s, transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta:hover {
+            background: var(--bois-fonce);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(92, 58, 33, 0.25);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--bois-miel);
+            outline-offset: 3px;
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--encre);
+            transition: transform 0.35s, opacity 0.35s;
+            border-radius: 1px;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .site-header {
+                padding: 0.75rem 1.2rem;
+            }
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--fond);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.08);
+                align-items: flex-start;
+                z-index: 999;
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 0.9rem;
+                letter-spacing: 0.06em;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .header-cta {
+                padding: 0.55rem 1.2rem;
+                font-size: 0.72rem;
+            }
+        }
+
+        /* ---- HÉRO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 7rem 2rem 3rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 55% 40%;
+            filter: brightness(0.85) saturate(0.75);
+            transform: scale(1.04);
+            animation: heroBreath 12s ease-in-out infinite alternate;
+        }
+        @keyframes heroBreath {
+            0% {
+                transform: scale(1.04);
+            }
+            100% {
+                transform: scale(1.09);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(195deg, rgba(26, 26, 26, 0.35) 0%, rgba(26, 26, 26, 0.15) 35%, rgba(92, 58, 33, 0.3) 70%, rgba(26, 26, 26, 0.55) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            animation: fadeUpHero 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        }
+        @keyframes fadeUpHero {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content h1 {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            max-width: 520px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.8rem;
+        }
+        .hero-badge .star {
+            color: #F5C542;
+            font-size: 1.1rem;
+            filter: drop-shadow(0 0 6px rgba(245, 197, 66, 0.6));
+        }
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: floatHint 3s ease-in-out infinite;
+        }
+        .hero-scroll-hint span {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-scroll-hint span::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: #fff;
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+        @keyframes scrollLine {
+            0% {
+                top: -100%;
+            }
+            60% {
+                top: 100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        @keyframes floatHint {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 6rem 1rem 2.5rem;
+                min-height: 90vh;
+            }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 8vw, 3.5rem);
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bois-miel);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .section-title {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 500;
+            color: var(--encre);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ---- FILIGRANE ---- */
+        .filigrane {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.06;
+            color: var(--bois-miel);
+        }
+        .filigrane svg {
+            width: 100%;
+            height: 100%;
+        }
+        .filigrane--top-right {
+            top: -60px;
+            right: -40px;
+            width: 380px;
+            height: 380px;
+        }
+        .filigrane--bottom-left {
+            bottom: -40px;
+            left: -30px;
+            width: 300px;
+            height: 300px;
+        }
+        .filigrane--center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            opacity: 0.04;
+        }
+
+        /* ---- REVEAL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+
+        /* ---- NOTRE MAISON ---- */
+        .maison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .maison-text p {
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            color: var(--encre);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+        .maison-image {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+        .maison-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .maison-image:hover img {
+            transform: scale(1.04);
+        }
+        .maison-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(26, 26, 26, 0.25) 100%);
+            pointer-events: none;
+        }
+        .maison-image .frame-accent {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .maison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .maison-image {
+                aspect-ratio: 3/4;
+                order: -1;
+            }
+        }
+
+        /* ---- TABLEAU NOIR ---- */
+        .tableau-noir {
+            background: var(--tableau);
+            border-radius: 4px;
+            padding: 2.5rem 2.8rem;
+            position: relative;
+            margin: 3rem 0;
+            box-shadow: 0 20px 50px rgba(26, 26, 26, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            overflow: hidden;
+        }
+        .tableau-noir::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .tableau-texte {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--craie);
+            letter-spacing: 0.03em;
+            line-height: 1.3;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .tableau-texte.revealed {
+            opacity: 1;
+        }
+        .tableau-texte .chalk-char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.04s ease, transform 0.04s ease;
+        }
+        .tableau-texte .chalk-char.drawn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tableau-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.35;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            .tableau-noir {
+                padding: 1.8rem 1.5rem;
+                margin: 2rem 0;
+            }
+            .tableau-texte {
+                font-size: clamp(1.4rem, 5vw, 2rem);
+            }
+        }
+
+        /* ---- CARTE ---- */
+        .carte-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .carte-item {
+            background: #fff;
+            border-radius: 4px;
+            padding: 1.8rem 1.4rem;
+            text-align: center;
+            border: 1px solid var(--perle);
+            transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .carte-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(26, 26, 26, 0.1);
+        }
+        .carte-item .emoji {
+            font-size: 2.4rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .carte-item:hover .emoji {
+            transform: scale(1.15) rotate(-5deg);
+        }
+        .carte-item h4 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+        }
+        .carte-item .desc {
+            font-size: 0.8rem;
+            color: #6b5e52;
+            line-height: 1.5;
+        }
+        .badge-new {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--amarena);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .carte-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .carte-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ---- SALON DE THÉ ---- */
+        .salon-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .salon-gallery .gallery-main {
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+        }
+        .salon-gallery .gallery-item {
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+        .salon-gallery .gallery-main {
+            aspect-ratio: 4/5;
+        }
+        .salon-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .salon-gallery .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .salon-infos {
+            background: #fff;
+            border: 1px solid var(--perle);
+            border-radius: 4px;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .salon-infos .info-block {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .salon-infos .info-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--perle);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .salon-infos .info-text strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+        }
+        .salon-infos .info-text span {
+            font-size: 0.8rem;
+            color: #6b5e52;
+        }
+
+        @media (max-width: 768px) {
+            .salon-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 0.7rem;
+            }
+            .salon-gallery .gallery-main {
+                grid-row: auto;
+                grid-column: 1 / -1;
+                aspect-ratio: 16/10;
+            }
+            .salon-infos {
+                flex-direction: column;
+                gap: 1.2rem;
+                align-items: flex-start;
+            }
+        }
+
+        /* ---- ADRESSES ---- */
+        .adresses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .adresse-card {
+            background: #fff;
+            border: 1px solid var(--perle);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: box-shadow 0.4s ease, transform 0.3s ease;
+        }
+        .adresse-card:hover {
+            box-shadow: 0 15px 35px rgba(26, 26, 26, 0.1);
+            transform: translateY(-3px);
+        }
+        .adresse-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .adresse-card-body {
+            padding: 1.5rem;
+        }
+        .adresse-card-body h4 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .adresse-card-body p {
+            font-size: 0.85rem;
+            color: #5a4e42;
+            line-height: 1.6;
+            margin-bottom: 0.3rem;
+        }
+        .adresse-card-body .tel-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-weight: 600;
+            color: var(--chocolat);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
+        }
+        .adresse-card-body .tel-link:hover {
+            color: var(--bois-miel);
+        }
+
+        @media (max-width: 900px) {
+            .adresses-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .adresses-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ---- MAP ---- */
+        .map-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 2.5rem;
+            box-shadow: 0 8px 30px rgba(26, 26, 26, 0.08);
+            border: 1px solid var(--perle);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+        }
+
+        /* ---- GESTE & MATIÈRE ---- */
+        .geste-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .geste-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .geste-text li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--perle);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+        .geste-text li::before {
+            content: '—';
+            color: var(--bois-miel);
+            font-weight: 600;
+            flex-shrink: 0;
+            letter-spacing: -2px;
+        }
+        .geste-image {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            position: sticky;
+            top: 7rem;
+        }
+        .geste-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .geste-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .geste-image {
+                position: static;
+                aspect-ratio: 16/10;
+                order: -1;
+            }
+        }
+
+        /* ---- CONTACT ---- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--perle);
+            border-radius: 3px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            background: #fff;
+            color: var(--encre);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--bois-miel);
+            box-shadow: 0 0 0 3px rgba(193, 154, 107, 0.12);
+        }
+        .contact-form button {
+            background: var(--chocolat);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background 0.35s, transform 0.3s, box-shadow 0.3s;
+            align-self: flex-start;
+        }
+        .contact-form button:hover {
+            background: var(--bois-fonce);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(92, 58, 33, 0.25);
+        }
+        .contact-form button:focus-visible {
+            outline: 3px solid var(--bois-miel);
+            outline-offset: 3px;
+        }
+        .contact-info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .contact-info-side .big-tel {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s;
+        }
+        .contact-info-side .big-tel:hover {
+            color: var(--chocolat);
+        }
+        .contact-info-side .info-line {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            color: #5a4e42;
+        }
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--chocolat);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--bois-miel);
+            border-radius: 3px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .pdf-link:hover {
+            background: var(--bois-miel);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--encre);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+        }
+        .site-footer strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        .site-footer .footer-credit {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+        .site-footer a {
+            color: var(--dore-clair);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
+
+        /* ---- UTILITIES ---- */
+        .text-chocolat {
+            color: var(--chocolat);
+        }
+        .text-bois {
+            color: var(--bois-miel);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--encre);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            z-index: 10000;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        /* ---- HOVER REFINEMENTS ---- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--bois-miel);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <a href="#hero" class="header-brand">Alban Kuntz</a>
+        <nav>
+            <ul class="header-nav" id="header-nav">
+                <li><a href="#maison">Notre Maison</a></li>
+                <li><a href="#carte">La Carte</a></li>
+                <li><a href="#salon">Salon de thé</a></li>
+                <li><a href="#adresses">Adresses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145042171" class="header-cta">Appeler</a>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Alban Kuntz Paris — Vitrine rue Guy de Maupassant" loading="eager">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star">★</span> 4.3 — 288 avis Google
+                </div>
+                <h1>Le temps de la belle pâtisserie.</h1>
+                <p>Croissants feuilletés main 48h, tartes d'époque, chocolats de couverture pure origine — au cœur du 16<sup>e</sup> arrondissement, à deux pas de La Muette.</p>
+            </div>
+            <div class="hero-scroll-hint" aria-hidden="true">
+                Découvrir
+                <span></span>
+            </div>
+        </section>
+
+        <!-- NOTRE MAISON -->
+        <section class="section" id="maison">
+            <div class="filigrane filigrane--top-right" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 160 Q60 40 100 30 Q140 20 160 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 8"/>
+                    <path d="M30 170 Q50 60 100 45 Q150 35 170 90" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                    <circle cx="100" cy="35" r="3" fill="currentColor" opacity="0.5"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <span class="section-label reveal">Notre Maison</span>
+                <div class="maison-grid">
+                    <div class="maison-text">
+                        <h2 class="section-title reveal reveal-delay-1">Une histoire de passion, depuis 2015</h2>
+                        <p class="reveal reveal-delay-2">De la première boutique rue Guy de Maupassant à nos trois adresses parisiennes et versaillaises, <strong>Alban Kuntz</strong> défend une pâtisserie d'auteur, fabriquée entièrement sur place. Farines des Yvelines, beurres normands AOP, fruits sélectionnés à maturité — chaque ingrédient porte la trace d'un choix exigeant.</p>
+                        <p class="reveal reveal-delay-3">Ici, pas de raccourcis. Nos croissants lèvent 48 heures. Nos pâtes fermentent longuement. Nos chocolats sont tempérés à la main, tablette par tablette. Cette lenteur assumée, c'est notre luxe.</p>
+                    </div>
+                    <div class="maison-image reveal reveal-delay-2">
+                        <img src="assets/maps-4.jpg" alt="Intérieur de la boutique Alban Kuntz" loading="lazy">
+                        <div class="frame-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLEAU NOIR -->
+        <section class="section" style="padding-top:1rem;padding-bottom:1rem;" aria-label="Citation du jour">
+            <div class="section-inner">
+                <div class="tableau-noir" id="tableau-noir">
+                    <div class="tableau-grain" aria-hidden="true"></div>
+                    <div class="tableau-texte" id="tableau-texte">Aujourd'hui, tarte Tatin</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA CARTE DE SAISON -->
+        <section class="section" id="carte">
+            <div class="filigrane filigrane--bottom-left" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M160 40 Q140 160 100 170 Q60 180 40 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 8"/>
+                    <path d="M170 30 Q150 150 100 160 Q55 170 30 110" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                    <circle cx="100" cy="165" r="3" fill="currentColor" opacity="0.5"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <span class="section-label reveal">La Carte de saison</span>
+                <h2 class="section-title reveal reveal-delay-1">Ce que vous dégusterez bientôt</h2>
+                <p class="reveal reveal-delay-2" style="max-width:600px;color:#5a4e42;font-size:0.95rem;line-height:1.7;">Nos créations évoluent au rythme des fruits mûrs et des inspirations de l'atelier. En ce moment :</p>
+                <div class="carte-grid">
+                    <div class="carte-item reveal reveal-delay-1">
+                        <span class="emoji">🥮</span>
+                        <h4>Millefeuille vanille</h4>
+                        <span class="desc">Vanille de Madagascar, pâte feuilletée 6 tours</span>
+                    </div>
+                    <div class="carte-item reveal reveal-delay-2">
+                        <span class="emoji">🍋</span>
+                        <h4>Tarte citron-basilic</h4>
+                        <span class="desc">Citrons de Sicile, basilic frais du marché</span>
+                        <span class="badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-item reveal reveal-delay-3">
+                        <span class="emoji">🍮</span>
+                        <h4>Flan de notre élevage</h4>
+                        <span class="desc">Œufs fermiers, lait entier, gousse de vanille</span>
+                    </div>
+                    <div class="carte-item reveal reveal-delay-4">
+                        <span class="emoji">🥐</span>
+                        <h4>Roulé à la cannelle</h4>
+                        <span class="desc">L'incontournable, beurre AOP, cannelle Ceylan</span>
+                    </div>
+                </div>
+                <p class="reveal reveal-delay-2" style="margin-top:2rem;font-size:0.85rem;color:#6b5e52;text-align:center;">Carte complète à télécharger ou à consulter sur place.</p>
+            </div>
+        </section>
+
+        <!-- LE SALON DE THÉ -->
+        <section class="section" id="salon" style="background:#fff;border-top:1px solid var(--perle);border-bottom:1px solid var(--perle);">
+            <div class="section-inner">
+                <span class="section-label reveal">Le salon de thé & terrasse</span>
+                <h2 class="section-title reveal reveal-delay-1">Attablons-nous</h2>
+                <p class="reveal reveal-delay-2" style="max-width:600px;color:#5a4e42;font-size:0.95rem;line-height:1.7;">Une trentaine de places dans un décor haussmannien aux notes boisées, où l'on vient autant pour un chocolat chaud mousseux que pour un déjeuner léger. La terrasse, protégée et chauffée en hiver, donne sur la rue Guy de Maupassant, au calme.</p>
+                <div class="salon-gallery">
+                    <div class="gallery-item gallery-main reveal reveal-delay-1">
+                        <img src="assets/maps-2.jpg" alt="Salon de thé Alban Kuntz" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-2">
+                        <img src="assets/maps-3.jpg" alt="Terrasse rue Guy de Maupassant" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-3">
+                        <img src="assets/maps-5.jpg" alt="Vitrine pâtisserie" loading="lazy">
+                    </div>
+                </div>
+                <div class="salon-infos reveal reveal-delay-2">
+                    <div class="info-block">
+                        <div class="info-icon">🕗</div>
+                        <div class="info-text">
+                            <strong>Service continu</strong>
+                            <span>8h – 19h30, tous les jours</span>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="info-icon">🪑</div>
+                        <div class="info-text">
+                            <strong>30 places</strong>
+                            <span>Salon + terrasse chauffée</span>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="info-icon">☕</div>
+                        <div class="info-text">
+                            <strong>Petit-déjeuner & déjeuner</strong>
+                            <span>Formules à partir de 14€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOS ADRESSES -->
+        <section class="section" id="adresses">
+            <div class="filigrane filigrane--center" aria-hidden="true">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="60" width="220" height="180" rx="8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 12"/>
+                    <line x1="40" y1="120" x2="260" y2="120" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+                    <circle cx="150" cy="90" r="8" fill="none" stroke="currentColor" stroke-width="0.9"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <span class="section-label reveal">Nos adresses</span>
+                <h2 class="section-title reveal reveal-delay-1">Trois boutiques, une seule exigence</h2>
+                <div class="adresses-grid">
+                    <div class="adresse-card reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Paris 16 — Guy de Maupassant" loading="lazy">
+                        <div class="adresse-card-body">
+                            <h4>Paris 16 — Guy de Maupassant</h4>
+                            <p>2 Rue Guy de Maupassant, 75116 Paris</p>
+                            <p>Horaires : 8h – 19h30, 7j/7</p>
+                            <a href="tel:+33145042171" class="tel-link">📞 01 45 04 21 71</a>
+                        </div>
+                    </div>
+                    <div class="adresse-card reveal reveal-delay-2">
+                        <img src="assets/maps-6.jpg" alt="Paris 8 — Notre-Dame" loading="lazy">
+                        <div class="adresse-card-body">
+                            <h4>Paris 8 — Notre-Dame</h4>
+                            <p>80 Rue Notre-Dame, 75008 Paris</p>
+                            <p>Horaires à confirmer</p>
+                            <a href="tel:+33145042171" class="tel-link">📞 01 45 04 21 71</a>
+                        </div>
+                    </div>
+                    <div class="adresse-card reveal reveal-delay-3">
+                        <img src="assets/maps-4.jpg" alt="Versailles — Montreuil" loading="lazy">
+                        <div class="adresse-card-body">
+                            <h4>Versailles — Montreuil</h4>
+                            <p>26 Rue Saint-Louis, 78000 Versailles</p>
+                            <p>Horaires à confirmer</p>
+                            <a href="tel:+33145042171" class="tel-link">📞 01 45 04 21 71</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=Alban+Kuntz+Paris+2+Rue+Guy+de+Maupassant%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Alban Kuntz Paris"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE GESTE & LA MATIÈRE -->
+        <section class="section" id="geste" style="background:#fff;border-top:1px solid var(--perle);">
+            <div class="filigrane filigrane--top-right" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="100" cy="100" rx="70" ry="50" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 9" transform="rotate(-15 100 100)"/>
+                    <ellipse cx="100" cy="100" rx="55" ry="38" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5" transform="rotate(-15 100 100)"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <span class="section-label reveal">Le geste & la matière</span>
+                <div class="geste-grid">
+                    <div class="geste-text">
+                        <h2 class="section-title reveal reveal-delay-1">Fait par nous, pour vous</h2>
+                        <ul class="reveal reveal-delay-2">
+                            <li><span>Tous nos pains, viennoiseries et gâteaux naissent dans notre laboratoire — rien n'est sous-traité.</span></li>
+                            <li><span>Pâtes fermentées longuement : 24 à 48 heures pour développer arômes et digestibilité.</span></li>
+                            <li><span>Cuissons en pierre pour une croûte dorée et une mie alvéolée parfaite.</span></li>
+                            <li><span>Chocolats de couverture pure origine, tempérés à la main, tablette par tablette.</span></li>
+                            <li><span>Beurres AOP normands, farines des Yvelines — circuits courts et traçabilité totale.</span></li>
+                            <li><span>Chaque fruit est choisi à maturité, chaque tarte est montée au couteau, pomme par pomme.</span></li>
+                        </ul>
+                    </div>
+                    <div class="geste-image reveal reveal-delay-3">
+                        <img src="assets/maps-3.jpg" alt="Pâtisseries artisanales Alban Kuntz" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+            <div class="section-inner">
+                <span class="section-label reveal">Contact & réservation</span>
+                <h2 class="section-title reveal reveal-delay-1">Commandez en boutique ou appelez-nous</h2>
+                <div class="contact-grid">
+                    <form class="contact-form reveal reveal-delay-2" action="#" method="post">
+                        <label for="nom" class="sr-only">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre demande (anniversaire, cocktail, événement...)"></textarea>
+                        <button type="submit">Envoyer — Réponse sous 2h</button>
+                    </form>
+                    <div class="contact-info-side reveal reveal-delay-3">
+                        <a href="tel:+33145042171" class="big-tel">01 45 04 21 71</a>
+                        <div class="info-line">📧 <a href="mailto:paris16@maisonkuntz.fr" style="color:#5a4e42;text-decoration:underline;">paris16@maisonkuntz.fr</a></div>
+                        <div class="info-line">📍 2 Rue Guy de Maupassant, 75116 Paris</div>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:0.5rem;">
+                            <a href="#" class="pdf-link">📄 Catalogue Fêtes</a>
+                            <a href="#" class="pdf-link">💍 Catalogue Mariages</a>
+                            <a href="#" class="pdf-link">🏢 Catalogue Entreprises</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p><strong>Alban Kuntz Paris</strong> — 2 Rue Guy de Maupassant, 75116 Paris</p>
+        <p>📞 <a href="tel:+33145042171">01 45 04 21 71</a> · ✉️ <a href="mailto:paris16@maisonkuntz.fr">paris16@maisonkuntz.fr</a></p>
+        <p>Paris 16 · Paris 8 · Versailles — Pâtisserie d'auteur depuis 2015</p>
+        <p class="footer-credit">Site créé par <a href="https://agence.mooo.com/alban-kuntz-paris" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobile-toggle');
+            const nav = document.getElementById('header-nav');
+            const header = document.getElementById('site-header');
+
+            if (toggle && nav) {
+                toggle.addEventListener('click', function() {
+                    const isOpen = nav.classList.contains('open');
+                    nav.classList.toggle('open', !isOpen);
+                    toggle.classList.toggle('active', !isOpen);
+                    toggle.setAttribute('aria-expanded', !isOpen);
+                });
+
+                // Close nav on link click
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('open');
+                        toggle.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Close nav on outside click
+                document.addEventListener('click', function(e) {
+                    if (!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains(
+                            'open')) {
+                        nav.classList.remove('open');
+                        toggle.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // Header scroll effect
+            let lastScroll = 0;
+            function updateHeader() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = scrollY;
+            }
+            window.addEventListener('scroll', updateHeader, { passive: true });
+            updateHeader();
+
+            // IntersectionObserver for reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealEls.forEach(el => observer.observe(el));
+            } else if (revealEls.length > 0) {
+                // Fallback: show all
+                revealEls.forEach(el => el.classList.add('visible'));
+            }
+
+            // Tableau noir chalk animation
+            const tableauTexte = document.getElementById('tableau-texte');
+            const tableauNoir = document.getElementById('tableau-noir');
+            let tableauAnimated = false;
+
+            function animateTableau() {
+                if (tableauAnimated || !tableauTexte || !tableauNoir) return;
+                const rect = tableauNoir.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top < windowHeight * 0.75 && rect.bottom > 0) {
+                    tableauAnimated = true;
+                    const fullText = tableauTexte.textContent || '';
+                    tableauTexte.textContent = '';
+                    tableauTexte.classList.add('revealed');
+
+                    const chars = fullText.split('');
+                    chars.forEach((char, i) => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.classList.add('chalk-char');
+                        span.style.transitionDelay = (i * 0.045) + 's';
+                        tableauTexte.appendChild(span);
+
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                span.classList.add('drawn');
+                            });
+                        });
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', animateTableau, { passive: true });
+            // Also try on load
+            setTimeout(animateTableau, 400);
+            // And on resize
+            window.addEventListener('resize', animateTableau, { passive: true });
+
+            // Respect prefers-reduced-motion
+            const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mqReduced.matches) {
+                // Show all reveals immediately
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+                // Show tableau text immediately
+                if (tableauTexte && !tableauAnimated) {
+                    tableauAnimated = true;
+                    tableauTexte.classList.add('revealed');
+                    const fullText = tableauTexte.textContent || '';
+                    tableauTexte.textContent = '';
+                    const chars = fullText.split('');
+                    chars.forEach(char => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.classList.add('chalk-char', 'drawn');
+                        tableauTexte.appendChild(span);
+                    });
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
