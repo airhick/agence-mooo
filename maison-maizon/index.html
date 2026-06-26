@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maison Maizon — L'art de recevoir a une adresse. Sophie et Esther vous accueillent au 129 rue de la Faisanderie, Paris. Vaisselle, verre bleu cobalt, linge brodé et conseils curatoriaux.">
+    <title>Maison Maizon — Art de recevoir | Paris 16e</title>
+    <meta property="og:title" content="Maison Maizon — L'art de recevoir a une adresse.">
+    <meta property="og:description" content="Un appartement haussmannien transformé en écrin curatorial par Sophie et Esther. Vaisselle, verre bleu cobalt, linge brodé — chaque objet raconte une histoire.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-chaud: #F9F6F0;
+            --noir-profond: #1A1A1A;
+            --bleu-cobalt: #0047AB;
+            --bois-chene: #D2B48C;
+            --gris-chaud: #8B7D72;
+            --bleu-nuit: #002855;
+            --font-display: 'Bricolage Grotesque', serif;
+            --font-body: 'Hanken Grotesk', sans-serif;
+            --grain-opacity: 0.035;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--blanc-chaud);
+            color: var(--noir-profond);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--bleu-cobalt);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 0 0 6px 6px;
+            z-index: 10001;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* HEADER */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            background: rgba(249, 246, 240, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.4s ease, background 0.4s ease;
+            will-change: transform;
+        }
+        .site-header.scrolled {
+            border-bottom-color: rgba(210, 180, 140, 0.35);
+            background: rgba(249, 246, 240, 0.94);
+        }
+        .header-logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+            color: var(--noir-profond);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .header-logo span {
+            color: var(--bleu-cobalt);
+            font-weight: 700;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2.5vw, 28px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--gris-chaud);
+            text-decoration: none;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bleu-cobalt);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--bleu-cobalt);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fff;
+            background: var(--bleu-cobalt);
+            padding: 10px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.25s var(--ease-out-back);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            outline-offset: 3px;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--bleu-nuit);
+            transform: scale(1.04);
+        }
+        .header-cta svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--noir-profond);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 340px;
+                height: 100vh;
+                background: var(--blanc-chaud);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 90px 32px 40px;
+                gap: 20px;
+                transition: right 0.4s var(--ease-out-expo);
+                border-left: 1px solid rgba(210, 180, 140, 0.3);
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06);
+            }
+            .header-nav.open {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.05rem;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .header-cta {
+                font-size: 0.8rem;
+                padding: 8px 14px;
+            }
+        }
+
+        /* MAIN */
+        main {
+            margin-top: 0;
+        }
+
+        /* HERO */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            align-items: stretch;
+            padding-top: 70px;
+            overflow: hidden;
+        }
+        .hero-visual {
+            position: relative;
+            grid-column: 1 / 3;
+            grid-row: 1;
+            z-index: 1;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.95) contrast(1.05) saturate(0.85);
+            transition: transform 1.6s var(--ease-out-expo);
+        }
+        .hero-visual.loaded img {
+            transform: scale(1.02);
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(175deg,
+                    rgba(249, 246, 240, 0.34) 0%,
+                    rgba(0, 71, 171, 0.07) 40%,
+                    rgba(0, 40, 85, 0.22) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .hero-visual .hero-frame {
+            position: absolute;
+            inset: clamp(12px, 2.5vw, 28px);
+            border: 1.5px solid rgba(249, 246, 240, 0.5);
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 2px;
+            transition: border-color 0.8s ease;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            grid-column: 1 / 3;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(32px, 6vw, 70px) clamp(20px, 5vw, 60px);
+            pointer-events: none;
+        }
+        .hero-content>* {
+            pointer-events: auto;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 246, 240, 0.82);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(210, 180, 140, 0.4);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--noir-profond);
+            letter-spacing: 0.03em;
+            width: fit-content;
+            margin-bottom: clamp(16px, 2vw, 24px);
+            font-family: var(--font-body);
+        }
+        .hero-badge .star {
+            color: #e8b825;
+            font-size: 1rem;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 6vw, 4.8rem);
+            color: #fff;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            max-width: 700px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.18);
+            margin-bottom: clamp(10px, 1.5vw, 18px);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.04em;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+            max-width: 500px;
+            margin-bottom: clamp(20px, 3vw, 32px);
+        }
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .hero-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--bleu-cobalt);
+            padding: 14px 26px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.25s var(--ease-out-back);
+            letter-spacing: 0.02em;
+            outline-offset: 3px;
+        }
+        .hero-cta-primary:hover,
+        .hero-cta-primary:focus-visible {
+            background: var(--bleu-nuit);
+            transform: scale(1.04);
+        }
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 1rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 14px 26px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s var(--ease-out-back);
+            letter-spacing: 0.02em;
+            outline-offset: 3px;
+        }
+        .hero-cta-secondary:hover,
+        .hero-cta-secondary:focus-visible {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.55);
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                min-height: 100svh;
+            }
+            .hero-visual {
+                min-height: 100svh;
+                grid-column: 1;
+            }
+            .hero-content {
+                grid-column: 1;
+                padding: clamp(24px, 5vw, 40px) clamp(16px, 4vw, 28px);
+            }
+            .hero-title {
+                font-size: clamp(2rem, 5.5vw, 3rem);
+                max-width: 100%;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-cta-primary,
+            .hero-cta-secondary {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* Section commune */
+        .section {
+            padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bleu-cobalt);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--noir-profond);
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+            margin-bottom: clamp(20px, 3vw, 32px);
+        }
+        .section-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            color: var(--gris-chaud);
+            line-height: 1.7;
+            max-width: 600px;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: var(--bleu-cobalt);
+            border-radius: 2px;
+            margin: clamp(24px, 4vw, 40px) 0;
+        }
+        .divider.dore {
+            background: var(--bois-chene);
+            height: 1.5px;
+            width: 40px;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 70px);
+            align-items: center;
+        }
+        .about-text-block {
+            position: relative;
+        }
+        .about-text-block .divider {
+            margin-top: 0;
+        }
+        .about-accent-block {
+            position: relative;
+            background: rgba(0, 71, 171, 0.04);
+            border: 1px solid rgba(210, 180, 140, 0.3);
+            border-radius: 4px;
+            padding: clamp(28px, 4vw, 44px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-family: var(--font-body);
+            color: var(--noir-profond);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            letter-spacing: 0.02em;
+        }
+        .about-accent-block .quote {
+            font-style: italic;
+            font-size: clamp(1.15rem, 2vw, 1.4rem);
+            font-weight: 400;
+            color: var(--bleu-cobalt);
+            line-height: 1.5;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid var(--bois-chene);
+        }
+        .about-accent-block .names {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--gris-chaud);
+            letter-spacing: 0.04em;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* OFFER */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 32px);
+            margin-top: clamp(24px, 4vw, 40px);
+        }
+        .offer-card {
+            position: relative;
+            padding: clamp(24px, 3vw, 32px);
+            background: #fff;
+            border: 1px solid rgba(210, 180, 140, 0.25);
+            border-radius: 3px;
+            transition: box-shadow 0.4s ease, transform 0.3s var(--ease-out-expo);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .offer-card:hover {
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        .offer-card-icon {
+            font-size: 2rem;
+            margin-bottom: 4px;
+        }
+        .offer-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--noir-profond);
+            letter-spacing: -0.01em;
+        }
+        .offer-card p {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--gris-chaud);
+            line-height: 1.6;
+        }
+        .offer-card .card-accent {
+            width: 28px;
+            height: 2px;
+            background: var(--bleu-cobalt);
+            border-radius: 1px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* AMBIANCE */
+        .ambiance-section {
+            background: rgba(0, 71, 171, 0.025);
+            border-top: 1px solid rgba(210, 180, 140, 0.3);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.3);
+        }
+        .ambiance-reveal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 5vw, 50px);
+            align-items: center;
+        }
+        .ambiance-image-wrapper {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            aspect-ratio: 4/3;
+        }
+        .ambiance-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: sepia(0.08) contrast(1.04) brightness(0.97);
+            transition: transform 1.2s var(--ease-out-expo);
+        }
+        .ambiance-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+        .ambiance-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(210, 180, 140, 0.35);
+            border-radius: 3px;
+            pointer-events: none;
+        }
+        .ambiance-text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .ambiance-text-block .ambiance-detail {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gris-chaud);
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ambiance-text-block .ambiance-detail::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--bleu-cobalt);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .ambiance-reveal {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* REVIEWS */
+        .reviews-badge-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 1px solid rgba(210, 180, 140, 0.4);
+            border-radius: 12px;
+            padding: 16px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-bottom: 16px;
+        }
+        .reviews-badge-large .big-stars {
+            color: #e8b825;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+        }
+        .reviews-badge-large .rating-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--noir-profond);
+            line-height: 1;
+        }
+        .reviews-badge-large .rating-text {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gris-chaud);
+        }
+
+        /* INFOS */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(24px, 3vw, 36px);
+        }
+        .info-card {
+            padding: clamp(20px, 3vw, 28px);
+            background: #fff;
+            border: 1px solid rgba(210, 180, 140, 0.25);
+            border-radius: 3px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: box-shadow 0.4s ease;
+        }
+        .info-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+        .info-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--noir-profond);
+            letter-spacing: -0.01em;
+            margin-bottom: 2px;
+        }
+        .info-card p,
+        .info-card a {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--gris-chaud);
+            text-decoration: none;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+        .info-card a:hover {
+            color: var(--bleu-cobalt);
+        }
+        .info-card .info-icon {
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+        }
+        .horaires-note {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--bois-chene);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* MAP */
+        .map-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 36px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(210, 180, 140, 0.3);
+            margin-top: clamp(20px, 3vw, 32px);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--bleu-nuit);
+            color: rgba(249, 246, 240, 0.85);
+            padding: clamp(40px, 6vw, 60px) clamp(20px, 5vw, 60px);
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: clamp(24px, 4vw, 40px);
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 14px;
+            letter-spacing: 0.01em;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: rgba(249, 246, 240, 0.7);
+            text-decoration: none;
+            line-height: 1.7;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover {
+            color: var(--bois-chene);
+        }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(249, 246, 240, 0.15);
+            font-size: 0.8rem;
+            color: rgba(249, 246, 240, 0.5);
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2.5px solid var(--bleu-cobalt);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <header class="site-header" id="site-header">
+        <a href="#" class="header-logo" aria-label="Maison Maizon — Accueil">Maison <span>Maizon</span></a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="header-nav" id="header-nav">
+                <li><a href="#about">Notre histoire</a></li>
+                <li><a href="#offer">Ce qu'on trouve</a></li>
+                <li><a href="#ambiance">L'ambiance</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+                <li><a href="tel:+33140508068" class="header-cta">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Appeler
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-visual" id="hero-visual">
+                <img src="assets/maps-1.jpg" alt="Intérieur de Maison Maizon — appartement haussmannien avec vaisselle et lumière naturelle" loading="eager" width="1600" height="1067">
+                <div class="hero-frame"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star">★</span> 4.3 — 22 avis Google
+                </div>
+                <h1 class="hero-title">L'art de recevoir<br>a une adresse.</h1>
+                <p class="hero-subtitle">129 rue de la Faisanderie, Paris</p>
+                <div class="hero-cta-row">
+                    <a href="tel:+33140508068" class="hero-cta-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        01 40 50 80 68
+                    </a>
+                    <a href="#infos" class="hero-cta-secondary">
+                        Pousser la porte →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="section-inner">
+                <span class="section-label reveal">Notre maison, la vôtre</span>
+                <div class="about-grid">
+                    <div class="about-text-block reveal reveal-left">
+                        <h2 class="section-title">Un appartement haussmannien habité</h2>
+                        <div class="divider"></div>
+                        <p class="section-text">
+                            Ici, pas de boutique froide ni de présentoir impersonnel. Sophie et Esther ont ouvert les portes
+                            de leur appartement du 16e pour partager leur passion de la table. Chaque pièce — du verre bleu cobalt
+                            soufflé en Bohême au linge brodé déniché dans le Perche — est choisie avec une exigence joyeuse, comme
+                            on compose un menu pour des amis. Venez toucher, soupeser, imaginer votre prochain dîner.
+                        </p>
+                    </div>
+                    <div class="about-accent-block reveal reveal-right reveal-delay-2">
+                        <p class="quote">« On ne vend pas des objets, on raconte des histoires de table. »</p>
+                        <p class="names">Sophie & Esther</p>
+                        <div class="divider dore"></div>
+                        <p style="font-size:0.9rem;color:var(--gris-chaud);">Conseil curatorial sur rendez-vous — chaque visite est une conversation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFER -->
+        <section class="section" id="offer">
+            <div class="section-inner">
+                <span class="section-label reveal">Ce qu'on trouve chez nous</span>
+                <h2 class="section-title reveal reveal-delay-1">Une sélection pensée pour<br>votre table</h2>
+                <div class="divider reveal reveal-delay-2"></div>
+                <div class="offer-grid">
+                    <div class="offer-card reveal reveal-delay-1">
+                        <span class="offer-card-icon">🔵</span>
+                        <h3>Verre bleu cobalt</h3>
+                        <p>La signature de la maison. Carafes, verres à eau et coupes soufflés en Bohême — une couleur vibrante qui magnifie une nappe blanche.</p>
+                        <div class="card-accent"></div>
+                    </div>
+                    <div class="offer-card reveal reveal-delay-2">
+                        <span class="offer-card-icon">🧵</span>
+                        <h3>Linge brodé</h3>
+                        <p>Serviettes, nappes et chemins de table chinés auprès d'ateliers français. Broderies délicates, lin lavé, coton gaufré.</p>
+                        <div class="card-accent"></div>
+                    </div>
+                    <div class="offer-card reveal reveal-delay-3">
+                        <span class="offer-card-icon">🍽️</span>
+                        <h3>Vaisselle d'auteur</h3>
+                        <p>Assiettes en grès, céramiques japonaises, couverts en laiton — des pièces qui rendent chaque repas mémorable.</p>
+                        <div class="card-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMBIANCE -->
+        <section class="section ambiance-section" id="ambiance">
+            <div class="section-inner">
+                <span class="section-label reveal">L'écrin haussmannien</span>
+                <div class="ambiance-reveal">
+                    <div class="ambiance-image-wrapper reveal reveal-left">
+                        <img src="assets/maps-1.jpg" alt="Ambiance de Maison Maizon — parquet en chevrons, moulures, lumière du jour" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="ambiance-text-block reveal reveal-right reveal-delay-1">
+                        <h2 class="section-title">Parquet chevron,<br>moulures & lumière</h2>
+                        <div class="divider"></div>
+                        <p class="section-text">
+                            L'appartement impose son rythme : la lumière du jour traverse les doubles fenêtres,
+                            le parquet craque doucement sous vos pas, et les objets dialoguent avec les moulures d'époque.
+                            Tout est disposé comme dans une maison vivante — car ici, c'en est une.
+                        </p>
+                        <div class="ambiance-detail">Blancs cassés chaleureux</div>
+                        <div class="ambiance-detail">Bois clair & métal brossé</div>
+                        <div class="ambiance-detail">Lumière naturelle abondante</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section class="section" id="reviews">
+            <div class="section-inner">
+                <span class="section-label reveal">Avis Google</span>
+                <div class="reviews-badge-large reveal reveal-delay-1">
+                    <span class="big-stars">★★★★★</span>
+                    <span class="rating-number">4.3</span>
+                    <span class="rating-text">sur 22 avis</span>
+                </div>
+                <h2 class="section-title reveal reveal-delay-2">Ce que nos visiteurs<br>racontent</h2>
+                <div class="divider reveal reveal-delay-3"></div>
+                <p class="section-text reveal reveal-delay-4">
+                    « Un endroit rare où l'on se sent accueilli comme chez des amis. Les pièces en verre bleu sont sublimes,
+                    et les conseils de Sophie et Esther valent de l'or. On repart avec bien plus que de la vaisselle. »
+                </p>
+            </div>
+        </section>
+
+        <!-- INFOS -->
+        <section class="section" id="infos">
+            <div class="section-inner">
+                <span class="section-label reveal">Infos pratiques</span>
+                <h2 class="section-title reveal reveal-delay-1">Venez nous voir</h2>
+                <div class="divider reveal reveal-delay-2"></div>
+                <div class="infos-grid reveal reveal-delay-3">
+                    <div class="info-card">
+                        <span class="info-icon">📍</span>
+                        <h3>Adresse</h3>
+                        <p>129 Rue de la Faisanderie<br>75016 Paris</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">📞</span>
+                        <h3>Téléphone</h3>
+                        <a href="tel:+33140508068">01 40 50 80 68</a>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">✉️</span>
+                        <h3>Email</h3>
+                        <a href="mailto:Pariscontact@maisonmaizon.com">Pariscontact@maisonmaizon.com</a>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">🕐</span>
+                        <h3>Horaires</h3>
+                        <p>Du mardi au samedi</p>
+                        <p class="horaires-note">Horaires à confirmer — appelez-nous avant de passer.</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">⭐</span>
+                        <h3>Note Google</h3>
+                        <p><strong>4.3★</strong> sur 22 avis</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">🏠</span>
+                        <h3>Visite</h3>
+                        <p>Conseil curatorial sur place — venez toucher les matières et échanger avec Sophie & Esther.</p>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-4">
+                    <iframe src="https://maps.google.com/maps?q=Maison+Maizon+129+Rue+de+la+Faisanderie%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Maison Maizon"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Maison Maizon</h4>
+                <p>129 Rue de la Faisanderie<br>75016 Paris</p>
+                <p><a href="tel:+33140508068">01 40 50 80 68</a></p>
+                <p><a href="mailto:Pariscontact@maisonmaizon.com">Pariscontact@maisonmaizon.com</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#about">Notre histoire</a>
+                <a href="#offer">Ce qu'on trouve</a>
+                <a href="#ambiance">L'ambiance</a>
+                <a href="#infos">Infos pratiques</a>
+            </div>
+            <div class="footer-col">
+                <h4>À propos</h4>
+                <p>Un appartement haussmannien transformé en écrin curatorial par Sophie et Esther. Art de recevoir, vaisselle d'auteur, verre bleu cobalt et linge brodé.</p>
+            </div>
+        </div>
+        <p class="footer-bottom">Site créé par Agence Mooo — © Maison Maizon</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "Maison Maizon",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "129 Rue de la Faisanderie",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140508068",
+            "email": "Pariscontact@maisonmaizon.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.3",
+                "reviewCount": "22"
+            },
+            "description": "Appartement haussmannien transformé en boutique curatoriale par Sophie et Esther. Vaisselle, verre bleu cobalt, linge brodé et conseils personnalisés pour l'art de recevoir.",
+            "url": "https://agence.mooo.com/maison-maizon"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            const heroVisual = document.getElementById('hero-visual');
+            let scrollTicking = false;
+
+            function updateHeaderScroll() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderScroll);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // Mark hero visual as loaded
+            if (heroVisual) {
+                const heroImg = heroVisual.querySelector('img');
+                if (heroImg && heroImg.complete) {
+                    heroVisual.classList.add('loaded');
+                } else if (heroImg) {
+                    heroImg.addEventListener('load', () => {
+                        heroVisual.classList.add('loaded');
+                    });
+                }
+            }
+
+            // Mobile nav toggle
+            const navToggle = document.getElementById('nav-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const navLinks = headerNav.querySelectorAll('a');
+
+            function closeNav() {
+                headerNav.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            function openNav() {
+                headerNav.classList.add('open');
+                navToggle.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            navToggle.addEventListener('click', () => {
+                if (headerNav.classList.contains('open')) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (headerNav.classList.contains('open')) {
+                        closeNav();
+                    }
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll(
+                '.reveal, .reveal-left, .reveal-right');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Close mobile nav on escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && headerNav.classList.contains('open')) {
+                    closeNav();
+                }
+            });
+
+            // Close mobile nav on outside click
+            document.addEventListener('click', (e) => {
+                if (headerNav.classList.contains('open') &&
+                    !headerNav.contains(e.target) &&
+                    !navToggle.contains(e.target)) {
+                    closeNav();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
