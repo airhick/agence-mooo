@@ -1,46 +1,42 @@
-Voici le brief créatif. Il est né de la confrontation entre les avis élogieux, l’énergie visuelle réelle et les défaillances critiques de l’audit : le site actuel ignore totalement le pignon sur rue, la vie de quartier et l’exception culturelle de cette épicerie.
+**1. Concept & positionnement**  
+« Superse » n’est pas qu’un e‑commerce iranien : c’est d’abord l’épicerie de quartier que tout le 15ᵉ connaît. Le site devient la vitrine numérique de ce lieu ouvert jusqu’à minuit, où les habitants viennent chercher du safran comme du pain lavash, et où l’on vous sert avec le sourire. L’idée forte : transformer la profusion visuelle d’un bazar en une expérience éditoriale élégante et lumineuse, capable d’accueillir aussi bien le chaland pressé que le curieux qui veut commander en ligne.
 
----
+**2. Direction artistique**  
+Parti pris : **« Bazar épuré »** – une alliance entre l’abondance graphique des produits persans (épices, fruits secs, pains, bocaux) et la simplicité architecturale de la boutique (murs blancs, verre, métal). Le design repose sur une photographie grands formats, des aplats blancs généreux et une grille très nette, réveillée par des touches épicées de rouge brique et de jaune safran. L’ambiance reste chaleureuse, familiale, jamais froide, avec des détails métalliques qui rappellent les présentoirs, les paniers ou les couvercles des samovars.
 
-### 1. Concept & positionnement
-**Le Trésor Persan de Javel.** On ne vend pas juste des produits iraniens, on ouvre les portes d’un garde-manger d’exception, niché au cœur du 15e arrondissement. Le site abandonne la logique de “supermarket générique” pour devenir le reflet numérique de cette épicerie de quartier plébiscitée, où les parisiens viennent chercher conseil, qualité et saveurs rares jusqu’à minuit. L’objectif : faire ressentir la densité chaleureuse des étagères et la lumière vibrante de la vitrine, pas un catalogue froid.
+**3. Palette**  
+- Fond principal : `#FCF9F6` (blanc cassé des murs éclairés au naturel)  
+- Encre primaire : `#1C2D27` (vert profond, intense, comme les herbes fraîches et les feuilles de vigne)  
+- Accent franc : `#C5452A` (rouge brique, chaleureux, qui rappelle le sumac, les piments doux et l’enseigne réelle)  
+- Accent lumineux : `#E5A73C` (safran doré, pour les CTA et les petits éclats)  
+- Soutien : `#5C7A6E` (vert sauge medium, icônes, filets secondaires)  
+- Métallique : `#C8C2B6` (gris-beige zinc, pour les séparations fines et les arrière-plans de cartes)
 
-### 2. Direction artistique
-**Brutaliste chaleureux & Étalage éclairé.** On part de la tension entre les matériaux bruts de l’existant (métal des rayonnages, verre des bocaux, sol carrelé) et l’abondance organique et colorée des produits. Le langage visuel mêlera une structure sobre et radicale (filets, gouttières étroites, blocs de texte massifs) à une lumière “néon de vitrine” qui fait scintiller les produits. C’est l’anti-bazar : une précision quasi chirurgicale pour sublimer la profusion.
+**4. Ton éditorial**  
+Chaleureux, direct, un brin complice. On tutoie le visiteur comme on le ferait derrière le comptoir. Le français est simple, concret, ancré dans le quartier (« à deux pas de la Seine », « ouvert jusqu’à minuit »). Pas de jargon marketing : on parle de produits, de fraîcheur, d’origine, de service. Chaque phrase pourrait être prononcée par le commerçant lui-même.
 
-### 3. Palette
-La palette est prélevée directement sur l’enseigne et dans la lumière d’une épicerie de nuit.
-- **Fond principal** : `#FAF8F5` (Blanc caisse enregistreuse, chaud mais clinique, évite le blanc fade en gardant une nuance de papier kraft éclairé).
-- **Encre / Texte** : `#1E1E1E` (Noir mâchefer, profond mais pas froid, pour un contraste premium).
-- **Accroche & Accents vifs** : `#E10500` (Rouge enseigne “OPEN”, utilisé avec parcimonie pour les prix, les CTA et les ponctuations graphiques).
-- **Accent métallique** : `#8A8D91` (Gris aluminium brossé des frigos, pour les séparateurs, icônes et états secondaires).
-- **Vert produit frais** : `#2C4C3B` (Vert profond des herbes séchées et des cornichons à l’iranienne, pour les badges “frais” et les touches de naturalité).
+**5. Accroche héro**  
+**Titre (Fraunces, grande taille) :**  
+*Votre épicerie iranienne, ouverte jusqu’à minuit.*  
 
-### 4. Ton éditorial
-**Expert et hospitalier.** On parle comme le commerçant qui connaît ses producteurs et prend le temps d’expliquer l’usage du *kashk* ou la différence entre deux variétés de riz. La voix est directe, chaleureuse et incroyablement précise sur les produits, sans jamais tomber dans le folklore. Niveau de langue : français courant soigné, tutoiement de proximité (“Votre épicerie”, “Passez nous voir”).
+**Sous-titre (Manrope) :**  
+Chez Superse, on trouve le meilleur de la Perse – safran, pistaches, pains frais – en plein cœur du 15ᵉ.  
+Passez nous voir au 12 avenue Émile Zola, ou commandez en ligne et récupérez vos courses sans attendre.
 
-### 5. Accroche héro
-**Titre :** Minuit, et tout est encore là.
-**Sous-titre :** L’épicerie iranienne de l’Avenue Émile Zola. Produits rares, plats faits maison, et le goût de Téhéran à deux pas du métro Javel. Ouvert sans interruption jusqu’à tard.
+**6. Sections ordonnées**  
+1. **Héro** – Photo pleine largeur de la devanture du magasin au crépuscule, avec l’enseigne allumée. Texte centré. Bouton CTA « Découvrir nos produits ».  
+2. **Le magasin** – *Une épicerie de quartier, un voyage immobile.*  
+   Texte sur l’histoire de Superse, la passion des produits iraniens, l’accueil personnalisé. Photo d’équipe sous une lumière naturelle.  
+3. **Les incontournables du moment** – *Nos coups de cœur.*  
+   Grille 3 colonnes (desktop) : photo en situation (un bocal de pistaches ouvert, un pain lavash sur une planche, des sachets de safran). Chaque produit est nommé en français avec une courte description gustative.  
+4. **Venir nous voir** – *Juste à côté.*  
+   Intégration Google Maps, adresse, horaires (Ouvert ⋅ Ferme à 00:00) mis en valeur dans un bloc traité comme une étiquette en métal. Plan et photo de la vitrine de jour.  
+5. **Commander en ligne** – *Faites vos courses, on s’occupe du reste.*  
+   Explication simple du parcours : sélectionnez vos produits, payez en ligne, choisissez la livraison ou le retrait au magasin. Chaque étape numérotée avec une icône (un panier, une enveloppe, un sac).  
+6. **Ce que disent nos clients** – *Plus de 90 avis nous donnent 4,7 étoiles.*  
+   Citations réelles (traduites) mises en page comme des petites cartes, avec étoiles et nom/prénom.  
+7. **Pied de page** – Rappel du téléphone (09 81 09 09 77), email, liens vers la boutique en ligne, réseaux sociaux. Inscription à la newsletter « Les trésors de la semaine ».
 
-### 6. Sections
-
-**1. Le Comptoir du jour**
-*Titre : L’étal du moment*
-On sort du catalogue pour montrer 6 à 8 produits de saison ou arrivages, photographiés en situation sur le comptoir du magasin, avec un prix au kilo clair. Exemple : “Les prunes salées d’Iran viennent d’arriver. Parfaites avec un thé noir fumant.”
-
-**2. Pour passer à table**
-*Titre : La cuisine est déjà prête*
-En plein dans le point fort des avis Google. Présentation des conserves artisanales et plats préparés (*ghormeh sabzi*, *fesenjan*). Bannière avec une citation d’avis client : « Des vrais plats iraniens comme à la maison, une dinguerie » – Avis Google vérifié.
-
-**3. Les essentiels du garde-manger**
-*Titre : Riz, safran, grenade. L’indispensable.*
-Un classement éditorial, pas une liste. Trois colonnes : “Les bases” (riz, huiles), “Le goût” (épices, mélanges persans), “Le plaisir” (douceurs, loukoums, pâtisseries). Chaque bloc est introduit par une mini-phrase d’expert.
-
-**4. L’épicerie**
-*Titre : 12 Avenue Émile Zola, Paris 15*
-Le bloc de réassurance ultime. Une grande photo en noir et blanc du store baissé ou de la vitrine illuminée. Accolée aux infos critiques manquantes : horaires (Ouvert du lundi au samedi, 9h–00h. Fermé le dimanche), téléphone cliquable, plan intégré, et la phrase signature : “On est juste à côté du métro Javel.”
-
-### 7. Signature visuelle
-- **Traitement typographique de la lumière** : Le mot “OPEN” ou un texte d’accroche sera traité comme une enseigne lumineuse en CSS/SVG, avec un halo rouge vibrant (`#E10500`) simulant un tube néon, déclenché au survol du hero.
-- **Animation “Apparition”** : Sur les photos produits, un rectangle blanc cassé de la couleur du fond (`#FAF8F5`) se rétracte par le haut lors du scroll, mimant l’ouverture d’un petit rideau de fer un matin d’ouverture, révélant le produit avec un léger retard. Cela transforme chaque section en événement, contrairement au simple fade-in générique.
+**7. Signature visuelle**  
+- **Animation « ouverture de bocal »** : au défilement, les grilles de produits apparaissent avec un effet de couvercle qui se dévisse (un cercle ou une forme en verre qui glisse vers le haut), révélant l’image et le texte. Ce motif donne une dimension tactile et reconnaissable entre toutes.  
+- **Filets verticaux** : un système de lignes fines métalliques (couleur `#C8C2B6`) traverse les sections 2, 3 et 5, évoquant les étagères de la boutique ou les armatures des vitrines. Ils structurent discrètement la composition et signent l’identité du site.
