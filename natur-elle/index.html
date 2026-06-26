@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natur'Elle — Fleuriste d'auteur au Ranelagh, Paris 16ᵉ</title>
+    <meta name="description" content="Atelier floral d'auteur à deux pas du jardin du Ranelagh. Bouquets uniques, compositions sur mesure, sélection quotidienne à Rungis. Savoir-faire artisanal depuis trente ans.">
+    <meta property="og:title" content="Natur'Elle — Fleuriste d'auteur au Ranelagh, Paris 16ᵉ">
+    <meta property="og:description" content="Atelier floral d'auteur à deux pas du jardin du Ranelagh. Bouquets uniques et compositions sur mesure.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Natur'Elle",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "87 Rue du Ranelagh",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145204216",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "28"
+            },
+            "image": "assets/maps-1.jpg",
+            "priceRange": "€€"
+        }
+    </script>
+    <style>
+        :root {
+            --coquille: #FDFBF7;
+            --noir-vegetal: #1E1C1B;
+            --brun-encre: #2F2D2B;
+            --vert-mousse: #4A5D4F;
+            --rose-ancien: #C2A0A2;
+            --bois-dore: #B8A785;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'Manrope', sans-serif;
+            --grain-opacity: 0.028;
+            --transition-slow: 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-medium: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--coquille);
+            color: var(--brun-encre);
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Grain global */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.75rem 1.25rem;
+            background: rgba(253, 251, 247, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(74, 93, 79, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            transition: background var(--transition-medium), box-shadow var(--transition-medium);
+        }
+        .site-header.scrolled {
+            background: rgba(253, 251, 247, 0.96);
+            box-shadow: 0 1px 20px rgba(30, 28, 27, 0.05);
+        }
+        .header-brand {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+            color: var(--noir-vegetal);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            line-height: 1;
+        }
+        .header-brand span {
+            color: var(--vert-mousse);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--brun-encre);
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.6rem;
+            border-radius: 2px;
+            transition: color var(--transition-medium), background var(--transition-medium);
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--vert-mousse);
+            transition: width var(--transition-medium);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--vert-mousse);
+            background: rgba(74, 93, 79, 0.04);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 60%;
+        }
+        .header-cta {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.1rem;
+            border: 1.5px solid var(--vert-mousse);
+            color: var(--vert-mousse);
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--vert-mousse);
+            color: var(--coquille);
+            outline: none;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            color: var(--brun-encre);
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        @media (max-width: 767px) {
+            .header-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding-top: 0.5rem;
+                border-top: 1px solid rgba(74, 93, 79, 0.1);
+                margin-top: 0.25rem;
+            }
+            .header-nav.open {
+                display: flex;
+            }
+            .header-nav a {
+                padding: 0.7rem 0.5rem;
+                font-size: 0.85rem;
+                border-bottom: 1px solid rgba(74, 93, 79, 0.05);
+            }
+            .header-cta {
+                display: none;
+            }
+            .header-cta.mobile-cta {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-top: 0.25rem;
+                padding: 0.7rem;
+                font-size: 0.85rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* ---- MAIN ---- */
+        main {
+            padding-top: 60px;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--noir-vegetal);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.65) saturate(0.7) contrast(1.05);
+            animation: hero-zoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.06);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg img {
+                animation: none;
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 55% 40%, transparent 30%, rgba(30, 28, 27, 0.55) 100%);
+            background-blend-mode: overlay;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        .hero-tag {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--bois-dore);
+            margin-bottom: 0.8rem;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(3.2rem, 8vw, 7.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--coquille);
+            margin-bottom: 0.6rem;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.4s forwards;
+        }
+        .hero-title .apostrophe {
+            color: var(--rose-ancien);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: rgba(253, 251, 247, 0.85);
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.6s forwards;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.75s forwards;
+        }
+        .hero-btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.8rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            border: 1.5px solid transparent;
+        }
+        .hero-btn-primary {
+            background: var(--coquille);
+            color: var(--noir-vegetal);
+            border-color: var(--coquille);
+        }
+        .hero-btn-primary:hover,
+        .hero-btn-primary:focus-visible {
+            background: transparent;
+            color: var(--coquille);
+            border-color: var(--coquille);
+            outline: none;
+        }
+        .hero-btn-secondary {
+            background: transparent;
+            color: var(--coquille);
+            border-color: rgba(253, 251, 247, 0.45);
+        }
+        .hero-btn-secondary:hover,
+        .hero-btn-secondary:focus-visible {
+            border-color: var(--coquille);
+            background: rgba(253, 251, 247, 0.08);
+            outline: none;
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 28px;
+            height: 44px;
+            border: 2px solid rgba(253, 251, 247, 0.5);
+            border-radius: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s 1s forwards;
+        }
+        .hero-scroll-indicator::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 10px;
+            background: rgba(253, 251, 247, 0.7);
+            border-radius: 3px;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+        @keyframes scrollDot {
+            0%,
+            100% {
+                top: 8px;
+                opacity: 0.6;
+            }
+            50% {
+                top: 22px;
+                opacity: 1;
+            }
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-tag,
+            .hero-title,
+            .hero-subtitle,
+            .hero-actions,
+            .hero-scroll-indicator {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 7rem 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .section {
+                padding: 9rem 4rem;
+            }
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--vert-mousse);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--noir-vegetal);
+            margin-bottom: 1.5rem;
+        }
+        .section-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--brun-encre);
+            max-width: 620px;
+        }
+        .section-text strong {
+            font-weight: 600;
+            color: var(--noir-vegetal);
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---- SAVOIR-FAIRE ---- */
+        .savoir-faire {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            background: var(--coquille);
+        }
+        @media (min-width: 768px) {
+            .savoir-faire {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .savoir-faire {
+                grid-template-columns: 5fr 4fr;
+                gap: 5rem;
+            }
+        }
+        .savoir-faire-image {
+            position: relative;
+            order: 2;
+            border: 1px solid rgba(74, 93, 79, 0.2);
+            padding: 0.5rem;
+            background: var(--coquille);
+            box-shadow: 20px 20px 0px 0px rgba(74, 93, 79, 0.06);
+        }
+        @media (min-width: 768px) {
+            .savoir-faire-image {
+                order: 2;
+                margin-left: -2rem;
+                margin-top: -3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .savoir-faire-image {
+                margin-left: -4rem;
+                margin-top: -5rem;
+            }
+        }
+        .savoir-faire-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+            filter: sepia(0.15) saturate(0.8) contrast(1.08);
+            transition: filter var(--transition-slow);
+        }
+        .savoir-faire-image:hover img {
+            filter: sepia(0) saturate(1) contrast(1);
+        }
+        .savoir-faire-content {
+            order: 1;
+            position: relative;
+        }
+        .savoir-faire-content .section-label::before {
+            content: 'Planche I — ';
+            font-weight: 700;
+        }
+        .filigree {
+            position: absolute;
+            top: -1.5rem;
+            left: -0.5rem;
+            font-family: var(--font-display);
+            font-size: 8rem;
+            color: rgba(74, 93, 79, 0.03);
+            pointer-events: none;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            z-index: 0;
+        }
+        @media (max-width: 767px) {
+            .filigree {
+                font-size: 4rem;
+                top: -1rem;
+                left: -0.2rem;
+            }
+        }
+        .highlight-box {
+            background: rgba(194, 160, 162, 0.08);
+            border-left: 3px solid var(--rose-ancien);
+            padding: 1.2rem 1.5rem;
+            margin-top: 1.5rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--brun-encre);
+            line-height: 1.6;
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* ---- CREATIONS ---- */
+        .creations {
+            background: var(--noir-vegetal);
+            color: var(--coquille);
+        }
+        .creations .section-label {
+            color: var(--bois-dore);
+        }
+        .creations .section-title {
+            color: var(--coquille);
+        }
+        .creations .section-text {
+            color: rgba(253, 251, 247, 0.8);
+        }
+        .creations-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (min-width: 600px) {
+            .creations-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .creations-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+        }
+        .creation-card {
+            position: relative;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(253, 251, 247, 0.1);
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            background: rgba(253, 251, 247, 0.02);
+            cursor: default;
+        }
+        .creation-card:hover {
+            border-color: rgba(253, 251, 247, 0.3);
+            background: rgba(253, 251, 247, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        }
+        .creation-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: rgba(253, 251, 247, 0.06);
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            pointer-events: none;
+            transition: color var(--transition-medium);
+        }
+        .creation-card:hover .creation-number {
+            color: rgba(194, 160, 162, 0.2);
+        }
+        .creation-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            color: var(--coquille);
+            position: relative;
+            z-index: 1;
+        }
+        .creation-card p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(253, 251, 247, 0.65);
+            position: relative;
+            z-index: 1;
+        }
+        .creation-card .accent-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rose-ancien);
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* ---- ATELIER ---- */
+        .atelier {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            background: var(--coquille);
+        }
+        @media (min-width: 768px) {
+            .atelier {
+                grid-template-columns: 4fr 5fr;
+                gap: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .atelier {
+                grid-template-columns: 4fr 5fr;
+                gap: 6rem;
+            }
+        }
+        .atelier-image {
+            position: relative;
+            order: 1;
+            border: 1px solid rgba(74, 93, 79, 0.15);
+            padding: 0.4rem;
+            background: var(--coquille);
+            box-shadow: -18px 18px 0px 0px rgba(194, 160, 162, 0.12);
+        }
+        @media (min-width: 768px) {
+            .atelier-image {
+                order: 1;
+                margin-right: -2rem;
+                margin-bottom: -3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .atelier-image {
+                margin-right: -5rem;
+                margin-bottom: -5rem;
+            }
+        }
+        .atelier-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 5/4;
+            object-fit: cover;
+            object-position: center 50%;
+            display: block;
+            filter: grayscale(0.55) contrast(1.1) brightness(0.95);
+            transition: filter var(--transition-slow);
+        }
+        .atelier-image:hover img {
+            filter: grayscale(0) contrast(1) brightness(1);
+        }
+        .atelier-content {
+            order: 2;
+            position: relative;
+        }
+        .atelier-content .section-label::before {
+            content: 'Planche II — ';
+            font-weight: 700;
+        }
+        .atelier-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .meta-item {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--vert-mousse);
+            padding: 0.4rem 0.9rem;
+            border: 1px solid rgba(74, 93, 79, 0.25);
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            text-decoration: none;
+        }
+        .meta-item:hover {
+            background: rgba(74, 93, 79, 0.06);
+            border-color: var(--vert-mousse);
+        }
+
+        /* ---- AVIS ---- */
+        .avis {
+            background: var(--coquille);
+            text-align: center;
+            border-top: 1px solid rgba(74, 93, 79, 0.08);
+            border-bottom: 1px solid rgba(74, 93, 79, 0.08);
+        }
+        .avis-stars {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 1.6rem;
+            color: var(--bois-dore);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .avis-stars .star-filled {
+            color: var(--bois-dore);
+        }
+        .avis-stars .star-half {
+            color: var(--bois-dore);
+            opacity: 0.55;
+        }
+        .avis-rating {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            letter-spacing: -0.02em;
+            color: var(--noir-vegetal);
+            line-height: 1;
+        }
+        .avis-count {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--vert-mousse);
+            margin-top: 0.3rem;
+        }
+        .avis-quote {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            color: var(--brun-encre);
+            position: relative;
+            padding: 0 1rem;
+        }
+        .avis-quote::before {
+            content: '“';
+            font-size: 5rem;
+            color: rgba(194, 160, 162, 0.25);
+            position: absolute;
+            top: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-display);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        /* ---- TROUVER ---- */
+        .trouver {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            background: var(--coquille);
+        }
+        @media (min-width: 768px) {
+            .trouver {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .trouver {
+                grid-template-columns: 4fr 5fr;
+                gap: 5rem;
+            }
+        }
+        .trouver-info .section-label::before {
+            content: 'Planche III — ';
+            font-weight: 700;
+        }
+        .info-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        .info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid rgba(74, 93, 79, 0.08);
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--brun-encre);
+        }
+        .info-list li .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--vert-mousse);
+            border: 1px solid rgba(74, 93, 79, 0.2);
+            border-radius: 50%;
+        }
+        .info-list a {
+            color: var(--brun-encre);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-medium);
+            border-bottom: 1px dotted transparent;
+        }
+        .info-list a:hover,
+        .info-list a:focus-visible {
+            color: var(--vert-mousse);
+            border-bottom-color: var(--vert-mousse);
+            outline: none;
+        }
+        .info-list .hours-note {
+            font-style: italic;
+            color: var(--vert-mousse);
+            font-size: 0.85rem;
+        }
+        .trouver-map {
+            border: 1px solid rgba(74, 93, 79, 0.15);
+            padding: 0.4rem;
+            background: var(--coquille);
+            box-shadow: 16px 16px 0px 0px rgba(74, 93, 79, 0.07);
+            height: fit-content;
+        }
+        .trouver-map iframe {
+            display: block;
+            width: 100%;
+            height: 340px;
+            border: 0;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--noir-vegetal);
+            color: rgba(253, 251, 247, 0.7);
+            padding: 3rem 1.5rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .site-footer {
+                padding: 3.5rem 3rem;
+                text-align: left;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1.5rem;
+            }
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: -0.01em;
+            color: var(--coquille);
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand span {
+            color: var(--rose-ancien);
+        }
+        .footer-info {
+            color: rgba(253, 251, 247, 0.55);
+            font-size: 0.8rem;
+        }
+        .footer-info a {
+            color: rgba(253, 251, 247, 0.7);
+            text-decoration: none;
+            transition: color var(--transition-medium);
+        }
+        .footer-info a:hover {
+            color: var(--coquille);
+        }
+        .footer-credit {
+            font-size: 0.75rem;
+            color: rgba(253, 251, 247, 0.35);
+            margin-top: 1rem;
+        }
+        @media (min-width: 768px) {
+            .footer-credit {
+                margin-top: 0;
+            }
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        a:focus-visible,
+        button:focus-visible,
+        .hero-btn:focus-visible,
+        .header-cta:focus-visible {
+            outline: 2px solid var(--vert-mousse);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+
+        /* ---- UTILITIES ---- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-brand">Natur<span>'</span>Elle</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <nav class="header-nav" id="headerNav">
+            <a href="#savoir-faire">Savoir-faire</a>
+            <a href="#creations">Créations</a>
+            <a href="#atelier">L'Atelier</a>
+            <a href="#avis">Avis</a>
+            <a href="#trouver">Nous trouver</a>
+            <a href="tel:+33145204216" class="header-cta mobile-cta">Appeler</a>
+        </nav>
+        <a href="tel:+33145204216" class="header-cta">Appeler</a>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Natur'Elle - Atelier floral au Ranelagh" loading="eager">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Fleuriste d'auteur — Paris 16ᵉ</p>
+                <h1 class="hero-title">Natur<span class="apostrophe">'</span>Elle</h1>
+                <p class="hero-subtitle">Chaque bouquet est un tableau végétal, composé à la main depuis trente ans.</p>
+                <div class="hero-actions">
+                    <a href="tel:+33145204216" class="hero-btn hero-btn-primary">Nous appeler</a>
+                    <a href="#trouver" class="hero-btn hero-btn-secondary">Itinéraire</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true"></div>
+        </section>
+
+        <!-- SAVOIR-FAIRE -->
+        <section class="section savoir-faire" id="savoir-faire">
+            <div class="savoir-faire-content reveal">
+                <span class="section-label">Notre histoire</span>
+                <h2 class="section-title">L'herbier vivant du Ranelagh</h2>
+                <p class="section-text">
+                    Depuis <strong>trente ans</strong>, Natur'Elle façonne des compositions florales comme on peint un paysage.
+                    Chaque matin, notre équipe sélectionne les plus belles tiges à <strong>Rungis</strong> — roses de jardin,
+                    pivoines éphémères, branchages sauvages — pour composer des bouquets qui ne ressemblent à aucun autre.
+                </p>
+                <div class="highlight-box">
+                    «&nbsp;Ici, on ne suit pas de catalogue. On écoute la fleur, sa courbe, sa lumière. C'est un artisanat d'instinct.&nbsp;»
+                </div>
+            </div>
+            <div class="savoir-faire-image reveal">
+                <img src="assets/maps-1.jpg" alt="Composition florale artisanale Natur'Elle" loading="lazy">
+            </div>
+            <div class="filigree" aria-hidden="true">I</div>
+        </section>
+
+        <!-- CREATIONS -->
+        <section class="section creations" id="creations">
+            <span class="section-label reveal">Nos spécimens</span>
+            <h2 class="section-title reveal">Quatre façons d'offrir la nature</h2>
+            <p class="section-text reveal" style="color:rgba(253,251,247,0.7);">Des créations pensées pour chaque occasion, du geste spontané à la commande d'exception.</p>
+            <div class="creations-grid">
+                <div class="creation-card reveal">
+                    <span class="creation-number">I</span>
+                    <h3><span class="accent-dot"></span>Bouquet d'auteur</h3>
+                    <p>Composition unique réalisée sur place, en fonction des arrivages du jour et de votre intention. Chaque bouquet est signé.</p>
+                </div>
+                <div class="creation-card reveal">
+                    <span class="creation-number">II</span>
+                    <h3><span class="accent-dot"></span>Composition sur mesure</h3>
+                    <p>Pour un événement, un dîner ou un décor de vitrine : nous créons des pièces architecturales qui subliment l'espace.</p>
+                </div>
+                <div class="creation-card reveal">
+                    <span class="creation-number">III</span>
+                    <h3><span class="accent-dot"></span>Carte blanche</h3>
+                    <p>Un abonnement floral pour recevoir, chaque semaine ou chaque mois, une création inédite livrée à domicile ou à venir chercher.</p>
+                </div>
+                <div class="creation-card reveal">
+                    <span class="creation-number">IV</span>
+                    <h3><span class="accent-dot"></span>Herbier conseil</h3>
+                    <p>Besoin d'inspiration ? Passez à l'atelier, nous vous guidons parmi les essences et les palettes pour trouver la pièce juste.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATELIER -->
+        <section class="section atelier" id="atelier">
+            <div class="atelier-image reveal">
+                <img src="assets/maps-1.jpg" alt="L'atelier Natur'Elle rue du Ranelagh" loading="lazy">
+            </div>
+            <div class="atelier-content reveal">
+                <span class="section-label">L'écrin</span>
+                <h2 class="section-title">Carrelage d'époque, verdure et lumière</h2>
+                <p class="section-text">
+                    Poussez la porte du <strong>87 rue du Ranelagh</strong> et laissez-vous envelopper par l'atmosphère confidentielle
+                    de notre atelier. Entre les murs patinés et le carrelage d'origine, les fleurs s'épanouissent dans une lumière
+                    douce, à l'abri du tumulte parisien. Un lieu où le temps ralentit et où chaque visite devient une parenthèse.
+                </p>
+                <div class="atelier-meta">
+                    <span class="meta-item">Boutique familiale</span>
+                    <span class="meta-item">Sélection Rungis</span>
+                    <a href="tel:+33145204216" class="meta-item">01 45 20 42 16</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section avis" id="avis">
+            <div class="reveal">
+                <span class="section-label">Ce que vous en dites</span>
+                <div class="avis-stars" aria-label="4,1 étoiles sur 5">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-half">★</span>
+                </div>
+                <div class="avis-rating">4,1 <span style="font-size:0.5em;vertical-align:middle;">/ 5</span></div>
+                <p class="avis-count">28 avis Google — une adresse confidentielle plébiscitée</p>
+                <blockquote class="avis-quote">
+                    Des bouquets d'une finesse rare, un accueil exquis et un lieu qui semble hors du temps. La plus belle fleuriste du quartier.
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- TROUVER -->
+        <section class="section trouver" id="trouver">
+            <div class="trouver-info reveal">
+                <span class="section-label">Nous trouver</span>
+                <h2 class="section-title">Au cœur du 16ᵉ</h2>
+                <p class="section-text">À deux pas du jardin du Ranelagh, dans une rue calme et arborée.</p>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-icon" aria-hidden="true">📍</span>
+                        <span><strong>Adresse</strong><br>87 Rue du Ranelagh, 75016 Paris</span>
+                    </li>
+                    <li>
+                        <span class="info-icon" aria-hidden="true">📞</span>
+                        <span><strong>Téléphone</strong><br><a href="tel:+33145204216">01 45 20 42 16</a></span>
+                    </li>
+                    <li>
+                        <span class="info-icon" aria-hidden="true">✉️</span>
+                        <span><strong>Email</strong><br><a href="mailto:fleuristenaturelleshop@gmail.com">fleuristenaturelleshop@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <span class="info-icon" aria-hidden="true">🕰️</span>
+                        <span><strong>Horaires</strong><br><span class="hours-note">Horaires à confirmer — nous vous invitons à nous contacter avant votre visite.</span></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="trouver-map reveal">
+                <iframe src="https://maps.google.com/maps?q=Natur+Elle+87+Rue+du+Ranelagh%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation Natur'Elle"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div>
+            <div class="footer-brand">Natur<span>'</span>Elle</div>
+            <div class="footer-info">
+                87 Rue du Ranelagh, 75016 Paris &nbsp;·&nbsp;
+                <a href="tel:+33145204216">01 45 20 42 16</a> &nbsp;·&nbsp;
+                <a href="mailto:fleuristenaturelleshop@gmail.com">Email</a>
+            </div>
+        </div>
+        <div class="footer-credit">Site créé par Agence Mooo</div>
+    </footer>
+
+    <script>
+        (function() {
+            // Menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const headerNav = document.getElementById('headerNav');
+            const siteHeader = document.getElementById('siteHeader');
+
+            if (menuToggle && headerNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isOpen = headerNav.classList.toggle('open');
+                    menuToggle.setAttribute('aria-expanded', isOpen);
+                    menuToggle.textContent = isOpen ? '✕' : '☰';
+                });
+                // Close menu on link click (mobile)
+                headerNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (headerNav.classList.contains('open')) {
+                            headerNav.classList.remove('open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            menuToggle.textContent = '☰';
+                        }
+                    });
+                });
+            }
+
+            // Header scroll effect
+            let scrollTicking = false;
+            function updateHeaderScroll() {
+                if (window.scrollY > 40) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderScroll);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // Intersection Observer for reveals
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                const revealElements = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Show all immediately if reduced motion preferred
+                document.querySelectorAll('.reveal').forEach(function(el) {
+                    el.classList.add('visible');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
