@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Mozart — Caviste historique au cœur du 16ᵉ arrondissement, Paris</title>
+    <meta name="description" content="Caviste Nicolas Mozart au 39 Avenue Mozart, Paris 16ᵉ. Note 4.9/5 — depuis 1937. Conseils personnalisés, sélection de vins, champagnes & spiritueux. Poussez la porte du village Mozart.">
+    <meta property="og:title" content="Nicolas Mozart — Votre caviste depuis 1937, au cœur du village Mozart">
+    <meta property="og:description" content="Note 4.9/5 par vos voisins. Conseils personnalisés, sélection de vins, champagnes & spiritueux. 39 Avenue Mozart, Paris 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='56' font-size='56'>🍷</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nicolas Mozart",
+            "description": "Caviste historique au cœur du 16ᵉ arrondissement de Paris, depuis 1937. Conseils personnalisés, sélection de vins, champagnes & spiritueux.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "39 Avenue Mozart",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142881453",
+            "email": "cave.mozart@nicolas.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "42",
+                "bestRating": "5"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "20:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "13:00" }
+            ],
+            "url": "https://agence.mooo.com/nicolas-mozart"
+        }
+    </script>
+    <style>
+        :root {
+            --noir-caviste: #151210;
+            --blanc-etiquette: #F7F3EE;
+            --rouge-nicolas: #B22222;
+            --bois-poli: #C4A882;
+            --gris-etain: #3C3835;
+            --dore-millesime: #D4AF37;
+            --text-muted: #A09890;
+            --overlay-dark: rgba(21, 18, 16, 0.55);
+            --shadow-card: 0 2px 24px rgba(0, 0, 0, 0.35);
+            --shadow-gold: 0 0 0 1px rgba(212, 175, 55, 0.25);
+            --radius-sm: 3px;
+            --radius-md: 6px;
+            --radius-lg: 12px;
+            --transition-ease: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-smooth: 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+            background-color: var(--noir-caviste);
+            color: var(--blanc-etiquette);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+
+        /* Focus visible */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--dore-millesime);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(21, 18, 16, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(196, 168, 130, 0.2);
+            padding: 0 clamp(1rem, 3vw, 3rem);
+            height: clamp(56px, 8vh, 72px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(21, 18, 16, 0.96);
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
+        }
+        .header-brand {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--blanc-etiquette);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-brand span {
+            color: var(--rouge-nicolas);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 2vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            color: var(--blanc-etiquette);
+            text-decoration: none;
+            font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bois-poli);
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--bois-poli);
+        }
+        .header-cta {
+            background: var(--rouge-nicolas);
+            color: var(--blanc-etiquette) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600 !important;
+            letter-spacing: 0.04em;
+            transition: background 0.3s ease, transform 0.2s ease !important;
+            font-size: clamp(0.75rem, 1vw, 0.85rem) !important;
+        }
+        .header-cta::after {
+            display: none !important;
+        }
+        .header-cta:hover {
+            background: #9a1c1c;
+            transform: translateY(-1px);
+            color: var(--blanc-etiquette) !important;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            color: var(--blanc-etiquette);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(21, 18, 16, 0.97);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 1rem 2rem 1.5rem;
+                border-bottom: 1px solid rgba(196, 168, 130, 0.3);
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .header-nav a {
+                padding: 0.7rem 0;
+                font-size: 0.95rem;
+                border-bottom: 1px solid rgba(196, 168, 130, 0.12);
+            }
+            .header-nav a:last-child {
+                border-bottom: none;
+            }
+            .header-cta {
+                text-align: center;
+                margin-top: 0.4rem;
+                border-radius: var(--radius-sm);
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: clamp(4rem, 12vh, 10rem) clamp(1.5rem, 6vw, 6rem) clamp(3rem, 8vh, 6rem);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.5) saturate(0.85);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(21, 18, 16, 0.3) 0%,
+                    rgba(21, 18, 16, 0.5) 40%,
+                    rgba(21, 18, 16, 0.75) 75%,
+                    var(--noir-caviste) 100%);
+            z-index: 1;
+        }
+        .hero-watermark {
+            position: absolute;
+            z-index: 1;
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(6rem, 18vw, 22rem);
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            color: rgba(196, 168, 130, 0.06);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-55%) rotate(-6deg);
+            line-height: 0.75;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(60, 56, 53, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--blanc-etiquette);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .hero-badge .stars {
+            color: var(--dore-millesime);
+            letter-spacing: 2px;
+        }
+        .hero h1 {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--blanc-etiquette);
+            margin-bottom: 1rem;
+            text-wrap: balance;
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--bois-poli);
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-weight: 400;
+            color: rgba(247, 243, 238, 0.82);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 540px;
+            text-wrap: balance;
+        }
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius-sm);
+            font-family: 'Mulish', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--rouge-nicolas);
+            color: var(--blanc-etiquette);
+            box-shadow: 0 4px 18px rgba(178, 34, 34, 0.3);
+        }
+        .btn-primary:hover {
+            background: #9a1c1c;
+            box-shadow: 0 6px 24px rgba(178, 34, 34, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--blanc-etiquette);
+            border: 1.5px solid var(--bois-poli);
+        }
+        .btn-outline:hover {
+            background: rgba(196, 168, 130, 0.1);
+            border-color: var(--dore-millesime);
+            color: var(--dore-millesime);
+            transform: translateY(-2px);
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: clamp(3rem, 8vh, 7rem) clamp(1.5rem, 6vw, 6rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--bois-poli);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--blanc-etiquette);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background: var(--bois-poli);
+            margin-top: 0.5rem;
+            border-radius: 1px;
+        }
+        .section-text {
+            font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+            color: rgba(247, 243, 238, 0.78);
+            line-height: 1.75;
+            max-width: 640px;
+            text-wrap: balance;
+        }
+
+        /* ---- STORY SECTION ---- */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .story-images {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+        .story-img-main {
+            grid-column: 1 / -1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+        .story-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .story-img-main:hover img {
+            transform: scale(1.03);
+        }
+        .story-img-secondary {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+        .story-img-secondary img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .story-img-secondary:hover img {
+            transform: scale(1.04);
+        }
+        .story-img-secondary:first-of-type {
+            margin-top: -1.5rem;
+        }
+        .story-img-secondary:last-of-type {
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .story-images {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .story-img-secondary:first-of-type {
+                margin-top: 0;
+            }
+            .story-img-secondary:last-of-type {
+                margin-top: 0;
+            }
+        }
+
+        /* ---- SELECTION SECTION ---- */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .wine-card {
+            background: var(--gris-etain);
+            border: 1px solid rgba(196, 168, 130, 0.2);
+            border-radius: var(--radius-md);
+            padding: 1.8rem 1.5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.45s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .wine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--bois-poli);
+            border-radius: 3px 0 0 3px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease, width 0.3s ease;
+        }
+        .wine-card:hover {
+            border-color: rgba(196, 168, 130, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        .wine-card:hover::before {
+            opacity: 1;
+            width: 5px;
+        }
+        .wine-card .wine-icon {
+            font-size: 2.2rem;
+            opacity: 0.7;
+            margin-bottom: 0.2rem;
+        }
+        .wine-card .wine-name {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--blanc-etiquette);
+        }
+        .wine-card .wine-appellation {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--bois-poli);
+            font-weight: 600;
+        }
+        .wine-card .wine-note {
+            font-size: 0.9rem;
+            color: rgba(247, 243, 238, 0.7);
+            line-height: 1.5;
+            font-style: italic;
+            flex-grow: 1;
+        }
+        .wine-card .wine-price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--blanc-etiquette);
+            letter-spacing: 0.02em;
+        }
+        .wine-card .wine-cta {
+            font-size: 0.8rem;
+            color: var(--dore-millesime);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            transition: color 0.25s;
+            align-self: flex-start;
+        }
+        .wine-card .wine-cta:hover {
+            color: #e8c84a;
+        }
+        @media (max-width: 500px) {
+            .selection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---- TRUST / REVIEWS ---- */
+        .trust-block {
+            background: var(--gris-etain);
+            border-radius: var(--radius-lg);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            border: 1px solid rgba(196, 168, 130, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .trust-block::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .trust-big-note {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(4rem, 8vw, 7rem);
+            font-weight: 500;
+            color: var(--dore-millesime);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .trust-stars {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            color: var(--dore-millesime);
+            letter-spacing: 4px;
+            margin: 0.5rem 0;
+        }
+        .trust-count {
+            font-size: 0.9rem;
+            color: rgba(247, 243, 238, 0.65);
+            letter-spacing: 0.05em;
+        }
+        .trust-quote {
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
+            font-style: italic;
+            color: rgba(247, 243, 238, 0.8);
+            line-height: 1.7;
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--bois-poli);
+            max-width: 580px;
+        }
+        .trust-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.2rem;
+            color: var(--dore-millesime);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
+        }
+        .trust-link:hover {
+            color: #e8c84a;
+        }
+
+        /* ---- SERVICES ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .service-item {
+            background: var(--gris-etain);
+            border-radius: var(--radius-md);
+            padding: 1.6rem;
+            border: 1px solid rgba(196, 168, 130, 0.15);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .service-item:hover {
+            border-color: rgba(196, 168, 130, 0.45);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+        .service-item h4 {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--blanc-etiquette);
+        }
+        .service-item p {
+            font-size: 0.85rem;
+            color: rgba(247, 243, 238, 0.65);
+            line-height: 1.5;
+        }
+
+        /* ---- HORAIRES ---- */
+        .horaires-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .horaires-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .horaires-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(196, 168, 130, 0.2);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+        .horaires-list li .day {
+            font-weight: 600;
+            color: var(--blanc-etiquette);
+        }
+        .horaires-list li .hours {
+            color: rgba(247, 243, 238, 0.7);
+        }
+        .horaires-list li.ferme .hours {
+            color: var(--rouge-nicolas);
+            font-weight: 600;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(196, 168, 130, 0.25);
+            aspect-ratio: 4/3;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .horaires-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .map-wrapper {
+                aspect-ratio: 16/10;
+                min-height: 280px;
+            }
+        }
+
+        /* ---- EQUIPE ---- */
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .equipe-portrait {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(196, 168, 130, 0.3);
+            position: relative;
+        }
+        .equipe-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .equipe-portrait:hover img {
+            transform: scale(1.03);
+        }
+        .equipe-info h3 {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--blanc-etiquette);
+            margin-bottom: 0.3rem;
+        }
+        .equipe-info .role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--bois-poli);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .equipe-info .bio {
+            font-size: 1rem;
+            color: rgba(247, 243, 238, 0.75);
+            line-height: 1.7;
+            max-width: 480px;
+        }
+        @media (max-width: 768px) {
+            .equipe-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .equipe-portrait {
+                aspect-ratio: 3/4;
+                max-width: 350px;
+            }
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: #0f0d0b;
+            border-top: 1px solid rgba(196, 168, 130, 0.2);
+            padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 6vw, 6rem);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(247, 243, 238, 0.55);
+            letter-spacing: 0.03em;
+        }
+        .site-footer .footer-brand {
+            font-family: 'Marcellus', 'Georgia', 'Times New Roman', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--blanc-etiquette);
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+        .site-footer .footer-nap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0.8rem 0 1.2rem;
+            font-size: 0.85rem;
+        }
+        .site-footer .footer-nap a {
+            color: rgba(247, 243, 238, 0.65);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer .footer-nap a:hover {
+            color: var(--bois-poli);
+        }
+        .site-footer .footer-credit {
+            font-size: 0.75rem;
+            color: rgba(247, 243, 238, 0.35);
+            margin-top: 0.5rem;
+        }
+
+        /* ---- ANIMATIONS ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+                transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Wine bottle reveal - "débouchage" */
+        .wine-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.96);
+            transition: opacity 0.65s cubic-bezier(0.19, 1, 0.22, 1),
+                transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .wine-reveal.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Hero content entrance */
+        .hero-content .hero-badge,
+        .hero-content h1,
+        .hero-content .hero-subtitle,
+        .hero-content .hero-ctas {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeUpIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+        .hero-content .hero-badge {
+            animation-delay: 0.15s;
+        }
+        .hero-content h1 {
+            animation-delay: 0.3s;
+        }
+        .hero-content .hero-subtitle {
+            animation-delay: 0.45s;
+        }
+        .hero-content .hero-ctas {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeUpIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content .hero-badge,
+            .hero-content h1,
+            .hero-content .hero-subtitle,
+            .hero-content .hero-ctas {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .reveal,
+            .wine-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Subtle gold shimmer on hover for premium elements */
+        @keyframes goldShimmer {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+            50% {
+                box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+            }
+        }
+        .trust-block:hover {
+            animation: goldShimmer 2s ease-in-out 1;
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <a href="#hero" class="header-brand">Nicolas <span>Mozart</span></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu de navigation" aria-expanded="false">☰</button>
+        <nav>
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#selection">Sélection</a></li>
+                <li><a href="#confiance">Avis</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#equipe">L'équipe</a></li>
+                <li><a href="tel:+33142881453" class="header-cta">📞 Appeler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Devanture du caviste Nicolas Mozart, 39 Avenue Mozart, Paris" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-watermark" aria-hidden="true">MOZART</div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="stars">★★★★★</span> 4.9/5 — 42 avis Google
+                </div>
+                <h1>Votre caviste depuis&nbsp;1937, au&nbsp;cœur du&nbsp;<em>village Mozart</em>.</h1>
+                <p class="hero-subtitle">Note de 4.9/5 par vos voisins. Conseils personnalisés, sélection de vins, champagnes &amp; spiritueux. Poussez la porte du 39&nbsp;Avenue&nbsp;Mozart.</p>
+                <div class="hero-ctas">
+                    <a href="tel:+33142881453" class="btn btn-primary">📞 Appeler</a>
+                    <a href="https://maps.google.com/?q=Nicolas+Mozart+39+Avenue+Mozart,+Paris" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 S'y rendre</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTOIRE -->
+        <section class="section" id="histoire">
+            <div class="section-inner">
+                <div class="story-grid">
+                    <div class="reveal">
+                        <p class="section-label">La cave &amp; son histoire</p>
+                        <h2 class="section-title">Un repère de quartier</h2>
+                        <p class="section-text">
+                            Depuis 1937, Nicolas Mozart est bien plus qu'un caviste&nbsp;: un repère de quartier au cœur de l'Avenue Mozart. Trois générations de clients franchissent cette porte pour trouver des conseils sincères, une sélection exigeante, et cette atmosphère unique où le bois clair des étagères dialogue avec la lumière froide des vitrines. Ici, chaque bouteille a été choisie une par une, chaque recommandation est un geste de confiance.
+                        </p>
+                    </div>
+                    <div class="story-images">
+                        <div class="story-img-main reveal reveal-delay-1">
+                            <img src="assets/maps-3.jpg" alt="Intérieur du caviste Nicolas Mozart — étagères en bois et bouteilles" loading="lazy">
+                        </div>
+                        <div class="story-img-secondary reveal reveal-delay-2">
+                            <img src="assets/maps-2.jpg" alt="Vitrine du caviste Nicolas Mozart" loading="lazy">
+                        </div>
+                        <div class="story-img-secondary reveal reveal-delay-3">
+                            <img src="assets/maps-4.jpg" alt="Sélection de bouteilles chez Nicolas Mozart" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉLECTION DU MOMENT -->
+        <section class="section" id="selection" style="background:rgba(60,56,53,0.25);">
+            <div class="section-inner">
+                <p class="section-label reveal">Notre sélection du moment</p>
+                <h2 class="section-title reveal reveal-delay-1">Les pépites que nous aimons conseiller</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom:0.5rem;">
+                    Des bouteilles choisies avec soin, pour tous les goûts et toutes les occasions. Chaque recommandation est signée par votre caviste.
+                </p>
+                <div class="selection-grid">
+                    <div class="wine-card wine-reveal" style="transition-delay:0.05s;">
+                        <div class="wine-icon">🍷</div>
+                        <div class="wine-name">Château Haut-Bergey</div>
+                        <div class="wine-appellation">Pessac-Léognan, Bordeaux</div>
+                        <div class="wine-note">« Un rouge racé, tanins soyeux, parfait sur une belle pièce de viande. »</div>
+                        <div class="wine-price">Dès 22€</div>
+                        <a href="tel:+33142881453" class="wine-cta">Demandez-nous conseil →</a>
+                    </div>
+                    <div class="wine-card wine-reveal" style="transition-delay:0.12s;">
+                        <div class="wine-icon">🥂</div>
+                        <div class="wine-name">Champagne Paul Bara</div>
+                        <div class="wine-appellation">Grand Cru, Bouzy</div>
+                        <div class="wine-note">« Bulle fine et fraîche, l'allié des apéritifs réussis et des grandes occasions. »</div>
+                        <div class="wine-price">Dès 36€</div>
+                        <a href="tel:+33142881453" class="wine-cta">Demandez-nous conseil →</a>
+                    </div>
+                    <div class="wine-card wine-reveal" style="transition-delay:0.19s;">
+                        <div class="wine-icon">🥃</div>
+                        <div class="wine-name">Armagnac Delord</div>
+                        <div class="wine-appellation">Bas-Armagnac, 20 ans d'âge</div>
+                        <div class="wine-note">« Une caresse boisée, vanillée, pour les amateurs de spiritueux d'exception. »</div>
+                        <div class="wine-price">Dès 48€</div>
+                        <a href="tel:+33142881453" class="wine-cta">Demandez-nous conseil →</a>
+                    </div>
+                    <div class="wine-card wine-reveal" style="transition-delay:0.26s;">
+                        <div class="wine-icon">🍾</div>
+                        <div class="wine-name">Sancerre Blanc</div>
+                        <div class="wine-appellation">Domaine Vacheron, Loire</div>
+                        <div class="wine-note">« Minéralité pure, vive et élégante — notre coup de cœur pour les fruits de mer. »</div>
+                        <div class="wine-price">Dès 19€</div>
+                        <a href="tel:+33142881453" class="wine-cta">Demandez-nous conseil →</a>
+                    </div>
+                    <div class="wine-card wine-reveal" style="transition-delay:0.33s;">
+                        <div class="wine-icon">🍷</div>
+                        <div class="wine-name">Gevrey-Chambertin</div>
+                        <div class="wine-appellation">Bourgogne, Côte de Nuits</div>
+                        <div class="wine-note">« Un grand classique bourguignon, profondeur et finesse au rendez-vous. »</div>
+                        <div class="wine-price">Dès 38€</div>
+                        <a href="tel:+33142881453" class="wine-cta">Demandez-nous conseil →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANCE / AVIS -->
+        <section class="section" id="confiance">
+            <div class="section-inner">
+                <div class="trust-block reveal">
+                    <p class="section-label">Pourquoi on nous fait confiance</p>
+                    <div class="trust-big-note">4.9<span style="font-size:0.5em;vertical-align:super;">/5</span></div>
+                    <div class="trust-stars">★★★★★</div>
+                    <p class="trust-count">42 avis Google — la note de la sincérité</p>
+                    <p class="trust-quote">
+                        Les clients de Nicolas Mozart saluent la qualité des conseils, la sélection toujours pertinente, et l'accueil chaleureux d'une équipe qui connaît son quartier et ses habitués. Une cave où l'on revient autant pour l'expertise que pour le sourire.
+                    </p>
+                    <a href="https://maps.google.com/?q=Nicolas+Mozart+39+Avenue+Mozart,+Paris" target="_blank" rel="noopener noreferrer" class="trust-link">
+                        ⭐ Voir tous les avis sur Google →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services" style="background:rgba(60,56,53,0.2);">
+            <div class="section-inner">
+                <p class="section-label reveal">Services sur place</p>
+                <h2 class="section-title reveal reveal-delay-1">Tout pour vous accompagner</h2>
+                <div class="services-grid">
+                    <div class="service-item reveal reveal-delay-1">
+                        <div class="service-icon">🍽️</div>
+                        <h4>Conseils gastronomiques</h4>
+                        <p>Accords mets &amp; vins personnalisés pour vos dîners et réceptions.</p>
+                    </div>
+                    <div class="service-item reveal reveal-delay-2">
+                        <div class="service-icon">📦</div>
+                        <h4>E‑réservation</h4>
+                        <p>Réservez vos bouteilles par téléphone ou email, retirez-les en magasin.</p>
+                    </div>
+                    <div class="service-item reveal reveal-delay-3">
+                        <div class="service-icon">🧊</div>
+                        <h4>Glaçons</h4>
+                        <p>Service glaçons à toute heure — pratique pour vos apéritifs improvisés.</p>
+                    </div>
+                    <div class="service-item reveal reveal-delay-4">
+                        <div class="service-icon">🏠</div>
+                        <h4>Retrait en magasin</h4>
+                        <p>Commandez, passez nous voir : votre sélection vous attend.</p>
+                    </div>
+                </div>
+                <div style="margin-top:2rem;text-align:center;" class="reveal">
+                    <a href="tel:+33142881453" class="btn btn-primary">📞 Appeler pour réserver</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAIRES & CONTACT -->
+        <section class="section" id="horaires">
+            <div class="section-inner">
+                <p class="section-label reveal">Horaires &amp; contact</p>
+                <h2 class="section-title reveal reveal-delay-1">Venez nous voir</h2>
+                <div class="horaires-grid" style="margin-top:2rem;">
+                    <div class="reveal reveal-delay-1">
+                        <ul class="horaires-list">
+                            <li><span class="day">Lundi</span><span class="hours ferme">Fermé</span></li>
+                            <li><span class="day">Mardi</span><span class="hours">10h00 – 20h30</span></li>
+                            <li><span class="day">Mercredi</span><span class="hours">10h00 – 20h30</span></li>
+                            <li><span class="day">Jeudi</span><span class="hours">10h00 – 20h30</span></li>
+                            <li><span class="day">Vendredi</span><span class="hours">10h00 – 20h30</span></li>
+                            <li><span class="day">Samedi</span><span class="hours">09h30 – 20h30</span></li>
+                            <li><span class="day">Dimanche</span><span class="hours">10h00 – 13h00</span></li>
+                        </ul>
+                        <p style="font-size:0.78rem;color:rgba(247,243,238,0.45);margin-top:0.6rem;">Horaires indicatifs — nous vous recommandons de nous appeler pour confirmer.</p>
+                        <p style="margin-top:1.2rem;font-size:0.95rem;color:rgba(247,243,238,0.75);">
+                            📍 <strong>39 Avenue Mozart, Paris 16ᵉ</strong><br>
+                            📞 <a href="tel:+33142881453" style="color:var(--blanc-etiquette);text-decoration:none;">01 42 88 14 53</a><br>
+                            ✉️ <a href="mailto:cave.mozart@nicolas.com" style="color:var(--blanc-etiquette);text-decoration:none;">cave.mozart@nicolas.com</a>
+                        </p>
+                        <a href="https://maps.google.com/?q=Nicolas+Mozart+39+Avenue+Mozart,+Paris" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:1rem;">📍 Voir sur Google Street View</a>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Nicolas+Mozart+39+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation du caviste Nicolas Mozart"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ÉQUIPE -->
+        <section class="section" id="equipe" style="background:rgba(60,56,53,0.2);">
+            <div class="section-inner">
+                <div class="equipe-grid">
+                    <div class="equipe-portrait reveal">
+                        <img src="assets/maps-5.jpg" alt="L'équipe du caviste Nicolas Mozart" loading="lazy">
+                    </div>
+                    <div class="equipe-info reveal reveal-delay-1">
+                        <p class="section-label">L'équipe</p>
+                        <h2 class="section-title" style="margin-bottom:0.3rem;">Un visage, une passion</h2>
+                        <p class="role">Votre caviste de quartier</p>
+                        <p class="bio">
+                            Passionné par le vin depuis toujours, ancré dans le 16ᵉ arrondissement, votre caviste connaît chaque recoin de ses étagères et chaque histoire derrière les bouteilles qu'il vous conseille. Ici, on prend le temps de vous écouter, de comprendre vos goûts, et de vous guider avec sincérité. Parce qu'un bon vin, c'est avant tout une rencontre — entre un terroir, un vigneron, et vous.
+                        </p>
+                        <a href="tel:+33142881453" class="btn btn-primary" style="margin-top:1.5rem;">📞 Appeler pour un conseil</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">Nicolas Mozart</div>
+        <div class="footer-nap">
+            <span>39 Avenue Mozart, Paris 16ᵉ</span>
+            <span>·</span>
+            <a href="tel:+33142881453">01 42 88 14 53</a>
+            <span>·</span>
+            <a href="mailto:cave.mozart@nicolas.com">cave.mozart@nicolas.com</a>
+        </div>
+        <p>Ouvert du mardi au dimanche — fermé le lundi</p>
+        <p class="footer-credit">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const headerNav = document.getElementById('headerNav');
+            if (menuBtn && headerNav) {
+                menuBtn.addEventListener('click', function() {
+                    const expanded = headerNav.classList.toggle('active');
+                    menuBtn.setAttribute('aria-expanded', expanded);
+                    menuBtn.textContent = expanded ? '✕' : '☰';
+                });
+                // Close menu on link click
+                headerNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        headerNav.classList.remove('active');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        menuBtn.textContent = '☰';
+                    });
+                });
+            }
+
+            // Header scroll effect
+            const siteHeader = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 60) {
+                            siteHeader.classList.add('scrolled');
+                        } else {
+                            siteHeader.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // IntersectionObserver for reveals
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                const revealElements = document.querySelectorAll('.reveal, .wine-reveal');
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Show all immediately if reduced motion
+                document.querySelectorAll('.reveal, .wine-reveal').forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // Close mobile menu on click outside
+            document.addEventListener('click', function(e) {
+                if (headerNav.classList.contains('active') &&
+                    !headerNav.contains(e.target) &&
+                    e.target !== menuBtn) {
+                    headerNav.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.textContent = '☰';
+                }
+            });
+
+            // Smooth close on escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && headerNav.classList.contains('active')) {
+                    headerNav.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.textContent = '☰';
+                    menuBtn.focus();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
