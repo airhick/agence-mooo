@@ -1,134 +1,112 @@
-# BRIEF CRÉATIF — BARNACLE OPTIQUE
-*2 rue de la Convention, Paris 15e — Opticien de quartier à l’âme artisane*
+**BRIEF CRÉATIF — BARNACLE OPTIQUE**  
+*Site vitrine haut de gamme — budget 10 000 €+*  
 
 ---
 
-## 1. Concept & positionnement
+### 1. Concept & positionnement  
+**Barnacle** — ce crustacé qui s’ancre solidement aux rochers — devient la métaphore d’une vision qui dure : des montures choisies pour leur caractère intemporel, ajustées avec la précision d’un artisanat de quartier. Ici, on ne vend pas des lunettes, on transmet un regard : celui d’une maison exigeante, chaleureuse et profondément parisienne, où chaque paire est un objet de style et de mémoire.  
 
-Au croisement de la rue de la Convention et du savoir-faire optique, Barnacle Optique est un **atelier de quartier habité**. On n’y vient pas pour cliquer sur « ajouter au panier », mais pour croiser un regard compétent, ajuster une monture et repartir avec des lunettes qui tiennent autant de l’optique de précision que du conseil personnalisé. Le site sera le **refus assumé du catalogue froid** : une vitrine qui donne envie de pousser la porte et de parler à Mickael. L’expérience en ligne n’est pas un tunnel d’achat — c’est une invitation à prendre rendez-vous.
-
-**Ce qu’on retient** : Barnacle Optique rend à la lunetterie son geste d’artisan, rue de la Convention, sous un éclairage de verre et de bois.
-
----
-
-## 2. Direction artistique
-
-**Parti pris esthétique : « Atelier optique — chaleur précise »**
-
-Les vraies photos Google Maps révèlent un commerce où le **bois clair et le métal noir cohabitent sous un éclairage tamisé**, avec des présentoirs en verre ordonnés et des affiches rétro qui apportent une touche d’histoire. L’ambiance est celle d’un appartement haussmannien transformé en cabinet d’opticien — chic sans être intimidant, technique sans froideur.
-
-La direction artistique transpose ce dialogue entre **matières brutes et rigueur optique** :
-- Fond beige / bois naturel comme une table d’atelier (pas du « crème chaud » générique : un beige tiré du vrai mobilier du magasin)
-- Encre noire précise, mate, pour les textes et les silhouettes de montures
-- Verre et métal suggérés par des jeux de transparence, d’ombres portées et de filets fins
-- Typographie qui assume sa personnalité : **Bricolage Grotesque** en titres (display à l’œil très dessiné, presque artisanal) / **Hanken Grotesk** en texte courant (lecture limpide, contemporaine)
-
-L’ensemble produit un site **clair d’ambiance, sombre d’accents** : fonds beiges, blocs noirs pour les pauses visuelles, photographies chaudement éclairées. Les compositions sont structurées mais jamais rigides — on laisse respirer les visages, les mains qui ajustent une branche, les reflets.
+La promesse : **« Voir clair, voir beau, voir longtemps. »**  
 
 ---
 
-## 3. Palette
+### 2. Direction artistique  
+**Parti pris : Un « bistrot de lunetier » au chic rétro-marin**  
+On hybride l’élégance chaleureuse des intérieurs parisiens (bois ciré, affiches patinées, lumière tamisée) avec une pointe de poésie océanique tirée du nom Barnacle. Pas de littoral naïf, mais une évocation abstraite : des matières naturelles (cuir, liège, métal brossé), des reflets aqueux maîtrisés, une atmosphère confidentielle d’atelier de créateur. Le design respire l’hospitalité précise — on y entre comme dans une boutique d’antiquaire contemporain.  
 
-| Rôle | HEX | Nom d’usage |
-|---|---|---|
-| Fond principal | `#F7F2E9` | Beige atelier |
-| Fond secondaire (blocs sombres) | `#1C1C1C` | Noir optique |
-| Encre (texte courant) | `#2D2A26` | Brun encre |
-| Accent froid (lien, bouton, repère) | `#3A5A78` | Bleu prescription |
-| Accent chaud (hover, détail) | `#C4945B` | Laiton monture |
-| Bordure / filet discret | `#E0D8CD` | Sépia clair |
-
-**Logique** : le beige atelier et le brun encre sortent directement des teintes boisées du magasin. Le noir optique ancre visuellement la page. Le bleu prescription — un bleu-gris sobre, évoquant les flacons de solution ophtalmique et les enseignes de métro parisien — introduit une note de confiance et de repérage. Le laiton monture, lui, réchauffe les interactions sans jamais tomber dans le doré bling-bling.
+Ce parti pris corrige tous les manques de l’existant : fini le froid e-commerce, place à une identité singulière, ancrée dans le réel de la maison (ses boiseries blondes, ses affiches anciennes, son noir profond).  
 
 ---
 
-## 4. Ton éditorial
+### 3. Palette  
+*Couleurs issues des photos réelles, retravaillées pour un rendu noble.*
 
-**Voix** : Mickael, opticien et prénom.
+| Rôle | Hex | Nom d’usage |
+|------|-----|-------------|
+| Fond principal | `#FDFAF3` | Crème coquille (blanc chaud, jamais fade) |
+| Encre / texte | `#1C1B1B` | Noir de jais, adouci pour les écrans |
+| Accent 1 | `#B2222E` | Rouge barnacle (brique profond, présent sur les affiches rétro, évoque la chaleur et l’audace) |
+| Accent 2 | `#2C4C5E` | Bleu abysse (rappel discret de l’élément marin, utilisé avec parcimonie en filets ou en survol) |
+| Surface boisée | `#C9A87C` | Bois blond ciré (pour les blocs de contenu, les fonds de cartes, les séparateurs) |
+| Surface froide | `#E8E3DC` | Gris perle (calme, pour les arrière-plans secondaires, jamais dominant) |
 
-On parle au « vous », avec la courtoisie d’un commerçant de quartier qui connaît ses clients. Le ton est **direct, concret, jamais clinique**. Pas de « large choix de lunettes » ni de « profitez d’offres accessibles à tous les budgets » — on préfère dire ce qui se passe vraiment rue de la Convention.
-- Niveau de langue soutenu sans être guindé (« vous trouverez » plutôt que « on vous propose »)
-- Précision technique quand elle éclaire le choix (« verres anti-lumière bleue traités à l’allemande »)
-- Légèreté quand le contexte le permet (« On a tous une première paire de Ray-Ban qui nous rappelle quelque chose. »)
-- Aucun superlatif commercial vide : les arguments sont les marques sourcées, la mutuelle acceptée, la réparation express, l’adresse calme loin des chaînes.
-
-**Règle** : Chaque section répond à une vraie question d’un client potentiel (« Où se trouve la boutique ? », « Est-ce que l’opticien peut me recevoir ? », « Quelles marques sont en rayon ? », « Et ma mutuelle ? »).
-
----
-
-## 5. Accroche héro
-
-**Titre (H1)** :
-> Rue de la Convention, la vue prend son temps.
-
-**Sous-titre** :
-> Mickael vous reçoit dans son atelier d’opticien : examens de vue, collections exigeantes et ajustages de précision, loin des chaînes anonymes.
-
-**Pourquoi ça fonctionne** :
-- Situe immédiatement le commerce dans son quartier (« Rue de la Convention »)
-- Fait exister un prénom (« Mickael ») et un lieu (« atelier d’opticien ») — on vend l’expérience humaine, pas le stock
-- « prend son temps » promet une consultation attentive, à l’opposé du clic-achat que l’audit reproche au site actuel
-- La mention « loin des chaînes anonymes » répond implicitement à la crainte du générique exprimée dans les avis Google élogieux (4,5★)
+*Bannissement absolu : pas de terracotta ni de vert acide ; pas de “presque noir + blanc clinique”.*
 
 ---
 
-## 6. Sections
+### 4. Ton éditorial  
+**Voix** : Celle d’un opticien passionné, connaisseur et bon vivant — un artisan du regard qui tutoie ses clients avec élégance sans jamais être condescendant. Le ton est précis, imagé, direct, parfois teinté d’un humour sec très parisien.  
 
-### 1. HERO
-**Titre** : Rue de la Convention, la vue prend son temps.  
-**Sous-titre** : Mickael vous reçoit dans son atelier d’opticien — examens de vue, collections pointues et ajustages de précision, loin des chaînes anonymes.  
-**Visuel** : Photo grand format de la devanture en lumière naturelle, avec le nom « Barnacle » lisible au-dessus de la vitrine. La rue de la Convention en arrière-plan flou ancre le lieu.  
-**CTA** : [Prendre rendez-vous] → ancre vers le formulaire de contact / [Voir l’atelier] → ancre vers la galerie.
-
-### 2. L’ATELIER (À propos)
-**Titre** : L’opticien derrière les montures.  
-**Contenu** : Mickael a posé ses outils au 2 rue de la Convention pour faire de la lunetterie une affaire de soin et de conseil. Ici, une monture se choisit au visage, pas dans un panier. Examen de vue complet, prise de mesures au millimètre, réparations express et tiers-payant mutuelle : tout se règle en boutique, avec du temps devant vous.  
-**Visuels** : Portrait de Mickael devant son présentoir + photo de l’atelier / meuble en bois + montures en gros plan.
-
-### 3. SERVICES
-**Titre** : Ce que l’on fait pour vos yeux.  
-**Blocs** :
-- *Examen de vue* : Tests de réfraction, dépistage et ordonnance sur place — votre mutuelle est prise en charge en tiers-payant.
-- *Conseil & essayage* : Une sélection de montures adaptée à votre morphologie et à votre style, sans pression.
-- *Atelier de réparation* : Ajustage, changement de verres, ressoudage : vos lunettes sont souvent réparables en moins de 24 heures.
-- *Tiers-payant* : La plupart des mutuelles sont acceptées ; Barnacle Optique s’occupe des démarches.
-
-**Visuels** : Icônes fines (ligne, pas de pictogrammes épais) ou photos de gestes (une main tenant une branche de lunettes).
-
-### 4. LES COLLECTIONS
-**Titre** : Des montures qui ne font pas semblant.  
-**Contenu** : Une curation de marques créateurs et de classiques choisis pour leur design et leur tenue dans le temps — Lunor, Ray-Ban, et d’autres que Mickael aime commenter en boutique. Chaque paire est présentée comme une pièce, pas comme une référence produit.  
-**Disposition** : Galerie de photos d’ambiance (montures portées ou posées sur le bois de l’atelier) avec un lien discret « Voir en boutique — Prendre rendez-vous ».  
-**Pourquoi pas de prix en ligne** : En rupture explicite avec l’ancien site qui affichait « 389,00 € » en première ligne. Le client vient essayer, le prix se discute en confiance.
-
-### 5. MARQUES
-**Titre** : Les maisons que l’on défend.  
-**Contenu** : Logos et noms de marques présentés proprement, avec une phrase de contexte (« Classiques américains depuis 1937 » pour Ray-Ban, « Finesse allemande, montures faites main » pour Lunor, etc.). Aucun lien vers un e-shop.
-
-### 6. LE QUARTIER
-**Titre** : 2 rue de la Convention, Paris 15e.  
-**Contenu** : À deux pas de la station Boucicaut, dans une rue de commerce et d’artisanat qui garde l’âme du 15e arrondissement. Un opticien de quartier, avec son rythme et sa clientèle d’habitués.  
-**Visuels** : Carte Google Maps intégrée (données structurées LocalBusiness) + photo de la devanture avec le numéro « 2 » visible.  
-**Horaires** : Lundi 13h-19h / Mardi-Vendredi 10h-19h / Samedi sur rendez-vous.
-
-### 7. PRENDRE RENDEZ-VOUS
-**Titre** : Un moment pour vos yeux.  
-**Formulaire** : Nom, email, téléphone, motif (examen de vue / réparation / conseil montures), créneau souhaité. Validation humaine — pas de calendrier de réservation automatique qui déshumaniserait.  
-**Contact** : Téléphone unique (07 50 66 89 08), email unique (mickael@barnacle.fr) — fini la double adresse et le Hotmail.
-
-### 8. PIED DE PAGE
-**Contenu épuré** : Adresse, téléphone, email, horaires, liens légaux (CGV, mentions). Lien Instagram si pertinent. Mention « Paiement sécurisé » sans cryptoactifs. Pas de répétition du menu complet.
+**Niveau de langue** : Soutenu mais jamais ampoulé, avec des accroches qui font sourire et des descriptions érudites mais accessibles (on parle de galbe, de grain d’écaille, d’équilibre d’un visage, sans jargonner).  
+**Registre** : Chic et chaleureux, à l’image d’un échange entre Mickaël et un habitué du quartier.  
 
 ---
 
-## 7. Signature visuelle
+### 5. Accroche héro  
+**Titre principal** (H1 structuré, fort) :  
+> **L’élégance tient à un fil.**
 
-**1. Révélation au scroll façon « mise au point »**
-Au chargement des blocs de texte ou des photos, une animation de **passage du flou au net** (type `backdrop-filter: blur()` qui se dissout en 600ms) évoque le réglage d’une monture optique. L’effet reste subtil : une seule occurrence par section, jamais gratuit.
+**Sous-titre** :  
+> Depuis 2012, Barnacle Optique choisit des montures qui vous ressemblent — et les ajuste à la main, à deux pas de la Seine, avec l’exigence discrète d’un atelier d’antan.
 
-**2. Motif « lentille-cache »**
-Un motif répété en filigrane sur les blocs sombres ou en watermark derrière les titres : un cercle fin contenant deux arcs de cercle (évoque une lentille optique, un diaphragme ou un reflet cornéen). Utilisé avec parcimonie (fond du footer, amorce de section), il devient la signature graphique de Barnacle — sans logo superflu.
+*Pourquoi ça marche* : ça pose le nom, la durée, l’expertise, la géolocalisation (Seine = Paris 15, Convention) et la promesse artisanale, tout en jouant sur le double sens “fil” (fil du style, fil du regard, monture légère).  
 
 ---
 
-**Résumé d’audit corrigé** : On abandonne le catalogue e-commerce froid pour un site vitrine qui donne envie de venir rue de la Convention. Un H1 local et humain, des sections qui répondent aux vraies questions, un parcours qui mène systématiquement à la prise de rendez-vous, et une direction artistique qui traduit les matières, la lumière et le soin du lieu. Le site ne vend pas des lunettes : il vend un opticien.
+### 6. Sections ordonnées (avec titres et contenu réel)  
+
+1. **Header / Navigation**  
+   *Barnacle* (logo en Bricolage Grotesque, rouge barnacle) — menu épuré : Optiques · Solaires · L’Atelier · Venir  
+
+2. **Hero** (vidéo ou photo pleine largeur d’un présentoir en bois, plans serrés sur une monture iconique, lumière tamisée)  
+   *Titre* : L’élégance tient à un fil.  
+   *Texte* : Accroche ci-dessus. *Bouton* : « Prendre rendez-vous »  
+
+3. **L’esprit Barnacle**  
+   *Titre* : **Une coquille, un quartier, un regard**  
+   *Contenu* :  
+   Barnacle. Ce petit crustacé qui s’accroche aux rocs nous a séduits : il incarne la solidité et l’attachement. Notre boutique est de la même trempe — un repère du 15ᵉ, où l’on vous reçoit avec le temps qu’il faut pour trouver la monture qui vous va, celle qui épouse votre visage et résiste aux modes. Ici, chaque paire est réglée sur mesure, vos verres taillés avec la précision d’un atelier de haute facture. Et si vous venez à pied, vous entendrez peut-être les clapotis de la Seine en repartant.  
+
+4. **Collections — Optiques & Solaires** (mise en scène des montures comme des portraits, sur fond gris perle, noms en rouge barnacle)  
+   *Titre* : **Des caractères, pas des produits.**  
+   *Sous-titre* : Lunor, Orgreen, Ahlem, Masunaga… une vingtaine de marques créatrices, sélectionnées pour leur gueule et leur confort.  
+   *Cartes* : chaque collection (classique, audacieuse, affranchie) avec une phrase incarnée — ex. “Pour les tempéraments calmes qui n’aiment pas passer inaperçus.”  
+
+5. **L’Atelier du détail** (corrige l’absence d’info sur les services)  
+   *Titre* : **Vos yeux méritent mieux qu’un ajustement en 5 minutes.**  
+   *Contenu* :  
+   • **Prise de mesures** : parfaitement centrées, quelle que soit la correction  
+   • **Ajustage à la main** : monture chauffée, galbée, équilibrée à votre morphologie  
+   • **Service tiers-payant** : nous gérons la télétransmission pour vos remboursements  
+   • **Réparation & nettoyage** : même pour les anciennes paires, on bichonne vos montures  
+
+6. **La boutique & le quartier** (photos réelles, plan Google Maps, horaires avec le samedi corrigé)  
+   *Titre* : **2, rue de la Convention — Paris 15ᵉ**  
+   *Contenu* :  
+   Notre vitrine est à deux pas du métro Boucicaut, dans une rue commerçante à l’allure de village. Poussez la porte : le bois blond, les lampes d’atelier et les affiches anciennes parlent d’une époque où l’on prenait son temps.  
+   *Horaires* :  
+   Lundi 13h · 19h  
+   Mardi · Samedi 10h · 19h  
+   (Fermé le dimanche : on recharge les forces.)  
+   *Téléphone* : 07 50 66 89 08 — un clic = un appel.  
+
+7. **Preuves & témoignages** (bloc réduit, authentique, pas de fausses citations)  
+   *Titre* : **Dans l’oreille de vos voisins**  
+   *Contenu* : Extrait d’un avis Google (4,5★) : *“Accueil très agréable, on sent tout de suite que ce sont des passionnés. Mickaël a passé une heure à ajuster mes branches : un régal.”* — Marie D.  
+   Un deuxième avis : *“Enfin un opticien qui ne vous pousse pas à changer de monture à chaque visite. Du vrai conseil.”*  
+
+8. **Footer — Appel à l’action**  
+   *Titre* : **Prenez le temps de voir clair.**  
+   *Boutons* : Prendre rendez-vous · Envoyer votre ordonnance · Nous appeler  
+   *Infos* : Rappel de l’adresse, du métro, de l’email avec une phrase de caractère : “Mickaël vous répond en personne, souvent avant même que votre café refroidisse.”  
+
+---
+
+### 7. Signature visuelle  
+**1. Le « reflet Barnacle »** : sur toutes les images de montures et de la boutique, un léger voile dégradé évoque la surface de l’eau — un flou directionnel discret qui transforme les photographies en scènes suspendues, comme vues à travers une vitre embuée. Cela unifie visuellement le catalogue et rappelle le nom de manière subtile.  
+
+**2. Le fil d’écaille** : un filet ondulé, inspiré des lignes de croissance d’un coquillage, placé en séparation de sections. Animé au scroll, il se dessine comme un trait d’encre rouge barnacle, apportant une élégance artisanale et un marqueur mémorable.  
+
+**3. Titrages en Bricolage Grotesque** : utilisés de manière sculpturale, parfois superposés à des gros plans de montures, avec un jeu d’espacement très maîtrisé (lettrage aéré, certaines lettres capitales en rouge barnacle en milieu de phrase pour un effet affiche rétro).  
+
+*Ces détails corrigent l’absence totale d’identité visuelle relevée dans l’audit et créent une expérience unique, immédiatement distinctive.*
