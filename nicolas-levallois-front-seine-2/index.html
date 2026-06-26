@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Levallois Front Seine — Caviste de quartier à Levallois-Perret</title>
+    <meta name="description" content="Vincent vous accueille au 35 rue Greffulhe, Levallois-Perret. Cave à vins, champagnes et spiritueux — conseil, réservation, retrait sous 2h. Note 4.7/5.">
+    <meta property="og:title" content="Nicolas Levallois Front Seine — Votre caviste de quartier">
+    <meta property="og:description" content="Vincent a repris la cave. Votre table est prévenue. Conseils, réservation en ligne, retrait sous 2 heures au 35 rue Greffulhe.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%236B4F3A' stroke='%239B1B30' stroke-width='3'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='serif' font-size='28' font-weight='bold' fill='%23EBE4D7'%3E35%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pierre: #EBE4D7;
+            --encre: #1A0F14;
+            --cerise: #9B1B30;
+            --barrique: #6B4F3A;
+            --verre: #F5F1EB;
+            --encre-light: #2a1a20;
+            --cerise-deep: #7a1525;
+            --shadow-soft: 0 2px 20px rgba(26, 15, 20, 0.06);
+            --shadow-card: 0 8px 40px rgba(26, 15, 20, 0.08);
+            --shadow-hover: 0 16px 48px rgba(26, 15, 20, 0.13);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-slow: 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                animation-delay: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--pierre);
+            color: var(--encre);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 15% 10%, rgba(155, 27, 48, 0.03) 0%, transparent 60%),
+                radial-gradient(ellipse at 85% 30%, rgba(107, 79, 58, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 70%, rgba(26, 15, 20, 0.02) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Texture grain subtile */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.85rem 1.25rem;
+            background: rgba(235, 228, 215, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(107, 79, 58, 0.15);
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .site-header.scrolled {
+            padding: 0.55rem 1.25rem;
+            background: rgba(235, 228, 215, 0.94);
+            box-shadow: 0 2px 24px rgba(26, 15, 20, 0.07);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--encre);
+            flex-shrink: 0;
+        }
+        .header-blason {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        .header-name {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--encre);
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .header-name span {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--barrique);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--encre);
+            text-decoration: none;
+            padding: 0.4rem 0.7rem;
+            border-radius: var(--radius-sm);
+            letter-spacing: 0.03em;
+            transition: all var(--transition-smooth);
+            white-space: nowrap;
+            position: relative;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--cerise);
+            background: rgba(155, 27, 48, 0.06);
+        }
+        .header-nav a.cta-nav {
+            background: var(--cerise);
+            color: #fff;
+            padding: 0.5rem 1.1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-bounce);
+            box-shadow: 0 4px 14px rgba(155, 27, 48, 0.25);
+        }
+        .header-nav a.cta-nav:hover,
+        .header-nav a.cta-nav:focus-visible {
+            background: var(--cerise-deep);
+            box-shadow: 0 6px 20px rgba(155, 27, 48, 0.35);
+            transform: translateY(-1px);
+            color: #fff;
+        }
+        .header-phone-mobile {
+            display: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--encre);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.4rem 0.7rem;
+        }
+        @media (max-width: 768px) {
+            .header-nav a:not(.cta-nav) {
+                display: none;
+            }
+            .header-phone-mobile {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+            .header-nav a.cta-nav {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.9rem;
+            }
+            .site-header {
+                padding: 0.65rem 0.9rem;
+                gap: 0.5rem;
+            }
+            .header-blason {
+                width: 32px;
+                height: 32px;
+            }
+            .header-name {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ========== MAIN ========== */
+        main {
+            padding-top: 80px;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding-top: 70px;
+            }
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Blason separator */
+        .blason-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 0 auto 2.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        .blason-separator .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--barrique), transparent);
+            opacity: 0.5;
+        }
+        .blason-separator svg {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            opacity: 0.85;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1.2rem, 5vw, 3rem) clamp(4rem, 8vw, 7rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            position: relative;
+            overflow: visible;
+        }
+        .hero-content {
+            z-index: 3;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--verre);
+            border: 1px solid rgba(107, 79, 58, 0.2);
+            border-radius: 30px;
+            padding: 0.45rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--barrique);
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s 0.1s both;
+        }
+        .hero-badge .star {
+            color: #d4a017;
+            font-size: 1rem;
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 0.8s 0.2s both;
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--cerise);
+            position: relative;
+            white-space: nowrap;
+        }
+        .hero h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: 0.05em;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--cerise);
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+        .hero .sous-titre {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            font-weight: 400;
+            color: var(--encre-light);
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            max-width: 460px;
+            animation: fadeInUp 0.8s 0.35s both;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+            animation: fadeInRight 1s 0.3s both;
+        }
+        .hero-image-wrapper .frame {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            aspect-ratio: 4/3;
+            background: var(--barrique);
+        }
+        .hero-image-wrapper .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition-slow);
+        }
+        .hero-image-wrapper .frame:hover img {
+            transform: scale(1.03);
+        }
+        .hero-image-wrapper .frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 15, 20, 0.12) 0%, rgba(107, 79, 58, 0.08) 40%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-accent-line {
+            position: absolute;
+            top: 0.8rem;
+            left: -1.2rem;
+            width: 4px;
+            height: 60%;
+            background: var(--cerise);
+            border-radius: 2px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: clamp(1.5rem, 3vw, 2rem) 1.2rem clamp(3rem, 6vw, 4rem);
+                text-align: left;
+            }
+            .hero-content {
+                order: 1;
+            }
+            .hero-image-wrapper {
+                order: 0;
+                max-width: 100%;
+            }
+            .hero-image-wrapper .frame {
+                aspect-ratio: 16/10;
+            }
+            .hero .sous-titre {
+                max-width: 100%;
+            }
+            .hero-accent-line {
+                left: -0.6rem;
+                top: 0.5rem;
+            }
+        }
+
+        /* ========== SECTION 01 - L'homme ========== */
+        .section-homme {
+            background: var(--verre);
+            border-top: 1px solid rgba(107, 79, 58, 0.12);
+            border-bottom: 1px solid rgba(107, 79, 58, 0.12);
+        }
+        .section-homme .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .section-homme .blason-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-homme .blason-col svg {
+            width: clamp(140px, 18vw, 200px);
+            height: auto;
+            opacity: 0.9;
+        }
+        .section-homme h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 1rem;
+        }
+        .section-homme p {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            color: var(--encre-light);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+        .section-homme .signature {
+            display: inline-block;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--cerise);
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 768px) {
+            .section-homme .section-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: left;
+            }
+            .section-homme .blason-col {
+                justify-content: flex-start;
+                order: -1;
+            }
+            .section-homme .blason-col svg {
+                width: 100px;
+            }
+        }
+
+        /* ========== SECTION 02 - Cave pas supermarché ========== */
+        .section-cave h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.6rem;
+        }
+        .section-cave .subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--barrique);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .cave-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .cave-card {
+            background: var(--verre);
+            border: 1px solid rgba(107, 79, 58, 0.13);
+            border-radius: var(--radius-md);
+            padding: 1.8rem 1.5rem;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .cave-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--barrique);
+            opacity: 0.4;
+            border-radius: 0 2px 2px 0;
+            transition: all var(--transition-smooth);
+        }
+        .cave-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+            border-color: rgba(107, 79, 58, 0.25);
+        }
+        .cave-card:hover::before {
+            opacity: 0.8;
+            width: 4px;
+        }
+        .cave-card h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+        .cave-card p {
+            font-size: 0.9rem;
+            color: var(--encre-light);
+            line-height: 1.6;
+        }
+
+        /* ========== SECTION 03 - Panier conseillé ========== */
+        .section-panier {
+            background: var(--verre);
+            border-top: 1px solid rgba(107, 79, 58, 0.12);
+            border-bottom: 1px solid rgba(107, 79, 58, 0.12);
+        }
+        .section-panier h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+        }
+        .section-panier .subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--barrique);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+        .panier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .bouteille-card {
+            background: var(--pierre);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid rgba(107, 79, 58, 0.1);
+        }
+        .bouteille-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+            border-color: rgba(155, 27, 48, 0.2);
+        }
+        .bouteille-card .bouteille-visuel {
+            height: 160px;
+            background: linear-gradient(160deg, rgba(155, 27, 48, 0.06) 0%, rgba(107, 79, 58, 0.1) 50%, rgba(235, 228, 215, 0.6) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bouteille-card .bouteille-visuel .bottle-silhouette {
+            width: 36px;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(26, 15, 20, 0.5) 0%, rgba(107, 79, 58, 0.4) 50%, rgba(155, 27, 48, 0.3) 100%);
+            border-radius: 6px 6px 3px 3px;
+            position: relative;
+        }
+        .bouteille-card .bouteille-visuel .bottle-silhouette::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 18px;
+            background: rgba(26, 15, 20, 0.45);
+            border-radius: 3px 3px 0 0;
+        }
+        .bouteille-card .bouteille-info {
+            padding: 1.2rem 1.3rem 1.3rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .bouteille-card .bouteille-info h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.01em;
+        }
+        .bouteille-card .bouteille-info .appellation {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--barrique);
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+        }
+        .bouteille-card .bouteille-info .mot-vincent {
+            font-size: 0.85rem;
+            color: var(--encre-light);
+            line-height: 1.55;
+            flex: 1;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+        .bouteille-card .bouteille-info .prix {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cerise);
+            letter-spacing: 0.02em;
+        }
+        .bouteille-card .btn-reserver {
+            display: inline-block;
+            margin-top: 0.7rem;
+            padding: 0.5rem 1.2rem;
+            background: transparent;
+            border: 1.5px solid var(--cerise);
+            color: var(--cerise);
+            border-radius: 25px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all var(--transition-bounce);
+            align-self: flex-start;
+        }
+        .bouteille-card .btn-reserver:hover,
+        .bouteille-card .btn-reserver:focus-visible {
+            background: var(--cerise);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(155, 27, 48, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* ========== SECTION 04 - Services ========== */
+        .section-services h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+        }
+        .section-services .subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--barrique);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .service-card {
+            background: var(--verre);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.5rem;
+            border: 1px solid rgba(107, 79, 58, 0.12);
+            transition: all var(--transition-smooth);
+        }
+        .service-card:hover {
+            box-shadow: var(--shadow-card);
+            border-color: rgba(107, 79, 58, 0.22);
+        }
+        .service-card h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--encre-light);
+            line-height: 1.6;
+        }
+        .horaires-block {
+            background: var(--pierre);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            border-left: 4px solid var(--barrique);
+        }
+        .horaires-block h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--encre);
+            margin-bottom: 0.8rem;
+        }
+        .horaires-block .horaire-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.35rem 0;
+            font-size: 0.9rem;
+            color: var(--encre-light);
+            border-bottom: 1px dotted rgba(107, 79, 58, 0.15);
+            letter-spacing: 0.02em;
+        }
+        .horaires-block .horaire-row:last-child {
+            border-bottom: none;
+        }
+        .horaires-block .horaire-row .jour {
+            font-weight: 500;
+            color: var(--encre);
+        }
+        .horaires-block .horaire-row.ferme {
+            color: var(--cerise);
+            opacity: 0.7;
+        }
+        .horaires-note {
+            font-size: 0.75rem;
+            color: var(--barrique);
+            margin-top: 0.6rem;
+            font-style: italic;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION 05 - Venir ========== */
+        .section-venir {
+            background: var(--verre);
+            border-top: 1px solid rgba(107, 79, 58, 0.12);
+            border-bottom: 1px solid rgba(107, 79, 58, 0.12);
+        }
+        .section-venir h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.3rem;
+        }
+        .section-venir .adresse-display {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            color: var(--encre);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.3rem;
+        }
+        .section-venir .adresse-display .num {
+            color: var(--cerise);
+            font-size: 1.15em;
+        }
+        .section-venir .infos-venir {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .section-venir .info-block p {
+            font-size: 0.95rem;
+            color: var(--encre-light);
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        .section-venir .info-block a {
+            color: var(--cerise);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-smooth);
+        }
+        .section-venir .info-block a:hover {
+            color: var(--cerise-deep);
+            text-decoration: underline;
+        }
+        .section-venir .carte-wrapper {
+            margin-top: 2rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(107, 79, 58, 0.15);
+        }
+        @media (max-width: 768px) {
+            .section-venir .infos-venir {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        /* ========== SECTION 06 - Avis ========== */
+        .section-avis h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.5rem, 2.8vw, 2rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.2rem;
+        }
+        .section-avis .note-big {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--cerise);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .section-avis .note-detail {
+            font-size: 0.85rem;
+            color: var(--barrique);
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .avis-card {
+            background: var(--verre);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.6rem;
+            border: 1px solid rgba(107, 79, 58, 0.12);
+            position: relative;
+            transition: all var(--transition-smooth);
+        }
+        .avis-card:hover {
+            box-shadow: var(--shadow-card);
+            border-color: rgba(107, 79, 58, 0.2);
+        }
+        .avis-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -8px;
+            left: 1rem;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 4rem;
+            color: var(--cerise);
+            opacity: 0.2;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .avis-card .stars {
+            color: #d4a017;
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+        }
+        .avis-card p {
+            font-size: 0.9rem;
+            color: var(--encre-light);
+            line-height: 1.6;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+        .avis-card .auteur {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--barrique);
+            margin-top: 0.8rem;
+            letter-spacing: 0.03em;
+            font-style: normal;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--encre);
+            color: var(--pierre);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 3rem);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .site-footer .footer-blason {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.8;
+        }
+        .site-footer .footer-adresse {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.4rem;
+            color: var(--verre);
+        }
+        .site-footer .footer-contact {
+            font-size: 0.9rem;
+            color: rgba(235, 228, 215, 0.65);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.3rem;
+        }
+        .site-footer .footer-contact a {
+            color: var(--verre);
+            text-decoration: none;
+            transition: color var(--transition-smooth);
+        }
+        .site-footer .footer-contact a:hover {
+            color: #fff;
+        }
+        .site-footer .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: rgba(235, 228, 215, 0.5);
+            letter-spacing: 0.05em;
+        }
+        .site-footer .footer-credits {
+            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            color: rgba(235, 228, 215, 0.35);
+            letter-spacing: 0.06em;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Focus visible */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2.5px solid var(--cerise);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ========== Lien tel/email ========== */
+        .tel-link {
+            color: var(--cerise);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: color var(--transition-smooth);
+        }
+        .tel-link:hover {
+            color: var(--cerise-deep);
+            text-decoration: underline;
+        }
+
+        /* ========== Back to top ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            z-index: 900;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--cerise);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all var(--transition-smooth);
+            box-shadow: 0 4px 16px rgba(155, 27, 48, 0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: var(--cerise-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(155, 27, 48, 0.4);
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-accent {
+            color: var(--cerise);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="site-header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Nicolas Levallois Front Seine — Accueil">
+            <svg class="header-blason" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <filter id="wood-texture-header">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise"/>
+                        <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+                        <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+                    </filter>
+                </defs>
+                <circle cx="32" cy="32" r="29" fill="none" stroke="#6B4F3A" stroke-width="2.5" filter="url(#wood-texture-header)"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#6B4F3A" stroke-width="0.8" stroke-dasharray="3 5" opacity="0.6"/>
+                <text x="32" y="43" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="30" font-weight="600" fill="#1A0F14" letter-spacing="-1">35</text>
+                <circle cx="32" cy="32" r="23" fill="none" stroke="#9B1B30" stroke-width="1" opacity="0.5"/>
+            </svg>
+            <span class="header-name">Nicolas<span>Levallois Front Seine</span></span>
+        </a>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#homme">Le caviste</a>
+            <a href="#cave">La cave</a>
+            <a href="#panier">Le panier</a>
+            <a href="#services">Services</a>
+            <a href="#venir">Venir</a>
+            <a href="tel:+33147596371" class="header-phone-mobile" aria-label="Appeler le 01 47 59 63 71">📞 01 47 59 63 71</a>
+            <a href="#panier" class="cta-nav">Je réserve</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero section" id="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star" aria-hidden="true">★</span> 4,7/5 — 28 avis Google
+                </div>
+                <h1 id="hero-title">Vincent a repris la cave.<br>Votre table <em>est prévenue</em>.</h1>
+                <p class="sous-titre">Depuis le 35 rue Greffulhe, il choisit, carafe et conseille comme on reçoit chez soi — avec goût, sans façon. Bienvenue 6 jours sur 7, et le dimanche matin.</p>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="frame">
+                    <img src="assets/maps-1.jpg" alt="Façade de la cave Nicolas Levallois Front Seine, 35 rue Greffulhe" loading="eager" width="800" height="600">
+                </div>
+                <div class="hero-accent-line" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 01 - L'homme derrière le comptoir -->
+        <section class="section section-homme" id="homme" aria-labelledby="homme-title">
+            <div class="section-inner reveal">
+                <div class="blason-col">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <filter id="wood-texture-large">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" result="noise"/>
+                                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+                                <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+                            </filter>
+                        </defs>
+                        <ellipse cx="60" cy="60" rx="52" ry="52" fill="none" stroke="#6B4F3A" stroke-width="3" filter="url(#wood-texture-large)"/>
+                        <ellipse cx="60" cy="60" rx="46" ry="46" fill="none" stroke="#6B4F3A" stroke-width="1" stroke-dasharray="4 7" opacity="0.5"/>
+                        <ellipse cx="60" cy="60" rx="38" ry="38" fill="none" stroke="#9B1B30" stroke-width="1.5" opacity="0.4"/>
+                        <text x="60" y="72" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="48" font-weight="600" fill="#1A0F14" letter-spacing="-2">35</text>
+                        <circle cx="60" cy="16" r="3" fill="#9B1B30" opacity="0.7"/>
+                        <circle cx="60" cy="104" r="3" fill="#9B1B30" opacity="0.7"/>
+                        <circle cx="16" cy="60" r="3" fill="#9B1B30" opacity="0.7"/>
+                        <circle cx="104" cy="60" r="3" fill="#9B1B30" opacity="0.7"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 id="homme-title">La cave a changé de mains,<br>pas d'esprit.</h2>
+                    <p>Vincent vous accueille depuis quelques mois au 35 rue Greffulhe. Il connaît ses vigneron·nes par leur prénom, ses appellations par cœur, et votre palais après deux visites. Ici, on ne vous vend pas «&nbsp;un rouge qui passe bien&nbsp;» — on vous demande quel plat vous servez samedi.</p>
+                    <span class="signature">— Vincent</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blason separator -->
+        <div class="section" style="padding:1rem 0;" aria-hidden="true">
+            <div class="blason-separator">
+                <span class="line"></span>
+                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="22" fill="none" stroke="#6B4F3A" stroke-width="1.8"/><text x="26" y="34" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="24" font-weight="600" fill="#1A0F14">35</text></svg>
+                <span class="line"></span>
+            </div>
+        </div>
+
+        <!-- SECTION 02 - Cave, pas supermarché -->
+        <section class="section section-cave" id="cave" aria-labelledby="cave-title">
+            <div class="section-inner">
+                <span class="subtitle reveal">La sélection</span>
+                <h2 id="cave-title" class="reveal reveal-delay-1">Cave, pas supermarché.</h2>
+                <div class="cave-grid reveal reveal-delay-2">
+                    <div class="cave-card">
+                        <h3>Vins & champagnes</h3>
+                        <p>Toute la sélection Nicolas, commentée par Vincent. Les grands classiques comme les cuvées confidentielles, pour tous les budgets.</p>
+                    </div>
+                    <div class="cave-card">
+                        <h3>Spiritueux</h3>
+                        <p>Whiskies, cognacs, armagnacs, liqueurs artisanales. De quoi ouvrir l'horizon après le dîner — ou avant.</p>
+                    </div>
+                    <div class="cave-card">
+                        <h3>Commande & retrait</h3>
+                        <p>Ce qui n'est pas en rayon, Vincent le commande. Réservation en ligne, retrait sous 2 heures. Simple, rapide, sans frais.</p>
+                    </div>
+                    <div class="cave-card">
+                        <h3>Le petit plus</h3>
+                        <p>Pour les soirs d'été : sachets de glaçons de 2 kg. Parce qu'un rosé tiède n'a jamais rendu personne heureux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 03 - Panier conseillé -->
+        <section class="section section-panier" id="panier" aria-labelledby="panier-title">
+            <div class="section-inner">
+                <span class="subtitle reveal">Le panier du mois</span>
+                <h2 id="panier-title" class="reveal reveal-delay-1">Les 4 bouteilles que Vincent<br>pose sur votre table ce mois-ci.</h2>
+                <div class="panier-grid reveal reveal-delay-2">
+                    <article class="bouteille-card">
+                        <div class="bouteille-visuel" aria-hidden="true">
+                            <div class="bottle-silhouette" style="background:linear-gradient(180deg, rgba(26,15,20,0.55) 0%, rgba(155,27,48,0.35) 50%, rgba(107,79,58,0.3) 100%);"></div>
+                        </div>
+                        <div class="bouteille-info">
+                            <span class="appellation">Champagne</span>
+                            <h3>Brut Réserve — Maison Lenoble</h3>
+                            <p class="mot-vincent">«&nbsp;Un champagne de vignerons, dosé avec justesse. Pour un apéritif qui compte, ou des huîtres un dimanche midi.&nbsp;»</p>
+                            <span class="prix">39,90 €</span>
+                            <a href="tel:+33147596371" class="btn-reserver">Je réserve</a>
+                        </div>
+                    </article>
+                    <article class="bouteille-card">
+                        <div class="bouteille-visuel" aria-hidden="true">
+                            <div class="bottle-silhouette" style="background:linear-gradient(180deg, rgba(107,79,58,0.5) 0%, rgba(235,228,215,0.5) 40%, rgba(26,15,20,0.3) 100%);"></div>
+                        </div>
+                        <div class="bouteille-info">
+                            <span class="appellation">Sancerre</span>
+                            <h3>Blanc — Domaine Vacheron</h3>
+                            <p class="mot-vincent">«&nbsp;Un sauvignon de terroir, minéral et précis. Sur un chèvre frais ou un poisson en croûte de sel, il fait merveille.&nbsp;»</p>
+                            <span class="prix">26,50 €</span>
+                            <a href="tel:+33147596371" class="btn-reserver">Je réserve</a>
+                        </div>
+                    </article>
+                    <article class="bouteille-card">
+                        <div class="bouteille-visuel" aria-hidden="true">
+                            <div class="bottle-silhouette" style="background:linear-gradient(180deg, rgba(26,15,20,0.7) 0%, rgba(155,27,48,0.5) 30%, rgba(107,79,58,0.35) 100%);"></div>
+                        </div>
+                        <div class="bouteille-info">
+                            <span class="appellation">Saint-Joseph</span>
+                            <h3>Rouge — Domaine Coursodon</h3>
+                            <p class="mot-vincent">«&nbsp;Une syrah nordiste, entre violette et poivre. Pour un gigot du dimanche ou un plateau de fromages affinés.&nbsp;»</p>
+                            <span class="prix">32,00 €</span>
+                            <a href="tel:+33147596371" class="btn-reserver">Je réserve</a>
+                        </div>
+                    </article>
+                    <article class="bouteille-card">
+                        <div class="bouteille-visuel" aria-hidden="true">
+                            <div class="bottle-silhouette" style="background:linear-gradient(180deg, rgba(235,228,215,0.6) 0%, rgba(155,27,48,0.25) 40%, rgba(107,79,58,0.3) 100%);"></div>
+                        </div>
+                        <div class="bouteille-info">
+                            <span class="appellation">Côtes de Provence</span>
+                            <h3>Rosé — Château Léoube</h3>
+                            <p class="mot-vincent">«&nbsp;L'été en bouteille. Pêche blanche, agrumes, finale saline. Sur une salade niçoise ou des grillades au balcon.&nbsp;»</p>
+                            <span class="prix">18,90 €</span>
+                            <a href="tel:+33147596371" class="btn-reserver">Je réserve</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 04 - Services & Carte Privilège -->
+        <section class="section section-services" id="services" aria-labelledby="services-title">
+            <div class="section-inner">
+                <span class="subtitle reveal">Services</span>
+                <h2 id="services-title" class="reveal reveal-delay-1">Carte Privilège, e-réservation,<br>livraison.</h2>
+                <div class="services-grid reveal reveal-delay-2">
+                    <div class="service-card">
+                        <h3>Carte Privilège</h3>
+                        <p>Demandez-la en magasin. Fidélité récompensée, offres réservées, et un œil attentif sur vos préférences. Gratuite, sans engagement.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>E-réservation</h3>
+                        <p>Commandez en ligne, Vincent prépare votre sélection, vous passez quand vous voulez. Paiement sur place ou par Call & Pay. Retrait sous 2 heures.</p>
+                    </div>
+                </div>
+                <div class="horaires-block reveal reveal-delay-3">
+                    <h3>Horaires d'ouverture</h3>
+                    <div class="horaire-row"><span class="jour">Lundi</span><span class="ferme">Fermé</span></div>
+                    <div class="horaire-row"><span class="jour">Mardi – Vendredi</span><span>10h00 – 13h30 · 15h30 – 20h00</span></div>
+                    <div class="horaire-row"><span class="jour">Samedi</span><span>10h00 – 20h00</span></div>
+                    <div class="horaire-row"><span class="jour">Dimanche</span><span>9h30 – 13h00</span></div>
+                    <p class="horaires-note">Horaires indicatifs — n'hésitez pas à appeler pour confirmer un créneau.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 05 - Venir -->
+        <section class="section section-venir" id="venir" aria-labelledby="venir-title">
+            <div class="section-inner">
+                <h2 id="venir-title" class="reveal">À deux pas du métro,<br>à deux rues du marché.</h2>
+                <div class="adresse-display reveal reveal-delay-1">
+                    <span class="num">35</span> Rue Greffulhe,<br>Levallois-Perret
+                </div>
+                <div class="infos-venir reveal reveal-delay-2">
+                    <div class="info-block">
+                        <p><strong>Métro :</strong> Louise Michel (ligne 3) — à 4 minutes à pied</p>
+                        <p><strong>Bus :</strong> Ligne 94, arrêt Greffulhe</p>
+                        <p><strong>Parking :</strong> Parking souterrain Hôtel de Ville à 200 m</p>
+                    </div>
+                    <div class="info-block">
+                        <p><strong>Téléphone :</strong> <a href="tel:+33147596371" class="tel-link">01 47 59 63 71</a></p>
+                        <p><strong>Email :</strong> <a href="mailto:cave.levalloisfrontdeseine@nicolas.com" class="tel-link">cave.levalloisfrontdeseine@nicolas.com</a></p>
+                    </div>
+                </div>
+                <div class="carte-wrapper reveal reveal-delay-3">
+                    <iframe src="https://maps.google.com/maps?q=Nicolas+Levallois+Front+Seine+35+Rue+Greffulhe%2C+Levallois-Perret&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation — Nicolas Levallois Front Seine"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 06 - Le mot de la fin (Avis) -->
+        <section class="section section-avis" id="avis" aria-labelledby="avis-title">
+            <div class="section-inner">
+                <span class="note-big reveal">4,7<span style="font-size:0.5em;vertical-align:super;">/5</span></span>
+                <p class="note-detail reveal reveal-delay-1">sur 28 avis Google. Les Levalloisiens ont tranché.</p>
+                <h2 id="avis-title" class="reveal reveal-delay-1" style="margin-bottom:1.5rem;">Ils sont passés au 35.</h2>
+                <div class="avis-grid reveal reveal-delay-2">
+                    <blockquote class="avis-card">
+                        <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p>«&nbsp;Vincent a sauvé notre dîner de Noël avec un accord qu'on n'aurait jamais trouvé seuls.&nbsp;»</p>
+                        <footer class="auteur">— Marie F., décembre 2025</footer>
+                    </blockquote>
+                    <blockquote class="avis-card">
+                        <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p>«&nbsp;Un accueil comme on n'en fait plus. On est venu pour une bouteille, on est reparti avec trois — et l'envie de revenir.&nbsp;»</p>
+                        <footer class="auteur">— Laurent G., janvier 2026</footer>
+                    </blockquote>
+                    <blockquote class="avis-card">
+                        <div class="stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+                        <p>«&nbsp;La sélection est impeccable, le conseil juste. Ma cave ne s'est jamais aussi bien portée.&nbsp;»</p>
+                        <footer class="auteur">— Claire D., mars 2026</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blason signature de fin -->
+        <div class="section" style="padding:0.5rem 0 2rem;text-align:center;" aria-hidden="true">
+            <div class="blason-separator" style="margin-bottom:0;">
+                <span class="line"></span>
+                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><circle cx="26" cy="26" r="22" fill="none" stroke="#6B4F3A" stroke-width="1.8"/><text x="26" y="34" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="24" font-weight="600" fill="#1A0F14">35</text></svg>
+                <span class="line"></span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <svg class="footer-blason" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="29" fill="none" stroke="#EBE4D7" stroke-width="2" opacity="0.6"/>
+            <circle cx="32" cy="32" r="25" fill="none" stroke="#9B1B30" stroke-width="1" opacity="0.5"/>
+            <text x="32" y="43" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="28" font-weight="600" fill="#EBE4D7" letter-spacing="-1">35</text>
+        </svg>
+        <p class="footer-adresse">Nicolas — Levallois Front Seine</p>
+        <p class="footer-contact">35 Rue Greffulhe, 92300 Levallois-Perret</p>
+        <p class="footer-contact"><a href="tel:+33147596371">01 47 59 63 71</a> · <a href="mailto:cave.levalloisfrontdeseine@nicolas.com">cave.levalloisfrontdeseine@nicolas.com</a></p>
+        <p class="footer-note">Note Google : 4,7 ★ / 28 avis</p>
+        <p class="footer-credits">Site créé par Agence Mooo</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nicolas Levallois Front Seine",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "35 Rue Greffulhe",
+                "addressLocality": "Levallois-Perret",
+                "postalCode": "92300",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147596371",
+            "email": "cave.levalloisfrontdeseine@nicolas.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "28"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "13:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "15:30", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:30", "closes": "13:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            const backToTop = document.getElementById('back-to-top');
+            let lastScrollY = 0;
+
+            function onScroll() {
+                const scrollY = window.scrollY;
+                if (scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                if (scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                lastScrollY = scrollY;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // Back to top
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            }
+
+            // Initial scroll check
+            onScroll();
+
+            // Respect prefers-reduced-motion
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                document.querySelectorAll('.reveal').forEach(function(el) {
+                    el.classList.add('visible');
+                    el.style.transition = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
