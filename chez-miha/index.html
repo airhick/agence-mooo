@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez Miha – Épicerie roumaine à Paris 15e | Charcuterie, vin, miel</title>
+    <meta name="description" content="Chez Miha, épicerie fine roumaine au 93 rue de Javel à Paris 15e. Charcuterie artisanale, vins, bières Ursus, conserves, zacuscă et sucreries. 4.5★ sur Google — 147 avis. Bună !">
+    <meta property="og:title" content="Chez Miha – L'âme roumaine à deux pas de la Seine">
+    <meta property="og:description" content="Charcuterie, vin, miel… Une épicerie fine de quartier où chaque produit raconte un terroir. 93 rue de Javel, Paris 15e.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/chez-miha">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23B13E3E'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-size='20' font-weight='bold' fill='%23F9F4EC'%3EM%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --papier-kraft: #F9F4EC;
+            --cafe-noir: #2C241B;
+            --paprika: #B13E3E;
+            --miel: #E5A43C;
+            --bleu-nuit: #1F2A38;
+            --herbes: #5B6B4A;
+            --cafe-clair: #4A3D32;
+            --paprika-fonce: #8B2E2E;
+            --papier-fonce: #EDE4D5;
+            --miel-clair: #F0BB5A;
+            --grain-opacity: 0.03;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                animation-delay: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Karla', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.125rem);
+            line-height: 1.7;
+            color: var(--cafe-noir);
+            background-color: var(--papier-kraft);
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.01em;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--paprika);
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 10001;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 10px;
+            outline: 3px solid var(--miel);
+            outline-offset: 2px;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(249, 244, 236, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(44, 36, 27, 0.1);
+            padding: 0 clamp(16px, 3vw, 40px);
+            transition: box-shadow 0.35s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(44, 36, 27, 0.09);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 20px;
+        }
+        .brand {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+            color: var(--cafe-noir);
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: 0.03em;
+            flex-shrink: 0;
+            line-height: 1.1;
+        }
+        .brand span {
+            color: var(--paprika);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 2vw, 22px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cafe-noir);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            transition: color 0.25s;
+            white-space: nowrap;
+            padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--paprika);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--paprika);
+            outline: none;
+        }
+        .nav-links a:focus-visible {
+            outline: 2px solid var(--miel);
+            outline-offset: 4px;
+            border-radius: 3px;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--paprika);
+            color: #fff;
+            padding: 9px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(177, 62, 62, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        .header-cta:hover::before,
+        .header-cta:focus-visible::before {
+            transform: translateX(0);
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--paprika-fonce);
+            box-shadow: 0 6px 20px rgba(177, 62, 62, 0.4);
+            transform: translateY(-1px);
+            outline: none;
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--miel);
+            outline-offset: 3px;
+        }
+
+        /* Hamburger mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1100;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--cafe-noir);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--papier-kraft);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 90px 28px 30px;
+                gap: 20px;
+                box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1050;
+                border-left: 1px solid rgba(44, 36, 27, 0.08);
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.05rem;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .header-cta {
+                font-size: 0.82rem;
+                padding: 8px 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-inner {
+                height: 56px;
+            }
+            .brand {
+                font-size: 1rem;
+            }
+            .header-cta {
+                padding: 7px 12px;
+                font-size: 0.78rem;
+                gap: 4px;
+            }
+        }
+
+        /* ========== SECTIONS GENERAL ========== */
+        section {
+            position: relative;
+            padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 40px);
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--paprika);
+            display: block;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2.2rem, 6vw, 6rem);
+            line-height: 0.92;
+            letter-spacing: -0.025em;
+            color: var(--cafe-noir);
+            margin-bottom: clamp(16px, 3vw, 28px);
+            word-break: break-word;
+        }
+        .section-subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            color: var(--cafe-clair);
+            max-width: 620px;
+            line-height: 1.6;
+        }
+
+        /* ========== HERO SECTION ========== */
+        #comptoir {
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            background: var(--bleu-nuit);
+            overflow: hidden;
+        }
+        .hero-image-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) saturate(1.05) contrast(1.08);
+            animation: hero-zoom 8s ease-out forwards;
+        }
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.08);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-wrap img {
+                animation: none;
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(31, 42, 56, 0.82) 0%, rgba(31, 42, 56, 0.35) 35%, rgba(31, 42, 56, 0.05) 60%, rgba(31, 42, 56, 0.0) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(32px, 6vw, 60px) clamp(16px, 5vw, 40px);
+            padding-top: 20vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(16px, 3vw, 28px);
+            animation: hero-fade-in 1.2s ease-out 0.3s both;
+        }
+        @keyframes hero-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .hero-tag {
+            display: inline-block;
+            background: var(--miel);
+            color: var(--cafe-noir);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 4px;
+            width: fit-content;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 5.5vw, 5.5rem);
+            line-height: 0.94;
+            letter-spacing: -0.02em;
+            max-width: 750px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+        }
+        .hero-subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            max-width: 520px;
+            line-height: 1.55;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            opacity: 0.92;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 4px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--paprika);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(177, 62, 62, 0.35);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--paprika-fonce);
+            box-shadow: 0 8px 28px rgba(177, 62, 62, 0.5);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--miel);
+            outline-offset: 3px;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(4px);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .btn-outline:focus-visible {
+            outline: 3px solid var(--miel);
+            outline-offset: 3px;
+        }
+
+        /* ========== SEPARATEUR BRODE ========== */
+        .separator-brode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 clamp(16px, 5vw, 40px);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .separator-brode svg {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            opacity: 0.7;
+            color: var(--paprika);
+        }
+        .separator-brode.light svg {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== SECTION À PROPOS ========== */
+        #apropos {
+            background: var(--papier-kraft);
+            position: relative;
+        }
+        #apropos::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: repeating-linear-gradient(45deg, var(--cafe-noir) 0, var(--cafe-noir) 1px, transparent 1px, transparent 18px),
+                repeating-linear-gradient(-45deg, var(--cafe-noir) 0, var(--cafe-noir) 1px, transparent 1px, transparent 18px);
+            pointer-events: none;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 4vw, 48px);
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 48px;
+            }
+        }
+        .about-text-block p {
+            margin-bottom: 1em;
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.75;
+            color: var(--cafe-clair);
+        }
+        .about-text-block p:last-child {
+            margin-bottom: 0;
+        }
+        .about-highlight {
+            background: var(--bleu-nuit);
+            color: #fff;
+            padding: clamp(24px, 4vw, 36px);
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            box-shadow: 0 8px 32px rgba(31, 42, 56, 0.2);
+        }
+        .about-highlight::before {
+            content: '"';
+            position: absolute;
+            top: -12px;
+            left: 16px;
+            font-size: 6rem;
+            color: var(--miel);
+            opacity: 0.5;
+            line-height: 1;
+            font-family: 'Libre Baskerville', serif;
+            pointer-events: none;
+        }
+        .about-highlight .author {
+            display: block;
+            margin-top: 12px;
+            font-family: 'Karla', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--miel-clair);
+            letter-spacing: 0.04em;
+        }
+
+        /* ========== SECTION TRÉSORS ========== */
+        #tresors {
+            background: var(--papier-fonce);
+            position: relative;
+            overflow: hidden;
+        }
+        #tresors::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.03;
+            background: repeating-conic-gradient(var(--cafe-noir) 0% 25%, transparent 0% 50%) 0 0 / 40px 40px;
+            pointer-events: none;
+        }
+        .tresors-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 4vw, 40px);
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 540px) {
+            .tresors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .tresors-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .carte-etiquette {
+            background: var(--papier-kraft);
+            border-radius: 6px;
+            padding: clamp(20px, 3.5vw, 32px) clamp(16px, 3vw, 24px) clamp(28px, 4vw, 40px);
+            position: relative;
+            box-shadow: 0 4px 20px rgba(44, 36, 27, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            /* Effet étiquette découpée sur le bas */
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 14px),
+                    97.5% 100%, 95% calc(100% - 14px), 92.5% 100%, 90% calc(100% - 14px), 87.5% 100%, 85% calc(100% - 14px), 82.5% 100%, 80% calc(100% - 14px), 77.5% 100%, 75% calc(100% - 14px), 72.5% 100%, 70% calc(100% - 14px), 67.5% 100%, 65% calc(100% - 14px), 62.5% 100%, 60% calc(100% - 14px), 57.5% 100%, 55% calc(100% - 14px), 52.5% 100%, 50% calc(100% - 14px), 47.5% 100%, 45% calc(100% - 14px), 42.5% 100%, 40% calc(100% - 14px), 37.5% 100%, 35% calc(100% - 14px), 32.5% 100%, 30% calc(100% - 14px), 27.5% 100%, 25% calc(100% - 14px), 22.5% 100%, 20% calc(100% - 14px), 17.5% 100%, 15% calc(100% - 14px), 12.5% 100%, 10% calc(100% - 14px), 7.5% 100%, 5% calc(100% - 14px), 2.5% 100%,
+                    0% calc(100% - 14px));
+            cursor: default;
+        }
+        .carte-etiquette:nth-child(odd) {
+            transform: rotate(-1.2deg);
+        }
+        .carte-etiquette:nth-child(even) {
+            transform: rotate(1.4deg);
+        }
+        .carte-etiquette:nth-child(3) {
+            transform: rotate(0.6deg);
+        }
+        .carte-etiquette:nth-child(4) {
+            transform: rotate(-0.8deg);
+        }
+        .carte-etiquette:hover {
+            transform: rotate(0deg) translateY(-6px) !important;
+            box-shadow: 0 16px 40px rgba(44, 36, 27, 0.16), 0 2px 6px rgba(0, 0, 0, 0.06);
+            z-index: 5;
+        }
+        .carte-icone {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 12px;
+            line-height: 1;
+            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.08));
+        }
+        .carte-titre {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            color: var(--cafe-noir);
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+        .carte-desc {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--cafe-clair);
+            line-height: 1.55;
+            font-style: italic;
+        }
+
+        /* ========== SECTION AVIS ========== */
+        #avis {
+            background: var(--papier-kraft);
+            position: relative;
+        }
+        .avis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid rgba(44, 36, 27, 0.1);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--cafe-noir);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            margin-bottom: 24px;
+        }
+        .stars {
+            color: var(--miel);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(20px, 3vw, 32px);
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 640px) {
+            .avis-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .avis-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .avis-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: clamp(20px, 3vw, 28px);
+            box-shadow: 0 3px 16px rgba(44, 36, 27, 0.06);
+            border: 1px solid rgba(44, 36, 27, 0.06);
+            position: relative;
+            transition: all 0.35s ease;
+        }
+        .avis-card:hover {
+            box-shadow: 0 8px 30px rgba(44, 36, 27, 0.12);
+            transform: translateY(-3px);
+        }
+        .avis-card .avis-stars {
+            color: var(--miel);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .avis-card .avis-texte {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--cafe-clair);
+            margin-bottom: 12px;
+        }
+        .avis-card .avis-auteur {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--cafe-noir);
+            letter-spacing: 0.02em;
+        }
+        .avis-cta-wrap {
+            margin-top: 28px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-avis {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--paprika);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            padding: 4px 0;
+        }
+        .btn-avis:hover,
+        .btn-avis:focus-visible {
+            border-bottom-color: var(--paprika);
+            outline: none;
+        }
+        .btn-avis:focus-visible {
+            outline: 2px solid var(--miel);
+            outline-offset: 6px;
+            border-radius: 2px;
+        }
+
+        /* ========== SECTION HORAIRES ========== */
+        #horaires {
+            background: var(--bleu-nuit);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        #horaires::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: radial-gradient(circle at 30% 20%, #fff 1px, transparent 1px),
+                radial-gradient(circle at 70% 60%, #fff 1px, transparent 1px),
+                radial-gradient(circle at 15% 80%, #fff 1px, transparent 1px);
+            background-size: 80px 80px, 100px 100px, 70px 70px;
+            pointer-events: none;
+        }
+        #horaires .section-title {
+            color: #fff;
+        }
+        #horaires .section-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .horaires-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 4vw, 48px);
+            position: relative;
+            z-index: 1;
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .horaires-grid {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 48px;
+            }
+        }
+        .horaires-table-wrap {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: clamp(20px, 3vw, 32px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+        }
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .horaires-table th,
+        .horaires-table td {
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .horaires-table th {
+            font-weight: 600;
+            color: var(--miel-clair);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .horaires-table td {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .horaires-note {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+        .infos-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .info-item .info-icon {
+            flex-shrink: 0;
+            font-size: 1.3rem;
+            color: var(--miel-clair);
+            margin-top: 1px;
+        }
+        .info-item a {
+            color: var(--miel-clair);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .info-item a:hover,
+        .info-item a:focus-visible {
+            color: #fff;
+            text-decoration: underline;
+            outline: none;
+        }
+        .info-item a:focus-visible {
+            outline: 2px solid var(--miel);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        .map-wrap {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ========== SECTION CONTACT ========== */
+        #contact {
+            background: var(--papier-kraft);
+            position: relative;
+        }
+        #contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L42 45 L30 36 L18 45 L22 30 L10 20 L25 20 Z' fill='none' stroke='%232C241B' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: clamp(28px, 4vw, 48px);
+            box-shadow: 0 6px 30px rgba(44, 36, 27, 0.08);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto;
+            border: 1px solid rgba(44, 36, 27, 0.06);
+        }
+        .contact-card .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+        }
+        .contact-card p {
+            color: var(--cafe-clair);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .contact-buttons .btn {
+            font-size: 0.9rem;
+            padding: 12px 22px;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--bleu-nuit);
+            color: rgba(255, 255, 255, 0.75);
+            padding: clamp(32px, 6vw, 56px) clamp(16px, 5vw, 40px);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255, 255, 255, 0.3) 30px, rgba(255, 255, 255, 0.3) 31px),
+                repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255, 255, 255, 0.2) 30px, rgba(255, 255, 255, 0.2) 31px);
+            pointer-events: none;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+        .footer-signature {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: #fff;
+            letter-spacing: 0.02em;
+        }
+        .footer-signature strong {
+            color: var(--miel-clair);
+            font-style: normal;
+        }
+        .footer-nap {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .footer-nap a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-nap a:hover,
+        .footer-nap a:focus-visible {
+            color: #fff;
+            text-decoration: underline;
+            outline: none;
+        }
+        .footer-credits {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 4px;
+        }
+        .footer-credits a {
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+        }
+        .footer-credits a:hover {
+            text-decoration: underline;
+        }
+        .footer-separator {
+            width: 120px;
+            height: 3px;
+            background: var(--miel);
+            opacity: 0.5;
+            border-radius: 3px;
+            margin: 4px 0 8px;
+        }
+
+        /* ========== MOTIF BRODÉ SVG (réutilisé) ========== */
+        .broderie-sep {
+            width: 100%;
+            max-width: 400px;
+            height: 28px;
+            display: block;
+            margin: 0 auto;
+            opacity: 0.55;
+        }
+        .broderie-sep.light-stroke path,
+        .broderie-sep.light-stroke circle,
+        .broderie-sep.light-stroke polyline {
+            stroke: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== REVEAL ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ========== FOCUS GLOBAL ========== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--miel);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        /* ========== UTILITIES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 12px 18px;
+                font-size: 0.85rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .carte-etiquette {
+                clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px),
+                        96% 100%, 92% calc(100% - 10px), 88% 100%, 84% calc(100% - 10px), 80% 100%, 76% calc(100% - 10px), 72% 100%, 68% calc(100% - 10px), 64% 100%, 60% calc(100% - 10px), 56% 100%, 52% calc(100% - 10px), 48% 100%, 44% calc(100% - 10px), 40% 100%, 36% calc(100% - 10px), 32% 100%, 28% calc(100% - 10px), 24% 100%, 20% calc(100% - 10px), 16% 100%, 12% calc(100% - 10px), 8% 100%, 4% calc(100% - 10px),
+                        0% 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#comptoir" class="brand" aria-label="Chez Miha - Retour à l'accueil">Chez <span>Miha</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#comptoir">Comptoir</a></li>
+                    <li><a href="#apropos">Bună !</a></li>
+                    <li><a href="#tresors">Trésors</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#horaires">Venir</a></li>
+                    <li><a href="#contact">Commander</a></li>
+                    <li><a href="tel:+33140594697" class="header-cta">📞 Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main id="main-content">
+
+        <!-- HÉRO : Le comptoir -->
+        <section id="comptoir" aria-labelledby="hero-title">
+            <div class="hero-image-wrap">
+                <img src="assets/maps-1.jpg" alt="Intérieur de l'épicerie Chez Miha — étagères garnies de produits roumains, charcuterie et bocaux colorés" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-tag">⭐ 4,5 — 147 avis Google</span>
+                <h1 id="hero-title" class="hero-title">Charcuterie, vin, miel… L'âme roumaine à deux pas de la Seine.</h1>
+                <p class="hero-subtitle">Chez Miha, 93 rue de Javel — une épicerie fine de quartier où chaque produit raconte un terroir, un savoir-faire et un souvenir. Bună !</p>
+                <div class="hero-buttons">
+                    <a href="#tresors" class="btn btn-primary">Voir les produits</a>
+                    <a href="#horaires" class="btn btn-outline">Venir nous voir</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparateur brodé -->
+        <div class="separator-brode" aria-hidden="true">
+            <svg viewBox="0 0 400 28" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4">
+                <polyline points="0,14 20,6 30,14 40,6 50,14 60,6 70,14 80,6 90,14 100,6 110,14 120,6 130,14 140,6 150,14 160,6 170,14 180,6 190,14 200,6 210,14 220,6 230,14 240,6 250,14 260,6 270,14 280,6 290,14 300,6 310,14 320,6 330,14 340,6 350,14 360,6 370,14 380,6 390,14 400,6"/>
+                <circle cx="10" cy="14" r="2.5" fill="currentColor"/>
+                <circle cx="50" cy="14" r="1.5" fill="currentColor"/>
+                <circle cx="90" cy="14" r="2.5" fill="currentColor"/>
+                <circle cx="130" cy="14" r="1.5" fill="currentColor"/>
+                <circle cx="170" cy="14" r="2.5" fill="currentColor"/>
+                <circle cx="210" cy="14" r="1.5" fill="currentColor"/>
+                <circle cx="250" cy="14" r="2.5" fill="currentColor"/>
+                <circle cx="290" cy="14" r="1.5" fill="currentColor"/>
+                <circle cx="330" cy="14" r="2.5" fill="currentColor"/>
+                <circle cx="370" cy="14" r="1.5" fill="currentColor"/>
+                <polyline points="0,22 30,16 60,22 90,16 120,22 150,16 180,22 210,16 240,22 270,16 300,22 330,16 360,22 390,16" stroke-width="0.7" opacity="0.5"/>
+            </svg>
+        </div>
+
+        <!-- SECTION : Bună ! (À propos) -->
+        <section id="apropos" aria-labelledby="apropos-title">
+            <div class="section-inner">
+                <div class="about-grid">
+                    <div class="about-text-block reveal">
+                        <span class="section-label">Bună !</span>
+                        <h2 id="apropos-title" class="section-title">Une épicerie,<br>une histoire,<br>une passion.</h2>
+                        <p>Mihaiela vous accueille depuis l'ouverture de cette boutique du 15<sup>e</sup> arrondissement, sélectionnée avec soin comme une cave à trésors roumains : charcuteries artisanales, vins, bières Ursus et Timișoreana, conserves traiteur et sucreries.</p>
+                        <p>Ici, on vient pour le goût, on revient pour le sourire. Chaque produit est choisi pour sa qualité et son authenticité — des recettes familiales aux crus médaillés, en passant par les miels de montagne et les confitures maison.</p>
+                    </div>
+                    <div class="about-highlight reveal reveal-delay-2">
+                        « Quand je conseille un vin ou une charcuterie, je raconte le producteur derrière. C'est ça, l'âme de Chez Miha : un bout de Roumanie qui se partage au comptoir. »
+                        <span class="author">— Mihaiela</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparateur brodé -->
+        <div class="separator-brode" aria-hidden="true">
+            <svg viewBox="0 0 400 28" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4">
+                <polyline points="0,10 15,18 30,10 45,18 60,10 75,18 90,10 105,18 120,10 135,18 150,10 165,18 180,10 195,18 210,10 225,18 240,10 255,18 270,10 285,18 300,10 315,18 330,10 345,18 360,10 375,18 390,10 400,18"/>
+                <rect x="5" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 7.5 10.5)"/>
+                <rect x="65" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 67.5 10.5)"/>
+                <rect x="125" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 127.5 10.5)"/>
+                <rect x="185" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 187.5 10.5)"/>
+                <rect x="245" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 247.5 10.5)"/>
+                <rect x="305" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 307.5 10.5)"/>
+                <rect x="365" y="8" width="5" height="5" fill="currentColor" rx="1" transform="rotate(45 367.5 10.5)"/>
+            </svg>
+        </div>
+
+        <!-- SECTION : Les trésors de l'épicerie -->
+        <section id="tresors" aria-labelledby="tresors-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Les trésors de l'épicerie</span>
+                <h2 id="tresors-title" class="section-title reveal reveal-delay-1">De la charcuterie<br>aux confitures,<br>le meilleur<br>de la Roumanie.</h2>
+                <p class="section-subtitle reveal reveal-delay-2">Chaque catégorie est une invitation au voyage. Découvrez nos sélections — et si vous hésitez, demandez conseil au comptoir.</p>
+                <div class="tresors-grid" style="margin-top: clamp(24px,4vw,40px);">
+                    <article class="carte-etiquette reveal reveal-delay-1">
+                        <span class="carte-icone" aria-hidden="true">🥓</span>
+                        <h3 class="carte-titre">Charcuterie & fromages</h3>
+                        <p class="carte-desc">Saucissons secs, jambons fumés, cașcaval affiné et slănină fondante. Des recettes artisanales qui sentent bon le terroir des Carpates.</p>
+                    </article>
+                    <article class="carte-etiquette reveal reveal-delay-2">
+                        <span class="carte-icone" aria-hidden="true">🍷</span>
+                        <h3 class="carte-titre">Vins & bières</h3>
+                        <p class="carte-desc">Rouges de Dealu Mare, blancs de Transylvanie, et les incontournables bières Ursus et Timișoreana. À boire bien frais.</p>
+                    </article>
+                    <article class="carte-etiquette reveal reveal-delay-3">
+                        <span class="carte-icone" aria-hidden="true">🥫</span>
+                        <h3 class="carte-titre">Conserves & zacuscă</h3>
+                        <p class="carte-desc">La fameuse zacuscă aux aubergines, les poivrons
