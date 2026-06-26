@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AU PIERROT FRIAND — Traiteur & Épicerie fine depuis 1925 | Issy-les-Moulineaux</title>
+    <meta name="description" content="AU PIERROT FRIAND — Traiteur, épicerie fine et cave depuis 1925 à Issy-les-Moulineaux et Clamart. Commandez en ligne, retirez en boutique. Note 4.8★ sur 181 avis.">
+    <meta property="og:title" content="AU PIERROT FRIAND — Traiteur & Épicerie fine depuis 1925">
+    <meta property="og:description" content="Depuis quatre générations, nos vitrines d'Issy et de Clamart mettent l'appétit en scène. Traiteur, épicerie fine, cave : vos événements commencent ici.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='56' font-size='56'%3E%F0%9F%8F%AE%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg-deep: #0F0F0F;
+            --ink-warm: #F5F0EB;
+            --accent-neon: #E4002B;
+            --accent-gold: #FFD700;
+            --surface-slate: #1E1E1E;
+            --pure-white: #FFFFFF;
+            --bg-deep-90: rgba(15, 15, 15, 0.92);
+            --bg-deep-70: rgba(15, 15, 15, 0.7);
+            --bg-deep-50: rgba(15, 15, 15, 0.5);
+            --neon-glow: 0 0 8px #E4002B, 0 0 24px rgba(228, 0, 43, 0.5), 0 0 60px rgba(228, 0, 43, 0.25);
+            --gold-glow: 0 0 6px rgba(255, 215, 0, 0.6), 0 0 18px rgba(255, 215, 0, 0.25);
+            --surface-elevated: #252525;
+            --border-subtle: rgba(245, 240, 235, 0.08);
+            --border-active: rgba(245, 240, 235, 0.18);
+            --radius-sm: 3px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-delay: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            background-color: var(--bg-deep);
+            color: var(--ink-warm);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ========== LOADER NÉON ========== */
+        .neon-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--bg-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: all;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .neon-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .neon-logo-svg {
+            width: min(85vw, 620px);
+            height: auto;
+            overflow: visible;
+        }
+        .neon-path {
+            fill: none;
+            stroke: var(--accent-neon);
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: var(--path-length);
+            stroke-dashoffset: var(--path-length);
+            animation: neonWrite 1.8s cubic-bezier(0.25, 0.1, 0.15, 1) forwards;
+            filter: drop-shadow(0 0 5px rgba(228, 0, 43, 0.7)) drop-shadow(0 0 15px rgba(228, 0, 43, 0.4));
+        }
+        .neon-path:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+        .neon-path:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+        .neon-path:nth-child(4) {
+            animation-delay: 0.7s;
+        }
+        .neon-path:nth-child(5) {
+            animation-delay: 0.9s;
+        }
+        .neon-path:nth-child(6) {
+            animation-delay: 1.05s;
+        }
+        .neon-path:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+        .neon-loader-sub {
+            position: absolute;
+            bottom: 18%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            letter-spacing: 0.22em;
+            color: var(--ink-warm);
+            opacity: 0;
+            animation: fadeInSub 0.7s ease 1.8s forwards;
+            text-transform: uppercase;
+        }
+        @keyframes neonWrite {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes fadeInSub {
+            to {
+                opacity: 0.7;
+            }
+        }
+        .neon-path.neon-glow-pulse {
+            animation: neonWrite 1.8s cubic-bezier(0.25, 0.1, 0.15, 1) forwards, neonPulse 2s ease-in-out 2.2s infinite;
+        }
+        @keyframes neonPulse {
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(228, 0, 43, 0.7)) drop-shadow(0 0 15px rgba(228, 0, 43, 0.4));
+            }
+            50% {
+                filter: drop-shadow(0 0 10px rgba(228, 0, 43, 1)) drop-shadow(0 0 28px rgba(228, 0, 43, 0.7)) drop-shadow(0 0 50px rgba(228, 0, 43, 0.35));
+            }
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-deep-90);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: background 0.35s ease, border-color 0.35s ease;
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 1rem;
+        }
+        .header-logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: var(--accent-neon);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(228, 0, 43, 0.5), 0 0 30px rgba(228, 0, 43, 0.2);
+            transition: text-shadow 0.4s ease;
+        }
+        .header-logo:hover {
+            text-shadow: 0 0 16px rgba(228, 0, 43, 0.8), 0 0 40px rgba(228, 0, 43, 0.35);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.4rem, 2vw, 1.4rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+            letter-spacing: 0.03em;
+            color: var(--ink-warm);
+            text-decoration: none;
+            padding: 0.35rem 0.15rem;
+            position: relative;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-neon);
+            border-radius: 2px;
+            transition: width 0.35s cubic-bezier(0.25, 0.1, 0.15, 1);
+            box-shadow: var(--neon-glow);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--pure-white);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+            letter-spacing: 0.05em;
+            background: var(--accent-neon);
+            color: var(--pure-white);
+            border: none;
+            padding: 0.55rem 1.2rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 0 12px rgba(228, 0, 43, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #ff1a3d;
+            box-shadow: 0 0 22px rgba(228, 0, 43, 0.6), 0 0 50px rgba(228, 0, 43, 0.25);
+            transform: translateY(-1px);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--accent-gold);
+            outline-offset: 3px;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--ink-warm);
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 5vw, 2.5rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 6rem 1.5rem 4rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.45) saturate(0.7) contrast(1.1);
+            animation: heroBgReveal 1.4s ease-out 0.1s both;
+        }
+        @keyframes heroBgReveal {
+            from {
+                opacity: 0;
+                transform: scale(1.06);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 55% 40%, rgba(228, 0, 43, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 30% 60%, rgba(255, 215, 0, 0.05) 0%, transparent 45%),
+                linear-gradient(180deg, rgba(15, 15, 15, 0.55) 0%, rgba(15, 15, 15, 0.8) 70%, var(--bg-deep) 100%);
+            pointer-events: none;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.28;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 800px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--surface-slate);
+            border: 1px solid var(--border-active);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+            letter-spacing: 0.04em;
+            color: var(--accent-gold);
+            opacity: 0;
+            animation: fadeUp 0.7s ease 0.5s forwards;
+            box-shadow: var(--gold-glow);
+        }
+        .hero-badge .star {
+            font-size: 1.1em;
+            color: var(--accent-gold);
+        }
+        .hero h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.2rem, 7vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.015em;
+            color: var(--accent-neon);
+            text-shadow: 0 0 12px rgba(228, 0, 43, 0.6), 0 0 40px rgba(228, 0, 43, 0.3), 0 0 90px rgba(228, 0, 43, 0.15);
+            margin-bottom: 0.15em;
+            opacity: 0;
+            animation: fadeUp 0.7s ease 0.7s forwards;
+        }
+        .hero h1 .year {
+            display: block;
+            font-size: 0.55em;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--accent-gold);
+            text-shadow: var(--gold-glow);
+            margin-bottom: 0.2em;
+        }
+        .hero-sub {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            color: var(--ink-warm);
+            opacity: 0;
+            animation: fadeUp 0.7s ease 0.9s forwards;
+            max-width: 620px;
+            margin: 0 auto 2rem;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeUp 0.7s ease 1.1s forwards;
+        }
+        .btn {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+            letter-spacing: 0.05em;
+            padding: 0.7rem 1.6rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent-neon);
+            color: var(--pure-white);
+            box-shadow: 0 0 16px rgba(228, 0, 43, 0.4);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #ff1a3d;
+            box-shadow: 0 0 28px rgba(228, 0, 43, 0.65), 0 0 55px rgba(228, 0, 43, 0.25);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--ink-warm);
+            border: 1.5px solid rgba(245, 240, 235, 0.35);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            border-color: var(--accent-neon);
+            color: var(--pure-white);
+            box-shadow: 0 0 18px rgba(228, 0, 43, 0.25);
+            background: rgba(228, 0, 43, 0.08);
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--accent-gold);
+            outline-offset: 3px;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== TITRES DE SECTION ========== */
+        .section-label {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1.2vw, 0.78rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            opacity: 0.85;
+        }
+        .section h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .section h2::after {
+            content: '';
+            display: block;
+            width: clamp(40px, 6vw, 70px);
+            height: 3px;
+            background: var(--accent-neon);
+            margin-top: 0.6rem;
+            border-radius: 2px;
+            box-shadow: var(--neon-glow);
+        }
+        .section p {
+            font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+            color: var(--ink-warm);
+            max-width: 680px;
+        }
+        .section p+p {
+            margin-top: 1em;
+        }
+
+        /* ========== REVEAL AU SCROLL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.75s cubic-bezier(0.25, 0.1, 0.15, 1), transform 0.75s cubic-bezier(0.25, 0.1, 0.15, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== CARTES / SURFACES ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.2rem, 3vw, 2rem);
+            margin-top: 2rem;
+        }
+        .card {
+            background: var(--surface-slate);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: clamp(1.4rem, 3vw, 2rem);
+            transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            border-color: var(--border-active);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(228, 0, 43, 0.15) inset;
+            transform: translateY(-3px);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-neon), var(--accent-gold));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .card h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            letter-spacing: 0.01em;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+            line-height: 1.6;
+            color: var(--ink-warm);
+            max-width: 100%;
+        }
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+
+        /* ========== GALERIE DUOTONE ========== */
+        .gallery-duotone {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(0.6rem, 1.5vw, 1rem);
+            margin-top: 2rem;
+        }
+        .gallery-duotone figure {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.15, 1), box-shadow 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-duotone figure:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 0 2px rgba(228, 0, 43, 0.3);
+            z-index: 5;
+        }
+        .gallery-duotone img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: filter 0.5s ease;
+        }
+        .duotone-red {
+            filter: grayscale(1) sepia(0.35) saturate(2.5) hue-rotate(-30deg) brightness(0.75) contrast(1.2);
+        }
+        .duotone-gold {
+            filter: grayscale(1) sepia(0.7) saturate(3) hue-rotate(-5deg) brightness(0.8) contrast(1.1);
+        }
+        .duotone-deep {
+            filter: grayscale(1) brightness(0.5) contrast(1.4) sepia(0.2) hue-rotate(-20deg);
+        }
+        .gallery-duotone figure:hover img {
+            filter: grayscale(0.2) sepia(0.15) saturate(1.4) brightness(0.9) contrast(1.05);
+        }
+        .gallery-duotone figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.8rem 1rem;
+            background: linear-gradient(transparent, rgba(15, 15, 15, 0.9));
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            color: var(--ink-warm);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* ========== BLOC NOTE GOOGLE ========== */
+        .rating-block {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--surface-slate);
+            border: 1px solid var(--border-subtle);
+            border-radius: 999px;
+            padding: 0.55rem 1.2rem;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: var(--ink-warm);
+            box-shadow: var(--gold-glow);
+        }
+        .rating-stars {
+            color: var(--accent-gold);
+            font-size: 1.1em;
+            letter-spacing: 0.05em;
+        }
+        .rating-score {
+            font-weight: 700;
+            color: var(--pure-white);
+        }
+
+        /* ========== MAP ========== */
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 2rem;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+            filter: grayscale(0.3) contrast(1.1) brightness(0.85);
+            transition: filter 0.4s ease;
+        }
+        .map-wrapper:hover iframe {
+            filter: grayscale(0) contrast(1) brightness(0.95);
+        }
+
+        /* ========== INFO BAR ========== */
+        .info-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--surface-slate);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            min-width: 200px;
+            flex: 1;
+        }
+        .info-icon {
+            font-size: 1.4rem;
+            color: var(--accent-neon);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .info-item strong {
+            display: block;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .info-item span,
+        .info-item a {
+            font-size: 0.92rem;
+            color: var(--ink-warm);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .info-item a:hover {
+            color: var(--accent-neon);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ========== HORAIRES ========== */
+        .hours-note {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--accent-gold);
+            margin-top: 1rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--surface-slate);
+            border-top: 1px solid var(--border-subtle);
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 5vw, 2.5rem);
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 0.04em;
+            color: var(--accent-neon);
+            text-shadow: 0 0 8px rgba(228, 0, 43, 0.4);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .footer-nap {
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--ink-warm);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .footer-nap a {
+            color: var(--ink-warm);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-nap a:hover {
+            color: var(--accent-neon);
+        }
+        .footer-credit {
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            color: rgba(245, 240, 235, 0.45);
+            margin-top: 1rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--bg-deep-90);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border-subtle);
+                z-index: 999;
+            }
+            .header-nav.open {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .header-cta {
+                padding: 0.45rem 0.9rem;
+                font-size: 0.75rem;
+            }
+            .hero {
+                min-height: 80vh;
+                padding-top: 5rem;
+            }
+            .hero h1 {
+                font-size: clamp(1.7rem, 8vw, 2.8rem);
+            }
+            .info-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-duotone {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-duotone {
+                grid-template-columns: 1fr;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ========== FOCUS GLOBAL ========== */
+        :focus-visible {
+            outline: 3px solid var(--accent-gold);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        a:focus-visible {
+            outline-offset: 3px;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        .text-neon {
+            color: var(--accent-neon);
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOADER NÉON -->
+    <div class="neon-loader" id="neonLoader" aria-hidden="true">
+        <svg class="neon-logo-svg" viewBox="0 0 620 140" xmlns="http://www.w3.org/2000/svg">
+            <text x="310" y="95" text-anchor="middle" font-family="'Bricolage Grotesque', 'Georgia', serif" font-weight="700" font-size="68" letter-spacing="2" fill="none" stroke="#E4002B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1800" stroke-dashoffset="1800" class="neon-path neon-glow-pulse" style="--path-length:1800;">AU PIERROT FRIAND</text>
+            <text x="310" y="95" text-anchor="middle" font-family="'Bricolage Grotesque', 'Georgia', serif" font-weight="700" font-size="68" letter-spacing="2" fill="none" stroke="#FFD700" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1800" stroke-dashoffset="1800" class="neon-path" style="--path-length:1800;" opacity="0.5">AU PIERROT FRIAND</text>
+        </svg>
+        <span class="neon-loader-sub">Depuis 1925</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#hero" class="header-logo">AU PIERROT FRIAND</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul class="header-nav" id="headerNav">
+                    <li><a href="#maison">Maison</a></li>
+                    <li><a href="#boutiques">Boutiques</a></li>
+                    <li><a href="#traiteur-particulier">Traiteur</a></li>
+                    <li><a href="#traiteur-pro">Entreprises</a></li>
+                    <li><a href="#boutique-en-ligne">Commander</a></li>
+                    <li><a href="#carnet">Actualités</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33140935453" class="header-cta">📞 Appeler</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Vitrine AU PIERROT FRIAND — enseigne rouge emblématique" loading="eager" decoding="async">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="star">★</span> 4.8 sur 181 avis Google
+                </div>
+                <h1>
+                    <span class="year">1925</span>
+                    Pierrot Friand<br>réveille la rue.
+                </h1>
+                <p class="hero-sub">Depuis quatre générations, nos vitrines d'Issy et de Clamart mettent l'appétit en scène. Traiteur, épicerie fine, cave&nbsp;: vos événements commencent ici.</p>
+                <div class="hero-actions">
+                    <a href="#boutique-en-ligne" class="btn btn-primary">Commander en ligne</a>
+                    <a href="#traiteur-particulier" class="btn btn-outline">Devis traiteur</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : MAISON DE FAMILLE -->
+        <section class="section" id="maison">
+            <div class="section-inner">
+                <span class="section-label reveal">Notre histoire</span>
+                <h2 class="reveal reveal-delay-1">Maison de famille, comptoir de quartier</h2>
+                <p class="reveal reveal-delay-2">Héritiers d'une épicerie fondée en 1925, nous avons gardé le goût des produits qu'on choisit un par un, le sens du conseil et l'amour du travail bien fait — à Issy comme à Clamart. Ici, chaque jour débute par la sélection des arrivages du marché, la mise en vitrine des pièces de boucherie et l'assemblage des plateaux qui feront vos réceptions.</p>
+                <p class="reveal reveal-delay-3">Nos deux magasins sont pensés comme des prolongements de notre cuisine : on y entre pour un conseil, on y reste pour l'odeur du pain frais, la vue des fromages affinés et le clin d'œil complice de ceux qui vous reconnaissent.</p>
+                <div class="rating-block reveal reveal-delay-4 mt-2">
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="rating-score">4.8</span>/5 —
+                    <span>181 avis Google</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : BOUTIQUES -->
+        <section class="section" id="boutiques" style="background: var(--surface-slate); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="section-inner">
+                <span class="section-label reveal">Nos adresses</span>
+                <h2 class="reveal reveal-delay-1">Vitrines, cave, déjeuner : deux boutiques, un même appétit</h2>
+                <p class="reveal reveal-delay-2">De la rue du Général Leclerc à Issy au cœur de Clamart, poussez la porte de nos magasins. À emporter ou sur le pouce, nos formules déjeuner changent chaque jour selon les arrivages du marché. Charcuterie, fromages, plats cuisinés, cave : tout est prêt, il ne manque que vous.</p>
+                <div class="card-grid">
+                    <div class="card reveal reveal-delay-3">
+                        <span class="card-icon">🏪</span>
+                        <h3>Issy-les-Moulineaux</h3>
+                        <p>1 Rue du Général Leclerc<br>92130 Issy-les-Moulineaux<br>📞 <a href="tel:+33140935453" style="color:var(--ink-warm);">01 40 93 54 53</a></p>
+                    </div>
+                    <div class="card reveal reveal-delay-4">
+                        <span class="card-icon">🏪</span>
+                        <h3>Clamart</h3>
+                        <p>Notre seconde boutique vous accueille au cœur de Clamart, avec la même exigence et des produits tout aussi soigneusement sourcés. Horaires et adresse précise disponibles par téléphone.</p>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-3 mt-2">
+                    <iframe src="https://maps.google.com/maps?q=AU+PIERROT+FRIAND+1+Rue+du+G%C3%A9n%C3%A9ral+Leclerc%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte AU PIERROT FRIAND Issy-les-Moulineaux"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE DUOTONE IMMERSIVE -->
+        <section class="section" style="padding-top: clamp(2rem,5vw,4rem); padding-bottom: clamp(2rem,5vw,4rem);">
+            <div class="section-inner">
+                <span class="section-label reveal">Galerie</span>
+                <h2 class="reveal reveal-delay-1">Nos vitrines s'allument pour vous</h2>
+                <div class="gallery-duotone">
+                    <figure class="reveal reveal-delay-1">
+                        <img src="assets/maps-1.jpg" alt="Vitrine Pierrot Friand — duotone rouge" class="duotone-red" loading="lazy">
+                        <figcaption>L'enseigne historique</figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Comptoir Pierrot Friand — duotone or" class="duotone-gold" loading="lazy">
+                        <figcaption>Le comptoir, cœur battant</figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-3">
+                        <img src="assets/maps-1.jpg" alt="Vitrine Pierrot Friand — duotone profond" class="duotone-deep" loading="lazy">
+                        <figcaption>Ambiance de quartier</figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-4">
+                        <img src="assets/maps-1.jpg" alt="Détail Pierrot Friand — duotone rouge" class="duotone-red" loading="lazy">
+                        <figcaption>L'éclat de la vitrine</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : TRAITEUR PARTICULIER -->
+        <section class="section" id="traiteur-particulier" style="background: var(--surface-slate); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="section-inner">
+                <span class="section-label reveal">Traiteur particulier</span>
+                <h2 class="reveal reveal-delay-1">Votre réception, notre orchestre</h2>
+                <p class="reveal reveal-delay-2">Cocktails dînatoires, buffets de fête, repas assis ou animations sur mesure : on s'occupe de tout, de la première bouchée à la dernière coupe. Nous concevons chaque prestation avec vous, en fonction de vos envies, de votre budget et des saisons.</p>
+                <p class="reveal reveal-delay-3">Devis gratuit, conseil personnalisé et livraison en Île-de-France. Contactez-nous pour échanger sur votre projet — nous vous répondons dans les meilleurs délais.</p>
+                <a href="mailto:infos@aupierrotfriand.com" class="btn btn-primary reveal reveal-delay-4 mt-1">Demander un devis</a>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : TRAITEUR PROFESSIONNEL -->
+        <section class="section" id="traiteur-pro">
+            <div class="section-inner">
+                <span class="section-label reveal">Traiteur professionnel</span>
+                <h2 class="reveal reveal-delay-1">Le bureau a aussi du goût</h2>
+                <p class="reveal reveal-delay-2">Plateaux-repas, petits déjeuners d'accueil, séminaires ou cocktails de lancement : nos équipes livrent l'excellence en entreprise, au jour et à l'heure dits. Sans faux pli. Chaque commande est préparée avec la même rigueur que pour une table de fête.</p>
+                <p class="reveal reveal-delay-3">Nous nous adaptons à vos contraintes logistiques et budgétaires. Demandez un devis ou une présentation de nos formules — nous étudions chaque demande avec attention.</p>
+                <a href="mailto:infos@aupierrotfriand.com" class="btn btn-outline reveal reveal-delay-4 mt-1">Contact entreprises</a>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : BOUTIQUE EN LIGNE -->
+        <section class="section" id="boutique-en-ligne" style="background: var(--surface-slate); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="section-inner">
+                <span class="section-label reveal">Commander</span>
+                <h2 class="reveal reveal-delay-1">La boutique en ligne : commandez, on prépare</h2>
+                <p class="reveal reveal-delay-2">Plateaux de fromages, pièces de boucherie, vins sélectionnés, plateaux apéritifs… Votre commande est préparée avec soin et disponible sous 24h au retrait magasin. Nous mettons en ligne chaque semaine nos sélections et nouveautés.</p>
+                <p class="reveal reveal-delay-3">Le retrait s'effectue dans la boutique de votre choix, aux horaires d'ouverture. Pour toute question sur un produit ou une disponibilité, n'hésitez pas à nous appeler.</p>
+                <a href="tel:+33140935453" class="btn btn-primary reveal reveal-delay-4 mt-1">Passer commande par téléphone</a>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : CARNET DE SAISON -->
+        <section class="section" id="carnet">
+            <div class="section-inner">
+                <span class="section-label reveal">Actualités</span>
+                <h2 class="reveal reveal-delay-1">Carnet de saison</h2>
+                <p class="reveal reveal-delay-2">Un journal de nos inspirations, arrivages, menus de fêtes et week-ends prolongés. Les vraies nouvelles de la boutique, sans filtre. Ici, on parle produits, producteurs, et parfois même de la météo qui fait gonfler les asperges ou mûrir les fromages.</p>
+                <p class="reveal reveal-delay-3">Revenez régulièrement : nos actualités sont mises à jour au fil des saisons, des fêtes et des coups de cœur de l'équipe.</p>
+                <div class="hours-note reveal reveal-delay-4">🕐 Horaires à confirmer — Contactez-nous pour connaître nos amplitudes d'ouverture.</div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section class="section" id="infos" style="background: var(--surface-slate); border-top: 1px solid var(--border-subtle);">
+            <div class="section-inner">
+                <span class="section-label reveal">Infos pratiques</span>
+                <h2 class="reveal reveal-delay-1">Nous trouver, nous joindre</h2>
+                <div class="info-bar reveal reveal-delay-2">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Adresse</strong>
+                            <span>1 Rue du Général Leclerc,<br>92130 Issy-les-Moulineaux</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <a href="tel:+33140935453">01 40 93 54 53</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:infos@aupierrotfriand.com">infos@aupierrotfriand.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⭐</span>
+                        <div>
+                            <strong>Note Google</strong>
+                            <span>4.8★ sur 181 avis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-logo">AU PIERROT FRIAND</span>
+            <div class="footer-nap">
+                1 Rue du Général Leclerc, 92130 Issy-les-Moulineaux<br>
+                <a href="tel:+33140935453">01 40 93 54 53</a> —
+                <a href="mailto:infos@aupierrotfriand.com">infos@aupierrotfriand.com</a><br>
+                Note Google : 4.8★ sur 181 avis
+            </div>
+            <p class="footer-credit">Site créé par <strong>Agence Mooo</strong></p>
+        </div>
+    </footer>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "AU PIERROT FRIAND",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1 Rue du Général Leclerc",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140935453",
+            "email": "infos@aupierrotfriand.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "181"
+            },
+            "url": "https://agence.mooo.com/au-pierrot-friand",
+            "description": "Traiteur, épicerie fine et cave depuis 1925 à Issy-les-Moulineaux et Clamart. Commandez en ligne, retirez en boutique."
+        }
+    </script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            // LOADER NÉON
+            const loader = document.getElementById('neonLoader');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function hideLoader() {
+                loader.classList.add('hidden');
+                // Retirer complètement après la transition
+                setTimeout(() => {
+                    if (loader.parentNode) loader.parentNode.removeChild(loader);
+                }, 700);
+            }
+
+            if (prefersReducedMotion) {
+                hideLoader();
+            } else {
+                // L'animation dure ~2.5s au total, on cache après 3s
+                setTimeout(hideLoader, 3000);
+                // Fallback si l'utilisateur clique ou tape
+                document.addEventListener('click', function quickHide() {
+                    hideLoader();
+                    document.removeEventListener('click', quickHide);
+                }, { once: true });
+                document.addEventListener('keydown', function quickHideK(e) {
+                    if (e.key === 'Escape' || e.key === ' ') {
+                        hideLoader();
+                        document.removeEventListener('keydown', quickHideK);
+                    }
+                }, { once: true });
+            }
+
+            // MOBILE MENU
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('headerNav');
+            if (mobileBtn && nav) {
+                mobileBtn.addEventListener('click', function() {
+                    const isOpen = nav.classList.toggle('open');
+                    mobileBtn.setAttribute('aria-expanded', isOpen);
+                    mobileBtn.textContent = isOpen ? '✕' : '☰';
+                });
+                // Fermer au clic sur un lien
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('open');
+                        mobileBtn.setAttribute('aria-expanded', 'false');
+                        mobileBtn.textContent = '☰';
+                    });
+                });
+            }
+
+            // INTERSECTION OBSERVER pour les reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0 && !prefersReducedMotion) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+                revealEls.forEach(el => observer.observe(el));
+            } else if (prefersReducedMotion) {
+                // Afficher tout sans animation
+                revealEls.forEach(el => el.classList.add('revealed'));
+            }
+
+            // HEADER : changement subtil au scroll
+            const header = document.getElementById('siteHeader');
+            let lastScrollY = 0;
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                if (scrollY > 80) {
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.5)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+                lastScrollY = scrollY;
+            }, { passive: true });
+        })();
+    </script>
+</body>
+</html>
