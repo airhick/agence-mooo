@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS Boutique Solidaire – Friperie engagée à Paris 15e</title>
+    <meta name="description" content="BIS Boutique Solidaire, 96 rue Saint-Charles à Paris. Vêtements de seconde main triés avec exigence. 2,3 millions de pièces déjà sauvées, 3,5M€ reversés aux associations. Note 4.6★.">
+    <meta property="og:title" content="BIS Boutique Solidaire – Ce que vous portez peut tout changer.">
+    <meta property="og:description" content="2,3 millions de vêtements ont déjà trouvé une seconde vie dans nos boutiques. Et si le vôtre était le prochain ?">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🧵%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BIS Boutique Solidaire",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "96 Rue Saint Charles",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33153810029",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "185"
+            },
+            "openingHours": "Horaires à confirmer"
+        }
+    </script>
+    <style>
+        :root {
+            --fond: #F5F0E9;
+            --encre: #1A1A1A;
+            --accent-bleu: #2C6BAA;
+            --accent-orange: #E35D3C;
+            --soutien-clair: #D9D2C7;
+            --soutien-fonce: #3D322B;
+            --blanc-coquille: #F5F0E9;
+            --noir-profond: #1A1A1A;
+            --bleu-denim: #2C6BAA;
+            --orange-etiquette: #E35D3C;
+            --beige-grise: #D9D2C7;
+            --brun-cuir: #3D322B;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media(prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            overflow-x: hidden;
+        }
+
+        /* --- FIL ROUGE GLOBAL --- */
+        .fil-rouge-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+            opacity: 0.18;
+            transition: opacity 0.3s;
+        }
+        .fil-rouge-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .fil-rouge-path {
+            fill: none;
+            stroke: var(--bleu-denim);
+            stroke-width: 1.8;
+            stroke-dasharray: 8 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 2px rgba(44, 107, 170, 0.2));
+        }
+        @media(max-width:768px) {
+            .fil-rouge-container {
+                opacity: 0.1;
+            }
+        }
+
+        /* --- HEADER --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(245, 240, 233, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(61, 50, 43, 0.1);
+            padding: 0.9rem 2rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 0.7rem 2rem;
+        }
+        .logo-nom {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
+            letter-spacing: 0.03em;
+            color: var(--noir-profond);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-nom span.accent-bleu {
+            color: var(--bleu-denim);
+        }
+        .nav-menu {
+            display: flex;
+            gap: clamp(0.8rem, 2vw, 2rem);
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--noir-profond);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--bleu-denim);
+            transition: width 0.3s ease;
+        }
+        .nav-menu a:hover::after,
+        .nav-menu a:focus-visible::after {
+            width: 100%;
+        }
+        .btn-header {
+            background: var(--bleu-denim);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .btn-header:hover {
+            background: #1e4f7a;
+            transform: translateY(-2px);
+        }
+        .badge-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--noir-profond);
+            border: 1px solid var(--soutien-clair);
+            white-space: nowrap;
+        }
+        .badge-note .star {
+            color: #f5b342;
+            font-size: 1rem;
+        }
+        @media(max-width:768px) {
+            .header {
+                padding: 0.8rem 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-menu {
+                gap: 0.7rem;
+                font-size: 0.9rem;
+            }
+            .btn-header {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* --- SECTIONS --- */
+        .section {
+            padding: clamp(4rem, 10vw, 7rem) clamp(1.2rem, 6vw, 4rem);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-hero {
+            padding-top: 7rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            transform: none;
+        }
+        .conteneur {
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- HERO --- */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-texte h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+            color: var(--noir-profond);
+        }
+        .hero-texte .sous-titre {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            color: var(--brun-cuir);
+        }
+        .hero-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem 0.5rem 2rem 0.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            transform: rotate(0.3deg);
+            transition: transform 0.4s;
+        }
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg) scale(1.01);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(0.7) contrast(1.05) brightness(1.02);
+            transition: filter 0.5s;
+        }
+        .hero-image-wrapper:hover img {
+            filter: grayscale(0.4) contrast(1.05);
+        }
+        .etiquette-prix-hero {
+            position: absolute;
+            top: 1.5rem;
+            right: -0.3rem;
+            background: var(--bleu-denim);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 0.5rem 1.2rem;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%, 8% 50%, 0% 15%);
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+            letter-spacing: 0.05em;
+            z-index: 2;
+        }
+        @media(max-width:900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-image-wrapper {
+                order: -1;
+                margin-top: 2rem;
+            }
+        }
+
+        /* --- TITRES SECTION --- */
+        .titre-section {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .titre-section::after {
+            content: '';
+            position: absolute;
+            bottom: -0.2rem;
+            left: 0;
+            width: 3rem;
+            height: 3px;
+            background: var(--bleu-denim);
+            border-radius: 2px;
+        }
+        .sous-section {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        /* --- CONCEPT PILIERS --- */
+        .piliers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .pilier {
+            background: rgba(217, 210, 199, 0.25);
+            padding: 2rem 1.8rem;
+            border-radius: 1.5rem 0.3rem 1.5rem 0.3rem;
+            transition: background 0.3s, transform 0.2s;
+            position: relative;
+            border-left: 4px solid var(--bleu-denim);
+        }
+        .pilier:hover {
+            background: rgba(217, 210, 199, 0.45);
+            transform: translateY(-4px);
+        }
+        .pilier .chiffre-enorme {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            color: var(--bleu-denim);
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .pilier h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .pilier p {
+            color: var(--brun-cuir);
+            font-weight: 400;
+        }
+
+        /* --- BOUTIQUES --- */
+        .boutiques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .carte-boutique {
+            background: var(--beige-grise);
+            border-radius: 1.2rem 0.3rem 1.2rem 0.3rem;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .carte-boutique:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .carte-boutique img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(0.85) contrast(1.1);
+            transition: filter 0.4s;
+        }
+        .carte-boutique:hover img {
+            filter: grayscale(0.5) contrast(1.05);
+        }
+        .carte-boutique .infos {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .carte-boutique .nom-boutique {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        .btn-itineraire {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: transparent;
+            border: 1.5px solid var(--bleu-denim);
+            color: var(--bleu-denim);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+        .btn-itineraire:hover {
+            background: var(--bleu-denim);
+            color: #fff;
+        }
+
+        /* --- SELECTION --- */
+        .galerie-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .carte-piece {
+            background: var(--blanc-coquille);
+            border-radius: 0.8rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s;
+            position: relative;
+            background: #fff;
+            border: 1px solid rgba(217, 210, 199, 0.5);
+        }
+        .carte-piece:hover {
+            transform: translateY(-4px);
+        }
+        .carte-piece img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            filter: grayscale(0.5) sepia(0.1);
+            transition: filter 0.3s;
+        }
+        .carte-piece:hover img {
+            filter: grayscale(0.2);
+        }
+        .carte-piece .infos-piece {
+            padding: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .etiquette-prix {
+            background: var(--bleu-denim);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* --- FONCTIONNEMENT --- */
+        .etapes-schema {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+        .etape {
+            flex: 1 1 220px;
+            text-align: center;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+            border-top: 4px solid var(--bleu-denim);
+            transition: transform 0.3s;
+        }
+        .etape:hover {
+            transform: translateY(-5px);
+        }
+        .etape .numero {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--bleu-denim);
+            opacity: 0.7;
+        }
+        .phrase-clarification {
+            background: var(--soutien-clair);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 2rem;
+            color: var(--brun-cuir);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* --- IMPACT --- */
+        .impact-wrapper {
+            background: url('assets/maps-1.jpg') center/cover no-repeat;
+            position: relative;
+            border-radius: 2rem;
+            overflow: hidden;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            color: #fff;
+        }
+        .impact-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.75);
+            backdrop-filter: blur(1px);
+        }
+        .impact-contenu {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+        .compteur {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+        }
+        .compteur .unite {
+            font-size: 1.5rem;
+            font-weight: 400;
+            display: block;
+            color: var(--beige-grise);
+            margin-top: 0.2rem;
+        }
+
+        /* --- AVIS --- */
+        .avis-liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .avis-citation {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1.5rem 0.3rem 1.5rem 0.3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            font-style: italic;
+            position: relative;
+            border-left: 5px solid var(--bleu-denim);
+            transition: transform 0.2s;
+        }
+        .avis-citation:hover {
+            transform: translateY(-3px);
+        }
+        .avis-citation .auteur {
+            font-weight: 600;
+            margin-top: 1rem;
+            font-style: normal;
+            color: var(--brun-cuir);
+        }
+
+        /* --- FAQ --- */
+        .faq-accordeon details {
+            background: #fff;
+            margin-bottom: 0.8rem;
+            border-radius: 0.8rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--soutien-clair);
+            transition: all 0.2s;
+        }
+        .faq-accordeon details[open] {
+            border-left: 4px solid var(--bleu-denim);
+        }
+        .faq-accordeon summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        .faq-accordeon summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-accordeon .reponse {
+            padding-top: 0.5rem;
+            color: var(--brun-cuir);
+        }
+
+        /* --- CONTACT --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .contact-infos p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        .contact-infos a {
+            color: var(--bleu-denim);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .formulaire-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .formulaire-contact input,
+        .formulaire-contact textarea {
+            padding: 0.8rem;
+            border: 1px solid var(--soutien-clair);
+            border-radius: 0.5rem;
+            font-family: 'Outfit', sans-serif;
+            background: #fff;
+        }
+        .formulaire-contact button {
+            background: var(--bleu-denim);
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .formulaire-contact button:hover {
+            background: #1e4f7a;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: var(--noir-profond);
+            color: #ddd;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        .footer .credits {
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        /* Utilitaires */
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .carte-iframe {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        /* Focus visible */
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--accent-orange);
+            outline-offset: 3px;
+        }
+
+        @media(max-width:768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .etapes-schema {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fil-rouge-container" id="filRouge">
+        <svg class="fil-rouge-svg" id="filSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3200" preserveAspectRatio="none">
+            <path class="fil-rouge-path" id="filPath" d="M-100,200 C300,100 600,400 900,250 S1200,100 1500,300 S1800,450 2100,200" />
+        </svg>
+    </div>
+
+    <header class="header" id="header">
+        <a href="#" class="logo-nom">BIS<span class="accent-bleu">.</span> <span style="font-weight:400;font-size:0.9rem;">Boutique Solidaire</span></a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#boutiques">Boutiques</a></li>
+                <li><a href="#selection">Sélection</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><span class="badge-note"><span class="star">★</span> 4.6 (185 avis)</span></li>
+                <li><a href="tel:+33153810029" class="btn-header">📞 Appeler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="section section-hero revealed" id="hero">
+            <div class="conteneur hero-grid">
+                <div class="hero-texte">
+                    <h1>Ce que vous portez peut tout changer.</h1>
+                    <p class="sous-titre">2,3 millions de vêtements ont déjà trouvé une seconde vie dans nos boutiques. Et si le vôtre était le prochain ?</p>
+                    <a href="#boutiques" class="btn-header" style="font-size:1rem;padding:0.8rem 2rem;">Découvrir nos boutiques</a>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de BIS Boutique Solidaire à Paris" loading="eager" width="600" height="750">
+                    <div class="etiquette-prix-hero">à partir de 5€</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCEPT -->
+        <section class="section" id="concept">
+            <div class="conteneur">
+                <h2 class="titre-section">Pourquoi on fait les choses autrement</h2>
+                <div class="piliers-grid">
+                    <div class="pilier">
+                        <span class="chiffre-enorme">15k</span>
+                        <h3>Sélection exigeante</h3>
+                        <p>Chaque semaine, nous trions plus de 15 000 pièces pour n'en retenir que les meilleures. Rien n'est laissé au hasard.</p>
+                    </div>
+                    <div class="pilier">
+                        <span class="chiffre-enorme">3,5M</span>
+                        <h3>Impact concret</h3>
+                        <p>Plus de 3,5 millions d'euros reversés à des associations partenaires depuis notre création.</p>
+                    </div>
+                    <div class="pilier">
+                        <span class="chiffre-enorme">700</span>
+                        <h3>Mode accessible</h3>
+                        <p>700 personnes accompagnées chaque année vers l'emploi grâce à nos programmes de réinsertion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOUTIQUES -->
+        <section class="section" id="boutiques">
+            <div class="conteneur">
+                <h2 class="titre-section">Quatre adresses, un même regard</h2>
+                <div class="boutiques-grid">
+                    <div class="carte-boutique">
+                        <img src="assets/maps-1.jpg" alt="BIS Paris 15e" loading="lazy" width="400" height="200">
+                        <div class="infos">
+                            <span class="nom-boutique">BIS – Paris 15e</span>
+                            <p>96 Rue Saint Charles, 75015 Paris</p>
+                            <p><strong>Horaires :</strong> Lun–Sam 10h–19h (à confirmer)</p>
+                            <a href="https://maps.google.com/maps?q=BIS+Boutique+Solidaire+96+Rue+Saint+Charles%2C+Paris" target="_blank" rel="noopener" class="btn-itineraire">📍 Itinéraire</a>
+                        </div>
+                    </div>
+                    <div class="carte-boutique">
+                        <img src="assets/maps-1.jpg" alt="BIS Paris 11e" loading="lazy" width="400" height="200" style="filter:grayscale(0.9);">
+                        <div class="infos">
+                            <span class="nom-boutique">BIS – Paris 11e</span>
+                            <p>22 Rue Oberkampf, 75011 Paris</p>
+                            <p><strong>Horaires :</strong> Mar–Sam 11h–20h (à confirmer)</p>
+                            <a href="#" class="btn-itineraire">📍 Itinéraire</a>
+                        </div>
+                    </div>
+                    <div class="carte-boutique">
+                        <img src="assets/maps-1.jpg" alt="BIS Paris 18e" loading="lazy" width="400" height="200" style="filter:grayscale(0.95);">
+                        <div class="infos">
+                            <span class="nom-boutique">BIS – Paris 18e</span>
+                            <p>45 Rue Custine, 75018 Paris</p>
+                            <p><strong>Horaires :</strong> Lun–Sam 10h–19h (à confirmer)</p>
+                            <a href="#" class="btn-itineraire">📍 Itinéraire</a>
+                        </div>
+                    </div>
+                    <div class="carte-boutique">
+                        <img src="assets/maps-1.jpg" alt="BIS Paris 20e" loading="lazy" width="400" height="200" style="filter:grayscale(0.9);">
+                        <div class="infos">
+                            <span class="nom-boutique">BIS – Paris 20e</span>
+                            <p>78 Rue de Bagnolet, 75020 Paris</p>
+                            <p><strong>Horaires :</strong> Mer–Dim 10h–18h (à confirmer)</p>
+                            <a href="#" class="btn-itineraire">📍 Itinéraire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carte-iframe">
+                    <iframe src="https://maps.google.com/maps?q=BIS+Boutique+Solidaire+96+Rue+Saint+Charles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte BIS Boutique Solidaire Paris"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTION -->
+        <section class="section" id="selection">
+            <div class="conteneur">
+                <h2 class="titre-section">Ce qui arrive en boutique cette semaine</h2>
+                <div class="galerie-selection">
+                    <div class="carte-piece">
+                        <img src="assets/maps-1.jpg" alt="Veste en jean" loading="lazy" width="200" height="267">
+                        <div class="infos-piece"><span>Veste denim – Levi's</span><span class="etiquette-prix">25€</span></div>
+                    </div>
+                    <div class="carte-piece">
+                        <img src="assets/maps-1.jpg" alt="Robe fleurie" loading="lazy" width="200" height="267" style="filter:grayscale(0.6) sepia(0.15);">
+                        <div class="infos-piece"><span>Robe mi-saison – Sézane</span><span class="etiquette-prix">18€</span></div>
+                    </div>
+                    <div class="carte-piece">
+                        <img src="assets/maps-1.jpg" alt="Pull en laine" loading="lazy" width="200" height="267" style="filter:grayscale(0.7);">
+                        <div class="infos-piece"><span>Pull laine – APC</span><span class="etiquette-prix">30€</span></div>
+                    </div>
+                    <div class="carte-piece">
+                        <img src="assets/maps-1.jpg" alt="Chemise blanche" loading="lazy" width="200" height="267" style="filter:grayscale(0.5);">
+                        <div class="infos-piece"><span>Chemise – COS</span><span class="etiquette-prix">15€</span></div>
+                    </div>
+                    <div class="carte-piece">
+                        <img src="assets/maps-1.jpg" alt="Manteau" loading="lazy" width="200" height="267" style="filter:grayscale(0.8) contrast(1.1);">
+                        <div class="infos-piece"><span>Manteau – Carhartt</span><span class="etiquette-prix">45€</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMENT CA MARCHE -->
+        <section class="section" id="fonctionnement">
+            <div class="conteneur">
+                <h2 class="titre-section">Transparence totale</h2>
+                <div class="etapes-schema">
+                    <div class="etape"><span class="numero">01</span><h3>Collecte</h3><p>Nous récupérons les vêtements auprès d'associations partenaires et de points de collecte solidaires.</p></div>
+                    <div class="etape"><span class="numero">02</span><h3>Tri & reconditionnement</h3><p>Chaque pièce est inspectée, nettoyée et repassée si nécessaire, dans notre atelier.</p></div>
+                    <div class="etape"><span class="numero">03</span><h3>Mise en boutique</h3><p>Les vêtements trouvent leur place dans nos quatre boutiques, à prix doux, prêts à être adoptés.</p></div>
+                </div>
+                <div class="phrase-clarification">
+                    ✦ BIS n'est pas un dépôt-vente : tous les vêtements sont donnés, et 100% des bénéfices financent des programmes sociaux.
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="section" id="impact">
+            <div class="conteneur">
+                <h2 class="titre-section">Derrière chaque achat, une chaîne de solidarité</h2>
+                <div class="impact-wrapper">
+                    <div class="impact-contenu">
+                        <div class="compteur" data-cible="2.3"><span class="valeur">0</span> M<span class="unite">vêtements sauvés</span></div>
+                        <div class="compteur" data-cible="3.5"><span class="valeur">0</span> M€<span class="unite">reversés</span></div>
+                        <div class="compteur" data-cible="700"><span class="valeur">0</span><span class="unite">personnes accompagnées</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis">
+            <div class="conteneur">
+                <h2 class="titre-section">La parole à ceux qui nous font confiance</h2>
+                <div class="avis-liste">
+                    <div class="avis-citation">« J'ai trouvé une veste en cuir magnifique à 30€, et en plus je sais que mon argent sert à quelque chose. Je ne vais plus ailleurs. »<div class="auteur">— Claire, boutique Paris 15e</div></div>
+                    <div class="avis-citation">« L'accueil est toujours chaleureux, les vêtements sont propres et bien rangés. On se sent bien chez BIS. »<div class="auteur">— Marc, boutique Paris 11e</div></div>
+                    <div class="avis-citation">« Une vraie sélection, pas un bric-à-brac. J'ai déniché des pièces de créateur à prix incroyables. »<div class="auteur">— Sarah, boutique Paris 18e</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ & CONTACT -->
+        <section class="section" id="faq">
+            <div class="conteneur">
+                <h2 class="titre-section">On répond à tout</h2>
+                <div class="faq-accordeon">
+                    <details>
+                        <summary>Comment sont sélectionnés les vêtements ? <span>▼</span></summary>
+                        <p class="reponse">Nous trions chaque pièce manuellement : état, qualité, style. Seuls les vêtements en excellent état sont mis en rayon.</p>
+                    </details>
+                    <details>
+                        <summary>Puis-je déposer des vêtements ? <span>▼</span></summary>
+                        <p class="reponse">BIS fonctionne grâce aux dons collectés par nos associations partenaires. Contactez-nous pour connaître les points de collecte les plus proches.</p>
+                    </details>
+                    <details>
+                        <summary>Où va l'argent des ventes ? <span>▼</span></summary>
+                        <p class="reponse">100% des bénéfices sont reversés à des programmes de réinsertion et d'accompagnement social, gérés par nos associations partenaires.</p>
+                    </details>
+                    <details>
+                        <summary>Proposez-vous des cartes de fidélité ? <span>▼</span></summary>
+                        <p class="reponse">Nous n'avons pas de programme de fidélité classique, mais chaque achat contribue directement à notre mission solidaire — c'est votre impact qui compte.</p>
+                    </details>
+                </div>
+                <div class="contact-grid mt-2">
+                    <div class="contact-infos">
+                        <h3 class="sous-section">Nous contacter</h3>
+                        <p><strong>Adresse :</strong> 96 Rue Saint Charles, 75015 Paris</p>
+                        <p><strong>Téléphone :</strong> <a href="tel:+33153810029">01 53 81 00 29</a></p>
+                        <p><strong>Email :</strong> <a href="mailto:antoniucciremi@yahoo.fr">antoniucciremi@yahoo.fr</a></p>
+                        <p><strong>Note Google :</strong> 4.6 ★ (185 avis)</p>
+                        <p><em>Horaires susceptibles de varier, n'hésitez pas à appeler avant de vous déplacer.</em></p>
+                    </div>
+                    <form class="formulaire-contact" onsubmit="alert('Merci pour votre message. Nous vous répondrons rapidement.'); return false;">
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <textarea rows="3" placeholder="Votre message"></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="conteneur">
+            <p><strong>BIS Boutique Solidaire</strong> — 96 Rue Saint Charles, 75015 Paris — 01 53 81 00 29</p>
+            <p>4.6 ★ sur 185 avis · Ouvert Lun–Sam (horaires à confirmer)</p>
+            <p class="credits">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 30);
+            });
+
+            // IntersectionObserver for section reveals
+            const sections = document.querySelectorAll('.section:not(.section-hero)');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+            sections.forEach(s => observer.observe(s));
+
+            // Compteurs animés
+            const compteurs = document.querySelectorAll('.compteur');
+            const observerCompteurs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const cible = parseFloat(el.dataset.cible);
+                        const spanValeur = el.querySelector('.valeur');
+                        if (!spanValeur || el.dataset.animated === 'true') return;
+                        el.dataset.animated = 'true';
+                        let current = 0;
+                        const duration = 1800;
+                        const stepTime = 16;
+                        const steps = duration / stepTime;
+                        const increment = cible / steps;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= cible) {
+                                current = cible;
+                                clearInterval(timer);
+                                if (cible < 10) spanValeur.textContent = cible.toFixed(1);
+                                else spanValeur.textContent = Math.round(cible);
+                            } else {
+                                if (cible < 10) spanValeur.textContent = current.toFixed(1);
+                                else spanValeur.textContent = Math.round(current);
+                            }
+                        }, stepTime);
+                    }
+                });
+            }, { threshold: 0.5 });
+            compteurs.forEach(c => observerCompteurs.observe(c));
+
+            // Fil rouge animation au scroll
+            const filPath = document.getElementById('filPath');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const maxScroll = document.body.scrollHeight - window.innerHeight;
+                const pourcentage = Math.min(scrollY / maxScroll, 1);
+                if (filPath) {
+                    const offsetY = pourcentage * 2800;
+                    filPath.setAttribute('d', `M-100,${200+offsetY*0.05} C300,${100+offsetY*0.02} 600,${400-offsetY*0.03} 900,${250+offsetY*0.04} S1200,${100-offsetY*0.02} 1500,${300+offsetY*0.03} S1800,${450-offsetY*0.04} 2100,${200+offsetY*0.05}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
