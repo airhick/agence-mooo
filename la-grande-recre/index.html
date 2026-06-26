@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Grande Récré Passy – Magasin de jouets au Passy Plaza, Paris 16ᵉ</title>
+    <meta name="description" content="La Grande Récré Passy vous accueille au cœur du Passy Plaza à Paris. Un écrin de jouets pensé pour les rêveurs de 0 à 99 ans. Conseils, liste de naissance, click & collect.">
+    <meta property="og:title" content="La Grande Récré Passy – Magasin de jouets au Passy Plaza, Paris 16ᵉ">
+    <meta property="og:description" content="Un écrin de jouets pensé pour les rêveurs de 0 à 99 ans. Conseils, liste de naissance, click & collect.">
+    <meta property="og:image" content="https://agence.mooo.com/la-grande-recre/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎠</text></svg>">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --rouge: #E50013;
+            --bleu: #0A2C61;
+            --jaune: #FFD500;
+            --gris-clair: #F0F0F0;
+            --gris-texte: #3a3a3a;
+            --gris-doux: #6b6b6b;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-card: 0 2px 16px rgba(10, 44, 97, 0.06), 0 0 0 1px rgba(10, 44, 97, 0.04);
+            --shadow-glow-jaune: 0 0 14px rgba(255, 213, 0, 0.7), 0 0 32px rgba(255, 213, 0, 0.35), 0 0 60px rgba(255, 213, 0, 0.15);
+            --shadow-glow-rouge: 0 0 10px rgba(229, 0, 19, 0.5), 0 0 24px rgba(229, 0, 19, 0.2);
+            --transition-douce: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-ressort: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.3vw, 1.125rem);
+            line-height: 1.7;
+            color: var(--bleu);
+            background-color: var(--white);
+            background-image:
+                radial-gradient(ellipse at 15% 5%, rgba(255, 213, 0, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 30%, rgba(229, 0, 19, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 80%, rgba(10, 44, 97, 0.03) 0%, transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ----- HEADER ----- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition-douce), box-shadow var(--transition-douce);
+            padding: 0 clamp(1rem, 3vw, 2.5rem);
+        }
+
+        .header.scrolled {
+            border-bottom-color: rgba(10, 44, 97, 0.08);
+            box-shadow: 0 1px 20px rgba(10, 44, 97, 0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 70px;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            color: var(--bleu);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--rouge);
+        }
+
+        .logo-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--jaune);
+            box-shadow: var(--shadow-glow-jaune);
+            animation: logoPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 8px rgba(255, 213, 0, 0.5), 0 0 20px rgba(255, 213, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 18px rgba(255, 213, 0, 0.9), 0 0 40px rgba(255, 213, 0, 0.4), 0 0 65px rgba(255, 213, 0, 0.1);
+            }
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            list-style: none;
+        }
+
+        .nav a {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--bleu);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.35em 0;
+            transition: color var(--transition-douce);
+            white-space: nowrap;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rouge);
+            border-radius: 1px;
+            transition: width var(--transition-ressort);
+        }
+
+        .nav a:hover::after,
+        .nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav a:hover {
+            color: var(--rouge);
+        }
+
+        .btn-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            color: var(--white);
+            background: var(--rouge);
+            padding: 0.6em 1.3em;
+            border-radius: 999px;
+            transition: all var(--transition-douce);
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(229, 0, 19, 0.18);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-header:hover {
+            background: #c40010;
+            box-shadow: 0 4px 18px rgba(229, 0, 19, 0.3);
+            transform: translateY(-1px);
+        }
+        .btn-header:focus-visible {
+            outline: 3px solid var(--jaune);
+            outline-offset: 3px;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .burger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--bleu);
+            border-radius: 2px;
+            transition: all var(--transition-douce);
+        }
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: clamp(420px, 60vh, 620px);
+            overflow: hidden;
+            background: var(--white);
+            max-width: 1280px;
+            margin: 0 auto;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 0 var(--radius-lg);
+            min-height: 350px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.02) contrast(1.04) saturate(1.08);
+            transition: filter 0.6s ease;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 44, 97, 0.25) 0%, rgba(229, 0, 19, 0.08) 40%, rgba(255, 213, 0, 0.06) 70%, transparent 100%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            border-radius: 0 0 0 var(--radius-lg);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(255, 213, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(229, 0, 19, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 1;
+            border-radius: 0 0 0 var(--radius-lg);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--bleu);
+            background: var(--jaune);
+            padding: 0.35em 0.9em;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.1s forwards;
+        }
+
+        .hero-badge .stars {
+            color: var(--rouge);
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 400;
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            line-height: 1.2;
+            color: var(--bleu);
+            letter-spacing: -0.015em;
+            margin-bottom: 1rem;
+            position: relative;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.25s forwards;
+        }
+
+        .hero-title strong {
+            font-weight: 700;
+        }
+
+        .hero-underline {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 18px;
+            overflow: visible;
+            pointer-events: none;
+        }
+
+        .hero-underline svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-underline path {
+            fill: none;
+            stroke: var(--rouge);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawWavy 1.2s 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes drawWavy {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            color: var(--gris-texte);
+            line-height: 1.6;
+            max-width: 440px;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.4s forwards;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.7s 0.5s forwards;
+        }
+
+        .btn-primary {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            color: var(--white);
+            background: var(--rouge);
+            padding: 0.75em 1.8em;
+            border-radius: 999px;
+            transition: all var(--transition-douce);
+            box-shadow: 0 3px 14px rgba(229, 0, 19, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: #c40010;
+            box-shadow: 0 6px 22px rgba(229, 0, 19, 0.32);
+            transform: translateY(-2px);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--jaune);
+            outline-offset: 4px;
+        }
+
+        .btn-outline {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            color: var(--bleu);
+            background: transparent;
+            padding: 0.7em 1.7em;
+            border-radius: 999px;
+            border: 2px solid var(--bleu);
+            transition: all var(--transition-douce);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-outline:hover {
+            background: var(--bleu);
+            color: var(--white);
+            border-color: var(--bleu);
+        }
+        .btn-outline:focus-visible {
+            outline: 3px solid var(--jaune);
+            outline-offset: 4px;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ----- SECTIONS ----- */
+        .section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: clamp(2.5rem, 6vw, 5rem) clamp(1.2rem, 4vw, 3rem);
+            position: relative;
+        }
+
+        .section-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--rouge);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+            line-height: 1.25;
+            color: var(--bleu);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--jaune);
+            margin-top: 0.65rem;
+            border-radius: 2px;
+        }
+
+        .section-text {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            color: var(--gris-texte);
+            line-height: 1.75;
+            max-width: 620px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+
+        .section-grid.reverse {
+            direction: rtl;
+        }
+        .section-grid.reverse>* {
+            direction: ltr;
+        }
+
+        .section-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--gris-clair);
+            box-shadow: var(--shadow-card);
+        }
+
+        .section-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(10, 44, 97, 0.12) 0%, transparent 50%, rgba(255, 213, 0, 0.08) 100%);
+            pointer-events: none;
+        }
+
+        /* Badge jouet */
+        .badge-jouet {
+            display: inline-block;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            color: var(--bleu);
+            background: var(--jaune);
+            padding: 0.2em 0.7em;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all var(--transition-douce);
+            cursor: default;
+            box-shadow: 0 1px 4px rgba(255, 213, 0, 0.3);
+        }
+        .badge-jouet:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(255, 213, 0, 0.5);
+        }
+
+        /* Guirlandes lumineuses */
+        .guirlande-point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--jaune);
+            box-shadow: 0 0 0px rgba(255, 213, 0, 0);
+            transition: box-shadow 0.7s ease, background 0.7s ease, transform 0.7s ease;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .guirlande-point.allume {
+            background: #ffe44d;
+            box-shadow: var(--shadow-glow-jaune);
+            animation: twinkle 1.8s ease-in-out infinite;
+        }
+        .guirlande-point.allume:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+        .guirlande-point.allume:nth-child(3n) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes twinkle {
+            0%,
+            100% {
+                box-shadow: 0 0 14px rgba(255, 213, 0, 0.7), 0 0 32px rgba(255, 213, 0, 0.35), 0 0 60px rgba(255, 213, 0, 0.15);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 22px rgba(255, 213, 0, 1), 0 0 48px rgba(255, 213, 0, 0.55), 0 0 80px rgba(255, 213, 0, 0.25);
+                transform: scale(1.5);
+            }
+        }
+
+        /* Fil de guirlande */
+        .guirlande-fil {
+            position: absolute;
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0.25;
+        }
+        .guirlande-fil svg {
+            width: 100%;
+            height: 100%;
+        }
+        .guirlande-fil path {
+            fill: none;
+            stroke: #ddd;
+            stroke-width: 1.5;
+            stroke-dasharray: 8 16;
+            stroke-linecap: round;
+        }
+
+        /* Reveal au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* Carte */
+        .carte-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .carte-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 380px;
+            border: 0;
+        }
+
+        /* Infos pratiques */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--gris-clair);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: all var(--transition-douce);
+            border: 1px solid transparent;
+        }
+        .info-card:hover {
+            border-color: rgba(10, 44, 97, 0.08);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-3px);
+        }
+
+        .info-card .info-icon {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .info-card h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--bleu);
+            margin-bottom: 0.3rem;
+        }
+        .info-card p,
+        .info-card a {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris-texte);
+            text-decoration: none;
+            line-height: 1.5;
+        }
+        .info-card a:hover {
+            color: var(--rouge);
+            text-decoration: underline;
+        }
+
+        /* Avis Google */
+        .avis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            border: 1px solid rgba(10, 44, 97, 0.1);
+            border-radius: 999px;
+            padding: 0.5em 1em;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu);
+            box-shadow: 0 1px 6px rgba(10, 44, 97, 0.04);
+        }
+        .avis-badge .star {
+            color: #fbbc04;
+            font-size: 1.1rem;
+        }
+        .avis-badge .note {
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bleu);
+            color: rgba(255, 255, 255, 0.85);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.2rem, 4vw, 3rem);
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .footer h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+        .footer p,
+        .footer a {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            line-height: 1.7;
+        }
+        .footer a:hover {
+            color: var(--jaune);
+            text-decoration: underline;
+        }
+        .footer-credits {
+            grid-column: 1/-1;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .footer-credits a {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+        .footer-credits a:hover {
+            color: var(--jaune);
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                border-radius: 0 0 var(--radius-md) var(--radius-md);
+            }
+            .hero-image {
+                order: -1;
+                min-height: 280px;
+                max-height: 380px;
+                border-radius: 0;
+            }
+            .hero-image::after,
+            .hero-image::before {
+                border-radius: 0;
+            }
+            .hero-content {
+                padding: 2rem 1.5rem 2.5rem;
+            }
+            .hero-title {
+                font-size: clamp(1.8rem, 6vw, 2.4rem);
+            }
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .section-grid.reverse {
+                direction: ltr;
+            }
+            .section-image-wrapper {
+                aspect-ratio: 16/10;
+                max-height: 300px;
+            }
+            .nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid rgba(10, 44, 97, 0.08);
+                box-shadow: 0 10px 30px rgba(10, 44, 97, 0.08);
+                z-index: 999;
+            }
+            .nav.active {
+                display: flex;
+            }
+            .nav a {
+                font-size: 1.05rem;
+            }
+            .burger {
+                display: flex;
+            }
+            .btn-header {
+                display: none;
+            }
+            .btn-header-mobile {
+                display: inline-flex;
+                margin-top: 0.5rem;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .guirlande-point {
+                display: none;
+            }
+            .guirlande-fil {
+                display: none;
+            }
+        }
+
+        @media (min-width: 901px) {
+            .btn-header-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            .btn-primary,
+            .btn-outline {
+                text-align: center;
+                justify-content: center;
+            }
+            .infos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .hero-title,
+            .hero-subtitle,
+            .hero-badge,
+            .hero-cta-group {
+                animation: none;
+                opacity: 1;
+            }
+            .hero-underline path {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .guirlande-point.allume {
+                animation: none;
+                box-shadow: 0 0 10px rgba(255, 213, 0, 0.5);
+            }
+            .btn-header:hover,
+            .btn-primary:hover,
+            .btn-outline:hover,
+            .info-card:hover,
+            .badge-jouet:hover {
+                transform: none;
+            }
+        }
+
+        /* Focus visible global */
+        *:focus-visible {
+            outline: 3px solid var(--jaune);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="La Grande Récré – Accueil">
+                La Grande <span>Récré</span>
+                <span class="logo-dot" aria-hidden="true"></span>
+            </a>
+            <nav>
+                <ul class="nav" id="nav">
+                    <li><a href="#magie">Le lieu</a></li>
+                    <li><a href="#adresse">Adresse</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#eveil">Éveil</a></li>
+                    <li><a href="#joyau">Héritage</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="btn-header-mobile"><a href="tel:+33142305202" class="btn-header">📞 Appeler</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33142305202" class="btn-header" aria-label="Appeler La Grande Récré">📞 Appeler</a>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <span class="hero-badge">
+                    <span class="stars">★★★★</span> 4/5 – 189 avis
+                </span>
+                <h1 class="hero-title">
+                    Ici commence la plus belle<br><strong>des récrés.</strong>
+                    <span class="hero-underline" aria-hidden="true">
+                        <svg viewBox="0 0 300 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,10 Q40,2 80,8 Q120,14 160,7 Q200,0 240,9 Q270,15 295,7"/>
+                        </svg>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">Au cœur du Passy Plaza, un écrin de jouets pensé pour les rêveurs de 0 à 99 ans.</p>
+                <div class="hero-cta-group">
+                    <a href="tel:+33142305202" class="btn-primary">📞 Appeler maintenant</a>
+                    <a href="#adresse" class="btn-outline">📍 Venir au magasin</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/maps-1.jpg" alt="La Grande Récré Passy – Vue du magasin avec ses guirlandes lumineuses et lettres colorées" loading="eager" width="800" height="600">
+            </div>
+        </section>
+
+        <!-- GUIRLANDE : points positionnés le long des sections -->
+        <div class="guirlande-fil" style="top:15%;left:4%;width:120px;height:70%;" aria-hidden="true">
+            <svg viewBox="0 0 120 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60,0 Q90,80 55,140 Q20,200 65,260 Q100,320 50,380 Q10,440 60,500 Q85,540 60,600"/>
+            </svg>
+        </div>
+
+        <!-- ① La magie du lieu -->
+        <section class="section" id="magie">
+            <span class="guirlande-point" style="top:8%;left:3%;" data-guirlande></span>
+            <span class="guirlande-point" style="top:35%;left:5%;" data-guirlande></span>
+            <span class="section-label reveal">① La magie du lieu</span>
+            <h2 class="section-title reveal reveal-delay-1">Un magasin qui scintille</h2>
+            <div class="section-grid">
+                <div>
+                    <p class="section-text reveal reveal-delay-2">
+                        Dès l'entrée, les guirlandes lumineuses guident votre regard vers les grandes lettres colorées qui ont fait la légende de l'enseigne. Ici, chaque rayon est scénographié comme une promesse d'aventure, des
+                        <span class="badge-jouet">poupées Corolle</span> aux jeux de construction en passant par les univers
+                        <span class="badge-jouet">Harry Potter</span> ou
+                        <span class="badge-jouet">Playmobil</span>.
+                    </p>
+                </div>
+                <div class="section-image-wrapper reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Ambiance lumineuse du magasin La Grande Récré Passy" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <!-- ② L'adresse parisienne du jeu -->
+        <section class="section" id="adresse" style="background:var(--gris-clair);border-radius:var(--radius-lg);margin:0 auto;max-width:1320px;">
+            <span class="guirlande-point" style="top:10%;right:4%;" data-guirlande></span>
+            <span class="guirlande-point" style="top:50%;right:6%;" data-guirlande></span>
+            <span class="section-label reveal">② L'adresse parisienne du jeu</span>
+            <h2 class="section-title reveal reveal-delay-1">Rendez-vous au 53 rue de Passy</h2>
+            <div class="section-grid reverse">
+                <div>
+                    <p class="section-text reveal reveal-delay-2">
+                        Situé au sein du centre commercial <strong>Passy Plaza</strong>, notre magasin vous accueille du lundi au samedi de <strong>10h à 20h</strong>. Le quartier, bien desservi (métro La Muette, bus 32, 52, 70), permet une visite facile, que vous soyez en promenade dominicale ou en quête d'une idée cadeau de dernière minute.
+                    </p>
+                    <div class="avis-badge reveal reveal-delay-3" style="margin-top:1rem;">
+                        <span class="star">★</span> <span class="note">4/5</span> sur 189 avis Google
+                    </div>
+                </div>
+                <div class="section-image-wrapper reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Façade et accueil de La Grande Récré au Passy Plaza" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <!-- ③ Services sur mesure -->
+        <section class="section" id="services">
+            <span class="guirlande-point" style="top:15%;left:2%;" data-guirlande></span>
+            <span class="guirlande-point" style="top:60%;left:7%;" data-guirlande></span>
+            <span class="section-label reveal">③ Services sur mesure</span>
+            <h2 class="section-title reveal reveal-delay-1">Plus qu'un achat, une écoute</h2>
+            <p class="section-text reveal reveal-delay-2" style="max-width:640px;">
+                Nos conseillers passionnés vous aident à trouver le jouet parfait pour l'âge et les goûts de l'enfant. Nous proposons un service de <strong>liste de naissance</strong>, le <strong>paiement en plusieurs fois</strong>, le <strong>click & collect en 1 heure</strong> et l'<strong>emballage cadeau offert</strong>.
+            </p>
+            <div class="infos-grid reveal reveal-delay-3">
+                <div class="info-card">
+                    <div class="info-icon">🎁</div>
+                    <h4>Emballage cadeau</h4>
+                    <p>Offert avec chaque achat, pour faire briller les yeux avant même l'ouverture.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h4>Click & Collect</h4>
+                    <p>Commande prête en 1 heure. Pratique pour les idées de dernière minute.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">👶</div>
+                    <h4>Liste de naissance</h4>
+                    <p>Un service personnalisé pour que bébé reçoive des jouets adaptés et choisis avec soin.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">💳</div>
+                    <h4>Paiement facilité</h4>
+                    <p>Paiement en plusieurs fois sans frais, pour offrir sans compromis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ④ La récré des tout-petits -->
+        <section class="section" id="eveil" style="background:var(--gris-clair);border-radius:var(--radius-lg);margin:0 auto;max-width:1320px;">
+            <span class="guirlande-point" style="top:20%;right:3%;" data-guirlande></span>
+            <span class="guirlande-point" style="top:55%;right:8%;" data-guirlande></span>
+            <span class="section-label reveal">④ La récré des tout-petits</span>
+            <h2 class="section-title reveal reveal-delay-1">Espace éveil & démonstration</h2>
+            <div class="section-grid">
+                <div>
+                    <p class="section-text reveal reveal-delay-2">
+                        Au fond du magasin, un coin moquetté permet aux enfants de tester les jeux d'éveil et aux parents d'échanger avec nos équipes.
+                        <span class="badge-jouet">Peluches</span>,
+                        <span class="badge-jouet">premiers puzzles</span> et
+                        <span class="badge-jouet">jouets en bois</span> sont à portée de main, dans un environnement tout doux.
+                    </p>
+                </div>
+                <div class="section-image-wrapper reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Espace éveil et démonstration pour les tout-petits" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <!-- ⑤ Le joyau du 16ᵉ -->
+        <section class="section" id="joyau">
+            <span class="guirlande-point" style="top:25%;left:6%;" data-guirlande></span>
+            <span class="guirlande-point" style="top:70%;left:3%;" data-guirlande></span>
+            <span class="section-label reveal">⑤ Le joyau du 16ᵉ</span>
+            <h2 class="section-title reveal reveal-delay-1">Dans l'air du temps, depuis toujours</h2>
+            <div class="section-grid reverse">
+                <div>
+                    <p class="section-text reveal reveal-delay-2">
+                        La Grande Récré fait partie du paysage parisien depuis plus de <strong>40 ans</strong>. À Passy, nous cultivons cet héritage en proposant à la fois les grands classiques indémodables et les dernières nouveautés repérées sur les salons internationaux.
+                        Le <span class="badge-jouet">circuit Brio</span> côtoie les dernières tendances, pour le plaisir des enfants d'hier et d'aujourd'hui.
+                    </p>
+                </div>
+                <div class="section-image-wrapper reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="La Grande Récré Passy – Un joyau du quartier depuis plus de 40 ans" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <!-- Carte -->
+        <section class="section" id="contact">
+            <span class="section-label reveal">📍 Nous trouver</span>
+            <h2 class="section-title reveal reveal-delay-1">Au cœur du Passy Plaza</h2>
+            <div class="carte-wrapper reveal reveal-delay-2">
+                <iframe src="https://maps.google.com/maps?q=La+Grande+R%C3%A9cr%C3%A9+Centre+Commercial+Passy%2C+Plaza%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – La Grande Récré Passy"></iframe>
+            </div>
+            <div class="infos-grid reveal reveal-delay-3" style="margin-top:2rem;">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h4>Adresse</h4>
+                    <p>Centre Commercial Passy Plaza<br>53 rue de Passy, 75016 Paris</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h4>Téléphone</h4>
+                    <p><a href="tel:+33142305202">01 42 30 52 02</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:rgpd@lagranderecre.com">rgpd@lagranderecre.com</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h4>Horaires</h4>
+                    <p>Lundi – Samedi<br>10h – 20h</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>La Grande Récré Passy</h4>
+                <p>Centre Commercial Passy Plaza<br>53 rue de Passy, 75016 Paris<br>
+                    <a href="tel:+33142305202">01 42 30 52 02</a><br>
+                    <a href="mailto:rgpd@lagranderecre.com">rgpd@lagranderecre.com</a>
+                </p>
+            </div>
+            <div>
+                <h4>À propos</h4>
+                <p>Un magasin de jouets historique au cœur du 16ᵉ arrondissement, où chaque visite est une parenthèse enchantée pour petits et grands.</p>
+                <p style="margin-top:0.6rem;">
+                    <span class="avis-badge" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);">
+                        <span class="star">★</span> 4/5 – 189 avis
+                    </span>
+                </p>
+            </div>
+            <div class="footer-credits">
+                Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a> – &copy; 2024 La Grande Récré
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "La Grande Récré Passy",
+            "description": "Magasin de jouets au cœur du Passy Plaza à Paris. Un écrin de jouets pensé pour les rêveurs de 0 à 99 ans.",
+            "image": "https://agence.mooo.com/la-grande-recre/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Centre Commercial Passy Plaza, 53 rue de Passy",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142305202",
+            "email": "rgpd@lagranderecre.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4",
+                "reviewCount": "189"
+            },
+            "openingHours": "Mo-Sa 10:00-20:00",
+            "url": "https://agence.mooo.com/la-grande-recre"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+            const handleScroll = () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // Burger menu
+            const burger = document.getElementById('burger');
+            const nav = document.getElementById('nav');
+            burger.addEventListener('click', () => {
+                const expanded = burger.getAttribute('aria-expanded') === 'true';
+                burger.setAttribute('aria-expanded', !expanded);
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+            // Fermer le menu au clic sur un lien
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.setAttribute('aria-expanded', 'false');
+                    burger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+
+            // IntersectionObserver pour les reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // IntersectionObserver pour les guirlandes
+            const guirlandePoints = document.querySelectorAll('[data-guirlande]');
+            const guirlandeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('allume');
+                        guirlandeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5, rootMargin: '0px 0px -60px 0px' });
+            guirlandePoints.forEach(point => guirlandeObserver.observe(point));
+
+            // Allumer aussi les guirlandes visibles au chargement
+            setTimeout(() => {
+                guirlandePoints.forEach(point => {
+                    const rect = point.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        point.classList.add('allume');
+                    }
+                });
+            }, 800);
+        })();
+    </script>
+</body>
+</html>
