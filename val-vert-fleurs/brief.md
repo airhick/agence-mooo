@@ -1,81 +1,100 @@
-Voici le brief créatif pour Val Vert Fleurs, conçu pour incarner la double vérité de cette boutique : un fleuriste de quartier où l’on vient chercher un bouquet à 20 €, et un décorateur capable d’habiller un salon tout entier. Chaque choix découle des photos réelles, des avis, et des manques identifiés dans l’audit.
+# BRIEF CRÉATIF — Val Vert Fleurs
+**Site vitrine – refonte direction artistique sur mesure**
 
 ---
 
 ## 1. Concept & positionnement
-
-Val Vert Fleurs est le poumon vert du 15ᵉ arrondissement. On y vient pour un bouquet spontané qui fera sensation, comme pour une scénographie florale d’envergure. La promesse : **la même exigence de composition, du geste quotidien au projet exceptionnel**. Le site devient l’écrin numérique de cette double expertise, en réconciliant la chaleur du comptoir et l’ambition du décorateur.
-
-## 2. Direction artistique : *Serre urbaine, élégance naturelle*
-
-On transpose l’expérience de la boutique — ce mélange immédiatement perceptible sur les photos Google Maps de végétal luxuriant, de fer forgé blanc et de bois blond baigné de lumière — en un espace numérique aéré et vivant.  
-- **Parti pris** : une toile de fond claire et respirante, traversée de verts profonds et de touches florales délicates.  
-- **Référence d’ambiance** : la nef d’une serre contemporaine, où la structure métallique dialogue avec l’abondance organique.  
-- **Différence clé avec l’existant** : on abandonne le look institutionnel froid pour une atmosphère de boutique chaleureuse, où les fleurs semblent sortir de l’écran.
-
-## 3. Palette — *Les teintes du 143 Avenue Félix Faure*
-
-Extraites des photos réelles (mur végétal, roses, pivoines, bois, lumière ambiante) et jamais génériques.
-
-| Rôle | Hex | Nom d’usage |
-|------|-----|-------------|
-| Fond principal | `#FDF8F0` | Blanc coquille — chaud et lumineux |
-| Encre / textes | `#2E5A3B` | Vert buis profond — lisibilité et racine |
-| Accent chaleureux | `#E8C4C8` | Rose poudré — écho des pivoines et roses anciennes |
-| Accent vif (CTA) | `#F7D65C` | Jaune mimosa — énergie et fraîcheur |
-| Structure / liant | `#D4A96A` | Bois blond — mobilier et douceur |
-| Fond secondaire | `#8CB89F` | Vert tige — fraîcheur, hover, blocs info |
-
-## 4. Ton éditorial
-
-Une voix de fleuriste, pas de communicant.  
-- **Registre** : chaleureux, direct, légèrement complice.  
-- **Tutoiement** ou vouvoiement naturel selon les sections, sans distance froide.  
-- **On évite** : le mot « prestation », le jargon événementiel, les pavés descriptifs.  
-- **On privilégie** : des verbes d’action et d’émotion (« composer », « offrir », « fleurir », « sublimer »), des phrases courtes, des listes visuelles.
-
-## 5. Accroche héro
-
-**Titre** (Fraunces, taille display) :  
-*Vos émotions en fleurs.*  
-**Sous-titre** (Manrope) :  
-*Du bouquet du jour à l’événement d’exception, nous composons chaque création avec le même geste, la même passion, depuis 20 ans au cœur du 15ᵉ.*
-
-Deux boutons côte à côte (pas de téléphone asséné) :  
-`[Commander un bouquet]` `[Voir nos réalisations événementielles]`
-
-## 6. Sections — *Architecture narrative*
-
-1. **Nos bouquets du jour**  
-   *Titre : Le bouquet qui fait sensation*  
-   *Contenu :* Trois compositions mises en avant, avec photo, nom évocateur, prix de départ (dès 20 €, 35 €, 50 €) et bouton « Commander en ligne ». On répond ici directement à l’absence criante de l’offre quotidienne et aux avis Google mentionnant ces bouquets à petit prix plébiscités.
-
-2. **L’esprit du geste**  
-   *Titre : Chaque tige a son intention*  
-   *Contenu :* Courts paragraphes illustrés sur la philosophie de composition : choix des fleurs de saison, équilibre des textures, travail de la couleur. Cette section remplace l’ancienne « Présentation » trop dense : elle respire, elle montre, elle raconte sans jargon.
-
-3. **Événementiel & décoration**  
-   *Titre : Quand vos espaces s’épanouissent*  
-   *Contenu :* Galerie de réalisations (salons, mariages, halls) avec légendes concises. Un texte clair et sans répétition martelée : « Location de plantes, scénographie florale, ambiances thématiques — nous orchestraons la part végétale de votre événement, du devis à l’installation. » Bouton `[Demander un devis]`.
-
-4. **La boutique & le quartier**  
-   *Titre : Poussez la porte du 143*  
-   *Contenu :* Portrait rapide de Vincent Garcia et de l’équipe, mention du mur végétal signature (« notre poumon vert »), lien avec la vie du quartier Félix Faure. Horaires et accès intégrés naturellement. Photo intérieure de la boutique en grand.
-
-5. **Ce que vous en dites**  
-   *Titre : La confiance en fleurs*  
-   *Contenu :* Trois extraits d’avis Google (anonymisés, tonalité authentique) qui mettent en avant la qualité, le rapport qualité-prix, la gentillesse — les éléments qui reviennent dans les vrais commentaires. Note 4,7/5 affichée fièrement.
-
-6. **Pied de page utile**  
-   *Titre : On reste en contact*  
-   *Contenu :* Téléphone (non martelé, présent une fois), email, formulaire de contact simplifié, lien Google Maps, Facebook. Pas de mention « Contactez-nous » à chaque ligne.
-
-## 7. Signature visuelle — *Le souffle végétal*
-
-- **Filigrane animé** : un motif de feuillage (ligne épurée, style botanique) apparaît en transparence au scroll entre les sections, comme une ombre portée par la lumière de la serre.  
-- **Révélation des images** : chaque photo de composition florale se dévoile avec un micro-effet d’ouverture (pétales qui s’écartent ou bloom discret), juste assez pour créer de l’émerveillement sans artifice gratuit.  
-- **Typographie taille monument** : des mots-clés isolés (« créer », « offrir », « fleurir ») traversent certaines sections en Fraunces extra-large et en vert buis semi-transparent, comme des enseignes végétales.
+Val Vert Fleurs n’est ni une boutique générique ni une agence événementielle clinquante : c’est **un repère vivant du 15e arrondissement, où l’exubérance végétale rencontre le savoir-faire précis du décorateur**. Le site doit cristalliser cette double promesse — la fraîcheur d’un bouquet cueilli le matin même, et la maîtrise d’une mise en scène florale pour grandes tables. On retient l’idée de **“l’atelier à ciel ouvert”** : un lieu qui pulse au rythme des saisons, visible dès l’écran, et qui donne envie de pousser la porte, que l’on habite le quartier ou que l’on prépare un salon porte de Versailles.
 
 ---
 
-Ce brief est taillé pour ce commerce et lui seul. La cohérence entre les signaux réels (mur végétal, fer forgé, rose poudré, jaune vif, avis clients) et la proposition esthétique est totale. Aucune palette générique, aucune structure numérotée artificielle, aucune fausse citation — et une réponse frontale à chaque lacune de l’audit.
+## 2. Direction artistique
+**Parti pris : « Botanique de caractère, rigueur parisienne ».**
+
+On puise dans ce qui fait l’identité visuelle *réelle* du commerce : l’immersion végétale de la boutique (mur de plantes, abondance sans être étouffante), le mobilier métallique blanc au dessin classique qui ancre élégamment cette nature débordante, et la lumière blanche, presque zénithale, qui donne aux fleurs une présence sculpturale.
+
+Le design sera **ordonné mais jamais froid** : une grille claire, une typographie à fort tempérament, et des respirations généreuses pour laisser les photos s’exprimer. L’abondance visuelle est maîtrisée par un squelette éditorial rigoureux — comme un bouquet composé. L’effet recherché : le visiteur ressent la même clarté fraîche que lorsqu’il entre au 143 avenue Félix Faure.
+
+---
+
+## 3. Palette chromatique
+Ancrée dans les teintes extraites des photos réelles du commerce, sans dilution. On évacue le gris fade et les pastels inutiles.
+
+| Rôle | Hex | Nom d’usage | Usage principal |
+|------|-----|-------------|-----------------|
+| Fond principal | `#FDFCF8` | Blanc tilleul | Arrière-plan du site, cartes, blocs texte |
+| Encre / texte | `#1E2D1E` | Vert cèdre | Titres, corps de texte, icônes |
+| Accent vif | `#6B8E23` | Vert pousse | Boutons, liens, soulignés actifs, balises |
+| Accent chaud | `#E8A838` | Jaune pollen | Badges, prix, indicateur “ouvert”, éléments saisonniers |
+| Soutien floral | `#E2A0AC` | Rose pivoine | Blocs très ciblés (catégorie “bouquets”, hover délicats) |
+| Contraste doux | `#F5F0E8` | Bois blanc | Séparateurs légers, fonds d’images secondaires |
+
+La dominante visuelle reste claire et fraîche (fond tilleul, vert cèdre). Les accents pivoine et pollen sont dosés avec parcimonie : jamais kitsch, toujours comme un pétale tombé sur une table.
+
+---
+
+## 4. Ton éditorial
+**Une voix de boutique : directe, concrète, généreuse.**
+
+- Registre courant mais soigné, jamais guindé. On parle comme on accueille un habitué ou un nouveau client : avec chaleur et professionnalisme.
+- On proscrit tout jargon événementiel (“synergies créatives”, “prestation clé en main”). À la place, des mots qui évoquent la matière, le geste, le résultat : “un bouquet qui tient jusqu’au dessert”, “une arche végétale sur mesure pour votre cocktail”.
+- Distance polie avec le “vous” de courtoisie, mais on évite les tournures trop formelles. L’émotion et l’expertise passent par les mots simples et précis.
+- Les horaires, délais, modes de retrait sont donnés sans fioriture. On rassure par la clarté.
+
+---
+
+## 5. Accroche héro
+_La page s’ouvre sur une photo pleine largeur du mur végétal et d’un bouquet en avant-plan, éventuellement en mouvement léger._
+
+**Titre principal (Fraunces, display, grand) :**
+> Chaque jour, des fleurs qui ont quelque chose à dire.
+
+**Sous-titre (Manrope, léger, taille modeste) :**
+> Bouquets du jour & décors d’exception, confiés depuis plus de vingt ans à un atelier du 15e arrondissement.
+
+**CTA double :**
+- Bouton primaire : « Commander un bouquet » (lien vers une ancre ou formulaire rapide)
+- Bouton secondaire : « Un événement ? Parlons-en » (lien vers section dédiée ou `tel:`)
+
+---
+
+## 6. Sections (structure ordonnée)
+**Ordre d’apparition sur la page.**
+
+### 6.1. Le goût du jour
+_Titre : “La boutique, en ce moment”_
+Contenu : galerie horizontale de 3–4 compositions prêtes à emporter, avec mention du prix de départ (ex : « À partir de 25 € »). Chaque photo est légendée par le nom du bouquet et son message idéal. Un lien discret invite à appeler pour une composition personnalisée.
+
+### 6.2. Grands événements
+_Titre : “De la table de fête au salon professionnel”_
+Contenu : sélection portfolio en mosaïque (mariage, inauguration, défilé, réception d’entreprise) avec survol révélant le type d’événement et un extrait de la demande initiale. Bouton « Demandez un devis » menant à un formulaire court. Texte d’accompagnement très sobre : “Un brief, un lieu, une date : nous concevons l’ambiance florale sur mesure.”
+
+### 6.3. Location longue durée
+_Titre : “Plantes et arbustes pour vos espaces”_
+Contenu : explication claire du service de location de plantes pour halls, salons, showrooms. Listes à puces des conditions (durée de location, entretien inclus, livraison/reprise). Galerie de plantes disponibles avec noms communs. CTA : « Réserver une visite conseil ».
+
+### 6.4. Le savoir-faire
+_Titre : “Un atelier, vingt ans, une adresse”_
+Contenu : court portrait de l’équipe (nom de Vincent Garcia si toujours valide, ou identité collective), ancré dans le quartier Félix Faure. Rappel des valeurs : approvisionnement local, respect des saisons, travail artisanal. Ton narratif chaleureux mais rapide, avec une photo de l’atelier en action.
+
+### 6.5. Ce qu’ils en disent
+_Titre : “La parole aux clients”_
+Contenu : 3 vrais avis Google Maps sélectionnés, traités en témoignages avec prénom, date de visite et note. Un lien final vers la fiche Google pour lire les autres.
+
+### 6.6. Venir & joindre
+_Titre : “À deux pas de chez vous”_
+Contenu : adresse, plan intégré (Google Maps), horaires clairs avec indicateur “Ouvert / Fermé” dynamique. Téléphone cliquable (`tel:`), email en clair, formulaire de contact simplifié (nom, objet, message). Mention explicite du drive et de la livraison.
+
+---
+
+## 7. Signature visuelle
+**Deux gestes mémorables, jamais gratuits :**
+
+1. **Typographie en tension organique :**  
+   Fraunces est exploitée avec sa variation “wonky” (option stylistique de la fonte) sur les titres clés, pour évoquer l’irrégularité élégante d’une tige qui pousse. Les titres courants restent nets, mais deux ou trois mots par page flirtent avec cette déconstruction maîtrisée — comme une fleur qui dépasse d’un massif structuré.
+
+2. **Animation de “pousse” au scroll :**  
+   Une ligne fine vert pousse (`#6B8E23`) se dessine verticalement le long de certains blocs, comme une tige qui grimpe, déclenchée par le défilement. Elle ne sert qu’à relier des éléments appartenant à la même famille (par exemple, les services) et disparaît une fois la section passée. Aucune autre animation superflue : le reste du contenu s’affiche avec des transitions simples et rapides.
+
+
+*Ce brief est prêt à être décliné en maquettes. Chaque décision graphique ramène à l’atmosphère du 143 avenue Félix Faure, sans concession aux automatismes décoratifs — le site doit donner envie de sentir, pas seulement de lire.*
