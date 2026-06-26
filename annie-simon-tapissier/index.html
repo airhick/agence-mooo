@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annie Simon Tapissier — Restauration & Création de Sièges Haute Couture, Paris 16e</title>
+    <meta name="description" content="Atelier Annie Simon Tapissier, maison d'excellence depuis 1979. Restauration et création de sièges, rideaux, coussins, têtes de lit. Savoir-faire français, Paris 16e — Dubaï.">
+    <meta property="og:title" content="Annie Simon Tapissier — L'art du siège, depuis 1979.">
+    <meta property="og:description" content="Restauration & création de sièges, rideaux, coussins, têtes de lit. Un savoir-faire français au service des plus beaux intérieurs.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blanc-couture: #F5F5DC;
+            --bleu-atelier: #0B1A26;
+            --rouge-capiton: #B22222;
+            --bois-cire: #8B4513;
+            --marine-profonde: #000033;
+            --lin-pale: #F0E9D8;
+            --text-light: #F5F5DC;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grid-line: rgba(11, 26, 38, 0.07);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--blanc-couture);
+        }
+
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            color: var(--bleu-atelier);
+            background-color: var(--blanc-couture);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* === TYPOGRAPHY === */
+        h1,
+        h2,
+        h3,
+        h4,
+        .display-font {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            color: var(--bleu-atelier);
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 500;
+            letter-spacing: -0.015em;
+            position: relative;
+            margin-bottom: 1.2rem;
+        }
+
+        h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        h4 {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        p,
+        li {
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            color: var(--bleu-atelier);
+            letter-spacing: 0.01em;
+        }
+
+        .text-small {
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .text-caption {
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .italic-display {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(245, 245, 220, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(11, 26, 38, 0.06);
+            transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .site-header.scrolled {
+            background: rgba(245, 245, 220, 0.94);
+            box-shadow: 0 2px 20px rgba(11, 26, 38, 0.06);
+            padding: 0.8rem 2rem;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--bleu-atelier);
+            text-decoration: none;
+            line-height: 1;
+            position: relative;
+        }
+
+        .logo-underline {
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--rouge-capiton);
+            transition: width 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border-radius: 1px;
+        }
+
+        .logo-underline.animated {
+            width: 100%;
+            animation: threadDraw 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        @keyframes threadDraw {
+            0% {
+                width: 0%;
+                left: 0;
+            }
+            30% {
+                width: 105%;
+                left: 0;
+            }
+            50% {
+                width: 90%;
+                left: 5%;
+            }
+            70% {
+                width: 102%;
+                left: 0;
+            }
+            100% {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 3vw, 2.2rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            font-family: 'Geist', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--bleu-atelier);
+            text-decoration: none;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--rouge-capiton);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .main-nav a:hover {
+            color: var(--rouge-capiton);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--rouge-capiton);
+            color: #fff;
+            padding: 0.7rem 1.6rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+
+        .cta-btn:hover::before {
+            left: 0;
+        }
+        .cta-btn:hover {
+            background: #9a1c1c;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(178, 34, 34, 0.25);
+        }
+        .cta-btn:focus-visible {
+            outline: 3px solid var(--rouge-capiton);
+            outline-offset: 3px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--bleu-atelier);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            border-radius: 1px;
+        }
+
+        /* === HERO === */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 650px;
+            overflow: hidden;
+            margin-top: 0;
+            background-color: var(--marine-profonde);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.85) saturate(1.05);
+            transform: scale(1.03);
+            transition: transform 1.4s ease-out;
+        }
+
+        .hero-section.revealed .hero-image {
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 30, 0.35) 0%, rgba(0, 0, 30, 0.05) 40%, rgba(0, 0, 30, 0.45) 100%);
+            z-index: 2;
+        }
+
+        .hero-texture {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(178, 34, 34, 0.04) 1px, transparent 1px);
+            background-size: 28px 28px;
+            z-index: 3;
+            opacity: 0.6;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 5;
+            bottom: 12%;
+            left: 6%;
+            right: 6%;
+            max-width: 900px;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content h1 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
+            font-weight: 600;
+            line-height: 1.05;
+        }
+
+        .hero-content .hero-subtitle {
+            font-family: 'Geist', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--blanc-couture);
+            max-width: 700px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content .hero-date {
+            color: var(--rouge-capiton);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: floatDown 2.2s ease-in-out infinite;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1px;
+        }
+
+        @keyframes floatDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(12px);
+            }
+        }
+
+        /* === SECTIONS GENERAL === */
+        .section {
+            padding: clamp(4rem, 10vw, 8rem) 5%;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background-color: var(--marine-profonde);
+            color: var(--blanc-couture);
+            max-width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .section-dark h2,
+        .section-dark h3,
+        .section-dark p,
+        .section-dark .text-caption {
+            color: var(--blanc-couture);
+        }
+
+        .section-lin {
+            background-color: var(--lin-pale);
+            max-width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .section-header {
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .section-header h2 {
+            margin-bottom: 0.6rem;
+        }
+
+        .section-header .accent-line {
+            width: 50px;
+            height: 3px;
+            background: var(--rouge-capiton);
+            margin-top: 0.4rem;
+            border-radius: 1px;
+        }
+
+        /* === MOIRAGE TEXTURE === */
+        .moire-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moire-reveal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(11, 26, 38, 0.08) 0.8px, transparent 1px);
+            background-size: 18px 18px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.9s ease-out;
+            mix-blend-mode: multiply;
+            border-radius: inherit;
+        }
+
+        .moire-reveal.revealed::before {
+            opacity: 0;
+        }
+
+        /* === CARDS (SAVOIR-FAIRE) === */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--blanc-couture);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            padding: 2rem 1.8rem;
+            position: relative;
+            border-radius: 1px;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            box-shadow: 0 2px 8px rgba(11, 26, 38, 0.04);
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--rouge-capiton);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border-radius: 1px 0 0 1px;
+        }
+
+        .service-card:hover::after {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(11, 26, 38, 0.09);
+        }
+
+        .service-card .card-icon {
+            font-size: 2.2rem;
+            color: var(--rouge-capiton);
+            margin-bottom: 0.3rem;
+        }
+
+        .service-card h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #2a3a46;
+            flex: 1;
+        }
+
+        .card-cta {
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--rouge-capiton);
+            text-decoration: none;
+            align-self: flex-start;
+            margin-top: 0.5rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .card-cta:hover {
+            color: #7a1717;
+        }
+
+        /* === GALERIE === */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            aspect-ratio: 3/4;
+            background: var(--marine-profonde);
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s ease, filter 0.45s ease;
+            filter: brightness(0.92);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.02);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 30, 0.85) 0%, rgba(0, 0, 30, 0) 100%);
+            padding: 1.6rem 1.2rem 1rem;
+            color: #fff;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-caption .project-name {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        /* === ATELIER === */
+        .atelier-quote {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(1.6rem, 4vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--bleu-atelier);
+            border-left: 4px solid var(--rouge-capiton);
+            padding-left: 2rem;
+            margin: 2.5rem 0;
+            max-width: 750px;
+        }
+
+        .reviews-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blanc-couture);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            padding: 0.7rem 1.4rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .stars {
+            color: #e6a817;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        /* === CONTACT === */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .contact-info a {
+            color: var(--bleu-atelier);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--rouge-capiton);
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: var(--rouge-capiton);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(11, 26, 38, 0.2);
+            background: #fff;
+            border-radius: 2px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            color: var(--bleu-atelier);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--rouge-capiton);
+            box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.08);
+        }
+
+        .contact-form .file-upload {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .map-container {
+            margin-top: 2.5rem;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--marine-profonde);
+            color: var(--blanc-couture);
+            padding: 3rem 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border-top: 4px solid var(--rouge-capiton);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .footer-content a {
+            color: var(--blanc-couture);
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+        .footer-content a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-signature {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+
+        /* === ANIMATIONS === */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.9rem 1.2rem;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(245, 245, 220, 0.97);
+                flex-direction: column;
+                padding: 1.5rem;
+                border-bottom: 2px solid var(--rouge-capiton);
+                gap: 1rem;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content {
+                bottom: 15%;
+                left: 5%;
+                right: 5%;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--rouge-capiton);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="logo-container">
+            <a href="#" class="logo-text" aria-label="Annie Simon Tapissier - Accueil">ANNIE SIMON</a>
+            <span class="logo-underline" id="logoUnderline"></span>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="main-nav" id="mainNav">
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#savoirfaire">Savoir-faire</a></li>
+                <li><a href="#atelier">L'Atelier</a></li>
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-btn">Prendre rendez-vous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <img src="assets/maps-1.jpg" alt="Annie Simon Tapissier - Détail de restauration artisanale" class="hero-image" loading="eager">
+            <div class="hero-overlay"></div>
+            <div class="hero-texture"></div>
+            <div class="hero-content">
+                <h1>L'art du siège,<br>depuis <span class="hero-date">1979.</span></h1>
+                <p class="hero-subtitle">Restauration & création de sièges, rideaux, coussins, têtes de lit — un savoir-faire français au service des plus beaux intérieurs, du 16ᵉ arrondissement aux palaces de Dubaï.</p>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Découvrir</span>
+                <span class="scroll-line"></span>
+            </div>
+        </section>
+
+        <!-- SAVOIR-FAIRE -->
+        <section class="section section-lin" id="savoirfaire">
+            <div class="section-header reveal-on-scroll">
+                <h2>Nos mains, votre style.</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="cards-grid">
+                <div class="service-card moire-reveal reveal-on-scroll">
+                    <div class="card-icon">🪑</div>
+                    <h4>Restauration de fauteuils & canapés</h4>
+                    <p>Nous redonnons vie à vos sièges de famille : décapage, sanglage traditionnel, finition main.</p>
+                    <a href="#contact" class="card-cta">En savoir plus →</a>
+                </div>
+                <div class="service-card moire-reveal reveal-on-scroll">
+                    <div class="card-icon">✨</div>
+                    <h4>Création sur mesure</h4>
+                    <p>Fauteuils, banquettes, têtes de lit dessinés selon vos envies, réalisés dans nos matières d'exception.</p>
+                    <a href="#contact" class="card-cta">En savoir plus →</a>
+                </div>
+                <div class="service-card moire-reveal reveal-on-scroll">
+                    <div class="card-icon">🪟</div>
+                    <h4>Rideaux & voilages</h4>
+                    <p>Confection de rideaux, stores et voilages sur mesure, pose incluse dans tout Paris.</p>
+                    <a href="#contact" class="card-cta">En savoir plus →</a>
+                </div>
+                <div class="service-card moire-reveal reveal-on-scroll">
+                    <div class="card-icon">🧵</div>
+                    <h4>Coussins & têtes de lit</h4>
+                    <p>Garnissage et création de coussins décoratifs, têtes de lit capitonnées, en tissu ou cuir.</p>
+                    <a href="#contact" class="card-cta">En savoir plus →</a>
+                </div>
+                <div class="service-card moire-reveal reveal-on-scroll">
+                    <div class="card-icon">🎨</div>
+                    <h4>Conseil en décoration</h4>
+                    <p>Accompagnement personnalisé pour harmoniser couleurs, textures et volumes dans vos pièces.</p>
+                    <a href="#contact" class="card-cta">En savoir plus →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RÉALISATIONS -->
+        <section class="section" id="realisations">
+            <div class="section-header reveal-on-scroll">
+                <h2>Les projets qui font notre fierté.</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal-on-scroll">
+                    <img src="assets/maps-2.jpg" alt="Projet Nobilis Paris - Restauration siège" loading="lazy">
+                    <div class="gallery-caption"><span class="project-name">Nobilis Paris</span><br>Fauteuil contemporain, velours</div>
+                </div>
+                <div class="gallery-item reveal-on-scroll">
+                    <img src="assets/maps-3.jpg" alt="Projet Cherry restaurant - Banquette sur mesure" loading="lazy">
+                    <div class="gallery-caption"><span class="project-name">Cherry Restaurant</span><br>Banquettes, cuir pleine fleur</div>
+                </div>
+                <div class="gallery-item reveal-on-scroll">
+                    <img src="assets/maps-4.jpg" alt="Projet Barque Sofa - Canapé design" loading="lazy">
+                    <div class="gallery-caption"><span class="project-name">Barque Sofa</span><br>Canapé sculptural, tissu Pierre Frey</div>
+                </div>
+                <div class="gallery-item reveal-on-scroll">
+                    <img src="assets/maps-5.jpg" alt="Projet Chaise Serpent - Pièce unique" loading="lazy">
+                    <div class="gallery-caption"><span class="project-name">Chaise Serpent</span><br>Restauration d'art, passementerie</div>
+                </div>
+                <div class="gallery-item reveal-on-scroll">
+                    <img src="assets/maps-6.jpg" alt="Projet résidence privée - Tête de lit capitonnée" loading="lazy">
+                    <div class="gallery-caption"><span class="project-name">Résidence privée</span><br>Tête de lit, capiton main</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ATELIER -->
+        <section class="section section-dark" id="atelier">
+            <div class="section-header reveal-on-scroll" style="max-width: 1400px; margin-left: auto; margin-right: auto;">
+                <h2>Une maison, des mains.</h2>
+                <div class="accent-line" style="background: var(--rouge-capiton);"></div>
+            </div>
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <p class="reveal-on-scroll" style="max-width: 700px;">Créée en 1979 par Simon Nataf, la maison Annie Simon perpétue un savoir-faire artisanal d'exception dans l'ameublement haut de gamme. Chaque pièce confiée à l'atelier bénéficie d'un travail minutieux, du garnissage traditionnel au choix des étoffes les plus rares.</p>
+                <blockquote class="atelier-quote reveal-on-scroll">« Le beau geste ne s'improvise pas. Il se transmet, se répète, s'affine. Chaque siège restauré est une conversation entre la main et le temps. »<br><span style="font-size: 1rem; font-family: 'Geist', sans-serif; font-style: normal; font-weight: 400;">— Simon Nataf, fondateur</span></blockquote>
+                <div class="reveal-on-scroll" style="margin-top: 2rem;">
+                    <div class="reviews-badge">
+                        <span class="stars">★★★★☆</span>
+                        <span><strong>3.9/5</strong> — 28 avis Google</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic; max-width: 600px;">« Un travail remarquable, un accueil chaleureux et des conseils précieux. » — Extrait d'avis client vérifié</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTOIRE -->
+        <section class="section section-lin" id="histoire">
+            <div class="section-header reveal-on-scroll">
+                <h2>Depuis 1979,<br>le fil ne s'est jamais rompu.</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="reveal-on-scroll" style="max-width: 750px;">
+                <p>De l'atelier historique de la rue Bois le Vent aux projets internationaux, Annie Simon Tapissier a su conjuguer tradition et modernité. La maison collabore avec des architectes d'intérieur, des décorateurs et des particuliers exigeants, en France comme à l'étranger. Chaque réalisation est unique, chaque client est accompagné avec la même exigence.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+            <div class="section-header reveal-on-scroll">
+                <h2>Nous rencontrer.</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-on-scroll">
+                    <p><strong>📍 Adresse :</strong> 34 rue Bois le Vent, 75016 Paris</p>
+                    <p><strong>📞 Téléphone :</strong> <a href="tel:+33142249588">01 42 24 95 88</a></p>
+                    <p><strong>✉️ Email :</strong> <a href="mailto:anniesimontapissier@gmail.com">anniesimontapissier@gmail.com</a></p>
+                    <p><strong>🕐 Horaires :</strong> Lundi – Vendredi, 9h – 19h</p>
+                    <p style="font-size:0.9rem; opacity:0.7;">Horaires susceptibles de variation, merci de nous contacter avant votre visite.</p>
+                    <div class="reviews-badge" style="margin-top:1rem;">
+                        <span class="stars">★★★★☆</span> <span>3.9/5 sur Google</span>
+                    </div>
+                </div>
+                <form class="contact-form reveal-on-scroll" id="contactForm" action="#" method="post">
+                    <input type="text" name="name" placeholder="Votre nom" required aria-label="Nom">
+                    <input type="email" name="email" placeholder="Votre email" required aria-label="Email">
+                    <textarea name="message" rows="5" placeholder="Décrivez votre projet ou demande..." required aria-label="Message"></textarea>
+                    <label class="file-upload">
+                        📎 Joindre une photo de votre meuble (optionnel) :
+                        <input type="file" name="photo" accept="image/*" style="display:block; margin-top:0.4rem;">
+                    </label>
+                    <button type="submit" class="cta-btn" style="align-self: flex-start;">Envoyer la demande</button>
+                </form>
+            </div>
+            <div class="map-container reveal-on-scroll">
+                <iframe src="https://maps.google.com/maps?q=Annie+Simon+Tapissier+34+Rue+Bois+le+Vent%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de l'atelier Annie Simon Tapissier"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div>
+                <p style="color:var(--blanc-couture);"><strong>Atelier Annie Simon</strong><br>Haute couture d'ameublement</p>
+                <p style="color:var(--blanc-couture); font-size:0.85rem;">34 rue Bois le Vent, 75016 Paris<br>01 42 24 95 88</p>
+            </div>
+            <div>
+                <p style="color:var(--blanc-couture);"><a href="#realisations">Réalisations</a> · <a href="#savoirfaire">Savoir-faire</a> · <a href="#atelier">L'Atelier</a> · <a href="#contact">Contact</a></p>
+                <p style="color:var(--blanc-couture); font-size:0.85rem;"><a href="https://g.page/annie-simon-tapissier" target="_blank" rel="noopener">Fiche Google My Business</a></p>
+            </div>
+        </div>
+        <p class="footer-signature">© 2025 Annie Simon Tapissier — Tous droits réservés. Site créé par Agence Mooo.</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Annie Simon Tapissier",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "34 Rue Bois le Vent",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142249588",
+            "email": "anniesimontapissier@gmail.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.9",
+                "reviewCount": "28"
+            },
+            "openingHours": "Mo-Fr 09:00-19:00",
+            "url": "https://agence.mooo.com/annie-simon-tapissier"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Logo underline animation
+            window.addEventListener('load', () => {
+                const underline = document.getElementById('logoUnderline');
+                if (underline) {
+                    underline.classList.add('animated');
+                }
+                // Hero reveal
+                const hero = document.querySelector('.hero-section');
+                if (hero) {
+                    setTimeout(() => hero.classList.add('revealed'), 150);
+                }
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const nav = document.getElementById('mainNav');
+            if (toggleBtn && nav) {
+                toggleBtn.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                });
+                // Fermer le menu au clic sur un lien
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                    });
+                });
+            }
+
+            // IntersectionObserver for reveals + moiré dissipation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Moiré reveal
+                        if (entry.target.classList.contains('moire-reveal')) {
+                            entry.target.classList.add('revealed');
+                        }
+                        // Désobserver après révélation pour performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -60px 0px'
+            });
+
+            document.querySelectorAll('.reveal-on-scroll, .moire-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll pour les ancres
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
