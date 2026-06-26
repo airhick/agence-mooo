@@ -1,84 +1,53 @@
-Voici le brief créatif pour la refonte du site d’Alison Boardman.
-
----
+# BRIEF CRÉATIF — Alison Boardman
 
 ## 1. Concept & positionnement
 
-**L’adresse confidentielle du 16e où le goût anglais rencontre l’art de vivre parisien.**
-Au cœur de la rue de l’Annonciation, Alison Boardman est une boutique-écrin qui propose une sélection d’objets et de mobilier choisis pour leur honnêteté artisanale et leur élégance durable. Un lieu de destination pour une clientèle locale éclairée, qui cherche des pièces à l’âme franche, loin des tendances éphémères.
+Un design d’intérieur qui traverse la Manche sans jamais trahir ni l’élégance du 16e arrondissement ni l’exigence anglo-saxonne du confort. Alison Boardman n’est pas un simple magasin : c’est un atelier de curation où chaque objet, chaque projet, est une conversation entre la matière brute et l’œil cosmopolite. On vient y chercher ce que le prêt-à-habiter ne donne pas : une patte, un récit, une permanence.
 
 ## 2. Direction artistique
 
-**Parti pris : « Bruts & Honorables »**
-L’énergie visuelle puise dans le caractère anglo-saxon du nom et l’élégance discrète du quartier. L’univers esthétique est celui d’un atelier-boutique baigné de lumière naturelle, où les matières nobles et imparfaites (bois massif, lin lavé, acier bruni) côtoient des finitions précises.
-- **Matières** : bois ciré, lin écru, céramique mate, laiton vieilli.
-- **Lumière** : claire, zénithale, douce, comme filtrée par une verrière d’atelier.
-- **Composition** : rigueur parisienne dans la mise en page (grands aplats, espacements généreux), chaleur anglaise dans les textures et les tons.
-On évite le minimalisme clinique : l’épure est habitée par le grain des matériaux.
+**Parti pris : « Atelier à collection »**
+
+Un esthétisme de cabinet de curiosités domestiqué, où dominent les textures réelles du métier — stucs essuyés, bois massif, lin lavé, laiton patiné. La composition honore le geste artisanal sans verser dans le rustique : on assume une élégance calme, théâtrale par instants, qui emprunte à l’appartement haussmannien son sens du cadre et à l’atelier anglais sa franchise de matériaux. La lumière est celle, tamisée, d’une boutique rue de l’Annonciation un après-midi d’automne : douce, directionnelle, révélant les volumes sans les brusquer.
 
 ## 3. Palette
 
-Le spectre chromatique est extrait d’un nuancier réel de peintures anglaises pour boiseries (Farrow & Ball) et de teintes naturelles observables dans les boutiques de la rue.
+| Rôle | Hex | Nom évocateur | Usage |
+|------|-----|---------------|-------|
+| Fond principal | #F9F6F0 | Calcaire pâle | Arrière-plans, grandes surfaces |
+| Fond secondaire | #EAE3D7 | Lin écru | Cartes, séparations douces, bandeaux |
+| Texte / encre | #2C2A28 | Brun d’encre | Corps de texte, titres (en négatif) |
+| Accent chaud | #B5673B | Cuivre ouvré | Boutons, liens, filets d’accent |
+| Contrepoint froid | #3F4A41 | Vert sous-bois | Détails, typo secondaire, icônes |
+| Métal précieux | #D1C4B1 | Bronze dormant | Traits fins, séparateurs, cadres |
 
-| Rôle | Nom | Hex |
-|---|---|---|
-| Fond principal | Lin écru | `#F5F2EB` |
-| Encre (texte, titres) | Bleu nuit profond (Railings) | `#2A2E36` |
-| Accent chaud (boutons, filets) | Bois ciré / Cuir havane | `#B87C4C` |
-| Accent froid (survol, citations) | Vert sauge fumé | `#8F9C8B` |
-| Détail métallique (icônes, séparateurs) | Laiton patiné | `#C2A878` |
-| Fond alternatif (cartes, blocs témoignages) | Pierre de Paris | `#E8E2D7` |
-
-**Ambiance générale : claire, chaleureuse, sans fadeur.** Le bleu nuit apporte l’autorité éditoriale, le bois et le laiton réchauffent, le vert sauge adoucit les transitions.
+La palette rejette les terre cuite et les contrastes criards. Le cuivre ouvré dialogue avec le vert sous-bois dans une complémentarité retenue ; le bronze dormant ponctue sans s’imposer. L’ensemble fonctionne aussi bien sur fond clair que sur un fond d’encre inversé.
 
 ## 4. Ton éditorial
 
-**Voix : personnelle, précise, sans affèterie.**
-Alison Boardman s’exprime comme une artisane du goût, qui connaît chaque objet et le travail du fabricant. Pas de superlatifs vides ni d’anglicismes plaqués. Le vocabulaire est concret : essence de bois, provenance, usage, entretien. Le registre est celui d’une conversation de confiance avec un client fidèle — ni publicitaire, ni distant.
-
-**Niveau de langue :** soutenu mais fluide, ponctué de phrases brèves qui laissent respirer les visuels.
+Voix posée, cultivée mais jamais précieuse. Le vouvoiement instaure une distance respectueuse ; les phrases ont du souffle, des incidentes maîtrisées, un lexique de l’ameublement et de l’architecture précis (on parle « parclose », « chapiteau », « patine » sans jargonner). Le registre invite à la lenteur de la découverte — on feuillette plus qu’on ne scrolle. Pas d’exclamation, pas d’injonction commerciale.
 
 ## 5. Accroche héro
 
-**Titre :** *Des objets qui ont déjà une histoire, prêts à entrer dans la vôtre.*
-**Sous-titre :** Meubles, luminaires et art de la table choisis par Alison Boardman, au cœur du village de Passy.
+**Titre** : Une certaine idée de l’intérieur
+**Sous-titre** : Alison Boardman façonne depuis vingt ans des lieux de vie où l’œil et le geste se répondent. Showroom, projets sur mesure et collection d’objets au 17 rue de l’Annonciation.
 
-## 6. Sections (page d’accueil)
+## 6. Sections
 
-1.  **Héritage & savoir-faire**
-    *Titre :* L’atelier derrière la boutique
-    *Contenu :* Alison Boardman collabore depuis vingt ans avec des ébénistes, céramistes et verriers d’Angleterre et de France. Chaque pièce raconte un geste, une matière, une patience.
-
-2.  **La sélection du moment**
-    *Titre :* Nos préférences cette saison
-    *Contenu :* Une table de ferme galloise en chêne rouvre, une série de bols en grès de Leach Pottery, un miroir vénitien retaillé dans un châssis de fenêtre anglaise. Les arrivages sont uniques, le choix se renouvelle au gré des coups de cœur.
-
-3.  **L’esprit du lieu**
-    *Titre :* Poussez la porte du 17 rue de l’Annonciation
-    *Contenu :* Une ancienne boucherie de quartier devenue un cocon de bois clair et de lumière. Ici, on prend le temps d’essayer, de toucher, d’imaginer l’objet dans sa propre maison.
-
-4.  **Ce que nos clients racontent**
-    *Titre :* La confiance, depuis 2008
-    *Contenu :* (témoignages réels extraits des avis Google, retranscrits sans fioritures)
-
-5.  **Informations pratiques**
-    *Titre :* Venir, écrire, appeler
-    *Contenu :* 17 Rue de l’Annonciation, Paris 16ᵉ — Ouvert du mardi au samedi, 10h30–13h / 14h30–19h. Téléphone : 01 40 50 37 33. La boutique est à deux pas du marché, dans la portion piétonne de la rue.
+1. **Le regard d’Alison**
+   *Une designer britannique installée à Paris, un parcours entre les ateliers d’artisans français et l’héritage des arts décoratifs anglais. Sa signature : des intérieurs qui résistent au temps, patiemment composés.*
+2. **La boutique**
+   *Un ancien pas-de-porte du quartier de la Muette transformé en écrin chaleureux. Chaque objet — coussin, lampe, table de ferme, céramique — est choisi pour sa vérité de matière et sa capacité à tenir le regard.*
+3. **Projets sur mesure**
+   *Du relevé au suivi de chantier, Alison Boardman imagine et orchestre des rénovations complètes. Appartements haussmanniens, maisons de famille, pied-à-terre : chaque projet est une réponse à un mode de vie, jamais un style plaqué.*
+4. **La collection permanente**
+   *Mobilier, luminaires et accessoires en édition limitée — souvent issus de collaborations avec des artisans du Grand Ouest ou de Toscane. Des pièces qui traversent les modes.*
+5. **Venir & échanger**
+   *Prendre rendez-vous pour une consultation privée ou simplement s’attarder rue de l’Annonciation. Téléphone, courriel et plan du quartier avec les bonnes adresses.*
 
 ## 7. Signature visuelle
 
-**1. Le monogramme « AB » en filigrane.**
-Un motif de ligature entre le A et le B, dessiné comme un fil de fer épais, apparaît en transparence (opacité 6 %) sur les fonds d’écran de la section « Héritage ». Il change d’échelle au scroll, passant de discrets 80 px à un détail monumental de 600 px semi-coupé.
+- **Cadrage « coupé au massicot »** : toutes les photographies sont présentées dans un cadre blanc irrégulier qui évoque le tirage d’art posé sur une table de travail. Les bords ne sont jamais parfaitement droits : un infime décalage d’angle fait « pièce unique ».
+- **Animation de révélation** : au scroll, chaque section se dévoile comme derrière un voile de lin qui se soulève latéralement — mouvement unique, orchestré une seule fois, déclenchant un approfondissement subtil du fond (le calcaire pâle devient lin écru pour la section suivante, puis s’inverse). Ce balayage textile est le seul effet d’ampleur du site.
 
-**2. Traitement des images : le « vignettage chaud ».**
-Toutes les photographies de produits et d’ambiance reçoivent un vignettage léger (assombrissement progressif des bords) et une dominante chaude tirant vers le ton « Bois ciré ». Cela crée une signature visuelle immédiate, comme si chaque image était regardée à travers une loupe d’antiquaire.
-
-**3. Animation d’apparition : le « posé délicat ».**
-À l’arrivée dans le viewport, les fiches produits ne surgissent pas mais se « posent » : une ombre portée douce (couleur `#2A2E36` à 10 %) s’élargit en 600 ms, tandis que l’image monte de 12 px. L’effet évoque le geste de déposer un objet fragile sur une table.
-
-**4. Typographie expressive : les grandes italiques Bricolage.**
-Certains mots-clés des accroches (« histoire », « vôtre », « geste », « patience ») sont composés en Bricolage Grotesque italique et surdimensionnés (2x le corps courant) à la manière de lettrines déstructurées, chevauchant légèrement le bloc de texte. Ce traitement donne une nervosité contemporaine à l’ensemble serein.
-
----
-
-Ce brief prend le contre-pied total du site fantôme actuel : il transforme une absence numérique en une présence en ligne mémorable, fidèle à l’énergie réelle du commerce — discrète, exigeante, chaleureuse.
+La police *Bricolage Grotesque* est utilisée pour le nom de la maison en couverture, à une échelle monumentale (le A et le B entrent en résonance comme deux initiales enlacées). Elle revient pour les titres de section en pleine largeur, avec un crénage serré qui évoque les enseignes au pochoir de l’artisanat. *Hanken Grotesk* prend le relais pour les textes, dans une mise en page aérée proche de l’édition.
