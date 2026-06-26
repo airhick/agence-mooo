@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde Ma Muse – Bijoux en vermeil & pierres naturelles à Paris</title>
+    <meta name="description" content="Créations en vermeil & pierres naturelles, imaginées une à une à l'atelier parisien de Mathilde Ma Muse. Sur rendez-vous au 10 Rue Oswaldo Cruz, Paris.">
+    <meta property="og:title" content="Mathilde Ma Muse – Bijoux d'atelier parisien">
+    <meta property="og:description" content="Vos bijoux ne sont pas des accessoires. Créations en vermeil & pierres protectrices, faites à Paris en souriant.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#1F4A3D">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💎%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --lin: #F7F4EB;
+            --anthracite: #2E3A3D;
+            --vert-jardin: #1F4A3D;
+            --bronze: #B8915A;
+            --sable: #EAE2D2;
+            --ardoise: #4B5C60;
+            --font-display: 'Bricolage Grotesque', serif;
+            --font-body: 'Hanken Grotesk', sans-serif;
+            --grain-opacity: 0.028;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--lin);
+            color: var(--anthracite);
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* Descender style for 'f' letters */
+        .descender {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            transform: translateY(0.18em);
+            letter-spacing: -0.02em;
+            transition: transform 0.3s ease;
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--vert-jardin);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 244, 235, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--sable);
+            padding: 0.75rem 1.25rem;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        header.scrolled {
+            box-shadow: 0 2px 24px rgba(46, 58, 61, 0.08);
+        }
+        .header-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--vert-jardin);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .header-brand span {
+            color: var(--bronze);
+            font-weight: 500;
+        }
+        .header-nav {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--anthracite);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bronze);
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--vert-jardin);
+        }
+        .header-cta {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            padding: 0.6rem 1.25rem;
+            border-radius: 40px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            border: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: var(--vert-jardin);
+            color: #F7F4EB;
+        }
+        .btn-primary:hover {
+            background: #17382e;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(31, 74, 61, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--vert-jardin);
+            border: 1.5px solid var(--vert-jardin);
+        }
+        .btn-outline:hover {
+            background: var(--vert-jardin);
+            color: #F7F4EB;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(31, 74, 61, 0.2);
+        }
+        .btn-bronze {
+            background: var(--bronze);
+            color: #F7F4EB;
+        }
+        .btn-bronze:hover {
+            background: #a07d4a;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(184, 145, 90, 0.35);
+        }
+
+        /* Badge Google */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(247, 244, 235, 0.9);
+            border: 1px solid var(--sable);
+            border-radius: 30px;
+            padding: 0.45rem 1rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--anthracite);
+            letter-spacing: 0.01em;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .google-badge .star {
+            color: #e4a83d;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        /* Main */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section spacing */
+        section {
+            padding: 4rem 1.25rem;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 2rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            section {
+                padding: 7rem 2.5rem;
+            }
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Filet décoratif */
+        .filet-bronze {
+            width: 60px;
+            height: 1.5px;
+            background: var(--bronze);
+            margin: 0 auto 2rem;
+            border: none;
+            opacity: 0.7;
+        }
+        .filet-bronze.left {
+            margin: 0 0 2rem;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 1.5rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(0.7);
+            transform: scale(1.02);
+            animation: heroBreath 12s ease-in-out infinite;
+        }
+        @keyframes heroBreath {
+            0%,
+            100% {
+                transform: scale(1.02);
+            }
+            50% {
+                transform: scale(1.06);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 74, 61, 0.35) 0%, rgba(46, 58, 61, 0.55) 60%, rgba(46, 58, 61, 0.75) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--sable);
+            border: 1px solid rgba(184, 145, 90, 0.6);
+            border-radius: 30px;
+            padding: 0.4rem 1.1rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            color: #F7F4EB;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--bronze);
+            font-weight: 600;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(247, 244, 235, 0.85);
+            line-height: 1.5;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Halo effect for jewelry images */
+        .halo-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+        .halo-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(184, 145, 90, 0.25) 0%, transparent 68%);
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            pointer-events: none;
+            z-index: 2;
+            border-radius: inherit;
+        }
+        .halo-img.revealed::after {
+            opacity: 1;
+        }
+        .halo-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease, filter 0.7s ease;
+            border-radius: inherit;
+        }
+        .halo-img:hover img {
+            transform: scale(1.04);
+            filter: brightness(1.05);
+        }
+
+        /* Section titles */
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--vert-jardin);
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            color: var(--ardoise);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* TRESORS */
+        .tresors-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 640px) {
+            .tresors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 960px) {
+            .tresors-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+        }
+        .tresor-card {
+            background: #fffefb;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(46, 58, 61, 0.06), 0 1px 3px rgba(46, 58, 61, 0.04);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            position: relative;
+        }
+        .tresor-card:hover {
+            box-shadow: 0 16px 40px rgba(46, 58, 61, 0.12), 0 2px 8px rgba(31, 74, 61, 0.08);
+            transform: translateY(-4px);
+        }
+        .tresor-card .card-img {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+        .tresor-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tresor-card .card-body {
+            padding: 1.5rem;
+            position: relative;
+        }
+        .tresor-card .card-body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            right: 1.5rem;
+            height: 1px;
+            background: var(--sable);
+        }
+        .tresor-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.15rem, 2vw, 1.35rem);
+            color: var(--vert-jardin);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.4rem;
+        }
+        .tresor-card .price {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--bronze);
+        }
+        .tresor-card .specs {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--ardoise);
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        /* CATEGORIES */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        @media (min-width: 600px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        @media (min-width: 960px) {
+            .categories-grid {
+                grid-template-columns: repeat(6, 1fr);
+                gap: 1.25rem;
+            }
+        }
+        .category-card {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--sable);
+            box-shadow: 0 3px 12px rgba(46, 58, 61, 0.05);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+        }
+        .category-card:hover {
+            box-shadow: 0 10px 28px rgba(46, 58, 61, 0.15);
+            transform: translateY(-3px);
+        }
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+        .category-card:hover img {
+            transform: scale(1.07);
+            filter: brightness(1.08);
+        }
+        .category-card .cat-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.2rem 0.8rem;
+            background: linear-gradient(transparent, rgba(31, 74, 61, 0.85));
+            color: #F7F4EB;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            letter-spacing: 0.01em;
+            text-align: center;
+            z-index: 2;
+            transition: padding 0.3s ease;
+        }
+        .category-card:hover .cat-label {
+            padding-bottom: 1.6rem;
+        }
+        .category-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(184, 145, 90, 0.2) 0%, transparent 65%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .category-card:hover::after {
+            opacity: 1;
+        }
+
+        /* CREATRICE */
+        .creatrice-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .creatrice-layout {
+                grid-template-columns: 1fr 1.3fr;
+                gap: 3.5rem;
+            }
+        }
+        .creatrice-portrait {
+            aspect-ratio: 4/5;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(46, 58, 61, 0.1);
+            position: relative;
+        }
+        .creatrice-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.05) brightness(0.95);
+            transition: filter 0.5s ease;
+        }
+        .creatrice-portrait:hover img {
+            filter: grayscale(0.7) contrast(1.02) brightness(1);
+        }
+        .creatrice-text h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            color: var(--vert-jardin);
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+        .creatrice-text p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: var(--anthracite);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .creatrice-text .highlight {
+            color: var(--bronze);
+            font-weight: 500;
+        }
+
+        /* COMMANDE */
+        .commande-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            counter-reset: step;
+        }
+        @media (min-width: 640px) {
+            .commande-steps {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+            padding: 2rem 1.25rem;
+            background: #fffefb;
+            border-radius: 16px;
+            box-shadow: 0 3px 16px rgba(46, 58, 61, 0.05);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            counter-increment: step;
+        }
+        .step-card:hover {
+            box-shadow: 0 10px 30px rgba(46, 58, 61, 0.1);
+            transform: translateY(-3px);
+        }
+        .step-number {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--vert-jardin);
+            color: #F7F4EB;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 44px;
+            margin-bottom: 1rem;
+            letter-spacing: 0;
+        }
+        .step-card h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--vert-jardin);
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.005em;
+        }
+        .step-card p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--ardoise);
+            line-height: 1.5;
+        }
+
+        /* AVIS */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .avis-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 960px) {
+            .avis-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        .avis-card {
+            background: #fffefb;
+            border-radius: 14px;
+            padding: 1.75rem;
+            box-shadow: 0 3px 14px rgba(46, 58, 61, 0.05);
+            border-left: 3px solid var(--bronze);
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
+            position: relative;
+        }
+        .avis-card:hover {
+            box-shadow: 0 8px 26px rgba(46, 58, 61, 0.1);
+            transform: translateY(-2px);
+        }
+        .avis-stars {
+            color: #e4a83d;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+        .avis-card blockquote {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--anthracite);
+            line-height: 1.6;
+            font-style: italic;
+            quotes: none;
+            margin: 0;
+        }
+        .avis-card .avis-author {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--vert-jardin);
+            margin-top: 0.9rem;
+            letter-spacing: 0.01em;
+        }
+        .avis-card .avis-date {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--ardoise);
+        }
+
+        /* INFOS PRATIQUES */
+        .infos-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .infos-layout {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .infos-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .info-block h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--vert-jardin);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+        .info-block p,
+        .info-block a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--anthracite);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        .info-block a:hover {
+            color: var(--bronze);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .info-highlight {
+            display: inline-block;
+            background: var(--sable);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--vert-jardin);
+            letter-spacing: 0.01em;
+        }
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(46, 58, 61, 0.1);
+            aspect-ratio: 4/3;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Monstera filigrane */
+        .filigrane-monstera {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.06;
+            width: 180px;
+            height: 180px;
+            color: var(--bronze);
+        }
+        .filigrane-monstera.top-right {
+            top: -30px;
+            right: -40px;
+            transform: rotate(15deg);
+        }
+        .filigrane-monstera.bottom-left {
+            bottom: -40px;
+            left: -30px;
+            transform: rotate(-160deg);
+            width: 140px;
+            height: 140px;
+        }
+        @media (min-width: 768px) {
+            .filigrane-monstera {
+                width: 240px;
+                height: 240px;
+            }
+            .filigrane-monstera.bottom-left {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #2b3538;
+            color: rgba(247, 244, 235, 0.8);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        footer .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #F7F4EB;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+        footer a {
+            color: var(--bronze);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #d4ad6e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        footer .footer-credit {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(184, 145, 90, 0.25);
+            font-size: 0.8rem;
+            color: rgba(247, 244, 235, 0.5);
+        }
+        footer .footer-credit a {
+            color: rgba(247, 244, 235, 0.55);
+        }
+
+        /* Utility: visually hidden */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive nav toggle (simple) */
+        @media (max-width: 767px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(247, 244, 235, 0.97);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 2px solid var(--sable);
+                box-shadow: 0 8px 20px rgba(46, 58, 61, 0.1);
+            }
+            .header-nav.open {
+                display: flex;
+            }
+            .header-burger {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.4rem;
+                z-index: 101;
+            }
+            .header-burger span {
+                display: block;
+                width: 26px;
+                height: 2px;
+                background: var(--anthracite);
+                margin: 6px 0;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+            }
+            .header-burger.open span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+            .header-burger.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .header-burger.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+        }
+        @media (min-width: 768px) {
+            .header-burger {
+                display: none;
+            }
+            .header-nav {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="header-inner">
+            <a href="#" class="header-brand">Mathilde<span>&nbsp;Ma Muse</span></a>
+            <button class="header-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="header-nav" id="mainNav">
+                    <li><a href="#tresors">Trésors</a></li>
+                    <li><a href="#categories">Catégories</a></li>
+                    <li><a href="#creatrice">L'Atelier</a></li>
+                    <li><a href="#commande">Sur mesure</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#infos">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:+33688245962" class="btn btn-outline" style="font-size:0.8rem;padding:0.5rem 1rem;">📞&nbsp;Appeler</a>
+                <a href="#creatrice" class="btn btn-primary">Rendez‑vous</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Atelier Mathilde Ma Muse – bijoux posés sur un écrin, plantes suspendues" loading="eager">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content section-inner">
+                <span class="hero-tag">Paris · Atelier d'artisanat</span>
+                <h1>Vos bijoux ne sont pas des&nbsp;accessoires.</h1>
+                <p class="hero-subtitle">Créations en vermeil & pierres naturelles, imaginées une à une à son atelier parisien — sur rendez‑vous.</p>
+                <div class="hero-actions">
+                    <a href="#creatrice" class="btn btn-primary">Prendre rendez‑vous à l'atelier</a>
+                    <div class="google-badge">
+                        <span class="star">★</span> 4.9/5 &nbsp;·&nbsp; 21 avis
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRESORS D'ATELIER -->
+        <section id="tresors">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Trésors d'atelier</h2>
+                    <hr class="filet-bronze" aria-hidden="true">
+                    <p class="section-subtitle">Trois pièces emblématiques, <span class="descender">f</span>açonnées à la main dans l'esprit du Jardin d'Hiver.</p>
+                </div>
+                <div class="tresors-grid">
+                    <div class="tresor-card reveal reveal-delay-1">
+                        <div class="card-img halo-img">
+                            <img src="assets/maps-2.jpg" alt="Collier Jardin d'Hiver en vermeil et pierres apaisantes" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3>Collier Jardin d'Hiver</h3>
+                            <span class="price">À partir de 230&nbsp;€</span>
+                            <p class="specs">Vermeil · Pierres apaisantes · <span class="descender">f</span>ermoir délicat</p>
+                        </div>
+                    </div>
+                    <div class="tresor-card reveal reveal-delay-2">
+                        <div class="card-img halo-img">
+                            <img src="assets/maps-3.jpg" alt="Bracelet Médaillon Secret en argent 925" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3>Bracelet Médaillon Secret</h3>
+                            <span class="price">À partir de 195&nbsp;€</span>
+                            <p class="specs">Argent 925 · Médaille gravée · Chaîne <span class="descender">f</span>orêt</p>
+                        </div>
+                    </div>
+                    <div class="tresor-card reveal reveal-delay-3">
+                        <div class="card-img halo-img">
+                            <img src="assets/maps-4.jpg" alt="Boucles d'oreilles Goutte en vermeil" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3>Boucles d'oreilles Goutte</h3>
+                            <span class="price">À partir de 160&nbsp;€</span>
+                            <p class="specs">Vermeil · Pierre de lune · <span class="descender">f</span>inition polie miroir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <section id="categories" style="background: #faf9f4;">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Catégories</h2>
+                    <hr class="filet-bronze" aria-hidden="true">
+                    <p class="section-subtitle">Explorer par <span class="descender">f</span>amille de pièces.</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card halo-img reveal reveal-delay-1">
+                        <img src="assets/maps-2.jpg" alt="Bagues" loading="lazy">
+                        <span class="cat-label">Bagues</span>
+                    </div>
+                    <div class="category-card halo-img reveal reveal-delay-1">
+                        <img src="assets/maps-3.jpg" alt="Boucles" loading="lazy">
+                        <span class="cat-label">Boucles</span>
+                    </div>
+                    <div class="category-card halo-img reveal reveal-delay-2">
+                        <img src="assets/maps-4.jpg" alt="Bracelets" loading="lazy">
+                        <span class="cat-label">Bracelets</span>
+                    </div>
+                    <div class="category-card halo-img reveal reveal-delay-2">
+                        <img src="assets/maps-5.jpg" alt="Colliers & Sautoirs" loading="lazy">
+                        <span class="cat-label">Colliers &amp;&nbsp;Sautoirs</span>
+                    </div>
+                    <div class="category-card halo-img reveal reveal-delay-3">
+                        <img src="assets/maps-6.jpg" alt="Nouveautés" loading="lazy">
+                        <span class="cat-label">Nouveautés</span>
+                    </div>
+                    <div class="category-card halo-img reveal reveal-delay-3">
+                        <img src="assets/maps-1.jpg" alt="Sur mesure" loading="lazy">
+                        <span class="cat-label">Sur&nbsp;mesure</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA CREATRICE & L'ATELIER -->
+        <section id="creatrice" style="position:relative;overflow:hidden;">
+            <!-- Filigrane monstera -->
+            <svg class="filigrane-monstera top-right" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M100 20 C60 20 20 55 20 100 C20 140 50 170 90 175 C85 155 75 130 80 105 C85 80 100 65 115 70 C125 73 130 85 125 100 C118 120 100 140 95 160 C108 155 125 140 140 120 C160 95 170 60 150 35 C135 15 115 20 100 20Z" stroke="currentColor" stroke-width="1.8" fill="none" opacity="0.8"/>
+                <ellipse cx="100" cy="105" rx="12" ry="18" fill="currentColor" opacity="0.5"/>
+                <circle cx="85" cy="55" r="6" fill="currentColor" opacity="0.5"/>
+                <circle cx="130" cy="60" r="5" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <div class="section-inner" style="position:relative;z-index:1;">
+                <div class="creatrice-layout">
+                    <div class="creatrice-portrait reveal">
+                        <img src="assets/maps-5.jpg" alt="Portrait – l'atelier de Mathilde Ma Muse" loading="lazy">
+                    </div>
+                    <div class="creatrice-text reveal reveal-delay-1">
+                        <h2>La créatrice &amp;&nbsp;l'atelier</h2>
+                        <hr class="filet-bronze left" aria-hidden="true">
+                        <p>Je m'amuse des pierres et des matières depuis plus de dix ans. Chaque bijou naît à mon établi, rue Oswaldo Cruz, entre les plantes et le sourire des clientes.</p>
+                        <p>Ici, on parle <span class="highlight">vermeil, argent 925, pierres protectrices</span> — avec la précision d'une <span class="descender">f</span>leuriste et la liberté d'une <span class="descender">f</span>laneuse. Les pièces sont <span class="descender">f</span>aites à Paris, en souriant, une à une.</p>
+                        <a href="tel:+33688245962" class="btn btn-bronze" style="margin-top:0.75rem;">Prendre rendez‑vous à l'atelier</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMANDE PERSONNALISEE -->
+        <section id="commande" style="background:#faf9f4;">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <h2 class="section-title">La commande personnalisée</h2>
+                    <hr class="filet-bronze" aria-hidden="true">
+                    <p class="section-subtitle">Un chemin en trois étapes, comme on pousse la porte d'un atelier d'artiste.</p>
+                </div>
+                <div class="commande-steps">
+                    <div class="step-card reveal reveal-delay-1">
+                        <span class="step-number">1</span>
+                        <h4>Votre envie</h4>
+                        <p>On en parle par mail ou à l'atelier. Vous me racontez l'histoire, l'occasion, le geste.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-2">
+                        <span class="step-number">2</span>
+                        <h4>Choix des pierres</h4>
+                        <p>Pierre de protection, médaille personnalisée… Je vous guide parmi les possibles.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-3">
+                        <span class="step-number">3</span>
+                        <h4><span class="descender">F</span>abrication</h4>
+                        <p>2 à 4 semaines de <span class="descender">f</span>abrication. Chaque bijou est emballé dans son pochon par<span class="descender">f</span>umé.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section id="avis" style="position:relative;overflow:hidden;">
+            <svg class="filigrane-monstera bottom-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M100 20 C60 20 20 55 20 100 C20 140 50 170 90 175 C85 155 75 130 80 105 C85 80 100 65 115 70 C125 73 130 85 125 100 C118 120 100 140 95 160 C108 155 125 140 140 120 C160 95 170 60 150 35 C135 15 115 20 100 20Z" stroke="currentColor" stroke-width="1.8" fill="none" opacity="0.8"/>
+                <ellipse cx="100" cy="105" rx="12" ry="18" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <div class="section-inner" style="position:relative;z-index:1;">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Avis qui nous touchent</h2>
+                    <hr class="filet-bronze" aria-hidden="true">
+                    <p class="section-subtitle">Note générale <strong style="color:var(--vert-jardin);">4,9/5</strong> basée sur 21 avis.</p>
+                </div>
+                <div class="avis-grid">
+                    <div class="avis-card reveal reveal-delay-1">
+                        <div class="avis-stars">★★★★★</div>
+                        <blockquote>«&nbsp;J'ai reçu mon collier Jardin d'Hiver, délicatement par<span class="descender">f</span>umé… Il veille sur moi depuis.&nbsp;»</blockquote>
+                        <p class="avis-author">Catherine <span class="avis-date">· janvier 2025</span></p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-2">
+                        <div class="avis-stars">★★★★★</div>
+                        <blockquote>«&nbsp;Un bracelet unique, <span class="descender">f</span>ait avec tant de soin. Les pierres sont magni<span class="descender">f</span>iques et l'accueil est adorable.&nbsp;»</blockquote>
+                        <p class="avis-author">Sophie <span class="avis-date">· mars 2025</span></p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <div class="avis-stars">★★★★★</div>
+                        <blockquote>«&nbsp;J'ai o<span class="descender">f</span><span class="descender">f</span>ert des boucles d'oreilles à ma sœur, elle ne les quitte plus. Le pochon par<span class="descender">f</span>umé est une délicate attention.&nbsp;»</blockquote>
+                        <p class="avis-author">Léa <span class="avis-date">· février 2025</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES & CONTACT -->
+        <section id="infos" style="background:#faf9f4;">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <h2 class="section-title">In<span class="descender">f</span>os pratiques &amp;&nbsp;Contact</h2>
+                    <hr class="filet-bronze" aria-hidden="true">
+                </div>
+                <div class="infos-layout">
+                    <div class="infos-details reveal reveal-delay-1">
+                        <div class="info-block">
+                            <h3>Adresse</h3>
+                            <p>10 Rue Oswaldo Cruz<br>75016 Paris, France</p>
+                        </div>
+                        <div class="info-block">
+                            <h3>Téléphone</h3>
+                            <a href="tel:+33688245962">06 88 24 59 62</a>
+                        </div>
+                        <div class="info-block">
+                            <h3>Email</h3>
+                            <a href="mailto:info@mathildemamuse.com">info@mathildemamuse.com</a>
+                        </div>
+                        <div class="info-block">
+                            <h3>Horaires</h3>
+                            <p>Sur rendez‑vous uniquement.<br>Merci de nous contacter pour convenir d'un créneau.</p>
+                            <span class="info-highlight" style="margin-top:0.5rem;">🕐 Horaires à confirmer</span>
+                        </div>
+                        <div class="info-block">
+                            <h3>Livraison &amp;&nbsp;Paiement</h3>
+                            <p>Livraison o<span class="descender">f</span><span class="descender">f</span>erte dès 150&nbsp;€ · Paiement 3× sans <span class="descender">f</span>rais</p>
+                        </div>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Mathilde+Ma+Muse+10+Rue+Oswaldo+Cruz%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de l'atelier Mathilde Ma Muse"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-brand">Mathilde Ma Muse</p>
+        <p>10 Rue Oswaldo Cruz · 75016 Paris<br>
+            <a href="tel:+33688245962">06 88 24 59 62</a> · <a href="mailto:info@mathildemamuse.com">info@mathildemamuse.com</a></p>
+        <p class="footer-credit">Site créé par <a href="https://agence.mooo.com/mathilde-ma-muse" target="_blank" rel="noopener">Agence&nbsp;Mooo</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Mathilde Ma Muse",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "10 Rue Oswaldo Cruz",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33688245962",
+            "email": "info@mathildemamuse.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "21"
+            },
+            "priceRange": "€€",
+            "description": "Créations en vermeil & pierres naturelles, imaginées une à une à son atelier parisien."
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Burger menu toggle
+            const burger = document.getElementById('burger');
+            const nav = document.getElementById('mainNav');
+            if (burger && nav) {
+                burger.addEventListener('click', function() {
+                    const isOpen = nav.classList.toggle('open');
+                    burger.classList.toggle('open');
+                    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+                // Close nav on link click (mobile)
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('open');
+                        burger.classList.remove('open');
+                        burger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header scroll shadow
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Wrap 'f' letters in titles with descender spans
+            function wrapDescenders() {
+                const titleSelectors = 'h1, h2, h3, .hero-subtitle, .section-subtitle';
+                const titles = document.querySelectorAll(titleSelectors);
+                titles.forEach(title => {
+                    // Only process if not already wrapped
+                    if (title.querySelector('.descender')) return;
+                    title.innerHTML = title.innerHTML.replace(
+                        /(f)/gi,
+                        '<span class="descender">$1</span>'
+                    );
+                });
+                // Also wrap in blockquotes and specific text blocks
+                const extraSelectors = 'blockquote, .specs, .step-card p, .info-block p, .creatrice-text p';
+                const extras = document.querySelectorAll(extraSelectors);
+                extras.forEach(el => {
+                    if (el.querySelector('.descender')) return;
+                    el.innerHTML = el.innerHTML.replace(
+                        /(f)/gi,
+                        '<span class="descender">$1</span>'
+                    );
+                });
+            }
+            wrapDescenders();
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal, .halo-img');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Fallback: reveal all after 3s if observer hasn't fired (for any missed)
+            setTimeout(() => {
+                revealElements.forEach(el => {
+                    if (!el.classList.contains('revealed')) {
+                        el.classList.add('revealed');
+                    }
+                });
+            }, 3500);
+        })();
+    </script>
+</body>
