@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LES MENUS SERVICES PARIS 15 — Sarah cuisine, vous déjeunez. Plats livrés à domicile dans le 15e.</title>
+    <meta name="description" content="Des plats mijotés livrés à domicile dans le 15e arrondissement par Sarah et son équipe. Menu de la semaine, sans engagement, dès 12,80 €. Appelez-nous au 01 78 09 52 30.">
+    <meta property="og:title" content="LES MENUS SERVICES PARIS 15 — Sarah cuisine, vous déjeunez.">
+    <meta property="og:description" content="Des plats mijotés, livrés à domicile dans le 15e — sans engagement, simplement réconfortants. Découvrez le menu de la semaine.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fond: #F9F4EB;
+            --encre: #1E2F3F;
+            --abricot: #E57A44;
+            --vert: #5B7B4B;
+            --blanc-casse: #FDFAF5;
+            --presque-noir: #2B2B28;
+            --kraft: #C4A67A;
+            --trait: rgba(30, 47, 63, 0.12);
+            --ombre-douce: 0 2px 20px rgba(30, 47, 63, 0.07);
+            --ombre-carte: 0 4px 24px rgba(30, 47, 63, 0.10);
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: clamp(16px, 2vw, 18px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--encre);
+            background-color: var(--fond);
+            background-image:
+                radial-gradient(ellipse at 15% 20%, rgba(229, 122, 68, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 60%, rgba(91, 123, 75, 0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 90%, rgba(196, 166, 122, 0.06) 0%, transparent 60%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Texture grain subtile */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(249, 244, 235, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--trait);
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 18px rgba(30, 47, 63, 0.09);
+            background: rgba(249, 244, 235, 0.95);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 clamp(1.2rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            gap: 1.5rem;
+        }
+        .logo-text {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 2.6vw, 1.25rem);
+            letter-spacing: 0.03em;
+            color: var(--encre);
+            white-space: nowrap;
+            line-height: 1.15;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text small {
+            font-weight: 400;
+            font-size: 0.55em;
+            letter-spacing: 0.08em;
+            color: var(--abricot);
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2.5vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.25em 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--abricot);
+            transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 2px;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--abricot);
+            outline: none;
+        }
+        .nav-cta {
+            background: var(--abricot);
+            color: #fff !important;
+            padding: 0.55em 1.4em !important;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem !important;
+            transition: all 0.35s !important;
+            box-shadow: 0 2px 12px rgba(229, 122, 68, 0.25);
+            white-space: nowrap;
+        }
+        .nav-cta:hover {
+            background: #d16a35 !important;
+            box-shadow: 0 4px 20px rgba(229, 122, 68, 0.4) !important;
+            transform: translateY(-1px);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* Hamburger mobile */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--encre);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Sections communes */
+        .section {
+            padding: clamp(3rem, 8vw, 6rem) clamp(1.2rem, 6vw, 3rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--abricot);
+            margin-bottom: 0.6rem;
+            display: inline-block;
+            position: relative;
+            padding-left: 2.2em;
+        }
+        .section-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1.6em;
+            height: 2px;
+            background: var(--abricot);
+            transform: translateY(-50%);
+            border-radius: 1px;
+        }
+        .section-title {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            color: var(--encre);
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-weight: 400;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            color: var(--presque-noir);
+            opacity: 0.75;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            padding: 0;
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(1.02) saturate(1.05);
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(249, 244, 235, 0.15) 0%,
+                    rgba(249, 244, 235, 0.45) 50%,
+                    rgba(249, 244, 235, 0.92) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(3rem, 10vw, 8rem) clamp(1.2rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            padding-top: 18vh;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blanc-casse);
+            border: 1.5px solid var(--trait);
+            border-radius: 50px;
+            padding: 0.45em 1.2em;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre);
+            box-shadow: var(--ombre-douce);
+            width: fit-content;
+            letter-spacing: 0.03em;
+        }
+        .hero-badge .stars {
+            color: #F0A500;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+        }
+        .hero-title {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 8vw, 4.5rem);
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            color: var(--encre);
+            max-width: 700px;
+            position: relative;
+        }
+        .hero-title .highlight {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.08em;
+            left: -0.04em;
+            width: calc(100% + 0.08em);
+            height: 0.25em;
+            background: var(--abricot);
+            opacity: 0.35;
+            z-index: -1;
+            border-radius: 2px;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            color: var(--presque-noir);
+            max-width: 500px;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.75em 1.8em;
+            border-radius: 50px;
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: var(--abricot);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(229, 122, 68, 0.35);
+        }
+        .btn-primary:hover {
+            background: #d16a35;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(229, 122, 68, 0.45);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--encre);
+            border: 2px solid var(--encre);
+        }
+        .btn-outline:hover {
+            background: var(--encre);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--abricot);
+            outline-offset: 3px;
+        }
+
+        /* Ancre visuelle : filigrane manuscrit */
+        .hero-filigrane {
+            position: absolute;
+            right: clamp(1rem, 5vw, 3rem);
+            bottom: 3rem;
+            z-index: 3;
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 500;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--abricot);
+            opacity: 0.7;
+            transform: rotate(-6deg);
+            letter-spacing: 0.04em;
+            pointer-events: none;
+            font-style: italic;
+            text-shadow: 0 1px 2px rgba(249, 244, 235, 0.6);
+        }
+
+        /* ============ MENU CAROUSEL ============ */
+        .menu-section {
+            background: var(--blanc-casse);
+            position: relative;
+            border-top: 1px solid var(--trait);
+            border-bottom: 1px solid var(--trait);
+        }
+        .menu-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: repeating-linear-gradient(90deg, var(--abricot) 0px, var(--abricot) 12px, transparent 12px, transparent 20px);
+            opacity: 0.5;
+        }
+        .menu-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 2rem 0 1.5rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--kraft) transparent;
+            cursor: grab;
+        }
+        .menu-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+        .menu-carousel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .menu-carousel::-webkit-scrollbar-thumb {
+            background: var(--kraft);
+            border-radius: 10px;
+        }
+        .menu-card {
+            flex: 0 0 clamp(250px, 32vw, 320px);
+            scroll-snap-align: start;
+            background: var(--fond);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--ombre-carte);
+            transition: all 0.35s;
+            position: relative;
+            border: 1px solid var(--trait);
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(30, 47, 63, 0.15);
+        }
+        .menu-card-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .menu-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .menu-card:hover .menu-card-img img {
+            transform: scale(1.05);
+        }
+        .menu-card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--abricot);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3em 0.9em;
+            border-radius: 50px;
+            letter-spacing: 0.04em;
+            z-index: 2;
+        }
+        .menu-card-body {
+            padding: 1.3rem 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+        .menu-card-body h3 {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.01em;
+            color: var(--encre);
+        }
+        .menu-card-body p {
+            font-size: 0.9rem;
+            color: var(--presque-noir);
+            opacity: 0.7;
+            line-height: 1.4;
+            flex: 1;
+        }
+        .menu-card-price {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--abricot);
+            letter-spacing: 0.02em;
+        }
+        .menu-card-price small {
+            font-weight: 400;
+            font-size: 0.55em;
+            color: var(--presque-noir);
+            opacity: 0.6;
+        }
+        .menu-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.3rem;
+        }
+        .menu-option-pill {
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 50px;
+            border: 1.5px solid var(--trait);
+            background: transparent;
+            color: var(--encre);
+            letter-spacing: 0.03em;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .menu-option-pill:hover {
+            border-color: var(--abricot);
+            color: var(--abricot);
+            background: rgba(229, 122, 68, 0.05);
+        }
+
+        /* ============ AGENCE SARAH ============ */
+        .agence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+        .agence-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--ombre-carte);
+            aspect-ratio: 4/5;
+        }
+        .agence-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .agence-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid var(--abricot);
+            border-radius: 20px;
+            opacity: 0.3;
+            pointer-events: none;
+            transform: translate(12px, 12px);
+            z-index: -1;
+            transition: transform 0.4s;
+        }
+        .agence-image:hover::after {
+            transform: translate(6px, 6px);
+        }
+        .agence-text blockquote {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-style: italic;
+            color: var(--encre);
+            line-height: 1.5;
+            margin: 1.2rem 0;
+            padding-left: 1.5em;
+            border-left: 3px solid var(--abricot);
+            quotes: none;
+        }
+        .agence-text .signature {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 600;
+            color: var(--abricot);
+            letter-spacing: 0.05em;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ============ ÉTAPES ============ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .step-card {
+            background: var(--blanc-casse);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--trait);
+            box-shadow: var(--ombre-douce);
+            transition: all 0.35s;
+            position: relative;
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--ombre-carte);
+        }
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            background: var(--fond);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid var(--trait);
+            transition: all 0.35s;
+        }
+        .step-card:hover .step-icon {
+            border-color: var(--abricot);
+            background: rgba(229, 122, 68, 0.06);
+            transform: scale(1.05);
+        }
+        .step-card h3 {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+        }
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--presque-noir);
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+        .step-number {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--abricot);
+            opacity: 0.2;
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        /* ============ AVIS ============ */
+        .avis-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 2rem 0 1.5rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--kraft) transparent;
+        }
+        .avis-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+        .avis-carousel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .avis-carousel::-webkit-scrollbar-thumb {
+            background: var(--kraft);
+            border-radius: 10px;
+        }
+        .avis-card {
+            flex: 0 0 clamp(280px, 30vw, 350px);
+            scroll-snap-align: start;
+            background: var(--blanc-casse);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--trait);
+            box-shadow: var(--ombre-douce);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: all 0.35s;
+        }
+        .avis-card:hover {
+            box-shadow: var(--ombre-carte);
+            transform: translateY(-3px);
+        }
+        .avis-stars {
+            color: #F0A500;
+            letter-spacing: 0.1em;
+            font-size: 1.1rem;
+        }
+        .avis-card p {
+            font-style: italic;
+            color: var(--encre);
+            line-height: 1.5;
+            flex: 1;
+        }
+        .avis-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--presque-noir);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .avis-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--vert);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+        }
+        .presse-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--fond);
+            border: 1.5px solid var(--trait);
+            border-radius: 50px;
+            padding: 0.5em 1.3em;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre);
+            letter-spacing: 0.03em;
+            margin-top: 1.5rem;
+        }
+
+        /* ============ CONTACT ============ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-phone {
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            letter-spacing: 0.06em;
+            color: var(--abricot);
+            text-decoration: none;
+            transition: color 0.3s;
+            word-break: break-all;
+        }
+        .contact-phone:hover {
+            color: #d16a35;
+        }
+        .contact-address {
+            font-size: 1rem;
+            color: var(--encre);
+            line-height: 1.5;
+        }
+        .contact-address strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.2em;
+        }
+        .contact-horaires {
+            font-size: 0.9rem;
+            color: var(--presque-noir);
+            opacity: 0.75;
+            background: var(--blanc-casse);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid var(--trait);
+        }
+        .contact-form {
+            background: var(--blanc-casse);
+            border-radius: 18px;
+            padding: 2rem;
+            border: 1px solid var(--trait);
+            box-shadow: var(--ombre-carte);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .contact-form label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+        }
+        .contact-form input {
+            width: 100%;
+            padding: 0.85em 1.2em;
+            border-radius: 50px;
+            border: 2px solid var(--trait);
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-size: 1rem;
+            background: var(--fond);
+            color: var(--encre);
+            transition: all 0.3s;
+            outline: none;
+        }
+        .contact-form input:focus {
+            border-color: var(--abricot);
+            box-shadow: 0 0 0 4px rgba(229, 122, 68, 0.08);
+        }
+        .contact-form .btn {
+            align-self: flex-start;
+        }
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--ombre-carte);
+            border: 1px solid var(--trait);
+        }
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ============ FILIGRANE FIN DE PAGE ============ */
+        .filigrane-footer {
+            text-align: right;
+            padding: 2rem clamp(1.2rem, 6vw, 3rem);
+            font-family: 'Syne', system-ui, sans-serif;
+            font-weight: 500;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--abricot);
+            opacity: 0.6;
+            letter-spacing: 0.04em;
+            transform: rotate(-2deg);
+            pointer-events: none;
+            font-style: italic;
+        }
+
+        /* ============ FOOTER ============ */
+        .site-footer {
+            background: var(--encre);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem clamp(1.2rem, 6vw, 3rem) 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer-inner a {
+            color: var(--abricot);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        .footer-inner a:hover {
+            color: #f0b088;
+        }
+        .footer-credits {
+            text-align: center;
+            padding-top: 2rem;
+            opacity: 0.6;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        /* ============ PLATEAU ANIMÉ (hover uniquement) ============ */
+        .plateau-anime {
+            display: inline-block;
+            position: relative;
+            cursor: default;
+        }
+        .plateau-anime .plateau-assiette {
+            display: inline-block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 1.4em;
+            vertical-align: middle;
+        }
+        .plateau-anime:hover .plateau-assiette {
+            transform: scale(1.15) rotate(-5deg);
+        }
+        .plateau-anime .plateau-elements {
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-12px);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 0.85em;
+            vertical-align: middle;
+            color: var(--abricot);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .plateau-anime:hover .plateau-elements {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75vw;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--blanc-casse);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -8px 0 30px rgba(30, 47, 63, 0.15);
+                transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                z-index: 1000;
+                gap: 1.8rem;
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+            .agence-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-filigrane {
+                bottom: 1.5rem;
+                font-size: 0.9rem;
+            }
+            .menu-carousel {
+                gap: 1rem;
+            }
+            .menu-card {
+                flex: 0 0 75vw;
+            }
+            .avis-card {
+                flex: 0 0 75vw;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: clamp(1.8rem, 7vw, 2.4rem);
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .btn {
+                text-align: center;
+                justify-content: center;
+            }
+            .menu-card {
+                flex: 0 0 82vw;
+            }
+            .avis-card {
+                flex: 0 0 82vw;
+            }
+            .contact-phone {
+                font-size: 1.3rem;
+                letter-spacing: 0.03em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo-text" aria-label="LES MENUS SERVICES PARIS 15 — Accueil">
+                Les Menus Services
+                <small>Paris 15</small>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#menu">Le menu</a></li>
+                    <li><a href="#agence">L'agence</a></li>
+                    <li><a href="#fonctionnement">Comment ça marche</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact" class="nav-cta">Appeler Sarah</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Sarah souriante derrière son comptoir, un plateau-repas à la main" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="stars">★</span> 4.6/5 sur 27 avis Google
+                </div>
+                <h1 class="hero-title reveal reveal-delay-1">
+                    <span class="highlight">Sarah cuisine,</span><br>vous déjeunez.
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-2">
+                    Des plats mijotés, livrés à domicile dans le 15<sup>e</sup> — sans engagement, simplement réconfortants.
+                </p>
+                <div class="hero-actions reveal reveal-delay-3">
+                    <a href="tel:+33178095230" class="btn btn-primary">📞 01 78 09 52 30</a>
+                    <a href="#menu" class="btn btn-outline">Voir le menu de la semaine</a>
+                </div>
+            </div>
+            <div class="hero-filigrane reveal reveal-delay-4">Bon appétit ! — Sarah</div>
+        </section>
+
+        <!-- MENU DE LA SEMAINE -->
+        <section class="section menu-section" id="menu">
+            <div class="section-inner">
+                <span class="section-label reveal">Cette semaine</span>
+                <h2 class="section-title reveal reveal-delay-1">Ce qu'on vous prépare cette semaine</h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    Des plats de saison, faits maison dans notre cuisine du 15<sup>e</sup>. Personnalisable en un clic — sans sel, mixé, diabétique.
+                </p>
+                <div class="menu-carousel reveal reveal-delay-3">
+                    <article class="menu-card">
+                        <div class="menu-card-img">
+                            <img src="assets/maps-2.jpg" alt="Velouté de carottes au gingembre frais" loading="lazy">
+                            <span class="menu-card-tag">Entrée</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3>Velouté de carottes au gingembre</h3>
+                            <p>Carottes bio, gingembre frais, crème de coco, coriandre. Onctueux et réconfortant.</p>
+                            <div class="menu-options">
+                                <span class="menu-option-pill">🧂 Sans sel</span>
+                                <span class="menu-option-pill">🥄 Mixé</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img">
+                            <img src="assets/maps-3.jpg" alt="Blanquette de veau à l'ancienne" loading="lazy">
+                            <span class="menu-card-tag">Plat</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3>Blanquette de veau à l'ancienne</h3>
+                            <p>Viande tendre, carottes fondantes, sauce onctueuse, riz parfumé. Un classique mijoté.</p>
+                            <div class="menu-options">
+                                <span class="menu-option-pill">🧂 Sans sel</span>
+                                <span class="menu-option-pill">🍬 Diabétique</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img">
+                            <img src="assets/maps-4.jpg" alt="Compotée de fruits de saison" loading="lazy">
+                            <span class="menu-card-tag">Dessert</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3>Compotée pomme-poire cannelle</h3>
+                            <p>Fruits de saison pochés, pointe de cannelle, sans sucre ajouté. Douceur naturelle.</p>
+                            <div class="menu-options">
+                                <span class="menu-option-pill">🍬 Diabétique</span>
+                                <span class="menu-option-pill">🥄 Mixé</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img">
+                            <img src="assets/maps-5.jpg" alt="Saumon en papillote, légumes vapeur" loading="lazy">
+                            <span class="menu-card-tag">Plat</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3>Saumon en papillote, riz citronné</h3>
+                            <p>Filet de saumon frais, courgettes, herbes du jardin, filet d'huile d'olive.</p>
+                            <div class="menu-options">
+                                <span class="menu-option-pill">🧂 Sans sel</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <p class="reveal reveal-delay-3" style="font-weight:600;color:var(--abricot);margin-top:0.8rem;font-size:1.1rem;">
+                    <span class="plateau-anime">
+                        <span class="plateau-assiette">🍽️</span>
+                        <span class="plateau-elements">À partir de 12,80 € le repas complet</span>
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- L'AGENCE, C'EST SARAH -->
+        <section class="section" id="agence">
+            <div class="section-inner">
+                <span class="section-label reveal">Qui sommes-nous</span>
+                <h2 class="section-title reveal reveal-delay-1">Une voisine dans votre cuisine</h2>
+                <div class="agence-grid">
+                    <div class="agence-image reveal reveal-delay-2">
+                        <img src="assets/maps-6.jpg" alt="Sarah et son équipe dans l'agence du 15e" loading="lazy">
+                    </div>
+                    <div class="agence-text reveal reveal-delay-3">
+                        <blockquote>
+                            « Je choisis les produits, j'accueille les familles, je veille à ce que votre plateau arrive comme si je l'apportais moi-même. »
+                        </blockquote>
+                        <p class="signature">— Sarah, responsable d'agence</p>
+                        <p style="margin-top:1rem;color:var(--presque-noir);opacity:0.8;line-height:1.6;">
+                            Avec notre équipe de livreurs du quartier, nous connaissons chaque rue, chaque cage d'escalier du 15<sup>e</sup>. Nous livrons vos repas chauds, avec le sourire, du lundi au vendredi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMENT ÇA MARCHE -->
+        <section class="section" id="fonctionnement" style="background:var(--blanc-casse);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);">
+            <div class="section-inner">
+                <span class="section-label reveal">Simple comme bonjour</span>
+                <h2 class="section-title reveal reveal-delay-1">Comment ça marche&nbsp;?</h2>
+                <div class="steps-grid">
+                    <div class="step-card reveal reveal-delay-1">
+                        <span class="step-number">1</span>
+                        <div class="step-icon">📞</div>
+                        <h3>On en parle</h3>
+                        <p>Un petit coup de fil à Sarah. Vous lui dites ce que vous aimez, vos besoins, vos préférences. Elle s'occupe de tout.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-2">
+                        <span class="step-number">2</span>
+                        <div class="step-icon">🚐</div>
+                        <h3>On vous livre</h3>
+                        <p>Nos livreurs du quartier vous apportent votre plateau, chaud et prêt à déguster, directement chez vous dans le 15<sup>e</sup>.</p>
+                    </div>
+                    <div class="step-card reveal reveal-delay-3">
+                        <span class="step-number">3</span>
+                        <div class="step-icon">🍲</div>
+                        <h3>On se régale</h3>
+                        <p>Vous savourez un repas fait maison, comme à la maison. Sans vaisselle, sans stress. Juste le plaisir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ILS NOUS FONT CONFIANCE -->
+        <section class="section" id="avis">
+            <div class="section-inner">
+                <span class="section-label reveal">Témoignages</span>
+                <h2 class="section-title reveal reveal-delay-1">Le quartier a son mot à dire</h2>
+                <div class="avis-carousel reveal reveal-delay-2">
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p>« Sarah est d'une gentillesse rare. Les plats sont excellents, on sent le fait maison. Mon père attend sa livraison avec impatience chaque midi. »</p>
+                        <div class="avis-author">
+                            <span class="avis-author-avatar">MB</span>
+                            M. Beaurenaut
+                        </div>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p>« Service impeccable, livraison ponctuelle, et surtout des repas variés et savoureux. Ma mère qui a du mal à cuisiner est ravie. Merci Sarah ! »</p>
+                        <div class="avis-author">
+                            <span class="avis-author-avatar">CL</span>
+                            Mme Lemercier
+                        </div>
+                    </div>
+                    <div class="avis-card">
+                        <div class="avis-stars">★★★★★</div>
+                        <p>« Enfin un service à taille humaine dans le 15e. On téléphone, on discute, et tout est prêt. Les légumes sont frais, les viandes tendres. Bravo. »</p>
+                        <div class="avis-author">
+                            <span class="avis-author-avatar">PD</span>
+                            M. Dupont
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1rem;">
+                    <span class="presse-badge">📰 Vu dans <em>Le Parisien</em></span>
+                    <span style="font-weight:600;color:var(--encre);">Note Google : <span style="color:#F0A500;">★★★★★</span> 4.6/5 (27 avis)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- POUSSEZ LA PORTE -->
+        <section class="section" id="contact" style="background:var(--blanc-casse);border-top:1px solid var(--trait);">
+            <div class="section-inner">
+                <span class="section-label reveal">Contact</span>
+                <h2 class="section-title reveal reveal-delay-1">Venez nous voir, c'est plus simple que prévu</h2>
+                <div class="contact-grid">
+                    <div class="contact-info reveal reveal-delay-2">
+                        <div>
+                            <strong style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:0.01em;color:var(--encre);">📞 Appelez Sarah</strong>
+                            <a href="tel:+33178095230" class="contact-phone">01 78 09 52 30</a>
+                        </div>
+                        <div class="contact-address">
+                            <strong>📍 L'agence</strong>
+                            10 Rue du Pic de Barrette<br>75015 Paris
+                        </div>
+                        <div class="contact-horaires">
+                            <strong>🕐 Horaires d'ouverture</strong><br>
+                            Lundi – Vendredi : 9h00 – 17h00<br>
+                            <em style="font-size:0.8rem;opacity:0.7;">Horaires à confirmer par téléphone</em>
+                        </div>
+                        <div>
+                            <strong>✉️ Email</strong><br>
+                            <a href="mailto:paris-sud-ouest@les-menus-services.com" style="color:var(--abricot);font-weight:500;">paris-sud-ouest@les-menus-services.com</a>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal reveal-delay-3" onsubmit="event.preventDefault();alert('Merci ! Sarah vous rappelle dans les plus brefs délais.')">
+                        <label for="tel">Votre numéro de téléphone</label>
+                        <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" required aria-required="true">
+                        <button type="submit" class="btn btn-primary">📞 Rappelez-moi</button>
+                        <p style="font-size:0.8rem;opacity:0.6;margin:0;">Un seul champ, et Sarah s'occupe de tout.</p>
+                    </form>
+                </div>
+                <div class="map-container reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=LES+MENUS+SERVICES+PARIS+15+10+Rue+du+Pic+de+Barrette%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de l'agence LES MENUS SERVICES PARIS 15"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILIGRANE FIN DE PAGE -->
+        <div class="filigrane-footer reveal">Bon appétit ! — Sarah</div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <strong>LES MENUS SERVICES PARIS 15</strong><br>
+                10 Rue du Pic de Barrette, 75015 Paris<br>
+                <a href="tel:+33178095230">01 78 09 52 30</a> ·
+                <a href="mailto:paris-sud-ouest@les-menus-services.com">paris-sud-ouest@les-menus-services.com</a>
+            </div>
+            <div>
+                Note Google : 4.6★ / 27 avis<br>
+                <a href="https://agence.mooo.com/les-menus-services-paris-15" target="_blank" rel="noopener">🌐 Site web</a>
+            </div>
+        </div>
+        <div class="footer-credits">
+            Site créé par Agence Mooo — <a href="https://agence.mooo.com/les-menus-services-paris-15" target="_blank" rel="noopener">agence.mooo.com</a>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "LES MENUS SERVICES PARIS 15",
+            "description": "Sarah cuisine, vous déjeunez. Des plats mijotés, livrés à domicile dans le 15e arrondissement de Paris.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "10 Rue du Pic de Barrette",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33178095230",
+            "email": "paris-sud-ouest@les-menus-services.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "27"
+            },
+            "image": "assets/maps-1.jpg",
+            "url": "https://agence.mooo.com/les-menus-services-paris-15",
+            "priceRange": "€€"
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const scrollHandler = () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            scrollHandler();
+
+            // Mobile nav toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            hamburger.addEventListener('click', () => {
+                const isActive = navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+            // Close nav on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Force hero elements visible after a short delay (in case observer misses them)
+            setTimeout(() => {
+                document.querySelectorAll('.hero .reveal').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 400);
+        });
+    </script>
+</body>
+</html>
