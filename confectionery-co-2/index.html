@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confiserie &amp; Cie — La plus petite grande maison de confiserie française | Paris 15ᵉ</title>
+    <meta name="description" content="Depuis cinquante ans, Confiserie &amp; Cie sélectionne les plus grands confiseurs français. Chocolats de plantation, dragées d'Aix, marrons glacés — 188 Rue de Lourmel, Paris 15ᵉ.">
+    <meta property="og:title" content="Confiserie &amp; Cie — La plus petite grande maison de confiserie française">
+    <meta property="og:description" content="Chocolats de plantation, dragées d'Aix, marrons glacés entiers, bêtises de Cambrai — nous les choisissons une à une et vous les présentons comme personne.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%AC%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Confiserie & Cie",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "188 Rue de Lourmel",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145543374",
+            "email": "confiserie.compagnie@gmail.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.3",
+                "reviewCount": "10",
+                "bestRating": "5"
+            },
+            "priceRange": "€€",
+            "url": "https://agence.mooo.com/confectionery-co-2"
+        }
+    </script>
+    <style>
+        :root {
+            --paper: #F7F2E9;
+            --ink: #2C1A0E;
+            --kraft: #C4A265;
+            --cherry: #8B1E2F;
+            --angelica: #5D7A4A;
+            --honey: #E8D5B0;
+            --white: #FFFDF8;
+            --shadow-soft: 0 2px 20px rgba(44, 26, 14, 0.07);
+            --shadow-deep: 0 8px 40px rgba(44, 26, 14, 0.13);
+            --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+            --font-body: 'Jost', 'Helvetica Neue', sans-serif;
+            --ruban-height: 52px;
+            --ruban-height-collapsed: 40px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--ink);
+            background-color: var(--paper);
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+        }
+
+        /* ============ RUBAN D'ENSEIGNE ============ */
+        .ruban-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--kraft);
+            color: var(--ink);
+            height: var(--ruban-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(16px, 4vw, 48px);
+            transition: height 0.45s var(--ease-out-expo), padding 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo);
+            box-shadow: 0 1px 0 rgba(44, 26, 14, 0.06);
+            clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+        }
+
+        .ruban-header.collapsed {
+            height: var(--ruban-height-collapsed);
+            padding: 0 clamp(16px, 4vw, 48px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .ruban-header::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--kraft);
+            opacity: 0.35;
+            filter: blur(3px);
+            pointer-events: none;
+        }
+
+        .ruban-nom {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            text-decoration: none;
+            color: var(--ink);
+            transition: font-size 0.45s var(--ease-out-expo);
+        }
+
+        .ruban-header.collapsed .ruban-nom {
+            font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+        }
+
+        .ruban-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2.5vw, 28px);
+            list-style: none;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.72rem, 1.3vw, 0.85rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .ruban-nav a {
+            color: var(--ink);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .ruban-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cherry);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+
+        .ruban-nav a:hover::after,
+        .ruban-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .ruban-nav a:hover,
+        .ruban-nav a:focus-visible {
+            color: var(--cherry);
+        }
+
+        .ruban-cta {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.2vw, 0.78rem);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--cherry);
+            border: none;
+            padding: 7px 18px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(139, 30, 47, 0.2);
+        }
+
+        .ruban-cta:hover {
+            background: #a02335;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(139, 30, 47, 0.3);
+        }
+
+        .ruban-cta:focus-visible {
+            outline: 2px solid var(--cherry);
+            outline-offset: 3px;
+        }
+
+        /* ============ HÉRO ============ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: flex-end;
+            padding: calc(var(--ruban-height) + 24px) clamp(20px, 6vw, 80px) clamp(40px, 8vh, 80px);
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 35%;
+            display: block;
+            filter: brightness(0.82) saturate(0.7) contrast(1.08);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(44, 26, 14, 0.15) 0%,
+                    rgba(44, 26, 14, 0.35) 40%,
+                    rgba(44, 26, 14, 0.65) 75%,
+                    rgba(44, 26, 14, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(247, 242, 233, 0.03) 2px,
+                    rgba(247, 242, 233, 0.03) 4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 720px;
+            animation: heroReveal 1.2s var(--ease-out-expo) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--white);
+            margin-bottom: clamp(14px, 2.5vh, 22px);
+            text-wrap: balance;
+        }
+
+        .hero-content .hero-sub {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.7vw, 1.15rem);
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            color: rgba(255, 253, 248, 0.85);
+            margin-bottom: clamp(24px, 4vh, 36px);
+            text-wrap: balance;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn-primary {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--cherry);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+            box-shadow: var(--shadow-deep);
+        }
+
+        .btn-primary:hover {
+            background: #a02335;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(139, 30, 47, 0.35);
+        }
+
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--white);
+            outline-offset: 3px;
+        }
+
+        .btn-secondary {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: transparent;
+            border: 1.5px solid rgba(255, 253, 248, 0.55);
+            padding: 14px 32px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.3s, background 0.3s, color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 253, 248, 0.08);
+            color: var(--white);
+        }
+
+        .btn-secondary:focus-visible {
+            outline: 2px solid var(--white);
+            outline-offset: 3px;
+        }
+
+        /* Indicateur scroll */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            animation: heroReveal 1.2s var(--ease-out-expo) 0.4s forwards;
+            opacity: 0;
+        }
+
+        .scroll-indicator span {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 253, 248, 0.6);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 253, 248, 0.4);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.6);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        /* ============ SECTIONS COMMUNES ============ */
+        .section {
+            padding: clamp(50px, 10vh, 100px) clamp(20px, 6vw, 80px);
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-titre {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            letter-spacing: 0.02em;
+            color: var(--ink);
+            margin-bottom: clamp(20px, 4vh, 36px);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-titre::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: var(--angelica);
+            border-radius: 1px;
+        }
+
+        /* ============ ÉDITO ============ */
+        .edito {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edito::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(196, 162, 101, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 70%, rgba(93, 122, 74, 0.04) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .edito .section-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(28px, 5vw, 48px);
+        }
+
+        @media (min-width: 768px) {
+            .edito .section-inner {
+                grid-template-columns: 1fr 1.2fr;
+                align-items: start;
+            }
+        }
+
+        .edito-texte {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+            line-height: 1.8;
+            letter-spacing: 0.015em;
+            color: var(--ink);
+        }
+
+        .edito-texte p+p {
+            margin-top: 1.2em;
+        }
+
+        .edito-texte strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .edito-texte em {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* ============ GALERIE ============ */
+        .galerie {
+            background: var(--paper);
+            position: relative;
+        }
+
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(16px, 3vw, 28px);
+        }
+
+        @media (min-width: 768px) {
+            .galerie-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .galerie-item {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border-radius: 6px;
+            cursor: pointer;
+            background: var(--kraft);
+            box-shadow: var(--shadow-soft);
+            transition: box-shadow 0.4s var(--ease-out-expo);
+            /* Animation papillote initiale */
+            opacity: 0;
+            transform: scaleY(0.85);
+            will-change: transform, opacity;
+        }
+
+        .galerie-item.revealed {
+            animation: papilloteReveal 0.55s var(--ease-out-expo) forwards;
+        }
+
+        @keyframes papilloteReveal {
+            0% {
+                opacity: 0;
+                transform: scaleY(0.8);
+            }
+            60% {
+                opacity: 0.9;
+                transform: scaleY(1.03);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        .galerie-item:hover {
+            box-shadow: var(--shadow-deep);
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s var(--ease-out-expo), filter 0.7s;
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.05) contrast(1.04);
+        }
+
+        .galerie-item .galerie-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg,
+                    rgba(44, 26, 14, 0.7) 0%,
+                    rgba(44, 26, 14, 0.2) 40%,
+                    rgba(44, 26, 14, 0.0) 65%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .galerie-item .galerie-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: clamp(18px, 3vw, 28px);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .galerie-item .galerie-label span {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: var(--white);
+            display: block;
+            text-shadow: 0 1px 8px rgba(44, 26, 14, 0.5);
+        }
+
+        .galerie-item .galerie-label small {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 253, 248, 0.75);
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Variations de traitement image par item */
+        .galerie-item:nth-child(1) img {
+            filter: saturate(0.75) brightness(0.9) sepia(0.08);
+        }
+        .galerie-item:nth-child(2) img {
+            filter: saturate(0.6) brightness(0.95) hue-rotate(-5deg) contrast(1.1);
+        }
+        .galerie-item:nth-child(3) img {
+            filter: saturate(0.85) brightness(0.88) sepia(0.12) contrast(1.05);
+        }
+        .galerie-item:nth-child(4) img {
+            filter: saturate(0.55) brightness(0.92) hue-rotate(8deg) contrast(1.08);
+        }
+        .galerie-item:nth-child(5) img {
+            filter: saturate(0.7) brightness(0.87) sepia(0.06) contrast(1.12);
+        }
+        .galerie-item:nth-child(6) img {
+            filter: saturate(0.65) brightness(0.93) hue-rotate(-3deg) contrast(1.06);
+        }
+
+        /* ============ FOURNISSEURS ============ */
+        .fournisseurs {
+            background: var(--white);
+            position: relative;
+        }
+
+        .fournisseurs-intro {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            line-height: 1.8;
+            letter-spacing: 0.015em;
+            max-width: 680px;
+            margin-bottom: clamp(28px, 5vh, 44px);
+            color: var(--ink);
+        }
+
+        .fournisseurs-index {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px 32px;
+        }
+
+        @media (min-width: 600px) {
+            .fournisseurs-index {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .fournisseurs-index {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .fournisseur-entry {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--honey);
+            transition: border-color 0.3s;
+        }
+
+        .fournisseur-entry:hover {
+            border-bottom-color: var(--kraft);
+        }
+
+        .fournisseur-nom {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            letter-spacing: 0.03em;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        .fournisseur-specialite {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            color: #6b5c4b;
+            font-style: italic;
+        }
+
+        /* ============ AVIS ============ */
+        .avis {
+            background: var(--paper);
+            position: relative;
+        }
+
+        .avis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            border: 1px solid var(--honey);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: clamp(18px, 3vh, 28px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .avis-stars {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: var(--cherry);
+        }
+
+        .avis-note {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .avis-count {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            color: #6b5c4b;
+            text-transform: uppercase;
+        }
+
+        .avis-citations {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(16px, 3vw, 24px);
+        }
+
+        @media (min-width: 600px) {
+            .avis-citations {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .avis-citation {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.9rem, 1.4vw, 1rem);
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+            padding: clamp(16px, 3vw, 24px);
+            background: var(--white);
+            border-radius: 6px;
+            border-left: 3px solid var(--angelica);
+            box-shadow: var(--shadow-soft);
+            font-style: italic;
+        }
+
+        /* ============ PRATIQUE ============ */
+        .pratique {
+            background: var(--white);
+            position: relative;
+        }
+
+        .pratique-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(24px, 5vw, 44px);
+        }
+
+        @media (min-width: 768px) {
+            .pratique-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+            letter-spacing: 0.02em;
+        }
+
+        .horaires-table th,
+        .horaires-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--honey);
+        }
+
+        .horaires-table th {
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: #6b5c4b;
+            width: 40%;
+        }
+
+        .horaires-table td {
+            font-weight: 400;
+            color: var(--ink);
+        }
+
+        .pratique-infos {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .pratique-infos a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.3vw, 0.98rem);
+            color: var(--ink);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .pratique-infos a:hover {
+            color: var(--cherry);
+        }
+
+        .pratique-infos a .ico {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--honey);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .pratique-carte {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            filter: saturate(0.55) sepia(0.2) brightness(1.02);
+            transition: filter 0.5s;
+        }
+
+        .pratique-carte:hover {
+            filter: saturate(0.8) sepia(0.1) brightness(1.04);
+        }
+
+        .pratique-note {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            color: #6b5c4b;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--ink);
+            color: rgba(247, 242, 233, 0.8);
+            padding: clamp(40px, 7vh, 60px) clamp(20px, 6vw, 80px);
+            position: relative;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(20px, 4vw, 36px);
+        }
+
+        @media (min-width: 600px) {
+            .footer-inner {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-separator {
+            grid-column: 1 / -1;
+            height: 2px;
+            background: transparent;
+            border-top: 1px solid rgba(196, 162, 101, 0.4);
+            border-bottom: 1px solid rgba(196, 162, 101, 0.2);
+            margin-bottom: 8px;
+        }
+
+        .footer-bloc {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            line-height: 1.7;
+        }
+
+        .footer-bloc strong {
+            font-weight: 500;
+            color: var(--honey);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .footer-bloc a {
+            color: rgba(247, 242, 233, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bloc a:hover {
+            color: var(--honey);
+        }
+
+        .footer-credit {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            color: rgba(247, 242, 233, 0.45);
+            padding-top: 12px;
+        }
+
+        .footer-credit a {
+            color: rgba(247, 242, 233, 0.55);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-credit a:hover {
+            color: var(--honey);
+        }
+
+        /* ============ FOCUS STYLES ============ */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--angelica);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* ============ RESPONSIVE FINE-TUNING ============ */
+        @media (max-width: 480px) {
+            .ruban-nav {
+                gap: 8px;
+                font-size: 0.65rem;
+                letter-spacing: 0.04em;
+            }
+            .ruban-nom {
+                font-size: 0.85rem;
+            }
+            .ruban-cta {
+                font-size: 0.65rem;
+                padding: 5px 10px;
+            }
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            .hero-content .hero-sub {
+                font-size: 0.9rem;
+            }
+            .galerie-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .galerie-item {
+                aspect-ratio: 3/4;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 767px) {
+            .galerie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- RUBAN D'ENSEIGNE -->
+    <header class="ruban-header" id="ruban" role="banner">
+        <a href="#hero" class="ruban-nom" aria-label="Retour à l'accueil">Confiserie &amp; Cie</a>
+        <nav aria-label="Navigation principale">
+            <ul class="ruban-nav" role="list">
+                <li><a href="#edito">La maison</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#fournisseurs">Fournisseurs</a></li>
+                <li><a href="#pratique">Venir</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33145543374" class="ruban-cta">Commander</a>
+    </header>
+
+    <!-- HÉRO -->
+    <section class="hero" id="hero" aria-labelledby="hero-titre">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Devanture de Confiserie & Cie, rue de Lourmel, Paris 15ᵉ" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-content">
+            <h1 id="hero-titre">Cinquante ans que Paris a une adresse pour les grands confiseurs français.</h1>
+            <p class="hero-sub">Chocolats de plantation, dragées d'Aix, marrons glacés entiers, bêtises de Cambrai — nous les choisissons une à une et vous les présentons comme personne.</p>
+            <div class="hero-ctas">
+                <a href="#galerie" class="btn-primary">Pousser la porte</a>
+                <a href="tel:+33145543374" class="btn-secondary">Commander</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span>Découvrir</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ÉDITO -->
+    <section class="section edito" id="edito" aria-labelledby="edito-titre">
+        <div class="section-inner">
+            <div>
+                <h2 class="section-titre" id="edito-titre"><em>Une confiserie, et une compagnie</em></h2>
+            </div>
+            <div class="edito-texte">
+                <p>Depuis <strong>1974</strong>, <em>Confiserie &amp; Cie</em> réunit dans sa boutique de la rue de Lourmel les meilleurs artisans chocolatiers et confiseurs de France. Nous les sélectionnons pour leur exigence, leur indépendance et ce petit supplément d'âme qui transforme une friandise en souvenir.</p>
+                <p>Particuliers, entreprises, comités d'entreprise : nous vous accueillons avec la même attention. Ici, on ne vend pas « des bonbons » — on présente une sélection raisonnée, comme un chef de cave présenterait ses grands crus classés.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="section galerie" id="galerie" aria-labelledby="galerie-titre">
+        <div class="section-inner">
+            <h2 class="section-titre" id="galerie-titre">Chocolats, confiseries, biscuits&nbsp;: tout ce qu'on aime offrir et s'offrir</h2>
+            <div class="galerie-grid">
+                <div class="galerie-item" data-delay="0">
+                    <img src="assets/maps-1.jpg" alt="Chocolats" loading="lazy" style="object-position: 30% 25%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Chocolats</span><small>Grands crus &amp; tablettes</small></div>
+                </div>
+                <div class="galerie-item" data-delay="80">
+                    <img src="assets/maps-1.jpg" alt="Dragées & Calissons" loading="lazy" style="object-position: 60% 40%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Dragées &amp; Calissons</span><small>Aix, Verdun, Brémond</small></div>
+                </div>
+                <div class="galerie-item" data-delay="160">
+                    <img src="assets/maps-1.jpg" alt="Fruits confits & Pâtes de fruits" loading="lazy" style="object-position: 45% 55%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Fruits confits &amp; Pâtes de fruits</span><small>Apt, Auvergne, Provence</small></div>
+                </div>
+                <div class="galerie-item" data-delay="40">
+                    <img src="assets/maps-1.jpg" alt="Nougats & Caramels" loading="lazy" style="object-position: 55% 30%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Nougats &amp; Caramels</span><small>Montélimar, Isigny, beurre salé</small></div>
+                </div>
+                <div class="galerie-item" data-delay="120">
+                    <img src="assets/maps-1.jpg" alt="Biscuits & Sablés" loading="lazy" style="object-position: 35% 50%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Biscuits &amp; Sablés</span><small>Bretagne, Normandie, Alsace</small></div>
+                </div>
+                <div class="galerie-item" data-delay="200">
+                    <img src="assets/maps-1.jpg" alt="Marrons glacés" loading="lazy" style="object-position: 50% 20%;">
+                    <div class="galerie-overlay"></div>
+                    <div class="galerie-label"><span>Marrons glacés</span><small>Ardèche, entiers, Sabaton</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOURNISSEURS -->
+    <section class="section fournisseurs" id="fournisseurs" aria-labelledby="fournisseurs-titre">
+        <div class="section-inner">
+            <h2 class="section-titre" id="fournisseurs-titre"><em>Vingt-six maisons, une seule promesse</em></h2>
+            <p class="fournisseurs-intro">Chaque confiseur présent dans notre boutique a été choisi pour son savoir-faire, son indépendance et la régularité de son excellence. Nous les connaissons personnellement — voici ceux que nous sommes fiers de représenter.</p>
+            <div class="fournisseurs-index">
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Cluizel</span><span class="fournisseur-specialite">1<sup>ers</sup> crus de plantation</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Voisin</span><span class="fournisseur-specialite">les coussins de Lyon</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Sabaton</span><span class="fournisseur-specialite">marrons glacés entiers</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Brémond</span><span class="fournisseur-specialite">calissons d'Aix</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Biscuiterie de l'Abbaye</span><span class="fournisseur-specialite">sablés normands</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Nougats Diane de Poytiers</span><span class="fournisseur-specialite">nougats de Montélimar</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Florian</span><span class="fournisseur-specialite">fleurs confites &amp; pâtes de fruits</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Biscuiterie Jeannette</span><span class="fournisseur-specialite">madeleines de Caen</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Henri Le Roux</span><span class="fournisseur-specialite">caramels au beurre salé</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Afchain</span><span class="fournisseur-specialite">bêtises de Cambrai</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Révillon</span><span class="fournisseur-specialite">chocolats fins de Roanne</span></div>
+                <div class="fournisseur-entry"><span class="fournisseur-nom">Larnicol</span><span class="fournisseur-specialite">biscuits bretons &amp; kouignettes</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section avis" id="avis" aria-labelledby="avis-titre">
+        <div class="section-inner">
+            <h2 class="section-titre" id="avis-titre">4,3 étoiles, 10 avis, et des habitués depuis cinquante ans</h2>
+            <div class="avis-badge" aria-label="Note Google : 4,3 sur 5 basée sur 10 avis">
+                <span class="avis-stars" aria-hidden="true">★★★★☆</span>
+                <span class="avis-note">4,3</span>
+                <span class="avis-count">sur 10 avis</span>
+            </div>
+            <div class="avis-citations">
+                <blockquote class="avis-citation">« Une adresse précieuse. On y trouve ce qu'on ne trouve nulle part ailleurs, et les conseils sont toujours justes. »</blockquote>
+                <blockquote class="avis-citation">« Un choix incroyable, des conseils parfaits. La boutique est magnifique et l'accueil chaleureux. »</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRATIQUE -->
+    <section class="section pratique" id="pratique" aria-labelledby="pratique-titre">
+        <div class="section-inner">
+            <h2 class="section-titre" id="pratique-titre">Poussez la porte, appelez-nous, ou écrivez-nous</h2>
+            <div class="pratique-grid">
+                <div>
+                    <table class="horaires-table" aria-label="Horaires d'ouverture">
+                        <thead>
+                            <tr><th scope="col">Jour</th><th scope="col">Horaires</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">Mardi</th><td>10h – 19h</td></tr>
+                            <tr><th scope="row">Mercredi</th><td>10h – 19h</td></tr>
+                            <tr><th scope="row">Jeudi</th><td>10h – 19h</td></tr>
+                            <tr><th scope="row">Vendredi</th><td>10h – 19h</td></tr>
+                            <tr><th scope="row">Samedi</th><td>9h30 – 18h30</td></tr>
+                            <tr><th scope="row">Dimanche</th><td>Fermé</td></tr>
+                            <tr><th scope="row">Lundi</th><td>Fermé</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="pratique-note">Le magasin reste ouvert certains samedis fériés — le mieux est de nous appeler.</p>
+                </div>
+                <div class="pratique-infos">
+                    <a href="https://maps.google.com/maps?q=Confiserie+%26+Cie+188+Rue+de+Lourmel,+Paris" target="_blank" rel="noopener noreferrer" aria-label="Voir l'adresse sur Google Maps">
+                        <span class="ico" aria-hidden="true">📍</span> 188 Rue de Lourmel, 75015 Paris
+                    </a>
+                    <a href="tel:+33145543374" aria-label="Appeler le 01 45 54 33 74">
+                        <span class="ico" aria-hidden="true">📞</span> 01 45 54 33 74
+                    </a>
+                    <a href="mailto:confiserie.compagnie@gmail.com" aria-label="Envoyer un email">
+                        <span class="ico" aria-hidden="true">✉️</span> confiserie.compagnie@gmail.com
+                    </a>
+                    <p style="font-weight:400;font-size:0.9rem;margin-top:6px;letter-spacing:0.02em;color:var(--ink);">Expédition possible — nous contacter pour les conditions.</p>
+                </div>
+            </div>
+            <div class="pratique-carte" style="margin-top:clamp(20px,3vw,32px);">
+                <iframe src="https://maps.google.com/maps?q=Confectionery+%26+Co.+188+Rue+de+Lourmel%2C+Paris&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Confiserie & Cie"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-separator" aria-hidden="true"></div>
+            <div class="footer-bloc">
+                <strong>Confiserie &amp; Cie</strong>
+                188 Rue de Lourmel<br>
+                75015 Paris<br>
+                <a href="tel:+33145543374">01 45 54 33 74</a>
+            </div>
+            <div class="footer-bloc">
+                <strong>Liens utiles</strong>
+                <a href="#pratique">Commande &amp; livraison</a><br>
+                <a href="#">Infos légales</a>
+            </div>
+            <div class="footer-bloc">
+                <strong>Suivez-nous</strong>
+                <span style="color:rgba(247,242,233,0.45);">À venir</span>
+            </div>
+            <div class="footer-credit">
+                Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // --- Ruban : dépliement au scroll ---
+            const ruban = document.getElementById('ruban');
+            const heroSection = document.getElementById('hero');
+            let ticking = false;
+
+            function updateRuban() {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                if (heroBottom < 80) {
+                    ruban.classList.add('collapsed');
+                } else {
+                    ruban.classList.remove('collapsed');
+                }
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(updateRuban);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            // check initial
+            updateRuban();
+
+            // --- Galerie : révélation papillote au scroll (IntersectionObserver) ---
+            const galerieItems = document.querySelectorAll('.galerie-item');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion && galerieItems.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const item = entry.target;
+                            const delay = parseInt(item.getAttribute('data-delay') || '0', 10);
+                            setTimeout(() => {
+                                item.classList.add('revealed');
+                            }, delay);
+                            observer.unobserve(item);
+                        }
+                    });
+                }, {
+                    threshold: 0.18,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                galerieItems.forEach(item => observer.observe(item));
+            } else if (prefersReducedMotion) {
+                // Révélation instantanée sans animation
+                galerieItems.forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scaleY(1)';
+                    item.classList.add('revealed');
+                });
+            }
+
+            // --- Défilement doux pour les ancres (respecte le header fixe) ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const rubanHeight = ruban.getBoundingClientRect().height;
+                        const targetPos = target.getBoundingClientRect().top + window.pageYOffset -
+                            rubanHeight - 12;
+                        window.scrollTo({
+                            top: targetPos,
+                            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
