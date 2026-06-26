@@ -1,80 +1,38 @@
-# BRIEF CRÉATIF — M.R.Optic’ Issy-les-Moulineaux
+1. **Concept & positionnement**  
+M.R.Optic’ n’est pas une chaîne : c’est l’alliance, rare, d’une précision optique chirurgicale et d’un lieu à l’élégance minérale, ancré dans le quotidien d’Issy-les-Moulineaux. Le site ne se contente pas de présenter des lunettes — il transpose l’expérience boutique : le contraste entre la pierre noire brute du comptoir et la chaleur du bois clair, la lumière vive qui ne laisse passer aucun flou, l’accueil sur-mesure. On retient le slogan implicite : *La justesse du regard, au cœur d’Issy.*
 
-## 1. Concept & positionnement
-**L’opticien de quartier qui a les pieds sur terre et le regard au loin.**  
-M.R.Optic’ n’est pas un showroom aseptisé — c’est un repère de rue, familier et fiable, qui amène l’expertise optique là où elle est nécessaire : en boutique comme au domicile. On retient l’alliance rare d’une rigueur professionnelle (marques premiums, examens approfondis) et d’un service profondément humain, sans afféterie.
+2. **Direction artistique**  
+**”Contraste minéral & précision boisée”** — un parti pris chic et brut directement tiré du mur en pierre noire qui signature le magasin. La direction oppose une toile de fond sombre, presque minérale, à des éclats de bois doré et des touches de rouge optique. Le design n’est ni clinique ni aseptisé : il assume une ambiance galerie contemporaine avec des respirations texturées, où la typographie DM Serif Display apporte une élégance intemporelle, et la DM Sans une lisibilité nette.
 
----
+3. **Palette**  
+- `#0D0D0D` Noir minéral — fond principal, évoque la pierre noire signature du comptoir.  
+- `#F5F0E8` Blanc chaux — fond des zones de lecture, clarté chaude sans fadeur.  
+- `#C29B6D` Bois doré — accent principal, liens, filets, icônes, rappel des étagères en bois clair.  
+- `#C41E3A` Rouge optique — boutons CTA, accents interactifs très limités (rappel du rouge de l’enseigne).  
+- `#2A2A2A` Gris carbone — cartes, surfaces secondaires pour varier les profondeurs.  
+- `#8C6E4A` Bois moyen — détails décoratifs, filets fins.
 
-## 2. Direction artistique
-**« Paris brut chaleureux »**  
-On part d’une vérité d’Issy-les-Moulineaux : une artère commerçante de proche banlieue, des trottoirs usés par les pas quotidiens, des devantures sans chichi, des passants de toutes générations. La DA capte cette rugosité francilienne en l’embourgeoisant juste ce qu’il faut par une typographie racée et un sens du détail textile. L’esprit est celui d’un atelier de lunetier bien tenu : on y sent le métal brossé, l’acétate poli et le mur en brique chaux, le tout baigné d’une lumière zénithale douce. On évite l’épure clinique comme le rustique mièvre — on sculpte un équilibre assumé entre la matière brute et la précision optique.
+4. **Ton éditorial**  
+Vouvoiement élégant mais direct, sans jargon opaque. La voix est celle d’un opticien expert qui connaît ses clients par leur prénom, parle du quartier et de la vraie vie. Aucune hyperbole commerciale : des faits, une présence rassurante. Exemple : *“Nous sommes rue Ernest Renan depuis 2013, et nous prenons le temps qu’il faut pour chaque paire.”*
 
----
+5. **Accroche héro**  
+- **Titre :** La justesse du regard, au cœur d’Issy  
+- **Sous-titre :** Opticien indépendant depuis 2013 — lunettes, lentilles, domicile & entreprise — rue Ernest Renan, Issy-les-Moulineaux.
 
-## 3. Palette (6 couleurs HEX)
-- **#F2EDE4** — Fond chaux (chaleureux, remplace le blanc pur).
-- **#2B2B28** — Encre profond (texte, presque noir tire vers un gris-brun ardoise).
-- **#D94F2B** — Accent brique oxydé (unique touche vibrante, signalétique, boutons).
-- **#5E6B6E** — Gris optique (textes secondaires, filets discrets).
-- **#E6D6BE** — Crème cuir (blocs de contraste doux, arrière-plans de cartes).
-- **#9BA8A3** — Vert-de-gris sourd (icônes, séparateurs, touches de calme).
+6. **Sections** (ordre, titres et phrase de contenu réelle)  
+- **Notre philosophie** — *“Une vision qui compte, une écoute qui change tout.”*  
+  Depuis 2013, Marwan Rahmani et son équipe accueillent chaque client avec la même promesse : trouver la correction parfaite et la monture qui lui ressemble, sans concession. Ici, on ne vend pas des lunettes, on ajuste un regard.  
+- **L’expérience boutique** — *“Un écrin minéral, une sélection pointue.”*  
+  Le mur en pierre noire du comptoir donne le ton : une atmosphère contemporaine, une lumière précise, et partout la chaleur du bois clair. Les présentoirs mettent en scène des montures triées sur le volet, pour un essayage confortable et sans hâte.  
+- **Services nomades** — *“Votre opticien, partout avec vous.”*  
+  MR Optic’ se déplace à votre domicile, en entreprise et dans les résidences seniors d’Issy et des alentours. Sélection de lunettes, conseils personnalisés, prise de mesures — le même soin qu’en boutique, là où vous êtes. Nous assurons aussi un service Relais Colis pour les retouches et ajustements.  
+- **Marques & savoir-faire** — *“Des montures & verres qui ont du caractère.”*  
+  Une curation exigeante de marques françaises et internationales, des verres minéraux aux traitements haute performance. Nous défendons des produits que nous aimons porter.  
+- **Ce que nos clients d’Issy disent de nous** — *“4.6/5 pour 112 avis, et la confiance qui va avec.”*  
+  Des témoignages authentiques, extraits de notre fiche Google, sans filtres. Parce qu’à Issy, le bouche-à-oreille ne ment pas.  
+- **Prêts à voir plus clair ?** — *Prenez rendez-vous ou passez nous voir.*  
+  Horaires, plan interactif de la rue Ernest Renan, téléphone, email et prise de rendez-vous en ligne en deux clics. Nous sommes ouverts du mardi au samedi — toutes les informations pratiques pour ne plus jamais hésiter.  
 
-*Aucune de ces teintes ne tombe dans le combo « crème + terracotta » générique : le brique oxydé est délibérément plus profond et moins orangé ; les bruns-gris apportent l’ancrage minéral.*
-
----
-
-## 4. Ton éditorial
-Une voix d’artisan urbain : directe, hospitalière mais sans ronds de jambe. Le français choisit la clarté technique quand il parle correction visuelle, et la chaleur sobre quand il évoque le service à domicile ou l’accompagnement. Pas de superlatifs vides : on préfère « conseil posé » à « expertise inégalée ». Tutoiement exclu ; on vouvoie avec naturel. Les textes sont calibrés pour les riverains d’Issy (références locales possibles, pas de « 94 » erroné).
-
----
-
-## 5. Accroche héro
-**H1** : Votre vue, rue Ernest Renan — et bien au-delà.  
-**Sous-titre** : Opticien à Issy-les-Moulineaux depuis 2013. Examens de vue, lunettes de créateur, service à domicile sur tout le 92.
-
-*L’accroche ancre géographiquement le magasin (rue précise + Issy), tout en ouvrant sur la mobilité du service. Le département 92 est enfin fièrement affirmé, sans l’erreur du 94.*
-
----
-
-## 6. Sections (ordre et contenu réel)
-
-1. **Qui sommes-nous ?**  
-   « Fondé par Marwan Rahmani, M.R.Optic’ est né d’une idée simple : offrir une optique de précision sans couper les ponts avec la vie de quartier. Depuis cette adresse d’Issy-les-Moulineaux, nous apportons conseils et corrections sur-mesure à des générations de clients, jusqu’à leur domicile ou leur résidence. »
-
-2. **Nos services**  
-   - **Optique en boutique** : large choix de montures, verres haute performance, ajustements.  
-   - **Optique à domicile** : sélection, essayage, livraison — pour les aînés, les mobilités réduites, les familles pressées.  
-   - **Optique en entreprise et EHPAD** : nous nous déplaçons pour équiper vos équipes ou résidents.  
-   *Horaires affichés en évidence : Lundi 9h-14h/15h-19h, Mardi-Vendredi 9h30-14h/15h-19h, Samedi 9h30-13h/14h-19h. Fermé dimanche.*
-
-3. **Nos lunettes & lentilles**  
-   « Des montures qui vous ressemblent, des verres qui vous protègent. Nous sélectionnons les meilleures innovations optiques — verres amincis, traitements anti-lumière bleue, transitions — pour une vision nette en toute situation. »  
-   *Encadré discret sur les marques phares (Ray-Ban, Oakley, Tom Ford, etc.) — pas de mur de logos criard, plutôt une photogravure en noir et blanc.*
-
-4. **Témoignages**  
-   « Une équipe aux petits soins. Mon ophtalmo m’avait conseillé des verres progressifs hors de prix ici ; Marwan m’a trouvé une solution équivalente pour moitié moins. J’ai vu la différence tout de suite. » — Patricia K., Issy.  
-   (Pas de faux témoignage : on résume un avis authentique reformulé avec élégance, sans guillemets abusifs.)
-
-5. **Actualités & conseils**  
-   « Myopie nocturne : pourquoi vos yeux fatiguent-ils quand la lumière tombe ? »  
-   Des articles datés et réels, écrits par l’équipe, qui montrent l’expertise sans boursouflure SEO. On corrige les dates futures en affichant les vraies dates de rédaction.
-
-6. **Contact & rendez-vous**  
-   Adresse, téléphone, email en clair (pas cachés dans des icônes). Formulaire de prise de RDV intégré. Lien vers fiche Google Maps et itinéraire.
-
----
-
-## 7. Signature visuelle
-- **Le « fil optique »** : un motif de ligne horizontale en pointillé (comme un tracé lumineux) qui traverse discrètement les sections, liant les blocs entre eux. Il ancre les ancres visuelles et rappelle le principe de focale optique.
-- **Typographie fonctionnelle surdimensionnée** : le nom « M.R.Optic’ » apparaît une fois en immense sur un fond pleine page, découpé dans une photo noir et blanc de la devanture, faisant office de plan générique. L’apostrophe, discrète en lecture normale, devient un détail de connivence pour les habitués.
-
----
-
-**Ce que ce brief corrige directement de l’audit précédent :**
-- L’accroche remplace le H1 « Opticien 94 » erroné par une géolocalisation précise et juste.
-- Les horaires sont intégrés dans la section services, plus une piqûre de rappel en footer.
-- Les coordonnées s’affichent en texte lisible, pas seulement en icônes.
-- Le service à domicile est mis en avant de façon concrète, pas comme une bannière « relais colis » parasite.
-- Les témoignages sont crédibles et rédigés sans pompe.
-- La palette évite les clichés de blog IA tout en restant chaude, optique et francilienne.
+7. **Signature visuelle**  
+- **Texture minérale** : Le fond noir n’est jamais un aplat uniforme — il porte en filigrane ou en bordure un détail texturé rappelant le grain de la pierre noire du comptoir (traitement par masque ou gradient texturé).  
+- **Cercle optique / mise au point** : En animation d’entrée, un grand cercle flouté (comme un verre non corrigé) gagne en netteté au scroll pour révéler le contenu — métaphore directe de la correction visuelle et signature mémorable de l’expertise.
