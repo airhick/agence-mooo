@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Grande Armée — Enregistrement, mixage, mastering à Neuilly-sur-Seine depuis 1972</title>
+    <meta name="description" content="Studio d'enregistrement haut de gamme à Neuilly-sur-Seine. Console analogique légendaire, acoustique exceptionnelle entre brique et bois. Mixage, mastering, production depuis 1972.">
+    <meta property="og:title" content="Studio Grande Armée — L'art de capter l'émotion depuis 1972">
+    <meta property="og:description" content="Un écrin sonore brut et raffiné au cœur de Neuilly-sur-Seine. Enregistrement, mixage, mastering dans un atelier industriel d'orfèvre.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230E1A24'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23C67A3D' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23C67A3D'/%3E%3Cpath d='M32 8 L32 18 M32 46 L32 56 M8 32 L18 32 M46 32 L56 32' stroke='%23F3EDE2' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Studio Grande Armée",
+            "description": "Studio d'enregistrement, mixage et mastering haut de gamme à Neuilly-sur-Seine. Console analogique légendaire, acoustique modulable, production depuis 1972.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "58 Avenue Charles de Gaulle",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33179621965",
+            "email": "zachhanoun@mac.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "30",
+                "bestRating": "5"
+            },
+            "openingHours": "Mo-Sa 09:00-00:00",
+            "url": "https://agence.mooo.com/studio-grand-army"
+        }
+    </script>
+    <style>
+        :root {
+            --bleu-nuit: #0E1A24;
+            --blanc-chauffe: #F3EDE2;
+            --cuivre-oxyde: #C67A3D;
+            --noyer-profond: #5A3C2A;
+            --terre-cuite: #8B4D3A;
+            --acier-brosse: #2A3038;
+            --cuivre-clair: #D4894F;
+            --cuivre-eclat: #E8A362;
+            --bleu-profond: #0A1219;
+            --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+            --font-display: 'Unbounded', sans-serif;
+            --font-body: 'Albert Sans', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bleu-nuit);
+            color: var(--blanc-chauffe);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            background: var(--texture-grain);
+            opacity: 0.35;
+            mix-blend-mode: overlay;
+        }
+
+        /* Noise overlay - subtle grain across entire page */
+        .global-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+        }
+
+        /* Loading screen - analog noise fade */
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--bleu-profond);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: all;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loading-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='ln'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23ln)' opacity='0.18'/%3E%3C/svg%3E");
+            animation: noisePulse 0.15s steps(3) infinite;
+        }
+
+        @keyframes noisePulse {
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+            33% {
+                opacity: 0.8;
+            }
+            66% {
+                opacity: 0.5;
+            }
+        }
+
+        .loading-signal {
+            position: relative;
+            z-index: 1;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--cuivre-oxyde);
+            border-radius: 50%;
+            animation: signalPing 1.2s ease-out infinite;
+        }
+
+        .loading-signal::after {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            background: var(--cuivre-oxyde);
+            opacity: 0.7;
+            animation: signalCore 1.2s ease-out infinite;
+        }
+
+        @keyframes signalPing {
+            0% {
+                transform: scale(0.6);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes signalCore {
+            0%,
+            100% {
+                transform: scale(0.3);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(14, 26, 36, 0.85);
+            backdrop-filter: blur(16px) saturate(120%);
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            border-bottom: 1px solid rgba(198, 122, 61, 0.15);
+            transition: all 0.4s ease;
+            padding: 0 clamp(16px, 3vw, 48px);
+        }
+
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            gap: clamp(16px, 3vw, 40px);
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: var(--blanc-chauffe);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .logo-link:hover {
+            color: var(--cuivre-oxyde);
+        }
+
+        .logo-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cuivre-oxyde);
+            transition: width 0.35s ease;
+        }
+
+        .logo-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(12px, 2vw, 28px);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--blanc-chauffe);
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.1vw, 0.88rem);
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cuivre-oxyde);
+            transition: width 0.35s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--cuivre-clair);
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1.5px solid var(--cuivre-oxyde);
+            color: var(--cuivre-oxyde);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(0.75rem, 1vw, 0.82rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.4s ease, border-color 0.4s ease;
+            white-space: nowrap;
+            border-radius: 2px;
+        }
+
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 30%, rgba(198, 122, 61, 0.25) 45%, rgba(232, 163, 98, 0.45) 50%, rgba(198, 122, 61, 0.25) 55%, transparent 70%);
+            transition: left 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+
+        .btn-cta:hover::before,
+        .btn-cta:focus-visible::before {
+            left: 100%;
+        }
+
+        .btn-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-cta:hover,
+        .btn-cta:focus-visible {
+            color: var(--cuivre-eclat);
+            border-color: var(--cuivre-clair);
+            outline: none;
+        }
+
+        .btn-cta:focus-visible {
+            box-shadow: 0 0 0 3px rgba(198, 122, 61, 0.35);
+            border-radius: 2px;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(198, 122, 61, 0.1);
+            border: 1px solid rgba(198, 122, 61, 0.25);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--blanc-chauffe);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .badge-google:hover {
+            background: rgba(198, 122, 61, 0.2);
+            border-color: var(--cuivre-oxyde);
+        }
+        .badge-stars {
+            color: #F9AB00;
+            font-size: 0.85rem;
+            letter-spacing: -1px;
+        }
+        .badge-note {
+            color: var(--cuivre-clair);
+        }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--blanc-chauffe);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        /* Sections communes */
+        .section {
+            padding: clamp(60px, 8vw, 120px) clamp(16px, 6vw, 80px);
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.9vw, 0.78rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cuivre-oxyde);
+            margin-bottom: clamp(12px, 2vw, 20px);
+            display: block;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--blanc-chauffe);
+            margin-bottom: clamp(20px, 3vw, 36px);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            letter-spacing: 0.01em;
+            color: var(--blanc-chauffe);
+        }
+
+        p {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: rgba(243, 237, 226, 0.8);
+            max-width: 680px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 72px;
+            isolation: isolate;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35) contrast(1.15) saturate(0.6);
+            transform: scale(1.03);
+            transition: transform 8s ease-out;
+        }
+
+        .hero.loaded .hero-bg img {
+            transform: scale(1);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 26, 36, 0.55) 0%, rgba(90, 60, 42, 0.45) 40%, rgba(14, 26, 36, 0.9) 100%);
+            z-index: 1;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='hg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hg)' opacity='0.09'/%3E%3C/svg%3E");
+            opacity: 0.7;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 clamp(16px, 4vw, 40px);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.8rem, 8vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--blanc-chauffe);
+            text-shadow: 0 2px 30px rgba(14, 26, 36, 0.6);
+            margin-bottom: clamp(16px, 3vw, 28px);
+            position: relative;
+        }
+
+        .hero-content h1::after {
+            content: '';
+            display: block;
+            width: clamp(60px, 10vw, 140px);
+            height: 2px;
+            background: var(--cuivre-oxyde);
+            margin: clamp(14px, 2.5vw, 22px) auto 0;
+            border-radius: 1px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            line-height: 1.55;
+            color: rgba(243, 237, 226, 0.75);
+            max-width: 600px;
+            margin: 0 auto clamp(28px, 4vw, 40px);
+            letter-spacing: 0.02em;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: clamp(12px, 2vw, 20px);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cuivre-oxyde);
+            border: none;
+            color: var(--bleu-nuit);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: clamp(12px, 1.8vw, 16px) clamp(24px, 4vw, 36px);
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 55%, transparent 75%);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .btn-primary:hover::before,
+        .btn-primary:focus-visible::before {
+            left: 100%;
+        }
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+        .btn-primary:hover {
+            background: var(--cuivre-clair);
+            box-shadow: 0 8px 32px rgba(198, 122, 61, 0.35);
+        }
+        .btn-primary:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(198, 122, 61, 0.5);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1.5px solid rgba(243, 237, 226, 0.4);
+            color: var(--blanc-chauffe);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: clamp(12px, 1.8vw, 16px) clamp(24px, 4vw, 36px);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-ghost::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(243, 237, 226, 0.06);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .btn-ghost:hover::before {
+            opacity: 1;
+        }
+        .btn-ghost:hover {
+            border-color: var(--blanc-chauffe);
+        }
+        .btn-ghost:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(243, 237, 226, 0.3);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: clamp(20px, 3vw, 36px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            animation: floatDown 2.5s ease-in-out infinite;
+        }
+
+        @keyframes floatDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        .scroll-indicator span {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(243, 237, 226, 0.5);
+        }
+        .scroll-line {
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(to bottom, var(--cuivre-oxyde), transparent);
+        }
+
+        /* Reveal animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* SECTION L'ECRIN */
+        .ecrin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 70px);
+            align-items: center;
+        }
+
+        .ecrin-visual {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            aspect-ratio: 4/3;
+            background: var(--acier-brosse);
+        }
+
+        .ecrin-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.2) saturate(0.5) sepia(0.3);
+            transform: scale(1.02);
+            transition: transform 6s ease;
+        }
+        .ecrin-visual:hover img {
+            transform: scale(1.06);
+        }
+
+        .ecrin-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(198, 122, 61, 0.35) 0%, rgba(14, 26, 36, 0.5) 60%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .ecrin-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='eg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23eg)' opacity='0.08'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+        }
+        .ecrin-visual .visual-frame {
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(198, 122, 61, 0.3);
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 1px;
+        }
+
+        .ecrin-text {
+            position: relative;
+        }
+        .ecrin-text p {
+            margin-bottom: 1.2em;
+            font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+            line-height: 1.75;
+        }
+        .ecrin-text .highlight {
+            color: var(--cuivre-clair);
+            font-weight: 500;
+        }
+
+        .texture-accent {
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background: var(--cuivre-oxyde);
+            margin: 8px 0 16px;
+            border-radius: 1px;
+        }
+
+        /* SECTION L'OUTIL */
+        .outil-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 70px);
+            align-items: start;
+        }
+        .outil-text p {
+            margin-bottom: 1.3em;
+            font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+            line-height: 1.75;
+        }
+        .outil-specs {
+            background: var(--acier-brosse);
+            border: 1px solid rgba(198, 122, 61, 0.2);
+            border-radius: 3px;
+            padding: clamp(24px, 4vw, 40px);
+            position: relative;
+            overflow: hidden;
+        }
+        .outil-specs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cuivre-oxyde), var(--terre-cuite), var(--cuivre-oxyde));
+        }
+        .outil-specs h3 {
+            margin-bottom: 16px;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+        }
+        .outil-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+        .outil-specs ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(243, 237, 226, 0.08);
+            font-family: var(--font-body);
+            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            color: rgba(243, 237, 226, 0.75);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .outil-specs ul li::before {
+            content: '◆';
+            color: var(--cuivre-oxyde);
+            font-size: 0.5rem;
+            flex-shrink: 0;
+        }
+        .outil-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            color: var(--cuivre-oxyde);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        .outil-download:hover {
+            color: var(--cuivre-eclat);
+        }
+
+        /* SECTION SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(16px, 2vw, 24px);
+        }
+        .service-card {
+            background: var(--acier-brosse);
+            border: 1px solid rgba(198, 122, 61, 0.15);
+            border-radius: 3px;
+            padding: clamp(20px, 3vw, 32px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--cuivre-oxyde);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            border-color: rgba(198, 122, 61, 0.45);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        .service-card .service-icon {
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            margin-bottom: 12px;
+            color: var(--cuivre-oxyde);
+        }
+        .service-card h3 {
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            margin-bottom: 6px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: rgba(243, 237, 226, 0.65);
+            max-width: 100%;
+        }
+
+        /* SECTION AVIS */
+        .avis-summary {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2vw, 20px);
+            flex-wrap: wrap;
+            margin-bottom: clamp(30px, 5vw, 50px);
+            background: rgba(198, 122, 61, 0.06);
+            border: 1px solid rgba(198, 122, 61, 0.2);
+            border-radius: 3px;
+            padding: clamp(16px, 3vw, 28px) clamp(20px, 4vw, 36px);
+            max-width: 500px;
+        }
+        .avis-big-note {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--cuivre-oxyde);
+            line-height: 1;
+        }
+        .avis-stars-large {
+            color: #F9AB00;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            letter-spacing: -1px;
+        }
+        .avis-count {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: rgba(243, 237, 226, 0.7);
+        }
+
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(16px, 2vw, 24px);
+        }
+        .avis-card {
+            background: var(--acier-brosse);
+            border: 1px solid rgba(243, 237, 226, 0.06);
+            border-radius: 3px;
+            padding: clamp(18px, 2.5vw, 28px);
+            position: relative;
+            transition: all 0.35s ease;
+        }
+        .avis-card:hover {
+            border-color: rgba(198, 122, 61, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+        .avis-card .avis-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .avis-card .avis-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--noyer-profond);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--cuivre-clair);
+            flex-shrink: 0;
+        }
+        .avis-card .avis-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--blanc-chauffe);
+        }
+        .avis-card .avis-stars-sm {
+            color: #F9AB00;
+            font-size: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+        .avis-card .avis-text {
+            font-size: 0.9rem;
+            color: rgba(243, 237, 226, 0.7);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .avis-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: clamp(20px, 3vw, 32px);
+            color: var(--cuivre-oxyde);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .avis-link:hover {
+            color: var(--cuivre-eclat);
+        }
+
+        /* SECTION VENIR */
+        .venir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 60px);
+            align-items: start;
+        }
+        .contact-info {
+            background: var(--acier-brosse);
+            border: 1px solid rgba(198, 122, 61, 0.2);
+            border-radius: 3px;
+            padding: clamp(24px, 4vw, 40px);
+        }
+        .contact-info .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .contact-info .info-icon {
+            color: var(--cuivre-oxyde);
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        .contact-info .info-label {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cuivre-oxyde);
+            margin-bottom: 2px;
+        }
+        .contact-info .info-value {
+            font-size: 0.95rem;
+            color: var(--blanc-chauffe);
+        }
+        .contact-info .info-value a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info .info-value a:hover {
+            color: var(--cuivre-clair);
+        }
+
+        .contact-form {
+            background: var(--acier-brosse);
+            border: 1px solid rgba(198, 122, 61, 0.2);
+            border-radius: 3px;
+            padding: clamp(24px, 4vw, 40px);
+        }
+        .contact-form h3 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(243, 237, 226, 0.7);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bleu-nuit);
+            border: 1px solid rgba(243, 237, 226, 0.15);
+            border-radius: 2px;
+            color: var(--blanc-chauffe);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cuivre-oxyde);
+            box-shadow: 0 0 0 3px rgba(198, 122, 61, 0.15);
+        }
+        .form-group textarea {
+            min-height: 100px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--cuivre-oxyde);
+            border: none;
+            color: var(--bleu-nuit);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 55%, transparent 75%);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+        .btn-submit:hover {
+            background: var(--cuivre-clair);
+            box-shadow: 0 8px 32px rgba(198, 122, 61, 0.35);
+        }
+        .btn-submit:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(198, 122, 61, 0.5);
+        }
+        .btn-submit span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-container {
+            margin-top: clamp(20px, 3vw, 32px);
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid rgba(198, 122, 61, 0.2);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--bleu-profond);
+            border-top: 1px solid rgba(198, 122, 61, 0.2);
+            padding: clamp(32px, 5vw, 50px) clamp(16px, 6vw, 80px);
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(24px, 4vw, 40px);
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--cuivre-oxyde);
+            margin-bottom: 14px;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.88rem;
+            color: rgba(243, 237, 226, 0.65);
+            line-height: 1.7;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover {
+            color: var(--cuivre-clair);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: clamp(20px, 3vw, 30px) auto 0;
+            padding-top: clamp(16px, 2vw, 24px);
+            border-top: 1px solid rgba(243, 237, 226, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: rgba(243, 237, 226, 0.45);
+        }
+        .footer-bottom a {
+            color: rgba(243, 237, 226, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom a:hover {
+            color: var(--cuivre-clair);
+        }
+
+        /* Responsive */
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(14, 26, 36, 0.96);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(198, 122, 61, 0.2);
+                z-index: 999;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .ecrin-grid,
+            .outil-layout,
+            .venir-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 7vw, 3.5rem);
+            }
+            .avis-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                height: 60px;
+            }
+            html {
+                scroll-padding-top: 60px;
+            }
+            .hero {
+                padding-top: 60px;
+                min-height: 90vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.4rem);
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .btn-cta {
+                padding: 8px 16px;
+                font-size: 0.7rem;
+            }
+            .badge-google {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .avis-summary {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+
+        /* Focus visible global */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--cuivre-oxyde);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Global grain texture -->
+    <div class="global-grain" aria-hidden="true"></div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+        <div class="loading-signal"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#hero" class="logo-link">Studio Grande Armée</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#ecrin">L'écrin</a></li>
+                    <li><a href="#outil">L'outil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#venir">Venir</a></li>
+                    <li>
+                        <a href="https://search.google.com/local/reviews?placeid=ChIJHQYmyDh15kcR0JfVq_E0Sxk" target="_blank" rel="noopener" class="badge-google" aria-label="Note Google 4.6 sur 5 - 30 avis">
+                            <span class="badge-stars">★★★★★</span>
+                            <span class="badge-note">4.6/5</span>
+                            <span style="font-weight:400;">(30)</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#venir" class="btn-cta"><span>Demander un devis</span></a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Studio Grande Armée - Salle d'enregistrement" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal">STUDIO<br>GRANDE ARMÉE</h1>
+            <p class="hero-subtitle reveal reveal-delay-1">Depuis 1972, l'art de capter l'émotion, entre brique et bois, au cœur de Neuilly.</p>
+            <div class="hero-cta-row reveal reveal-delay-2">
+                <a href="#venir" class="btn-primary"><span>Demander un devis</span></a>
+                <a href="tel:+33179621965" class="btn-ghost"><span>01 79 62 19 65</span></a>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span>Découvrir</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- L'ECRIN -->
+    <section class="section" id="ecrin">
+        <div class="section-inner">
+            <span class="section-label reveal">— L'écrin</span>
+            <div class="ecrin-grid">
+                <div class="ecrin-visual reveal">
+                    <img src="assets/maps-1.jpg" alt="Le Studio Grande Armée - Atelier acoustique" loading="lazy">
+                    <div class="visual-frame"></div>
+                </div>
+                <div class="ecrin-text reveal reveal-delay-1">
+                    <h2>Un lieu, une acoustique, une âme.</h2>
+                    <div class="texture-accent"></div>
+                    <p>C'est un atelier où chaque matériau travaille pour le son. <span class="highlight">Briques apparentes, verrière d'artiste, poutres d'acier et parquet massif</span> dessinent une acoustique vivante, loin des chambres anéchoïques stériles.</p>
+                    <p>Ici, on enregistre comme on respire : sans neutralité froide, avec la <span class="highlight">chaleur du bois</span> et la <span class="highlight">précision du métal</span>. Le lieu lui-même est un instrument – ses murs de brique diffusent, sa verrière fait chanter les aigus, ses poutres domptent les basses.</p>
+                    <p>Depuis plus de cinquante ans, des générations d'artistes franchissent cette porte et reconnaissent instantanément : <span class="highlight">le son a une patine</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'OUTIL -->
+    <section class="section" id="outil" style="background: var(--bleu-profond);">
+        <div class="section-inner">
+            <span class="section-label reveal">— L'outil</span>
+            <div class="outil-layout">
+                <div class="outil-text reveal">
+                    <h2>Console, périphériques, micros : le cuivre et le signal.</h2>
+                    <div class="texture-accent"></div>
+                    <p>La pièce maîtresse est une <span class="highlight">console analogique légendaire</span>, entourée d'un parc outboard rare – compresseurs optiques, égaliseurs à lampes, reverbs à plaques. Couplée à un monitoring de référence et un patch intégralement câblé main, elle garantit un <span class="highlight">chemin du signal d'une pureté absolue</span>.</p>
+                    <p>Le studio est calibré en <span class="highlight">acoustique modulable</span> pour s'adapter à toutes les prises de son : voix, instruments, orchestres réduits. Chaque session bénéficie d'un réglage sur mesure.</p>
+                </div>
+                <div class="outil-specs reveal reveal-delay-1">
+                    <h3>Spécifications techniques</h3>
+                    <ul>
+                        <li>Console analogique haut de gamme — entrées/inline</li>
+                        <li>Compresseurs optiques & égaliseurs à lampes</li>
+                        <li>Reverbs à plaques & delays numériques</li>
+                        <li>Monitoring de référence full-range</li>
+                        <li>Patch intégralement câblé main</li>
+                        <li>Acoustique modulable — panneaux diffusants</li>
+                        <li>Micros statiques, dynamiques & rubans</li>
+                        <li>Conversion A/N haute définition</li>
+                        <li>Accueil orchestres réduits & formations live</li>
+                    </ul>
+                    <a href="#" class="outil-download" onclick="alert('Liste technique détaillée disponible sur demande. Contactez-nous au 01 79 62 19 65 ou par email à zachhanoun@mac.com.'); return false;">
+                        ⬇ Liste technique complète (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="section-inner">
+            <span class="section-label reveal">— Nos services</span>
+            <h2 class="reveal">Ce que nous maîtrisons</h2>
+            <div class="services-grid reveal reveal-delay-1">
+                <div class="service-card">
+                    <div class="service-icon">🎙️</div>
+                    <h3>Enregistrement live & tracking multipiste</h3>
+                    <p>Captation en direct, prise par prise, en configuration studio ou live room. Jusqu'à 24 pistes simultanées avec une chaîne analogique complète.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎚️</div>
+                    <h3>Mixage analogique / hybride</h3>
+                    <p>Summing analogique sur console, processing outboard, rappels d'automation. Le meilleur des deux mondes : chaleur analogique et précision numérique.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💿</div>
+                    <h3>Mastering stéréo et stems</h3>
+                    <p>Finalisation pour tous supports : streaming, CD, vinyle. Égalisation, compression, imagerie stéréo, loudness normalisé selon les standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎼</div>
+                    <h3>Production & direction artistique</h3>
+                    <p>Accompagnement créatif de la pré-production à la livraison. Arrangements, direction de session, conseil artistique personnalisé.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎧</div>
+                    <h3>Prise voix off, doublage, podcast premium</h3>
+                    <p>Cabine isolée, acoustique traitée, micros voix de référence. Livraison en formats broadcast, post-produits et nettoyés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section" id="avis" style="background: var(--bleu-profond);">
+        <div class="section-inner">
+            <span class="section-label reveal">— Ce que nos clients disent</span>
+            <h2 class="reveal">30 artistes parlent de nous</h2>
+            <div class="avis-summary reveal reveal-delay-1">
+                <div class="avis-big-note">4.6</div>
+                <div>
+                    <div class="avis-stars-large">★★★★★</div>
+                    <div class="avis-count">Basé sur 30 avis Google vérifiés</div>
+                </div>
+            </div>
+            <div class="avis-grid">
+                <div class="avis-card reveal reveal-delay-1">
+                    <div class="avis-header">
+                        <div class="avis-avatar">M.L</div>
+                        <div>
+                            <div class="avis-name">Marie L.</div>
+                            <div class="avis-stars-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« Un lieu chargé d'histoire où chaque note trouve sa place. La console a une âme, et Zach sait exactement comment la faire chanter. Le son est chaud, précis, vivant. »</p>
+                </div>
+                <div class="avis-card reveal reveal-delay-2">
+                    <div class="avis-header">
+                        <div class="avis-avatar">T.B</div>
+                        <div>
+                            <div class="avis-name">Thomas B.</div>
+                            <div class="avis-stars-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« J'ai enregistré trois albums ici. L'acoustique de la pièce est exceptionnelle — cette brique, ce bois, cette verrière… tout respire la musique. Un vrai cocon pour les artistes exigeants. »</p>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <div class="avis-header">
+                        <div class="avis-avatar">C.D</div>
+                        <div>
+                            <div class="avis-name">Claire D.</div>
+                            <div class="avis-stars-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« Le mastering réalisé ici a sublimé mon EP. Écoute critique, oreille affûtée, et un pressage vinyle dont je suis fière. Studio d'un niveau international à deux pas de Paris. »</p>
+                </div>
+                <div class="avis-card reveal reveal-delay-1">
+                    <div class="avis-header">
+                        <div class="avis-avatar">A.K</div>
+                        <div>
+                            <div class="avis-name">Alexandre K.</div>
+                            <div class="avis-stars-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« Le parc outboard est un musée qui fonctionne. Compresseurs optiques, lampes, patch main… tout est entretenu avec un soin d'orfèvre. Ça s'entend dès la première prise. »</p>
+                </div>
+                <div class="avis-card reveal reveal-delay-2">
+                    <div class="avis-header">
+                        <div class="avis-avatar">S.M</div>
+                        <div>
+                            <div class="avis-name">Sarah M.</div>
+                            <div class="avis-stars-sm">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« Excellente session voix off pour un documentaire. Cabine impeccable, monitoring précis, et une ambiance de travail très professionnelle. Je recommande vivement. »</p>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <div class="avis-header">
+                        <div class="avis-avatar">P.R</div>
+                        <div>
+                            <div class="avis-name">Pierre R.</div>
+                            <div class="avis-stars-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="avis-text">« Un studio comme on n'en fait plus. L'âme du lieu vous inspire avant même d'avoir branché un micro. Zach est un passionné, un vrai. Le résultat est à la hauteur du cadre. »</p>
+                </div>
+            </div>
+            <a href="https://search.google.com/local/reviews?placeid=ChIJHQYmyDh15kcR0JfVq_E0Sxk" target="_blank" rel="noopener" class="avis-link reveal reveal-delay-4">
+                Lire tous les avis sur Google →
+            </a>
+        </div>
+    </section>
+
+    <!-- VENIR & RÉSERVER -->
+    <section class="section" id="venir">
+        <div class="section-inner">
+            <span class="section-label reveal">— Venir & réserver</span>
+            <h2 class="reveal">Poussez la porte</h2>
+            <div class="venir-grid">
+                <div class="contact-info reveal">
+                    <h3 style="margin-bottom:18px;">Coordonnées</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <div class="info-label">Adresse</div>
+                            <div class="info-value">58 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <div class="info-label">Téléphone</div>
+                            <div class="info-value"><a href="tel:+33179621965">01 79 62 19 65</a></div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <div class="info-label">Email</div>
+                            <div class="info-value"><a href="mailto:zachhanoun@mac.com">zachhanoun@mac.com</a></div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕐</span>
+                        <div>
+                            <div class="info-label">Horaires</div>
+                            <div class="info-value">Lundi – Samedi<br>Jusqu'à minuit sur session<br><small style="color:rgba(243,237,226,0.5);">Horaires à confirmer</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form reveal reveal-delay-1">
+                    <h3>Demander un devis</h3>
+                    <form action="#" method="post" onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous répondrons dans les meilleurs délais.');">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projet">Projet</label>
+                            <textarea id="projet" name="projet" placeholder="Décrivez votre projet (enregistrement, mixage, mastering, etc.)" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date souhaitée</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <button type="submit" class="btn-submit"><span>Envoyer la demande</span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container reveal reveal-delay-2">
+                <iframe src="https://maps.google.com/maps?q=Studio+Grand+Army+58+Avenue+Charles+de+Gaulle%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Studio Grande Armée"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Studio Grande Armée</h4>
+                <p>Enregistrement, mixage, mastering<br>Paris — Neuilly-sur-Seine<br>Depuis 1972</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>58 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine<br><a href="tel:+33179621965">01 79 62 19 65</a><br><a href="mailto:zachhanoun@mac.com">zachhanoun@mac.com</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#ecrin">L'écrin</a>
+                <a href="#outil">L'outil</a>
+                <a href="#services">Services</a>
+                <a href="#avis">Avis clients</a>
+                <a href="#venir">Venir & réserver</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <p>Retrouvez-nous sur Google<br>
+                    <a href="https://search.google.com/local/reviews?placeid=ChIJHQYmyDh15kcR0JfVq_E0Sxk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;">
+                        <span style="color:#F9AB00;">★★★★★</span> 4.6/5 (30 avis)
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Studio Grande Armée — Paris depuis 1972. Tous droits réservés.</span>
+            <span>
+                <a href="#">Mentions légales</a> &nbsp;·&nbsp;
+                <a href="#">Politique de confidentialité</a> &nbsp;·&nbsp;
+                Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Loading overlay
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const hero = document.querySelector('.hero');
+
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loadingOverlay.classList.add('hidden');
+                    hero.classList.add('loaded');
+                    // Remove overlay after transition
+                    setTimeout(function() {
+                        if (loadingOverlay.parentNode) {
+                            loadingOverlay.style.display = 'none';
+                        }
+                    }, 900);
+                }, 1400);
+            });
+
+            // Fallback: hide loading after 3.5s max
+            setTimeout(function() {
+                if (!loadingOverlay.classList.contains('hidden')) {
+                    loadingOverlay.classList.add('hidden');
+                    hero.classList.add('loaded');
+                    setTimeout(function() {
+                        if (loadingOverlay.parentNode) {
+                            loadingOverlay.style.display = 'none';
+                        }
+                    }, 900);
+                }
+            }, 3500);
+
+            // Mobile nav toggle
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            navToggle.addEventListener('click', function() {
+                const isActive = navLinks.classList.contains('active');
+                navLinks.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', !isActive);
+            });
+
+            // Close nav on link click (mobile)
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // Respect prefers-reduced-motion
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                // Immediately show all reveals
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                    el.style.transition = 'none';
+                });
+                // Hide loading immediately
+                loadingOverlay.classList.add('hidden');
+                loadingOverlay.style.display = 'none';
+                hero.classList.add('loaded');
+            }
+
+            // Header scroll effect - subtle shadow on scroll
+            const siteHeader = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    siteHeader.style.boxShadow = '0 2px 24px rgba(0,0,0,0.4)';
+                } else {
+                    siteHeader.style.boxShadow = 'none';
+                }
+                lastScroll = scrollY;
+            }, { passive: true });
+
+            // Close mobile nav on outside click
+            document.addEventListener('click', function(e) {
+                if (navLinks.classList.contains('active') &&
+                    !navLinks.contains(e.target) &&
+                    !navToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
