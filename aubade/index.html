@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aubade Passy — Lingerie Fine & Salon d'Essayage Privé | Paris 16ᵉ</title>
+    <meta name="description" content="Aubade Paris Passy, 22 rue de Passy — un salon d'essayage confidentiel au cœur du 16ᵉ. Conseil sur-mesure, pièces d'exception, rendez-vous privé. Téléphonez au 01 42 88 11 48.">
+    <meta property="og:title" content="Aubade Passy — Lingerie Fine & Salon d'Essayage Privé">
+    <meta property="og:description" content="Votre lingerie mérite une adresse. Au 22 rue de Passy, découvrez un salon confidentiel, un conseil expert et les plus belles pièces Aubade dans l'intimité du 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🌙%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --noir-ceruse: #1A1614;
+            --nacre: #F5EEEB;
+            --soie-ecrue: #D9CDC2;
+            --brun-velours: #3B322E;
+            --rose-cuivre: #C37B6F;
+            --vert-passy: #8A9B9E;
+            --gold-mirror: #B8A28B;
+            --shadow-deep: 0 4px 24px rgba(0,0,0,0.5);
+            --shadow-soft: 0 2px 12px rgba(26,22,20,0.12);
+            --radius-panel: 2px;
+            --transition-silk: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-reveal: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 2vw, 18px);
+            background: var(--noir-ceruse);
+            color: var(--soie-ecrue);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 300;
+            line-height: 1.65;
+            background: var(--noir-ceruse);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- FOCUS VISIBLE --- */
+        :focus-visible {
+            outline: 2px solid var(--rose-cuivre);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, .display-font, .nav-logo, .hero-title, .section-title, .mirror-text-reflected {
+            font-family: 'Marcellus', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+        }
+
+        h2.section-title {
+            font-size: clamp(2.4rem, 6vw, 3.8rem);
+            color: var(--nacre);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subhead {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--rose-cuivre);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .body-text {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .caption-text {
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            color: var(--vert-passy);
+            text-transform: uppercase;
+        }
+
+        /* --- NAVIGATION --- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 22, 20, 0.78);
+            backdrop-filter: blur(18px) saturate(1.4);
+            -webkit-backdrop-filter: blur(18px) saturate(1.4);
+            border-bottom: 1px solid rgba(217, 205, 194, 0.15);
+            padding: 1rem clamp(1rem, 3vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background var(--transition-silk), padding var(--transition-silk);
+        }
+        .site-header.scrolled {
+            background: rgba(26, 22, 20, 0.92);
+            padding: 0.65rem clamp(1rem, 3vw, 3rem);
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            color: var(--nacre);
+            text-decoration: none;
+            line-height: 1;
+        }
+        .nav-logo span {
+            color: var(--rose-cuivre);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--soie-ecrue);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color var(--transition-silk), border-color var(--transition-silk);
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--nacre);
+            border-bottom-color: var(--rose-cuivre);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--rose-cuivre);
+            color: var(--rose-cuivre);
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.8rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all var(--transition-silk);
+            cursor: pointer;
+            line-height: 1.2;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--rose-cuivre);
+            color: var(--noir-ceruse);
+            border-color: var(--rose-cuivre);
+            outline: none;
+        }
+        .btn-primary.dark-bg {
+            background: var(--rose-cuivre);
+            color: var(--nacre);
+            border-color: var(--rose-cuivre);
+            font-weight: 600;
+        }
+        .btn-primary.dark-bg:hover {
+            background: transparent;
+            color: var(--rose-cuivre);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--soie-ecrue);
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO --- */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 7rem clamp(1rem, 4vw, 4rem) 4rem;
+            position: relative;
+            background: var(--noir-ceruse);
+            overflow: hidden;
+        }
+        .hero-image-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 48%;
+            overflow: hidden;
+            opacity: 0.85;
+            mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.1) 90%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.1) 90%);
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.05) saturate(0.6);
+            mix-blend-mode: luminosity;
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 620px;
+            animation: fadeUp 1s var(--transition-reveal) forwards;
+        }
+        .hero-label {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--vert-passy);
+            margin-bottom: 1.8rem;
+            display: block;
+        }
+        .hero-title {
+            font-size: clamp(3.2rem, 8vw, 5.4rem);
+            color: var(--nacre);
+            margin-bottom: 1.2rem;
+            line-height: 1.05;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-weight: 300;
+            color: var(--soie-ecrue);
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            line-height: 1.55;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .hero-filigrane {
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            font-family: 'Marcellus', serif;
+            font-size: clamp(6rem, 15vw, 14rem);
+            color: rgba(217, 205, 194, 0.025);
+            z-index: 0;
+            pointer-events: none;
+            line-height: 1;
+            user-select: none;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- REVEAL ON SCROLL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        .section {
+            padding: 5rem clamp(1.2rem, 5vw, 4rem);
+            position: relative;
+            background: var(--noir-ceruse);
+            overflow: hidden;
+        }
+        .section.light-bg {
+            background: var(--nacre);
+            color: var(--brun-velours);
+        }
+        .section.light-bg .section-title {
+            color: var(--brun-velours);
+        }
+        .section.light-bg .body-text {
+            color: var(--brun-velours);
+        }
+        .section.light-bg .section-subhead {
+            color: #8A6B61;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid-content {
+            max-width: 500px;
+        }
+
+        /* --- AMBIANCE GALLERY --- */
+        .gallery-scroll {
+            display: flex;
+            gap: 1.2rem;
+            overflow-x: auto;
+            padding: 1.5rem 0 2.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            max-width: 1200px;
+            margin: 0 auto;
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+        .gallery-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--rose-cuivre);
+            border-radius: 4px;
+        }
+        .gallery-card {
+            flex: 0 0 clamp(260px, 40vw, 400px);
+            height: 500px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: var(--shadow-deep);
+            transition: transform var(--transition-silk);
+        }
+        .gallery-card:hover {
+            transform: translateY(-6px);
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75) contrast(1.1) sepia(0.2);
+            transition: filter var(--transition-silk);
+        }
+        .gallery-card:hover img {
+            filter: brightness(0.9) contrast(1.05) sepia(0);
+        }
+
+        /* --- MIRROR EFFECT SECTION --- */
+        .mirror-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        .mirror-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .mirror-text-reflected {
+            position: absolute;
+            bottom: 18%;
+            right: 8%;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: rgba(245, 238, 235, 0.65);
+            transform: scaleX(-1);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            transition: opacity 1s ease, transform 1s ease;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* --- AVIS / GOOGLE BADGE --- */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(26,22,20,0.7);
+            backdrop-filter: blur(8px);
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid rgba(217, 205, 194, 0.25);
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--nacre);
+            margin-bottom: 2rem;
+            width: fit-content;
+        }
+        .stars {
+            color: #F4B740;
+            letter-spacing: 2px;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            max-width: 1000px;
+            margin: 2.5rem auto 0;
+        }
+        .avis-card {
+            background: rgba(245, 238, 235, 0.04);
+            border: 1px solid rgba(217, 205, 194, 0.12);
+            padding: 2rem 1.8rem;
+            border-radius: 2px;
+            transition: background var(--transition-silk);
+        }
+        .avis-card:hover {
+            background: rgba(245, 238, 235, 0.07);
+        }
+        .avis-text {
+            font-style: italic;
+            color: var(--soie-ecrue);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .avis-author {
+            font-weight: 600;
+            color: var(--rose-cuivre);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* --- CONTACT MAP --- */
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(217, 205, 194, 0.2);
+            filter: grayscale(0.3) contrast(1.1);
+            width: 100%;
+            margin-top: 2rem;
+        }
+        .info-block {
+            background: rgba(26,22,20,0.5);
+            border: 1px solid rgba(217, 205, 194, 0.15);
+            padding: 2rem;
+            border-radius: 2px;
+            backdrop-filter: blur(4px);
+        }
+        .info-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .info-line strong {
+            font-family: 'Marcellus', serif;
+            font-weight: 400;
+            color: var(--rose-cuivre);
+            min-width: 100px;
+            letter-spacing: 0.03em;
+        }
+        .info-line a {
+            color: var(--soie-ecrue);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--vert-passy);
+            transition: color var(--transition-silk);
+        }
+        .info-line a:hover {
+            color: var(--nacre);
+            border-bottom-color: var(--rose-cuivre);
+        }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            background: #110E0D;
+            padding: 3rem clamp(1.2rem, 5vw, 4rem);
+            border-top: 1px solid rgba(217, 205, 194, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--vert-passy);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .site-footer .footer-nap {
+            color: var(--soie-ecrue);
+            letter-spacing: 0.04em;
+        }
+
+        /* --- DENTELLE FILIGRANE BACKGROUND --- */
+        .dentelle-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(195, 123, 111, 0.06) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(138, 155, 158, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-image-container {
+                width: 70%;
+                right: -10%;
+                opacity: 0.5;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26,22,20,0.96);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(217,205,194,0.2);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-primary {
+                text-align: center;
+            }
+            .gallery-card {
+                height: 350px;
+            }
+            .info-line {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <a href="#" class="nav-logo" aria-label="Aubade Passy - Accueil">Aubade<span>·Passy</span></a>
+        <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#boutique">La Boutique</a></li>
+                <li><a href="#ambiance">Ambiance</a></li>
+                <li><a href="#rendezvous">Rendez-vous</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#rendezvous" class="btn-primary" style="border-radius:50px; padding:0.5rem 1.4rem;">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-image-container">
+                <img src="assets/maps-1.jpg" alt="Intérieur de la boutique Aubade rue de Passy" loading="eager">
+            </div>
+            <div class="hero-content">
+                <span class="hero-label">Passy Confidentiel</span>
+                <h1 class="hero-title">Votre lingerie<br>mérite une adresse.</h1>
+                <p class="hero-subtitle">Au 22 rue de Passy, Aubade n'est pas qu'une marque. C'est un salon d'essayage confidentiel, un conseil sur-mesure et les plus belles pièces de la collection, loin de l'agitation numérique.</p>
+                <div class="hero-actions">
+                    <a href="#rendezvous" class="btn-primary dark-bg">Prendre un rendez-vous privé</a>
+                    <a href="tel:+33142881148" class="btn-primary" style="border-color:var(--soie-ecrue); color:var(--soie-ecrue);">Appeler · 01 42 88 11 48</a>
+                </div>
+            </div>
+            <div class="hero-filigrane" aria-hidden="true">Aubade</div>
+        </section>
+
+        <!-- BOUTIQUE & QUARTIER -->
+        <section class="section light-bg reveal" id="boutique">
+            <div class="grid-2col">
+                <div class="grid-content">
+                    <span class="section-subhead">Boutique & Quartier</span>
+                    <h2 class="section-title">Une maison au cœur du 16ᵉ</h2>
+                    <p class="body-text">À deux pas de la Maison de la Radio et des jardins du Ranelagh, notre adresse de Passy cultive depuis plus de vingt ans l'art du conseil en lingerie fine. Ici, chaque silhouette trouve sa coupe dans un cadre qui privilégie la discrétion et le confort d'écoute.</p>
+                    <div style="display:flex; align-items:center; gap:1.5rem; margin-top:2rem;">
+                        <div class="google-badge" style="background:rgba(59,50,46,0.15); border-color:rgba(59,50,46,0.2); color:var(--brun-velours);">
+                            <span class="stars">★★★★☆</span> 4,3 — 16 avis
+                        </div>
+                    </div>
+                </div>
+                <div style="position:relative; border-radius:2px; overflow:hidden; box-shadow: var(--shadow-soft);">
+                    <img src="assets/maps-1.jpg" alt="Façade et intérieur Aubade Passy" style="width:100%; height:auto; object-fit:cover; filter: brightness(0.95) contrast(1.05) saturate(0.8);" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUELS D'AMBIANCE / Franchissez la porte -->
+        <section class="section reveal" id="ambiance" style="background: #12100F;">
+            <div class="dentelle-bg"></div>
+            <div style="max-width:1200px; margin:0 auto; position:relative; z-index:2;">
+                <span class="section-subhead">Visuels d'ambiance</span>
+                <h2 class="section-title">Franchissez la porte</h2>
+                <p class="body-text" style="color:var(--soie-ecrue); margin-bottom:2.5rem;">Luminaires tamisés, boiseries sombres, miroirs biseautés et les campagnes Aubade en noir & blanc accrochées comme des tableaux de maître — la boutique de Passy est un écrin.</p>
+            </div>
+            <div class="gallery-scroll" style="position:relative; z-index:2;">
+                <div class="gallery-card"><img src="assets/maps-1.jpg" alt="Ambiance salon Aubade Passy" loading="lazy"></div>
+                <div class="gallery-card"><img src="assets/maps-1.jpg" alt="Détail miroirs et lumière chaude" loading="lazy"></div>
+                <div class="gallery-card"><img src="assets/maps-1.jpg" alt="Mobilier en bois sombre" loading="lazy"></div>
+            </div>
+            <!-- Typographie miroir -->
+            <div style="max-width:800px; margin:3rem auto 0; position:relative; z-index:2;" class="mirror-container reveal">
+                <img src="assets/maps-1.jpg" alt="Miroir de la boutique reflétant l'espace" loading="lazy" style="width:100%; filter: brightness(0.65) contrast(1.2);">
+                <span class="mirror-text-reflected" id="mirrorReflect">Aubade</span>
+            </div>
+        </section>
+
+        <!-- PRESTATIONS & RENDEZ-VOUS -->
+        <section class="section light-bg reveal" id="rendezvous">
+            <div class="grid-2col">
+                <div class="grid-content">
+                    <span class="section-subhead">Prestations</span>
+                    <h2 class="section-title">Un moment rien qu'à vous</h2>
+                    <p class="body-text">Essayage accompagné, conseil en morphologie, retouches confiées à nos ateliers partenaires. Réservez votre créneau et profitez de la boutique en toute intimité — nous bloquons des plages exclusives pour que vous ne croisiez jamais plus d'une cliente à la fois.</p>
+                    <div style="margin-top:2rem;">
+                        <a href="tel:+33142881148" class="btn-primary" style="border-color:var(--brun-velours); color:var(--brun-velours); margin-right:1rem;">Appeler pour réserver</a>
+                    </div>
+                </div>
+                <div class="info-block" style="background:rgba(26,22,20,0.03); border-color:rgba(59,50,46,0.2); color:var(--brun-velours);">
+                    <h3 style="font-family:'Marcellus',serif; font-weight:400; margin-bottom:1.5rem; font-size:1.4rem;">Horaires d'ouverture</h3>
+                    <div class="info-line"><strong>Mardi – Samedi</strong> <span>10h30 – 13h00 / 14h00 – 19h00</span></div>
+                    <div class="info-line"><strong>Dimanche</strong> <span>Fermé</span></div>
+                    <div class="info-line"><strong>Lundi</strong> <span>Fermé</span></div>
+                    <p style="font-size:0.75rem; color:var(--vert-passy); margin-top:1.2rem;">Horaires susceptibles de varier — veuillez confirmer par téléphone.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section reveal" id="avis" style="background:#161312;">
+            <div class="dentelle-bg"></div>
+            <div style="max-width:1000px; margin:0 auto; position:relative; z-index:2; text-align:center;">
+                <span class="section-subhead">Ce que nos clientes disent</span>
+                <div class="google-badge" style="margin:0.5rem auto 1.5rem;">
+                    <span class="stars">★★★★☆</span> 4,3 sur Google · 16 témoignages précieux
+                </div>
+                <h2 class="section-title" style="text-align:center;">L'écho du boudoir</h2>
+            </div>
+            <div class="avis-grid" style="position:relative; z-index:2;">
+                <div class="avis-card reveal">
+                    <p class="avis-text">« Une vendeuse aux petits soins, des conseils justes et un accueil qui change des grandes chaînes. »</p>
+                    <p class="avis-author">Sophie L.</p>
+                </div>
+                <div class="avis-card reveal">
+                    <p class="avis-text">« Boutique très élégante, on prend le temps pour vous. La retouche était parfaite. »</p>
+                    <p class="avis-author">Camille D.</p>
+                </div>
+                <div class="avis-card reveal">
+                    <p class="avis-text">« Un moment suspendu. Je ne commande plus en ligne, ici tout est plus beau. »</p>
+                    <p class="avis-author">Laurence M.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & VENIR -->
+        <section class="section light-bg reveal" id="contact">
+            <div class="grid-2col">
+                <div class="grid-content">
+                    <span class="section-subhead">Contact & Venir</span>
+                    <h2 class="section-title">Le chemin est simple</h2>
+                    <div class="info-line"><strong>Adresse</strong> <span>22 Rue de Passy, 75016 Paris</span></div>
+                    <div class="info-line"><strong>Métro</strong> <span>La Muette (ligne 9) · Passy (ligne 6)</span></div>
+                    <div class="info-line"><strong>Téléphone</strong> <a href="tel:+33142881148">01 42 88 11 48</a></div>
+                    <div class="info-line"><strong>Email</strong> <a href="mailto:contact@aubadepro.com">contact@aubadepro.com</a></div>
+                    <p style="font-size:0.8rem; color:var(--vert-passy); margin-top:1.5rem;">Téléphonez pour toute question ou pour adapter votre rendez-vous.</p>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Aubade+22+Rue+de+Passy%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps Aubade Passy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-nap">Aubade Passy · 22 Rue de Passy, 75016 Paris · 01 42 88 11 48</p>
+        <p>Du mardi au samedi, 10h30–13h00 / 14h00–19h00</p>
+        <p style="margin-top:0.5rem;">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Aubade Passy",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "22 Rue de Passy",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142881148",
+            "email": "contact@aubadepro.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.3",
+                "reviewCount": "16"
+            },
+            "openingHours": ["Tu-Sa 10:30-13:00", "Tu-Sa 14:00-19:00"],
+            "priceRange": "€€€"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+                // Close menu on link click
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Intersection Observer for reveals
+            const reveals = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -30px 0px'
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            reveals.forEach(el => observer.observe(el));
+
+            // Mirror text effect: stabilizes when visible
+            const mirrorText = document.getElementById('mirrorReflect');
+            if (mirrorText) {
+                const mirrorObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            mirrorText.style.opacity = '1';
+                            mirrorText.style.transform = 'scaleX(-1) translateY(0)';
+                        } else {
+                            mirrorText.style.opacity = '0.3';
+                            mirrorText.style.transform = 'scaleX(-1) translateY(20px)';
+                        }
+                    });
+                }, { threshold: 0.6 });
+                mirrorObserver.observe(mirrorText);
+                // initial subtle movement
+                mirrorText.style.transition = 'opacity 1.2s ease, transform 1s cubic-bezier(0.16,1,0.3,1)';
+                mirrorText.style.opacity = '0.3';
+            }
+        })();
+    </script>
+</body>
+</html>
