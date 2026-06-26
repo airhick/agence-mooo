@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anders – Mobilier sur mesure pour enfants et ados | Paris 16</title>
+    <meta name="description" content="Anders, boutique-atelier de mobilier sur mesure pour l'enfance et l'adolescence depuis plus de 20 ans. Lits mezzanine, superposés, baldaquin en bois massif à personnaliser. 96 avenue Paul Doumer, Paris 16.">
+    <meta property="og:title" content="Anders – La chambre se dessine ici, en bois et en couleurs">
+    <meta property="og:description" content="Depuis plus de 20 ans, nous fabriquons des meubles sur mesure pour les enfants et les ados, à découvrir et personnaliser dans notre boutique-atelier du 16e.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coquille: #F7F2EB;
+            --encre: #2B2B28;
+            --chene: #C4A882;
+            --bleu-anders: #4A7C82;
+            --poudre: #E8D5C4;
+            --vert-atelier: #3D4A46;
+            --shadow-warm: 0 4px 24px rgba(61, 74, 70, 0.10);
+            --shadow-deep: 0 12px 40px rgba(43, 43, 40, 0.14);
+            --radius-frame: 6px;
+            --font-display: 'Bricolage Grotesque', 'Georgia', serif;
+            --font-body: 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--coquille);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Texture grain subtile sur le fond */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* HEADER */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(247, 242, 235, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--poudre);
+            transition: box-shadow 0.35s ease, background 0.35s ease;
+            padding: 0 clamp(16px, 3vw, 40px);
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(43, 43, 40, 0.08);
+            background: rgba(247, 242, 235, 0.96);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1320px;
+            margin: 0 auto;
+            height: 68px;
+            gap: 24px;
+        }
+        .brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+            line-height: 1;
+            position: relative;
+        }
+        .brand::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--bleu-anders);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .brand:hover::after,
+        .brand:focus-visible::after {
+            transform: scaleX(1);
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(8px, 1.5vw, 20px);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-list a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--encre);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: color 0.25s, background 0.25s;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            position: relative;
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background: var(--bleu-anders);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.28s ease;
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            transform: scaleX(1);
+        }
+        .nav-list a:hover {
+            color: var(--bleu-anders);
+        }
+        .nav-cta {
+            background: var(--bleu-anders) !important;
+            color: #fff !important;
+            padding: 9px 18px !important;
+            border-radius: 6px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.03em !important;
+            transition: background 0.3s, transform 0.2s !important;
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover {
+            background: #3d6a6f !important;
+            transform: translateY(-1px);
+        }
+        .google-badge-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: #fff;
+            border: 1px solid var(--poudre);
+            border-radius: 20px;
+            padding: 5px 11px 5px 7px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--encre);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .google-badge-header .star {
+            color: #f5a623;
+            font-size: 1rem;
+            line-height: 1;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--encre);
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        /* MAIN */
+        main {
+            margin-top: 68px;
+        }
+        section {
+            padding: clamp(48px, 7vw, 100px) clamp(16px, 5vw, 40px);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            padding-top: clamp(60px, 8vw, 100px);
+            padding-bottom: clamp(48px, 7vw, 90px);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(28px, 4vw, 50px);
+            position: relative;
+        }
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: clamp(32px, 5vw, 64px);
+            align-items: center;
+            max-width: 1180px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(16px, 2.5vw, 24px);
+            z-index: 2;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+        }
+        .hero h1 .accent {
+            color: var(--bleu-anders);
+            display: inline;
+        }
+        .hero .subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: var(--vert-atelier);
+            line-height: 1.55;
+            max-width: 520px;
+        }
+        .hero-image-wrap {
+            position: relative;
+            border-radius: var(--radius-frame);
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            aspect-ratio: 4/3;
+            background: var(--poudre);
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.94) contrast(1.04) saturate(0.9);
+            transition: filter 0.6s ease;
+        }
+        .hero-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid var(--chene);
+            border-radius: var(--radius-frame);
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.7;
+        }
+        .hero-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: -16px;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed var(--bleu-anders);
+            border-radius: var(--radius-frame);
+            z-index: 0;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: clamp(28px, 4vw, 48px);
+            line-height: 1.15;
+            position: relative;
+        }
+        .section-title .accent {
+            color: var(--bleu-anders);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--chene);
+            margin-top: 12px;
+            border-radius: 2px;
+        }
+
+        /* Nuancier */
+        .nuancier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: clamp(16px, 2.5vw, 28px);
+            margin-bottom: clamp(24px, 3vw, 40px);
+        }
+        .swatch {
+            aspect-ratio: 1/1.2;
+            border-radius: var(--radius-frame);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-warm);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            cursor: default;
+        }
+        .swatch:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-deep);
+        }
+        .swatch-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .swatch-color {
+            width: 100%;
+            height: 70%;
+            position: relative;
+        }
+        .swatch-label {
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: #fff;
+            color: var(--encre);
+            text-align: center;
+            padding: 4px;
+        }
+        .swatch-color.s1 {
+            background: #F7F2EB;
+        }
+        .swatch-color.s2 {
+            background: #C4A882;
+        }
+        .swatch-color.s3 {
+            background: #4A7C82;
+        }
+        .swatch-color.s4 {
+            background: #E8D5C4;
+        }
+        .swatch-color.s5 {
+            background: #3D4A46;
+        }
+        .swatch-color.s6 {
+            background: #8C6E5A;
+        }
+        .swatch-color.s7 {
+            background: #D4C4B0;
+        }
+        .swatch-color.s8 {
+            background: #5A8A8E;
+        }
+
+        /* Collections mosaique */
+        .collections-mosaic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(20px, 3vw, 36px);
+        }
+        .collection-card {
+            background: #fff;
+            border-radius: var(--radius-frame);
+            overflow: hidden;
+            box-shadow: var(--shadow-warm);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+            border: 1px solid transparent;
+        }
+        .collection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-deep);
+            border-color: var(--chene);
+        }
+        .collection-card-img {
+            width: 100%;
+            aspect-ratio: 5/3;
+            background: var(--poudre);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--chene);
+            font-size: 3rem;
+        }
+        .collection-card-img .placeholder-icon {
+            opacity: 0.5;
+            font-size: 4rem;
+        }
+        .collection-card-body {
+            padding: clamp(16px, 2vw, 24px);
+        }
+        .collection-card-body h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--encre);
+            margin-bottom: 6px;
+        }
+        .collection-card-body p {
+            font-size: 0.9rem;
+            color: var(--vert-atelier);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* Atelier */
+        .atelier-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: center;
+            background: #fff;
+            border-radius: var(--radius-frame);
+            padding: clamp(28px, 5vw, 56px);
+            box-shadow: var(--shadow-warm);
+            border-left: 6px solid var(--bleu-anders);
+        }
+        .atelier-block .atelier-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .atelier-block .atelier-text p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--encre);
+        }
+        .atelier-block .atelier-illu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            opacity: 0.6;
+            color: var(--chene);
+        }
+
+        /* Boutique */
+        .boutique-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: start;
+        }
+        .boutique-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .boutique-info p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--encre);
+        }
+        .boutique-info .address-block {
+            background: #fff;
+            padding: 20px 24px;
+            border-radius: var(--radius-frame);
+            box-shadow: var(--shadow-warm);
+            border-left: 4px solid var(--chene);
+            font-style: normal;
+        }
+        .boutique-info .address-block strong {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        .map-wrap {
+            border-radius: var(--radius-frame);
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            border: 3px solid var(--chene);
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* Temoignages */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(20px, 3vw, 32px);
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: var(--radius-frame);
+            padding: clamp(20px, 3vw, 28px);
+            box-shadow: var(--shadow-warm);
+            position: relative;
+            border-top: 4px solid var(--bleu-anders);
+        }
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--encre);
+            font-style: italic;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .testimonial-card .quote::before {
+            content: '«';
+            position: absolute;
+            left: -2px;
+            top: -8px;
+            font-size: 2.5rem;
+            color: var(--chene);
+            font-family: var(--font-display);
+            line-height: 1;
+            opacity: 0.6;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--vert-atelier);
+            letter-spacing: 0.02em;
+        }
+        .google-rating-large {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .google-rating-large .stars-big {
+            font-size: 1.6rem;
+            color: #f5a623;
+            letter-spacing: 2px;
+        }
+        .google-rating-large .rating-text {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--encre);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: start;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--poudre);
+            border-radius: var(--radius-frame);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            background: #fff;
+            color: var(--encre);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--bleu-anders);
+            box-shadow: 0 0 0 4px rgba(74, 124, 130, 0.1);
+        }
+        .contact-form button {
+            align-self: flex-start;
+            background: var(--bleu-anders);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: var(--radius-frame);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .contact-form button:hover {
+            background: #3d6a6f;
+            transform: translateY(-2px);
+        }
+        .contact-form button:focus-visible {
+            outline: 3px solid var(--bleu-anders);
+            outline-offset: 3px;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-details a {
+            color: var(--bleu-anders);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .contact-details a:hover {
+            color: #3d6a6f;
+            text-decoration: underline;
+        }
+        .contact-details .tel-link {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--vert-atelier);
+            color: var(--coquille);
+            padding: clamp(32px, 5vw, 56px) clamp(16px, 5vw, 40px);
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+        .site-footer a {
+            color: var(--chene);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .site-footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer-credits {
+            margin-top: 12px;
+            opacity: 0.7;
+            font-size: 0.75rem;
+        }
+
+        /* SVG sketch animation */
+        .sketch-svg {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        .sketch-svg.visible {
+            opacity: 0.5;
+        }
+        .sketch-svg path {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            transition: stroke-dashoffset 2s ease;
+        }
+        .sketch-svg.visible path {
+            stroke-dashoffset: 0;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.12s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.36s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.48s;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-image-wrap {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .hero-image-wrap::before {
+                display: none;
+            }
+            .atelier-block {
+                grid-template-columns: 1fr;
+            }
+            .atelier-block .atelier-illu {
+                font-size: 5rem;
+                order: -1;
+            }
+            .boutique-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                background: rgba(247, 242, 235, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 12px;
+                border-bottom: 2px solid var(--poudre);
+                box-shadow: var(--shadow-deep);
+            }
+            .nav-list.open {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .google-badge-header {
+                font-size: 0.7rem;
+                padding: 4px 8px 4px 5px;
+            }
+        }
+        @media (max-width: 500px) {
+            .nuancier-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            .swatch {
+                aspect-ratio: 1/1;
+            }
+            .swatch-label {
+                font-size: 0.65rem;
+                padding: 2px;
+            }
+            .collections-mosaic {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Focus styles */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--bleu-anders);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Anders",
+            "description": "Mobilier sur mesure pour l'enfance et l'adolescence – boutique-atelier à Paris 16.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "96 Avenue Paul Doumer",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33623130166",
+            "email": "contact@anders-paris.com",
+            "url": "https://agence.mooo.com/anders",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "95"
+            },
+            "priceRange": "€€€",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "description": "Horaires à confirmer – Nous vous recevons du mardi au samedi, avec ou sans rendez-vous."
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="Anders – Accueil">Anders</a>
+            <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#nuancier">Nuancier</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#atelier">L'atelier</a></li>
+                    <li><a href="#boutique">Boutique</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact" class="nav-cta">Prendre RDV</a></li>
+                    <li><span class="google-badge-header"><span class="star">★</span> 4.1 · 95 avis</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-layout">
+                <div class="hero-text reveal">
+                    <h1>La chambre se dessine ici, <span class="accent">en bois</span> et en couleurs</h1>
+                    <p class="subtitle">Depuis plus de 20 ans, nous fabriquons des meubles sur mesure pour les enfants et les ados, à découvrir et personnaliser dans notre boutique-atelier du 16ᵉ.</p>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                        <a href="#contact" class="nav-cta" style="display:inline-block;text-decoration:none;font-size:1rem;padding:14px 28px;">Prendre rendez-vous</a>
+                        <a href="tel:+33623130166" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--encre);font-weight:500;font-size:0.95rem;padding:14px 20px;border:2px solid var(--chene);border-radius:6px;transition:all 0.3s;">📞 06 23 13 01 66</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Boutique Anders – Intérieur chaleureux avec mobilier en bois pour enfants" loading="eager" width="800" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- NUANCIER -->
+        <section id="nuancier">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Le <span class="accent">nuancier</span> des possibles</h2>
+                <p class="reveal reveal-delay-1" style="max-width:640px;margin-bottom:32px;font-size:1.05rem;line-height:1.7;color:var(--vert-atelier);">Plus de 30 couleurs de lasure, des essences de bois massif, des dimensions adaptées à chaque espace. Venez composer le meuble qui ressemble à votre enfant.</p>
+                <div class="nuancier-grid reveal reveal-delay-2">
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s1"></div><div class="swatch-label">Coquille</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s2"></div><div class="swatch-label">Chêne brut</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s3"></div><div class="swatch-label">Bleu Anders</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s4"></div><div class="swatch-label">Poudré</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s5"></div><div class="swatch-label">Vert atelier</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s6"></div><div class="swatch-label">Noyer</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s7"></div><div class="swatch-label">Sable</div></div></div>
+                    <div class="swatch"><div class="swatch-inner"><div class="swatch-color s8"></div><div class="swatch-label">Lagon</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTIONS -->
+        <section id="collections" style="background:#fff;border-radius:0;box-shadow:inset 0 1px 0 var(--poudre),inset 0 -1px 0 var(--poudre);">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Les <span class="accent">collections</span></h2>
+                <div class="collections-mosaic reveal reveal-delay-1">
+                    <div class="collection-card">
+                        <div class="collection-card-img"><span class="placeholder-icon">🛏️</span></div>
+                        <div class="collection-card-body">
+                            <h3>Lits mezzanine</h3>
+                            <p>La cabane en l'air, à partir de 6 ans. Structure en hêtre massif, échelle intégrée, rideaux optionnels.</p>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <div class="collection-card-img"><span class="placeholder-icon">🪜</span></div>
+                        <div class="collection-card-body">
+                            <h3>Lits superposés</h3>
+                            <p>Pour les fratries, optimisés sans perdre un centimètre. Séparables en deux lits simples.</p>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <div class="collection-card-img"><span class="placeholder-icon">👑</span></div>
+                        <div class="collection-card-body">
+                            <h3>Lits baldaquin</h3>
+                            <p>Une silhouette douce et intemporelle. Toit ouvrant, panneaux rainurés, couleurs au choix.</p>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <div class="collection-card-img"><span class="placeholder-icon">📚</span></div>
+                        <div class="collection-card-body">
+                            <h3>Bibliothèques & bureaux</h3>
+                            <p>Compagnons de lecture et de devoirs, évolutifs de la maternelle au lycée.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATELIER -->
+        <section id="atelier">
+            <div class="section-inner">
+                <h2 class="section-title reveal">L'esprit de <span class="accent">l'atelier</span></h2>
+                <div class="atelier-block reveal reveal-delay-1">
+                    <div class="atelier-text">
+                        <p>Un mobilier fait pour durer. Nous travaillons le <strong>hêtre</strong> et le <strong>chêne</strong>, assemblés dans nos ateliers partenaires avec des tenons et mortaises traditionnels, des panneaux rainurés, des lasures à l'eau qui respectent la peau des enfants.</p>
+                        <p>Chaque commande est contrôlée avant livraison, et nous assurons le <strong>SAV</strong> pour les années à venir. Un meuble Anders, c'est un compagnon de croissance.</p>
+                    </div>
+                    <div class="atelier-illu">🪚</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOUTIQUE -->
+        <section id="boutique" style="background:var(--vert-atelier);color:var(--coquille);border-radius:0;">
+            <div class="section-inner">
+                <h2 class="section-title reveal" style="color:var(--coquille);">La boutique comme <span class="accent" style="color:var(--chene);">une maison</span></h2>
+                <div class="boutique-grid reveal reveal-delay-1">
+                    <div class="boutique-info">
+                        <p style="color:var(--coquille);opacity:0.9;">96 avenue Paul Doumer, Paris 16. Poussez la porte de notre espace clair et spacieux. Installez-vous, touchez les matières, feuilletez les nuanciers. Nous vous recevons avec ou sans rendez-vous, du mardi au samedi.</p>
+                        <div class="address-block" style="background:rgba(255,255,255,0.08);color:var(--coquille);border-left-color:var(--chene);">
+                            <strong>Anders</strong>
+                            96 Avenue Paul Doumer<br>
+                            75016 Paris<br>
+                            📞 <a href="tel:+33623130166" style="color:var(--chene);">06 23 13 01 66</a><br>
+                            ✉️ <a href="mailto:contact@anders-paris.com" style="color:var(--chene);">contact@anders-paris.com</a><br>
+                            <small style="opacity:0.7;">Horaires : du mardi au samedi — Horaires à confirmer</small>
+                        </div>
+                    </div>
+                    <div class="map-wrap reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Anders+96+Avenue+Paul+Doumer%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – Anders Paris 16"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section id="avis">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Ils ont imaginé <span class="accent">avec nous</span></h2>
+                <div class="google-rating-large reveal reveal-delay-1">
+                    <span class="stars-big">★★★★☆</span>
+                    <span class="rating-text">4.1 sur 5 — 95 avis Google</span>
+                </div>
+                <div class="testimonials-grid reveal reveal-delay-2">
+                    <div class="testimonial-card">
+                        <p class="quote">Une qualité et un conseil rares. Nous avons pu choisir chaque détail du lit de notre fils, et le rendu est magnifique.</p>
+                        <span class="author">— Sophie M.</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">Nous cherchions un lit mezzanine sur mesure pour notre fille de 7 ans. L'équipe a su nous guider avec patience et goût. Le résultat est superbe, solide, et l'enfant l'adore.</p>
+                        <span class="author">— Laurent D.</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">Boutique charmante, accueil chaleureux. On se sent comme dans un atelier d'artisan. Les finitions sont impeccables, le bois est magnifique.</p>
+                        <span class="author">— Camille R.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" style="background:#fff;border-top:1px solid var(--poudre);">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Contact <span class="accent">& rendez-vous</span></h2>
+                <div class="contact-grid reveal reveal-delay-1">
+                    <form class="contact-form" id="contact-form" action="#" method="post">
+                        <input type="text" name="name" placeholder="Votre nom" required aria-label="Votre nom">
+                        <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
+                        <input type="tel" name="phone" placeholder="Votre téléphone" aria-label="Votre téléphone">
+                        <textarea name="message" rows="4" placeholder="Votre message – parlez-nous de votre projet, de l'âge de l'enfant, de l'espace disponible…" aria-label="Votre message"></textarea>
+                        <button type="submit">Demander un devis</button>
+                    </form>
+                    <div class="contact-details">
+                        <p style="font-size:1.05rem;line-height:1.7;color:var(--encre);"><strong>Prenez rendez-vous</strong> pour une consultation personnalisée en boutique, en journée ou en soirée. Nous prenons le temps de dessiner avec vous la chambre idéale.</p>
+                        <a href="tel:+33623130166" class="tel-link">📞 06 23 13 01 66</a>
+                        <a href="mailto:contact@anders-paris.com">✉️ contact@anders-paris.com</a>
+                        <p style="font-size:0.85rem;color:var(--vert-atelier);margin-top:8px;">96 Avenue Paul Doumer, 75016 Paris</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SKETCH SVG décoratif (dessin d'architecte) -->
+    <svg class="sketch-svg" id="sketch-svg-1" width="200" height="160" viewBox="0 0 200 160" style="top:18%;right:5%;" aria-hidden="true">
+        <path d="M20 140 L20 30 Q20 15 35 15 L165 15 Q180 15 180 30 L180 140" fill="none" stroke="#4A7C82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <path d="M45 140 L45 50 L90 50 L90 140" fill="none" stroke="#C4A882" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        <path d="M100 140 L100 30 M55 140 L55 50" fill="none" stroke="#C4A882" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+    </svg>
+    <svg class="sketch-svg" id="sketch-svg-2" width="180" height="180" viewBox="0 0 180 180" style="bottom:15%;left:3%;" aria-hidden="true">
+        <path d="M15 165 L15 25 Q15 10 28 10 L152 10 Q165 10 165 25 L165 165" fill="none" stroke="#4A7C82" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        <path d="M50 165 L50 55 L90 55 L90 165 M95 165 L95 40 L135 40 L135 165" fill="none" stroke="#C4A882" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        <circle cx="40" cy="25" r="6" fill="none" stroke="#4A7C82" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+
+    <footer class="site-footer">
+        <p><strong>Anders</strong> — Mobilier sur mesure pour l'enfance et l'adolescence<br>
+            96 Avenue Paul Doumer, 75016 Paris · <a href="tel:+33623130166">06 23 13 01 66</a> · <a href="mailto:contact@anders-paris.com">contact@anders-paris.com</a></p>
+        <p class="footer-credits">Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const nav = document.getElementById('nav-list');
+            if (btn && nav) {
+                btn.addEventListener('click', function() {
+                    const expanded = nav.classList.toggle('open');
+                    btn.setAttribute('aria-expanded', expanded);
+                    btn.textContent = expanded ? '✕' : '☰';
+                });
+            }
+
+            // Header scroll shadow
+            const header = document.getElementById('site-header');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 40) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Reveal on scroll (IntersectionObserver)
+            const reveals = document.querySelectorAll('.reveal');
+            const sketchSvgs = document.querySelectorAll('.sketch-svg');
+            const observerOptions = { threshold: 0.18, rootMargin: '0px 0px -40px 0px' };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(function(el) { revealObserver.observe(el); });
+
+            // Sketch SVGs become visible on scroll
+            const sketchObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sketchSvgs.forEach(function(el) { sketchObserver.observe(el); });
+
+            // Smooth anchor scroll offset for fixed header
+            document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                        // Close mobile menu if open
+                        if (nav && nav.classList.contains('open')) {
+                            nav.classList.remove('open');
+                            btn.setAttribute('aria-expanded', 'false');
+                            btn.textContent = '☰';
+                        }
+                    }
+                });
+            });
+
+            // Contact form submission (prevent default, show feedback)
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btnSubmit = form.querySelector('button[type="submit"]');
+                    const originalText = btnSubmit.textContent;
+                    btnSubmit.textContent = '✓ Message envoyé !';
+                    btnSubmit.style.background = '#3d6a6f';
+                    btnSubmit.disabled = true;
+                    setTimeout(function() {
+                        btnSubmit.textContent = originalText;
+                        btnSubmit.style.background = '';
+                        btnSubmit.disabled = false;
+                        form.reset();
+                    }, 2800);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
