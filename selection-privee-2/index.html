@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection Privée — Atelier de soie & cachemire, Paris XVᵉ</title>
+    <meta name="description" content="Sélection Privée, atelier-boutique de soie et cachemire au 55 rue de la Convention, Paris XVᵉ. Pièces uniques brodées main, métiers Jacquard depuis 1989. Prenez rendez-vous pour un accueil privé.">
+    <meta property="og:title" content="Sélection Privée — Atelier de soie & cachemire, Paris">
+    <meta property="og:description" content="Chaque étole est une décision. Depuis 1989, nous tissons la soie et le cachemire sur métiers Jacquard, dans nos ateliers parisiens.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🧵%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sélection Privée",
+            "description": "Atelier-boutique de soie et cachemire, pièces uniques brodées main sur métiers Jacquard depuis 1989.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "55 Rue de la Convention",
+                "addressLocality": "Paris",
+                "addressRegion": "Île-de-France",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145786980",
+            "email": "selectionprivee@sfr.fr",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.6",
+                "reviewCount": "44",
+                "bestRating": "5"
+            },
+            "priceRange": "€€€"
+        }
+    </script>
+    <style>
+        :root {
+            --lin-ecru: #F7F2E9;
+            --pierre-blonde: #EAE1D2;
+            --noir-tanin: #1F1C1A;
+            --gris-mine: #4A4340;
+            --bordeaux-atelier: #8E2C3F;
+            --argent-brut: #9BA4AC;
+            --thread-color: #9BA4AC;
+            --thread-height: 0%;
+            --scroll-progress: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            background-color: var(--lin-ecru);
+            color: var(--noir-tanin);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--lin-ecru);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--argent-brut);
+            border-radius: 3px;
+        }
+
+        /* ===== FOCUS ===== */
+        :focus-visible {
+            outline: 2px solid var(--bordeaux-atelier);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 242, 233, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(74, 67, 64, 0.08);
+            transition: all 0.35s ease;
+            padding: 0 clamp(16px, 3vw, 48px);
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-header.scrolled {
+            background: rgba(247, 242, 233, 0.95);
+            border-bottom-color: rgba(74, 67, 64, 0.15);
+            box-shadow: 0 1px 24px rgba(31, 28, 26, 0.04);
+        }
+
+        .header-logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .header-logo:hover {
+            color: var(--bordeaux-atelier);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 2.5vw, 28px);
+            list-style: none;
+        }
+        .header-nav a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gris-mine);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bordeaux-atelier);
+            transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--bordeaux-atelier);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--bordeaux-atelier);
+            text-decoration: none;
+            border: 1.5px solid var(--bordeaux-atelier);
+            padding: 9px 20px;
+            border-radius: 2px;
+            transition: all 0.35s ease;
+            white-space: nowrap;
+            background: transparent;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .header-cta:hover {
+            background: var(--bordeaux-atelier);
+            color: #fff;
+        }
+
+        /* Burger */
+        .burger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+            width: 32px;
+            height: 24px;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .burger-btn span {
+            display: block;
+            height: 1.5px;
+            background: var(--noir-tanin);
+            transition: all 0.35s ease;
+            border-radius: 1px;
+        }
+        .burger-btn.active span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+        .burger-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .burger-btn.active span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(247, 242, 233, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            padding: 32px;
+            transform: translateY(-100%);
+            transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .mobile-nav.active {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--noir-tanin);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .mobile-nav a:hover {
+            color: var(--bordeaux-atelier);
+        }
+        .mobile-nav .mobile-cta {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--bordeaux-atelier);
+            border: 1.5px solid var(--bordeaux-atelier);
+            padding: 12px 28px;
+            border-radius: 2px;
+            margin-top: 12px;
+            transition: all 0.35s;
+        }
+        .mobile-nav .mobile-cta:hover {
+            background: var(--bordeaux-atelier);
+            color: #fff;
+        }
+
+        @media (max-width: 860px) {
+            .header-nav,
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .burger-btn {
+                display: flex;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+        }
+        @media (min-width: 861px) {
+            .mobile-nav {
+                display: none !important;
+                transform: translateY(-100%) !important;
+            }
+            .burger-btn {
+                display: none;
+            }
+        }
+
+        /* ===== SILK THREAD ===== */
+        .silk-thread-wrapper {
+            position: fixed;
+            top: 0;
+            right: clamp(24px, 6vw, 72px);
+            width: 2px;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .silk-thread-line {
+            width: 1.5px;
+            height: var(--thread-height, 0%);
+            background: var(--thread-color, #9BA4AC);
+            border-radius: 1px;
+            transition: background-color 0.9s ease;
+            position: relative;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        .silk-thread-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--thread-color, #9BA4AC);
+            transition: background-color 0.9s ease;
+            flex-shrink: 0;
+            margin-bottom: 2px;
+        }
+        @media (max-width: 860px) {
+            .silk-thread-wrapper {
+                display: none;
+            }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            position: relative;
+            padding: clamp(60px, 10vw, 120px) clamp(16px, 6vw, 80px);
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-alt {
+            background-color: var(--pierre-blonde);
+        }
+
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--argent-brut);
+            margin-bottom: clamp(12px, 2vw, 20px);
+            display: block;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: clamp(80px, 12vh, 140px) clamp(16px, 8vw, 100px) clamp(60px, 8vh, 100px);
+            overflow: hidden;
+            background: var(--noir-tanin);
+        }
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) contrast(1.1) grayscale(0.3);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(31, 28, 26, 0.35) 0%,
+                    rgba(31, 28, 26, 0.25) 35%,
+                    rgba(31, 28, 26, 0.55) 70%,
+                    rgba(31, 28, 26, 0.8) 100%);
+            z-index: 1;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 820px;
+        }
+        .hero-content .section-label {
+            color: rgba(255, 255, 255, 0.65);
+            letter-spacing: 0.18em;
+            font-size: 0.7rem;
+            animation: fadeInUp 1s 0.15s both;
+        }
+        .hero-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin-bottom: clamp(16px, 2.5vw, 28px);
+            animation: fadeInUp 1s 0.3s both;
+        }
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            max-width: 600px;
+            letter-spacing: 0.02em;
+            animation: fadeInUp 1s 0.5s both;
+        }
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: clamp(24px, 3vw, 40px);
+            right: clamp(24px, 6vw, 72px);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.7;
+            animation: fadeInUp 1s 0.9s both;
+        }
+        .hero-scroll-hint span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .hero-scroll-line {
+            width: 1px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.4);
+            animation: scrollPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%,
+            100% {
+                transform: scaleY(0.4);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scaleY(1);
+                opacity: 0.9;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-scroll-hint {
+                right: 20px;
+                bottom: 20px;
+            }
+            .hero-scroll-line {
+                height: 32px;
+            }
+        }
+
+        /* ===== BADGE NOTE ===== */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.04em;
+            margin-bottom: clamp(18px, 3vw, 28px);
+            animation: fadeInUp 1s 0.7s both;
+        }
+        .rating-star {
+            color: #f0c060;
+            font-size: 1rem;
+            letter-spacing: 0;
+        }
+        .rating-count {
+            opacity: 0.75;
+            font-weight: 400;
+        }
+
+        /* ===== LE GESTE ===== */
+        .geste-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(32px, 6vw, 80px);
+            align-items: start;
+        }
+        .geste-text-block {
+            max-width: 520px;
+        }
+        .geste-text-block h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: clamp(16px, 2.5vw, 28px);
+        }
+        .geste-text-block p {
+            font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+            color: var(--gris-mine);
+            line-height: 1.8;
+            letter-spacing: 0.015em;
+        }
+        .geste-accent-line {
+            width: 40px;
+            height: 2px;
+            background: var(--bordeaux-atelier);
+            margin-bottom: 24px;
+        }
+        .geste-visual {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: var(--pierre-blonde);
+            overflow: hidden;
+            border-radius: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .geste-visual .texture-block {
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(31, 28, 26, 0.03) 3px, rgba(31, 28, 26, 0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(31, 28, 26, 0.03) 3px, rgba(31, 28, 26, 0.03) 4px);
+            position: relative;
+        }
+        .geste-visual .texture-block::after {
+            content: '';
+            position: absolute;
+            inset: 16%;
+            border: 1px solid rgba(142, 44, 63, 0.2);
+            border-radius: 1px;
+        }
+        .geste-visual-label {
+            position: absolute;
+            bottom: 20px;
+            right: 24px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gris-mine);
+            z-index: 2;
+        }
+
+        @media (max-width: 720px) {
+            .geste-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .geste-visual {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ===== COLLECTIONS ===== */
+        .collection-header {
+            text-align: left;
+            margin-bottom: clamp(40px, 6vw, 64px);
+            max-width: 700px;
+        }
+        .collection-header h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+        }
+        .collection-header p {
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            color: var(--gris-mine);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+        .collection-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(20px, 3vw, 36px);
+        }
+        .collection-card {
+            background: #fff;
+            border: 1px solid rgba(74, 67, 64, 0.08);
+            padding: clamp(28px, 4vw, 40px);
+            border-radius: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--bordeaux-atelier);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .collection-card:hover::before {
+            transform: scaleX(1);
+        }
+        .collection-card:hover {
+            border-color: rgba(74, 67, 64, 0.2);
+            box-shadow: 0 12px 40px rgba(31, 28, 26, 0.06);
+            transform: translateY(-3px);
+        }
+        .collection-card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+            opacity: 0.8;
+        }
+        .collection-card h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            margin-bottom: 10px;
+            letter-spacing: 0.01em;
+        }
+        .collection-card p {
+            font-size: 0.9rem;
+            color: var(--gris-mine);
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+        .collection-card .card-meta {
+            display: block;
+            margin-top: 16px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--argent-brut);
+            font-weight: 500;
+        }
+
+        /* ===== GALERIE ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+            gap: clamp(8px, 1.5vw, 16px);
+        }
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 1px;
+            cursor: default;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.7s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+        .gallery-item:nth-child(1) img {
+            filter: grayscale(0.6) contrast(1.1) brightness(0.85);
+        }
+        .gallery-item:nth-child(2) img {
+            filter: grayscale(0.95) contrast(1.25) brightness(0.7);
+        }
+        .gallery-item:nth-child(3) img {
+            filter: sepia(0.2) brightness(0.9) contrast(1.05);
+        }
+        .gallery-item:nth-child(4) img {
+            filter: grayscale(0.3) brightness(0.95);
+        }
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 1;
+            aspect-ratio: 3/2;
+        }
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+            grid-row: span 1;
+            aspect-ratio: 3/2;
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(31, 28, 26, 0.55);
+            padding: 4px 10px;
+            border-radius: 1px;
+            pointer-events: none;
+        }
+        @media (max-width: 680px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4) {
+                grid-column: span 2;
+                aspect-ratio: 2/1;
+            }
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(3) {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* ===== ADRESSE ===== */
+        .adresse-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(32px, 6vw, 64px);
+            align-items: start;
+        }
+        .adresse-info h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: clamp(20px, 3vw, 32px);
+        }
+        .adresse-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            color: var(--gris-mine);
+            line-height: 1.6;
+        }
+        .adresse-detail strong {
+            color: var(--noir-tanin);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .adresse-detail a {
+            color: var(--bordeaux-atelier);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .adresse-detail a:hover {
+            opacity: 0.7;
+        }
+        .adresse-horaires {
+            background: #fff;
+            border: 1px solid rgba(74, 67, 64, 0.1);
+            padding: clamp(20px, 3vw, 28px);
+            border-radius: 1px;
+            margin-top: 8px;
+        }
+        .adresse-horaires h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--argent-brut);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .adresse-horaires p {
+            font-size: 0.9rem;
+            color: var(--gris-mine);
+            line-height: 1.6;
+        }
+        .adresse-map {
+            border-radius: 1px;
+            overflow: hidden;
+            border: 1px solid rgba(74, 67, 64, 0.1);
+            aspect-ratio: 4/5;
+            min-height: 360px;
+        }
+        .adresse-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(0.2) contrast(0.95);
+        }
+        @media (max-width: 720px) {
+            .adresse-grid {
+                grid-template-columns: 1fr;
+            }
+            .adresse-map {
+                aspect-ratio: 4/3;
+                min-height: 280px;
+            }
+        }
+
+        /* ===== CARNET ===== */
+        .carnet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid rgba(74, 67, 64, 0.12);
+        }
+        .carnet-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: clamp(16px, 3vw, 32px);
+            padding: clamp(18px, 2.5vw, 28px) 0;
+            border-bottom: 1px solid rgba(74, 67, 64, 0.12);
+            transition: background 0.3s;
+        }
+        .carnet-item:hover {
+            background: rgba(234, 225, 210, 0.4);
+        }
+        .carnet-date {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--argent-brut);
+            font-weight: 600;
+            padding-top: 2px;
+        }
+        .carnet-content h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            font-weight: 500;
+            color: var(--noir-tanin);
+            margin-bottom: 4px;
+            letter-spacing: 0.01em;
+        }
+        .carnet-content p {
+            font-size: 0.88rem;
+            color: var(--gris-mine);
+            line-height: 1.6;
+            letter-spacing: 0.015em;
+        }
+        @media (max-width: 500px) {
+            .carnet-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--noir-tanin);
+            color: rgba(255, 255, 255, 0.7);
+            padding: clamp(40px, 6vw, 60px) clamp(16px, 6vw, 80px);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(24px, 4vw, 40px);
+        }
+        .footer-col h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            margin-top: clamp(28px, 4vw, 40px);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+
+        /* ===== UTILITIES ===== */
+        .texture-dot {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: radial-gradient(circle, var(--noir-tanin) 1px, transparent 1px);
+            background-size: 6px 6px;
+            inset: 0;
+        }
+        .decorative-filets {
+            position: absolute;
+            top: 0;
+            left: clamp(16px, 6vw, 80px);
+            width: 1px;
+            height: 60px;
+            background: rgba(142, 44, 63, 0.25);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-logo">Sélection Privée</a>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="#le-geste">Le geste</a></li>
+                <li><a href="#etoles">Étoles & châles</a></li>
+                <li><a href="#sacs">Sacs brodés</a></li>
+                <li><a href="#atelier">Atelier</a></li>
+                <li><a href="#adresse">L'adresse</a></li>
+                <li><a href="#carnet">Carnet</a></li>
+            </ul>
+        </nav>
+        <a href="#adresse" class="header-cta desktop-only">Prendre R.-V.</a>
+        <button class="burger-btn" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#le-geste">Le geste</a>
+        <a href="#etoles">Étoles & châles</a>
+        <a href="#sacs">Sacs brodés</a>
+        <a href="#atelier">Atelier</a>
+        <a href="#adresse">L'adresse</a>
+        <a href="#carnet">Carnet</a>
+        <a href="#adresse" class="mobile-cta">Prendre rendez-vous</a>
+    </nav>
+
+    <!-- SILK THREAD -->
+    <div class="silk-thread-wrapper" id="silkThread" aria-hidden="true">
+        <div class="silk-thread-dot" id="silkDot"></div>
+        <div class="silk-thread-line" id="silkLine"></div>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-image">
+                <img src="assets/maps-1.jpg" alt="Sélection Privée — Atelier parisien, 55 rue de la Convention" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+            <div class="hero-content">
+                <span class="section-label">Paris XVᵉ — Depuis 1989</span>
+                <div class="rating-badge">
+                    <span class="rating-star">★</span> 3.6
+                    <span class="rating-count">sur 44 avis</span>
+                </div>
+                <h1 class="hero-title">Chaque étole<br>est une décision.</h1>
+                <p class="hero-subtitle">Depuis 1989, nous tissons la soie et le cachemire sur métiers Jacquard, dans nos ateliers parisiens. Pièces uniques brodées main, sacs d'apparat, impressions numériques maîtrisées&nbsp;: une maison, un savoir-faire, une adresse confidentielle au cœur du 15ᵉ.</p>
+            </div>
+            <div class="hero-scroll-hint" aria-hidden="true">
+                <span>Découvrir</span>
+                <div class="hero-scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- LE GESTE -->
+        <section class="section" id="le-geste" data-thread-color="#8E2C3F">
+            <span class="section-label">Philosophie</span>
+            <div class="geste-grid">
+                <div class="geste-text-block">
+                    <div class="geste-accent-line"></div>
+                    <h2>Sur nos métiers à tisser Jacquard, chaque fil est placé à la main.</h2>
+                    <p>Cette lenteur assumée nous interdit les grandes séries&nbsp;: c'est précisément ce qui rend chaque pièce unique. La soie est teinte dans nos ateliers, le cachemire sélectionné fibre par fibre. Chaque étole, chaque pochette, chaque châle porte en lui des heures de gestes précis — un savoir-faire que nous défendons depuis plus de trente ans au 55 rue de la Convention. Ici, la rareté n'est pas un argument&nbsp;; elle est la conséquence naturelle du travail bien fait.</p>
+                </div>
+                <div class="geste-visual">
+                    <div class="texture-block"></div>
+                    <span class="geste-visual-label">Métier Jacquard</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉTOLES & CHÂLES -->
+        <section class="section section-alt" id="etoles" data-thread-color="#4A4340">
+            <div class="collection-header">
+                <span class="section-label">Collection phare</span>
+                <h2>Étoles & châles</h2>
+                <p>La magie des couleurs naît de l'entrelacs des fils teints en atelier. Laissez-vous guider parmi les «&nbsp;Soyeuses&nbsp;» et les modèles Cérémonie — ou découvrez nos nouvelles impressions numériques, pensées pour la vie quotidienne sans rien céder à l'exception.</p>
+            </div>
+            <div class="collection-cards">
+                <article class="collection-card">
+                    <span class="collection-card-icon">🧣</span>
+                    <h3>Les Soyeuses</h3>
+                    <p>Soie pure, fils teints à la main, tombé fluide. Chaque pièce est le résultat d'un travail de 18 à 25 heures sur métier Jacquard. Motifs inspirés des archives de la maison.</p>
+                    <span class="card-meta">Sur commande — Délai 4 semaines</span>
+                </article>
+                <article class="collection-card">
+                    <span class="collection-card-icon">✨</span>
+                    <h3>Modèles Cérémonie</h3>
+                    <p>Broderies main sur soie sauvage. Ces étoles d'apparat sont conçues pour les grandes occasions — mariages, cérémonies, transmissions. Chaque point est unique.</p>
+                    <span class="card-meta">Pièce unique — Délai 6 semaines</span>
+                </article>
+                <article class="collection-card">
+                    <span class="collection-card-icon">🖼️</span>
+                    <h3>Impressions numériques</h3>
+                    <p>La modernité au service du geste : nos impressions numériques reproduisent avec une fidélité exceptionnelle les motifs créés en atelier, sur des supports soigneusement choisis.</p>
+                    <span class="card-meta">Disponible en showroom</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- SACS BRODÉS -->
+        <section class="section" id="sacs" data-thread-color="#9BA4AC">
+            <span class="section-label">Collection pochette</span>
+            <div class="collection-header" style="margin-bottom: clamp(28px, 4vw, 48px);">
+                <h2>Sacs brodés</h2>
+                <p>Brodées à la main par nos artisans, nos pochettes accompagnent aussi bien un jean qu'une robe de cocktail. Chaque motif est un dessin original, jamais reproduit à l'identique. Comptez quatre semaines pour une pièce sur commande.</p>
+            </div>
+            <div class="collection-cards">
+                <article class="collection-card">
+                    <span class="collection-card-icon">🪡</span>
+                    <h3>Pochette du soir</h3>
+                    <p>Satin de soie, broderie au fil d'argent ou de soie bordeaux. Fermoir en laiton vieilli. Un objet de collection qui traverse les saisons.</p>
+                    <span class="card-meta">Sur commande — Délai 4 semaines</span>
+                </article>
+                <article class="collection-card">
+                    <span class="collection-card-icon">🌸</span>
+                    <h3>Pochette florale</h3>
+                    <p>Motifs botaniques brodés point par point. Chaque fleur est un dessin original de l'atelier. Disponible en plusieurs fonds de soie.</p>
+                    <span class="card-meta">Pièce unique — Délai 4 semaines</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- L'ATELIER EN IMAGES -->
+        <section class="section section-alt" id="atelier" data-thread-color="#8E2C3F">
+            <span class="section-label">Galerie immersive</span>
+            <div class="collection-header">
+                <h2>L'atelier en images</h2>
+                <p>Les métiers Jacquard en action, le geste du brodeur, les écheveaux de soie brute, la lumière du 55 rue de la Convention à travers les vitrines. Une plongée silencieuse dans les coulisses de la création.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Façade de l'atelier — 55 rue de la Convention" loading="lazy">
+                    <span class="gallery-caption">La façade — 55 rue de la Convention</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Ambiance atelier — détail" loading="lazy">
+                    <span class="gallery-caption">L'atelier</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Vitrine — Sélection Privée" loading="lazy">
+                    <span class="gallery-caption">La vitrine</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Intérieur du showroom" loading="lazy">
+                    <span class="gallery-caption">Le showroom</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ADRESSE -->
+        <section class="section" id="adresse" data-thread-color="#1F1C1A">
+            <span class="section-label">Showroom & prise de rendez-vous</span>
+            <div class="adresse-grid">
+                <div class="adresse-info">
+                    <h2>L'adresse</h2>
+                    <div class="adresse-detail">
+                        <p><strong>55 rue de la Convention</strong><br>Paris XVᵉ — 75015</p>
+                        <p>Téléphone&nbsp;: <a href="tel:+33145786980">01 45 78 69 80</a></p>
+                        <p>Courriel&nbsp;: <a href="mailto:selectionprivee@sfr.fr">selectionprivee@sfr.fr</a></p>
+                    </div>
+                    <div class="adresse-horaires">
+                        <h4>Horaires d'ouverture</h4>
+                        <p>Du mardi au samedi<br>10h — 19h</p>
+                        <p style="margin-top:8px;font-size:0.8rem;color:var(--argent-brut);">Fermé dimanche et lundi</p>
+                    </div>
+                    <p style="margin-top:20px;font-size:0.9rem;color:var(--gris-mine);line-height:1.7;">Pour un accueil privé, un essayage ou une commande sur mesure, prenez rendez-vous&nbsp;: le créateur vous recevra personnellement.</p>
+                </div>
+                <div class="adresse-map">
+                    <iframe src="https://maps.google.com/maps?q=S%C3%A9lection+Priv%C3%A9e+55+Rue+de+la+Convention%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte — Sélection Privée, 55 rue de la Convention, Paris"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARNET D'ATELIER -->
+        <section class="section section-alt" id="carnet" data-thread-color="#4A4340">
+            <span class="section-label">Journal</span>
+            <div class="collection-header">
+                <h2>Carnet d'atelier</h2>
+                <p>Notes sur les teintures en cours, arrivages de cachemire, inspirations des collections à venir. Un espace pour les fidèles qui veulent suivre la vie de la maison au fil des saisons.</p>
+            </div>
+            <div class="carnet-list">
+                <article class="carnet-item">
+                    <span class="carnet-date">Octobre 2025</span>
+                    <div class="carnet-content">
+                        <h3>Arrivage de cachemire d'Écosse</h3>
+                        <p>Nous venons de recevoir notre commande annuelle de cachemire brut en provenance des Highlands. Les fibres, d'une finesse exceptionnelle cette année, seront triées une à une avant d'être filées dans notre atelier.</p>
+                    </div>
+                </article>
+                <article class="carnet-item">
+                    <span class="carnet-date">Septembre 2025</span>
+                    <div class="carnet-content">
+                        <h3>Teintures d'automne — les essais</h3>
+                        <p>La saison des teintures bat son plein. Nous testons actuellement un bordeaux profond obtenu à partir de garance, qui pourrait devenir la signature de la collection Cérémonie 2026.</p>
+                    </div>
+                </article>
+                <article class="carnet-item">
+                    <span class="carnet-date">Juillet 2025</span>
+                    <div class="carnet-content">
+                        <h3>Un nouveau métier Jacquard</h3>
+                        <p>L'atelier s'agrandit : un métier Jacquard de 1978, restauré dans les règles de l'art, a rejoint nos rangs. Il tissera exclusivement les étoles de la ligne «&nbsp;Soyeuses&nbsp;».</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sélection Privée</h4>
+                <p>55 rue de la Convention<br>75015 Paris</p>
+                <p><a href="tel:+33145786980">01 45 78 69 80</a></p>
+                <p><a href="mailto:selectionprivee@sfr.fr">selectionprivee@sfr.fr</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Mardi — Samedi<br>10h — 19h</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#le-geste">Le geste</a>
+                <a href="#etoles">Étoles & châles</a>
+                <a href="#sacs">Sacs brodés</a>
+                <a href="#atelier">Atelier</a>
+                <a href="#carnet">Carnet</a>
+            </div>
+            <div class="footer-col">
+                <h4>Note</h4>
+                <p>★ 3.6 / 5 — 44 avis Google</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© Sélection Privée — Paris XVᵉ</span>
+            <span>Site créé par <a href="https://agence.mooo.com/selection-privee-2" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // === HEADER SCROLL ===
+            const header = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            const handleHeaderScroll = () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            };
+
+            // === BURGER ===
+            const burgerBtn = document.getElementById('burgerBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileLinks = mobileNav.querySelectorAll('a');
+
+            const closeMobileNav = () => {
+                burgerBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
+
+            const openMobileNav = () => {
+                burgerBtn.classList.add('active');
+                mobileNav.classList.add('active');
+                burgerBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            };
+
+            burgerBtn.addEventListener('click', () => {
+                if (mobileNav.classList.contains('active')) {
+                    closeMobileNav();
+                } else {
+                    openMobileNav();
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileNav();
+                });
+            });
+
+            // === INTERSECTION OBSERVER — REVEAL SECTIONS ===
+            const sections = document.querySelectorAll('.section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        sectionObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // === SILK THREAD — COLOR SWITCHING ===
+            const silkLine = document.getElementById('silkLine');
+            const silkDot = document.getElementById('silkDot');
+            const silkWrapper = document.getElementById('silkThread');
+            const threadSections = document.querySelectorAll('[data-thread-color]');
+
+            const threadColorObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+                        const color = entry.target.getAttribute('data-thread-color');
+                        if (color && silkWrapper) {
+                            silkWrapper.style.setProperty('--thread-color', color);
+                        }
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '-30% 0px -30% 0px',
+                threshold: 0.2
+            });
+
+            threadSections.forEach(section => {
+                threadColorObserver.observe(section);
+            });
+
+            // === SILK THREAD — SCROLL PROGRESS ===
+            const updateThreadHeight = () => {
+                if (!silkWrapper || window.innerWidth <= 860) return;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPos = window.scrollY;
+                const progress = docHeight > 0 ? Math.min(scrollPos / docHeight, 1) : 0;
+                const percentage = progress * 100;
+                silkWrapper.style.setProperty('--thread-height', percentage + '%');
+            };
+
+            // === COMBINED SCROLL HANDLER ===
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        handleHeaderScroll();
+                        updateThreadHeight();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // Initial calls
+            handleHeaderScroll();
+            updateThreadHeight();
+
+            // === RESIZE ===
+            window.addEventListener('resize', () => {
+                updateThreadHeight();
+                if (window.innerWidth > 860 && mobileNav.classList.contains('active')) {
+                    closeMobileNav();
+                }
+            });
+
+            // === KEYBOARD ESC TO CLOSE MOBILE NAV ===
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                    closeMobileNav();
+                }
+            });
+
+            // === INITIAL HERO REVEAL (already animated via CSS keyframes) ===
+            // Sections are revealed by IntersectionObserver on load
+        })();
+    </script>
+</body>
+</html>
