@@ -1,65 +1,72 @@
-**Brief créatif — Petit Poney & Cie**  
-*Site vitrine — février 2026*
+BRIEF CRÉATIF — PETIT PONEY & CIE  
+Site vitrine · Rue Marbeau, Paris 16e
 
 ---
 
-### 1. Concept & positionnement
-Petit Poney & Cie n’est pas un énième e‑commerce de puériculture : c’est une **maison de quartier** nichée rue Marbeau, dans le 16ᵉ arrondissement parisien. Le site vitrine devient l’antichambre de la boutique, le lieu où l’on prend rendez‑vous avec la douceur avant même d’en franchir le seuil. On retient une promesse simple : **des trésors doux pour petits parisiens, choisis avec un regard de maman et une exigence de designer.**
+## 1. Concept & positionnement
 
-### 2. Direction artistique
-**Bohème urbain, précision de tailleur**  
-Plutôt qu’un « esprit bohème » imprécis, on puise dans les vraies images de la boutique : bois clair, macramé, coton froissé, lumière de verrière adoucie par des voilages. L’esthétique est celle d’un **appartement haussmannien réchauffé de textures naturelles** — on est dans le raffinement discret de la rive droite, pas dans le rustique champêtre. Le minimalisme est exclu : on assume une richesse de détails (points noués, étiquettes manuscrites, ombres portées) mais chaque élément est justifié par la matière réelle. Le site doit donner envie de *toucher*.
+Petit Poney & Cie n’est pas une boutique, c’est un sas. On y entre pour échapper à l’agitation du 16e, on y reste parce que tout y est rassurant, doux, choisi avec un soin palpable. Le site vitrine sera ce même sas numérique : un moment suspendu où l’artisanat bébé retrouve ses droits — tactile, silencieux, lumineux — avant de donner envie de pousser la vraie porte, Rue Marbeau.
 
-### 3. Palette
-Tirée des photos de la boutique : un sol en chêne ciré, des murs blancs légèrement grisés, des touches de coton bio teinté.
+## 2. Direction artistique
 
-| Rôle              | HEX       | Nom                           |
-|-------------------|-----------|-------------------------------|
-| Fond principal    | `#F7F4EF` | Coquille d’œuf                |
-| Encre (texte)     | `#3B2C29` | Sépia profond                 |
-| Accent principal  | `#AE9E8C` | Chanvre lavé                  |
-| Accent chaleureux | `#C4A992` | Bois de rose poudré           |
-| Rehaut végétal    | `#6E7D6B` | Vert mousse assourdi          |
-| Détail métallisé  | `#D4C9B8` | Or sablé (pour filets, icônes)|
+**« Artisanat tamisé »** — Un parti pris de clarté chaleureuse et de matérialité discrète.  
+Dérivé directement de la lumière tamisée des photos réelles, du bois blond des présentoirs et des tissus en coton bio qui peuplent la boutique. On évite toute surenchère enfantine ou rustique : l’ambiance est à l’épure douce d’un atelier parisien baigné de lumière naturelle, où chaque objet semble avoir été posé à la main. Les respirations sont amples, la composition frontale et sereine. Maximalisme des matières (bois, osier, macramé évoqués par les textures d’arrière-plan), minimalisme des formes.
 
-Pas de noir pur, pas de blanc froid. L’ambiance générale est claire et enveloppante, jamais institue.
+## 3. Palette
 
-### 4. Ton éditorial
-**Une voix de boudoir moderne** — on tutoie avec élégance, comme une amie de la famille qui connaît le quartier et les prénoms. Des phrases brèves, un vocabulaire précis (matières, labels), un registre légèrement littéraire mais jamais guindé. L’émotion passe avant le discours marketing. Les prix ne sont pas criés ; on les découvre au terme d’une mise en désir. Pas de jargon « bébé roi », on parle *bien‑être* et *transmission*.
+| Rôle | Hex | Nom |
+|------|-----|-----|
+| Fond | `#FDF8F2` | Coquillage |
+| Surface & cartes | `#F3EBE0` | Sable pâle |
+| Bordures & filets | `#E0D3C2` | Lin |
+| Encre principale | `#3C3228` | Chocolat |
+| Accent (CTA, sélections) | `#B8976E` | Miel boisé |
+| Accent sombre (hover) | `#8B6742` | Bois brûlé |
 
-### 5. Accroche héro
-**H1** : *Les premiers trésors se cachent rue Marbeau*  
-**Sous‑titre** : Bienvenue chez Petit Poney & Cie, écrin de douceurs pour naître et grandir en beauté — depuis 2019 au cœur du 16ᵉ.
+Aucun blanc froid, aucun gris délayé. La palette est entièrement tirée des teintes réelles des photos : le beige des murs (`#D8C3A5` affiné en `#E0D3C2`), le blanc cassé des textiles (`#F5F5F5` réchauffé en `#FDF8F2`), le brun clair des meubles (`#A67B5B` décliné en `#B8976E` et `#8B6742`). L’accent miel est suffisamment franc pour guider l’œil sans rompre la quiétude de l’ensemble.
 
-### 6. Sections (ordre linéaire)
-- **L’adresse du lin et du bois**  
-  *Un titre de section qui claque comme une devanture.*  
-  À deux pas de la place de Mexico, notre boutique est un cocon où chaque objet raconte une attention. Nous avons choisi nos matières comme on choisit un prénom : avec soin.
+## 4. Ton éditorial
 
-- **Fabriqués pour durer, pensés pour émouvoir**  
-  *Cinq blocs visuels pour les promesses fondatrices.*  
-  Bois naturel | Coton bio | Macramé artisanal | Zéro superflu | Certifié éco‑responsable
+Une voix douce qui ne chuchote pas. On tutoie la cliente (jeune maman ou futur parent, habituée des codes du 16e : exigeante mais pas froide) avec une familiarité élégante. Les phrases sont courtes, les adjectifs précis, les verbes actifs. Aucun mièvre, aucun jargon marketing. On parle de « coffret » plutôt que de « box », de « trousseau » plutôt que de « kit ». Le registre est celui d’une confidence entre deux tasses de thé — sincère, informée, jamais sentencieuse.
 
-- **Ce que vous trouverez chez nous**  
-  *Galerie éditoriale (pas un catalogue).*  
-  Quatre à six ambiances photographiées en boutique : le coin hochets en hêtre, le mur de doudous, la malle de grenouillères, les coffrets naissance à composer sur place. Chaque légende est une micro‑histoire.
+## 5. Accroche héro
 
-- **Raconter vos premières fois**  
-  *Un appel à témoin doux, pas une section avis.*  
-  « Margaux, 8 mois, est née dans un de nos bodies fleur de coton. » Trois récits choisis parmi les vrais avis Google, reformulés avec délicatesse.
+**Titre**  
+*Les premiers jours, dans le creux de nos mains.*
 
-- **Des questions, une envie ?**  
-  *Section double : bloc contact + horaires.*  
-  Deux colonnes : à gauche un numéro de téléphone cliquable et un formulaire lean ; à droite les horaires d’ouverture, une carte statique et un bouton « Itinéraire ». Aucun formulaire superflu.
+**Sous-titre**  
+Boutique-atelier rue Marbeau, Paris 16e — puériculture naturelle, coton bio, bois brut.  
+Tout est choisi, testé, aimé. Rien ne fait de bruit.
 
-- **Carnet de saison**  
-  *Remplace le blog fantôme.*  
-  Un seul article récent, daté et signé : « L’art de choisir une turbulette pour la nuit parisienne ». Le blog ne s’affiche que s’il vit.
+## 6. Sections (hiérarchie réelle, titres et contenus)
 
-### 7. Signature visuelle
-- **Fil continu de macramé** : un trait noué, discret, qui relie les sections et s’anime au scroll (le nœud se défait puis se refait), comme un ruban qu’on déroule.  
-- **Typographie délibérée** : Syne en high‑contrast (titre immense mais léger, interligne négatif) se heurte aux textes Outfit aérés, ancrés. Les chiffres (poids, âges, prix) sont traités en chiffres elzéviriens, créant un mini‑système d’étiquettes qui n’a rien d’un catalogue.
+1. **L’instinct des matières**  
+   *Bois, macramé, coton peigné.* Nous choisissons chaque fibre comme on prépare un berceau : avec une exigence muette. Ici, pas de plastique, pas de superflu. Ce que vous touchez est ce que bébé connaîtra.
+
+2. **Ce qui se prépare ici**  
+   *Coffrets naissance, doudous, hochets.* Une sélection où chaque objet a sa raison : éveiller la main, rassurer le sommeil, habiller les premiers sourires. Aperçu de nos pièces les plus confiées — le reste, c’est en boutique.
+
+3. **La boutique, Rue Marbeau**  
+   *Poussez la porte.* Une adresse, des horaires, un plan. Venez reconnaître les textures, comparer les bois, croiser le tableau de croissance qui a mesuré tous les bébés du quartier.  
+   → *Adresse, horaires, téléphone, itinéraire Google Maps intégré, photos intérieures en pleine largeur.*
+
+4. **Ces petits riens qu’on nous a dits**  
+   *Les mots des parents.* Extraits choisis d’avis, présentés sobrement, sans astérisque ni tralala. Parce que la confiance se transmet de mère en mère, pas en bannière.
+
+5. **La veilleuse**  
+   *Notre lettre douce.* Tous les quinze jours, une idée, une arrivée, une rencontre avec l’artisan du moment. Pas de promotion tonitruante, juste un fil qui relie votre boîte mail à notre atelier.  
+   → *Formulaire sobre, une seule occurrence.*
+
+6. **Pied de page assis**  
+   Petit Poney & Cie · Rue Marbeau, 75116 Paris · 06 65 16 02 20 · Du mardi au samedi, 10h–19h.  
+   Liens : Instagram · Mentions légales · Contact · Plan du site.
+
+## 7. Signature visuelle
+
+- **Le tableau de croissance comme fil narratif.** Sur les pages longues, une réglette discrète court le long du bord gauche, animée en reveal au scroll : des encoches (1 mois, 6 mois, 1 an…) ponctuent la navigation, comme un rappel du temps qui passe et des étapes qu’on chérit. C’est un marqueur unique, propre à Petit Poney & Cie, croisé sur les photos réelles de la boutique.
+
+- **Effet « toile de lin » au survol.** Les cartes produits ou les photos de la boutique réagissent au hover par un très léger décalage d’un calque texturé (toile tissée) en surimpression, évoquant le toucher du coton bio. Rien d’ostentatoire : un frémissement tactile, à peine perceptible, qui donne envie de cliquer pour « sentir » davantage.
 
 ---
 
-*Ce brief renverse la logique d’abandon constatée : il arrime le site à un lieu physique, donne un rôle à chaque bloc et remplace l’urgence promotionnelle par un rythme de maison de confiance.*
+*Ce brief prend le contre-pied exact des faiblesses relevées : adresse et horaires restaurés en position de force, site apaisé dans sa structure (une seule H1, un seul formulaire newsletter, aucune promotion périmée), hiérarchie limpide et ton affûté. La boutique physique retrouve sa place centrale ; l’e-commerce est invité, pas subi.*
