@@ -3,28 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alison Boardman — Design d'intérieur & Boutique | Paris 16ᵉ</title>
-    <meta name="description" content="Alison Boardman — Studio de design d'intérieur et boutique d'objets choisis au 17 rue de l'Annonciation, Paris 16ᵉ. Consultation, projets sur mesure, curiosités pour la maison.">
-    <meta property="og:title" content="Alison Boardman — Design d'intérieur & Boutique | Paris 16ᵉ">
-    <meta property="og:description" content="Des intérieurs qui respirent la matière. Design d'intérieur et objets choisis — au 17 rue de l'Annonciation, Paris 16ᵉ.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>Alison Boardman — Boutique d'objets & mobilier | Paris 16ᵉ</title>
+    <meta name="description" content="Alison Boardman — Meubles, luminaires et art de la table choisis avec soin au 17 rue de l'Annonciation, Paris 16ᵉ. Une sélection d'objets à l'âme franche, entre goût anglais et art de vivre parisien.">
+    <meta property="og:title" content="Alison Boardman — Boutique d'objets & mobilier | Paris 16ᵉ">
+    <meta property="og:description" content="Des objets qui ont déjà une histoire, prêts à entrer dans la vôtre. Meubles, luminaires et art de la table au cœur du village de Passy.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A2E36'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='%23F5F2EB'%3EAB%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,8 92,50 50,92 8,50' fill='%231D7A7A'/></svg>">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Alison Boardman",
+            "description": "Boutique de meubles, luminaires et art de la table — sélection artisanale entre Angleterre et France, au cœur de Passy.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "17 Rue de l'Annonciation",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140503733",
+            "email": "alison.boardman@wanadoo.fr",
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "9"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:30",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "14:30",
+                    "closes": "19:00"
+                }
+            ],
+            "url": "https://agence.mooo.com/alison-boardman"
+        }
+    </script>
     <style>
         :root {
-            --beige: #F3EFE6;
-            --olive: #6B6B4A;
-            --sarcelle: #1D7A7A;
-            --terracotta: #C27A5A;
-            --penombre: #2E2B28;
-            --dore: #E5D5B5;
-            --beige-trans: rgba(243, 239, 230, 0.92);
+            --lin-ecru: #F5F2EB;
+            --bleu-nuit: #2A2E36;
+            --bois-cire: #B87C4C;
+            --vert-sauge: #8F9C8B;
+            --laiton: #C2A878;
+            --pierre-paris: #E8E2D7;
+            --shadow-soft: rgba(42, 46, 54, 0.08);
+            --shadow-medium: rgba(42, 46, 54, 0.12);
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-posé: 600ms var(--ease-out-expo);
         }
 
         *,
@@ -35,17 +75,11 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 5rem;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
+            :root {
+                --transition-posé: 0.01ms !important;
+                --ease-out-expo: linear !important;
+                --ease-out-back: linear !important;
             }
             *,
             *::before,
@@ -56,55 +90,29 @@
             }
         }
 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
         body {
             font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
-            background-color: var(--beige);
-            color: var(--olive);
-            line-height: 1.6;
             font-weight: 400;
-            position: relative;
-            min-height: 100vh;
+            line-height: 1.6;
+            color: var(--bleu-nuit);
+            background-color: var(--lin-ecru);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
             overflow-x: hidden;
-            letter-spacing: 0.01em;
-        }
-
-        /* ---- GRAIN OVERLAY ---- */
-        .grain-overlay {
-            position: fixed;
-            inset: -50%;
-            pointer-events: none;
-            z-index: 9997;
-            opacity: 0.028;
-            width: 300%;
-            height: 300%;
-            animation: grain-shift 8s steps(3) infinite;
-        }
-        @keyframes grain-shift {
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-            33% {
-                transform: translate(-2px, -1px);
-            }
-            66% {
-                transform: translate(3px, 2px);
-            }
-        }
-
-        /* ---- DIAMOND FILIGRANE ---- */
-        .diamond-filigrane {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            background-image:
-                linear-gradient(45deg, rgba(107, 107, 74, 0.045) 1px, transparent 1px),
-                linear-gradient(-45deg, rgba(107, 107, 74, 0.045) 1px, transparent 1px);
-            background-size: 36px 36px;
-            background-position: 0 0;
-            transition: background-size 0.6s var(--ease-out-expo);
-            will-change: background-size, background-position;
         }
 
         /* ---- HEADER ---- */
@@ -112,840 +120,949 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: var(--beige-trans);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(107, 107, 74, 0.12);
-            padding: 0.85rem clamp(1rem, 3vw, 2.5rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-            transition: border-color 0.3s;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2.5rem);
+            background: rgba(245, 242, 235, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(194, 168, 120, 0.25);
+            transition: box-shadow 0.4s var(--ease-out-expo);
         }
         .site-header.scrolled {
-            border-bottom-color: rgba(107, 107, 74, 0.25);
+            box-shadow: 0 2px 24px var(--shadow-soft);
         }
-        .header-name {
-            font-family: 'Bricolage Grotesque', serif;
+        .header-logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 600;
-            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-            color: var(--penombre);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             letter-spacing: -0.01em;
+            color: var(--bleu-nuit);
+            text-decoration: none;
             white-space: nowrap;
-            text-decoration: none;
-            transition: color 0.25s;
-        }
-        .header-name:hover {
-            color: var(--sarcelle);
-        }
-        .header-nav {
-            display: flex;
-            gap: clamp(0.5rem, 2vw, 1.6rem);
-            list-style: none;
-            align-items: center;
-            flex-wrap: wrap;
-            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
-        .header-nav a {
-            color: var(--olive);
-            text-decoration: none;
             position: relative;
-            padding: 0.25em 0;
-            transition: color 0.25s;
         }
-        .header-nav a::after {
+        .header-logo::after {
             content: '';
             position: absolute;
             bottom: -2px;
             left: 0;
-            width: 0;
+            width: 100%;
             height: 1.5px;
-            background: var(--sarcelle);
-            transition: width 0.35s var(--ease-out-expo);
+            background: var(--bois-cire);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+        .header-logo:hover::after {
+            transform: scaleX(1);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 3vw, 2rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            color: var(--bleu-nuit);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.25em 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--bois-cire);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s var(--ease-out-expo);
         }
         .header-nav a:hover,
         .header-nav a:focus-visible {
-            color: var(--sarcelle);
+            color: var(--bois-cire);
         }
         .header-nav a:hover::after,
         .header-nav a:focus-visible::after {
-            width: 100%;
+            transform: scaleX(1);
+            transform-origin: left;
         }
         .header-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.4em;
-            background: var(--sarcelle);
-            color: #fff;
-            padding: 0.55em 1.25em;
-            border-radius: 2px;
-            text-decoration: none;
+            font-family: 'Hanken Grotesk', sans-serif;
             font-weight: 600;
-            font-size: clamp(0.78rem, 1vw, 0.88rem);
-            letter-spacing: 0.03em;
-            transition: background 0.3s, transform 0.25s var(--ease-out-expo);
-            white-space: nowrap;
+            font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+            color: #fff;
+            background: var(--bois-cire);
             border: none;
+            padding: 0.55em 1.2em;
+            border-radius: 2px;
             cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: background 0.35s, transform 0.3s var(--ease-out-back), box-shadow 0.35s;
+            white-space: nowrap;
         }
         .header-cta:hover,
         .header-cta:focus-visible {
-            background: #176868;
-            transform: translateY(-1px);
+            background: #9e6a3e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(184, 124, 76, 0.3);
+            outline: none;
         }
         .header-cta:focus-visible {
-            outline: 3px solid var(--terracotta);
+            outline: 2px solid var(--bleu-nuit);
             outline-offset: 3px;
         }
-        .badge-google {
+        .rating-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.35em;
-            background: rgba(229, 213, 181, 0.45);
-            border: 1px solid rgba(194, 122, 90, 0.3);
-            padding: 0.35em 0.7em;
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+            font-weight: 600;
+            color: var(--bleu-nuit);
+            background: var(--pierre-paris);
+            padding: 0.35em 0.75em;
             border-radius: 20px;
-            font-size: clamp(0.7rem, 0.9vw, 0.78rem);
-            font-weight: 500;
-            color: var(--penombre);
             white-space: nowrap;
             letter-spacing: 0.02em;
-            transition: background 0.3s;
         }
-        .badge-google .stars {
-            color: #e8a830;
-            letter-spacing: 0.05em;
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 3px solid var(--terracotta);
-            outline-offset: 3px;
-            border-radius: 2px;
+        .rating-badge .star {
+            color: #d4a03c;
+            font-size: 1.1em;
         }
 
-        /* ---- MAIN CONTENT WRAPPER ---- */
-        .main-content {
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
             position: relative;
-            z-index: 1;
+        }
+        .section-alt {
+            background-color: var(--pierre-paris);
+        }
+        .section-label {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1vw, 0.78rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--vert-sauge);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: clamp(20px, 3vw, 32px);
+            height: 1px;
+            background: var(--laiton);
+            margin-right: 0.75em;
+            vertical-align: middle;
+        }
+        .section-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--bleu-nuit);
+            margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+        }
+        .section-text {
+            font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+            line-height: 1.7;
+            color: var(--bleu-nuit);
+            max-width: 620px;
+            font-weight: 400;
+        }
+
+        /* ---- FILEt décoratif ---- */
+        .filet {
+            width: clamp(40px, 6vw, 70px);
+            height: 2px;
+            background: var(--bois-cire);
+            margin: clamp(1.5rem, 3vw, 2.5rem) 0;
+            border: none;
+            border-radius: 1px;
+        }
+        .filet-laiton {
+            background: var(--laiton);
+            height: 1.5px;
         }
 
         /* ---- HERO ---- */
         .hero {
             display: grid;
             grid-template-columns: 1fr;
-            min-height: 85vh;
+            gap: clamp(2rem, 4vw, 3rem);
             align-items: center;
-            padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 3.5rem);
-            gap: 2rem;
-            position: relative;
+            min-height: 75vh;
+            padding-top: clamp(2rem, 4vw, 3.5rem);
         }
-        @media (min-width: 820px) {
+        @media (min-width: 768px) {
             .hero {
-                grid-template-columns: 1fr 1.15fr;
-                min-height: 82vh;
-                gap: 0;
+                grid-template-columns: 1fr 1.3fr;
+                gap: clamp(2rem, 5vw, 4rem);
             }
         }
-        .hero-text {
+        .hero-content {
             z-index: 2;
-            padding: 1rem 0;
             position: relative;
+        }
+        .hero-eyebrow {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.72rem, 1vw, 0.8rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--vert-sauge);
+            margin-bottom: 0.75rem;
+            display: block;
         }
         .hero-title {
-            font-family: 'Bricolage Grotesque', serif;
-            font-weight: 700;
-            font-size: clamp(2.6rem, 5.5vw, 5.5rem);
-            line-height: 1.05;
-            color: var(--penombre);
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5em;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            color: var(--bleu-nuit);
+            margin-bottom: 1rem;
         }
-        .hero-title .char {
+        .hero-title .oversized {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(3.2rem, 8vw, 6rem);
             display: inline-block;
-            opacity: 0;
-            transform: translateY(1.2em);
-            transition: opacity 0.55s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
-            will-change: transform, opacity;
-        }
-        .hero-title.revealed .char {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hero-subtitle {
-            font-family: 'Hanken Grotesk', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1rem, 1.5vw, 1.35rem);
-            color: var(--olive);
-            letter-spacing: 0.02em;
-            line-height: 1.5;
-            max-width: 32ch;
-            opacity: 0;
-            transform: translateY(1rem);
-            transition: opacity 0.7s 0.5s var(--ease-out-expo), transform 0.7s 0.5s var(--ease-out-expo);
-        }
-        .hero-subtitle.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hero-image-wrap {
+            color: var(--bois-cire);
             position: relative;
             z-index: 1;
+            margin: 0 -0.04em;
+            line-height: 0.75;
+            vertical-align: -0.08em;
+            letter-spacing: -0.03em;
+            transition: color 0.5s;
+        }
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.6;
+            color: var(--bleu-nuit);
+            max-width: 480px;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+        .hero-visual {
+            position: relative;
             border-radius: 3px;
             overflow: hidden;
-            box-shadow: 0 2px 30px rgba(46, 43, 40, 0.12), 0 8px 60px rgba(46, 43, 40, 0.06);
             aspect-ratio: 4/3;
-            max-height: 70vh;
-            transition: box-shadow 0.5s;
+            box-shadow: 0 20px 50px var(--shadow-medium);
         }
-        @media (min-width: 820px) {
-            .hero-image-wrap {
-                aspect-ratio: 5/4;
-                max-height: 68vh;
-                margin-left: 1.5rem;
-            }
-        }
-        .hero-image-wrap:hover {
-            box-shadow: 0 4px 40px rgba(46, 43, 40, 0.18), 0 12px 70px rgba(46, 43, 40, 0.09);
-        }
-        .hero-image-wrap img {
+        .hero-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 35%;
             display: block;
-            transition: transform 0.7s var(--ease-out-expo);
+            transition: transform 1.2s var(--ease-out-expo);
         }
-        .hero-image-wrap:hover img {
-            transform: scale(1.03);
+        .hero-visual:hover img {
+            transform: scale(1.04);
         }
-        .hero-image-wrap::after {
+        .hero-visual::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(29, 122, 122, 0.06) 0%, transparent 50%, rgba(194, 122, 90, 0.08) 100%);
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(184, 124, 76, 0.22) 85%, rgba(184, 124, 76, 0.38) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(184, 124, 76, 0.06);
             pointer-events: none;
             z-index: 2;
         }
-
-        /* ---- SECTION COMMON ---- */
-        .section {
-            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3.5rem);
-            position: relative;
-            z-index: 1;
-        }
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-family: 'Bricolage Grotesque', serif;
-            font-weight: 600;
-            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-            color: var(--penombre);
-            letter-spacing: -0.01em;
-            line-height: 1.15;
-            margin-bottom: 0.6em;
-        }
-        .section-title .char {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(0.6em);
-            transition: opacity 0.45s var(--ease-out-expo), transform 0.55s var(--ease-out-expo);
-        }
-        .section-title.revealed .char {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section-body {
-            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-            color: var(--olive);
-            line-height: 1.7;
-            max-width: 58ch;
-            font-weight: 400;
-            letter-spacing: 0.015em;
-        }
-        .section-rule {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--dore), transparent);
-            margin: clamp(2rem, 5vw, 4rem) 0;
+        .hero-filets {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 60px;
+            height: 60px;
+            border-top: 2px solid var(--laiton);
+            border-right: 2px solid var(--laiton);
+            z-index: 3;
             opacity: 0.7;
+            pointer-events: none;
         }
-
-        /* ---- LE STUDIO ---- */
-        .studio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-        @media (min-width: 780px) {
-            .studio-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+        @media (max-width: 767px) {
+            .hero-filets {
+                top: -8px;
+                right: -8px;
+                width: 36px;
+                height: 36px;
             }
         }
-        .studio-accent {
-            width: 100%;
-            aspect-ratio: 1/1;
-            max-width: 340px;
-            background: radial-gradient(ellipse at 55% 40%, rgba(194, 122, 90, 0.18) 0%, transparent 65%),
-                radial-gradient(ellipse at 30% 60%, rgba(29, 122, 122, 0.1) 0%, transparent 55%);
-            border-radius: 2px;
-            position: relative;
-            overflow: hidden;
-        }
-        .studio-accent::before {
-            content: '';
+
+        /* ---- MONOGRAM ---- */
+        .monogram-container {
             position: absolute;
-            inset: 12%;
-            border: 1px solid rgba(107, 107, 74, 0.25);
-            border-radius: 2px;
-            transform: rotate(-1.5deg);
+            pointer-events: none;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.06;
+            transition: opacity 0.5s;
         }
-        .studio-accent .inner-shape {
-            position: absolute;
-            top: 22%;
-            left: 18%;
-            width: 50%;
-            height: 50%;
-            background: rgba(229, 213, 181, 0.4);
-            border-radius: 50%;
-            filter: blur(30px);
+        .monogram-container svg {
+            width: 80px;
+            height: auto;
+            transition: width 0.1s linear;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .monogram-container svg {
+                width: 120px;
+            }
         }
 
-        /* ---- LA BOUTIQUE ---- */
-        .boutique-list {
-            list-style: none;
+        /* ---- CARDS / POSÉ DÉLICAT ---- */
+        .cards-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.4rem;
-            margin-top: 1.5rem;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: clamp(2rem, 3vw, 3rem);
         }
         @media (min-width: 600px) {
-            .boutique-list {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .cards-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 1.8rem;
             }
         }
-        .boutique-item {
-            border-left: 3px solid var(--terracotta);
-            padding-left: 1.2rem;
-            transition: border-color 0.35s, background 0.35s;
-            background: rgba(229, 213, 181, 0.2);
-            padding: 1.1rem 1.2rem;
-            border-radius: 0 3px 3px 0;
-            border-left-width: 3px;
+        .card-posé {
+            background: #fff;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(42, 46, 54, 0.04);
+            transform: translateY(0);
+            transition: box-shadow var(--transition-posé), transform var(--transition-posé);
+            position: relative;
         }
-        .boutique-item:hover {
-            border-left-color: var(--sarcelle);
-            background: rgba(229, 213, 181, 0.4);
+        .card-posé.revealed {
+            box-shadow: 0 12px 32px var(--shadow-soft), 0 4px 10px rgba(42, 46, 54, 0.06);
         }
-        .boutique-item strong {
-            display: block;
-            font-family: 'Bricolage Grotesque', serif;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: var(--penombre);
-            margin-bottom: 0.25em;
-            letter-spacing: 0.01em;
-        }
-        .boutique-item span {
-            font-size: 0.9rem;
-            color: var(--olive);
-            line-height: 1.5;
-        }
-
-        /* ---- PROJETS ---- */
-        .projets-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-        @media (min-width: 550px) {
-            .projets-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.4rem;
-            }
-        }
-        @media (min-width: 900px) {
-            .projets-grid {
-                grid-template-columns: 1.3fr 0.9fr 1fr;
-                grid-template-rows: auto auto;
-                gap: 1.5rem;
-            }
-        }
-        .projet-card {
+        .card-posé .card-img-wrap {
             position: relative;
             overflow: hidden;
-            border-radius: 3px;
             aspect-ratio: 4/3;
-            cursor: default;
-            box-shadow: 0 1px 12px rgba(46, 43, 40, 0.08);
-            transition: box-shadow 0.4s, transform 0.4s var(--ease-out-expo);
+            background: var(--pierre-paris);
         }
-        .projet-card:hover {
-            box-shadow: 0 4px 28px rgba(46, 43, 40, 0.16);
-            transform: translateY(-3px);
-        }
-        .projet-card:nth-child(1) {
-            aspect-ratio: 3/4;
-        }
-        @media (min-width: 900px) {
-            .projet-card:nth-child(1) {
-                grid-row: span 2;
-                aspect-ratio: 2/3;
-            }
-            .projet-card:nth-child(3) {
-                grid-column: 2 / span 2;
-                aspect-ratio: 16/9;
-            }
-        }
-        .projet-card img {
+        .card-posé .card-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.6s var(--ease-out-expo);
+            transform: translateY(0);
+            transition: transform var(--transition-posé);
         }
-        .projet-card:hover img {
-            transform: scale(1.06);
+        .card-posé.revealed .card-img-wrap img {
+            transform: translateY(0);
         }
-        .projet-card .projet-overlay {
+        .card-posé .card-img-wrap::after {
+            content: '';
             position: absolute;
             inset: 0;
+            background: radial-gradient(ellipse at center, transparent 55%, rgba(184, 124, 76, 0.2) 88%, rgba(184, 124, 76, 0.35) 100%);
             pointer-events: none;
             z-index: 1;
-            mix-blend-mode: soft-light;
-            opacity: 0.5;
-            transition: opacity 0.4s;
         }
-        .projet-card:hover .projet-overlay {
-            opacity: 0.25;
+        .card-posé .card-body {
+            padding: clamp(1rem, 2vw, 1.5rem);
         }
-        .overlay-warm {
-            background: linear-gradient(135deg, #C27A5A 0%, transparent 60%);
+        .card-posé .card-body h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            letter-spacing: -0.01em;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.35rem;
         }
-        .overlay-cool {
-            background: linear-gradient(200deg, #1D7A7A 0%, transparent 55%);
-        }
-        .overlay-olive {
-            background: linear-gradient(160deg, #6B6B4A 0%, transparent 50%);
+        .card-posé .card-body p {
+            font-size: clamp(0.82rem, 1vw, 0.9rem);
+            color: var(--bleu-nuit);
+            opacity: 0.75;
+            line-height: 1.5;
         }
 
-        /* ---- ATELIER & CONTACT ---- */
-        .contact-grid {
+        /* ---- TESTIMONIALS ---- */
+        .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: start;
+            gap: clamp(1.25rem, 2vw, 2rem);
+            margin-top: clamp(1.5rem, 3vw, 2.5rem);
         }
-        @media (min-width: 720px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+        @media (min-width: 600px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        .contact-info {
-            font-size: clamp(0.9rem, 1.1vw, 1rem);
-            color: var(--olive);
-            line-height: 1.8;
+        @media (min-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
-        .contact-info a {
-            color: var(--sarcelle);
+        .testimonial-block {
+            background: var(--pierre-paris);
+            padding: clamp(1.25rem, 2.5vw, 2rem);
+            border-radius: 3px;
+            position: relative;
+            border-left: 3px solid var(--laiton);
+            transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
+        }
+        .testimonial-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px var(--shadow-soft);
+        }
+        .testimonial-block .quote {
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            line-height: 1.6;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.75rem;
+        }
+        .testimonial-block .attribution {
+            font-weight: 600;
+            font-size: clamp(0.78rem, 0.95vw, 0.85rem);
+            color: var(--vert-sauge);
+            letter-spacing: 0.03em;
+        }
+
+        /* ---- PRATICAL INFO ---- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .info-block {
+            background: #fff;
+            padding: clamp(1.25rem, 2.5vw, 2rem);
+            border-radius: 3px;
+            box-shadow: 0 2px 12px var(--shadow-soft);
+        }
+        .info-block h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            letter-spacing: -0.01em;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.75rem;
+        }
+        .info-block p,
+        .info-block a {
+            font-size: clamp(0.88rem, 1vw, 0.95rem);
+            line-height: 1.6;
+            color: var(--bleu-nuit);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .info-block a:hover {
+            color: var(--bois-cire);
             text-decoration: underline;
             text-underline-offset: 3px;
-            text-decoration-thickness: 1px;
-            text-decoration-color: rgba(29, 122, 122, 0.35);
-            transition: text-decoration-color 0.3s, color 0.3s;
         }
-        .contact-info a:hover {
-            text-decoration-color: var(--sarcelle);
-            color: #155e5e;
+        .horaires-list {
+            list-style: none;
+            font-size: clamp(0.85rem, 1vw, 0.92rem);
+            line-height: 1.7;
+            color: var(--bleu-nuit);
         }
-        .contact-info strong {
-            color: var(--penombre);
-            font-weight: 600;
+        .horaires-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.2em 0;
+            border-bottom: 1px dotted rgba(194, 168, 120, 0.35);
         }
-        .map-wrap {
+        .horaires-list li:last-child {
+            border-bottom: none;
+        }
+        .map-wrapper {
             border-radius: 3px;
             overflow: hidden;
-            box-shadow: 0 2px 20px rgba(46, 43, 40, 0.1);
-            aspect-ratio: 16/10;
-            min-height: 280px;
+            box-shadow: 0 4px 20px var(--shadow-soft);
+            margin-top: clamp(1.5rem, 3vw, 2.5rem);
+            aspect-ratio: 16/9;
+            max-height: 420px;
         }
-        .map-wrap iframe {
+        .map-wrapper iframe {
             width: 100%;
             height: 100%;
             border: 0;
-        }
-        .hours-block {
-            background: rgba(229, 213, 181, 0.3);
-            border: 1px solid rgba(107, 107, 74, 0.15);
-            border-radius: 3px;
-            padding: 1.2rem 1.4rem;
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-            color: var(--olive);
-            line-height: 1.7;
-        }
-        .hours-block strong {
-            color: var(--penombre);
+            display: block;
         }
 
         /* ---- FOOTER ---- */
         .site-footer {
-            position: relative;
-            z-index: 1;
-            border-top: 1px solid rgba(107, 107, 74, 0.15);
-            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 5vw, 3.5rem);
+            background: var(--bleu-nuit);
+            color: var(--lin-ecru);
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 5vw, 3rem);
             text-align: center;
-            font-size: 0.82rem;
-            color: var(--olive);
-            letter-spacing: 0.03em;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
             line-height: 1.8;
+            letter-spacing: 0.03em;
         }
-        .site-footer .footer-credits {
-            color: rgba(107, 107, 74, 0.6);
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
+        .site-footer .footer-brand {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+        .site-footer .footer-nap {
+            opacity: 0.75;
+            margin-bottom: 0.75rem;
+        }
+        .site-footer .footer-credit {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+        .site-footer a {
+            color: var(--laiton);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: var(--bois-cire);
+        }
+        .footer-filet {
+            width: 50px;
+            height: 1.5px;
+            background: var(--laiton);
+            margin: 1rem auto;
+            border: none;
+            border-radius: 1px;
+            opacity: 0.6;
         }
 
-        /* ---- REVEAL ON SCROLL ---- */
-        .reveal-el {
+        /* ---- SCROLL REVEAL ---- */
+        .reveal-fade {
             opacity: 0;
-            transform: translateY(2rem);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-            will-change: transform, opacity;
+            transform: translateY(24px);
+            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
         }
-        .reveal-el.revealed {
+        .reveal-fade.revealed {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ---- UTILITY ---- */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-fade {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
 
-        @media (max-width: 540px) {
-            .header-nav {
+        /* ---- RESPONSIVE FINE-TUNING ---- */
+        @media (max-width: 480px) {
+            .site-header {
+                flex-wrap: wrap;
                 gap: 0.5rem;
-                font-size: 0.72rem;
+                justify-content: center;
+            }
+            .header-nav {
+                gap: 0.6rem;
+                font-size: 0.78rem;
             }
             .header-cta {
+                font-size: 0.78rem;
                 padding: 0.45em 0.9em;
-                font-size: 0.74rem;
             }
-            .badge-google {
-                font-size: 0.68rem;
-                padding: 0.3em 0.55em;
+            .rating-badge {
+                font-size: 0.7rem;
             }
+        }
+        @media (min-width: 1200px) {
+            .section {
+                padding-left: clamp(3rem, 8vw, 6rem);
+                padding-right: clamp(3rem, 8vw, 6rem);
+            }
+            .hero {
+                min-height: 80vh;
+            }
+        }
+
+        /* ---- FOCUS ---- */
+        :focus-visible {
+            outline: 2px solid var(--bois-cire);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+
+        /* ---- OVERSIZED KEYWORDS IN OTHER SECTIONS ---- */
+        .oversized-inline {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: var(--bois-cire);
+            display: inline-block;
+            line-height: 0.7;
+            vertical-align: -0.06em;
+            margin: 0 -0.03em;
+            letter-spacing: -0.03em;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
-
-    <!-- Grain texture overlay -->
-    <svg class="grain-overlay" aria-hidden="true">
-        <filter id="noise-filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" />
-            <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noise-filter)" />
-    </svg>
-
-    <!-- Diamond filigrane pattern -->
-    <div class="diamond-filigrane" id="diamondFiligrane" aria-hidden="true"></div>
-
-    <!-- Sticky Header -->
     <header class="site-header" id="siteHeader">
-        <a href="#" class="header-name">Alison Boardman</a>
+        <a href="#hero" class="header-logo" aria-label="Alison Boardman — Accueil">Alison Boardman</a>
         <nav aria-label="Navigation principale">
             <ul class="header-nav">
-                <li><a href="#studio">Le Studio</a></li>
-                <li><a href="#boutique">La Boutique</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#atelier">Contact</a></li>
-                <li><span class="badge-google" aria-label="Note Google 4.6 sur 5, 9 avis"><span class="stars">★</span> 4.6 <span style="opacity:0.7;">· 9 avis</span></span></li>
+                <li><a href="#heritage">Héritage</a></li>
+                <li><a href="#selection">Sélection</a></li>
+                <li><a href="#lieu">Le Lieu</a></li>
+                <li><a href="#pratique">Contact</a></li>
             </ul>
         </nav>
-        <a href="#atelier" class="header-cta">Prendre RDV</a>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+            <span class="rating-badge" aria-label="Note 4,6 sur 5 — 9 avis Google"><span class="star">★</span> 4.6 <span style="font-weight:400;opacity:0.7;">(9 avis)</span></span>
+            <a href="tel:+33140503733" class="header-cta" aria-label="Appeler Alison Boardman">📞 Appeler</a>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-
+    <main>
         <!-- HERO -->
-        <section class="hero" id="hero">
-            <div class="hero-text">
-                <h1 class="hero-title" id="heroTitle">Des intérieurs qui respirent la matière.</h1>
-                <p class="hero-subtitle" id="heroSubtitle">Design d'intérieur et objets choisis — au 17 rue de l'Annonciation, Paris 16ᵉ.</p>
+        <section class="section hero" id="hero">
+            <div class="hero-content reveal-fade">
+                <span class="hero-eyebrow">Depuis 2008 — Paris 16ᵉ</span>
+                <h1 class="hero-title">
+                    Des objets qui ont déjà une <span class="oversized">histoire</span>, prêts à entrer dans la <span class="oversized">vôtre</span>.
+                </h1>
+                <p class="hero-subtitle">Meubles, luminaires et art de la table choisis par Alison Boardman, au cœur du village de Passy.</p>
+                <hr class="filet">
+                <a href="#selection" style="display:inline-block;font-weight:600;color:var(--bois-cire);text-decoration:none;font-size:clamp(0.9rem,1.1vw,1rem);letter-spacing:0.03em;border-bottom:1.5px solid var(--bois-cire);padding-bottom:0.2em;transition:color 0.3s,border-color 0.3s;" onmouseover="this.style.color='var(--bleu-nuit)';this.style.borderColor='var(--bleu-nuit)'" onmouseout="this.style.color='var(--bois-cire)';this.style.borderColor='var(--bois-cire)'">Découvrir la sélection →</a>
             </div>
-            <div class="hero-image-wrap">
-                <img src="assets/maps-1.jpg" alt="Alison Boardman — Intérieur de la boutique et atelier au 17 rue de l'Annonciation, Paris 16ᵉ" loading="eager" fetchpriority="high">
+            <div class="hero-visual reveal-fade">
+                <div class="hero-filets"></div>
+                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80&auto=format&fit=crop" alt="Vitrine de la boutique Alison Boardman — objets et mobilier soigneusement disposés" loading="eager" width="1920" height="1280">
             </div>
         </section>
 
-        <!-- LE STUDIO -->
-        <section class="section" id="studio">
-            <div class="section-inner">
-                <div class="studio-grid">
-                    <div>
-                        <h2 class="section-title reveal-split" data-reveal="split">Une approche sensible du lieu.</h2>
-                        <p class="section-body reveal-el">Alison Boardman conçoit des intérieurs comme des toiles composées de textures, de lumière et de volumes. Chaque projet naît d'un dialogue avec l'architecture et les habitudes de vie — un geste précis qui laisse respirer les matériaux bruts, les patines et les nuances de la lumière naturelle.</p>
-                        <p class="section-body reveal-el" style="margin-top:1em;">Depuis son atelier du 16ᵉ arrondissement, elle imagine des espaces où chaque objet trouve sa place dans une composition vivante, jamais figée.</p>
-                    </div>
-                    <div class="studio-accent reveal-el" aria-hidden="true">
-                        <div class="inner-shape"></div>
-                    </div>
-                </div>
+        <!-- HÉRITAGE & SAVOIR-FAIRE -->
+        <section class="section section-alt" id="heritage" style="position:relative;overflow:hidden;">
+            <div class="monogram-container" id="monogramAB" aria-hidden="true">
+                <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--bleu-nuit);">
+                    <path d="M15 88 L55 10 L95 88" stroke-width="7"/>
+                    <path d="M32 58 L72 58" stroke-width="5"/>
+                    <path d="M70 30 C70 20, 105 15, 105 42 C105 62, 75 65, 75 50 C75 38, 100 35, 105 42" stroke-width="7" fill="none"/>
+                </svg>
             </div>
-            <hr class="section-rule" aria-hidden="true">
-        </section>
-
-        <!-- LA BOUTIQUE -->
-        <section class="section" id="boutique">
-            <div class="section-inner">
-                <h2 class="section-title reveal-split" data-reveal="split">Curiosités choisies.</h2>
-                <p class="section-body reveal-el">Une sélection d'objets et de petits mobiliers pour donner une âme à chaque pièce. Chaque article est choisi pour sa présence tactile et sa capacité à dialoguer avec la lumière.</p>
-                <ul class="boutique-list reveal-el">
-                    <li class="boutique-item"><strong>Vases texturés</strong><span>Céramiques aux émaux craquelés, terres enfumées, formes organiques.</span></li>
-                    <li class="boutique-item"><strong>Lampes géométriques</strong><span>Abat-jour sculpturaux en tissu et métal, lumière tamisée et chaude.</span></li>
-                    <li class="boutique-item"><strong>Toiles abstraites</strong><span>Œuvres d'artistes émergents, palettes sourdes et compositions méditatives.</span></li>
-                </ul>
-            </div>
-            <hr class="section-rule" aria-hidden="true">
-        </section>
-
-        <!-- PROJETS -->
-        <section class="section" id="projets">
-            <div class="section-inner">
-                <h2 class="section-title reveal-split" data-reveal="split">Matières en situation.</h2>
-                <p class="section-body reveal-el" style="margin-bottom:0.5rem;">Un portfolio silencieux où chaque image raconte une atmosphère : appartements haussmanniens, lofts baignés de sud, maisons de campagne.</p>
-                <div class="projets-grid">
-                    <div class="projet-card reveal-el">
-                        <img src="assets/maps-1.jpg" alt="Projet — Appartement haussmannien, Paris" loading="lazy" style="object-position:center 25%;">
-                        <div class="projet-overlay overlay-warm"></div>
-                    </div>
-                    <div class="projet-card reveal-el">
-                        <img src="assets/maps-1.jpg" alt="Projet — Loft contemporain" loading="lazy" style="object-position:center 55%;">
-                        <div class="projet-overlay overlay-cool"></div>
-                    </div>
-                    <div class="projet-card reveal-el">
-                        <img src="assets/maps-1.jpg" alt="Projet — Maison de campagne" loading="lazy" style="object-position:center 40%;">
-                        <div class="projet-overlay overlay-olive"></div>
-                    </div>
-                </div>
-            </div>
-            <hr class="section-rule" aria-hidden="true">
-        </section>
-
-        <!-- L'ATELIER & CONTACT -->
-        <section class="section" id="atelier">
-            <div class="section-inner">
-                <h2 class="section-title reveal-split" data-reveal="split">Pousser la porte.</h2>
-                <div class="contact-grid">
-                    <div class="contact-info reveal-el">
-                        <p>Prenez rendez-vous pour une consultation personnalisée. L'atelier est ouvert <strong>du mardi au samedi</strong>, à deux pas de la Maison de la Radio, dans le calme feutré du 16ᵉ arrondissement.</p>
-                        <p style="margin-top:1em;">
-                            <strong>Téléphone :</strong> <a href="tel:+33140503733">01 40 50 37 33</a><br>
-                            <strong>Email :</strong> <a href="mailto:alison.boardman@wanadoo.fr">alison.boardman@wanadoo.fr</a><br>
-                            <strong>Adresse :</strong> 17 Rue de l'Annonciation, 75016 Paris
-                        </p>
-                        <div class="hours-block">
-                            <strong>Horaires d'ouverture :</strong><br>
-                            Mardi – Samedi : 10h – 13h, 14h – 19h<br>
-                            Dimanche & Lundi : fermé<br>
-                            <em style="font-size:0.8rem;opacity:0.7;">(Horaires indicatifs — à confirmer lors de la prise de rendez-vous)</em>
+            <div class="reveal-fade" style="position:relative;z-index:1;">
+                <span class="section-label">Savoir-faire</span>
+                <h2 class="section-title">L'atelier derrière la boutique</h2>
+                <p class="section-text">
+                    Alison Boardman collabore depuis vingt ans avec des ébénistes, céramistes et verriers d'Angleterre et de France. Chaque pièce raconte un <span class="oversized-inline">geste</span>, une matière, une <span class="oversized-inline">patience</span>.
+                </p>
+                <hr class="filet filet-laiton">
+                <div style="display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,3vw,2rem);margin-top:clamp(1.5rem,3vw,2rem);max-width:900px;">
+                    <div style="display:flex;gap:1rem;align-items:flex-start;">
+                        <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--laiton);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;">🪑</span>
+                        <div>
+                            <strong style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(0.95rem,1.2vw,1.05rem);color:var(--bleu-nuit);">Ébénisterie</strong>
+                            <p style="font-size:clamp(0.82rem,0.95vw,0.9rem);color:var(--bleu-nuit);opacity:0.75;margin-top:0.2rem;">Meubles en bois massif, finitions cirées, assemblages traditionnels.</p>
                         </div>
-                        <p style="margin-top:1.2rem;">
-                            <span class="badge-google" style="display:inline-flex;font-size:0.85rem;" aria-label="Note Google 4.6 sur 5, 9 avis"><span class="stars">★</span> 4.6 · 9 avis Google</span>
-                        </p>
                     </div>
-                    <div class="map-wrap reveal-el">
-                        <iframe src="https://maps.google.com/maps?q=Alison+Boardman+17+Rue+de+l%27Annonciation%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte — Alison Boardman, 17 Rue de l'Annonciation, Paris 16ᵉ"></iframe>
+                    <div style="display:flex;gap:1rem;align-items:flex-start;">
+                        <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--laiton);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;">🏺</span>
+                        <div>
+                            <strong style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(0.95rem,1.2vw,1.05rem);color:var(--bleu-nuit);">Céramique & Verrerie</strong>
+                            <p style="font-size:clamp(0.82rem,0.95vw,0.9rem);color:var(--bleu-nuit);opacity:0.75;margin-top:0.2rem;">Grès, porcelaine mate, verre soufflé — pièces uniques ou petites séries.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- LA SÉLECTION DU MOMENT -->
+        <section class="section" id="selection">
+            <div class="reveal-fade">
+                <span class="section-label">Arrivages</span>
+                <h2 class="section-title">Nos préférences cette saison</h2>
+                <p class="section-text">Les arrivages sont uniques, le choix se renouvelle au gré des coups de cœur. Voici ce qui nous inspire en ce moment.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card-posé reveal-fade" data-reveal>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Table de ferme galloise en chêne rouvre" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="card-body">
+                        <h4>Table de ferme galloise</h4>
+                        <p>Chêne rouvre massif, patine naturelle, piétement tourné. Une pièce qui traverse les générations.</p>
+                    </div>
+                </div>
+                <div class="card-posé reveal-fade" data-reveal>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop" alt="Bols en grès de Leach Pottery" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="card-body">
+                        <h4>Bols en grès — Leach Pottery</h4>
+                        <p>Série de bols tournés à la main, émaux naturels. Leach Pottery, Cornouailles, depuis 1920.</p>
+                    </div>
+                </div>
+                <div class="card-posé reveal-fade" data-reveal>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop" alt="Miroir vénitien dans châssis de fenêtre anglaise" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="card-body">
+                        <h4>Miroir vénitien retaillé</h4>
+                        <p>Glace ancienne dans un châssis de fenêtre anglaise du XIXᵉ. Un objet hybride, entre deux traditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ESPRIT DU LIEU -->
+        <section class="section section-alt" id="lieu">
+            <div class="reveal-fade" style="display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3rem);align-items:center;">
+                <div>
+                    <span class="section-label">La Boutique</span>
+                    <h2 class="section-title">Poussez la porte du 17 rue de l'Annonciation</h2>
+                    <p class="section-text">Une ancienne boucherie de quartier devenue un cocon de bois clair et de lumière. Ici, on prend le temps d'essayer, de toucher, d'imaginer l'objet dans sa propre maison.</p>
+                    <hr class="filet filet-laiton">
+                    <p style="font-size:clamp(0.88rem,1vw,0.95rem);color:var(--bleu-nuit);opacity:0.8;font-style:italic;">« Une adresse discrète où l'on entre par hasard et où l'on revient par conviction. »</p>
+                </div>
+                <div style="position:relative;border-radius:3px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 16px 40px var(--shadow-medium);">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop" alt="Intérieur de la boutique Alison Boardman — bois clair et lumière naturelle" loading="lazy" width="1200" height="675" style="width:100%;height:100%;object-fit:cover;display:block;">
+                    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 50%,rgba(184,124,76,0.2) 85%,rgba(184,124,76,0.35) 100%);pointer-events:none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="section" id="avis">
+            <div class="reveal-fade">
+                <span class="section-label">Confiance</span>
+                <h2 class="section-title">La confiance, depuis 2008</h2>
+                <p class="section-text">Ce que nos clients partagent, simplement.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-block reveal-fade" data-reveal>
+                    <p class="quote">« Une boutique rare, où chaque objet a une vraie présence. Alison connaît l'histoire de chaque pièce et prend le temps de vous guider. On repart toujours avec quelque chose qui compte. »</p>
+                    <span class="attribution">— Claire D., cliente depuis 2015</span>
+                </div>
+                <div class="testimonial-block reveal-fade" data-reveal>
+                    <p class="quote">« J'ai trouvé une table de ferme galloise qui est devenue le cœur de notre salle à manger. Le bois est vivant, la patine magnifique. Un achat réfléchi, pour la vie. »</p>
+                    <span class="attribution">— François & Hélène M.</span>
+                </div>
+                <div class="testimonial-block reveal-fade" data-reveal>
+                    <p class="quote">« L'endroit parfait pour dénicher un cadeau qui a du sens. La sélection est exigeante, l'accueil chaleureux sans être insistant. Une bulle dans le quartier. »</p>
+                    <span class="attribution">— Marie L., Passy</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMATIONS PRATIQUES -->
+        <section class="section section-alt" id="pratique">
+            <div class="reveal-fade">
+                <span class="section-label">Venir</span>
+                <h2 class="section-title">Venir, écrire, appeler</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-block reveal-fade" data-reveal>
+                    <h4>📍 Adresse</h4>
+                    <p>17 Rue de l'Annonciation<br>75016 Paris, France</p>
+                    <p style="font-size:0.85rem;opacity:0.7;margin-top:0.3rem;">Dans la portion piétonne de la rue, à deux pas du marché.</p>
+                    <hr style="border:none;border-top:1px dotted rgba(194,168,120,0.4);margin:1rem 0;">
+                    <h4>📞 Téléphone</h4>
+                    <a href="tel:+33140503733">01 40 50 37 33</a>
+                    <h4 style="margin-top:0.75rem;">✉️ Email</h4>
+                    <a href="mailto:alison.boardman@wanadoo.fr">alison.boardman@wanadoo.fr</a>
+                </div>
+                <div class="info-block reveal-fade" data-reveal>
+                    <h4>🕰️ Horaires d'ouverture</h4>
+                    <ul class="horaires-list">
+                        <li><span>Mardi</span><span>10h30–13h / 14h30–19h</span></li>
+                        <li><span>Mercredi</span><span>10h30–13h / 14h30–19h</span></li>
+                        <li><span>Jeudi</span><span>10h30–13h / 14h30–19h</span></li>
+                        <li><span>Vendredi</span><span>10h30–13h / 14h30–19h</span></li>
+                        <li><span>Samedi</span><span>10h30–13h / 14h30–19h</span></li>
+                        <li style="color:var(--vert-sauge);font-style:italic;"><span>Dimanche & Lundi</span><span>Fermé</span></li>
+                    </ul>
+                    <p style="font-size:0.8rem;opacity:0.65;margin-top:0.6rem;">Horaires susceptibles de varier — nous vous recommandons d'appeler avant de vous déplacer.</p>
+                </div>
+            </div>
+            <div class="map-wrapper reveal-fade" data-reveal>
+                <iframe src="https://maps.google.com/maps?q=Alison+Boardman+17+Rue+de+l%27Annonciation%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Alison Boardman, 17 Rue de l'Annonciation, Paris" aria-label="Carte de localisation de la boutique"></iframe>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
-        <p><strong>Alison Boardman</strong> — 17 Rue de l'Annonciation, 75016 Paris &nbsp;·&nbsp; <a href="tel:+33140503733" style="color:var(--sarcelle);text-decoration:underline;text-underline-offset:2px;">01 40 50 37 33</a> &nbsp;·&nbsp; <a href="mailto:alison.boardman@wanadoo.fr" style="color:var(--sarcelle);text-decoration:underline;text-underline-offset:2px;">alison.boardman@wanadoo.fr</a></p>
-        <p class="footer-credits">Site créé par Agence Mooo</p>
+        <div class="footer-brand">Alison Boardman</div>
+        <hr class="footer-filet">
+        <div class="footer-nap">
+            17 Rue de l'Annonciation, 75016 Paris — <a href="tel:+33140503733">01 40 50 37 33</a> — <a href="mailto:alison.boardman@wanadoo.fr">alison.boardman@wanadoo.fr</a>
+        </div>
+        <p style="opacity:0.6;font-size:0.85rem;">Ouvert du mardi au samedi, 10h30–13h / 14h30–19h</p>
+        <p class="footer-credit">Site créé par <a href="https://agence.mooo.com/alison-boardman" target="_blank" rel="noopener">Agence Mooo</a></p>
     </footer>
-
-    <!-- Schema.org LocalBusiness -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Alison Boardman",
-            "description": "Studio de design d'intérieur et boutique d'objets choisis au 17 rue de l'Annonciation, Paris 16ᵉ.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "17 Rue de l'Annonciation",
-                "addressLocality": "Paris",
-                "postalCode": "75016",
-                "addressCountry": "FR"
-            },
-            "telephone": "+33140503733",
-            "email": "alison.boardman@wanadoo.fr",
-            "image": "assets/maps-1.jpg",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.6",
-                "ratingCount": "9",
-                "bestRating": "5"
-            },
-            "openingHoursSpecification": [
-                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "19:00" }
-            ],
-            "url": "https://agence.mooo.com/alison-boardman"
-        }
-    </script>
 
     <script>
         (function() {
-            // ---- LETTER SPLITTER ----
-            function splitLetters(el) {
-                const text = el.textContent.trim();
-                el.textContent = '';
-                el.setAttribute('aria-label', text);
-                [...text].forEach((char, i) => {
-                    const span = document.createElement('span');
-                    span.className = 'char';
-                    span.textContent = char;
-                    span.style.transitionDelay = (i * 0.025) + 's';
-                    span.setAttribute('aria-hidden', 'true');
-                    el.appendChild(span);
-                });
-            }
-
-            // ---- HERO TITLE letter-by-letter ----
-            const heroTitle = document.getElementById('heroTitle');
-            if (heroTitle) {
-                splitLetters(heroTitle);
-                // Trigger reveal after a short delay for the hero
-                setTimeout(() => {
-                    heroTitle.classList.add('revealed');
-                }, 250);
-            }
-
-            // ---- HERO SUBTITLE reveal ----
-            const heroSubtitle = document.getElementById('heroSubtitle');
-            if (heroSubtitle) {
-                setTimeout(() => {
-                    heroSubtitle.classList.add('revealed');
-                }, 450);
-            }
-
-            // ---- SPLIT SECTION TITLES ----
-            const splitTitles = document.querySelectorAll('.reveal-split[data-reveal="split"]');
-            splitTitles.forEach(title => {
-                splitLetters(title);
-            });
-
-            // ---- INTERSECTION OBSERVER for scroll reveals ----
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.12
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        // Reveal the element itself
-                        if (el.classList.contains('reveal-el')) {
-                            el.classList.add('revealed');
-                        }
-                        // Reveal split titles
-                        if (el.classList.contains('reveal-split') && el.dataset.reveal === 'split') {
-                            el.classList.add('revealed');
-                        }
-                        observer.unobserve(el);
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all reveal elements
-            document.querySelectorAll('.reveal-el, .reveal-split[data-reveal="split"]').forEach(el => {
-                observer.observe(el);
-            });
-
-            // ---- HEADER SCROLL CLASS ----
+            // --- HEADER SCROLL SHADOW ---
             const header = document.getElementById('siteHeader');
-            let scrollTicking = false;
+            let headerTicking = false;
             window.addEventListener('scroll', () => {
-                if (!scrollTicking) {
+                if (!headerTicking) {
                     requestAnimationFrame(() => {
-                        if (window.scrollY > 30) {
+                        if (window.scrollY > 10) {
                             header.classList.add('scrolled');
                         } else {
                             header.classList.remove('scrolled');
                         }
-                        scrollTicking = false;
+                        headerTicking = false;
                     });
-                    scrollTicking = true;
+                    headerTicking = true;
                 }
-            }, { passive: true });
+            });
 
-            // ---- DIAMOND FILIGRANE SCROLL ANIMATION ----
-            const diamond = document.getElementById('diamondFiligrane');
-            let diamondTicking = false;
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            // --- MONOGRAM SCALE ON SCROLL ---
+            const monogramSVG = document.querySelector('#monogramAB svg');
+            const heritageSection = document.getElementById('heritage');
+            let monogramTicking = false;
 
-            if (!prefersReducedMotion && diamond) {
-                window.addEventListener('scroll', () => {
-                    if (!diamondTicking) {
-                        requestAnimationFrame(() => {
-                            const scrollY = window.scrollY;
-                            const maxScroll = document.body.scrollHeight - window.innerHeight;
-                            const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
-                            const sizeShift = 36 + Math.sin(progress * Math.PI * 1.3) * 4;
-                            const posShift = progress * 8;
-                            diamond.style.backgroundSize = sizeShift + 'px ' + sizeShift + 'px';
-                            diamond.style.backgroundPosition = posShift + 'px ' + (posShift * 0.6) + 'px';
-                            diamondTicking = false;
-                        });
-                        diamondTicking = true;
-                    }
-                }, { passive: true });
+            function updateMonogram() {
+                if (!heritageSection || !monogramSVG) return;
+                const rect = heritageSection.getBoundingClientRect();
+                const sectionHeight = rect.height;
+                const sectionTop = rect.top;
+                const viewportHeight = window.innerHeight;
+                // Progress: 0 when section top is at viewport bottom, 1 when section bottom is at viewport top
+                const scrollStart = sectionTop - viewportHeight;
+                const scrollEnd = sectionTop + sectionHeight;
+                const totalRange = scrollEnd - scrollStart;
+                let progress = (window.scrollY - scrollStart) / totalRange;
+                progress = Math.max(0, Math.min(1, progress));
+                // Scale from ~80px to ~600px (on desktop), clamped for mobile
+                const minSize = 60;
+                const maxSize = Math.min(600, viewportHeight * 0.8);
+                const currentSize = minSize + (maxSize - minSize) * progress;
+                monogramSVG.style.width = currentSize + 'px';
+                // Semi-coupé effect: translate so only portion is visible at large sizes
+                const offsetX = progress > 0.5 ? (progress - 0.5) * 2 * (currentSize * 0.3) : 0;
+                const container = document.getElementById('monogramAB');
+                if (container) {
+                    container.style.transform = `translate(calc(-50% + ${offsetX}px), -50%)`;
+                }
             }
 
-            // ---- SMOOTH SCROLL FOR HEADER CTA (ensures it works everywhere) ----
+            window.addEventListener('scroll', () => {
+                if (!monogramTicking) {
+                    requestAnimationFrame(() => {
+                        updateMonogram();
+                        monogramTicking = false;
+                    });
+                    monogramTicking = true;
+                }
+            });
+            // Initial call
+            updateMonogram();
+
+            // --- INTERSECTION OBSERVER (scroll reveals + posé délicat) ---
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReduced) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.15
+                };
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            // For card-posé, add a staggered delay based on index
+                            if (entry.target.classList.contains('card-posé') && entry.target.hasAttribute('data-reveal')) {
+                                const allCards = document.querySelectorAll('.card-posé[data-reveal]');
+                                const index = Array.from(allCards).indexOf(entry.target);
+                                entry.target.style.transitionDelay = (index * 120) + 'ms';
+                            }
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all reveal-fade elements
+                document.querySelectorAll('.reveal-fade').forEach(el => {
+                    revealObserver.observe(el);
+                });
+
+                // Also observe card-posé elements specifically
+                document.querySelectorAll('.card-posé[data-reveal]').forEach(el => {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Reduced motion: show everything immediately
+                document.querySelectorAll('.reveal-fade, .card-posé[data-reveal]').forEach(el => {
+                    el.classList.add('revealed');
+                });
+            }
+
+            // --- HANDLE RESIZE FOR MONOGRAM ---
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(updateMonogram, 150);
+            });
+
+            // --- SMOOTH ANCHOR SCROLL OFFSET FOR STICKY HEADER ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href === '#') return;
-                    const target = document.querySelector(href);
-                    if (target) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
                         e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        const headerHeight = header.getBoundingClientRect().height;
+                        const targetPosition = targetEl.getBoundingClientRect().top + window.scrollY -
+                            headerHeight - 16;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: prefersReduced ? 'auto' : 'smooth'
+                        });
                     }
                 });
             });
-
         })();
     </script>
 </body>
