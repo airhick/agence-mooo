@@ -1,51 +1,88 @@
-Voici un brief créatif qui rompt avec la standardisation corporate et ancre le site dans l’énergie réelle du showroom parisien. Il exploite la tension entre la lumière crue des grandes baies vitrées, la rigueur des matériaux bruts (métal, verre, bois) et le raffinement discret de la clientèle du 16e arrondissement.
+Voici le brief créatif, taillé sur mesure pour l’Espace Conseil TRYBA Paris 16e, en réponse directe à l’audit et en totale adhérence avec l’énergie visuelle captée sur place.
 
 ---
 
-**BRIEF CRÉATIF — TRYBA Paris 16e**
+### 1. Concept & positionnement
 
-**1. Concept & positionnement**
-Le site ne vend pas des fenêtres ; il ouvre un dialogue sur la lumière parisienne. TRYBA Paris 16e devient « l’atelier des transparences », un lieu où le savoir-faire technique de la chaîne se tait au profit d’une relation de conseil singulière, à hauteur d’immeubles haussmanniens, de copropriétés exigeantes et de goûts très personnels. On retient un espace conseil qui écoute avant de proposer, et une promesse : chaque menuiserie naît d’une conversation, pas d’un catalogue.
+**L’idée forte :** On ne vend pas des fenêtres, on refonde le regard que Paris porte sur votre intérieur. Le site ne sera pas un catalogue national plaqué sur une adresse, mais le prolongement numérique de la grande vitrine de l’Avenue de Versailles : un écrin de verre et de lumière où l’on ressent physiquement le passage à un double, puis triple vitrage. Le commerce local redevient le héros, le réseau national une caution silencieuse.
 
-**2. Direction artistique**
-*Néo-atelier haussmannien.*
-On puise dans l’énergie visuelle réelle du showroom : la lumière naturelle crue qui traverse les immenses baies vitrées (transparence), le bois clair des présentoirs et des échantillons (chaleur maîtrisée), le métal et le verre bruts (rigueur technique). L’esthétique fusionne la noblesse discrète d’un atelier d’architecte du 16e avec la netteté contemporaine d’un studio de création. Les grands aplats blancs deviennent des surfaces lumineuses, le bois blé apporte une assise organique, et le bleu marine — extrait de la charte discrète de la façade — ancre l’élégance. Aucune froideur corporate : des micro-interactions de nuancier et une typographie d’éditeur rappellent que l’on compose, ici, du sur-mesure.
+**Ce qu’on retient :** Un showroom digital ultra-local, où chaque habitant du 16e arrondissement reconnaît son quartier, ses immeubles, et comprend que TRYBA est son interlocuteur direct, depuis 1980, pour une menuiserie sur-mesure enfin expliquée avec clarté.
 
-**3. Palette**
-- **Coquille d’œuf** (#FAF7F2) — Fond principal, lumière chaude et nuancée qui évite le blanc aseptisé et évoque le papier vergé ou le lin brut.
-- **Encre marine** (#112D47) — Texte principal, filets, ancrage visuel. Plus profond qu’un simple bleu marine corporate, il tire vers le noir bleuté pour une élégance intemporelle.
-- **Bois de bouleau** (#CBB99B) — Accent chaleureux, fonds de sous-sections, séparateurs organiques. Rappelle les échantillons clairs et les présentoirs du showroom.
-- **Gris ardoise** (#5E636B) — Texte secondaire, légendes, éléments fonctionnels. Remplace le gris clair délavé par une teinte minérale, plus habillée.
-- **Vert bronze** (#3A5045) — Unique accent de couleur. Apparaît avec parcimonie sur les CTA et les liens, comme un clin d’œil aux menuiseries métalliques patinées des immeubles haussmanniens et aux feuillages de l’Avenue de Versailles.
+---
 
-**4. Ton éditorial**
-Voix d’un conseiller expert, ni précieux ni familier. Un français juste, économe, qui va au fait avec élégance. On tutoie la langue sans tutoyer le lecteur (« vous » systématique). Les phrases sont courtes, les verbes précis. On évoque le quartier, la lumière, les contraintes de copropriété avec la précision d’un architecte et la discrétion d’un habitant du 16e. Aucun superlatif vide — chaque promesse technique est un fait vérifiable, livré sobrement.
+### 2. Direction artistique
 
-**5. Accroche héro**
-*Titre* : **Le 16e sous votre regard.**
-*Sous-titre* : Fenêtres, portes et verrières dessinées à votre mesure — conseil, conception et pose dans notre atelier de l’Avenue de Versailles.
+**Parti pris esthétique : « Showroom d’architecte de quartier »**
 
-**6. Sections**
-1.  **L’atelier du 16e** — *Titre réel : L’atelier du 16e.*
-    Un espace de 200m² entièrement voué au conseil. Venez manipuler des échantillons de bois, d’aluminium et de PVC, tester une baie en conditions réelles, et bâtir votre projet avec une équipe qui connaît chaque immeuble du quartier.
-    *(Contenu visuel : photos authentiques de l’intérieur du showroom, de l’équipe, de la rue, avec une lumière naturelle non retouchée.)*
+On emprunte au design d’intérieur haut de gamme et aux studios d’architecture parisiens leur langage : sobriété minérale, lumière abondante, béton ciré et structures métalliques fines. L’énergie réelle du magasin est une transparence vive, des gammes de gris et de beiges mats traversées par la brillance du verre. On traduit cette tension entre le brut industriel maîtrisé et la chaleur d’un conseil humain.
 
-2.  **Menuiseries sur parole** — *Titre réel : Menuiseries sur parole.*
-    Le catalogue s’efface derrière votre besoin. Fenêtres, portes d’entrée, vérandas ou volets : nous partons de votre vue, de votre étage, de votre orientation pour vous proposer les gammes TRYBA qui y répondent vraiment.
-    *(Contenu : remplace les interminables listes de produits par une approche par usage — « Votre vue », « Votre seuil », « Votre terrasse ».)*
+- **Matières numériques :** Verre dépoli, aluminium brossé, ombres portées nettes, fonds en textures de papier artisan ou de micro-ciment. Aucun dégradé superflu, aucun flou. La lumière est toujours rasante, comme celle qui traverse la vitrine réelle.
+- **Photographies :** On délaisse les images catalogue désincarnées. On commande un reportage local : le conseiller devant le magasin, un détail de verre et de joint, des fenêtres posées sur des immeubles du 16e. Ces vues sont traitées en noir et blanc chaud légèrement bleuté, et viennent dialoguer avec des aplats de la palette locale, créant une alternance vivante entre réel et abstraction.
+- **Typographie :** Fraunces apporte son empattement élégant et ses terminaisons joueuses (notamment dans les lettres « R » et « A »), évoquant la précision des coupes de menuiserie. Manrope, en body, claire et aérée, agit comme une voix de conseil posée, technique sans être froide. Les titres Fraunces sont parfois surdimensionnés, en débord léger, pour créer une architecture typographique qui fait écho à une façade.
 
-3.  **L’œil copropriété** — *Titre réel : L’œil copropriété.*
-    Remplacer des fenêtres sur cour ou sur rue dans un immeuble haussmannien obéit à des règles précises. Nous préparons avec vous le dossier pour l’assemblée générale, réalisons les plans et calepinages exigés, et dialoguons directement avec votre syndic.
-    *(Contenu : un bloc de texte structuré en deux colonnes — Contraintes / Solutions concrètes, avec la rigueur d’une fiche pratique.)*
+---
 
-4.  **Devis transparent** — *Titre réel : Devis transparent.*
-    En moins de trente secondes, décrivez votre projet. Vous recevez sous 48h une estimation claire, basée sur nos relevés réels — pas un prix moyen statistique.
-    *(Contenu : formulaire simplifié, intégré élégamment sur fond Coquille d’œuf, avec chaque étape numérotée, polices Manrope, filet Bois de bouleau.)*
+### 3. Palette
 
-5.  **Rendez-vous ici** — *Titre réel : Rendez-vous ici.*
-    TRYBA Paris 16e. 15 Avenue de Versailles. À huit minutes à pied de la Maison de la Radio, au cœur du quartier du Stade Jean-Bouin. Le lundi de 14h à 19h, du mardi au samedi de 10h à 19h30. Appelez-nous au 01 59 30 12 28.
-    *(Contenu : carte épurée, horaires corrigés, numéro de téléphone vérifié, sans doublon ni erreur. Mention du parking public à 50m.)*
+Tirée des teintes réelles du magasin, enrichie pour éviter l’écueil « blanc fade + gris » :
 
-**7. Signature visuelle**
-- **Le nuancier vivant.** Au survol de certaines photos de réalisations, un curseur transparent affiche les trois matériaux principaux de la menuiserie (bois, alu, PVC) avec leurs références de teinte réelles, comme un échantillon numérique directement issu des présentoirs du showroom.
-- **La ligne éditoriale.** Tous les titres (Fraunces) sont soulignés d’un filet Bois de bouleau de 2px, qui s’allonge horizontalement au scroll. Ce simple trait devient la discrète signature de l’atelier — un clin d’œil aux traces de crayon du concepteur, jamais effacées.
+| Rôle | Hex | Nom descriptif | Source sensorielle |
+|------|-----|----------------|---------------------|
+| Fond principal | `#F5F3F0` | Blanc craie | Le blanc des vitrines, réchauffé par la pierre de Paris |
+| Fond secondaire / cartes | `#EBE8E1` | Beige poudre | Le beige dominant des présentoirs et des joints clairs |
+| Encre / corps de texte | `#2B2D2C` | Anthracite chaud | Le métal sombre des châssis aluminium, sans noir pur |
+| Accent primaire | `#B6A28E` | Bronze brossé | Les poignées de porte et le reflet mat des cadres métalliques |
+| Accent secondaire | `#4F6D7A` | Bleu Seine | La lumière froide du ciel parisien sur le verre ; utilisé pour les CTA structurants |
+| Utilitaire (très rare) | `#C4BDB2` | Nuage métal | Fond de tags, séparateurs fins |
+
+**Lumière :** Cette palette est exclusivement réservée à une ambiance claire, « bain de jour ». Pas de dark mode.
+
+---
+
+### 4. Ton éditorial
+
+**Voix :** Un artisan de haut vol. Un conseiller technique qui habite le quartier, connaît les intempéries parisiennes et les hauteurs sous plafond haussmanniennes. Pas de jargon assommant, mais un vocabulaire précis qui rassure : « dormant », « ouvrant caché », « confort thermique ». Le niveau de langue est soutenu, le registre consultatif. On vouvoie, on accompagne, on ne vend pas à tout prix.
+
+**Rythme :** Des accroches factuelles et élégantes, des phrases courtes. Aucune exclamation promotionnelle vidée de sens. La marque nationale TRYBA n’intervient qu’au second plan, comme une garantie d’excellence, jamais comme une bannière criarde.
+
+---
+
+### 5. Accroche héro
+
+**Titre :**
+> Votre façade mérite plus qu’une fenêtre. Elle mérite un point de vue.
+
+**Sous‑titre :**
+> TRYBA Paris 16e conçoit et pose vos menuiseries sur‑mesure, avec un conseil de quartier, avenue de Versailles. Devis clair, sans surprise.
+
+*(Le titre joue sur la double lecture « point de vue » = vue de Paris ET opinion d’expert. Le sous‑titre ancre le local immédiatement et répond au manque de balisage identifié dans l’audit.)*
+
+---
+
+### 6. Sections
+
+1.  **Accroche pleine page** — *Titre + sous‑titre ci‑dessus.* Un grand cliché en arrière‑plan de la vitrine réelle du magasin, légèrement filmé au travers d’un verre clair avec des reflets d’arbres.
+
+2.  **Le constat local** — *« Vos murs méritent le silence. »*
+    Un court paragraphe qui parle du boulevard circulaire proche, de la densité sonore du 16e, et de la différence entre un double vitrage standard et un triple vitrage TRYBA posé par une équipe locale qui connaît les contraintes des immeubles anciens.
+
+3.  **Le conseiller dédié** — *« Rencontrez votre expert de quartier. »*
+    Photo réelle du responsable de l’Espace Conseil, son prénom, son historique (ex : « 12 ans de chantiers dans l’Ouest parisien ») — contenu qui manque cruellement dans l’audit. Un bouton unique « Prendre rendez-vous en boutique », qui ouvre un formulaire en deux champs (nom + téléphone), avec rappel par le conseiller sous 2h. Le numéro local corrigé `01 59 30 12 28` est ici cliquable et mis en avant, résolvant l’incohérence NAP.
+
+4.  **Les solutions sur‑mesure** — *« Menuiseries pensées pour Paris. »*
+    Une carte visuelle et non une liste déroulante nationale. Trois colonnes : « Fenêtres & Baies », « Portes d’entrée », « Volets & Pergolas ». Chaque colonne amène à une fiche produit minimaliste avec un seul prix indicatif (« À partir de… »), un descriptif technique, et une photo prise en situation réelle dans le 16e.
+
+5.  **La preuve par le quartier** — *« Ils nous ont confié leur vue. »*
+    Trois blocs témoignages avec nom, prénom, rue (ex : « Madame C., Avenue de Versailles ») et un extrait d’avis Google, pas une citation inventée. On affiche la note locale 4,1/5, en toute transparence, avec le décompte « sur 32 avis vérifiés dans le quartier ». Plus d’écart avec un 4,6 national flou.
+
+6.  **L’engagement fabrication française** — *« De l’Alsace et des Pays de la Loire à votre façade parisienne. »*
+    Un seul bloc épuré, avec l’icône du label « Alsace Excellence » mentionné par le commerçant sur Google, sans répétition en boucle comme dans l’audit. On explique en une phrase l’existence des ateliers TRYBA, puis on retourne au local.
+
+7.  **Pied de page ancré** — *Adresse cliquable, plan Google Map en fond, horaires lisibles, mention « Métro Exelmans, bus 72 », numéro `01 59 30 12 28` répété et cliquable.* Plus de formulaire complexe, juste un lien vers la page RDV unique.
+
+---
+
+### 7. Signature visuelle
+
+- **L’effet « vitrine révélée » :** Au scroll, chaque bloc de contenu semble se dévoiler derrière une plaque de verre animée. Un léger jeu de réfraction (mouvement subtil d’opacité et de translation) donne l’impression de lire le site au travers de l’une des vitrines du magasin — clin d’œil direct au détail visuel singulier mentionné.
+- **Le « K de châssis » en filigrane typographique :** Une ligature surdimensionnée du « TR » de TRYBA ou une lettre « K » abstraite (évoquant une coupe de profilé menuisé) est utilisée comme séparateur de section ou en fond d’image. Ce motif, strictement géométrique et métallique, encode l’information « menuiserie » sans avoir à montrer une fenêtre à chaque écran.
