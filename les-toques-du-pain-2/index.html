@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Toqués du Pain — Boulangerie artisanale à Vanves | Pain au levain, viennoiseries, pâtisseries</title>
+    <meta name="description" content="Les Toqués du Pain, boulangerie artisanale à Vanves centre Saint-Rémy. Christian et Valérie, artisans boulangers passionnés, vous accueillent pour des pains d'exception, viennoiseries pur beurre et pâtisseries de chef. Note 4.2★ sur 320 avis.">
+    <meta property="og:title" content="Les Toqués du Pain — Boulangerie artisanale à Vanves">
+    <meta property="og:description" content="Fous amoureux du pain. Et ça se voit. Christian et Valérie pétrissent, façonnent et enfournent chaque jour au cœur de Vanves.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥖</text></svg>">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Bakery",
+            "name": "Les Toqués du Pain",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3 Boulevard du Lycée",
+                "addressLocality": "Vanves",
+                "postalCode": "92170",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33155649717",
+            "email": "christian.habert060@orange.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "320"
+            },
+            "image": "assets/maps-1.jpg",
+            "url": "https://agence.mooo.com/les-toques-du-pain-2",
+            "servesCuisine": "French bakery",
+            "openingHours": "Tu-Sa 07:00-20:00, Su 07:30-13:30"
+        }
+    </script>
+    <style>
+        :root {
+            --farine: #FAF5EE;
+            --cafe: #2C241A;
+            --cuivre: #B85D3F;
+            --croute: #D79E4A;
+            --bois: #4E3C2E;
+            --mie: #E8D5C0;
+            --grain-opacity: 0.04;
+            --shadow-hard: 4px 4px 0px rgba(44, 36, 26, 0.12);
+            --shadow-soft: 0 20px 60px rgba(44, 36, 26, 0.08);
+            --transition-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.1vw + 0.5rem, 18px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Geist', system-ui, -apple-system, sans-serif;
+            background-color: var(--farine);
+            color: var(--cafe);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain global */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* Canvas levain animé */
+        #levain-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+            transition: opacity 0.8s ease;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--cafe);
+            color: var(--farine);
+            padding: 0.5rem 1rem;
+            z-index: 10000;
+            border-radius: 0 0 4px 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ============ HEADER ============ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 245, 238, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(44, 36, 26, 0.07);
+            transition: all 0.35s var(--transition-smooth);
+            padding: 0.6rem 1.5rem;
+        }
+        .site-header.scrolled {
+            padding: 0.35rem 1.5rem;
+            background: rgba(250, 245, 238, 0.94);
+            box-shadow: 0 2px 20px rgba(44, 36, 26, 0.06);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--cafe);
+            flex-shrink: 0;
+        }
+        .monogram {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        .monogram svg {
+            width: 100%;
+            height: 100%;
+        }
+        .brand-text {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(1rem, 1.6vw, 1.35rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--cafe);
+            white-space: nowrap;
+        }
+        .brand-text span {
+            display: block;
+            font-size: 0.55em;
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cuivre);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cafe);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: color 0.25s;
+            white-space: nowrap;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre);
+            transition: width 0.35s var(--transition-smooth);
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--cuivre);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--cuivre);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            transition: all 0.3s var(--transition-smooth);
+            white-space: nowrap;
+            box-shadow: var(--shadow-hard);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta:hover {
+            background: #a34a2f;
+            box-shadow: 6px 6px 0px rgba(44, 36, 26, 0.15);
+            transform: translate(-1px, -1px);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--croute);
+            outline-offset: 3px;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--cafe);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--farine);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                gap: 1.2rem;
+                box-shadow: -10px 0 40px rgba(44, 36, 26, 0.15);
+                transition: right 0.4s var(--transition-smooth);
+                z-index: 999;
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1rem;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .header-cta {
+                font-size: 0.78rem;
+                padding: 0.45rem 0.9rem;
+            }
+        }
+
+        /* ============ MAIN ============ */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+        section {
+            position: relative;
+            z-index: 1;
+            padding: clamp(3rem, 6vw, 7rem) 1.5rem;
+        }
+        .section-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ============ HÉRO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--mie);
+            padding: 0.35rem 0.9rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--cafe);
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--croute);
+        }
+        .hero-badge .stars {
+            color: var(--croute);
+            letter-spacing: 0.1em;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            color: var(--cafe);
+            margin-bottom: 1rem;
+            text-wrap: balance;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--cuivre);
+            position: relative;
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            color: var(--bois);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--cuivre);
+            color: #fff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: var(--shadow-hard);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-family: 'Geist', sans-serif;
+        }
+        .btn-primary:hover {
+            background: #a34a2f;
+            box-shadow: 8px 8px 0px rgba(44, 36, 26, 0.15);
+            transform: translate(-2px, -2px);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--croute);
+            outline-offset: 3px;
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--cafe);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            border: 1.5px solid var(--cafe);
+            transition: all 0.3s var(--transition-smooth);
+            cursor: pointer;
+            font-family: 'Geist', sans-serif;
+        }
+        .btn-secondary:hover {
+            background: var(--cafe);
+            color: var(--farine);
+            border-color: var(--cafe);
+        }
+        .btn-secondary:focus-visible {
+            outline: 3px solid var(--croute);
+            outline-offset: 3px;
+        }
+        .hero-image-wrap {
+            position: relative;
+            z-index: 1;
+            aspect-ratio: 4/5;
+            max-height: 75vh;
+            overflow: hidden;
+            border-radius: 3px;
+            box-shadow: var(--shadow-soft), 12px 12px 0px rgba(184, 93, 63, 0.18);
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.05) saturate(0.9);
+            transition: transform 1.2s var(--transition-smooth);
+        }
+        .hero-image-wrap:hover img {
+            transform: scale(1.04);
+        }
+        .hero-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(184, 93, 63, 0.12) 0%, rgba(78, 60, 46, 0.06) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-image-wrap .tag-pain {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--farine);
+            color: var(--cafe);
+            padding: 0.4rem 0.9rem;
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            z-index: 2;
+            border-radius: 1px;
+            box-shadow: var(--shadow-hard);
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 800px) {
+            .hero .section-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-image-wrap {
+                order: -1;
+                aspect-ratio: 4/3;
+                max-height: 50vh;
+                box-shadow: var(--shadow-soft), 8px 8px 0px rgba(184, 93, 63, 0.15);
+            }
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+            .hero-subtitle {
+                max-width: 100%;
+            }
+        }
+
+        /* ============ REVEAL ANIMATIONS ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ============ SECTION TITLES ============ */
+        .section-label {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--cuivre);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--cafe);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            text-wrap: balance;
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--cuivre);
+        }
+
+        /* ============ NOTRE HISTOIRE ============ */
+        .histoire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .histoire-image {
+            aspect-ratio: 3/4;
+            background: var(--bois);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .histoire-image .img-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.7) sepia(0.15) brightness(0.75);
+        }
+        .histoire-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 36, 26, 0.5) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .histoire-image .caption {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            color: #fff;
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            z-index: 2;
+            letter-spacing: 0.02em;
+        }
+        .histoire-texte {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-top: 0.5rem;
+        }
+        .histoire-col {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--cuivre);
+        }
+        .histoire-col h3 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--cafe);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .histoire-col p {
+            font-size: 0.95rem;
+            color: var(--bois);
+            line-height: 1.6;
+        }
+        .lire-suite {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--cuivre);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            transition: gap 0.3s;
+            margin-top: 0.5rem;
+        }
+        .lire-suite:hover {
+            gap: 0.7rem;
+        }
+        .lire-suite::after {
+            content: '→';
+            transition: transform 0.3s;
+        }
+        .lire-suite:hover::after {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 800px) {
+            .histoire-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .histoire-image {
+                aspect-ratio: 4/3;
+                max-height: 400px;
+            }
+        }
+
+        /* ============ GRILLE PAINS ============ */
+        .pains-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+        .pain-card {
+            background: var(--farine);
+            border-radius: 3px;
+            overflow: visible;
+            position: relative;
+            transition: transform 0.4s var(--transition-bounce), box-shadow 0.4s;
+            box-shadow: 0 2px 12px rgba(44, 36, 26, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+        .pain-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-soft), 0 10px 30px rgba(44, 36, 26, 0.1);
+        }
+        .pain-visual {
+            aspect-ratio: 1/1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px 3px 0 0;
+        }
+        .pain-visual .pain-illustration {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pain-etiquette {
+            position: relative;
+            background: var(--mie);
+            margin: -1.8rem 1rem 1rem;
+            padding: 1.2rem 1rem 1rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-hard);
+            z-index: 2;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .pain-etiquette::before {
+            content: '';
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--bois);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(44, 36, 26, 0.2);
+        }
+        .pain-etiquette::after {
+            content: '';
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 3px;
+            background: var(--bois);
+            border-radius: 1px;
+            opacity: 0.5;
+        }
+        .pain-nom {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--cafe);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        .pain-details {
+            font-size: 0.78rem;
+            color: var(--bois);
+            font-weight: 400;
+        }
+        .pain-poids {
+            font-weight: 600;
+            color: var(--cuivre);
+            font-size: 0.85rem;
+        }
+        .pain-card .btn-primary {
+            margin: 0 1rem 1.2rem;
+            text-align: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            padding: 0.6rem 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .pains-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.4rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .pains-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+                gap: 2rem;
+            }
+        }
+
+        /* ============ SLIDER VIENNOISERIES ============ */
+        .slider-container {
+            position: relative;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            cursor: grab;
+            padding-bottom: 0.5rem;
+        }
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+        .slider-track {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.5rem 0.5rem 1rem;
+        }
+        .viennoiserie-card {
+            flex: 0 0 clamp(180px, 22vw, 260px);
+            aspect-ratio: 1/1;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            scroll-snap-align: start;
+            box-shadow: 0 3px 14px rgba(44, 36, 26, 0.07);
+            transition: transform 0.4s var(--transition-bounce), box-shadow 0.4s;
+            cursor: pointer;
+        }
+        .viennoiserie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+        .viennoiserie-visual {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+        .viennoiserie-card:hover .viennoiserie-visual {
+            transform: scale(1.07);
+        }
+        .viennoiserie-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 36, 26, 0.75) 0%, transparent 45%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .viennoiserie-card:hover .viennoiserie-overlay {
+            opacity: 1;
+        }
+        .viennoiserie-overlay .v-name {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+        .viennoiserie-overlay .v-comp {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.75rem;
+            font-weight: 400;
+        }
+
+        /* ============ PÂTISSERIE ============ */
+        .patisserie-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .patisserie-visual-block {
+            aspect-ratio: 4/5;
+            background: var(--bois);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .patisserie-visual-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+        .patisserie-citation {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-style: italic;
+            color: var(--cuivre);
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            padding: 2rem;
+            background: var(--mie);
+            border-radius: 3px;
+            position: relative;
+            box-shadow: var(--shadow-hard);
+        }
+        .patisserie-citation::before {
+            content: '"';
+            position: absolute;
+            top: -0.4rem;
+            left: 0.8rem;
+            font-size: 5rem;
+            color: var(--cuivre);
+            opacity: 0.2;
+            font-family: 'Instrument Serif', Georgia, serif;
+            line-height: 1;
+        }
+        .patisserie-citation .auteur {
+            display: block;
+            font-family: 'Geist', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: var(--cafe);
+            letter-spacing: 0.04em;
+        }
+        .patisserie-cta {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 800px) {
+            .patisserie-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .patisserie-visual-block {
+                aspect-ratio: 4/3;
+                max-height: 350px;
+            }
+        }
+
+        /* ============ TERRASSE ============ */
+        .terrasse-block {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .terrasse-image {
+            aspect-ratio: 16/10;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .terrasse-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .terrasse-infos {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .terrasse-infos .adresse {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--cafe);
+            line-height: 1.5;
+        }
+        .terrasse-infos .horaires-mini {
+            font-size: 0.9rem;
+            color: var(--bois);
+            line-height: 1.6;
+        }
+        .terrasse-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 800px) {
+            .terrasse-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ============ CARTE CADEAU ============ */
+        .cadeau-block {
+            background: var(--mie);
+            border-radius: 3px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-hard);
+            position: relative;
+            overflow: hidden;
+        }
+        .cadeau-block::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            background: var(--croute);
+            border-radius: 50%;
+            opacity: 0.13;
+        }
+        .cadeau-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .cadeau-block .section-title {
+            margin-bottom: 0.8rem;
+        }
+        .cadeau-block p {
+            margin-bottom: 1.5rem;
+            color: var(--bois);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============ INFOS PRATIQUES ============ */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .infos-carte iframe {
+            border-radius: 3px;
+            box-shadow: var(--shadow-soft);
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+        .infos-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .info-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .info-item a {
+            color: var(--cuivre);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .info-item a:hover {
+            color: #a34a2f;
+            text-decoration: underline;
+        }
+        .open-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #2e7d32;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .open-indicator.ferme {
+            background: #9e2a2b;
+        }
+        .open-indicator .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #fff;
+            animation: pulse-dot 1.8s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+            }
+            50% {
+                opacity: 0.4;
+                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+            }
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid var(--mie);
+            border-radius: 2px;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.9rem;
+            background: #fff;
+            color: var(--cafe);
+            transition: border-color 0.3s;
+        }
+        .newsletter-form input:focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 2px;
+            border-color: var(--cuivre);
+        }
+        .newsletter-form button {
+            padding: 0.7rem 1.4rem;
+            background: var(--cafe);
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            transition: background 0.3s;
+        }
+        .newsletter-form button:hover {
+            background: #1a1510;
+        }
+        .newsletter-form button:focus-visible {
+            outline: 3px solid var(--croute);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 800px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .infos-carte iframe {
+                height: 280px;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        .site-footer {
+            background: var(--bois);
+            color: #e0d7cc;
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .footer-brand .monogram {
+            width: 36px;
+            height: 36px;
+        }
+        .footer-brand .brand-text {
+            color: #e0d7cc;
+            font-size: 1.1rem;
+        }
+        .footer-brand .brand-text span {
+            color: var(--croute);
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .footer-links a {
+            color: #c4b8a8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.25s;
+        }
+        .footer-links a:hover {
+            color: var(--croute);
+        }
+        .footer-signature {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            color: #b0a18e;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            text-align: right;
+            align-self: end;
+        }
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.78rem;
+            color: #9e8f7c;
+        }
+        .footer-bottom a {
+            color: #c4b8a8;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .footer-signature {
+                text-align: left;
+            }
+        }
+
+        /* ============ UTILITIES ============ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        :focus-visible {
+            outline: 2px solid var(--cuivre);
+            outline-offset: 2px;
+            border-radius: 1px;
+        }
+
+        /* ============ DECORATIVE ORNAMENTS ============ */
+        .ornament-line {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 1.5rem 0;
+        }
+        .ornament-line::before,
+        .ornament-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--cuivre);
+            opacity: 0.35;
+        }
+        .ornament-line span {
+            width: 6px;
+            height: 6px;
+            background: var(--croute);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <canvas id="levain-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="Les Toqués du Pain — Accueil">
+                <span class="monogram">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="24" cy="22" rx="14" ry="13" fill="#FAF5EE" stroke="#2C241A" stroke-width="2.5"/>
+                        <ellipse cx="24" cy="20" rx="8" ry="7" fill="#FAF5EE" stroke="#2C241A" stroke-width="2"/>
+                        <rect x="11" y="13" width="26" height="5" rx="2.5" fill="#FAF5EE" stroke="#2C241A" stroke-width="2"/>
+                        <text x="24" y="17" text-anchor="middle" font-size="7" font-family="serif" font-weight="bold" fill="#2C241A">TdP</text>
+                    </svg>
+                </span>
+                <span class="brand-text">Les Toqués<span>du Pain</span></span>
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#histoire">Histoire</a></li>
+                    <li><a href="#pains">Pains</a></li>
+                    <li><a href="#viennoiseries">Viennoiseries</a></li>
+                    <li><a href="#patisserie">Pâtisseries</a></li>
+                    <li><a href="#infos">Infos</a></li>
+                    <li><a href="#commander" class="header-cta">Commander en ligne</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="section-inner">
+                <div class="hero-content reveal">
+                    <div class="hero-badge">
+                        <span class="stars">★★★★☆</span> 4.2 — 320 avis Google
+                    </div>
+                    <h1>Fous amoureux du pain. <em>Et ça se voit.</em></h1>
+                    <p class="hero-subtitle">Christian et Valérie pétrissent, façonnent et enfournent chaque jour au cœur de Vanves — entre héritage familial et exigence de chef.</p>
+                    <div class="hero-ctas">
+                        <a href="#commander" class="btn-primary">Commander nos pains & viennoiseries</a>
+                        <a href="#infos" class="btn-secondary">Voir la boutique</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap reveal reveal-delay-2">
+                    <span class="tag-pain">Pain au levain — scarifié main</span>
+                    <img src="assets/maps-1.jpg" alt="Pain fraîchement scarifié, gros plan sur la croûte dorée — Les Toqués du Pain Vanves" loading="eager" width="800" height="1000">
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE HISTOIRE -->
+        <section id="histoire">
+            <div class="section-inner">
+                <span class="section-label reveal">Le fournil</span>
+                <h2 class="section-title reveal reveal-delay-1">De La Coupole <em>au fournil</em></h2>
+                <div class="histoire-grid">
+                    <div class="histoire-image reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Portrait noir et blanc de Christian et Valérie dans le laboratoire" class="img-placeholder" loading="lazy" width="600" height="800">
+                        <span class="caption">Christian & Valérie, artisans boulangers</span>
+                    </div>
+                    <div class="histoire-texte reveal reveal-delay-3">
+                        <div class="histoire-col">
+                            <h3>Christian, l'ancien chef</h3>
+                            <p>Après des années aux fourneaux de La Coupole, Christian a troqué la toque de chef pour le tablier de boulanger. Sa recherche d'équilibre et de justesse se retrouve dans chaque pain — un héritage de la haute gastronomie appliqué à la boulangerie de quartier.</p>
+                            <a href="#" class="lire-suite">Lire la suite</a>
+                        </div>
+                        <div class="histoire-col">
+                            <h3>Valérie, la fille de boulanger</h3>
+                            <p>Le pain, elle est née dedans. Fille et petite-fille de boulangers, Valérie porte l'héritage familial avec une exigence naturelle. Au fournil, c'est elle qui veille sur le levain, écoute la pâte pousser et transmet ce savoir-faire avec une générosité rare.</p>
+                            <a href="#" class="lire-suite">Lire la suite</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE PAIN, NOTRE OBSESSION -->
+        <section id="pains" style="background:rgba(232,213,192,0.25);">
+            <div class="section-inner">
+                <span class="section-label reveal">La fournée du jour</span>
+                <h2 class="section-title reveal reveal-delay-1">Ce que le feu <em>révèle</em></h2>
+                <div class="pains-grid">
+                    <div class="pain-card reveal reveal-delay-1">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Pain de campagne" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:50% 30%;filter:contrast(1.1) saturate(0.7) brightness(0.85);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Pain de campagne</span>
+                            <span class="pain-details">Farine de meule, longue fermentation</span>
+                            <span class="pain-poids">1 kg — 6,20 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                    <div class="pain-card reveal reveal-delay-2">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Pain complet" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:40% 25%;filter:contrast(1.15) saturate(0.6) brightness(0.75);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Pain complet</span>
+                            <span class="pain-details">Farine T150 bio, miel du Gâtinais</span>
+                            <span class="pain-poids">800 g — 5,80 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                    <div class="pain-card reveal reveal-delay-3">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Pain au levain" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:55% 35%;filter:contrast(1.05) saturate(0.75) brightness(0.9);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Pain au levain</span>
+                            <span class="pain-details">Levain naturel, 48h de pointage</span>
+                            <span class="pain-poids">900 g — 6,80 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                    <div class="pain-card reveal reveal-delay-1">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Pain aux céréales" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:45% 28%;filter:contrast(1.2) saturate(0.65) brightness(0.8);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Pain aux céréales</span>
+                            <span class="pain-details">Graines toastées, farine T80</span>
+                            <span class="pain-poids">850 g — 6,40 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                    <div class="pain-card reveal reveal-delay-2">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Baguette tradition" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:50% 20%;filter:contrast(1.08) saturate(0.7) brightness(0.88);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Baguette tradition</span>
+                            <span class="pain-details">Farine Label Rouge, grigne signature</span>
+                            <span class="pain-poids">250 g — 1,30 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                    <div class="pain-card reveal reveal-delay-3">
+                        <div class="pain-visual">
+                            <img src="assets/maps-1.jpg" alt="Pain de seigle" class="pain-illustration" loading="lazy" width="400" height="400" style="object-position:35% 32%;filter:contrast(1.25) saturate(0.55) brightness(0.7);">
+                        </div>
+                        <div class="pain-etiquette">
+                            <span class="pain-nom">Pain de seigle</span>
+                            <span class="pain-details">Seigle bio, levain de seigle</span>
+                            <span class="pain-poids">750 g — 7,20 €</span>
+                        </div>
+                        <a href="#commander" class="btn-primary">Je commande</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIENNOISERIES & DOUCEURS -->
+        <section id="viennoiseries">
+            <div class="section-inner">
+                <span class="section-label reveal">Le petit matin</span>
+                <h2 class="section-title reveal reveal-delay-1">Pour les matins <em>qui comptent</em></h2>
+                <div class="slider-container reveal reveal-delay-2" id="slider-viennoiseries">
+                    <div class="slider-track">
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Croissant pur beurre" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:50% 40%;filter:brightness(1.05) saturate(0.8);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Croissant pur beurre</span>
+                                <span class="v-comp">AOP Charentes-Poitou, feuilletage 3 tours</span>
+                            </div>
+                        </div>
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Pain au chocolat Valrhona" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:60% 35%;filter:brightness(0.95) saturate(0.7) contrast(1.1);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Pain au chocolat Valrhona</span>
+                                <span class="v-comp">Grand cru Caraïbe 66%, pur beurre</span>
+                            </div>
+                        </div>
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Brioche à la fleur d'oranger" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:45% 30%;filter:brightness(1.08) saturate(0.85);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Brioche à la fleur d'oranger</span>
+                                <span class="v-comp">Fleur d'oranger bio, mie filante</span>
+                            </div>
+                        </div>
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Chausson aux pommes" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:40% 25%;filter:brightness(1.0) saturate(0.75) contrast(1.05);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Chausson aux pommes</span>
+                                <span class="v-comp">Pommes caramélisées, compote maison</span>
+                            </div>
+                        </div>
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Escargot pistache" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:55% 38%;filter:brightness(0.98) saturate(0.72);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Escargot pistache</span>
+                                <span class="v-comp">Pâte pistache artisanale, sirop léger</span>
+                            </div>
+                        </div>
+                        <div class="viennoiserie-card">
+                            <img src="assets/maps-1.jpg" alt="Kouign-amann" class="viennoiserie-visual" loading="lazy" width="300" height="300" style="object-position:48% 33%;filter:brightness(1.1) saturate(0.8) contrast(1.08);">
+                            <div class="viennoiserie-overlay">
+                                <span class="v-name">Kouign-amann</span>
+                                <span class="v-comp">Beurre salé de Guérande, caramel croustillant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:1.5rem;" class="reveal reveal-delay-3">
+                    <a href="#commander" class="btn-primary">Commander mes viennoiseries pour demain</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA PÂTISSERIE EN HÉRITAGE -->
+        <section id="patisserie" style="background:rgba(232,213,192,0.25);">
+            <div class="section-inner">
+                <span class="section-label reveal">Le sucré</span>
+                <h2 class="section-title reveal reveal-delay-1">De l'assiette <em>à la vitrine</em></h2>
+                <div class="patisserie-block">
+                    <div class="patisserie-visual-block reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Gâteaux signatures des Toqués du Pain" loading="lazy" width="600" height="750" style="object-position:50% 30%;">
+                    </div>
+                    <div class="reveal reveal-delay-3">
+                        <blockquote class="patisserie-citation">
+                            L'équilibre des saveurs, c'est comme un pain bien grigné : ça se joue au millimètre et au degré près. En pâtisserie, j'applique la même rigueur qu'au fournil — chaque dessert doit raconter une histoire.
+                            <span class="auteur">— Christian Habert, artisan boulanger-pâtissier</span>
+                        </blockquote>
+                        <div class="patisserie-cta">
+                            <a href="#commander" class="btn-primary">Découvrir la carte des desserts sur mesure</a>
+                            <p style="margin-top:0.8rem;font-size:0.85rem;color:var(--bois);">Gâteaux d'anniversaire, pièces montées, desserts d'événement — sur commande.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA TERRASSE, LE QUARTIER -->
+        <section id="terrasse">
+            <div class="section-inner">
+                <span class="section-label reveal">Le quartier</span>
+                <h2 class="section-title reveal reveal-delay-1">À deux pas du <em>marché Saint-Rémy</em></h2>
+                <div class="terrasse-block">
+                    <div class="terrasse-image reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Terrasse ensoleillée des Toqués du Pain à Vanves" loading="lazy" width="800" height="500" style="object-position:50% 60%;">
+                    </div>
+                    <div class="terrasse-infos reveal reveal-delay-3">
+                        <p class="adresse">📍 3 Boulevard du Lycée,<br>92170 Vanves — centre Saint-Rémy</p>
+                        <p class="horaires-mini">
+                            <strong>Horaires :</strong><br>
+                            Mardi – Vendredi : 7h – 20h<br>
+                            Samedi : 7h30 – 20h<br>
+                            Dimanche : 7h30 – 13h30<br>
+                            <em>Lundi : fermé</em>
+                        </p>
+                        <p style="font-size:0.9rem;color:var(--bois);">Petite restauration sur place : tartines, salades, soupes maison. Terrasse ouverte aux beaux jours.</p>
+                        <div class="terrasse-ctas">
+                            <a href="https://maps.google.com/maps?q=Les+Toqu%C3%A9s+du+Pain+3+Boulevard+du+Lyc%C3%A9e%2C+Vanves" target="_blank" rel="noopener" class="btn-secondary">Itinéraire</a>
+                            <a href="tel:+33155649717" class="btn-primary">Nous appeler</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARTE CADEAU -->
+        <section id="cadeau">
+            <div class="section-inner">
+                <div class="cadeau-block reveal">
+                    <span class="cadeau-icon">🎁</span>
+                    <h2 class="section-title">Offrez du bonheur, <em>simplement</em></h2>
+                    <p>Une carte cadeau des Toqués du Pain, c'est le plaisir d'un pain encore tiède, un croissant pur beurre un matin de semaine, ou un gâteau signature pour une occasion. Disponible en boutique ou en ligne.</p>
+                    <a href="#commander" class="btn-primary">Voir les cartes cadeaux</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section id="infos" style="background:rgba(232,213,192,0.3);">
+            <div class="section-inner">
+                <span class="section-label reveal">Pratique</span>
+                <h2 class="section-title reveal reveal-delay-1">Venez <em>nous voir</em></h2>
+                <div class="infos-grid">
+                    <div class="infos-carte reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Les+Toqu%C3%A9s+du+Pain+3+Boulevard+du+Lyc%C3%A9e%2C+Vanves&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps des Toqués du Pain à Vanves"></iframe>
+                    </div>
+                    <div class="infos-details reveal reveal-delay-3">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span><strong>Adresse :</strong><br>3 Boulevard du Lycée, 92170 Vanves</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>Téléphone :</strong><br><a href="tel:+33155649717">01 55 64 97 17</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <span><strong>Email :</strong><br><a href="mailto:christian.habert060@orange.fr">christian.habert060@orange.fr</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕐</span>
+                            <span id="horaires-status">
+                                <span class="open-indicator" id="open-indicator">
+                                    <span class="dot"></span> Ouvert actuellement
+                                </span>
+                                <br><small style="color:var(--bois);">Horaires à confirmer — contactez-nous</small>
+                            </span>
+                        </div>
+                        <div class="ornament-line"><span></span></div>
+                        <div>
+                            <p style="font-weight:600;color:var(--cafe);margin-bottom:0.4rem;">📬 La newsletter du fournil</p>
+                            <p style="font-size:0.8rem;color:var(--bois);margin-bottom:0.6rem;">Les jours de fournée, les nouveaux desserts, et rien d'autre.</p>
+                            <form class="newsletter-form" action="#" method="post">
+                                <input type="email" placeholder="Votre email" required aria-label="Adresse email pour la newsletter">
+                                <button type="submit">S'inscrire</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="monogram">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="24" cy="22" rx="14" ry="13" fill="none" stroke="#E8D5C0" stroke-width="2.5"/>
+                        <ellipse cx="24" cy="20" rx="8" ry="7" fill="none" stroke="#E8D5C0" stroke-width="2"/>
+                        <rect x="11" y="13" width="26" height="5" rx="2.5" fill="none" stroke="#E8D5C0" stroke-width="2"/>
+                        <text x="24" y="17" text-anchor="middle" font-size="7" font-family="serif" font-weight="bold" fill="#E8D5C0">TdP</text>
+                    </svg>
+                </span>
+                <span class="brand-text">Les Toqués<span>du Pain</span></span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#histoire">Notre histoire</a></li>
+                <li><a href="#pains">Nos pains</a></li>
+                <li><a href="#viennoiseries">Viennoiseries</a></li>
+                <li><a href="#patisserie">Pâtisseries</a></li>
+                <li><a href="#cadeau">Cartes cadeaux</a></li>
+                <li><a href="#infos">Contact & Infos</a></li>
+            </ul>
+            <p class="footer-signature">Artisan boulanger depuis 2005<br>Vanves, centre Saint-Rémy</p>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Les Toqués du Pain — Tous droits réservés</span>
+            <span>Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // === CANVAS LEVAIN ANIMÉ ===
+            const canvas = document.getElementById('levain-canvas');
+            const ctx = canvas.getContext('2d');
+            let bubbles = [];
+            const maxBubbles = 55;
+            let animationId;
+            let scrollOffset = 0;
+            let targetScrollOffset = 0;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class Bubble {
+                constructor() {
+                    this.reset(true);
+                }
+                reset(initial) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = initial ? Math.random() * canvas.height : canvas.height + 30;
+                    this.r = Math.random() * 32 + 6;
+                    this.speed = Math.random() * 0.25 + 0.08;
+                    this.opacity = Math.random() * 0.18 + 0.04;
+                    this.wobbleAmp = Math.random() * 18 + 4;
+                    this.wobbleSpeed = Math.random() * 0.006 + 0.002;
+                    this.wobbleOffset = Math.random() * Math.PI * 2;
+                }
+                update(scrollDelta) {
+                    this.y -= this.speed + scrollDelta * 0.015;
+                    this.x += Math.sin(this.y * this.wobbleSpeed + this.wobbleOffset) * this.wobbleAmp * 0.03;
+                    if (this.y < -50) {
+                        this.y = canvas.height + 30;
+                        this.x = Math.random() * canvas.width;
+                    }
+                    if (this.x < -30) this.x = canvas.width + 30;
+                    if (this.x > canvas.width + 30) this.x = -30;
+                }
+                draw(ctx) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(184,93,63,${this.opacity})`;
+                    ctx.fill();
+                    ctx.strokeStyle = `rgba(44,36,26,${this.opacity*0.6})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+
+            for (let i = 0; i < maxBubbles; i++) {
+                bubbles.push(new Bubble());
+            }
+
+            function animate() {
+                const scrollDelta = targetScrollOffset - scrollOffset;
+                scrollOffset += scrollDelta * 0.08;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                bubbles.forEach(b => {
+                    b.update(scrollDelta);
+                    b.draw(ctx);
+                });
+                animationId = requestAnimationFrame(animate);
+            }
+
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                animate();
+            }
+
+            window.addEventListener('scroll', () => {
+                targetScrollOffset = window.pageYOffset;
+            }, { passive: true });
+
+            // === HEADER SCROLL ===
+            const header = document.getElementById('site-header');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // === MOBILE MENU ===
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            menuBtn.addEventListener('click', () => {
+                const isActive = navLinks.classList.toggle('active');
+                menuBtn.classList.toggle('active');
+                menuBtn.setAttribute('aria-expanded', isActive);
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // === REVEAL ON SCROLL (IntersectionObserver) ===
+            const revealEl
