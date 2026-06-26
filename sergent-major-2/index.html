@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergent Major — Vêtements pour enfants, 0 à 11 ans, Neuilly-sur-Seine</title>
+    <meta name="description" content="Boutique Sergent Major au 73 Avenue du Roule à Neuilly-sur-Seine. Depuis trente ans, nous habillons les enfants comme on ouvre un livre — avec le soin de la première page. Vêtements 0-11 ans.">
+    <meta property="og:title" content="Sergent Major — Le vestiaire des premières histoires, Neuilly-sur-Seine">
+    <meta property="og:description" content="Depuis trente ans, nous habillons les enfants de Neuilly comme on ouvre un livre. Boutique au 73 Avenue du Roule.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E📖%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "Sergent Major",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "73 Avenue du Roule",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33147381387",
+            "email": "service-client@sergent-major.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "58"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ]
+        }
+    </script>
+    <style>
+        :root {
+            --pierre-roule: #F7F2E9;
+            --violet-sergent: #3E1A30;
+            --olive-patinée: #7D8A3E;
+            --cuir-reliure: #C26A4A;
+            --verriere: #D1DBD0;
+            --or-blanc-enseigne: #EBE4D6;
+            --violet-deep: #2A0F20;
+            --olive-fonce: #5C6B2D;
+            --col-width: 20vw;
+            --main-width: 80vw;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+            line-height: 1.7;
+            color: var(--violet-sergent);
+            background-color: var(--pierre-roule);
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* Grain de pierre subtil */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ========== INTRO OVERLAY ========== */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--pierre-roule);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        #intro-overlay.hidden {
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+        #intro-overlay .intro-logo {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            letter-spacing: 0.12em;
+            color: var(--violet-sergent);
+            text-align: center;
+            line-height: 1.1;
+            position: relative;
+            display: inline-block;
+            padding: 0 0.3em;
+        }
+        #intro-overlay .intro-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -0.15em;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cuir-reliure);
+            animation: intro-underline 0.9s ease-out forwards;
+        }
+        @keyframes intro-underline {
+            0% {
+                width: 0;
+                left: 0;
+            }
+            60% {
+                width: 100%;
+                left: 0;
+            }
+            100% {
+                width: 0;
+                left: 100%;
+            }
+        }
+        #intro-overlay .intro-sub {
+            font-family: 'Geist', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.7rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.25em;
+            color: var(--olive-patinée);
+            text-align: center;
+            margin-top: 0.8em;
+            opacity: 0;
+            animation: fade-in-sub 0.6s 0.35s ease-out forwards;
+        }
+        @keyframes fade-in-sub {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #intro-overlay {
+                display: none;
+            }
+            #intro-overlay .intro-logo::after {
+                animation: none;
+                width: 0;
+            }
+            #intro-overlay .intro-sub {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        /* ========== LAYOUT PRINCIPAL ========== */
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Colonne latérale narrative */
+        .narrative-col {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: var(--col-width);
+            height: 100vh;
+            background: var(--pierre-roule);
+            border-right: 1px solid rgba(62, 26, 48, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            padding: 2rem 1.5rem;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .narrative-col .quote-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+        .narrative-col .quote-item {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+            line-height: 1.8;
+            color: var(--violet-sergent);
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity 0.7s ease;
+            letter-spacing: 0.02em;
+            padding: 0 0.5rem;
+        }
+        .narrative-col .quote-item.active {
+            opacity: 1;
+            position: relative;
+            top: auto;
+            transform: none;
+        }
+        .narrative-col .quote-mark {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--olive-patinée);
+            opacity: 0.3;
+            line-height: 0.6;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contenu principal */
+        .main-content {
+            margin-left: var(--col-width);
+            width: var(--main-width);
+            flex-shrink: 0;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 242, 233, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(62, 26, 48, 0.06);
+            padding: 0.9rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            transition: background 0.3s ease;
+        }
+        .site-header .brand {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+            letter-spacing: 0.1em;
+            color: var(--violet-sergent);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .site-header .brand span {
+            color: var(--olive-patinée);
+            font-weight: 400;
+            font-size: 0.65em;
+            letter-spacing: 0.18em;
+            display: block;
+            font-family: 'Geist', sans-serif;
+            font-style: normal;
+            margin-top: 0.15em;
+        }
+        .site-header nav {
+            display: flex;
+            gap: 1.6rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .site-header nav a {
+            font-family: 'Geist', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.75rem, 0.85vw, 0.82rem);
+            letter-spacing: 0.06em;
+            color: var(--violet-sergent);
+            text-decoration: none;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.25s ease;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        .site-header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuir-reliure);
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .site-header nav a:hover,
+        .site-header nav a:focus-visible {
+            color: var(--cuir-reliure);
+        }
+        .site-header nav a:hover::after,
+        .site-header nav a:focus-visible::after {
+            width: 100%;
+        }
+        .site-header .header-cta {
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.85vw, 0.82rem);
+            letter-spacing: 0.05em;
+            color: #fff;
+            background: var(--violet-sergent);
+            padding: 0.55em 1.4em;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        .site-header .header-cta:hover,
+        .site-header .header-cta:focus-visible {
+            background: var(--cuir-reliure);
+            transform: translateY(-1px);
+        }
+        .site-header .header-cta:focus-visible {
+            outline: 3px solid var(--olive-patinée);
+            outline-offset: 3px;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: clamp(3rem, 7vh, 6rem) clamp(1.5rem, 4vw, 4rem);
+            position: relative;
+        }
+
+        /* Chiffre romain */
+        .section-roman {
+            position: absolute;
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(5rem, 10vw, 10rem);
+            color: var(--olive-patinée);
+            opacity: 0.14;
+            line-height: 0.7;
+            pointer-events: none;
+            z-index: 0;
+            top: clamp(0.5rem, 2vh, 2rem);
+            left: clamp(0.5rem, 2vw, 2.5rem);
+            letter-spacing: -0.03em;
+            user-select: none;
+        }
+
+        /* HÉRO */
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 6rem 4rem 5rem;
+            overflow: hidden;
+        }
+        .hero-section .hero-bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-section .hero-bg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.55) saturate(0.7) contrast(1.05);
+            opacity: 0.85;
+        }
+        .hero-section .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(62, 26, 48, 0.55) 0%,
+                    rgba(62, 26, 48, 0.35) 40%,
+                    rgba(62, 26, 48, 0.5) 100%);
+            z-index: 1;
+        }
+        .hero-section .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        .hero-section .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            font-family: 'Geist', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.8vw, 0.78rem);
+            letter-spacing: 0.08em;
+            color: var(--or-blanc-enseigne);
+            background: rgba(62, 26, 48, 0.7);
+            padding: 0.45em 1.1em;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+            text-transform: uppercase;
+        }
+        .hero-section .hero-badge .stars {
+            color: #f0c060;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+        }
+        .hero-section h1 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hero-section .hero-subtitle {
+            font-family: 'Geist', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            line-height: 1.65;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 560px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+        }
+        .hero-section .hero-scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            animation: gentle-bob 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes gentle-bob {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-section .hero-scroll-hint {
+                animation: none;
+            }
+        }
+
+        /* Section À propos */
+        .about-section .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        .about-section .about-text h2 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--violet-sergent);
+            margin-bottom: 1.2rem;
+        }
+        .about-section .about-text p {
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--violet-sergent);
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .about-section .about-image {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 12px 40px rgba(62, 26, 48, 0.18);
+        }
+        .about-section .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            filter: brightness(0.9) contrast(1.08) saturate(0.75);
+            transition: transform 0.6s ease;
+        }
+        .about-section .about-image:hover img {
+            transform: scale(1.04);
+        }
+        .about-section .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(62, 26, 48, 0.2);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .about-section .about-image .image-label {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 3;
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: #fff;
+            background: rgba(62, 26, 48, 0.65);
+            padding: 0.35em 0.9em;
+            border-radius: 1px;
+            letter-spacing: 0.04em;
+            backdrop-filter: blur(3px);
+        }
+
+        /* Section Vestiaire */
+        .vestiaire-section .vestiaire-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+        }
+        .vestiaire-section h2 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--violet-sergent);
+            margin-bottom: 1rem;
+        }
+        .vestiaire-section .vestiaire-intro {
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--violet-sergent);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        .vestiaire-section .pieces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.8rem;
+        }
+        .vestiaire-section .piece-card {
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(62, 26, 48, 0.08);
+            padding: 1.6rem 1.4rem;
+            border-radius: 2px;
+            transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.3s ease;
+            position: relative;
+            cursor: default;
+        }
+        .vestiaire-section .piece-card:hover {
+            border-color: var(--cuir-reliure);
+            box-shadow: 0 8px 30px rgba(62, 26, 48, 0.1);
+            transform: translateY(-3px);
+        }
+        .vestiaire-section .piece-card .piece-icon {
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+            display: block;
+            opacity: 0.7;
+        }
+        .vestiaire-section .piece-card h3 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            color: var(--violet-sergent);
+            margin-bottom: 0.3rem;
+        }
+        .vestiaire-section .piece-card p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--violet-sergent);
+            opacity: 0.75;
+            font-weight: 400;
+        }
+
+        /* Section Venir */
+        .venir-section .venir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+        .venir-section h2 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--violet-sergent);
+            margin-bottom: 1.2rem;
+        }
+        .venir-section .horaires-block {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(62, 26, 48, 0.1);
+            padding: 2rem;
+            border-radius: 2px;
+            font-family: 'Geist', sans-serif;
+        }
+        .venir-section .horaires-block .day-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5em 0;
+            border-bottom: 1px dotted rgba(62, 26, 48, 0.12);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .venir-section .horaires-block .day-row:last-child {
+            border-bottom: none;
+        }
+        .venir-section .horaires-block .day-row .day-name {
+            font-weight: 500;
+            color: var(--violet-sergent);
+        }
+        .venir-section .horaires-block .day-row .day-hours {
+            font-weight: 400;
+            color: var(--violet-sergent);
+            opacity: 0.8;
+        }
+        .venir-section .horaires-block .day-row.ferme .day-hours {
+            font-style: italic;
+            opacity: 0.5;
+        }
+        .venir-section .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(62, 26, 48, 0.18);
+            border: 1px solid rgba(62, 26, 48, 0.12);
+            aspect-ratio: 1/1;
+            min-height: 320px;
+        }
+        .venir-section .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .venir-section .acces-info {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--violet-sergent);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Section Avis */
+        .avis-section .avis-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+        .avis-section h2 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--violet-sergent);
+            margin-bottom: 2rem;
+        }
+        .avis-section .avis-card {
+            background: rgba(255, 255, 255, 0.4);
+            border-left: 3px solid var(--cuir-reliure);
+            padding: 1.6rem 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 2px 2px 0;
+            position: relative;
+            transition: border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        .avis-section .avis-card:hover {
+            border-left-color: var(--olive-patinée);
+            box-shadow: 0 6px 24px rgba(62, 26, 48, 0.08);
+        }
+        .avis-section .avis-card .avis-quote {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-style: italic;
+            color: var(--violet-sergent);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+        .avis-section .avis-card .avis-author {
+            font-family: 'Geist', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--olive-patinée);
+            text-transform: uppercase;
+        }
+
+        /* Section Contact */
+        .contact-section .contact-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+        }
+        .contact-section h2 {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--violet-sergent);
+            margin-bottom: 0.8rem;
+        }
+        .contact-section .contact-text {
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--violet-sergent);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .contact-section .contact-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-section .contact-link {
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            padding: 0.7em 1.6em;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            text-transform: uppercase;
+        }
+        .contact-section .contact-link.primary {
+            background: var(--violet-sergent);
+            color: #fff;
+        }
+        .contact-section .contact-link.primary:hover {
+            background: var(--cuir-reliure);
+            transform: translateY(-2px);
+        }
+        .contact-section .contact-link.secondary {
+            background: transparent;
+            color: var(--violet-sergent);
+            border: 1.5px solid var(--violet-sergent);
+        }
+        .contact-section .contact-link.secondary:hover {
+            background: var(--violet-sergent);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .contact-section .contact-link:focus-visible {
+            outline: 3px solid var(--olive-patinée);
+            outline-offset: 3px;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            padding: 2.5rem 2.5rem 3rem;
+            border-top: 1px solid rgba(62, 26, 48, 0.1);
+            margin-left: var(--col-width);
+            width: var(--main-width);
+            position: relative;
+            z-index: 1;
+            font-size: 0.8rem;
+            line-height: 1.8;
+            color: var(--violet-sergent);
+            opacity: 0.75;
+            letter-spacing: 0.02em;
+        }
+        .site-footer .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .site-footer .footer-brand {
+            font-family: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            color: var(--violet-sergent);
+            opacity: 1;
+        }
+        .site-footer a {
+            color: var(--violet-sergent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .site-footer a:hover {
+            border-bottom-color: var(--cuir-reliure);
+        }
+        .site-footer .footer-discreet {
+            font-size: 0.7rem;
+            opacity: 0.55;
+            margin-top: 1.5rem;
+        }
+        .site-footer .footer-discreet a {
+            color: var(--olive-patinée);
+            border-bottom-color: transparent;
+        }
+        .site-footer .footer-discreet a:hover {
+            border-bottom-color: var(--olive-patinée);
+        }
+        .site-footer .footer-credit {
+            font-size: 0.68rem;
+            opacity: 0.4;
+            margin-top: 0.4rem;
+        }
+
+        /* ========== REVEAL AU SCROLL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .narrative-col {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .site-footer {
+                margin-left: 0;
+                width: 100%;
+            }
+            :root {
+                --col-width: 0;
+                --main-width: 100%;
+            }
+            .hero-section {
+                padding: 5rem 2rem 4rem;
+                min-height: 70vh;
+            }
+            .about-section .about-grid,
+            .venir-section .venir-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-section .about-image {
+                aspect-ratio: 16/10;
+                order: -1;
+            }
+            .section-roman {
+                font-size: clamp(3.5rem, 8vw, 7rem);
+                top: 0.3rem;
+                left: 0.8rem;
+            }
+            .site-header {
+                padding: 0.7rem 1.2rem;
+                gap: 0.8rem;
+            }
+            .site-header nav {
+                gap: 0.9rem;
+            }
+            .site-header nav a {
+                font-size: 0.72rem;
+                letter-spacing: 0.04em;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero-section {
+                padding: 4rem 1.2rem 3rem;
+                min-height: 60vh;
+            }
+            .hero-section h1 {
+                font-size: clamp(1.8rem, 7vw, 2.4rem);
+            }
+            .hero-section .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .section {
+                padding: 2.5rem 1.2rem;
+            }
+            .site-header {
+                padding: 0.6rem 1rem;
+                gap: 0.5rem;
+            }
+            .site-header nav {
+                gap: 0.55rem;
+            }
+            .site-header nav a {
+                font-size: 0.68rem;
+                letter-spacing: 0.03em;
+            }
+            .site-header .header-cta {
+                font-size: 0.7rem;
+                padding: 0.45em 1em;
+            }
+            .vestiaire-section .pieces-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .contact-section .contact-actions {
+                flex-direction: column;
+            }
+            .avis-section .avis-card {
+                padding: 1.2rem 1.4rem;
+            }
+        }
+        @media (max-width: 420px) {
+            .vestiaire-section .pieces-grid {
+                grid-template-columns: 1fr;
+            }
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.6rem 1rem;
+            }
+            .site-header nav {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 0.7rem;
+            }
+        }
+
+        /* ========== FOCUS VISIBLE ========== */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--olive-patinée);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+        ::selection {
+            background: var(--cuir-reliure);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTRO OVERLAY -->
+    <div id="intro-overlay" aria-hidden="true">
+        <div style="text-align:center;">
+            <div class="intro-logo">SERGENT MAJOR</div>
+            <div class="intro-sub">73, AVENUE DU ROULE · NEUILLY</div>
+        </div>
+    </div>
+
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+
+        <!-- COLONNE NARRATIVE -->
+        <aside class="narrative-col" aria-hidden="true">
+            <div class="quote-container">
+                <span class="quote-mark">«</span>
+                <span class="quote-item active" data-section="hero">Ma robe tourne,<br>tu veux voir&nbsp;?</span>
+                <span class="quote-item" data-section="about">C'est mon premier<br>costume de grand.</span>
+                <span class="quote-item" data-section="vestiaire">J'ai choisi les<br>boutons moi-même.</span>
+                <span class="quote-item" data-section="venir">Tu crois qu'il<br>me va bien&nbsp;?</span>
+                <span class="quote-item" data-section="avis">Pour mon anniversaire,<br>je veux venir ici.</span>
+                <span class="quote-item" data-section="contact">Papa dit que je suis<br>un vrai monsieur.</span>
+            </div>
+        </aside>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main class="main-content" id="main-content">
+
+            <!-- HEADER -->
+            <header class="site-header" id="site-header">
+                <a href="#hero" class="brand">SERGENT MAJOR<span>73 Avenue du Roule</span></a>
+                <nav aria-label="Navigation principale">
+                    <a href="#about">La boutique</a>
+                    <a href="#vestiaire">Vestiaire</a>
+                    <a href="#venir">Venir</a>
+                    <a href="#avis">Avis</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <a href="tel:+33147381387" class="header-cta">Appeler</a>
+            </header>
+
+            <!-- HÉRO -->
+            <section class="section hero-section" id="hero" data-quote-section="hero">
+                <div class="hero-bg-img">
+                    <img src="assets/maps-1.jpg" alt="Façade de la boutique Sergent Major, 73 Avenue du Roule, Neuilly-sur-Seine" loading="eager" fetchpriority="high">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content reveal">
+                    <div class="hero-badge">
+                        <span class="stars">★★★★★</span> 4.7/5 · 58 avis Google
+                    </div>
+                    <h1>Leurs histoires commencent<br>Avenue du Roule.</h1>
+                    <p class="hero-subtitle">Depuis trente ans, nous habillons les enfants de Neuilly comme on ouvre un livre — avec le soin de la première page et la promesse d'un beau chapitre.</p>
+                </div>
+                <div class="hero-scroll-hint" aria-hidden="true">Dérouler ↓</div>
+            </section>
+
+            <!-- I. AU 73 DE L'AVENUE -->
+            <section class="section about-section" id="about" data-quote-section="about">
+                <span class="section-roman" aria-hidden="true">I</span>
+                <div class="about-grid">
+                    <div class="about-text reveal reveal-delay-1">
+                        <h2>Au 73 de l'Avenue</h2>
+                        <p>Une devanture en pierre sculptée, une enseigne couleur de myrtille, et au-delà de la vitre, trois générations d'enfants endimanchés. Voilà trente ans que notre boutique tient salon sur cette artère paisible, entre le Jardin des Arts et la Mairie.</p>
+                        <p>Ici, chaque vêtement est choisi avec la même exigence qu'un livre qu'on confie à un jeune lecteur : il doit être beau, bien fait, et donner envie d'y revenir. Les tissus se touchent, les boutons se regardent, les ourlets se vérifient — rien n'est laissé au hasard.</p>
+                        <p>Nous connaissons vos enfants par leur prénom, nous savons qu'un bermuda doit résister aux genoux qui frottent le bitume du square, et qu'une robe de cérémonie doit pouvoir tourner. Longtemps.</p>
+                    </div>
+                    <div class="about-image reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Vitrine et façade en pierre sculptée de la boutique Sergent Major" loading="lazy">
+                        <span class="image-label">Façade historique, Av. du Roule</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- II. LE VESTIAIRE DU MOMENT -->
+            <section class="section vestiaire-section" id="vestiaire" data-quote-section="vestiaire">
+                <span class="section-roman" aria-hidden="true">II</span>
+                <div class="vestiaire-inner reveal">
+                    <h2>Le vestiaire du moment</h2>
+                    <p class="vestiaire-intro">Ce printemps, nous avons choisi pour vos petits la toile de coton et le lin lavé. Robes à smocks, bermudas en popeline, cardigans bouton-d'or. Des pièces douces, taillées pour les goûters au square et les premiers pas sous les marronniers.</p>
+                    <div class="pieces-grid">
+                        <div class="piece-card reveal reveal-delay-1">
+                            <span class="piece-icon">👗</span>
+                            <h3>Robes à smocks</h3>
+                            <p>Toile de coton légère, smocks faits main, coupe ample pour les journées qui s'étirent.</p>
+                        </div>
+                        <div class="piece-card reveal reveal-delay-2">
+                            <span class="piece-icon">👕</span>
+                            <h3>Bermudas en popeline</h3>
+                            <p>Taille ajustable, teintes pierre et olive, conçus pour ne pas entraver les escalades.</p>
+                        </div>
+                        <div class="piece-card reveal reveal-delay-3">
+                            <span class="piece-icon">🧶</span>
+                            <h3>Cardigans bouton-d'or</h3>
+                            <p>Laine mérinos fine, boutons en nacre véritable, la maille qui traverse les saisons.</p>
+                        </div>
+                        <div class="piece-card reveal reveal-delay-1">
+                            <span class="piece-icon">🧵</span>
+                            <h3>Lin lavé</h3>
+                            <p>Pantalons et blouses en lin pré-lavé, doux dès le premier porter, infroissable avec élégance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- III. VENIR NOUS VOIR -->
+            <section class="section venir-section" id="venir" data-quote-section="venir">
+                <span class="section-roman" aria-hidden="true">III</span>
+                <div class="venir-grid">
+                    <div class="reveal reveal-delay-1">
+                        <h2>Venir nous voir</h2>
+                        <div class="horaires-block">
+                            <div class="day-row">
+                                <span class="day-name">Lundi</span>
+                                <span class="day-hours">Fermé</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day-name">Mardi</span>
+                                <span class="day-hours">10h – 13h · 14h – 19h</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day-name">Mercredi</span>
+                                <span class="day-hours">10h – 13h · 14h – 19h</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day-name">Jeudi</span>
+                                <span class="day-hours">10h – 13h · 14h – 19h</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day-name">Vendredi</span>
+                                <span class="day-hours">10h – 13h · 14h – 19h</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day-name">Samedi</span>
+                                <span class="day-hours">10h – 13h · 14h – 19h</span>
+                            </div>
+                            <div class="day-row ferme">
+                                <span class="day-name">Dimanche</span>
+                                <span class="day-hours">Fermé — le temps de préparer les vitrines</span>
+                            </div>
+                        </div>
+                        <p class="acces-info">La station <strong>Les Sablons</strong> (ligne 1) est à deux pas. Pour les landaus, le trottoir est large et la boutique de plain-pied.</p>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Sergent+Major+73+Avenue+du+Roule%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation Sergent Major, 73 Avenue du Roule, Neuilly-sur-Seine"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IV. CE QU'ON EN DIT -->
+            <section class="section avis-section" id="avis" data-quote-section="avis">
+                <span class="section-roman" aria-hidden="true">IV</span>
+                <div class="avis-inner reveal">
+                    <h2>Ce qu'on en dit</h2>
+                    <div class="avis-card reveal reveal-delay-1">
+                        <p class="avis-quote">« Une équipe qui connaît le prénom de votre enfant à la troisième visite. »</p>
+                        <p class="avis-author">— Mme L., cliente depuis 2015</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-2">
+                        <p class="avis-quote">« J'y ai acheté le manteau de baptême de mon fils. Dix ans après, j'y retourne pour sa petite sœur. »</p>
+                        <p class="avis-author">— Marc B., Neuilly</p>
+                    </div>
+                    <div class="avis-card reveal reveal-delay-3">
+                        <p class="avis-quote">« Les vitrines sont de petites scènes de théâtre. Ma fille s'arrête devant à chaque passage. »</p>
+                        <p class="avis-author">— Caroline D., Neuilly</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- V. CONTACT -->
+            <section class="section contact-section" id="contact" data-quote-section="contact">
+                <span class="section-roman" aria-hidden="true">V</span>
+                <div class="contact-inner reveal">
+                    <h2>Contact</h2>
+                    <p class="contact-text">Un doute sur une taille&nbsp;? Envie de faire exposer une pièce avant votre passage&nbsp;? Appelez-nous. Ici, on décroche encore.</p>
+                    <div class="contact-actions">
+                        <a href="tel:+33147381387" class="contact-link primary">📞 01 47 38 13 87</a>
+                        <a href="mailto:service-client@sergent-major.com" class="contact-link secondary">✉️ Nous écrire</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="site-footer">
+                <div class="footer-grid">
+                    <div>
+                        <div class="footer-brand">SERGENT MAJOR</div>
+                        <p>Vêtements pour enfants, 0 à 11 ans.<br>73 Avenue du Roule, 92200 Neuilly-sur-Seine.</p>
+                        <p>Service client : <a href="mailto:service-client@sergent-major.com">service-client@sergent-major.com</a></p>
+                    </div>
+                    <div>
+                        <p><strong>Horaires</strong><br>Mardi – Samedi : 10h – 13h et 14h – 19h<br>Dimanche & Lundi : fermé</p>
+                        <p><strong>Téléphone</strong><br><a href="tel:+33147381387">01 47 38 13 87</a></p>
+                    </div>
+                </div>
+                <p class="footer-discreet">
+                    <a href="https://www.sergent-major.com" target="_blank" rel="noopener noreferrer">Catalogue complet de la marque →</a>
+                </p>
+                <p class="footer-credit">Site créé par Agence Mooo</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        (function() {
+            // ========== INTRO OVERLAY ==========
+            const overlay = document.getElementById('intro-overlay');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReducedMotion && overlay) {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            } else if (overlay) {
+                document.body.style.overflow = 'hidden';
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        overlay.classList.add('hidden');
+                        document.body.style.overflow = '';
+                        // Nettoyer l'overlay après la transition
+                        setTimeout(function() {
+                            if (overlay.parentNode) {
+                                overlay.remove();
+                            }
+                        }, 900);
+                    }, 1200);
+                });
+                // Fallback si load déjà déclenché
+                if (document.readyState === 'complete') {
+                    setTimeout(function() {
+                        overlay.classList.add('hidden');
+                        document.body.style.overflow = '';
+                        setTimeout(function() {
+                            if (overlay.parentNode) {
+                                overlay.remove();
+                            }
+                        }, 900);
+                    }, 1200);
+                }
+            }
+
+            // ========== INTERSECTION OBSERVER (REVEAL) ==========
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0 && !prefersReducedMotion) {
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+                revealEls.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else if (prefersReducedMotion && revealEls.length > 0) {
+                revealEls.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // ========== COLONNE NARRATIVE : CHANGEMENT DE CITATION AU SCROLL ==========
+            const quoteItems = document.querySelectorAll('.narrative-col .quote-item');
+            const sectionsWithQuotes = document.querySelectorAll('[data-quote-section]');
+
+            if (quoteItems.length > 0 && sectionsWithQuotes.length > 0 && !prefersReducedMotion) {
+                const quoteObserver = new IntersectionObserver(function(entries) {
+                    let maxRatio = 0;
+                    let mostVisible = null;
+
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+                            maxRatio = entry.intersectionRatio;
+                            mostVisible = entry.target;
+                        }
+                    });
+
+                    if (mostVisible) {
+                        const sectionName = mostVisible.getAttribute('data-quote-section');
+                        quoteItems.forEach(function(item) {
+                            if (item.getAttribute('data-section') === sectionName) {
+                                item.classList.add('active');
+                            } else {
+                                item.classList.remove('active');
+                            }
+                        });
+                    }
+                }, {
+                    threshold: [0, 0.2, 0.4, 0.6, 0.8],
+                    rootMargin: '-10% 0px -10% 0px'
+                });
+
+                sectionsWithQuotes.forEach(function(section) {
+                    quoteObserver.observe(section);
+                });
+            }
+
+            // ========== GESTION DU HEADER STICKY (effet visuel supplémentaire) ==========
+            const header = document.getElementById('site-header');
+            if (header) {
+                let lastScrollY = 0;
+                let ticking = false;
+
+                function updateHeader() {
+                    const scrollY = window.scrollY;
+                    if (scrollY > 80) {
+                        header.style.boxShadow = '0 2px 20px rgba(62,26,48,0.08)';
+                    } else {
+                        header.style.boxShadow = 'none';
+                    }
+                    lastScrollY = scrollY;
+                    ticking = false;
+                }
+
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        requestAnimationFrame(updateHeader);
+                        ticking = true;
+                    }
+                }, { passive: true });
+            }
+
+            // ========== AJUSTEMENT POUR LA COLONNE LATÉRALE (position des citations) ==========
+            function adjustQuotePositions() {
+                const quoteContainer = document.querySelector('.narrative-col .quote-container');
+                if (!quoteContainer || window.innerWidth <= 1024) return;
+                // Les citations sont déjà bien positionnées via CSS
+            }
+
+            window.addEventListener('resize', adjustQuotePositions, { passive: true });
+            adjustQuotePositions();
+
+        })();
+    </script>
+</body>
+</html>
