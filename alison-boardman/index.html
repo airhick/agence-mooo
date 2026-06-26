@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alison Boardman — Design d'intérieur & Boutique | Paris 16ᵉ</title>
+    <meta name="description" content="Alison Boardman — Studio de design d'intérieur et boutique d'objets choisis au 17 rue de l'Annonciation, Paris 16ᵉ. Consultation, projets sur mesure, curiosités pour la maison.">
+    <meta property="og:title" content="Alison Boardman — Design d'intérieur & Boutique | Paris 16ᵉ">
+    <meta property="og:description" content="Des intérieurs qui respirent la matière. Design d'intérieur et objets choisis — au 17 rue de l'Annonciation, Paris 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,8 92,50 50,92 8,50' fill='%231D7A7A'/></svg>">
+    <style>
+        :root {
+            --beige: #F3EFE6;
+            --olive: #6B6B4A;
+            --sarcelle: #1D7A7A;
+            --terracotta: #C27A5A;
+            --penombre: #2E2B28;
+            --dore: #E5D5B5;
+            --beige-trans: rgba(243, 239, 230, 0.92);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+            background-color: var(--beige);
+            color: var(--olive);
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* ---- GRAIN OVERLAY ---- */
+        .grain-overlay {
+            position: fixed;
+            inset: -50%;
+            pointer-events: none;
+            z-index: 9997;
+            opacity: 0.028;
+            width: 300%;
+            height: 300%;
+            animation: grain-shift 8s steps(3) infinite;
+        }
+        @keyframes grain-shift {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(-2px, -1px);
+            }
+            66% {
+                transform: translate(3px, 2px);
+            }
+        }
+
+        /* ---- DIAMOND FILIGRANE ---- */
+        .diamond-filigrane {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                linear-gradient(45deg, rgba(107, 107, 74, 0.045) 1px, transparent 1px),
+                linear-gradient(-45deg, rgba(107, 107, 74, 0.045) 1px, transparent 1px);
+            background-size: 36px 36px;
+            background-position: 0 0;
+            transition: background-size 0.6s var(--ease-out-expo);
+            will-change: background-size, background-position;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--beige-trans);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(107, 107, 74, 0.12);
+            padding: 0.85rem clamp(1rem, 3vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            transition: border-color 0.3s;
+        }
+        .site-header.scrolled {
+            border-bottom-color: rgba(107, 107, 74, 0.25);
+        }
+        .header-name {
+            font-family: 'Bricolage Grotesque', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            color: var(--penombre);
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .header-name:hover {
+            color: var(--sarcelle);
+        }
+        .header-nav {
+            display: flex;
+            gap: clamp(0.5rem, 2vw, 1.6rem);
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+        .header-nav a {
+            color: var(--olive);
+            text-decoration: none;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.25s;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--sarcelle);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--sarcelle);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--sarcelle);
+            color: #fff;
+            padding: 0.55em 1.25em;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1vw, 0.88rem);
+            letter-spacing: 0.03em;
+            transition: background 0.3s, transform 0.25s var(--ease-out-expo);
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #176868;
+            transform: translateY(-1px);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--terracotta);
+            outline-offset: 3px;
+        }
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            background: rgba(229, 213, 181, 0.45);
+            border: 1px solid rgba(194, 122, 90, 0.3);
+            padding: 0.35em 0.7em;
+            border-radius: 20px;
+            font-size: clamp(0.7rem, 0.9vw, 0.78rem);
+            font-weight: 500;
+            color: var(--penombre);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            transition: background 0.3s;
+        }
+        .badge-google .stars {
+            color: #e8a830;
+            letter-spacing: 0.05em;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--terracotta);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ---- MAIN CONTENT WRAPPER ---- */
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 85vh;
+            align-items: center;
+            padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 3.5rem);
+            gap: 2rem;
+            position: relative;
+        }
+        @media (min-width: 820px) {
+            .hero {
+                grid-template-columns: 1fr 1.15fr;
+                min-height: 82vh;
+                gap: 0;
+            }
+        }
+        .hero-text {
+            z-index: 2;
+            padding: 1rem 0;
+            position: relative;
+        }
+        .hero-title {
+            font-family: 'Bricolage Grotesque', serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 5.5vw, 5.5rem);
+            line-height: 1.05;
+            color: var(--penombre);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5em;
+        }
+        .hero-title .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(1.2em);
+            transition: opacity 0.55s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+            will-change: transform, opacity;
+        }
+        .hero-title.revealed .char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-subtitle {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.5vw, 1.35rem);
+            color: var(--olive);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            max-width: 32ch;
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: opacity 0.7s 0.5s var(--ease-out-expo), transform 0.7s 0.5s var(--ease-out-expo);
+        }
+        .hero-subtitle.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-image-wrap {
+            position: relative;
+            z-index: 1;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 30px rgba(46, 43, 40, 0.12), 0 8px 60px rgba(46, 43, 40, 0.06);
+            aspect-ratio: 4/3;
+            max-height: 70vh;
+            transition: box-shadow 0.5s;
+        }
+        @media (min-width: 820px) {
+            .hero-image-wrap {
+                aspect-ratio: 5/4;
+                max-height: 68vh;
+                margin-left: 1.5rem;
+            }
+        }
+        .hero-image-wrap:hover {
+            box-shadow: 0 4px 40px rgba(46, 43, 40, 0.18), 0 12px 70px rgba(46, 43, 40, 0.09);
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            display: block;
+            transition: transform 0.7s var(--ease-out-expo);
+        }
+        .hero-image-wrap:hover img {
+            transform: scale(1.03);
+        }
+        .hero-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(29, 122, 122, 0.06) 0%, transparent 50%, rgba(194, 122, 90, 0.08) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* ---- SECTION COMMON ---- */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3.5rem);
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-family: 'Bricolage Grotesque', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+            color: var(--penombre);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            margin-bottom: 0.6em;
+        }
+        .section-title .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(0.6em);
+            transition: opacity 0.45s var(--ease-out-expo), transform 0.55s var(--ease-out-expo);
+        }
+        .section-title.revealed .char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-body {
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            color: var(--olive);
+            line-height: 1.7;
+            max-width: 58ch;
+            font-weight: 400;
+            letter-spacing: 0.015em;
+        }
+        .section-rule {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--dore), transparent);
+            margin: clamp(2rem, 5vw, 4rem) 0;
+            opacity: 0.7;
+        }
+
+        /* ---- LE STUDIO ---- */
+        .studio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        @media (min-width: 780px) {
+            .studio-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .studio-accent {
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-width: 340px;
+            background: radial-gradient(ellipse at 55% 40%, rgba(194, 122, 90, 0.18) 0%, transparent 65%),
+                radial-gradient(ellipse at 30% 60%, rgba(29, 122, 122, 0.1) 0%, transparent 55%);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .studio-accent::before {
+            content: '';
+            position: absolute;
+            inset: 12%;
+            border: 1px solid rgba(107, 107, 74, 0.25);
+            border-radius: 2px;
+            transform: rotate(-1.5deg);
+        }
+        .studio-accent .inner-shape {
+            position: absolute;
+            top: 22%;
+            left: 18%;
+            width: 50%;
+            height: 50%;
+            background: rgba(229, 213, 181, 0.4);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        /* ---- LA BOUTIQUE ---- */
+        .boutique-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.4rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 600px) {
+            .boutique-list {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.8rem;
+            }
+        }
+        .boutique-item {
+            border-left: 3px solid var(--terracotta);
+            padding-left: 1.2rem;
+            transition: border-color 0.35s, background 0.35s;
+            background: rgba(229, 213, 181, 0.2);
+            padding: 1.1rem 1.2rem;
+            border-radius: 0 3px 3px 0;
+            border-left-width: 3px;
+        }
+        .boutique-item:hover {
+            border-left-color: var(--sarcelle);
+            background: rgba(229, 213, 181, 0.4);
+        }
+        .boutique-item strong {
+            display: block;
+            font-family: 'Bricolage Grotesque', serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--penombre);
+            margin-bottom: 0.25em;
+            letter-spacing: 0.01em;
+        }
+        .boutique-item span {
+            font-size: 0.9rem;
+            color: var(--olive);
+            line-height: 1.5;
+        }
+
+        /* ---- PROJETS ---- */
+        .projets-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 550px) {
+            .projets-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.4rem;
+            }
+        }
+        @media (min-width: 900px) {
+            .projets-grid {
+                grid-template-columns: 1.3fr 0.9fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 1.5rem;
+            }
+        }
+        .projet-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            aspect-ratio: 4/3;
+            cursor: default;
+            box-shadow: 0 1px 12px rgba(46, 43, 40, 0.08);
+            transition: box-shadow 0.4s, transform 0.4s var(--ease-out-expo);
+        }
+        .projet-card:hover {
+            box-shadow: 0 4px 28px rgba(46, 43, 40, 0.16);
+            transform: translateY(-3px);
+        }
+        .projet-card:nth-child(1) {
+            aspect-ratio: 3/4;
+        }
+        @media (min-width: 900px) {
+            .projet-card:nth-child(1) {
+                grid-row: span 2;
+                aspect-ratio: 2/3;
+            }
+            .projet-card:nth-child(3) {
+                grid-column: 2 / span 2;
+                aspect-ratio: 16/9;
+            }
+        }
+        .projet-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .projet-card:hover img {
+            transform: scale(1.06);
+        }
+        .projet-card .projet-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: soft-light;
+            opacity: 0.5;
+            transition: opacity 0.4s;
+        }
+        .projet-card:hover .projet-overlay {
+            opacity: 0.25;
+        }
+        .overlay-warm {
+            background: linear-gradient(135deg, #C27A5A 0%, transparent 60%);
+        }
+        .overlay-cool {
+            background: linear-gradient(200deg, #1D7A7A 0%, transparent 55%);
+        }
+        .overlay-olive {
+            background: linear-gradient(160deg, #6B6B4A 0%, transparent 50%);
+        }
+
+        /* ---- ATELIER & CONTACT ---- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        @media (min-width: 720px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .contact-info {
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            color: var(--olive);
+            line-height: 1.8;
+        }
+        .contact-info a {
+            color: var(--sarcelle);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: rgba(29, 122, 122, 0.35);
+            transition: text-decoration-color 0.3s, color 0.3s;
+        }
+        .contact-info a:hover {
+            text-decoration-color: var(--sarcelle);
+            color: #155e5e;
+        }
+        .contact-info strong {
+            color: var(--penombre);
+            font-weight: 600;
+        }
+        .map-wrap {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(46, 43, 40, 0.1);
+            aspect-ratio: 16/10;
+            min-height: 280px;
+        }
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .hours-block {
+            background: rgba(229, 213, 181, 0.3);
+            border: 1px solid rgba(107, 107, 74, 0.15);
+            border-radius: 3px;
+            padding: 1.2rem 1.4rem;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--olive);
+            line-height: 1.7;
+        }
+        .hours-block strong {
+            color: var(--penombre);
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(107, 107, 74, 0.15);
+            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 5vw, 3.5rem);
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--olive);
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+        }
+        .site-footer .footer-credits {
+            color: rgba(107, 107, 74, 0.6);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ---- REVEAL ON SCROLL ---- */
+        .reveal-el {
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+            will-change: transform, opacity;
+        }
+        .reveal-el.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---- UTILITY ---- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 540px) {
+            .header-nav {
+                gap: 0.5rem;
+                font-size: 0.72rem;
+            }
+            .header-cta {
+                padding: 0.45em 0.9em;
+                font-size: 0.74rem;
+            }
+            .badge-google {
+                font-size: 0.68rem;
+                padding: 0.3em 0.55em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Grain texture overlay -->
+    <svg class="grain-overlay" aria-hidden="true">
+        <filter id="noise-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise-filter)" />
+    </svg>
+
+    <!-- Diamond filigrane pattern -->
+    <div class="diamond-filigrane" id="diamondFiligrane" aria-hidden="true"></div>
+
+    <!-- Sticky Header -->
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-name">Alison Boardman</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#studio">Le Studio</a></li>
+                <li><a href="#boutique">La Boutique</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#atelier">Contact</a></li>
+                <li><span class="badge-google" aria-label="Note Google 4.6 sur 5, 9 avis"><span class="stars">★</span> 4.6 <span style="opacity:0.7;">· 9 avis</span></span></li>
+            </ul>
+        </nav>
+        <a href="#atelier" class="header-cta">Prendre RDV</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-text">
+                <h1 class="hero-title" id="heroTitle">Des intérieurs qui respirent la matière.</h1>
+                <p class="hero-subtitle" id="heroSubtitle">Design d'intérieur et objets choisis — au 17 rue de l'Annonciation, Paris 16ᵉ.</p>
+            </div>
+            <div class="hero-image-wrap">
+                <img src="assets/maps-1.jpg" alt="Alison Boardman — Intérieur de la boutique et atelier au 17 rue de l'Annonciation, Paris 16ᵉ" loading="eager" fetchpriority="high">
+            </div>
+        </section>
+
+        <!-- LE STUDIO -->
+        <section class="section" id="studio">
+            <div class="section-inner">
+                <div class="studio-grid">
+                    <div>
+                        <h2 class="section-title reveal-split" data-reveal="split">Une approche sensible du lieu.</h2>
+                        <p class="section-body reveal-el">Alison Boardman conçoit des intérieurs comme des toiles composées de textures, de lumière et de volumes. Chaque projet naît d'un dialogue avec l'architecture et les habitudes de vie — un geste précis qui laisse respirer les matériaux bruts, les patines et les nuances de la lumière naturelle.</p>
+                        <p class="section-body reveal-el" style="margin-top:1em;">Depuis son atelier du 16ᵉ arrondissement, elle imagine des espaces où chaque objet trouve sa place dans une composition vivante, jamais figée.</p>
+                    </div>
+                    <div class="studio-accent reveal-el" aria-hidden="true">
+                        <div class="inner-shape"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="section-rule" aria-hidden="true">
+        </section>
+
+        <!-- LA BOUTIQUE -->
+        <section class="section" id="boutique">
+            <div class="section-inner">
+                <h2 class="section-title reveal-split" data-reveal="split">Curiosités choisies.</h2>
+                <p class="section-body reveal-el">Une sélection d'objets et de petits mobiliers pour donner une âme à chaque pièce. Chaque article est choisi pour sa présence tactile et sa capacité à dialoguer avec la lumière.</p>
+                <ul class="boutique-list reveal-el">
+                    <li class="boutique-item"><strong>Vases texturés</strong><span>Céramiques aux émaux craquelés, terres enfumées, formes organiques.</span></li>
+                    <li class="boutique-item"><strong>Lampes géométriques</strong><span>Abat-jour sculpturaux en tissu et métal, lumière tamisée et chaude.</span></li>
+                    <li class="boutique-item"><strong>Toiles abstraites</strong><span>Œuvres d'artistes émergents, palettes sourdes et compositions méditatives.</span></li>
+                </ul>
+            </div>
+            <hr class="section-rule" aria-hidden="true">
+        </section>
+
+        <!-- PROJETS -->
+        <section class="section" id="projets">
+            <div class="section-inner">
+                <h2 class="section-title reveal-split" data-reveal="split">Matières en situation.</h2>
+                <p class="section-body reveal-el" style="margin-bottom:0.5rem;">Un portfolio silencieux où chaque image raconte une atmosphère : appartements haussmanniens, lofts baignés de sud, maisons de campagne.</p>
+                <div class="projets-grid">
+                    <div class="projet-card reveal-el">
+                        <img src="assets/maps-1.jpg" alt="Projet — Appartement haussmannien, Paris" loading="lazy" style="object-position:center 25%;">
+                        <div class="projet-overlay overlay-warm"></div>
+                    </div>
+                    <div class="projet-card reveal-el">
+                        <img src="assets/maps-1.jpg" alt="Projet — Loft contemporain" loading="lazy" style="object-position:center 55%;">
+                        <div class="projet-overlay overlay-cool"></div>
+                    </div>
+                    <div class="projet-card reveal-el">
+                        <img src="assets/maps-1.jpg" alt="Projet — Maison de campagne" loading="lazy" style="object-position:center 40%;">
+                        <div class="projet-overlay overlay-olive"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="section-rule" aria-hidden="true">
+        </section>
+
+        <!-- L'ATELIER & CONTACT -->
+        <section class="section" id="atelier">
+            <div class="section-inner">
+                <h2 class="section-title reveal-split" data-reveal="split">Pousser la porte.</h2>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-el">
+                        <p>Prenez rendez-vous pour une consultation personnalisée. L'atelier est ouvert <strong>du mardi au samedi</strong>, à deux pas de la Maison de la Radio, dans le calme feutré du 16ᵉ arrondissement.</p>
+                        <p style="margin-top:1em;">
+                            <strong>Téléphone :</strong> <a href="tel:+33140503733">01 40 50 37 33</a><br>
+                            <strong>Email :</strong> <a href="mailto:alison.boardman@wanadoo.fr">alison.boardman@wanadoo.fr</a><br>
+                            <strong>Adresse :</strong> 17 Rue de l'Annonciation, 75016 Paris
+                        </p>
+                        <div class="hours-block">
+                            <strong>Horaires d'ouverture :</strong><br>
+                            Mardi – Samedi : 10h – 13h, 14h – 19h<br>
+                            Dimanche & Lundi : fermé<br>
+                            <em style="font-size:0.8rem;opacity:0.7;">(Horaires indicatifs — à confirmer lors de la prise de rendez-vous)</em>
+                        </div>
+                        <p style="margin-top:1.2rem;">
+                            <span class="badge-google" style="display:inline-flex;font-size:0.85rem;" aria-label="Note Google 4.6 sur 5, 9 avis"><span class="stars">★</span> 4.6 · 9 avis Google</span>
+                        </p>
+                    </div>
+                    <div class="map-wrap reveal-el">
+                        <iframe src="https://maps.google.com/maps?q=Alison+Boardman+17+Rue+de+l%27Annonciation%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte — Alison Boardman, 17 Rue de l'Annonciation, Paris 16ᵉ"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><strong>Alison Boardman</strong> — 17 Rue de l'Annonciation, 75016 Paris &nbsp;·&nbsp; <a href="tel:+33140503733" style="color:var(--sarcelle);text-decoration:underline;text-underline-offset:2px;">01 40 50 37 33</a> &nbsp;·&nbsp; <a href="mailto:alison.boardman@wanadoo.fr" style="color:var(--sarcelle);text-decoration:underline;text-underline-offset:2px;">alison.boardman@wanadoo.fr</a></p>
+        <p class="footer-credits">Site créé par Agence Mooo</p>
+    </footer>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Alison Boardman",
+            "description": "Studio de design d'intérieur et boutique d'objets choisis au 17 rue de l'Annonciation, Paris 16ᵉ.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "17 Rue de l'Annonciation",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140503733",
+            "email": "alison.boardman@wanadoo.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "ratingCount": "9",
+                "bestRating": "5"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "19:00" }
+            ],
+            "url": "https://agence.mooo.com/alison-boardman"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // ---- LETTER SPLITTER ----
+            function splitLetters(el) {
+                const text = el.textContent.trim();
+                el.textContent = '';
+                el.setAttribute('aria-label', text);
+                [...text].forEach((char, i) => {
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.textContent = char;
+                    span.style.transitionDelay = (i * 0.025) + 's';
+                    span.setAttribute('aria-hidden', 'true');
+                    el.appendChild(span);
+                });
+            }
+
+            // ---- HERO TITLE letter-by-letter ----
+            const heroTitle = document.getElementById('heroTitle');
+            if (heroTitle) {
+                splitLetters(heroTitle);
+                // Trigger reveal after a short delay for the hero
+                setTimeout(() => {
+                    heroTitle.classList.add('revealed');
+                }, 250);
+            }
+
+            // ---- HERO SUBTITLE reveal ----
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            if (heroSubtitle) {
+                setTimeout(() => {
+                    heroSubtitle.classList.add('revealed');
+                }, 450);
+            }
+
+            // ---- SPLIT SECTION TITLES ----
+            const splitTitles = document.querySelectorAll('.reveal-split[data-reveal="split"]');
+            splitTitles.forEach(title => {
+                splitLetters(title);
+            });
+
+            // ---- INTERSECTION OBSERVER for scroll reveals ----
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        // Reveal the element itself
+                        if (el.classList.contains('reveal-el')) {
+                            el.classList.add('revealed');
+                        }
+                        // Reveal split titles
+                        if (el.classList.contains('reveal-split') && el.dataset.reveal === 'split') {
+                            el.classList.add('revealed');
+                        }
+                        observer.unobserve(el);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all reveal elements
+            document.querySelectorAll('.reveal-el, .reveal-split[data-reveal="split"]').forEach(el => {
+                observer.observe(el);
+            });
+
+            // ---- HEADER SCROLL CLASS ----
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 30) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ---- DIAMOND FILIGRANE SCROLL ANIMATION ----
+            const diamond = document.getElementById('diamondFiligrane');
+            let diamondTicking = false;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion && diamond) {
+                window.addEventListener('scroll', () => {
+                    if (!diamondTicking) {
+                        requestAnimationFrame(() => {
+                            const scrollY = window.scrollY;
+                            const maxScroll = document.body.scrollHeight - window.innerHeight;
+                            const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
+                            const sizeShift = 36 + Math.sin(progress * Math.PI * 1.3) * 4;
+                            const posShift = progress * 8;
+                            diamond.style.backgroundSize = sizeShift + 'px ' + sizeShift + 'px';
+                            diamond.style.backgroundPosition = posShift + 'px ' + (posShift * 0.6) + 'px';
+                            diamondTicking = false;
+                        });
+                        diamondTicking = true;
+                    }
+                }, { passive: true });
+            }
+
+            // ---- SMOOTH SCROLL FOR HEADER CTA (ensures it works everywhere) ----
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
