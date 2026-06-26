@@ -1,80 +1,61 @@
-# BRIEF CRÉATIF — Premibel Parquet Paris Balard
+# BRIEF CRÉATIF — PREMIBEL PARQUET PARIS BALARD
 
 ---
 
-## 1. Concept & positionnement
+## 1. CONCEPT & POSITIONNEMENT
 
-**Le parquet n’est pas un produit, c’est une matière vivante que l’on choisit avec les pieds, les yeux et les mains.** Premibel Paris Balard n’est pas un drive du bois — c’est un atelier-showroom de quartier où l’on vient toucher les essences, interroger un expert et repartir avec une certitude. Le site vitrine sera cette main tendue locale : il incarnera la chaleur du bois massif contre la rigueur minérale de la façade en brique rouge du 15ᵉ arrondissement, pour dire en une seule image : « Venez, on va trouver votre parquet ensemble. »
+Un parquet ne s’achète pas sans le toucher. Le site vitrine doit refléter cette évidence en faisant du **showroom de la rue Balard** le cœur battant de l’expérience — et non un simple entrepôt e‑commerce. On inverse la logique : le lieu physique d’abord, le catalogue ensuite.
 
----
-
-## 2. Direction artistique
-
-**Brut de Balard** — Une esthétique qui marie le brutalisme parisien (brique apparente, béton ciré, baies vitrées atelier) à la noblesse organique du bois massif. Le parti pris est celui du contraste maîtrisé : des fonds clairs presque blanc cassé, traversés par des ombres portées nettes, comme la lumière vive qui tombe sur un parquet fraîchement posé. La brique rouge du 38 bis devient un filigrane graphique (liserés, hover states, séparateurs) sans virer au rustique. Tout est affaire de texture : le bois se voit en photo, pas en aplat de couleur. Le design respire, les espaces blancs sont généreux — c’est un showroom, pas un entrepôt.
+**Idée forte :** « Le bois a une adresse. » Positionner Premibel Paris Balard comme la destination de quartier où l’expertise se transmet de vive voix et la matière se choisit en conscience — pour les pros comme pour les particuliers qui n’y connaissent rien. Le site devient une **invitation à pousser la porte**, pas un catalogue noyé dans 181 liens.
 
 ---
 
-## 3. Palette
+## 2. DIRECTION ARTISTIQUE
 
-| Rôle | HEX | Nom |
-|:--|:--|:--|
-| Fond clair principal | `#FAF7F2` | Blanc chaux Balard |
-| Fond sombre / contraste | `#1C1A17` | Brun de tanin |
-| Accent brique | `#8B3A36` | Rouge façade |
-| Teinte bois chaude | `#B8935E` | Chêne huilé |
-| Texte secondaire | `#6B6359` | Grès du 15ᵉ |
-| Bordure froide | `#C4BCB3` | Béton clair |
+**Menuiserie contemporaine** — entre l’atelier d’artisan et la boutique de quartier, élégance sobre et matière affirmée.
 
-— La brique reste profonde, jamais orangée ni terracotta. Le blanc chaux évite le blanc froid d'hôpital. Le noir est un brun très dense, plus doux qu'un #000, en cohérence avec l'univers du bois.
+Le parti pris s’ancre dans les **signaux réels** du commerce : vitrines courbées baignées de lumière naturelle, enseigne bordeaux en capitales blanches, sols jonchés d’échantillons de bois. On garde cette franchise visuelle, ni rustique ni luxueuse — **brute et précise**, comme un parquet bien posé.
 
----
+- Typographie display **DM Serif Display** utilisée en grandes masses pour rappeler l’enseigne.
+- Courbes des vitrines reprises comme motifs structurels (séparateurs, encadrés, transitions).
+- Textures bois subtiles en arrière-plan (chêne clair, veinage discret), jamais décoratives, toujours signifiantes.
 
-## 4. Ton éditorial
-
-Vouvoiement de rigueur. Voix directe, précise, jamais publicitaire. On parle d'essences, d'années de séchage, de clouage invisible, de retrait en 2h. On tutoie le bois, pas le client. Aucune fausse urgence (« stock limité »), aucune fausse citation. L'expertise rassure plus que la promotion.
+L’ambiance est **naturelle, tamisée, accueillante** — on évite la froideur du blanc pur et le drame du presque-noir.
 
 ---
 
-## 5. Accroche héro
+## 3. PALETTE
 
-**Titre :** *Un parquet massif mérite qu’on le choisisse debout.*  
-**Sous-titre :** Dans notre showroom du 38 bis rue Balard, touchez les essences, parlez à un expert et repartez avec la certitude d’un sol fait pour durer.
+| Rôle | Hex | Nom | Usage |
+|------|-----|-----|-------|
+| Accent primaire | `#7B1A2A` | Bordeaux enseigne | Boutons, liens, filets, surlignements |
+| Fond clair | `#F7F3EE` | Blanc chêne | Arrière-plan principal |
+| Encre | `#2A2A2A` | Anthracite atelier | Texte courant sur fond clair |
+| Fond sombre | `#2E2E2E` | Gris showroom | Sections contrastées, footer |
+| Accent matière | `#C4A882` | Chêne moyen | Fonds texturés, séparations, encadrés échantillons |
+| Détail fonctionnel | `#3B4A3B` | Vert olive | Signalétique « Click & Collect », badges magasin |
 
----
-
-## 6. Sections
-
-### 1. Le showroom Balard
-**Titre :** *Un lieu pensé pour le bois.*
-**Contenu :** Une façade de brique rouge à deux pas du parc André-Citroën, des baies vitrées qui baignent les lames de lumière naturelle, et un expert présent du lundi au samedi pour vous guider. Pas de catalogue imprimé sous le bras — ici, tout se vit debout.
-
-### 2. Le conseil qui change tout
-**Titre :** *30 minutes suffisent pour éviter des années de regret.*
-**Contenu :** Chêne de Bourgogne ou chêne de Russie ? Huilé ou verni ? Pose flottante ou collée ? Prenez rendez-vous pour un échange en face à face avec nos spécialistes, échantillons en main.
-
-### 3. Click & Collect en 2h
-**Titre :** *Commandez avant 11h, posez ce soir.*
-**Contenu :** Choisissez votre parquet sur premibel.fr, sélectionnez le retrait au showroom Balard, et récupérez votre commande dans les deux heures. Un service pensé pour les artisans et les Parisiens pressés.
-
-### 4. Essences & collections
-**Titre :** *Chaque parquet a une origine, une coupe, une histoire.*
-**Contenu :** Massif, contrecollé, stratifié, lames de terrasse — explorez nos gammes par matière. Les fiches produits sont là, mais le vrai choix se fait au 38 bis.
-
-### 5. La promesse Premibel Balard
-**Titre :** *Un parquet livré, c’est bien. Un parquet assumé, c’est mieux.*
-**Contenu :** 33 ans d’expertise, un showroom physique pour voir et toucher, un SAV joignable au 06 61 17 12 12. Nous ne vendons que ce que nous serions prêts à poser chez nous.
-
-### 6. Prendre la bonne décision
-**Titre :** *Parquet en bâtons rompus, pont de bateau, pose sur plot : nos guides.*
-**Contenu :** Articles et tutoriels pour comprendre les contraintes techniques, préparer votre sol et choisir la finition qui tiendra dans le temps.
+**Ambiance :** majorité claire (`#F7F3EE`) rythmée par des bascules sombres (`#2E2E2E`) qui évoquent les zones d’ombre des vitrines. Le bordeaux n’est jamais envahissant : il ponctue.
 
 ---
 
-## 7. Signature visuelle
+## 4. TON ÉDITORIAL
 
-- **Liseré brique à l’écran :** une ligne verticale ou horizontale couleur `#8B3A36` qui cadre la page et rappelle discrètement la façade du showroom. Présente au chargement comme un fil conducteur, elle accompagne le scroll sans lourdeur.
-- **Typographie display ouvragée en reveal :** les titres en DM Serif Display apparaissent au scroll avec un effet de « dévoilement progressif » — comme une lame de parquet que l’on déballe, les empattenents se dessinant lettre après lettre. Rien de clinquant : un fondu texturé, lent et digne.
+**Voix :** un conseiller de la rue Balard — passionné, accessible, jamais arrogant. Il parle à l’artisan comme au primo‑accédant avec la même clarté.
+
+- **Niveau de langue :** courant, tutoiement réservé aux articles de blog (conseils), **vouvoiement** dans les pages institutionnelles et le catalogue. Transparence totale sur les prix et les délais.
+- **Registre :** explications concrètes (« voici la différence entre un chêne huilé et un stratifié »), zéro jargon gratuit, ton de recommandation personnelle. Les verbes d’action sont choisis avec soin : toucher, comparer, poser soi‑même, venir voir.
+
+**Interdits :** superlatifs vides (« meilleur choix », « qualité supérieure ») sans preuve concrète ; faux faits (prix inventés, fausses citations) ; formules purement promotionnelles (« offre exclusive ») sans lien avec le lieu.
 
 ---
 
-_Livrable conçu pour corriger l’éclatement national du site actuel, ancrer la confiance dans le lieu physique de la rue Balard, et offrir une réponse esthétique cohérente avec l’énergie réelle des photos du commerce._
+## 5. ACCROCHE HÉRO
+
+### Grand titre
+> **Le parquet juste. Depuis 33 ans.**
+
+### Sous‑titre
+> Massif, contrecollé, stratifié — venez choisir votre sol parmi 200 essences, en ligne ou à deux pas du Parc André Citroën.
+
+**Pourquoi ça fonction
