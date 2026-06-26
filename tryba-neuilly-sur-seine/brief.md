@@ -1,111 +1,53 @@
-Voici le brief créatif pour le nouveau site vitrine de TRYBA Neuilly-sur-Seine, conçu pour corriger les faiblesses identifiées et ancrer profondément ce commerce dans son territoire.
+Voici le brief créatif, entièrement ancré dans les spécificités réelles de TRYBA Neuilly-sur-Seine.
 
 ---
 
-## 1. Concept & positionnement
+## BRIEF CRÉATIF – TRYBA Neuilly-sur-Seine
 
-**« L’artisanat d’avenue »** — TRYBA Neuilly n’est pas un catalogue national déguisé en page locale. C’est un atelier de conseil en menuiserie, pignon sur l’avenue Charles de Gaulle, où l’on vient rencontrer un expert qui connaît les copropriétés du 92, les exigences des Architectes des Bâtiments de France et le standing discret du quartier. Le site incarne cette promesse : **la précision d’un fabricant alsacien alliée à la proximité d’un commerce d’avenue**. On ne vend pas des fenêtres. On apporte une réponse technique, esthétique et humaine à un projet d’habitat.
+### 1. Concept & positionnement
+**Une menuiserie de quartier, à l’échelle des immeubles de l’avenue Charles-de-Gaulle.**
+On ne vient pas chez TRYBA Neuilly pour acheter une fenêtre standard, mais pour **restaurer la lumière des salons haussmanniens et préserver l’élégance du bâti ancien** avec des pièces d’excellence. L’Espace Conseil devient un atelier d’architecte feutré, où le sur-mesure industriel français épouse les moulures et les pierres de taille du 92.
 
----
+### 2. Direction artistique
+**« Épure haussmannienne contemporaine »** – un parti pris qui marie la noblesse minérale de la pierre de taille, la chaleur du bois sculpté (détail réellement observé à côté de l’entrée moderne) et la rigueur graphique des menuiseries aluminium. L’ambiance est sobre, lumineuse et tactile ; les ombres portées sont nettes, comme un jeu de dormants. La typographie artisanale (Bricolage Grotesque) dialogue avec la précision du métal, tandis que la géométrie des verrières rythme les compositions. Rien de générique – chaque image, chaque ligne respire l’ancrage neuilléen.
 
-## 2. Direction artistique
+### 3. Palette
+| Rôle | Couleur | HEX |
+|------|---------|-----|
+| **Fond principal** | Blanc pierre chaulée (rappel des façades de l’avenue) | `#F6F2EC` |
+| **Encre / corps de texte** | Bleu nuit pierreux (dérivé du bleu de l’enseigne, mais plus profond et élégant) | `#1A2A3A` |
+| **Accent** | Bleu TRYBA adouci (assez franc pour les CTA, sans agressivité) | `#005C9E` |
+| **Touche chaude** | Beige pierre (boiseries et appuis de fenêtre, visible sur les photos réelles) | `#D3B8A3` |
+| **Fond sombre / titre inversé** | Noir velours | `#252220` |
+| **Ponctuation très claire** | Blanc poudre (pour les cartes et les filets) | `#FFFFFF` |
 
-**Parti pris : « Atelier contemporain »**  
-Ni showroom aseptisé, ni plateforme corporate. L’esthétique épouse la double identité du commerce : la rigueur technique de la fabrication (précision, plans, coupes, matières brutes maîtrisées) et l’élégance sobre de Neuilly (pierre calcaire, ferronneries, proportions haussmanniennes). On travaille une tension maîtrisée entre l’univers de l’établi moderne — croquis techniques, outils de mesure, échantillons de matière — et le raffinement architectural de l’Ouest parisien. La lumière est celle d’un showroom d’avenue : naturelle, franche, mettant en valeur la matière. La composition est aérée, rythmée par des blocs différenciés qui guident le regard, loin de la surcharge informationnelle du site actuel.
+Principe : jamais de blanc froid ni de gris passe-partout ; chaque couleur est extraite de l’énergie réelle du commerce (enseigne, pierre, porte bois, métal). La palette peut fonctionner en clair ou en sombre selon la section.
 
----
+### 4. Ton éditorial
+**Experte & chaleureuse, avec la retenue propre à Neuilly.** Vous ne serez jamais interrompu par un slogan criard. On vouvoie, on nomme les rues, on parle « tableaux de fenêtre irréguliers », « copropriété des années 30 », « menuiseries posées sans dégâts dans la pierre de taille ». La voix est celle d’un conseiller qui connaît le quartier, ses contraintes architecturales et ses attentes de discrétion. Les formulations sont concrètes, jamais vendeuses : on préfère « venez essayer les ouvrants » à « profitez de notre offre exceptionnelle ».
 
-## 3. Palette
+### 5. Accroche héro
+**Titre :** *Et si vos fenêtres habillaient enfin votre immeuble ?*  
+**Sous-titre :** Dans notre Espace Conseil de l’avenue Charles-de-Gaulle, concevez avec nous des menuiseries sur mesure, fabriquées en France et posées dans le respect des façades haussmanniennes.
 
-Les teintes sont directement prélevées de l’univers réel du commerce et de son environnement :
+L’accroche s’adresse directement à la frustration du propriétaire neuilléen (fenêtres trop standard) et invite à une démarche personnalisée, en nommant l’adresse emblématique.
 
-| Rôle | Hex | Nom | Usage |
-|------|-----|-----|-------|
-| Fond | `#F7F4EF` | Pierre de Neuilly | Fond principal, chaleur minérale sans être crème générique |
-| Encre | `#2C2A28` | Anthracite atelier | Texte courant, encre principale (ni noir pur, ni fade) |
-| Accent 1 | `#8A6E4B` | Chêne fumé | Boutons, liens, filets, éléments d’interaction |
-| Accent 2 | `#C4B5A8` | Aluminium brossé | Surfaces secondaires, séparateurs, blocs distinctifs |
-| Soutien | `#4A5B4E` | Vert ardoise | Témoignages, labels, éléments de confiance (rappel subtil du patrimoine végétal de Neuilly) |
-| Signal | `#E8E2D7` | Calcaire clair | Survols, cartes, arrière-plans d’encarts |
+### 6. Sections (ordre réel, titres et contenus)
 
-L’ambiance est claire, minérale et chaleureuse, sans froideur. Aucun blanc pur (`#FFFFFF`) n’est utilisé ; le fond pierre apporte une assise tactile.
+**Section 1 – « Votre Espace Conseil à Neuilly »**  
+*Contenu :* À deux pas de la Porte Maillot, notre showroom du 31 avenue Charles de Gaulle vous accueille du mardi au samedi. Ici, touchez les matières, manipulez les ouvrants et parlez-nous de vos contraintes de copropriété.
 
----
+**Section 2 – « Menuiseries sur mesure pour l’habitat haussmannien »**  
+*Contenu :* Fenêtres bois à petit bois, portes d’entrée en aluminium brossé, volets pliants discrets — chaque pièce est fabriquée dans nos ateliers d’Alsace et des Pays de la Loire, et posée par nos experts du 92.
 
-## 4. Ton éditorial
+**Section 3 – « L’art de la pose, ajusté au millimètre »**  
+*Contenu :* Moulures, tableaux irréguliers, pierre de taille sensible : nos poseurs sont formés à intervenir sur le bâti ancien sans altérer les façades. Chantiers propres, finitions impeccables, délais tenus.
 
-**Voix : expertise discrète, conseil de proximité.**  
-On vouvoie le visiteur. Le vocabulaire est précis (on parle de « menuiseries », de « dormant », de « feuillure »), mais chaque terme technique est immédiatement mis en contexte pour rester accessible. Le ton est celui d’un artisan qui connaît son métier et le quartier — jamais condescendant, jamais commercial forcé. Les phrases sont courtes à moyennes, avec un rythme posé. On évite les superlatifs nationaux en première ligne ; on les relègue en preuves secondaires.
+**Section 4 – « Ce qu’ils pensent de nous… dans le quartier »**  
+*Contenu :* Avis réels de clients Google du magasin (ex. : « Madame R., avenue du Roule : *Enfin des fenêtres qui ferment sans dénaturer notre immeuble 1930.* ») avec photos avant/après prises à Neuilly même.
 
-**Exemple :**  
-*Ne dites pas :* « Meilleure enseigne de menuiserie pour la 7ᵉ année consécutive ! Demandez votre devis gratuit ! »  
-*Dites :* « Sept fois distinguée, une seule adresse à Neuilly. Venez parler de votre projet. »
+**Section 5 – « Visite & devis : prenez rendez-vous »**  
+*Contenu :* Appelez-nous au **01 59 30 12 29** (téléphone corrigé) ou passez au 31 avenue Charles-de-Gaulle. Horaires : du mardi au samedi, 9h-12h30 / 14h-18h30. Itinéraire direct via Google Maps.
 
----
-
-## 5. Accroche héro
-
-**Titre (H1) :**
-> Menuiseries sur-mesure,  
-> conseil sur place  
-> à Neuilly
-
-**Sous-titre :**
-> Derrière chaque fenêtre de l’avenue Charles de Gaulle, un appartement, une exigence.  
-> Nous vous recevons au 31 pour concevoir la vôtre.
-
-**Bouton primaire :** « Prendre rendez-vous au showroom »
-
-**Lien discret :** « Ou appelez le 01 59 30 12 29 »
-
-L’accroche ancre immédiatement : le lieu, le service, le caractère personnalisé. Le numéro de téléphone local est mis en avant pour corriger l’incohérence relevée par l’audit et instaurer la confiance.
-
----
-
-## 6. Sections
-
-L’ordre proposé corrige la confusion du site actuel en créant un parcours clair : identification locale → expertise → preuves sociales → offre → contact.
-
-### ① Pourquoi ce showroom
-**Titre :** Neuilly, 31 avenue Charles de Gaulle  
-**Contenu :** Un espace de 180 m² où toucher les matériaux, comparer les finitions et rencontrer un interlocuteur qui connaît les copropriétés du 92. Ouvert du mardi au samedi, 9h–12h et 14h–19h. (bloc avec photo réelle du showroom et de l’avenue, plan d’accès intégré)
-
-### ② Votre projet, pas un numéro de catalogue
-**Titre :** Une menuiserie se dessine à quatre mains  
-**Contenu :** Nous commençons par vous écouter : étage, exposition, contraintes de copropriété, ambitions thermiques et acoustiques. Puis nous esquissons, échantillons à l’appui. Fenêtres, portes, volets, pergolas — en PVC, aluminium ou bois. (illustré par un croquis technique en filigrane, un échantillon de matière photographié à plat)
-
-### ③ Fabriqué en France, posé avec soin
-**Titre :** De l’Alsace à votre appartement  
-**Contenu :** Nos menuiseries sont conçues et fabriquées dans nos ateliers de Marckolsheim et des Pays de la Loire. La pose est assurée par des équipes formées, coordonnées par votre interlocuteur de Neuilly. Garantie jusqu’à 30 ans. Labels et certifications en fin de bloc — pas en ouverture. (photo de l’atelier, pas de stock shot générique ; idéalement une image fournie par TRYBA de leurs ateliers réels)
-
-### ④ Ils nous ont confié leurs fenêtres
-**Titre :** Avis de nos clients à Neuilly  
-**Contenu :** Notes réelles issues de Google Maps (4.4/5, 32 avis), mises à jour automatiquement ou manuellement chaque trimestre. Trois témoignages textuels authentiques extraits des avis publics, avec prénom et initiale. Pas de notes génériques nationales (23 195 avis) en premier plan. (bloc sobre, typographie aérée, chaque citation en Hanken Grotesk avec filet latéral)
-
-### ⑤ Offres en cours
-**Titre :** En ce moment au 31  
-**Contenu :** Les offres nationales (triple vitrage au prix du double, porte du mois) présentées sobrement, sans pop-up, avec condition de durée et lien vers « En savoir plus ». (bloc compact, deux colonnes maxi, traitement graphique discret — pas de badges clignotants)
-
-### ⑥ Financement
-**Titre :** Payer en plusieurs fois, sans complication  
-**Contenu :** Solutions de financement en 3, 4 ou 10 fois. Nous vous expliquons les modalités en rendez-vous, simplement. (bloc court, rassurant, sans jargon)
-
-### ⑦ Pied de page
-**Contenu :** Adresse complète, plan, horaires, téléphone (01 59 30 12 29), email, lien vers l’espace client national, mentions légales. Numéro de téléphone cliquable sur mobile.
-
----
-
-## 7. Signature visuelle
-
-**1. Le motif « trait de coupe »**  
-Un filet technique (ligne fine avec amorces perpendiculaires, comme un repère de coupe sur un plan d’atelier) court en bordure de certains blocs — titres de section, séparateurs, encarts de témoignages. Il encode visuellement la précision du fabricant sans alourdir. La couleur du filet alterne entre l’accent Chêne fumé et le soutien Vert ardoise selon le fond.
-
-**2. La surface matière en plein écran**  
-Chaque section s’ouvre sur une photographie en pleine largeur, non pas de produits finis sur fond blanc, mais de **matières brutes photographiées à hauteur d’œil** : un échantillon de chêne avec son fil, une coupe d’aluminium brossé, un détail de vitrage feuilleté. L’image est recadrée serrée, presque abstraite, pour évoquer le toucher plus que le catalogue. Un fondu subtil au scroll dévoile le contenu de la section.
-
-**3. Typographie en tension**  
-Bricolage Grotesque est utilisée en grand pour les titres (H1, H2), avec un crénage serré qui lui donne une assise d’enseigne. Hanken Grotesk assure le confort de lecture en corps 16-18 px. Un jeu d’échelle est assumé : le H1 peut atteindre 4,5 rem sur desktop, créant une présence graphique forte qui contraste avec la légèreté des blocs. Pas de numérotation (01/02/03) artificielle — le parcours est fluide, sans artifice décoratif.
-
----
-
-Ce brief est conçu pour que le site TRYBA Neuilly-sur-Seine ne ressemble ni au site corporate national, ni au site d’un autre franchisé TRYBA, ni à un template générique. Il parle aux habitants de l’avenue Charles de Gaulle avec le ton, les couleurs et la précision que leur quartier mérite.
+**Section 6 – « Carnet de garanties & suivi local »**  
+*Contenu :* 30 ans de garantie pièces et
