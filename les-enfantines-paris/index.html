@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LES ENFANTINES PARIS — Mode enfant 0-8 ans, boutique rue Guichard Paris 16e</title>
+    <meta name="description" content="Boutique de mode pour enfants de 0 à 8 ans au 12 rue Guichard, Paris 16e. Imprimés exclusifs dessinés à Paris, pièces responsables fabriquées au Portugal. Note 4.9★.">
+    <meta property="og:title" content="LES ENFANTINES PARIS — L'enfance en belle étoffe">
+    <meta property="og:description" content="Boutique de mode pour les 0 à 8 ans. Imprimés exclusifs, fabrication portugaise responsable. 12 rue Guichard, Paris 16e.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/les-enfantines-paris">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23DCC9B3'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' font-style='italic' fill='%232E2A29'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coquille: #FBF9F6;
+            --fusain: #2E2A29;
+            --bleu-guichard: #B6C5D0;
+            --bois-poudre: #DCC9B3;
+            --beige-dormant: #E8D5C4;
+            --sable-clair: #F2EFEA;
+            --font-display: 'Playfair Display', 'Times New Roman', serif;
+            --font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+            --section-pad: clamp(3rem, 8vw, 7rem);
+            --content-max: 1200px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            background-color: var(--coquille);
+            color: var(--fusain);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ========== RIDEAU DE VELOURS ========== */
+        .rideau {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--beige-dormant);
+            pointer-events: none;
+            transform: translateY(0);
+            transition: transform 1.3s cubic-bezier(0.65, 0, 0.35, 1);
+            will-change: transform;
+        }
+        .rideau--ouvert {
+            transform: translateY(-105%);
+        }
+        .rideau::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--bois-poudre);
+            opacity: 0.6;
+        }
+        .rideau__texture {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(46, 42, 41, 0.15) 2px,
+                    rgba(46, 42, 41, 0.15) 3px);
+            pointer-events: none;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9000;
+            background: rgba(251, 249, 246, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(220, 201, 179, 0.35);
+            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            transition: box-shadow 0.4s ease;
+        }
+        .header--scrolled {
+            box-shadow: 0 2px 20px rgba(46, 42, 41, 0.06);
+        }
+
+        .header__logo-wrap {
+            flex: 1 1 auto;
+            min-width: 0;
+            text-align: left;
+        }
+        .header__logo {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+            letter-spacing: 0.22em;
+            color: var(--fusain);
+            text-decoration: none;
+            line-height: 1.15;
+            transition: letter-spacing 0.55s ease, color 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        .header__logo:hover {
+            letter-spacing: 0.08em;
+            color: #1c1918;
+        }
+        .header__logo-monogram {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 3.2em;
+            height: 2.4em;
+            pointer-events: none;
+            opacity: 0;
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.4s ease;
+            z-index: -1;
+        }
+        .header__logo-monogram svg {
+            width: 100%;
+            height: 100%;
+        }
+        .header__logo:hover .header__logo-monogram {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.18;
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .header__nav a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            letter-spacing: 0.04em;
+            color: var(--fusain);
+            text-decoration: none;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bois-poudre);
+            transition: width 0.35s ease;
+        }
+        .header__nav a:hover,
+        .header__nav a:focus-visible {
+            color: #1c1918;
+        }
+        .header__nav a:hover::after,
+        .header__nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.03em;
+            color: var(--coquille);
+            background: var(--fusain);
+            padding: 0.5em 1.2em;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.35s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+        .header__cta:hover,
+        .header__cta:focus-visible {
+            background: #1c1918;
+            transform: translateY(-1px);
+        }
+        .header__cta:focus-visible {
+            outline: 2px solid var(--bleu-guichard);
+            outline-offset: 3px;
+        }
+        .header__badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3em;
+            font-size: clamp(0.72rem, 1vw, 0.8rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--fusain);
+            background: var(--sable-clair);
+            padding: 0.35em 0.75em;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .header__badge-google .star {
+            color: #e2a829;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 720px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+                padding: 0.5rem 1rem;
+            }
+            .header__logo-wrap {
+                text-align: left;
+                width: 100%;
+            }
+            .header__nav {
+                gap: 0.6rem 1rem;
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .header__cta {
+                align-self: flex-start;
+            }
+            .header__badge-google {
+                align-self: flex-start;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding: clamp(5rem, 12vw, 9rem) clamp(1rem, 5vw, 4rem) clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 55%;
+            filter: brightness(0.92) saturate(0.85);
+            transform: scale(1.03);
+            animation: hero-zoom-settle 2.2s cubic-bezier(0.25, 0, 0.2, 1) forwards;
+        }
+        @keyframes hero-zoom-settle {
+            from {
+                transform: scale(1.08);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .hero__voile {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to top,
+                    rgba(46, 42, 41, 0.55) 0%,
+                    rgba(46, 42, 41, 0.18) 35%,
+                    rgba(251, 249, 246, 0.06) 65%,
+                    rgba(251, 249, 246, 0.02) 100%);
+        }
+        .hero__texture {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.045;
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='0.6' fill='%232E2A29'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            animation: hero-fade-up 1.6s 0.4s cubic-bezier(0.25, 0, 0.2, 1) both;
+        }
+        @keyframes hero-fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(38px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero__titre {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 6.5vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: #fff;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0.35em;
+        }
+        .hero__sous-titre {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+        }
+        .hero__sous-titre a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(255, 255, 255, 0.45);
+            transition: text-decoration-color 0.3s;
+        }
+        .hero__sous-titre a:hover {
+            text-decoration-color: rgba(255, 255, 255, 0.85);
+        }
+        .hero__indice {
+            position: absolute;
+            bottom: clamp(1.5rem, 3vw, 2.5rem);
+            right: clamp(1rem, 4vw, 3rem);
+            z-index: 2;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            animation: hero-fade-up 1.6s 0.7s cubic-bezier(0.25, 0, 0.2, 1) both;
+        }
+
+        /* ========== SÉPARATEUR FIL & AIGUILLE ========== */
+        .separateur {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            padding: 0 clamp(1rem, 5vw, 3rem);
+            max-width: var(--content-max);
+            margin: 0 auto;
+            position: relative;
+        }
+        .separateur__ligne {
+            flex: 1 1 auto;
+            height: 1px;
+            background: var(--bois-poudre);
+            position: relative;
+        }
+        .separateur__bouton {
+            flex: 0 0 auto;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bois-poudre);
+            margin: 0 clamp(0.6rem, 1.5vw, 1.2rem);
+            position: relative;
+            box-shadow: 0 0 0 3px var(--coquille), 0 0 0 5px rgba(220, 201, 179, 0.3);
+            flex-shrink: 0;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: var(--section-pad) clamp(1rem, 5vw, 3rem);
+            position: relative;
+        }
+        .section__inner {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+        .section__titre {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+            letter-spacing: 0.02em;
+            color: var(--fusain);
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+        .section__texte {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+            line-height: 1.75;
+            letter-spacing: 0.015em;
+            color: var(--fusain);
+            max-width: 680px;
+        }
+        .section__texte+.section__texte {
+            margin-top: 1em;
+        }
+
+        /* ========== BOUTIQUE ========== */
+        .boutique__photos {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            grid-template-rows: auto auto;
+            gap: clamp(0.6rem, 1.5vw, 1.2rem);
+            margin-bottom: 2.5rem;
+        }
+        .boutique__photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            background: var(--sable-clair);
+        }
+        .boutique__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease, filter 0.5s ease;
+        }
+        .boutique__photo:hover img {
+            transform: scale(1.04);
+        }
+        .boutique__photo--principale {
+            grid-row: 1 / 3;
+            aspect-ratio: 3 / 4;
+            min-height: 350px;
+        }
+        .boutique__photo--secondaire {
+            aspect-ratio: 4 / 3;
+            min-height: 180px;
+        }
+        .boutique__photo--texture {
+            background: var(--sable-clair);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 4 / 3;
+            min-height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .boutique__photo--texture::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(182, 197, 208, 0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 60%, rgba(220, 201, 179, 0.3) 0%, transparent 55%);
+            z-index: 1;
+        }
+        .boutique__photo--texture::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 8px,
+                    rgba(46, 42, 41, 0.02) 8px,
+                    rgba(46, 42, 41, 0.02) 9px);
+            z-index: 2;
+        }
+        .boutique__photo-legende {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            padding: 1.2rem 1rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--fusain);
+            background: linear-gradient(to top, rgba(251, 249, 246, 0.9), transparent);
+        }
+        .boutique__infos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--sable-clair);
+            border-radius: 2px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 0.5rem;
+        }
+        .boutique__infos h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.6em;
+            color: var(--fusain);
+        }
+        .boutique__infos p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.3em;
+        }
+        .boutique__infos a {
+            color: var(--fusain);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: var(--bois-poudre);
+            transition: text-decoration-color 0.3s;
+        }
+        .boutique__infos a:hover {
+            text-decoration-color: var(--fusain);
+        }
+        .boutique__carte {
+            margin-top: 2rem;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(46, 42, 41, 0.07);
+        }
+        .boutique__carte iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        @media (max-width: 720px) {
+            .boutique__photos {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .boutique__photo--principale {
+                grid-row: auto;
+                aspect-ratio: 4/3;
+                min-height: 250px;
+            }
+            .boutique__infos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SAVOIR-FAIRE ========== */
+        .savoir-faire {
+            position: relative;
+        }
+        .savoir-faire__bloc {
+            position: relative;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            background: var(--sable-clair);
+            border-radius: 2px;
+            border-left: 3px solid var(--bleu-guichard);
+        }
+        .savoir-faire__bloc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(220, 201, 179, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        /* ========== UNIVERS ========== */
+        .univers__galerie {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(0.8rem, 2vw, 1.5rem);
+        }
+        .univers__carte {
+            background: var(--sable-clair);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+            cursor: default;
+            position: relative;
+        }
+        .univers__carte:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(46, 42, 41, 0.1);
+        }
+        .univers__carte-illustration {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--coquille);
+            position: relative;
+            overflow: hidden;
+        }
+        .univers__carte-illustration svg {
+            width: 45%;
+            height: 45%;
+            opacity: 0.55;
+            transition: opacity 0.4s ease, transform 0.5s ease;
+        }
+        .univers__carte:hover .univers__carte-illustration svg {
+            opacity: 0.75;
+            transform: scale(1.08);
+        }
+        .univers__carte-illustration::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(182, 197, 208, 0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .univers__carte-body {
+            padding: 1rem 1.1rem 1.3rem;
+        }
+        .univers__carte-nom {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.03em;
+            color: var(--fusain);
+            margin-bottom: 0.35em;
+        }
+        .univers__carte-desc {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #4a4543;
+        }
+
+        @media (max-width: 900px) {
+            .univers__galerie {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .univers__galerie {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== FIDÈLES ========== */
+        .fideles__grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+        .fideles__carte {
+            background: var(--coquille);
+            border: 1px solid rgba(220, 201, 179, 0.4);
+            border-radius: 2px;
+            padding: clamp(1.4rem, 2.5vw, 2rem);
+            position: relative;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .fideles__carte:hover {
+            border-color: var(--bois-poudre);
+            box-shadow: 0 6px 24px rgba(46, 42, 41, 0.05);
+        }
+        .fideles__carte-etoiles {
+            color: #c9a03a;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.7em;
+        }
+        .fideles__carte-texte {
+            font-family: var(--font-body);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            letter-spacing: 0.015em;
+            color: var(--fusain);
+            margin-bottom: 1em;
+        }
+        .fideles__carte-auteur {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--fusain);
+        }
+        .fideles__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            background: var(--sable-clair);
+            padding: 0.4em 1em;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 2rem;
+        }
+        .fideles__badge .star-big {
+            color: #c9a03a;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 720px) {
+            .fideles__grille {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--fusain);
+            color: rgba(251, 249, 246, 0.8);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 5vw, 3rem);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+        .footer__inner {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .footer a {
+            color: rgba(251, 249, 246, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: rgba(251, 249, 246, 0.25);
+            transition: color 0.3s, text-decoration-color 0.3s;
+        }
+        .footer a:hover {
+            color: #fff;
+            text-decoration-color: rgba(251, 249, 246, 0.6);
+        }
+        .footer__signature {
+            margin-top: 2rem;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            color: rgba(251, 249, 246, 0.5);
+        }
+        .footer__mooo {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            color: rgba(251, 249, 246, 0.35);
+        }
+        @media (max-width: 720px) {
+            .footer__inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== REVEAL AU SCROLL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0, 0.2, 1);
+        }
+        .reveal--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal--delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal--delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal--delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal--delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== FOCUS VISIBLE ========== */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--bleu-guichard);
+            outline-offset: 3px;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- RIDEAU DE VELOURS -->
+    <div class="rideau" id="rideau" aria-hidden="true">
+        <div class="rideau__texture"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header" role="banner">
+        <div class="header__logo-wrap">
+            <a href="#" class="header__logo" aria-label="LES ENFANTINES PARIS — retour à l'accueil">
+                Enfantines
+                <span class="header__logo-monogram" aria-hidden="true">
+                    <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg">
+                        <text x="50" y="52" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-weight="700" font-size="58" fill="#2E2A29" opacity="0.7">ef</text>
+                    </svg>
+                </span>
+            </a>
+        </div>
+        <nav class="header__nav" aria-label="Navigation principale">
+            <a href="#boutique">La Boutique</a>
+            <a href="#savoir-faire">Savoir-faire</a>
+            <a href="#univers">L'Univers</a>
+            <a href="#fideles">Avis</a>
+        </nav>
+        <span class="header__badge-google" aria-label="Note Google 4.9 sur 5">
+            <span class="star" aria-hidden="true">★</span> 4.9
+        </span>
+        <a href="tel:+33984140101" class="header__cta" aria-label="Appeler le 09 84 14 01 01">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Appeler
+        </a>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content">
+
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="hero-titre">
+            <div class="hero__bg">
+                <img src="assets/maps-1.jpg" alt="Intérieur de la boutique LES ENFANTINES PARIS — ambiance boisée et lumineuse" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero__voile" aria-hidden="true"></div>
+            <div class="hero__texture" aria-hidden="true"></div>
+            <div class="hero__content">
+                <h1 class="hero__titre" id="hero-titre">L'enfance en belle étoffe</h1>
+                <p class="hero__sous-titre">
+                    Boutique de mode pour les 0 à 8&nbsp;ans — imprimés exclusifs dessinés à Paris, pièces responsables fabriquées au Portugal.<br>
+                    <a href="https://maps.google.com/maps?q=12+Rue+Guichard+Paris" target="_blank" rel="noopener">12 rue Guichard, Paris 16e</a>
+                    &nbsp;·&nbsp;
+                    <a href="tel:+33984140101">09 84 14 01 01</a>
+                    &nbsp;·&nbsp; Ouvert du mardi au samedi
+                </p>
+            </div>
+            <span class="hero__indice" aria-hidden="true">Poussez la porte</span>
+        </section>
+
+        <!-- SÉPARATEUR -->
+        <div class="separateur" aria-hidden="true">
+            <span class="separateur__ligne"></span>
+            <span class="separateur__bouton"></span>
+            <span class="separateur__ligne"></span>
+        </div>
+
+        <!-- ① LA BOUTIQUE -->
+        <section class="section" id="boutique" aria-labelledby="titre-boutique">
+            <div class="section__inner">
+                <h2 class="section__titre reveal" id="titre-boutique">Rue Guichard</h2>
+                <div class="boutique__photos reveal reveal--delay-1">
+                    <div class="boutique__photo boutique__photo--principale">
+                        <img src="assets/maps-1.jpg" alt="Ambiance intérieure de la boutique LES ENFANTINES — bois clair et lumière douce" loading="lazy">
+                    </div>
+                    <div class="boutique__photo boutique__photo--secondaire">
+                        <img src="assets/maps-1.jpg" alt="Détail de la vitrine apprêtée" loading="lazy" style="object-position: 50% 20%;">
+                    </div>
+                    <div class="boutique__photo--texture boutique__photo--secondaire">
+                        <span class="boutique__photo-legende">Coton gaze, étagères basses — un écrin à taille d'enfant.</span>
+                    </div>
+                </div>
+                <p class="section__texte reveal reveal--delay-2">
+                    C'est une adresse qui se mérite, à deux pas de l'avenue Mozart. Une devanture sobre, un intérieur à taille d'enfant où l'on prend le temps. Bois clair, étagères basses, lumière douce&nbsp;: ici, on choisit le trousseau comme on choisit un livre.
+                </p>
+
+                <div class="boutique__infos reveal reveal--delay-3">
+                    <div>
+                        <h3>Coordonnées</h3>
+                        <p>12 Rue Guichard<br>75016 Paris, France</p>
+                        <p><a href="tel:+33984140101">09 84 14 01 01</a></p>
+                        <p><a href="mailto:contact@lesenfantines.com">contact@lesenfantines.com</a></p>
+                    </div>
+                    <div>
+                        <h3>Horaires</h3>
+                        <p>Mardi — Vendredi&nbsp;: 10h–19h</p>
+                        <p>Samedi&nbsp;: 10h–18h30</p>
+                        <p>Dimanche &amp; Lundi&nbsp;: fermé</p>
+                        <p style="font-size:0.8rem;color:#5c5654;margin-top:0.4em;">Horaires indicatifs — nous vous invitons à confirmer avant votre visite.</p>
+                    </div>
+                </div>
+
+                <div class="boutique__carte reveal reveal--delay-4">
+                    <iframe src="https://maps.google.com/maps?q=LES+ENFANTINES+PARIS+12+Rue+Guichard%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — LES ENFANTINES PARIS, 12 rue Guichard"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉPARATEUR -->
+        <div class="separateur" aria-hidden="true">
+            <span class="separateur__ligne"></span>
+            <span class="separateur__bouton"></span>
+            <span class="separateur__ligne"></span>
+        </div>
+
+        <!-- ② LE SAVOIR-FAIRE -->
+        <section class="section savoir-faire" id="savoir-faire" aria-labelledby="titre-savoir-faire">
+            <div class="section__inner">
+                <h2 class="section__titre reveal" id="titre-savoir-faire">Du coton, du Portugal, du temps</h2>
+                <div class="savoir-faire__bloc reveal reveal--delay-1">
+                    <p class="section__texte">
+                        Nos ateliers familiaux au Portugal tissent des exclusivités que vous ne verrez nulle part ailleurs. Chaque imprimé naît d'un dessin original, chaque coupe est pensée pour le mouvement de l'enfant et la main du parent. Les matières sont certifiées <strong>OEKO-TEX</strong>, douces sur la peau, résistantes au lavage.
+                    </p>
+                    <p class="section__texte">
+                        Une mode responsable, au rythme des saisons, sans surproduction — parce qu'un vêtement d'enfant doit pouvoir être transmis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉPARATEUR -->
+        <div class="separateur" aria-hidden="true">
+            <span class="separateur__ligne"></span>
+            <span class="separateur__bouton"></span>
+            <span class="separateur__ligne"></span>
+        </div>
+
+        <!-- ③ L'UNIVERS -->
+        <section class="section" id="univers" aria-labelledby="titre-univers">
+            <div class="section__inner">
+                <h2 class="section__titre reveal" id="titre-univers">Barboteuses, chouettes et compagnie</h2>
+                <div class="univers__galerie">
+                    <div class="univers__carte reveal reveal--delay-1">
+                        <div class="univers__carte-illustration" aria-hidden="true">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="55" cy="75" rx="35" ry="18" fill="#B6C5D0" opacity="0.6"/>
+                                <ellipse cx="55" cy="48" rx="16" ry="14" fill="#B6C5D0" opacity="0.7"/>
+                                <circle cx="48" cy="43" r="2.5" fill="#2E2A29" opacity="0.5"/>
+                                <circle cx="60" cy="43" r="2.5" fill="#2E2A29" opacity="0.5"/>
+                                <ellipse cx="54" cy="50" rx="4" ry="2.5" fill="#2E2A29" opacity="0.4"/>
+                                <path d="M55 90 Q75 70 90 75 Q95 78 92 85" stroke="#B6C5D0" stroke-width="3" fill="none" opacity="0.55"/>
+                            </svg>
+                        </div>
+                        <div class="univers__carte-body">
+                            <p class="univers__carte-nom">Loutre</p>
+                            <p class="univers__carte-desc">Un imprimé facétieux né d'une aquarelle de Camille, notre illustratrice maison.</p>
+                        </div>
+                    </div>
+                    <div class="univers__carte reveal reveal--delay-2">
+                        <div class="univers__carte-illustration" aria-hidden="true">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="60" cy="65" rx="28" ry="32" fill="#B6C5D0" opacity="0.55"/>
+                                <circle cx="48" cy="50" r="10" fill="#FBF9F6" opacity="0.8"/>
+                                <circle cx="72" cy="50" r="10" fill="#FBF9F6" opacity="0.8"/>
+                                <circle cx="48" cy="50" r="5" fill="#2E2A29" opacity="0.55"/>
+                                <circle cx="72" cy="50" r="5" fill="#2E2A29" opacity="0.55"/>
+                                <path d="M55 72 L60 68 L65 72" stroke="#2E2A29" stroke-width="2" fill="none" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="univers__carte-body">
+                            <p class="univers__carte-nom">Chouette</p>
+                            <p class="univers__carte-desc">Sage et curieuse, elle veille sur les premiers sommeils. Un motif au charme narratif.</p>
+                        </div>
+                    </div>
+                    <div class="univers__carte reveal reveal--delay-3">
+                        <div class="univers__carte-illustration" aria-hidden="true">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="60" cy="80" rx="25" ry="20" fill="#B6C5D0" opacity="0.5"/>
+                                <path d="M60 60 Q60 20 65 15" stroke="#B6C5D0" stroke-width="4" fill="none" opacity="0.6"/>
+                                <ellipse cx="66" cy="18" rx="9" ry="7" fill="#B6C5D0" opacity="0.65"/>
+                                <circle cx="69" cy="15" r="2" fill="#2E2A29" opacity="0.5"/>
+                                <path d="M45 68 L55 58 M75 68 L65 58" stroke="#B6C5D0" stroke-width="2.5" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="univers__carte-body">
+                            <p class="univers__carte-nom">Autruche</p>
+                            <p class="univers__carte-desc">Une allure gracile, un brin d'humour — l'imprimé qui fait sourire les grands.</p>
+                        </div>
+                    </div>
+                    <div class="univers__carte reveal reveal--delay-4">
+                        <div class="univers__carte-illustration" aria-hidden="true">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="60" cy="72" rx="30" ry="24" fill="#B6C5D0" opacity="0.55"/>
+                                <ellipse cx="60" cy="48" rx="18" ry="16" fill="#B6C5D0" opacity="0.6"/>
+                                <circle cx="53" cy="44" r="2.5" fill="#2E2A29" opacity="0.45"/>
+                                <circle cx="67" cy="44" r="2.5" fill="#2E2A29" opacity="0.45"/>
+                                <ellipse cx="60" cy="52" rx="5" ry="3" fill="#2E2A29" opacity="0.35"/>
+                                <ellipse cx="45" cy="80" rx="8" ry="5" fill="#B6C5D0" opacity="0.4"/>
+                                <ellipse cx="75" cy="80" rx="8" ry="5" fill="#B6C5D0" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="univers__carte-body">
+                            <p class="univers__carte-nom">Marmotte</p>
+                            <p class="univers__carte-desc">Ronde et rassurante, elle incarne la douceur des pièces en molleton brossé.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉPARATEUR -->
+        <div class="separateur" aria-hidden="true">
+            <span class="separateur__ligne"></span>
+            <span class="separateur__bouton"></span>
+            <span class="separateur__ligne"></span>
+        </div>
+
+        <!-- ④ LES FIDÈLES -->
+        <section class="section" id="fideles" aria-labelledby="titre-fideles">
+            <div class="section__inner">
+                <h2 class="section__titre reveal" id="titre-fideles">Ils nous confient leurs enfants</h2>
+                <div class="fideles__badge reveal reveal--delay-1">
+                    <span class="star-big" aria-hidden="true">★</span>
+                    <span>4.9 sur 5 — 54 avis Google</span>
+                </div>
+                <div class="fideles__grille">
+                    <div class="fideles__carte reveal reveal--delay-1">
+                        <div class="fideles__carte-etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="fideles__carte-texte">« Une pépite rue Guichard. Du beau, de l'intemporel, des finitions impeccables. On entre pour un cadeau de naissance, on revient pour la garde-robe complète. »</p>
+                        <p class="fideles__carte-auteur">Marie</p>
+                    </div>
+                    <div class="fideles__carte reveal reveal--delay-2">
+                        <div class="fideles__carte-etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="fideles__carte-texte">« Un accueil rare, des conseils justes et une sélection de pièces qu'on ne trouve nulle part ailleurs. Les imprimés sont sublimes, la qualité au rendez-vous. »</p>
+                        <p class="fideles__carte-auteur">Constance</p>
+                    </div>
+                    <div class="fideles__carte reveal reveal--delay-3">
+                        <div class="fideles__carte-etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+                        <p class="fideles__carte-texte">« Le genre d'adresse qu'on a envie de garder pour soi. Les matières sont douces, les coupes bien pensées, et l'équipe connaît chaque tissu par cœur. »</p>
+                        <p class="fideles__carte-auteur">Julien</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div>
+                <p style="font-family:var(--font-display);font-style:italic;font-weight:600;font-size:1.1rem;letter-spacing:0.04em;color:#fff;margin-bottom:0.5em;">LES ENFANTINES</p>
+                <p>12 Rue Guichard<br>75016 Paris, France</p>
+                <p><a href="tel:+33984140101">09 84 14 01 01</a></p>
+                <p><a href="mailto:contact@lesenfantines.com">contact@lesenfantines.com</a></p>
+            </div>
+            <div>
+                <p style="font-weight:600;color:#fff;margin-bottom:0.4em;">Horaires</p>
+                <p>Mardi — Vendredi&nbsp;: 10h–19h</p>
+                <p>Samedi&nbsp;: 10h–18h30</p>
+                <p>Dimanche &amp; Lundi&nbsp;: fermé</p>
+            </div>
+            <div>
+                <p style="font-weight:600;color:#fff;margin-bottom:0.4em;">Suivez-nous</p>
+                <p><a href="#" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="#" target="_blank" rel="noopener">Pinterest</a></p>
+            </div>
+        </div>
+        <p class="footer__signature">LES ENFANTINES — un goût de Paris, une pointe d'enfance, depuis 2018.</p>
+        <p class="footer__mooo">Site créé par Agence Mooo</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // === RIDEAU DE VELOURS ===
+            const rideau = document.getElementById('rideau');
+            if (rideau) {
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReduced) {
+                    rideau.style.display = 'none';
+                } else {
+                    // Petit délai pour que le rideau soit visible avant l'ouverture
+                    window.addEventListener('load', function() {
+                        setTimeout(function() {
+                            rideau.classList.add('rideau--ouvert');
+                            // Nettoyage après l'animation
+                            rideau.addEventListener('transitionend', function() {
+                                rideau.style.display = 'none';
+                            }, { once: true });
+                        }, 350);
+                    });
+                    // Fallback si load déjà déclenché
+                    if (document.readyState === 'complete') {
+                        setTimeout(function() {
+                            rideau.classList.add('rideau--ouvert');
+                            rideau.addEventListener('transitionend', function() {
+                                rideau.style.display = 'none';
+                            }, { once: true });
+                        }, 350);
+                    }
+                }
+            }
+
+            // === HEADER SCROLL ===
+            const header = document.getElementById('header');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 30) {
+                            header.classList.add('header--scrolled');
+                        } else {
+                            header.classList.remove('header--scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // === INTERSECTION OBSERVER POUR REVEALS ===
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.12
+                };
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal--visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback sans observer
+                revealElements.forEach(function(el) {
+                    el.classList.add('reveal--visible');
+                });
+            }
+
+            // === FERMETURE DOUCE DU RIDEAU AU CLIC (mobile, impatient) ===
+            if (rideau && rideau.style.display !== 'none') {
+                rideau.addEventListener('click', function() {
+                    rideau.classList.add('rideau--ouvert');
+                    rideau.addEventListener('transitionend', function() {
+                        rideau.style.display = 'none';
+                    }, { once: true });
+                });
+            }
+        })();
+    </script>
+
+    <!-- SCHEMA.ORG LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "LES ENFANTINES PARIS",
+            "description": "Boutique de mode pour enfants de 0 à 8 ans — imprimés exclusifs dessinés à Paris, pièces responsables fabriquées au Portugal.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "12 Rue Guichard",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33984140101",
+            "email": "contact@lesenfantines.com",
+            "url": "https://agence.mooo.com/les-enfantines-paris",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ], "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00",
+                    "closes": "18:30" }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "54",
+                "bestRating": "5"
+            },
+            "priceRange": "€€"
+        }
+    </script>
+</body>
+</html>
