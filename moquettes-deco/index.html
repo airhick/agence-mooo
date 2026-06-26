@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOQUETTES DECO — Moquettes, tapis & parquets sur mesure à Paris 16e</title>
+    <meta name="description" content="Maison GAROTEX depuis 1948. MOQUETTES DECO vous accueille au 1 rue des Bauches, Paris 16e. Conseil, pose et entretien de moquettes, tapis et parquets. Note 5★ sur Google.">
+    <meta property="og:title" content="MOQUETTES DECO — Artisan du sol depuis 1948">
+    <meta property="og:description" content="Chaque sol raconte une vie. Depuis 1948, nous lui donnons du caractère. Moquettes, tapis, parquets au cœur du 16e arrondissement.">
+    <meta property="og:image" content="https://agence.mooo.com/moquettes-deco/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/moquettes-deco">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='16' width='100' height='100' fill='%23B3433A'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-size='56' font-family='serif' font-weight='700' fill='%23EDE6D7'>M</text></svg>">
+    <style>
+        :root {
+            --mastic: #EDE6D7;
+            --brique: #B3433A;
+            --brique-deep: #8C2F28;
+            --encre: #2C2523;
+            --bleu: #4A6B7C;
+            --bleu-deep: #354E5C;
+            --mousse: #5C6E56;
+            --mousse-deep: #465342;
+            --argile: #F3EDE4;
+            --argile-clair: #FAF7F2;
+            --grain-opacity: 0.06;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.05vw, 17px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--mastic);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10000;
+            opacity: var(--grain-opacity);
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.45'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ============ SCROLL PROGRESS THREAD ============ */
+        #scroll-thread {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 0%;
+            background: var(--brique);
+            z-index: 9000;
+            transition: height 0.15s linear;
+            border-radius: 0 3px 3px 0;
+            box-shadow: 0 0 10px rgba(179, 67, 58, 0.35);
+        }
+        @media (max-width: 768px) {
+            #scroll-thread {
+                width: 3px;
+                left: auto;
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+        }
+
+        /* ============ HEADER ============ */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 8000;
+            background: rgba(237, 230, 215, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(44, 37, 35, 0.08);
+            padding: 0.65rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(44, 37, 35, 0.08);
+            background: rgba(237, 230, 215, 0.97);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--encre);
+            flex-shrink: 0;
+        }
+        .header-logo-mark {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            background: var(--brique);
+            color: var(--mastic);
+            width: 2.5em;
+            height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .header-logo-mark::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1.5px solid rgba(237, 230, 215, 0.3);
+            border-radius: 1px;
+            pointer-events: none;
+        }
+        .header-name {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.15vw, 0.95rem);
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            color: var(--encre);
+        }
+        .header-name small {
+            display: block;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+            color: var(--brique);
+            text-transform: uppercase;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.6rem, 2vw, 1.4rem);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--encre);
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.25s;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brique);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--brique);
+        }
+        .header-cta {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+            background: var(--brique);
+            color: var(--mastic);
+            padding: 0.6em 1.3em;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.2s var(--ease-spring);
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+        }
+        .header-cta:hover {
+            background: var(--brique-deep);
+            transform: scale(1.03);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--brique);
+            outline-offset: 3px;
+        }
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            background: var(--argile);
+            padding: 0.35em 0.7em;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--encre);
+            white-space: nowrap;
+            border: 1px solid rgba(179, 67, 58, 0.15);
+        }
+        .badge-google .stars {
+            color: #E4A825;
+            font-size: 0.9em;
+            letter-spacing: -0.05em;
+        }
+        @media (max-width: 640px) {
+            .header-nav {
+                gap: 0.5rem;
+                font-size: 0.7rem;
+            }
+            .badge-google {
+                font-size: 0.68rem;
+                padding: 0.25em 0.5em;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.5em 1em;
+            }
+            .header-name {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: var(--encre);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 60% 35%;
+            filter: brightness(0.82) contrast(1.08) saturate(0.75);
+            animation: hero-img-reveal 1.8s var(--ease-out-expo) forwards;
+        }
+        @keyframes hero-img-reveal {
+            from {
+                transform: scale(1.08);
+                filter: brightness(0.5) contrast(1.15) saturate(0.5) blur(3px);
+            }
+            to {
+                transform: scale(1);
+                filter: brightness(0.82) contrast(1.08) saturate(0.75) blur(0);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg,
+                    rgba(44, 37, 35, 0.55) 0%,
+                    rgba(44, 37, 35, 0.3) 40%,
+                    rgba(44, 37, 35, 0.55) 85%,
+                    rgba(44, 37, 35, 0.8) 100%);
+            pointer-events: none;
+        }
+        /* Scan textile - bandes animées */
+        .hero-scan-stripes {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5vw;
+            padding: 0 4vw;
+            opacity: 1;
+        }
+        .scan-stripe {
+            flex: 1;
+            max-width: 70px;
+            height: 120vh;
+            transform: translateY(-120vh);
+            border-radius: 2px;
+            animation: scan-drop 1.6s var(--ease-out-expo) forwards;
+            opacity: 0.55;
+            mix-blend-mode: soft-light;
+        }
+        .scan-stripe:nth-child(1) {
+            background: var(--brique);
+            animation-delay: 0s;
+        }
+        .scan-stripe:nth-child(2) {
+            background: var(--bleu);
+            animation-delay: 0.08s;
+        }
+        .scan-stripe:nth-child(3) {
+            background: var(--mousse);
+            animation-delay: 0.16s;
+        }
+        .scan-stripe:nth-child(4) {
+            background: var(--brique);
+            animation-delay: 0.24s;
+            max-width: 50px;
+        }
+        .scan-stripe:nth-child(5) {
+            background: var(--encre);
+            animation-delay: 0.32s;
+            max-width: 55px;
+        }
+        .scan-stripe:nth-child(6) {
+            background: var(--bleu);
+            animation-delay: 0.4s;
+            max-width: 65px;
+        }
+        .scan-stripe:nth-child(7) {
+            background: var(--mousse);
+            animation-delay: 0.48s;
+            max-width: 45px;
+        }
+        @keyframes scan-drop {
+            0% {
+                transform: translateY(-130vh);
+            }
+            35% {
+                transform: translateY(-15vh);
+            }
+            55% {
+                transform: translateY(-2vh);
+            }
+            70% {
+                transform: translateY(-5vh);
+            }
+            85% {
+                transform: translateY(0vh);
+            }
+            92% {
+                transform: translateY(1vh);
+            }
+            100% {
+                transform: translateY(0vh);
+                opacity: 0.25;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scan-stripe {
+                animation: none;
+                opacity: 0.2;
+                transform: translateY(0);
+            }
+            .hero-bg img {
+                animation: none;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: clamp(2.5rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+            color: #fff;
+            max-width: 900px;
+        }
+        .hero-label {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.65rem, 0.95vw, 0.8rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            opacity: 0;
+            animation: fade-up 0.7s 0.6s var(--ease-out-expo) forwards;
+        }
+        .hero-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4.5vw, 3.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.9rem;
+            opacity: 0;
+            animation: fade-up 0.8s 0.75s var(--ease-out-expo) forwards;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+            max-width: 22ch;
+        }
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+            font-weight: 400;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 36ch;
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fade-up 0.8s 0.9s var(--ease-out-expo) forwards;
+        }
+        .hero-btn {
+            display: inline-block;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.05vw, 0.9rem);
+            letter-spacing: 0.04em;
+            background: var(--brique);
+            color: #fff;
+            padding: 0.85em 2em;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background 0.25s, box-shadow 0.3s, transform 0.2s var(--ease-spring);
+            opacity: 0;
+            animation: fade-up 0.8s 1.05s var(--ease-out-expo) forwards;
+            box-shadow: 0 6px 28px rgba(179, 67, 58, 0.4);
+        }
+        .hero-btn:hover {
+            background: var(--brique-deep);
+            box-shadow: 0 10px 36px rgba(179, 67, 58, 0.55);
+            transform: translateY(-2px);
+        }
+        .hero-btn:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 80vh;
+                align-items: flex-end;
+            }
+            .hero-content {
+                padding: 2rem 1.2rem 1.8rem;
+            }
+            .scan-stripe {
+                gap: 1.5vw;
+            }
+        }
+
+        /* ============ SECTIONS SHARED ============ */
+        .section {
+            padding: clamp(3rem, 7vw, 5.5rem) clamp(1rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.6rem, 0.85vw, 0.72rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--brique);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+            line-height: 1.18;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            margin-bottom: 0.9rem;
+        }
+        .section-intro {
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            color: #4a3f3c;
+            max-width: 50ch;
+            line-height: 1.65;
+            letter-spacing: 0.015em;
+        }
+
+        /* ============ ATELIER ============ */
+        .atelier-section {
+            background: var(--argile);
+            position: relative;
+            overflow: hidden;
+        }
+        .atelier-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(179, 67, 58, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .atelier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .atelier-visual {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--encre);
+            box-shadow: 0 4px 32px rgba(44, 37, 35, 0.18);
+        }
+        .atelier-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.9) contrast(1.05) saturate(0.7);
+            transition: filter 0.6s, transform 0.6s;
+        }
+        .atelier-visual:hover img {
+            filter: brightness(0.78) contrast(1.12) saturate(0.55);
+            transform: scale(1.03);
+        }
+        .atelier-visual .label-tag {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 1.2rem;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            background: var(--mastic);
+            color: var(--brique);
+            padding: 0.4em 0.9em;
+            border-radius: 2px;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .atelier-text {
+            position: relative;
+        }
+        .atelier-text .histoire {
+            font-size: clamp(0.85rem, 1.05vw, 0.95rem);
+            color: #3d3330;
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+        .atelier-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .atelier-stat {
+            text-align: left;
+        }
+        .atelier-stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            color: var(--bleu);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .atelier-stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #5c4f4b;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .atelier-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .atelier-visual {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+            .atelier-stats {
+                gap: 1.5rem;
+            }
+        }
+
+        /* ============ FAMILLES (3 cartes) ============ */
+        .familles-section {
+            background: var(--mastic);
+            position: relative;
+        }
+        .familles-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(90deg, var(--brique) 0px, var(--brique) 18px, transparent 18px, transparent 32px, var(--bleu) 32px, var(--bleu) 44px, transparent 44px, transparent 58px, var(--mousse) 58px, var(--mousse) 70px, transparent 70px, transparent 84px);
+            opacity: 0.5;
+            z-index: 2;
+        }
+        .familles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            margin-top: 2.5rem;
+        }
+        .famille-card {
+            background: var(--argile-clair);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.35s var(--ease-spring), box-shadow 0.35s;
+            box-shadow: 0 2px 16px rgba(44, 37, 35, 0.06);
+            border: 1px solid rgba(44, 37, 35, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .famille-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(44, 37, 35, 0.13);
+        }
+        .famille-card-visual {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .famille-card-visual .texture-bg {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.6s;
+        }
+        .famille-card:hover .texture-bg {
+            transform: scale(1.06);
+        }
+        .texture-moquette {
+            background: linear-gradient(135deg, #6b4c45 0%, #8b5e54 20%, #5c3830 40%, #7a4e42 55%, #4a2e27 70%, #8b5e54 90%);
+            background-size: 400% 400%;
+            animation: texture-shimmer 8s ease-in-out infinite;
+        }
+        .texture-tapis {
+            background: linear-gradient(135deg, #3d5c6e 0%, #5a7d92 25%, #2e4554 45%, #4e6d80 60%, #3a5262 78%, #5a7d92 100%);
+            background-size: 350% 350%;
+            animation: texture-shimmer 10s ease-in-out infinite;
+        }
+        .texture-parquet {
+            background: linear-gradient(135deg, #7a6b5a 0%, #9c8b78 20%, #5e4f3e 40%, #8a7a66 55%, #6b5c4a 72%, #9c8b78 95%);
+            background-size: 380% 380%;
+            animation: texture-shimmer 9s ease-in-out infinite;
+        }
+        @keyframes texture-shimmer {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
+        }
+        .famille-card-visual .card-label {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            background: var(--mastic);
+            color: var(--brique);
+            padding: 0.35em 0.7em;
+            border-radius: 2px;
+            z-index: 1;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+        }
+        .famille-card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .famille-card-body h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 0.4rem;
+        }
+        .famille-card-body p {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: #4a3f3c;
+            letter-spacing: 0.015em;
+            flex: 1;
+        }
+        .famille-card-link {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--brique);
+            text-decoration: none;
+            margin-top: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            transition: gap 0.3s;
+        }
+        .famille-card-link:hover {
+            gap: 0.7em;
+        }
+        .famille-card-link::after {
+            content: '→';
+            font-size: 1.1em;
+            transition: transform 0.3s;
+        }
+        .famille-card-link:hover::after {
+            transform: translateX(3px);
+        }
+        @media (max-width: 768px) {
+            .familles-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .familles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ MUR DES TEXTURES ============ */
+        .textures-section {
+            background: var(--argile);
+            position: relative;
+            overflow: hidden;
+        }
+        .textures-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 1.5rem 0 0.5rem;
+            margin-top: 1.5rem;
+            cursor: grab;
+            scrollbar-width: thin;
+            scrollbar-color: var(--brique) transparent;
+        }
+        .textures-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .textures-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .textures-scroll::-webkit-scrollbar-thumb {
+            background: var(--brique);
+            border-radius: 3px;
+        }
+        .texture-item {
+            flex: 0 0 clamp(200px, 28vw, 280px);
+            scroll-snap-align: start;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4;
+            box-shadow: 0 3px 20px rgba(44, 37, 35, 0.1);
+            transition: box-shadow 0.35s;
+        }
+        .texture-item:hover {
+            box-shadow: 0 8px 32px rgba(44, 37, 35, 0.2);
+        }
+        .texture-item-bg {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+        .texture-item:hover .texture-item-bg {
+            transform: scale(1.07);
+        }
+        .texture-item figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(0deg, rgba(44, 37, 35, 0.85) 0%, transparent 100%);
+            color: #fff;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            z-index: 1;
+        }
+        /* Texture swatches */
+        .swatch-velours {
+            background: radial-gradient(ellipse at 30% 20%, #6b3a4a 0%, #3d1f2a 50%, #1f0e14 100%);
+            background-size: 200% 200%;
+            animation: swatch-pulse 7s ease-in-out infinite;
+        }
+        .swatch-boucle {
+            background: repeating-conic-gradient(#8c7a6b 0% 3%, #a59585 3% 6%, #7a6a5c 6% 9%, #b5a595 9% 12%, #8c7a6b 12% 15%) fixed;
+            background-size: 60px 60px;
+            filter: blur(0.3px);
+        }
+        .swatch-sisal {
+            background: linear-gradient(150deg, #c4b89c 0%, #e0d7c0 25%, #b8a880 50%, #d9ceb4 75%, #c4b89c 100%);
+            background-size: 300% 300%;
+            animation: swatch-pulse 9s ease-in-out infinite;
+        }
+        .swatch-oriental {
+            background:
+                radial-gradient(circle at 20% 30%, #b3433a 0%, transparent 35%),
+                radial-gradient(circle at 70% 50%, #4a6b7c 0%, transparent 40%),
+                radial-gradient(circle at 40% 70%, #c9a24e 0%, transparent 30%),
+                #2c1f1a;
+            background-size: 200% 200%;
+            animation: swatch-pulse 8s ease-in-out infinite;
+        }
+        .swatch-laine {
+            background:
+                radial-gradient(ellipse at 50% 20%, #f3ede4 0%, transparent 60%),
+                repeating-linear-gradient(0deg, #d5cbc0 0px, #d5cbc0 1px, transparent 1px, transparent 4px),
+                #b8aca0;
+            background-size: 100% 100%, 100% 100%, 100% 100%;
+        }
+        .swatch-jonc {
+            background: linear-gradient(180deg, #5c6e56 0%, #798f6e 30%, #4a5c43 55%, #6b7e5f 80%, #3d4e38 100%);
+            background-size: 100% 300%;
+            animation: swatch-pulse 11s ease-in-out infinite;
+        }
+        .swatch-artdeco {
+            background:
+                repeating-linear-gradient(45deg, #b3433a 0px, #b3433a 3px, #ede6d7 3px, #ede6d7 6px, #4a6b7c 6px, #4a6b7c 9px, #ede6d7 9px, #ede6d7 12px),
+                #2c2523;
+            background-blend-mode: overlay;
+            background-size: 40px 40px;
+        }
+        @keyframes swatch-pulse {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* ============ PROMESSE ============ */
+        .promesse-section {
+            background: var(--mastic);
+        }
+        .promesse-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        .promesse-block {
+            text-align: left;
+            padding: 1.8rem;
+            background: var(--argile-clair);
+            border-radius: 3px;
+            border: 1px solid rgba(44, 37, 35, 0.04);
+            position: relative;
+            transition: box-shadow 0.35s;
+            box-shadow: 0 1px 8px rgba(44, 37, 35, 0.04);
+        }
+        .promesse-block:hover {
+            box-shadow: 0 6px 28px rgba(44, 37, 35, 0.1);
+        }
+        .promesse-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.7rem;
+            display: block;
+            color: var(--brique);
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+        .promesse-block h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            color: var(--encre);
+            margin-bottom: 0.4rem;
+        }
+        .promesse-block p {
+            font-size: 0.85rem;
+            color: #4a3f3c;
+            line-height: 1.55;
+            letter-spacing: 0.015em;
+        }
+        @media (max-width: 768px) {
+            .promesse-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .promesse-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ AVIS ============ */
+        .avis-section {
+            background: var(--argile);
+            position: relative;
+        }
+        .avis-section::before {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: repeating-linear-gradient(90deg, var(--brique) 0, var(--brique) 6px, transparent 6px, transparent 10px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2vw, 1.8rem);
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .avis-card {
+            background: var(--argile-clair);
+            padding: 1.5rem;
+            border-radius: 3px;
+            border-left: 3px solid var(--brique);
+            box-shadow: 0 2px 12px rgba(44, 37, 35, 0.05);
+            transition: transform 0.3s var(--ease-spring);
+        }
+        .avis-card:hover {
+            transform: translateY(-4px);
+        }
+        .avis-stars {
+            color: #E4A825;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .avis-card p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #3d3330;
+            font-style: italic;
+            letter-spacing: 0.015em;
+        }
+        .avis-card .avis-author {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--bleu);
+            margin-top: 0.6rem;
+            font-style: normal;
+        }
+        .avis-mini-cta {
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .avis-mini-cta a {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--brique);
+            text-decoration: none;
+            border-bottom: 2px solid var(--brique);
+            padding-bottom: 0.2em;
+            transition: letter-spacing 0.3s, border-color 0.3s;
+        }
+        .avis-mini-cta a:hover {
+            letter-spacing: 0.07em;
+            border-color: var(--brique-deep);
+        }
+        @media (max-width: 768px) {
+            .avis-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .avis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ CONTACT ============ */
+        .contact-section {
+            background: var(--encre);
+            color: #e0d9cf;
+            position: relative;
+        }
+        .contact-section .section-title {
+            color: #f5f0e8;
+        }
+        .contact-section .section-label {
+            color: #d48980;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-top: 2rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .contact-info strong {
+            color: #f5f0e8;
+            font-weight: 600;
+            display: block;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .contact-info a {
+            color: #d48980;
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .contact-info a:hover {
+            color: #f0c4bf;
+        }
+        .contact-map {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+            aspect-ratio: 4/3;
+        }
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        .horaires-block {
+            background: rgba(243, 237, 228, 0.06);
+            padding: 1rem 1.2rem;
+            border-radius: 3px;
+            border-left: 3px solid var(--brique);
+            margin-top: 1rem;
+        }
+        .horaires-block table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            letter-spacing: 0.015em;
+        }
+        .horaires-block td {
+            padding: 0.3em 0;
+        }
+        .horaires-block td+td {
+            text-align: right;
+            font-weight: 500;
+            color: #f5f0e8;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(243, 237, 228, 0.08);
+            border: 1px solid rgba(237, 230, 215, 0.2);
+            padding: 0.75em 1em;
+            border-radius: 3px;
+            color: #f5f0e8;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: border-color 0.25s, background 0.25s;
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--brique);
+            background: rgba(243, 237, 228, 0.14);
+        }
+        .contact-form button {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            background: var(--brique);
+            color: #fff;
+            border: none;
+            padding: 0.8em 1.6em;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.2s var(--ease-spring);
+            align-self: flex-start;
+        }
+        .contact-form button:hover {
+            background: var(--brique-deep);
+            transform: scale(1.03);
+        }
+        .contact-form button:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-map {
+                aspect-ratio: 16/10;
+                order: -1;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        .site-footer {
+            background: #1a1514;
+            color: #b0a69e;
+            padding: 2.5rem clamp(1rem, 5vw, 4rem);
+            font-size: 0.8rem;
+            letter-spacing: 0.025em;
+            border-top: 1px solid rgba(237, 230, 215, 0.08);
+            text-align: center;
+            line-height: 1.7;
+        }
+        .site-footer .footer-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #d5cec2;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+        .site-footer a {
+            color: #c9a098;
+            text-decoration: none;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-credit {
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            color: #6e6259;
+            letter-spacing: 0.04em;
+        }
+
+        /* ============ REVEAL ON SCROLL ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ============ FOCUS VISIBLE ============ */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--brique);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "MOQUETTES DECO",
+            "alternateName": "GAROTEX",
+            "description": "Maison GAROTEX depuis 1948. Moquettes, tapis et parquets — pose et conseil sur mesure à Paris 16e.",
+            "image": "https://agence.mooo.com/moquettes-deco/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1 Rue des Bauches",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33142888463",
+            "email": "garotex@free.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "ratingCount": "5",
+                "reviewCount": "5"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00", "closes": "12:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "14:00", "closes": "18:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "00:00", "closes": "00:00",
+                    "description": "Sur rendez-vous uniquement" }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.8462,
+                "longitude": 2.2648
+            },
+            "url": "https://agence.mooo.com/moquettes-deco"
+        }
+    </script>
+</head>
+<body>
+    <div id="scroll-thread" aria-hidden="true"></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" id="site-header">
+        <a href="#" class="header-brand" aria-label="MOQUETTES DECO — Accueil">
+            <span class="header-logo-mark">M</span>
+            <span class="header-name">MOQUETTES DECO<small>Maison GAROTEX depuis 1948</small></span>
+        </a>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#atelier">Atelier</a>
+            <a href="#familles">Nos sols</a>
+            <a href="#textures">Textures</a>
+            <a href="#promesse">Promesse</a>
+            <a href="#avis">Avis</a>
+            <a href="#contact">Contact</a>
+            <span class="badge-google" aria-label="Note Google 5 étoiles sur 5">
+                <span class="stars">★★★★★</span> 5/5
+            </span>
+        </nav>
+        <a href="#contact" class="header-cta">Prendre rendez-vous</a>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Mur de rouleaux de moquettes chez MOQUETTES DECO, Paris 16e" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-scan-stripes" aria-hidden="true">
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+            <span class="scan-stripe"></span>
+        </div>
+        <div class="hero-content">
+            <p class="hero-label">Maison fondée en 1948 · Paris 16ᵉ</p>
+            <h1 class="hero-title">Chaque sol raconte une vie. Depuis 1948, nous lui donnons du caractère.</h1>
+            <p class="hero-subtitle">Moquettes, tapis, parquets — pose et conseil sur mesure au cœur du 16<sup>e</sup> arrondissement. 5 générations de passion textile au service de vos intérieurs.</p>
+            <a href="#contact" class="hero-btn">Prenez rendez-vous en boutique</a>
+        </div>
+    </section>
+
+    <!-- ==================== ATELIER ==================== -->
+    <section class="section atelier-section" id="atelier">
+        <div class="section-inner">
+            <div class="atelier-grid">
+                <div class="atelier-visual reveal">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de la boutique MOQUETTES DECO — rouleaux de moquettes" loading="lazy">
+                    <span class="label-tag">Atelier</span>
+                </div>
+                <div class="atelier-text reveal reveal-delay-1">
+                    <span class="section-label">Notre atelier parisien</span>
+                    <h2 class="section-title">Une maison de famille, un savoir-faire vivant</h2>
+                    <p class="histoire">
+                        Tout commence en 1948, lorsque la famille GAROTEX ouvre les portes du 1 rue des Bauches. Depuis, cinq générations se succèdent, animées par la même exigence : vous offrir un sol qui a du caractère. Ici, on ne vend pas des mètres carrés — on transmet une passion textile, un conseil sincère, et l'amour du travail bien fait.<br><br>
+                        Poussez la porte de notre boutique-atelier : vous y découvrirez des centaines de références, des matières à toucher, et surtout, une équipe à votre écoute.
+                    </p>
+                    <div class="atelier-stats">
+                        <div class="atelier-stat">
+                            <span class="atelier-stat-number">1948</span>
+                            <span class="atelier-stat-label">Fondation</span>
+                        </div>
+                        <div class="atelier-stat">
+                            <span class="atelier-stat-number">5</span>
+                            <span class="atelier-stat-label">Générations</span>
+                        </div>
+                        <div class="atelier-stat">
+                            <span class="atelier-stat-number">1</span>
+                            <span class="atelier-stat-label">Adresse unique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAMILLES ==================== -->
+    <section class="section familles-section" id="familles">
+        <div class="section-inner">
+            <span class="section-label reveal">Ce que nous habillons</span>
+            <h2 class="section-title reveal reveal-delay-1">Trois familles, mille possibles</h2>
+            <p class="section-intro reveal reveal-delay-2">Nous avons choisi de nous consacrer à trois grands univers, pour vous offrir une expertise pointue sans vous perdre dans des sous-catégories absconses.</p>
+            <div class="familles-grid">
+                <article class="famille-card reveal">
+                    <div class="famille-card-visual">
+                        <div class="texture-bg texture-moquette"></div>
+                        <span class="card-label">Laine</span>
+                    </div>
+                    <div class="famille-card-body">
+                        <h3>Moquettes</h3>
+                        <p>Nous en parlons au mètre ou à la pièce, selon votre projet. Velours, bouclé, aiguilleté — chaque texture a sa raison d'être, et nous vous aidons à trouver la vôtre.</p>
+                        <a href="#textures" class="famille-card-link">Découvrir les textures</a>
+                    </div>
+                </article>
+                <article class="famille-card reveal reveal-delay-1">
+                    <div class="famille-card-visual">
+                        <div class="texture-bg texture-tapis"></div>
+                        <span class="card-label">Velours</span>
+                    </div>
+                    <div class="famille-card-body">
+                        <h3>Tapis &amp; escaliers</h3>
+                        <p>Du tapis sur mesure à la pose d'escalier haussmannien, nous maîtrisons les contraintes techniques et esthétiques des plus beaux intérieurs parisiens.</p>
+                        <a href="#textures" class="famille-card-link">Voir les matières</a>
+                    </div>
+                </article>
+                <article class="famille-card reveal reveal-delay-2">
+                    <div class="famille-card-visual">
+                        <div class="texture-bg texture-parquet"></div>
+                        <span class="card-label">Sisal</span>
+                    </div>
+                    <div class="famille-card-body">
+                        <h3>Parquets</h3>
+                        <p>Parce qu'un beau sol peut aussi être en bois. Nous posons et rénovons les parquets avec le même soin artisanal que pour nos moquettes.</p>
+                        <a href="#textures" class="famille-card-link">Explorer les essences</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MUR DES TEXTURES ==================== -->
+    <section class="section textures-section" id="textures">
+        <div class="section-inner">
+            <span class="section-label reveal">Le mur des textures</span>
+            <h2 class="section-title reveal reveal-delay-1">Touchez du regard</h2>
+            <p class="section-intro reveal reveal-delay-2">Chaque matière a une histoire. Voici un aperçu de ce qui vous attend en boutique — des fibres brutes aux motifs les plus élaborés.</p>
+            <div class="textures-scroll" role="list" aria-label="Galerie de textures de moquettes">
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-velours"></div>
+                    <figcaption>Velours ras</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-boucle"></div>
+                    <figcaption>Bouclé</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-sisal"></div>
+                    <figcaption>Sisal</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-oriental"></div>
+                    <figcaption>Motifs orientaux</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-laine"></div>
+                    <figcaption>Laine bouillie</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-jonc"></div>
+                    <figcaption>Jonc de mer</figcaption>
+                </figure>
+                <figure class="texture-item" role="listitem">
+                    <div class="texture-item-bg swatch-artdeco"></div>
+                    <figcaption>Moquette imprimée Art déco</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROMESSE ==================== -->
+    <section class="section promesse-section" id="promesse">
+        <div class="section-inner">
+            <span class="section-label reveal">Notre promesse</span>
+            <h2 class="section-title reveal reveal-delay-1">Conseil, pose, entretien — du premier pas au dernier coup d'aspirateur</h2>
+            <div class="promesse-grid">
+                <div class="promesse-block reveal">
+                    <span class="promesse-icon" aria-hidden="true">①</span>
+                    <h4>Nous vous écoutons</h4>
+                    <p>Chaque projet commence par une conversation. Nous prenons le temps de comprendre votre intérieur, vos envies, votre budget — et nous vous guidons vers le choix juste, sans pression.</p>
+                </div>
+                <div class="promesse-block reveal reveal-delay-1">
+                    <span class="promesse-icon" aria-hidden="true">②</span>
+                    <h4>Nous posons chez vous</h4>
+                    <p>Notre équipe intégrée intervient à Paris et en proche banlieue. Pose soignée, délais tenus, finitions impeccables : nous traitons votre intérieur comme le nôtre.</p>
+                </div>
+                <div class="promesse-block reveal reveal-delay-2">
+                    <span class="promesse-icon" aria-hidden="true">③</span>
+                    <h4>Nous vous aidons à entretenir</h4>
+                    <p>Un beau sol dure des décennies quand il est bien entretenu. Nous vous conseillons les bons gestes et les produits recommandés pour préserver la beauté de votre revêtement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AVIS ==================== -->
+    <section class="section avis-section" id="avis">
+        <div class="section-inner">
+            <span class="section-label reveal">Fiche de confiance</span>
+            <h2 class="section-title reveal reveal-delay-1">Ce que nos clients en disent</h2>
+            <p class="section-intro reveal reveal-delay-2">Note Google : <strong>5/5</strong> sur 5,0 avis. Nous laissons parler ceux qui ont poussé la porte avant vous.</p>
+            <div class="avis-grid">
+                <blockquote class="avis-card reveal">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p>«&thinsp;Un accueil comme on n'en fait plus. Monsieur GAROTEX a pris le temps de tout m'expliquer, sans chercher à me vendre le plus cher. La pose était parfaite.&thinsp;»</p>
+                    <cite class="avis-author">— Marie L., Paris 16ᵉ</cite>
+                </blockquote>
+                <blockquote class="avis-card reveal reveal-delay-1">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p>«&thinsp;J'ai trouvé exactement la moquette que je cherchais pour mon escalier. Un choix immense et des conseils très professionnels. Je reviendrai.&thinsp;»</p>
+                    <cite class="avis-author">— Philippe D., Boulogne</cite>
+                </blockquote>
+                <blockquote class="avis-card reveal reveal-delay-2">
+                    <div class="avis-stars" aria-hidden="true">★★★★★</div>
+                    <p>«&thinsp;Boutique historique du quartier, on y trouve des matières introuvables ailleurs. Le rapport qualité-prix est excellent et l'équipe est adorable.&thinsp;»</p>
+                    <cite class="avis-author">— Anne R., Paris 16ᵉ</cite>
+                </blockquote>
+            </div>
+            <div class="avis-mini-cta reveal reveal-delay-3">
+                <a href="#contact">Venez vous faire votre propre avis →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section contact-section" id="contact">
+        <div class="section-inner">
+            <span class="section-label reveal">Contact & Venir</span>
+            <h2 class="section-title reveal reveal-delay-1">Poussez la porte</h2>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <p><strong>Adresse</strong>1 Rue des Bauches, 75016 Paris</p>
+                    <p><strong>Téléphone</strong><a href="tel:+33142888463">01 42 88 84 63</a></p>
+                    <p><strong>Email</strong><a href="mailto:garotex@free.fr">garotex@free.fr</a></p>
+                    <div class="horaires-block">
+                        <table aria-label="Horaires d'ouverture">
+                            <tr><td>Lundi — Vendredi</td><td>9h–12h30 / 14h–18h30</td></tr>
+                            <tr><td>Samedi</td><td>Sur rendez-vous</td></tr>
+                            <tr><td>Dimanche</td><td>Fermé</td></tr>
+                        </table>
+                    </div>
+                    <form class="contact-form" action="#" method="post" aria-label="Demande de rappel">
+                        <input type="text" name="nom" placeholder="Votre nom" required aria-required="true">
+                        <input type="tel" name="telephone" placeholder="Votre téléphone" required aria-required="true">
+                        <textarea name="message" rows="3" placeholder="Quelques mots sur votre projet…"></textarea>
+                        <button type="submit">Demandez un rappel</button>
+                    </form>
+                </div>
+                <div class="contact-map reveal reveal-delay-1">
+                    <iframe src="https://maps.google.com/maps?q=MOQUETTES+DECO+1+Rue+des+Bauches%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — MOQUETTES DECO, 1 Rue des Bauches, Paris"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <p class="footer-brand">MOQUETTES DECO</p>
+        <p>Maison GAROTEX depuis 1948 — 1 Rue des Bauches, 75016 Paris<br>
+            <a href="tel:+33142888463">01 42 88 84 63</a> · <a href="mailto:garotex@free.fr">garotex@free.fr</a><br>
+            Ouvert du lundi au vendredi, 9h–12h30 / 14h–18h30 · Samedi sur rendez-vous
+        </p>
+        <p class="footer-credit">Site créé par <strong>Agence Mooo</strong> — <a href="https://agence.mooo.com/moquettes-deco" rel="noopener">agence.mooo.com</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            // Scroll progress thread
+            const thread = document.getElementById('scroll-thread');
+            const header = document.getElementById('site-header');
+
+            function updateScroll() {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+                if (thread) thread.style.height = progress + '%';
+
+                if (header) {
+                    if (scrollTop > 40) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', updateScroll, { passive: true });
+            updateScroll();
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.18,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                revealElements.forEach(el => observer.observe(el));
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY -
+                            headerHeight - 16;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Fade scan stripes after hero settles
+            const scanStripes = document.querySelectorAll('.scan-stripe');
+            if (scanStripes.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                setTimeout(() => {
+                    scanStripes.forEach((stripe, i) => {
+                        stripe.style.transition = 'opacity 1.5s ease-out, transform 1.2s cubic-bezier(0.19, 1, 0.22, 1)';
+                        stripe.style.opacity = '0.08';
+                        stripe.style.transform = 'translateY(-3vh)';
+                        stripe.style.animation = 'none';
+                    });
+                    const container = document.querySelector('.hero-scan-stripes');
+                    if (container) {
+                        setTimeout(() => {
+                            container.style.transition = 'opacity 0.6s';
+                            container.style.opacity = '0.35';
+                        }, 1600);
+                    }
+                }, 2200);
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches && scanStripes.length > 0) {
+                scanStripes.forEach(s => {
+                    s.style.animation = 'none';
+                    s.style.opacity = '0.08';
+                    s.style.transform = 'translateY(0)';
+                });
+            }
+
+            console.log('MOQUETTES DECO — Site vitrine prêt. Poussez la porte au 1 rue des Bauches ✦');
+        })();
+    </script>
+</body>
+</html>
