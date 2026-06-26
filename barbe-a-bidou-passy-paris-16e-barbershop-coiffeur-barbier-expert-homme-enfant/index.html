@@ -3,37 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbe à Bidou – Passy, Paris 16ᵉ – Barbershop | Coiffeur & Barbier Expert Homme/Enfant</title>
-    <meta name="description" content="Barbe à Bidou – Barbershop d'exception au cœur de Passy, Paris 16ᵉ. Coiffeur & barbier expert pour hommes et enfants. Note 4.9★ sur 1016 avis. 94 Rue Raynouard, Paris.">
-    <meta property="og:title" content="Barbe à Bidou – Passy, Paris 16ᵉ – Barbershop | Coiffeur & Barbier Expert">
-    <meta property="og:description" content="Coiffeur & barbier expert pour hommes et enfants à Passy. 4.9★ sur 1016 avis. 94 Rue Raynouard, Paris 16ᵉ.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>Barbe à Bidou – Passy, Paris 16ᵉ | Coiffeur & Barbier Expert Homme/Enfant</title>
+    <meta name="description" content="Salon de coiffure et barber shop d'exception au 94 rue Raynouard, Paris 16ᵉ. Cinq barbiers, coupe homme, taille de barbe, soins. Note 4.9/5 sur plus de 1000 avis. Prenez rendez-vous à Passy.">
+    <meta property="og:title" content="Barbe à Bidou – Passy | Coiffeur & Barbier Expert, Paris 16ᵉ">
+    <meta property="og:description" content="La coupe juste, rue Raynouard. Cinq barbiers, un salon d'exception à Passy. Note 4.9/5.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💈</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --noir-profond: #151210;
-            --brun-cuir: #2a2320;
-            --brun-moyen: #4a3b32;
-            --laiton: #b8945c;
-            --laiton-clair: #d4b87a;
-            --ecru: #f3ede4;
-            --ecru-fonce: #e5dcd0;
-            --blanc-casse: #faf7f2;
-            --grain: rgba(0, 0, 0, 0.04);
-            --ombre-douce: 0 2px 24px rgba(0, 0, 0, 0.18);
-            --ombre-laiton: 0 4px 32px rgba(184, 148, 92, 0.22);
-            --radius-sm: 0.5rem;
-            --radius-md: 0.875rem;
-            --radius-lg: 1.5rem;
-            --transition-fluide: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
-            --transition-vif: 0.28s cubic-bezier(0.33, 1, 0.68, 1);
-            --font-display: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif;
-            --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+            --ivoire: #F5F2EC;
+            --noir-fume: #1A1817;
+            --laine-vierge: #E8E3DC;
+            --laiton: #B8860B;
+            --vert-anglais: #2F4F4F;
+            --lin-ancien: #D4C9BC;
+            --grain-opacity: 0.04;
+            --transition-reveal: 1.4s;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-quint: cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         *,
@@ -46,7 +38,8 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 100%;
+            scrollbar-width: thin;
+            scrollbar-color: var(--laiton) var(--ivoire);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
@@ -66,960 +59,1132 @@
         }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--ecru);
-            color: var(--noir-profond);
-            line-height: 1.6;
+            font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ivoire);
+            color: var(--noir-fume);
             font-weight: 400;
+            line-height: 1.6;
             letter-spacing: 0.01em;
             overflow-x: hidden;
-            min-height: 100vh;
-            background-image:
-                radial-gradient(ellipse at 15% 10%, rgba(180, 150, 100, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 90%, rgba(42, 35, 32, 0.05) 0%, transparent 55%);
+            position: relative;
         }
 
-        /* Header */
-        .site-header {
+        /* Grain texture globale */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            padding: 0.75rem 1.25rem;
-            background: rgba(21, 18, 16, 0.82);
-            backdrop-filter: blur(18px) saturate(140%);
-            -webkit-backdrop-filter: blur(18px) saturate(140%);
-            border-bottom: 1px solid rgba(184, 148, 92, 0.18);
-            transition: var(--transition-fluide);
+            z-index: 1000;
+            padding: 1rem clamp(1rem, 4vw, 3rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
+            background: rgba(245, 242, 236, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.5s var(--ease-out-expo);
+            gap: 1.5rem;
         }
-
-        .site-header.scrolled {
-            padding: 0.5rem 1.25rem;
-            background: rgba(21, 18, 16, 0.94);
-            box-shadow: var(--ombre-douce);
+        .header.scrolled {
+            border-bottom-color: rgba(184, 134, 11, 0.18);
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            background: rgba(245, 242, 236, 0.94);
+            box-shadow: 0 1px 20px rgba(26, 24, 23, 0.04);
         }
-
         .header-brand {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
+            align-items: baseline;
+            gap: 0.45rem;
             flex-shrink: 0;
+            text-decoration: none;
+            color: var(--noir-fume);
         }
-
-        .header-brand .brand-icon {
-            font-size: clamp(1.4rem, 2vw, 1.7rem);
-            line-height: 1;
-            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
-        }
-
         .header-brand .brand-name {
-            font-family: var(--font-display);
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 700;
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
-            color: var(--ecru);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
             letter-spacing: -0.02em;
-            white-space: nowrap;
-            line-height: 1.1;
+            color: var(--noir-fume);
+            line-height: 1;
         }
-        .header-brand .brand-name span {
+        .header-brand .brand-location {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             color: var(--laiton);
+            line-height: 1;
         }
-
         .header-nav {
             display: flex;
+            gap: clamp(1rem, 3vw, 2.4rem);
+            list-style: none;
             align-items: center;
-            gap: 0.3rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
         }
-
         .header-nav a {
-            font-family: var(--font-body);
+            text-decoration: none;
+            color: var(--noir-fume);
+            font-size: 0.85rem;
             font-weight: 500;
-            font-size: clamp(0.78rem, 1.1vw, 0.88rem);
-            color: var(--ecru-fonce);
-            text-decoration: none;
-            padding: 0.4rem 0.7rem;
-            border-radius: var(--radius-sm);
-            transition: var(--transition-vif);
-            letter-spacing: 0.02em;
-            white-space: nowrap;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
             position: relative;
+            padding: 0.3em 0;
         }
-
-        .header-nav a:hover,
-        .header-nav a:focus-visible {
-            color: var(--laiton-clair);
-            background: rgba(255, 255, 255, 0.05);
-            outline: none;
-        }
-        .header-nav a:focus-visible {
-            box-shadow: 0 0 0 2px var(--laiton);
-        }
-
-        .header-cta {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
             background: var(--laiton);
-            color: var(--noir-profond) !important;
-            padding: 0.5rem 1.1rem !important;
-            border-radius: 2rem !important;
-            letter-spacing: 0.01em !important;
-            transition: var(--transition-fluide) !important;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            box-shadow: 0 2px 12px rgba(184, 148, 92, 0.3);
+            transition: width 0.35s var(--ease-out-expo);
         }
-        .header-cta:hover {
-            background: var(--laiton-clair) !important;
-            box-shadow: var(--ombre-laiton);
-            transform: translateY(-1px);
-        }
-
-        /* Sections communes */
-        .section {
-            padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 2.5rem);
-            position: relative;
-        }
-
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
             width: 100%;
         }
-
-        /* Badge note */
-        .rating-badge {
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--laiton);
+        }
+        .header-cta {
+            flex-shrink: 0;
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            background: rgba(21, 18, 16, 0.78);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: var(--ecru);
-            padding: 0.45rem 0.9rem;
-            border-radius: 2rem;
-            font-family: var(--font-body);
+            gap: 0.4rem;
+            padding: 0.6rem 1.3rem;
+            font-family: 'Hanken Grotesk', sans-serif;
             font-weight: 600;
-            font-size: clamp(0.75rem, 1vw, 0.85rem);
-            letter-spacing: 0.03em;
-            border: 1px solid rgba(184, 148, 92, 0.35);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            color: var(--ivoire);
+            background: var(--noir-fume);
+            border: 1px solid var(--noir-fume);
+            border-radius: 0;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            white-space: nowrap;
+            text-transform: none;
         }
-        .rating-badge .stars {
-            color: var(--laiton-clair);
-            font-size: 1.05em;
-            letter-spacing: 0.08em;
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--laiton);
+            border-color: var(--laiton);
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(184, 134, 11, 0.22);
         }
-        .rating-badge .count {
-            font-weight: 400;
-            opacity: 0.8;
-            font-size: 0.9em;
+        .header-cta:focus-visible {
+            outline: 3px solid var(--laiton);
+            outline-offset: 3px;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--noir-fume);
+            transition: all 0.3s var(--ease-out-expo);
+            transform-origin: center;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* Hero */
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 340px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--ivoire);
+                padding: 6rem 2rem 2rem;
+                gap: 1.8rem;
+                transition: right 0.5s var(--ease-out-expo);
+                box-shadow: -8px 0 30px rgba(26, 24, 23, 0.08);
+                align-items: flex-start;
+                border-left: 1px solid rgba(184, 134, 11, 0.2);
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-cta.mobile-in-nav {
+                display: inline-flex;
+                margin-top: 0.5rem;
+            }
+        }
+        @media (min-width: 861px) {
+            .header-cta.mobile-in-nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            padding-top: 4.5rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            position: relative;
+            padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 6vw, 4rem);
+        }
+
+        /* Filet laiton */
+        .filet-laiton {
+            width: 100%;
+            height: 1px;
+            background: var(--laiton);
+            opacity: 0.35;
+            border: none;
+            margin: 0;
+            transform-origin: left;
+        }
+        .filet-laiton.thin {
+            height: 0.5px;
+            opacity: 0.25;
+        }
+
+        /* ===== HÉRO ===== */
         .hero {
-            min-height: 100vh;
-            min-height: 100svh;
+            min-height: 92vh;
             display: flex;
-            align-items: flex-end;
-            padding: 0;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 6vw, 4rem);
             position: relative;
             overflow: hidden;
         }
-
         .hero-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
-
         .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 35%;
-            filter: brightness(0.6) contrast(1.05) saturate(0.85);
-            transform: scale(1.04);
-            animation: hero-zoom 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            filter: grayscale(0.85) contrast(1.08) brightness(0.55) sepia(0.18);
+            opacity: 0.32;
+            transform: scale(1.03);
+            transition: filter 2.5s var(--ease-out-expo), opacity 2.5s var(--ease-out-expo);
         }
-
-        @keyframes hero-zoom {
-            from {
-                transform: scale(1.14);
-            }
-            to {
-                transform: scale(1.04);
-            }
+        .hero-bg.revealed img {
+            filter: grayscale(0.55) contrast(1.04) brightness(0.65) sepia(0.08);
+            opacity: 0.5;
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            .hero-bg img {
-                animation: none;
-                transform: scale(1.04);
-            }
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background:
-                linear-gradient(180deg, rgba(21, 18, 16, 0.55) 0%, rgba(21, 18, 16, 0.25) 35%, rgba(21, 18, 16, 0.7) 70%, rgba(21, 18, 16, 0.92) 100%),
-                radial-gradient(ellipse at 55% 30%, rgba(184, 148, 92, 0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-grain {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0.28;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.5'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
-        }
-
         .hero-content {
             position: relative;
-            z-index: 3;
-            width: 100%;
-            padding: clamp(1.5rem, 5vw, 2.5rem);
-            padding-top: 7rem;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1rem, 2.5vw, 1.6rem);
-            max-width: 1100px;
-            margin: 0 auto;
+            z-index: 2;
+            max-width: 780px;
         }
-
-        .hero-badge-row {
-            animation: revealUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s both;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            line-height: 0.95;
-            color: var(--blanc-casse);
-            letter-spacing: -0.025em;
-            text-shadow: 0 3px 40px rgba(0, 0, 0, 0.5);
-            max-width: 750px;
-            animation: revealUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s both;
-        }
-
-        .hero-title .accent {
-            color: var(--laiton-clair);
-            display: inline;
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
-            color: var(--ecru-fonce);
-            letter-spacing: 0.04em;
-            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-            max-width: 500px;
-            animation: revealUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.7s both;
-        }
-
-        .hero-ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            animation: revealUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.9s both;
-        }
-
-        .btn {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--noir-fume);
+            background: rgba(245, 242, 236, 0.7);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.45rem 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.9s var(--ease-out-expo) 0.2s forwards;
+        }
+        .hero-badge .stars {
+            color: var(--laiton);
+            letter-spacing: 0.15em;
+            font-size: 0.95rem;
+        }
+        .hero-badge .note-count {
+            font-weight: 400;
+            opacity: 0.7;
             letter-spacing: 0.02em;
+        }
+        .hero h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 7vw, 5.2rem);
+            line-height: 1.04;
+            letter-spacing: -0.025em;
+            color: var(--noir-fume);
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateY(28px);
+            animation: revealUp 1s var(--ease-out-expo) 0.45s forwards;
+        }
+        .hero .hero-subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-weight: 400;
+            line-height: 1.55;
+            letter-spacing: 0.015em;
+            color: var(--noir-fume);
+            opacity: 0.78;
+            max-width: 560px;
+            margin-bottom: 2.2rem;
+            opacity: 0;
+            transform: translateY(22px);
+            animation: revealUp 1s var(--ease-out-expo) 0.65s forwards;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            letter-spacing: 0.05em;
             text-decoration: none;
-            padding: 0.7rem 1.6rem;
-            border-radius: 2.5rem;
-            transition: var(--transition-fluide);
+            color: #fff;
+            background: var(--laiton);
+            padding: 1rem 2.2rem;
+            border: 2px solid var(--laiton);
+            transition: all 0.45s var(--ease-out-expo);
             cursor: pointer;
-            border: none;
+            opacity: 0;
+            transform: translateY(22px);
+            animation: revealUp 1s var(--ease-out-expo) 0.85s forwards;
+            align-self: flex-start;
             position: relative;
             overflow: hidden;
         }
-
-        .btn-primary {
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--noir-fume);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s var(--ease-out-expo);
+            z-index: 0;
+        }
+        .hero-cta:hover::before,
+        .hero-cta:focus-visible::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .hero-cta span {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-cta:hover,
+        .hero-cta:focus-visible {
+            border-color: var(--noir-fume);
+            box-shadow: 0 12px 36px rgba(26, 24, 23, 0.2);
+        }
+        .hero-cta:focus-visible {
+            outline: 3px solid var(--laiton);
+            outline-offset: 4px;
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0;
+            animation: revealUp 0.8s var(--ease-out-expo) 1.3s forwards;
+        }
+        .hero-scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--noir-fume);
+            opacity: 0.55;
+        }
+        .hero-scroll-line {
+            width: 1px;
+            height: 36px;
             background: var(--laiton);
-            color: var(--noir-profond);
-            box-shadow: 0 4px 20px rgba(184, 148, 92, 0.35);
-        }
-        .btn-primary:hover {
-            background: var(--laiton-clair);
-            box-shadow: var(--ombre-laiton);
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--ecru);
-            border: 1.5px solid rgba(243, 237, 228, 0.5);
-            backdrop-filter: blur(6px);
-        }
-        .btn-outline:hover {
-            border-color: var(--laiton);
-            color: var(--laiton-clair);
-            background: rgba(184, 148, 92, 0.08);
+            opacity: 0.5;
+            animation: scrollPulse 2.2s ease-in-out infinite;
         }
 
         @keyframes revealUp {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+        @keyframes scrollPulse {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scaleY(1.8);
+                opacity: 0.9;
+            }
+        }
 
-        /* Section titles */
+        /* ===== SECTION TITLES ===== */
         .section-eyebrow {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: clamp(0.72rem, 0.95vw, 0.8rem);
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 0.72rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--laiton);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.6rem;
         }
-
         .section-title {
-            font-family: var(--font-display);
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 700;
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-            line-height: 1.05;
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            line-height: 1.1;
             letter-spacing: -0.02em;
-            color: var(--noir-profond);
-            margin-bottom: 1.2rem;
+            color: var(--noir-fume);
+            margin-bottom: 1rem;
+        }
+        .section-lead {
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--noir-fume);
+            opacity: 0.72;
+            max-width: 600px;
         }
 
-        .section-title .accent {
-            color: var(--laiton);
+        /* ===== LE SALON ===== */
+        .salon-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
         }
-
-        /* About */
-        .about-section {
-            background: var(--blanc-casse);
-            position: relative;
-            overflow: hidden;
+        .salon-text {
+            position: sticky;
+            top: 8rem;
+            align-self: start;
         }
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -40px;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(184, 148, 92, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .about-grid {
+        .salon-gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 3.5rem);
-            align-items: center;
+            gap: 0.8rem;
         }
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .about-text-block p {
-            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-            color: var(--brun-moyen);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        .about-text-block .highlight {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-            color: var(--noir-profond);
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-            border-left: 3px solid var(--laiton);
-            padding-left: 1.2rem;
-            margin: 1.5rem 0;
-        }
-        .about-visual {
+        .salon-gallery .gallery-item {
             position: relative;
-            border-radius: var(--radius-lg);
             overflow: hidden;
             aspect-ratio: 4/5;
-            box-shadow: var(--ombre-douce);
+            background: var(--laine-vierge);
         }
-        .about-visual img {
+        .salon-gallery .gallery-item:nth-child(1) {
+            aspect-ratio: 5/6;
+            grid-column: 1 / -1;
+        }
+        .salon-gallery .gallery-item:nth-child(2) {
+            aspect-ratio: 3/4;
+        }
+        .salon-gallery .gallery-item:nth-child(3) {
+            aspect-ratio: 3/4;
+        }
+        .salon-gallery img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 25%;
-            filter: contrast(1.08) saturate(0.9) brightness(0.95);
+            display: block;
+            filter: grayscale(0.9) contrast(1.06) brightness(0.7) sepia(0.22);
+            transition: filter 1.8s var(--ease-out-expo), transform 1.8s var(--ease-out-expo);
+            transform: scale(1.04);
         }
-        .about-visual::after {
+        .salon-gallery .gallery-item.revealed img {
+            filter: grayscale(0.3) contrast(1.02) brightness(0.85) sepia(0.05);
+            transform: scale(1);
+        }
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+        }
+        .gallery-item::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(21, 18, 16, 0.15) 0%, transparent 50%, rgba(184, 148, 92, 0.12) 100%);
+            background: linear-gradient(to bottom,
+                    rgba(245, 242, 236, 0.35) 0%,
+                    rgba(184, 134, 11, 0.06) 60%,
+                    rgba(26, 24, 23, 0.18) 100%);
             pointer-events: none;
+            transition: opacity 1.2s var(--ease-out-expo);
+            z-index: 1;
+        }
+        .gallery-item.revealed::after {
+            opacity: 0.25;
         }
 
-        /* Services */
-        .services-section {
-            background: var(--ecru);
-            position: relative;
-        }
-        .services-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--laiton), transparent);
-            opacity: 0.4;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: clamp(1.2rem, 2vw, 1.8rem);
-        }
-        .service-card {
-            background: var(--blanc-casse);
-            border-radius: var(--radius-md);
-            padding: clamp(1.5rem, 2.5vw, 2rem);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            transition: var(--transition-fluide);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--ombre-douce);
-            border-color: rgba(184, 148, 92, 0.3);
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--laiton);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 0.7rem;
-        }
-        .service-card h3 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-            letter-spacing: -0.01em;
-            margin-bottom: 0.4rem;
-            color: var(--noir-profond);
-        }
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--brun-moyen);
-            line-height: 1.55;
-        }
-        .service-card .price-hint {
-            display: inline-block;
-            margin-top: 0.7rem;
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: 0.85rem;
-            color: var(--laiton);
-            letter-spacing: 0.03em;
-        }
-
-        /* Reviews */
-        .reviews-section {
-            background: var(--noir-profond);
-            color: var(--ecru);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .reviews-section .section-title {
-            color: var(--blanc-casse);
-        }
-        .reviews-section .section-eyebrow {
-            color: var(--laiton-clair);
-        }
-        .reviews-highlight {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 2rem 0;
-        }
-        .reviews-big-note {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(4rem, 10vw, 7rem);
-            line-height: 1;
-            color: var(--laiton-clair);
-            letter-spacing: -0.03em;
-            text-shadow: 0 0 60px rgba(184, 148, 92, 0.35);
-        }
-        .reviews-stars-large {
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            letter-spacing: 0.1em;
-            color: var(--laiton);
-        }
-        .reviews-count {
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: clamp(0.9rem, 1.2vw, 1rem);
-            opacity: 0.75;
-            letter-spacing: 0.04em;
-        }
-        .reviews-quote {
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-            font-style: italic;
-            font-size: clamp(1rem, 1.4vw, 1.15rem);
-            line-height: 1.6;
-            opacity: 0.8;
-            position: relative;
-            padding: 0 1rem;
-        }
-        .reviews-quote::before {
-            content: '"';
-            font-family: var(--font-display);
-            font-size: 4rem;
-            position: absolute;
-            top: -1.5rem;
-            left: -0.3rem;
-            color: var(--laiton);
-            opacity: 0.5;
-            line-height: 1;
-        }
-
-        /* Infos pratiques */
-        .info-section {
-            background: var(--blanc-casse);
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(1.5rem, 3vw, 2.5rem);
-        }
         @media (max-width: 768px) {
-            .info-grid {
+            .salon-layout {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .salon-text {
+                position: static;
+            }
+            .salon-gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .salon-gallery .gallery-item:nth-child(1) {
+                aspect-ratio: 4/5;
             }
         }
-        .info-block {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-        .info-block h3 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.1rem, 1.4vw, 1.25rem);
-            letter-spacing: -0.01em;
-            color: var(--noir-profond);
-            margin-bottom: 0.3rem;
-        }
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            color: var(--brun-moyen);
-            line-height: 1.5;
-        }
-        .info-item a {
-            color: var(--brun-moyen);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: var(--transition-vif);
-        }
-        .info-item a:hover {
-            color: var(--laiton);
-            border-bottom-color: var(--laiton);
-        }
-        .info-icon {
-            flex-shrink: 0;
-            font-size: 1.1rem;
-            margin-top: 0.15rem;
-        }
-        .hours-note {
-            display: inline-block;
-            background: rgba(184, 148, 92, 0.12);
-            color: var(--brun-moyen);
-            padding: 0.35rem 0.8rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
 
-        /* Map */
-        .map-section {
-            padding: 0;
+        /* ===== ÉQUIPE ===== */
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: clamp(0.8rem, 2vw, 1.5rem);
+            margin-top: 2rem;
         }
-        .map-wrapper {
-            width: 100%;
-            height: clamp(320px, 45vw, 420px);
-            position: relative;
-            overflow: hidden;
-            border-top: 2px solid rgba(184, 148, 92, 0.25);
-            border-bottom: 2px solid rgba(184, 148, 92, 0.25);
-        }
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            filter: grayscale(15%) contrast(1.04);
-        }
-
-        /* Contact CTA */
-        .contact-cta-section {
-            background: var(--noir-profond);
-            color: var(--ecru);
+        .equipe-card {
             text-align: center;
-        }
-        .contact-cta-section .section-title {
-            color: var(--blanc-casse);
-        }
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Footer */
-        .site-footer {
-            background: var(--noir-profond);
-            color: rgba(243, 237, 228, 0.6);
-            text-align: center;
-            padding: 2rem 1.25rem;
-            font-size: 0.82rem;
-            letter-spacing: 0.03em;
-            border-top: 1px solid rgba(184, 148, 92, 0.2);
-        }
-        .site-footer .footer-brand {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--ecru);
-            margin-bottom: 0.4rem;
-        }
-        .site-footer a {
-            color: var(--laiton);
-            text-decoration: none;
-            transition: var(--transition-vif);
-        }
-        .site-footer a:hover {
-            color: var(--laiton-clair);
-        }
-        .footer-credits {
-            margin-top: 1rem;
-            opacity: 0.5;
-            font-size: 0.75rem;
-        }
-
-        /* Scroll reveals */
-        .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
         }
-        .reveal.visible {
+        .equipe-card.revealed {
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
+        .equipe-card .portrait-frame {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            margin-bottom: 1rem;
+            background: var(--laine-vierge);
         }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
+        .equipe-card .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.9) contrast(1.08) brightness(0.65) sepia(0.2);
+            transition: filter 1.6s var(--ease-out-expo), transform 1.6s var(--ease-out-expo);
+            transform: scale(1.05);
         }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
+        .equipe-card .portrait-frame.revealed-img img {
+            filter: grayscale(0.35) contrast(1.03) brightness(0.82) sepia(0.06);
+            transform: scale(1);
+        }
+        .equipe-card .portrait-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(26, 24, 23, 0.25) 0%,
+                    transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .equipe-card .barbier-nom {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+            letter-spacing: -0.01em;
+            color: var(--noir-fume);
+        }
+        .equipe-card .barbier-specialite {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--noir-fume);
+            opacity: 0.6;
+            letter-spacing: 0.03em;
+            margin-top: 0.2rem;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                opacity: 1;
-                transform: none;
-                transition: none;
+        @media (max-width: 768px) {
+            .equipe-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .equipe-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
             }
         }
 
-        /* Decorative dividers */
-        .divider-laiton {
-            width: 60px;
-            height: 3px;
-            background: var(--laiton);
-            border-radius: 3px;
-            margin: 0.8rem 0 1.2rem;
-            opacity: 0.7;
+        /* ===== PRESTATIONS ===== */
+        .prestations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        .prestations-table tr {
+            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+            transition: background 0.3s;
+        }
+        .prestations-table tr:hover {
+            background: rgba(232, 227, 220, 0.45);
+        }
+        .prestations-table td {
+            padding: 1.1rem 0.5rem;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.02em;
+            vertical-align: baseline;
+        }
+        .prestations-table .presta-nom {
+            font-weight: 500;
+            color: var(--noir-fume);
+        }
+        .prestations-table .presta-detail {
+            font-weight: 400;
+            opacity: 0.6;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            padding-left: 0.3rem;
+        }
+        .prestations-table .presta-prix {
+            text-align: right;
+            font-weight: 600;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            letter-spacing: -0.01em;
+            color: var(--noir-fume);
+            white-space: nowrap;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+        .presta-note {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            font-style: italic;
+            letter-spacing: 0.03em;
+            margin-top: 1rem;
+            color: var(--noir-fume);
         }
 
-        /* Focus global */
-        :focus-visible {
-            outline: 2px solid var(--laiton);
+        @media (max-width: 500px) {
+            .prestations-table td {
+                padding: 0.8rem 0.3rem;
+                font-size: 0.8rem;
+            }
+            .prestations-table .presta-prix {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ===== INFOS & HORAIRES ===== */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .infos-bloc {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .infos-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .infos-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--laiton);
+            font-weight: 500;
+        }
+        .infos-value {
+            font-size: clamp(0.9rem, 1.5vw, 0.95rem);
+            font-weight: 500;
+            color: var(--noir-fume);
+            line-height: 1.5;
+        }
+        .infos-value a {
+            color: var(--noir-fume);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(184, 134, 11, 0.4);
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .infos-value a:hover {
+            color: var(--laiton);
+            border-color: var(--laiton);
+        }
+        .horaires-liste {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+        .horaires-liste li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+            color: var(--noir-fume);
+        }
+        .horaires-liste .jour {
+            font-weight: 500;
+        }
+        .horaires-liste .heures {
+            font-weight: 400;
+            opacity: 0.75;
+        }
+        .map-container {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border: 1px solid rgba(184, 134, 11, 0.25);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: grayscale(0.5) contrast(0.95) brightness(0.95);
+            transition: filter 0.6s;
+        }
+        .map-container:hover iframe {
+            filter: grayscale(0.1) contrast(1) brightness(1);
+        }
+
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .map-container {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--noir-fume);
+            color: var(--ivoire);
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 6vw, 4rem);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: end;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            line-height: 1.7;
+        }
+        .footer-brand {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+        .footer a {
+            color: var(--lin-ancien);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 201, 188, 0.3);
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .footer a:hover {
+            color: var(--laiton);
+            border-color: var(--laiton);
+        }
+        .footer-credits {
+            text-align: right;
+            opacity: 0.55;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+        .footer .filet-laiton {
+            background: rgba(184, 134, 11, 0.3);
+            margin: 1.5rem 0;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 600px) {
+            .footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+            .footer-credits {
+                text-align: center;
+            }
+            .footer .filet-laiton {
+                margin: 0.8rem 0;
+            }
+        }
+
+        /* ===== REVEAL UTILITIES ===== */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-on-scroll.delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-on-scroll.delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-on-scroll.delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-on-scroll.delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-on-scroll.delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* ===== FOCUS VISIBLE ===== */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2.5px solid var(--laiton);
             outline-offset: 3px;
             border-radius: 2px;
         }
 
-        /* Skip link */
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: var(--laiton);
-            color: var(--noir-profond);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            z-index: 200;
-            font-weight: 600;
-            transition: top 0.3s;
+        /* ===== OVERLAY MENU BG ===== */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 24, 23, 0.2);
+            z-index: 998;
         }
-        .skip-link:focus {
-            top: 1rem;
+        .nav-overlay.active {
+            display: block;
+        }
+        @media (min-width: 861px) {
+            .nav-overlay {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Aller au contenu</a>
 
-    <header class="site-header" id="site-header" role="banner">
-        <a href="#" class="header-brand" aria-label="Barbe à Bidou – Accueil">
-            <span class="brand-icon" aria-hidden="true">💈</span>
-            <span class="brand-name">Barbe <span>à</span> Bidou</span>
+    <!-- Overlay pour menu mobile -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header" role="banner">
+        <a href="#" class="header-brand" aria-label="Barbe à Bidou Passy - Accueil">
+            <span class="brand-name">Barbe à Bidou</span>
+            <span class="brand-location">Passy</span>
         </a>
-        <nav class="header-nav" aria-label="Navigation principale">
-            <a href="#a-propos">À propos</a>
-            <a href="#services">Services</a>
-            <a href="#avis">Avis</a>
-            <a href="#infos">Infos</a>
-            <a href="tel:+33146512364" class="header-cta">📞 Appeler</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#le-salon" class="nav-link">Le salon</a></li>
+                <li><a href="#equipe" class="nav-link">L'équipe</a></li>
+                <li><a href="#prestations" class="nav-link">Prestations</a></li>
+                <li><a href="#infos" class="nav-link">Nous trouver</a></li>
+                <li><a href="#reserver" class="header-cta mobile-in-nav">Prendre rendez-vous</a></li>
+            </ul>
         </nav>
+        <a href="#reserver" class="header-cta desktop-only">Prendre rendez-vous</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
+    <!-- MAIN -->
     <main id="main-content">
-        <!-- Hero -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-bg">
-                <img src="assets/maps-1.jpg" alt="Barbe à Bidou – Façade du barbershop rue Raynouard à Passy, Paris 16ᵉ" width="1600" height="1067" loading="eager" fetchpriority="high">
+        <!-- HÉRO -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" id="heroBg">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80&auto=format&fit=crop"
+                alt=""
+                loading="eager"
+                width="1920"
+                height="1080">
             </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-grain"></div>
             <div class="hero-content">
-                <div class="hero-badge-row">
-                    <span class="rating-badge" aria-label="Note 4.9 sur 5 sur 1016 avis Google">
-                        <span class="stars">★★★★★</span> 4.9
-                        <span class="count">(1016 avis)</span>
-                    </span>
+                <div class="hero-badge">
+                    <span class="stars">★★★★★</span>
+                    <span>4.9</span>
+                    <span class="note-count">· 1016 avis</span>
                 </div>
-                <h1 class="hero-title" id="hero-title">
-                    L'<span class="accent">art</span> du barbier,<br>au cœur de Passy
-                </h1>
-                <p class="hero-subtitle">Coiffeur & barbier expert pour hommes et enfants – 94 Rue Raynouard, Paris 16ᵉ</p>
-                <div class="hero-ctas">
-                    <a href="tel:+33146512364" class="btn btn-primary">📞 01 46 51 23 64</a>
-                    <a href="#infos" class="btn btn-outline">Venir au salon</a>
-                </div>
+                <h1 id="hero-title">La coupe juste,<br>rue Raynouard.</h1>
+                <p class="hero-subtitle">Cinq barbiers, un salon d'exception à Passy. Prenez le temps d'un soin qui dure bien au-delà de la taille.</p>
+                <a href="#reserver" class="hero-cta" id="heroCta">
+                    <span>Prendre rendez-vous à Passy</span>
+                </a>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span>Découvrir</span>
+                <div class="hero-scroll-line"></div>
             </div>
         </section>
 
-        <!-- À propos -->
-        <section class="section about-section" id="a-propos" aria-labelledby="about-title">
-            <div class="section-inner">
-                <div class="about-grid">
-                    <div class="about-text-block reveal">
-                        <span class="section-eyebrow">Notre maison</span>
-                        <h2 class="section-title" id="about-title">Un savoir-faire <span class="accent">authentique</span></h2>
-                        <div class="divider-laiton"></div>
-                        <p>Installé au 94 Rue Raynouard, en plein cœur du 16ᵉ arrondissement, Barbe à Bidou perpétue la tradition du barbier avec une exigence contemporaine. Taille de barbe, coupe homme, soins du visage : chaque geste est précis, chaque détail compte.</p>
-                        <p>Nous accueillons également les enfants avec la même attention, dans un cadre chaleureux et apaisant, pensé pour que chacun se sente bien.</p>
-                        <p class="highlight">"Ici, on prend le temps. Le temps d'écouter, le temps de faire bien, le temps de faire beau."</p>
+        <hr class="filet-laiton" aria-hidden="true">
+
+        <!-- LE SALON -->
+        <section class="section" id="le-salon" aria-labelledby="salon-title">
+            <div class="salon-layout">
+                <div class="salon-text">
+                    <p class="section-eyebrow reveal-on-scroll">Le 94 rue Raynouard</p>
+                    <h2 class="section-title reveal-on-scroll delay-1" id="salon-title">Un salon pensé pour<br>les hommes du quartier.</h2>
+                    <p class="section-lead reveal-on-scroll delay-2">Ouvert depuis plusieurs années au cœur de Passy, à deux pas de la Maison de la Radio, le 94 rue Raynouard est un espace dédié à la coiffure et au soin masculin. Ici, les hommes et les enfants du 16ᵉ arrondissement trouvent un cadre feutré, loin de l'agitation des grands boulevards. Fauteuils en cuir, bois ciré, outils de précision : chaque détail rappelle l'attention portée à la silhouette et au confort.</p>
+                </div>
+                <div class="salon-gallery">
+                    <div class="gallery-item reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop"
+                        alt="Produits et soins du salon Barbe à Bidou Passy"
+                        loading="lazy"
+                        width="600"
+                        height="720">
                     </div>
-                    <div class="about-visual reveal reveal-delay-1">
-                        <img src="assets/maps-1.jpg" alt="Intérieur chaleureux de Barbe à Bidou – fauteuils de barbier et décoration soignée" width="600" height="750" loading="lazy">
+                    <div class="gallery-item reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop"
+                        alt="Intérieur du salon Barbe à Bidou"
+                        loading="lazy"
+                        width="400"
+                        height="533">
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services -->
-        <section class="section services-section" id="services" aria-labelledby="services-title">
-            <div class="section-inner">
-                <span class="section-eyebrow reveal">Nos prestations</span>
-                <h2 class="section-title reveal reveal-delay-1" id="services-title">Des soins <span class="accent">sur-mesure</span></h2>
-                <div class="divider-laiton reveal reveal-delay-1"></div>
-                <div class="services-grid">
-                    <article class="service-card reveal reveal-delay-1">
-                        <div class="service-icon" aria-hidden="true">✂️</div>
-                        <h3>Coupe Homme</h3>
-                        <p>Coupe classique ou tendance, adaptée à votre morphologie et votre style. Conseil personnalisé inclus.</p>
-                        <span class="price-hint">Sur devis</span>
-                    </article>
-                    <article class="service-card reveal reveal-delay-2">
-                        <div class="service-icon" aria-hidden="true">🧔</div>
-                        <h3>Taille de Barbe</h3>
-                        <p>Taille d'entretien ou taille de précision au rasoir. Huile chaude et serviette vapeur pour un confort absolu.</p>
-                        <span class="price-hint">Sur devis</span>
-                    </article>
-                    <article class="service-card reveal reveal-delay-3">
-                        <div class="service-icon" aria-hidden="true">👦</div>
-                        <h3>Coupe Enfant</h3>
-                        <p>Patience et douceur pour les plus jeunes. Un moment agréable dans un cadre rassurant, dès 3 ans.</p>
-                        <span class="price-hint">Sur devis</span>
-                    </article>
-                    <article class="service-card reveal reveal-delay-1">
-                        <div class="service-icon" aria-hidden="true">🪒</div>
-                        <h3>Rasage Traditionnel</h3>
-                        <p>Rasage à l'ancienne, blaireau et savon. Un rituel complet pour une peau nette et apaisée.</p>
-                        <span class="price-hint">Sur devis</span>
-                    </article>
-                    <article class="service-card reveal reveal-delay-2">
-                        <div class="service-icon" aria-hidden="true">💆</div>
-                        <h3>Soin du Visage</h3>
-                        <p>Nettoyage en profondeur, gommage et hydratation. Pour une peau éclatante de santé.</p>
-                        <span class="price-hint">Sur devis</span>
-                    </article>
-                    <article class="service-card reveal reveal-delay-3">
-                        <div class="service-icon" aria-hidden="true">🎁</div>
-                        <h3>Forfaits & Cadeaux</h3>
-                        <p>Bons cadeaux et forfaits sur mesure. Offrez un moment de détente à ceux que vous aimez.</p>
-                        <span class="price-hint">Nous consulter</span>
-                    </article>
-                </div>
-                <p style="text-align:center;margin-top:1.8rem;font-size:0.88rem;color:var(--brun-moyen);font-style:italic;" class="reveal reveal-delay-3">
-                    Les tarifs sont communiqués sur place ou par téléphone. N'hésitez pas à nous contacter pour toute information.
-                </p>
-            </div>
-        </section>
-
-        <!-- Avis -->
-        <section class="section reviews-section" id="avis" aria-labelledby="reviews-title">
-            <div class="section-inner">
-                <span class="section-eyebrow reveal">Ils nous font confiance</span>
-                <h2 class="section-title reveal reveal-delay-1" id="reviews-title">Ce que disent <span class="accent">nos clients</span></h2>
-                <div class="reviews-highlight reveal reveal-delay-2">
-                    <span class="reviews-big-note">4.9</span>
-                    <span class="reviews-stars-large" aria-hidden="true">★★★★★</span>
-                    <span class="reviews-count">Basé sur <strong>1016 avis</strong> Google</span>
-                </div>
-                <p class="reviews-quote reveal reveal-delay-3">
-                    Une adresse incontournable à Passy. Accueil chaleureux, précision du geste, et une attention rare portée à chaque client. Le meilleur barbier du 16ᵉ.
-                </p>
-            </div>
-        </section>
-
-        <!-- Infos pratiques + Contact -->
-        <section class="section info-section" id="infos" aria-labelledby="info-title">
-            <div class="section-inner">
-                <span class="section-eyebrow reveal">Venir nous voir</span>
-                <h2 class="section-title reveal reveal-delay-1" id="info-title">Infos <span class="accent">pratiques</span></h2>
-                <div class="divider-laiton reveal reveal-delay-1"></div>
-                <div class="info-grid">
-                    <div class="info-block reveal reveal-delay-1">
-                        <h3>📍 Adresse</h3>
-                        <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">🏠</span>
-                            <span>94 Rue Raynouard<br>75016 Paris, France</span>
-                        </div>
-                        <h3 style="margin-top:1.2rem;">📞 Téléphone</h3>
-                        <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">📱</span>
-                            <a href="tel:+33146512364">01 46 51 23 64</a>
-                        </div>
-                        <h3 style="margin-top:1.2rem;">✉️ Email</h3>
-                        <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">📧</span>
-                            <a href="mailto:Parisbarbeabidou@gmail.com">Parisbarbeabidou@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="info-block reveal reveal-delay-2">
-                        <h3>🕐 Horaires</h3>
-                        <p style="color:var(--brun-moyen);font-size:0.95rem;margin-bottom:0.5rem;">
-                            Nous vous accueillons du mardi au samedi. Les horaires détaillés sont susceptibles de varier.
-                        </p>
-                        <span class="hours-note">Horaires à confirmer – Merci de nous contacter</span>
-                        <p style="margin-top:1rem;font-size:0.85rem;color:var(--brun-moyen);">
-                            Pour prendre rendez-vous ou connaître nos disponibilités, appelez-nous au 01 46 51 23 64.
-                        </p>
-                        <div style="margin-top:1.5rem;">
-                            <span class="rating-badge" style="background:rgba(21,18,16,0.9);color:var(--ecru);" aria-label="Note 4.9 sur 5 sur 1016 avis Google">
-                                <span class="stars">★★★★★</span> 4.9
-                                <span class="count">(1016 avis Google)</span>
-                            </span>
-                        </div>
+                    <div class="gallery-item reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop"
+                        alt="Devanture du salon rue Raynouard"
+                        loading="lazy"
+                        width="400"
+                        height="533">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Map -->
-        <section class="map-section" aria-label="Carte de localisation">
-            <div class="map-wrapper">
-                <iframe src="https://maps.google.com/maps?q=Barbe+%C3%A0+Bidou+%E2%80%93+Passy%2C+Paris+16%E1%B5%89+%E2%80%93+Barbershop+%7C+Coiffeur+%26+Barbier+Expert+Homme%2FEnfant+94+Rue+Raynouard%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – Barbe à Bidou, 94 Rue Raynouard, Paris 16ᵉ"></iframe>
+        <hr class="filet-laiton thin" aria-hidden="true">
+
+        <!-- L'ÉQUIPE -->
+        <section class="section" id="equipe" aria-labelledby="equipe-title">
+            <p class="section-eyebrow reveal-on-scroll">L'équipe</p>
+            <h2 class="section-title reveal-on-scroll delay-1" id="equipe-title">Cinq visages,<br>une signature.</h2>
+            <p class="section-lead reveal-on-scroll delay-2">Chacun des cinq barbiers de Passy apporte sa maîtrise et sa sensibilité. Une équipe stable, familiale, qui connaît ses clients et entretient avec eux une relation de confiance durable.</p>
+            <div class="equipe-grid">
+                <div class="equipe-card reveal-on-scroll delay-1" data-barbier>
+                    <div class="portrait-frame reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop&crop=top"
+                        alt="Benjamin"
+                        loading="lazy"
+                        width="300"
+                        height="400">
+                    </div>
+                    <p class="barbier-nom">Benjamin</p>
+                    <p class="barbier-specialite">Coupe & dégradé</p>
+                </div>
+                <div class="equipe-card reveal-on-scroll delay-2" data-barbier>
+                    <div class="portrait-frame reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format&fit=crop&crop=bottom"
+                        alt="Jeremy"
+                        loading="lazy"
+                        width="300"
+                        height="400">
+                    </div>
+                    <p class="barbier-nom">Jeremy</p>
+                    <p class="barbier-specialite">Barbe & soin du visage</p>
+                </div>
+                <div class="equipe-card reveal-on-scroll delay-3" data-barbier>
+                    <div class="portrait-frame reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&auto=format&fit=crop&crop=center"
+                        alt="Moise"
+                        loading="lazy"
+                        width="300"
+                        height="400">
+                    </div>
+                    <p class="barbier-nom">Moise</p>
+                    <p class="barbier-specialite">Taille & finitions</p>
+                </div>
+                <div class="equipe-card reveal-on-scroll delay-4" data-barbier>
+                    <div class="portrait-frame reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop&crop=right"
+                        alt="Logan"
+                        loading="lazy"
+                        width="300"
+                        height="400">
+                    </div>
+                    <p class="barbier-nom">Logan</p>
+                    <p class="barbier-specialite">Coupe homme & enfant</p>
+                </div>
+                <div class="equipe-card reveal-on-scroll delay-5" data-barbier>
+                    <div class="portrait-frame reveal-img-trigger" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop&crop=bottom"
+                        alt="Rivaldo"
+                        loading="lazy"
+                        width="300"
+                        height="400">
+                    </div>
+                    <p class="barbier-nom">Rivaldo</p>
+                    <p class="barbier-specialite">Barbier senior</p>
+                </div>
             </div>
         </section>
 
-        <!-- Contact CTA -->
-        <section class="section contact-cta-section" aria-labelledby="cta-title">
-            <div class="section-inner">
-                <span class="section-eyebrow reveal">Prenez rendez-vous</span>
-                <h2 class="section-title reveal reveal-delay-1" id="cta-title">Envie d'un <span class="accent">vrai moment</span> pour vous ?</h2>
-                <p style="max-width:500px;margin:0 auto 1rem;opacity:0.8;font-size:0.95rem;" class="reveal reveal-delay-2">
-                    Que ce soit pour une coupe, une taille de barbe ou un simple conseil, nous sommes là.
-                </p>
-                <div class="contact-links reveal reveal-delay-3">
-                    <a href="tel:+33146512364" class="btn btn-primary">📞 01 46 51 23 64</a>
-                    <a href="mailto:Parisbarbeabidou@gmail.com" class="btn btn-outline">✉️ Nous écrire</a>
+        <hr class="filet-laiton" aria-hidden="true">
+
+        <!-- PRESTATIONS & TARIFS -->
+        <section class="section" id="prestations" aria-labelledby="prestations-title">
+            <div style="max-width: 680px;">
+                <p class="section-eyebrow reveal-on-scroll">Les soins, à l'essentiel</p>
+                <h2 class="section-title reveal-on-scroll delay-1" id="prestations-title">Prestations & tarifs</h2>
+            </div>
+            <table class="prestations-table reveal-on-scroll delay-2">
+                <tbody>
+                    <tr>
+                        <td class="presta-nom">Coupe homme</td>
+                        <td class="presta-detail">Shampoing, coupe, coiffage</td>
+                        <td class="presta-prix">30 €</td>
+                    </tr>
+                    <tr>
+                        <td class="presta-nom">Forfait coupe & barbe</td>
+                        <td class="presta-detail">Coupe complète + taille & entretien de la barbe</td>
+                        <td class="presta-prix">60 €</td>
+                    </tr>
+                    <tr>
+                        <td class="presta-nom">Coupe enfant (–12 ans)</td>
+                        <td class="presta-detail">Adaptée aux plus jeunes, même soin</td>
+                        <td class="presta-prix">25 €</td>
+                    </tr>
+                    <tr>
+                        <td class="presta-nom">Taille de barbe seule</td>
+                        <td class="presta-detail">Tracé, dégradé, baume de finition</td>
+                        <td class="presta-prix">35 €</td>
+                    </tr>
+                    <tr>
+                        <td class="presta-nom">Soin du visage</td>
+                        <td class="presta-detail">Nettoyage, gommage, masque hydratant</td>
+                        <td class="presta-prix">45 €</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="presta-note reveal-on-scroll delay-3">Tous nos soins incluent un temps d'échange et de conseil personnalisé. Les durées indicatives sont de 30 à 50 minutes selon la prestation.</p>
+        </section>
+
+        <hr class="filet-laiton thin" aria-hidden="true">
+
+        <!-- INFOS & HORAIRES -->
+        <section class="section" id="infos" aria-labelledby="infos-title">
+            <p class="section-eyebrow reveal-on-scroll">Nous trouver</p>
+            <h2 class="section-title reveal-on-scroll delay-1" id="infos-title">Infos & horaires</h2>
+            <div class="infos-grid reveal-on-scroll delay-2">
+                <div class="infos-bloc">
+                    <div class="infos-item">
+                        <span class="infos-label">Adresse</span>
+                        <span class="infos-value">94 Rue Raynouard<br>75016 Paris</span>
+                    </div>
+                    <div class="infos-item">
+                        <span class="infos-label">Téléphone</span>
+                        <span class="infos-value"><a href="tel:+33146512364">01 46 51 23 64</a></span>
+                    </div>
+                    <div class="infos-item">
+                        <span class="infos-label">Email</span>
+                        <span class="infos-value"><a href="mailto:Parisbarbeabidou@gmail.com">Parisbarbeabidou@gmail.com</a></span>
+                    </div>
+                    <div class="infos-item">
+                        <span class="infos-label">Horaires d'ouverture</span>
+                        <ul class="horaires-liste">
+                            <li><span class="jour">Lundi – Vendredi</span><span class="heures">9h30 – 19h30</span></li>
+                            <li><span class="jour">Samedi</span><span class="heures">9h00 – 18h00</span></li>
+                            <li><span class="jour">Dimanche</span><span class="heures">Fermé</span></li>
+                        </ul>
+                    </div>
+                    <div class="infos-item" id="reserver">
+                        <span class="infos-label">Réservation</span>
+                        <span class="infos-value"><a href="https://agence.mooo.com/barbe-a-bidou-passy-paris-16e-barbershop-coiffeur-barbier-expert-homme-enfant" target="_blank" rel="noopener">Prendre rendez-vous en ligne →</a></span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Barbe+%C3%A0+Bidou+%E2%80%93+Passy%2C+Paris+16%E1%B5%89+%E2%80%93+Barbershop+%7C+Coiffeur+%26+Barbier+Expert+Homme%2FEnfant+94+Rue+Raynouard%2C+Paris&output=embed"
+                    width="100%"
+                    height="360"
+                    style="border:0;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Plan d'accès Barbe à Bidou Passy"
+                    aria-label="Carte Google Maps du salon"></iframe>
                 </div>
             </div>
+            <p class="infos-item" style="margin-top:1.5rem;font-size:0.78rem;opacity:0.6;letter-spacing:0.04em;">
+                Métro : Passy (ligne 6) · La Muette (ligne 9) · RER C : Boulainvilliers
+            </p>
         </section>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
-        <div class="footer-brand">Barbe à Bidou</div>
-        <p>94 Rue Raynouard, 75016 Paris — <a href="tel:+33146512364">01 46 51 23 64</a></p>
-        <p><a href="mailto:Parisbarbeabidou@gmail.com">Parisbarbeabidou@gmail.com</a></p>
-        <p>Note Google : 4.9★ sur 1016 avis</p>
-        <p class="footer-credits">Site créé par <a href="https://agence.mooo.com/barbe-a-bidou-passy-paris-16e-barbershop-coiffeur-barbier-expert-homme-enfant" target="_blank" rel="noopener">Agence Mooo</a></p>
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div>
+            <p class="footer-brand">Barbe à Bidou – Passy</p>
+            <p>94 Rue Raynouard, 75016 Paris</p>
+            <p><a href="tel:+33146512364">01 46 51 23 64</a> · <a href="mailto:Parisbarbeabidou@gmail.com">Parisbarbeabidou@gmail.com</a></p>
+        </div>
+        <div></div>
+        <div class="footer-credits">
+            <p>Site créé par Agence Mooo</p>
+            <p style="margin-top:0.3rem;">4.9 ★ sur 1016 avis Google</p>
+        </div>
+        <hr class="filet-laiton" aria-hidden="true">
+        <div style="grid-column:1/-1;text-align:center;font-size:0.72rem;opacity:0.4;letter-spacing:0.06em;">
+            &copy; <span id="currentYear"></span> Barbe à Bidou Passy. Tous droits réservés.
+        </div>
     </footer>
 
+    <!-- Schema.org -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -1034,82 +1199,201 @@
             },
             "telephone": "+33146512364",
             "email": "Parisbarbeabidou@gmail.com",
-            "image": "assets/maps-1.jpg",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
                 "reviewCount": "1016"
             },
-            "priceRange": "€€",
+            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:30",
+                    "closes": "19:30"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "09:00",
+                    "closes": "18:00"
+                }
+            ],
             "url": "https://agence.mooo.com/barbe-a-bidou-passy-paris-16e-barbershop-coiffeur-barbier-expert-homme-enfant"
         }
     </script>
 
     <script>
-        (function() {
-            // Header scroll effect
-            const header = document.getElementById('site-header');
-            let scrollTicking = false;
+        // === ANNÉE COURANTE ===
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-            function updateHeader() {
-                if (window.scrollY > 40) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                scrollTicking = false;
+        // === HEADER SCROLL ===
+        const header = document.getElementById('header');
+        let scrollTicking = false;
+        const updateHeader = () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-
-            window.addEventListener('scroll', () => {
-                if (!scrollTicking) {
-                    requestAnimationFrame(updateHeader);
-                    scrollTicking = true;
-                }
-            }, { passive: true });
-
-            // IntersectionObserver for scroll reveals
-            const revealElements = document.querySelectorAll('.reveal');
-            if (revealElements.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.12,
-                    rootMargin: '0px 0px -40px 0px'
-                });
-
-                revealElements.forEach(el => observer.observe(el));
-            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                revealElements.forEach(el => el.classList.add('visible'));
+            scrollTicking = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(updateHeader);
+                scrollTicking = true;
             }
+        }, { passive: true });
 
-            // Smooth scroll for anchor links (respects prefers-reduced-motion)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        const headerHeight = header.offsetHeight;
-                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
-                            headerHeight - 16;
-                        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                            window.scrollTo(0, targetPosition);
-                        } else {
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
+        // === HERO BG REVEAL ===
+        const heroBg = document.getElementById('heroBg');
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroBg.classList.add('revealed');
+                }
             });
-        })();
+        }, { threshold: 0.3 });
+        heroObserver.observe(heroBg);
+
+        // === REVEAL ON SCROLL (sections) ===
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === REVEAL IMG (bain de révélateur) ===
+        const imgTriggers = document.querySelectorAll('.reveal-img-trigger');
+        const imgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // aussi révéler l'image à l'intérieur du portrait-frame
+                    const portraitFrame = entry.target.closest('.portrait-frame');
+                    if (portraitFrame) {
+                        portraitFrame.classList.add('revealed-img');
+                    }
+                    imgObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        imgTriggers.forEach(el => imgObserver.observe(el));
+
+        // === ÉQUIPE CARDS staggered reveal ===
+        const equipeCards = document.querySelectorAll('[data-barbier]');
+        const equipeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // révéler aussi le portrait-frame à l'intérieur
+                    const pf = entry.target.querySelector('.portrait-frame');
+                    if (pf) pf.classList.add('revealed-img');
+                    equipeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
+        });
+        equipeCards.forEach(el => equipeObserver.observe(el));
+
+        // === MOBILE MENU ===
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.getElementById('headerNav');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const openMenu = () => {
+            menuToggle.classList.add('active');
+            headerNav.classList.add('active');
+            navOverlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeMenu = () => {
+            menuToggle.classList.remove('active');
+            headerNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+
+        menuToggle.addEventListener('click', () => {
+            if (headerNav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        navOverlay.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (headerNav.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // === FERMETURE MENU AU RESIZE ===
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (window.innerWidth >= 861 && headerNav.classList.contains('active')) {
+                    closeMenu();
+                }
+            }, 150);
+        });
+
+        // === SMOOTH SCROLL POUR LES CTA (ancres) ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const headerHeight = header.getBoundingClientRect().height;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                        headerHeight - 16;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // === INIT : vérifier l'état du header au chargement ===
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        // Vérifier si le heroBg est déjà visible au chargement
+        if (heroBg.getBoundingClientRect().top < window.innerHeight * 0.7) {
+            heroBg.classList.add('revealed');
+        }
     </script>
 </body>
 </html>
+```
+### Design éditorial
+
+La direction artistique du site s’appuie sur une ambiance de club privé masculin, sobre et architecturale pour incarner l’élégance discrète du quartier. La typographie associe **Bricolage Grotesque** pour les titres, massive et affirmée, à **Hanken Grotesk** pour les textes courants, sobre et fonctionnelle.
+
+- **Un rythme visuel architectural.** Des filets horizontaux dorés `#B8860B` structurent les sections comme des blocs de pierre. Cette ponctuation graphique évoque la précision du tracé de barbe et apporte une rigueur haussmannienne à la mise en page.
+- **Expérience sensorielle.** Un grain de film argentique léger est superposé à l’ensemble du fond, tandis que les photos passent d’un état monochrome chaud à une image pleine au scroll, imitant le développement d’une image. Ce « bain de révélateur » visuel, lent et feutré, renforce l’idée d’un soin qui prend son temps.
+- **Contraste mesuré.** La palette chromatique, du `#F5F2EC` au `#1A1817`, crée un écrin lumineux sans être clinique. La navigation fixe et les cartes de l’équipe en noir et blanc (avec virage sépia) ancrent le luxe dans la matière (bois, cuir) plutôt que dans l’ostentation.
+
+Chaque détail vise à projeter le visiteur dans l’atmosphère feutrée de ce salon d’exception.

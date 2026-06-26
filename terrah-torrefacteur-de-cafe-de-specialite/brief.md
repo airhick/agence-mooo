@@ -1,46 +1,72 @@
-## Brief créatif – Terrah · Torréfacteur de café de spécialité
+Voici le brief créatif pour Terrah, conçu pour corriger les faiblesses structurelles et visuelles identifiées tout en incarnant l'énergie réelle du commerce.
+
+---
+
+## BRIEF CRÉATIF — TERRAH
 
 ### 1. Concept & positionnement
-**De l’atelier à la tasse, un café intensément parisien.**  
-Terrah n’est pas un simple torréfacteur : c’est un lieu vivant où l’odeur du café fraîchement torréfié s’échappe jusque sur le trottoir du 11ᵉ. Le site raconte cette double énergie — la précision de l’artisan et la chaleur du coffee shop de quartier — pour que chaque visiteur, riverain ou office manager, trouve immédiatement sa porte d’entrée.
+**“Le sur mesure” — un tailleur de café pour les entreprises.**
+Terrah n'est pas un simple fournisseur, c'est un artisan qui façonne une solution café exactement dimensionnée pour chaque entreprise. On abandonne le ton “vendeur de machines” pour adopter celui d'un **maître d'hôtel ou d'un chef de partie** : compétence technique irréprochable, conseil discret, qualité absolue. Le visiteur doit sentir qu'il entre dans une maison qui maîtrise son art du grain à la tasse, avec le chic sobre d'une enseigne parisienne historique.
 
 ### 2. Direction artistique
-**Brut de torréfaction, élégance sobre.**  
-Un parti pris ancré dans les matières réelles du commerce : bois étuvé, sacs de jute, métal brossé des machines, carreaux de ciment du coffee shop. Les photos Google Maps montrent un lieu à la fois industriel et accueillant, baigné de lumière naturelle, avec des tonalités chaudes de cafés torréfiés et de cuivres. La DA traduit cette tension entre la rugosité de l’atelier et la douceur du service au comptoir. Chaque écran respire, laissant la place aux textures, aux gros plans sur le grain, aux portraits des baristas. Aucune froideur corporate ni rusticité artificielle — le luxe ici est celui de l’authentique.
+**“Le Rost ganté” — élégance torréfiée.**
+Un parti pris éditorial chic, inspiré par les photos absentes mais déduit de l'activité réelle : on imagine un atelier où le laiton des machines à torréfier dialogue avec le bois, le cuir et la matière brute du café. L'esthétique sera celle d'un **carnet de dégustation luxueux**, mêlant la précision technique (tableaux de suivi de torréfaction, notes de dégustation) à une sensualité très matérielle (gros plans sur les grains, texture du sac de jute, vapeur sur une tasse en porcelaine). Aucun effet « coffee shop générique avec plantes vertes et murs blancs » — ici, la noblesse est dans la matière sombre et la lumière contrôlée.
 
 ### 3. Palette
-Les teintes ont été extraites de l’observation des photos du commerce : le brun profond du café, le beige chaud de la toile de jute, le gris des machines, la touche de vert des plantes, et un éclat cuivré.
+Les couleurs sont directement extraites de l'univers du café de spécialité et des machines professionnelles.
 
-| Rôle           | HEX       | Nom                         |
-|----------------|-----------|-----------------------------|
-| Fond principal | `#FBF7F2` | Blanc cassé cosy            |
-| Encre / texte  | `#2C1E16` | Brun torréfié               |
-| Accent chaud   | `#B86B3D` | Cuivré café                 |
-| Second accent  | `#5A6B56` | Vert sauge (plantes, thé)   |
-| Surface foncée | `#3A3A3C` | Gris machine                |
-| Surface claire | `#EDE6DB` | Jute pâle                   |
+| Rôle | Nom | Hex | Usage |
+|------|-----|-----|-------|
+| Encre | Noir torréfié | `#1C1613` | Textes, fonds principaux, ancrage solide |
+| Fond | Écume chaude | `#F8F3ED` | Fond des sections (remplace le blanc fade) |
+| Accent chaud | Cuivre machine | `#B87333` | Boutons CTA, filets, prix, éléments interactifs |
+| Subtil | Vert soie | `#3A4A3F` | Accents froids pour les chiffres, étiquettes « sans engagement », notes techniques |
+| Chair | Crème moka | `#E3D5C4` | Survolumes, blocs contrastés, cartes de contenu |
+| Signalétique | Bleu travail | `#2C3E50` | Icônes, pictogrammes « livraison 4h », signalétique pro |
+
+**Ambiance générale :** Fond clair chaud majoritaire, mais avec des zones de respiration en noir torréfié pour les bandeaux pleine largeur, les footers et les sections “chiffres clés”. Les CTA sont en cuivre, jamais en vert acide.
 
 ### 4. Ton éditorial
-Une voix **directe, passionnée, jamais arrogante**. Le vouvoiement est conservé pour la clientèle pro, mais la proximité du tutoiement affleure dans les adresses aux particuliers — on sent le sourire du barista. Le vocabulaire technique (origines, scores, notes de dégustation) est rendu accessible par des explications courtes et sensorielles. Le registre est celui d’un commerçant qui connaît son métier et aime le partager.
-
-**Signature de plume :** des accroches rythmées, des phrases qui évoquent le geste (torréfier, infuser, déguster).
+**Voix :** Un chef de rang ou un artisan maître torréfacteur. Niveau de langue soutenu mais direct, sans jargon marketing. Le tutoiement est banni (on s'adresse à un responsable d'entreprise ou à un chef de bureau). Les verbes sont actifs, les chiffres sont assumés. On évite les superlatifs (“meilleur”, “excellent”) pour des faits (“torréfié la veille”, “0,18€ HT la tasse”). Le café est toujours qualifié de “café de spécialité”, jamais simplement “café”.
 
 ### 5. Accroche héro
-**Titre :** Torréfié ce matin, bu ce midi.  
-**Sous-titre :** Coffee shop au cœur du 11ᵉ & atelier de torréfaction. Grains de spécialité, machines, conseil — pour votre cuisine ou pour votre entreprise.
+**Titre :** ~~“| Le café pour les pros, sans prise de tête”~~ **→ “Le café de spécialité sur mesure pour votre entreprise.”**
+
+**Sous-titre :** “Une solution complète, de la machine à la tasse, calibrée sur vos besoins — torréfié à Paris, livré en 4 heures, sans engagement.”
+
+*(Ce titre corrige le H1 cassé, ancre la promesse B2B, introduit le “sur mesure” comme concept central, et mentionne Paris immédiatement pour le SEO local.)*
 
 ### 6. Sections
-1. **Le café du coin**  
-   *26 rue Oberkampf, Paris 11ᵉ. Espresso, latte, batch brew : nos baristas vous servent du lundi au samedi. Terrasse au calme, wifi, et le bruit rassurant du moulin.*
-2. **Les grains de la semaine**  
-   *Sélection rigoureuse de micro-lots, torréfaction sur mesure. Chaque café est tracé, goûté et livré avec son histoire. Boutique en ligne — expédition sous 24 h.*
-3. **L’atelier des curieux**  
-   *Découvrez l’envers du décor : initiations, cupping, ateliers latte art. Tous niveaux, à deux pas du comptoir. Réservez votre place.*
-4. **Terrah pour les pros**  
-   *Machine, café, maintenance, livraison en 4 h sur Paris. Essai 30 jours offert. À partir de 0,18 € HT la tasse. Service sans engagement, humain joignable.*
-5. **Deux adresses, un seul grain**  
-   *Coffee shop : 26 rue Oberkampf, Paris 11ᵉ (accueil, dégustation, ateliers). Torréfaction & siège : 90 rue Raynouard, Paris 16ᵉ. Contact : 06 18 05 25 31 · contact@terrah.co*
+L'ordre est repensé pour que le tunnel de conversion B2B soit fluide, mais avec des respirations visuelles fortes et une hiérarchie claire.
+
+1.  **Héros**
+    *Titre :* “Le café de spécialité sur mesure pour votre entreprise.”
+    *Contenu visuel :* Photo pleine largeur — un plan rapproché sur les mains d'un torréfacteur contrôlant la couleur d'un grain au refroidissoir, lumière chaude focalisée. Overlay très léger du cuivre `#B87333` en aplat à 5% sur le texte.
+
+2.  **L'offre en trois gestes**
+    *Titre :* “Votre solution café, calibrée en 7 jours.”
+    *Contenu :* Trois colonnes illustrées (icônes en bleu travail `#2C3E50`) : 1. Brief & dégustation — 2. Installation & formation — 3. Réassort & maintenance. On remplace les étapes génériques par des verbes techniques et des durées engageantes.
+
+3.  **Comparateur d'économies**
+    *Titre :* “Que change Terrah à votre solution actuelle ?”
+    *Contenu :* Tableau comparatif épuré, fond crème moka `#E3D5C4`, chiffres clés en cuivre `#B87333`. Un champ de saisie pour le nombre de salariés, avec résultat dynamique en police display surdimensionnée. Pas de faux prix : on invite au devis personnalisé.
+
+4.  **La torréfaction (section storytelling visuel)**
+    *Titre :* “Torréfié ici, livré demain.”
+    *Contenu :* 4 grandes photos en noir et blanc avec un voile chaud, légendées en DM Serif Display : “Sélection des crus” — “Torréfaction au 26 rue Oberkampf” — “Contrôle qualité” — “Livraison en 4h sur Paris”. On montre enfin l'atelier et le salon, on règle la dissonance d'adresse en l'assumant : un lieu de travail ET de dégustation.
+
+5.  **Salon de dégustation**
+    *Titre :* “Goûtez avant de choisir.”
+    *Contenu :* “Notre comptoir de dégustation vous accueille au 26 rue Oberkampf, Paris 11ᵉ. Venez rencontrer notre maître torréfacteur, goûter nos crus du moment et définir le profil qui conviendra à vos équipes.” + Photo du comptoir (bois, laiton, lumière douce). Horaires mis en évidence.
+
+6.  **Témoignages & chiffres**
+    *Titre :* “+120 entreprises l'ont déjà adopté.”
+    *Contenu :* Blocs témoignages en fond noir torréfié, texte en écume chaude `#F8F3ED`, citations authentiques extraites des avis Google Maps (scores, retours réels). Les phrases trop génériques sont remplacées par les verbatim clients réels.
+
+7.  **FAQ & CTA final**
+    *Titre :* “Sans engagement — vraiment.”
+    *Contenu :* La FAQ actuelle remise en forme en accordéon, avec un dernier bloc CTA : “Réserver un essai de 30 jours” en bouton cuivre. Le lien WhatsApp pour le réassort est présent en bas, avec une étiquette verte soie “Dépannage en 4h”.
 
 ### 7. Signature visuelle
-- **La trame du sac** : un motif discret issu du tissage de la toile de jute, utilisé en fond de carte ou en séparateur de sections. Il s’anime subtilement au scroll, comme un fil qui se tend.
-- **Le grain qui respire** : au survol des visuels de paquets de café, un effet de zoom avant cinétique révèle les stries du grain et libère un léger mouvement de torréfaction (vapeur, ronds de chaleur). Un détail technique qui ancre l’artisanat dans le digital.
+1.  **La typographie comme matière :** DM Serif Display est utilisée en **titrage massif et contrasté**, parfois en outline sur fond sombre pour évoquer les tampons sur les sacs de café en toile. Dans le comparateur, les chiffres d'économie sont affichés en DM Serif Display à 120px, avec un effet de chevauchement subtil sur le bloc suivant, comme une griffe d'imprimeur.
+2.  **Animation “vapeur” au scroll :** Lorsque l'utilisateur arrive sur la section torréfaction, des volutes blanches animées (SVG légères, flou gaussien) passent sur les photos en noir et blanc, donnant l'impression de chaleur et de fraîcheur — un détail sensoriel subtil qui rend le site immédiatement mémorable et ancre l'idée de torréfaction artisanale.
