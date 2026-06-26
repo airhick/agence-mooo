@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godot & Fils Neuilly Peretti — Achat Vente Or, expertise depuis 1933</title>
+    <meta name="description" content="Godot & Fils, experts en achat, vente et rachat d'or au cœur de Neuilly-sur-Seine depuis 1933. Lingots, pièces, bijoux estimés en toute transparence avenue Achille Peretti. Note 4,9★.">
+    <meta property="og:title" content="Godot & Fils Neuilly Peretti — Achat Vente Or">
+    <meta property="og:description" content="Depuis 1933, Godot & Fils expertise vos pièces, lingots et bijoux au cœur de Neuilly-sur-Seine. Achat, vente, rachat et conservation — en toute transparence.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231C1E1F' stroke='%23C5A86B' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23C5A86B' stroke-width='2'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='20' fill='%23C5A86B' font-family='serif' font-weight='bold'%3E₣%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Godot & Fils Neuilly Peretti (Achat Vente Or)",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "145 Avenue Achille Peretti",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33184201514",
+            "email": "peretti@godotetfils.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "59",
+                "bestRating": "5"
+            },
+            "priceRange": "€€€",
+            "openingHours": "Mo-Fr 10:00-19:00",
+            "url": "https://agence.mooo.com/godot-fils-neuilly-peretti-achat-vente-or"
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #1C1E1F;
+            --text: #F5F2ED;
+            --gold: #C5A86B;
+            --gold-hover: #D4B87A;
+            --deep-green: #2F4F4F;
+            --border: #3A3D3F;
+            --border-light: #4A4D4F;
+            --font-display: 'Unbounded', sans-serif;
+            --font-body: 'Albert Sans', sans-serif;
+            --grain-opacity: 0.04;
+            --spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+            --spacing-sm: clamp(1rem, 2vw, 1.5rem);
+            --spacing-md: clamp(1.5rem, 3vw, 2.5rem);
+            --spacing-lg: clamp(2.5rem, 6vw, 5rem);
+            --spacing-xl: clamp(4rem, 10vw, 8rem);
+            --fs-display-xl: clamp(2.4rem, 5.5vw, 4.8rem);
+            --fs-display-lg: clamp(1.8rem, 3.5vw, 3rem);
+            --fs-display-md: clamp(1.4rem, 2.2vw, 2rem);
+            --fs-body: clamp(0.95rem, 1.15vw, 1.1rem);
+            --fs-body-sm: clamp(0.82rem, 0.95vw, 0.95rem);
+            --fs-caption: clamp(0.7rem, 0.85vw, 0.8rem);
+            --letter-spacing-tight: -0.02em;
+            --letter-spacing-wide: 0.06em;
+            --letter-spacing-wider: 0.12em;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: var(--fs-body);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* Grain texture overlay */
+        .grain-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: var(--grain-opacity);
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            mix-blend-mode: overlay;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .grain-overlay {
+                opacity: 0.02;
+            }
+        }
+
+        /* Filigrane monétaire */
+        .filigrane {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.022;
+            top: 55%;
+            right: -8%;
+            width: clamp(280px, 45vw, 620px);
+            height: auto;
+            transform: rotate(-12deg);
+            transition: opacity 1.6s ease;
+        }
+        .filigrane.visible-more {
+            opacity: 0.04;
+        }
+        .filigrane svg {
+            width: 100%;
+            height: auto;
+            fill: var(--border);
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 0.5rem 1rem;
+            z-index: 10000;
+            font-weight: 600;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9000;
+            padding: 0.75rem 1.5rem;
+            transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+            background: transparent;
+        }
+        .header.scrolled {
+            background: rgba(28, 30, 31, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1.5rem;
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+            letter-spacing: var(--letter-spacing-wider);
+            color: var(--text);
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            padding: 0.35rem 0;
+            transition: color 0.3s;
+        }
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+        .logo .gold-dot {
+            color: var(--gold);
+            font-size: 1.3em;
+            margin: 0 0.15em;
+            vertical-align: -0.08em;
+            display: inline-block;
+        }
+        .nav-desktop {
+            display: flex;
+            gap: clamp(0.8rem, 2vw, 2rem);
+            list-style: none;
+            align-items: center;
+        }
+        .nav-desktop a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+        .nav-desktop a:hover,
+        .nav-desktop a:focus-visible {
+            color: var(--gold-hover);
+        }
+        .nav-desktop a:hover::after,
+        .nav-desktop a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 1.1rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: var(--fs-body-sm);
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.35s ease;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .header-cta:hover::before,
+        .header-cta:focus-visible::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-cta span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.35s;
+        }
+        .header-cta:hover span,
+        .header-cta:focus-visible span {
+            color: var(--bg);
+        }
+        .header-cta .cta-icon {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1em;
+        }
+        .badge-google-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(197, 168, 107, 0.1);
+            border: 1px solid rgba(197, 168, 107, 0.25);
+            padding: 0.3rem 0.65rem;
+            border-radius: 100px;
+            font-size: var(--fs-caption);
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .badge-google-mini .star {
+            color: #F9AB00;
+            font-size: 1.15em;
+        }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 9001;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 30, 31, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 8999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+        .mobile-menu .mobile-cta {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 0.8rem 1.8rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: var(--fs-body);
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        .mobile-menu .mobile-cta:hover {
+            background: var(--gold-hover);
+        }
+
+        /* MAIN */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 6rem 1.5rem 4rem;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.35) saturate(0.7) contrast(1.1);
+            transform: scale(1.05);
+            animation: hero-bg-zoom 12s ease-out forwards;
+        }
+        @keyframes hero-bg-zoom {
+            from {
+                transform: scale(1.15);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 35%, rgba(28, 30, 31, 0.75) 85%, rgba(28, 30, 31, 0.95) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            animation: hero-fade-up 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            opacity: 0;
+            animation-delay: 0.3s;
+        }
+        @keyframes hero-fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scellé animation */
+        .scelle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 2rem;
+            height: 50px;
+            position: relative;
+        }
+        .scelle-line {
+            height: 2px;
+            background: var(--gold);
+            transform-origin: center;
+            will-change: transform;
+            border-radius: 1px;
+        }
+        .scelle-line.left {
+            transform: scaleX(0);
+            animation: scelle-stretch-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation-delay: 0.15s;
+            width: clamp(60px, 15vw, 160px);
+            margin-right: 0;
+        }
+        .scelle-line.right {
+            transform: scaleX(0);
+            animation: scelle-stretch-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation-delay: 0.15s;
+            width: clamp(60px, 15vw, 160px);
+            margin-left: 0;
+        }
+        @keyframes scelle-stretch-left {
+            0% {
+                transform: scaleX(0);
+                transform-origin: right center;
+            }
+            60% {
+                transform: scaleX(1);
+                transform-origin: right center;
+            }
+            100% {
+                transform: scaleX(1);
+                transform-origin: right center;
+            }
+        }
+        @keyframes scelle-stretch-right {
+            0% {
+                transform: scaleX(0);
+                transform-origin: left center;
+            }
+            60% {
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
+            100% {
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
+        }
+        .scelle-seal {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 35%, #D4B87A 0%, #8B6914 60%, #5C3D0E 100%);
+            box-shadow: 0 0 18px rgba(197, 168, 107, 0.7), 0 0 40px rgba(197, 168, 107, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            margin: 0 6px;
+            animation: seal-pulse-fade 2.4s ease-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        .scelle-seal::after {
+            content: 'S';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0;
+        }
+        @keyframes seal-pulse-fade {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            25% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(0.95);
+            }
+            55% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scelle-line.left,
+            .scelle-line.right {
+                animation: none;
+                transform: scaleX(1);
+            }
+            .scelle-seal {
+                animation: none;
+                opacity: 0.5;
+            }
+            .hero-bg img {
+                animation: none;
+                transform: scale(1.05);
+            }
+            .hero-content {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: var(--fs-display-xl);
+            letter-spacing: var(--letter-spacing-tight);
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+        }
+        .hero h1 .gold-accent {
+            color: var(--gold);
+        }
+        .hero-sub {
+            font-size: var(--fs-body);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+            color: rgba(245, 242, 237, 0.8);
+            max-width: 620px;
+            margin: 0 auto 2rem;
+        }
+        .hero-badge-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .badge-google-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(28, 30, 31, 0.7);
+            border: 1px solid rgba(197, 168, 107, 0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            color: var(--text);
+            letter-spacing: 0.02em;
+            backdrop-filter: blur(8px);
+        }
+        .badge-google-hero .stars {
+            color: #F9AB00;
+            font-size: 1.2em;
+            letter-spacing: 2px;
+        }
+        .badge-google-hero .note {
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .hero-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 0.75rem 1.6rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: var(--fs-body);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.35s ease;
+        }
+        .hero-cta-btn:hover {
+            background: var(--gold-hover);
+            box-shadow: 0 6px 28px rgba(197, 168, 107, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: scroll-bounce 2s ease-in-out infinite;
+            opacity: 0.7;
+            color: var(--text);
+            font-size: var(--fs-caption);
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+        .scroll-indicator .line-vert {
+            width: 1px;
+            height: 36px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            border-radius: 1px;
+        }
+        @keyframes scroll-bounce {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-indicator {
+                animation: none;
+            }
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: var(--spacing-xl) 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--font-display);
+            font-size: var(--fs-caption);
+            letter-spacing: var(--letter-spacing-wider);
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: var(--fs-display-lg);
+            letter-spacing: var(--letter-spacing-tight);
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        .section-text {
+            font-size: var(--fs-body);
+            line-height: 1.75;
+            color: rgba(245, 242, 237, 0.82);
+            max-width: 700px;
+            font-weight: 400;
+        }
+        .section-text+.section-text {
+            margin-top: 1rem;
+        }
+
+        /* Divider line */
+        .divider-dot {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .divider-dot .line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .divider-dot .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: translateY(0);
+                transition: none;
+            }
+        }
+
+        /* Heritage section */
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        .heritage-visual {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 2px;
+            background: var(--border);
+        }
+        .heritage-visual .ornament-frame {
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(197, 168, 107, 0.3);
+            margin: 12px;
+            border-radius: 1px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .heritage-visual .ornament-corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-color: var(--gold);
+            border-style: solid;
+            z-index: 2;
+            opacity: 0.7;
+        }
+        .ornament-corner.tl {
+            top: 20px;
+            left: 20px;
+            border-width: 2px 0 0 2px;
+        }
+        .ornament-corner.tr {
+            top: 20px;
+            right: 20px;
+            border-width: 2px 2px 0 0;
+        }
+        .ornament-corner.bl {
+            bottom: 20px;
+            left: 20px;
+            border-width: 0 0 2px 2px;
+        }
+        .ornament-corner.br {
+            bottom: 20px;
+            right: 20px;
+            border-width: 0 2px 2px 0;
+        }
+        .heritage-visual .year-badge {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+            text-shadow: 0 0 40px rgba(197, 168, 107, 0.4);
+            line-height: 1;
+        }
+        .heritage-visual .bg-pattern {
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(197, 168, 107, 0.04) 8px, rgba(197, 168, 107, 0.04) 10px),
+                repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(197, 168, 107, 0.04) 8px, rgba(197, 168, 107, 0.04) 10px);
+            z-index: 0;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+        .service-card {
+            background: rgba(58, 61, 63, 0.3);
+            border: 1px solid var(--border);
+            padding: var(--spacing-md);
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+        .service-card:hover::before,
+        .service-card:focus-within::before {
+            height: 100%;
+        }
+        .service-card:hover {
+            border-color: var(--border-light);
+            background: rgba(58, 61, 63, 0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--gold);
+            opacity: 0.8;
+        }
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: var(--fs-display-md);
+            letter-spacing: 0.02em;
+            color: var(--text);
+            margin-bottom: 0.6rem;
+        }
+        .service-card p {
+            font-size: var(--fs-body-sm);
+            color: rgba(245, 242, 237, 0.75);
+            line-height: 1.65;
+        }
+        .service-card .discretion-note {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: var(--fs-caption);
+            color: var(--gold);
+            font-style: italic;
+            letter-spacing: 0.03em;
+        }
+
+        /* Pourquoi nous */
+        .pourquoi-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        .stat-item {
+            text-align: center;
+            padding: var(--spacing-md);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            background: rgba(58, 61, 63, 0.2);
+        }
+        .stat-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: var(--fs-body-sm);
+            color: rgba(245, 242, 237, 0.7);
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Produits galerie */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-sm);
+        }
+        .gallery-item {
+            aspect-ratio: 3/4;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            background: rgba(58, 61, 63, 0.4);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+        .gallery-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(197, 168, 107, 0.06);
+            transform: translateY(-4px);
+        }
+        .gallery-item .obj-illustration {
+            width: 70%;
+            height: 60%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Lingot */
+        .obj-lingot {
+            width: 65%;
+            height: 40%;
+            background: linear-gradient(180deg, #D4B87A 0%, #B8943D 25%, #8B6914 55%, #C5A86B 80%, #A07828 100%);
+            border-radius: 3px;
+            box-shadow: 0 4px 20px rgba(197, 168, 107, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            position: relative;
+        }
+        .obj-lingot::after {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: 15%;
+            width: 35%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 1px;
+        }
+        /* Napoleon piece */
+        .obj-piece {
+            width: 55%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle at 45% 40%, #E0C870 0%, #C5A86B 30%, #8B6914 65%, #5C3D0E 100%);
+            box-shadow: 0 4px 22px rgba(197, 168, 107, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        .obj-piece::after {
+            content: '';
+            position: absolute;
+            inset: 8%;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+        }
+        /* Stack of coins */
+        .obj-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .obj-stack .coin {
+            width: 45px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #D4B87A, #A07828);
+            box-shadow: 0 2px 6px rgba(197, 168, 107, 0.3);
+        }
+        .obj-stack .coin:nth-child(2) {
+            width: 48px;
+        }
+        .obj-stack .coin:nth-child(3) {
+            width: 43px;
+        }
+        /* Watch */
+        .obj-watch {
+            width: 50%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle at 45% 40%, #f0e6d0 0%, #c8b898 30%, #8a7a60 60%, #5c5040 100%);
+            box-shadow: 0 4px 20px rgba(200, 180, 150, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            position: relative;
+            border: 3px solid #6b5c45;
+        }
+        .obj-watch::after {
+            content: '';
+            position: absolute;
+            inset: 20%;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        .gallery-label {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: var(--fs-caption);
+            color: rgba(245, 242, 237, 0.8);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* Avis */
+        .avis-card {
+            background: rgba(58, 61, 63, 0.35);
+            border: 1px solid var(--border);
+            padding: var(--spacing-md);
+            border-radius: 2px;
+            max-width: 600px;
+            position: relative;
+        }
+        .avis-card .quote-mark {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--gold);
+            opacity: 0.4;
+            position: absolute;
+            top: 0.5rem;
+            left: 1.2rem;
+            pointer-events: none;
+        }
+        .avis-card blockquote {
+            font-size: var(--fs-body);
+            line-height: 1.7;
+            color: rgba(245, 242, 237, 0.85);
+            font-style: italic;
+            margin: 0;
+            padding: 0.5rem 0 0.5rem 2rem;
+        }
+        .avis-author {
+            font-weight: 600;
+            color: var(--text);
+            font-style: normal;
+            display: block;
+            margin-top: 1rem;
+            font-size: var(--fs-body-sm);
+            letter-spacing: 0.02em;
+        }
+        .avis-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--fs-body-sm);
+            letter-spacing: 0.02em;
+            transition: color 0.3s;
+        }
+        .avis-link:hover {
+            color: var(--gold-hover);
+        }
+        .avis-link .arrow {
+            transition: transform 0.3s;
+        }
+        .avis-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .contact-info .info-block {
+            padding: 1.2rem;
+            border-left: 2px solid var(--gold);
+            background: rgba(58, 61, 63, 0.2);
+            border-radius: 0 2px 2px 0;
+        }
+        .contact-info h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: var(--fs-body-sm);
+            letter-spacing: 0.04em;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+        .contact-info p,
+        .contact-info a {
+            color: rgba(245, 242, 237, 0.8);
+            text-decoration: none;
+            font-size: var(--fs-body);
+            transition: color 0.3s;
+            line-height: 1.6;
+        }
+        .contact-info a:hover {
+            color: var(--gold-hover);
+        }
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        .map-wrapper iframe {
+            display: block;
+            filter: grayscale(0.3) brightness(0.85) contrast(1.1);
+            transition: filter 0.5s;
+        }
+        .map-wrapper:hover iframe {
+            filter: grayscale(0) brightness(0.9) contrast(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(28, 30, 31, 0.95);
+            border-top: 1px solid var(--border);
+            padding: var(--spacing-lg) 1.5rem var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+        .footer-col h5 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: var(--fs-body-sm);
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .footer-col p,
+        .footer-col a {
+            color: rgba(245, 242, 237, 0.7);
+            font-size: var(--fs-body-sm);
+            text-decoration: none;
+            line-height: 1.7;
+            display: block;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: var(--gold-hover);
+        }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: var(--fs-caption);
+            color: rgba(245, 242, 237, 0.45);
+            letter-spacing: 0.04em;
+        }
+        .footer-bottom .credit {
+            color: rgba(245, 242, 237, 0.35);
+            font-size: var(--fs-caption);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-desktop {
+                display: none;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .mobile-menu {
+                display: flex;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .heritage-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            .heritage-visual {
+                aspect-ratio: 16/9;
+            }
+            .pourquoi-stats {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero h1 {
+                font-size: clamp(1.8rem, 6vw, 3rem);
+            }
+            .scelle-line.left,
+            .scelle-line.right {
+                width: clamp(35px, 10vw, 80px);
+            }
+            .badge-google-mini {
+                display: none;
+            }
+            .header-inner {
+                gap: 0.8rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+            .section {
+                padding: var(--spacing-lg) 1rem;
+            }
+            .hero {
+                padding: 5rem 1rem 3rem;
+                min-height: 90vh;
+            }
+            .scelle-container {
+                height: 36px;
+                margin-bottom: 1.2rem;
+            }
+            .scelle-seal {
+                width: 22px;
+                height: 22px;
+            }
+            .scelle-seal::after {
+                font-size: 11px;
+            }
+            .hero-badge-row {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav-desktop {
+                display: none;
+            }
+            .header {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        @media (hover: none) {
+            .service-card:hover {
+                border-color: var(--border);
+                background: rgba(58, 61, 63, 0.3);
+                box-shadow: none;
+            }
+            .gallery-item:hover {
+                border-color: var(--border);
+                box-shadow: none;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="loading">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="filigrane" aria-hidden="true" id="filigrane">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="200" cy="200" r="155" fill="none" stroke="currentColor" stroke-width="0.8"/>
+            <path d="M200 30 C280 30 350 90 360 170 C365 210 340 250 310 280 C270 320 220 350 200 355 C180 350 130 320 90 280 C60 250 35 210 40 170 C50 90 120 30 200 30Z" fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <text x="200" y="215" text-anchor="middle" font-size="28" fill="currentColor" font-family="serif" font-weight="bold" opacity="0.7">RF</text>
+            <text x="200" y="250" text-anchor="middle" font-size="14" fill="currentColor" font-family="serif" opacity="0.5">20 FRANCS</text>
+        </svg>
+    </div>
+
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Godot & Fils — Accueil">GODOT<span class="gold-dot">·</span>&amp;<span class="gold-dot">·</span>FILS</a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-desktop">
+                    <li><a href="#heritage">Héritage</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pourquoi">Pourquoi nous</a></li>
+                    <li><a href="#produits">Pièces</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="badge-google-mini" aria-label="Note Google 4,9 sur 5">
+                <span class="star">★</span>4.9<span style="opacity:0.7;">/5</span>
+            </div>
+            <a href="tel:+33184201514" class="header-cta desktop-only">
+                <span class="cta-icon">📞</span><span>01 84 20 15 14</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#heritage">Héritage</a>
+        <a href="#services">Services</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#produits">Pièces</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+33184201514" class="mobile-cta">📞 01 84 20 15 14</a>
+    </div>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Façade de Godot & Fils, avenue Achille Peretti à Neuilly-sur-Seine" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <div class="scelle-container" aria-hidden="true">
+                    <span class="scelle-line left"></span>
+                    <span class="scelle-seal"></span>
+                    <span class="scelle-line right"></span>
+                </div>
+                <h1 id="hero-title">Votre or a une histoire.<br>Nous lui donnons <span class="gold-accent">une suite</span>.</h1>
+                <p class="hero-sub">Depuis 1933, Godot & Fils expertise vos pièces, lingots et bijoux au cœur de Neuilly-sur-Seine. Achat, vente, rachat et conservation — en toute transparence, avenue Achille Peretti.</p>
+                <div class="hero-badge-row">
+                    <a href="tel:+33184201514" class="hero-cta-btn">📞 Appeler maintenant</a>
+                    <div class="badge-google-hero">
+                        <span class="stars">★★★★★</span>
+                        <span class="note">4.9/5</span>
+                        <span>— 59 avis vérifiés</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>DÉCOUVRIR</span>
+                <span class="line-vert"></span>
+            </div>
+        </section>
+
+        <!-- HÉRITAGE -->
+        <section class="section" id="heritage" aria-labelledby="heritage-title">
+            <div class="section-inner">
+                <div class="heritage-grid">
+                    <div class="heritage-visual reveal" aria-hidden="true">
+                        <div class="bg-pattern"></div>
+                        <div class="ornament-frame"></div>
+                        <span class="ornament-corner tl"></span>
+                        <span class="ornament-corner tr"></span>
+                        <span class="ornament-corner bl"></span>
+                        <span class="ornament-corner br"></span>
+                        <span class="year-badge">1933</span>
+                    </div>
+                    <div>
+                        <span class="section-label reveal">Héritage</span>
+                        <h2 class="section-title reveal reveal-delay-1" id="heritage-title">Depuis 1933,<br>la valeur du geste</h2>
+                        <p class="section-text reveal reveal-delay-2">Fondée il y a plus de 90 ans, la maison Godot & Fils est l'un des derniers experts français du négoce des métaux précieux en quartier résidentiel. À Neuilly, deux adresses conservent ce patrimoine : l'agence Mairie, avenue Achille Peretti, et l'agence Château, rue du Château.</p>
+                        <p class="section-text reveal reveal-delay-3">Notre longévité repose sur un principe simple : chaque client repart avec un justificatif, une estimation claire, et la certitude d'avoir été conseillé sans pression. L'or n'est pas une urgence — c'est une matière qui se pèse, se vérifie et se transmet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services" aria-labelledby="services-title" style="background:rgba(47,79,79,0.08);">
+            <div class="section-inner">
+                <span class="section-label reveal">Services</span>
+                <h2 class="section-title reveal reveal-delay-1" id="services-title">Nos expertises,<br>votre liberté</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom:var(--spacing-lg);">Chaque prestation s'exerce dans la discrétion et la rigueur, au sein de notre agence de l'avenue Achille Peretti.</p>
+                <div class="services-grid">
+                    <div class="service-card reveal reveal-delay-1">
+                        <span class="service-icon" aria-hidden="true">⚖️</span>
+                        <h3>Achat instantané d'or</h3>
+                        <p>Bijoux, pièces boursables, napoléons et or dentaire* — estimés devant vous, pesés sur balances certifiées, réglés immédiatement.</p>
+                        <span class="discretion-note">*Nous rachetons également l'or issu de soins dentaires, toujours avec discrétion.</span>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <span class="service-icon" aria-hidden="true">📦</span>
+                        <h3>Vente de lingots</h3>
+                        <p>Lingots sous scellés numérotés, certificats d'authenticité inclus. Une garantie tangible pour vos placements et transmissions.</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <span class="service-icon" aria-hidden="true">⌚</span>
+                        <h3>Rachat de montres</h3>
+                        <p>Montres, bracelets et bijoux de valeur rachetés au juste prix. Expertise horlogère et gemmologique sur rendez-vous.</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-4">
+                        <span class="service-icon" aria-hidden="true">💱</span>
+                        <h3>Change & conservation</h3>
+                        <p>Change de devises sans commission déguisée. Location de coffre-fort accessible pendant nos heures d'ouverture, en toute confidentialité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POURQUOI NOUS -->
+        <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Pourquoi nous</span>
+                <h2 class="section-title reveal reveal-delay-1" id="pourquoi-title">Une confiance<br>qui se mesure</h2>
+                <p class="section-text reveal reveal-delay-2">Vos biens sont estimés devant vous, pesés sur nos balances certifiées et réglés immédiatement. Chaque transaction est accompagnée d'un justificatif originel, exigible en héritage ou en revente. C'est cette rigueur qui nous vaut 4,9 étoiles et 59 avis vérifiés.</p>
+                <div class="pourquoi-stats">
+                    <div class="stat-item reveal reveal-delay-1">
+                        <span class="stat-number">90+</span>
+                        <span class="stat-label">années d'expertise familiale</span>
+                    </div>
+                    <div class="stat-item reveal reveal-delay-2">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">sur 59 avis Google vérifiés</span>
+                    </div>
+                    <div class="stat-item reveal reveal-delay-3">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">agences à Neuilly (Mairie & Château)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUITS & PIÈCES -->
+        <section class="section" id="produits" aria-labelledby="produits-title" style="background:rgba(47,79,79,0.06);">
+            <div class="section-inner">
+                <span class="section-label reveal">Produits & Pièces</span>
+                <h2 class="section-title reveal reveal-delay-1" id="produits-title">L'or concret,<br>en images</h2>
+                <p class="section-text reveal reveal-delay-2" style="margin-bottom:var(--spacing-lg);">Une galerie sobre des matières que nous traitons — photographiées sans artifice, pour que la valeur parle d'elle-même.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal reveal-delay-1" role="img" aria-label="Lingot d'or estampillé Godot">
+                        <div class="obj-illustration"><span class="obj-lingot"></span></div>
+                        <span class="gallery-label">Lingot Godot</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-2" role="img" aria-label="Pièce Napoléon 20 francs">
+                        <div class="obj-illustration"><span class="obj-piece"></span></div>
+                        <span class="gallery-label">Napoléon 20F</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-3" role="img" aria-label="Pièces boursables empilées">
+                        <div class="obj-illustration">
+                            <span class="obj-stack">
+                                <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+                            </span>
+                        </div>
+                        <span class="gallery-label">Pièces boursables</span>
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-4" role="img" aria-label="Montre et bracelets de valeur">
+                        <div class="obj-illustration"><span class="obj-watch"></span></div>
+                        <span class="gallery-label">Montres & bracelets</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis" aria-labelledby="avis-title">
+            <div class="section-inner">
+                <span class="section-label reveal">Avis & Transparence</span>
+                <h2 class="section-title reveal reveal-delay-1" id="avis-title">Ce qu'en disent<br>nos clients</h2>
+                <div class="avis-card reveal reveal-delay-2">
+                    <span class="quote-mark" aria-hidden="true">«</span>
+                    <blockquote>
+                        Expertise sérieuse, prix immédiat, contact humain.
+                        <span class="avis-author">— Marie-Claire B. (avis Google vérifié)</span>
+                    </blockquote>
+                </div>
+                <p class="section-text reveal reveal-delay-3" style="margin-top:1.5rem;">Tous les témoignages affichés sont extraits de notre fiche Google (4.9/5, 59 avis).</p>
+                <a href="https://www.google.com/maps/place/Godot+%26+Fils+Neuilly+Peretti+(Achat+Vente+Or)/@48.8869,2.2653,17z" target="_blank" rel="noopener noreferrer" class="avis-link reveal reveal-delay-3">
+                    Consulter tous les avis <span class="arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact" aria-labelledby="contact-title" style="background:rgba(47,79,79,0.06);">
+            <div class="section-inner">
+                <span class="section-label reveal">Contact & Accès</span>
+                <h2 class="section-title reveal reveal-delay-1" id="contact-title">Poussez la porte<br>du 145</h2>
+                <div class="contact-grid">
+                    <div class="contact-info reveal reveal-delay-2">
+                        <div class="info-block">
+                            <h4>Adresse</h4>
+                            <p>Godot & Fils Neuilly Mairie<br>145 avenue Achille Peretti<br>92200 Neuilly-sur-Seine</p>
+                        </div>
+                        <div class="info-block">
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33184201514">01 84 20 15 14</a>
+                        </div>
+                        <div class="info-block">
+                            <h4>Email</h4>
+                            <a href="mailto:peretti@godotetfils.com">peretti@godotetfils.com</a>
+                        </div>
+                        <div class="info-block">
+                            <h4>Horaires d'ouverture</h4>
+                            <p>Du lundi au vendredi<br>10h – 19h sans interruption</p>
+                        </div>
+                        <div class="info-block" style="border-left-color:var(--deep-green);">
+                            <h4 style="color:var(--deep-green);">Seconde agence</h4>
+                            <p>Agence Château — rue du Château, Neuilly-sur-Seine</p>
+                        </div>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-3">
+                        <iframe src="https://maps.google.com/maps?q=Godot+%26+Fils+Neuilly+Peretti+%28Achat+Vente+Or%29+145+Avenue+Achille+Peretti%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Godot & Fils Neuilly Peretti"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h5>Godot & Fils</h5>
+                <p>145 avenue Achille Peretti<br>92200 Neuilly-sur-Seine<br>France</p>
+                <a href="tel:+33184201514">01 84 20 15 14</a>
+                <a href="mailto:peretti@godotetfils.com">peretti@godotetfils.com</a>
+            </div>
+            <div class="footer-col">
+                <h5>Horaires</h5>
+                <p>Lundi – Vendredi<br>10h – 19h sans interruption<br>Samedi & Dimanche : fermé</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <a href="#heritage">Héritage</a>
+                <a href="#services">Services</a>
+                <a href="#pourquoi">Pourquoi nous</a>
+                <a href="#produits">Pièces</a>
+                <a href="#avis">Avis</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Godot & Fils — Achat Vente Or — Neuilly-sur-Seine</p>
+            <p class="credit">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Header scroll
+            const header = document.getElementById('header');
+            const filigrane = document.getElementById('filigrane');
+            let lastScrollY = 0;
+
+            function onScroll() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                // Filigrane visibility
+                if (scrollY > 400) {
+                    filigrane.classList.add('visible-more');
+                } else {
+                    filigrane.classList.remove('visible-more');
+                }
+                lastScrollY = scrollY;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            // Initial check
+            onScroll();
+
+            // Mobile menu
+            const navToggle = document.getElementById('navToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            let menuOpen = false;
+
+            function closeMenu() {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu() {
+                menuOpen = true;
+                mobileMenu.classList.add('open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                navToggle.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            navToggle.addEventListener('click', function() {
+                if (menuOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close menu on link click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Show all immediately
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // Handle reduced motion changes
+            const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            motionQuery.addEventListener('change', function() {
+                if (motionQuery.matches) {
+                    revealElements.forEach(function(el) {
+                        el.classList.add('visible');
+                        el.style.transition = 'none';
+                    });
+                }
+            });
+
+            // Close mobile menu on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && menuOpen) {
+                    closeMenu();
+                }
+            });
+
+            // Remove loading class after animations
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.body.classList.remove('loading');
+                }, 800);
+            });
+        })();
+    </script>
+</body>
+</html>
