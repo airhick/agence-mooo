@@ -1,79 +1,67 @@
-**BRIEF CRÉATIF — NICOLAS POMPE**  
-**Site vitrine | Caviste · Paris 16ᵉ**
+# BRIEF CRÉATIF — Nicolas Pompe
+
+## 1. Concept & positionnement
+Nicolas Pompe n’est pas un simple point de vente : c’est un **repère de quartier** où l’on vient autant pour une bouteille que pour un conseil, un sourire, une histoire. Laurence et Maxime y incarnent un art de vivre à mi-chemin entre la cave de connaisseur et le club confidentiel — une adresse élégante mais sans pose, où le vin parle avant tout de plaisir et de partage.  
+Le site doit faire ressentir cette **maîtrise sans prétention** et donner envie de pousser la porte du 69, comme on entre chez un ami qui aurait une très belle cave.
+
+## 2. Direction artistique
+**« Cave club du 16e »**  
+Un parti pris sophistiqué et chaleureux, inspiré par l’architecture privée des caves à vin parisiennes : murs en pierre de taille assourdis, boiseries sombres, étiquettes manuscrites, touches de cuivre brillant.  
+La lumière est tamisée, les ombres profondes, mais la typographie moderne (Syne / Outfit) casse le classicisme pour un résultat **actuel, précis et urbain**. L’esprit « club » évoque une appartenance discrète ; pas de dorures ni de luxe tapageur, mais une élégance utile.
+
+## 3. Palette
+Dérivée des teintes réelles d’une cave : vin, bois ciré, métal patiné, pierre claire.
+
+| Rôle | Hex | Nommé |
+|------|-----|-------|
+| Fond principal | `#F8F3EC` | Pierre cave |
+| Encre / textes | `#1F1822` | Nuit de lie |
+| Accent principal | `#8B2F4A` | Lie-de-vin Pompé |
+| Accent chaud | `#C37B4B` | Cuivre patiné |
+| Surface secondaire | `#2D2327` | Ombre fût |
+| Bordure / filets | `#E2D6C8` | Craie sèche |
+
+**Ambiance :** plutôt claire et respirante (`Pierre cave` en fond), avec des zones sombres (`Ombre fût`) pour le drame. L’accent `Lie-de-vin` vient chauffer les boutons, liens et soulignements, tandis que le `Cuivre` apparaît en touches fines (icônes, filet d’or, éléments décoratifs).
+
+## 4. Ton éditorial
+**Une voix personnelle, cultivée mais naturelle.** On tutoie le visiteur curieux, on le prend par le bras. Vocabulaire du vin toujours juste, mais jamais pédant : on parle de plaisir, d’accords, de découvertes.  
+Quelques expressions d’initiés (« une quille pour ce soir », « un rouge de soif ») viennent ancrer le propos dans la vraie vie, sans en faire trop. Le ton de Laurence & Maxime transparaît : un mélange de rigueur et de bienveillance, avec l’humour discret de ceux qui savent que le vin est une fête.
+
+## 5. Accroche héro
+**Titre :**  
+*Vins choisis, soif partagée.*  
+**Sous-titre :**  
+Laurence & Maxime vous reçoivent au 69 de la rue de la Pompe — cave, conseils, et coups de cœur depuis le 16e.
+
+## 6. Sections
+
+### 1. Le mot des cavistes
+**Titre :** *Derrière le comptoir*  
+« On nous confie une table, une occasion, un budget… et on cherche la bouteille qui va faire mouche. C’est ça, notre métier. »
+
+### 2. La cave du moment
+**Titre :** *Sélection d’arrivage*  
+4 à 6 bouteilles en vedette, avec pour chacune une description vive (cépage, région, accord, anecdote), prix affiché sans barré inutile. Une étiquette « Le coup de cœur de Maxime » ou « Pour épater ce soir ».
+
+### 3. Services & vie locale
+**Titre :** *Tout, sauf compliqué*  
+Click & collect avant 19h, livraison dans le quartier, glaçons à emporter, carte Privilège. Présenté par icônes délicates et deux phrases maximum par service.
+
+### 4. L’avis du quartier
+**Titre :** *4.8 — merci le 16e*  
+Bloc intégré avec note Google visible et 2-3 courts verbatims choisis (vrais avis, sans nom fictif). Bouton « Lire les avis » pointant vers Google Maps.
+
+### 5. Horaires & pousser la porte
+**Titre :** *On ouvre pour vous*  
+Liste des jours, avec une phrase d’accroche comme « Du mardi au samedi, à toute heure, et souvent le dimanche matin pour les urgences de dernier repas. »
+
+### 6. Contact & adresse
+**Titre :** *69 Rue de la Pompe*  
+Téléphone cliquable, email, accès métro/bus. Mini-carte statique. Pas de formulaire lourd : on encourage l’appel ou la visite.
+
+## 7. Signature visuelle
+- **Pochon de couleur « Lie-de-vin »** : un coup de pinceau digital (ou une forme abstraite rappelant une tache de vin) apparaît discrètement au scroll, comme un cachet de propriété. Il vient souligner certains titres ou habiller une photo.  
+- **Typographie expressive en mode « sélection »** : sur la section « Cave du moment », les noms de cuvées sont affichés en Syne mega-large (90px+), débordant presque de leur grille, façon étalage soigné mais généreux. L’animation au survol d’une bouteille déroule une étiquette manuscrite (fausse écriture cursive affichée en Outfit Light pour garder la lisibilité et éviter le pastiche).
 
 ---
-
-### 1. Concept & positionnement
-L’enseigne Nicolas Pompe n’est pas une grande surface du vin, mais la cave de confiance du 16ᵉ arrondissement, tenue par un duo de cavistes dont le nom est connu des clients.  
-**Concept** : « La cave confidentielle » — un site qui restitue la sensation de pousser la porte d’une boutique boisée et dorée, où chaque bouteille est un conseil.  
-**Positionnement** : Caviste de quartier haut de gamme, note 4.8/5, sélection pointue, service irréprochable, à l’écart du catalogue de masse.
-
----
-
-### 2. Direction artistique
-**« Carnet de cave moderne »**  
-Un parti pris éditorial qui emprunte à la reliure et à la papeterie de luxe : fonds texturés évoquant les pages d’un carnet de dégustation, typographie Syne affirmée comme un monogramme, Outfit pour la lisibilité. La lumière chaude des photos réelles est prolongée par une transparence dorée, des ombres douces et des filets fins. L’abondance contrôlée de la boutique devient une richesse visuelle maîtrisée (générosité sans désordre). La surface vitrée et le laiton des étagères inspirent des touches métalliques discrètes.
-
----
-
-### 3. Palette
-*Issue directement des vraies photos du lieu : bouteilles, cuves, bois, laque de l’enseigne.*
-
-| Rôle | Hex | Nom |
-|------|-----|-----|
-| Fond principal | `#FAF5EB` | Papier ancien |
-| Fond alternatif / deep | `#2C1A14` | Lie de vin |
-| Encre texte | `#2C1A14` | Lie de vin |
-| Accent primaire | `#9B1B30` | Laque rouge enseigne |
-| Accent doré | `#D4A843` | Laiton / capsule |
-| Sépia froid (blocs) | `#EFE4D3` | Sable bois |
-
----
-
-### 4. Ton éditorial
-**Voix** : la caviste passionnée, qui connaît ses clients par leur prénom.  
-**Niveau de langue** : soutenu sans être guindé ; précis pour les vins, chaleureux pour l’accueil.  
-**Registre** : vouvouement de proximité, déclaratif, jamais promotionnel.
-
----
-
-### 5. Accroche héro
-**Titre** (Syne, taille 5vw+) :  
-`La cave qui aime votre table.`
-
-**Sous-titre** :  
-`Laurence et Maxime ouvrent pour vous 69 Rue de la Pompe — sélection personnelle, conseil sur mesure et une note de 4.8 ⭑ méritée un verre après l’autre.`
-
----
-
-### 6. Sections
-
-1. **Héritage de quartier**  
-   *Titre* : Une maison au nom de rue  
-   *Contenu* : Depuis toujours au 69 Rue de la Pompe, notre cave est celle d’un immeuble, d’une famille, d’une adresse. Ici le vin ne se vend pas, il se partage. Laurence et Maxime vous accueillent du mardi au dimanche, avec l’exigence tranquille des passionnés.
-
-2. **Les cavistes**  
-   *Titre* : Vos cavistes, tout simplement  
-   *Contenu* : Laurence et Maxime animent cette cave comme on tient salon. Disponibles, fins connaisseurs, ils marient chaque bouteille à votre repas, votre budget, votre curiosité. Pas de grande théorie, que des conseils sur mesure.
-
-3. **La sélection du moment**  
-   *Titre* : Dans notre verre actuellement  
-   *Contenu* : Trois vins et un champagne, choisis chaque semaine par la maison. Affichés ici avec leur prix, leurs accords et la raison du choix. Pas le catalogue du web, le carnet intime de la cave.
-
-4. **Services**  
-   *Titre* : À votre service, avant, pendant, après le repas  
-   *Contenu* : Click & collect en 2h, commande par téléphone, conseils accords mets & vins en boutique, glaçons en dépannage, emballage cadeau offert, carte de fidélité Nicolas.
-
-5. **La parole aux habitués**  
-   *Titre* : 4.8 ⭑ — ce sont eux qui le disent  
-   *Contenu* : Extraits choisis des avis Google, avec le prénom de chaque auteur. Preuve sociale transparente, non filtrée, visible immédiatement.
-
-6. **Horaires & venue**  
-   *Titre* : On vous voit quand ?  
-   *Contenu* : Adresse, téléphone, mail, horaires d’ouverture, plan interactif discret. Bouton d’appel mobile et lien pour réserver un créneau conseil privé.
-
----
-
-### 7. Signature visuelle
-- **Le chiffre lumineux** : le `69` de l’adresse traité en typographie Syne surdimensionnée, partiellement dissimulée par un damier de bouteilles ou traversée par un rai de lumière dorée au scroll.  
-- **La ligne dorée** : un filet laiton de 1px sépare systématiquement chaque section ; il se charge progressivement de gauche à droite lors du défilement, comme une étagère qui s’éclaire quand on avance dans la cave.
+*Ce brief ancre Nicolas Pompe dans son territoire — le haut du 16e, la rigueur du bon vin, l’accueil sans chichis — et corrige les faiblesses du site actuel : personnalité locale absente, note Google invisible, contenu générique, aucune chaleur humaine.*
