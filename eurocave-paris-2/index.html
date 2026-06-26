@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroCave Paris | Showroom de caves à vin d'exception — Avenue de Neuilly, Paris 16ᵉ</title>
+    <meta name="description" content="Showroom EuroCave Paris — 25 Avenue de Neuilly, 75116. Découvrez les caves à vin en situation, conseil sur mesure par des experts. Prenez rendez-vous pour vos vins de garde.">
+    <meta property="og:title" content="EuroCave Paris — L'écrin parisien de la cave à vin">
+    <meta property="og:description" content="Showroom dédié aux caves EuroCave. Conseil sur mesure, gammes en fonctionnement, expertise depuis 1976. Avenue de Neuilly, Paris 16ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='56' font-size='52'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cave-brulee: #1A1410;
+            --craie-de-vin: #F3EDE2;
+            --laiton-vieilli: #B8863C;
+            --verre-fume: #2C4A52;
+            --pierre-de-taille: #9B9182;
+            --etiquette-grand-cru: #FDF9F2;
+            --laiton-clair: #D4A855;
+            --ombre-profonde: #0F0B08;
+            --ambiance-doree: #5C3D1E;
+            --display: 'Bricolage Grotesque', serif;
+            --body: 'Hanken Grotesk', sans-serif;
+            --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-out: cubic-bezier(0.6, 0.01, 0.4, 1);
+            --timeline-width: 2px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 1.1vw, 18px);
+            background-color: var(--cave-brulee);
+            color: var(--craie-de-vin);
+        }
+
+        body {
+            font-family: var(--body);
+            font-weight: 300;
+            line-height: 1.7;
+            background-color: var(--cave-brulee);
+            color: var(--craie-de-vin);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Grain global */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ========== TIMELINE ========== */
+        .timeline {
+            position: fixed;
+            top: 0;
+            left: clamp(1.2rem, 3vw, 3rem);
+            height: 100vh;
+            z-index: 100;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40px;
+        }
+
+        .timeline__track {
+            position: relative;
+            width: var(--timeline-width);
+            height: 100%;
+            background: var(--verre-fume);
+            border-radius: 1px;
+            flex-shrink: 0;
+        }
+
+        .timeline__fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: var(--laiton-vieilli);
+            border-radius: 1px;
+            transition: height 0.3s var(--transition-out);
+            box-shadow: 0 0 8px rgba(184, 134, 60, 0.5);
+        }
+
+        .timeline__markers {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+        }
+
+        .timeline__marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+            transition: all 0.5s var(--transition-ease);
+        }
+
+        .timeline__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--verre-fume);
+            border: 2px solid var(--verre-fume);
+            transition: all 0.5s var(--transition-ease);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline__marker.active .timeline__dot {
+            background: var(--laiton-clair);
+            border-color: var(--laiton-vieilli);
+            box-shadow: 0 0 16px rgba(184, 134, 60, 0.7), 0 0 4px rgba(212, 168, 85, 0.6);
+        }
+
+        .timeline__label {
+            font-family: var(--display);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--verre-fume);
+            transition: color 0.5s var(--transition-ease);
+        }
+
+        .timeline__marker.active .timeline__label {
+            color: var(--laiton-clair);
+        }
+
+        .timeline__marker--1976 {
+            top: 72%;
+        }
+        .timeline__marker--1992 {
+            top: 44%;
+        }
+        .timeline__marker--2025 {
+            top: 16%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                left: 0.6rem;
+                width: 28px;
+            }
+            .timeline__track {
+                width: 1.5px;
+            }
+            .timeline__dot {
+                width: 7px;
+                height: 7px;
+            }
+            .timeline__label {
+                font-size: 0.6rem;
+                letter-spacing: 0.04em;
+            }
+            .timeline__marker {
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline {
+                left: 0.3rem;
+                width: 20px;
+                opacity: 0.7;
+            }
+            .timeline__label {
+                display: none;
+            }
+            .timeline__dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(26, 20, 16, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(184, 134, 60, 0.15);
+            padding: 0.8rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: background 0.4s var(--transition-ease);
+        }
+
+        .header__brand {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1rem, 1.6vw, 1.35rem);
+            letter-spacing: 0.02em;
+            color: var(--craie-de-vin);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+
+        .header__brand span {
+            display: block;
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: 0.55em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--laiton-vieilli);
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 1.8vw, 1.8rem);
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .header__nav a {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--pierre-de-taille);
+            text-decoration: none;
+            transition: color 0.3s var(--transition-ease);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--laiton-vieilli);
+            transition: width 0.35s var(--transition-ease);
+        }
+
+        .header__nav a:hover,
+        .header__nav a:focus-visible {
+            color: var(--craie-de-vin);
+        }
+        .header__nav a:hover::after,
+        .header__nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header__cta {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: var(--laiton-vieilli);
+            color: var(--cave-brulee);
+            border: none;
+            padding: 0.6rem 1.3rem;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s var(--transition-ease);
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .header__cta:hover,
+        .header__cta:focus-visible {
+            background: var(--laiton-clair);
+            box-shadow: 0 4px 20px rgba(184, 134, 60, 0.4);
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        .header__hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 210;
+            flex-direction: column;
+            gap: 5px;
+            width: 32px;
+        }
+
+        .header__hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--craie-de-vin);
+            border-radius: 2px;
+            transition: all 0.35s var(--transition-ease);
+            transform-origin: center;
+        }
+
+        .header__hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .header__hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .header__hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        @media (max-width: 900px) {
+            .header__nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(26, 20, 16, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 3rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.45s var(--transition-out);
+                z-index: 205;
+                border-left: 1px solid rgba(184, 134, 60, 0.2);
+            }
+            .header__nav.open {
+                right: 0;
+            }
+            .header__nav a {
+                font-size: 1.1rem;
+            }
+            .header__hamburger {
+                display: flex;
+            }
+            .header__cta {
+                font-size: 0.7rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+            padding-left: clamp(3rem, 7vw, 6rem);
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: sepia(0.35) brightness(0.55) contrast(1.25) saturate(0.7);
+            transform: scale(1.03);
+        }
+
+        .hero__vignette {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                radial-gradient(ellipse at 35% 50%, transparent 40%, rgba(26, 20, 16, 0.65) 75%, rgba(26, 20, 16, 0.9) 100%),
+                radial-gradient(ellipse at 70% 30%, rgba(44, 74, 82, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+            animation: heroReveal 1s var(--transition-out) 0.2s both;
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(26, 20, 16, 0.7);
+            border: 1px solid rgba(184, 134, 60, 0.35);
+            border-radius: 3px;
+            padding: 0.45rem 0.9rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--craie-de-vin);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero__badge .stars {
+            color: var(--laiton-clair);
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .hero__title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--craie-de-vin);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero__subtitle {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.6;
+            color: var(--pierre-de-taille);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1vw, 0.85rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.85rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s var(--transition-ease);
+            display: inline-block;
+            border: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn--primary {
+            background: var(--laiton-vieilli);
+            color: var(--cave-brulee);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+        .btn--primary:hover,
+        .btn--primary:focus-visible {
+            background: var(--laiton-clair);
+            box-shadow: 0 6px 28px rgba(184, 134, 60, 0.5);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--craie-de-vin);
+            border: 1px solid rgba(243, 237, 226, 0.4);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn--secondary:hover,
+        .btn--secondary:focus-visible {
+            border-color: var(--laiton-vieilli);
+            color: var(--laiton-clair);
+            box-shadow: 0 4px 20px rgba(184, 134, 60, 0.25);
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-left: clamp(2rem, 6vw, 3rem);
+                min-height: 90vh;
+            }
+            .hero__title {
+                font-size: clamp(1.8rem, 7vw, 2.8rem);
+            }
+            .hero__subtitle {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-left: 1.8rem;
+                min-height: 85vh;
+            }
+            .hero__title {
+                font-size: 1.6rem;
+            }
+            .hero__actions {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ========== SECTIONS COMMUNES ========== */
+        .section {
+            position: relative;
+            padding: clamp(3rem, 8vh, 7rem) clamp(1.5rem, 5vw, 4rem);
+            padding-left: clamp(3rem, 7vw, 6rem);
+            z-index: 1;
+        }
+
+        .section__inner {
+            max-width: 820px;
+            margin: 0;
+        }
+
+        .section__tag {
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--laiton-vieilli);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .section__title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--craie-de-vin);
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--laiton-vieilli);
+            margin-top: 0.8rem;
+            border-radius: 1px;
+        }
+
+        .section__text {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.75;
+            color: var(--pierre-de-taille);
+            max-width: 620px;
+        }
+
+        .section__text strong {
+            color: var(--craie-de-vin);
+            font-weight: 500;
+        }
+
+        /* Reveal au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s var(--transition-out), transform 0.8s var(--transition-out);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding-left: clamp(2rem, 6vw, 3rem);
+                padding-right: 1.5rem;
+            }
+            .section__text {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding-left: 1.8rem;
+                padding-right: 1rem;
+            }
+        }
+
+        /* ========== SECTION ÉCRIN ========== */
+        .section--ecrin {
+            background: linear-gradient(180deg, var(--cave-brulee) 0%, rgba(26, 20, 16, 0.95) 40%, var(--cave-brulee) 100%);
+            border-top: 1px solid rgba(184, 134, 60, 0.08);
+        }
+
+        .section--ecrin .section__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            max-width: 1000px;
+        }
+
+        .section--ecrin .section__image-wrapper {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .section--ecrin .section__image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.4) brightness(0.6) contrast(1.3) saturate(0.6);
+            transition: transform 0.6s var(--transition-ease);
+        }
+
+        .section--ecrin .section__image-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        .section--ecrin .section__image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, transparent 30%, rgba(26, 20, 16, 0.7) 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .section--ecrin .section__inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .section--ecrin .section__image-wrapper {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* ========== SECTION GAMMES ========== */
+        .section--gammes {
+            background: var(--cave-brulee);
+            position: relative;
+        }
+
+        .section--gammes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15%;
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 60, 0.2), transparent);
+        }
+
+        .section--gammes .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+            max-width: 900px;
+        }
+
+        .highlight-card {
+            background: rgba(44, 74, 82, 0.12);
+            border: 1px solid rgba(184, 134, 60, 0.1);
+            border-radius: 3px;
+            padding: 1.8rem;
+            transition: all 0.5s var(--transition-ease);
+            position: relative;
+        }
+
+        .highlight-card:hover {
+            border-color: rgba(184, 134, 60, 0.35);
+            background: rgba(44, 74, 82, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .highlight-card__icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .highlight-card__title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--craie-de-vin);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .highlight-card__desc {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: var(--pierre-de-taille);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .section--gammes .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* ========== SECTION CONSEIL ========== */
+        .section--conseil {
+            background: linear-gradient(180deg, var(--cave-brulee) 0%, rgba(28, 22, 17, 1) 50%, var(--cave-brulee) 100%);
+            border-top: 1px solid rgba(184, 134, 60, 0.06);
+            border-bottom: 1px solid rgba(184, 134, 60, 0.06);
+        }
+
+        .quote-block {
+            font-family: var(--display);
+            font-weight: 500;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            line-height: 1.5;
+            color: var(--craie-de-vin);
+            font-style: italic;
+            letter-spacing: 0.01em;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--laiton-vieilli);
+            margin: 1.5rem 0;
+            max-width: 560px;
+        }
+
+        /* ========== SECTION SAVOIR-FAIRE ========== */
+        .section--savoir-faire {
+            background: var(--cave-brulee);
+            position: relative;
+        }
+
+        .section--savoir-faire .stats-row {
+            display: flex;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: left;
+            min-width: 100px;
+        }
+
+        .stat-item__number {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: var(--laiton-vieilli);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-item__label {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--pierre-de-taille);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+        }
+
+        /* ========== SECTION AVIS ========== */
+        .section--avis {
+            background: var(--cave-brulee);
+            position: relative;
+        }
+
+        .section--avis::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 60, 0.25), transparent);
+        }
+
+        .carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.5rem 0 1.5rem;
+            margin-top: 2rem;
+            max-width: 900px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--verre-fume) transparent;
+            cursor: grab;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 4px;
+        }
+        .carousel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--verre-fume);
+            border-radius: 4px;
+        }
+
+        .carousel__card {
+            flex: 0 0 clamp(280px, 40vw, 340px);
+            scroll-snap-align: start;
+            background: rgba(44, 74, 82, 0.1);
+            border: 1px solid rgba(184, 134, 60, 0.12);
+            border-radius: 3px;
+            padding: 2rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.4s var(--transition-ease);
+            position: relative;
+        }
+
+        .carousel__card:hover {
+            border-color: rgba(184, 134, 60, 0.4);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .carousel__stars {
+            color: var(--laiton-clair);
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .carousel__text {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--craie-de-vin);
+            font-style: italic;
+            flex-grow: 1;
+        }
+
+        .carousel__author {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--laiton-vieilli);
+            letter-spacing: 0.03em;
+        }
+
+        .carousel__bottle {
+            width: 32px;
+            height: 80px;
+            background: linear-gradient(180deg, rgba(44, 74, 82, 0.5) 0%, rgba(26, 20, 16, 0.8) 60%, rgba(44, 74, 82, 0.6) 100%);
+            border-radius: 6px 6px 3px 3px;
+            position: relative;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(184, 134, 60, 0.2);
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+
+        .carousel__bottle::after {
+            content: '';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 16px;
+            background: rgba(44, 74, 82, 0.7);
+            border-radius: 2px 2px 0 0;
+            border: 1px solid rgba(184, 134, 60, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .carousel__card {
+                flex: 0 0 75vw;
+            }
+        }
+
+        /* ========== SECTION PRATIQUE (fond clair) ========== */
+        .section--pratique {
+            background: var(--etiquette-grand-cru);
+            color: var(--cave-brulee);
+            border-top: 1px solid rgba(184, 134, 60, 0.3);
+        }
+
+        .section--pratique .section__title {
+            color: var(--cave-brulee);
+        }
+        .section--pratique .section__title::after {
+            background: var(--laiton-vieilli);
+        }
+        .section--pratique .section__text {
+            color: rgba(26, 20, 16, 0.75);
+        }
+        .section--pratique .section__tag {
+            color: var(--laiton-vieilli);
+        }
+
+        .pratique-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 2rem;
+            max-width: 1000px;
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-family: var(--body);
+            font-size: 0.95rem;
+            color: var(--cave-brulee);
+            line-height: 1.6;
+        }
+
+        .info-item__icon {
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            color: var(--laiton-vieilli);
+            margin-top: 2px;
+        }
+
+        .info-item a {
+            color: var(--cave-brulee);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--laiton-vieilli);
+            text-decoration-thickness: 1px;
+            transition: color 0.3s;
+        }
+        .info-item a:hover {
+            color: var(--laiton-vieilli);
+        }
+
+        .form-contact {
+            background: rgba(26, 20, 16, 0.03);
+            border: 1px solid rgba(184, 134, 60, 0.2);
+            border-radius: 4px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-contact__title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--cave-brulee);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-contact input,
+        .form-contact textarea {
+            font-family: var(--body);
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(26, 20, 16, 0.2);
+            border-radius: 2px;
+            background: var(--etiquette-grand-cru);
+            color: var(--cave-brulee);
+            transition: border-color 0.3s var(--transition-ease);
+            width: 100%;
+            resize: vertical;
+        }
+
+        .form-contact input:focus,
+        .form-contact textarea:focus {
+            outline: none;
+            border-color: var(--laiton-vieilli);
+            box-shadow: 0 0 0 3px rgba(184, 134, 60, 0.1);
+        }
+
+        .form-contact .btn--primary {
+            align-self: flex-start;
+            background: var(--laiton-vieilli);
+            color: var(--etiquette-grand-cru);
+            font-size: 0.8rem;
+        }
+        .form-contact .btn--primary:hover {
+            background: var(--laiton-clair);
+        }
+
+        .form-contact__confirmation {
+            display: none;
+            font-family: var(--body);
+            font-weight: 500;
+            color: #2C4A52;
+            font-size: 0.9rem;
+            padding: 0.6rem 1rem;
+            background: rgba(44, 74, 82, 0.08);
+            border-radius: 3px;
+            border-left: 3px solid var(--verre-fume);
+        }
+
+        .map-wrapper {
+            margin-top: 2rem;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
+            border: 1px solid rgba(184, 134, 60, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .pratique-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .form-contact {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--ombre-profonde);
+            color: var(--pierre-de-taille);
+            padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem);
+            padding-left: clamp(3rem, 7vw, 6rem);
+            border-top: 1px solid rgba(184, 134, 60, 0.12);
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 1.8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer a {
+            color: var(--laiton-vieilli);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: var(--laiton-clair);
+        }
+
+        .footer__brand {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--craie-de-vin);
+            letter-spacing: 0.03em;
+        }
+
+        .footer__credits {
+            color: var(--verre-fume);
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding-left: 1.8rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* ========== ACCESSIBILITÉ FOCUS ========== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--laiton-clair);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TIMELINE -->
+    <div class="timeline" aria-hidden="true">
+        <div class="timeline__track">
+            <div class="timeline__fill" id="timelineFill"></div>
+            <div class="timeline__markers">
+                <div class="timeline__marker timeline__marker--1976" data-marker="1976">
+                    <div class="timeline__dot"></div>
+                    <span class="timeline__label">1976</span>
+                </div>
+                <div class="timeline__marker timeline__marker--1992" data-marker="1992">
+                    <div class="timeline__dot"></div>
+                    <span class="timeline__label">1992</span>
+                </div>
+                <div class="timeline__marker timeline__marker--2025" data-marker="2025">
+                    <div class="timeline__dot"></div>
+                    <span class="timeline__label">2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="#hero" class="header__brand">
+            EuroCave Paris
+            <span>Showroom · Avenue de Neuilly</span>
+        </a>
+        <nav class="header__nav" id="headerNav" aria-label="Navigation principale">
+            <a href="#ecrin">L'écrin</a>
+            <a href="#gammes">Les gammes</a>
+            <a href="#conseil">Le conseil</a>
+            <a href="#savoir-faire">Savoir-faire</a>
+            <a href="#avis">Avis</a>
+            <a href="#pratique">Infos pratiques</a>
+        </nav>
+        <a href="#pratique" class="header__cta">Prendre RDV</a>
+        <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img src="assets/maps-1.jpg" alt="Showroom EuroCave Paris — ambiance tamisée, caves en présentation" loading="eager" width="1920" height="1080">
+            </div>
+            <div class="hero__vignette"></div>
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <span class="stars">★★★★</span> 4,2/5 — 35 avis Google
+                </div>
+                <h1 class="hero__title">
+                    Trouvez la cave qui va élever vos plus beaux millésimes.
+                </h1>
+                <p class="hero__subtitle">
+                    Au cœur du 16ᵉ arrondissement, notre showroom vous accueille pour un conseil sur mesure, loin du catalogue. Prenez rendez-vous avec un expert et découvrez les conditions parfaites pour vos vins.
+                </p>
+                <div class="hero__actions">
+                    <a href="#pratique" class="btn btn--primary">Prendre rendez-vous en boutique</a>
+                    <a href="#ecrin" class="btn btn--secondary">Voir le showroom</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : L'ÉCRIN PARISIEN -->
+        <section class="section section--ecrin reveal" id="ecrin" data-year="2025">
+            <div class="section__inner">
+                <div>
+                    <span class="section__tag">Le lieu</span>
+                    <h2 class="section__title">Bienvenue avenue de Neuilly</h2>
+                    <p class="section__text">
+                        Notre showroom est le <strong>seul espace à Paris</strong> entièrement dédié aux caves EuroCave. Poussez la porte et plongez dans une atmosphère feutrée, conçue pour vous faire découvrir — en conditions réelles — les solutions de conservation, de service et de vieillissement de vos vins. Un lieu pensé pour les amateurs comme pour les professionnels.
+                    </p>
+                </div>
+                <div class="section__image-wrapper">
+                    <img src="assets/maps-1.jpg" alt="Ambiance du showroom EuroCave Paris" loading="lazy" width="600" height="750">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : UNE CAVE À VOTRE IMAGE -->
+        <section class="section section--gammes reveal" id="gammes" data-year="1992">
+            <div class="section__inner" style="max-width:900px;">
+                <span class="section__tag">Les produits</span>
+                <h2 class="section__title">Toutes nos gammes, en fonctionnement</h2>
+                <p class="section__text">
+                    Ici, les caves ne sont pas alignées comme des appareils électroménagers. Elles sont présentées en situation, avec des bouteilles, dans des ambiances proches de ce que vous vivrez chez vous.
+                </p>
+                <div class="highlight-grid">
+                    <div class="highlight-card reveal">
+                        <span class="highlight-card__icon">🍷</span>
+                        <h3 class="highlight-card__title">Meuble à vin intégré</h3>
+                        <p class="highlight-card__desc">S'intègre dans votre cuisine ou votre salon, pour une dégustation quotidienne sans compromis.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <span class="highlight-card__icon">🏛️</span>
+                        <h3 class="highlight-card__title">Cave de vieillissement</h3>
+                        <p class="highlight-card__desc">Reproduit les conditions d'une cave souterraine naturelle, pour vos bouteilles de longue garde.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <span class="highlight-card__icon">✨</span>
+                        <h3 class="highlight-card__title">Armoire de service</h3>
+                        <p class="highlight-card__desc">Vos vins à la température idéale de dégustation, prêts à être servis à chaque occasion.</p>
+                    </div>
+                </div>
+                <p class="section__text" style="margin-top:1.8rem;">
+                    Nos experts vous guident selon <strong>votre collection, votre espace et vos ambitions</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : LE CONSEIL -->
+        <section class="section section--conseil reveal" id="conseil">
+            <div class="section__inner">
+                <span class="section__tag">L'accompagnement</span>
+                <h2 class="section__title">Parlez-nous de vos vins</h2>
+                <p class="section__text">
+                    Nos conseillers vous reçoivent <strong>sur rendez-vous</strong> pour un échange approfondi. Apportez votre cahier des charges, vos contraintes d'agencement, vos questions les plus pointues sur l'hygrométrie ou les vibrations.
+                </p>
+                <div class="quote-block">
+                    « Nous vous aidons à choisir sans jamais forcer la main. Le showroom est aussi un lieu d'étude sur plan pour vos projets de cave enterrée. »
+                </div>
+                <p class="section__text">
+                    Chaque visite est un moment privilégié entre le vin, le temps et le conseil — <strong>comme un rendez-vous de connaisseur</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : MADE IN FRANCE -->
+        <section class="section section--savoir-faire reveal" id="savoir-faire" data-year="1976">
+            <div class="section__inner">
+                <span class="section__tag">L'excellence</span>
+                <h2 class="section__title">L'excellence signée EuroCave</h2>
+                <p class="section__text">
+                    Depuis 1976, nos caves sont fabriquées en France et pensées pour reproduire les conditions naturelles d'une cave souterraine. Contrôle de la température, de l'hygrométrie, ventilation maîtrisée, filtration anti-odeurs… Chaque détail compte pour que vos vins atteignent leur apogée, chez vous comme chez les plus grands chefs.
+                </p>
+                <div class="stats-row">
+                    <div class="stat-item reveal">
+                        <div class="stat-item__number">50</div>
+                        <div class="stat-item__label">ans de savoir-faire</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-item__number">100%</div>
+                        <div class="stat-item__label">fabrication française</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-item__number">∞</div>
+                        <div class="stat-item__label">passion du vin</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : AVIS -->
+        <section class="section section--avis reveal" id="avis">
+            <div class="section__inner" style="max-width:1000px;">
+                <span class="section__tag">Témoignages</span>
+                <h2 class="section__title">4,2 ★ sur Google — ce que vous en dites</h2>
+                <p class="section__text">35 avis laissés par nos visiteurs. Voici ce qu'ils retiennent de leur passage au showroom.</p>
+                <div class="carousel" aria-label="Carrousel de témoignages clients">
+                    <div class="carousel__card">
+                        <div class="carousel__bottle"></div>
+                        <div class="carousel__stars">★★★★★</div>
+                        <p class="carousel__text">« Un accueil à la hauteur de la qualité des caves. J'ai pu comparer trois modèles en situation avant de me décider. »</p>
+                        <span class="carousel__author">— Philippe, client du 16ᵉ</span>
+                    </div>
+                    <div class="carousel__card">
+                        <div class="carousel__bottle"></div>
+                        <div class="carousel__stars">★★★★★</div>
+                        <p class="carousel__text">« Le conseiller a pris le temps de comprendre ma collection. Aucune pression, juste de l'expertise. Ma cave est parfaitement adaptée. »</p>
+                        <span class="carousel__author">— Anne-Sophie, Paris 17ᵉ</span>
+                    </div>
+                    <div class="carousel__card">
+                        <div class="carousel__bottle"></div>
+                        <div class="carousel__stars">★★★★</div>
+                        <p class="carousel__text">« Showroom élégant, on se croirait dans une vraie cave de garde. J'y suis allé pour un renseignement, je suis reparti avec un projet complet. »</p>
+                        <span class="carousel__author">— Marc, Neuilly-sur-Seine</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : PRATIQUE (fond clair) -->
+        <section class="section section--pratique reveal" id="pratique">
+            <div class="section__inner" style="max-width:1000px;">
+                <span class="section__tag">Venir, appeler, échanger</span>
+                <h2 class="section__title">Le showroom en pratique</h2>
+                <div class="pratique-grid">
+                    <div class="info-block">
+                        <div class="info-item">
+                            <span class="info-item__icon">📍</span>
+                            <span><strong>25 Avenue de Neuilly, 75116 Paris</strong><br>Métro Porte Maillot (ligne 1, RER C)<br>Bus 82 et 73 à 50 mètres<br>Parking public à proximité</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item__icon">🕐</span>
+                            <span><strong>Horaires d'ouverture</strong><br>Mardi au samedi : 10h–13h et 14h–19h<br>Fermé dimanche et lundi</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item__icon">📞</span>
+                            <span><a href="tel:+33145005255">01 45 00 52 55</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item__icon">✉️</span>
+                            <span>Presse : <a href="mailto:presse@eurocave.com">presse@eurocave.com</a></span>
+                        </div>
+                    </div>
+                    <div class="form-contact" id="formContact">
+                        <h3 class="form-contact__title">Prendre rendez-vous</h3>
+                        <input type="text" id="formName" placeholder="Votre nom" required aria-label="Votre nom">
+                        <input type="email" id="formEmail" placeholder="Votre email" required aria-label="Votre email">
+                        <input type="tel" id="formPhone" placeholder="Votre téléphone" aria-label="Votre téléphone">
+                        <textarea id="formMessage" rows="3" placeholder="Quelques mots sur votre projet…" aria-label="Votre message"></textarea>
+                        <button class="btn btn--primary" id="formSubmit" type="button">Envoyer la demande</button>
+                        <div class="form-contact__confirmation" id="formConfirmation">
+                            ✅ Merci ! Votre demande a bien été envoyée. Nous vous contacterons très rapidement.
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=EuroCave+Paris+25+Avenue+de+Neuilly%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte du showroom EuroCave Paris"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <div class="footer__brand">EuroCave Paris</div>
+            <p>25 Avenue de Neuilly, 75116 Paris<br>
+                <a href="tel:+33145005255">01 45 00 52 55</a> · <a href="mailto:presse@eurocave.com">presse@eurocave.com</a><br>
+                Mardi–Samedi : 10h–13h & 14h–19h
+            </p>
+        </div>
+        <div class="footer__credits">
+            Site créé par <a href="https://agence.mooo.com/eurocave-paris-2" target="_blank" rel="noopener">Agence Mooo</a>
+        </div>
+    </footer>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "EuroCave Paris",
+            "description": "Showroom de caves à vin EuroCave — conseil sur mesure, gammes en fonctionnement. Avenue de Neuilly, Paris 16e.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "25 Avenue de Neuilly",
+                "postalCode": "75116",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145005255",
+            "email": "presse@eurocave.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "35"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ],
+            "url": "https://agence.mooo.com/eurocave-paris-2"
+        }
+    </script>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // === IntersectionObserver pour les reveals ===
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // === Timeline fill au scroll ===
+            const timelineFill = document.getElementById('timelineFill');
+            const markers = document.querySelectorAll('.timeline__marker');
+
+            function updateTimeline() {
+                const scrollTop = window.scrollY;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+                if (timelineFill) {
+                    timelineFill.style.height = (scrollPercent * 100) + '%';
+                }
+
+                // Activation des marqueurs selon les sections visibles
+                markers.forEach(marker => {
+                    const year = marker.getAttribute('data-marker');
+                    const targetSection = document.querySelector(`[data-year="${year}"]`);
+                    if (targetSection) {
+                        const rect = targetSection.getBoundingClientRect();
+                        const viewH = window.innerHeight;
+                        const isVisible = rect.top < viewH * 0.7 && rect.bottom > viewH * 0.2;
+                        if (isVisible) {
+                            marker.classList.add('active');
+                        } else {
+                            marker.classList.remove('active');
+                        }
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateTimeline, { passive: true });
+            window.addEventListener('resize', updateTimeline, { passive: true });
+            updateTimeline();
+
+            // === Header hamburger menu ===
+            const hamburger = document.getElementById('hamburger');
+            const headerNav = document.getElementById('headerNav');
+
+            hamburger.addEventListener('click', () => {
+                const isOpen = headerNav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            // Fermer le menu au clic sur un lien
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    headerNav.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // === Formulaire de contact ===
+            const formSubmit = document.getElementById('formSubmit');
+            const formConfirmation = document.getElementById('formConfirmation');
+
+            formSubmit.addEventListener('click', () => {
+                const name = document.getElementById('formName').value.trim();
+                const email = document.getElementById('formEmail').value.trim();
+                if (name && email) {
+                    formConfirmation.style.display = 'block';
+                    formSubmit.style.opacity = '0.6';
+                    formSubmit.style.pointerEvents = 'none';
+                    formSubmit.textContent = 'Demande envoyée ✓';
+                    // Réinitialisation discrète après 6 secondes
+                    setTimeout(() => {
+                        formConfirmation.style.display = 'none';
+                        formSubmit.style.opacity = '1';
+                        formSubmit.style.pointerEvents = 'auto';
+                        formSubmit.textContent = 'Envoyer la demande';
+                        document.getElementById('formName').value = '';
+                        document.getElementById('formEmail').value = '';
+                        document.getElementById('formPhone').value = '';
+                        document.getElementById('formMessage').value = '';
+                    }, 6000);
+                } else {
+                    // Focus sur le premier champ vide
+                    if (!name) document.getElementById('formName').focus();
+                    else document.getElementById('formEmail').focus();
+                    // Légère secousse
+                    const formEl = document.getElementById('formContact');
+                    formEl.style.transition = 'transform 0.15s ease';
+                    formEl.style.transform = 'translateX(-6px)';
+                    setTimeout(() => {
+                        formEl.style.transform = 'translateX(6px)';
+                        setTimeout(() => {
+                            formEl.style.transform = 'translateX(0)';
+                        }, 150);
+                    }, 150);
+                }
+            });
+
+            // === Smooth scroll pour les ancres (fallback pour navigateurs sans support) ===
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY -
+                            headerHeight - 10;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // === Respect de prefers-reduced-motion ===
+            const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mq.matches) {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+                if (timelineFill) timelineFill.style.transition = 'none';
+                document.querySelectorAll('.carousel__card, .highlight-card').forEach(el => {
+                    el.style.transition
