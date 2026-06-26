@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aux Vins Vivants Beaugrenelle — Caviste BIO & Vin nature, Paris 15e</title>
+    <meta name="description" content="Aux Vins Vivants Beaugrenelle : 800 vins natures & biodynamiques au cœur du 15e arrondissement de Paris. Cave vivante, expertise passionnée, vins qui respirent. Note 4.7★ — 51 avis.">
+    <meta property="og:title" content="Aux Vins Vivants Beaugrenelle — Caviste BIO & Vin nature">
+    <meta property="og:description" content="Le vin, tel qu'il respire. 800 vins natures & biodynamiques, trois caves à Paris. Découvrez notre sélection vivante au 9 Rue Beaugrenelle, Paris 15e.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍷</text></svg>">
+    <style>
+        :root {
+            --terre-cave: #1E1A18;
+            --mousse-liege: #F3EFE8;
+            --lie-de-vie: #8B2D3C;
+            --vrille: #5C7A3A;
+            --macerration: #D48C3C;
+            --chene-clair: #A89887;
+            --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+            --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-slow: 0.6s var(--ease-out-expo);
+            --transition-medium: 0.4s var(--ease-out-expo);
+            --transition-fast: 0.25s var(--ease-out-expo);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            background-color: var(--terre-cave);
+            color: var(--mousse-liege);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ---- SCROLLBAR ---- */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--terre-cave);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--chene-clair);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--macerration);
+        }
+
+        /* ---- FOCUS ---- */
+        :focus-visible {
+            outline: 2px solid var(--macerration);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ---- SELECTION ---- */
+        ::selection {
+            background: var(--lie-de-vie);
+            color: var(--mousse-liege);
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color var(--transition-medium), padding var(--transition-medium), box-shadow var(--transition-medium);
+            background-color: transparent;
+        }
+        .site-header.scrolled {
+            background-color: rgba(30, 26, 24, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 0.7rem 1.5rem;
+            box-shadow: 0 1px 0 rgba(168, 152, 135, 0.12);
+        }
+        .header-logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            letter-spacing: 0.03em;
+            color: var(--mousse-liege);
+            text-decoration: none;
+            line-height: 1.15;
+            transition: color var(--transition-fast);
+        }
+        .header-logo span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.55em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--chene-clair);
+        }
+        .header-logo:hover {
+            color: var(--macerration);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--chene-clair);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--macerration);
+            transition: width var(--transition-medium);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--mousse-liege);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.1rem;
+            background-color: var(--lie-de-vie);
+            color: var(--mousse-liege);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            white-space: nowrap;
+        }
+        .header-cta:hover {
+            background-color: var(--macerration);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(212, 140, 60, 0.25);
+        }
+        .header-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            color: var(--mousse-liege);
+            z-index: 1001;
+        }
+        .header-mobile-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--mousse-liege);
+            margin: 6px 0;
+            transition: all var(--transition-fast);
+            border-radius: 2px;
+        }
+        .header-mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .header-mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .header-mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--terre-cave);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                gap: 2rem;
+                transition: right var(--transition-medium);
+                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-nav a {
+                font-size: 1.1rem;
+            }
+            .header-mobile-toggle {
+                display: block;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+        }
+        @media (min-width: 861px) {
+            .header-cta.mobile-only {
+                display: none;
+            }
+        }
+
+        /* ---- MOTIF BULLES ---- */
+        .bulles-vivantes {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1.5s var(--ease-out-expo);
+        }
+        .bulles-vivantes.visible {
+            opacity: 0.35;
+        }
+        .bulles-vivantes svg circle {
+            fill: none;
+            stroke: var(--macerration);
+            stroke-width: 0.6;
+            vector-effect: non-scaling-stroke;
+        }
+
+        /* ---- HERO ---- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background-color: var(--terre-cave);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) saturate(0.8) contrast(1.05);
+            transition: filter 2s var(--ease-out-expo);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: radial-gradient(ellipse at 55% 40%, transparent 30%, rgba(30, 26, 24, 0.55) 70%, rgba(30, 26, 24, 0.9) 100%);
+            pointer-events: none;
+        }
+        .hero-texture {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 2rem 1.5rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .hero-content {
+                padding: 3rem 3rem 5rem;
+                gap: 1.5rem;
+            }
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+            color: var(--mousse-liege);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3em 0.5em;
+        }
+        .hero-title .word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(28px);
+            animation: wordRise 0.75s var(--ease-out-expo) forwards;
+            will-change: transform, opacity;
+        }
+        .hero-title .word:nth-child(1) {
+            animation-delay: 0.08s;
+        }
+        .hero-title .word:nth-child(2) {
+            animation-delay: 0.16s;
+        }
+        .hero-title .word:nth-child(3) {
+            animation-delay: 0.24s;
+        }
+        .hero-title .word:nth-child(4) {
+            animation-delay: 0.32s;
+        }
+        .hero-title .word:nth-child(5) {
+            animation-delay: 0.40s;
+        }
+        @keyframes wordRise {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            line-height: 1.55;
+            letter-spacing: 0.015em;
+            color: var(--chene-clair);
+            max-width: 620px;
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-cta-wrap {
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.7s forwards;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            background-color: var(--lie-de-vie);
+            color: var(--mousse-liege);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--macerration);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-medium);
+            z-index: 0;
+            border-radius: 4px;
+        }
+        .hero-cta:hover::before {
+            transform: scaleX(1);
+        }
+        .hero-cta span {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-cta:hover {
+            box-shadow: 0 8px 28px rgba(212, 140, 60, 0.3);
+            transform: translateY(-2px);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 26, 24, 0.7);
+            border: 1px solid rgba(168, 152, 135, 0.25);
+            border-radius: 24px;
+            padding: 0.4rem 1rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--mousse-liege);
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.6s forwards;
+        }
+        .hero-badge .stars {
+            color: var(--macerration);
+            letter-spacing: 0.05em;
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            position: relative;
+            padding: 5rem 1.5rem;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 7rem 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .section {
+                padding: 8rem 4rem;
+            }
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            line-height: 1.15;
+            letter-spacing: 0.04em;
+            color: var(--mousse-liege);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .section-title .breathing-letter {
+            display: inline-block;
+            transition: font-weight 0.5s var(--ease-out-expo), color 0.5s var(--ease-out-expo);
+            font-weight: 400;
+        }
+        .section-title:hover .breathing-letter,
+        .section-title.breathing-active .breathing-letter {
+            font-weight: 700;
+            color: var(--macerration);
+        }
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            color: var(--chene-clair);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* ---- SECTION: NOTRE CAVE ---- */
+        .conviction-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .conviction-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+        .conviction-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            line-height: 1.7;
+            color: var(--chene-clair);
+            letter-spacing: 0.015em;
+        }
+        .conviction-text strong {
+            color: var(--mousse-liege);
+            font-weight: 600;
+        }
+        .conviction-chiffre {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(6rem, 14vw, 12rem);
+            line-height: 0.85;
+            color: var(--lie-de-vie);
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+        .conviction-chiffre-label {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--chene-clair);
+            margin-top: 0.5rem;
+        }
+
+        /* ---- SECTION: TROIS CAVES ---- */
+        .caves-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 600px) {
+            .caves-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .caves-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .cave-card {
+            background: rgba(30, 26, 24, 0.6);
+            border: 1px solid rgba(168, 152, 135, 0.18);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: border-color var(--transition-medium), transform var(--transition-medium), box-shadow var(--transition-medium);
+            position: relative;
+        }
+        .cave-card:hover {
+            border-color: rgba(212, 140, 60, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+        }
+        .cave-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .cave-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.9) contrast(1.1);
+            transition: filter var(--transition-slow), transform var(--transition-slow);
+        }
+        .cave-card:hover .cave-card-image img {
+            filter: brightness(0.85) saturate(1) contrast(1.05);
+            transform: scale(1.04);
+        }
+        .cave-card-body {
+            padding: 1.2rem 1.3rem;
+        }
+        .cave-card-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.03em;
+            color: var(--mousse-liege);
+            margin-bottom: 0.25rem;
+        }
+        .cave-card-address {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--chene-clair);
+            margin-bottom: 0.5rem;
+        }
+        .cave-card-detail {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--mousse-liege);
+            line-height: 1.5;
+            position: relative;
+            padding-left: 0.8rem;
+            border-left: 2px solid var(--vrille);
+        }
+
+        /* ---- SECTION: SELECTION ---- */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+        @media (max-width: 540px) {
+            .selection-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        .bottle-card {
+            position: relative;
+            background: rgba(30, 26, 24, 0.5);
+            border: 1px solid rgba(168, 152, 135, 0.15);
+            border-radius: 8px;
+            padding: 1.6rem 1.2rem 1.2rem;
+            text-align: center;
+            transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
+            cursor: default;
+            perspective: 600px;
+        }
+        .bottle-card:hover {
+            border-color: rgba(212, 140, 60, 0.5);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+            transform: translateY(-6px);
+        }
+        .bottle-visual {
+            position: relative;
+            width: 80px;
+            height: 200px;
+            margin: 0 auto 1.2rem;
+            transform: rotateY(0deg) rotateX(0deg);
+            transition: transform var(--transition-medium);
+            transform-style: preserve-3d;
+        }
+        .bottle-card:hover .bottle-visual {
+            transform: rotateY(-6deg) rotateX(3deg);
+        }
+        .bottle-silhouette {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        .bottle-silhouette svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+        }
+        .bottle-glow {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 100px;
+            background: radial-gradient(ellipse, rgba(212, 140, 60, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity var(--transition-medium);
+        }
+        .bottle-card:hover .bottle-glow {
+            opacity: 1.5;
+        }
+        .bottle-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: var(--mousse-liege);
+            margin-bottom: 0.2rem;
+        }
+        .bottle-cuvee {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.82rem;
+            color: var(--chene-clair);
+            margin-bottom: 0.2rem;
+        }
+        .bottle-region {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--vrille);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .bottle-price {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--macerration);
+            letter-spacing: 0.02em;
+        }
+        .bottle-note {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.78rem;
+            color: var(--chene-clair);
+            margin-top: 0.5rem;
+            line-height: 1.45;
+            font-style: italic;
+        }
+
+        /* ---- SECTION: COMMENT CA MARCHE ---- */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 600px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+        }
+        .step-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border: 1px solid rgba(168, 152, 135, 0.15);
+            border-radius: 6px;
+            transition: border-color var(--transition-medium), background var(--transition-medium);
+        }
+        .step-card:hover {
+            border-color: rgba(92, 122, 58, 0.5);
+            background: rgba(92, 122, 58, 0.04);
+        }
+        .step-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--vrille);
+        }
+        .step-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.03em;
+            color: var(--mousse-liege);
+            margin-bottom: 0.5rem;
+        }
+        .step-desc {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--chene-clair);
+            line-height: 1.55;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background-color: #171412;
+            border-top: 1px solid rgba(168, 152, 135, 0.12);
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .site-footer {
+                padding: 4rem 3rem 2.5rem;
+            }
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            color: var(--mousse-liege);
+            margin-bottom: 0.8rem;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--chene-clair);
+            line-height: 1.7;
+            text-decoration: none;
+            display: block;
+            transition: color var(--transition-fast);
+        }
+        .footer-col a:hover {
+            color: var(--macerration);
+        }
+        .footer-map {
+            width: 100%;
+            height: 220px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(168, 152, 135, 0.2);
+            margin-top: 0.5rem;
+        }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(168, 152, 135, 0.1);
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--chene-clair);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+        .footer-bottom a {
+            color: var(--chene-clair);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        .footer-bottom a:hover {
+            color: var(--macerration);
+        }
+
+        /* ---- REVEAL ON SCROLL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ---- DIVIDER ---- */
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--lie-de-vie);
+            margin: 0.5rem 0 1.5rem;
+            border: none;
+            opacity: 0.7;
+        }
+
+        /* ---- UTIL ---- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .accent-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--macerration);
+            margin: 0 0.3em;
+            vertical-align: middle;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.6);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-logo" aria-label="Aux Vins Vivants — Accueil">
+            Aux Vins Vivants
+            <span>Beaugrenelle · Paris 15e</span>
+        </a>
+        <button class="header-mobile-toggle" id="mobileToggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="headerNav" role="navigation" aria-label="Navigation principale">
+            <a href="#notre-cave">Notre cave</a>
+            <a href="#trois-caves">Les caves</a>
+            <a href="#selection">Sélection</a>
+            <a href="#comment-ca-marche">Infos</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+33183890469" class="header-cta mobile-only" aria-label="Appeler le 01 83 89 04 69">📞 Appeler</a>
+        </nav>
+        <a href="tel:+33183890469" class="header-cta desktop-only" aria-label="Appeler le 01 83 89 04 69">📞 01 83 89 04 69</a>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Intérieur chaleureux de la cave Aux Vins Vivants — casiers en bois, lumière tamisée, bouteilles alignées" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-texture"></div>
+            <div class="bulles-vivantes visible" style="top:15%;left:5%;width:180px;height:180px;" aria-hidden="true">
+                <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="40" r="18"/><circle cx="90" cy="25" r="12"/><circle cx="140" cy="60" r="22"/><circle cx="55" cy="110" r="10"/><circle cx="120" cy="130" r="16"/><circle cx="160" cy="150" r="8"/></svg>
+            </div>
+            <div class="bulles-vivantes visible" style="top:50%;right:3%;width:140px;height:140px;" aria-hidden="true">
+                <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="30" r="14"/><circle cx="70" cy="20" r="9"/><circle cx="110" cy="55" r="18"/><circle cx="40" cy="90" r="11"/><circle cx="100" cy="105" r="7"/></svg>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="stars">★★★★★</span> 4.7/5 — 51 avis Google
+                </div>
+                <h1 class="hero-title">
+                    <span class="word">Le</span>
+                    <span class="word">vin,</span>
+                    <span class="word">tel</span>
+                    <span class="word">qu'il</span>
+                    <span class="word">respire.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    800 vins natures &amp; biodynamiques, trois caves au cœur du 15e, une seule certitude&nbsp;: ici, on ne met pas le vin en bouteille, on le laisse vivre.
+                </p>
+                <div class="hero-cta-wrap">
+                    <a href="#notre-cave" class="hero-cta"><span>Découvrir la cave</span> →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE CAVE -->
+        <section class="section" id="notre-cave">
+            <div class="section-inner">
+                <div class="conviction-grid">
+                    <div>
+                        <h2 class="section-title reveal">
+                            Une <span class="breathing-letter">c</span>ave n'est pas un entrepôt.
+                        </h2>
+                        <hr class="section-divider reveal reveal-delay-1">
+                        <p class="conviction-text reveal reveal-delay-1">
+                            <strong>Aux Vins Vivants</strong>, on ne stocke pas du vin. On l'accompagne. Chaque bouteille qui entre ici est le fruit d'un travail <strong>sans intrants</strong>, d'un raisin respecté, d'un vigneron qui a choisi la confiance plutôt que la chimie. Nous défendons les vins <strong>natures, biodynamiques, vivants</strong> — ceux qui bougent encore dans le verre, ceux qui racontent une parcelle, un climat, une main. Pas de poudre de perlimpinpin&nbsp;: juste du jus de raisin fermenté, élevé avec soin, et une bonne dose de caractère.
+                        </p>
+                    </div>
+                    <div class="reveal reveal-delay-2" style="text-align:center;">
+                        <span class="conviction-chiffre">800</span>
+                        <span class="conviction-chiffre-label">références<br>vivantes</span>
+                        <p style="font-family:var(--font-body);font-size:0.85rem;color:var(--chene-clair);margin-top:0.8rem;max-width:260px;margin-left:auto;margin-right:auto;">De quoi satisfaire le néophyte curieux comme l'amateur le plus averti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bulles-vivantes" style="bottom:8%;left:10%;width:160px;height:160px;" aria-hidden="true">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="35" r="15"/><circle cx="75" cy="22" r="10"/><circle cx="125" cy="50" r="20"/><circle cx="50" cy="95" r="8"/><circle cx="105" cy="110" r="13"/><circle cx="140" cy="130" r="6"/></svg>
+            </div>
+        </section>
+
+        <!-- TROIS CAVES -->
+        <section class="section" id="trois-caves" style="background:rgba(23,20,18,0.5);">
+            <div class="section-inner">
+                <h2 class="section-title reveal">
+                    15e, 11e, 20e&nbsp;: <span class="breathing-letter">P</span>aris en trois caves.
+                </h2>
+                <hr class="section-divider reveal reveal-delay-1">
+                <p class="section-subtitle reveal reveal-delay-1">Un même esprit, trois adresses. Chaque cave a sa personnalité, mais toutes partagent la même exigence&nbsp;: des vins qui respirent, des vignerons qu'on connaît par leur prénom, et des conseils qui ne prennent personne de haut.</p>
+                <div class="caves-grid reveal reveal-delay-2" style="margin-top:2.5rem;">
+                    <div class="cave-card">
+                        <div class="cave-card-image">
+                            <img src="assets/maps-1.jpg" alt="Cave Beaugrenelle — intérieur chaleureux avec casiers en bois" loading="lazy" style="object-position:center 30%;">
+                        </div>
+                        <div class="cave-card-body">
+                            <p class="cave-card-name">Beaugrenelle</p>
+                            <p class="cave-card-address">9 Rue Beaugrenelle, Paris 15e</p>
+                            <p class="cave-card-detail">Le vaisseau amiral. Le plus large choix des trois caves — 800 références dans un écrin de bois patiné.</p>
+                        </div>
+                    </div>
+                    <div class="cave-card">
+                        <div class="cave-card-image">
+                            <img src="assets/maps-1.jpg" alt="Cave Paris 11e — ambiance tamisée et étagères de vins nature" loading="lazy" style="object-position:center 50%;filter:brightness(0.65) saturate(0.85) hue-rotate(-5deg);">
+                        </div>
+                        <div class="cave-card-body">
+                            <p class="cave-card-name">République</p>
+                            <p class="cave-card-address">Paris 11e — à deux pas du canal</p>
+                            <p class="cave-card-detail">L'antenne de l'Est parisien. Une sélection plus ramassée, taillée pour les apéros de quartier et les belles découvertes.</p>
+                        </div>
+                    </div>
+                    <div class="cave-card">
+                        <div class="cave-card-image">
+                            <img src="assets/maps-1.jpg" alt="Cave Paris 20e — casiers et lumière chaude" loading="lazy" style="object-position:center 60%;filter:brightness(0.65) saturate(0.85) hue-rotate(3deg);">
+                        </div>
+                        <div class="cave-card-body">
+                            <p class="cave-card-name">Belleville</p>
+                            <p class="cave-card-address">Paris 20e — sur les hauteurs</p>
+                            <p class="cave-card-detail">La petite dernière. L'esprit de Belleville en bouteilles&nbsp;: des vins de soif, des vignerons émergents, et des prix doux.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTION DU MOMENT -->
+        <section class="section" id="selection">
+            <div class="section-inner">
+                <h2 class="section-title reveal">
+                    Huit vins qui ont <span class="breathing-letter">q</span>uelque chose à dire.
+                </h2>
+                <hr class="section-divider reveal reveal-delay-1">
+                <p class="section-subtitle reveal reveal-delay-1">Notre sélection du moment — des cuvées qui tiennent tête, qui ont du souffle, et qui n'ont pas fini de vous surprendre.</p>
+                <div class="selection-grid reveal reveal-delay-2" style="margin-top:2.5rem;">
+                    <!-- Bouteille 1 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3a1a1a"/><stop offset="40%" stop-color="#6b2a2a"/><stop offset="60%" stop-color="#8b3a3a"/><stop offset="100%" stop-color="#2a1010"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g1)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Domaine des Marnes</p>
+                        <p class="bottle-cuvee">Cuvée Argile</p>
+                        <p class="bottle-region">Jura</p>
+                        <p class="bottle-price">28 €</p>
+                        <p class="bottle-note">Un blanc de macération qui réveille, entre orange confite et fleur de sureau.</p>
+                    </div>
+                    <!-- Bouteille 2 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="50%" stop-color="#3a2040"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g2)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Clos de l'Élan</p>
+                        <p class="bottle-cuvee">Rouge Garance</p>
+                        <p class="bottle-region">Loire</p>
+                        <p class="bottle-price">22 €</p>
+                        <p class="bottle-note">Un rouge droit, croquant, qui sent l'éclat de cerise et la terre fraîche.</p>
+                    </div>
+                    <!-- Bouteille 3 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a2a1a"/><stop offset="50%" stop-color="#4a5a30"/><stop offset="100%" stop-color="#1a2a1a"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g3)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Mas des Terrasses</p>
+                        <p class="bottle-cuvée">Pétale de Grenache</p>
+                        <p class="bottle-region">Roussillon</p>
+                        <p class="bottle-price">19 €</p>
+                        <p class="bottle-note">Un rosé de pressée, à la fois salin et fruité, comme une tranche de pastèque au bord de mer.</p>
+                    </div>
+                    <!-- Bouteille 4 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2a1a10"/><stop offset="50%" stop-color="#8B5A2B"/><stop offset="100%" stop-color="#2a1a10"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g4)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Domaine du Ruisseau</p>
+                        <p class="bottle-cuvee">Blanc de Noirs</p>
+                        <p class="bottle-region">Alsace</p>
+                        <p class="bottle-price">32 €</p>
+                        <p class="bottle-note">Un effervescent naturel, vif et précis, qui danse sur la langue comme des bulles de source.</p>
+                    </div>
+                    <!-- Bouteille 5 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a1020"/><stop offset="50%" stop-color="#5a3050"/><stop offset="100%" stop-color="#1a1020"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g5)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Clos des Murmures</p>
+                        <p class="bottle-cuvee">Syrah confidentielle</p>
+                        <p class="bottle-region">Rhône Nord</p>
+                        <p class="bottle-price">35 €</p>
+                        <p class="bottle-note">Une syrah qui a du coffre et de l'élégance, poivre noir, violette, et une finale qui s'étire.</p>
+                    </div>
+                    <!-- Bouteille 6 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#202010"/><stop offset="50%" stop-color="#6a6a20"/><stop offset="100%" stop-color="#202010"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g6)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Château Fontarèche</p>
+                        <p class="bottle-cuvee">Vieilles Vignes</p>
+                        <p class="bottle-region">Languedoc</p>
+                        <p class="bottle-price">24 €</p>
+                        <p class="bottle-note">Un rouge solaire, mûr mais tendu, qui évoque le garrigue et les fruits noirs gorgés de soleil.</p>
+                    </div>
+                    <!-- Bouteille 7 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#252015"/><stop offset="50%" stop-color="#D48C3C"/><stop offset="100%" stop-color="#252015"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g7)" opacity="0.8"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Domaine de l'Aube</p>
+                        <p class="bottle-cuvee">Chardonnay mineral</p>
+                        <p class="bottle-region">Bourgogne</p>
+                        <p class="bottle-price">38 €</p>
+                        <p class="bottle-note">Un blanc ciselé, presque austère dans sa jeunesse, qui s'ouvre sur des notes de pierre à fusil.</p>
+                    </div>
+                    <!-- Bouteille 8 -->
+                    <div class="bottle-card">
+                        <div class="bottle-visual">
+                            <div class="bottle-glow"></div>
+                            <div class="bottle-silhouette">
+                                <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs><linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="50%" stop-color="#4a3030"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient></defs>
+                                    <rect x="22" y="45" width="36" height="130" rx="8" fill="url(#g8)" opacity="0.85"/>
+                                    <rect x="26" y="50" width="28" height="42" rx="3" fill="#F3EFE8" opacity="0.9"/>
+                                    <rect x="30" y="0" width="20" height="48" rx="4" fill="#1E1A18" stroke="#A89887" stroke-width="0.8"/>
+                                    <rect x="34" y="4" width="12" height="38" rx="3" fill="none" stroke="#D48C3C" stroke-width="0.5" opacity="0.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="bottle-name">Caves du Volcan</p>
+                        <p class="bottle-cuvee">Auvergne rouge</p>
+                        <p class="bottle-region">Auvergne</p>
+                        <p class="bottle-price">21 €</p>
+                        <p class="bottle-note">Un vin de copain, gouleyant et désaltérant, qui sent le basalte et la framboise écrasée.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bulles-vivantes" style="top:12%;right:4%;width:120px;height:120px;" aria-hidden="true">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="28" r="11"/><circle cx="60" cy="18" r="8"/><circle cx="95" cy="40" r="15"/><circle cx="35" cy="75" r="7"/><circle cx="85" cy="85" r="10"/></svg>
+            </div>
+        </section>
+
+        <!-- COMMENT CA MARCHE -->
+        <section class="section" id="comment-ca-marche" style="background:rgba(23,20,18,0.5);">
+            <div class="section-inner">
+                <h2 class="section-title reveal">
+                    Venez, commandez, <span class="breathing-letter">g</span>oûtez.
+                </h2>
+                <hr class="section-divider reveal reveal-delay-1">
+                <div class="steps-grid reveal reveal-delay-2" style="margin-top:2rem;">
+                    <div class="step-card">
+                        <span class="step-icon">🚶</span>
+                        <p class="step-title">Passez en cave</p>
+                        <p class="step-desc">9 Rue Beaugrenelle, Paris 15e. Ouvert du mardi au samedi, 11h–20h30. Le samedi dès 10h. Fermé dimanche et lundi.<br><small style="color:var(--chene-clair);">Horaires indicatifs — à confirmer.</small></p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-icon">📦</span>
+                        <p class="step-title">Commandez en ligne</p>
+                        <p class="step-desc">Click &amp; collect ou livraison possible dans Paris. Contactez-nous pour connaître les zones desservies et préparer votre commande à l'avance.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-icon">💬</span>
+                        <p class="step-title">Discutez avec nous</p>
+                        <p class="step-desc">Un conseil, une envie particulière&nbsp;? Appelez-nous au <a href="tel:+33183890469" style="color:var(--macerration);">01 83 89 04 69</a>, écrivez à <a href="mailto:contact@vinsvivants.fr" style="color:var(--macerration);">contact@vinsvivants.fr</a> ou passez nous voir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Aux Vins Vivants</h4>
+                <p>9 Rue Beaugrenelle<br>75015 Paris, France</p>
+                <p style="margin-top:0.5rem;">
+                    <a href="tel:+33183890469">01 83 89 04 69</a>
+                    <a href="mailto:contact@vinsvivants.fr">contact@vinsvivants.fr</a>
+                </p>
+                <p style="margin-top:0.5rem;display:flex;align-items:center;gap:0.4rem;">
+                    <span style="color:var(--macerration);">★★★★★</span> 4.7/5 — 51 avis Google
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Nos trois caves</h4>
+                <p><strong>Beaugrenelle</strong> — 9 Rue Beaugrenelle, 75015 Paris</p>
+                <p><strong>République</strong> — Paris 11e (à deux pas du canal)</p>
+                <p><strong>Belleville</strong> — Paris 20e (sur les hauteurs)</p>
+                <p style="margin-top:0.5rem;font-size:0.78rem;">Caviste BIO &amp; Vin nature — Paris</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plan</h4>
+                <div class="footer-map">
+                    <iframe src="https://maps.google.com/maps?q=Aux+Vins+Vivants+Beaugrenelle+-+Caviste+BIO+%26+Vin+nature+9+Rue+Beaugrenelle%2C+Paris&output=embed" width="100%" height="220" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan Google Maps — Aux Vins Vivants Beaugrenelle"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Aux Vins Vivants — Caviste BIO &amp; Vin nature, Paris.</span>
+            <span>Site créé par <a href="https://agence.mooo.com/aux-vins-vivants-beaugrenelle-caviste-bio-vin-nature" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Aux Vins Vivants Beaugrenelle — Caviste BIO & Vin nature",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "9 Rue Beaugrenelle",
+                "addressLocality": "Paris",
+                "addressCountry": "FR",
+                "postalCode": "75015"
+            },
+            "telephone": "+33183890469",
+            "email": "contact@vinsvivants.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "51"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "11:00",
+                    "closes": "20:30"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "10:00",
+                    "closes": "20:00"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // DOM elements
+            const header = document.getElementById('siteHeader');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const headerNav = document.getElementById('headerNav');
+            const reveals = document.querySelectorAll('.reveal');
+            const bulles = document.querySelectorAll('.bulles-vivantes');
+            const breathingTitles = document.querySelectorAll('.section-title');
+            const heroSection = document.getElementById('hero');
+
+            // IntersectionObserver for scroll reveal
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            reveals.forEach(el => revealObserver.observe(el));
+
+            // IntersectionObserver for bulles vivantes
+            const bullesObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            bulles.forEach(el => {
+                // Only observe non-hero bulles (hero ones are always visible)
+                if (!el.classList.contains('visible') || el.closest('.hero-section') === null) {
+                    bullesObserver.observe(el);
+                } else if (el.closest('.hero-section')) {
+                    el.classList.add('visible');
+                }
+            });
+
+            // Header scroll effect
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }, {
+                threshold: 0
+            });
+
+            if (heroSection) {
+                headerObserver.observe(heroSection);
+            }
+
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', () => {
+                const isActive = headerNav.classList.contains('active');
+                headerNav.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+                mobileToggle.setAttribute('aria-expanded', !isActive);
+                document.body.style.overflow = isActive ? '' : 'hidden';
+            });
+
+            // Close mobile menu on link click
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    headerNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close mobile menu on outside click
+            document.addEventListener('click', (e) => {
+                if (headerNav.classList.contains('active') &&
+                    !headerNav.contains(e.target) &&
+                    !mobileToggle.contains(e.target)) {
+                    headerNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Breathing letters on section titles — activate when title enters viewport
+            const breathingObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('breathing-active');
+                        // Remove after a moment so it can re-trigger on re-entry
+                        setTimeout(() => {
+                            entry.target.classList.remove('breathing-active');
+                        }, 2500);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            breathingTitles.forEach(title => breathingObserver.observe(title));
+
+            // Escape key to close mobile menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && headerNav.classList.contains('active')) {
+                    headerNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Smooth scroll for all anchor links (already native with scroll-behavior, but ensure)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+        })();
+    </script>
+
+</body>
+</html>
