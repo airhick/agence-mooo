@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Lease — Leasing professionnel à Levallois-Perret | Solutions LLD sur mesure</title>
+    <meta name="description" content="Fast Lease, votre expert en leasing professionnel au 25 rue Greffulhe à Levallois-Perret. Solutions de location longue durée configurées pour votre activité. 4.2★ sur 38 avis. Prenez rendez-vous au 01 40 88 94 50.">
+    <meta property="og:title" content="Fast Lease — Leasing professionnel à Levallois-Perret">
+    <meta property="og:description" content="Votre leasing n'attend que la bonne clé. Solutions LLD configurées pour votre activité, au 25 rue Greffulhe.">
+    <meta property="og:image" content="https://agence.mooo.com/fast-lease-2/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='15' width='50' height='72' rx='4' fill='%23C41E3A'/%3E%3Ccircle cx='60' cy='55' r='7' fill='%23F7F5F2'/%3E%3Crect x='58' y='18' width='2' height='24' fill='%23F7F5F2' opacity='0.6'/%3E%3C/svg%3E" type="image/svg+xml">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Fast Lease",
+            "image": "https://agence.mooo.com/fast-lease-2/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "25 Rue Greffulhe",
+                "addressLocality": "Levallois-Perret",
+                "postalCode": "92300",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140889450",
+            "email": "50idf@groupe-fastlease.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "38"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            "url": "https://agence.mooo.com/fast-lease-2"
+        }
+    </script>
+    <style>
+        :root {
+            --encre: #2A2D2C;
+            --perle: #F7F5F2;
+            --rouge: #C41E3A;
+            --gris: #8D9094;
+            --blanc: #FFFFFF;
+            --cuir: #3F332C;
+            --rouge-ombre: #9a1630;
+            --perle-tiede: #f0ede8;
+            --transition-porte: 1.1s;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--encre);
+            background-color: var(--perle);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ========== OVERLAY PORTE ROUGE ========== */
+        .porte-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            pointer-events: none;
+            display: flex;
+            background: var(--perle);
+            transition: opacity 0.6s ease 1.2s;
+        }
+        .porte-overlay.fermee {
+            opacity: 0;
+            transition: opacity 0.5s ease 0.1s;
+        }
+        .porte-overlay.terminee {
+            display: none;
+        }
+        .porte-battant {
+            flex: 1;
+            background: var(--perle);
+            position: relative;
+            transition: transform var(--transition-porte) cubic-bezier(0.68, 0.01, 0.26, 1.01);
+            will-change: transform;
+        }
+        .porte-battant.gauche {
+            transform-origin: right center;
+            border-right: 0.5px solid var(--rouge);
+        }
+        .porte-battant.droite {
+            transform-origin: left center;
+            border-left: 0.5px solid var(--rouge);
+        }
+        .porte-overlay.ouverte .porte-battant.gauche {
+            transform: translateX(-50.5vw);
+        }
+        .porte-overlay.ouverte .porte-battant.droite {
+            transform: translateX(50.5vw);
+        }
+        .porte-ligne-centre {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 80px;
+            background: var(--rouge);
+            z-index: 10001;
+            transition: opacity 0.4s ease 0.9s, height 0.6s ease 0.3s;
+        }
+        .porte-overlay.ouverte .porte-ligne-centre {
+            opacity: 0;
+            height: 0;
+        }
+        .porte-poignee-ico {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--rouge);
+            border-radius: 50%;
+            z-index: 10002;
+            opacity: 1;
+            transition: opacity 0.35s ease 0.7s, transform 0.6s ease 0.3s;
+            background: var(--perle);
+        }
+        .porte-overlay.ouverte .porte-poignee-ico {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.4);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .porte-overlay {
+                display: none !important;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9000;
+            background: rgba(247, 245, 242, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(141, 144, 148, 0.25);
+            padding: 0 clamp(1rem, 3vw, 3rem);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow 0.35s ease;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 18px rgba(42, 45, 44, 0.07);
+        }
+        .header-logo {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+            color: var(--encre);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-logo .logo-accent {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--rouge);
+            border-radius: 1px;
+            margin-right: 2px;
+            flex-shrink: 0;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 1.8vw, 1.6rem);
+        }
+        .header-nav a {
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--encre);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--rouge);
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--rouge);
+        }
+        .header-cta {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.55rem 1.3rem;
+            background: var(--rouge);
+            color: var(--blanc);
+            border: none;
+            border-radius: 20px 6px 20px 6px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--rouge-ombre);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.25);
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--rouge);
+            outline-offset: 3px;
+        }
+        .menu-burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 9001;
+        }
+        .menu-burger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .menu-burger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .menu-burger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-burger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        @media (max-width: 860px) {
+            .header-nav {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: rgba(247, 245, 242, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem 2rem 2rem;
+                gap: 1rem;
+                transform: translateY(-120%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border-bottom: 1px solid rgba(141, 144, 148, 0.2);
+                box-shadow: 0 12px 30px rgba(42, 45, 44, 0.08);
+            }
+            .header-nav.active {
+                transform: translateY(0);
+            }
+            .header-nav a {
+                font-size: 1rem;
+                padding: 0.35rem 0;
+            }
+            .header-cta {
+                align-self: flex-start;
+                margin-top: 0.3rem;
+            }
+            .menu-burger {
+                display: flex;
+            }
+        }
+
+        /* ========== SECTIONS COMMUNES ========== */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 4rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-label {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--rouge);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-titre {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--encre);
+            margin-bottom: 1.2rem;
+        }
+        .section-texte {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+            line-height: 1.7;
+            color: var(--encre);
+            max-width: 620px;
+        }
+        .section-texte strong {
+            font-weight: 600;
+            color: var(--encre);
+        }
+        .filet-rouge {
+            width: 48px;
+            height: 2px;
+            background: var(--rouge);
+            margin-bottom: 1.5rem;
+            border-radius: 1px;
+        }
+
+        /* ========== HÉRO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 68px;
+            position: relative;
+            overflow: hidden;
+            background: var(--perle);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.2rem, 5vw, 4rem);
+        }
+        .hero-texte {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blanc);
+            border: 1px solid rgba(141, 144, 148, 0.3);
+            border-radius: 24px;
+            padding: 0.4rem 1rem 0.4rem 0.6rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre);
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.01em;
+        }
+        .hero-badge .etoiles {
+            color: #e8a317;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .hero-badge .note {
+            font-weight: 700;
+            color: var(--encre);
+        }
+        .hero-badge .avis-count {
+            color: var(--gris);
+            font-weight: 400;
+        }
+        .hero-titre {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--encre);
+            margin-bottom: 1.4rem;
+            max-width: 540px;
+        }
+        .hero-titre .mot-rouge {
+            color: var(--rouge);
+            position: relative;
+            display: inline-block;
+        }
+        .hero-titre .mot-rouge::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 2px;
+            right: 2px;
+            height: 1px;
+            background: var(--rouge);
+            opacity: 0.4;
+        }
+        .hero-soustitre {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.65;
+            color: var(--gris);
+            max-width: 460px;
+            margin-bottom: 2rem;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-primaire {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--rouge);
+            color: var(--blanc);
+            border: none;
+            border-radius: 22px 6px 22px 6px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+        .btn-primaire:hover,
+        .btn-primaire:focus-visible {
+            background: var(--rouge-ombre);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(196, 30, 58, 0.28);
+        }
+        .btn-primaire:focus-visible {
+            outline: 2px solid var(--rouge);
+            outline-offset: 3px;
+        }
+        .btn-secondaire {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.8rem;
+            background: transparent;
+            color: var(--encre);
+            border: 1.5px solid var(--gris);
+            border-radius: 22px 6px 22px 6px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .btn-secondaire:hover,
+        .btn-secondaire:focus-visible {
+            border-color: var(--rouge);
+            color: var(--rouge);
+            background: rgba(196, 30, 58, 0.03);
+        }
+        .btn-secondaire:focus-visible {
+            outline: 2px solid var(--rouge);
+            outline-offset: 3px;
+        }
+        .hero-image-wrap {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 20px 50px rgba(42, 45, 44, 0.13);
+            background: var(--cuir);
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) contrast(1.04) saturate(0.85);
+            transition: filter 0.6s ease;
+        }
+        .hero-image-wrap:hover img {
+            filter: brightness(0.88) contrast(1.08) saturate(0.75);
+        }
+        .hero-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(63, 51, 44, 0.18) 0%, transparent 50%, rgba(196, 30, 58, 0.06) 100%);
+            pointer-events: none;
+        }
+        .hero-griffure {
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 70px;
+            height: 3px;
+            background: var(--rouge);
+            z-index: 3;
+            border-radius: 2px 0 0 0;
+        }
+
+        @media (max-width: 780px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-image-wrap {
+                order: -1;
+                aspect-ratio: 16/10;
+                max-height: 320px;
+            }
+            .hero-titre {
+                font-size: clamp(2rem, 7vw, 3rem);
+                max-width: 100%;
+            }
+            .hero-soustitre {
+                max-width: 100%;
+            }
+        }
+
+        /* ========== PROMESSE ========== */
+        .promesse {
+            background: var(--blanc);
+            position: relative;
+        }
+        .promesse-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+        .promesse-texte-col .section-titre {
+            max-width: 420px;
+        }
+        .promesse-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .promesse-points li {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            line-height: 1.6;
+            color: var(--encre);
+            padding-left: 2rem;
+            position: relative;
+            border-left: 2px solid var(--perle-tiede);
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            transition: border-color 0.35s ease;
+        }
+        .promesse-points li:hover {
+            border-left-color: var(--rouge);
+        }
+        .promesse-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 7px;
+            height: 7px;
+            background: var(--rouge);
+            border-radius: 1px;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .promesse-points li:hover::before {
+            opacity: 1;
+        }
+        @media (max-width: 680px) {
+            .promesse-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ========== CHIFFRES CLÉS ========== */
+        .chiffres-cles {
+            background: var(--cuir);
+            color: var(--perle);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 4rem);
+        }
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .chiffre-item {
+            text-align: right;
+            border-right: 1px solid rgba(247, 245, 242, 0.2);
+            padding-right: 1.5rem;
+            transition: border-color 0.35s ease;
+        }
+        .chiffre-item:last-child {
+            border-right: none;
+        }
+        .chiffre-item:hover {
+            border-right-color: var(--rouge);
+        }
+        .chiffre-nombre {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            line-height: 1;
+            color: var(--rouge);
+            letter-spacing: -0.02em;
+            display: block;
+        }
+        .chiffre-legende {
+            font-family: 'Karla', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--gris);
+            margin-top: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 680px) {
+            .chiffres-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.8rem;
+            }
+            .chiffre-item {
+                border-right: 1px solid rgba(247, 245, 242, 0.2);
+                padding-right: 1rem;
+            }
+            .chiffre-item:nth-child(2) {
+                border-right: none;
+            }
+            .chiffre-nombre {
+                font-size: clamp(1.8rem, 7vw, 2.6rem);
+            }
+        }
+
+        /* ========== SERVICES ========== */
+        .services {
+            background: var(--perle);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: var(--blanc);
+            padding: clamp(1.5rem, 3vw, 2.2rem);
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 2px 12px rgba(42, 45, 44, 0.04);
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--rouge);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(42, 45, 44, 0.09);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-icone {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .service-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .service-card p {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris);
+            line-height: 1.55;
+        }
+        @media (max-width: 750px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== AVIS ========== */
+        .avis {
+            background: var(--blanc);
+            position: relative;
+        }
+        .avis-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .avis-note-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--perle);
+            padding: 1rem 1.5rem;
+            border-radius: 2px;
+        }
+        .avis-note-badge .grand-chiffre {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--encre);
+            line-height: 1;
+        }
+        .avis-note-badge .etoiles-group {
+            color: #e8a317;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .avis-note-badge .avis-count {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gris);
+        }
+        .avis-carrousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2.5vw, 1.8rem);
+        }
+        .avis-card {
+            background: var(--perle);
+            padding: 1.5rem 1.5rem 1.2rem;
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .avis-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(42, 45, 44, 0.07);
+        }
+        .avis-card .quote-marks {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 3rem;
+            color: var(--rouge);
+            opacity: 0.3;
+            line-height: 0;
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+        }
+        .avis-card blockquote {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--encre);
+            line-height: 1.6;
+            font-style: italic;
+            margin: 0 0 1rem;
+            padding-top: 0.8rem;
+        }
+        .avis-auteur {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+        }
+        .avis-auteur span {
+            font-weight: 400;
+            color: var(--gris);
+        }
+        @media (max-width: 750px) {
+            .avis-carrousel {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .avis-carrousel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== AGENCE / CONTACT ========== */
+        .agence {
+            background: var(--perle);
+        }
+        .agence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .agence-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .agence-adresse {
+            font-family: 'Karla', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--encre);
+        }
+        .agence-adresse strong {
+            font-weight: 600;
+        }
+        .agence-tel {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--rouge);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.25s ease;
+        }
+        .agence-tel:hover {
+            color: var(--rouge-ombre);
+        }
+        .agence-horaires {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris);
+            line-height: 1.6;
+        }
+        .agence-horaires strong {
+            color: var(--encre);
+            font-weight: 600;
+        }
+        .agence-carte {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(42, 45, 44, 0.1);
+            background: var(--perle-tiede);
+            aspect-ratio: 4/3;
+        }
+        .agence-carte iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 700px) {
+            .agence-grid {
+                grid-template-columns: 1fr;
+            }
+            .agence-carte {
+                aspect-ratio: 16/10;
+                min-height: 260px;
+            }
+        }
+
+        /* ========== RENDEZ-VOUS ========== */
+        .rendezvous {
+            background: var(--blanc);
+        }
+        .form-rdv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.5rem;
+            max-width: 700px;
+            margin-top: 1.5rem;
+        }
+        .form-rdv .full-width {
+            grid-column: 1 / -1;
+        }
+        .form-rdv input,
+        .form-rdv select,
+        .form-rdv textarea {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid var(--perle-tiede);
+            border-radius: 2px;
+            background: var(--perle);
+            color: var(--encre);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            resize: vertical;
+        }
+        .form-rdv input:focus,
+        .form-rdv select:focus,
+        .form-rdv textarea:focus {
+            outline: none;
+            border-color: var(--rouge);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.07);
+        }
+        .form-rdv textarea {
+            min-height: 100px;
+        }
+        .form-rdv button {
+            grid-column: 1 / -1;
+            justify-self: start;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 550px) {
+            .form-rdv {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== FAQ ========== */
+        .faq {
+            background: var(--perle);
+        }
+        .faq-liste {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-width: 750px;
+            margin-top: 1.5rem;
+        }
+        .faq-item {
+            background: var(--blanc);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 16px rgba(42, 45, 44, 0.05);
+        }
+        .faq-question {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--encre);
+            padding: 1.1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            letter-spacing: 0.01em;
+            transition: color 0.25s ease;
+        }
+        .faq-question:hover {
+            color: var(--rouge);
+        }
+        .faq-question .faq-fleche {
+            font-size: 1.2rem;
+            transition: transform 0.35s ease;
+            flex-shrink: 0;
+            color: var(--rouge);
+            font-weight: 400;
+        }
+        .faq-item.open .faq-fleche {
+            transform: rotate(180deg);
+        }
+        .faq-reponse {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris);
+            line-height: 1.6;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.45s ease;
+        }
+        .faq-item.open .faq-reponse {
+            max-height: 200px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--cuir);
+            color: var(--perle);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.2rem, 5vw, 4rem);
+            font-family: 'Karla', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .footer-col h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--blanc);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+        .footer-col a {
+            color: var(--gris);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        .footer-col a:hover {
+            color: var(--rouge);
+        }
+        .footer-col .footer-rouge {
+            color: var(--rouge);
+            font-weight: 600;
+        }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(247, 245, 242, 0.15);
+            font-size: 0.78rem;
+            color: var(--gris);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+        .footer-bottom a {
+            color: var(--gris);
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            color: var(--rouge);
+        }
+        @media (max-width: 650px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ========== REVEAL AU SCROLL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ========== FOCUS GLOBAL ========== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--rouge);
+            outline-offset: 2px;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY ANIMATION PORTE ROUGE -->
+    <div class="porte-overlay" id="porteOverlay" aria-hidden="true">
+        <div class="porte-battant gauche"></div>
+        <div class="porte-battant droite"></div>
+        <div class="porte-ligne-centre"></div>
+        <div class="porte-poignee-ico"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#hero" class="header-logo" aria-label="Fast Lease — Accueil">
+            <span class="logo-accent"></span>Fast Lease
+        </a>
+        <nav class="header-nav" id="headerNav" aria-label="Navigation principale">
+            <a href="#promesse">Promesse</a>
+            <a href="#services">Services</a>
+            <a href="#avis-section">Avis</a>
+            <a href="#agence">Agence</a>
+            <a href="#rendezvous" class="header-cta">Prendre rendez-vous</a>
+        </nav>
+        <button class="menu-burger" id="menuBurger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="hero">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="heroTitre">
+            <div class="hero-grid">
+                <div class="hero-texte reveal">
+                    <div class="hero-badge reveal reveal-delay-1">
+                        <span class="etoiles" aria-label="4.2 étoiles sur 5">★★★★☆</span>
+                        <span class="note">4.2</span>
+                        <span class="avis-count">sur 38 avis Google</span>
+                    </div>
+                    <h1 class="hero-titre reveal reveal-delay-1" id="heroTitre">
+                        Votre leasing n'attend que <span class="mot-rouge">la bonne clé</span>.
+                    </h1>
+                    <p class="hero-soustitre reveal reveal-delay-2">
+                        Solutions de location longue durée configurées pour votre activité, au 25 rue Greffulhe à Levallois-Perret. Pas de numéro surtaxé, pas de formulaire fantôme&nbsp;: un interlocuteur, une proposition, une signature.
+                    </p>
+                    <div class="hero-actions reveal reveal-delay-3">
+                        <a href="#rendezvous" class="btn-primaire">
+                            <span>Prendre rendez-vous</span>
+                            <span aria-hidden="true">→</span>
+                        </a>
+                        <a href="tel:+33140889450" class="btn-secondaire">Appeler l'agence</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Façade de l'agence Fast Lease au 25 rue Greffulhe à Levallois-Perret" loading="eager" width="600" height="450">
+                    <div class="hero-griffure" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE PROMESSE -->
+        <section class="section promesse" id="promesse" aria-labelledby="promesseTitre">
+            <div class="section-inner promesse-grid">
+                <div class="promesse-texte-col reveal">
+                    <span class="section-label">Notre promesse</span>
+                    <h2 class="section-titre" id="promesseTitre">Un leasing taillé, pas standardisé.</h2>
+                    <div class="filet-rouge" aria-hidden="true"></div>
+                    <p class="section-texte">
+                        Professions libérales, TPE, PME, grands groupes&nbsp;: votre activité a ses contraintes propres. Nous bâtissons votre contrat de <strong>location longue durée</strong> à partir de vos flux de trésorerie, de votre fiscalité et de vos attentes de services. Pas l'inverse.
+                    </p>
+                </div>
+                <ul class="promesse-points reveal reveal-delay-1" aria-label="Nos engagements">
+                    <li>Analyse de votre trésorerie et de votre fiscalité avant toute proposition</li>
+                    <li>Contrats ajustés à vos flux, pas l'inverse</li>
+                    <li>Un interlocuteur dédié, joignable directement</li>
+                    <li>Transparence totale sur les taux et les durées</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CHIFFRES CLÉS -->
+        <section class="chiffres-cles" aria-label="Chiffres clés Fast Lease">
+            <div class="chiffres-grid">
+                <div class="chiffre-item reveal">
+                    <span class="chiffre-nombre">40+</span>
+                    <span class="chiffre-legende">constructeurs partenaires</span>
+                </div>
+                <div class="chiffre-item reveal reveal-delay-1">
+                    <span class="chiffre-nombre">1&nbsp;200</span>
+                    <span class="chiffre-legende">véhicules livrés en 2024</span>
+                </div>
+                <div class="chiffre-item reveal reveal-delay-2">
+                    <span class="chiffre-nombre">4.2</span>
+                    <span class="chiffre-legende">note Google / 38 avis</span>
+                </div>
+                <div class="chiffre-item reveal reveal-delay-3">
+                    <span class="chiffre-nombre">25</span>
+                    <span class="chiffre-legende">rue Greffulhe, Levallois</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE CHOIX DES MARQUES -->
+        <section class="section" id="choix-marques" aria-labelledby="marquesTitre" style="background:var(--blanc);">
+            <div class="section-inner reveal">
+                <span class="section-label">Le choix des marques</span>
+                <h2 class="section-titre" id="marquesTitre">Plus de 40 constructeurs, un seul critère.</h2>
+                <div class="filet-rouge" aria-hidden="true"></div>
+                <p class="section-texte">
+                    Celui qui sert votre métier. Berlines, utilitaires, scooters, motos, véhicules électriques&nbsp;: nous représentons <strong>toutes les marques du marché</strong>, sans préférence captive. Notre catalogue est un outil de travail, pas un magazine automobile.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section services" id="services" aria-labelledby="servicesTitre">
+            <div class="section-inner">
+                <span class="section-label reveal">Services</span>
+                <h2 class="section-titre reveal" id="servicesTitre">La carte d'entretien, la conciergerie, et tout le reste.</h2>
+                <div class="filet-rouge reveal" aria-hidden="true"></div>
+                <p class="section-texte reveal">
+                    Carte carburant, maintenance incluse, véhicule de remplacement, service conciergerie pour vous décharger de la logistique quotidienne&nbsp;: nous en parlons dès le premier rendez-vous pour dimensionner votre contrat au plus juste.
+                </p>
+                <div class="services-grid">
+                    <article class="service-card reveal reveal-delay-1">
+                        <span class="service-icone" aria-hidden="true">⛽</span>
+                        <h3>Carte carburant</h3>
+                        <p>Gérez vos pleins sans avance de frais, avec reporting mensuel intégré à votre contrat.</p>
+                    </article>
+                    <article class="service-card reveal reveal-delay-2">
+                        <span class="service-icone" aria-hidden="true">🔧</span>
+                        <h3>Maintenance incluse</h3>
+                        <p>Entretien, pneumatiques, révisions&nbsp;: tout est couvert selon vos souhaits.</p>
+                    </article>
+                    <article class="service-card reveal reveal-delay-3">
+                        <span class="service-icone" aria-hidden="true">🚗</span>
+                        <h3>Véhicule de remplacement</h3>
+                        <p>Votre activité ne s'arrête pas. Un véhicule de prêt vous attend si le vôtre est immobilisé.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section avis" id="avis-section" aria-labelledby="avisTitre">
+            <div class="section-inner">
+                <div class="avis-header reveal">
+                    <div class="avis-note-badge">
+                        <span class="grand-chiffre">4.2</span>
+                        <div>
+                            <span class="etoiles-group" aria-label="4.2 étoiles sur 5">★★★★☆</span>
+                            <span class="avis-count">sur 38 avis Google Maps</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="section-label">Ce qu'ils disent</span>
+                        <h2 class="section-titre" id="avisTitre" style="margin-bottom:0;">Et surtout des clients qui reviennent.</h2>
+                    </div>
+                </div>
+                <div class="avis-carrousel">
+                    <article class="avis-card reveal reveal-delay-1">
+                        <span class="quote-marks" aria-hidden="true">&#8220;</span>
+                        <blockquote>
+                            Mon cabinet médical a enfin trouvé un partenaire qui comprend mes contraintes. Deux véhicules configurés en une semaine, entretien inclus. Rapport qualité-prix imbattable.
+                        </blockquote>
+                        <p class="avis-auteur">Dr Mathieu L. <span>— Profession libérale, Paris</span></p>
+                    </article>
+                    <article class="avis-card reveal reveal-delay-2">
+                        <span class="quote-marks" aria-hidden="true">&#8220;</span>
+                        <blockquote>
+                            Notre PME de 12 salariés a basculé toute sa flotte utilitaire chez Fast Lease. L'accompagnement fiscal a été décisif. Équipe réactive, jamais de standard téléphonique.
+                        </blockquote>
+                        <p class="avis-auteur">Sandrine V. <span>— Dirigeante PME, Levallois</span></p>
+                    </article>
+                    <article class="avis-card reveal reveal-delay-3">
+                        <span class="quote-marks" aria-hidden="true">&#8220;</span>
+                        <blockquote>
+                            Des vrais pros du leasing, pas des vendeurs de voitures. Ils m'ont orienté vers une motorisation électrique pertinente pour mes tournées. Je recommande sans réserve.
+                        </blockquote>
+                        <p class="avis-auteur">Karim B. <span>— Artisan, Hauts-de-Seine</span></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOTRE AGENCE -->
+        <section class="section agence" id="agence" aria-labelledby="agenceTitre">
+            <div class="section-inner agence-grid">
+                <div class="agence-info reveal">
+                    <span class="section-label">Votre agence à Levallois</span>
+                    <h2 class="section-titre" id="agenceTitre">Rue Greffulhe, on parle de votre leasing.</h2>
+                    <div class="filet-rouge" aria-hidden="true"></div>
+                    <p class="agence-adresse">
+                        <strong>Fast Lease</strong><br>
+                        25 Rue Greffulhe<br>
+                        92300 Levallois-Perret
+                    </p>
+                    <a href="tel:+33140889450" class="agence-tel">01 40 88 94 50</a>
+                    <p class="agence-horaires">
+                        <strong>Ouvert</strong> du lundi au vendredi de 9h à 18h.<br>
+                        Un café, une table, et une proposition claire.<br>
+                        Pas de 0&nbsp;820, pas d'attente.
+                    </p>
+                    <a href="#rendezvous" class="btn-primaire" style="align-self:flex-start;">Prendre rendez-vous</a>
+                </div>
+                <div class="agence-carte reveal reveal-delay-1">
+                    <iframe src="https://maps.google.com/maps?q=Fast+Lease+25+Rue+Greffulhe%2C+Levallois-Perret&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation Fast Lease, 25 rue Greffulhe Levallois-Perret"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRENDRE RENDEZ-VOUS -->
+        <section class="section rendezvous" id="rendezvous" aria-labelledby="rdvTitre">
+            <div class="section-inner reveal">
+                <span class="section-label">Prendre rendez-vous</span>
+                <h2 class="section-titre" id="rdvTitre">Un créneau, en trois clics.</h2>
+                <div class="filet-rouge" aria-hidden="true"></div>
+                <p class="section-texte">
+                    Choisissez un jour et une heure pour un rendez-vous téléphonique ou présentiel avec un expert Fast Lease. Nous préparons votre proposition en amont, vous repartez avec une simulation chiffrée.
+                </p>
+                <form class="form-rdv" action="#" method="post" aria-label="Formulaire de demande de rendez-vous">
+                    <input type="text" name="prenom" placeholder="Prénom" required aria-label="Votre prénom">
+                    <input type="text" name="nom" placeholder="Nom" required aria-label="Votre nom">
+                    <input type="text" name="entreprise" placeholder="Entreprise" class="full-width" aria-label="Nom de votre entreprise">
+                    <select name="besoin" class="full-width" aria-label="Type de besoin">
+                        <option value="">Votre besoin principal</option>
+                        <option value="berline">Berline</option>
+                        <option value="utilitaire">Utilitaire</option>
+                        <option value="electrique">Véhicule électrique</option>
+                        <option value="flotte">Flotte complète</option>
+                        <option value="moto">Moto / Scooter</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <select name="creneau" class="full-width" aria-label="Créneau souhaité">
+                        <option value="">Créneau souhaité</option>
+                        <option value="lundi-matin">Lundi matin</option>
+                        <option value="lundi-aprem">Lundi après-midi</option>
+                        <option value="mardi-matin">Mardi matin</option>
+                        <option value="mardi-aprem">Mardi après-midi</option>
+                        <option value="mercredi-matin">Mercredi matin</option>
+                        <option value="mercredi-aprem">Mercredi après-midi</option>
+                        <option value="jeudi-matin">Jeudi matin</option>
+                        <option value="jeudi-aprem">Jeudi après-midi</option>
+                        <option value="vendredi-matin">Vendredi matin</option>
+                        <option value="vendredi-aprem">Vendredi après-midi</option>
+                    </select>
+                    <textarea name="message" class="full-width" placeholder="Précisez votre besoin (optionnel)" aria-label="Message complémentaire"></textarea>
+                    <button type="submit" class="btn-primaire">Demander une simulation</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" aria-labelledby="faqTitre">
+            <div class="section-inner reveal">
+                <span class="section-label">FAQ légère</span>
+                <h2 class="section-titre" id="faqTitre">Des réponses rapides, pour avancer.</h2>
+                <div class="filet-rouge" aria-hidden="true"></div>
+                <div class="faq-liste">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            LLD ou crédit-bail&nbsp;: quelle différence&nbsp;?
+                            <span class="faq-fleche" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-reponse">
+                            <p>La <strong>LLD</strong> (Location Longue Durée) est une location sans option d'achat&nbsp;: vous restituez le véhicule au terme du contrat. Le <strong>crédit-bail</strong> inclut une option d'achat en fin de contrat. Le choix dépend de votre stratégie fiscale et de l'usage prévu. Nous analysons votre situation pour vous orienter.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Quel impact fiscal pour mon entreprise&nbsp;?
+                            <span class="faq-fleche" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-reponse">
+                            <p>Les loyers de LLD sont déductibles du résultat imposable, dans la limite des amortissements non déductibles pour la fraction excédant un certain plafond (variable selon le type de véhicule et les émissions de CO₂). Nous travaillons avec votre expert-comptable pour optimiser votre montage.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Quelle durée d'engagement minimale&nbsp;?
+                            <span class="faq-fleche" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-reponse">
+                            <p>Les contrats démarrent généralement à <strong>12 mois</strong> pour les professionnels, et peuvent s'étendre jusqu'à 60 mois selon vos besoins. Nous ajustons la durée à votre activité, sans vous enfermer dans un cadre rigide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Fast Lease</h4>
+                <p>
+                    25 Rue Greffulhe<br>
+                    92300 Levallois-Perret<br>
+                    <a href="tel:+33140889450" class="footer-rouge">01 40 88 94 50</a><br>
+                    <a href="mailto:50idf@groupe-fastlease.fr">50idf@groupe-fastlease.fr</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>
+                    Lundi – Vendredi<br>
+                    9h – 18h<br>
+                    <span style="color:var(--gris);font-size:0.8rem;">Horaires à confirmer</span>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <p>
+                    <a href="#promesse">Notre promesse</a><br>
+                    <a href="#services">Services</a><br>
+                    <a href="#agence">Agence</a><br>
+                    <a href="#rendezvous">Rendez-vous</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Fast Lease — Tous droits réservés</span>
+            <span>Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Overlay porte rouge
+            const overlay = document.getElementById('porteOverlay');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReduced && overlay) {
+                // Déclencher l'ouverture après un court délai
+                setTimeout(() => {
+                    overlay.classList.add('ouverte');
+                }, 180);
+
+                // Marquer comme fermée après l'animation
+                setTimeout(() => {
+                    overlay.classList.add('fermee');
+                }, 1500);
+
+                // Supprimer du DOM après transition
+                setTimeout(() => {
+                    overlay.classList.add('terminee');
+                }, 2100);
+            } else if (overlay) {
+                overlay.style.display = 'none';
+            }
+
+            // Header scroll
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 15) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // Menu burger
+            const burger = document.getElementById('menuBurger');
+            const nav = document.getElementById('headerNav');
+            burger.addEventListener('click', () => {
+                const expanded = burger.getAttribute('aria-expanded') === 'true';
+                burger.setAttribute('aria-expanded', !expanded);
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // Fermer le menu au clic sur un lien
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.setAttribute('aria-expanded', 'false');
+                    burger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+
+            // FAQ accordéon
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const isOpen = item.classList.contains('open');
+                    // Fermer tous les autres
+                    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                        if (openItem !== item) {
+                            openItem.classList.remove('open');
+                            openItem.querySelector('.faq-question').setAttribute(
+                                'aria-expanded', 'false');
+                        }
+                    });
+                    // Toggle
+                    if (isOpen) {
+                        item.classList.remove('open');
+                        btn.setAttribute('aria-expanded', 'false');
+                    } else {
+                        item.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // IntersectionObserver pour reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length && !prefersReduced) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealEls.forEach(el => observer.observe(el));
+            } else if (prefersReduced) {
+                revealEls.forEach(el => el.classList.add('revealed'));
+            }
+        })();
+    </script>
+</body>
+</html>
