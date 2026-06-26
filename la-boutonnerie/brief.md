@@ -1,51 +1,112 @@
-Brief Créatif — La Boutonnerie
-==================================
+# Brief créatif — La Boutonnerie
 
-1. Concept & positionnement
----------------------------
-La Boutonnerie est la « caverne d’Ali Baba » de la mercerie parisienne depuis 1975, une institution de quartier au savoir-faire artisanal. Le site raconte cette maison vivante où chaque bobine de fil, chaque tiroir à boutons témoigne d’une histoire textile. On ne vend pas des fournitures, on invite à entrer dans un écrin chaleureux, joyeusement désuet mais terriblement élégant, où la passion du détail se touche du doigt.
+---
 
-2. Direction artistique
------------------------
-**Parti pris : « Mercerie-chic, l’ordre du désordre »**
-Une esthétique hybride entre l’atelier couture intemporel et le concept-store épuré. L’énergie du lieu (bois patiné, blouse en lin, échantillons de couleur, lumière douce) est traduite par un design *texturé* et *tactile* : fonds de page en papier kraft, cadrages serrés sur les matières (gros plans de boutons, écheveaux de soie), typographie sériée à l’ancienne mais respirant dans de grandes marges blanches. Le bleu marine profond de l’enseigne historique ancre la boutique dans son quartier du 15ᵉ, tandis que les touches de rouge bouton et de beige lin réchauffent l’ensemble.
+## 1. Concept & positionnement
 
-3. Palette
-----------
-- **Fond Craie** — `#F9F6F0` (blanc cassé très doux, fond principal)
-- **Bleu Enseigne** — `#0A1A3A` (presque noir-bleu, pour les titres, les textes forts)
-- **Beige Lin** — `#D4C4A8` (exactement la teinte du bois des comptoirs, arrière-plans, filets)
-- **Rouge Bouton** — `#A4243B` (accent vif, boutons, liens, soulignés)
-- **Vert Bobine** — `#2D6A4F` (accent secondaire, tiré des écheveaux de fil, utilisé avec parcimonie pour les labels ou icônes)
-- **Gris Couture** — `#3A3A3C` (pour le texte courant, doux mais lisible sur fond clair)
+**Concept :** « La caverne d’Ali Baba du 15ᵉ » — un écrin numérique qui restitue la sensation de découverte et d’émerveillement que procure la boutique réelle. On ne vend pas du fil et des boutons, on ouvre les portes d’un atelier-mémoire où chaque tiroir recèle un trésor pour les mains.
 
-4. Ton éditorial
-----------------
-Voix de commerçante passionnée, ni condescendante ni publicitaire. On tutoie le·la client·e régulier·ère, on vouvoie le visiteur distrait. Le registre est chaleureux, précis et légèrement poétique (« le tintement du grelot des ciseaux », « le tiroir aux boutons de nacre »). Pas de jargon technique trop pointu, mais une évocation experte des matières et des savoir-faire. Le ton fait ressentir la boutique comme un lieu de rendez-vous plus que comme un simple magasin.
+**Positionnement :** Mercerie de quartier à l’ancienne, experte et généreuse, ni nostalgique poussiéreuse ni concept-store aseptisé. Le site assume son héritage (1969) tout en parlant aux couturiers d’aujourd’hui, des amateurs éclairés aux nouvelles générations de créatifs textiles.
 
-5. Accroche héro
-----------------
-**Titre (H1)** : *Les trésors cousus main du 15ᵉ*  
-**Sous-titre** : Depuis 1975, la mercerie de la rue Saint Charles cultive l’art du bouton et du fil, dans un écrin de bois et de lumière.
+---
 
-6. Sections (ordre et contenus réels)
--------------------------------------
-1. **Héros** — Grande photo pleine largeur de la vitrine de jour, avec l’enseigne rétro. Titre + sous-titre + bouton « Piquer une tête dans la boutique ».
-2. **L’histoire** — Titre : *Une bobine, une adresse, une histoire*  
-   Texte : Née en 1969 rue Duranton, la Boutonnerie a grandi rue Saint Charles. Ce qui n’était qu’un modeste comptoir à boutons est devenu la « caverne d’Ali Baba » des couturières, brodeuses et tricoteuses de Paris. Ici, on conseille, on échange, on transmet.
-3. **La caverne d’Ali Baba** — Titre : *Sous le comptoir, la merveille*  
-   Grille de 4 à 6 photos légendées d’échantillons réels : « Boutons de nacre », « Fils à broder DMC », « Ribambelles de canevas », « Kit de tricot d’antan ». Chaque image déclenche un zoom lent au survol.
-4. **Conseil & Atmosphère** — Titre : *Pas besoin de savoir coudre pour être reçu*  
-   Texte : On vous aide à choisir le bon fil, la bonne aiguille, ou le kit créatif qui occupera vos dimanches. Ici, la patience est le plus beau des fils conducteurs.
-5. **Témoignages** — Titre : *Ce qu’ils en disent*  
-   Brique tournante de 3 vrais avis Google Maps (réels, complets, avec prénom et date) qui soulignent le conseil, le choix, la déco.
-6. **Infos pratiques** — Titre : *Nous trouver*  
-   Adresse, carte Google Maps intégrée, horaires réels (explicités jour par jour), téléphone, email. Mention spéciale : « Fermé les jours fériés et certains mercredis — merci de nous appeler pour être sûr. »
-7. **Footer** — Liens : Mentions légales, CGV, Fiche Google Business, lien vers la page « Nous appeler ». Copyright 2025.
+## 2. Direction artistique
 
-7. Signature visuelle
----------------------
-- **Motif « Point de trame »** : un discret fond de grille de points de croix en filigrane (opacité 8 %) sur les arrière-plans des sections — comme une toile de lin tissée dans le site, qui disparaît au défilement mobile mais donne un cachet unique sur desktop.
-- **Typographie sculptée** : les lettrines (D, B, C…) sont traitées en DM Serif Display rouge bouton, en grand corps, avec une ombre portée bleu enseigne très fine, rappelant les caractères d’impression d’un vieux catalogue de mercerie.
-- **Animation d’ouverture** : au chargement, la photo héro se révèle en montant lentement, tandis que les boutons de la vitrine s’allument un à un (effet « boutons de nacre » lumineux).
-- **Traitement photo** : toutes les images sont passées à un filtre chaud (comme une vieille pellicule Fuji) avec une vigne discrète, puis recadrées très près : on voit les reflets dans les boutons, les brins de fil, les étiquettes d’époque. Cela crée une galerie d’art textile, pas un simple catalogue.
+**Parti pris : « Atelier-apothicaire »** — une esthétique de mercerie traditionnelle traitée avec la précision et la noblesse d’une officine d’antan. Les produits sont présentés comme des spécimens précieux, presque botaniques (boutons classifiés, fils en nuancier, rubans en écheveaux). La composition alterne entre inventaires ordonnés et accumulations organiques qui évoquent l’exiguïté foisonnante du 168 rue Saint Charles.
+
+Ce parti pris naît directement des vraies photos : vitrine dense mais harmonieuse, boiseries patinées, lumière naturelle qui caresse les étals, enseigne rétro bleu marine. On traduit cette matière vécue sans folkloriser.
+
+---
+
+## 3. Palette
+
+| Rôle | Hex | Nom |
+|------|-----|-----|
+| Fond principal | `#FBF8F3` | Craie de tailleur |
+| Encre (texte) | `#1C1A17` | Noir de fumée |
+| Accent primaire | `#1B2D4F` | Bleu enseigne |
+| Accent secondaire | `#C4A24E` | Laiton patiné |
+| Surface secondaire | `#E8DDD0` | Lin écru |
+| Profondeur | `#2B2520` | Bois bruni |
+
+*Note :* Le bleu marine est prélevé de l’enseigne rétro de la boutique, visible sur Google Maps. Le laiton patiné évoque les dés à coudre, ciseaux anciens et boutons métalliques. Le craie et le lin écru remplacent un blanc froid pour garder la chaleur des boiseries réelles. Cette palette évite sciemment le cliché terracotta + crème et le style « journal broadsheet ».
+
+---
+
+## 4. Ton éditorial
+
+**Voix :** Aubergiste du textile. Chaleureux, connaisseur, jamais condescendant. On tutoie le client comme en boutique, mais avec le respect qu’on doit à un artisan. Le vocabulaire est précis sans être technique : on parle « boutons en nacre véritable », « fil d’Alsace au chinois », pas de jargon inaccessible.
+
+**Registre :** Conversation de comptoir — souriant, un brin bavard, capable de digressions savantes sur l’origine d’un ruban. Le ton compense la disparition du conseil en présentiel par une présence chaleureuse et incarnée.
+
+**Interdits :** Pas de fausses citations clients, pas de « passion depuis 19XX » générique, pas de superlatifs vides (« qualité exceptionnelle », « meilleur choix »). Toujours montrer, nommer, raconter.
+
+---
+
+## 5. Accroche héro
+
+**Titre (DM Serif Display, grande échelle) :**
+> Chaque bouton a une histoire. La nôtre commence en 1969.
+
+**Sous-titre (DM Sans, corps moyen) :**
+> Mercerie traditionnelle, fils, boutons et trésors textiles au cœur du 15ᵉ arrondissement — une caverne d’Ali Baba à deux pas du métro Charles Michels.
+
+*Pourquoi ça fonctionne :* Le titre accroche par la promesse narrative (« une histoire ») et ancre immédiatement l’ancienneté sans formule éculée. Le sous-titre pose les trois piliers (activité, géographie, ambiance) de manière concrète et mémorable.
+
+---
+
+## 6. Sections
+
+### 1. **Une mercerie, trois générations**
+*À propos et histoire*
+> En 1969, une petite boutique de la rue Duranton ne vendait qu’une chose : des boutons. Cinquante ans plus tard, au 168 rue Saint Charles, La Boutonnerie a gardé son nom — et son âme. Elle a surtout élargi son univers à la mercerie traditionnelle, aux travaux manuels et aux loisirs textiles, sans jamais perdre ce qui fait son charme : un conseil patient, des produits choisis, et le sentiment, en poussant la porte, d’entrer dans un atelier hors du temps.
+
+### 2. **Boutons, fils & compagnie**
+*Présentation de l’offre — traité comme un cabinet de curiosités*
+> Boutons en corozo, en nacre, en bois ou en métal. Fils d’Alsace, du Lyonnais et d’ailleurs. Rubans, galons et passementerie. Toiles à broder, canevas à points comptés, laines à tricoter d’Italie et d’Écosse. Ciseaux, dés, aiguilles, mètres ruban de collection. Tout ce qu’il faut pour coudre, broder, raccommoder — ou simplement rêver, un bouton entre les doigts.
+
+### 3. **La caverne d’Ali Baba**
+*Ambiance et visite — photos immersives + texte d’atmosphère*
+> Les habitués l’appellent « la caverne d’Ali Baba ». À raison : ici, chaque tiroir, chaque bocal, chaque étagère déborde de couleurs et de matières. La lumière tombe sur les boiseries, l’odeur du bois et du coton flotte dans l’air. On vient pour un fil, on repart avec une idée de broderie, un bouton trouvé au fond d’un présentoir et le sourire de la personne qui vous l’a déniché.
+
+### 4. **Votre ouvrage, votre rythme**
+*Conseil et services — répond à l’absence criante d’horaires et de services dans l’audit*
+> Besoin d’un conseil pour assortir un fil ? D’une idée de canevas pour débuter ? D’un bouton rare pour une veste de grand-père ? En boutique, on prend le temps. Pas de précipitation, pas de standardisation — juste de l’écoute et de l’expertise. (Et si vous apportez votre ouvrage, on vous installe un coin de comptoir pour échanger autour d’un fil — au sens propre comme au figuré.)
+
+### 5. **Du fil à l’aiguille**
+*Inspirations et créations — galerie de réalisations (boutique ou clients) avec légendes poétiques*
+> Point de croix ou point arrière, tricot torsadé ou broderie libre — chaque technique a sa place ici. Laissez-vous inspirer par les ouvrages qui sortent de nos boîtes à fils et de nos carnets d’idées.
+
+### 6. **Poussez la porte**
+*Horaires, contact, accès — structuré, clair, prioritaire après l’accroche*
+> **Horaires d’ouverture**  
+> Mardi — Samedi : 10h00 – 19h00  
+> Dimanche & Lundi : fermé  
+> Jours fériés : fermé sauf exception annoncée ici  
+> Fermeture estivale : dernière semaine de juillet et première semaine d’août (dates affichées au-dessus)  
+>   
+> **Nous trouver**  
+> 168 rue Saint Charles, 75015 Paris  
+> Métro Charles Michels (ligne 10), Boucicaut (ligne 8)  
+>   
+> **Un mot, une question ?**  
+> 01 45 57 33 03  
+> laboutonnerie@wanadoo.fr  
+*Note de conception :* Horaires clairs, sans pacte de lecture lourd. Les fermetures exceptionnelles sont affichées dans un bandeau dédié en haut de page, daté et circonstancié (ex : « Fermé le mercredi 24 juin 2025 »). Fini les messages sanitaires de 2020.
+
+---
+
+## 7. Signature visuelle
+
+**1. Les boutons comme bijoux — macrophotographie systématique**
+Chaque section s’ouvre sur un plan serré de boutons, fils ou rubans, traités avec la lumière douce et le cadrage qu’on réserverait à des pièces de joaillerie. Fond flou de boiserie, profondeur de champ courte, éclat discret des nacres et des métaux. Ces images ne sont pas décoratives : elles incarnent la promesse de précieux minuscules.
+
+**2. Le motif « carte à boutons » comme filigrane**
+Un motif subtil de carte de boutons anciens (celle où les boutons sont cousus côte à côte sur un carton cranté) apparaît en filigrane sur les arrière-plans de section, à peine perceptible, comme une texture de papier vergé. Il rappelle l’univers sans l’imposer, et crée une continuité tactile entre le digital et le physique.
+
+**3. Animation au scroll — le « déballage de trésor »**
+Les blocs de contenu se révèlent avec un effet de glissement latéral très lent, comme si l’on faisait glisser un tiroir ou un écrin. Pas de fade-up générique : un mouvement horizontal contrôlé, paresseux, qui mime la découverte — le cœur même de l’expérience Boutonnerie.
+
+---
+
+*Ce brief est spécifique à La Boutonnerie : chaque élément (couleurs, ton, accroche, signature visuelle) découle des photos et données réelles de ce commerce unique, et corrige méthodiquement les faiblesses identifiées dans l’audit.*
