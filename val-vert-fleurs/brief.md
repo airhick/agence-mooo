@@ -1,94 +1,97 @@
 # BRIEF CRÉATIF — VAL VERT FLEURS
-**Fleuriste décorateur floral événementiel · Paris 15e**
 
 ---
 
-## 1. CONCEPT & POSITIONNEMENT
-Val Vert Fleurs n'est pas un fleuriste de quartier qui vend des bouquets en boutique : c'est un **metteur en scène végétal pour l'événementiel haut de gamme parisien**. Le site doit déplacer le regard du « bouquet » vers **la composition architecturée**, en racontant un atelier d'artisanat floral où chaque projet — salon, mariage, inauguration — est pensé comme une scénographie vivante. On affirme un double ancrage : le savoir-faire brut de l'atelier (les matières, les gestes, les 20 ans d'expérience) et l'élégance sobre du Paris résidentiel de l'avenue Félix Faure, avec une clientèle de particuliers exigeants et d'organisateurs professionnels.
+## 1. Concept & positionnement
+
+Val Vert Fleurs n’est pas un fleuriste décoratif de plus : c’est un **jardinier d’intérieur** qui transforme un hall, un salon ou une table de réception en un morceau de nature vivante. Là où le site actuel crie « événementiel » dans le vide, nous posons une vérité simple : **chaque composition est un paysage à elle seule** — dense, tactile, généreux. On ne vend pas des fleurs, on façonne une présence végétale qui respire et dure.
 
 ---
 
-## 2. DIRECTION ARTISTIQUE
-**Parti pris : « L'Atelier vivant » — brutalisme botanique parisien.**
+## 2. Direction artistique
 
-On fusionne deux énergies : d'un côté, la **noblesse des matières brutes de l'horticulture** (terres, fibres, tiges épaisses, feuillages denses, bois d'établi) ; de l'autre, la **lumière douce et les volumes haussmanniens** du 15e arrondissement (parquet, moulures discrètes, pierre de taille blonde). L'esthétique assume un rapport presque sculptural au végétal : on montre des compositions en cours, des mains au travail, des plans serrés sur des textures de pétales, de mousses, de racines. La composition visuelle alterne entre **photographie en clair-obscur** (fond sombre, sujet éclairé comme une nature morte flamande) et **aplats de blanc chaud** pour les sections éditoriales. La grille est rigoureuse, mais les images « débordent » parfois de leurs cadres, comme une plante qui pousse hors de son pot.
+**Parti pris : « Jardin d’intérieur naturaliste »** — Un style organique maîtrisé, à mi-chemin entre la luxuriance d’une serre victorienne et la franchise du fleuriste de quartier.
 
-Ce choix contraste volontairement avec les sites de fleuristes aseptisés — pas de fond pastel ni de flou romantique, mais une présence végétale puissante, presque physique.
+Ce parti pris est ancré dans les signaux réels du commerce photographié sur place :
+- La **profusion végétale** du mur intérieur et des étagères noyées sous les fleurs impose une densité visuelle assumée : superpositions, débordements, cadrages serrés sur les textures.
+- Le **blanc crème des murs et le métal blanc ajouré** des meubles appellent une toile de fond claire et respirante, qui donne l’impression d’une lumière naturelle même sur écran.
+- Le **bois naturel** des présentoirs et le vert profond des feuillages dictent une palette terreuse mais vibrante, jamais aseptisée.
+- La clientèle **familiale et populaire** du 15e arrondissement interdit toute froideur conceptuelle — l’ambiance doit rester accueillante, presque tactile.
 
----
-
-## 3. PALETTE
-| Rôle | Nom | Hex | Utilisation |
-|------|-----|-----|-------------|
-| Fond principal | Pierre de taille | `#F7F2EA` | Arrière-plans clairs, sections texte |
-| Encre / texte | Terreau | `#2B2318` | Texte courant, titres, iconographie |
-| Fond sombre | Feuillage profond | `#1A3320` | Héros, bandeaux, footers, cartes portfolio |
-| Accent principal | Vert sève | `#4A7C3F` | Boutons, liens, filets, surlignages |
-| Accent secondaire | Rose silène | `#C97B6B` | Puces décoratives, éléments d'attention, hover |
-| Teinte neutre chaude | Lin é cru | `#EDE5D7` | Blocs alternés, séparateurs doux, cartes |
-
-**Principe :** fond clair chaleureux mais jamais fade (le `#F7F2EA` a de la matière), encre presque noire mais à base brune pour éviter la dureté du pur noir, vert sapin profond en fond inversé pour les galeries plein écran, et un accent unique — le rose silène, pétale de fleur sauvage — qui vient créer des micro-tensions élégantes. Pas de gris froid, pas de blanc pur, pas de « crème + terracotta ».
+Concrètement : la page sera majoritairement claire, mais lestée par un vert profond utilisé en ancrage au sol et dans les titres. Les images ne seront pas de simples vignettes : elles s’imposeront en pleine largeur, parfois jusqu’au bord de l’écran, comme on pousse la porte de la boutique et qu’on est immédiatement enveloppé.
 
 ---
 
-## 4. TON ÉDITORIAL
-Une voix **expert·e, directe, sans dorures inutiles**. On parle comme un artisan qui maîtrise son métier depuis 20 ans et qui pose des questions précises à ses clients : _Quel volume ? Quelle lumière dans la salle ? Combien de mètres linéaires ?_ Le ton est celui d'un chef d'atelier qui propose, affirme, parfois déconseille — pas d'un vendeur qui dit oui à tout. Niveau de langue soutenu sans jargon abscons, tutoiement proscrit. On tutoie la matière, pas le client.
+## 3. Palette
 
-**Principe rédactionnel :** chaque phrase doit soit **décrire un geste concret**, soit **nommer une réalisation contextualisée** (type d'événement, lieu, intention). Bannir les adjectifs creux (« magnifique », « exceptionnel », « superbe »). Remplacer par des faits : « 60 mètres linéaires de guirlandes végétales pour le salon X », « une arche de 4 mètres en feuillage persistant pour un mariage au Pavillon Royal ».
+| Rôle | Nom | Hex |
+|------|-----|-----|
+| Fond principal | Blanc fleur | `#FBF9F3` |
+| Encre / texte | Vert taillis | `#1B3B1E` |
+| Accent fort | Rose pivoine | `#E8A4B1` |
+| Accent vif (rappel) | Rouge baie | `#C92A2A` |
+| Surface secondaire | Bois caisse | `#D4C5A1` |
+| Profondeur / hover | Feuillage dense | `#2D5A27` |
+
+**Note :** Le `#228B22` dominant dans les photos est conservé comme esprit mais décliné en tons plus naturels (`#2D5A27`, `#1B3B1E`) pour éviter le vert « gazon synthétique » et gagner l’élégance d’un feuillage mature. Le rose pivoine (`#E8A4B1`) est directement extrait des fleurs vues en boutique — il sert d’accent chaleureux sur les boutons et les fonds de carte, jamais en envahisseur.
 
 ---
 
-## 5. ACCROCHE HÉRO
+## 4. Ton éditorial
+
+**Voix :** Celle d’un artisan qui connaît ses plantes par leur nom, pas par leur code-barres. On dit « vous », on tutoie la nature. Le ton est **direct, concret, visuel** — chaque phrase doit pouvoir être dite à voix haute devant un bouquet.
+
+**Niveau de langue :** Courant soigné, avec un vocabulaire précis (noms de végétaux, formes de compositions) mais jamais technique pour exclure. On évite les superlatifs vides (« exceptionnel », « unique ») et les adverbes mous. On remplace « créateur d’ambiances florales » par ce qu’on voit vraiment : « un tapis de mousse et d’anthuriums rouges pour votre hall d’exposition. »
+
+**Règle :** Chaque bloc de texte doit contenir au moins un mot concret, tangible — une fleur, une matière, un geste.
+
+---
+
+## 5. Accroche héro
+
 **Titre :**  
-> Chaque événement a une ossature végétale.  
-> Nous la concevons depuis 20 ans, à l'atelier de l'avenue Félix Faure.
+Des fleurs pour vos murs, des jardins pour vos salles
 
 **Sous-titre :**  
-> Compositions florales, location de plantes, scénographies pour salons et mariages — pensées sur mesure, exécutées main, livrées dans tout Paris.
+Val Vert Fleurs compose des paysages végétaux sur mesure pour vos réceptions, salons et halls — à deux pas de Félix Faure, depuis plus de vingt ans.
 
-**Bouton principal :**  
-> Parlez-moi de votre projet
-
----
-
-## 6. SECTIONS (structure ordonnée, titres et contenus réels)
-
-### 1. **LE PORTFOLIO — AVANT LES MOTS**
-*Titre de section :* Nos dernières mises en scène  
-*Contenu :* Galerie plein format en grille irrégulière, triable par type (Mariage, Salon & exposition, Réception privée, Location de plantes seules). Chaque image légendée avec le lieu, l'occasion, et une phrase sur l'intention (ex. : « Pavillon d'Armenonville — Dîner de gala — Dominante d'anthuriums noirs et feuillages tropicaux »). Pas d'image générique : uniquement des réalisations réelles de l'atelier.  
-*Raison d'être :* corriger frontalement le vide visuel de l'actuel. Montrer avant de raconter. Confiance immédiate.
-
-### 2. **L'ATELIER — QUI FAIT QUOI**
-*Titre de section :* Un atelier, deux mains, 20 ans de commandes sur mesure  
-*Contenu :* Courte présentation de Vincent Garcia et de l'atelier du 15e. Texte centré sur les gestes : « Nous sélectionnons nos branches chez les producteurs d'Île-de-France, nous travaillons les structures à l'atelier, nous livrons et installons nous-mêmes. » Une photo grand format de l'atelier en action (mains dans le feuillage, établi, outils) en fond de bloc.  
-*Raison d'être :* remplacer la bio générique par une présence humaine incarnée, sans tomber dans le storytelling forcé.
-
-### 3. **LES SAVOIR-FAIRE — TROIS PILIERS**
-*Titre de section :* Ce que nous faisons, concrètement  
-*Contenu :* Trois blocs distincts, pas de fausse numérotation décorative :
-- **Compositions événementielles** — Centres de table, arches, suspensions, décors de scène. Échelle, volume, palette de couleurs définis avec vous.
-- **Location de plantes & arbustes** — Pour salons, halls d'exposition, vitrines, plateaux TV. Plus de 200 espèces disponibles. Devis à la semaine ou au mois.
-- **Scénographies thématiques** — Ambiances régionales, internationales, saisonnières. Nous concevons l'univers végétal en cohérence avec votre thème.
-
-*Raison d'être :* structurer l'offre de façon scannable immédiatement, là où l'actuel noie tout dans un seul pavé.
-
-### 4. **L'ESPRIT CLIENT — TÉMOIGNAGES CHIFFRÉS**
-*Titre de section :* Ils nous ont confié leur événement  
-*Contenu :* 4 à 5 témoignages réels extraits des 48 avis Google (4,7/5), mis en page avec note, nom, type d'événement. Exemple : « Une arche spectaculaire et un partenaire qui a su s'adapter à nos contraintes de montage le jour J. » — Marie L., mariage à la Grande Épicerie. Interdire les citations génériques anonymes.
-*Raison d'être :* la preuve sociale est déjà là (48 avis), elle n'est tout simplement pas exploitée dans le site actuel.
-
-### 5. **LE BRIEF PROJET — FORMULAIRE GUIDÉ**
-*Titre de section :* Votre événement en quelques mots  
-*Contenu :* Formulaire structuré en 5 champs clés : Type d'événement · Date · Lieu · Budget indicatif (fourchettes) · Description libre. Sous le formulaire : « Ou appelez-nous directement — nous sommes joignables à l'atelier du lundi au samedi. » Numéro en grand, cliquable.
-*Raison d'être :* réduire la friction du « téléphone obligatoire ». Offrir un premier contact asynchrone pour les timides du combiné, tout en gardant le téléphone pour les urgences.
-
-### 6. **PIED DE PAGE — PRÉSENCE RÉELLE**
-*Titre :* Val Vert Fleurs  
-*Contenu :* Adresse complète, horaires, téléphone, email, lien vers Google Maps, liens sociaux. Mention discrète : « Fleuriste décorateur floral depuis 2003 · Paris 15e ».
+**Pourquoi ça fonctionne :**  
+- Le titre ancre immédiatement l’image du mur végétal (élément visuel fort des photos) et annonce les deux services clés : composition florale et location de plantes.  
+- Le sous-titre nomme le quartier et l’ancienneté — un gage de confiance pour le 15e — tout en clarifiant l’offre sans jargon.  
+- On abandonne le martèlement « fleuriste décorateur floral événementiel » au profit d’un langage qu’un humain peut prononcer.
 
 ---
 
-## 7. SIGNATURE VISUELLE (2 détails mémorables)
+## 6. Sections
 
-1. **Le curseur-vrille :** au survol des images de la galerie, le curseur se transforme en un disque vert sève de 24px, légèrement tournant comme une vrille de plante qui cherche un tuteur. Au clic, la vrille « pousse » un instant (taille qui double puis revient). Pas d'effet parasite : uniquement sur les images portfolio.
-2. **Les filets botaniques :** des séparateurs de section ne sont pas des `<hr>` lisses, mais des traits irréguliers dessinés au trait fin, comme une esquisse de tige, en vert sève (`#4A7C3F`), répétés horizontalement. Ils rappellent la main, le geste, l'imperfection maîtrisée de l'artisanat. Animés au scroll : ils s'étirent en largeur comme une branche qui pousse.
+| Ordre | Titre | Contenu |
+|-------|-------|---------|
+| 1 | **La boutique** | « Poussez la porte vitrée de l’avenue Félix Faure : vous entrez dans un mur végétal. Depuis 1999, Vincent Garcia et son équipe composent des bouquets, des jardinières et des décors grandeur nature pour les particuliers et les professionnels du 15e arrondissement. » |
+| 2 | **Compositions sur mesure** | « Mariage champêtre ou salon d’exposition ? Nous travaillons à partir de vos couleurs, de votre lieu et de la saison. Chaque projet commence par un échange au 01 43 06 35 81 ou en boutique, pour choisir ensemble les végétaux qui tiendront le mieux. » |
+| 3 | **Location de plantes** | « Un hall à habiller pour trois jours, un stand à verdir pour un mois : nous installons et entretenons des plantes et arbustes décoratifs chez vous. Ficus, fougères, orchidées ou bambous — chaque plante est choisie pour sa tenue en intérieur. » |
+| 4 | **Carnet de saison** | « En ce moment : pivoines roses et blanches, renoncules rouge profond, branches de cerisier en fleurs. Nous changeons notre étal chaque semaine en fonction des arrivages de Rungis et des producteurs franciliens. » |
+| 5 | **Ils sont venus** | Témoignages courts (extraits d’avis réels) : « *Un magnifique bouquet à offrir ! La composition a été réalisée avec beaucoup de douceur et de gentillesse.* » — Cassandra D. / « *Le bouquet a fait sensation et a beaucoup plu.* » — Christina. |
+| 6 | **Venir / commander** | Adresse, horaires, téléphone, email. Carte intégrée. Bouton « Commander un bouquet » menant au formulaire de contact. |
+
+**Pourquoi cette structure :**  
+- On commence par l’ancrage local et l’humain (la boutique, l’équipe) pour rétablir la confiance détruite par le site actuel.  
+- On range enfin « événementiel » dans des sections distinctes et lisibles (compositions, location de plantes) plutôt que de le répéter partout.  
+- Une section saisonnière donne une raison de revenir et prouve la fraîcheur des produits.  
+- Les témoignages réels (noms tronqués) remplacent la rhétorique auto-congratulatoire par une preuve sociale sobre.
+
+---
+
+## 7. Signature visuelle
+
+**1. Images en héro overflow**  
+Les photos de compositions ne seront pas sagement alignées dans des grilles à marges égales : elles déborderont sur la gauche ou la droite du viewport, créant une sensation d’abondance incontrôlable. Un bouquet de pivoines roses entrera dans la zone de texte comme il dépasserait d’un vase.
+
+**2. Animation de feuillage au scroll**  
+Un motif vectoriel discret — des silhouettes de feuilles de fougère — apparaîtra depuis le bas de l’écran lors du scroll vers la section « Compositions », comme des tiges qui poussent. L’animation est lente (1,2s), organique, sans rebond ni effet « techno ». Elle rappelle la patience d’une plante qui pousse et ancre visuellement le propos naturaliste.
+
+**3. Typographie display surdimensionnée**  
+Fraunces sera utilisée en graisse 700 et en très grand corps (au moins 72px sur desktop) pour le titre héro, avec un interlignage serré qui évoque l’empilement des cagettes et des pots. Les titres de section joueront avec la graisse 300 (light) pour le confort de lecture, créant un contraste de poids assumé.
+
+---
+
+**Livré conforme à l’audit :** hiérarchie réparée, répétitions tuées, photos mises en majesté, confiance rétablie par le lieu et l’humain, pas par la vantardise.
