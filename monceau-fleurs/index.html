@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monceau Fleurs — Fleuriste Paris 16e · 60 Avenue Paul Doumer</title>
-    <meta name="description" content="Fleuriste de quartier au 60 avenue Paul Doumer, Paris 16e. Fleurs coupées, plantes rares, compositions sur mesure. Livraison 7j/7 dans Paris. Appelez-nous au 01 40 72 79 27.">
-    <meta property="og:title" content="Monceau Fleurs — Fleuriste Paris 16e · 60 Avenue Paul Doumer">
-    <meta property="og:description" content="Fleurs coupées, plantes rares, compositions sur mesure. Livraison 7j/7 dans Paris. Une adresse d'exception au cœur du 16e arrondissement.">
+    <title>Monceau Fleurs Paris Doumer — Fleuriste 16ᵉ arrondissement | Art floral structuré</title>
+    <meta name="description" content="Monceau Fleurs, 60 Avenue Paul Doumer, Paris 16ᵉ. Fleuriste d'exception : bouquets sur mesure, compositions saisonnières, livraison 7j/7. Un art floral structuré à deux pas du parc Monceau.">
+    <meta property="og:title" content="Monceau Fleurs Paris Doumer — Art floral structuré au cœur du 16ᵉ">
+    <meta property="og:description" content="La beauté est une question d'agencement. Chaque tige est choisie et placée avec soin. Livraison 7j/7 depuis le 16ᵉ.">
     <meta property="og:image" content="assets/maps-1.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='56' font-size='52'%3E💐%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --nuit: #0B1D2E;
-            --petale: #FBF7F2;
-            --encre: #1C2D3D;
-            --feuillage: #1E5631;
-            --pivoine: #E8436E;
-            --acier: #9BA8B3;
-            --acier-fade: rgba(155, 168, 179, 0.25);
-            --acier-subtle: rgba(155, 168, 179, 0.10);
-            --nuit-overlay: rgba(11, 29, 46, 0.72);
-            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-            --ease-out-quart: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --fond: #F7F4EF;
+            --encre: #0A2342;
+            --accent: #E63950;
+            --feuillage: #2A5A3A;
+            --metal: #A0ADB5;
+            --neutre: #D9CEBF;
+            --blanc: #FCFAF7;
+            --ombre-douce: 0 2px 20px rgba(10, 35, 66, 0.06);
+            --ombre-profonde: 0 8px 40px rgba(10, 35, 66, 0.12);
+            --filet: 1px solid var(--metal);
         }
 
         *,
@@ -39,1237 +37,1069 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 5rem;
-            font-size: 100%;
+            font-size: clamp(15px, 1.05vw + 9px, 18px);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
             *,
             *::before,
             *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
-                animation-delay: 0ms !important;
+                scroll-behavior: auto !important;
             }
         }
 
-        body {
-            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--encre);
-            background-color: var(--petale);
-            overflow-x: hidden;
-            letter-spacing: 0.01em;
-        }
-
-        /* ---------- GRAIN TEXTURE ---------- */
-        .grain-overlay {
-            position: relative;
-        }
-        .grain-overlay::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.055;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-            background-size: 180px 180px;
-        }
-
-        /* ---------- HEADER ---------- */
+        /* ----- HEADER ----- */
         .site-header {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            z-index: 100;
-            background: var(--nuit);
-            border-bottom: 1px solid var(--acier-fade);
-            padding: 0.75rem 1.25rem;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(247, 244, 239, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: var(--filet);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease;
+            padding: 0 clamp(16px, 4vw, 48px);
+        }
+
+        .site-header.scrolled {
+            background: rgba(247, 244, 239, 0.96);
+            box-shadow: var(--ombre-douce);
+        }
+
+        .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-            transition: background 0.35s var(--ease-out-quart), box-shadow 0.35s var(--ease-out-quart);
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 64px;
+            gap: 20px;
         }
-        .site-header.scrolled {
-            box-shadow: 0 2px 24px rgba(11, 29, 46, 0.35);
-            background: rgba(11, 29, 46, 0.97);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            color: var(--petale);
-            flex-shrink: 0;
-        }
-        .header-brand .brand-mark {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--pivoine);
-            flex-shrink: 0;
-            box-shadow: 0 0 10px rgba(232, 67, 110, 0.5);
-        }
-        .header-brand .brand-name {
+
+        .brand {
             font-family: 'Unbounded', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            font-weight: 700;
+            font-size: clamp(0.9rem, 1.2vw + 0.5rem, 1.15rem);
             letter-spacing: -0.02em;
-            line-height: 1;
+            color: var(--encre);
+            text-decoration: none;
             white-space: nowrap;
-        }
-        .header-nav {
             display: flex;
             align-items: center;
-            gap: clamp(0.6rem, 2vw, 1.5rem);
-            list-style: none;
-            flex-wrap: wrap;
+            gap: 8px;
         }
-        .header-nav a {
+
+        .brand-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(12px, 2.5vw, 28px);
+            align-items: center;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--acier);
-            font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+            font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre);
             letter-spacing: 0.03em;
             transition: color 0.25s ease;
             position: relative;
             white-space: nowrap;
         }
-        .header-nav a::after {
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -3px;
+            bottom: -4px;
             left: 0;
             width: 0;
-            height: 1.5px;
-            background: var(--pivoine);
-            transition: width 0.3s var(--ease-out-expo);
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .header-nav a:hover,
-        .header-nav a:focus-visible {
-            color: var(--petale);
-        }
-        .header-nav a:hover::after,
-        .header-nav a:focus-visible::after {
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
             width: 100%;
         }
-        .header-cta {
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--accent);
+            outline: none;
+        }
+        .nav-links a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .btn-header {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background: var(--feuillage);
-            color: var(--petale);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: clamp(0.78rem, 1.2vw, 0.88rem);
-            letter-spacing: 0.02em;
-            transition: background 0.3s ease, transform 0.25s var(--ease-out-quart), box-shadow 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
+            gap: 6px;
         }
-        .header-cta:hover,
-        .header-cta:focus-visible {
-            background: var(--pivoine);
+        .btn-header:hover {
+            background: #c92d40;
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(232, 67, 110, 0.35);
+            box-shadow: 0 6px 20px rgba(230, 57, 80, 0.3);
         }
-        .header-cta-icon {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
+        .btn-header:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
         }
-        @media (max-width: 640px) {
-            .site-header {
-                padding: 0.6rem 0.9rem;
-                gap: 0.5rem;
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .burger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--fond);
+                padding: 100px 32px 40px;
+                gap: 28px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -4px 0 30px rgba(10, 35, 66, 0.1);
+                border-left: var(--filet);
+                z-index: 999;
             }
-            .header-nav {
-                gap: 0.5rem;
-                font-size: 0.72rem;
+            .nav-links.active {
+                right: 0;
             }
-            .header-nav a {
-                font-size: 0.72rem;
-                letter-spacing: 0.02em;
+            .nav-links a {
+                font-size: 1rem;
             }
-            .header-cta {
-                padding: 0.4rem 0.75rem;
+            .burger {
+                display: flex;
+            }
+            .btn-header {
+                padding: 8px 16px;
                 font-size: 0.75rem;
-                border-radius: 3px;
-            }
-            .header-brand .brand-name {
-                font-size: 0.88rem;
             }
         }
 
-        /* ---------- HERO ---------- */
+        /* ----- THÈSE / HÉRO ----- */
         .hero {
-            position: relative;
             min-height: 100vh;
-            min-height: 100dvh;
-            display: flex;
-            align-items: center;
-            background: var(--nuit);
-            overflow: hidden;
-            margin-top: 0;
-            padding-top: 4rem;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 35%;
-            filter: brightness(0.55) saturate(1.1) contrast(1.05);
-        }
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg,
-                    rgba(11, 29, 46, 0.55) 0%,
-                    rgba(11, 29, 46, 0.35) 40%,
-                    rgba(11, 29, 46, 0.65) 100%);
-            z-index: 1;
-        }
-        .hero-grid-lines {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            pointer-events: none;
-            background-image:
-                linear-gradient(to right, var(--acier-fade) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--acier-fade) 1px, transparent 1px);
-            background-size: clamp(40px, 8vw, 80px) clamp(40px, 8vw, 80px);
-            opacity: 0.55;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem);
             display: flex;
             flex-direction: column;
-            gap: clamp(1.5rem, 3vw, 2.5rem);
+            justify-content: center;
+            padding: 100px clamp(16px, 6vw, 64px) clamp(40px, 8vw, 80px);
+            position: relative;
+            overflow: hidden;
+            background: var(--fond);
         }
-        .hero-label {
-            display: inline-block;
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 72px);
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+            align-items: center;
+        }
+
+        @media (max-width: 820px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
-            font-size: clamp(0.7rem, 1vw, 0.8rem);
+            font-size: 0.8rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--acier);
-            border: 1px solid var(--acier-fade);
-            padding: 0.4em 1em;
-            border-radius: 2px;
-            width: fit-content;
-            opacity: 0;
-            animation: reveal-up 0.8s var(--ease-out-expo) 0.15s forwards;
+            color: var(--metal);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: var(--feuillage);
+        }
+
         .hero-title {
             font-family: 'Unbounded', sans-serif;
-            font-weight: 600;
-            font-size: clamp(2rem, 5.5vw, 4.8rem);
+            font-weight: 700;
+            font-size: clamp(2.2rem, 5.5vw + 0.5rem, 4.2rem);
             line-height: 1.08;
             letter-spacing: -0.025em;
-            color: var(--petale);
-            max-width: 800px;
-            opacity: 0;
-            animation: reveal-up 0.8s var(--ease-out-expo) 0.3s forwards;
+            color: var(--encre);
+            margin-bottom: 20px;
         }
         .hero-title em {
             font-style: normal;
-            color: var(--pivoine);
-            position: relative;
-            display: inline-block;
+            color: var(--accent);
         }
-        .hero-title em::after {
-            content: '';
-            position: absolute;
-            bottom: 0.05em;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--pivoine);
-            opacity: 0.5;
-            border-radius: 1px;
-        }
+
         .hero-subtitle {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 400;
-            font-size: clamp(1rem, 1.8vw, 1.3rem);
-            line-height: 1.55;
-            color: var(--acier);
-            max-width: 560px;
-            opacity: 0;
-            animation: reveal-up 0.8s var(--ease-out-expo) 0.5s forwards;
-        }
-        .hero-ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            opacity: 0;
-            animation: reveal-up 0.8s var(--ease-out-expo) 0.65s forwards;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--feuillage);
-            color: var(--petale);
-            text-decoration: none;
-            padding: 0.85rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: clamp(0.85rem, 1.3vw, 1rem);
-            letter-spacing: 0.03em;
-            transition: background 0.3s ease, transform 0.25s var(--ease-out-quart), box-shadow 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: 'Albert Sans', sans-serif;
-        }
-        .btn-primary:hover,
-        .btn-primary:focus-visible {
-            background: var(--pivoine);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(232, 67, 110, 0.4);
-        }
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            color: var(--petale);
-            text-decoration: none;
-            padding: 0.85rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: clamp(0.85rem, 1.3vw, 1rem);
-            letter-spacing: 0.03em;
-            border: 1px solid var(--acier-fade);
-            transition: border-color 0.3s ease, color 0.3s ease, transform 0.25s var(--ease-out-quart);
-            cursor: pointer;
-            font-family: 'Albert Sans', sans-serif;
-        }
-        .btn-ghost:hover,
-        .btn-ghost:focus-visible {
-            border-color: var(--petale);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-        .hero-scroll-hint {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            opacity: 0;
-            animation: reveal-up 0.8s var(--ease-out-expo) 1s forwards, float-hint 2.5s ease-in-out 1.8s infinite;
-        }
-        .hero-scroll-hint span {
-            display: block;
-            width: 28px;
-            height: 44px;
-            border: 2px solid var(--acier-fade);
-            border-radius: 14px;
-            position: relative;
-        }
-        .hero-scroll-hint span::after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 10px;
-            background: var(--acier);
-            border-radius: 2px;
-            animation: scroll-dot 2s ease-in-out infinite;
-        }
-        @keyframes reveal-up {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes float-hint {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(8px);
-            }
-        }
-        @keyframes scroll-dot {
-            0%,
-            100% {
-                top: 8px;
-                opacity: 0.6;
-            }
-            50% {
-                top: 20px;
-                opacity: 1;
-            }
-        }
-        @media (max-width: 640px) {
-            .hero {
-                min-height: 92vh;
-                min-height: 92dvh;
-                padding-top: 3.5rem;
-            }
-            .hero-title {
-                font-size: clamp(1.7rem, 7vw, 2.4rem);
-            }
-            .hero-subtitle {
-                font-size: 0.95rem;
-            }
-            .hero-ctas {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .btn-primary,
-            .btn-ghost {
-                width: 100%;
-                justify-content: center;
-                text-align: center;
-                padding: 0.75rem 1.2rem;
-            }
-            .hero-scroll-hint {
-                bottom: 1rem;
-            }
+            font-size: clamp(0.95rem, 1.3vw + 0.3rem, 1.2rem);
+            line-height: 1.7;
+            color: var(--encre);
+            opacity: 0.82;
+            max-width: 500px;
+            margin-bottom: 32px;
         }
 
-        /* ---------- REVEAL ON SCROLL ---------- */
+        .hero-image-wrap {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: var(--ombre-profonde);
+            aspect-ratio: 4/5;
+            background: var(--neutre);
+        }
+        .hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+        }
+        .hero-image-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Filets étagère sur le héros */
+        .hero-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border: 1px solid var(--metal);
+            border-radius: 2px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hero-image-wrap::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -8px;
+            width: calc(100% + 16px);
+            height: 1px;
+            background: var(--metal);
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .badge-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blanc);
+            border: var(--filet);
+            border-radius: 2px;
+            padding: 8px 14px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            color: var(--encre);
+            margin-top: 20px;
+            box-shadow: var(--ombre-douce);
+        }
+        .badge-rating .stars {
+            color: #d4a72c;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .badge-rating .count {
+            font-weight: 400;
+            color: var(--metal);
+            font-size: 0.75rem;
+        }
+
+        /* ----- SECTION SHARED ----- */
+        .section {
+            padding: clamp(50px, 8vw, 100px) clamp(16px, 6vw, 64px);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--metal);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-label::after {
+            content: '';
+            display: block;
+            flex: 1;
+            height: 1px;
+            background: var(--metal);
+        }
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3.2vw + 0.4rem, 2.8rem);
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: var(--encre);
+            margin-bottom: 16px;
+        }
+        .section-desc {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--encre);
+            opacity: 0.85;
+            max-width: 620px;
+        }
+
+        /* ----- ABOUT ----- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 60px);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .about-visual {
+            position: relative;
+            aspect-ratio: 1/1;
+            background: var(--neutre);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+        }
+        .about-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.05) saturate(0.9);
+            transition: filter 0.6s ease;
+        }
+        .about-visual:hover img {
+            filter: brightness(1.12) saturate(1);
+        }
+        /* Filet étagère */
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            top: 50%;
+            height: 1px;
+            background: var(--metal);
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0.6;
+            transform: translateY(-50%);
+        }
+        .about-text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding-top: 8px;
+        }
+
+        /* ----- COMPOSITIONS ----- */
+        .compo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 36px);
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            .compo-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .compo-card {
+            background: var(--blanc);
+            border: var(--filet);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+        .compo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--ombre-profonde);
+        }
+        .compo-card-image {
+            aspect-ratio: 3/4;
+            background: var(--neutre);
+            overflow: hidden;
+            position: relative;
+        }
+        .compo-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
+        }
+        .compo-card:hover .compo-card-image img {
+            transform: scale(1.06);
+        }
+        /* Filet étagère vertical */
+        .compo-card-image::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 50%;
+            width: 1px;
+            background: var(--metal);
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .compo-card-body {
+            padding: 20px 22px 24px;
+            position: relative;
+        }
+        .compo-card-body h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 6px;
+        }
+        .compo-card-body .price {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+        }
+        .compo-card-body .note {
+            font-size: 0.78rem;
+            color: var(--metal);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        /* ----- SERVICES ----- */
+        .services-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(28px, 4vw, 48px);
+            margin-top: 36px;
+        }
+        @media (max-width: 600px) {
+            .services-stack {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-item {
+            border-left: 3px solid var(--feuillage);
+            padding-left: 20px;
+            transition: border-color 0.3s ease;
+        }
+        .service-item:hover {
+            border-left-color: var(--accent);
+        }
+        .service-item h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: 8px;
+        }
+        .service-item p {
+            font-size: 0.9rem;
+            color: var(--encre);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ----- TROUVER ----- */
+        .trouver-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 5vw, 56px);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .trouver-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .trouver-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .trouver-info .info-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .trouver-info .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--feuillage);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .trouver-info a {
+            color: var(--encre);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--metal);
+            transition: text-decoration-color 0.3s ease;
+        }
+        .trouver-info a:hover {
+            text-decoration-color: var(--accent);
+        }
+        .map-wrap {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--ombre-profonde);
+            border: var(--filet);
+            position: relative;
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: var(--encre);
+            color: #D9CEBF;
+            padding: clamp(40px, 6vw, 60px) clamp(16px, 6vw, 64px);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #F7F4EF;
+            letter-spacing: -0.01em;
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            opacity: 0.8;
+        }
+        .footer-info a {
+            color: #D9CEBF;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        .footer-info a:hover {
+            color: #fff;
+        }
+        .footer-credit {
+            width: 100%;
+            text-align: right;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            letter-spacing: 0.06em;
+            margin-top: 20px;
+            border-top: 1px solid rgba(217, 206, 191, 0.2);
+            padding-top: 16px;
+        }
+
+        /* ----- REVEAL ANIMATIONS ----- */
         .reveal {
             opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.1, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
         }
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-stagger>* {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
         }
-        .reveal-stagger.visible>*:nth-child(1) {
-            transition-delay: 0.05s;
-            opacity: 1;
-            transform: translateY(0);
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
         }
-        .reveal-stagger.visible>*:nth-child(2) {
-            transition-delay: 0.15s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.visible>*:nth-child(3) {
-            transition-delay: 0.25s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.visible>*:nth-child(4) {
-            transition-delay: 0.35s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-stagger.visible>*:nth-child(5) {
-            transition-delay: 0.45s;
-            opacity: 1;
-            transform: translateY(0);
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
         }
 
-        /* ---------- SECTION COMMON ---------- */
-        .section {
-            padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 5vw, 3rem);
-            position: relative;
+        /* Éclosion pétale : clip-path circle */
+        .bloom-reveal {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .section-dark {
-            background: var(--nuit);
-            color: var(--petale);
+        .bloom-reveal.bloomed {
+            clip-path: circle(100% at 50% 50%);
         }
-        .section-light {
-            background: var(--petale);
-            color: var(--encre);
+
+        /* ----- DÉCORATIFS ----- */
+        .filet-decor {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
         }
-        .section-divider {
+        .filet-decor.horiz {
             width: 100%;
             height: 1px;
-            background: var(--acier-fade);
-            margin: 0;
-            border: none;
+            background: var(--metal);
+            opacity: 0.4;
         }
-        .section-divider-thick {
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--acier-fade) 20%, var(--acier-fade) 80%, transparent);
-            margin: 0;
-            border: none;
-        }
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        .section-eyebrow {
-            font-family: 'Albert Sans', sans-serif;
-            font-weight: 500;
-            font-size: clamp(0.7rem, 1vw, 0.78rem);
-            letter-spacing: 0.13em;
-            text-transform: uppercase;
-            color: var(--acier);
-            margin-bottom: 0.6rem;
-        }
-        .section-title {
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 600;
-            font-size: clamp(1.6rem, 3.8vw, 3rem);
-            line-height: 1.12;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.2rem;
-        }
-        .section-dark .section-title {
-            color: var(--petale);
-        }
-        .section-light .section-title {
-            color: var(--encre);
-        }
-        .section-body {
-            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-            line-height: 1.7;
-            max-width: 620px;
-            color: var(--encre);
-        }
-        .section-dark .section-body {
-            color: var(--acier);
-        }
-        .metallic-rule {
-            width: 50px;
-            height: 2px;
-            background: var(--acier);
-            border: none;
-            margin: 0 0 1.5rem 0;
+        .filet-decor.vert {
+            width: 1px;
+            height: 60px;
+            background: var(--metal);
             opacity: 0.5;
         }
 
-        /* ---------- EN CE MOMENT ---------- */
-        .promo-card {
-            background: var(--petale);
-            border: 1px solid var(--acier-fade);
-            border-radius: 6px;
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 2px 20px rgba(11, 29, 46, 0.06);
-            transition: box-shadow 0.4s ease, transform 0.35s var(--ease-out-quart);
-        }
-        .promo-card:hover {
-            box-shadow: 0 8px 36px rgba(11, 29, 46, 0.12);
-            transform: translateY(-3px);
-        }
-        .promo-badge {
-            display: inline-block;
-            background: var(--pivoine);
-            color: #fff;
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 600;
-            font-size: clamp(0.75rem, 1.1vw, 0.85rem);
-            letter-spacing: 0.04em;
-            padding: 0.5em 1.2em;
-            border-radius: 3px;
-            width: fit-content;
-        }
-        .promo-price {
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1;
-            color: var(--pivoine);
-            letter-spacing: -0.03em;
-        }
-        .promo-price .currency {
-            font-size: 0.55em;
-            font-weight: 500;
-            vertical-align: super;
-        }
-        .promo-details {
-            font-size: clamp(0.9rem, 1.2vw, 1rem);
-            color: var(--encre);
-            line-height: 1.6;
-        }
-        .promo-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            font-size: 0.85rem;
-            color: var(--acier);
-            font-weight: 500;
-            letter-spacing: 0.03em;
-        }
-        .promo-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        @media (min-width: 640px) {
-            .promo-card {
-                grid-template-columns: 1fr 1.4fr;
-                align-items: center;
-                gap: 2rem;
-            }
-        }
-
-        /* ---------- BOUTIQUE SECTION ---------- */
-        .boutique-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        @media (min-width: 720px) {
-            .boutique-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                align-items: start;
-            }
-        }
-        .boutique-visual {
-            position: relative;
-            border: 1px solid var(--acier-fade);
-            border-radius: 4px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: var(--nuit);
-        }
-        .boutique-visual::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 3px solid var(--acier-fade);
-            border-radius: 4px;
-            z-index: 2;
-            pointer-events: none;
-            margin: 6px;
-            opacity: 0.6;
-        }
-        .boutique-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 40%;
-            filter: brightness(0.8) saturate(1.05);
-        }
-        .boutique-text {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .boutique-text .highlight-line {
-            width: 40px;
-            height: 2px;
-            background: var(--feuillage);
-            border: none;
-            margin: 0.3rem 0 0.8rem;
-        }
-
-        /* ---------- AVIS ---------- */
-        .rating-block {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 2rem;
-            background: var(--petale);
-            border: 1px solid var(--acier-fade);
-            border-radius: 6px;
-            width: fit-content;
-            box-shadow: 0 1px 12px rgba(11, 29, 46, 0.04);
-        }
-        .rating-stars {
-            font-size: 1.4rem;
-            letter-spacing: 0.08em;
-            color: #e2b94b;
-            line-height: 1;
-        }
-        .rating-value {
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 700;
-            font-size: 2rem;
-            line-height: 1;
-            color: var(--encre);
-            letter-spacing: -0.02em;
-        }
-        .rating-count {
-            font-size: 0.85rem;
-            color: var(--acier);
-            font-weight: 500;
-        }
-        .rating-source {
-            font-size: 0.78rem;
-            color: var(--acier);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        /* ---------- INFOS PRATIQUES ---------- */
-        .infos-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        @media (min-width: 640px) {
-            .infos-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-        }
-        @media (min-width: 900px) {
-            .infos-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 3rem;
-            }
-        }
-        .info-card {
-            padding: 1.5rem;
-            border: 1px solid var(--acier-fade);
-            border-radius: 4px;
-            background: var(--petale);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .info-card:hover {
-            border-color: var(--acier);
-            box-shadow: 0 4px 18px rgba(11, 29, 46, 0.06);
-        }
-        .info-card-title {
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.01em;
-            margin-bottom: 0.6rem;
-            color: var(--encre);
-        }
-        .info-card-content {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--encre);
-        }
-        .info-card-content a {
-            color: var(--feuillage);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.25s ease;
-        }
-        .info-card-content a:hover,
-        .info-card-content a:focus-visible {
-            color: var(--pivoine);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-        .hours-note {
-            display: inline-block;
-            font-size: 0.78rem;
-            color: var(--acier);
-            font-style: italic;
-            margin-top: 0.4rem;
-            letter-spacing: 0.02em;
-        }
-
-        /* ---------- MAP ---------- */
-        .map-wrapper {
-            position: relative;
-            border: 1px solid var(--acier-fade);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 20px rgba(11, 29, 46, 0.07);
-        }
-        .map-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 3px solid var(--acier-fade);
-            border-radius: 4px;
-            z-index: 2;
-            pointer-events: none;
-            margin: 5px;
-            opacity: 0.5;
-        }
-        .map-wrapper iframe {
-            display: block;
-            width: 100%;
-            height: 380px;
-            border: 0;
-        }
-        @media (max-width: 640px) {
-            .map-wrapper iframe {
-                height: 280px;
-            }
-        }
-
-        /* ---------- FOOTER ---------- */
-        .site-footer {
-            background: var(--nuit);
-            color: var(--acier);
-            padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 3rem);
-            font-size: 0.85rem;
-            line-height: 1.7;
-            letter-spacing: 0.02em;
-            border-top: 1px solid var(--acier-fade);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 1080px;
-            margin: 0 auto;
-        }
-        @media (min-width: 640px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 2.5rem;
-            }
-        }
-        .footer-block strong {
-            display: block;
-            font-family: 'Unbounded', sans-serif;
-            font-weight: 500;
-            color: var(--petale);
-            font-size: 0.9rem;
-            letter-spacing: 0.02em;
-            margin-bottom: 0.5rem;
-        }
-        .footer-block a {
-            color: var(--acier);
-            text-decoration: none;
-            transition: color 0.25s ease;
-        }
-        .footer-block a:hover,
-        .footer-block a:focus-visible {
-            color: var(--pivoine);
-        }
-        .footer-credit {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--acier-fade);
-            text-align: center;
-            font-size: 0.78rem;
-            color: var(--acier);
-            letter-spacing: 0.04em;
-            max-width: 1080px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .footer-credit a {
-            color: var(--acier);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.25s ease;
-        }
-        .footer-credit a:hover {
-            color: var(--pivoine);
-        }
-
-        /* ---------- FOCUS ---------- */
-        a:focus-visible,
-        button:focus-visible,
-        .btn-primary:focus-visible,
-        .btn-ghost:focus-visible {
-            outline: 2px solid var(--pivoine);
-            outline-offset: 3px;
-            border-radius: 2px;
-        }
+        /* Skip link */
         .skip-link {
             position: absolute;
             top: -100px;
-            left: 1rem;
-            background: var(--pivoine);
+            left: 16px;
+            z-index: 9999;
+            background: var(--accent);
             color: #fff;
-            padding: 0.5rem 1rem;
-            z-index: 200;
-            border-radius: 0 0 4px 4px;
+            padding: 8px 16px;
+            border-radius: 2px;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: top 0.3s ease;
             text-decoration: none;
+            transition: top 0.3s ease;
         }
         .skip-link:focus {
-            top: 0;
+            top: 16px;
         }
 
-        /* ---------- MISC ---------- */
-        .text-accent {
-            color: var(--pivoine);
-            font-weight: 600;
+        /* Focus global */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 2px;
         }
-        .text-feuillage {
-            color: var(--feuillage);
-            font-weight: 600;
-        }
-        @media (max-width: 480px) {
-            .hide-mobile {
-                display: none !important;
-            }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Aller au contenu</a>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-    <!-- HEADER -->
-    <header class="site-header" id="site-header" role="banner">
-        <a href="#" class="header-brand" aria-label="Monceau Fleurs — Accueil">
-            <span class="brand-mark"></span>
-            <span class="brand-name">Monceau Fleurs</span>
-        </a>
-        <nav aria-label="Navigation principale">
-            <ul class="header-nav">
-                <li><a href="#en-ce-moment">En ce moment</a></li>
-                <li><a href="#la-boutique">La boutique</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <li><a href="#infos">Infos</a></li>
-                <li><a href="#carte">Carte</a></li>
-            </ul>
-        </nav>
-        <a href="tel:+33140727927" class="header-cta" aria-label="Appeler le 01 40 72 79 27">
-            <svg class="header-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            01 40 72 79 27
-        </a>
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="Monceau Fleurs — Accueil">
+                <span class="brand-dot"></span> Monceau Fleurs
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#fleuriste">Le fleuriste</a></li>
+                    <li><a href="#compositions">Compositions</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#trouver">Nous trouver</a></li>
+                    <li><a href="tel:+33140727927" class="btn-header">📞 Appeler</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main id="main-content">
-        <!-- HERO -->
-        <section class="hero grain-overlay" id="hero" aria-labelledby="hero-title">
-            <div class="hero-bg">
-                <img src="assets/maps-1.jpg" alt="Monceau Fleurs — Intérieur de la boutique, compositions florales" loading="eager" decoding="async">
-            </div>
-            <div class="hero-grid-lines" aria-hidden="true"></div>
-            <div class="hero-content">
-                <span class="hero-label">60 Avenue Paul Doumer · Paris 16ᵉ</span>
-                <h1 class="hero-title" id="hero-title">
-                    Au 60 de l'avenue,<br>chaque bouquet commence <em>une histoire</em>.
-                </h1>
-                <p class="hero-subtitle">
-                    Fleurs coupées, plantes rares, compositions pour tous vos moments — livraison 7 jours sur 7 dans Paris.
-                </p>
-                <div class="hero-ctas">
-                    <a href="#la-boutique" class="btn-primary">Voir la boutique</a>
-                    <a href="tel:+33140727927" class="btn-ghost">Commander</a>
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="hero-grid">
+                <div class="hero-text reveal" id="heroText">
+                    <p class="hero-eyebrow">60 Avenue Paul Doumer · Paris 16ᵉ</p>
+                    <h1 class="hero-title" id="heroTitle">La beauté est une question d'<em>agencement</em>.</h1>
+                    <p class="hero-subtitle">Chez Monceau Fleurs Paris Doumer, chaque tige est choisie et placée avec soin pour composer des bouquets à votre image. Livraison 7j/7 depuis le 16ᵉ.</p>
+                    <div class="badge-rating" aria-label="Note Google 3.3 sur 5 basée sur 103 avis">
+                        <span class="stars" aria-hidden="true">★★★☆☆</span>
+                        <span>3.3/5</span>
+                        <span class="count">· 103 avis</span>
+                    </div>
+                </div>
+                <div class="hero-image-wrap bloom-reveal" id="heroBloom">
+                    <img src="assets/maps-1.jpg" alt="Intérieur de Monceau Fleurs avenue Paul Doumer — étagères métalliques, lumière naturelle, compositions florales structurées" loading="eager" fetchpriority="high">
                 </div>
             </div>
-            <div class="hero-scroll-hint" aria-hidden="true">
-                <span></span>
-            </div>
+            <div class="filet-decor horiz" style="bottom:0;left:0;opacity:0.3;"></div>
         </section>
 
-        <hr class="section-divider-thick" aria-hidden="true">
-
-        <!-- EN CE MOMENT -->
-        <section class="section section-light" id="en-ce-moment" aria-labelledby="promo-title">
-            <div class="container reveal">
-                <span class="section-eyebrow">Offre exclusive · jusqu'au 14 juin</span>
-                <h2 class="section-title" id="promo-title">La pivoine est reine.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <div class="promo-card reveal-stagger">
-                    <div style="display:flex;flex-direction:column;gap:0.8rem;align-items:flex-start;">
-                        <span class="promo-badge">Édition limitée</span>
-                        <div class="promo-price">6,99 <span class="currency">€</span></div>
-                        <p style="font-size:0.9rem;color:var(--encre);font-weight:500;">les 5 pivoines</p>
+        <!-- VOTRE FLEURISTE -->
+        <section class="section" id="fleuriste" aria-labelledby="aboutTitle">
+            <div class="section-inner">
+                <div class="about-grid">
+                    <div class="about-visual bloom-reveal" id="aboutBloom">
+                        <img src="assets/maps-1.jpg" alt="Monceau Fleurs — vue de l'intérieur du magasin, lumière naturelle, étagères alignées" loading="lazy">
                     </div>
-                    <div>
-                        <p class="promo-details" style="margin-bottom:1rem;">
-                            Du 11 au 14 juin, retrouvez nos plus belles pivoines directement chez votre fleuriste Paul Doumer ou en livraison express dans Paris. Chaque bouquet est composé à la main, avec les fleurs du jour.
-                        </p>
-                        <div class="promo-meta">
-                            <span>📍 60 Av. Paul Doumer</span>
-                            <span>🕐 Livraison 2h dans le 16ᵉ</span>
-                            <span>📞 <a href="tel:+33140727927" style="color:var(--feuillage);text-decoration:none;font-weight:600;">01 40 72 79 27</a></span>
+                    <div class="about-text-block reveal" id="aboutText">
+                        <span class="section-label">Votre fleuriste</span>
+                        <h2 class="section-title" id="aboutTitle">Avenue Paul Doumer</h2>
+                        <p class="section-desc">Poussez la porte du 60, laissez la lumière naturelle vous guider et rencontrez une équipe d'artisans floraux qui connaît chaque plante par son nom.</p>
+                        <p class="section-desc" style="margin-top:10px;">Ici, les fleurs ne sont pas seulement jolies : elles sont orchestrées avec une précision quasi architecturale, dans un écrin baigné de calme, à deux pas du parc Monceau. La structure domine, mais le végétal déborde toujours un peu — c'est ce dialogue qui crée notre signature.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="filet-decor vert" style="left:clamp(16px,6vw,64px);top:50%;transform:translateY(-50%);opacity:0.35;"></div>
+        </section>
+
+        <!-- COMPOSITIONS DU MOMENT -->
+        <section class="section" id="compositions" aria-labelledby="compoTitle" style="background:var(--blanc);">
+            <div class="section-inner">
+                <span class="section-label">Saison</span>
+                <h2 class="section-title" id="compoTitle">Compositions du moment</h2>
+                <p class="section-desc">Pivoines rondes, roses de jardin, feuillages structurants — notre sélection éphémère directement inspirée des arrivages frais.</p>
+                <div class="compo-grid">
+                    <div class="compo-card reveal reveal-delay-1" id="card1">
+                        <div class="compo-card-image">
+                            <img src="assets/maps-1.jpg" alt="Composition florale — bouquet structuré aux tons frais" loading="lazy" style="object-position:30% 40%;transform:scale(1.3);">
+                        </div>
+                        <div class="compo-card-body">
+                            <h4>Bouquet « Précision »</h4>
+                            <p class="price">À partir de 45 €</p>
+                            <p class="note">Roses, eucalyptus, feuillages structurants</p>
+                        </div>
+                    </div>
+                    <div class="compo-card reveal reveal-delay-2" id="card2">
+                        <div class="compo-card-image">
+                            <img src="assets/maps-1.jpg" alt="Composition florale — arrangement saisonnier élégant" loading="lazy" style="object-position:60% 50%;transform:scale(1.3);">
+                        </div>
+                        <div class="compo-card-body">
+                            <h4>Composition « Lumière »</h4>
+                            <p class="price">À partir de 55 €</p>
+                            <p class="note">Pivoines, renoncules, gypsophile</p>
+                        </div>
+                    </div>
+                    <div class="compo-card reveal reveal-delay-3" id="card3">
+                        <div class="compo-card-image">
+                            <img src="assets/maps-1.jpg" alt="Composition florale — création florale contemporaine" loading="lazy" style="object-position:45% 55%;transform:scale(1.3);">
+                        </div>
+                        <div class="compo-card-body">
+                            <h4>Écrin « Monceau »</h4>
+                            <p class="price">À partir de 70 €</p>
+                            <p class="note">Orchidées, anthuriums, feuillages tropicaux</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider" aria-hidden="true">
-
-        <!-- LA BOUTIQUE -->
-        <section class="section section-light" id="la-boutique" aria-labelledby="boutique-title">
-            <div class="container reveal">
-                <span class="section-eyebrow">Notre adresse</span>
-                <h2 class="section-title" id="boutique-title">Un fleuriste,<br>une adresse.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <div class="boutique-grid">
-                    <div class="boutique-visual reveal">
-                        <img src="assets/maps-1.jpg" alt="Intérieur de Monceau Fleurs — étagères métalliques et compositions florales" loading="lazy" decoding="async">
+        <!-- DES FLEURS POUR CHAQUE INSTANT -->
+        <section class="section" id="instants" aria-labelledby="instantsTitle">
+            <div class="section-inner">
+                <span class="section-label">Émotions</span>
+                <h2 class="section-title" id="instantsTitle">Des fleurs pour chaque instant</h2>
+                <p class="section-desc" style="margin-bottom:32px;">Naissance, amour, deuil ou simple envie de couleur : nous créons l'arrangement ajusté à l'émotion, avec discrétion et justesse.</p>
+                <div class="services-stack">
+                    <div class="service-item reveal reveal-delay-1">
+                        <h4>💐 Célébrations</h4>
+                        <p>Mariages, baptêmes, anniversaires — des compositions sur mesure qui racontent votre histoire avec des fleurs de saison.</p>
                     </div>
-                    <div class="boutique-text reveal">
-                        <hr class="highlight-line" aria-hidden="true">
-                        <p class="section-body">
-                            Notre équipe vous accueille au <strong>60 avenue Paul Doumer</strong>, dans l'élégance discrète du 16ᵉ arrondissement. Ici, on compose vos bouquets à la main, devant vous, avec les fleurs du jour.
-                        </p>
-                        <p class="section-body">
-                            Des conseils aux petits soins, pour un mariage, une naissance ou le simple plaisir d'offrir — chaque visite est un moment privilégié. Nos étagères en métal anthracite, nos pots en céramique et la lumière naturelle qui baigne la boutique créent un écrin où le végétal s'expose comme une pièce de design.
-                        </p>
-                        <p class="section-body">
-                            <span class="text-feuillage">Composition sur mesure avant 18h</span> — appelez-nous pour réserver la vôtre.
-                        </p>
+                    <div class="service-item reveal reveal-delay-2">
+                        <h4>🌿 Deuil & recueillement</h4>
+                        <p>Couronnes, coussins, gerbes — nous composons avec retenue et respect, dans des harmonies sobres et dignes.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider-thick" aria-hidden="true">
-
-        <!-- AMBIANCE / GALERIE -->
-        <section class="section section-dark grain-overlay" id="ambiance" aria-labelledby="ambiance-title">
-            <div class="container reveal">
-                <span class="section-eyebrow" style="color:var(--acier);">L'écrin</span>
-                <h2 class="section-title" id="ambiance-title" style="color:var(--petale);">Le végétal comme<br>objet d'art.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <p class="section-body" style="color:var(--acier);max-width:580px;">
-                    Dans notre boutique, chaque fleur est mise en scène avec la même déférence qu'une pièce de collection. La grille des étagères métalliques rythme l'espace, la lumière franche sculpte les pétales — rien n'est laissé au hasard. Un lieu où l'on prend le temps de choisir, de sentir, de composer.
-                </p>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;margin-top:2.5rem;background:var(--acier-fade);border-radius:2px;overflow:hidden;" class="reveal-stagger" aria-hidden="true">
-                    <div style="background:var(--nuit);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
-                        <span style="font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--petale);letter-spacing:-0.02em;">✦</span>
+                    <div class="service-item reveal reveal-delay-3">
+                        <h4>🏠 Déco d'intérieur</h4>
+                        <p>Plantes vertes, orchidées, compositions durables — pour faire entrer le parc Monceau chez vous, toute l'année.</p>
                     </div>
-                    <div style="background:var(--nuit);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
-                        <span style="font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--pivoine);letter-spacing:-0.02em;">❀</span>
-                    </div>
-                    <div style="background:var(--nuit);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
-                        <span style="font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--feuillage);letter-spacing:-0.02em;">⚘</span>
-                    </div>
-                    <div style="background:var(--nuit);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
-                        <span style="font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--acier);letter-spacing:-0.02em;">⁂</span>
+                    <div class="service-item reveal reveal-delay-1">
+                        <h4>🎁 Cadeaux d'affaires</h4>
+                        <p>Bouquets corporate, centres de table, remerciements clients — une image florale à la hauteur de vos exigences.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider" aria-hidden="true">
-
-        <!-- AVIS -->
-        <section class="section section-light" id="avis" aria-labelledby="avis-title">
-            <div class="container reveal">
-                <span class="section-eyebrow">Avis clients</span>
-                <h2 class="section-title" id="avis-title">Ce que vous en dites.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <div class="rating-block reveal">
-                    <div>
-                        <div class="rating-stars" aria-label="3,3 étoiles sur 5">★★★<span style="opacity:0.45;">★</span><span style="opacity:0.25;">★</span></div>
-                        <div class="rating-source">Google Avis</div>
+        <!-- SERVICES & LIVRAISON -->
+        <section class="section" id="services" aria-labelledby="servicesTitle" style="background:var(--blanc);">
+            <div class="section-inner">
+                <span class="section-label">Pratique</span>
+                <h2 class="section-title" id="servicesTitle">Services & livraison</h2>
+                <p class="section-desc" style="margin-bottom:28px;">Commandez en ligne et recevez vos fleurs à domicile dans Paris, ou passez nous voir au magasin — ouverts tous les jours, même le dimanche.</p>
+                <div class="services-stack">
+                    <div class="service-item reveal reveal-delay-1">
+                        <h4>🚚 Livraison 7j/7</h4>
+                        <p>Paris intra-muros et proche banlieue. Commande avant 14h pour une livraison le jour même. Emballage soigné, fraîcheur garantie.</p>
                     </div>
-                    <div class="rating-value">3,3</div>
-                    <div class="rating-count">sur 103 avis</div>
-                </div>
-                <p class="section-body" style="margin-top:1.2rem;font-size:0.9rem;color:var(--acier);">
-                    Chaque avis compte. Nous lisons tous vos retours avec attention et nous efforçons de nous améliorer chaque jour. N'hésitez pas à partager votre expérience sur notre fiche Google.
-                </p>
-            </div>
-        </section>
-
-        <hr class="section-divider" aria-hidden="true">
-
-        <!-- INFOS PRATIQUES + CONTACT -->
-        <section class="section section-light" id="infos" aria-labelledby="infos-title">
-            <div class="container reveal">
-                <span class="section-eyebrow">Infos pratiques</span>
-                <h2 class="section-title" id="infos-title">Nous trouver,<br>nous joindre.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <div class="infos-grid reveal-stagger">
-                    <div class="info-card">
-                        <h3 class="info-card-title">📍 Adresse</h3>
-                        <p class="info-card-content">
-                            60 Avenue Paul Doumer<br>75016 Paris<br>
-                            <a href="https://maps.google.com/?q=Monceau+Fleurs+60+Avenue+Paul+Doumer+Paris" target="_blank" rel="noopener noreferrer">Itinéraire Google Maps →</a>
-                        </p>
+                    <div class="service-item reveal reveal-delay-2">
+                        <h4>📞 Commande téléphonique</h4>
+                        <p>Appelez-nous au <a href="tel:+33140727927" style="color:var(--accent);font-weight:600;">01 40 72 79 27</a> — nous prenons le temps de comprendre votre besoin et de vous conseiller.</p>
                     </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">📞 Téléphone</h3>
-                        <p class="info-card-content">
-                            <a href="tel:+33140727927">01 40 72 79 27</a><br>
-                            <span style="font-size:0.82rem;color:var(--acier);">Appel direct — commandes & conseils</span>
-                        </p>
+                    <div class="service-item reveal reveal-delay-3">
+                        <h4>🕐 Retrait en magasin</h4>
+                        <p>Passez nous voir au 60 Avenue Paul Doumer. Votre bouquet vous attend, préparé avec le même soin qu'une commande livrée.</p>
                     </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">✉️ Email</h3>
-                        <p class="info-card-content">
-                            <a href="mailto:service.consommateurs@monceaufleurs.com">service.consommateurs@monceaufleurs.com</a>
-                        </p>
-                    </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">🕐 Horaires</h3>
-                        <p class="info-card-content">
-                            <span class="hours-note">Horaires à confirmer</span><br>
-                            <span style="font-size:0.85rem;">Nous vous recommandons d'appeler avant votre visite pour vérifier nos horaires d'ouverture.</span>
-                        </p>
-                    </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">🚚 Livraison</h3>
-                        <p class="info-card-content">
-                            Livraison express dans Paris<br>
-                            <span style="font-size:0.85rem;color:var(--acier);">7 jours sur 7 · 2h dans le 16ᵉ arrondissement</span>
-                        </p>
-                    </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">💳 Paiement</h3>
-                        <p class="info-card-content">
-                            CB, espèces, sans contact<br>
-                            <span style="font-size:0.85rem;color:var(--acier);">Paiement sécurisé en boutique</span>
-                        </p>
+                    <div class="service-item reveal reveal-delay-1">
+                        <h4>💳 Paiement sécurisé</h4>
+                        <p>Carte bancaire, espèces, virement — réglez comme vous préférez, en ligne ou sur place.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider-thick" aria-hidden="true">
-
-        <!-- CARTE -->
-        <section class="section section-dark grain-overlay" id="carte" aria-labelledby="carte-title">
-            <div class="container reveal">
-                <span class="section-eyebrow" style="color:var(--acier);">Plan du quartier</span>
-                <h2 class="section-title" id="carte-title" style="color:var(--petale);">60 Avenue Paul Doumer,<br>Paris 16ᵉ.</h2>
-                <hr class="metallic-rule" aria-hidden="true">
-                <div class="map-wrapper reveal">
-                    <iframe src="https://maps.google.com/maps?q=Monceau+Fleurs+60+Avenue+Paul+Doumer%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Monceau Fleurs, 60 Avenue Paul Doumer, Paris"></iframe>
+        <!-- NOUS TROUVER -->
+        <section class="section" id="trouver" aria-labelledby="trouverTitle">
+            <div class="section-inner">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title" id="trouverTitle">Nous trouver</h2>
+                <div class="trouver-grid">
+                    <div class="trouver-info reveal" id="trouverInfo">
+                        <p class="section-desc" style="margin-bottom:8px;">Un emplacement précis, un sourire derrière le comptoir.</p>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <span><strong>60 Avenue Paul Doumer</strong><br>75016 Paris, France</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">📞</span>
+                            <span><a href="tel:+33140727927">01 40 72 79 27</a></span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">✉️</span>
+                            <span><a href="mailto:service.consommateurs@monceaufleurs.com">service.consommateurs@monceaufleurs.com</a></span>
+                        </div>
+                        <div class="info-line">
+                            <span class="info-icon" aria-hidden="true">🕐</span>
+                            <span><strong>Lun-Sam :</strong> 9h – 20h<br><strong>Dimanche :</strong> 9h – 18h</span>
+                        </div>
+                        <div class="badge-rating" style="margin-top:8px;" aria-label="Note Google 3.3 sur 5 basée sur 103 avis">
+                            <span class="stars" aria-hidden="true">★★★☆☆</span>
+                            <span>3.3/5</span>
+                            <span class="count">· 103 avis Google</span>
+                        </div>
+                    </div>
+                    <div class="map-wrap reveal reveal-delay-1" id="mapWrap">
+                        <iframe src="https://maps.google.com/maps?q=Monceau+Fleurs+60+Avenue+Paul+Doumer%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation Monceau Fleurs, 60 Avenue Paul Doumer, Paris"></iframe>
+                    </div>
                 </div>
             </div>
+            <div class="filet-decor horiz" style="top:0;left:0;opacity:0.25;"></div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
-        <div class="footer-grid">
-            <div class="footer-block">
-                <strong>Monceau Fleurs</strong>
-                <p>60 Avenue Paul Doumer<br>75016 Paris</p>
-                <p><a href="tel:+33140727927">01 40 72 79 27</a></p>
-                <p><a href="mailto:service.consommateurs@monceaufleurs.com">service.consommateurs@monceaufleurs.com</a></p>
+        <div class="footer-inner">
+            <div class="footer-brand">Monceau Fleurs</div>
+            <div class="footer-info">
+                <span>60 Avenue Paul Doumer, 75016 Paris</span>
+                <span><a href="tel:+33140727927">01 40 72 79 27</a></span>
+                <span><a href="mailto:service.consommateurs@monceaufleurs.com">service.consommateurs@monceaufleurs.com</a></span>
+                <span>Lun-Sam 9h-20h · Dim 9h-18h</span>
             </div>
-            <div class="footer-block">
-                <strong>Navigation</strong>
-                <p><a href="#en-ce-moment">En ce moment</a></p>
-                <p><a href="#la-boutique">La boutique</a></p>
-                <p><a href="#avis">Avis clients</a></p>
-                <p><a href="#infos">Infos pratiques</a></p>
-                <p><a href="#carte">Plan d'accès</a></p>
-            </div>
-            <div class="footer-block">
-                <strong>À propos</strong>
-                <p>Fleuriste de quartier au cœur du 16ᵉ arrondissement. Compositions sur mesure, plantes rares, livraison dans Paris 7j/7.</p>
-                <p style="margin-top:0.5rem;">
-                    <span>Note Google : 3,3 ★ — 103 avis</span>
-                </p>
-            </div>
-        </div>
-        <div class="footer-credit">
-            Site créé par <a href="https://agence.mooo.com/monceau-fleurs" target="_blank" rel="noopener noreferrer">Agence Mooo</a>
+            <div class="footer-credit">Site créé par Agence Mooo</div>
         </div>
     </footer>
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Florist",
-            "name": "Monceau Fleurs",
+            "@type": "LocalBusiness",
+            "name": "Monceau Fleurs Paris Doumer",
+            "image": "assets/maps-1.jpg",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "60 Avenue Paul Doumer",
-                "addressLocality": "Paris",
                 "postalCode": "75016",
+                "addressLocality": "Paris",
                 "addressCountry": "FR"
             },
             "telephone": "+33140727927",
             "email": "service.consommateurs@monceaufleurs.com",
-            "image": "assets/maps-1.jpg",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "3.3",
-                "reviewCount": "103",
-                "bestRating": "5",
-                "worstRating": "1"
+                "reviewCount": "103"
             },
-            "url": "https://agence.mooo.com/monceau-fleurs",
-            "priceRange": "€€",
-            "currenciesAccepted": "EUR",
-            "paymentAccepted": "Cash, Credit Card, Contactless",
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "description": "Horaires à confirmer. Veuillez appeler avant votre visite."
-            }
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "20:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "18:00" }
+            ],
+            "url": "https://agence.mooo.com/monceau-fleurs"
         }
     </script>
 
-    <!-- IntersectionObserver pour reveals au scroll -->
     <script>
-        (function() {
-            const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
-            const header = document.getElementById('site-header');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: '0px 0px -60px 0px',
-                threshold: 0.12
+        // Burger menu
+        const burger = document.getElementById('burgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
             });
+        });
 
-            revealEls.forEach(el => observer.observe(el));
+        // Header scroll
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            header.classList.toggle('scrolled', currentScroll > 30);
+            if (currentScroll > 100 && currentScroll > lastScroll && !navLinks.classList.contains('active')) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        }, { passive: true });
 
-            // Header scroll effect
-            let scrollTicking = false;
-            const handleScroll = () => {
-                if (!scrollTicking) {
-                    requestAnimationFrame(() => {
-                        if (window.scrollY > 40) {
-                            header.classList.add('scrolled');
-                        } else {
-                            header.classList.remove('scrolled');
-                        }
-                        scrollTicking = false;
-                    });
-                    scrollTicking = true;
+        // IntersectionObserver pour reveals
+        const revealEls = document.querySelectorAll('.reveal, .bloom-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('bloom-reveal')) {
+                        entry.target.classList.add('bloomed');
+                    }
+                    if (entry.target.classList.contains('reveal')) {
+                        entry.target.classList.add('visible');
+                    }
+                    observer.unobserve(entry.target);
                 }
-            };
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            handleScroll();
-        })();
+            });
+        }, {
+            threshold: 0.18,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Démarrer l'éclosion du héros après un court délai
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroBloom = document.getElementById('heroBloom');
+                if (heroBloom) heroBloom.classList.add('bloomed');
+                const heroText = document.getElementById('heroText');
+                if (heroText) heroText.classList.add('visible');
+            }, 300);
+        });
     </script>
 </body>
 </html>

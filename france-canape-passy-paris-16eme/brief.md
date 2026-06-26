@@ -1,91 +1,77 @@
-Voici le brief créatif.
+# BRIEF CRÉATIF — FRANCE CANAPÉ PASSY
+**56 Avenue Paul Doumer, Paris 16ème**
 
 ---
 
-## 1. Concept & positionnement
+## 1. CONCEPT & POSITIONNEMENT
 
-**Le luxe ne crie pas, il s’installe.**
-France Canapé Passy n’est pas un showroom de plus : c’est l’adresse discrète du 16ᵉ arrondissement où l’on vient chercher la pièce qui structurera le salon pour vingt ans. Le site sera une parenthèse silencieuse et exigeante — un écrin numérique qui restitue la sensation de pousser la porte d’un appartement haussmannien habité par le design, loin du bruit des marketplaces.
-
-On retient la rencontre entre le **savoir-faire français** et l’**exigence esthétique contemporaine**, adressée à une clientèle qui préfère la justesse d’une ligne à l’accumulation d’effets.
+France Canapé Passy n'est pas un showroom : c'est un **appartement parisien habité par le design**, où chaque canapé se vit avant de s'acheter. Le concept central est celui de l'essai intime, dans un écrin haussmannien baigné de lumière, où la marquise rayée noir et blanc — signature architecturale de la façade — agit comme un seuil symbolique entre la rue du 16ème et l'univers feutré du beau mobilier. Ce qu'on retient : **ici, on ne visite pas un magasin, on s'installe dans le canapé qui manquait à son salon.**
 
 ---
 
-## 2. Direction artistique
+## 2. DIRECTION ARTISTIQUE
 
-**« Haussmann Contemporain »**
-
-Un parti pris esthétique qui puise dans l’ADN du lieu : l’avenue Paul Doumer, ses façades en pierre de taille, ses moulures, son calme cossu. On transpose cet héritage architectural classique dans une grammaire visuelle résolument actuelle.
-
-- **Matières** : Le site donnera à *voir le toucher*. Gros plans sur la main qui effleure un velours côtelé, sur la couture sellier d’un cuir pleine fleur, sur le veinage d’un bois de noyer. La lumière est naturelle, douce, traversant une fenêtre à petit bois — jamais un éclairage studio aseptisé.
-- **Structure** : On emprunte à l’haussmannien sa rigueur (symétries, proportions nobles) et on la casse avec des respirations modernes (grands vides, décalages typographiques, pleine page).
-- **Énergie** : Calme, posée, concentrée. Un tempo lent qui invite à rester, pas à scroller frénétiquement.
+**« Haussmann Contemporain »** — Un parti pris qui fusionne l'ossature classique parisienne (moulures, hauteur sous plafond, lumière zénithale) avec la radicalité épurée du design mobilier actuel. L'esthétique est dictée par la **lumière naturelle crue** qui traverse les grandes vitrines et vient sculpter les textures mates des tissus d'ameublement, exactement comme sur les vraies photos Google du commerce. Pas de pénombre ni de dorures : une clarté franche, presque photographique, où le noir profond des structures métalliques dialoguent avec les beiges sableux des revêtements. La marquise rayée est érigée en motif graphique structurant, rappel discret de l'adresse et de l'identité visuelle du lieu.
 
 ---
 
-## 3. Palette
+## 3. PALETTE
 
-Extraite des teintes réelles d’un intérieur parisien raffiné où cohabitent boiseries, pierre et textiles nobles.
-
-| Rôle | Nom | Hex |
+| Rôle | Nom | HEX |
 |------|-----|-----|
-| **Fond principal** | Pierre de Passy | `#F5F2ED` |
-| **Encre (texte)** | Noyer profond | `#2C241B` |
-| **Accent chaud** | Cuir havane | `#B87B4C` |
-| **Accent froid & luxe** | Bleu fumée | `#546E7A` |
-| **Fond secondaire / carte** | Gris pierre chaude | `#E6E1D8` |
-| **Détail signalétique** | Laiton brossé | `#C4A96A` |
+| Fond principal | Blanc Paul-Doumer | `#F7F3ED` |
+| Encre | Noir Marquise | `#1C1A18` |
+| Accent fort | Bleu Passy | `#1E2A3B` |
+| Accent chaud | Beige Tissu | `#D4C5B2` |
+| Fond alternatif | Crème Appartement | `#EFE9E1` |
+| Détail métal | Laiton Fenêtre | `#BF9B6A` |
 
-Le fond est clair — une carnation de pierre, jamais fade — et la typographie vient s’y poser avec autorité. L’ambiance générale est lumineuse sans être froide : un appartement parisien traversé de soleil d’automne.
-
----
-
-## 4. Ton éditorial
-
-**Une voix sobre, experte et confidentielle.**
-On s’adresse à un interlocuteur averti, qui n’a pas besoin qu’on lui vende du rêve mais qu’on lui parle **matière, structure, durée**. Le registre est celui de la conversation cultivée, avec une pointe d’exigence propre au goût parisien.
-
-- Descriptif : précis, concret, jamais de superlatifs vides.
-- Évocation : on raconte le geste de l’atelier, l’origine d’un matériau, la pensée d’une ligne.
-- Pas de “collection exclusive” ni de “pièce unique” : on dit ce qui est, avec le mot juste.
+La palette est **claire et lumineuse**, fidèle à la lumière réelle du magasin. Le Bleu Passy — un bleu nuit très profond, presque ardoise — vient ancrer le luxe sans agressivité ; il est le seul ton froid, utilisé avec parcimonie pour les accents (boutons, liens, filets). Aucun gris neutre, aucun blanc clinique : chaque teinte possède une chaleur organique tirée des matières photographiées (bois, tissu, pierre).
 
 ---
 
-## 5. Accroche héro
+## 4. TON ÉDITORIAL
 
-**Titre**
-> Le canapé n’est pas un meuble. C’est la pièce où la maison se tient.
-
-**Sous-titre**
-> Avenue Paul Doumer, une adresse parisienne dédiée au design d’assise depuis plus de vingt ans. Matières sourcées, lignes tenues, confort durable.
+**Registre :** conseil expert, chaleureux sans familiarité, émaillé de précision parisienne.
+**Niveau de langue :** soutenu mais immédiat. On parle au « vous » singulier, comme à un hôte que l'on reçoit avenue Paul Doumer.
+**Voix :** celle d’un décorateur d’intérieur qui connaît son arrondissement, qui nomme les choses avec justesse, et qui sait qu’un canapé ne se choisit pas sur photo. Aucune hyperbole commerciale ; des faits, des textures, des noms de matières, des conseils d'association.
 
 ---
 
-## 6. Sections
+## 5. ACCROCHE HÉRO
 
-1. **L’adresse**
-   *Titre :* Passy, 16ᵉ — Une maison pour le salon
-   *Contenu :* À deux pas du Trocadéro, notre boutique de l’avenue Paul Doumer rassemble le meilleur de l’édition design française et européenne. Un lieu à échelle humaine pour essayer, comparer, et repartir avec un conseil véritable.
+**Titre :**
+> Sous la marquise, l’essai est un art.
 
-2. **Les collections**
-   *Titre :* Canapés & fauteuils — L’assise pensée
-   *Contenu :* Droit, d’angle, panoramique ou convertible. Chaque modèle est présenté par famille de style (scandinave, italien contemporain, intemporel) et par matière (cuir pleine fleur, velours, tissu technique). Fiches produit avec dimensions, délais de fabrication et options de personnalisation.
-
-3. **Savoir-faire**
-   *Titre :* Ce qui fait la durée
-   *Contenu :* Structure en bois massif, coutures sellier, mousse haute résilience. Nous expliquons en images les choix de fabrication qui distinguent un canapé conçu pour vivre de celui qu’on remplace.
-
-4. **Le studio Passy**
-   *Titre :* Votre projet, accompagné
-   *Contenu :* Nos conseillers reçoivent sur rendez-vous pour étudier vos contraintes d’espace, de lumière et d’usage. Service de planification 3D, échantillonnage de tissus à emporter, livraison et installation dans Paris et l’Ouest francilien.
-
-5. **Venir**
-   *Titre :* 56 avenue Paul Doumer, 75016 Paris
-   *Contenu :* Horaires d’ouverture, accès (métro Trocadéro / La Muette, parking), téléphone et formulaire de prise de rendez-vous. Plan interactif discret.
+**Sous-titre :**
+> 56 Avenue Paul Doumer. Installez-vous dans le canapé qui vous ressemble, au cœur du 16ᵉ.
 
 ---
 
-## 7. Signature visuelle
+## 6. SECTIONS
 
-- **Typographie en tension :** les titres en Libre Baskerville jouent la carte classique avec des graisses légères et un interlignage serré, tandis que les données (prix, dimensions, délais) passent en Karla, nette et fonctionnelle. L’écart entre les deux polices crée une friction élégante, jamais anodine.
-- **Le fil de couture :** un filet vertical continu, fin comme un fil sellier, traverse la page de haut en bas sur les écrans desktop. Il rappelle l’exigence de fabrication et sert de repère de lecture : section après section, le contenu s’ancre sur ce fil plutôt que sur une grille invisible. Au scroll, il se révèle progressivement en laiton (`#C4A96A`) sur fond pierre.
+1.  **L’esprit du lieu**
+    > Un appartement haussmannien traversé de lumière, pensé pour essayer le design comme on vit chez soi. Pas de podium, pas de mise en scène : des canapés en situation, face aux grandes vitrines de l’avenue Paul Doumer.
+
+2.  **Collections en dialogue**
+    > Lignes épurées, matières nobles, équilibres de couleurs : chaque pièce exposée répond à une intention. Découvrez nos sélections par univers — contemporain, intemporel, architectural — et nos conseils d’associations pour un salon qui vous raconte.
+
+3.  **Le conseil à l’essai**
+    > Parce qu’un canapé se juge assis. Dans nos salons privés, prenez le temps : testez les profondeurs d’assise, comparez les textiles en lumière naturelle, projetez les volumes dans votre propre espace. Nos décorateurs vous accompagnent sans hâte.
+
+4.  **Vu depuis Passy**
+    > *[galerie immersive en grand format]* Les grandes vitrines, la marquise rayée, les canapés baignés de jour. Un portrait du lieu en lumière réelle, sans filtre.
+
+5.  **Ce que nos clients en disent**
+    > Extraits vérifiés des 91 avis Google (4.6/5). Des mots de clients qui ont trouvé leur canapé avenue Paul Doumer, et qui le racontent.
+
+6.  **Nous trouver, nous joindre**
+    > 56 Avenue Paul Doumer, Paris 16ᵉ — au pied de la marquise rayée. Téléphone, horaires, accès. Et une invitation : poussez la porte.
+
+---
+
+## 7. SIGNATURE VISUELLE
+
+- **La marquise comme motif graphique :** les rayures noir et blanc de l'auvent sont abstraites en un motif *stripe* vertical utilisé comme élément de transition entre les sections (arrière-plan furtif, séparateur animé, liseré discret). Ce n'est jamais littéral, toujours suggéré — un clin d'œil à l'adresse.
+
+- **Typographie en tension :** *Libre Baskerville* (empattement classique, presque littéraire) est utilisée en **très grand format** pour les titres de section, créant un contraste d'échelle saisissant avec le texte courant en *
