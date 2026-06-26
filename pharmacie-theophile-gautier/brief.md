@@ -1,90 +1,70 @@
-# BRIEF CRÉATIF — PHARMACIE THEOPHILE GAUTIER
+Voici le brief créatif pour le nouveau site vitrine de la Pharmacie Theophile Gautier, conçu pour corriger l’absence totale d’ancrage local et offrir une expérience à la hauteur du quartier.
 
 ---
 
-## 1. CONCEPT & POSITIONNEMENT
+## 1. Concept & positionnement
+**La pharmacie de famille du 16e, entre pierre haussmannienne et rigueur contemporaine.**  
+On abandonne le site générique du réseau pour incarner une adresse : celle d’un officin de proximité où l’expertise pharmaceutique dialogue avec l’élégance minérale de la façade et le vert néon de la croix emblématique. Le site devient le reflet numérique de ce lieu réel, rassurant et impeccable, pensé pour les habitants de l’Avenue Théophile Gautier qui cherchent bien plus que des horaires : une relation de confiance, des services concrets et un repère visuel familier.
 
-La Pharmacie Théophile Gautier n'est pas une officine de réseau anonyme : c'est une pharmacie de quartier du 16e arrondissement, inscrite dans une façade haussmannienne en pierre de taille, reconnaissable entre mille à sa **croix néon vert vif**. Le concept : faire dialoguer l'**autorité minérale du lieu** (la pierre, les moulures, l'adresse prestigieuse) avec l'**immédiateté franche du soin** (le néon qui ne ment pas, le service sans détour). On retient : une pharmacie qui a pignon sur rue ET qui vous répond en direct — pas un chatbot de groupement.
+## 2. Direction artistique
+**“Haussmann graphique”** – Un classicisme architectural assumé (moulures, pierre de taille, boiseries) traversé par une ponctuation graphique contemporaine : le vert néon électrique de la croix, utilisé comme un signal visuel fort. La composition mêle la rigueur des façades du 16e à une structuration claire, presque signalétique, où chaque information est un repère. La lumière froide et vive des photos réelles se traduit par une interface à fond clair laiteux, valorisant la typographie et les contrastes nets.
 
----
+## 3. Palette
+Couleurs directement extraites de l’énergie visuelle réelle du commerce (façade pierre, croix verte, boiseries intérieures) :
 
-## 2. DIRECTION ARTISTIQUE : « NÉON & PIERRE »
+| Rôle | HEX | Nom d’usage |
+|------|-----|-------------|
+| Fond principal | `#F8F5F0` | Pierre chaude |
+| Texte / encre | `#2C2B2B` | Ardoise foncée |
+| Accent primaire (croix, CTA) | `#39FF14` | Vert néon |
+| Accent secondaire (bois, chaleur) | `#8B6B4D` | Noyer |
+| Surface / carte | `#E8E3DC` | Calcaire |
+| Détails froids (filets, icônes) | `#9EA2A1` | Pierre de taille |
 
-Le parti pris esthétique est un **brutalisme médical adouci par l'élégance classique du bâti parisien**.
+La pierre chaude domine les fonds, évitant le blanc fade ; le vert néon est réservé aux interactions clés (boutons, liens, motifs-signature) pour créer une identité immédiatement reconnaissable.
 
-- **Matières** : la pierre grège de la façade haussmannienne, le verre sérigraphié des vitrines, le métal émaillé de l'enseigne néon, le formica blanc des comptoirs d'officine. Une esthétique de pharmacie *ancienne modernisée*, sans nostalgie décorative.
-- **Lumière** : froide, vive, évoquant l'éclairage clinicien (tubes fluo, néons). Pas de tièdeur bougie ni de pénombre cosy — la santé exige la clarté.
-- **Contraste structurant** : fonds pierre/gris d'un côté, éclats vert fluo de l'autre. Le vert n'est pas une décoration rapportée : il est l'identité lumineuse de ce commerce depuis la rue.
+## 4. Ton éditorial
+**Registre :** Proche, confiant, précis. Une voix de pharmacien qui connaît ses clients – ni soutenue, ni infantilisante.  
+**Niveau de langue :** Vous de courtoisie, mais avec la fluidité de l’oral : « Passez nous voir », « On vous prépare votre ordonnance ».  
+**Énergie :** Rassurante et pratique. Chaque phrase répond à une question concrète (horaires, services, disponibilité). Pas de jargon national ni de remplissage marketing.
 
----
+## 5. Accroche héro
+**Titre :** Votre ordonnance, notre savoir-faire.  
+**Sous-titre :** Pharmacie familiale depuis [année de création à confirmer, ex. 30 ans] au 2 Avenue Théophile Gautier. Tests antigéniques, livraison à domicile, parapharmacie conseil. Ouverts jusqu’à 20h ce soir.
 
-## 3. PALETTE — « CLINIQUE PARISIENNE »
+(Cette accroche associe immédiatement l’adresse réelle, les services clés et l’horaire du jour – elle corrige le défaut critique de l’audit : l’absence d’informations locales.)
 
-| Rôle | Nom | Hex | Usage |
-|---|---|---|---|
-| Fond principal | Pierre d'Auteuil | `#E8E4DF` | Fond de page, cartes, blocs sobres |
-| Fond secondaire | Blanc officinal | `#FCFAF5` | Arrière-plans textes, formulaires |
-| Encre | Bitume Haussmann | `#2A2825` | Textes courants, titres (noir chaud, pas pur) |
-| Accent franc | Vert Néon Croix | `#1BDF3C` | Boutons, liens, filets, pictos, éléments cliquables — **l'accent signature** |
-| Second accent | Vert pharmacie foncé | `#0D7A26` | États hover, titres secondaires, ancres |
-| Ancrage foncé | Grille fonte | `#3D3A36` | Pied de page, bandeaux contrastes |
+## 6. Sections (ordre de la page)
+1. **Pharmacie Théophile Gautier**  
+   Logo / enseigne + menu minimal. Bouton « Appeler le 01 42 88 05 65 » bien visible.  
+   *Contenu :* Aucun renvoi à un réseau national. Le nom de la pharmacie est le H1 implicite du site.
 
-**Clair ou sombre** : clair. La pharmacie réelle baigne dans une lumière froide et vive ; le site doit respirer la netteté. Le vert néon est le seul éclat saturé — tout le reste est minéral et retenu.
+2. **Héros**  
+   Titre et sous-titre ci-dessus, sur fond photographique pleine largeur montrant la façade réelle en pierre avec la croix verte allumée (photo issue des images Google Maps retravaillée).  
+   CTA principal : « Voir nos services » ⏤ « Appeler maintenant ».
 
----
+3. **En ce moment (ou « Votre santé au 16e »)**  
+   *Titre :* Ce que vous cherchez ce mois-ci  
+   *Contenu réel :* Trois cartes : « Dépistage grippe/Covid sans RDV – résultats en 15 min », « Location de tire-lait, aérosols, béquilles : devis sous 24h », « Ordonnance en ligne ? Faites-la nous parvenir par email et récupérez-la en 20 minutes ». Pas d’articles génériques nationaux.
 
-## 4. TON ÉDITORIAL
+4. **Nos services locaux**  
+   *Titre :* Ce qu’on fait, à deux pas de chez vous  
+   *Liste concise et visuelle :* Tests antigéniques / Vaccination / Livraison d’ordonnances à domicile (périmètre 75016) / Matériel médical / Parapharmacie conseil / Gardes et nuits. Chaque service a un pictogramme discret et un lien pour en savoir plus (ancre).
 
-**Voix** : directe, précise, jamais paternaliste. On s'adresse au patient du quartier — Auteuil, Passy, Muette — avec le même ton qu'au comptoir : professionnel sans jargon, accessible sans familiarité excessive, rassurant sans pathos. Le « vous » est systématique ; le « nous » désigne l'équipe réelle, pas un groupement abstrait.
+5. **L’équipe & le lieu**  
+   *Titre :* Les visages derrière le comptoir  
+   *Contenu :* Photos réelles ou portraits style “équipe de quartier” (à défaut, on travaillera des illustrations éditoriales en cohérence avec le style haussmannien graphique). Courte phrase : « Martin, pharmacien titulaire, et Marina, préparatrice, vous connaissent par votre prénom. Ici, on prend le temps d’expliquer. » (Corrige l’absence d’identité humaine.)
 
-**Niveau de langue** : courant soigné. On évite le registre « magazine santé lifestyle » (zéro titre du type « Les secrets d'un hiver sans rhume »). À la place : des faits, des services, des horaires, des noms. L'information est la politesse du soignant.
+6. **Nous trouver**  
+   *Titre :* 2 Avenue Théophile Gautier, 75016 Paris  
+   *Contenu :* Carte Google Maps intégrée, horaires complets jour par jour (avec prochaines gardes en évidence), métro le plus proche (Jasmin ou Église d’Auteuil), bus dispo. Bloc cliquable « Appeler un taxi ou réserver une livraison ».
 
----
+7. **Pied de page**  
+   *Contenu :* Rappel téléphone, email local (ex. contact@pharmacie-théophilegautier.fr), lien vers la page de confidentialité, crédits. Totalement désolidarisé de la plateforme Pharmactiv visible en surface.
 
-## 5. ACCROCHE HÉRO
+## 7. Signature visuelle
+1. **La croix néon comme motif mutique** – La croix verte `#39FF14` est le fil rouge du site : elle apparaît en version miniature à chaque changement de section (comme un repère visuel), en loader animé, ou en filigrane sur les photos d’ambiance. Elle signe l’identité locale bien plus que le logo réseau.
 
-**Titre (H1)** :  
-*Votre pharmacie au 2, avenue Théophile Gautier*
+2. **Typographie sculpturale** – Le nom complet « Pharmacie Theophile Gautier » est affiché une fois en très grand en Cormorant Garamond (graisse regular, lettres espacées avec élégance), comme une enseigne numérique. Il trône sur le héros et le pied de page, toujours en `#2C2B2B` sur fond pierre chaude. Aucun autre mot ne rivalise en taille avec ce balisage local.
 
-**Sous-titre** :  
-Croix néon verte, conseil humain, de 9h à 20h. L'officine qui veille sur le quartier.
-
-**Bouton primaire** : `01 42 88 05 65`
-
----
-
-## 6. SECTIONS (dans l'ordre d'apparition)
-
-### 6.1 — Services immédiats
-**Titre** : *Ordonnance, vaccin, urgence : tout est là.*  
-**Contenu** : Trois tuiles claires (pas de carrousel masqué) — « Ordonnance du jour » (délivrée sous 15 min sur place ou en click & collect), « Vaccination sans rendez-vous » (créneaux du matin, 9h-12h), « Pharmacie de garde » (numéro direct et géolocalisation).
-
-### 6.2 — L'équipe du 2, avenue Théophile Gautier
-**Titre** : *Vos pharmaciens, pas un algorithme.*  
-**Contenu** : Photo de l'équipe devant le comptoir (lumière froide, pas de portrait retouché). Une phrase sous la photo : « [Prénom du titulaire si dispo + ses associés/préparateurs, formulation réelle] vous répondent au 01 42 88 05 65, du lundi au samedi jusqu'à 20h. »
-
-### 6.3 — La pharmacie, en vrai
-**Titre** : *La façade que vous connaissez.*  
-**Contenu** : Grande photo pleine largeur de la vitrine au 2 avenue Théophile Gautier, enseigne néon verte visible. Texte d'accompagnement minimal : « Depuis [année si connue / faute de mieux ne pas inventer -> ne pas mettre], au cœur du 16e, entre rue de Passy et avenue Mozart. »
-
-### 6.4 — Nous trouver (parce que sans ça, rien ne sert)
-**Titre** : *Adresse, horaires, itinéraire.*  
-**Contenu** : Adresse en dur (2 avenue Théophile Gautier, 75016 Paris), téléphone réel (01 42 88 05 65), horaires exacts, embed Google Maps simple. Pas de moteur de recherche interne. Un bouton « Appeler maintenant » en vert néon.
-
-### 6.5 — Le lien vers le réseau (relégué, mais présent pour SEO)
-**Titre** : *Pharmacie membre du groupement Pharmactiv*  
-**Contenu** : Courte mention : « La Pharmacie Théophile Gautier fait partie des 1000 officines Pharmactiv. Un réseau indépendant pour des services étendus, sans renier l'âme de votre pharmacie de quartier. » Lien discret vers le portail si nécessaire.
-
----
-
-## 7. SIGNATURE VISUELLE
-
-**1. Le néon vert qui s'allume** — Le logo/croix de l'enseigne s'anime en CSS au chargement de la page : un effet de clignotement doux puis stabilisation, comme si on venait d'allumer la pharmacie. Le vert `#1BDF3C` pulse, puis tient. Cette animation ne se déclenche qu'**une fois par session** (pas de loop intempestif).
-
-**2. Moulures vecteur** — Dans les séparations de sections, des filets fins reprennent le tracé des moulures haussmanniennes visibles sur la façade réelle. Un détail discret, visible uniquement en desktop, qui ancre le site dans le bâtiment sans tomber dans le décoratif gratuit.
-
-**3. Typographie surdimensionnée contrôlée** — Le numéro de téléphone clé (`01 42 88 05 65`) est traité en Cormorant Garamond, corps massif, dans la couleur Pierre d'Auteuil sur fond Bitume — lisible au premier coup d'œil même en scroll rapide. C'est un ancrage visuel fort (le vrai numéro, pas celui du réseau).
-
----
-
-*Ce brief est prêt pour le design. Chaque décision — palette minérale + accent néon, voix directe, priorité absolue aux coordonnées réelles, signature lumineuse — répond aux faiblesses identifiées dans l'audit : absence d'identité locale, informations enfouies, ton générique, CTA dilués. Le site de la Pharmacie Théophile Gautier aura désormais une présence à la hauteur de sa façade.*
+Ces deux partis pris répondent à l’exigence de ne jamais produire un site générique et de faire de l’adresse réelle une icône immédiate pour le visiteur.
