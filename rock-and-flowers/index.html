@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock and Flowers — Fleurs artificielles d'exception, Paris 16ᵉ</title>
+    <meta name="description" content="Maison d'édition florale depuis 1992. Fleurs artificielles Real Touch fabriquées à la main à Paris. Artisanat d'art pour fleuristes, décorateurs et passionnés.">
+    <meta property="og:title" content="Rock and Flowers — La fleur qui ne cède jamais au temps">
+    <meta property="og:description" content="Depuis 1992, nous façonnons à la main des fleurs artificielles qui trompent le regard des plus grands fleuristes. Réalisme absolu, technique Real Touch, fabriqué en France.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-craie: #F7F5F2;
+            --terre-ombre: #2B2523;
+            --rose-petale: #D4A0A4;
+            --vert-tige: #6A7156;
+            --laiton: #A08C75;
+            --bleu-nuit: #1E2228;
+            --text-light: #F7F5F2;
+            --text-dark: #2B2523;
+            --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-medium: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: 0.2s ease-out;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(16px, 2.5vw, 18px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--blanc-craie);
+            color: var(--terre-ombre);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* === FILIGRANE ACANTHUS === */
+        .acanthus-bg {
+            position: relative;
+        }
+        .acanthus-bg::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2.2);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle at 30% 40%, transparent 20%, rgba(160, 140, 117, 0.06) 60%, transparent 80%),
+                repeating-radial-gradient(circle at 25% 35%, transparent 0px, transparent 18px, rgba(160, 140, 117, 0.04) 19px, transparent 20px),
+                radial-gradient(ellipse at 70% 60%, transparent 30%, rgba(212, 160, 164, 0.05) 70%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 50% 40% 55% 45%;
+            opacity: 0.7;
+            animation: acanthus-breathe 12s ease-in-out infinite;
+        }
+        @keyframes acanthus-breathe {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(2.2) rotate(0deg);
+            }
+            25% {
+                transform: translate(-50%, -50%) scale(2.25) rotate(1.5deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(2.15) rotate(-1deg);
+            }
+            75% {
+                transform: translate(-50%, -50%) scale(2.3) rotate(0.5deg);
+            }
+        }
+
+        /* === TYPOGRAPHIE === */
+        h1,
+        h2,
+        h3,
+        .display-font {
+            font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+        }
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            letter-spacing: -0.02em;
+            font-weight: 500;
+        }
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5em;
+            position: relative;
+            z-index: 1;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 500;
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--laiton);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 245, 242, 0.82);
+            backdrop-filter: blur(14px) saturate(130%);
+            -webkit-backdrop-filter: blur(14px) saturate(130%);
+            border-bottom: 1px solid rgba(160, 140, 117, 0.2);
+            transition: background var(--transition-medium), border-color var(--transition-medium);
+            padding: 0.8rem 0;
+        }
+        .site-header.scrolled {
+            background: rgba(247, 245, 242, 0.94);
+            border-bottom-color: rgba(160, 140, 117, 0.35);
+            box-shadow: 0 2px 20px rgba(43, 37, 35, 0.06);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--terre-ombre);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .logo .logo-icon {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--vert-tige);
+            border-radius: 50% 40% 50% 40%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .logo .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 20px;
+            height: 20px;
+            background: var(--rose-petale);
+            border-radius: 45% 55% 45% 55%;
+            opacity: 0.8;
+        }
+        .logo:hover {
+            color: var(--rose-petale);
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.8rem, 2vw, 2rem);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-list a {
+            text-decoration: none;
+            color: var(--terre-ombre);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: color var(--transition-fast);
+            position: relative;
+            padding: 0.3rem 0;
+            white-space: nowrap;
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--rose-petale);
+            transition: width var(--transition-medium);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-list a:hover {
+            color: var(--rose-petale);
+        }
+        .nav-cta {
+            background: var(--terre-ombre);
+            color: var(--blanc-craie) !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 2px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: background var(--transition-fast), transform var(--transition-fast);
+            font-size: 0.85rem;
+        }
+        .nav-cta:hover {
+            background: var(--bleu-nuit);
+            color: #fff !important;
+            transform: translateY(-1px);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--terre-ombre);
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--terre-ombre);
+            margin: 5px 0;
+            transition: var(--transition-fast);
+            border-radius: 1px;
+        }
+
+        /* === HERO === */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+            background: var(--blanc-craie);
+        }
+        .hero-grid {
+            max-width: 1300px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            margin-bottom: 0.5rem;
+            color: var(--terre-ombre);
+            position: relative;
+        }
+        .hero-text .subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-weight: 400;
+            color: var(--laiton);
+            max-width: 460px;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(247, 245, 242, 0.9);
+            border: 1px solid var(--laiton);
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--terre-ombre);
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .stars {
+            color: #c7913b;
+            letter-spacing: 0.15em;
+            font-size: 1rem;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-height: 70vh;
+            box-shadow: 20px 20px 60px rgba(43, 37, 35, 0.15), -4px -4px 20px rgba(212, 160, 164, 0.1);
+            background: var(--laiton);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: saturate(0.9) contrast(1.03);
+            mix-blend-mode: normal;
+        }
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 160, 164, 0.12) 0%, transparent 50%, rgba(106, 113, 86, 0.08) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-accent-line {
+            position: absolute;
+            top: 20%;
+            left: -5%;
+            width: 1px;
+            height: 60%;
+            background: linear-gradient(to bottom, transparent, var(--laiton), transparent);
+            opacity: 0.4;
+            z-index: 0;
+            display: none;
+        }
+
+        /* === SECTIONS GÉNÉRALES === */
+        section {
+            padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3rem);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+        }
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--laiton);
+            margin: 1rem 0 1.5rem;
+            border-radius: 1px;
+        }
+
+        /* === SAVOIR-FAIRE === */
+        .savoir-faire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+        .savoir-faire-text {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--terre-ombre);
+        }
+        .savoir-faire-text .highlight {
+            color: var(--rose-petale);
+            font-weight: 600;
+        }
+        .savoir-faire-visual {
+            position: relative;
+            aspect-ratio: 1/1;
+            background: var(--bleu-nuit);
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 15px 15px 50px rgba(30, 34, 40, 0.25);
+        }
+        .savoir-faire-visual .inner-texture {
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse at 40% 30%, rgba(212, 160, 164, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(106, 113, 86, 0.25) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255, 255, 255, 0.02) 4px, rgba(255, 255, 255, 0.02) 5px);
+            border-radius: 2px;
+            animation: texture-shift 8s ease-in-out infinite;
+        }
+        @keyframes texture-shift {
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        /* === COLLECTION === */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .flower-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(160, 140, 117, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(43, 37, 35, 0.04);
+        }
+        .flower-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(43, 37, 35, 0.12);
+            border-color: var(--rose-petale);
+        }
+        .flower-card-image {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            position: relative;
+            background: #e8e4df;
+        }
+        .flower-card-image .flower-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-medium), filter var(--transition-medium);
+            filter: saturate(0.85) brightness(1.02);
+        }
+        .flower-card:hover .flower-img {
+            transform: scale(1.06);
+            filter: saturate(1) brightness(1.06);
+        }
+        .flower-card-image .effleurement-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(30, 34, 40, 0.5) 100%);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .flower-card:hover .effleurement-overlay {
+            opacity: 1;
+        }
+        .effleurement-overlay .hand-hint {
+            color: #fff;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            animation: hint-fade 0.6s ease-out;
+        }
+        @keyframes hint-fade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .flower-card-body {
+            padding: 1.5rem;
+        }
+        .flower-card-body h3 {
+            margin-bottom: 0.3rem;
+            color: var(--terre-ombre);
+        }
+        .flower-card-body .flower-desc {
+            font-size: 0.85rem;
+            color: var(--laiton);
+            line-height: 1.5;
+        }
+
+        /* === PROJETS SUR MESURE === */
+        .projets-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+        .projets-visual {
+            aspect-ratio: 5/4;
+            background: linear-gradient(135deg, #e8e2da 0%, #d9d2c8 40%, #c4bcb0 100%);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 80px rgba(43, 37, 35, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .projets-visual .arch-sketch {
+            width: 70%;
+            height: 60%;
+            border: 2px dashed var(--laiton);
+            border-radius: 2px;
+            opacity: 0.5;
+            position: relative;
+        }
+        .projets-visual .arch-sketch::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 30%;
+            width: 40%;
+            height: 20px;
+            background: var(--rose-petale);
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+        .projets-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .projets-text li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(160, 140, 117, 0.2);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .projets-text li::before {
+            content: '•';
+            color: var(--rose-petale);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* === ABONNEMENT === */
+        .abonnement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .abo-card {
+            background: #fff;
+            border: 1px solid rgba(160, 140, 117, 0.25);
+            padding: 2.5rem 2rem;
+            border-radius: 2px;
+            text-align: center;
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+        .abo-card:hover {
+            border-color: var(--rose-petale);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(43, 37, 35, 0.08);
+        }
+        .abo-card .abo-tier {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--terre-ombre);
+        }
+        .abo-card .abo-price {
+            font-size: 0.9rem;
+            color: var(--laiton);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.04em;
+        }
+        .abo-card .abo-features {
+            list-style: none;
+            font-size: 0.9rem;
+            text-align: left;
+            color: var(--terre-ombre);
+            line-height: 2;
+        }
+        .abo-card.highlight {
+            border-color: var(--rose-petale);
+            background: rgba(212, 160, 164, 0.04);
+        }
+
+        /* === PLATEFORME PRO === */
+        .pro-section {
+            background: var(--bleu-nuit);
+            color: var(--text-light);
+        }
+        .pro-section h2 {
+            color: #fff;
+        }
+        .pro-section .section-label {
+            color: var(--laiton);
+        }
+        .pro-section .section-divider {
+            background: var(--laiton);
+        }
+        .pro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+        .pro-features {
+            list-style: none;
+        }
+        .pro-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(247, 245, 242, 0.15);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .pro-features li .pro-icon {
+            color: var(--rose-petale);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .pro-visual {
+            aspect-ratio: 1/1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(160, 140, 117, 0.3);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 6rem;
+            color: rgba(212, 160, 164, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .pro-visual::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(160, 140, 117, 0.2);
+            border-radius: 1px;
+        }
+
+        /* === HISTOIRE & CONTACT === */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+        }
+        .contact-info {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .contact-info a {
+            color: var(--terre-ombre);
+            text-decoration: none;
+            border-bottom: 1px solid var(--laiton);
+            transition: border-color var(--transition-fast);
+        }
+        .contact-info a:hover {
+            border-bottom-color: var(--rose-petale);
+            color: var(--rose-petale);
+        }
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(43, 37, 35, 0.1);
+            border: 1px solid rgba(160, 140, 117, 0.2);
+        }
+        .map-wrapper iframe {
+            display: block;
+            filter: grayscale(15%) brightness(1.02);
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--bleu-nuit);
+            color: rgba(247, 245, 242, 0.7);
+            padding: 3rem clamp(1.5rem, 5vw, 3rem) 2rem;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer-credit {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(160, 140, 117, 0.25);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(247, 245, 242, 0.5);
+            letter-spacing: 0.04em;
+        }
+
+        /* === ANIMATIONS REVEAL === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* === PREFERS REDUCED MOTION === */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* === FOCUS VISIBLE === */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--rose-petale);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .savoir-faire-grid,
+            .projets-grid,
+            .pro-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-image-wrapper {
+                max-height: 50vh;
+                aspect-ratio: 4/3;
+            }
+            .hero-section {
+                padding-top: 6rem;
+                min-height: auto;
+            }
+            .nav-list {
+                gap: 0.6rem;
+            }
+            .nav-list a {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(247, 245, 242, 0.97);
+                backdrop-filter: blur(20px);
+                padding: 1.5rem;
+                border-bottom: 1px solid rgba(160, 140, 117, 0.3);
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(43, 37, 35, 0.1);
+            }
+            .nav-list.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            h1 {
+                font-size: clamp(2rem, 7vw, 3.5rem);
+            }
+            h2 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+            section {
+                padding: 3rem 1.2rem;
+            }
+            .collection-grid,
+            .abonnement-grid {
+                grid-template-columns: 1fr;
+            }
+            .savoir-faire-visual {
+                aspect-ratio: 3/2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 5rem 1rem 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.7rem;
+            }
+            .site-header {
+                padding: 0.5rem 0;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Rock and Flowers — Accueil">
+                <span class="logo-icon"></span> Rock and Flowers
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#savoir-faire">Savoir-faire</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#projets">Sur mesure</a></li>
+                    <li><a href="#abonnement">Abonnement</a></li>
+                    <li><a href="#pro">Professionnels</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:+33140727121" class="nav-cta">Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section acanthus-bg" id="hero">
+            <div class="hero-accent-line"></div>
+            <div class="hero-grid">
+                <div class="hero-text reveal">
+                    <div class="hero-badge reveal reveal-delay-1">
+                        <span class="stars">★★★★★</span> 5/5 — 18 avis Google
+                    </div>
+                    <h1 class="reveal reveal-delay-2">La fleur qui ne cède jamais au temps.</h1>
+                    <p class="subtitle reveal reveal-delay-3">
+                        Depuis 1992, nous façonnons à la main des fleurs artificielles qui trompent le regard des plus grands fleuristes. Réalisme absolu, technique Real Touch, fabriqué en France.
+                    </p>
+                    <a href="#savoir-faire" class="nav-cta reveal reveal-delay-4" style="display:inline-block;">Découvrir le geste</a>
+                </div>
+                <div class="hero-image-wrapper reveal reveal-delay-2">
+                    <img src="assets/maps-1.jpg" alt="Atelier Rock and Flowers — Fleurs artificielles Real Touch" loading="eager" width="800" height="1000">
+                </div>
+            </div>
+        </section>
+
+        <!-- SAVOIR-FAIRE -->
+        <section id="savoir-faire" class="acanthus-bg">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">L'atelier</span>
+                    <h2>Un pétale, des heures d'atelier</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="savoir-faire-grid">
+                    <div class="savoir-faire-text reveal reveal-delay-1">
+                        <p>
+                            Chaque fleur est <span class="highlight">sculptée, moulée et assemblée à la main</span> dans notre atelier parisien. La technique exclusive <strong>Real Touch</strong> reproduit la texture soyeuse, le grain d'une nervure, la souplesse exacte d'une tige vivante.
+                        </p>
+                        <p style="margin-top:1rem;">
+                            Ce n'est pas de l'imitation, c'est une <em>recréation</em>. Nos artisans maîtrisent le limbe, la hampe, la bractée — chaque détail botanique est étudié, gauffré, patiné. Le résultat : une fleur qui supporte l'examen le plus rapproché, sans jamais trahir son secret.
+                        </p>
+                    </div>
+                    <div class="savoir-faire-visual reveal reveal-delay-2">
+                        <div class="inner-texture"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTION PERMANENTE -->
+        <section id="collection">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">Collection permanente</span>
+                    <h2>Nos fleurs signatures</h2>
+                    <div class="section-divider"></div>
+                    <p style="max-width:600px; color:var(--laiton); font-size:0.95rem;">
+                        Une sélection d'essences emblématiques, disponibles en ligne toute l'année, à poser telles quelles ou à intégrer à vos compositions d'intérieur.
+                    </p>
+                </div>
+                <div class="collection-grid">
+                    <div class="flower-card reveal reveal-delay-1">
+                        <div class="flower-card-image">
+                            <img src="assets/maps-1.jpg" alt="Orchidée Phalaenopsis Real Touch" class="flower-img" loading="lazy" width="400" height="533">
+                            <div class="effleurement-overlay">
+                                <span class="hand-hint">✧ Effleurer le pétale</span>
+                            </div>
+                        </div>
+                        <div class="flower-card-body">
+                            <h3>Orchidée Phalaenopsis</h3>
+                            <p class="flower-desc">Blanc pur ou rose poudré. Hampe élancée, fleurs soyeuses. La plus troublante de nos recréations.</p>
+                        </div>
+                    </div>
+                    <div class="flower-card reveal reveal-delay-2">
+                        <div class="flower-card-image">
+                            <img src="assets/maps-1.jpg" alt="Rose Forlove Real Touch" class="flower-img" loading="lazy" width="400" height="533" style="object-position: 50% 35%; filter: saturate(0.75) hue-rotate(-10deg) brightness(1.05);">
+                            <div class="effleurement-overlay">
+                                <span class="hand-hint">✧ Effleurer le pétale</span>
+                            </div>
+                        </div>
+                        <div class="flower-card-body">
+                            <h3>Rose Forlove</h3>
+                            <p class="flower-desc">Corolle généreuse, pétales froissés à la main. Disponible en cinq tons, du blush au pourpre profond.</p>
+                        </div>
+                    </div>
+                    <div class="flower-card reveal reveal-delay-3">
+                        <div class="flower-card-image">
+                            <img src="assets/maps-1.jpg" alt="Dahlia Baune Real Touch" class="flower-img" loading="lazy" width="400" height="533" style="object-position: 50% 60%; filter: saturate(0.8) hue-rotate(5deg) brightness(1.03);">
+                            <div class="effleurement-overlay">
+                                <span class="hand-hint">✧ Effleurer le pétale</span>
+                            </div>
+                        </div>
+                        <div class="flower-card-body">
+                            <h3>Dahlia Baune</h3>
+                            <p class="flower-desc">Pompon structuré, port altier. Une architecture florale à elle seule, pour les intérieurs exigeants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS SUR MESURE -->
+        <section id="projets" class="acanthus-bg">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">Sur mesure</span>
+                    <h2>Un décor pour votre lieu, à votre image</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="projets-grid">
+                    <div class="projets-visual reveal reveal-delay-1">
+                        <div class="arch-sketch"></div>
+                    </div>
+                    <div class="projets-text reveal reveal-delay-2">
+                        <p style="margin-bottom:1.5rem; color:var(--terre-ombre);">
+                            Cafés, restaurants, boutiques, halls d'hôtel : nous concevons et installons des <strong>architectures florales</strong> sur devis. Chaque projet est précédé d'une étude de votre volume, de votre lumière et de votre fréquentation pour un rendu qui ne s'efface jamais.
+                        </p>
+                        <ul>
+                            <li>Étude personnalisée de votre espace</li>
+                            <li>Conception sur plan et maquette</li>
+                            <li>Installation par nos équipes</li>
+                            <li>Suivi et renouvellement saisonnier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABONNEMENT -->
+        <section id="abonnement">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">Abonnement floral</span>
+                    <h2>Un nouveau chapitre fleuri chaque mois</h2>
+                    <div class="section-divider"></div>
+                    <p style="max-width:600px; color:var(--laiton); font-size:0.95rem;">
+                        Parce qu'un intérieur vit au rythme des saisons — même en fleurs artificielles. Recevez une composition exclusive pensée par nos fleuristes.
+                    </p>
+                </div>
+                <div class="abonnement-grid">
+                    <div class="abo-card reveal reveal-delay-1">
+                        <div class="abo-tier">Sérénade</div>
+                        <div class="abo-price">À partir de 49€ / mois</div>
+                        <ul class="abo-features">
+                            <li>✓ Une composition par mois</li>
+                            <li>✓ Format intime (25–35 cm)</li>
+                            <li>✓ Livraison incluse</li>
+                        </ul>
+                    </div>
+                    <div class="abo-card highlight reveal reveal-delay-2">
+                        <div class="abo-tier">Mélodie</div>
+                        <div class="abo-price">À partir de 79€ / mois</div>
+                        <ul class="abo-features">
+                            <li>✓ Une composition par mois</li>
+                            <li>✓ Format intermédiaire (40–55 cm)</li>
+                            <li>✓ Choix de la teinte dominante</li>
+                            <li>✓ Livraison incluse</li>
+                        </ul>
+                    </div>
+                    <div class="abo-card reveal reveal-delay-3">
+                        <div class="abo-tier">Lyric</div>
+                        <div class="abo-price">À partir de 129€ / mois</div>
+                        <ul class="abo-features">
+                            <li>✓ Une composition par mois</li>
+                            <li>✓ Format majeur (60–80 cm)</li>
+                            <li>✓ Création sur-mesure</li>
+                            <li>✓ Consultation avec un fleuriste</li>
+                            <li>✓ Livraison incluse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLATEFORME PRO -->
+        <section id="pro" class="pro-section">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">Espace professionnel</span>
+                    <h2>Artistes & fleuristes, composez sans limite</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="pro-grid">
+                    <div class="reveal reveal-delay-1">
+                        <ul class="pro-features">
+                            <li><span class="pro-icon">◆</span> Accédez à notre catalogue en prix professionnels</li>
+                            <li><span class="pro-icon">◆</span> Échangez avec notre studio de création</li>
+                            <li><span class="pro-icon">◆</span> Collaborez sur des pièces uniques</li>
+                            <li><span class="pro-icon">◆</span> Une section privée dédiée à ceux dont le métier est la beauté</li>
+                        </ul>
+                    </div>
+                    <div class="pro-visual reveal reveal-delay-2">
+                        R<span style="font-size:0.5em; vertical-align:super;">&</span>F
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTOIRE & CONTACT -->
+        <section id="contact" class="acanthus-bg">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-label">Histoire & contact</span>
+                    <h2>Prenez rendez-vous avec nous</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal reveal-delay-1">
+                        <p style="margin-bottom:1.5rem;">
+                            <strong>Rock and Flowers</strong> — Maison fondée en 1992. Partenaire de l'École Nationale des Fleuristes. Depuis trois décennies, nous défendons un artisanat d'excellence au service des professionnels les plus exigeants et des particuliers passionnés.
+                        </p>
+                        <p>
+                            📍 34 avenue du Président Kennedy, Paris 16ᵉ<br>
+                            📞 <a href="tel:+33140727121">01 40 72 71 21</a><br>
+                            ✉️ <a href="mailto:rockandflowers.com@gmail.com">rockandflowers.com@gmail.com</a>
+                        </p>
+                        <p style="margin-top:1rem; font-style:italic; color:var(--laiton);">
+                            Visite sur rendez-vous uniquement. Horaires à confirmer lors de la prise de contact.
+                        </p>
+                    </div>
+                    <div class="map-wrapper reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Rock+and+flowers+34+Avenue+du+Pr%C3%A9sident+Kennedy%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localisation de Rock and Flowers à Paris"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <strong style="color:#fff;">Rock and Flowers</strong><br>
+                34 avenue du Président Kennedy<br>
+                75016 Paris, France<br>
+                <a href="tel:+33140727121" style="color:inherit;">01 40 72 71 21</a>
+            </div>
+            <div>
+                <a href="mailto:rockandflowers.com@gmail.com" style="color:inherit;">rockandflowers.com@gmail.com</a><br>
+                Google : ★★★★★ 5/5 (18 avis)
+            </div>
+        </div>
+        <div class="footer-credit">
+            Site créé par Agence Mooo
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Rock and Flowers",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "34 avenue du Président Kennedy",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140727121",
+            "email": "rockandflowers.com@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "18"
+            },
+            "url": "https://agence.mooo.com/rock-and-flowers"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            let lastScrollY = 0;
+            const handleScroll = () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollY = scrollY;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const navList = document.getElementById('navList');
+            menuBtn.addEventListener('click', () => {
+                const expanded = navList.classList.toggle('active');
+                menuBtn.setAttribute('aria-expanded', expanded);
+            });
+            // Close menu on link click (mobile)
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -50px 0px',
+                    threshold: 0.15
+                };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+
+            // Smooth scroll for anchor links (already handled by CSS scroll-behavior)
+            // But ensure any non-smooth browser gets a polyfill-like experience
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 20;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Initial header state
+            handleScroll();
+        })();
+    </script>
+</body>
+</html>
