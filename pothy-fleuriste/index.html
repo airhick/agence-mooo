@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pothy Fleuriste | Artisan fleuriste à Issy-les-Moulineaux</title>
+    <meta name="description" content="Pothy Fleuriste, artisan fleuriste à Issy-les-Moulineaux. Bouquets sur mesure, livraison dès 40€, abonnements floraux et événements. Note 4.6/5 ★ – 43 avis.">
+    <meta property="og:title" content="Pothy Fleuriste | Artisan fleuriste à Issy-les-Moulineaux">
+    <meta property="og:description" content="Les fleurs ont leur langage. Nous en maîtrisons la grammaire. Bouquets sur mesure, livraison dès 40€, abonnements floraux.">
+    <meta property="og:image" content="https://agence.mooo.com/pothy-fleuriste/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/pothy-fleuriste">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://agence.mooo.com/pothy-fleuriste">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --anthracite: #1E1E1E;
+            --coquillage: #F5F0E8;
+            --corail: #E85D3A;
+            --vert-tige: #3B7D4F;
+            --laiton: #C1A36E;
+            --gris-beton: #2A2A2A;
+            --display: 'Syne', sans-serif;
+            --body: 'Outfit', sans-serif;
+            --letter-spacing-display: 0.15em;
+            --transition-smooth: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--anthracite);
+            color: var(--coquillage);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--corail);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--corail);
+            color: var(--coquillage);
+        }
+
+        /* Laiton separator */
+        .laiton-separator {
+            display: block;
+            height: 1px;
+            background: var(--laiton);
+            border: none;
+            width: 100%;
+            max-width: 120px;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin: 0 0 1.5rem 0;
+        }
+        .laiton-separator.revealed {
+            transform: scaleX(1);
+        }
+        .laiton-separator.centered {
+            margin-left: auto;
+            margin-right: auto;
+            transform-origin: center;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: scale(0.82) translateY(18px);
+            transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.34, 1.2, 0.64, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.40s;
+        }
+        .reveal-delay-6 {
+            transition-delay: 0.48s;
+        }
+        .reveal-delay-7 {
+            transition-delay: 0.56s;
+        }
+        .reveal-delay-8 {
+            transition-delay: 0.64s;
+        }
+        .reveal-delay-9 {
+            transition-delay: 0.72s;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(30, 30, 30, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(193, 163, 110, 0.18);
+            padding: 0.75rem 1.25rem;
+            transition: padding 0.35s ease, background 0.35s ease;
+        }
+        .site-header.scrolled {
+            padding: 0.5rem 1.25rem;
+            background: rgba(30, 30, 30, 0.94);
+            border-bottom-color: rgba(193, 163, 110, 0.3);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .brand-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            letter-spacing: var(--letter-spacing-display);
+            text-transform: uppercase;
+            color: var(--coquillage);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .brand-name span {
+            color: var(--corail);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--coquillage);
+            text-decoration: none;
+            padding: 0.45rem 0.7rem;
+            border-radius: 4px;
+            transition: color 0.3s, background 0.3s;
+            white-space: nowrap;
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--laiton);
+            background: rgba(193, 163, 110, 0.08);
+        }
+        .header-cta {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--corail);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.25s;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .header-cta:hover {
+            background: #d14a2a;
+            transform: translateY(-1px);
+        }
+        .google-badge-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: var(--laiton);
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+        .google-badge-header .stars {
+            color: #F4B400;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 6rem 1.5rem 4rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.45) saturate(1.1) contrast(1.05);
+            transform: scale(1.03);
+            animation: hero-ken-burns 18s ease-in-out infinite alternate;
+        }
+        @keyframes hero-ken-burns {
+            0% {
+                transform: scale(1.03) translate(0, 0);
+            }
+            100% {
+                transform: scale(1.12) translate(-1%, -0.8%);
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(30, 30, 30, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .hero-accent-line {
+            width: 60px;
+            height: 2px;
+            background: var(--corail);
+            margin: 0 auto 1.8rem;
+            transform: scaleX(0);
+            animation: line-reveal 0.9s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            transform-origin: center;
+        }
+        @keyframes line-reveal {
+            to {
+                transform: scaleX(1);
+            }
+        }
+        .hero h1 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2rem, 5.5vw, 3.6rem);
+            letter-spacing: var(--letter-spacing-display);
+            text-transform: uppercase;
+            line-height: 1.15;
+            color: var(--coquillage);
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        @keyframes fade-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            color: rgba(245, 240, 232, 0.85);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fade-up 0.8s 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(12px);
+            animation: fade-up 0.8s 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        .btn-primary {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--corail);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(232, 93, 58, 0.3);
+        }
+        .btn-outline {
+            font-family: var(--display);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: transparent;
+            color: var(--coquillage);
+            padding: 0.8rem 1.9rem;
+            border-radius: 3px;
+            text-decoration: none;
+            border: 1.5px solid var(--laiton);
+            transition: background 0.3s, border-color 0.3s, transform 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-outline:hover {
+            background: rgba(193, 163, 110, 0.1);
+            border-color: var(--coquillage);
+            transform: translateY(-2px);
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            opacity: 0;
+            animation: fade-up 0.8s 1.3s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        .hero-scroll-indicator span {
+            display: block;
+            width: 28px;
+            height: 28px;
+            border-right: 2px solid var(--laiton);
+            border-bottom: 2px solid var(--laiton);
+            transform: rotate(45deg);
+            animation: scroll-bob 2s ease-in-out infinite;
+        }
+        @keyframes scroll-bob {
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(8px);
+            }
+        }
+
+        /* Section commune */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--laiton);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            letter-spacing: var(--letter-spacing-display);
+            text-transform: uppercase;
+            color: var(--coquillage);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Section Atelier */
+        .atelier-section {
+            background: var(--gris-beton);
+            position: relative;
+            overflow: hidden;
+        }
+        .atelier-filigrane {
+            position: absolute;
+            top: -60px;
+            right: -80px;
+            width: 380px;
+            height: 380px;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 0;
+            transform: rotate(15deg);
+        }
+        .atelier-filigrane svg {
+            width: 100%;
+            height: 100%;
+        }
+        .atelier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .atelier-image-wrap {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            aspect-ratio: 4/5;
+        }
+        .atelier-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: grayscale(100%) contrast(1.15) brightness(0.9);
+            transition: filter 0.6s;
+        }
+        .atelier-image-wrap:hover img {
+            filter: grayscale(60%) contrast(1.05) brightness(0.95);
+        }
+        .atelier-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(30, 30, 30, 0.5) 100%);
+            pointer-events: none;
+        }
+        .signature {
+            font-family: 'Outfit', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--laiton);
+            letter-spacing: 0.04em;
+            margin-top: 1.2rem;
+            display: block;
+            opacity: 0.85;
+        }
+        .atelier-text p {
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            line-height: 1.8;
+            color: rgba(245, 240, 232, 0.82);
+            margin-bottom: 1rem;
+        }
+
+        /* Section Galerie */
+        .galerie-section {
+            background: var(--anthracite);
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+        .galerie-item {
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            transition: box-shadow 0.4s, transform 0.4s;
+            background: var(--gris-beton);
+        }
+        .galerie-item:hover {
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.5s;
+        }
+        .galerie-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.1) saturate(1.15);
+        }
+        .galerie-tag {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(30, 30, 30, 0.85);
+            color: var(--coquillage);
+            padding: 0.35rem 0.75rem;
+            border-radius: 2px;
+            border-left: 2px solid var(--corail);
+            backdrop-filter: blur(4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .galerie-item:nth-child(3n + 1) img {
+            object-position: center 20%;
+        }
+        .galerie-item:nth-child(3n + 2) img {
+            object-position: center 60%;
+        }
+        .galerie-item:nth-child(3n + 3) img {
+            object-position: center 80%;
+        }
+        .galerie-item:nth-child(2n) img {
+            filter: saturate(1.08) brightness(1.03);
+        }
+        .galerie-item:nth-child(5) img,
+        .galerie-item:nth-child(7) img {
+            filter: contrast(1.06) brightness(0.96);
+        }
+
+        /* Section Services */
+        .services-section {
+            background: var(--gris-beton);
+            position: relative;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 2.5rem;
+        }
+        .service-card {
+            background: var(--anthracite);
+            border-radius: 3px;
+            padding: 2rem 1.8rem;
+            border-top: 3px solid transparent;
+            transition: border-color 0.4s, transform 0.35s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
+        .service-card.card-corail {
+            border-top-color: var(--corail);
+        }
+        .service-card.card-vert {
+            border-top-color: var(--vert-tige);
+        }
+        .service-card.card-laiton {
+            border-top-color: var(--laiton);
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            line-height: 1;
+        }
+        .service-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--coquillage);
+            margin-bottom: 0.7rem;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(245, 240, 232, 0.72);
+            margin-bottom: 1.4rem;
+        }
+        .service-card .btn-small {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.1rem;
+            border-radius: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-corail {
+            background: var(--corail);
+            color: #fff;
+        }
+        .btn-corail:hover {
+            background: #d14a2a;
+            box-shadow: 0 6px 20px rgba(232, 93, 58, 0.35);
+        }
+        .btn-vert {
+            background: var(--vert-tige);
+            color: #fff;
+        }
+        .btn-vert:hover {
+            background: #2e6640;
+            box-shadow: 0 6px 20px rgba(59, 125, 79, 0.35);
+        }
+        .btn-laiton {
+            background: var(--laiton);
+            color: #1E1E1E;
+        }
+        .btn-laiton:hover {
+            background: #b08e55;
+            box-shadow: 0 6px 20px rgba(193, 163, 110, 0.35);
+        }
+
+        /* Section Avis */
+        .avis-section {
+            background: var(--anthracite);
+            position: relative;
+        }
+        .avis-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--gris-beton);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--coquillage);
+            letter-spacing: 0.03em;
+            border: 1px solid rgba(193, 163, 110, 0.25);
+        }
+        .avis-rating-badge .big-stars {
+            color: #F4B400;
+            font-size: 1.3rem;
+            letter-spacing: 0.08em;
+        }
+        .avis-rating-badge .note-chiffre {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+        .avis-slider-wrap {
+            position: relative;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+        .avis-slider {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+            will-change: transform;
+        }
+        .avis-card {
+            flex: 0 0 clamp(280px, 40vw, 380px);
+            background: var(--gris-beton);
+            border-radius: 4px;
+            padding: 1.8rem;
+            border-left: 3px solid var(--laiton);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: border-color 0.3s;
+        }
+        .avis-card:hover {
+            border-left-color: var(--corail);
+        }
+        .avis-stars {
+            color: #F4B400;
+            letter-spacing: 0.06em;
+            font-size: 0.95rem;
+        }
+        .avis-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(245, 240, 232, 0.8);
+            flex: 1;
+            font-style: italic;
+        }
+        .avis-author {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--laiton);
+        }
+        .avis-thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--laiton);
+            flex-shrink: 0;
+        }
+        .slider-nav {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+        .slider-nav button {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid var(--laiton);
+            background: transparent;
+            color: var(--laiton);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-nav button:hover {
+            background: var(--laiton);
+            color: #1E1E1E;
+            border-color: var(--laiton);
+        }
+
+        /* Section Contact */
+        .contact-section {
+            background: var(--gris-beton);
+            position: relative;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: rgba(245, 240, 232, 0.8);
+            line-height: 1.5;
+        }
+        .contact-info-item .ci-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .contact-info-item strong {
+            display: block;
+            font-family: var(--display);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--coquillage);
+            font-size: 0.78rem;
+            margin-bottom: 0.2rem;
+        }
+        .contact-info-item a {
+            color: var(--laiton);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+        .contact-info-item a:hover {
+            color: var(--corail);
+        }
+        .horaires-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 0.5rem;
+        }
+        .horaires-table td {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(193, 163, 110, 0.15);
+            color: rgba(245, 240, 232, 0.75);
+        }
+        .horaires-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+            color: var(--coquillage);
+        }
+        .horaires-note {
+            font-size: 0.72rem;
+            color: rgba(245, 240, 232, 0.5);
+            font-style: italic;
+            margin-top: 0.5rem;
+            display: block;
+        }
+        .map-wrap {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+            height: 100%;
+            min-height: 320px;
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+        }
+        .form-devis {
+            background: var(--anthracite);
+            padding: 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+            border: 1px solid rgba(193, 163, 110, 0.2);
+        }
+        .form-devis h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--coquillage);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-devis input,
+        .form-devis textarea,
+        .form-devis select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--gris-beton);
+            border: 1px solid rgba(193, 163, 110, 0.3);
+            color: var(--coquillage);
+            font-family: var(--body);
+            font-size: 0.9rem;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+            resize: vertical;
+        }
+        .form-devis input:focus,
+        .form-devis textarea:focus,
+        .form-devis select:focus {
+            border-color: var(--corail);
+            outline: none;
+        }
+        .form-devis textarea {
+            min-height: 100px;
+        }
+        .form-devis .btn-submit {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--corail);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.25s;
+        }
+        .form-devis .btn-submit:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #181818;
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(193, 163, 110, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-filigrane {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .footer-filigrane svg {
+            width: 100%;
+            height: 100%;
+        }
+        .footer-brand {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: var(--letter-spacing-display);
+            text-transform: uppercase;
+            color: var(--coquillage);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-address {
+            font-size: 0.85rem;
+            color: rgba(245, 240, 232, 0.6);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-address a {
+            color: var(--laiton);
+            text-decoration: none;
+        }
+        .footer-address a:hover {
+            color: var(--corail);
+        }
+        .footer-madeby {
+            font-size: 0.7rem;
+            color: rgba(245, 240, 232, 0.35);
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Monstera SVG filigrane */
+        .monstera-filigrane-svg {
+            fill: var(--laiton);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .atelier-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .atelier-image-wrap {
+                aspect-ratio: 3/4;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+            .galerie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .header-nav {
+                display: none;
+            }
+            .header-inner {
+                gap: 0.6rem;
+            }
+        }
+        @media (max-width: 560px) {
+            .galerie-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .avis-card {
+                flex: 0 0 82vw;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .section {
+                padding: 3.5rem 1rem;
+            }
+            .section-title {
+                font-size: 1.35rem;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.45rem 0.9rem;
+            }
+            .google-badge-header {
+                font-size: 0.68rem;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .laiton-separator {
+                transform: scaleX(1);
+                transition: none;
+            }
+            .hero-bg img {
+                animation: none;
+            }
+            .hero h1,
+            .hero-subtitle,
+            .hero-cta-group,
+            .hero-scroll-indicator,
+            .hero-accent-line {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .galerie-item:hover img {
+                transform: none;
+            }
+            .service-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#hero" class="brand-name">Pothy<span>.</span>Fleuriste</a>
+            <div class="google-badge-header" aria-label="Note Google 4.6 sur 5 basée sur 43 avis">
+                <span class="stars">★★★★★</span> 4.6/5 <span style="opacity:0.7;">(43 avis)</span>
+            </div>
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a href="#atelier">Atelier</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#services">Services</a>
+                <a href="#avis">Avis</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:+33146488401" class="header-cta" aria-label="Appeler Pothy Fleuriste">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Appeler
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Composition florale Pothy Fleuriste" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-accent-line"></div>
+                <h1>Les fleurs ont leur langage.<br>Nous en maîtrisons la grammaire.</h1>
+                <p class="hero-subtitle">Artisan fleuriste depuis 2008, Pothy compose, livre et entretient vos émotions à Issy-les-Moulineaux — <strong style="color:#E85D3A;font-weight:600;">à partir de 40&nbsp;€</strong>.</p>
+                <div class="hero-cta-group">
+                    <a href="#galerie" class="btn-primary">Découvrir nos créations</a>
+                    <a href="#contact" class="btn-outline">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true"><span></span></div>
+        </section>
+
+        <!-- ATELIER & GESTE -->
+        <section class="section atelier-section" id="atelier">
+            <div class="atelier-filigrane" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="monstera-filigrane-svg">
+                    <path d="M100 10 C60 10 25 40 20 75 C15 110 30 140 55 155 C50 135 40 105 45 80 C48 60 60 40 80 35 C75 25 60 18 45 22 C55 30 58 45 55 60 C52 75 40 88 28 90 C18 92 10 85 8 72 C6 58 14 40 30 30 C20 25 12 32 8 42 C4 52 8 65 18 72 C12 78 5 76 3 65 C1 50 10 28 28 18 C45 8 68 12 85 25 C95 18 108 14 120 18 C135 22 148 35 152 55 C156 75 150 98 138 112 C130 98 118 88 105 85 C95 82 85 88 82 98 C78 110 85 125 95 132 C88 142 75 148 60 148 C45 148 30 140 22 128 C28 135 38 140 50 140 C65 140 78 132 85 120 C78 125 68 128 58 125 C48 122 40 114 38 102 C36 90 42 78 52 72 C60 78 65 88 63 98 C60 108 52 115 42 118 C55 128 72 130 88 122 C98 155 80 185 100 190 C120 185 102 155 112 122 C128 130 145 128 158 118 C148 115 140 108 137 98 C135 88 140 78 148 72 C158 78 164 90 162 102 C160 114 152 122 142 125 C132 128 122 125 115 120 C122 132 135 140 150 140 C162 140 172 135 178 128 C170 140 155 148 140 148 C125 148 112 142 105 132 C115 125 122 110 118 98 C114 88 105 82 95 85 C82 88 70 98 62 112 C52 98 44 75 48 55 C52 35 65 22 80 18 C92 14 108 18 115 25 C132 12 155 8 172 18 C190 28 199 50 197 65 C195 76 188 78 182 72 C192 65 196 52 192 42 C188 32 180 25 170 30 C186 40 194 58 192 72 C190 85 182 92 172 90 C160 88 148 75 145 60 C142 45 145 30 155 22 C140 18 125 25 120 35 C140 40 152 60 155 80 C158 105 150 135 145 155 C170 140 185 110 180 75 C175 40 160 10 100 10Z"/>
+                </svg>
+            </div>
+            <div class="section-inner">
+                <div class="atelier-grid">
+                    <div class="atelier-image-wrap reveal">
+                        <img src="assets/maps-1.jpg" alt="Pothy, artisan fleuriste au travail à Issy-les-Moulineaux" loading="lazy">
+                    </div>
+                    <div class="atelier-text">
+                        <span class="section-label reveal reveal-delay-1">L'atelier</span>
+                        <h2 class="section-title reveal reveal-delay-2">L'homme derrière le bouquet</h2>
+                        <hr class="laiton-separator reveal reveal-delay-3" aria-hidden="true">
+                        <p class="reveal reveal-delay-3">Pothy, fleuriste de quartier, travaille chaque tige comme une ligne d'écriture. Ni chaîne, ni catalogue figé : tout naît du dialogue avec la fleur et avec vous.</p>
+                        <p class="reveal reveal-delay-4">Dans son atelier d'Issy-les-Moulineaux, chaque composition est pensée comme une architecture végétale — structure, texture, respiration. La main écoute, le bouquet raconte.</p>
+                        <span class="signature reveal reveal-delay-5">— Pothy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE D'ENVIES -->
+        <section class="section galerie-section" id="galerie">
+            <div class="section-inner">
+                <span class="section-label reveal">Nos réalisations</span>
+                <h2 class="section-title reveal reveal-delay-1">Ce que nous créons pour vous</h2>
+                <hr class="laiton-separator reveal reveal-delay-2" aria-hidden="true">
+                <div class="galerie-grid">
+                    <div class="galerie-item reveal reveal-delay-1">
+                        <img src="assets/maps-2.jpg" alt="Bouquet quotidien Pothy Fleuriste" loading="lazy">
+                        <span class="galerie-tag">Quotidien</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-2">
+                        <img src="assets/maps-2.jpg" alt="Composition mariage Pothy Fleuriste" loading="lazy">
+                        <span class="galerie-tag">Mariage</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-3">
+                        <img src="assets/maps-2.jpg" alt="Arrangement floral Pothy Fleuriste" loading="lazy">
+                        <span class="galerie-tag">Deuil</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-4">
+                        <img src="assets/maps-2.jpg" alt="Abonnement floral Pothy Fleuriste" loading="lazy">
+                        <span class="galerie-tag">Abonnement</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-5">
+                        <img src="assets/maps-2.jpg" alt="Bouquet quotidien Pothy" loading="lazy">
+                        <span class="galerie-tag">Quotidien</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-6">
+                        <img src="assets/maps-2.jpg" alt="Composition mariage Issy" loading="lazy">
+                        <span class="galerie-tag">Mariage</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-7">
+                        <img src="assets/maps-2.jpg" alt="Arrangement deuil Pothy" loading="lazy">
+                        <span class="galerie-tag">Deuil</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-8">
+                        <img src="assets/maps-2.jpg" alt="Abonnement floral entreprise" loading="lazy">
+                        <span class="galerie-tag">Abonnement</span>
+                    </div>
+                    <div class="galerie-item reveal reveal-delay-9">
+                        <img src="assets/maps-2.jpg" alt="Bouquet Pothy Fleuriste" loading="lazy">
+                        <span class="galerie-tag">Quotidien</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES À LA CARTE -->
+        <section class="section services-section" id="services">
+            <div class="section-inner">
+                <span class="section-label reveal">Nos services</span>
+                <h2 class="section-title reveal reveal-delay-1">À chaque besoin, une réponse fleurie</h2>
+                <hr class="laiton-separator reveal reveal-delay-2" aria-hidden="true">
+                <div class="services-grid">
+                    <div class="service-card card-corail reveal reveal-delay-1">
+                        <span class="service-icon">🚚</span>
+                        <h3>Livraison dès 40&nbsp;€</h3>
+                        <p>Nous déposons vos bouquets à domicile sur Issy et alentours, fraîcheur garantie. Chaque livraison est soignée comme un présent.</p>
+                        <a href="#contact" class="btn-small btn-corail">Je réserve mon créneau</a>
+                    </div>
+                    <div class="service-card card-vert reveal reveal-delay-2">
+                        <span class="service-icon">🌿</span>
+                        <h3>Abonnement floral</h3>
+                        <p>Particuliers, entreprises : un devis sur mesure pour des livraisons régulières. Votre espace fleuri, sans y penser.</p>
+                        <a href="#contact" class="btn-small btn-vert">Demander un devis</a>
+                    </div>
+                    <div class="service-card card-laiton reveal reveal-delay-3">
+                        <span class="service-icon">✨</span>
+                        <h3>Événements</h3>
+                        <p>Mariages, deuils, inaugurations — contactez-nous pour une proposition personnalisée, pensée pour votre moment.</p>
+                        <a href="#contact" class="btn-small btn-laiton">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANCE PARTAGÉE -->
+        <section class="section avis-section" id="avis">
+            <div class="section-inner">
+                <span class="section-label reveal">Ils nous font confiance</span>
+                <h2 class="section-title reveal reveal-delay-1">Ils ont posé les yeux sur nos compositions</h2>
+                <hr class="laiton-separator reveal reveal-delay-2" aria-hidden="true">
+                <div class="avis-rating-badge reveal reveal-delay-2">
+                    <span class="big-stars">★★★★★</span>
+                    <span class="note-chiffre">4.6/5</span>
+                    <span>sur 43 avis Google</span>
+                </div>
+                <div class="avis-slider-wrap reveal reveal-delay-3">
+                    <div class="avis-slider" id="avisSlider">
+                        <div class="avis-card">
+                            <div class="avis-stars">★★★★★</div>
+                            <p class="avis-text">« Un accueil chaleureux et des compositions qui sortent de l'ordinaire. Pothy a su comprendre exactement ce que je voulais pour l'anniversaire de ma femme. Les fleurs étaient magnifiques et ont tenu presque deux semaines. »</p>
+                            <span class="avis-author">— Marc L.</span>
+                        </div>
+                        <div class="avis-card">
+                            <div class="avis-stars">★★★★★</div>
+                            <p class="avis-text">« Livraison impeccable dans les temps, bouquet encore plus beau que sur la photo envoyée. Un vrai artisan qui aime son métier, ça se voit tout de suite. Je recommande les yeux fermés. »</p>
+                            <span class="avis-author">— Sophie D.</span>
+                        </div>
+                        <div class="avis-card">
+                            <div class="avis-stars">★★★★☆</div>
+                            <p class="avis-text">« Très belle boutique de quartier. J'ai pris un abonnement pour mon cabinet, les compositions sont toujours variées et de saison. Un seul bémol sur les horaires parfois un peu fluctuants, mais la qualité est au rendez-vous. »</p>
+                            <span class="avis-author">— Thomas R.</span>
+                        </div>
+                        <div class="avis-card">
+                            <div class="avis-stars">★★★★★</div>
+                            <p class="avis-text">« Pothy a réalisé les compositions pour notre mariage. Un travail d'une finesse incroyable, tout le monde a remarqué la beauté des centres de table. Merci infiniment pour cette journée inoubliable. »</p>
+                            <span class="avis-author">— Claire & Antoine</span>
+                        </div>
+                        <div class="avis-card">
+                            <div class="avis-stars">★★★★★</div>
+                            <p class="avis-text">« Des fleurs qui ont du caractère ! On est loin des bouquets standardisés. Chaque visite à l'atelier est une découverte. Le rapport qualité-prix est excellent pour du sur-mesure. »</p>
+                            <span class="avis-author">— Nadia K.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button id="sliderPrev" aria-label="Témoignage précédent">←</button>
+                    <button id="sliderNext" aria-label="Témoignage suivant">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- À DEUX PAS DE CHEZ VOUS -->
+        <section class="section contact-section" id="contact">
+            <div class="section-inner">
+                <span class="section-label reveal">Venir nous voir</span>
+                <h2 class="section-title reveal reveal-delay-1">Pousser la porte de l'atelier</h2>
+                <hr class="laiton-separator reveal reveal-delay-2" aria-hidden="true">
+                <div class="contact-grid">
+                    <div class="contact-info reveal reveal-delay-2">
+                        <div class="contact-info-item">
+                            <span class="ci-icon">📍</span>
+                            <div>
+                                <strong>Adresse</strong>
+                                44 bis Rue Ernest Renan<br>92130 Issy-les-Moulineaux
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="ci-icon">📞</span>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <a href="tel:+33146488401">01 46 48 84 01</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="ci-icon">✉️</span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:pothy.fleuriste@orange.fr">pothy.fleuriste@orange.fr</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="ci-icon">🕐</span>
+                            <div>
+                                <strong>Horaires d'ouverture</strong>
+                                <table class="horaires-table">
+                                    <tr><td>Lundi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Mardi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Mercredi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Jeudi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Vendredi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Samedi</td><td>9h – 19h</td></tr>
+                                    <tr><td>Dimanche</td><td>9h – 13h</td></tr>
+                                </table>
+                                <span class="horaires-note">Horaires indicatifs — nous vous invitons à nous contacter pour confirmer.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-wrap reveal reveal-delay-3">
+                        <iframe src="https://maps.google.com/maps?q=POTHY+FLEURISTE+44+bis+Rue+Ernest+Renan%2C+Issy-les-Moulineaux&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Pothy Fleuriste à Issy-les-Moulineaux"></iframe>
+                    </div>
+                </div>
+                <div class="form-devis reveal reveal-delay-4" id="formDevis">
+                    <h3>Demande de devis — Abonnement floral</h3>
+                    <form action="#" method="post" onsubmit="event.preventDefault(); alert('Merci ! Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.'); this.reset();">
+                        <div class="form-row">
+                            <input type="text" name="nom" placeholder="Votre nom *" required aria-label="Votre nom">
+                            <input type="email" name="email" placeholder="Votre email *" required aria-label="Votre email">
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" name="telephone" placeholder="Votre téléphone" aria-label="Votre téléphone">
+                            <select name="type" aria-label="Type de demande">
+                                <option value="">Type de demande</option>
+                                <option value="abonnement">Abonnement floral</option>
+                                <option value="mariage">Mariage</option>
+                                <option value="deuil">Deuil</option>
+                                <option value="evenement">Autre événement</option>
+                                <option value="livraison">Livraison</option>
+                            </select>
+                        </div>
+                        <textarea name="message" placeholder="Décrivez votre besoin (fréquence, type de fleurs, budget, dates...) *" required aria-label="Votre message" style="margin-bottom:1rem;"></textarea>
+                        <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-filigrane" aria-hidden="true">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="monstera-filigrane-svg">
+                <path d="M100 10 C60 10 25 40 20 75 C15 110 30 140 55 155 C50 135 40 105 45 80 C48 60 60 40 80 35 C75 25 60 18 45 22 C55 30 58 45 55 60 C52 75 40 88 28 90 C18 92 10 85 8 72 C6 58 14 40 30 30 C20 25 12 32 8 42 C4 52 8 65 18 72 C12 78 5 76 3 65 C1 50 10 28 28 18 C45 8 68 12 85 25 C95 18 108 14 120 18 C135 22 148 35 152 55 C156 75 150 98 138 112 C130 98 118 88 105 85 C95 82 85 88 82 98 C78 110 85 125 95 132 C88 142 75 148 60 148 C45 148 30 140 22 128 C28 135 38 140 50 140 C65 140 78 132 85 120 C78 125 68 128 58 125 C48 122 40 114 38 102 C36 90 42 78 52 72 C60 78 65 88 63 98 C60 108 52 115 42 118 C55 128 72 130 88 122 C98 155 80 185 100 190 C120 185 102 155 112 122 C128 130 145 128 158 118 C148 115 140 108 137 98 C135 88 140 78 148 72 C158 78 164 90 162 102 C160 114 152 122 142 125 C132 128 122 125 115 120 C122 132 135 140 150 140 C162 140 172 135 178 128 C170 140 155 148 140 148 C125 148 112 142 105 132 C115 125 122 110 118 98 C114 88 105 82 95 85 C82 88 70 98 62 112 C52 98 44 75 48 55 C52 35 65 22 80 18 C92 14 108 18 115 25 C132 12 155 8 172 18 C190 28 199 50 197 65 C195 76 188 78 182 72 C192 65 196 52 192 42 C188 32 180 25 170 30 C186 40 194 58 192 72 C190 85 182 92 172 90 C160 88 148 75 145 60 C142 45 145 30 155 22 C140 18 125 25 120 35 C140 40 152 60 155 80 C158 105 150 135 145 155 C170 140 185 110 180 75 C175 40 160 10 100 10Z"/>
+            </svg>
+        </div>
+        <p class="footer-brand">Pothy Fleuriste</p>
+        <p class="footer-address">
+            44 bis Rue Ernest Renan, 92130 Issy-les-Moulineaux<br>
+            <a href="tel:+33146488401">01 46 48 84 01</a> ·
+            <a href="mailto:pothy.fleuriste@orange.fr">pothy.fleuriste@orange.fr</a><br>
+            Artisanat floral à Issy-les-Moulineaux
+        </p>
+        <p class="footer-madeby">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Pothy Fleuriste",
+            "description": "Artisan fleuriste à Issy-les-Moulineaux. Bouquets sur mesure, livraison dès 40€, abonnements floraux et événements.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "44 bis Rue Ernest Renan",
+                "addressLocality": "Issy-les-Moulineaux",
+                "postalCode": "92130",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146488401",
+            "email": "pothy.fleuriste@orange.fr",
+            "image": "https://agence.mooo.com/pothy-fleuriste/assets/maps-1.jpg",
+            "url": "https://agence.mooo.com/pothy-fleuriste",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "43"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "13:00" }
+            ]
+        }
+    </script>
+
+    <script>
+        (function() {
+            // IntersectionObserver pour les reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            const separatorEls = document.querySelectorAll('.laiton-separator');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+            separatorEls.forEach(el => revealObserver.observe(el));
+
+            // Header scroll effect
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 60) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Slider avis
+            const slider = document.getElementById('avisSlider');
+            const prevBtn = document.getElementById('sliderPrev');
+            const nextBtn = document.getElementById('sliderNext');
+            let currentSlide = 0;
+            const totalSlides = slider ? slider.children.length : 0;
+            let cardWidth = 0;
+
+            function updateCardWidth() {
+                if (slider && slider.children.length > 0) {
+                    const firstCard = slider.children[0];
+                    cardWidth = firstCard.offsetWidth + 24; // 24 = gap
+                }
+            }
+
+            function goToSlide(index) {
+                if (!slider) return;
+                updateCardWidth();
+                const maxSlide = Math.max(0, totalSlides - Math.floor(slider.parentElement.offsetWidth / cardWidth));
+                currentSlide = Math.max(0, Math.min(index, maxSlide));
+                slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+            }
+
+            if (prevBtn && nextBtn && slider) {
+                prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+                nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+                window.addEventListener('resize', () => {
+                    updateCardWidth();
+                    goToSlide(currentSlide);
+                });
+                updateCardWidth();
+                goToSlide(0);
+
+                // Touch swipe
+                let touchStartX = 0;
+                let touchEndX = 0;
+                slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+                slider.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diff = touchStartX - touchEndX;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) goToSlide(currentSlide + 1);
+                        else goToSlide(currentSlide - 1);
+                    }
+                }, { passive: true });
+            }
+        })();
+    </script>
+</body>
+</html>
