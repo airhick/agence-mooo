@@ -1,57 +1,105 @@
-Voici le brief créatif pour le nouveau site vitrine de **La Gorgone**.
+# BRIEF CRÉATIF — La Gorgone
 
 ---
 
-### 1. Concept & positionnement
-La Gorgone n’est pas une boutique, c’est un repaire. Un antre parisien discret où la matière prend le pouvoir : on entre en curieux, on ressort initié. Le site ne se contente pas de montrer des produits, il distille une présence magnétique, à l’image d’un lieu qui transforme la visite en découverte personnelle. Tout l’enjeu est de créer un espace numérique qui respire l’intimité sophistiquée de la rue de la Convention — un secret bien gardé du 15e arrondissement, à deux pas du silence feutré des ateliers d’artistes.
+## 1. Concept & positionnement
 
-### 2. Direction artistique
-**Parti pris : « Cabinet de curiosités minéral »**
+La Gorgone ne vend pas des objets : elle arrête le passant. Son nom — emprunté à la créature mythologique dont le regard pétrifie — devient ici une promesse : celle d'une boutique où l'on reste figé d'envie devant des curiosités dénichées une à une. Nous renversons la malédiction : à La Gorgone, on n'est pas changé en pierre par effroi, mais par émerveillement. Le site sera l'écrin numérique de ce *cabinet de trésors de quartier*, entre bazar parisien et collection privée — populaire sans être vulgaire, animé sans être criard.
 
-Inspiré par le nom puissant du lieu et l’élégance discrète du quartier Convention (immeubles haussmanniens en pierre blonde, grilles ouvragées, ateliers vitrés), je propose une esthétique hybride entre le cabinet de géologie et le boudoir contemporain. L’énergie est minérale, tellurique, presque tactile. On travaille une lumière rasante qui sculpte la matière, des noirs denses veinés d’accents métalliques, et des compositions qui juxtaposent la rigueur architecturale à l’accident organique. Pas de rusticité, mais une austérité magnétique, où chaque objet semble avoir été déterré d’un voyage souterrain.
+Barre à tenir : faire oublier radicalement le blog politique actuel. Le visiteur qui arrive doit sentir l'odeur du papier, le vert profond de la façade, la chaleur d'un commerce qui tient la rue de la Convention depuis des années.
 
-### 3. Palette
-La palette est un dégradé d’ardoise vivante, réchauffée par la présence du métal précieux et de la pierre parisienne.
+---
 
-| Rôle | Nom | HEX |
-|------|-----|-----|
-| Fond profond | Ardoise houillère | `#1C1E1C` |
-| Encre / Texte | Pierre blonde oxydée | `#E8E3D3` |
-| Accent unique & CTA | Cuivre martelé | `#C47E3B` |
-| Surface claire (cartes, fonds texte) | Calcaire coquillé | `#F4EFE6` |
-| Élément graphique, liseré | Soufre / Orpiment | `#E5B23D` |
-| Profondeur, ombres | Basalte | `#2A2D2A` |
+## 2. Direction artistique
 
-> Principe : le site est majoritairement *dark*, enveloppant comme un écrin. Les fonds clairs interviennent par blocs, comme des tables d’étude éclairées. Le cuivre est le seul accent, utilisé avec parcimonie pour guider l’œil ; le soufre souligne des détails graphiques (filets, icônes, prix).
+**« Cabinet mythologique de quartier »**
 
-### 4. Ton éditorial
-**Voix :** une confidente exigeante. Un tutoiement rare et choisi, un vocabulaire précis, presque technique, qui refuse le jargon marketing.  
-**Niveau de langue :** soutenu sans être guindé, avec des termes de brocante, d’artisanat, de minéralogie lorsque l’objet le mérite.  
-**Registre :** l’adresse à l’initié — on ne survend rien, on informe celui qui sait reconnaître. Les phrases sont brèves, le champ lexical est celui de la matière (veiné, patiné, gorgé, extrait), jamais du « coup de cœur » ou du « must-have ».
+Un parti pris ancré dans le réel de la boutique : la façade vert profond (#4A7C59) et sa sculpture en relief sont le point d'encrage visuel. On bâtit une ambiance de *collectionneur-épicier* — bois patiné, métal des vitrines, papier des cartes postales. L'esthétique mêle la solennité un brin théâtrale du nom « Gorgone » à la familiarité chaleureuse d'un commerce de rue parisien. On évoque un petit musée personnel, une vitrine d'apothicaire revisitée, un étal qui déborde sur le trottoir.
 
-### 5. Accroche héro
-**Titre :** *Derrière la pierre, une présence.*  
-**Sous-titre :** La Gorgone ouvre ses portes rue de la Convention pour celles et ceux qui n’ont jamais cessé de chercher des objets vivants. Curiosités minérales, artisanat tellurique, sélections rares : chaque pièce transforme la pièce.
+Les images seront traitées comme des *planches de collection* : bordures douces, ombres portées subtiles, jamais de saturation agressive. Le fond du site n'est pas blanc — il est crème vieux papier, comme les cartes postales qu'on vend ici. L'écran doit donner envie de pousser la porte.
 
-### 6. Sections
-**1. Le Gisement — À propos**  
-*Texte :* Longtemps endormi dans une cour pavée du 15e arrondissement, La Gorgone s’est éveillée boutique. Ici, on collecte l’éclat noir, la forme qui dérange et l’objet qui raconte une strate.
+---
 
-**2. Galerie — La collection permanente**  
-*Texte :* Nos pièces permanentes ne sont ni en rayon ni en vitrine : elles sont posées sur du velours brut. Approchez-vous, saisissez l’ombre portée.
+## 3. Palette
 
-**3. Matières — Ce que vous trouverez ici**  
-*Texte :* Cristallisations rares, céramiques tectoniques, flacons d’apothicaire noirs, éditions confidentielles sur les arts de la terre. Chaque matière a son mot.
+| Rôle | Nom | Hex | Usage |
+|------|-----|-----|-------|
+| Accent principal | Vert Gorgone | `#3D6B4A` | Boutons forts, filets, icônes, hover states |
+| Accent secondaire | Terre cuite | `#8B3E2F` | Liens, soulignements, puces, prix, détails chauds |
+| Fond principal | Crème carte postale | `#F7ECD5` | Fond de page, arrière-plan des blocs |
+| Fond alternatif | Bois brut | `#E8D5C0` | Fond de cartes, sections différenciées |
+| Texte | Encre bistre | `#1E1814` | Texte courant, titres secondaires |
+| Surbrillance | Or vieilli | `#B8993A` | Éléments précieux, guillemets, témoignages, cadres étroits |
 
-**4. La Chambre claire — Ambiance & photos**  
-*Texte :* Lumière rasante sur pierre blonde parisienne, un mobilier d’architecte chiné, des plateaux en ardoise brute — La Gorgone se découvre à hauteur d’œil.
+La palette est **chaude et enveloppante**, jamais terne. Le vert Gorgone est la couleur signature — il apparaît dès le hero, en aplat ou en surimpression. Le crème domine, le bois structure, la terre cuite réveille. L'or est parcimonieux : il signale ce qui est rare.
 
-**5. Venir — Infos pratiques & contact**  
-*Texte :* 15 Rue de la Convention, Paris 15e. Une sonnette en laiton. Un passage voûté. Les horaires sont précis, le temps élastique.
+---
 
-**6. L’Écho — Avis & presse**  
-*Texte :* 4.6 sur 5 — les visiteurs parlent d’un « choc minéral », d’une « respiration dans le quartier ». Lisez-les, ils ont trouvé les mots.
+## 4. Ton éditorial
 
-### 7. Signature visuelle
-1. **Typographie en gravure** : les titres en *Libre Baskerville* sont systématiquement traités en blanc cassé (`#E8E3D3`) sur fond noir, avec un crénage généreux (+80 tracking) qui évoque les plaques de minéralogiste du XIXe siècle. Ils ne sont jamais centrés : ils ancrent le bloc à gauche, comme des étiquettes de cabinet.
-2. **Révélation au charbon** : toutes les images de la galerie (produits, intérieurs) apparaissent au scroll via un effet de *reveal* progressif de bas en haut, comme si on les frottait à sec pour en révéler la matière. L’animation imite un dévoilement de fusain, avec un bruit doux de grain numérique. Aucune autre animation sur la page — uniquement ce geste.
+**Chaleureux, direct, avec un sourire en coin.** On vouvoie le visiteur, mais sans distance compassée. Le ton assume une pointe de malice mythologique (on file la métaphore de la Gorgone sans la surjouer), tout en restant celui d'un commerçant de quartier qui connaît ses clients par leur prénom. Pas de jargon, pas de snobisme — on est rue de la Convention, pas au Palais-Royal.
+
+Niveau de langue : français courant, quelques tours oraux maîtrisés. On s'adresse autant à la voisine du 15e qu'au touriste de passage qui cherche une carte postale qui a du caractère.
+
+---
+
+## 5. Accroche héro
+
+**Titre :**
+> Arrêtez-vous. C'est fait exprès.
+
+**Sous-titre :**
+> Depuis plus de vingt ans, La Gorgone pétrifie les passants rue de la Convention — pas de frayeur, juste de la curiosité. Cartes postales, souvenirs et cadeaux qui ne demandent qu'à être regardés.
+
+**Texte découverte (tag ou label flottant) :**
+> Boutique de quartier · Note 4,6 ★ · Ouvert du mardi au samedi
+
+---
+
+## 6. Sections
+
+### ① Héro
+**Titre :** Arrêtez-vous. C'est fait exprès.
+**Contenu visuel :** Photo pleine largeur de la façade verte avec sa sculpture en relief, le pas-de-porte garni de présentoirs à cartes postales. L'image est enveloppée d'un calque subtil vert Gorgone à 15 %. Le titre est en Libre Baskerville, corps surdimensionné, crème sur fond sombre.
+
+---
+
+### ② La boutique
+**Titre :** Une gorgone à la Convention
+**Contenu :** Un texte à deux colonnes. À gauche, l'histoire : « Il fallait un nom à la hauteur de l'effet produit. Quand on passe devant le 15 rue de la Convention, on ralentit. On s'arrête. On regarde. Une Gorgone, en somme — mais de la plus accueillante espèce. » À droite, une photo pleine colonne de l'intérieur de la boutique : étagères en bois, objets exposés, lumière chaude. On parle du quartier, de la clientèle, de l'âme du lieu.
+
+---
+
+### ③ Les trésors
+**Titre :** Ce que vous trouverez (si vous restez assez longtemps)
+**Contenu :** Une grille de 4 à 6 vignettes illustrant les catégories phares — cartes postales (Paris et au-delà), souvenirs de la capitale, petits cadeaux, papeterie, objets de curiosité. Chaque vignette est une photo soignée sur fond Bois brut, avec un titre en Karla bold et une courte description. Exemple : « Cartes postales — Paris, mais pas que. Des vues qu'on ne trouve pas partout, imprimées sur du vrai papier. »
+
+---
+
+### ④ Le quartier nous trouve
+**Titre :** Rue de la Convention, 15e
+**Contenu :** Carte Google Maps intégrée (si le devis le permet) ou illustration du plan de métro local. Adresse complète, horaires clairs, stations de métro les plus proches (Convention, Boucicaut). Un bloc texte : « À deux pas du métro Convention, entre la boulangerie et le fleuriste. Regardez la façade verte : vous ne pouvez pas la rater. » Téléphone cliquable, email visible.
+
+---
+
+### ⑤ Avis
+**Titre :** 4,6 étoiles — c'est vous qui le dites
+**Contenu :** Trois vrais avis Google (anonymisés mais fidèles dans l'esprit) mis en page comme des citations, avec guillemets en Or vieilli, sur fond Bois brut. Pas de fausses attributions : on écrit « — Client Google, octobre 2024 » ou équivalent. Un bouton « Lire tous les avis » renvoie vers la fiche Google Maps.
+
+---
+
+### ⑥ Contact
+**Titre :** Poussez la porte — ou écrivez-nous
+**Contenu :** Formulaire simple (nom, email, message) sur fond crème. Rappel du téléphone et de l'adresse. Photo de la vitrine vue de trois-quarts, comme si on s'apprêtait à entrer.
+
+---
+
+## 7. Signature visuelle
+
+**1. Le motif « Œil de Gorgone » —** Un ornement graphique discret, inspiré du motif sculpté sur la façade, décliné en filet de section ou en séparateur. Il apparaît entre chaque grand bloc, tracé en Terre cuite ou en Or vieilli, fin comme une gravure. Pas de tête de Méduse littérale : on suggère, on ne montre pas.
+
+**2. Le traitement « carte postale » des images —** Toute photo de produit ou d'ambiance reçoit un cadre léger (une ombre douce + un liseré Bois brut de 2 px) qui évoque une carte postale ancienne posée sur une table. Au survol, l'image se soulève légèrement (translateY de 4 px + ombre accentuée) — comme si on la décollait du présentoir. Ce micro-mouvement est le seul geste d'animation superflu : il sert le propos.
+
+---
+
+**Ce brief annule et remplace intégralement le site actuel.** Tout le contenu en arabe disparaît. Le nouveau site est intégralement en français, photographié *dans* le commerce réel, écrit pour ses vrais clients. La Gorgone mérite mieux qu'un agrégateur de news — elle mérite le site qui lui ressemble.
