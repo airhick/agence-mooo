@@ -1,93 +1,103 @@
-Voici le brief créatif pour l’Herboristerie Lila Sobanski.
+**BRIEF CRÉATIF — HERBORISTERIE LILA SOBANSKI**
 
 ---
 
 ## 1. Concept & positionnement
 
-Un écrin de verdure et de verre au cœur du 16e arrondissement, où la science des plantes rencontre une élégance apaisante. Le site ne se contente pas de vendre des produits : il restitue l’expérience de pousser la porte d’un lieu unique, entre cabinet de consultation et apothicairerie contemporaine. Toute la navigation s’articule autour de la promesse fondamentale : une herboriste vous écoute et vous guide, dans un cadre aussi rigoureux qu’accueillant.
+Le site vitrine ne sera pas un catalogue mais le reflet numérique de la boutique de l’avenue Paul Doumer : un espace confidentiel où l’on pousse la porte pour être écouté, humé, pesé, conseillé. L’expérience digitale doit faire sentir au visiteur qu’ici, derrière chaque plante, il y a une main, un regard, un quartier – pas un algorithme de tri alphabétique.
 
-Positionnement : la haute expertise botanique, accessible et profondément humaine, à l’opposé du catalogue industriel froid. On parle à une clientèle de quartier exigeante qui recherche du conseil, de la qualité et une relation de confiance.
+Positionnement : une herboristerie de **consultation et de comptoir**, nichée dans le 16e arrondissement, où la plante médicinale est un art de vivre exigeant, jamais un produit de grande surface. Le site sera l’antichambre de la boutique réelle : il donne envie de s’y rendre, présente l’herboriste, rend visible l’expertise, et permet de prendre rendez-vous.
 
 ---
 
 ## 2. Direction artistique
 
-**« Apothicaire du Trocadéro, luxe végétal transparent »**
+**Parti pris : carnet botaniste du 16e — élégance de l’herbier, chaleur du comptoir.**
 
-Le parti pris est une alliance entre la rigueur encyclopédique des cabinets de curiosités du 19e siècle et une transparence contemporaine inspirée par la façade vitrée de la boutique. La direction évoque une **serre d’architecte** : ossature bois foncé, vastes surfaces de verre, lumière naturelle tamisée, végétation maîtrisée. La mise en page est aérée, les hiérarchies typographiques sont nettes (inspiration des planches botaniques), mais l’ensemble respire grâce à de grands espaces blanc cassé et à des photographies à la fois documentaires et sensibles. Aucun pastiche rustique : on reste dans le raffinement épuré d’un appartement haussmannien traversé par le vivant.
+L’énergie des photos Google Maps dicte une esthétique de *shop* plus que de laboratoire. Les murs beiges, l’enseigne cursive, les plantes grimpantes en façade, la lumière tamisée au sodium : tout évoque un **naturalisme domestiqué, un raffinement discret**. On fuit le bois brut rustique comme le vert sauge aseptisé d’herboristerie bio standard. À la place, on cultive une élégance de papier vergé, d’étiquettes manuscrites, de bocaux pharmaceutiques chinés.
 
-Référence implicite : les serres du Jardin des Serres d’Auteuil toutes proches, la transparence sophistiquée d’une verrière d’atelier.
+La référence implicite : le carnet de botaniste parisien du début du XXe siècle, mais transposé en typographie contemporaine et en compositions aérées. Le dessin prime sur la photographie produit brute ; chaque image sera retravaillée en photogravure douce, aux ombres chaudes, comme prise à travers la vitrine un jour d’automne.
 
 ---
 
 ## 3. Palette
 
-| Rôle | HEX | Nom d’inspiration | Usage |
-|------|-----|-------------------|-------|
-| Fond principal | `#F5F5DC` | Blanc Tilleul | Arrière-plan principal, aplats clairs |
-| Texte / encre | `#2E241B` | Écorce foncée | Texte courant, icônes principales |
-| Accent chaud | `#8B5A2B` | Bois de noyer | Boutons, séparateurs, liens actifs |
-| Accent botanique | `#556B2F` | Olive sauge | Filets, éléments graphiques, CTA forts |
-| Surbrillance douce | `#D3B8A0` | Châtaigne claire | Fonds de section alternés, hover discrets |
-| Contraste clair | `#FFFFFF` | Blanc optique | Contraste ponctuel sur fond olive, cartes info |
+Extraite des dominantes réelles de la boutique et de sa façade, raffinée pour le digital :
 
-La palette évite soigneusement le duo « crème + terracotta » en privilégiant des bruns froids et un vert profond, directement extraits de l’enseigne et des boiseries visibles en photo. Le résultat est chaleureux sans mièvrerie, et très ancré dans le lieu réel.
+| Rôle | Hex | Nom |
+|------|-----|------|
+| Fond | `#F8F3E6` | Coquille d’œuf — pour les fonds chauds mais lumineux, jamais blanc froid |
+| Encre | `#2E241B` | Brun sépia profond — pour le texte principal, remplace le noir pur |
+| Accent chaud | `#C85A3A` | Terre cuite oxydée — boutons, liens, petits filets |
+| Accent froid | `#6B7B5E` | Sauge de sous-bois — rappels subtils, étiquettes, fonds secondaires |
+| Sépare / filet | `#D4C5B2` | Lin — filets fins, séparateurs discrets |
+| Surface secondaire | `#F0E6D8` | Papier kraft — pour les cartes de contenu, les encadrés |
+
+**Ambiance** : claire mais enveloppante. Le blanc pur est banni ; l’arrière-plan respire comme un papier de garde ancien. Pas de gris.
 
 ---
 
 ## 4. Ton éditorial
 
-Une voix calme, rassurante et précise. On vouvoie la cliente ou le client, avec le respect dû à une consultation de santé. Le vocabulaire est botanique mais jamais abscons ; chaque terme technique est immédiatement éclairé par son usage. Le ton mêle trois registres : **la confidence de l’herboriste** (« voici ce que les plantes peuvent faire pour vous »), **la rigueur du préparateur** (« nos extraits sont standardisés et nos plantes séchées tracées ») et **l’appartenance au quartier** (« à deux pas du Trocadéro, votre parenthèse nature »). Pas de jargon marketing, pas d’exagération — juste la promesse d’un savoir-faire personnalisé.
+Une voix de spécialiste, érudite sans jargon, qui tutoie le lecteur comme un habitué du quartier qu’on reçoit au comptoir. Le niveau de langue est soutenu, le ton est franc et concret – jamais publicitaire ni ésotérique. Chaque phrase doit sentir le *conseil*, pas la *vente*.
+
+On évite les promesses vagues (« bien-être naturel ») au profit de formulations précises et ancrées : le nom de la plante, son usage, sa provenance, son mode de préparation. L’herboriste parle à la première personne quand il s’agit de son métier ; le site parle d’elle à la troisième pour dresser son portrait.
 
 ---
 
 ## 5. Accroche héro
 
-Titre (H1) :  
-**Votre santé trouve sa nature**
+> **Titre** : *Des plantes, un comptoir, une écoute*  
+> **Sous-titre** : Herboristerie & consultations personnalisées — 71 avenue Paul Doumer, Paris 16ᵉ
 
-Sous-titre :  
-Depuis vingt ans, Lila Sobanski met l’exigence de la phytothérapie au service des habitants du 16e. Poussez la porte — ou prenez rendez-vous en ligne pour une consultation personnalisée.
-
-CTA principal : « Prendre rendez-vous » (mène à un formulaire dédié).
+Pas de slogan, pas de métaphore filée. Juste les trois piliers de l’expérience boutique posés comme une évidence. Dessous, un bouton primaire **Prendre rendez-vous** et un lien discret **Voir la boutique →**
 
 ---
 
-## 6. Sections de la page d’accueil
+## 6. Sections (ordre, titres réels, contenu réel)
 
-1. **Le cabinet** (titre de section)  
-   *Ici, on ne se contente pas de vendre des plantes. Chaque visite commence par un échange avec une professionnelle qui vous aide à choisir la solution la plus adaptée à votre équilibre — gélules, macérats de gemmothérapie, tisanes complexes ou soins cosmétiques naturels.*  
-   *(Photo pleine largeur de la boutique avec ses bocaux en verre et son établi)*
+### 6.1 — *L’herboriste*
+**Contenu** : Portrait de Lila Sobanski en 4–5 phrases. Son parcours, sa formation, sa relation aux plantes. Texte à la première personne ou en narration sobre. On y voit son visage pour la première fois sur le site.  
+*Exemple* : « Herboriste diplômée et passionnée par les flores médicinales d’Europe tempérée, je vous reçois sur rendez-vous dans ma boutique du 16ᵉ arrondissement. Chaque plante que je propose est sélectionnée pour sa qualité, préparée par mes soins, et conseillée au regard de votre situation personnelle. »
 
-2. **Une consultante à votre écoute**  
-   *Consultation en boutique ou par téléphone. Lila Sobanski vous reçoit pour comprendre vos besoins, vos antécédents et vous orienter parmi plus de 500 références de plantes, d’extraits et de complexes. Une approche holistique qui remet l’humain au centre.*  
-   *(CTA secondaire : « En savoir plus sur la consultation »)*
+### 6.2 — *Consultations*
+**Titre** : *Un rendez-vous, juste vous et vos symptômes*  
+**Contenu** : Explication concrète du déroulé d’une consultation (durée, approche, tarif, préparation conseillée). Un bouton de prise de rendez-vous (renvoi vers un outil type Calendly ou formulaire). On indique les jours / créneaux et le lieu.
 
-3. **Nos spécialités** (titre de section)  
-   Remplace la navigation alphabétique par des portes d’entrée thématiques. Trois cartes illustrées :  
-   * **Digestion & drainage** — Tisanes, ampoules de sève et gélules pour retrouver un confort intestinal.  
-   * **Sommeil & sérénité** — Plantes adaptogènes, huiles essentielles douces et macérats de bourgeons pour apaiser l’esprit.  
-   * **Énergie & immunité** — Préparations de phytothérapie et de gemmothérapie pour traverser les saisons en pleine forme.  
-   *(Chaque carte redirige vers une page regroupant les produits correspondants, avec une vraie introduction rédigée)*
+### 6.3 — *Les préparations*
+**Titre** : *Tisanes complexes, extraits, cosmétiques*  
+**Contenu** : Galerie de familles de produits — pas un catalogue alphabétique, mais des « univers » présentés avec une photo d’ambiance et une description d’usage. Chaque tuile renvoie vers une fiche détaillée sobre. On évite les listes infinies.  
+*Exemple de tuile* : « Drainages saisonniers — Des cures pensées pour soutenir l’organisme aux changements de saison. » Sans date, pour ne pas périmer.
 
-4. **L’herboristerie de quartier** (titre de section)  
-   *Nichée au 71 avenue Paul Doumer, à quelques pas du Trocadéro, notre herboristerie vous accueille du lundi au samedi dans un cadre où le bois, le verre et les plantes dessinent une parenthèse hors du temps. Nous connaissons nos habitués par leur prénom, et vous guiderons vers le produit le plus juste, loin des algorithmes et des rayons standardisés.*  
-   *(Carte Google Maps intégrée, photo de la devanture vitrée, horaires clairement affichés dans un bloc distinct)*
+### 6.4 — *La boutique*
+**Titre** : *71 avenue Paul Doumer*  
+**Contenu** : Photo extérieure de la devanture (enseigne cursive + plantes grimpantes), photo intérieure du comptoir. Adresse complète, plan Google Maps intégré. Horaires clairs. Mention du numéro de téléphone et de l’email professionnel (à acheter en `.fr`).  
+*Texte d’ambiance* : « Une petite herboristerie de quartier, à deux pas de la Maison de la Radio. Poussez la porte : l’odeur des plantes sèches et le calme du lieu font le reste. »
 
-5. **Ce que nos clients pensent de nous** (titre de section)  
-   Avis soigneusement sélectionnés, mis en forme avec nom et prénom, éventuellement une étoile Google. Exemple : « *Enfin une professionnelle qui prend le temps d’expliquer et de conseiller sans pousser à la consommation. Laissez-vous guider, vous ne le regretterez pas.* — Marie C., cliente du quartier. »
+### 6.5 — *Les avis de vos voisins*
+**Titre** : *4,5 étoiles — merci à vous*  
+**Contenu** : 3–4 citations réelles d’avis Google, choisies pour leur précision et leur chaleur. Chaque citation est mise en forme sobrement, avec le prénom du client et la date. On ajoute un lien « Voir tous les avis → » vers la fiche Google. Cela donne confiance immédiatement et ancre dans le quartier.
 
-6. **Prenez rendez-vous** (titre de section)  
-   Formulaire épuré ou lien vers un module de réservation. Phrase d’appel : « Un avis personnalisé, une préparation sur mesure ou simplement une première orientation ? Réservez un créneau de 20 minutes avec Lila Sobanski. »  
-   *(Pas de panier visible à cet endroit : la consultation est la porte d’entrée reine)*
+### 6.6 — *Prendre soin de soi, saison après saison*
+**Titre** : *Journal de l’herboriste*  
+**Contenu** : Section éditoriale légère type carnet : un court article saisonnier changeant (conseil du moment, focus sur une plante, recette de tisane). Format daté pour éviter l’effet « abandonné », avec une fréquence modeste (2 à 4 par an). Cela corrige le « Automne 2023 » périmé et nourrit le SEO local.
 
-7. **Pied de page repensé**  
-   Nom, adresse, téléphone, email, horaires (structurés en schema.org), liens légaux et rappel discret « Propulsé par votre confiance, pas par PrestaShop ». Un tout petit lien vers la boutique en ligne pour ceux qui veulent commander après coup, mais relégué à une place secondaire.
+### 6.7 — *Pied de page* (section fonctionnelle)
+Adresse, horaires, téléphone, email, liens vers mentions légales et conditions de consultation. Logo de la note Google avec rappel du 4,5/5. Menu secondaire très sobre, pas de surcharge.
 
 ---
 
 ## 7. Signature visuelle
 
-- **Illustration botanique en filigrane** : un motif de feuilles de sauge (rappel du prénom de l’herboriste et de la plante star) est placé en arrière-plan des sections importantes. Il est semi-transparent (`opacity: 0.05`) et fixe, pour créer un léger parallaxe au scroll et évoquer les papiers peints des salons du 16e, sans motif répétitif envahissant.
-- **Transparence assumée** : les cartes de produits et les encarts d’avis utilisent un effet `backdrop-filter: blur(12px)` sur fond clair, faisant référence directe à la verrière de la boutique et apportant une touche contemporaine très haut de gamme.
-- **Animation d’entrée ciblée** : les titres de section et les illustrations végétales apparaissent en fondu et en léger décalage vertical au scroll, comme si on tournait lentement les pages d’un herbier — jamais de mouvements excessifs. Le CTA de rendez-vous est le seul à garder un effet de pulse très discret au survol
+### 7.1 — Traitement des images en photogravure douce
+Toutes les photos (devanture, comptoir, plantes, Lila elle-même) reçoivent un traitement uniforme : désaturation partielle en mode chaud, ombres légèrement relevées, grain fin de film argentique. On obtient une signature visuelle de « tirage botanique » qui distingue immédiatement le site des banques d’images génériques.
+
+### 7.2 — Le motif « grille d’apothicaire »
+Un discret motif de fond dans les séparations de sections ou en arrière-plan des encadrés : un quadrillage fin façon planche d’herbier ou registre d’apothicaire, tracé au trait `#D4C5B2`. Il rappelle le geste du classement sans tomber dans le catalogue. Présent uniquement en filigrane, jamais intrusif.
+
+### 7.3 — Typographie intentionnelle
+Les titres en **Bricolage Grotesque** seront joués à une échelle généreuse (display), parfois en césure sur deux lignes avec des filets fins pour structurer. Le corps en **Hanken Grotesk** restera sobre et très lisible, avec une graisse régulière. L’échelle typographique distingue clairement les niveaux : l’œil circule, la hiérarchie est limpide (corrigeant l’absence de H1 / H2 du site actuel).
+
+---
+
+**Ce brief annule et remplace intégralement la logique de catalogue alphabétique héritée de PrestaShop.** Le nouveau site n’est pas une boutique en ligne, c’est la porte d’entrée numérique de l’herboristerie – avec son visage, son quartier, ses horaires, et l’invitation à pousser la vraie porte.
