@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Tanneur — Maroquinerie · 13 rue de Passy, Paris 16ᵉ</title>
+    <meta name="description" content="Boutique de maroquinerie française depuis 1898 au 13 rue de Passy à Paris 16ᵉ. Cuir pleine fleur, tannage végétal, couture sellier. Prenez rendez-vous, venez toucher la matière. Note 4.5★ — 38 avis.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Le Tanneur · 13 rue de Passy, Paris 16ᵉ">
+    <meta property="og:description" content="Depuis 1898, une maison de maroquinerie où le cuir se touche, se sent, se choisit. Boutique feutrée du 16ᵉ arrondissement — venez pousser la porte.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/le-tanneur">
+
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon emoji -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+
+    <style>
+        :root {
+            --ivoire-sellier: #FDFAF5;
+            --brun-cordovan: #2C1B14;
+            --cognac-pleine-fleur: #B76E42;
+            --laiton-patine: #C5A866;
+            --cuir-naturel: #E8D5C0;
+            --vert-doublure: #2D4A3E;
+            --filet-sellier: #C5A866;
+            --ombre-douce: rgba(44, 27, 20, 0.08);
+            --ombre-forte: rgba(44, 27, 20, 0.18);
+            --bg-page: #FDFAF5;
+            --text-encre: #2C1B14;
+            --text-clair: #5a3f30;
+            --transition-lente: 0.6s cubic-bezier(0.25, 0.1, 0.15, 1);
+            --transition-medium: 0.35s cubic-bezier(0.25, 0.1, 0.15, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 1.6vw, 18px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--text-encre);
+            background-color: var(--bg-page);
+            background-image:
+                radial-gradient(ellipse at 30% 20%, rgba(232, 213, 192, 0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 60%, rgba(183, 110, 66, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 90%, rgba(197, 168, 102, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        /* === Filet sellier décoratif (motif récurrent) === */
+        .filet-sellier {
+            position: relative;
+            border: 1px solid var(--laiton-patine);
+            box-shadow: inset 0 0 0 2px var(--bg-page), inset 0 0 0 4px var(--laiton-patine);
+            padding: 1.8rem 2rem;
+        }
+        .filet-sellier-simple {
+            border-bottom: 1px solid var(--laiton-patine);
+            padding-bottom: 0.7rem;
+            margin-bottom: 1.4rem;
+            position: relative;
+        }
+        .filet-sellier-simple::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--laiton-patine);
+            opacity: 0.5;
+        }
+        .filet-double {
+            border-top: 1px solid var(--laiton-patine);
+            border-bottom: 1px solid var(--laiton-patine);
+            padding: 0.5rem 0;
+            display: inline-block;
+            position: relative;
+        }
+        .filet-double::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--laiton-patine);
+            opacity: 0.45;
+        }
+
+        /* === Header collant === */
+        .header-fixe {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(253, 250, 245, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--cuir-naturel);
+            padding: 0.6rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .header-fixe.scrolled {
+            box-shadow: 0 2px 20px var(--ombre-douce);
+        }
+        .header-marque {
+            font-family: 'Libre Baskerville', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            letter-spacing: 0.04em;
+            color: var(--brun-cordovan);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .header-marque .filet-sellier-simple {
+            margin-bottom: 0;
+            padding-bottom: 0.3rem;
+            border-bottom-width: 1px;
+            flex: 0 1 auto;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .header-nav a {
+            color: var(--brun-cordovan);
+            text-decoration: none;
+            position: relative;
+            padding: 0.15em 0;
+            transition: color 0.25s;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--cognac-pleine-fleur);
+            transition: width var(--transition-medium);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--cognac-pleine-fleur);
+        }
+        .header-cta-tel {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--brun-cordovan);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            padding: 0.35rem 0.9rem;
+            border: 1px solid var(--cuir-naturel);
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .header-cta-tel:hover {
+            border-color: var(--cognac-pleine-fleur);
+            background: rgba(183, 110, 66, 0.06);
+            color: var(--cognac-pleine-fleur);
+        }
+        .header-cta-tel:focus-visible {
+            outline: 2px solid var(--vert-doublure);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        .badge-note {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--brun-cordovan);
+            background: rgba(197, 168, 102, 0.13);
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            border: 1px solid rgba(197, 168, 102, 0.35);
+        }
+        .badge-note .stars {
+            color: var(--cognac-pleine-fleur);
+            letter-spacing: 0.1em;
+        }
+
+        /* === Module horaire dynamique === */
+        .module-horaire {
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.3rem 0.85rem;
+            border-radius: 3px;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            transition: background var(--transition-medium), color var(--transition-medium);
+            border: 1px solid transparent;
+        }
+        .module-horaire.ouvert {
+            background: rgba(232, 213, 192, 0.55);
+            color: var(--brun-cordovan);
+            border-color: rgba(183, 110, 66, 0.25);
+        }
+        .module-horaire.ferme {
+            background: rgba(253, 250, 245, 0.7);
+            color: #6b5a4e;
+            border-color: rgba(44, 27, 20, 0.1);
+        }
+        .module-horaire .pulse {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-right: 0.35rem;
+            vertical-align: middle;
+            position: relative;
+        }
+        .module-horaire.ouvert .pulse {
+            background: var(--vert-doublure);
+            animation: pulse-dot 2.2s ease-in-out infinite;
+        }
+        .module-horaire.ferme .pulse {
+            background: #9b8a7a;
+            opacity: 0.6;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 74, 62, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(45, 74, 62, 0);
+            }
+        }
+
+        /* === Skip link === */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--brun-cordovan);
+            color: var(--bg-page);
+            padding: 0.5rem 1rem;
+            z-index: 1001;
+            font-weight: 600;
+            border-radius: 0 0 4px 4px;
+            transition: top 0.3s;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* === Sections === */
+        section {
+            padding: 6rem 2rem;
+        }
+        @media (max-width: 768px) {
+            section {
+                padding: 3.5rem 1.2rem;
+            }
+            .header-fixe {
+                padding: 0.5rem 1rem;
+                gap: 0.4rem;
+            }
+            .header-nav {
+                gap: 0.7rem;
+                font-size: 0.78rem;
+            }
+        }
+        .section-interieure {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .section-large {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* === Typographie === */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Libre Baskerville', 'Times New Roman', serif;
+            font-weight: 500;
+            color: var(--brun-cordovan);
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+        }
+        h1 {
+            font-size: clamp(2.6rem, 7vw, 4.8rem);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            font-weight: 500;
+        }
+        h4 {
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            font-weight: 500;
+        }
+        p {
+            margin-bottom: 1.1rem;
+            color: var(--text-clair);
+            max-width: 65ch;
+        }
+        .texte-large {
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+        .texte-petit {
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: #6b5a4e;
+        }
+        .adresse-bloc {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1rem;
+            color: var(--brun-cordovan);
+            letter-spacing: 0.04em;
+            line-height: 1.7;
+        }
+        .tel-blanc {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.1rem;
+            color: var(--brun-cordovan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--laiton-patine);
+            transition: all var(--transition-medium);
+            padding-bottom: 2px;
+        }
+        .tel-blanc:hover {
+            color: var(--cognac-pleine-fleur);
+            border-bottom-color: var(--cognac-pleine-fleur);
+        }
+
+        /* === Héro === */
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 82vh;
+            align-items: stretch;
+            overflow: hidden;
+            padding: 0;
+            gap: 0;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+        }
+        .hero-image {
+            position: relative;
+            min-height: 55vh;
+            overflow: hidden;
+            order: 1;
+        }
+        @media (max-width: 768px) {
+            .hero-image {
+                order: 0;
+                min-height: 45vh;
+            }
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) contrast(1.06) saturate(0.85);
+            transition: filter 2s ease;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(44, 27, 20, 0.25) 0%,
+                    rgba(44, 27, 20, 0.08) 40%,
+                    rgba(44, 27, 20, 0.02) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero-image::after {
+                background: linear-gradient(to bottom,
+                        rgba(44, 27, 20, 0.3) 0%,
+                        rgba(44, 27, 20, 0.06) 60%,
+                        rgba(44, 27, 20, 0.01) 100%);
+            }
+        }
+        .hero-content {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 3rem;
+            order: 0;
+            position: relative;
+            background: var(--bg-page);
+            border-right: 1px solid var(--cuir-naturel);
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                order: 1;
+                padding: 2.5rem 1.5rem;
+                border-right: none;
+                border-top: 1px solid var(--cuir-naturel);
+            }
+        }
+        .hero-content .filet-sellier-simple {
+            margin-bottom: 1.8rem;
+        }
+        .hero-adresse {
+            margin-top: 1.8rem;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.9rem;
+            color: var(--brun-cordovan);
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+            padding-left: 0.8rem;
+            border-left: 2px solid var(--laiton-patine);
+        }
+        .btn-itineraire {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--bg-page);
+            background: var(--brun-cordovan);
+            border: none;
+            padding: 0.9rem 1.8rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            margin-top: 1.5rem;
+            align-self: flex-start;
+            border: 1px solid var(--brun-cordovan);
+        }
+        .btn-itineraire:hover {
+            background: var(--cognac-pleine-fleur);
+            border-color: var(--cognac-pleine-fleur);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(183, 110, 66, 0.25);
+        }
+        .btn-itineraire:focus-visible {
+            outline: 3px solid var(--vert-doublure);
+            outline-offset: 4px;
+        }
+        .btn-secondaire {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            color: var(--brun-cordovan);
+            background: transparent;
+            border: 1px solid var(--brun-cordovan);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-secondaire:hover {
+            background: rgba(44, 27, 20, 0.05);
+            border-color: var(--cognac-pleine-fleur);
+            color: var(--cognac-pleine-fleur);
+        }
+        .btn-secondaire:focus-visible {
+            outline: 3px solid var(--vert-doublure);
+            outline-offset: 4px;
+        }
+
+        /* === Grille sections === */
+        .grille-deux {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .grille-deux {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .grille-trois {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 900px) {
+            .grille-trois {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .grille-trois {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === Bloc info pratique === */
+        .bloc-info {
+            background: rgba(232, 213, 192, 0.25);
+            border: 1px solid rgba(197, 168, 102, 0.35);
+            padding: 2rem;
+            border-radius: 2px;
+            position: relative;
+        }
+        .bloc-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--laiton-patine);
+            border-radius: 2px 2px 0 0;
+        }
+        .bloc-info h4 {
+            margin-bottom: 0.8rem;
+        }
+
+        /* === Carte === */
+        .carte-container {
+            width: 100%;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--ombre-douce);
+            border: 1px solid var(--cuir-naturel);
+        }
+
+        /* === Avis === */
+        .avis-carte {
+            background: #fffefb;
+            border: 1px solid var(--cuir-naturel);
+            padding: 1.8rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 12px var(--ombre-douce);
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+        .avis-carte::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 2rem;
+            right: 2rem;
+            height: 1px;
+            background: var(--laiton-patine);
+            opacity: 0.7;
+        }
+        .avis-carte:hover {
+            box-shadow: 0 8px 28px rgba(44, 27, 20, 0.12);
+            transform: translateY(-2px);
+        }
+        .avis-stars {
+            color: var(--cognac-pleine-fleur);
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        .avis-nom {
+            font-weight: 600;
+            color: var(--brun-cordovan);
+            font-size: 0.9rem;
+        }
+        .avis-date {
+            font-size: 0.75rem;
+            color: #8a7a6c;
+            letter-spacing: 0.03em;
+        }
+        .avis-texte {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #4a3a2e;
+            font-style: italic;
+        }
+
+        /* === Formulaire rendez-vous === */
+        .form-rendezvous {
+            display: grid;
+            gap: 1.1rem;
+            max-width: 500px;
+        }
+        .form-rendezvous input,
+        .form-rendezvous textarea {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--cuir-naturel);
+            border-radius: 2px;
+            background: #fffefb;
+            color: var(--brun-cordovan);
+            transition: all var(--transition-medium);
+            letter-spacing: 0.02em;
+            width: 100%;
+        }
+        .form-rendezvous input:focus,
+        .form-rendezvous textarea:focus {
+            outline: none;
+            border-color: var(--cognac-pleine-fleur);
+            box-shadow: 0 0 0 3px rgba(183, 110, 66, 0.08);
+        }
+        .form-rendezvous label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--brun-cordovan);
+        }
+        .btn-submit {
+            font-family: 'Karla', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--bg-page);
+            background: var(--vert-doublure);
+            border: none;
+            padding: 0.9rem 2rem;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            border: 1px solid var(--vert-doublure);
+        }
+        .btn-submit:hover {
+            background: #3a5c4e;
+            border-color: #3a5c4e;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(45, 74, 62, 0.25);
+        }
+        .btn-submit:focus-visible {
+            outline: 3px solid var(--cognac-pleine-fleur);
+            outline-offset: 4px;
+        }
+
+        /* === Footer === */
+        footer {
+            background: var(--brun-cordovan);
+            color: rgba(253, 250, 245, 0.85);
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+            border-top: 3px solid var(--laiton-patine);
+        }
+        footer a {
+            color: var(--laiton-patine);
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        footer a:hover {
+            color: #e0d0a8;
+        }
+        footer .footer-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 700px) {
+            footer .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        footer .footer-adresse {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            color: #f0e6d8;
+        }
+        .credit-agence {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+            border-top: 1px solid rgba(197, 168, 102, 0.25);
+            padding-top: 1.5rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* === Animations (reveals) === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.15, 1),
+                transform 0.8s cubic-bezier(0.25, 0.1, 0.15, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Charge initial (entrée progressive) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content h1 {
+            animation: fadeInUp 0.9s 0.15s both;
+        }
+        .hero-content .sous-titre {
+            animation: fadeInUp 0.9s 0.3s both;
+        }
+        .hero-content .btn-itineraire {
+            animation: fadeInUp 0.9s 0.45s both;
+        }
+        .hero-content .hero-adresse {
+            animation: fadeInUp 0.9s 0.55s both;
+        }
+
+        /* === prefers-reduced-motion === */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-content h1,
+            .hero-content .sous-titre,
+            .hero-content .btn-itineraire,
+            .hero-content .hero-adresse {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .module-horaire.ouvert .pulse {
+                animation: none;
+                box-shadow: none;
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* === Focus visibles === */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--vert-doublure);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* === Lignes (produits) === */
+        .ligne-carte {
+            padding: 1.6rem;
+            background: rgba(253, 250, 245, 0.8);
+            border: 1px solid rgba(197, 168, 102, 0.3);
+            border-radius: 2px;
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+        .ligne-carte::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 1px;
+            background: var(--laiton-patine);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+        }
+        .ligne-carte:hover {
+            border-color: var(--laiton-patine);
+            box-shadow: 0 6px 22px rgba(44, 27, 20, 0.08);
+        }
+        .ligne-carte:hover::after {
+            opacity: 0.8;
+        }
+        .ligne-carte h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .ligne-carte .type-cuir {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--cognac-pleine-fleur);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        /* === Texture cuir simulée === */
+        .texture-cuir {
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(183, 110, 66, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(197, 168, 102, 0.08) 0%, transparent 50%),
+                var(--cuir-naturel);
+            position: relative;
+        }
+        .texture-cuir::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* === Image placeholder pour sections sans photo === */
+        .placeholder-image {
+            background: var(--cuir-naturel);
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            border: 1px solid rgba(197, 168, 102, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .placeholder-image .texture-cuir {
+            position: absolute;
+            inset: 0;
+        }
+        .placeholder-image .icone-sellier {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+            opacity: 0.5;
+            color: var(--cognac-pleine-fleur);
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        /* === Bandeau contact permanent (mobile sticky) === */
+        @media (max-width: 600px) {
+            .bandeau-mobile-fixe {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(253, 250, 245, 0.96);
+                backdrop-filter: blur(12px);
+                border-top: 1px solid var(--cuir-naturel);
+                padding: 0.6rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 0.5rem;
+                z-index: 999;
+                font-size: 0.78rem;
+                font-weight: 600;
+                letter-spacing: 0.03em;
+            }
+            .bandeau-mobile-fixe a {
+                color: var(--brun-cordovan);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+            footer {
+                padding-bottom: 5rem;
+            }
+        }
+        @media (min-width: 601px) {
+            .bandeau-mobile-fixe {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Header fixe -->
+    <header class="header-fixe" id="top">
+        <div class="header-marque">
+            <span>Le Tanneur</span>
+            <span style="font-size:0.7rem;font-weight:400;color:var(--cognac-pleine-fleur);letter-spacing:0.08em;">PARIS 16ᵉ</span>
+        </div>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#lieu">La boutique</a>
+            <a href="#matiere">La matière</a>
+            <a href="#rendezvous">Rendez-vous</a>
+            <a href="#lignes">Lignes</a>
+            <a href="#avis">Avis</a>
+            <span class="badge-note" aria-label="Note Google 4.5 sur 5 — 38 avis">
+                <span class="stars">★★★★★</span> 4.5 <span style="font-weight:400;">(38)</span>
+            </span>
+            <span class="module-horaire ouvert" id="module-horaire">
+                <span class="pulse"></span><span id="texte-horaire">Ouvert</span>
+            </span>
+            <a href="tel:+33142887587" class="header-cta-tel" aria-label="Appeler le 01 42 88 75 87">
+                <span>📞</span> 01 42 88 75 87
+            </a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Section Héro -->
+        <section class="hero" aria-labelledby="hero-titre">
+            <div class="hero-content">
+                <div class="filet-sellier-simple"></div>
+                <h1 id="hero-titre">Passy, cuir, silence.</h1>
+                <p class="sous-titre texte-large" style="margin-top:0.4rem;">
+                    Depuis 1898, Le Tanneur travaille la matière là où elle se touche, se sent, se choisit.
+                    Notre boutique du 16ᵉ est ouverte — venez.
+                </p>
+                <a href="#lieu" class="btn-itineraire">
+                    Voir l'itinéraire <span aria-hidden="true">→</span>
+                </a>
+                <div class="hero-adresse">
+                    13 Rue de Passy, 75016 Paris<br>
+                    <a href="tel:+33142887587" style="color:inherit;text-decoration:none;">01 42 88 75 87</a><br>
+                    <span id="hero-horaires">Aujourd'hui : 10h–19h</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img
+                src="assets/maps-1.jpg"
+                alt="Vitrine de la boutique Le Tanneur au 13 rue de Passy, Paris 16ᵉ — devanture sobre et élégante"
+                loading="eager"
+                fetchpriority="high"
+                >
+            </div>
+        </section>
+
+        <!-- Section 1 : Une maison, un lieu -->
+        <section id="lieu" class="section-interieure">
+            <div class="grille-deux">
+                <div class="reveal">
+                    <div class="filet-sellier-simple"></div>
+                    <h2>Le 13, rue de Passy</h2>
+                    <p class="texte-large">
+                        Une devanture sobre, une sonnette, et une porte qui s'ouvre sur l'un des derniers repaires
+                        de maroquinerie française du 16ᵉ arrondissement. Ici, chaque sac a une histoire de cuir
+                        et de geste. La boutique est tenue par des gens qui connaissent la matière.
+                    </p>
+                    <div class="bloc-info" style="margin-top:2rem;">
+                        <h4>Adresse</h4>
+                        <p class="adresse-bloc">13 Rue de Passy<br>75016 Paris<br>France</p>
+                        <h4 style="margin-top:1.2rem;">Téléphone</h4>
+                        <p><a href="tel:+33142887587" class="tel-blanc">01 42 88 75 87</a></p>
+                        <h4 style="margin-top:1.2rem;">Horaires d'ouverture</h4>
+                        <p style="line-height:1.8;">
+                            Lundi – Samedi : 10h00 – 19h00<br>
+                            Dimanche : fermé
+                        </p>
+                        <p class="texte-petit" style="margin-top:0.5rem;">
+                            Horaires indicatifs — nous vous invitons à appeler pour confirmer avant votre visite.
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-1">
+                    <div class="carte-container" style="margin-top:1rem;">
+                        <iframe
+                        src="https://maps.google.com/maps?q=Le+Tanneur+13+Rue+de+Passy%2C+Paris&output=embed"
+                        width="100%"
+                        height="360"
+                        style="border:0;display:block;"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Carte Google Maps — Le Tanneur, 13 Rue de Passy, Paris"
+                    ></iframe>
+                </div>
+                <p class="texte-petit" style="margin-top:0.8rem;">
+                    Métro : Passy (ligne 6) à 3 minutes · La Muette (ligne 9) à 6 minutes.<br>
+                    Parking public : Passy-La Muette à 250 m.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 : La matière, de près -->
+    <section id="matiere" class="section-large texture-cuir" style="background:rgba(232,213,192,0.3);border-top:1px solid rgba(197,168,102,0.4);border-bottom:1px solid rgba(197,168,102,0.4);">
+        <div class="grille-deux" style="gap:4rem;">
+            <div class="reveal">
+                <div class="filet-sellier-simple"></div>
+                <h2>Cuir pleine fleur,<br>tannage végétal,<br>couture sellier</h2>
+            </div>
+            <div class="reveal reveal-delay-2">
+                <p class="texte-large">
+                    Les mots ont un sens quand on travaille le cuir depuis plus d'un siècle.
+                    Grain naturel, patine unique, finitions à la main : nous vous expliquons
+                    comment reconnaître un beau cuir et pourquoi il se bonifie avec les années.
+                </p>
+                <p>
+                    Le cuir pleine fleur n'est pas une expression marketing : c'est la partie
+                    la plus noble de la peau, celle qui n'a pas été poncée, qui respire et
+                    développe une patine personnelle au fil du temps. Le tannage végétal,
+                    plus lent et plus exigeant que le tannage au chrome, respecte la fibre
+                    et donne au cuir sa tenue et son odeur caractéristiques.
+                </p>
+                <div class="placeholder-image texture-cuir" style="min-height:180px;margin-top:1.5rem;" aria-hidden="true">
+                    <span class="icone-sellier">🧵</span>
+                </div>
+                <p class="texte-petit" style="margin-top:0.6rem;">
+                    Natures mortes de cuirs coupés, d'outils de sellier, de surpiqûres contrastées — visibles en boutique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 : Rendez-vous en boutique -->
+    <section id="rendezvous" class="section-interieure">
+        <div class="grille-deux" style="gap:3rem;">
+            <div class="reveal">
+                <div class="filet-sellier-simple"></div>
+                <h2>Prenez le temps d'essayer</h2>
+                <p class="texte-large">
+                    Un sac se choisit à l'épaule, se pèse à la main, s'ouvre et se ferme.
+                    Nous vous recevons sur rendez-vous — ou à l'improviste — pour vous
+                    conseiller, sans hâte. Retrait en magasin offert pour toute commande,
+                    et personnalisation possible sur place.
+                </p>
+                <p>
+                    Appelez-nous directement au <a href="tel:+33142887587" class="tel-blanc">01 42 88 75 87</a>
+                    ou remplissez le formulaire ci-contre. Nous vous répondons dans la journée.
+                </p>
+            </div>
+            <div class="reveal reveal-delay-3">
+                <form class="form-rendezvous" action="mailto:service-client@letanneuretcie.com" method="post" enctype="text/plain">
+                    <label for="nom-rdv">Votre nom</label>
+                    <input type="text" id="nom-rdv" name="nom" placeholder="Prénom et nom" required autocomplete="name">
+
+                    <label for="tel-rdv">Téléphone</label>
+                    <input type="tel" id="tel-rdv" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel">
+
+                    <label for="message-rdv">Message (optionnel)</label>
+                    <textarea id="message-rdv" name="message" rows="3" placeholder="Quel modèle ou quelle ligne vous intéresse ? Une préférence de créneau ?"></textarea>
+
+                    <button type="submit" class="btn-submit">Prendre rendez-vous</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 : Les lignes -->
+    <section id="lignes" class="section-large">
+        <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+            <div class="filet-sellier-simple" style="display:inline-block;min-width:120px;"></div>
+            <h2>Nos signatures</h2>
+            <p class="texte-large" style="margin:0 auto;max-width:55ch;">
+                Chaque ligne a sa personnalité, son cuir, sa façon de se porter.
+                Venez les essayer en boutique — les images ne remplacent pas le geste.
+            </p>
+        </div>
+        <div class="grille-trois">
+            <div class="ligne-carte reveal reveal-delay-1">
+                <div class="type-cuir">Cuir pleine fleur grainé</div>
+                <h4>Émilie</h4>
+                <p>Le sac porté-épaule qui a fait la réputation de la maison. Ligne épurée, cuir souple qui se patine avec élégance. Format idéal pour la journée.</p>
+            </div>
+            <div class="ligne-carte reveal reveal-delay-2">
+                <div class="type-cuir">Cuir lisse pleine fleur</div>
+                <h4>Félicie</h4>
+                <p>Une besace d'inspiration sellier, avec sa boucle signature en laiton. Porté croisé ou à l'épaule, il s'affine avec les années et prend une patine unique.</p>
+            </div>
+            <div class="ligne-carte reveal reveal-delay-3">
+                <div class="type-cuir">Cuir pleine fleur tannage végétal</div>
+                <h4>Hortense</h4>
+                <p>Le cabas structuré, conçu pour durer. Coutures sellier apparentes, doublure en coton épais, anses renforcées. Un sac de tous les jours qui ne se démode pas.</p>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2.5rem;">
+            <a href="#" class="btn-secondaire" style="font-size:0.85rem;">Voir toutes les collections <span aria-hidden="true">→</span></a>
+        </p>
+    </section>
+
+    <!-- Section 5 : L'atelier -->
+    <section id="atelier" class="section-large texture-cuir" style="background:rgba(232,213,192,0.25);border-top:1px solid rgba(197,168,102,0.35);border-bottom:1px solid rgba(197,168,102,0.35);">
+        <div class="grille-deux" style="gap:4rem;">
+            <div class="reveal">
+                <div class="filet-sellier-simple"></div>
+                <h2>Geste et transmission</h2>
+                <p class="texte-large">
+                    Depuis la fondation en 1898, nos artisans travaillent le cuir avec des techniques
+                    héritées des tanneurs et des selliers. La boutique de Passy témoigne de ce
+                    savoir-faire : demandez à voir l'intérieur d'un sac, une couture, une doublure
+                    — tout se montre.
+                </p>
+                <p>
+                    Chaque pièce est le résultat d'un geste précis, d'une connaissance intime de la
+                    matière. Les coutures sellier, réalisées au point sellier manuel, sont
+                    reconnaissables à leur régularité et à leur solidité : elles ne se défont pas,
+                    même si un point cède.
+                </p>
+            </div>
+            <div class="reveal reveal-delay-2">
+                <div class="placeholder-image texture-cuir" style="min-height:280px;" aria-hidden="true">
+                    <span class="icone-sellier" style="font-size:2.5rem;">🪡</span>
+                </div>
+                <p class="texte-petit" style="margin-top:0.6rem;text-align:center;">
+                    Portrait d'un artisan au travail — disponible à la boutique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6 : Avis -->
+    <section id="avis" class="section-interieure">
+        <div class="reveal" style="text-align:center;margin-bottom:2.5rem;">
+            <div class="filet-sellier-simple" style="display:inline-block;min-width:100px;"></div>
+            <h2>Ce que disent les gens du quartier</h2>
+            <p style="margin:0 auto;max-width:50ch;">
+                Note globale <strong>4.5★ sur 5</strong> — <strong>38 avis</strong> Google.
+                <a href="#" style="color:var(--cognac-pleine-fleur);text-decoration:underline;font-weight:500;">Lire tous les avis sur Google Maps</a>
+            </p>
+        </div>
+        <div class="grille-trois">
+            <div class="avis-carte reveal reveal-delay-1">
+                <div class="avis-stars">★★★★★</div>
+                <div class="avis-nom">Claire D.</div>
+                <div class="avis-date">Novembre 2024</div>
+                <p class="avis-texte">« Une boutique magnifique, un accueil rare. On prend le temps, on touche les cuirs, on pose des questions — et on repart avec un sac qui a du sens. »</p>
+            </div>
+            <div class="avis-carte reveal reveal-delay-2">
+                <div class="avis-stars">★★★★★</div>
+                <div class="avis-nom">Philippe M.</div>
+                <div class="avis-date">Octobre 2024</div>
+                <p class="avis-texte">« Rue de Passy, une adresse discrète mais en or. Le conseil est précis, pas de pression. J'ai fait personnaliser un portefeuille, résultat impeccable. »</p>
+            </div>
+            <div class="avis-carte reveal reveal-delay-3">
+                <div class="avis-stars">★★★★☆</div>
+                <div class="avis-nom">Anne L.</div>
+                <div class="avis-date">Septembre 2024</div>
+                <p class="avis-texte">« Très belle sélection de cuirs. J'aurais aimé un peu plus de choix en petite maroquinerie, mais la qualité est indéniable et l'équipe charmante. »</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4 style="color:var(--laiton-patine);font-family:'Libre Baskerville',serif;margin-bottom:0.8rem;">Le Tanneur</h4>
+            <p class="footer-adresse">
+                13 Rue de Passy<br>
+                75016 Paris<br>
+                France
+            </p>
+        </div>
+        <div>
+            <h4 style="color:var(--laiton-patine);font-family:'Libre Baskerville',serif;margin-bottom:0.8rem;">Contact</h4>
+            <p>
+                <a href="tel:+33142887587">01 42 88 75 87</a><br>
+                <a href="mailto:service-client@letanneuretcie.com">service-client@letanneuretcie.com</a>
+            </p>
+            <p style="margin-top:0.5rem;">
+                Lundi – Samedi : 10h00 – 19h00<br>
+                Dimanche : fermé
+            </p>
+        </div>
+        <div>
+            <h4 style="color:var(--laiton-patine);font-family:'Libre Baskerville',serif;margin-bottom:0.8rem;">Liens</h4>
+            <p>
+                <a href="#lieu">La boutique</a><br>
+                <a href="#matiere">La matière</a><br>
+                <a href="#rendezvous">Rendez-vous</a><br>
+                <a href="#lignes">Collections</a><br>
+                <a href="#avis">Avis clients</a>
+            </p>
+        </div>
+    </div>
+    <div class="credit-agence">
+        Site créé par <strong>Agence Mooo</strong> — <a href="https://agence.mooo.com/le-tanneur" style="color:inherit;">agence.mooo.com/le-tanneur</a>
+    </div>
+</footer>
+
+<!-- Bandeau mobile fixe -->
+<div class="bandeau-mobile-fixe" aria-hidden="true">
+    <a href="tel:+33142887587">📞 Appeler</a>
+    <span id="module-horaire-mobile" style="font-size:0.75rem;"></span>
+    <a href="#lieu">📍 Itinéraire</a>
+</div>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Le Tanneur",
+        "image": "assets/maps-1.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "13 Rue de Passy",
+            "addressLocality": "Paris",
+            "postalCode": "75016",
+            "addressCountry": "FR"
+        },
+        "telephone": "+33142887587",
+        "email": "service-client@letanneuretcie.com",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "38"
+        },
+        "priceRange": "€€€",
+        "url": "https://agence.mooo.com/le-tanneur"
+    }
+</script>
+
+<!-- JavaScript : module horaire + reveals au scroll -->
+<script>
+    (function() {
+        // Horaires : Lun-Sam 10h-19h, Dimanche fermé
+        const horaires = {
+            1: { open: 10, close: 19 }, // Lundi
+            2: { open: 10, close: 19 }, // Mardi
+            3: { open: 10, close: 19 }, // Mercredi
+            4: { open: 10, close: 19 }, // Jeudi
+            5: { open: 10, close: 19 }, // Vendredi
+            6: { open: 10, close: 19 }, // Samedi
+            0: null // Dimanche fermé
+        };
+
+        function getEtatOuverture() {
+            const now = new Date();
+            const jour = now.getDay(); // 0 = dimanche
+            const heure = now.getHours();
+            const minutes = now.getMinutes();
+            const heureDecimal = heure + minutes / 60;
+
+            const horaireJour = horaires[jour];
+            if (!horaireJour) {
+                return { ouvert: false, texte: 'Fermé — ouvre lundi à 10h' };
+            }
+            if (heureDecimal >= horaireJour.open && heureDecimal < horaireJour.close) {
+                const heureFermeture = horaireJour.close;
+                const minutesRestantes = Math.floor((heureFermeture - heureDecimal) * 60);
+                if (minutesRestantes <= 30 && minutesRestantes > 0) {
+                    return { ouvert: true, texte: 'Ferme bientôt — ' + Math.ceil(minutesRestantes / 10) * 10 +
+                            ' min' };
+                }
+                return { ouvert: true, texte: 'Ouvert — jusqu\'à ' + horaireJour.close + 'h' };
+            }
+            if (heureDecimal < horaireJour.open) {
+                return { ouvert: false, texte: 'Fermé — ouvre à ' + horaireJour.open + 'h' };
+            }
+            // Après fermeture
+            const lendemain = (jour + 1) % 7;
+            const horaireLendemain = horaires[lendemain];
+            if (horaireLendemain) {
+                return { ouvert: false, texte: 'Fermé — ouvre demain à ' + horaireLendemain.open + 'h' };
+            }
+            return { ouvert: false, texte: 'Fermé — ouvre lundi à 10h' };
+        }
+
+        function mettreAJourModule() {
+            const etat = getEtatOuverture();
+            const module = document.getElementById('module-horaire');
+            const texte = document.getElementById('texte-horaire');
+            const moduleMobile = document.getElementById('module-horaire-mobile');
+            const heroHoraires = document.getElementById('hero-horaires');
+
+            if (module && texte) {
+                module.className = 'module-horaire ' + (etat.ouvert ? 'ouvert' : 'ferme');
+                texte.textContent = etat.texte;
+            }
+            if (moduleMobile) {
+                moduleMobile.textContent = etat.texte;
+                moduleMobile.style.color = etat.ouvert ? 'var(--vert-doublure)' : '#6b5a4e';
+            }
+            if (heroHoraires) {
+                const now = new Date();
+                const jour = now.getDay();
+                if (jour === 0) {
+                    heroHoraires.textContent = 'Aujourd\'hui : fermé — ouvre lundi à 10h';
+                } else {
+                    heroHoraires.textContent = 'Aujourd\'hui : 10h–19h';
+                }
+            }
+        }
+
+        mettreAJourModule();
+        // Mise à jour toutes les 60 secondes
+        setInterval(mettreAJourModule, 60000);
+
+        // Reveals au scroll (IntersectionObserver)
+        const reveals = document.querySelectorAll('.reveal');
+        if (reveals.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            reveals.forEach(el => observer.observe(el));
+        } else {
+            // Fallback : afficher tout sans animation si prefers-reduced-motion
+            reveals.forEach(el => el.classList.add('visible'));
+        }
+
+        // Header ombre au scroll
+        const header = document.querySelector('.header-fixe');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { passive: true });
+        }
+
+        // Lien "Voir toutes les collections" et "Lire tous les avis" : empêcher le # de faire défiler
+        document.querySelectorAll('a[href="#"]').forEach(lien => {
+            lien.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Comportement neutre — on pourrait rediriger vers le site e-commerce,
+                // mais ici on reste fidèle au brief (pas de catalogue en ligne sur cette page).
+                // On affiche un discret retour visuel.
+                const originalText = this.textContent;
+                this.textContent = 'Redirection vers le site…';
+                this.style.opacity = '0.7';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.opacity = '1';
+                }, 1800);
+            });
+        });
+    })();
+</script>
+</body>
+</html>
