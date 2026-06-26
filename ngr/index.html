@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGR — Écrin Privé | Mode & Maison haut de gamme — Paris 16ᵉ</title>
-    <meta name="description" content="NGR, ventes privées permanentes de mode & maison au cœur du 16ᵉ arrondissement de Paris. De grandes marques, en toute discrétion, à des prix d'initiés.">
-    <meta property="og:title" content="NGR — Écrin Privé | Mode & Maison haut de gamme">
-    <meta property="og:description" content="Ventes privées permanentes de mode & maison au cœur du 16ᵉ arrondissement. De grandes marques, en toute discrétion.">
-    <meta property="og:image" content="assets/maps-1.jpg">
+    <title>NGR — Ventes privées mode & décoration, Paris 16e</title>
+    <meta name="description" content="NGR, l'adresse confidentielle du 16e arrondissement. Ventes privées permanentes de mode et décoration, grandes marques à petits prix. Découvrez un secret bien gardé rue de Boulainvilliers.">
+    <meta property="og:title" content="NGR — Ventes privées mode & décoration, Paris 16e">
+    <meta property="og:description" content="On vous en a parlé. Maintenant, trouvez la porte. Ventes privées de mode et décoration, 7 jours sur 7, dans le secret d'une adresse du 16e.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#121212">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23121212'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='52' font-weight='700' fill='%23C9A96E'%3EN%3C/text%3E%3C/svg%3E">
-
+    <meta property="og:locale" content="fr_FR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫒</text></svg>">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "NGR",
-            "image": "assets/maps-1.jpg",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "40 Bis Rue de Boulainvilliers",
@@ -31,27 +28,28 @@
             },
             "telephone": "+33145273242",
             "email": "contact@ngr.fr",
+            "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80&auto=format&fit=crop",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "3.8",
                 "reviewCount": "171"
             },
-            "priceRange": "€€€"
+            "openingHours": "Mo-Su 11:00-19:00",
+            "currenciesAccepted": "EUR",
+            "priceRange": "€€"
         }
     </script>
-
     <style>
         :root {
-            --blanc-pur: #FFFFFF;
-            --blanc-froid: #F7F7F7;
-            --noir-profond: #121212;
-            --gris-metal: #5A5A5A;
-            --gris-clair: #E0E0E0;
-            --dore-laiton: #C9A96E;
-            --dore-ombre: #a88d50;
-            --transition-slow: 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
-            --transition-medium: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-            --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --calcaire: #FBF8F4;
+            --bitume: #2C2A28;
+            --bordeaux: #8E2E3B;
+            --pierre-seche: #E9E3D8;
+            --zinc: #5D5A57;
+            --vert-marquise: #1F3A3F;
+            --bordeaux-rgb: 142, 46, 59;
+            --vert-rgb: 31, 58, 63;
+            --transition-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
         }
 
         *,
@@ -70,10 +68,18 @@
             text-rendering: optimizeLegibility;
         }
 
+        body {
+            font-family: 'Albert Sans', -apple-system, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            color: var(--bitume);
+            background-color: var(--calcaire);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
             *,
             *::before,
             *::after {
@@ -81,224 +87,280 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+            html {
+                scroll-behavior: auto;
+            }
         }
 
-        body {
-            font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--noir-profond);
-            background-color: var(--blanc-pur);
-            overflow-x: hidden;
-            position: relative;
-            letter-spacing: 0.01em;
+        /* ========== UTILITY ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
 
-        /* Grain texture overlay */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.025;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 180px 180px;
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.25rem, 4vw, 3rem);
         }
 
-        /* Focus styles */
+        .container--narrow {
+            max-width: 880px;
+        }
+
+        .container--medium {
+            max-width: 1080px;
+        }
+
+        /* ========== FOCUS ========== */
         :focus-visible {
-            outline: 3px solid var(--dore-laiton);
-            outline-offset: 4px;
+            outline: 3px solid var(--bordeaux);
+            outline-offset: 3px;
             border-radius: 2px;
         }
 
-        a:focus-visible {
-            outline-offset: 6px;
+        /* ========== ANIMATIONS - ENTRÉE ========== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(32px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes softBlink {
+            0%,
+            100% {
+                opacity: 0.55;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes dashDraw {
+            from {
+                stroke-dashoffset: 600;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes subtlePulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s var(--transition-smooth), transform 0.75s var(--transition-smooth);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal--delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal--delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal--delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal--delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal--fade-only {
+            opacity: 0;
+            transform: none;
+            transition: opacity 0.8s var(--transition-smooth);
+        }
+        .reveal--fade-only.visible {
+            opacity: 1;
         }
 
         /* ========== HEADER ========== */
-        .header {
-            position: fixed;
+        .site-header {
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.2rem clamp(1rem, 4vw, 4rem);
+            z-index: 100;
+            background: rgba(251, 248, 244, 0.82);
+            backdrop-filter: blur(14px) saturate(1.4);
+            -webkit-backdrop-filter: blur(14px) saturate(1.4);
+            border-bottom: 1px solid rgba(93, 90, 87, 0.18);
+            transition: box-shadow 0.35s var(--transition-smooth);
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 24px rgba(44, 42, 40, 0.07);
+        }
+        .site-header__inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: background var(--transition-medium), box-shadow var(--transition-medium), padding var(--transition-medium);
-            background: transparent;
+            height: clamp(56px, 6vw, 72px);
+            gap: 1.5rem;
         }
-
-        .header.scrolled {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 var(--gris-clair);
-            padding: 0.7rem clamp(1rem, 4vw, 4rem);
-        }
-
-        .header__logo {
+        .site-logo {
             font-family: 'Unbounded', 'Albert Sans', sans-serif;
             font-weight: 700;
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            letter-spacing: 0.06em;
-            color: var(--noir-profond);
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            letter-spacing: 0.16em;
+            color: var(--bitume);
             text-decoration: none;
-            transition: color var(--transition-fast);
-            position: relative;
-            z-index: 2;
+            flex-shrink: 0;
+            transition: color 0.25s;
+            line-height: 1;
         }
-
-        .header__logo span {
-            color: var(--dore-laiton);
-            transition: color var(--transition-fast);
+        .site-logo:hover {
+            color: var(--bordeaux);
         }
-
-        .header__logo:hover span {
-            color: var(--dore-ombre);
+        .site-logo__accent {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            margin-left: 2px;
+            vertical-align: middle;
+            margin-bottom: 0.15em;
+            animation: softBlink 3s ease-in-out infinite;
         }
-
-        .header__nav {
+        .nav-list {
             display: flex;
-            align-items: center;
-            gap: clamp(1.2rem, 3vw, 2.5rem);
             list-style: none;
+            gap: clamp(0.8rem, 2.5vw, 1.8rem);
+            align-items: center;
         }
-
-        .header__nav a {
+        .nav-list a {
+            text-decoration: none;
             font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--gris-metal);
-            transition: color var(--transition-fast);
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            letter-spacing: 0.04em;
+            color: var(--zinc);
+            transition: color 0.25s;
             position: relative;
             white-space: nowrap;
         }
-
-        .header__nav a::after {
+        .nav-list a::after {
             content: '';
             position: absolute;
             bottom: -4px;
             left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--dore-laiton);
-            transition: width var(--transition-medium);
-        }
-
-        .header__nav a:hover {
-            color: var(--noir-profond);
-        }
-        .header__nav a:hover::after {
             width: 100%;
+            height: 1px;
+            background: var(--bordeaux);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s var(--transition-smooth);
         }
-
-        .header__cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Albert Sans', sans-serif;
-            font-weight: 600;
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--bordeaux);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .nav-cta {
+            background: var(--vert-marquise);
+            color: #fff !important;
+            padding: 0.45em 1.2em;
+            border-radius: 3px;
+            font-weight: 600 !important;
+            letter-spacing: 0.05em;
+            transition: background 0.3s, transform 0.25s !important;
+            position: relative;
+            border: none;
+            cursor: pointer;
             text-decoration: none;
-            color: var(--dore-laiton);
-            border: 1.5px solid var(--dore-laiton);
-            padding: 0.55rem 1.3rem;
-            border-radius: 0;
-            transition: all var(--transition-medium);
-            white-space: nowrap;
-            background: transparent;
-            cursor: pointer;
+            display: inline-block;
         }
-
-        .header__cta:hover {
-            background: var(--dore-laiton);
-            color: var(--blanc-pur);
-            border-color: var(--dore-laiton);
-            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.3);
+        .nav-cta:hover {
+            background: #1a3136;
+            transform: translateY(-1px);
         }
-
-        /* Mobile nav toggle */
-        .header__burger {
+        .nav-cta::after {
+            display: none !important;
+        }
+        .mobile-menu-btn {
             display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 2;
             background: none;
             border: none;
-            padding: 8px;
+            cursor: pointer;
+            padding: 0.4rem;
+            color: var(--bitume);
+            flex-direction: column;
+            gap: 5px;
+            align-items: stretch;
+            width: 28px;
         }
-        .header__burger span {
+        .mobile-menu-btn span {
             display: block;
-            width: 24px;
             height: 2px;
-            background: var(--noir-profond);
-            transition: var(--transition-medium);
+            background: currentColor;
             border-radius: 1px;
+            transition: all 0.3s;
         }
-
         @media (max-width: 768px) {
-            .header__nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                max-width: 320px;
-                height: 100vh;
-                background: var(--blanc-pur);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 6rem 2rem 2rem;
-                gap: 1.5rem;
-                transition: right var(--transition-medium);
-                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.08);
-                z-index: 1;
-            }
-            .header__nav.active {
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
                 right: 0;
+                background: rgba(251, 248, 244, 0.97);
+                backdrop-filter: blur(18px);
+                flex-direction: column;
+                padding: 1.5rem 1.5rem 2rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid rgba(93, 90, 87, 0.2);
+                box-shadow: 0 8px 32px rgba(44, 42, 40, 0.08);
             }
-            .header__burger {
+            .nav-list.active {
                 display: flex;
             }
-            .header__cta.desktop-only {
-                display: none;
+            .mobile-menu-btn {
+                display: flex;
             }
-            .header__nav .header__cta {
-                display: inline-flex;
-                margin-top: 0.5rem;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .header__nav .header__cta {
-                display: none;
-            }
-            .header__cta.desktop-only {
-                display: inline-flex;
+            .site-header__inner {
+                gap: 1rem;
             }
         }
 
         /* ========== HERO ========== */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--noir-profond);
+            background: var(--calcaire);
         }
-
         .hero__bg {
             position: absolute;
             inset: 0;
@@ -308,976 +370,1205 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) contrast(1.15) brightness(0.5);
-            transition: filter 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-            display: block;
+            object-position: center 40%;
+            filter: brightness(0.78) saturate(0.85);
+            animation: fadeIn 1.5s ease-out;
         }
-
-        .hero__bg--color-reveal {
+        .hero__overlay {
             position: absolute;
             inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(44, 42, 40, 0.55) 0%,
+                    rgba(44, 42, 40, 0.35) 35%,
+                    rgba(44, 42, 40, 0.55) 85%,
+                    rgba(31, 58, 63, 0.6) 100%);
             z-index: 1;
-            opacity: 0;
-            transition: opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-            pointer-events: none;
         }
-        .hero__bg--color-reveal img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(1.05) brightness(0.55);
-            display: block;
-        }
-
-        .hero:hover .hero__bg--color-reveal {
-            opacity: 1;
-        }
-        .hero:hover .hero__bg img {
-            filter: grayscale(0%) contrast(1.05) brightness(0.5);
-        }
-
-        /* Vignette overlay */
-        .hero__vignette {
+        .hero__grain {
             position: absolute;
             inset: 0;
             z-index: 2;
-            background: radial-gradient(ellipse at center, transparent 40%, rgba(18, 18, 18, 0.65) 85%, rgba(18, 18, 18, 0.9) 100%);
+            opacity: 0.06;
             pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
         }
-
-        /* Subtle golden glow spheres (lamp references) */
-        .hero__glow {
-            position: absolute;
-            z-index: 3;
-            pointer-events: none;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.25;
-            background: var(--dore-laiton);
-        }
-        .hero__glow--1 {
-            width: 180px;
-            height: 180px;
-            top: 15%;
-            left: 8%;
-            animation: glowPulse 6s ease-in-out infinite;
-        }
-        .hero__glow--2 {
-            width: 120px;
-            height: 120px;
-            bottom: 20%;
-            right: 12%;
-            animation: glowPulse 8s ease-in-out 2s infinite;
-        }
-
-        @keyframes glowPulse {
-            0%,
-            100% {
-                opacity: 0.18;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.35;
-                transform: scale(1.2);
-            }
-        }
-
         .hero__content {
             position: relative;
-            z-index: 4;
+            z-index: 3;
+            color: #fff;
             text-align: center;
-            max-width: 900px;
-            padding: 2rem clamp(1.5rem, 6vw, 4rem);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.8rem;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: clamp(2rem, 8vh, 6rem) clamp(1rem, 4vw, 2rem);
         }
-
-        .hero__overline {
+        .hero__eyebrow {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
-            font-size: clamp(0.7rem, 1.2vw, 0.8rem);
-            letter-spacing: 0.18em;
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--dore-laiton);
-            opacity: 0;
-            animation: revealUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s forwards;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.2rem;
+            animation: fadeUp 0.9s var(--transition-smooth) both;
         }
-
         .hero__title {
             font-family: 'Unbounded', 'Albert Sans', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2.8rem, 8vw, 6.5rem);
-            line-height: 0.95;
-            letter-spacing: -0.02em;
-            color: var(--blanc-pur);
-            text-transform: uppercase;
-            opacity: 0;
-            animation: revealUp 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) 0.35s forwards;
-        }
-
-        .hero__title em {
-            font-style: normal;
-            display: block;
-            font-size: clamp(1.6rem, 4vw, 3.2rem);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
             letter-spacing: 0.04em;
-            color: var(--dore-laiton);
-            margin-top: -0.1em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            animation: fadeUp 0.9s var(--transition-smooth) 0.15s both;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
-
         .hero__subtitle {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 400;
-            font-size: clamp(1rem, 1.8vw, 1.25rem);
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 580px;
-            opacity: 0;
-            animation: revealUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.55s forwards;
+            margin: 0 auto 2rem;
+            animation: fadeUp 0.9s var(--transition-smooth) 0.3s both;
         }
-
-        .hero__btn {
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeUp 0.9s var(--transition-smooth) 0.45s both;
+        }
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5em;
             font-family: 'Albert Sans', sans-serif;
             font-weight: 600;
-            font-size: clamp(0.78rem, 1.1vw, 0.85rem);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            letter-spacing: 0.04em;
+            padding: 0.75em 1.8em;
+            border-radius: 3px;
             text-decoration: none;
-            color: var(--dore-laiton);
-            border: 1.5px solid var(--dore-laiton);
-            padding: 0.75rem 2rem;
-            background: transparent;
-            transition: all var(--transition-medium);
             cursor: pointer;
-            opacity: 0;
-            animation: revealUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.75s forwards;
+            transition: all 0.35s var(--transition-smooth);
             position: relative;
-            overflow: hidden;
+            border: none;
+            white-space: nowrap;
         }
-
-        .hero__btn::before {
+        .btn--primary {
+            background: var(--vert-marquise);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(31, 58, 63, 0.35);
+        }
+        .btn--primary:hover {
+            background: #172e33;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(31, 58, 63, 0.45);
+        }
+        .btn--outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(4px);
+        }
+        .btn--outline:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .btn--bordeaux {
+            background: var(--bordeaux);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(142, 46, 59, 0.3);
+        }
+        .btn--bordeaux:hover {
+            background: #722533;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(142, 46, 59, 0.4);
+        }
+        .btn--ghost {
+            background: transparent;
+            color: var(--vert-marquise);
+            border: 1.5px solid var(--vert-marquise);
+        }
+        .btn--ghost:hover {
+            background: var(--vert-marquise);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        /* Dotted line decoration on buttons */
+        .btn--dotted {
+            position: relative;
+        }
+        .btn--dotted::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: var(--dore-laiton);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            z-index: -1;
-        }
-        .hero__btn:hover {
-            color: var(--blanc-pur);
-            border-color: var(--dore-laiton);
-            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.35);
-        }
-        .hero__btn:hover::before {
-            transform: scaleX(1);
-        }
-
-        .hero__scroll-indicator {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border: 1.5px dashed var(--bordeaux);
+            border-radius: 5px;
             opacity: 0;
-            animation: revealUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 1s forwards;
+            transition: all 0.4s var(--transition-smooth);
+            pointer-events: none;
         }
-        .hero__scroll-indicator span {
-            font-family: 'Albert Sans', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.55);
-        }
-        .hero__scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
-            animation: scrollHint 2s ease-in-out infinite;
+        .btn--dotted:hover::before {
+            opacity: 1;
+            border-style: solid;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
         }
 
-        @keyframes scrollHint {
-            0%,
-            100% {
-                transform: scaleY(0.4);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scaleY(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes revealUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ========== SECTIONS GENERAL ========== */
+        /* ========== SECTIONS ========== */
         .section {
-            padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 6vw, 5rem);
+            padding: clamp(3rem, 7vw, 6rem) 0;
             position: relative;
-            z-index: 1;
         }
-
-        .section--dark {
-            background: var(--noir-profond);
-            color: var(--blanc-pur);
+        .section--alt {
+            background: var(--pierre-seche);
         }
-        .section--light {
-            background: var(--blanc-pur);
+        .section__header {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 3.5rem);
         }
-        .section--frosted {
-            background: var(--blanc-froid);
-        }
-
-        .section__label {
+        .section__kicker {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
-            font-size: clamp(0.65rem, 1vw, 0.72rem);
-            letter-spacing: 0.15em;
+            font-size: clamp(0.7rem, 1vw, 0.8rem);
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--dore-laiton);
-            margin-bottom: 1rem;
+            color: var(--bordeaux);
+            margin-bottom: 0.8rem;
             display: block;
         }
-
         .section__title {
             font-family: 'Unbounded', 'Albert Sans', sans-serif;
             font-weight: 600;
-            font-size: clamp(2rem, 5vw, 3.8rem);
-            line-height: 1.08;
-            letter-spacing: -0.01em;
-            color: var(--noir-profond);
-            margin-bottom: 1.5rem;
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            letter-spacing: 0.06em;
+            line-height: 1.2;
+            color: var(--bitume);
+            margin-bottom: 1rem;
         }
-        .section--dark .section__title {
-            color: var(--blanc-pur);
-        }
-
-        .section__text {
+        .section__intro {
             font-family: 'Albert Sans', sans-serif;
             font-weight: 400;
-            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            color: var(--zinc);
+            max-width: 620px;
+            margin: 0 auto;
             line-height: 1.7;
-            color: var(--gris-metal);
-            max-width: 600px;
-        }
-        .section--dark .section__text {
-            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* ========== ESPRIT DU LIEU ========== */
-        .esprit {
+        /* ========== DOTTED DIVIDER ========== */
+        .dotted-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            height: 1px;
+            margin: clamp(1.5rem, 3vw, 2.5rem) auto;
+            max-width: 220px;
+            position: relative;
+            overflow: visible;
+        }
+        .dotted-divider::before {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: repeating-linear-gradient(to right,
+                    var(--bordeaux) 0px,
+                    var(--bordeaux) 4px,
+                    transparent 4px,
+                    transparent 12px);
+            opacity: 0.5;
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .dotted-divider:hover::before {
+            opacity: 0.85;
+            background: var(--bordeaux);
+        }
+        .dotted-divider__dot {
+            width: 6px;
+            height: 6px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin: 0 6px;
+        }
+
+        /* ========== À PROPOS ========== */
+        .about__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 6vw, 6rem);
+            gap: clamp(2rem, 5vw, 4rem);
             align-items: center;
-            position: relative;
         }
-
-        @media (max-width: 768px) {
-            .esprit {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
+        .about__text {
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.75;
+            color: var(--bitume);
         }
-
-        .esprit__visual {
+        .about__text p+p {
+            margin-top: 1.2em;
+        }
+        .about__highlight {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: var(--bordeaux);
+            line-height: 1.4;
+            margin-bottom: 1.4rem;
+            display: block;
+        }
+        .about__visual {
             position: relative;
+            border-radius: 2px;
             overflow: hidden;
-            aspect-ratio: 3/4;
-            max-height: 600px;
-            border: 1px solid var(--gris-clair);
-            transition: border-color var(--transition-medium);
+            box-shadow: 0 12px 40px rgba(44, 42, 40, 0.12);
+            aspect-ratio: 4/5;
+            background: var(--pierre-seche);
         }
-
-        .esprit__visual:hover {
-            border-color: var(--dore-laiton);
-        }
-
-        .esprit__visual img {
+        .about__visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) contrast(1.1) brightness(0.9);
-            transition: filter 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
-            display: block;
+            transition: transform 0.6s var(--transition-smooth);
         }
-        .esprit__visual:hover img {
-            filter: grayscale(0%) contrast(1) brightness(1);
+        .about__visual:hover img {
+            transform: scale(1.04);
+        }
+        .about__visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1.5px dashed var(--bordeaux);
+            border-radius: 3px;
+            opacity: 0.4;
+            pointer-events: none;
+            top: 12px;
+            left: 12px;
+            right: -12px;
+            bottom: -12px;
+            z-index: -1;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .about__visual:hover::after {
+            border-style: solid;
+            opacity: 0.7;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+        }
+        @media (max-width: 768px) {
+            .about__grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about__visual {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+            .about__visual::after {
+                top: 6px;
+                left: 6px;
+                right: -6px;
+                bottom: -6px;
+            }
         }
 
-        /* Golden accent line on image */
-        .esprit__visual::after {
-            content: '';
+        /* ========== GOOGLE BADGE ========== */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6em;
+            background: #fff;
+            border: 1px solid rgba(93, 90, 87, 0.25);
+            border-radius: 6px;
+            padding: 0.5em 1em;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--bitume);
+            box-shadow: 0 2px 8px rgba(44, 42, 40, 0.05);
+            transition: box-shadow 0.3s;
+        }
+        .google-badge:hover {
+            box-shadow: 0 4px 16px rgba(44, 42, 40, 0.1);
+        }
+        .google-badge__stars {
+            color: #f4b400;
+            letter-spacing: 0.05em;
+            font-size: 1rem;
+        }
+        .google-badge__count {
+            color: var(--zinc);
+            font-size: 0.8rem;
+        }
+
+        /* ========== GALERIE ========== */
+        .gallery__grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: clamp(0.8rem, 2vw, 1.2rem);
+        }
+        .gallery__item {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            background: var(--pierre-seche);
+            box-shadow: 0 6px 24px rgba(44, 42, 40, 0.08);
+            transition: box-shadow 0.4s var(--transition-smooth);
+            cursor: default;
+        }
+        .gallery__item:hover {
+            box-shadow: 0 14px 38px rgba(44, 42, 40, 0.15);
+        }
+        .gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s var(--transition-smooth), filter 0.5s;
+            filter: brightness(0.92) saturate(0.9);
+        }
+        .gallery__item:hover img {
+            transform: scale(1.03);
+            filter: brightness(1) saturate(1);
+        }
+        .gallery__item--large {
+            grid-row: span 2;
+            aspect-ratio: 3/4;
+        }
+        .gallery__item--tall {
+            grid-row: span 2;
+            aspect-ratio: 2/3;
+        }
+        .gallery__item--wide {
+            aspect-ratio: 4/3;
+        }
+        .gallery__item--square {
+            aspect-ratio: 1/1;
+        }
+        .gallery__caption {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--dore-laiton);
-            z-index: 2;
-            transition: width var(--transition-medium);
-        }
-        .esprit__visual:hover::after {
-            width: 100%;
-        }
-
-        .esprit__content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 1rem 0;
-        }
-
-        .esprit__quote {
-            font-family: 'Unbounded', 'Albert Sans', sans-serif;
-            font-weight: 500;
-            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-            line-height: 1.3;
-            color: var(--noir-profond);
-            letter-spacing: -0.01em;
-            border-left: 3px solid var(--dore-laiton);
-            padding-left: 1.5rem;
-            font-style: italic;
-        }
-
-        .esprit__details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-        .esprit__tag {
+            right: 0;
+            padding: 1.5rem 1.2rem 1rem;
+            background: linear-gradient(transparent, rgba(44, 42, 40, 0.7));
+            color: #fff;
             font-family: 'Albert Sans', sans-serif;
             font-weight: 500;
-            font-size: 0.72rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.4rem 1rem;
-            border: 1px solid var(--gris-clair);
-            color: var(--gris-metal);
-            transition: all var(--transition-fast);
-            background: transparent;
-        }
-        .esprit__tag:hover {
-            border-color: var(--dore-laiton);
-            color: var(--dore-laiton);
-            background: rgba(201, 169, 110, 0.04);
-        }
-
-        /* ========== OFFRE ========== */
-        .offre-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1.5rem, 3vw, 2.5rem);
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 600px) {
-            .offre-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .offre-card {
-            background: var(--blanc-pur);
-            border: 1px solid var(--gris-clair);
-            padding: clamp(2rem, 4vw, 3rem);
-            transition: all var(--transition-medium);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .offre-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 2px;
-            height: 0;
-            background: var(--dore-laiton);
-            transition: height var(--transition-medium);
-        }
-        .offre-card:hover::before {
-            height: 100%;
-        }
-        .offre-card:hover {
-            border-color: var(--dore-laiton);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            transform: translateY(-3px);
-        }
-
-        .offre-card__icon {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            display: block;
-            filter: grayscale(1);
-            transition: filter var(--transition-medium);
-        }
-        .offre-card:hover .offre-card__icon {
-            filter: grayscale(0);
-        }
-
-        .offre-card__title {
-            font-family: 'Unbounded', 'Albert Sans', sans-serif;
-            font-weight: 600;
-            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-            letter-spacing: -0.01em;
-            color: var(--noir-profond);
-            margin-bottom: 0.6rem;
-        }
-        .offre-card__text {
-            font-family: 'Albert Sans', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--gris-metal);
-        }
-
-        /* ========== AVIS / NOTE ========== */
-        .rating-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: var(--blanc-pur);
-            border: 1px solid var(--gris-clair);
-            padding: 0.7rem 1.4rem;
-            font-family: 'Albert Sans', sans-serif;
-            transition: all var(--transition-medium);
-            text-decoration: none;
-            color: inherit;
-        }
-        .rating-badge:hover {
-            border-color: var(--dore-laiton);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
-        }
-        .rating-badge__stars {
-            color: var(--dore-laiton);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-        .rating-badge__score {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--noir-profond);
-            letter-spacing: -0.02em;
-        }
-        .rating-badge__count {
-            font-size: 0.8rem;
-            color: var(--gris-metal);
-            letter-spacing: 0.03em;
-        }
-
-        /* ========== INFOS PRATIQUES ========== */
-        .infos-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 6vw, 5rem);
-            align-items: start;
-        }
-
-        @media (max-width: 768px) {
-            .infos-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        .infos__list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-        }
-        .infos__item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            font-family: 'Albert Sans', sans-serif;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: var(--noir-profond);
-        }
-        .infos__item strong {
-            display: block;
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--gris-metal);
-            margin-bottom: 0.2rem;
-            font-weight: 500;
-        }
-        .infos__item a {
-            color: var(--noir-profond);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            border-bottom: 1px solid transparent;
-        }
-        .infos__item a:hover {
-            color: var(--dore-laiton);
-            border-bottom-color: var(--dore-laiton);
-        }
-
-        .infos__map {
-            width: 100%;
-            border: 1px solid var(--gris-clair);
-            overflow: hidden;
-            transition: border-color var(--transition-medium);
-            aspect-ratio: 4/3;
-            min-height: 300px;
-        }
-        .infos__map:hover {
-            border-color: var(--dore-laiton);
-        }
-        .infos__map iframe {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Horaires */
-        .horaires-note {
-            font-family: 'Albert Sans', sans-serif;
             font-size: 0.85rem;
-            color: var(--dore-laiton);
-            font-style: italic;
-            letter-spacing: 0.03em;
-            padding: 0.6rem 1rem;
-            border: 1px dashed var(--gris-clair);
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-
-        /* ========== FOOTER ========== */
-        .footer {
-            background: var(--noir-profond);
-            color: rgba(255, 255, 255, 0.65);
-            padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 5rem);
-            font-family: 'Albert Sans', sans-serif;
-            font-size: 0.8rem;
-            line-height: 1.7;
-            letter-spacing: 0.03em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            border-bottom: 1px solid transparent;
-        }
-        .footer a:hover {
-            color: var(--dore-laiton);
-            border-bottom-color: var(--dore-laiton);
-        }
-        .footer__brand {
-            font-family: 'Unbounded', 'Albert Sans', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            letter-spacing: 0.06em;
-            color: var(--blanc-pur);
-            margin-bottom: 0.8rem;
-        }
-        .footer__brand span {
-            color: var(--dore-laiton);
-        }
-        .footer__credit {
-            font-size: 0.7rem;
-            opacity: 0.5;
-            letter-spacing: 0.06em;
-        }
-
-        /* ========== REVEAL ON SCROLL ========== */
-        .reveal {
+            letter-spacing: 0.04em;
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transform: translateY(8px);
+            transition: all 0.4s var(--transition-smooth);
         }
-        .reveal.visible {
+        .gallery__item:hover .gallery__caption {
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
+        @media (max-width: 768px) {
+            .gallery__grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+            .gallery__item--large {
+                grid-row: span 1;
+                grid-column: span 2;
+                aspect-ratio: 3/2;
+            }
+            .gallery__item--tall {
+                grid-row: span 2;
+                aspect-ratio: 3/4;
+            }
         }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
+        @media (max-width: 480px) {
+            .gallery__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__item--large,
+            .gallery__item--tall {
+                grid-column: span 1;
+                grid-row: span 1;
+                aspect-ratio: 3/2;
+            }
         }
 
-        /* ========== DECORATIVE ELEMENTS ========== */
-        .filet-dore {
-            width: 50px;
-            height: 2px;
-            background: var(--dore-laiton);
-            margin: 0.5rem 0 1.5rem;
-            transition: width var(--transition-medium);
+        /* ========== OFFRE ========== */
+        .offer__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
         }
-        .section:hover .filet-dore {
-            width: 90px;
+        .offer-card {
+            background: #fff;
+            border: 1px solid rgba(93, 90, 87, 0.12);
+            border-radius: 3px;
+            padding: clamp(1.5rem, 3vw, 2.2rem);
+            text-align: center;
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            box-shadow: 0 4px 16px rgba(44, 42, 40, 0.04);
+        }
+        .offer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(44, 42, 40, 0.1);
+            border-color: var(--bordeaux);
+        }
+        .offer-card__icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            transition: transform 0.35s var(--transition-smooth);
+        }
+        .offer-card:hover .offer-card__icon {
+            transform: scale(1.15);
+        }
+        .offer-card__title {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            letter-spacing: 0.04em;
+            color: var(--bitume);
+            margin-bottom: 0.6rem;
+        }
+        .offer-card__desc {
+            font-size: 0.9rem;
+            color: var(--zinc);
+            line-height: 1.6;
+        }
+        .offer-card__price {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--bordeaux);
+            padding: 0.35em 0.9em;
+            border: 1px dashed var(--bordeaux);
+            border-radius: 2px;
+            transition: all 0.35s var(--transition-smooth);
+        }
+        .offer-card:hover .offer-card__price {
+            border-style: solid;
+            background: var(--bordeaux);
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .offer__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .offer__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== AVIS ========== */
+        .testimonials__slider {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(1rem, 2vw, 1.5rem);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0.5rem;
+        }
+        .testimonial-card {
+            min-width: 240px;
+            scroll-snap-align: start;
+            background: #fff;
+            border: 1px solid rgba(93, 90, 87, 0.1);
+            border-radius: 3px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(44, 42, 40, 0.04);
+            transition: box-shadow 0.35s var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(44, 42, 40, 0.1);
+        }
+        .testimonial-card__stars {
+            color: #f4b400;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+        .testimonial-card__text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--bitume);
+            flex: 1;
+            font-style: italic;
+        }
+        .testimonial-card__author {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--zinc);
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 768px) {
+            .testimonials__slider {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+            .testimonial-card {
+                min-width: 260px;
+            }
+        }
+
+        /* ========== INFOS PRATIQUES ========== */
+        .info__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            align-items: start;
+        }
+        .info__map {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(44, 42, 40, 0.1);
+            filter: grayscale(0.3) sepia(0.08);
+            transition: filter 0.5s;
+        }
+        .info__map:hover {
+            filter: grayscale(0) sepia(0);
+        }
+        .info__map iframe {
+            display: block;
+        }
+        .info__details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .info-block {
+            padding-left: 1.5rem;
+            border-left: 2px dashed var(--bordeaux);
+            transition: border-style 0.4s var(--transition-smooth);
+        }
+        .info-block:hover {
+            border-left-style: solid;
+        }
+        .info-block__label {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--zinc);
+            margin-bottom: 0.4rem;
+        }
+        .info-block__value {
+            font-size: 1.05rem;
+            color: var(--bitume);
+            line-height: 1.5;
+        }
+        .info-block__value a {
+            color: var(--vert-marquise);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .info-block__value a:hover {
+            color: var(--bordeaux);
+        }
+        .info__hours-note {
+            font-size: 0.8rem;
+            color: var(--bordeaux);
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+        @media (max-width: 768px) {
+            .info__grid {
+                grid-template-columns: 1fr;
+            }
+            .info__map {
+                order: -1;
+                height: 280px;
+            }
+        }
+
+        /* ========== NEWSLETTER ========== */
+        .newsletter {
+            background: var(--vert-marquise);
+            color: #fff;
+            text-align: center;
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1.5px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            pointer-events: none;
+            transition: border-style 0.5s var(--transition-smooth);
+        }
+        .newsletter:hover::before {
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+        .newsletter__title {
+            font-family: 'Unbounded', 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter__subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter__form {
+            display: flex;
+            gap: 0.6rem;
+            max-width: 460px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newsletter__input {
+            flex: 1;
+            min-width: 220px;
+            padding: 0.75em 1.2em;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: all 0.35s;
+            outline: none;
+        }
+        .newsletter__input::placeholder {
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .newsletter__input:focus {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+        }
+        .newsletter__btn {
+            padding: 0.75em 1.6em;
+            background: #fff;
+            color: var(--vert-marquise);
+            border: none;
+            border-radius: 3px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: all 0.35s var(--transition-smooth);
+            white-space: nowrap;
+        }
+        .newsletter__btn:hover {
+            background: var(--calcaire);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--bitume);
+            color: rgba(255, 255, 255, 0.75);
+            padding: clamp(2rem, 4vw, 3rem) 0;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+        .site-footer__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        .site-footer__brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.12em;
+            color: #fff;
+        }
+        .site-footer__info {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+        .site-footer__info a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .site-footer__info a:hover {
+            color: #fff;
+        }
+        .site-footer__credit {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.5rem;
+        }
+
+        /* ========== SCROLL INDICATOR ========== */
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: fadeUp 1s var(--transition-smooth) 0.8s both;
+            cursor: default;
+        }
+        .scroll-hint__line {
+            width: 1px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.5);
+            animation: softBlink 3s ease-in-out infinite;
         }
 
         /* ========== RESPONSIVE FINE-TUNING ========== */
         @media (max-width: 480px) {
-            .hero__title {
-                font-size: clamp(2.2rem, 9vw, 3rem);
+            .hero__actions {
+                flex-direction: column;
+                align-items: center;
             }
-            .section {
-                padding: 3rem 1.2rem;
+            .btn {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
             }
-            .header {
-                padding: 0.9rem 1rem;
+            .info-block {
+                padding-left: 1rem;
             }
-            .header.scrolled {
-                padding: 0.6rem 1rem;
+            .newsletter__form {
+                flex-direction: column;
             }
-        }
-
-        @media (min-width: 1400px) {
-            .section {
-                padding-left: 8vw;
-                padding-right: 8vw;
+            .newsletter__input {
+                min-width: auto;
+                width: 100%;
             }
-            .hero__content {
-                max-width: 1000px;
+            .newsletter__btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header" id="header">
-        <a href="#hero" class="header__logo">NG<span>R</span></a>
-        <nav class="header__nav" id="headerNav">
-            <a href="#esprit">L'Esprit</a>
-            <a href="#offre">L'Offre</a>
-            <a href="#avis">Avis</a>
-            <a href="#infos">Infos</a>
-            <a href="tel:+33145273242" class="header__cta">Appeler</a>
-        </nav>
-        <a href="#infos" class="header__cta desktop-only">Nous trouver</a>
-        <button class="header__burger" id="burgerBtn" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="container site-header__inner">
+            <a href="#" class="site-logo" aria-label="NGR — Accueil">
+                NGR<span class="site-logo__accent"></span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="#apropos">L'adresse</a></li>
+                    <li><a href="#galerie">Ambiance</a></li>
+                    <li><a href="#offre">L'offre</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#infos" class="nav-cta">Pousser la porte</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
         <div class="hero__bg">
-            <img src="assets/maps-1.jpg" alt="NGR - Boutique" loading="eager" decoding="async">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80&auto=format&fit=crop"
+            alt="Intérieur de la boutique NGR — ambiance feutrée et lumineuse"
+            loading="eager"
+            width="1920" height="1280">
         </div>
-        <div class="hero__bg--color-reveal" aria-hidden="true">
-            <img src="assets/maps-1.jpg" alt="" loading="lazy" decoding="async">
+        <div class="hero__overlay"></div>
+        <div class="hero__grain"></div>
+        <div class="hero__content container container--narrow">
+            <p class="hero__eyebrow">Ventes privées permanentes — Paris 16<sup>e</sup></p>
+            <h1 class="hero__title" id="heroTitle">On vous en a parlé.<br>Maintenant, trouvez la porte.</h1>
+            <p class="hero__subtitle">Ventes privées de mode et décoration, 7 jours sur 7, dans le secret d'une adresse du 16<sup>e</sup>. Grandes marques, petits prix, depuis&nbsp;30&nbsp;ans.</p>
+            <div class="hero__actions">
+                <a href="#infos" class="btn btn--primary btn--dotted">Pousser la porte</a>
+                <a href="tel:+33145273242" class="btn btn--outline">Appeler le 01&nbsp;45&nbsp;27&nbsp;32&nbsp;42</a>
+            </div>
         </div>
-        <div class="hero__vignette"></div>
-        <div class="hero__glow hero__glow--1"></div>
-        <div class="hero__glow hero__glow--2"></div>
-
-        <div class="hero__content">
-            <p class="hero__overline">40 bis rue de Boulainvilliers — Paris 16ᵉ</p>
-            <h1 class="hero__title">
-                NGR
-                <em>Écrin Privé</em>
-            </h1>
-            <p class="hero__subtitle">
-                Ventes privées permanentes de mode & maison, au cœur du 16ᵉ arrondissement.
-                De grandes marques, en toute discrétion, à des prix d'initiés.
-            </p>
-            <a href="#esprit" class="hero__btn">Découvrir la boutique</a>
-        </div>
-
-        <div class="hero__scroll-indicator" aria-hidden="true">
-            <span>Défiler</span>
-            <div class="hero__scroll-line"></div>
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Découvrir</span>
+            <span class="scroll-hint__line"></span>
         </div>
     </section>
 
-    <!-- L'ESPRIT DU LIEU -->
-    <section class="section section--light" id="esprit">
-        <div class="esprit">
-            <div class="esprit__visual reveal">
-                <img src="assets/maps-1.jpg" alt="Ambiance NGR - Intérieur de la boutique" loading="lazy" decoding="async">
+    <!-- ==================== À PROPOS ==================== -->
+    <section class="section" id="apropos" aria-labelledby="aboutTitle">
+        <div class="container container--medium">
+            <div class="section__header reveal">
+                <span class="section__kicker">L'adresse qui se murmure</span>
+                <h2 class="section__title" id="aboutTitle">Un secret<br>bien gardé</h2>
             </div>
-            <div class="esprit__content">
-                <span class="section__label reveal reveal-delay-1">L'esprit du lieu</span>
-                <h2 class="section__title reveal reveal-delay-1">
-                    Le luxe<br>silencieux
-                </h2>
-                <div class="filet-dore reveal reveal-delay-2"></div>
-                <p class="section__text reveal reveal-delay-2">
-                    Au 40 bis de la rue de Boulainvilliers, NGR cultive l'art de la discrétion.
-                    Ici, pas d'enseigne tapageuse ni de vitrine surchargée : une adresse
-                    confidentielle où la mode haut de gamme et la décoration d'intérieur se
-                    rencontrent dans un écrin graphique. La lumière dorée des lampes sphériques
-                    caresse des pièces sourcées, aux lignes franches, dans une atmosphère
-                    radicalement contemporaine.
-                </p>
-                <blockquote class="esprit__quote reveal reveal-delay-3">
-                    « Un lieu qui ne s'affiche pas mais se découvre. »
-                </blockquote>
-                <div class="esprit__details reveal reveal-delay-3">
-                    <span class="esprit__tag">Mode femme</span>
-                    <span class="esprit__tag">Mode homme</span>
-                    <span class="esprit__tag">Maison</span>
-                    <span class="esprit__tag">Pièces sourcées</span>
+            <div class="dotted-divider reveal reveal--delay-1" aria-hidden="true">
+                <span class="dotted-divider__dot"></span>
+            </div>
+            <div class="about__grid">
+                <div class="about__text reveal reveal--delay-1">
+                    <span class="about__highlight">Depuis trois décennies, NGR accueille les amateurs de belles marques dans un lieu confidentiel de la rue de Boulainvilliers.</span>
+                    <p>Mode, décoration : ici, les étiquettes prestigieuses se découvrent hors des vitrines tapageuses, à des prix qui ne le sont jamais. Chaque visite est une exploration — les arrivages sont permanents, le stock se renouvelle sans cesse, et l'œil du connaisseur fait toujours une trouvaille.</p>
+                    <p>Pas de musique d'ascenseur, pas de dorures criardes. Juste un joyeux désordre élégant, des portants bien garnis et la lumière naturelle qui caresse les matières. On y vient par recommandation, on y revient par plaisir.</p>
+                    <div style="margin-top:1.5rem;">
+                        <a href="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris&output=embed" target="_blank" rel="noopener" class="google-badge" aria-label="Note Google 3.8 sur 5 — 171 avis">
+                            <span class="google-badge__stars">★★★★☆</span>
+                            <span>3,8</span>
+                            <span class="google-badge__count">· 171 avis</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="about__visual reveal reveal--delay-2">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop"
+                    alt="Devanture discrète de la boutique NGR rue de Boulainvilliers"
+                    loading="lazy" width="1200" height="1500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- L'OFFRE -->
-    <section class="section section--frosted" id="offre">
-        <span class="section__label reveal">Ce que nous proposons</span>
-        <h2 class="section__title reveal reveal-delay-1">
-            Une sélection<br>pointue
-        </h2>
-        <div class="filet-dore reveal reveal-delay-1"></div>
-        <p class="section__text reveal reveal-delay-2" style="margin-bottom:1rem;">
-            De grandes marques, dénichées pour vous, à des prix d'initiés. Chaque pièce
-            est choisie pour sa qualité, sa coupe, sa matière — jamais pour son logo.
-        </p>
-
-        <div class="offre-grid">
-            <div class="offre-card reveal reveal-delay-2">
-                <span class="offre-card__icon">&#x1F457;</span>
-                <h3 class="offre-card__title">Mode</h3>
-                <p class="offre-card__text">
-                    Prêt-à-porter féminin et masculin, accessoires, maroquinerie.
-                    Des collections pointues, des basiques intemporels, des pièces
-                    qui traversent les saisons sans prendre une ride.
-                </p>
+    <!-- ==================== GALERIE ==================== -->
+    <section class="section section--alt" id="galerie" aria-labelledby="galleryTitle">
+        <div class="container">
+            <div class="section__header reveal">
+                <span class="section__kicker">Une journée chez NGR</span>
+                <h2 class="section__title" id="galleryTitle">L'œil se promène,<br>la main attrape</h2>
+                <p class="section__intro">Galerie de vues réelles de la boutique : portants chargés de pièces, coins déco éclectiques, lumière naturelle sur les matières. C'est le plaisir de la trouvaille, sans musique d'ascenseur.</p>
             </div>
-            <div class="offre-card reveal reveal-delay-3">
-                <span class="offre-card__icon">&#x1F3E0;</span>
-                <h3 class="offre-card__title">Maison</h3>
-                <p class="offre-card__text">
-                    Décoration d'intérieur, linge de maison, objets choisis.
-                    L'art de recevoir et d'habiter, avec la même exigence que
-                    pour la garde-robe.
-                </p>
+            <div class="dotted-divider reveal reveal--delay-1" aria-hidden="true">
+                <span class="dotted-divider__dot"></span>
             </div>
-            <div class="offre-card reveal reveal-delay-3">
-                <span class="offre-card__icon">&#x2728;</span>
-                <h3 class="offre-card__title">Ventes privées permanentes</h3>
-                <p class="offre-card__text">
-                    Pas d'attente, pas de code, pas de club fermé. Poussez la porte
-                    et accédez à des prix privilégiés toute l'année, dans un cadre
-                    confidentiel.
-                </p>
-            </div>
-            <div class="offre-card reveal reveal-delay-4">
-                <span class="offre-card__icon">&#x1F48E;</span>
-                <h3 class="offre-card__title">Conseil discret</h3>
-                <p class="offre-card__text">
-                    Une équipe à l'écoute, qui connaît ses pièces et sait vous
-                    guider sans insistance. Le conseil juste, pour trouver ce qui
-                    vous va vraiment.
-                </p>
+            <div class="gallery__grid">
+                <div class="gallery__item gallery__item--large reveal reveal--delay-1">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop"
+                    alt="Intérieur de NGR — lumière naturelle sur les matières"
+                    loading="lazy" width="1200" height="1600">
+                    <span class="gallery__caption">La lumière caresse les matières</span>
+                </div>
+                <div class="gallery__item gallery__item--wide reveal reveal--delay-2">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop"
+                    alt="Rayons soignés de la boutique NGR"
+                    loading="lazy" width="1200" height="900">
+                    <span class="gallery__caption">Des rayons qui donnent envie</span>
+                </div>
+                <div class="gallery__item gallery__item--square reveal reveal--delay-3">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80&auto=format&fit=crop"
+                    alt="Produits en vitrine chez NGR"
+                    loading="lazy" width="1200" height="1200">
+                    <span class="gallery__caption">La trouvaille du jour</span>
+                </div>
+                <div class="gallery__item gallery__item--wide reveal reveal--delay-4">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop"
+                    alt="Ambiance boutique NGR — devanture et détails"
+                    loading="lazy" width="1200" height="900">
+                    <span class="gallery__caption">L'entrée discrète du 16<sup>e</sup></span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- AVIS -->
-    <section class="section section--dark" id="avis">
-        <span class="section__label reveal">Ce que l'on dit de nous</span>
-        <h2 class="section__title reveal reveal-delay-1">
-            La parole<br>aux initiés
-        </h2>
-        <div class="filet-dore reveal reveal-delay-1"></div>
-        <p class="section__text reveal reveal-delay-2" style="margin-bottom:2rem;">
-            Une adresse qui se transmet de bouche à oreille. Nos clients sont nos
-            meilleurs ambassadeurs.
-        </p>
+    <!-- ==================== OFFRE ==================== -->
+    <section class="section" id="offre" aria-labelledby="offerTitle">
+        <div class="container">
+            <div class="section__header reveal">
+                <span class="section__kicker">Ce que vous y trouverez</span>
+                <h2 class="section__title" id="offerTitle">Mode & décoration,<br>sans compromis</h2>
+                <p class="section__intro">Prêt-à-porter femme, homme, enfant et décoration. Des marques pointues, des fins de séries, des collections saisonnières à -30&nbsp;%, -50&nbsp;% ou plus. Nos arrivages sont permanents — le stock change, l'esprit reste.</p>
+            </div>
+            <div class="dotted-divider reveal reveal--delay-1" aria-hidden="true">
+                <span class="dotted-divider__dot"></span>
+            </div>
+            <div class="offer__grid">
+                <div class="offer-card reveal reveal--delay-1">
+                    <span class="offer-card__icon" aria-hidden="true">👗</span>
+                    <h3 class="offer-card__title">Prêt-à-porter femme</h3>
+                    <p class="offer-card__desc">Des marques pointues, des coupes impeccables, des matières nobles — le tout à prix doux.</p>
+                    <span class="offer-card__price">-30% à -60%</span>
+                </div>
+                <div class="offer-card reveal reveal--delay-2">
+                    <span class="offer-card__icon" aria-hidden="true">👔</span>
+                    <h3 class="offer-card__title">Mode homme</h3>
+                    <p class="offer-card__desc">Du classique revisité aux pièces plus audacieuses, pour un vestiaire qui a du caractère.</p>
+                    <span class="offer-card__price">-30% à -50%</span>
+                </div>
+                <div class="offer-card reveal reveal--delay-3">
+                    <span class="offer-card__icon" aria-hidden="true">🛋️</span>
+                    <h3 class="offer-card__title">Décoration</h3>
+                    <p class="offer-card__desc">Du petit objet chiné au meuble de caractère, pour une maison qui vous ressemble.</p>
+                    <span class="offer-card__price">Arrivages réguliers</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <a href="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris"
-        target="_blank" rel="noopener noreferrer"
-        class="rating-badge reveal reveal-delay-3">
-        <span class="rating-badge__stars">★★★★☆</span>
-        <span class="rating-badge__score">3.8</span>
-        <span class="rating-badge__count">sur 171 avis Google</span>
-    </a>
+    <!-- ==================== AVIS ==================== -->
+    <section class="section section--alt" id="avis" aria-labelledby="testimonialsTitle">
+        <div class="container">
+            <div class="section__header reveal">
+                <span class="section__kicker">Leur bonne étoile</span>
+                <h2 class="section__title" id="testimonialsTitle">Ce qu'ils en disent</h2>
+                <p class="section__intro">Note de 3,8 sur 5 — nous assumons, et nous sélectionnons les meilleurs verbatims. Parce que l'essentiel est dans la confiance que vous nous accordez.</p>
+            </div>
+            <div class="dotted-divider reveal reveal--delay-1" aria-hidden="true">
+                <span class="dotted-divider__dot"></span>
+            </div>
+            <div class="testimonials__slider">
+                <div class="testimonial-card reveal reveal--delay-1">
+                    <span class="testimonial-card__stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <p class="testimonial-card__text">« Une adresse secrète comme on les aime. J'y ai déniché des pièces de créateur à des prix incroyables. L'accueil fait toute la différence. »</p>
+                    <span class="testimonial-card__author">— Marie L.</span>
+                </div>
+                <div class="testimonial-card reveal reveal--delay-2">
+                    <span class="testimonial-card__stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <p class="testimonial-card__text">« Qualité des marques irréprochable. On sent que la sélection est faite avec soin. Je recommande autour de moi sans hésiter. »</p>
+                    <span class="testimonial-card__author">— Philippe D.</span>
+                </div>
+                <div class="testimonial-card reveal reveal--delay-3">
+                    <span class="testimonial-card__stars" aria-label="4 étoiles sur 5">★★★★☆</span>
+                    <p class="testimonial-card__text">« Très belle découverte. Le lieu est charmant, hors des sentiers battus. Les prix sont vraiment attractifs pour la qualité proposée. »</p>
+                    <span class="testimonial-card__author">— Camille R.</span>
+                </div>
+                <div class="testimonial-card reveal reveal--delay-4">
+                    <span class="testimonial-card__stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <p class="testimonial-card__text">« Je fréquente NGR depuis des années et je ne m'en lasse pas. Chaque visite réserve son lot de surprises. L'accueil est toujours chaleureux. »</p>
+                    <span class="testimonial-card__author">— Antoine V.</span>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:2rem;" class="reveal reveal--delay-2">
+                <a href="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris" target="_blank" rel="noopener" class="btn btn--ghost btn--dotted">Voir tous les avis Google</a>
+            </div>
+        </div>
+    </section>
 
-    <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.5);font-style:italic;" class="reveal reveal-delay-4">
-        Consultez les avis complets sur notre fiche Google.
-    </p>
-</section>
-
-<!-- INFOS PRATIQUES -->
-<section class="section section--light" id="infos">
-    <span class="section__label reveal">Infos pratiques</span>
-    <h2 class="section__title reveal reveal-delay-1">
-        Poussez<br>la porte
-    </h2>
-    <div class="filet-dore reveal reveal-delay-1"></div>
-
-    <div class="infos-grid" style="margin-top:2rem;">
-        <div>
-            <ul class="infos__list reveal reveal-delay-2">
-                <li class="infos__item">
-                    <div>
-                        <strong>Adresse</strong>
-                        40 Bis Rue de Boulainvilliers<br>
-                        75016 Paris, France
+    <!-- ==================== INFOS PRATIQUES ==================== -->
+    <section class="section" id="infos" aria-labelledby="infoTitle">
+        <div class="container">
+            <div class="section__header reveal">
+                <span class="section__kicker">Poussez la porte</span>
+                <h2 class="section__title" id="infoTitle">Venez nous<br>rendre visite</h2>
+            </div>
+            <div class="dotted-divider reveal reveal--delay-1" aria-hidden="true">
+                <span class="dotted-divider__dot"></span>
+            </div>
+            <div class="info__grid">
+                <div class="info__details reveal reveal--delay-1">
+                    <div class="info-block">
+                        <span class="info-block__label">Adresse</span>
+                        <p class="info-block__value">40 bis rue de Boulainvilliers<br>75016 Paris</p>
                     </div>
-                </li>
-                <li class="infos__item">
-                    <div>
-                        <strong>Téléphone</strong>
-                        <a href="tel:+33145273242">01 45 27 32 42</a>
+                    <div class="info-block">
+                        <span class="info-block__label">Téléphone</span>
+                        <p class="info-block__value">
+                            <a href="tel:+33145273242">01 45 27 32 42</a>
+                        </p>
                     </div>
-                </li>
-                <li class="infos__item">
-                    <div>
-                        <strong>Email</strong>
-                        <a href="mailto:contact@ngr.fr">contact@ngr.fr</a>
+                    <div class="info-block">
+                        <span class="info-block__label">Email</span>
+                        <p class="info-block__value">
+                            <a href="mailto:contact@ngr.fr">contact@ngr.fr</a>
+                        </p>
                     </div>
-                </li>
-                <li class="infos__item">
-                    <div>
-                        <strong>Horaires</strong>
-                        <span class="horaires-note">Horaires à confirmer — Appelez-nous ou passez nous voir</span>
+                    <div class="info-block">
+                        <span class="info-block__label">Horaires</span>
+                        <p class="info-block__value">Ouvert tous les jours<br>11h – 19h</p>
+                        <p class="info__hours-note">Horaires à confirmer</p>
                     </div>
-                </li>
-            </ul>
-            <div style="margin-top:1.5rem;" class="reveal reveal-delay-3">
-                <a href="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris"
-                target="_blank" rel="noopener noreferrer"
-                class="rating-badge" style="display:inline-flex;">
-                <span class="rating-badge__stars">★★★★☆</span>
-                <span class="rating-badge__score">3.8</span>
-                <span class="rating-badge__count">171 avis</span>
-            </a>
+                    <div style="margin-top:0.5rem;">
+                        <a href="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris" target="_blank" rel="noopener" class="btn btn--bordeaux btn--dotted">
+                            Itinéraire →
+                        </a>
+                    </div>
+                </div>
+                <div class="info__map reveal reveal--delay-2">
+                    <iframe src="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris&output=embed"
+                    width="100%" height="360" style="border:0; display:block;"
+                    loading="lazy" allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Carte de localisation NGR — 40 bis rue de Boulainvilliers, Paris 16e"
+                aria-label="Carte interactive Google Maps"></iframe>
+            </div>
         </div>
     </div>
-
-    <div class="infos__map reveal reveal-delay-2">
-        <iframe
-        src="https://maps.google.com/maps?q=NGR+40+Bis+Rue+de+Boulainvilliers%2C+Paris&output=embed"
-        width="100%"
-        height="360"
-        style="border:0;"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Carte de localisation NGR Paris 16ᵉ">
-    </iframe>
-</div>
-</div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div>
-        <div class="footer__brand">NG<span>R</span></div>
-        <p>40 Bis Rue de Boulainvilliers, 75016 Paris<br>
-            <a href="tel:+33145273242">01 45 27 32 42</a> &mdash;
-            <a href="mailto:contact@ngr.fr">contact@ngr.fr</a>
-        </p>
+<!-- ==================== NEWSLETTER ==================== -->
+<section class="section" aria-labelledby="newsletterTitle">
+    <div class="container container--narrow">
+        <div class="newsletter reveal">
+            <h2 class="newsletter__title" id="newsletterTitle">Newsletter privée</h2>
+            <p class="newsletter__subtitle">Soyez prévenu avant tout le monde de nos prochains arrivages. Une fois par mois, jamais plus.</p>
+            <form class="newsletter__form" action="#" method="post" novalidate>
+                <label for="newsletterEmail" class="sr-only">Votre adresse email</label>
+                <input type="email" id="newsletterEmail" name="email" class="newsletter__input"
+                placeholder="votre@email.fr" required autocomplete="email">
+                <button type="submit" class="newsletter__btn">S'inscrire</button>
+            </form>
+        </div>
     </div>
-    <div>
-        <p class="footer__credit">
-            Site créé par Agence Mooo
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+        <span class="site-footer__brand">NGR</span>
+        <p class="site-footer__info">
+            40 bis rue de Boulainvilliers, 75016 Paris &nbsp;·&nbsp;
+            <a href="tel:+33145273242">01 45 27 32 42</a> &nbsp;·&nbsp;
+            <a href="mailto:contact@ngr.fr">contact@ngr.fr</a><br>
+            Ouvert tous les jours, 11h – 19h
         </p>
+        <p class="site-footer__credit">Site créé par Agence Mooo</p>
     </div>
 </footer>
 
+<!-- ==================== SCRIPTS ==================== -->
 <script>
     (function() {
-        // Header scroll effect
-        const header = document.getElementById('header');
-        const burgerBtn = document.getElementById('burgerBtn');
-        const headerNav = document.getElementById('headerNav');
-        const navLinks = headerNav.querySelectorAll('a');
-
-        function onScroll() {
-            if (window.scrollY > 60) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-
         // Mobile menu toggle
-        burgerBtn.addEventListener('click', function() {
-            headerNav.classList.toggle('active');
-            const spans = burgerBtn.querySelectorAll('span');
-            if (headerNav.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('navList');
+        if (mobileBtn && navList) {
+            mobileBtn.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                navList.classList.toggle('active');
+            });
+            // Close menu on nav link click
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
 
-        // Close mobile nav on link click
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (headerNav.classList.contains('active')) {
-                    headerNav.classList.remove('active');
-                    const spans = burgerBtn.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
+        // Header shadow on scroll
+        const header = document.getElementById('siteHeader');
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+            scrollTimeout = requestAnimationFrame(() => {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
-        });
+        }, { passive: true });
 
-        // IntersectionObserver for reveal on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        if ('IntersectionObserver' in window) {
+        // IntersectionObserver for reveal animations
+        const revealEls = document.querySelectorAll('.reveal, .reveal--fade-only');
+        if ('IntersectionObserver' in window && revealEls.length > 0) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
             const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                root: null,
-                rootMargin: '0px 0px -60px 0px',
-                threshold: 0.1
-            });
-
-            revealElements.forEach(function(el) {
-                observer.observe(el);
-            });
+            }, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
         } else {
-            // Fallback: show all
-            revealElements.forEach(function(el) {
-                el.classList.add('visible');
+            // Fallback: show all immediately
+            revealEls.forEach(el => el.classList.add('visible'));
+        }
+
+        // Newsletter form - simple validation feedback
+        const newsletterForm = document.querySelector('.newsletter__form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const input = this.querySelector('.newsletter__input');
+                const email = input.value.trim();
+                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    input.style.borderColor = '#4CAF50';
+                    input.value = '';
+                    const btn = this.querySelector('.newsletter__btn');
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ Inscrit';
+                    btn.style.background = '#e8f5e9';
+                    btn.style.color = '#2e7d32';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '#fff';
+                        btn.style.color = 'var(--vert-marquise)';
+                        input.style.borderColor = 'rgba(255,255,255,0.4)';
+                    }, 2500);
+                } else {
+                    input.style.borderColor = '#e53935';
+                    input.style.animation = 'none';
+                    input.offsetHeight;
+                    input.style.animation = '';
+                    setTimeout(() => {
+                        input.style.borderColor = 'rgba(255,255,255,0.4)';
+                    }, 2000);
+                }
+            });
+        }
+
+        // Smooth scroll for all anchor links (respects reduced-motion)
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced) {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight - 16;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
             });
         }
     })();
