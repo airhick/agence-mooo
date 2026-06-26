@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuilly Optique Just For Kids | Opticien exclusivement pour enfants à Neuilly-sur-Seine</title>
+    <meta name="description" content="Neuilly Optique Just For Kids, opticien dédié aux enfants sur l'Avenue du Roule à Neuilly-sur-Seine. Examens de vue, montures adaptées, expertise haute de gamme. Note 5/5. Prenez rendez-vous.">
+    <meta property="og:title" content="Neuilly Optique Just For Kids | Opticien pour enfants à Neuilly-sur-Seine">
+    <meta property="og:description" content="Des lunettes à la hauteur de leurs rêves. Opticiens exclusivement dédiés aux enfants à Neuilly-sur-Seine.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FBF7F2' stroke='%231B2A3B' stroke-width='4'/%3E%3Ccircle cx='35' cy='45' r='8' fill='none' stroke='%231B2A3B' stroke-width='3'/%3E%3Ccircle cx='65' cy='45' r='8' fill='none' stroke='%231B2A3B' stroke-width='3'/%3E%3Cpath d='M25 55 Q50 70 75 55' fill='none' stroke='%23A3D0E0' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='80' cy='30' r='4' fill='%23F1C85A'/%3E%3Ccircle cx='20' cy='25' r='3' fill='%23F1C85A'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --creme: #FBF7F2;
+            --encre: #1B2A3B;
+            --ciel: #A3D0E0;
+            --argent: #C8CCD0;
+            --dore: #F1C85A;
+            --dore-sombre: #c4a03a;
+            --blanc: #ffffff;
+            --ombre-douce: 0 8px 30px rgba(27, 42, 59, 0.06);
+            --ombre-forte: 0 16px 40px rgba(27, 42, 59, 0.12);
+            --rayon: 2rem;
+            --transition: 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+            background-color: var(--creme);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Focus visible pour AA */
+        :focus-visible {
+            outline: 3px solid var(--dore);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        /* Réduction de mouvement */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* === TYPOGRAPHIE === */
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: 'Fraunces', 'Times New Roman', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 4.8rem);
+            font-weight: 600;
+            color: var(--encre);
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 500;
+            color: var(--encre);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 500;
+            color: var(--encre);
+            letter-spacing: -0.01em;
+        }
+
+        p,
+        li {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--encre);
+            opacity: 0.9;
+        }
+
+        .txt-large {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .txt-small {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* === STRUCTURE & ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-reveal>* {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .stagger-reveal.visible>*:nth-child(1) {
+            transition-delay: 0.1s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-reveal.visible>*:nth-child(2) {
+            transition-delay: 0.25s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-reveal.visible>*:nth-child(3) {
+            transition-delay: 0.4s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-reveal.visible>*:nth-child(4) {
+            transition-delay: 0.55s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-reveal.visible>*:nth-child(5) {
+            transition-delay: 0.7s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === EFFETS D'OPTIQUE & DÉCOR === */
+        .grain-bg {
+            position: relative;
+        }
+
+        .grain-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-size: 150px 150px;
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+
+        .etoile-decor {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.12;
+            z-index: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--dore) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(6px);
+        }
+
+        .filet-argente {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--argent) 30%, var(--argent) 70%, transparent 100%);
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .card-verre {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 204, 208, 0.25);
+            border-radius: var(--rayon);
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition);
+            overflow: hidden;
+        }
+
+        .card-verre:hover {
+            box-shadow: var(--ombre-forte);
+            border-color: rgba(163, 208, 224, 0.5);
+            transform: translateY(-4px);
+        }
+
+        /* === HEADER === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(251, 247, 242, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(200, 204, 208, 0.3);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-nom {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--encre);
+        }
+
+        .logo-icone {
+            width: 42px;
+            height: 42px;
+            background: var(--encre);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--creme);
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.02em;
+            box-shadow: 0 0 20px rgba(163, 208, 224, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icone::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 18px;
+            height: 18px;
+            background: var(--dore);
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .logo-texte {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        .logo-texte span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.04em;
+            color: var(--encre);
+            opacity: 0.7;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+            position: relative;
+            padding: 0.2rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dore);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        nav a:hover::after,
+        nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .btn-rdv {
+            background: var(--dore);
+            color: var(--encre);
+            font-weight: 600;
+            padding: 0.75rem 1.6rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 4px 15px rgba(241, 200, 90, 0.3);
+            white-space: nowrap;
+        }
+
+        .btn-rdv:hover {
+            background: var(--dore-sombre);
+            box-shadow: 0 8px 25px rgba(241, 200, 90, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-rdv-outline {
+            background: transparent;
+            border: 2px solid var(--dore);
+            color: var(--encre);
+            box-shadow: none;
+        }
+        .btn-rdv-outline:hover {
+            background: rgba(241, 200, 90, 0.1);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(251, 247, 242, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                border-bottom: 1px solid var(--argent);
+                z-index: 99;
+            }
+            nav.active {
+                transform: translateY(0);
+            }
+            .hamburger {
+                display: flex;
+            }
+            header {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 7rem 2rem 4rem;
+            overflow: hidden;
+            background: var(--creme);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 85%;
+            border-radius: 60% 40% 40% 60% / 50% 45% 55% 50%;
+            overflow: hidden;
+            box-shadow: -20px 30px 60px rgba(27, 42, 59, 0.15);
+            z-index: 2;
+            background: var(--argent);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.05) contrast(1.02) saturate(0.9);
+            mix-blend-mode: normal;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(163, 208, 224, 0.25) 0%, rgba(251, 247, 242, 0.4) 60%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 600px;
+            width: 55%;
+            padding-right: 2rem;
+        }
+
+        .badge-etoiles {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--argent);
+            box-shadow: var(--ombre-douce);
+        }
+
+        .etoiles {
+            color: var(--dore);
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .hero .sous-titre {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: var(--encre);
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .tel-lien {
+            color: var(--encre);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.2s;
+        }
+        .tel-lien:hover {
+            color: var(--dore-sombre);
+        }
+
+        .decor-astre {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                padding: 6rem 1.5rem 3rem;
+                min-height: auto;
+            }
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+            .hero-image {
+                position: relative;
+                width: 90%;
+                height: 320px;
+                margin-bottom: 2rem;
+                transform: none;
+                top: auto;
+                right: auto;
+                border-radius: 40% 60% 50% 50% / 60% 50% 40% 50%;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .badge-etoiles {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* === SECTIONS === */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-concept {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .concept-visuel {
+            position: relative;
+        }
+
+        .cercle-optique {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+            background: linear-gradient(145deg, rgba(163, 208, 224, 0.3) 0%, rgba(200, 204, 208, 0.2) 60%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+        }
+
+        .cercle-optique img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: luminosity;
+            opacity: 0.9;
+            filter: contrast(1.1);
+        }
+
+        .cercle-optique::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 40% 50%, rgba(251, 247, 242, 0.6) 0%, transparent 70%);
+        }
+
+        .concept-texte {
+            position: relative;
+        }
+
+        .concept-texte h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .concept-texte p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 800px) {
+            .section-concept {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .cercle-optique {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* === SERVICES === */
+        .grille-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .carte-service {
+            padding: 2.5rem 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .icone-service {
+            width: 50px;
+            height: 50px;
+            background: var(--ciel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--encre);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            background: rgba(163, 208, 224, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .carte-service h3 {
+            font-size: 1.5rem;
+        }
+
+        /* === GALERIE AMBIANCE === */
+        .galerie {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .galerie-item {
+            aspect-ratio: 4 / 5;
+            border-radius: 2rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .galerie-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(27, 42, 59, 0.3) 0%, transparent 50%);
+            z-index: 1;
+            transition: opacity 0.3s;
+        }
+
+        .galerie-item:hover::before {
+            opacity: 0.6;
+        }
+
+        .galerie-item .legende {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            color: white;
+            z-index: 2;
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .galerie-item:hover .legende {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 700px) {
+            .galerie {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 450px) {
+            .galerie {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === AVIS === */
+        .avis-bloc {
+            background: var(--blanc);
+            border-radius: 3rem;
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+        }
+
+        .big-note {
+            font-family: 'Fraunces', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--encre);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stars-big {
+            font-size: 2rem;
+            color: var(--dore);
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .avis-texte {
+            max-width: 500px;
+            margin: 1.5rem auto;
+            font-style: italic;
+            color: var(--encre);
+            opacity: 0.8;
+        }
+
+        /* === INFOS PRATIQUES === */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .carte-container {
+            border-radius: var(--rayon);
+            overflow: hidden;
+            box-shadow: var(--ombre-forte);
+            background: var(--argent);
+            height: 360px;
+        }
+
+        .carte-container iframe {
+            filter: grayscale(10%) contrast(1.05);
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-icone {
+            width: 40px;
+            height: 40px;
+            background: rgba(163, 208, 224, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .horaires-note {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px dashed var(--argent);
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 800px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .avis-bloc {
+                padding: 3rem 1.5rem;
+            }
+            .big-note {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--encre);
+            color: var(--creme);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(241, 200, 90, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h3 {
+            color: var(--creme);
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+        }
+        .footer-col p,
+        .footer-col a {
+            color: var(--creme);
+            opacity: 0.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.2s;
+        }
+        .footer-col a:hover {
+            opacity: 1;
+            color: var(--dore);
+        }
+
+        .footer-credits {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            opacity: 0.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 700px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ÉTOILES DÉCORATIVES FLOTTANTES */
+        .etoile-flottante {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            background: var(--dore);
+            border-radius: 50%;
+            filter: blur(3px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-15px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-5px) translateX(-8px);
+            }
+            75% {
+                transform: translateY(-20px) translateX(5px);
+            }
+        }
+
+        .lune-decor {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(241, 200, 90, 0.2) 0%, transparent 70%);
+            filter: blur(20px);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo-nom" aria-label="Retour à l'accueil Neuilly Optique Just For Kids">
+            <div class="logo-icone" aria-hidden="true">JFK</div>
+            <div class="logo-texte">Neuilly Optique<span>Just For Kids</span></div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="nav" role="navigation" aria-label="Navigation principale">
+            <a href="#concept">Concept</a>
+            <a href="#services">Expertise</a>
+            <a href="#ambiance">Ambiance</a>
+            <a href="#avis">Avis</a>
+            <a href="#infos">Infos & Contact</a>
+            <a href="tel:+33146374170" class="btn-rdv" style="margin-left:1rem;">Prendre rendez-vous</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero grain-bg" id="hero">
+            <div class="hero-content reveal">
+                <div class="badge-etoiles">
+                    <span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span> 5/5 • 26 avis Google
+                </div>
+                <h1>Des lunettes à la hauteur de leurs rêves.</h1>
+                <p class="sous-titre">Opticiens exclusivement dédiés aux enfants, nous mettons au service de leur regard toute l'exigence et la douceur qu'ils méritent.</p>
+                <div class="hero-cta">
+                    <a href="tel:+33146374170" class="btn-rdv">Prendre rendez-vous</a>
+                    <a href="tel:+33146374170" class="tel-lien">📞 01 46 37 41 70</a>
+                </div>
+            </div>
+            <div class="hero-image reveal" style="transition-delay: 0.3s;">
+                <img src="assets/maps-1.jpg" alt="Vitrine de Neuilly Optique Just For Kids" loading="eager" width="800" height="1000">
+            </div>
+            <div class="etoile-flottante" style="top:20%;left:10%;width:60px;height:60px;" aria-hidden="true"></div>
+            <div class="etoile-flottante" style="top:60%;right:15%;width:40px;height:40px;animation-delay:2s;" aria-hidden="true"></div>
+            <div class="lune-decor" style="top:15%;right:30%;" aria-hidden="true"></div>
+        </section>
+
+        <!-- CONCEPT -->
+        <section id="concept">
+            <div class="container section-concept">
+                <div class="concept-visuel reveal">
+                    <div class="cercle-optique">
+                        <img src="assets/maps-1.jpg" alt="Intérieur de la boutique optique" loading="lazy" width="600" height="600">
+                    </div>
+                    <div class="etoile-decor" style="bottom:-20px;right:-20px;" aria-hidden="true"></div>
+                </div>
+                <div class="concept-texte stagger-reveal">
+                    <h2>Bien plus que des montures</h2>
+                    <p>Eva Ferrand Mani a fait de la vision des enfants son unique spécialité. Chez <strong>Neuilly Optique Just For Kids</strong>, chaque examen est pensé pour leur morphologie, chaque monture est choisie pour sa légèreté et sa résistance, dans un environnement qui apaise et rassure.</p>
+                    <p>Ici, pas de compromis : l'expertise optique haut de gamme s'allie à une écoute profonde des besoins de l'enfant. Nous savons qu'un regard bien corrigé dès le plus jeune âge, c'est une promesse d'épanouissement.</p>
+                    <a href="#infos" class="btn-rdv btn-rdv-outline" style="margin-top:1rem;">Découvrir notre approche</a>
+                </div>
+            </div>
+            <div class="filet-argente container" style="margin-top:4rem;"></div>
+        </section>
+
+        <!-- SERVICES / EXPERTISE -->
+        <section id="services">
+            <div class="container">
+                <h2 class="reveal">Une expertise dédiée à leurs yeux</h2>
+                <p class="txt-large reveal" style="max-width:700px;margin-bottom:2rem;">De l'examen de vue à l'adaptation des montures, chaque étape est pensée pour le confort visuel et la sécurité des enfants.</p>
+                <div class="grille-services stagger-reveal">
+                    <div class="carte-service card-verre">
+                        <div class="icone-service" aria-hidden="true">🔍</div>
+                        <h3>Examen morphologique</h3>
+                        <p>Matériel de réfraction adapté à la taille et à la distance pupillaire des plus jeunes. Un bilan complet, sans stress.</p>
+                    </div>
+                    <div class="carte-service card-verre">
+                        <div class="icone-service" aria-hidden="true">👓</div>
+                        <h3>Montures ultra-légères</h3>
+                        <p>Collections rigoureusement sélectionnées pour leur légèreté, leur flexibilité et leur résistance aux chocs. Confort absolu.</p>
+                    </div>
+                    <div class="carte-service card-verre">
+                        <div class="icone-service" aria-hidden="true">✨</div>
+                        <h3>Verres haute précision</h3>
+                        <p>Traitements anti-reflet, anti-rayures et filtrage de la lumière bleue nocive, pour une clarté visuelle optimale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMBIANCE / GALERIE -->
+        <section id="ambiance" style="background: rgba(163,208,224,0.08);">
+            <div class="container">
+                <h2 class="reveal">L'écrin de clarté</h2>
+                <p class="txt-large reveal" style="max-width:600px;">Un lieu pensé comme une parenthèse douce, où la lumière caresse les présentoirs argentés et où chaque détail invite au calme.</p>
+                <div class="galerie stagger-reveal">
+                    <div class="galerie-item">
+                        <img src="assets/maps-1.jpg" alt="Espace accueil de la boutique" loading="lazy" width="400" height="500">
+                        <span class="legende">L'espace d'accueil</span>
+                    </div>
+                    <div class="galerie-item">
+                        <img src="assets/maps-1.jpg" alt="Présentoirs de montures enfant" loading="lazy" width="400" height="500" style="filter: brightness(0.95) saturate(0.8) hue-rotate(5deg);">
+                        <span class="legende">Les présentoirs</span>
+                    </div>
+                    <div class="galerie-item">
+                        <img src="assets/maps-1.jpg" alt="Coin examen adapté" loading="lazy" width="400" height="500" style="filter: brightness(1.1) contrast(1.05) saturate(0.7);">
+                        <span class="legende">Le coin examen</span>
+                    </div>
+                </div>
+            </div>
+            <div class="etoile-flottante" style="bottom:10%;left:5%;width:50px;height:50px;animation-delay:4s;" aria-hidden="true"></div>
+        </section>
+
+        <!-- AVIS -->
+        <section id="avis">
+            <div class="container">
+                <div class="avis-bloc reveal">
+                    <div class="big-note">5.0</div>
+                    <div class="stars-big" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p class="txt-large">Ce que les parents de Neuilly en disent</p>
+                    <p class="avis-texte">« Un lieu d'exception dédié à nos enfants. L'examen est très complet, les montures sont adorables et résistantes. Eva est d'une patience infinie. »</p>
+                    <p class="txt-small">Basé sur 26 avis Google vérifiés — note de 5 sur 5</p>
+                    <div style="margin-top:1.5rem;">
+                        <a href="https://maps.google.com/maps?q=Neuilly+Optique+Just+For+Kids+63+Avenue+du+Roule%2C+Neuilly-sur-Seine" target="_blank" rel="noopener" class="btn-rdv btn-rdv-outline">Voir tous les avis Google</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES & CONTACT -->
+        <section id="infos" style="background: rgba(200,204,208,0.1);">
+            <div class="container">
+                <h2 class="reveal">Nous trouver</h2>
+                <div class="infos-grid">
+                    <div class="carte-container reveal">
+                        <iframe src="https://maps.google.com/maps?q=Neuilly+Optique+Just+For+Kids+63+Avenue+du+Roule%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de Neuilly Optique Just For Kids"></iframe>
+                    </div>
+                    <div class="info-details stagger-reveal">
+                        <div class="info-ligne">
+                            <div class="info-icone" aria-hidden="true">📍</div>
+                            <div>
+                                <h3 style="margin-bottom:0.2rem;font-size:1.2rem;">Adresse</h3>
+                                <p>63 Avenue du Roule<br>92200 Neuilly-sur-Seine</p>
+                            </div>
+                        </div>
+                        <div class="info-ligne">
+                            <div class="info-icone" aria-hidden="true">📞</div>
+                            <div>
+                                <h3 style="margin-bottom:0.2rem;font-size:1.2rem;">Téléphone</h3>
+                                <a href="tel:+33146374170" style="color:var(--encre);font-weight:600;text-decoration:none;">01 46 37 41 70</a>
+                                <p class="txt-small">Appelez pour prendre rendez-vous</p>
+                            </div>
+                        </div>
+                        <div class="info-ligne">
+                            <div class="info-icone" aria-hidden="true">✉️</div>
+                            <div>
+                                <h3 style="margin-bottom:0.2rem;font-size:1.2rem;">Email</h3>
+                                <a href="mailto:justforkids@neuillyoptique.com" style="color:var(--encre);text-decoration:underline;">justforkids@neuillyoptique.com</a>
+                            </div>
+                        </div>
+                        <div class="horaires-note">
+                            <p><strong>Horaires d'ouverture</strong><br>Horaires à confirmer par téléphone. Nous vous accueillons du mardi au samedi, principalement sur rendez-vous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lune-decor" style="bottom:5%;left:10%;width:100px;height:100px;" aria-hidden="true"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Neuilly Optique<br>Just For Kids</h3>
+                <p>63 Avenue du Roule<br>92200 Neuilly-sur-Seine</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <a href="tel:+33146374170">01 46 37 41 70</a>
+                <a href="mailto:justforkids@neuillyoptique.com">justforkids@neuillyoptique.com</a>
+                <p>Note Google : 5/5 (26 avis)</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liens</h3>
+                <a href="#concept">Concept</a>
+                <a href="#services">Expertise</a>
+                <a href="#ambiance">Ambiance</a>
+                <a href="#avis">Avis</a>
+                <a href="#infos">Infos pratiques</a>
+            </div>
+        </div>
+        <div class="footer-credits">
+            <p>© 2024 Neuilly Optique Just For Kids. Tous droits réservés. Site créé par Agence Mooo.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Menu hamburger
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    const expanded = nav.classList.toggle('active');
+                    hamburger.setAttribute('aria-expanded', expanded);
+                });
+                // Fermer au clic sur un lien
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Header scroll effet subtil
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100) {
+                    header.style.boxShadow = '0 10px 40px rgba(27,42,59,0.08)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // IntersectionObserver pour reveals
+            const revealElements = document.querySelectorAll('.reveal, .stagger-reveal');
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -60px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optionnel : ne plus observer après révélation
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => observer.observe(el));
+
+            // Déclenchement immédiat pour le hero (déjà visible)
+            window.addEventListener('load', () => {
+                const heroReveals = document.querySelectorAll('.hero .reveal');
+                heroReveals.forEach(el => el.classList.add('visible'));
+            });
+
+        })();
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Neuilly Optique Just For Kids",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "63 Avenue du Roule",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146374170",
+            "email": "justforkids@neuillyoptique.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "26"
+            },
+            "priceRange": "€€",
+            "url": "https://agence.mooo.com/neuilly-optique-just-for-kids-2"
+        }
+    </script>
+</body>
+</html>
