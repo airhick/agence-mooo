@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Épicerie Les 4 Saisons à Clamart — Primeur ouvert jusqu'à 23h45, du mardi au dimanche. Fruits, légumes, poissonnerie, fromages fermiers et épicerie fine. 18 rue Hébert, 92140 Clamart.">
+    <title>Épicerie Les 4 Saisons — Primeur à Clamart, ouvert jusqu'à 23h45</title>
+
+    <meta property="og:title" content="Épicerie Les 4 Saisons — Votre primeur ouvert jusqu'à 23h45 à Clamart">
+    <meta property="og:description" content="Des fruits et légumes de saison, des produits frais choisis chaque matin, et le sourire en plus. Du mardi au dimanche, de 8h30 à 23h45.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='56' font-size='56'%3E%F0%9F%8D%8A%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Épicerie Les 4 Saisons",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "18 Rue Hébert",
+                "addressLocality": "Clamart",
+                "postalCode": "92140",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33146447234",
+            "email": "les4saisons92@gmail.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.4",
+                "reviewCount": "33"
+            },
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "08:30",
+                "closes": "23:45"
+            }]
+        }
+    </script>
+
+    <style>
+        :root {
+            --cream-kraft: #F9F5EE;
+            --vert-cagette: #2E4A33;
+            --tomate-terre: #B34932;
+            --encre-ardoise: #1F1C1B;
+            --pierre-seche: #6B6058;
+            --osier-clair: #D9CDB3;
+            --osier-clair-alpha: rgba(217, 205, 179, 0.45);
+            --vert-cagette-alpha: rgba(46, 74, 51, 0.08);
+            --shadow-sm: 0 1px 3px rgba(31, 28, 27, 0.06);
+            --shadow-md: 0 4px 16px rgba(31, 28, 27, 0.1);
+            --shadow-lg: 0 12px 40px rgba(31, 28, 27, 0.14);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-brisk: 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Jost', system-ui, sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.125rem);
+            line-height: 1.7;
+            color: var(--encre-ardoise);
+            background-color: var(--cream-kraft);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.028'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--tomate-terre);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-brisk);
+        }
+        a:hover {
+            color: var(--tomate-terre);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.6rem 1.2rem;
+            background: rgba(249, 245, 238, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--osier-clair-alpha);
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .site-header.scrolled {
+            background: rgba(249, 245, 238, 0.96);
+            box-shadow: var(--shadow-md);
+            padding: 0.45rem 1.2rem;
+        }
+
+        .header-brand {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+            letter-spacing: 0.01em;
+            color: var(--vert-cagette);
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .header-brand span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.55em;
+            letter-spacing: 0.06em;
+            color: var(--pierre-seche);
+            text-transform: uppercase;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.7rem, 2vw, 1.6rem);
+            list-style: none;
+            flex-wrap: wrap;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .header-nav a {
+            padding: 0.3rem 0;
+            position: relative;
+            color: var(--encre-ardoise);
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--tomate-terre);
+            transition: width var(--transition-brisk);
+            border-radius: 1px;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.1rem;
+            background: var(--tomate-terre);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: all var(--transition-brisk);
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(179, 73, 50, 0.25);
+        }
+        .header-cta:hover {
+            background: #9c3d29;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(179, 73, 50, 0.3);
+        }
+        .header-cta .cta-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                gap: 0.5rem;
+                font-size: 0.78rem;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 0.3rem;
+                border-top: 1px solid var(--osier-clair-alpha);
+                margin-top: 0.2rem;
+            }
+            .header-cta {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.9rem;
+            }
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 7rem 1.5rem 4rem;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) saturate(0.75);
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(46, 74, 51, 0.55) 0%, rgba(31, 28, 27, 0.35) 40%, rgba(31, 28, 27, 0.6) 100%);
+            mix-blend-mode: multiply;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='gn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23gn)' opacity='0.12'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 860px;
+            color: #fefaf5;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.8rem;
+            animation: fadeInUp 0.7s 0.15s both;
+            color: #fefaf5;
+        }
+        .hero-badge .star {
+            color: #f7c948;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            animation: fadeInUp 0.7s 0.3s both;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+        .hero-title .giant-time {
+            display: block;
+            font-size: clamp(4.5rem, 11vw, 8.5rem);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 0.85;
+            color: #fff;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 60px rgba(249, 245, 238, 0.15);
+            margin: 0.15em 0;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            max-width: 580px;
+            margin: 0 auto 1rem;
+            animation: fadeInUp 0.7s 0.5s both;
+            line-height: 1.55;
+            color: rgba(254, 250, 245, 0.9);
+        }
+        .hero-subtitle em {
+            font-style: normal;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.04em;
+        }
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            animation: fadeInUp 0.7s 0.65s both;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all var(--transition-brisk);
+            border: none;
+            font-family: inherit;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--tomate-terre);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(179, 73, 50, 0.35);
+        }
+        .btn-primary:hover {
+            background: #9c3d29;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(179, 73, 50, 0.45);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fefaf5;
+            border: 2px solid rgba(254, 250, 245, 0.55);
+        }
+        .btn-outline:hover {
+            background: rgba(254, 250, 245, 0.1);
+            border-color: #fefaf5;
+            color: #fff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--tomate-terre);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            color: var(--vert-cagette);
+            margin-bottom: 0.8rem;
+        }
+        .section-lead {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            color: var(--pierre-seche);
+            max-width: 620px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--osier-clair);
+            margin: 1.5rem 0;
+            border-radius: 2px;
+        }
+
+        /* ---- Season filigrane ---- */
+        .season-filigrane {
+            position: absolute;
+            top: -40px;
+            right: -60px;
+            width: clamp(220px, 35vw, 400px);
+            height: auto;
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .season-filigrane {
+                top: -20px;
+                right: -40px;
+                width: 180px;
+                opacity: 0.12;
+            }
+        }
+
+        /* ---- Unbox reveal ---- */
+        .unbox-reveal {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+        }
+        .unbox-reveal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--vert-cagette);
+            z-index: 3;
+            transform: translateX(0);
+            transition: transform 0.75s cubic-bezier(0.65, 0.02, 0.35, 1);
+            border-radius: inherit;
+        }
+        .unbox-reveal.revealed::after {
+            transform: translateX(102%);
+        }
+        .unbox-reveal .unbox-inner {
+            opacity: 0;
+            transform: translateX(-14px);
+            transition: opacity 0.5s 0.25s ease, transform 0.6s 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .unbox-reveal.revealed .unbox-inner {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ---- Cartes saison ---- */
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .season-card {
+            background: #fff;
+            border: 1px solid var(--osier-clair);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition-brisk), transform var(--transition-brisk);
+            position: relative;
+        }
+        .season-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+        .season-card-emoji {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .season-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--vert-cagette);
+            margin-bottom: 0.3rem;
+        }
+        .season-card p {
+            font-size: 0.9rem;
+            color: var(--pierre-seche);
+            line-height: 1.5;
+        }
+
+        /* ---- Rayons grid ---- */
+        .rayons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 900px) {
+            .rayons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 520px) {
+            .rayons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .rayon-card {
+            background: #fff;
+            border: 1px solid var(--osier-clair);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-brisk);
+            cursor: default;
+        }
+        .rayon-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--tomate-terre);
+        }
+        .rayon-card .rayon-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.7rem;
+            line-height: 1;
+        }
+        .rayon-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            color: var(--vert-cagette);
+            margin-bottom: 0.2rem;
+        }
+        .rayon-card p {
+            font-size: 0.82rem;
+            color: var(--pierre-seche);
+            line-height: 1.4;
+        }
+
+        /* ---- Horaires highlight ---- */
+        .hours-highlight {
+            background: var(--vert-cagette);
+            color: #fefaf5;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .hours-highlight::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='gn2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23gn2)' opacity='0.06'/%3E%3C/svg%3E");
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .hours-highlight .giant-hours {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5rem);
+            letter-spacing: 0.04em;
+            line-height: 1;
+            color: #fff;
+            margin-bottom: 0.4rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hours-highlight .days-line {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: var(--osier-clair);
+        }
+        .hours-highlight .tag-sunday {
+            display: inline-block;
+            margin-top: 0.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 1;
+            color: #fefaf5;
+        }
+
+        /* ---- Story section ---- */
+        .story-block {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--osier-clair);
+            margin-top: 2rem;
+            position: relative;
+        }
+        .story-block::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 2rem;
+            right: 2rem;
+            height: 4px;
+            background: var(--tomate-terre);
+            border-radius: 0 0 4px 4px;
+        }
+        .story-block .story-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--vert-cagette);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- Contact ---- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-form {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--osier-clair);
+        }
+        .contact-form .form-group {
+            margin-bottom: 1.1rem;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.3rem;
+            color: var(--encre-ardoise);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 2px solid var(--osier-clair);
+            border-radius: var(--radius-sm);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            background: var(--cream-kraft);
+            transition: border-color var(--transition-brisk);
+            color: var(--encre-ardoise);
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--tomate-terre);
+            outline: none;
+            background: #fff;
+        }
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .contact-info-card {
+            background: var(--vert-cagette);
+            color: #fefaf5;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .contact-info-card .info-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(254, 250, 245, 0.9);
+        }
+        .contact-info-card .info-icon {
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        .contact-info-card a {
+            color: #fefaf5;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .contact-info-card a:hover {
+            color: var(--osier-clair);
+        }
+
+        /* ---- Venir ---- */
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+            border: 3px solid var(--osier-clair);
+        }
+        .hours-table {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.6rem 1.5rem;
+            margin-top: 1.8rem;
+            font-size: 0.95rem;
+            max-width: 400px;
+        }
+        .hours-table .day {
+            font-weight: 600;
+            color: var(--vert-cagette);
+        }
+        .hours-table .time {
+            color: var(--pierre-seche);
+        }
+        .hours-table .closed {
+            color: var(--tomate-terre);
+            font-weight: 500;
+        }
+
+        /* ---- Footer ---- */
+        .site-footer {
+            background: var(--vert-cagette);
+            color: rgba(254, 250, 245, 0.85);
+            padding: 3rem 1.5rem 1.5rem;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--tomate-terre);
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.01em;
+        }
+        .footer-col p,
+        .footer-col a {
+            color: rgba(254, 250, 245, 0.8);
+            line-height: 1.6;
+        }
+        .footer-col a:hover {
+            color: #fff;
+        }
+        .footer-credits {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(217, 205, 179, 0.2);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            color: rgba(254, 250, 245, 0.55);
+        }
+        .footer-credits a {
+            color: rgba(254, 250, 245, 0.7);
+            font-weight: 500;
+        }
+        .footer-credits a:hover {
+            color: #fff;
+        }
+
+        /* ---- Utility ---- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            .hero {
+                min-height: 90vh;
+                padding: 6rem 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Épicerie Les 4 Saisons — Retour à l'accueil">
+            Les 4 Saisons
+            <span>Primeur · Clamart</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#saison">En ce moment</a></li>
+                <li><a href="#rayons">Rayons</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#venir">Venir</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33146447234" class="header-cta" aria-label="Appeler l'épicerie au 01 46 44 72 34">
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            01 46 44 72 34
+        </a>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="hero-bg">
+            <img src="assets/maps-1.jpg" alt="Façade de l'Épicerie Les 4 Saisons, rue Hébert à Clamart" loading="eager" decoding="async">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" aria-label="Note Google 4.4 étoiles sur 33 avis">
+                <span class="star">★</span> 4.4 sur 33 avis Google
+            </div>
+            <h1 class="hero-title" id="heroTitle">
+                Votre primeur est ouvert jusqu'à
+                <span class="giant-time">23h45</span>
+            </h1>
+            <p class="hero-subtitle">
+                Des fruits et légumes de saison, des produits frais choisis chaque matin, et le sourire en plus.<br>
+                <em>Et le dimanche aussi.</em>
+            </p>
+            <div class="hero-cta-row">
+                <a href="#contact" class="btn btn-primary">Commander un panier</a>
+                <a href="#venir" class="btn btn-outline">Nous trouver</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1 : C'EST DE SAISON ========== -->
+    <section class="section" id="saison" aria-labelledby="saisonTitle" style="background: #fdfaf6;">
+        <!-- Filigrane botanique -->
+        <svg class="season-filigrane" viewBox="0 0 280 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g stroke="#D9CDB3" stroke-width="1.6" fill="none" opacity="0.7">
+                <path d="M140 20 C125 55, 95 90, 65 130 C45 160, 35 190, 48 215 C58 235, 80 245, 105 235 C135 223, 160 195, 155 160 C150 135, 130 118, 115 125"/>
+                <path d="M155 160 C168 140, 185 115, 210 100 C235 86, 255 90, 260 110 C265 132, 248 152, 225 158 C208 162, 190 155, 180 140"/>
+                <ellipse cx="58" cy="195" rx="16" ry="7" transform="rotate(-25 58 195)" stroke-width="1.2" opacity="0.6"/>
+                <ellipse cx="100" cy="105" rx="13" ry="5.5" transform="rotate(30 100 105)" stroke-width="1.2" opacity="0.6"/>
+                <ellipse cx="220" cy="108" rx="14" ry="6" transform="rotate(-15 220 108)" stroke-width="1.2" opacity="0.6"/>
+                <ellipse cx="175" cy="148" rx="10" ry="4.5" transform="rotate(40 175 148)" stroke-width="1" opacity="0.5"/>
+                <circle cx="145" cy="30" r="5" fill="#D9CDB3" opacity="0.35"/>
+                <circle cx="82" cy="145" r="4" fill="#D9CDB3" opacity="0.3"/>
+                <circle cx="200" cy="125" r="3.5" fill="#D9CDB3" opacity="0.3"/>
+            </g>
+        </svg>
+
+        <div class="section-inner">
+            <p class="section-label">C'est de saison</p>
+            <h2 class="section-title" id="saisonTitle">En ce moment sur l'étal</h2>
+            <p class="section-lead">Asperges vertes du Ventoux, fraises de Plougastel, tomates anciennes de Marmande — chaque produit est livré le matin même et trié à la main.</p>
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <div class="season-grid">
+                <div class="season-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="season-card-emoji" aria-hidden="true">🍓</span>
+                        <h3>Fraises de Plougastel</h3>
+                        <p>Cueillies à maturité, livrées avant l'aube. Sucrées, parfumées, fondantes.</p>
+                    </div>
+                </div>
+                <div class="season-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="season-card-emoji" aria-hidden="true">🥬</span>
+                        <h3>Asperges du Ventoux</h3>
+                        <p>Vertes et charnues, récoltées la veille. Juste poêlées ou en salade tiède.</p>
+                    </div>
+                </div>
+                <div class="season-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="season-card-emoji" aria-hidden="true">🍅</span>
+                        <h3>Tomates de Marmande</h3>
+                        <p>Anciennes, côtelées, gorgées de soleil. Le goût vrai du potager.</p>
+                    </div>
+                </div>
+                <div class="season-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="season-card-emoji" aria-hidden="true">🍑</span>
+                        <h3>Pêches de vigne</h3>
+                        <p>Chair blanche ou jaune, juteuses à souhait. L'été dans un fruit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2 : NOS RAYONS ========== -->
+    <section class="section" id="rayons" aria-labelledby="rayonsTitle">
+        <div class="section-inner">
+            <p class="section-label">Nos rayons</p>
+            <h2 class="section-title" id="rayonsTitle">Tout pour la table</h2>
+            <p class="section-lead">Fruits, légumes, poissonnerie, fromages fermiers, boissons et épicerie fine : un tour d'étal suffit pour composer un repas complet.</p>
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <div class="rayons-grid">
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🍎</span>
+                        <h4>Fruits</h4>
+                        <p>De saison, mûrs à point, choisis chez les meilleurs producteurs.</p>
+                    </div>
+                </div>
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🥕</span>
+                        <h4>Légumes</h4>
+                        <p>Fraîcheur quotidienne, du maraîcher à votre assiette.</p>
+                    </div>
+                </div>
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🐟</span>
+                        <h4>Poissonnerie</h4>
+                        <p>Arrivages directs de la criée, poissons entiers et filets.</p>
+                    </div>
+                </div>
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🧀</span>
+                        <h4>Fromages fermiers</h4>
+                        <p>Affinés sur place, lait cru, AOP et pépites régionales.</p>
+                    </div>
+                </div>
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🍷</span>
+                        <h4>Boissons</h4>
+                        <p>Vins de vignerons, jus artisanaux, bières locales.</p>
+                    </div>
+                </div>
+                <div class="rayon-card unbox-reveal">
+                    <div class="unbox-inner">
+                        <span class="rayon-emoji" aria-hidden="true">🫒</span>
+                        <h4>Épicerie fine</h4>
+                        <p>Huiles d'olive, condiments, conserves d'artisans passionnés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3 : HORAIRES ========== -->
+    <section class="section" id="horaires" aria-labelledby="horairesTitle">
+        <div class="section-inner">
+            <p class="section-label">L'épicerie ouverte en continu</p>
+            <h2 class="section-title" id="horairesTitle">Du mardi au dimanche, de 8h30 à 23h45</h2>
+            <p class="section-lead">Le seul primeur de Clamart à vous accueillir sans interruption jusqu'à 23h45. Rentrez tard du travail ou improvisez un dîner : on est là.</p>
+
+            <div class="hours-highlight unbox-reveal">
+                <div class="unbox-inner">
+                    <div class="giant-hours">8h30 → 23h45</div>
+                    <div class="days-line">Mardi · Mercredi · Jeudi · Vendredi · Samedi · Dimanche</div>
+                    <span class="tag-sunday">Oui, le dimanche aussi !</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4 : LE QUARTIER ========== -->
+    <section class="section" id="quartier" aria-labelledby="quartierTitle" style="background: #fdfaf6;">
+        <div class="section-inner">
+            <p class="section-label">Le quartier, notre terroir</p>
+            <h2 class="section-title" id="quartierTitle">Rue Hébert, depuis toujours</h2>
+            <p class="section-lead">Nous servons les habitants de Clamart depuis des années. Nos arrivages sont pensés pour les familles du quartier, les habitués du dimanche et tous ceux qui aiment les bons produits sans prétention.</p>
+
+            <div class="story-block">
+                <p class="story-quote">« Ici, on connaît le prénom de nos clients, on sait comment ils aiment leurs tomates, et on leur garde le dernier fromage de chèvre quand ils arrivent après 22h. C'est ça, l'esprit de comptoir. »</p>
+                <p style="color:var(--pierre-seche);font-size:0.9rem;">— L'équipe des 4 Saisons</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5 : CONTACT ========== -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+        <div class="section-inner">
+            <p class="section-label">Contact & commandes</p>
+            <h2 class="section-title" id="contactTitle">Envie d'un plateau de fruits de mer ou d'un panier sur mesure ?</h2>
+            <p class="section-lead">Appelez-nous au <a href="tel:+33146447234" style="font-weight:600;color:var(--tomate-terre);text-decoration:underline;text-underline-offset:3px;">01 46 44 72 34</a> ou passez commande via notre formulaire. On prépare tout pour votre arrivée.</p>
+
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm" action="mailto:les4saisons92@gmail.com" method="post" enctype="text/plain" aria-label="Formulaire de commande">
+                    <div class="form-group">
+                        <label for="name">Votre nom</label>
+                        <input type="text" id="name" name="name" placeholder="M. / Mme Dupont" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Votre email</label>
+                        <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone (pour vous rappeler)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre demande</label>
+                        <textarea id="message" name="message" placeholder="Décrivez ce que vous souhaitez : panier de saison, plateau de fruits de mer, fromages..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                    <p style="font-size:0.75rem;color:var(--pierre-seche);margin-top:0.7rem;">Votre message sera envoyé par email. Nous vous répondons sous 24h.</p>
+                </form>
+
+                <div class="contact-info-card">
+                    <h3>On vous répond</h3>
+                    <div class="info-line">
+                        <span class="info-icon" aria-hidden="true">📞</span>
+                        <span><a href="tel:+33146447234">01 46 44 72 34</a></span>
+                    </div>
+                    <div class="info-line">
+                        <span class="info-icon" aria-hidden="true">✉️</span>
+                        <span><a href="mailto:les4saisons92@gmail.com">les4saisons92@gmail.com</a></span>
+                    </div>
+                    <div class="info-line">
+                        <span class="info-icon" aria-hidden="true">📍</span>
+                        <span>18 rue Hébert, 92140 Clamart</span>
+                    </div>
+                    <div class="info-line">
+                        <span class="info-icon" aria-hidden="true">⭐</span>
+                        <span>4.4 sur 33 avis Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6 : VENIR ========== -->
+    <section class="section" id="venir" aria-labelledby="venirTitle" style="background: #fdfaf6;">
+        <div class="section-inner">
+            <p class="section-label">Venir</p>
+            <h2 class="section-title" id="venirTitle">18 rue Hébert, 92140 Clamart</h2>
+            <p class="section-lead">Fermé le lundi. Mardi – Dimanche : 8h30 – 23h45.</p>
+
+            <div class="map-wrapper">
+                <iframe src="https://maps.google.com/maps?q=Epicerie+Les+4+saisons+18+Rue+H%C3%A9bert%2C+Clamart&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de l'Épicerie Les 4 Saisons à Clamart"></iframe>
+            </div>
+
+            <div class="hours-table" aria-label="Horaires d'ouverture détaillés">
+                <span class="day">Lundi</span><span class="closed">Fermé</span>
+                <span class="day">Mardi</span><span class="time">8h30 – 23h45</span>
+                <span class="day">Mercredi</span><span class="time">8h30 – 23h45</span>
+                <span class="day">Jeudi</span><span class="time">8h30 – 23h45</span>
+                <span class="day">Vendredi</span><span class="time">8h30 – 23h45</span>
+                <span class="day">Samedi</span><span class="time">8h30 – 23h45</span>
+                <span class="day">Dimanche</span><span class="time">8h30 – 23h45</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Les 4 Saisons</h4>
+                <p>Primeur de quartier ouvert en continu, du mardi au dimanche, de 8h30 à 23h45.<br>Fruits, légumes, poissonnerie, fromages et épicerie fine.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>18 rue Hébert<br>92140 Clamart<br>France</p>
+                <p style="margin-top:0.5rem;">
+                    <a href="tel:+33146447234">01 46 44 72 34</a><br>
+                    <a href="mailto:les4saisons92@gmail.com">les4saisons92@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Lundi : fermé<br>
+                    Mardi – Dimanche : 8h30 – 23h45<br>
+                    <em style="font-style:italic;opacity:0.8;">Ouvert les dimanches et jours fériés</em></p>
+            </div>
+        </div>
+        <div class="footer-credits">
+            Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener noreferrer">Agence Mooo</a>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // ---- Header scroll effect ----
+            const header = document.getElementById('siteHeader');
+            let lastScrollY = 0;
+            const handleScroll = () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollY = scrollY;
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // ---- IntersectionObserver for unbox reveals & scroll animations ----
+            const revealElements = document.querySelectorAll('.unbox-reveal, .story-block, .hours-highlight, .contact-form, .contact-info-card, .map-wrapper');
+
+            if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.18
+                };
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                revealElements.forEach(el => {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Show all immediately if reduced motion or no observer support
+                revealElements.forEach(el => {
+                    el.classList.add('revealed');
+                });
+            }
+
+            // ---- Contact form gentle handling ----
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Let the mailto action proceed naturally
+                    // Just add a small delay for UX feedback
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = '✓ Demande envoyée !';
+                        submitBtn.style.background = '#2E4A33';
+                        submitBtn.style.pointerEvents = 'none';
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.style.pointerEvents = '';
+                        }, 2500);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+```
+### Design & narration
+
+Ce design incarne le concept de "chic de comptoir", entre l'élégance d'une épicerie fine et la chaleur d'un commerce de proximité. L'objectif est de faire ressentir la confiance et la fraîcheur, tout en ancrant le site dans l'univers réel du quartier.
+
+- **Typographie éditoriale** : L'association de Cormorant Garamond (pour les titres et l'accroche "23h45") et de Jost (pour les textes) crée une hiérarchie claire et expressive. Le mot "23h45" devient l'élément signature, traité comme une enseigne peinte.
+- **Palette et matières** : Les couleurs sont directement issues de l'univers du primeur : le vert profond des cagettes, le rouge terre des tomates, le crème du papier kraft. Un bruit de fond (grain) très léger est appliqué sur toute la page pour éviter l'aspect "plat" et rappeler une texture de papier artisanal.
+- **Composition narrative** : Le filigrane botanique dans la section saisonnière, le bloc "histoire" avec sa citation, et l'animation de "déballage" (un masque vert glissant) structurent la lecture comme une visite de l'étal.
+- **Valorisation de l'atout clé** : L'amplitude horaire est mise en scène de manière spectaculaire dans le hero et dans un bloc dédié, transformant une contrainte logistique en avantage concurrentiel unique et mémorable.
+
+### Choix techniques et animations
+
+- **Structure sémantique** : Le code utilise des balises `<header>`, `<nav>`, `<section>`, `<footer>` et des attributs ARIA pour une accessibilité optimale. Les données structurées Schema.org sont intégrées pour le référencement local.
+- **Animations au scroll** : Un `IntersectionObserver` déclenche la classe `.revealed` sur les éléments clés (cartes produits, blocs horaires). Cela active l'effet de "déballage" CSS : un pseudo-élément vert glisse vers la droite, révélant le contenu avec un léger décalage.
+- **Expérience fluide** : Le header est collant avec un effet de flou (`backdrop-filter`). Les `clamp()` assurent une typographie fluide et responsive. La préférence `prefers-reduced-motion` est respectée, désactivant toutes les animations si nécessaire.
+- **Formulaire fonctionnel** : Le formulaire de commande utilise `mailto:` comme méthode d'envoi, avec un retour visuel immédiat sur le bouton pour confirmer l'action.
