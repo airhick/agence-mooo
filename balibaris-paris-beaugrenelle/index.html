@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balibaris Paris Beaugrenelle — Atelier confidentiel | Chemises, retouches & conseil</title>
+    <meta name="description" content="Balibaris Paris Beaugrenelle — Boutique-atelier au 12 rue Linois, Paris 15ᵉ. Essayage, retouche minute, conseil silhouette. Une équipe qui se souvient de vous. Téléphone : 01 40 59 07 35.">
+    <meta property="og:title" content="Balibaris — Atelier Beaugrenelle | Chemises sur mesure & retouche">
+    <meta property="og:description" content="Ici, votre chemise a une histoire. Elle commence au 12 rue Linois. Essayage, retouche, conseil — la boutique Balibaris de Beaugrenelle n'est pas un rayon. C'est un atelier habillé.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lin-ecru: #FAF7F2;
+            --carbone: #1E2329;
+            --terre-essayage: #C85A3C;
+            --bleu-retouche: #3E5E6B;
+            --sable-beaugrenelle: #D9D2C5;
+            --couture-doree: #E8A85F;
+            --grain-opacity: 0.04;
+            --transition-base: 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 72px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--lin-ecru);
+            color: var(--carbone);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.05rem);
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ----- GRAIN OVERLAY ----- */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 220px 220px;
+        }
+
+        /* ----- FIL ROUGE ----- */
+        .fil-rouge-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+        .fil-rouge-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .fil-rouge-path {
+            fill: none;
+            stroke: var(--couture-doree);
+            stroke-width: 1.4;
+            stroke-dasharray: 6 8;
+            stroke-linecap: round;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 2px rgba(232, 168, 95, 0.4));
+        }
+        .aiguille-marker {
+            fill: var(--couture-doree);
+            opacity: 0.8;
+        }
+
+        /* ----- HEADER ----- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(217, 210, 197, 0.55);
+            padding: 0 clamp(1rem, 2vw, 2.5rem);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(250, 247, 242, 0.94);
+            box-shadow: 0 1px 20px rgba(30, 35, 41, 0.06);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 1.5rem;
+        }
+        .brand-name {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
+            letter-spacing: -0.02em;
+            color: var(--carbone);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .brand-name span {
+            font-weight: 400;
+            color: var(--bleu-retouche);
+            font-size: 0.7em;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.8rem, 1.8vw, 2rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--carbone);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--couture-doree);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--terre-essayage);
+        }
+        .header-cta {
+            font-family: 'Unbounded', serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            background: var(--terre-essayage);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(200, 90, 60, 0.2);
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #b04a2e;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(200, 90, 60, 0.3);
+        }
+        .header-cta:focus-visible {
+            outline: 3px solid var(--couture-doree);
+            outline-offset: 3px;
+        }
+        .note-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--sable-beaugrenelle);
+            color: var(--carbone);
+            padding: 0.35rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            font-family: 'Albert Sans', sans-serif;
+        }
+        .note-badge .stars {
+            color: var(--couture-doree);
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            .header-nav .hide-mobile {
+                display: none;
+            }
+            .header-inner {
+                gap: 0.8rem;
+                height: 56px;
+            }
+            .header-nav {
+                gap: 0.5rem;
+            }
+            .header-nav a {
+                font-size: 0.75rem;
+            }
+            .note-badge {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.5rem;
+            }
+            .header-cta {
+                font-size: 0.7rem;
+                padding: 0.45rem 0.9rem;
+            }
+        }
+
+        /* ----- SECTIONS GENERAL ----- */
+        section {
+            position: relative;
+            padding: clamp(2.5rem, 5vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: 'Unbounded', serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--bleu-retouche);
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        /* ----- HERO ----- */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: clamp(3rem, 8vh, 6rem);
+            padding-bottom: clamp(2rem, 5vh, 4rem);
+            max-width: 1300px;
+            position: relative;
+        }
+        .hero-title {
+            font-family: 'Unbounded', serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 4.5vw, 3.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--carbone);
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealUp 0.85s var(--ease-out-expo) 0.15s forwards;
+        }
+        .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            line-height: 1.55;
+            color: #3a3f46;
+            max-width: 620px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(24px);
+            animation: revealUp 0.85s var(--ease-out-expo) 0.35s forwards;
+        }
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.85s var(--ease-out-expo) 0.5s forwards;
+        }
+        .btn-primary {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            background: var(--terre-essayage);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s var(--ease-out-expo);
+            box-shadow: 0 3px 12px rgba(200, 90, 60, 0.25);
+            text-align: center;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #a8472e;
+            box-shadow: 0 6px 22px rgba(200, 90, 60, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--couture-doree);
+            outline-offset: 4px;
+        }
+        .btn-ghost {
+            font-family: 'Unbounded', serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            background: transparent;
+            color: var(--carbone);
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+            border: 1.5px solid var(--sable-beaugrenelle);
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+            text-align: center;
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            border-color: var(--couture-doree);
+            color: var(--terre-essayage);
+            background: rgba(232, 168, 95, 0.06);
+        }
+        .btn-ghost:focus-visible {
+            outline: 3px solid var(--couture-doree);
+            outline-offset: 4px;
+        }
+
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ----- SECTION CABINE ----- */
+        .cabine-section {
+            padding-top: 1rem;
+            padding-bottom: clamp(2rem, 4vw, 4rem);
+            max-width: 1300px;
+        }
+        .cabine-image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(30, 35, 41, 0.15);
+            aspect-ratio: 16 / 9;
+            min-height: 360px;
+            background: var(--sable-beaugrenelle);
+        }
+        .cabine-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.97) contrast(1.04) saturate(0.9);
+        }
+        .cabine-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(30, 35, 41, 0.15) 0%, rgba(30, 35, 41, 0.35) 100%);
+            pointer-events: none;
+        }
+        .cabine-overlay-text {
+            position: absolute;
+            bottom: clamp(1.5rem, 4vw, 3rem);
+            left: clamp(1.5rem, 4vw, 3rem);
+            z-index: 2;
+            color: #fff;
+        }
+        .cabine-overlay-text h2 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.5rem;
+        }
+        .cabine-overlay-text .cta-discret {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--couture-doree);
+            padding-bottom: 3px;
+            transition: border-color 0.3s ease, color 0.3s ease;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+        .cabine-overlay-text .cta-discret:hover {
+            border-color: #fff;
+            color: var(--couture-doree);
+        }
+
+        /* ----- SAVOIR-FAIRE ----- */
+        .savoir-faire-section {
+            padding-top: clamp(2rem, 4vw, 4rem);
+            padding-bottom: clamp(2rem, 4vw, 4rem);
+        }
+        .savoir-faire-section h2 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            color: var(--carbone);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(217, 210, 197, 0.6);
+            border-radius: 4px;
+            padding: clamp(1.5rem, 2.5vw, 2rem);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            border-color: var(--couture-doree);
+            box-shadow: 0 8px 30px rgba(30, 35, 41, 0.08);
+            transform: translateY(-3px);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--couture-doree);
+            transition: height 0.5s var(--ease-out-expo);
+            border-radius: 0 2px 2px 0;
+        }
+        .service-card:hover::before {
+            height: 100%;
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            line-height: 1;
+            color: var(--bleu-retouche);
+        }
+        .service-card h3 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            color: var(--carbone);
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: #3a3f46;
+            line-height: 1.5;
+        }
+
+        /* ----- LIEU ----- */
+        .lieu-section h2 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: var(--carbone);
+        }
+        .lieu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .lieu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .lieu-info {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .lieu-info .adresse {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .lieu-info .horaires {
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.45);
+            border-left: 3px solid var(--couture-doree);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+        }
+        .lieu-info a {
+            color: var(--terre-essayage);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .lieu-info a:hover {
+            color: #a8472e;
+            text-decoration: underline;
+            text-decoration-color: var(--couture-doree);
+            text-underline-offset: 4px;
+        }
+        .map-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 6px 30px rgba(30, 35, 41, 0.12);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+            background: var(--sable-beaugrenelle);
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+        }
+
+        /* ----- TEMOIGNAGES ----- */
+        .temoignages-section {
+            padding-top: clamp(2rem, 4vw, 3rem);
+            padding-bottom: clamp(2rem, 4vw, 3rem);
+        }
+        .temoignages-section h2 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: var(--carbone);
+        }
+        .note-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .note-chiffre {
+            font-family: 'Unbounded', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            letter-spacing: -0.03em;
+            color: var(--carbone);
+            line-height: 1;
+        }
+        .note-details {
+            font-size: 0.9rem;
+            color: #3a3f46;
+        }
+        .note-details .etoiles {
+            color: var(--couture-doree);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .avis-liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+        }
+        .avis-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(217, 210, 197, 0.5);
+            border-radius: 4px;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            transition: border-color 0.4s ease;
+        }
+        .avis-card:hover {
+            border-color: var(--couture-doree);
+        }
+        .avis-card .auteur {
+            font-weight: 600;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--bleu-retouche);
+        }
+        .avis-card .date {
+            font-size: 0.75rem;
+            color: #6b7077;
+        }
+        .avis-card .etoiles-avis {
+            color: var(--couture-doree);
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+        .equipe-message {
+            font-family: 'Albert Sans', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: #3a3f46;
+            border-left: 3px solid var(--couture-doree);
+            padding-left: 1.2rem;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ----- CONTACT / NEWSLETTER ----- */
+        .contact-section {
+            padding-top: clamp(2rem, 4vw, 3rem);
+            padding-bottom: clamp(2rem, 4vw, 3rem);
+        }
+        .contact-section h2 {
+            font-family: 'Unbounded', serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: var(--carbone);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .contact-info a {
+            color: var(--terre-essayage);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: #a8472e;
+            text-decoration: underline;
+            text-decoration-color: var(--couture-doree);
+            text-underline-offset: 4px;
+        }
+        .newsletter-box {
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(217, 210, 197, 0.6);
+            border-radius: 4px;
+            padding: 1.8rem;
+        }
+        .newsletter-box h3 {
+            font-family: 'Unbounded', serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+        .newsletter-box p {
+            font-size: 0.85rem;
+            color: #3a3f46;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid var(--sable-beaugrenelle);
+            border-radius: 3px;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 0.9rem;
+            background: #fff;
+            color: var(--carbone);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--couture-doree);
+            box-shadow: 0 0 0 4px rgba(232, 168, 95, 0.12);
+        }
+        .newsletter-form button {
+            font-family: 'Unbounded', serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            background: var(--bleu-retouche);
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+        }
+        .newsletter-form button:hover {
+            background: #2f4955;
+            box-shadow: 0 4px 14px rgba(62, 94, 107, 0.3);
+        }
+        .newsletter-form button:focus-visible {
+            outline: 3px solid var(--couture-doree);
+            outline-offset: 3px;
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            border-top: 1px solid rgba(217, 210, 197, 0.7);
+            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 4vw, 2.5rem);
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6b7077;
+            position: relative;
+        }
+        .site-footer .aiguille-finale {
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            opacity: 0.7;
+            transform: rotate(15deg);
+        }
+        .site-footer .credits {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #9a9ea5;
+        }
+
+        /* ----- SCROLL REVEAL ----- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ----- FOCUS VISIBLE GLOBAL ----- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 3px solid var(--couture-doree);
+            outline-offset: 2px;
+        }
+
+        /* ----- ACCESSIBILITE CONTRASTE ----- */
+        @media (prefers-contrast: high) {
+            :root {
+                --lin-ecru: #ffffff;
+                --carbone: #000000;
+                --terre-essayage: #a0301a;
+                --bleu-retouche: #1e3a44;
+                --sable-beaugrenelle: #c5bcaa;
+                --couture-doree: #c08030;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Fil rouge SVG décoratif -->
+    <div class="fil-rouge-container" aria-hidden="true">
+        <svg class="fil-rouge-svg" viewBox="0 0 1440 3000" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
+            <path class="fil-rouge-path" d="M 60 120 Q 200 180 280 350 T 180 620 T 350 900 T 220 1200 T 400 1550 T 260 1900 T 380 2250 T 200 2600 T 350 2850"
+            stroke-dashoffset="0" />
+            <circle class="aiguille-marker" cx="347" cy="2848" r="4.5" />
+            <line x1="347" y1="2842" x2="347" y2="2865" stroke="#E8A85F" stroke-width="1.2" opacity="0.6" />
+        </svg>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#hero" class="brand-name" aria-label="Balibaris Paris Beaugrenelle — Accueil">
+                Balibaris
+                <span>Beaugrenelle</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="header-nav">
+                    <li><a href="#cabine" class="hide-mobile">La cabine</a></li>
+                    <li><a href="#savoir-faire" class="hide-mobile">Savoir-faire</a></li>
+                    <li><a href="#lieu">Le lieu</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li>
+                        <span class="note-badge" aria-label="Note Google 3.4 sur 5 basée sur 55 avis">
+                            <span class="stars">★★★☆☆</span> 3.4
+                        </span>
+                    </li>
+                    <li><a href="#contact" class="header-cta">Prendre RDV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero" aria-labelledby="hero-title">
+            <span class="section-label">Atelier confidentiel — Paris 15ᵉ</span>
+            <h1 class="hero-title" id="hero-title">Ici, votre chemise a une histoire.<br>Elle commence au 12 rue Linois.</h1>
+            <p class="hero-subtitle">Essayage, retouche, conseil — la boutique Balibaris de Beaugrenelle n'est pas un rayon. C'est un atelier habillé, avec une équipe qui se souvient de vous.</p>
+            <div class="hero-cta-group">
+                <a href="tel:+33140590735" class="btn-primary">Appeler — 01 40 59 07 35</a>
+                <a href="#lieu" class="btn-ghost">Venir en boutique</a>
+            </div>
+        </section>
+
+        <!-- SECTION CABINE -->
+        <section class="cabine-section reveal" id="cabine" aria-labelledby="cabine-title">
+            <span class="section-label">Hors gabarit</span>
+            <div class="cabine-image-wrapper">
+                <img src="assets/maps-1.jpg" alt="Cabine d'essayage Balibaris Beaugrenelle — portemanteaux chargés, lumière chaude, lieu prêt à recevoir" loading="lazy" width="1200" height="675">
+                <div class="cabine-overlay-text">
+                    <h2 id="cabine-title">Dernier essayage en cabine 2</h2>
+                    <a href="#contact" class="cta-discret">Prendre rendez-vous →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SAVOIR-FAIRE -->
+        <section class="savoir-faire-section reveal" id="savoir-faire" aria-labelledby="sf-title">
+            <span class="section-label">Savoir-faire de boutique</span>
+            <h2 id="sf-title">Ce qu'on fait ici qu'un écran ne fera jamais</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="service-icon" aria-hidden="true">✂️</span>
+                    <h3>Retouche minute</h3>
+                    <p>L'ourlet de pantalon qui tombe juste. Reprise sous trois jours, essayage sur place. On ajuste, vous repartez confiant.</p>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon" aria-hidden="true">🧵</span>
+                    <h3>Conseil silhouette</h3>
+                    <p>Mariage, entretien, nouveau poste — on compose votre tenue en 30 minutes, sans pression. L'œil expert qui sauve un essayage.</p>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon" aria-hidden="true">📦</span>
+                    <h3>E‑réservation & click & collect</h3>
+                    <p>Vous repérez en ligne, on prépare votre sélection en cabine. Rien à payer avant d'avoir essayé. Simple, humain.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION LIEU -->
+        <section class="lieu-section reveal" id="lieu" aria-labelledby="lieu-title">
+            <span class="section-label">Le lieu</span>
+            <h2 id="lieu-title">Au pied des verrières, face à la Seine</h2>
+            <div class="lieu-grid">
+                <div class="lieu-info">
+                    <p class="adresse">📍 12 Rue Linois, 75015 Paris</p>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33140590735">01 40 59 07 35</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:contactpresse@balibaris.com">contactpresse@balibaris.com</a></p>
+                    <p><strong>Transports :</strong> Métro Charles‑Michels (ligne 10), Javel (RER C), parkings Beaugrenelle à proximité.</p>
+                    <p><strong>Accessibilité :</strong> Accès PMR — niveau 0 du centre commercial Beaugrenelle.</p>
+                    <div class="horaires">
+                        <strong>🕐 Horaires d'ouverture</strong><br>
+                        Horaires à confirmer — merci de nous appeler ou de passer nous voir. L'équipe est généralement présente aux heures d'ouverture du centre Beaugrenelle.
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Balibaris+-+Paris+Beaugrenelle+12+Rue+Linois%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Balibaris Paris Beaugrenelle"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION TEMOIGNAGES -->
+        <section class="temoignages-section reveal" id="avis" aria-labelledby="avis-title">
+            <span class="section-label">Transparence assumée</span>
+            <h2 id="avis-title">55 avis, une moyenne de 3,4 — et l'envie de faire mieux</h2>
+            <div class="note-display">
+                <span class="note-chiffre">3.4</span>
+                <span class="note-details">
+                    <span class="etoiles" aria-label="3 étoiles et demie sur 5">★★★☆☆</span><br>
+                    sur 55 avis Google
+                </span>
+            </div>
+            <div class="avis-liste">
+                <div class="avis-card">
+                    <span class="etoiles-avis">★★★★☆</span>
+                    <p>« Très bon accueil, le vendeur a pris le temps de me conseiller sur les tailles. La retouche était parfaite. Je reviendrai. »</p>
+                    <p class="auteur">— Thomas L.</p>
+                    <p class="date">15 mars 2025</p>
+                </div>
+                <div class="avis-card">
+                    <span class="etoiles-avis">★★★☆☆</span>
+                    <p>« Belle boutique, beaux produits. Un peu d'attente pour l'essayage mais le résultat est là. Bon conseil. »</p>
+                    <p class="auteur">— Karim B.</p>
+                    <p class="date">2 février 2025</p>
+                </div>
+                <div class="avis-card">
+                    <span class="etoiles-avis">★★☆☆☆</span>
+                    <p>« J'ai dû repasser pour la retouche, le délai annoncé n'était pas tenu. Mais l'équipe a fait un geste commercial, c'est honnête. »</p>
+                    <p class="auteur">— Julie M.</p>
+                    <p class="date">28 janvier 2025</p>
+                </div>
+            </div>
+            <p class="equipe-message">
+                « On a lu chaque retour. Depuis janvier, on a changé nos délais de retouche. Dites‑nous en cabine ce qu'on peut encore améliorer. »
+                <br><span style="font-style:normal;font-weight:500;display:inline-block;margin-top:0.4rem;">— L'équipe Balibaris Beaugrenelle</span>
+            </p>
+        </section>
+
+        <!-- SECTION CONTACT & NEWSLETTER -->
+        <section class="contact-section reveal" id="contact" aria-labelledby="contact-title">
+            <span class="section-label">Rester en lien, sans bruit</span>
+            <h2 id="contact-title">Contact & nouvelles de l'atelier</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><strong>📞 Téléphone :</strong> <a href="tel:+33140590735">01 40 59 07 35</a></p>
+                    <p><strong>✉️ Email :</strong> <a href="mailto:contactpresse@balibaris.com">contactpresse@balibaris.com</a></p>
+                    <p><strong>📍 Adresse :</strong> 12 Rue Linois, 75015 Paris</p>
+                    <p style="margin-top:1rem;font-size:0.85rem;color:#3a3f46;">Appelez-nous pour un rendez-vous d'essayage ou passez nous voir — nous sommes au niveau 0 du centre Beaugrenelle, prêts à vous recevoir.</p>
+                </div>
+                <div class="newsletter-box">
+                    <h3>Newsletter — Une fois par saison</h3>
+                    <p>Les arrivages qui concernent votre morphologie. Pas de bruit, pas de pop‑in. Juste l'essentiel, quatre fois par an.</p>
+                    <form class="newsletter-form" action="#" method="post">
+                        <input type="email" name="email" placeholder="votre@email.fr" required aria-label="Votre adresse email">
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <span class="aiguille-finale" aria-hidden="true">🪡</span>
+        <p><strong>Balibaris — Paris Beaugrenelle</strong><br>12 Rue Linois, 75015 Paris<br>Tél. : <a href="tel:+33140590735" style="color:inherit;">01 40 59 07 35</a></p>
+        <p class="credits">Site créé par Agence Mooo</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // IntersectionObserver pour les reveals au scroll
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(revealCallback, observerOptions);
+            revealEls.forEach(el => observer.observe(el));
+
+            // Header scroll state
+            const header = document.getElementById('header');
+            let scrollTicking = false;
+            const updateHeader = () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            };
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeader);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // Défilement du fil rouge — mise à jour du dashoffset pour effet de déroulement
+            const filPath = document.querySelector('.fil-rouge-path');
+            if (filPath && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const pathLength = filPath.getTotalLength();
+                if (pathLength) {
+                    filPath.style.strokeDasharray = pathLength;
+                    filPath.style.strokeDashoffset = pathLength;
+
+                    let filTicking = false;
+                    const updateFil = () => {
+                        const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                        const clampedPercent = Math.min(1, Math.max(0, scrollPercent));
+                        filPath.style.strokeDashoffset = pathLength * (1 - clampedPercent);
+                        filTicking = false;
+                    };
+
+                    window.addEventListener('scroll', () => {
+                        if (!filTicking) {
+                            requestAnimationFrame(updateFil);
+                            filTicking = true;
+                        }
+                    }, { passive: true });
+
+                    // Initialisation
+                    updateFil();
+                }
+            } else if (filPath) {
+                // Mode réduit : fil statique visible
+                filPath.style.strokeDasharray = '6 8';
+                filPath.style.strokeDashoffset = '0';
+            }
+
+            // Gestion du formulaire newsletter (empêcher soumission réelle)
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value.trim()) {
+                        alert('Merci ! Votre inscription a bien été prise en compte. À bientôt dans l\'atelier.');
+                        emailInput.value = '';
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ClothingStore",
+            "name": "Balibaris - Paris Beaugrenelle",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "12 Rue Linois",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140590735",
+            "email": "contactpresse@balibaris.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.4",
+                "reviewCount": "55"
+            },
+            "priceRange": "€€€",
+            "openingHours": "Horaires à confirmer",
+            "url": "https://agence.mooo.com/balibaris-paris-beaugrenelle"
+        }
+    </script>
+</body>
+</html>
