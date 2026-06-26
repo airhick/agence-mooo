@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superse – Épicerie Iranienne Paris 15 | Le Trésor Persan de Javel</title>
+    <meta name="description" content="Superse, épicerie iranienne au 12 Avenue Émile Zola Paris 15. Produits rares, plats faits maison, ouvert jusqu'à minuit. Note 4.7★ – 90 avis Google.">
+    <meta property="og:title" content="Superse – Le Trésor Persan de Javel | Épicerie Iranienne Paris 15">
+    <meta property="og:description" content="Minuit, et tout est encore là. L'épicerie iranienne de l'Avenue Émile Zola. Produits rares, plats faits maison, et le goût de Téhéran à deux pas du métro Javel.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Superse",
+            "description": "Épicerie iranienne – Le Trésor Persan de Javel. Produits rares, plats faits maison, ouvert jusqu'à minuit.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "12 Avenue Emile Zola",
+                "addressLocality": "Paris",
+                "addressRegion": "Île-de-France",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33981090977",
+            "email": "onlinesupersemarket@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "90"
+            },
+            "image": "assets/maps-1.jpg",
+            "priceRange": "€€",
+            "currenciesAccepted": "EUR",
+            "openingHours": "Mo-Sa 09:00-00:00"
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #FAF8F5;
+            --ink: #1E1E1E;
+            --accent: #E10500;
+            --metal: #8A8D91;
+            --green: #2C4C3B;
+            --bg-rgb: 250, 248, 245;
+            --accent-rgb: 225, 5, 0;
+            --font-display: 'Fraunces', 'Times New Roman', serif;
+            --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+            --gutter: clamp(1rem, 3vw, 2.5rem);
+            --section-gap: clamp(4rem, 8vw, 8rem);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Global grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(var(--bg-rgb), 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(30, 30, 30, 0.07);
+            padding: 0.75rem var(--gutter);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            min-height: 56px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .header-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            letter-spacing: 0.06em;
+            color: var(--ink);
+            white-space: nowrap;
+            line-height: 1;
+            position: relative;
+        }
+
+        .header-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .header-logo:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: clamp(0.8rem, 2vw, 1.8rem);
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .header-nav a {
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--ink);
+            position: relative;
+            padding: 0.3em 0;
+            transition: color 0.25s ease;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s ease;
+        }
+
+        .header-nav a:hover {
+            color: var(--accent);
+        }
+        .header-nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .header-cta {
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            letter-spacing: 0.04em;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.55em 1.4em;
+            border-radius: 3px;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-cta:hover {
+            background: #c00400;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35);
+        }
+
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .header-cta:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .google-badge-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3em;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            font-weight: 500;
+            color: var(--ink);
+            background: rgba(30, 30, 30, 0.04);
+            padding: 0.35em 0.7em;
+            border-radius: 20px;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .google-badge-mini .stars {
+            color: #f5a623;
+            font-size: 1em;
+            letter-spacing: -0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                gap: 0.5rem;
+            }
+            .header-nav a {
+                font-size: 0.78rem;
+            }
+            .header-cta {
+                padding: 0.5em 1em;
+                font-size: 0.78rem;
+            }
+        }
+        @media (max-width: 520px) {
+            header {
+                padding: 0.6rem 1rem;
+                gap: 0.5rem;
+            }
+            .header-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 0.6rem;
+                padding-top: 0.3rem;
+            }
+            .header-cta {
+                font-size: 0.75rem;
+                padding: 0.45em 0.9em;
+            }
+            .header-logo {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: var(--ink);
+            cursor: default;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.55) contrast(1.1);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+        .hero:hover .hero-bg img {
+            filter: brightness(0.5) contrast(1.15);
+            transform: scale(1.03);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to top,
+                    rgba(30, 30, 30, 0.75) 0%,
+                    rgba(30, 30, 30, 0.35) 40%,
+                    rgba(30, 30, 30, 0.05) 70%,
+                    rgba(30, 30, 30, 0) 100%);
+            pointer-events: none;
+        }
+
+        /* Ligne décorative verticale */
+        .hero-file-line {
+            position: absolute;
+            left: var(--gutter);
+            top: 20%;
+            bottom: 20%;
+            width: 1px;
+            background: rgba(250, 248, 245, 0.25);
+            z-index: 3;
+            pointer-events: none;
+        }
+        @media (max-width: 600px) {
+            .hero-file-line {
+                display: none;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: var(--gutter);
+            padding-top: clamp(6rem, 15vh, 12rem);
+            padding-bottom: clamp(3rem, 6vw, 5rem);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-content .pre-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(250, 248, 245, 0.7);
+            margin-bottom: 1rem;
+            display: block;
+            animation: fadeUp 0.8s 0.1s both ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2.6rem, 6vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            color: #FAF8F5;
+            margin-bottom: 1rem;
+            animation: fadeUp 0.8s 0.2s both ease-out;
+            max-width: 700px;
+        }
+
+        .hero-content .subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.55;
+            color: rgba(250, 248, 245, 0.85);
+            max-width: 550px;
+            margin-bottom: 1.8rem;
+            animation: fadeUp 0.8s 0.35s both ease-out;
+        }
+
+        .hero-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(250, 248, 245, 0.12);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(250, 248, 245, 0.2);
+            padding: 0.6em 1.2em;
+            border-radius: 30px;
+            color: #FAF8F5;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            letter-spacing: 0.03em;
+            animation: fadeUp 0.8s 0.45s both ease-out;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .hero-google-badge .stars {
+            color: #f5a623;
+            font-size: 1.1em;
+            letter-spacing: -0.05em;
+        }
+        .hero-google-badge:hover {
+            background: rgba(250, 248, 245, 0.2);
+            border-color: rgba(250, 248, 245, 0.35);
+        }
+
+        /* Néon sign */
+        .neon-sign-wrapper {
+            position: absolute;
+            top: clamp(2rem, 5vw, 3.5rem);
+            right: var(--gutter);
+            z-index: 3;
+            animation: fadeUp 0.8s 0.3s both ease-out;
+        }
+        .neon-sign {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            letter-spacing: 0.35em;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0.5em 1.2em;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            text-shadow:
+                0 0 7px var(--accent),
+                0 0 10px var(--accent),
+                0 0 21px var(--accent),
+                0 0 42px rgba(var(--accent-rgb), 0.7),
+                0 0 60px rgba(var(--accent-rgb), 0.5);
+            box-shadow:
+                0 0 7px var(--accent),
+                0 0 20px rgba(var(--accent-rgb), 0.4),
+                inset 0 0 7px rgba(var(--accent-rgb), 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        .neon-sign::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 6px;
+            border: 1px solid rgba(var(--accent-rgb), 0.3);
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+        .hero:hover .neon-sign {
+            text-shadow:
+                0 0 5px #fff,
+                0 0 8px #fff,
+                0 0 12px var(--accent),
+                0 0 22px var(--accent),
+                0 0 50px var(--accent),
+                0 0 80px rgba(255, 60, 40, 0.8),
+                0 0 120px rgba(255, 40, 20, 0.6);
+            box-shadow:
+                0 0 10px var(--accent),
+                0 0 30px rgba(var(--accent-rgb), 0.6),
+                0 0 60px rgba(var(--accent-rgb), 0.3),
+                inset 0 0 12px rgba(var(--accent-rgb), 0.4);
+            border-color: #ff3333;
+            background: rgba(0, 0, 0, 0.45);
+        }
+        .hero:hover .neon-sign::after {
+            border-color: rgba(var(--accent-rgb), 0.6);
+            box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes neonFlicker {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            2% {
+                opacity: 0.85;
+            }
+            4% {
+                opacity: 1;
+            }
+            8% {
+                opacity: 0.9;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            52% {
+                opacity: 0.8;
+            }
+            54% {
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .neon-sign {
+                animation: neonFlicker 5s infinite alternate;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .neon-sign-wrapper {
+                top: 1.2rem;
+                right: 1rem;
+            }
+            .neon-sign {
+                font-size: 0.85rem;
+                letter-spacing: 0.2em;
+                padding: 0.4em 0.8em;
+            }
+            .hero-content h1 {
+                font-size: clamp(2rem, 7vw, 3rem);
+            }
+            .hero {
+                min-height: 75vh;
+            }
+        }
+
+        /* ==================== SECTIONS COMMUNES ==================== */
+        section {
+            padding: var(--section-gap) var(--gutter);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            margin-bottom: clamp(2rem, 4vw, 3.5rem);
+            position: relative;
+        }
+
+        .section-tag {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            max-width: 650px;
+        }
+
+        .section-intro {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            color: rgba(30, 30, 30, 0.7);
+            max-width: 500px;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Filet décoratif */
+        .rule {
+            width: 100%;
+            height: 1px;
+            background: rgba(30, 30, 30, 0.1);
+            margin: 0;
+            border: none;
+        }
+        .rule-accent {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1.5rem 0;
+            border: none;
+        }
+        .rule-metal {
+            width: 100%;
+            height: 1px;
+            background: var(--metal);
+            opacity: 0.35;
+            margin: 2rem 0;
+            border: none;
+        }
+
+        /* ==================== COMPTOIR DU JOUR ==================== */
+        .comptoir-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2.5vw, 2rem);
+        }
+
+        @media (max-width: 900px) {
+            .comptoir-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 520px) {
+            .comptoir-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.7rem;
+            }
+        }
+
+        .comptoir-item {
+            position: relative;
+        }
+
+        /* Rideau de fer – conteneur */
+        .curtain-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: var(--bg);
+            aspect-ratio: 4 / 3;
+        }
+        .curtain-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .curtain-wrapper:hover img {
+            transform: scale(1.04);
+        }
+        .curtain {
+            position: absolute;
+            inset: 0;
+            background: var(--bg);
+            z-index: 5;
+            transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+            transform-origin: top;
+            border-radius: 4px;
+            box-shadow: 0 0 0 1px rgba(30, 30, 30, 0.04);
+        }
+        .curtain-wrapper.revealed .curtain {
+            transform: translateY(-100%);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .curtain {
+                transition: none;
+            }
+        }
+
+        /* Petite étiquette prix */
+        .price-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+            color: var(--accent);
+            background: rgba(var(--accent-rgb), 0.06);
+            padding: 0.3em 0.7em;
+            border-radius: 2px;
+            letter-spacing: 0.04em;
+            margin-top: 0.7rem;
+        }
+        .comptoir-item h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            margin-top: 0.5rem;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .comptoir-item p {
+            font-size: clamp(0.8rem, 0.9vw, 0.85rem);
+            color: rgba(30, 30, 30, 0.6);
+            margin-top: 0.3rem;
+            line-height: 1.4;
+        }
+
+        /* ==================== CUISINE ==================== */
+        .cuisine-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .cuisine-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .cuisine-visual {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 5 / 4;
+        }
+        .cuisine-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .cuisine-visual:hover img {
+            transform: scale(1.03);
+        }
+        .cuisine-visual .curtain {
+            border-radius: 6px;
+        }
+
+        .cuisine-text blockquote {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            line-height: 1.35;
+            color: var(--ink);
+            padding: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            position: relative;
+        }
+        .cuisine-text blockquote::before {
+            content: '“';
+            position: absolute;
+            top: -0.3em;
+            left: 0.3rem;
+            font-size: 4rem;
+            color: rgba(var(--accent-rgb), 0.15);
+            font-family: var(--font-display);
+            line-height: 1;
+            pointer-events: none;
+        }
+        .cuisine-text .quote-attribution {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(30, 30, 30, 0.5);
+            letter-spacing: 0.04em;
+            margin-top: -0.8rem;
+            padding-left: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+        .cuisine-text .quote-attribution .verified-icon {
+            color: #4285F4;
+            font-size: 0.9em;
+        }
+        .cuisine-text p {
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            line-height: 1.7;
+            color: rgba(30, 30, 30, 0.75);
+        }
+        .cuisine-text .highlight-dishes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+        .dish-badge {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            padding: 0.4em 1em;
+            border-radius: 20px;
+            background: rgba(var(--accent-rgb), 0.05);
+            color: var(--accent);
+            border: 1px solid rgba(var(--accent-rgb), 0.2);
+            transition: all 0.25s ease;
+        }
+        .dish-badge:hover {
+            background: rgba(var(--accent-rgb), 0.12);
+            border-color: var(--accent);
+        }
+
+        /* ==================== GARDE-MANGER ==================== */
+        .essentials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .essentials-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .essential-col {
+            position: relative;
+            padding-top: 1.5rem;
+            border-top: 3px solid var(--metal);
+            transition: border-color 0.4s ease;
+        }
+        .essential-col:nth-child(1) {
+            border-top-color: var(--ink);
+        }
+        .essential-col:nth-child(2) {
+            border-top-color: var(--accent);
+        }
+        .essential-col:nth-child(3) {
+            border-top-color: var(--green);
+        }
+        .essential-col:hover {
+            border-top-width: 5px;
+        }
+
+        .essential-col .col-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: rgba(30, 30, 30, 0.04);
+            position: absolute;
+            top: -0.3em;
+            left: 0;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .essential-col h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .essential-col .expert-phrase {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: rgba(30, 30, 30, 0.5);
+            letter-spacing: 0.03em;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        .essential-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .essential-col ul li {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            color: var(--ink);
+            padding: 0.5em 0;
+            border-bottom: 1px solid rgba(30, 30, 30, 0.06);
+            position: relative;
+            padding-left: 1.2em;
+            transition: color 0.25s ease, padding-left 0.25s ease;
+        }
+        .essential-col ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--metal);
+            transition: color 0.25s ease;
+        }
+        .essential-col ul li:hover {
+            color: var(--accent);
+            padding-left: 1.5em;
+        }
+        .essential-col ul li:hover::before {
+            color: var(--accent);
+        }
+
+        /* ==================== EPICERIE ==================== */
+        .epicerie-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: stretch;
+        }
+
+        @media (max-width: 768px) {
+            .epicerie-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .epicerie-photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            aspect-ratio: 4 / 5;
+            min-height: 350px;
+        }
+        .epicerie-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.15) brightness(0.9);
+            transition: filter 0.5s ease, transform 0.6s ease;
+        }
+        .epicerie-photo:hover img {
+            filter: grayscale(70%) contrast(1.1) brightness(0.95);
+            transform: scale(1.03);
+        }
+        .epicerie-photo .photo-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 0.4em 0.9em;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .epicerie-infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .epicerie-infos .adresse-block {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.3rem, 2vw, 1.7rem);
+            line-height: 1.3;
+            color: var(--ink);
+        }
+        .epicerie-infos .adresse-block span {
+            display: block;
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: rgba(30, 30, 30, 0.55);
+            letter-spacing: 0.05em;
+            margin-top: 0.3rem;
+        }
+        .horaires-block {
+            background: rgba(30, 30, 30, 0.03);
+            padding: 1.2rem 1.5rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--green);
+        }
+        .horaires-block h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+        .horaires-block p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--ink);
+        }
+        .horaires-block .open-until {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            padding: 0.7em 1.3em;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 30, 30, 0.15);
+            color: var(--ink);
+            background: transparent;
+        }
+        .contact-link:hover {
+            background: var(--ink);
+            color: #FAF8F5;
+            border-color: var(--ink);
+        }
+        .contact-link.phone-link {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+        .contact-link.phone-link:hover {
+            background: #b80400;
+            border-color: #b80400;
+            box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.3);
+        }
+        .signature-phrase {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-style: italic;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            color: rgba(30, 30, 30, 0.6);
+            letter-spacing: 0.02em;
+            margin-top: 0.5rem;
+        }
+
+        /* ==================== MAP ==================== */
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(30, 30, 30, 0.07);
+        }
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--ink);
+            color: rgba(250, 248, 245, 0.7);
+            padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            letter-spacing: 0.03em;
+            position: relative;
+            z-index: 1;
+        }
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (max-width: 700px) {
+            footer .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        footer .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #FAF8F5;
+            letter-spacing: 0.06em;
+        }
+        footer a {
+            color: rgba(250, 248, 245, 0.8);
+            transition: color 0.3s ease;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: #FAF8F5;
+        }
+        footer .footer-credit {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            font-size: 0.78rem;
+            color: rgba(250, 248, 245, 0.4);
+            letter-spacing: 0.05em;
+        }
+
+        /* ==================== UTILITIES ==================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 400px) {
+            :root {
+                --gutter: 0.9rem;
+            }
+            .comptoir-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .price-tag {
+                font-size: 0.7rem;
+                padding: 0.25em 0.5em;
+            }
+            .comptoir-item h3 {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" role="banner">
+        <a href="#" class="header-logo" aria-label="Superse – Accueil">SUPERSE</a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#comptoir">Comptoir</a></li>
+                <li><a href="#cuisine">Cuisine</a></li>
+                <li><a href="#garde-manger">Garde-manger</a></li>
+                <li><a href="#epicerie">L'épicerie</a></li>
+                <li>
+                    <span class="google-badge-mini" aria-label="Note Google 4.7 sur 5 – 90 avis">
+                        <span class="stars">★★★★★</span> 4.7 · 90 avis
+                    </span>
+                </li>
+            </ul>
+        </nav>
+        <a href="tel:+33981090977" class="header-cta" aria-label="Appeler Superse au 09 81 09 09 77">
+            📞 09 81 09 09 77
+        </a>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Vitrine illuminée de l'épicerie Superse, Avenue Émile Zola, Paris 15" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-file-line"></div>
+            <div class="hero-content">
+                <span class="pre-title">Épicerie iranienne · Paris 15ᵉ</span>
+                <h1 id="hero-title">Minuit, et tout<br>est encore là.</h1>
+                <p class="subtitle">L'épicerie iranienne de l'Avenue Émile Zola. Produits rares, plats faits maison, et le goût de Téhéran à deux pas du métro Javel. Ouvert sans interruption jusqu'à tard.</p>
+                <a href="https://maps.google.com/maps?q=Superse+12+Avenue+Emile+Zola%2C+Paris" target="_blank" rel="noopener noreferrer" class="hero-google-badge" aria-label="Voir les 90 avis Google – Note 4.7 sur 5">
+                    <span class="stars">★★★★★</span> 4.7/5 — 90 avis Google
+                </a>
+            </div>
+            <div class="neon-sign-wrapper" aria-hidden="true">
+                <span class="neon-sign">OUVERT</span>
+            </div>
+        </section>
+
+        <hr class="rule" aria-hidden="true">
+
+        <!-- ==================== COMPTOIR DU JOUR ==================== -->
+        <section id="comptoir" aria-labelledby="comptoir-title">
+            <div class="section-header">
+                <span class="section-tag">Le comptoir du jour</span>
+                <h2 class="section-title" id="comptoir-title">L'étal du moment</h2>
+                <p class="section-intro">Des arrivages sélectionnés chaque semaine, photographiés sur le comptoir du magasin. Prix au kilo clairs, conseils d'usage.</p>
+                <hr class="rule-accent" aria-hidden="true">
+            </div>
+
+            <div class="comptoir-grid">
+                <!-- Produit 1 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="0">
+                        <img src="assets/maps-2.jpg" alt="Prunes salées d'Iran dans leur bocal en verre" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">12,90 €/kg</span>
+                    <h3>Prunes salées d'Iran</h3>
+                    <p>Les prunes salées viennent d'arriver. Parfaites avec un thé noir fumant.</p>
+                </article>
+                <!-- Produit 2 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="80">
+                        <img src="assets/maps-3.jpg" alt="Safran en filaments, épice rare d'Iran" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">8,50 €/g</span>
+                    <h3>Safran en filaments</h3>
+                    <p>Récolte 2024, couleur grenat profond. Quelques pistils suffisent.</p>
+                </article>
+                <!-- Produit 3 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="160">
+                        <img src="assets/maps-4.jpg" alt="Pistaches de Kerman grillées à sec" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">24,00 €/kg</span>
+                    <h3>Pistaches de Kerman</h3>
+                    <p>Grillées à sec, salées juste ce qu'il faut. Le croquant iranien par excellence.</p>
+                </article>
+                <!-- Produit 4 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="240">
+                        <img src="assets/maps-5.jpg" alt="Dattes Mazafati moelleuses d'Iran" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">14,50 €/kg</span>
+                    <h3>Dattes Mazafati</h3>
+                    <p>Moelleuses, presque fondantes. La star des soirées ramadan.</p>
+                </article>
+                <!-- Produit 5 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="320">
+                        <img src="assets/maps-6.jpg" alt="Lavashak – pâte de fruits iranienne artisanale" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">9,90 €/pièce</span>
+                    <h3>Lavashak</h3>
+                    <p>Pâte de fruits acidulée, séchée au soleil. Le snack préféré des écoliers de Téhéran.</p>
+                </article>
+                <!-- Produit 6 -->
+                <article class="comptoir-item">
+                    <div class="curtain-wrapper" data-delay="400">
+                        <img src="assets/maps-1.jpg" alt="Thé noir de Ceylan, sélection Superse" loading="lazy">
+                        <div class="curtain"></div>
+                    </div>
+                    <span class="price-tag">7,50 €/100g</span>
+                    <h3>Thé noir de Ceylan</h3>
+                    <p>Feuilles entières, infusées lentement. Le rituel de chaque heure, chez nous.</p>
+                </article>
+            </div>
+        </section>
+
+        <hr class="rule-metal" aria-hidden="true">
+
+        <!-- ==================== CUISINE ==================== -->
+        <section id="cuisine" aria-labelledby="cuisine-title">
+            <div class="section-header">
+                <span class="section-tag">Pour passer à table</span>
+                <h2 class="section-title" id="cuisine-title">La cuisine est déjà prête</h2>
+                <p class="section-intro">Conserves artisanales, plats mijotés et préparations maison. Directement sur votre table, comme là-bas.</p>
+                <hr class="rule-accent" aria-hidden="true">
+            </div>
+
+            <div class="cuisine-layout">
+                <div class="cuisine-visual curtain-wrapper" data-delay="100">
+                    <img src="assets/maps-4.jpg" alt="Plats préparés iraniens – ghormeh sabzi, fesenjan" loading="lazy">
+                    <div class="curtain"></div>
+                </div>
+                <div class="cuisine-text">
+                    <p>Chaque semaine, nos cuisiniers préparent des <strong>ghormeh sabzi</strong>, <strong>fesenjan</strong> et autres classiques de la cuisine persane. Conserves artisanales, recettes familiales, zéro compromis. Il suffit de réchauffer et de dresser.</p>
+                    <blockquote>
+                        « Des vrais plats iraniens comme à la maison, une dinguerie. »
+                    </blockquote>
+                    <div class="quote-attribution">
+                        <span class="verified-icon">✓</span> Avis Google vérifié
+                    </div>
+                    <div class="highlight-dishes">
+                        <span class="dish-badge">Ghormeh Sabzi</span>
+                        <span class="dish-badge">Fesenjan</span>
+                        <span class="dish-badge">Zereshk Polo</span>
+                        <span class="dish-badge">Kashk-e Bademjan</span>
+                    </div>
+                    <p style="margin-top:1.2rem;">À emporter ou à déguster sur place. Passez nous voir, on vous racontera l'histoire de chaque plat.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="rule-metal" aria-hidden="true">
+
+        <!-- ==================== GARDE-MANGER ==================== -->
+        <section id="garde-manger" aria-labelledby="garde-manger-title">
+            <div class="section-header">
+                <span class="section-tag">Les essentiels du garde-manger</span>
+                <h2 class="section-title" id="garde-manger-title">Riz, safran, grenade.<br>L'indispensable.</h2>
+                <p class="section-intro">Un classement éditorial, pas une liste. Voici ce que vous devez avoir dans vos placards pour cuisiner persan.</p>
+                <hr class="rule-accent" aria-hidden="true">
+            </div>
+
+            <div class="essentials-grid">
+                <div class="essential-col">
+                    <span class="col-number">01</span>
+                    <h3>Les bases</h3>
+                    <p class="expert-phrase">« Sans un bon riz, il n'y a pas de repas. »</p>
+                    <ul>
+                        <li>Riz basmati de la Caspienne</li>
+                        <li>Huile de colza pressée à froid</li>
+                        <li>Légumineuses – lentilles corail, pois chiches</li>
+                        <li>Vinaigre de raisin vert</li>
+                        <li>Pain lavash frais</li>
+                    </ul>
+                </div>
+                <div class="essential-col">
+                    <span class="col-number">02</span>
+                    <h3>Le goût</h3>
+                    <p class="expert-phrase">« Les épices, c'est l'âme de la cuisine iranienne. »</p>
+                    <ul>
+                        <li>Safran pur en filaments</li>
+                        <li>Sumac – l'agrume sec qui change tout</li>
+                        <li>Advieh – le mélange d'épices persan</li>
+                        <li>Curcuma de Kerman</li>
+                        <li>Eau de rose & eau de fleur d'oranger</li>
+                    </ul>
+                </div>
+                <div class="essential-col">
+                    <span class="col-number">03</span>
+                    <h3>Le plaisir</h3>
+                    <p class="expert-phrase">« Le sucré persan est une caresse. »</p>
+                    <ul>
+                        <li>Loukoums artisanaux – pistache & rose</li>
+                        <li>Baklavas au miel de montagne</li>
+                        <li>Pâtisseries safranées</li>
+                        <li>Confiture de pétales de rose</li>
+                        <li>Halva maison</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="rule-metal" aria-hidden="true">
+
+        <!-- ==================== EPICERIE ==================== -->
+        <section id="epicerie" aria-labelledby="epicerie-title">
+            <div class="section-header">
+                <span class="section-tag">L'épicerie</span>
+                <h2 class="section-title" id="epicerie-title">12 Avenue Émile Zola,<br>Paris 15</h2>
+                <hr class="rule-accent" aria-hidden="true">
+            </div>
+
+            <div class="epicerie-layout">
+                <div class="epicerie-photo">
+                    <img src="assets/maps-6.jpg" alt="La vitrine de Superse, 12 Avenue Émile Zola, Paris 15 – photo noir et blanc" loading="lazy">
+                    <span class="photo-caption">Vitrine · Avenue Émile Zola</span>
+                </div>
+                <div class="epicerie-infos">
+                    <div class="adresse-block">
+                        12 Avenue Émile Zola
+                        <span>75015 Paris · Métro Javel</span>
+                    </div>
+                    <div class="horaires-block">
+                        <h4>🕐 Horaires d'ouverture</h4>
+                        <p>Du lundi au samedi : <strong>9h – <span class="open-until">00h</span></strong><br>Fermé le dimanche</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="tel:+33981090977" class="contact-link phone-link" aria-label="Appeler Superse">
+                            📞 09 81 09 09 77
+                        </a>
+                        <a href="mailto:onlinesupersemarket@gmail.com" class="contact-link" aria-label="Écrire à Superse">
+                            ✉️ Nous écrire
+                        </a>
+                        <a href="https://maps.google.com/maps?q=Superse+12+Avenue+Emile+Zola%2C+Paris" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Voir l'itinéraire sur Google Maps">
+                            🗺️ Itinéraire
+                        </a>
+                    </div>
+                    <p class="signature-phrase">« On est juste à côté du métro Javel. »</p>
+
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=Superse+12+Avenue+Emile+Zola%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Superse, 12 Avenue Émile Zola, Paris 15" aria-label="Google Maps – Superse Paris 15"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">SUPERSE</div>
+                <p style="margin-top:0.4rem;">Le Trésor Persan de Javel</p>
+            </div>
+            <div>
+                <p><strong>Adresse</strong><br>12 Avenue Émile Zola<br>75015 Paris, France</p>
+                <p style="margin-top:0.5rem;"><strong>Téléphone</strong><br><a href="tel:+33981090977">09 81 09 09 77</a></p>
+            </div>
+            <div>
+                <p><strong>Email</strong><br><a href="mailto:onlinesupersemarket@gmail.com">onlinesupersemarket@gmail.com</a></p>
+                <p style="margin-top:0.5rem;"><strong>Google</strong><br>⭐ 4.7/5 — 90 avis vérifiés</p>
+                <p style="margin-top:0.5rem;"><strong>Horaires</strong><br>Lun–Sam : 9h–00h<br>Dimanche : fermé</p>
+            </div>
+            <p class="footer-credit">© 2024 Superse — Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== RIDEAU DE FER – IntersectionObserver ====================
+        (function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const curtainWrappers = document.querySelectorAll('.curtain-wrapper');
+
+            if (prefersReducedMotion) {
+                // Reveal instantly without animation
+                curtainWrappers.forEach(wrapper => {
+                    wrapper.classList.add('revealed');
+                });
+                return;
+            }
+
+            const observerOptions = {
+                threshold: 0.12,
+                rootMargin: '0px 0px -30px 0px'
+            };
+
+            const curtainObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, delay);
+                        curtainObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            curtainWrappers.forEach(wrapper => {
+                curtainObserver.observe(wrapper);
+            });
+
+            // ==================== HEADER SCROLL SHADOW ====================
+            const header = document.getElementById('header');
+            let scrollTicking = false;
+
+            function updateHeaderShadow() {
+                if (window.scrollY > 15) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderShadow);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ==================== HERO NEON – hover already handled via CSS ====================
+
+            // Initial check for header shadow
+            updateHeaderShadow();
+
+            // ==================== SMOOTH SCROLL OFFSET pour header sticky ====================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window
+                            .pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
