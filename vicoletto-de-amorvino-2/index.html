@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Vicoletto de Amorvino • Épicerie fine italienne & traiteur à Vanves</title>
+    <meta name="description" content="Vicoletto de Amorvino, épicerie fine italienne et cave à vins à Vanves. Pâtes fraîches, huiles d'olive, vins nature, traiteur du midi. Commandez en ligne ou passez nous voir rue Louis Blanc.">
+    <meta property="og:title" content="Vicoletto de Amorvino • L'Italie par la ruelle">
+    <meta property="og:description" content="Épicerie fine, cave à vins et traiteur italien à Vanves. Une venelle secrète qui débouche sur les saveurs les plus franches d'Italie.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='86'%3E🍷%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --marbre: #F4F2EE;
+            --encre: #2B2A27;
+            --ambre: #C56A1C;
+            --vert-bouteille: #1F4A3B;
+            --pierre-seche: #9B8D7E;
+            --laiton: #B39264;
+            --shadow-soft: 0 2px 12px rgba(43, 42, 39, 0.06);
+            --shadow-deep: 0 8px 30px rgba(43, 42, 39, 0.12);
+            --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            font-size: 100%;
+            background-color: var(--marbre);
+        }
+
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 350;
+            line-height: 1.6;
+            color: var(--encre);
+            background-color: var(--marbre);
+            background-image: var(--texture-noise);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Typography scale */
+        h1,
+        h2,
+        h3,
+        .display,
+        .serif-display {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 450;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            text-rendering: optimizeLegibility;
+        }
+
+        .serif-display {
+            font-weight: 450;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-align: justify;
+            text-justify: inter-word;
+            width: 100%;
+            hyphens: manual;
+        }
+
+        h2 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 460;
+            letter-spacing: 0.04em;
+            color: var(--encre);
+        }
+
+        h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 480;
+            letter-spacing: 0.06em;
+            color: var(--vert-bouteille);
+        }
+
+        p,
+        li {
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            font-weight: 380;
+            color: var(--encre);
+            letter-spacing: 0.015em;
+        }
+
+        .large-body {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 360;
+            line-height: 1.55;
+        }
+
+        .small-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--pierre-seche);
+        }
+
+        a {
+            color: var(--ambre);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s ease, background-color 0.25s ease;
+            position: relative;
+        }
+
+        a:hover,
+        a:focus-visible {
+            color: var(--vert-bouteille);
+            outline: none;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--ambre);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Layout */
+        .page-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        /* Header collant */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            width: 100%;
+            background-color: rgba(244, 242, 238, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(155, 141, 126, 0.25);
+            padding: 1rem clamp(1.5rem, 5vw, 4rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-weight: 550;
+            letter-spacing: 0.06em;
+            color: var(--encre);
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header-nav a {
+            font-size: 0.95rem;
+            font-weight: 480;
+            letter-spacing: 0.04em;
+            color: var(--encre);
+            text-transform: lowercase;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .header-nav a:hover {
+            border-bottom-color: var(--ambre);
+            color: var(--encre);
+        }
+
+        .cta-btn {
+            background-color: var(--ambre);
+            color: #F4F2EE;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 550;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: var(--shadow-soft);
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            background-color: #b35e1a;
+            color: #F4F2EE;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .cta-btn:focus-visible {
+            outline: 2px solid var(--vert-bouteille);
+            outline-offset: 2px;
+        }
+
+        /* Sections communes */
+        section {
+            padding: 5rem 0;
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* HERO */
+        .hero-section {
+            padding-top: 3rem;
+            padding-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 850px;
+            height: auto;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+            box-shadow: var(--shadow-deep);
+            background-color: #d9d4cb;
+            margin: 0 auto;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.05) brightness(0.98);
+            transition: transform 0.6s ease, filter 0.6s;
+        }
+
+        .hero-image-container:hover img {
+            transform: scale(1.02);
+            filter: contrast(1.1) brightness(0.95);
+        }
+
+        .hero-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(31, 74, 59, 0.08) 0%, rgba(197, 106, 28, 0.1) 100%);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        /* Ambre coulée au survol */
+        .image-with-wine-overlay {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+
+        .image-with-wine-overlay::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(197, 106, 28, 0.25) 0%, rgba(197, 106, 28, 0.05) 80%);
+            z-index: 2;
+            transition: top 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+            pointer-events: none;
+        }
+
+        .image-with-wine-overlay:hover::before {
+            top: 0;
+        }
+
+        .hero-title-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+            font-weight: 380;
+            color: var(--pierre-seche);
+            letter-spacing: 0.06em;
+            border-top: 1px solid var(--pierre-seche);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Grands mots structurants */
+        .abstract-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 420;
+            letter-spacing: 0.12em;
+            color: rgba(155, 141, 126, 0.18);
+            text-align: center;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .content-block {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(244, 242, 238, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 2.5rem;
+            border-radius: 3px;
+            border-left: 3px solid var(--ambre);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(155, 141, 126, 0.2);
+            padding: 2rem;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .product-card:hover {
+            border-color: var(--ambre);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .quote-block {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-style: italic;
+            color: var(--vert-bouteille);
+            line-height: 1.3;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--pierre-seche);
+            border-top: 1px solid var(--pierre-seche);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--marbre);
+            border: 1px solid #e0d9ce;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 550;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: var(--encre);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .star-gold {
+            color: #E09540;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        iframe {
+            border-radius: 4px;
+            filter: grayscale(15%);
+            width: 100%;
+            height: 360px;
+            border: 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        footer {
+            width: 100%;
+            background-color: #2B2A27;
+            color: #e5e0d8;
+            padding: 3rem clamp(1.5rem, 5vw, 4rem);
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        footer a {
+            color: var(--laiton);
+        }
+
+        footer a:hover {
+            color: #D4B896;
+        }
+
+        @media (max-width: 700px) {
+            .site-header {
+                justify-content: center;
+                text-align: center;
+            }
+            .header-nav {
+                gap: 1.2rem;
+                justify-content: center;
+            }
+            h1 {
+                text-align: left;
+                hyphens: none;
+                word-break: break-word;
+            }
+            .abstract-title {
+                font-size: clamp(3rem, 12vw, 7rem);
+                opacity: 0.14;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            section {
+                transition: none;
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .image-with-wine-overlay::before {
+                transition: none;
+            }
+            .hero-image-container img {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-logo">Vicoletto de Amorvino</div>
+        <nav class="header-nav" aria-label="Navigation principale">
+            <a href="#notre-venelle">Notre venelle</a>
+            <a href="#comptoir-midi">Le comptoir</a>
+            <a href="#cave-gardemanger">Cave & garde-manger</a>
+            <a href="#evenements">Événements</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+33973882087" class="cta-btn" aria-label="Appeler le 09 73 88 20 87">Commander le déjeuner →</a>
+        </nav>
+    </header>
+    <main class="page-container">
+        <!-- HÉRO -->
+        <section id="hero" class="hero-section revealed">
+            <div class="hero-image-container image-with-wine-overlay">
+                <img src="assets/maps-1.jpg" alt="Vicoletto de Amorvino - l'épicerie, cave à vins et traiteur à Vanves" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-title-block">
+                <h1>Vicoletto de Amorvino</h1>
+                <p class="hero-subtitle">L'Italie par la ruelle.</p>
+                <a href="tel:+33973882087" class="cta-btn" style="margin-top:1.2rem;">Commander le déjeuner →</a>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : Notre venelle -->
+        <section id="notre-venelle" class="revealed">
+            <div class="section-inner" style="position:relative;">
+                <div class="abstract-title" aria-hidden="true" style="top:-3rem;">Vicolo</div>
+                <h2 style="position:relative;z-index:2;">Notre venelle</h2>
+                <div class="grid-2col" style="position:relative;z-index:2;">
+                    <div>
+                        <p class="large-body">Jonathan et sa bande ont ouvert Vicoletto pour partager les <i>eccellenze</i> qu'ils débusquent du Piémont aux Pouilles. Ici, chaque bouteille a un vigneron, chaque lasagne une grand-mère.</p>
+                        <p style="margin-top:1.5rem;">Notre métier ? Goûter, sélectionner, raconter. Nous travaillons avec des producteurs italiens qui mettent le terroir en bouteille et la tradition dans l'assiette. Pas de grande distribution, pas de compromis.</p>
+                    </div>
+                    <div class="product-card">
+                        <span class="small-label">Philosophie</span>
+                        <h3 style="margin:0.5rem 0 0.2rem;">L'excellence de quartier</h3>
+                        <p>Vanves est notre village. Nous voulons que chaque voisin trouve chez nous un concentré d'Italie sincère, qu'il vienne pour un sandwich focaccia ou une caisse de Barbaresco.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : Le comptoir du midi -->
+        <section id="comptoir-midi" class="revealed" style="background-color:#f0ede6; margin:0 -2rem; padding-left:2rem; padding-right:2rem;">
+            <div class="section-inner" style="position:relative;">
+                <div class="abstract-title" aria-hidden="true" style="top:1rem; left:-2rem;">Pasta</div>
+                <h2 style="position:relative;z-index:2;">Le comptoir du midi</h2>
+                <div class="grid-2col" style="position:relative;z-index:2;">
+                    <div>
+                        <p class="large-body">Des pâtes fraîches du jour, des sandwichs focaccia garnis minute et des salades qui croquent encore. Une cuisine traiteur sans raccourcis, disponible sur place ou à emporter.</p>
+                        <ul style="margin-top:1.5rem; list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                            <li style="display:flex; gap:0.6rem; align-items:baseline;"><span style="color:var(--ambre); font-weight:600;">→</span> Lasagnes maison, risotto du jour</li>
+                            <li style="display:flex; gap:0.6rem; align-items:baseline;"><span style="color:var(--ambre); font-weight:600;">→</span> Focaccia garnie jambon de Parme / stracciatella</li>
+                            <li style="display:flex; gap:0.6rem; align-items:baseline;"><span style="color:var(--ambre); font-weight:600;">→</span> Salades de saison, antipasti à composer</li>
+                        </ul>
+                        <a href="tel:+33973882087" style="display:inline-block; margin-top:1.8rem;" class="cta-btn">Passer commande</a>
+                    </div>
+                    <div class="product-card" style="border-left: 3px solid var(--vert-bouteille);">
+                        <span class="small-label">Formules midi</span>
+                        <p style="font-weight:500;">Plat + boisson à partir de 12€. Tout est préparé le matin même avec nos produits d'épicerie. <br>Disponible du mardi au samedi, de 10h à 14h.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : Cave & garde-manger -->
+        <section id="cave-gardemanger" class="revealed">
+            <div class="section-inner" style="position:relative;">
+                <div class="abstract-title" aria-hidden="true" style="top:-2rem; right:-1rem; text-align:right;">Vino</div>
+                <h2 style="position:relative;z-index:2;">Cave & garde-manger</h2>
+                <div class="grid-2col" style="position:relative;z-index:2;">
+                    <div>
+                        <p class="large-body">Nous goûtons tout, nous sélectionnons le vigneron, pas l'étiquette. Huiles d'olive monocépage, vins nature siciliens, panettone artisanal, amaretti fondants : ouvrir un produit, c'est déjà voyager.</p>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:1.2rem;">
+                        <div class="product-card">
+                            <span class="small-label">À la une</span>
+                            <h3 style="margin:0.2rem 0;">Huile d'olive monocépage</h3>
+                            <p>Des Pouilles et de Toscane, pressée à froid, directement du moulin.</p>
+                        </div>
+                        <div class="product-card">
+                            <span class="small-label">Cuvée du moment</span>
+                            <h3 style="margin:0.2rem 0;">Nero d'Avola non filtré</h3>
+                            <p>Sicile, vigneron indépendant. Robe profonde, nez de fruits noirs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : Vos événements -->
+        <section id="evenements" class="revealed" style="background-color:#f0ede6; margin:0 -2rem; padding-left:2rem; padding-right:2rem;">
+            <div class="section-inner" style="position:relative;">
+                <div class="abstract-title" aria-hidden="true" style="top:0; left:0;">Olio</div>
+                <h2 style="position:relative;z-index:2;">Vos événements</h2>
+                <div class="grid-2col" style="position:relative;z-index:2;">
+                    <div>
+                        <p class="large-body">Un anniversaire dans notre arrière-salle ou un apéritif dînatoire à domicile ? Nous créons des menus sur mesure et assurons le service. Parlons-en autour d'un verre.</p>
+                        <p style="margin-top:1rem;">Nous organisons aussi des dégustations privées de vins et huiles d'olive, pour les groupes jusqu'à 12 personnes.</p>
+                    </div>
+                    <div class="product-card" style="display:flex; flex-direction:column; gap:0.5rem;">
+                        <span class="small-label">Contactez-nous</span>
+                        <p>Écrivez-nous vos envies, nous préparons une proposition dans la journée.</p>
+                        <a href="mailto:jonathan@petitscommerces.fr" style="font-weight:550;">jonathan@petitscommerces.fr</a>
+                        <a href="tel:+33973882087" style="font-weight:550;">09 73 88 20 87</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : La note du quartier -->
+        <section id="avis" class="revealed">
+            <div class="section-inner" style="align-items:center; text-align:center;">
+                <div class="badge-google" style="margin-bottom:1.5rem;">
+                    <span class="star-gold">★★★★★</span> 5 sur 5 — 42 avis Google
+                </div>
+                <div class="quote-block">
+                    « Une épicerie comme on n'en fait plus. »
+                </div>
+                <p style="max-width:600px; margin:0 auto; color:var(--pierre-seche);">La meilleure réponse, c'est celle de nos voisins. Depuis l'ouverture, chaque avis compte et nous pousse à aller plus loin.</p>
+                <a href="https://maps.google.com/maps?q=Vicoletto+de+Amorvino+7+Rue+Louis+Blanc%2C+Vanves" target="_blank" rel="noopener" style="margin-top:1.5rem; font-weight:550; display:inline-block;">Lire les avis sur Google Maps →</a>
+            </div>
+        </section>
+
+        <!-- SECTION 6 : Horaires & adresse + Carte -->
+        <section id="contact" class="revealed">
+            <div class="section-inner">
+                <h2>Horaires & adresse</h2>
+                <div class="grid-2col">
+                    <div style="display:flex; flex-direction:column; gap:1.8rem;">
+                        <div>
+                            <p style="font-weight:500; margin-bottom:0.2rem;">Vicoletto de Amorvino</p>
+                            <p>7 rue Louis Blanc, Vanves</p>
+                            <p><a href="tel:+33973882087">09 73 88 20 87</a></p>
+                            <p><a href="mailto:jonathan@petitscommerces.fr">jonathan@petitscommerces.fr</a></p>
+                        </div>
+                        <div>
+                            <p style="font-weight:500;">Horaires d'ouverture :</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.3rem; margin-top:0.4rem;">
+                                <li>Mardi – Samedi : 10h–14h & 16h–20h</li>
+                                <li>Dimanche : 9h–13h</li>
+                                <li>Lundi : fermé</li>
+                            </ul>
+                            <p style="font-size:0.8rem; color:var(--pierre-seche); margin-top:0.5rem;">Horaires à confirmer pendant les jours fériés.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <iframe src="https://maps.google.com/maps?q=Vicoletto+de+Amorvino+7+Rue+Louis+Blanc%2C+Vanves&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Vicoletto de Amorvino"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p style="color:#ddd8cf; font-weight:500;">Vicoletto de Amorvino</p>
+            <p style="color:#c5bfb4;">7 rue Louis Blanc, Vanves</p>
+            <p style="color:#c5bfb4;">09 73 88 20 87</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.3rem; text-align:right;">
+            <p style="color:#c5bfb4;">Site créé par Agence Mooo</p>
+            <p style="color:#9b8d7e; font-size:0.8rem;">© 2025 Vicoletto de Amorvino</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "GroceryStore",
+            "name": "Vicoletto de Amorvino",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "7 Rue Louis Blanc",
+                "addressLocality": "Vanves",
+                "postalCode": "92170",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33973882087",
+            "email": "jonathan@petitscommerces.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "42"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "14:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "16:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "09:00",
+                    "closes": "13:00"
+                }
+            ],
+            "url": "https://agence.mooo.com/vicoletto-de-amorvino-2"
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                document.querySelectorAll('section').forEach(s => s.classList.add('revealed'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('section').forEach(section => {
+                if (!section.classList.contains('revealed')) {
+                    observer.observe(section);
+                }
+            });
+
+            // Déclencher immédiatement pour la première section visible si pas déjà révélée
+            setTimeout(() => {
+                document.querySelectorAll('section').forEach(s => {
+                    const rect = s.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && !s.classList.contains('revealed')) {
+                        s.classList.add('revealed');
+                        observer.unobserve(s);
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
