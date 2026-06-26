@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Spot La Poste | Laboratoire d'innovations — Paris 15</title>
-    <meta name="description" content="Poussez la porte du futur au Spot La Poste, 7 Rue du Colonel Pierre Avia, Paris 15ᵉ. Laboratoire d'innovations ouvert à tous : expériences interactives, ateliers, démos. Note 4.8★ — 50 avis Google.">
-    <meta property="og:title" content="Le Spot La Poste | Laboratoire d'innovations — Paris 15">
-    <meta property="og:description" content="Poussez la porte du futur. 200 m² d'expériences interactives où l'innovation devient concrète. Ouvert du mardi au samedi, 10h–17h.">
+    <title>Le Spot La Poste — Laboratoire d'innovation à Paris 15ᵉ</title>
+    <meta name="description" content="Le Spot La Poste : 200 m² d'expériences interactives au cœur du 15ᵉ à Paris. IA, métavers, cybersécurité — touchez l'innovation du doigt. Gratuit, ouvert à tous. Note 4.8★.">
+    <meta property="og:title" content="Le Spot La Poste — Laboratoire d'innovation à Paris">
+    <meta property="og:description" content="Et si l'innovation se touchait du doigt ? Bienvenue au Spot, le laboratoire d'idées de La Poste. Gratuit, ouvert à tous, au cœur du 15ᵉ.">
     <meta property="og:image" content="assets/maps-1.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agence.mooo.com/le-spot-la-poste">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231E1E1E'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23FFD700' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23FFD700'/%3E%3Ccircle cx='16' cy='16' r='1.2' fill='%231E1E1E'/%3E%3C/svg%3E">
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
     <style>
         :root {
-            --bg: #1E1E1E;
-            --text: #F2F2F2;
-            --yellow: #FFD700;
-            --cyan: #00BFFF;
-            --magenta: #FF69B4;
-            --bg-light: #2A2A2A;
-            --bg-lighter: #333333;
-            --font-display: 'Bricolage Grotesque', sans-serif;
-            --font-body: 'Hanken Grotesk', sans-serif;
-            --section-gap: clamp(3rem, 8vw, 7rem);
-            --content-max: 1200px;
-            --grid-opacity: 0.06;
+            --lin: #FBF8F2;
+            --nuit: #1A1E2B;
+            --solaire: #FFDA1A;
+            --bleu-poste: #0046AD;
+            --corail: #FF5C39;
+            --pierre: #E5DDD3;
+            --pierre-fonce: #c8bfb3;
+            --nuit-trans: rgba(26, 30, 43, 0.04);
+            --nuit-trans-md: rgba(26, 30, 43, 0.08);
+            --shadow-sm: 0 1px 3px rgba(26, 30, 43, 0.06);
+            --shadow-md: 0 4px 16px rgba(26, 30, 43, 0.10);
+            --shadow-lg: 0 12px 40px rgba(26, 30, 43, 0.14);
+            --shadow-xl: 0 20px 60px rgba(26, 30, 43, 0.18);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-spring: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
 
         *,
@@ -44,12 +50,29 @@
             font-size: 100%;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            background: var(--lin);
+            color: var(--nuit);
         }
 
+        body {
+            font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.55;
+            background: var(--lin);
+            min-height: 100vh;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* Focus */
+        :focus-visible {
+            outline: 3px solid var(--corail);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
             *,
             *::before,
             *::after {
@@ -57,1263 +80,1048 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+            html {
+                scroll-behavior: auto;
+            }
         }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            font-weight: 400;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-        }
-
-        /* ============ CANVAS BACKGROUND GRID ============ */
-        #bg-grid {
+        /* ---------- HEADER ---------- */
+        .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.7;
-        }
-
-        /* ============ HEADER ============ */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(30, 30, 30, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 0 clamp(1rem, 3vw, 2.5rem);
-            transition: border-color 0.3s ease;
-        }
-
-        .site-header:hover {
-            border-bottom-color: rgba(0, 191, 255, 0.25);
-        }
-
-        .header-inner {
-            max-width: var(--content-max);
-            margin: 0 auto;
+            z-index: 1000;
+            padding: 14px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: clamp(3.5rem, 6vw, 4.5rem);
-            gap: 1.5rem;
+            background: rgba(251, 248, 242, 0.82);
+            backdrop-filter: blur(16px) saturate(1.4);
+            -webkit-backdrop-filter: blur(16px) saturate(1.4);
+            border-bottom: 1px solid rgba(26, 30, 43, 0.06);
+            transition: all var(--transition);
+            gap: 16px;
         }
-
-        .logo {
-            font-family: var(--font-display);
+        .header.scrolled {
+            padding: 10px 20px;
+            box-shadow: var(--shadow-md);
+            background: rgba(251, 248, 242, 0.94);
+        }
+        .header__brand {
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 700;
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            color: var(--yellow);
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            color: var(--nuit);
             text-decoration: none;
-            letter-spacing: -0.01em;
-            flex-shrink: 0;
-            position: relative;
+            letter-spacing: -0.02em;
             white-space: nowrap;
-        }
-
-        .logo span {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--cyan);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .logo:hover::after {
-            opacity: 1;
-        }
-
-        .nav-links {
             display: flex;
-            list-style: none;
-            gap: clamp(0.8rem, 2.5vw, 2rem);
             align-items: center;
-            flex-wrap: wrap;
+            gap: 8px;
         }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
+        .header__brand span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--solaire);
+            border-radius: 2px;
+            transform: rotate(45deg);
+            transition: transform var(--transition-spring);
+        }
+        .header__brand:hover span {
+            transform: rotate(135deg) scale(1.3);
+        }
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 2vw, 20px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header__nav a {
+            font-family: 'Hanken Grotesk', sans-serif;
             font-weight: 500;
-            font-size: clamp(0.8rem, 1.4vw, 0.9rem);
-            letter-spacing: 0.02em;
-            transition: color 0.25s;
+            font-size: 0.9rem;
+            color: var(--nuit);
+            text-decoration: none;
             position: relative;
+            padding: 4px 0;
+            letter-spacing: 0.02em;
+            transition: color var(--transition);
             white-space: nowrap;
         }
-
-        .nav-links a::after {
+        .header__nav a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--cyan);
-            transition: width 0.3s ease;
+            background: var(--corail);
+            transition: width var(--transition-spring);
         }
-
-        .nav-links a:hover,
-        .nav-links a:focus-visible {
-            color: var(--cyan);
+        .header__nav a:hover {
+            color: var(--corail);
         }
-        .nav-links a:hover::after,
-        .nav-links a:focus-visible::after {
+        .header__nav a:hover::after {
             width: 100%;
         }
-
-        .nav-cta {
-            font-family: var(--font-display);
+        .header__cta {
+            font-family: 'Hanken Grotesk', sans-serif;
             font-weight: 600;
-            background: var(--yellow);
-            color: var(--bg) !important;
-            padding: 0.5em 1.3em;
-            border-radius: 3px;
-            font-size: clamp(0.75rem, 1.3vw, 0.85rem);
-            letter-spacing: 0.03em;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            padding: 10px 18px;
+            background: var(--nuit);
+            color: var(--lin);
+            border: 2px solid var(--nuit);
+            border-radius: 50px;
             text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all var(--transition-spring);
             white-space: nowrap;
-        }
-
-        .nav-cta:hover {
-            background: var(--magenta);
-            color: #fff !important;
-            box-shadow: 0 0 28px rgba(255, 105, 180, 0.5);
-            transform: translateY(-1px);
-        }
-        .nav-cta::after {
-            display: none;
-        }
-
-        .burger-btn {
-            display: none;
-            background: none;
-            border: none;
             cursor: pointer;
-            padding: 0.4rem;
-            z-index: 101;
-            flex-direction: column;
-            gap: 5px;
-            width: 34px;
+        }
+        .header__cta:hover {
+            background: var(--corail);
+            border-color: var(--corail);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(255, 92, 57, 0.35);
+        }
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--nuit);
+            background: #fff;
+            padding: 6px 12px;
+            border-radius: 50px;
+            border: 1px solid var(--pierre);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .badge-google .star {
+            color: #FBBC04;
+            font-size: 1rem;
         }
 
-        .burger-btn span {
-            display: block;
-            height: 2px;
-            background: var(--text);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+        /* ---------- HÉRO ---------- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 5vw 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 5vw, 60px);
+            align-items: center;
             width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
-
-        .burger-btn.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
+        .hero__text {
+            z-index: 2;
+            position: relative;
         }
-        .burger-btn.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
+        .hero__overline {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bleu-poste);
+            margin-bottom: 16px;
+            display: block;
         }
-        .burger-btn.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
+        .hero__title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.035em;
+            color: var(--nuit);
+            margin-bottom: 20px;
         }
-
-        @media (max-width: 860px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: min(320px, 80vw);
-                height: 100vh;
-                background: rgba(30, 30, 30, 0.96);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 3rem 2.5rem;
-                gap: 2rem;
-                transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-                z-index: 99;
-                border-left: 1px solid rgba(255, 255, 255, 0.08);
-            }
-            .nav-links.open {
-                right: 0;
-            }
-            .nav-links a {
-                font-size: 1.1rem;
-            }
-            .burger-btn {
-                display: flex;
-            }
-            .nav-cta {
-                align-self: flex-start;
-                font-size: 0.95rem;
-            }
+        .hero__title .line-break {
+            display: block;
         }
-
-        /* ============ MAIN CONTENT WRAPPER ============ */
-        .main-content {
+        .hero__title .accent {
+            color: var(--corail);
+            position: relative;
+            display: inline-block;
+        }
+        .hero__title .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: clamp(6px, 1vw, 12px);
+            background: var(--solaire);
+            z-index: -1;
+            border-radius: 3px;
+            opacity: 0.7;
+        }
+        .hero__subtitle {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            line-height: 1.5;
+            color: var(--nuit);
+            max-width: 480px;
+            margin-bottom: 28px;
+            opacity: 0.8;
+        }
+        .hero__actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all var(--transition-spring);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        .btn--primary {
+            background: var(--corail);
+            color: #fff;
+            border: 2px solid var(--corail);
+        }
+        .btn--primary:hover {
+            background: #e8492a;
+            border-color: #e8492a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 92, 57, 0.4);
+        }
+        .btn--outline {
+            background: transparent;
+            color: var(--nuit);
+            border: 2px solid var(--pierre-fonce);
+        }
+        .btn--outline:hover {
+            border-color: var(--nuit);
+            background: var(--nuit);
+            color: var(--lin);
+            transform: translateY(-2px);
+        }
+        .hero__visual {
             position: relative;
             z-index: 1;
-        }
-
-        /* ============ SECTIONS ============ */
-        section {
-            padding: var(--section-gap) clamp(1.2rem, 5vw, 3rem);
-            position: relative;
-            max-width: var(--content-max);
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        section:not(#hero)::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg,
-                    transparent 0%,
-                    rgba(0, 191, 255, 0.15) 15%,
-                    rgba(0, 191, 255, 0.5) 35%,
-                    rgba(255, 105, 180, 0.5) 65%,
-                    rgba(255, 105, 180, 0.15) 85%,
-                    transparent 100%);
-            margin-bottom: var(--section-gap);
-            transition: opacity 0.5s ease;
-            opacity: 0.6;
-        }
-
-        section:hover:not(#hero)::before {
-            opacity: 1;
-        }
-
-        @media (max-width: 600px) {
-            section:not(#hero)::before {
-                margin-bottom: 2rem;
-            }
-        }
-
-        /* ============ HERO ============ */
-        #hero {
-            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .hero__img-wrapper {
             position: relative;
+            width: 100%;
+            max-width: 540px;
+            aspect-ratio: 4/5;
+            border-radius: var(--radius-xl);
             overflow: hidden;
-            max-width: 100%;
-            padding: 0 clamp(1.2rem, 5vw, 3rem);
-            isolation: isolate;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(26, 30, 43, 0.08);
         }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('assets/maps-1.jpg') center/cover no-repeat;
-            z-index: -2;
-            filter: brightness(0.35) saturate(1.3) contrast(1.1);
-            transform: scale(1.03);
-            animation: hero-bg-breathe 12s ease-in-out infinite;
-        }
-
-        @keyframes hero-bg-breathe {
-            0%,
-            100% {
-                transform: scale(1.03);
-            }
-            50% {
-                transform: scale(1.06);
-            }
-        }
-
-        #hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background:
-                radial-gradient(ellipse at 30% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 30%, rgba(255, 105, 180, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 80%, rgba(0, 191, 255, 0.05) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 850px;
-            z-index: 2;
-            animation: hero-content-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-
-        @keyframes hero-content-in {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(30, 30, 30, 0.7);
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            border-radius: 50px;
-            padding: 0.45em 1.3em;
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
-            color: var(--yellow);
-            letter-spacing: 0.04em;
-            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-        }
-        .hero-badge .stars {
-            color: var(--yellow);
-            letter-spacing: 2px;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(2.4rem, 8vw, 6rem);
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            color: transparent;
-            -webkit-text-stroke: 2px var(--yellow);
-            text-shadow:
-                0 0 8px #FFD700,
-                0 0 22px #FFD700,
-                0 0 50px rgba(255, 215, 0, 0.55),
-                0 0 90px rgba(255, 215, 0, 0.25);
-            animation: neon-on 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-            margin-bottom: 0.35em;
-            paint-order: stroke fill;
-        }
-
-        @keyframes neon-on {
-            0% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.05);
-                text-shadow: 0 0 0px transparent, 0 0 0px transparent, 0 0 0px transparent, 0 0 0px transparent;
-            }
-            18% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.3);
-                text-shadow: 0 0 3px #FFD700, 0 0 8px rgba(255, 215, 0, 0.4), 0 0 0px transparent, 0 0 0px transparent;
-            }
-            30% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.15);
-                text-shadow: 0 0 1px rgba(255, 215, 0, 0.5), 0 0 4px rgba(255, 215, 0, 0.2), 0 0 0px transparent, 0 0 0px transparent;
-            }
-            42% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.7);
-                text-shadow: 0 0 6px #FFD700, 0 0 18px rgba(255, 215, 0, 0.6), 0 0 35px rgba(255, 215, 0, 0.3), 0 0 0px transparent;
-            }
-            55% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.35);
-                text-shadow: 0 0 3px rgba(255, 215, 0, 0.6), 0 0 9px rgba(255, 215, 0, 0.3), 0 0 18px rgba(255, 215, 0, 0.15), 0 0 0px transparent;
-            }
-            70% {
-                -webkit-text-stroke-color: rgba(255, 215, 0, 0.9);
-                text-shadow: 0 0 7px #FFD700, 0 0 20px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.4), 0 0 70px rgba(255, 215, 0, 0.15);
-            }
-            100% {
-                -webkit-text-stroke-color: #FFD700;
-                text-shadow: 0 0 8px #FFD700, 0 0 22px #FFD700, 0 0 50px rgba(255, 215, 0, 0.55), 0 0 90px rgba(255, 215, 0, 0.25);
-            }
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: clamp(0.95rem, 2vw, 1.2rem);
-            color: rgba(242, 242, 242, 0.8);
-            max-width: 620px;
-            margin: 0 auto clamp(2rem, 4vw, 3rem);
-            line-height: 1.55;
-            letter-spacing: 0.01em;
-            animation: fade-up 0.9s 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-
-        @keyframes fade-up {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-cta {
-            display: inline-block;
-            font-family: var(--font-display);
-            font-weight: 600;
-            background: var(--yellow);
-            color: var(--bg);
-            padding: 0.85em 2.2em;
-            text-decoration: none;
-            font-size: clamp(0.9rem, 1.6vw, 1.05rem);
-            letter-spacing: 0.04em;
-            border-radius: 3px;
-            transition: all 0.35s ease;
-            animation: fade-up 0.9s 1s cubic-bezier(0.22, 1, 0.36, 1) both;
-            position: relative;
-            box-shadow: 0 0 0 rgba(255, 215, 0, 0);
-        }
-
-        .hero-cta:hover {
-            background: var(--magenta);
-            color: #fff;
-            box-shadow: 0 0 40px rgba(255, 105, 180, 0.55);
-            transform: translateY(-3px);
-        }
-        .hero-cta:focus-visible {
-            outline: 3px solid var(--cyan);
-            outline-offset: 4px;
-        }
-
-        .hero-cta .arrow {
-            display: inline-block;
-            margin-left: 0.5em;
-            transition: transform 0.3s ease;
-        }
-        .hero-cta:hover .arrow {
-            transform: translateY(3px);
-        }
-
-        /* ============ SECTION TITLES ============ */
-        .section-title {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.6rem, 4vw, 2.8rem);
-            letter-spacing: -0.01em;
-            color: var(--text);
-            margin-bottom: 0.4em;
-            line-height: 1.15;
-        }
-
-        .section-title .accent {
-            color: var(--yellow);
+        .hero__img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            font-size: 0.45em;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 0.4em;
-            font-family: var(--font-body);
+            filter: contrast(1.05) saturate(0.95);
+            transition: transform 0.6s ease;
         }
-
-        .section-subtitle {
-            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-            color: rgba(242, 242, 242, 0.7);
-            max-width: 650px;
-            margin-bottom: 2rem;
-            line-height: 1.5;
+        .hero__img-wrapper:hover img {
+            transform: scale(1.03);
         }
-
-        /* ============ ABOUT SECTION ============ */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 6vw, 5rem);
-            align-items: start;
-        }
-
-        @media (max-width: 700px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .about-text p {
-            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-            color: rgba(242, 242, 242, 0.8);
-            margin-bottom: 1.2em;
-            line-height: 1.65;
-        }
-
-        .about-highlight {
-            background: var(--bg-light);
-            border-left: 3px solid var(--cyan);
-            padding: 1.2rem 1.5rem;
-            border-radius: 0 6px 6px 0;
-            font-weight: 500;
-            color: var(--text);
-            margin-top: 0.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-
-        @media (max-width: 400px) {
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .stat-card {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.35s ease;
-        }
-
-        .stat-card:hover {
-            border-color: var(--magenta);
-            box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--yellow);
-            line-height: 1;
-            margin-bottom: 0.3em;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(242, 242, 242, 0.65);
-            letter-spacing: 0.03em;
-        }
-
-        /* ============ PROGRAMME SECTION ============ */
-        .programme-card {
-            background: var(--bg-light);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 6px;
-            padding: clamp(2rem, 5vw, 3.5rem);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .programme-card:hover {
-            border-color: rgba(0, 191, 255, 0.4);
-            box-shadow: 0 0 40px rgba(0, 191, 255, 0.1);
-        }
-
-        .programme-card::after {
-            content: '';
+        .hero__img-accent {
             position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 105, 180, 0.07) 0%, transparent 70%);
-            pointer-events: none;
-            transition: opacity 0.5s;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--solaire);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .hero__img-accent2 {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 80px;
+            height: 80px;
+            background: var(--corail);
+            border-radius: var(--radius-md);
+            z-index: -1;
             opacity: 0.5;
         }
-        .programme-card:hover::after {
-            opacity: 1;
+        .hero__grain {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
         }
 
-        .programme-card h3 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            color: var(--cyan);
-            margin-bottom: 0.8rem;
+        /* ---------- SECTIONS ---------- */
+        .section {
+            padding: clamp(60px, 8vw, 100px) 5vw;
+            position: relative;
+        }
+        .section__inner {
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-
-        .programme-card p {
-            font-size: clamp(0.9rem, 1.4vw, 1rem);
-            color: rgba(242, 242, 242, 0.75);
+        .section__label {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--bleu-poste);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .section__title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--nuit);
+            margin-bottom: clamp(16px, 2vw, 24px);
+        }
+        .section__text {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
             line-height: 1.6;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 0.7em;
+            color: var(--nuit);
+            opacity: 0.8;
+            max-width: 640px;
+            margin-bottom: clamp(30px, 4vw, 50px);
+        }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--solaire);
+            border-radius: 2px;
+            margin-bottom: 20px;
         }
 
-        .programme-meta {
+        /* ---------- GALERIE IMMERSIVE ---------- */
+        .gallery-immersive {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 250px 250px;
+            gap: 12px;
+            width: 100%;
+        }
+        .gallery-immersive .gi-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(26, 30, 43, 0.06);
+            transition: all var(--transition-spring);
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-immersive .gi-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--solaire);
+        }
+        .gallery-immersive .gi-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-immersive .gi-item:hover img {
+            transform: scale(1.06);
+        }
+        .gi-item:nth-child(1) {
+            grid-row: 1 / 3;
+            grid-column: 1;
+        }
+        .gi-item:nth-child(2) {
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .gi-item:nth-child(3) {
+            grid-row: 1;
+            grid-column: 3;
+        }
+        .gi-item:nth-child(4) {
+            grid-row: 2;
+            grid-column: 2;
+        }
+        .gi-item:nth-child(5) {
+            grid-row: 2;
+            grid-column: 3;
+        }
+
+        /* ---------- MODULES ---------- */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(14px, 2vw, 20px);
+        }
+        .module-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 28px);
+            border: 1px solid var(--pierre);
+            position: relative;
+            transition: all var(--transition-spring);
+            cursor: default;
+            box-shadow: var(--shadow-sm);
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .module-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--corail);
+        }
+        .module-card__icon {
+            width: 48px;
+            height: 48px;
+            background: var(--corail);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+            transition: transform var(--transition-spring);
+        }
+        .module-card:hover .module-card__icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        .module-card__title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+            color: var(--nuit);
+            margin: 0;
+        }
+        .module-card__desc {
+            font-size: 0.85rem;
+            color: var(--nuit);
+            opacity: 0.7;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* ---------- MOSAÏQUE ---------- */
+        .mosaic {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            grid-template-rows: 220px 180px;
+            gap: 12px;
+        }
+        .mosaic__item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(26, 30, 43, 0.06);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-spring);
+        }
+        .mosaic__item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--solaire);
+        }
+        .mosaic__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .mosaic__item:nth-child(1) {
+            grid-row: 1 / 3;
+            grid-column: 1;
+        }
+        .mosaic__item:nth-child(2) {
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .mosaic__item:nth-child(3) {
+            grid-row: 1;
+            grid-column: 3;
+        }
+        .mosaic__item:nth-child(4) {
+            grid-row: 2;
+            grid-column: 2 / 4;
+        }
+
+        /* ---------- TÉMOIGNAGES ---------- */
+        .testimonial-block {
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: clamp(24px, 4vw, 36px);
+            border: 1px solid var(--pierre);
+            box-shadow: var(--shadow-md);
+            max-width: 700px;
+            position: relative;
+        }
+        .testimonial-block::before {
+            content: '"';
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 6rem;
+            color: var(--solaire);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            line-height: 1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .testimonial-block p {
+            font-style: italic;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            line-height: 1.55;
+            color: var(--nuit);
             position: relative;
             z-index: 1;
+            padding-top: 10px;
         }
-
-        .programme-meta span {
-            font-size: 0.85rem;
-            color: var(--magenta);
-            letter-spacing: 0.04em;
+        .testimonial-block .author {
+            display: block;
+            margin-top: 12px;
             font-weight: 600;
-            font-family: var(--font-display);
+            font-style: normal;
+            color: var(--bleu-poste);
+            font-size: 0.9rem;
         }
 
-        /* ============ INFOS PRATIQUES ============ */
+        /* ---------- INFOS PRATIQUES ---------- */
         .infos-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-        }
-
-        @media (max-width: 750px) {
-            .infos-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-        }
-
-        .infos-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .infos-list li {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            font-size: clamp(0.9rem, 1.3vw, 0.98rem);
-            color: rgba(242, 242, 242, 0.8);
-            line-height: 1.5;
-        }
-
-        .infos-icon {
-            flex-shrink: 0;
-            width: 36px;
-            height: 36px;
-            background: var(--bg-lighter);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: var(--cyan);
-            border: 1px solid rgba(0, 191, 255, 0.25);
-            transition: all 0.3s ease;
-        }
-        .infos-list li:hover .infos-icon {
-            border-color: var(--magenta);
-            box-shadow: 0 0 18px rgba(255, 105, 180, 0.35);
-            color: var(--magenta);
-        }
-
-        .infos-list strong {
-            color: var(--text);
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.15em;
-        }
-
-        .infos-list a {
-            color: var(--cyan);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .infos-list a:hover {
-            color: var(--magenta);
-        }
-
-        .map-wrapper {
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: border-color 0.4s ease;
-            height: 100%;
-            min-height: 320px;
-        }
-        .map-wrapper:hover {
-            border-color: rgba(0, 191, 255, 0.5);
-            box-shadow: 0 0 30px rgba(0, 191, 255, 0.12);
-        }
-        .map-wrapper iframe {
-            display: block;
-            width: 100%;
-            height: 100%;
-            min-height: 320px;
-        }
-
-        /* ============ PRIVATISATION ============ */
-        .privatisation-inner {
-            background: var(--bg-light);
-            border-radius: 6px;
-            padding: clamp(2rem, 5vw, 3.5rem);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-        }
-        .privatisation-inner:hover {
-            border-color: rgba(255, 105, 180, 0.35);
-            box-shadow: 0 0 35px rgba(255, 105, 180, 0.08);
-        }
-        .privatisation-inner p {
-            font-size: clamp(0.9rem, 1.4vw, 1rem);
-            color: rgba(242, 242, 242, 0.75);
-            line-height: 1.6;
-            max-width: 600px;
-            margin-bottom: 0.6em;
-        }
-        .capacity-badge {
-            display: inline-block;
-            background: var(--bg-lighter);
-            color: var(--cyan);
-            font-family: var(--font-display);
-            font-weight: 600;
-            padding: 0.4em 1.2em;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            letter-spacing: 0.04em;
-            margin-top: 1rem;
-            border: 1px solid rgba(0, 191, 255, 0.2);
-        }
-
-        /* ============ AVIS ============ */
-        .avis-wrapper {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-        }
-
-        @media (max-width: 650px) {
-            .avis-wrapper {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        .avis-big-note {
-            text-align: center;
-            flex-shrink: 0;
-        }
-        .avis-big-number {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(4rem, 8vw, 6rem);
-            color: var(--yellow);
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-        .avis-big-stars {
-            color: var(--yellow);
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            letter-spacing: 4px;
-            margin: 0.3em 0;
-        }
-        .avis-big-count {
-            color: rgba(242, 242, 242, 0.5);
-            font-size: 0.9rem;
-            letter-spacing: 0.03em;
-        }
-
-        .avis-quotes {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        .avis-quote {
-            background: var(--bg-light);
-            padding: 1.3rem 1.6rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--cyan);
-            font-style: italic;
-            color: rgba(242, 242, 242, 0.8);
-            transition: all 0.3s ease;
-            font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-            line-height: 1.5;
-        }
-        .avis-quote:hover {
-            border-left-color: var(--magenta);
-            box-shadow: 0 0 22px rgba(255, 105, 180, 0.1);
-            transform: translateX(4px);
-        }
-        .avis-link {
-            display: inline-block;
-            color: var(--cyan);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            margin-top: 0.5rem;
-        }
-        .avis-link:hover {
-            color: var(--magenta);
-        }
-
-        /* ============ CONTACT FORM ============ */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
+            gap: clamp(24px, 4vw, 40px);
             align-items: start;
         }
-
-        @media (max-width: 700px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+        .infos-card {
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: clamp(20px, 3vw, 32px);
+            border: 1px solid var(--pierre);
+            box-shadow: var(--shadow-sm);
         }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            background: var(--bg-light);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.9em 1.1em;
-            color: var(--text);
-            font-family: var(--font-body);
-            font-size: clamp(0.9rem, 1.2vw, 0.95rem);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            resize: vertical;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            box-shadow: 0 0 18px rgba(0, 191, 255, 0.2);
-        }
-        .contact-form textarea {
-            min-height: 130px;
-        }
-        .contact-form button {
-            font-family: var(--font-display);
+        .infos-card h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 600;
-            background: var(--yellow);
-            color: var(--bg);
-            border: none;
-            padding: 0.85em 2em;
-            font-size: clamp(0.9rem, 1.3vw, 0.98rem);
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            border-radius: 3px;
-            transition: all 0.35s ease;
-            align-self: flex-start;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+            color: var(--nuit);
         }
-        .contact-form button:hover {
-            background: var(--magenta);
-            color: #fff;
-            box-shadow: 0 0 35px rgba(255, 105, 180, 0.5);
-            transform: translateY(-2px);
+        .infos-card p,
+        .infos-card li {
+            font-size: 0.9rem;
+            color: var(--nuit);
+            opacity: 0.8;
+            line-height: 1.6;
         }
-        .contact-form button:focus-visible {
-            outline: 3px solid var(--cyan);
-            outline-offset: 3px;
-        }
-
-        .contact-note {
-            font-size: 0.85rem;
-            color: rgba(242, 242, 242, 0.55);
-            margin-top: 0.5rem;
-            line-height: 1.5;
-        }
-        .contact-note .icon-note {
-            color: var(--cyan);
-            margin-right: 0.3em;
-        }
-
-        .form-success {
-            display: none;
-            background: var(--bg-light);
-            border: 1px solid var(--cyan);
-            border-radius: 4px;
-            padding: 1.5rem;
-            text-align: center;
-            color: var(--text);
-            font-weight: 500;
-        }
-        .form-success.visible {
-            display: block;
-        }
-        .form-success .check {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--cyan);
-        }
-
-        /* ============ FOOTER ============ */
-        .site-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 2rem clamp(1.2rem, 5vw, 3rem);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: var(--content-max);
-            margin: 0 auto;
-            width: 100%;
-        }
-        .site-footer .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
+        .infos-card ul {
             list-style: none;
-            margin-bottom: 1rem;
+            padding: 0;
         }
-        .site-footer a {
-            color: rgba(242, 242, 242, 0.55);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s;
+        .infos-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--pierre);
         }
-        .site-footer a:hover {
-            color: var(--cyan);
+        .infos-card ul li:last-child {
+            border-bottom: none;
         }
-        .site-footer .footer-credit {
-            color: rgba(242, 242, 242, 0.35);
-            font-size: 0.78rem;
-            letter-spacing: 0.03em;
+        .infos-card a {
+            color: var(--bleu-poste);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition);
+        }
+        .infos-card a:hover {
+            color: var(--corail);
+        }
+        .map-wrapper {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--pierre);
+            box-shadow: var(--shadow-md);
         }
 
-        /* ============ REVEAL ANIMATIONS ============ */
-        .reveal-section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background: var(--nuit);
+            color: var(--lin);
+            padding: clamp(30px, 5vw, 50px) 5vw;
+            border-top: 4px solid var(--solaire);
         }
-        .reveal-section.revealed {
+        .footer__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer__brand {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.02em;
+        }
+        .footer__info {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+        .footer__info a {
+            color: var(--solaire);
+            text-decoration: none;
+            transition: opacity var(--transition);
+        }
+        .footer__info a:hover {
+            opacity: 0.8;
+        }
+        .footer__credit {
+            font-size: 0.78rem;
+            opacity: 0.5;
+            margin-top: 20px;
+            width: 100%;
+            text-align: right;
+        }
+
+        /* ---------- REVEAL ANIMATIONS ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.revealed {
             opacity: 1;
             transform: translateY(0);
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal-section {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-            #hero::before {
-                animation: none;
-            }
-            .hero-title {
-                animation: none;
-                text-shadow: 0 0 8px #FFD700, 0 0 22px #FFD700, 0 0 50px rgba(255, 215, 0, 0.55), 0 0 90px rgba(255, 215, 0, 0.25);
-                -webkit-text-stroke-color: #FFD700;
-            }
-            .hero-subtitle,
-            .hero-cta {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
         }
 
-        /* ============ FOCUS VISIBLE ============ */
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible {
-            outline: 2px solid var(--cyan);
-            outline-offset: 3px;
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 1024px) {
+            .hero__grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero__visual {
+                order: -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .hero__img-wrapper {
+                max-width: 100%;
+                aspect-ratio: 4/4;
+            }
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 40px;
+            }
+            .gallery-immersive {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 200px 150px 150px;
+            }
+            .gi-item:nth-child(1) {
+                grid-row: 1 / 2;
+                grid-column: 1 / 3;
+            }
+            .gi-item:nth-child(2) {
+                grid-row: 2;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(3) {
+                grid-row: 2;
+                grid-column: 2;
+            }
+            .gi-item:nth-child(4) {
+                grid-row: 3;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(5) {
+                grid-row: 3;
+                grid-column: 2;
+            }
+            .modules-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .mosaic {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 180px 150px 150px;
+            }
+            .mosaic__item:nth-child(1) {
+                grid-row: 1;
+                grid-column: 1 / 3;
+            }
+            .mosaic__item:nth-child(2) {
+                grid-row: 2;
+                grid-column: 1;
+            }
+            .mosaic__item:nth-child(3) {
+                grid-row: 2;
+                grid-column: 2;
+            }
+            .mosaic__item:nth-child(4) {
+                grid-row: 3;
+                grid-column: 1 / 3;
+            }
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+            .header__nav a {
+                font-size: 0.8rem;
+            }
         }
-
-        /* ============ MOBILE OVERLAY (menu) ============ */
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 98;
-            pointer-events: none;
-        }
-        .mobile-overlay.active {
-            display: block;
-            pointer-events: auto;
-        }
-
-        @media (min-width: 861px) {
-            .mobile-overlay.active {
-                display: none;
+        @media (max-width: 640px) {
+            .header {
+                padding: 10px 12px;
+            }
+            .header__nav {
+                gap: 8px;
+            }
+            .header__nav a {
+                font-size: 0.72rem;
+            }
+            .header__cta {
+                font-size: 0.72rem;
+                padding: 8px 14px;
+            }
+            .badge-google {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                gap: 3px;
+            }
+            .hero {
+                padding: 90px 16px 40px;
+            }
+            .hero__title {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+            .hero__subtitle {
+                font-size: 0.95rem;
+            }
+            .section {
+                padding: 50px 16px;
+            }
+            .gallery-immersive {
+                grid-template-columns: 1fr;
+                grid-template-rows: 220px 140px 140px 140px 140px;
+            }
+            .gi-item:nth-child(1) {
+                grid-row: 1;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(2) {
+                grid-row: 2;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(3) {
+                grid-row: 3;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(4) {
+                grid-row: 4;
+                grid-column: 1;
+            }
+            .gi-item:nth-child(5) {
+                grid-row: 5;
+                grid-column: 1;
+            }
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            .mosaic {
+                grid-template-columns: 1fr;
+                grid-template-rows: 180px 120px 120px 140px;
+            }
+            .mosaic__item:nth-child(1) {
+                grid-row: 1;
+                grid-column: 1;
+            }
+            .mosaic__item:nth-child(2) {
+                grid-row: 2;
+                grid-column: 1;
+            }
+            .mosaic__item:nth-child(3) {
+                grid-row: 3;
+                grid-column: 1;
+            }
+            .mosaic__item:nth-child(4) {
+                grid-row: 4;
+                grid-column: 1;
+            }
+            .footer__inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .footer__credit {
+                text-align: left;
+            }
+            .header__brand {
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <canvas id="bg-grid" aria-hidden="true"></canvas>
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="#hero" class="logo">Le <span>Spot</span></a>
-            <button class="burger-btn" id="burgerBtn" aria-label="Menu de navigation" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">Le lieu</a></li>
-                    <li><a href="#programme">En ce moment</a></li>
-                    <li><a href="#infos">Infos pratiques</a></li>
-                    <li><a href="#privatisation">Privatisation</a></li>
-                    <li><a href="#avis">Avis</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#programme" class="nav-cta">Voir le programme</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="header" id="header">
+        <a href="#" class="header__brand">
+            <span></span> Le Spot
+        </a>
+        <nav>
+            <ul class="header__nav">
+                <li><a href="#lieu">Le lieu</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#bienvenus">Public</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#infos">Infos</a></li>
+                <li>
+                    <span class="badge-google" title="Note Google">
+                        <span class="star">★</span> 4.8 <span style="font-weight:400;opacity:0.7;">(50 avis)</span>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+        <a href="#infos" class="header__cta">Nous rendre visite</a>
     </header>
 
-    <main class="main-content">
-
-        <!-- HERO -->
-        <section id="hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="stars">★★★★☆</span> 4.8/5 — 50 avis Google
-                </div>
-                <h1 class="hero-title">Poussez la porte<br>du futur.</h1>
-                <p class="hero-subtitle">
-                    À la lisière de Paris et d'Issy-les-Moulineaux, le Spot vous ouvre son laboratoire d'innovations.
-                    Expériences interactives, démos, rencontres — venez jouer avec les technologies qui dessinent demain.
-                </p>
-                <a href="#programme" class="hero-cta">
-                    Voir le programme du moment <span class="arrow">↓</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">Qu'est-ce que le Spot ?</span>
-                Un lieu pour comprendre, toucher, construire
-            </h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Le Spot, c'est <strong>200&nbsp;m² d'expériences</strong> où l'innovation du groupe La Poste devient concrète.
-                        On y teste des interfaces, on y découvre comment la technologie améliore nos villes et nos vies.
+    <main>
+        <!-- HÉRO -->
+        <section class="hero">
+            <div class="hero__grain"></div>
+            <div class="hero__grid">
+                <div class="hero__text reveal">
+                    <span class="hero__overline">Laboratoire d'innovation — Paris 15ᵉ</span>
+                    <h1 class="hero__title">
+                        Et si l'innovation<br>
+                        <span class="accent">se touchait du doigt&nbsp;?</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Bienvenue au Spot, le laboratoire d'idées de La Poste.<br>
+                        Ici, vous ne faites pas que regarder&nbsp;: vous expérimentez, jouez et questionnez le futur.<br>
+                        Ouvert à tous, au cœur du 15ᵉ — sans badge, sans prérequis.
                     </p>
-                    <p>
-                        Ouvert à tous — particuliers, familles, passionnés. Ici, pas de jargon : on manipule, on échange,
-                        on repart avec des idées plein la tête. L'équipe vous accueille sans rendez-vous, au cœur du 15<sup>e</sup> arrondissement.
-                    </p>
-                    <div class="about-highlight">
-                        🧪 Un laboratoire urbain, pas un showroom. Venez comme vous êtes.
+                    <div class="hero__actions">
+                        <a href="#experiences" class="btn btn--primary">Découvrir les modules</a>
+                        <a href="#infos" class="btn btn--outline">Venir au Spot</a>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">200 m²</div>
-                        <div class="stat-label">d'exposition interactive</div>
+                <div class="hero__visual reveal reveal-delay-2">
+                    <div class="hero__img-wrapper">
+                        <img src="assets/maps-1.jpg" alt="Le Spot La Poste — Visiteurs en pleine découverte interactive" loading="eager" width="540" height="675">
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">45 min</div>
-                        <div class="stat-label">durée moyenne de visite</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">18 mois</div>
-                        <div class="stat-label">renouvellement des thèmes</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">4.8 ★</div>
-                        <div class="stat-label">satisfaction visiteurs</div>
-                    </div>
+                    <div class="hero__img-accent"></div>
+                    <div class="hero__img-accent2"></div>
                 </div>
             </div>
         </section>
 
-        <!-- PROGRAMME -->
-        <section id="programme" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">En ce moment</span>
-                La thématique 2025 : impact & société
-            </h2>
-            <div class="programme-card">
-                <h3>IA & données au service de l'environnement</h3>
-                <p>
-                    Jusqu'à l'été, explorez comment l'intelligence artificielle et les données peuvent réduire
-                    notre empreinte environnementale. Une thématique conçue pour donner des clés concrètes, sans
-                    discours technophile hors-sol.
+        <!-- ① LE LIEU -->
+        <section class="section" id="lieu">
+            <div class="section__inner">
+                <span class="section__label reveal">① Le lieu</span>
+                <div class="divider reveal reveal-delay-1"></div>
+                <h2 class="section__title reveal reveal-delay-1">200&nbsp;m² d'expériences,<br>de jeu et de dialogue</h2>
+                <p class="section__text reveal reveal-delay-2">
+                    Un showroom pensé comme un terrain d'exploration, conçu pour tous les publics&nbsp;: postiers, pros, riverains, familles ou simples curieux. Chaque visite est unique parce qu'elle se construit avec vous.
                 </p>
-                <p>
-                    Ateliers flash, bornes interactives, mini-conférences chaque samedi.
-                    Le programme évolue régulièrement — revenez, il y aura toujours du nouveau.
-                </p>
-                <div class="programme-meta">
-                    <span>⏱ Durée : 45 min</span>
-                    <span>🔄 Renouvellement : tous les 18 mois</span>
-                    <span>📅 Ateliers chaque samedi</span>
+                <div class="gallery-immersive reveal reveal-delay-3">
+                    <div class="gi-item"><img src="assets/maps-1.jpg" alt="Visiteurs au Spot" loading="lazy" width="600" height="400"></div>
+                    <div class="gi-item"><img src="assets/maps-2.jpg" alt="Exploration interactive" loading="lazy" width="300" height="250"></div>
+                    <div class="gi-item"><img src="assets/maps-3.jpg" alt="Module en manipulation" loading="lazy" width="300" height="250"></div>
+                    <div class="gi-item"><img src="assets/maps-4.jpg" alt="Échange autour d'une expérience" loading="lazy" width="300" height="250"></div>
+                    <div class="gi-item"><img src="assets/maps-5.jpg" alt="Visiteurs en action" loading="lazy" width="300" height="250"></div>
                 </div>
             </div>
         </section>
 
-        <!-- INFOS PRATIQUES -->
-        <section id="infos" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">Infos pratiques</span>
-                Venez demain, c'est ouvert
-            </h2>
-            <div class="infos-grid">
-                <ul class="infos-list">
-                    <li>
-                        <div class="infos-icon">📍</div>
-                        <div>
-                            <strong>Adresse</strong>
-                            7 Rue du Colonel Pierre Avia, 75015 Paris
-                        </div>
-                    </li>
-                    <li>
-                        <div class="infos-icon">🕐</div>
-                        <div>
-                            <strong>Horaires</strong>
-                            Du mardi au samedi, 10h – 17h<br>
-                            <span style="font-size:0.8rem;color:rgba(242,242,242,0.45);">Fermé dimanche et lundi</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="infos-icon">🚇</div>
-                        <div>
-                            <strong>Accès</strong>
-                            Métro Porte de Versailles (ligne 12)<br>
-                            Tram T2 — arrêt Issy-Val de Seine<br>
-                            Bus 39, 169<br>
-                            <span style="font-size:0.8rem;color:rgba(242,242,242,0.45);">Pas de parking public sur place</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="infos-icon">✉️</div>
-                        <div>
-                            <strong>Contact</strong>
-                            <a href="mailto:le.spot@laposte.fr">le.spot@laposte.fr</a><br>
-                            <span style="font-size:0.8rem;color:rgba(242,242,242,0.45);">Pas de téléphone — échange par email ou formulaire</span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=Le+Spot+La+Poste+7+Rue+du+Colonel+Pierre+Avia%2C+Paris&output=embed"
-                    width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Carte Google Maps — Le Spot La Poste"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRIVATISATION -->
-        <section id="privatisation" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">Un événement privé ?</span>
-                Le Spot rien que pour vous
-            </h2>
-            <div class="privatisation-inner">
-                <p>
-                    Vous souhaitez organiser une visite de groupe, un after-work ou un lancement dans un cadre unique ?
-                    Décrivez votre projet via le formulaire de contact, notre équipe vous répond sous 48h.
+        <!-- ② LES EXPÉRIENCES -->
+        <section class="section" id="experiences" style="background:rgba(229,221,211,0.25);">
+            <div class="section__inner">
+                <span class="section__label reveal">② Les expériences</span>
+                <div class="divider reveal reveal-delay-1"></div>
+                <h2 class="section__title reveal reveal-delay-1">11 modules interactifs<br>pour comprendre demain</h2>
+                <p class="section__text reveal reveal-delay-2">
+                    Intelligence artificielle, métavers, cybersécurité, impact environnemental… Autant de sujets complexes rendus accessibles par le jeu et la manipulation. Les thématiques se renouvellent tous les 18 mois pour coller au pouls du monde.
                 </p>
-                <p>
-                    Le Spot se transforme pour vos événements : conférences intimistes, démonstrations sur mesure,
-                    moments d'échange privilégiés dans une atmosphère résolument contemporaine.
-                </p>
-                <span class="capacity-badge">👥 Capacité maximale : 50 personnes</span>
-            </div>
-        </section>
-
-        <!-- AVIS -->
-        <section id="avis" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">Avis de visiteurs</span>
-                Ceux qui ont déjà poussé la porte
-            </h2>
-            <div class="avis-wrapper">
-                <div class="avis-big-note">
-                    <div class="avis-big-number">4.8</div>
-                    <div class="avis-big-stars">★★★★☆</div>
-                    <div class="avis-big-count">50 avis Google</div>
-                </div>
-                <div class="avis-quotes">
-                    <div class="avis-quote">
-                        « Un lieu surprenant, les enfants ont adoré manipuler les écrans géants. On est restés plus d'une heure sans voir le temps passer ! »
+                <div class="modules-grid">
+                    <div class="module-card reveal reveal-delay-1">
+                        <div class="module-card__icon">🤖</div>
+                        <h3 class="module-card__title">Intelligence Artificielle</h3>
+                        <p class="module-card__desc">Comprendre l'IA générative en la manipulant concrètement, sans jargon.</p>
                     </div>
-                    <div class="avis-quote">
-                        « Atelier très instructif sur la mobilité de demain. L'équipe est passionnée et prend le temps d'expliquer simplement. »
+                    <div class="module-card reveal reveal-delay-1">
+                        <div class="module-card__icon">🥽</div>
+                        <h3 class="module-card__title">Métavers & Immersion</h3>
+                        <p class="module-card__desc">Plongez dans des univers virtuels et testez les casques dernière génération.</p>
                     </div>
-                    <a href="https://maps.google.com/?q=Le+Spot+La+Poste+7+Rue+du+Colonel+Pierre+Avia+Paris" target="_blank" rel="noopener" class="avis-link">
-                        Voir tous les avis sur Google Maps →
-                    </a>
+                    <div class="module-card reveal reveal-delay-1">
+                        <div class="module-card__icon">🔐</div>
+                        <h3 class="module-card__title">Cybersécurité</h3>
+                        <p class="module-card__desc">Apprenez les gestes qui protègent vos données par des mises en situation ludiques.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-2">
+                        <div class="module-card__icon">🌍</div>
+                        <h3 class="module-card__title">Impact Environnemental</h3>
+                        <p class="module-card__desc">Mesurez l'empreinte carbone du numérique et découvrez des leviers d'action.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-2">
+                        <div class="module-card__icon">⛓️</div>
+                        <h3 class="module-card__title">Blockchain & Traçabilité</h3>
+                        <p class="module-card__desc">Démystifiez la blockchain via des démonstrations interactives et visuelles.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-2">
+                        <div class="module-card__icon">📦</div>
+                        <h3 class="module-card__title">Objets Connectés</h3>
+                        <p class="module-card__desc">Manipulez des capteurs et comprenez l'Internet des objets du quotidien.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-3">
+                        <div class="module-card__icon">🕶️</div>
+                        <h3 class="module-card__title">Réalité Augmentée</h3>
+                        <p class="module-card__desc">Superposez le virtuel au réel et imaginez les usages de demain.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-3">
+                        <div class="module-card__icon">📊</div>
+                        <h3 class="module-card__title">Data & Vie Privée</h3>
+                        <p class="module-card__desc">Visualisez vos traces numériques et reprenez le contrôle sur vos données.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-3">
+                        <div class="module-card__icon">🦾</div>
+                        <h3 class="module-card__title">Robotique Inclusive</h3>
+                        <p class="module-card__desc">Programmez un robot et découvrez comment la tech se met au service de tous.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-4">
+                        <div class="module-card__icon">🏙️</div>
+                        <h3 class="module-card__title">Ville Intelligente</h3>
+                        <p class="module-card__desc">Explorez les solutions connectées qui transforment nos territoires urbains.</p>
+                    </div>
+                    <div class="module-card reveal reveal-delay-4">
+                        <div class="module-card__icon">📬</div>
+                        <h3 class="module-card__title">Poste de Demain</h3>
+                        <p class="module-card__desc">Projetez-vous dans les services postaux du futur, entre physicalité et digital.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="reveal-section">
-            <h2 class="section-title">
-                <span class="accent">Contact</span>
-                On vous répond directement
-            </h2>
-            <div class="contact-grid">
-                <form class="contact-form" id="contactForm" novalidate>
-                    <input type="text" name="name" placeholder="Votre nom" required aria-label="Votre nom">
-                    <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
-                    <textarea name="message" placeholder="Votre message — décrivez votre projet, posez vos questions..." required aria-label="Votre message"></textarea>
-                    <button type="submit">Envoyer</button>
-                    <p class="contact-note">
-                        <span class="icon-note">💡</span> Le Spot est géré par une petite équipe, nous revenons vers vous
-                        rapidement aux heures d'ouverture (mardi–samedi, 10h–17h).
-                    </p>
-                </form>
-                <div class="form-success" id="formSuccess">
-                    <span class="check">✓</span>
-                    <p>Merci ! Votre message a bien été envoyé. Notre équipe vous répond sous 48h aux heures d'ouverture.</p>
-                </div>
-                <div class="contact-info-side">
-                    <p style="color:rgba(242,242,242,0.7);font-size:0.95rem;line-height:1.6;">
-                        Vous préférez écrire directement ?<br>
-                        <a href="mailto:le.spot@laposte.fr" style="color:var(--cyan);text-decoration:none;font-weight:500;">le.spot@laposte.fr</a>
-                    </p>
-                    <p style="color:rgba(242,242,242,0.5);font-size:0.82rem;margin-top:1rem;">
-                        Pas de téléphone — tout passe par le formulaire ou l'email, pour un suivi plus efficace.
-                    </p>
+        <!-- ③ VOUS ÊTES LES BIENVENUS -->
+        <section class="section" id="bienvenus">
+            <div class="section__inner">
+                <span class="section__label reveal">③ Vous êtes les bienvenus</span>
+                <div class="divider reveal reveal-delay-1"></div>
+                <h2 class="section__title reveal reveal-delay-1">Pas de badge,<br>pas de barrière</h2>
+                <p class="section__text reveal reveal-delay-2">
+                    Équipes La Poste, partenaires tech, étudiants, familles du quartier ou passants du boulevard périphérique… le Spot est gratuit et ouvert à tous. Passez quand vous voulez pendant les heures d'ouverture, ou réservez un créneau pour un groupe.
+                </p>
+                <div class="mosaic reveal reveal-delay-3">
+                    <div class="mosaic__item"><img src="assets/maps-6.jpg" alt="Famille au Spot" loading="lazy" width="600" height="400"></div>
+                    <div class="mosaic__item"><img src="assets/maps-3.jpg" alt="Étudiants en exploration" loading="lazy" width="300" height="220"></div>
+                    <div class="mosaic__item"><img src="assets/maps-4.jpg" alt="Collaborateurs La Poste" loading="lazy" width="300" height="220"></div>
+                    <div class="mosaic__item"><img src="assets/maps-2.jpg" alt="Groupe de visiteurs" loading="lazy" width="600" height="180"></div>
                 </div>
             </div>
         </section>
 
+        <!-- ④ TÉMOIGNAGES -->
+        <section class="section" id="temoignages" style="background:rgba(229,221,211,0.30);">
+            <div class="section__inner">
+                <span class="section__label reveal">④ L'ambiance</span>
+                <div class="divider reveal reveal-delay-1"></div>
+                <h2 class="section__title reveal reveal-delay-1">Et les visiteurs<br>en parlent mieux que nous</h2>
+                <div class="testimonial-block reveal reveal-delay-2">
+                    <p>«&nbsp;Une matinée au top avec l'équipe du Spot et deux belles interventions. Sans oublier l'accueil parfait d'une équipe dynamique.&nbsp;»</p>
+                    <span class="author">— Julien Nic</span>
+                </div>
+                <p style="margin-top:20px;font-size:0.9rem;opacity:0.7;" class="reveal reveal-delay-3">
+                    Note Google&nbsp;: <strong>4.8★ sur 5</strong> — basée sur <strong>50 avis</strong> vérifiés. Les visiteurs soulignent l'accueil, la pédagogie et la qualité des modules.
+                </p>
+            </div>
+        </section>
+
+        <!-- ⑤ INFOS PRATIQUES -->
+        <section class="section" id="infos">
+            <div class="section__inner">
+                <span class="section__label reveal">⑤ Infos pratiques</span>
+                <div class="divider reveal reveal-delay-1"></div>
+                <h2 class="section__title reveal reveal-delay-1">Prêts à pousser<br>la porte&nbsp;?</h2>
+                <div class="infos-grid reveal reveal-delay-2">
+                    <div class="infos-card">
+                        <h4>📍 Adresse</h4>
+                        <p>7 Rue du Colonel Pierre Avia<br>75015 Paris, France</p>
+                        <h4 style="margin-top:18px;">📧 Contact</h4>
+                        <p><a href="mailto:le.spot@laposte.fr">le.spot@laposte.fr</a></p>
+                        <h4 style="margin-top:18px;">🕐 Horaires</h4>
+                        <p>Horaires à confirmer — Nous vous invitons à contacter l'équipe ou à consulter les informations affichées sur place. Le Spot est généralement ouvert en semaine, accessible sans rendez-vous.</p>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=Le+Spot+La+Poste+7+Rue+du+Colonel+Pierre+Avia%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Le Spot La Poste"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-        <ul class="footer-links">
-            <li><a href="https://www.lapostegroupe.com" target="_blank" rel="noopener">lapostegroupe.com</a></li>
-            <li><a href="https://maps.google.com/?q=Le+Spot+La+Poste+7+Rue+du+Colonel+Pierre+Avia+Paris" target="_blank" rel="noopener">Fiche Google Maps</a></li>
-            <li><a href="#">Mentions légales</a></li>
-        </ul>
-        <p class="footer-credit">
-            Le Spot La Poste — 7 Rue du Colonel Pierre Avia, 75015 Paris &nbsp;|&nbsp; Site créé par Agence Mooo
-        </p>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div>
+                <div class="footer__brand">Le Spot La Poste</div>
+                <div class="footer__info" style="margin-top:8px;">
+                    7 Rue du Colonel Pierre Avia, 75015 Paris<br>
+                    <a href="mailto:le.spot@laposte.fr">le.spot@laposte.fr</a><br>
+                    Note Google&nbsp;: 4.8★ (50 avis)
+                </div>
+            </div>
+            <div class="footer__info">
+                Gratuit — Ouvert à tous<br>
+                Sans badge, sans prérequis
+            </div>
+            <div class="footer__credit">
+                Site créé par Agence Mooo
+            </div>
+        </div>
     </footer>
 
     <script type="application/ld+json">
@@ -1321,6 +1129,7 @@
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Le Spot La Poste",
+            "description": "Laboratoire d'innovation interactif de La Poste. 200 m² d'expériences : IA, métavers, cybersécurité. Gratuit, ouvert à tous au cœur du 15ᵉ arrondissement de Paris.",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "7 Rue du Colonel Pierre Avia",
@@ -1329,243 +1138,58 @@
                 "addressCountry": "FR"
             },
             "email": "le.spot@laposte.fr",
+            "image": "assets/maps-1.jpg",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
-                "reviewCount": "50"
+                "reviewCount": "50",
+                "bestRating": "5",
+                "worstRating": "1"
             },
-            "image": "assets/maps-1.jpg",
             "url": "https://agence.mooo.com/le-spot-la-poste",
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "10:00",
-                "closes": "17:00"
-            }
+            "priceRange": "Gratuit"
         }
     </script>
 
     <script>
-        (function() {
-            // ============ CANVAS BACKGROUND GRID ============
-            const canvas = document.getElementById('bg-grid');
-            const ctx = canvas.getContext('2d');
-            let animationId;
-            const gridSpacing = 90;
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = document.documentElement.scrollHeight;
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
+            lastScroll = currentScroll;
+        }, { passive: true });
 
-            function drawGrid(scrollY) {
-                const w = canvas.width;
-                const h = canvas.height;
-                ctx.clearRect(0, 0, w, h);
+        // IntersectionObserver for reveals
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.15
+        };
 
-                const waveAmp = prefersReducedMotion ? 0 : 6;
-                const waveFreq = 0.012;
-
-                ctx.strokeStyle = 'rgba(0, 191, 255, 0.04)';
-                ctx.lineWidth = 1;
-                for (let x = gridSpacing; x < w; x += gridSpacing) {
-                    ctx.beginPath();
-                    for (let y = 0; y < h; y += 8) {
-                        const offsetX = Math.sin(y * waveFreq + scrollY * 0.003) * waveAmp;
-                        const drawX = x + offsetX;
-                        if (y === 0) ctx.moveTo(drawX, y);
-                        else ctx.lineTo(drawX, y);
-                    }
-                    ctx.stroke();
-                }
-
-                ctx.strokeStyle = 'rgba(255, 105, 180, 0.03)';
-                for (let y = gridSpacing; y < h; y += gridSpacing) {
-                    ctx.beginPath();
-                    for (let x = 0; x < w; x += 8) {
-                        const offsetY = Math.sin(x * waveFreq + scrollY * 0.004) * waveAmp;
-                        const drawY = y + offsetY;
-                        if (x === 0) ctx.moveTo(x, drawY);
-                        else ctx.lineTo(x, drawY);
-                    }
-                    ctx.stroke();
-                }
-
-                // Points d'intersection brillants
-                for (let x = gridSpacing; x < w; x += gridSpacing) {
-                    for (let y = gridSpacing; y < h; y += gridSpacing) {
-                        const offsetX = Math.sin(y * waveFreq + scrollY * 0.003) * waveAmp;
-                        const offsetY = Math.sin(x * waveFreq + scrollY * 0.004) * waveAmp;
-                        const px = x + offsetX;
-                        const py = y + offsetY;
-                        if (px > 0 && px < w && py > 0 && py < h) {
-                            ctx.fillStyle = 'rgba(255, 215, 0, 0.06)';
-                            ctx.beginPath();
-                            ctx.arc(px, py, 2, 0, Math.PI * 2);
-                            ctx.fill();
-                        }
-                    }
-                }
-            }
-
-            function animate() {
-                const scrollY = window.scrollY;
-                drawGrid(scrollY);
-                animationId = requestAnimationFrame(animate);
-            }
-
-            function initCanvas() {
-                resizeCanvas();
-                if (!prefersReducedMotion) {
-                    animate();
-                } else {
-                    drawGrid(0);
-                }
-            }
-
-            // ============ RESIZE HANDLER ============
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    resizeCanvas();
-                    if (!prefersReducedMotion && !animationId) {
-                        animate();
-                    }
-                }, 150);
-            });
-
-            // ============ SCROLL-BASED CANVAS HEIGHT UPDATE ============
-            let lastDocHeight = document.documentElement.scrollHeight;
-            const scrollObserver = new MutationObserver(() => {
-                const newHeight = document.documentElement.scrollHeight;
-                if (Math.abs(newHeight - lastDocHeight) > 20) {
-                    lastDocHeight = newHeight;
-                    resizeCanvas();
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
                 }
             });
-            scrollObserver.observe(document.body, { childList: true, subtree: true, attributes: true });
+        }, observerOptions);
 
-            // ============ INTERSECTION OBSERVER (reveal sections) ============
-            const revealSections = document.querySelectorAll('.reveal-section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -60px 0px',
-                threshold: 0.12
-            };
+        revealElements.forEach(el => revealObserver.observe(el));
 
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            revealSections.forEach(section => revealObserver.observe(section));
-
-            // ============ MOBILE MENU ============
-            const burgerBtn = document.getElementById('burgerBtn');
-            const navLinks = document.getElementById('navLinks');
-            const mobileOverlay = document.getElementById('mobileOverlay');
-
-            function openMenu() {
-                navLinks.classList.add('open');
-                burgerBtn.classList.add('active');
-                burgerBtn.setAttribute('aria-expanded', 'true');
-                mobileOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenu() {
-                navLinks.classList.remove('open');
-                burgerBtn.classList.remove('active');
-                burgerBtn.setAttribute('aria-expanded', 'false');
-                mobileOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            burgerBtn.addEventListener('click', () => {
-                if (navLinks.classList.contains('open')) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
+        // Initial hero elements should be visible quickly — trigger after short delay
+        setTimeout(() => {
+            document.querySelectorAll('.hero .reveal').forEach(el => {
+                el.classList.add('revealed');
             });
-
-            mobileOverlay.addEventListener('click', closeMenu);
-
-            // Close menu on nav link click
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('open')) {
-                        closeMenu();
-                    }
-                });
-            });
-
-            // Close menu on Escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-                    closeMenu();
-                    burgerBtn.focus();
-                }
-            });
-
-            // ============ FORM HANDLING ============
-            const contactForm = document.getElementById('contactForm');
-            const formSuccess = document.getElementById('formSuccess');
-
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = contactForm.querySelector('[name="name"]').value.trim();
-                const email = contactForm.querySelector('[name="email"]').value.trim();
-                const message = contactForm.querySelector('[name="message"]').value.trim();
-
-                if (!name || !email || !message) {
-                    // Simple validation feedback
-                    const emptyFields = [];
-                    if (!name) emptyFields.push('nom');
-                    if (!email) emptyFields.push('email');
-                    if (!message) emptyFields.push('message');
-                    alert('Veuillez remplir tous les champs : ' + emptyFields.join(', ') + '.');
-                    return;
-                }
-
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Veuillez entrer une adresse email valide.');
-                    return;
-                }
-
-                // Simulate sending
-                contactForm.style.display = 'none';
-                formSuccess.classList.add('visible');
-
-                // In a real scenario, you'd send the form data via fetch here
-                console.log('Formulaire soumis :', { name, email, message });
-            });
-
-            // ============ INIT ============
-            initCanvas();
-
-            // Re-observe canvas animation if reduced motion preference changes
-            window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
-                if (e.matches) {
-                    if (animationId) {
-                        cancelAnimationFrame(animationId);
-                        animationId = null;
-                    }
-                    drawGrid(0);
-                } else {
-                    if (!animationId) {
-                        animate();
-                    }
-                }
-            });
-
-        })();
+        }, 200);
     </script>
 </body>
 </html>
