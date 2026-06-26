@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Lourmel — Boulangerie artisanale · 121 Avenue Félix Faure, Paris 15e</title>
+    <meta name="description" content="Bakery Lourmel, boulangerie artisanale au 121 avenue Félix Faure dans le 15e arrondissement de Paris. Baguettes Tradition, viennoiseries au beurre, pâtisseries orientales. Ouvert dès 6h30.">
+    <meta property="og:title" content="Bakery Lourmel — L'avenue Félix Faure s'éveille avec l'odeur du pain chaud">
+    <meta property="og:description" content="Depuis vingt ans, nos fournées rythment la vie du 15e — baguettes craquantes, viennoiseries au beurre et pâtisseries orientales sorties du fournil à toute heure.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2C241A">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><text y='32' font-size='32'>🥖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bakery Lourmel",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "121 Avenue Félix Faure",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33144263074",
+            "email": "imen_chouaref@yahoo.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.0",
+                "reviewCount": "222"
+            },
+            "image": "assets/maps-1.jpg",
+            "openingHours": "Mo-Sa 06:30-20:00; Su 06:30-13:00",
+            "url": "https://agence.mooo.com/bakery-lourmel-2"
+        }
+    </script>
+    <style>
+        :root {
+            --farine: #FDFAF6;
+            --croute: #2C241A;
+            --brique: #C15B3D;
+            --herbe: #7A8B5E;
+            --dore: #D4A853;
+            --bois: #4A3E35;
+            --farine-rgb: 253, 250, 246;
+            --croute-rgb: 44, 36, 26;
+            --brique-rgb: 193, 91, 61;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(44, 36, 26, 0.08);
+            --shadow-md: 0 4px 20px rgba(44, 36, 26, 0.12);
+            --shadow-lg: 0 12px 40px rgba(44, 36, 26, 0.18);
+            --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            --font-display: 'Bricolage Grotesque', 'Bricolage Grotesque Placeholder', sans-serif;
+            --font-body: 'Hanken Grotesk', 'Hanken Grotesk Placeholder', sans-serif;
+            --nav-height: 70px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 0.9rem + 0.4vw, 1.1rem);
+            line-height: 1.65;
+            color: var(--croute);
+            background-color: var(--farine);
+            background-image: var(--grain);
+            background-attachment: fixed;
+            letter-spacing: 0.005em;
+            overflow-x: hidden;
+        }
+
+        /* === SKIP LINK === */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--croute);
+            color: var(--farine);
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: top 0.25s ease;
+        }
+        .skip-link:focus {
+            top: 12px;
+            outline: 3px solid var(--brique);
+            outline-offset: 3px;
+        }
+
+        /* === NAVIGATION === */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            height: var(--nav-height);
+            background: rgba(var(--farine-rgb), 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(var(--croute-rgb), 0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(1rem, 4vw, 2.5rem);
+            gap: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        .nav-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1rem, 1rem + 0.6vw, 1.25rem);
+            color: var(--croute);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .nav-brand span {
+            color: var(--brique);
+        }
+        .nav-links {
+            display: flex;
+            gap: clamp(0.3rem, 1.5vw, 1.2rem);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 1;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .nav-links a {
+            color: var(--croute);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            transition: color 0.2s, background 0.2s;
+            white-space: nowrap;
+            position: relative;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--brique);
+            background: rgba(var(--brique-rgb), 0.06);
+            outline: none;
+        }
+        .nav-links a:focus-visible {
+            outline: 2px solid var(--brique);
+            outline-offset: 2px;
+        }
+        .nav-cta {
+            background: var(--brique) !important;
+            color: #fff !important;
+            padding: 8px 16px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.03em !important;
+            transition: background 0.25s, transform 0.2s !important;
+            box-shadow: 0 2px 8px rgba(var(--brique-rgb), 0.35);
+        }
+        .nav-cta:hover {
+            background: #a84e35 !important;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(var(--brique-rgb), 0.45);
+        }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-shrink: 0;
+            color: var(--croute);
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: currentColor;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .nav-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                position: fixed;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: rgba(var(--farine-rgb), 0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem;
+                gap: 0.6rem;
+                border-bottom: 1px solid rgba(var(--croute-rgb), 0.1);
+                transform: translateY(-120%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: var(--shadow-lg);
+                z-index: 899;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+            }
+            .nav-links a {
+                padding: 12px 16px;
+                font-size: 1rem;
+                border-radius: var(--radius-md);
+            }
+            .nav-cta {
+                text-align: center;
+                margin-top: 4px;
+            }
+            .nav-hamburger {
+                display: block;
+            }
+        }
+
+        /* === SECTIONS === */
+        .section {
+            padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 2.5rem);
+            position: relative;
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: var(--nav-height);
+            gap: 0;
+            align-items: stretch;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+            z-index: 2;
+            background: var(--farine);
+            position: relative;
+        }
+        .hero-content::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 70% 80%, rgba(var(--farine-rgb), 0) 0%, rgba(var(--farine-rgb), 0.3) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-content>* {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(var(--brique-rgb), 0.08);
+            color: var(--brique);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(var(--brique-rgb), 0.2);
+            width: fit-content;
+        }
+        .hero-badge .stars {
+            color: var(--dore);
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+        .hero-badge .count {
+            color: var(--croute);
+            opacity: 0.7;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.2rem, 4vw + 1rem, 4rem);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            color: var(--croute);
+            margin-bottom: 1.2rem;
+            max-width: 90%;
+        }
+        .hero h1 .word-stack {
+            display: block;
+        }
+        .hero h1 .word-stack:nth-child(2) {
+            color: var(--brique);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
+            line-height: 1.55;
+            color: var(--bois);
+            margin-bottom: 2rem;
+            max-width: 440px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .btn-primary {
+            background: var(--brique);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(var(--brique-rgb), 0.4);
+        }
+        .btn-primary:hover {
+            background: #a84e35;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(var(--brique-rgb), 0.5);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--croute);
+            border: 1.5px solid var(--croute);
+        }
+        .btn-ghost:hover {
+            background: var(--croute);
+            color: var(--farine);
+        }
+        .hero-visual {
+            position: relative;
+            overflow: hidden;
+            background: var(--croute);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 50vh;
+        }
+        .hero-visual-inner {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: levainRise 1.5s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+            transform-origin: bottom center;
+            will-change: transform;
+        }
+        @keyframes levainRise {
+            from {
+                transform: scaleY(0);
+                opacity: 0.85;
+            }
+            to {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-img {
+                animation: none;
+            }
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 36, 26, 0.55) 0%, rgba(44, 36, 26, 0.15) 40%, rgba(44, 36, 26, 0.0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-visual-label {
+            position: absolute;
+            bottom: clamp(1rem, 3vw, 2rem);
+            left: clamp(1rem, 3vw, 2rem);
+            z-index: 2;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.6rem + 0.4vw, 0.9rem);
+            color: #fff;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0.9;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+                min-height: auto;
+            }
+            .hero-content {
+                padding: 3rem 1.25rem 2rem;
+                order: 1;
+            }
+            .hero-visual {
+                order: 2;
+                min-height: 55vh;
+                max-height: 70vh;
+            }
+            .hero h1 {
+                max-width: 100%;
+                font-size: clamp(1.8rem, 3vw + 0.8rem, 2.6rem);
+            }
+            .hero-subtitle {
+                max-width: 100%;
+            }
+        }
+
+        /* === FLOUR DUST PATTERN === */
+        .flour-dust {
+            position: relative;
+        }
+        .flour-dust::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.7) 0.5px, transparent 0.5px),
+                radial-gradient(circle at 32% 55%, rgba(255, 255, 255, 0.6) 0.4px, transparent 0.4px),
+                radial-gradient(circle at 48% 12%, rgba(255, 255, 255, 0.8) 0.6px, transparent 0.6px),
+                radial-gradient(circle at 65% 70%, rgba(255, 255, 255, 0.5) 0.45px, transparent 0.45px),
+                radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.7) 0.55px, transparent 0.55px),
+                radial-gradient(circle at 88% 60%, rgba(255, 255, 255, 0.6) 0.5px, transparent 0.5px),
+                radial-gradient(circle at 22% 80%, rgba(255, 255, 255, 0.7) 0.6px, transparent 0.6px),
+                radial-gradient(circle at 55% 45%, rgba(255, 255, 255, 0.55) 0.5px, transparent 0.5px),
+                radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.65) 0.55px, transparent 0.55px),
+                radial-gradient(circle at 38% 90%, rgba(255, 255, 255, 0.6) 0.5px, transparent 0.5px);
+            background-size: 180px 180px;
+            opacity: 0.55;
+        }
+        .flour-dust>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === SECTION TITLES === */
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2rem, 3vw + 1rem, 3.2rem);
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+            color: var(--croute);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .section-title .loose-letter {
+            display: inline-block;
+            letter-spacing: -0.04em;
+            transform: translateY(-0.03em);
+        }
+        .section-title .tight-pair {
+            letter-spacing: -0.07em;
+        }
+        .section-eyebrow {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brique);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-intro {
+            font-size: clamp(1rem, 0.5rem + 1vw, 1.15rem);
+            color: var(--bois);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* === FOURNIL SECTION === */
+        .fournil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 4rem);
+            align-items: center;
+        }
+        .fournil-img-wrap {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+            background: var(--croute);
+        }
+        .fournil-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: sepia(0.2) brightness(0.85) contrast(1.15);
+            transition: filter 0.5s ease;
+        }
+        .fournil-img-wrap:hover img {
+            filter: sepia(0.1) brightness(0.9) contrast(1.1);
+        }
+        .fournil-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(var(--brique-rgb), 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .fournil-accent {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 0.9;
+            color: var(--brique);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .fournil-grid {
+                grid-template-columns: 1fr;
+            }
+            .fournil-img-wrap {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* === COMPTOIR SECTION === */
+        .comptoir {
+            background: var(--croute);
+            color: var(--farine);
+            position: relative;
+            overflow: hidden;
+        }
+        .comptoir::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(212, 168, 83, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 75% 70%, rgba(193, 91, 61, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .comptoir .section-title {
+            color: var(--farine);
+        }
+        .comptoir .section-intro {
+            color: rgba(var(--farine-rgb), 0.75);
+        }
+        .comptoir .section-eyebrow {
+            color: var(--dore);
+        }
+        .comptoir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+            position: relative;
+            z-index: 1;
+        }
+        .comptoir-card {
+            background: rgba(var(--farine-rgb), 0.04);
+            border: 1px solid rgba(var(--farine-rgb), 0.1);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .comptoir-card:hover {
+            background: rgba(var(--farine-rgb), 0.08);
+            border-color: rgba(var(--dore-rgb), 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        .comptoir-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            filter: grayscale(0.3);
+        }
+        .comptoir-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.4rem;
+            color: var(--farine);
+        }
+        .comptoir-card p {
+            font-size: 0.9rem;
+            color: rgba(var(--farine-rgb), 0.65);
+            line-height: 1.5;
+        }
+        .comptoir-card .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--dore);
+            border: 1px solid rgba(var(--dore-rgb), 0.4);
+            padding: 3px 10px;
+            border-radius: 50px;
+            margin-top: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* === TRAITEUR SECTION === */
+        .traiteur-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            align-items: center;
+        }
+        .traiteur-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 5/4;
+            background: var(--bois);
+            box-shadow: var(--shadow-lg);
+        }
+        .traiteur-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+            filter: brightness(0.75) saturate(0.85);
+            transition: filter 0.5s ease;
+        }
+        .traiteur-visual:hover img {
+            filter: brightness(0.85) saturate(0.95);
+        }
+        .traiteur-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom right, rgba(var(--brique-rgb), 0.25), transparent 60%);
+            pointer-events: none;
+        }
+        .traiteur-cta-block {
+            background: rgba(var(--brique-rgb), 0.05);
+            border-left: 4px solid var(--brique);
+            padding: 1.5rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 1.5rem;
+        }
+        .traiteur-cta-block .tel-large {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.3rem, 1rem + 1vw, 1.6rem);
+            color: var(--brique);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.2s;
+        }
+        .traiteur-cta-block .tel-large:hover {
+            color: #a84e35;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .traiteur-grid {
+                grid-template-columns: 1fr;
+            }
+            .traiteur-visual {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+        }
+
+        /* === HORAIRES SECTION === */
+        .horaires-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            align-items: start;
+        }
+        .horaires-list {
+            list-style: none;
+        }
+        .horaires-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(var(--croute-rgb), 0.1);
+            font-size: 0.95rem;
+            gap: 1rem;
+        }
+        .horaires-list .day {
+            font-weight: 600;
+            color: var(--croute);
+        }
+        .horaires-list .time {
+            color: var(--bois);
+            text-align: right;
+        }
+        .horaires-list .closed {
+            color: var(--brique);
+            font-weight: 500;
+        }
+        .map-wrap {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/3;
+            background: var(--bois);
+        }
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .address-block {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--bois);
+            line-height: 1.7;
+        }
+        .address-block strong {
+            color: var(--croute);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .horaires-wrap {
+                grid-template-columns: 1fr;
+            }
+            .map-wrap {
+                aspect-ratio: 16/10;
+                order: -1;
+            }
+        }
+
+        /* === AVIS SECTION === */
+        .avis {
+            background: rgba(var(--croute-rgb), 0.03);
+            position: relative;
+        }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+        .avis-card {
+            background: var(--farine);
+            border: 1px solid rgba(var(--croute-rgb), 0.08);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .avis-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .avis-card .quote-mark {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 0.6;
+            color: var(--brique);
+            opacity: 0.3;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .avis-card blockquote {
+            font-style: italic;
+            color: var(--croute);
+            line-height: 1.55;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            border: none;
+            padding: 0;
+        }
+        .avis-card .author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bois);
+            letter-spacing: 0.02em;
+        }
+        .avis-card .author span {
+            color: var(--herbe);
+            font-weight: 400;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--croute);
+            letter-spacing: 0.03em;
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            border: 1.5px solid rgba(var(--croute-rgb), 0.2);
+            border-radius: var(--radius-sm);
+            background: var(--farine);
+            color: var(--croute);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.01em;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--brique);
+            box-shadow: 0 0 0 3px rgba(var(--brique-rgb), 0.1);
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            align-self: flex-start;
+        }
+        .contact-infos {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            padding: 1.5rem;
+            background: rgba(var(--croute-rgb), 0.03);
+            border-radius: var(--radius-md);
+        }
+        .contact-infos .info-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .contact-infos .info-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: rgba(var(--brique-rgb), 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .contact-infos .info-text {
+            font-size: 0.9rem;
+            color: var(--bois);
+            line-height: 1.5;
+        }
+        .contact-infos .info-text strong {
+            display: block;
+            color: var(--croute);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+        .contact-infos a {
+            color: var(--brique);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-infos a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-infos {
+                order: -1;
+            }
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--croute);
+            color: rgba(var(--farine-rgb), 0.7);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 5vw, 2.5rem);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            border-top: 1px solid rgba(var(--farine-rgb), 0.08);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+        }
+        .footer h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            color: var(--farine);
+            margin-bottom: 0.6rem;
+        }
+        .footer a {
+            color: rgba(var(--farine-rgb), 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: var(--dore);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(var(--farine-rgb), 0.1);
+            font-size: 0.8rem;
+            color: rgba(var(--farine-rgb), 0.45);
+            letter-spacing: 0.03em;
+        }
+        .footer-bottom a {
+            color: rgba(var(--farine-rgb), 0.55);
+        }
+        .footer-bottom a:hover {
+            color: var(--dore);
+        }
+
+        /* === REVEAL ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* === UTILS === */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-brique {
+            color: var(--brique);
+        }
+        .text-dore {
+            color: var(--dore);
+        }
+        .text-herbe {
+            color: var(--herbe);
+        }
+        .divider-dotted {
+            width: 60px;
+            height: 3px;
+            background: repeating-linear-gradient(90deg, var(--brique) 0px, var(--brique) 4px, transparent 4px, transparent 8px);
+            margin: 1.5rem 0;
+            border: none;
+            opacity: 0.6;
+        }
+
+        /* === FOCUS === */
+        :focus-visible {
+            outline: 2px solid var(--brique);
+            outline-offset: 2px;
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--brique);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+        <a href="#" class="nav-brand">Bakery <span>Lourmel</span></a>
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#fournil">Le fournil</a></li>
+            <li><a href="#comptoir">Au comptoir</a></li>
+            <li><a href="#traiteur">Traiteur</a></li>
+            <li><a href="#horaires">Horaires</a></li>
+            <li><a href="#avis">Avis</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:+33144263074" class="nav-cta">📞 01 44 26 30 74</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="stars" aria-hidden="true">★★★☆☆</span>
+                    <span>3,0</span>
+                    <span class="count">· 222 avis</span>
+                </div>
+                <h1 id="hero-title">
+                    <span class="word-stack">L'avenue Félix Faure</span>
+                    <span class="word-stack">s'éveille avec l'odeur</span>
+                    <span class="word-stack">du pain chaud.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Depuis vingt ans, nos fournées rythment la vie du 15e — baguettes craquantes,
+                    viennoiseries au beurre et pâtisseries orientales sorties du fournil à toute heure.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#comptoir" class="btn btn-primary">Découvrir nos pains</a>
+                    <a href="#horaires" class="btn btn-ghost">Horaires & adresse</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-inner">
+                    <img src="assets/maps-1.jpg" alt="Façade de Bakery Lourmel au 121 avenue Félix Faure, Paris 15e" class="hero-img" loading="eager" fetchpriority="high">
+                </div>
+                <span class="hero-visual-label">121 av. Félix Faure · Paris 15ᵉ</span>
+            </div>
+        </section>
+
+        <!-- LE FOURNIL -->
+        <section class="section flour-dust" id="fournil" aria-labelledby="fournil-title">
+            <span class="section-eyebrow reveal">Le fournil</span>
+            <h2 class="section-title reveal reveal-delay-1" id="fournil-title">
+                <span class="loose-letter">C</span>e qui se <span class="tight-pair">pa</span>sse
+                <span class="loose-letter">a</span>vant <span class="tight-pair">6h</span>30
+            </h2>
+            <div class="divider-dotted reveal reveal-delay-2"></div>
+            <div class="fournil-grid">
+                <div class="reveal reveal-delay-2">
+                    <span class="fournil-accent">5h00</span>
+                    <p class="section-intro">
+                        Le levain a fermenté toute la nuit dans le pétrin de bois. Les mains savent déjà
+                        le poids de chaque pâton. À 6h00, la première fournée glisse sur la sole en brique :
+                        l'air se remplit de cette odeur qui réveille l'avenue. Pas de machine automatique ici —
+                        juste des gestes transmis et une farine de meule qui donne à la croûte son caractère.
+                    </p>
+                    <p style="color:var(--bois);font-size:0.9rem;">
+                        Nous travaillons au levain naturel, avec des farines sélectionnées pour leur goût.
+                        Chaque jour, quatre fournées pour que vous trouviez du pain chaud, du petit matin
+                        jusqu'à la fermeture.
+                    </p>
+                </div>
+                <div class="fournil-img-wrap reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Le fournil de Bakery Lourmel en pleine action" loading="lazy" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <!-- AU COMPTOIR -->
+        <section class="section comptoir" id="comptoir" aria-labelledby="comptoir-title">
+            <span class="section-eyebrow reveal">Au comptoir</span>
+            <h2 class="section-title reveal reveal-delay-1" id="comptoir-title">
+                Des <span class="text-dore">pains</span>, des
+                <span class="text-dore">viennoiseries</span>,<br>des
+                <span class="text-dore">douceurs</span>
+            </h2>
+            <p class="section-intro reveal reveal-delay-2" style="max-width:650px;">
+                Une sélection de ce que nos clients viennent chercher chaque matin.
+                Pas de catalogue interminable : l'essentiel, bien fait.
+            </p>
+            <div class="comptoir-grid reveal reveal-delay-3">
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🥖</span>
+                    <h3>Baguette Tradition</h3>
+                    <p>Farine de meule, levain naturel, longue fermentation. Craquante à souhait, mie alvéolée.</p>
+                    <span class="tag">Best-seller</span>
+                </div>
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🥐</span>
+                    <h3>Croissant pur beurre AOP</h3>
+                    <p>Feuilletage au beurre Charentes-Poitou, doré lentement. Fondant et croustillant.</p>
+                    <span class="tag">Pur beurre</span>
+                </div>
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🍞</span>
+                    <h3>Tourte de meule</h3>
+                    <p>Pain de campagne dense, farine semi-complète, parfait pour les grandes tablées.</p>
+                    <span class="tag">Sur commande</span>
+                </div>
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🍰</span>
+                    <h3>Baba au rhum maison</h3>
+                    <p>Biscuit moelleux imbibé, crème légère. La touche française qui conclut un repas.</p>
+                    <span class="tag">Fait maison</span>
+                </div>
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🥮</span>
+                    <h3>Baklava aux amandes</h3>
+                    <p>Feuilles de brick croustillantes, miel parfumé, amandes torréfiées. Parfum d'Orient.</p>
+                    <span class="tag">Spécialité</span>
+                </div>
+                <div class="comptoir-card">
+                    <span class="comptoir-card-icon" aria-hidden="true">🧁</span>
+                    <h3>Viennoiserie du jour</h3>
+                    <p>Pain au chocolat, chausson aux pommes, escargot pistache — selon l'humeur du fournil.</p>
+                    <span class="tag">Rotation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAITEUR -->
+        <section class="section flour-dust" id="traiteur" aria-labelledby="traiteur-title">
+            <span class="section-eyebrow reveal">Les grandes tables</span>
+            <h2 class="section-title reveal reveal-delay-1" id="traiteur-title">
+                Buffets, cocktails,<br>
+                <span class="text-brique">mariages</span> : on livre chaud
+            </h2>
+            <div class="traiteur-grid">
+                <div class="reveal reveal-delay-2">
+                    <p class="section-intro">
+                        Plateaux de pâtisseries orientales pour les fêtes, pièces montées sur commande,
+                        brunchs d'entreprise, cocktails dinatoires. Nous préparons tout sur place et
+                        livrons dans le 15e et les arrondissements voisins.
+                    </p>
+                    <p style="color:var(--bois);font-size:0.9rem;margin-bottom:1rem;">
+                        Pour les grandes occasions, passez commande la veille. On s'adapte à vos besoins :
+                        régimes spécifiques, formats, présentation soignée.
+                    </p>
+                    <div class="traiteur-cta-block reveal reveal-delay-3">
+                        <p style="font-weight:600;color:var(--croute);margin-bottom:6px;">Parlez-nous de votre projet :</p>
+                        <a href="tel:+33144263074" class="tel-large">01 44 26 30 74</a>
+                    </div>
+                </div>
+                <div class="traiteur-visual reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Plateaux de pâtisseries orientales Bakery Lourmel" loading="lazy" width="500" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAIRES & ADRESSE -->
+        <section class="section" id="horaires" aria-labelledby="horaires-title">
+            <span class="section-eyebrow reveal">Infos pratiques</span>
+            <h2 class="section-title reveal reveal-delay-1" id="horaires-title">
+                Passez quand le <span class="text-brique">four</span> est allumé
+            </h2>
+            <div class="divider-dotted reveal reveal-delay-2"></div>
+            <div class="horaires-wrap">
+                <div class="reveal reveal-delay-2">
+                    <ul class="horaires-list">
+                        <li><span class="day">Lundi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Mardi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Mercredi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Jeudi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Vendredi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Samedi</span><span class="time">06:30 – 20:00</span></li>
+                        <li><span class="day">Dimanche</span><span class="time closed">06:30 – 13:00</span></li>
+                    </ul>
+                    <div class="address-block reveal reveal-delay-3">
+                        <strong>Bakery Lourmel</strong>
+                        121 Avenue Félix Faure, 75015 Paris<br>
+                        <a href="tel:+33144263074" style="color:var(--brique);text-decoration:none;font-weight:500;">01 44 26 30 74</a><br>
+                        <a href="mailto:imen_chouaref@yahoo.fr" style="color:var(--brique);text-decoration:none;font-weight:500;">imen_chouaref@yahoo.fr</a>
+                    </div>
+                </div>
+                <div class="map-wrap reveal reveal-delay-3">
+                    <iframe src="https://maps.google.com/maps?q=Bakery+Lourmel+121+Avenue+F%C3%A9lix+Faure%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Bakery Lourmel" aria-label="Carte Google Maps montrant l'emplacement de la boulangerie"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section avis" id="avis" aria-labelledby="avis-title">
+            <span class="section-eyebrow reveal">Le quartier nous connaît</span>
+            <h2 class="section-title reveal reveal-delay-1" id="avis-title">
+                Ce que disent les <span class="text-herbe">voisins</span>
+            </h2>
+            <p class="section-intro reveal reveal-delay-2">
+                Des clients qui passent chaque semaine, parfois chaque jour.
+                Voici ce qu'ils racontent.
+            </p>
+            <div class="avis-grid">
+                <div class="avis-card reveal reveal-delay-2">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <blockquote>
+                        Le croissant aux amandes du samedi, c'est notre rituel. Ma fille ne jure que par lui
+                        depuis qu'elle a quatre ans — et elle en a douze aujourd'hui.
+                    </blockquote>
+                    <p class="author">Marie <span>· habitante de l'avenue</span></p>
+                </div>
+                <div class="avis-card reveal reveal-delay-3">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <blockquote>
+                        J'habite au 130, je traverse tous les matins. La baguette Tradition est toujours
+                        chaude quand je passe à 7h15. L'accueil est franc, on connaît mon prénom.
+                    </blockquote>
+                    <p class="author">Karim <span>· voisin du quartier</span></p>
+                </div>
+                <div class="avis-card reveal reveal-delay-4">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <blockquote>
+                        Pour le baptême de mon fils, j'ai commandé un plateau de baklavas et une pièce montée.
+                        Tout était prêt à l'heure, présenté avec soin. Les invités ont tout dévoré.
+                    </blockquote>
+                    <p class="author">Sophie <span>· cliente traiteur</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section flour-dust" id="contact" aria-labelledby="contact-title">
+            <span class="section-eyebrow reveal">Contact & traiteur express</span>
+            <h2 class="section-title reveal reveal-delay-1" id="contact-title">
+                Une commande,<br>une <span class="text-brique">question</span> ?
+            </h2>
+            <div class="contact-grid">
+                <form class="contact-form reveal reveal-delay-2" aria-label="Formulaire de contact">
+                    <div>
+                        <label for="contact-name">Votre nom</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Prénom et nom" required>
+                    </div>
+                    <div>
+                        <label for="contact-email">Votre email</label>
+                        <input type="email" id="contact-email" name="email" placeholder="vous@email.fr" required>
+                    </div>
+                    <div>
+                        <label for="contact-subject">Sujet</label>
+                        <select id="contact-subject" name="subject">
+                            <option value="traiteur">Demande traiteur / événement</option>
+                            <option value="commande">Commande de pains ou pâtisseries</option>
+                            <option value="info">Renseignement général</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="contact-message">Votre message</label>
+                        <textarea id="contact-message" name="message" placeholder="Décrivez votre demande..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+                <div class="contact-infos reveal reveal-delay-3">
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">📞</span>
+                        <span class="info-text">
+                            <strong>Téléphone</strong>
+                            <a href="tel:+33144263074">01 44 26 30 74</a><br>
+                            <span style="font-size:0.8rem;opacity:0.7;">Appelez pour les commandes traiteur</span>
+                        </span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">✉️</span>
+                        <span class="info-text">
+                            <strong>Email</strong>
+                            <a href="mailto:imen_chouaref@yahoo.fr">imen_chouaref@yahoo.fr</a>
+                        </span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">📍</span>
+                        <span class="info-text">
+                            <strong>Adresse</strong>
+                            121 Avenue Félix Faure<br>75015 Paris
+                        </span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">🕐</span>
+                        <span class="info-text">
+                            <strong>Ouvert</strong>
+                            Lun–Sam : 6h30–20h00<br>
+                            Dimanche : 6h30–13h00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-grid">
+            <div>
+                <h4>Bakery Lourmel</h4>
+                <p>
+                    121 Avenue Félix Faure<br>
+                    75015 Paris<br>
+                    <a href="tel:+33144263074">01 44 26 30 74</a><br>
+                    <a href="mailto:imen_chouaref@yahoo.fr">imen_chouaref@yahoo.fr</a>
+                </p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <p>
+                    <a href="#fournil">Le fournil</a><br>
+                    <a href="#comptoir">Au comptoir</a><br>
+                    <a href="#traiteur">Traiteur</a><br>
+                    <a href="#horaires">Horaires</a><br>
+                    <a href="#avis">Avis</a><br>
+                    <a href="#contact">Contact</a>
+                </p>
+            </div>
+            <div>
+                <h4>Horaires</h4>
+                <p>
+                    Lun–Sam : 6h30 – 20h00<br>
+                    Dimanche : 6h30 – 13h00<br>
+                    <span style="opacity:0.6;">Fermé le dimanche après-midi</span>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Bakery Lourmel — Boulangerie artisanale du 15ᵉ arrondissement de Paris. Site créé par <a href="https://agence.mooo.com" rel="noopener">Agence Mooo</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Navigation scroll shadow
+            const nav = document.getElementById('nav');
+            let scrollTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 20) {
+                            nav.classList.add('scrolled');
+                        } else {
+                            nav.classList.remove('scrolled');
+                        }
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+
+            // Mobile nav toggle
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            navToggle.addEventListener('click', function() {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Close mobile nav on link click
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('open');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver for reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)')
+                .matches) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                // If no IntersectionObserver or reduced motion, show all immediately
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // Contact form basic handling (prevent default for demo)
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Message envoyé — merci !';
+                    btn.style.background = '#7A8B5E';
+                    btn.disabled = true;
+                    setTimeout(function() {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        contactForm.reset();
+                    }, 3000);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
