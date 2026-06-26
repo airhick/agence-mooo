@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Comptoir Des Mobiles | Réparation iPhone, Samsung, Mac, PC à Neuilly-sur-Seine</title>
+    <meta name="description" content="Réparation express en 30 minutes à Neuilly-sur-Seine. Diagnostic offert. iPhone, Samsung, Mac, PC, tablettes et montres connectées. 4 ateliers à Neuilly, Boulogne et Montrouge. Note 4.6★ — 248 avis.">
+    <meta property="og:title" content="Le Comptoir Des Mobiles — Réparé en 30 minutes. Garanti.">
+    <meta property="og:description" content="Diagnostic offert dans nos 4 ateliers de Neuilly, Boulogne et Montrouge. iPhone, Samsung, Mac, PC. Avec ou sans rendez-vous.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Le Comptoir Des Mobiles",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "27 Rue de Chartres",
+                "addressLocality": "Neuilly-sur-Seine",
+                "postalCode": "92200",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33141928204",
+            "email": "info@lecomptoirdesmobiles.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "248"
+            },
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:30",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "10:00",
+                    "closes": "18:00"
+                }
+            ]
+        }
+    </script>
+    <style>
+        :root {
+            --blanc-bois: #F7F3EE;
+            --noir-carbone: #1C1C1C;
+            --vert-comptoir: #4E5E2B;
+            --vert-touches: #7A8B3F;
+            --gris-etabli: #E8E4DF;
+            --rouge-intervention: #C8472B;
+            --blanc-pur: #FFFFFF;
+            --ombre-douce: 0 4px 24px rgba(28, 28, 28, 0.07);
+            --ombre-profonde: 0 12px 40px rgba(28, 28, 28, 0.13);
+            --rayon-carte: 20px;
+            --transition-vive: 220ms cubic-bezier(0.33, 0.00, 0.18, 1.00);
+            --transition-fluide: 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+            --filet-largeur: 2px;
+            --badge-taille: clamp(2.6rem, 4.5vw, 3.4rem);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5.5rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--blanc-bois);
+            color: var(--noir-carbone);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.15vw + 0.5rem, 1.15rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Filet d'établi — vertical, traverse toute la page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: clamp(2.5rem, 7vw, 7rem);
+            width: var(--filet-largeur);
+            height: 100vh;
+            background: var(--vert-comptoir);
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.82;
+            transform-origin: top center;
+            animation: filetAppear 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        @keyframes filetAppear {
+            0% {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scaleY(1);
+                opacity: 0.82;
+            }
+        }
+
+        /* Container principal */
+        .page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 9990;
+            background: rgba(247, 243, 238, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(78, 94, 43, 0.12);
+            padding: 0.9rem 0;
+            transition: all var(--transition-fluide);
+        }
+        .site-header.scrolled {
+            box-shadow: var(--ombre-douce);
+            background: rgba(247, 243, 238, 0.96);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .logo-texte {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+            letter-spacing: 0.03em;
+            color: var(--vert-comptoir);
+            white-space: nowrap;
+            line-height: 1.15;
+        }
+        .logo-texte span {
+            font-weight: 500;
+            color: var(--noir-carbone);
+            display: block;
+            font-size: 0.48em;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-top: -0.15em;
+        }
+        .nav-principale {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 2.5vw, 2.2rem);
+            flex-wrap: wrap;
+        }
+        .nav-principale a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.92rem;
+            letter-spacing: 0.025em;
+            color: var(--noir-carbone);
+            text-decoration: none;
+            position: relative;
+            padding: 0.35em 0;
+            transition: color var(--transition-vive);
+            white-space: nowrap;
+        }
+        .nav-principale a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--vert-comptoir);
+            transition: width var(--transition-vive);
+        }
+        .nav-principale a:hover,
+        .nav-principale a:focus-visible {
+            color: var(--vert-comptoir);
+            outline: none;
+        }
+        .nav-principale a:hover::after,
+        .nav-principale a:focus-visible::after {
+            width: 100%;
+        }
+        .cta-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--vert-comptoir);
+            color: var(--blanc-pur);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            padding: 0.65rem 1.35rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all var(--transition-vive);
+            white-space: nowrap;
+            position: relative;
+            box-shadow: 0 4px 14px rgba(78, 94, 43, 0.22);
+        }
+        .cta-header:hover {
+            background: var(--vert-touches);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(78, 94, 43, 0.32);
+        }
+        .badge-google-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: var(--blanc-pur);
+            border: 1.5px solid var(--gris-etabli);
+            border-radius: 50px;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--noir-carbone);
+            white-space: nowrap;
+            letter-spacing: 0.015em;
+        }
+        .badge-google-header .star {
+            color: #F4B400;
+            font-size: 1.05rem;
+            line-height: 1;
+        }
+
+        /* Sections */
+        .section {
+            padding: clamp(3rem, 8vh, 7rem) 0;
+            position: relative;
+        }
+        .section-titre {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2.1rem, 4.5vw, 3.6rem);
+            letter-spacing: 0.05em;
+            color: var(--noir-carbone);
+            margin-bottom: clamp(1.8rem, 4vh, 3.2rem);
+            line-height: 1.15;
+            position: relative;
+            display: inline-block;
+        }
+        .section-titre::after {
+            content: '';
+            position: absolute;
+            bottom: -0.35em;
+            left: 0;
+            width: 2.6em;
+            height: 3px;
+            background: var(--vert-touches);
+            border-radius: 2px;
+        }
+        .section-chapeau {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+            color: rgba(28, 28, 28, 0.72);
+            max-width: 48ch;
+            margin-bottom: 2.5rem;
+            line-height: 1.65;
+        }
+
+        /* HÉRO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 7vw, 6rem);
+            align-items: center;
+            min-height: 75vh;
+            padding-top: clamp(2rem, 5vh, 4rem);
+            padding-bottom: clamp(2rem, 5vh, 4rem);
+        }
+        .hero-texte {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge-min {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--badge-taille);
+            height: var(--badge-taille);
+            border-radius: 50%;
+            background: var(--rouge-intervention);
+            color: var(--blanc-pur);
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(0.7rem, 1.1vw, 0.85rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+            line-height: 1.1;
+            box-shadow: 0 0 0 6px rgba(200, 71, 43, 0.18), 0 8px 24px rgba(200, 71, 43, 0.3);
+            animation: pulseBadge 2.4s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        @keyframes pulseBadge {
+            0%,
+            100% {
+                box-shadow: 0 0 0 6px rgba(200, 71, 43, 0.18), 0 8px 24px rgba(200, 71, 43, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 0 14px rgba(200, 71, 43, 0.05), 0 12px 32px rgba(200, 71, 43, 0.4);
+            }
+        }
+        .hero-titre {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            letter-spacing: 0.05em;
+            color: var(--noir-carbone);
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+        }
+        .hero-sous-titre {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+            color: rgba(28, 28, 28, 0.7);
+            max-width: 42ch;
+            line-height: 1.55;
+            margin-bottom: 2rem;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: var(--rayon-carte);
+            overflow: hidden;
+            box-shadow: var(--ombre-profonde);
+            aspect-ratio: 4/3;
+            transform: rotate(0.5deg);
+            transition: transform var(--transition-fluide);
+        }
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.94) contrast(1.06) saturate(0.85);
+            transition: filter var(--transition-fluide);
+        }
+        .hero-image-wrapper:hover img {
+            filter: brightness(1) contrast(1.08) saturate(0.9);
+        }
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(78, 94, 43, 0.13) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Bloc Urgence */
+        .bloc-urgence {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            box-shadow: var(--ombre-douce);
+            border-left: 6px solid var(--rouge-intervention);
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow var(--transition-fluide);
+        }
+        .bloc-urgence:hover {
+            box-shadow: var(--ombre-profonde);
+        }
+        .bloc-urgence::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(200, 71, 43, 0.04);
+            pointer-events: none;
+        }
+        .bloc-urgence-titre {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            letter-spacing: 0.04em;
+            color: var(--noir-carbone);
+            margin-bottom: 0.7rem;
+        }
+        .bloc-urgence-texte {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.3vw, 1.1rem);
+            color: rgba(28, 28, 28, 0.7);
+            max-width: 52ch;
+            line-height: 1.6;
+        }
+
+        /* Services Express */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.4rem);
+        }
+        .carte-service {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: 2rem 1.7rem;
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition-fluide);
+            position: relative;
+            border-top: 3px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .carte-service:hover {
+            border-top-color: var(--vert-comptoir);
+            box-shadow: var(--ombre-profonde);
+            transform: translateY(-4px);
+        }
+        .carte-service-icone {
+            font-size: 2.3rem;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .carte-service-titre {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-carbone);
+        }
+        .carte-service-prix {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--vert-comptoir);
+            letter-spacing: 0.02em;
+        }
+        .carte-service-detail {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: rgba(28, 28, 28, 0.6);
+            line-height: 1.5;
+        }
+
+        /* Étapes */
+        .etapes-liste {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            counter-reset: etape;
+            position: relative;
+        }
+        .etape-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.8rem;
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: 2rem 2.2rem;
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition-fluide);
+            counter-increment: etape;
+            position: relative;
+            border-left: 5px solid var(--gris-etabli);
+            transition: border-left-color var(--transition-vive), box-shadow var(--transition-fluide);
+        }
+        .etape-item:hover {
+            border-left-color: var(--vert-comptoir);
+            box-shadow: var(--ombre-profonde);
+        }
+        .etape-numero {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: var(--gris-etabli);
+            line-height: 1;
+            min-width: 3.5rem;
+            transition: color var(--transition-vive);
+        }
+        .etape-item:hover .etape-numero {
+            color: var(--vert-touches);
+        }
+        .etape-contenu h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-carbone);
+            margin-bottom: 0.35rem;
+        }
+        .etape-contenu p {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.98rem;
+            color: rgba(28, 28, 28, 0.68);
+            line-height: 1.55;
+            max-width: 44ch;
+        }
+
+        /* Avis */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.4rem);
+        }
+        .carte-avis {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: 2rem 1.8rem;
+            box-shadow: var(--ombre-douce);
+            position: relative;
+            transition: all var(--transition-fluide);
+        }
+        .carte-avis:hover {
+            box-shadow: var(--ombre-profonde);
+            transform: translateY(-3px);
+        }
+        .carte-avis-etoiles {
+            color: #F4B400;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+        .carte-avis-texte {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.98rem;
+            color: rgba(28, 28, 28, 0.78);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        .carte-avis-auteur {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--noir-carbone);
+            letter-spacing: 0.02em;
+        }
+        .carte-avis-auteur span {
+            font-weight: 400;
+            color: rgba(28, 28, 28, 0.5);
+            font-size: 0.82rem;
+        }
+
+        /* Comptoirs */
+        .comptoirs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.4rem);
+        }
+        .carte-comptoir {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: 2rem 1.8rem;
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition-fluide);
+            border-top: 4px solid var(--vert-comptoir);
+        }
+        .carte-comptoir:hover {
+            box-shadow: var(--ombre-profonde);
+        }
+        .carte-comptoir h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-carbone);
+            margin-bottom: 0.7rem;
+        }
+        .carte-comptoir .adresse {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: rgba(28, 28, 28, 0.68);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .carte-comptoir .horaires {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.88rem;
+            color: rgba(28, 28, 28, 0.6);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+        .btn-itineraire {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--vert-comptoir);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition-vive);
+        }
+        .btn-itineraire:hover {
+            border-bottom-color: var(--vert-comptoir);
+            color: var(--vert-touches);
+        }
+
+        /* FAQ */
+        .faq-liste {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .faq-item {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            box-shadow: var(--ombre-douce);
+            overflow: hidden;
+            transition: all var(--transition-fluide);
+            border-left: 3px solid transparent;
+        }
+        .faq-item.ouvert {
+            border-left-color: var(--vert-comptoir);
+            box-shadow: var(--ombre-profonde);
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.025em;
+            color: var(--noir-carbone);
+            padding: 1.4rem 1.8rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color var(--transition-vive);
+        }
+        .faq-question:hover {
+            color: var(--vert-comptoir);
+        }
+        .faq-question .fleche {
+            font-size: 1.3rem;
+            transition: transform var(--transition-vive);
+            color: var(--vert-touches);
+            flex-shrink: 0;
+        }
+        .faq-item.ouvert .faq-question .fleche {
+            transform: rotate(180deg);
+        }
+        .faq-reponse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-fluide), padding var(--transition-fluide);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: rgba(28, 28, 28, 0.68);
+            line-height: 1.6;
+            padding: 0 1.8rem;
+        }
+        .faq-item.ouvert .faq-reponse {
+            max-height: 120px;
+            padding: 0 1.8rem 1.4rem;
+        }
+
+        /* Formulaire */
+        .formulaire-rdv {
+            background: var(--blanc-pur);
+            border-radius: var(--rayon-carte);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            box-shadow: var(--ombre-douce);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            align-items: end;
+        }
+        .form-groupe {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .form-groupe label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-carbone);
+            text-transform: uppercase;
+        }
+        .form-groupe select,
+        .form-groupe input {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--gris-etabli);
+            border-radius: 12px;
+            background: var(--blanc-bois);
+            color: var(--noir-carbone);
+            transition: all var(--transition-vive);
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+        .form-groupe select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%234E5E2B'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.4rem;
+        }
+        .form-groupe select:focus,
+        .form-groupe input:focus {
+            outline: none;
+            border-color: var(--vert-comptoir);
+            box-shadow: 0 0 0 4px rgba(78, 94, 43, 0.08);
+        }
+        .btn-soumettre {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 2rem;
+            background: var(--vert-comptoir);
+            color: var(--blanc-pur);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-vive);
+            box-shadow: 0 4px 14px rgba(78, 94, 43, 0.22);
+            white-space: nowrap;
+            align-self: end;
+            height: fit-content;
+        }
+        .btn-soumettre:hover {
+            background: var(--vert-touches);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78, 94, 43, 0.32);
+        }
+
+        /* Carte */
+        .carte-wrapper {
+            border-radius: var(--rayon-carte);
+            overflow: hidden;
+            box-shadow: var(--ombre-profonde);
+            margin-top: 2rem;
+            border: 3px solid var(--gris-etabli);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--noir-carbone);
+            color: var(--blanc-bois);
+            padding: clamp(2.5rem, 6vh, 4.5rem) 0 1.5rem;
+            margin-top: clamp(3rem, 8vh, 7rem);
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 5rem);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+        .footer-col h4 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1rem;
+            color: var(--blanc-pur);
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.92rem;
+            color: rgba(247, 243, 238, 0.7);
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color var(--transition-vive);
+        }
+        .footer-col a:hover {
+            color: var(--vert-touches);
+        }
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem clamp(1.5rem, 5vw, 5rem) 0;
+            border-top: 1px solid rgba(247, 243, 238, 0.12);
+            margin-top: 2.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(247, 243, 238, 0.45);
+            letter-spacing: 0.02em;
+        }
+
+        /* Sticky footer tel */
+        .sticky-tel {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9995;
+            background: var(--vert-comptoir);
+            color: var(--blanc-pur);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            padding: 0.75rem 1.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(78, 94, 43, 0.45);
+            transition: all var(--transition-fluide);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sticky-tel:hover {
+            background: var(--vert-touches);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 34px rgba(78, 94, 43, 0.55);
+        }
+
+        /* Badge 30 min flottant près des CTA */
+        .badge-30min {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            background: var(--rouge-intervention);
+            color: var(--blanc-pur);
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.03em;
+            text-align: center;
+            line-height: 1.1;
+            box-shadow: 0 0 0 4px rgba(200, 71, 43, 0.15);
+            animation: pulseBadgePetit 2.2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes pulseBadgePetit {
+            0%,
+            100% {
+                box-shadow: 0 0 0 4px rgba(200, 71, 43, 0.15);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(200, 71, 43, 0.03);
+            }
+        }
+
+        /* Liseré vert olive sur intertitres dans les cartes */
+        .liseres-connecteurs {
+            border-left: 3px solid var(--vert-comptoir);
+            padding-left: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: 2.5rem;
+            }
+            .hero-image-wrapper {
+                aspect-ratio: 3/2;
+                order: -1;
+            }
+            body::before {
+                left: 1.2rem;
+                width: 1.5px;
+            }
+            .nav-principale {
+                gap: 0.8rem;
+            }
+            .header-inner {
+                gap: 0.8rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+            .nav-principale {
+                flex-wrap: wrap;
+                gap: 0.5rem 0.8rem;
+            }
+            .nav-principale a {
+                font-size: 0.8rem;
+            }
+            .cta-header {
+                font-size: 0.78rem;
+                padding: 0.5rem 1rem;
+            }
+            .badge-google-header {
+                font-size: 0.72rem;
+                padding: 0.25rem 0.6rem;
+            }
+            body::before {
+                display: none;
+            }
+            .sticky-tel {
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 0.78rem;
+                padding: 0.6rem 1.1rem;
+            }
+        }
+
+        /* Animations au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-gauche {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal-gauche.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo-texte" aria-label="Le Comptoir Des Mobiles — Accueil">Le Comptoir<br>Des Mobiles<span>Neuilly-sur-Seine</span></a>
+            <nav class="nav-principale" aria-label="Navigation principale">
+                <a href="#services">Services</a>
+                <a href="#etapes">Comment ça se passe</a>
+                <a href="#avis">Avis</a>
+                <a href="#comptoirs">Comptoirs</a>
+                <a href="#faq">FAQ</a>
+                <div class="badge-google-header" aria-label="Note Google 4.6 sur 5 étoiles, 248 avis">
+                    <span class="star">★</span> 4.6 <span style="font-weight:400;color:rgba(28,28,28,0.5);">(248)</span>
+                </div>
+                <a href="#rdv" class="cta-header">Prendre rendez-vous</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- HÉRO -->
+        <section class="hero section" id="hero">
+            <div class="hero-texte reveal">
+                <div class="hero-badge-min" aria-hidden="true">30<br>min</div>
+                <h1 class="hero-titre">Réparé en 30&nbsp;minutes. Garanti.</h1>
+                <p class="hero-sous-titre">iPhone, Samsung, Mac, PC — diagnostic offert dans nos 4 ateliers de Neuilly, Boulogne et Montrouge. Avec ou sans rendez-vous.</p>
+                <a href="#rdv" class="cta-header" style="font-size:1rem;padding:0.85rem 2rem;">Diagnostic gratuit immédiat</a>
+            </div>
+            <div class="hero-image-wrapper reveal-gauche">
+                <img src="assets/maps-1.jpg" alt="Le Comptoir Des Mobiles — atelier de réparation à Neuilly-sur-Seine" loading="eager" width="800" height="600">
+            </div>
+        </section>
+
+        <!-- BLOC URGENCE -->
+        <section class="section" id="urgence">
+            <div class="bloc-urgence reveal">
+                <h2 class="bloc-urgence-titre">En panne maintenant&nbsp;?</h2>
+                <p class="bloc-urgence-texte">Un connecteur qui lâche, un écran noir, une batterie à plat. Passez nous voir avant 18h30, repartez l'esprit tranquille le jour même.</p>
+                <div style="margin-top:1.2rem;display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                    <span class="badge-30min" aria-hidden="true">30<br>min</span>
+                    <a href="tel:+33141928204" style="font-family:'Outfit',sans-serif;font-weight:600;color:var(--rouge-intervention);text-decoration:none;font-size:1.05rem;letter-spacing:0.02em;">Appelez le 01 41 92 82 04</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES EXPRESS -->
+        <section class="section" id="services">
+            <h2 class="section-titre reveal">Ce que l'on répare pour vous</h2>
+            <p class="section-chapeau reveal">Des techniciens formés, des pièces de qualité, une transparence absolue sur les prix et les délais.</p>
+            <div class="services-grid">
+                <div class="carte-service reveal">
+                    <div class="carte-service-icone">📱</div>
+                    <h3 class="carte-service-titre liseres-connecteurs">Smartphone</h3>
+                    <p class="carte-service-prix">Batterie iPhone — à partir de 49&nbsp;€</p>
+                    <p class="carte-service-detail">Écran Samsung — à partir de 89&nbsp;€. Connecteur de charge, appareil photo, haut-parleur, carte mère.</p>
+                </div>
+                <div class="carte-service reveal" style="transition-delay:0.08s;">
+                    <div class="carte-service-icone">💻</div>
+                    <h3 class="carte-service-titre liseres-connecteurs">Ordinateur</h3>
+                    <p class="carte-service-prix">Mac & PC — diagnostic offert</p>
+                    <p class="carte-service-detail">Remplacement SSD, écran, clavier, batterie. Réinstallation système, récupération de données.</p>
+                </div>
+                <div class="carte-service reveal" style="transition-delay:0.14s;">
+                    <div class="carte-service-icone">📋</div>
+                    <h3 class="carte-service-titre liseres-connecteurs">Tablette</h3>
+                    <p class="carte-service-prix">iPad — à partir de 69&nbsp;€</p>
+                    <p class="carte-service-detail">Vitre tactile, batterie, connecteur, boutons. Toutes marques, tous modèles.</p>
+                </div>
+                <div class="carte-service reveal" style="transition-delay:0.20s;">
+                    <div class="carte-service-icone">⌚</div>
+                    <h3 class="carte-service-titre liseres-connecteurs">Montre connectée</h3>
+                    <p class="carte-service-prix">Apple Watch — batterie dès 59&nbsp;€</p>
+                    <p class="carte-service-detail">Écran, couronne, étanchéité. Samsung Galaxy Watch, Garmin, Fitbit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMENT ÇA SE PASSE -->
+        <section class="section" id="etapes">
+            <h2 class="section-titre reveal">Trois pas, trente minutes</h2>
+            <p class="section-chapeau reveal">Chaque étape est un engagement réel, pas une promesse vague.</p>
+            <div class="etapes-liste">
+                <div class="etape-item reveal">
+                    <div class="etape-numero">01</div>
+                    <div class="etape-contenu">
+                        <h3>Diagnostic immédiat au comptoir</h3>
+                        <p>Vous posez votre appareil sur l'établi. Nos techniciens identifient la panne en quelques minutes, sous vos yeux.</p>
+                    </div>
+                </div>
+                <div class="etape-item reveal" style="transition-delay:0.1s;">
+                    <div class="etape-numero">02</div>
+                    <div class="etape-contenu">
+                        <h3>Devis clair, sans mauvaise surprise</h3>
+                        <p>On vous annonce le prix et le délai avant toute intervention. Pas de frais cachés, pas de supplément imprévu.</p>
+                    </div>
+                </div>
+                <div class="etape-item reveal" style="transition-delay:0.2s;">
+                    <div class="etape-numero">03</div>
+                    <div class="etape-contenu">
+                        <h3>Réparation sur place et test final</h3>
+                        <p>La réparation est effectuée dans l'atelier attenant. Nous testons chaque fonction devant vous avant de vous rendre l'appareil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS HABITANTS -->
+        <section class="section" id="avis">
+            <h2 class="section-titre reveal">Plus de 240 avis nous donnent raison</h2>
+            <p class="section-chapeau reveal">La confiance de nos clients, c'est notre meilleure publicité.</p>
+            <div class="avis-grid">
+                <div class="carte-avis reveal">
+                    <div class="carte-avis-etoiles">★★★★★</div>
+                    <p class="carte-avis-texte">Écran de mon iPhone changé en moins d'une demi-heure. Accueil très professionnel, je reviendrai sans hésiter.</p>
+                    <p class="carte-avis-auteur">Claire M. <span>— Neuilly-sur-Seine</span></p>
+                </div>
+                <div class="carte-avis reveal" style="transition-delay:0.08s;">
+                    <div class="carte-avis-etoiles">★★★★★</div>
+                    <p class="carte-avis-texte">Mon MacBook ne chargeait plus, ils ont trouvé la panne en cinq minutes. Rapport qualité-prix imbattable dans le quartier.</p>
+                    <p class="carte-avis-auteur">Pierre D. <span>— Boulogne-Billancourt</span></p>
+                </div>
+                <div class="carte-avis reveal" style="transition-delay:0.14s;">
+                    <div class="carte-avis-etoiles">★★★★★</div>
+                    <p class="carte-avis-texte">J'ai cassé la vitre de ma tablette Samsung, réparée le jour même. Service rapide et très aimable, je recommande.</p>
+                    <p class="carte-avis-auteur">Nathalie V. <span>— Montrouge</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LES QUATRE COMPTOIRS -->
+        <section class="section" id="comptoirs">
+            <h2 class="section-titre reveal">Trouvez le vôtre</h2>
+            <p class="section-chapeau reveal">Quatre ateliers à votre service, avec des horaires adaptés à votre quotidien.</p>
+            <div class="comptoirs-grid">
+                <div class="carte-comptoir reveal">
+                    <h3>Neuilly — Rue de Chartres</h3>
+                    <p class="adresse">27 Rue de Chartres<br>92200 Neuilly-sur-Seine</p>
+                    <p class="horaires">Lundi – Vendredi : 9h30 – 19h00<br>Samedi : 10h00 – 18h00<br>Dimanche : fermé</p>
+                    <a href="https://maps.google.com/maps?q=Le+Comptoir+Des+Mobiles+27+Rue+de+Chartres%2C+Neuilly-sur-Seine" target="_blank" rel="noopener" class="btn-itineraire">→ Itinéraire</a>
+                </div>
+                <div class="carte-comptoir reveal" style="transition-delay:0.08s;">
+                    <h3>Boulogne — Centre</h3>
+                    <p class="adresse">Atelier Boulogne-Billancourt<br>92100 Boulogne-Billancourt</p>
+                    <p class="horaires">Lundi – Vendredi : 10h00 – 19h00<br>Samedi : 10h00 – 17h30<br>Dimanche : fermé</p>
+                    <a href="https://maps.google.com/maps?q=Le+Comptoir+Des+Mobiles+Boulogne" target="_blank" rel="noopener" class="btn-itineraire">→ Itinéraire</a>
+                </div>
+                <div class="carte-comptoir reveal" style="transition-delay:0.14s;">
+                    <h3>Montrouge — Mairie</h3>
+                    <p class="adresse">Atelier Montrouge<br>92120 Montrouge</p>
+                    <p class="horaires">Lundi – Vendredi : 10h00 – 19h00<br>Samedi : 10h00 – 18h00<br>Dimanche : fermé</p>
+                    <a href="https://maps.google.com/maps?q=Le+Comptoir+Des+Mobiles+Montrouge" target="_blank" rel="noopener" class="btn-itineraire">→ Itinéraire</a>
+                </div>
+                <div class="carte-comptoir reveal" style="transition-delay:0.20s;">
+                    <h3>Neuilly — Sablons</h3>
+                    <p class="adresse">Atelier Neuilly Sablons<br>92200 Neuilly-sur-Seine</p>
+                    <p class="horaires">Lundi – Vendredi : 9h30 – 19h00<br>Samedi : 10h00 – 17h00<br>Dimanche : fermé</p>
+                    <a href="https://maps.google.com/maps?q=Le+Comptoir+Des+Mobiles+Neuilly+Sablons" target="_blank" rel="noopener" class="btn-itineraire">→ Itinéraire</a>
+                </div>
+            </div>
+            <div class="carte-wrapper reveal">
+                <iframe src="https://maps.google.com/maps?q=Le+Comptoir+Des+Mobiles+27+Rue+de+Chartres%2C+Neuilly-sur-Seine&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte des ateliers Le Comptoir Des Mobiles"></iframe>
+            </div>
+        </section>
+
+        <!-- FAQ AFFÛTÉE -->
+        <section class="section" id="faq">
+            <h2 class="section-titre reveal">Tout ce que vous vous demandez</h2>
+            <div class="faq-liste reveal">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Faut-il prendre rendez-vous&nbsp;? <span class="fleche">▾</span></button>
+                    <div class="faq-reponse">Pas nécessairement : vous pouvez venir directement au comptoir. Un rendez-vous vous garantit cependant une prise en charge immédiate.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Combien de temps dure une réparation classique&nbsp;? <span class="fleche">▾</span></button>
+                    <div class="faq-reponse">La plupart des interventions (batterie, écran, connecteur) sont réalisées en 30 minutes devant vous, si la pièce est en stock.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Le diagnostic est-il vraiment gratuit&nbsp;? <span class="fleche">▾</span></button>
+                    <div class="faq-reponse">Oui, le diagnostic est intégralement offert, même si vous décidez de ne pas poursuivre la réparation.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Utilisez-vous des pièces d'origine&nbsp;? <span class="fleche">▾</span></button>
+                    <div class="faq-reponse">Nous travaillons avec des pièces de qualité équivalente ou supérieure, sélectionnées pour leur fiabilité. Nous pouvons également commander des pièces constructeur si vous le souhaitez.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Mes données sont-elles en sécurité&nbsp;? <span class="fleche">▾</span></button>
+                    <div class="faq-reponse">Absolument. Nous n'accédons jamais à vos fichiers personnels et nous vous recommandons de sauvegarder vos données avant toute intervention, par précaution.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRISE DE RENDEZ-VOUS -->
+        <section class="section" id="rdv">
+            <h2 class="section-titre reveal">Passez quand vous voulez</h2>
+            <p class="section-chapeau reveal">Choisissez votre atelier et le créneau qui vous convient. Ou appelez-nous directement.</p>
+            <form class="formulaire-rdv reveal" action="#" method="post">
+                <div class="form-groupe">
+                    <label for="objet">Appareil concerné</label>
+                    <select id="objet" name="objet" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="ordinateur">Ordinateur</option>
+                        <option value="tablette">Tablette</option>
+                        <option value="montre">Montre connectée</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-groupe">
+                    <label for="boutique">Atelier</label>
+                    <select id="boutique" name="boutique" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="neuilly-chartres">Neuilly — Rue de Chartres</option>
+                        <option value="boulogne">Boulogne — Centre</option>
+                        <option value="montrouge">Montrouge — Mairie</option>
+                        <option value="neuilly-sablons">Neuilly — Sablons</option>
+                    </select>
+                </div>
+                <div class="form-groupe">
+                    <label for="creneau">Créneau souhaité</label>
+                    <input type="datetime-local" id="creneau" name="creneau" required>
+                </div>
+                <button type="submit" class="btn-soumettre">Confirmer le créneau</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Le Comptoir Des Mobiles</h4>
+                <p>27 Rue de Chartres<br>92200 Neuilly-sur-Seine</p>
+                <p><a href="tel:+33141928204">01 41 92 82 04</a></p>
+                <p><a href="mailto:info@lecomptoirdesmobiles.com">info@lecomptoirdesmobiles.com</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Lundi – Vendredi : 9h30 – 19h00<br>Samedi : 10h00 – 18h00<br>Dimanche : fermé</p>
+                <p style="font-size:0.8rem;color:rgba(247,243,238,0.45);">Horaires à confirmer pour les ateliers de Boulogne et Montrouge.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Note Google</h4>
+                <p style="font-size:1.3rem;font-weight:600;color:#F4B400;">★ 4.6 / 5</p>
+                <p>Basé sur 248 avis</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Le Comptoir Des Mobiles — Tous droits réservés. Site créé par Agence Mooo.</p>
+        </div>
+    </footer>
+
+    <a href="tel:+33141928204" class="sticky-tel" aria-label="Appeler le 01 41 92 82 04">
+        <span style="font-size:1.2rem;">📞</span> 01 41 92 82 04
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const observerHeader = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting && window.scrollY > 80) {
+                        header.classList.add('scrolled');
+                    } else if (window.scrollY < 40) {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }, { threshold: 0 });
+
+            // Reveal animations
+            const revealElements = document.querySelectorAll('.reveal, .reveal-gauche');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // FAQ accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('.faq-question');
+                button.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('ouvert');
+                    // Fermer tous les autres
+                    faqItems.forEach(other => other.classList.remove('ouvert'));
+                    // Ouvrir celui-ci s'il était fermé
+                    if (!isOpen) {
+                        item.classList.add('ouvert');
+                        button.setAttribute('aria-expanded', 'true');
+                    } else {
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Scroll listener for header class
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { passive: true });
+
+            // Déclencher les reveals visibles au chargement
+            setTimeout(() => {
+                revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 120);
+        });
+    </script>
+</body>
+</html>
