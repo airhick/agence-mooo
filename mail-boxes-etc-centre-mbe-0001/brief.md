@@ -1,129 +1,96 @@
-# BRIEF CRÉATIF — MBE 0001 Paris
+**BRIEF CRÉATIF — Mail Boxes Etc. Centre 0001 Paris**
 
 ---
 
-## 1. Concept & positionnement
-
-Le 0001 n'est pas un numéro de franchise, c'est un matricule d'excellence. On abandonne le ton corporate générique pour ancrer ce centre dans son quartier : un hub logistique de précision au cœur du 15e, là où l'avenue Félix Faure croise l'urgence des envois, la fragilité des œuvres d'art et la rigueur des domiciliations d'entreprise. L'idée : **un atelier urbain où chaque colis, chaque pli, chaque impression est traitée avec la technicité d'un studio et la fiabilité d'une institution de quartier.**
-
-Ce qu'on retient : *MBE 0001 — Centre d'opérations postales et logistiques. Paris 15e.*
+### 1. Concept & positionnement
+« L’atelier d’expédition de l’avenue Félix Faure » : on ne vend pas des solutions corporate, on incarne un savoir-faire artisanal de quartier. Le centre est pensé comme un studio de préparation où chaque colis — lettre, œuvre, palette — bénéficie d’un protocole d’emballage hérité de la logistique haut de gamme, exécuté par des mains visibles et des visages connus. Le site doit rétablir la confiance locale immédiate en donnant tout, tout de suite : horaires, photos réelles du centre, bouton devis qualifié, preuve sociale extraite des 189 avis.
 
 ---
 
-## 2. Direction artistique
-
-**Parti pris : POST-INDUSTRIEL DE SERVICE**
-
-On assume l'esthétique du lieu réel — métal, verre, surfaces brillantes, signalétique rouge vif sur fond noir — pour la pousser vers un langage visuel qui évoque la maîtrise technique et la rapidité. Pas de fausse chaleur ni de verdure artificielle. L'ambiance est celle d'un *workshop* urbain, précis, presque chirurgical : tables en inox, étagères métalliques, transparence des opérations. Les surfaces vitrées de la façade deviennent un motif récurrent (calques, superpositions, reflets).
-
-La référence : les ateliers d'expédition d'art contemporains, les studios de design industriel, les imprimeries de luxe. Le noir domine (comme la façade réelle), le rouge MBE est utilisé avec parcimonie — jamais en aplat décoratif, toujours en signal : un trait, un soulignement, un repère.
+### 2. Direction artistique
+**« Fichier d’atelier »** — un minimal-luxe industriel, ancré dans les matières réelles du centre : le métal des étagères de stockage, le verre du comptoir, le papier kraft des emballages. L’ambiance est vive, précise, légèrement froide mais tenue par une chaleur typographique editorial. On retrouve la rigueur des fiches logistiques (filets fins, alignements millimétrés, numérotation) détournée en système d’affichage des services, combinée à la brutalité élégante d’une enseigne rouge et noire photographiée frontalement. La page fonctionne comme un pupitre de préparation : chaque information est à sa place, sans encombrement, prête à être saisie.
 
 ---
 
-## 3. Palette
-
-| Rôle | HEX | Nom |
+### 3. Palette
+| Rôle | Hex | Nom |
 |------|-----|-----|
-| Fond principal | `#0C0C0C` | Noir atelier |
-| Surface / cartes | `#F5F1ED` | Blanc calque (légèrement chaud, casse le froid) |
-| Encre / texte | `#1A1A1A` | Encre noire |
-| Accent unique | `#E10600` | Rouge MBE |
-| Métal froid | `#C8C4BE` | Gris quai |
-| Bordure / filets | `#3D3D3D` | Acier sombre |
+| Fond principal | `#F7F5F2` | Papier kraft froid |
+| Encre / texte | `#1A1A1A` | Noir de carbone |
+| Accent primaire | `#C41E2B` | Rouge enseigne MBE |
+| Accent secondaire | `#4A4A4A` | Gris métal brossé |
+| Fond sombre alternatif | `#2D2D2D` | Acier foncé |
+| Touche signalétique | `#0066B3` | Bleu colissimo (utilisé pour les CTAs tracking) |
 
-**Règle d'usage :** 80% noir/blanc, 15% gris structures, 5% rouge maximum. Le rouge ne remplit jamais une surface : il souligne, il pointe, il signale.
-
----
-
-## 4. Ton éditorial
-
-**Voix :** Directe, technique mais sans jargon. On s'adresse à un professionnel qui connaît la valeur de ce qu'il expédie, un particulier exigeant, une association qui a besoin de sérieux administratif. On ne vend pas du "service" — on documente ce qu'on fait, concrètement.
-
-**Niveau de langue :** Soutenu sans être guindé. Tutoiement exclu. Phrases courtes, verbes d'action précis (emballer, expédier, imprimer, domicilier). On nomme les choses : "colis fragile", pas "solution d'envoi" ; "boîte aux lettres", pas "service de courrier".
-
-**Registre :** Le ton de quelqu'un qui sait faire et qui le prouve. Une forme de fierté artisanale, mais dans un cadre très urbain — pas de folklore.
+*Palette claire mais ancrée, le rouge est le seul éclat chromatique franc — pas de terracotta, pas de vert acide. L’acier et le carbone remplacent le gris fade.*
 
 ---
 
-## 5. Accroche héro
-
-**Titre :**
-> Expédier depuis Paris 15e.
-> Avec la précision que vos envois méritent.
-
-**Sous-titre :**
-> Emballage, logistique, impression, domiciliation — tout ce que votre courrier, votre colis ou votre entreprise exige, traité avenue Félix Faure par une équipe qui ne laisse rien au hasard.
+### 4. Ton éditorial
+Direct, expert, sans jargon. On tutoie le client riverain (usage du « vous » de proximité) mais on maintient une précision de logisticien : chaque verbe est descriptif (« nous emballons », « nous expédions », « nous domicilions »). Pas de superlatifs vides. Les explications sont concises, techniques quand il le faut, jamais vendeuses. Le ton traduit la double casquette : professionnel pour les entreprises, accessible pour le particulier qui pousse la porte avec un colis sous le bras.
 
 ---
 
-## 6. Sections (ordre, titres, contenu réel)
+### 5. Accroche héro
+**Titre** :  
+« À 200 mètres du métro Félix Faure, vos colis sont déjà prêts. »
 
-### Section 1 — Introduction : À propos
-**Titre :** MBE 0001. Un centre, un quartier, une exigence.
-
-*Situé au 141 avenue Félix Faure depuis [année d'ouverture réelle à insérer], le centre MBE 0001 est le point névralgique des envois et de la logistique de proximité dans le 15e arrondissement. Nous préparons, protégeons et expédions vos colis comme s'ils étaient les nôtres — des lettres simples aux œuvres d'art les plus fragiles. Ici, chaque problème d'emballage trouve sa solution. Chaque urgence trouve un interlocuteur.*
-
----
-
-### Section 2 — Services 1 : Expédier & Emballer
-**Titre :** Ce que nous expédions. Et comment nous l'emballons.
-
-*Colis standard, vins et spiritueux, bagages, palettes, œuvres d'art et objets fragiles : à chaque contenu son emballage sur-mesure. Nous ne glissons pas vos affaires dans un carton standard — nous concevons la protection adaptée, du calage en mousse au caisson bois. Formalités douanières incluses pour l'international. Suivi en temps réel remis en main propre ou par notification.*
+**Sous-titre** :  
+Emballage certifié, expédition nationale et internationale, impression, domiciliation — une équipe visible, des horaires clairs, un devis immédiat.
 
 ---
 
-### Section 3 — Services 2 : Imprimer & Reproduire
-**Titre :** Imprimer en urgence. Livrer en boutique ou chez vous.
+### 6. Sections (ordre et contenu réel)
 
-*Tirage de documents, flyers, affiches, papeterie professionnelle — nous imprimons sur place avec un rendu irréprochable. Formats standards et grands formats. Pas de délais fantaisistes : vous commandez, nous produisons, vous récupérez avenue Félix Faure — ou nous expédions pour vous.*
+**1. Barre fixe de confiance (sticky top, chargée immédiatement)**  
+- **Horaires visibles** : Lun–Ven 9h30–13h, 14h–18h30 ; Sam 9h30–12h30 (confirmés par téléphone).  
+- **Lien téléphone cliquable** : `01 40 60 57 19`  
+- **Bouton** « Devis en 2 min » → ancre vers le formulaire.
 
----
+**2. Héro visuelle**  
+- Photo frontale du centre, angle légèrement bas, enseigne rouge/noire nette, verrière visible. Titre et sous-titre (ci-dessus) superposés en DM Serif Display, graisse régulière, très grand, débordant partiellement sur la photo.
 
-### Section 4 — Services 3 : Domicilier & Recevoir
-**Titre :** Votre adresse au 141 avenue Félix Faure.
+**3. « L’atelier Félix Faure »**  
+Titre : *Vos colis ne passent pas chez une machine.*  
+Texte : « Ouverts depuis [année] et repris par une équipe qui gère plusieurs centres en région parisienne, nous préparons vos envois comme nous aimerions les recevoir : emballage renforcé, formalités douanières maîtrisées, suivi en temps réel. Artistes, e-commerçants, habitants du 15e : votre interlocuteur est ici, au comptoir. »
 
-*Domiciliation d'entreprise, siège social d'association, location de boîte aux lettres : une adresse prestigieuse dans le 15e arrondissement, une gestion rigoureuse du courrier entrant, et une équipe joignable qui connaît votre nom. Pas une boîte impersonnelle — un vrai centre avec des vrais gens.*
+**4. « Expédier »**  
+Titre : *Expédier depuis le 15e, vers la France ou l’international*  
+Blocs-services avec filets fins et pastilles numérotées :  
+- 01 | Colis standard & express  
+- 02 | Œuvres d’art & objets fragiles  
+- 03 | Bagages & vins  
+- 04 | Palettes & imports  
+Chaque bloc : une phrase technique concise + bouton « Tarif indicatif » ou « Devis ciblé ».
 
----
+**5. « Imprimer & reproduire »**  
+Titre : *Impressions pros, ramassage au comptoir*  
+Phrase : « Flyers, affiches, papeterie, plans grand format — nous imprimons et vous récupérez à Félix Faure, sans intermédiaire. »
 
-### Section 5 — Preuve sociale : Avis & Confiance
-**Titre :** 180 clients nous ont notés. Voici ce qu'ils disent.
+**6. « Domicilier son entreprise »**  
+Titre : *Une adresse dans le 15e, une boîte aux lettres dédiée*  
+Phrase : « Domiciliation commerciale et associative, location de boîtes aux lettres physiques, scan et transfert de courrier. Votre siège social mérite mieux qu’une boîte postale générique. »
 
-*Note moyenne : 4/5 sur 180 avis vérifiés.*
-*[3 extraits courts, pas 7 pavés]*
-*— « Service impeccable pour l'emballage d'un tableau fragile. Suivi parfait. » — C. Martin*
-*— « Équipe réactive et compétente. Mon colis est arrivé en 48h. » — L. Dubois*
-*— « Domiciliation simple et efficace. Je recommande pour les associations. » — A. Lefèvre*
-*Lire tous les avis sur Google →*
+**7. Preuve sociale intégrée**  
+Titre : *189 clients l’ont déjà vérifié*  
+Extraits de vrais avis Google (sans notes inventées, juste citations textuelles) :  
+« Accueil réactif et professionnel, à recommander pour toute expédition nationale et internationale. » — Jean-Philippe M.  
+« Une équipe qui a repris le centre et qui connaît son métier. » — Jeanne B.  
+Composant visuel simple : citation en DM Serif Display italique, sur fond papier, avec filet rouge latéral.
 
----
+**8. Formulaire de devis qualifié (priorité à la conversion)**  
+Titre : *Devis immédiat, réponse sous 2h ouvrées*  
+Champs simples :  
+- Type de demande (toggle : Expédition / Impression / Domiciliation)  
+- Description rapide  
+- Email / Téléphone  
+CTA : « Recevoir mon estimation »
 
-### Section 6 — Informations pratiques & Contact
-**Titre :** Venir, appeler, expédier.
-
-*141 Avenue Félix Faure, 75015 Paris*
-*Horaires : Lundi–Vendredi 9h–12h30 / 14h–18h (fermé le samedi et dimanche)*
-*Téléphone : [lien cliquable] 01 40 60 57 19*
-*Demande de devis : formulaire ci-dessous — réponse sous 2 heures ouvrées.*
-
-*Formulaire de contact minimal : Nom, Email, Service souhaité (choix : Expédition / Impression / Domiciliation / Autre), Message libre.*
-
----
-
-### Section 7 — Pied de page local
-**Titre :** MBE 0001 Paris 15e
-
-*Un centre du réseau Mail Boxes Etc. — exploité localement.*
-*[Lien : trouver un autre centre MBE] — [Plan du site local] — [Mentions légales]*
-
----
-
-## 7. Signature visuelle
-
-**1. Le matricule comme motif graphique —** "0001" devient un élément d'identité répété, surdimensionné en filigrane sur les arrière-plans sombres, gravé comme un numéro de série industriel. Il apparaît en transparence, en bordure, en amorce — toujours partiel, jamais décoratif complet. Il signe la page comme un objet technique.
-
-**2. Animation des verbes d'action —** À l'ouverture de la section Services, une séquence typographique en DM Serif Display superpose verticalement les verbes : *Emballer. Expédier. Imprimer. Domicilier.* Chaque mot apparaît au scroll, se cale en rouge, puis glisse vers le gris pour laisser place au suivant. Le rythme est mécanique, fluide, comme un tapis roulant de centre de tri. Aucune autre animation intrusive sur le site — celle-ci suffit à marquer la technicité.
+**9. Footer local**  
+Adresse claire, plan Google Maps intégré, horaires rappelés, lien « Suivre votre colis » (secondaire, utile pour la rétention).
 
 ---
 
-**Prêt pour la conception.**
+### 7. Signature visuelle
+1. **Photographie en macro décalé** : chaque photo du centre (comptoir, mains en train d’emballer, rouleau de kraft, étiquette) est traitée avec une profondeur de champ courte et un plan rapproché « geste métier ». Pas de banque d’images, que du réel pris à Félix Faure.  
+2. **Animation « Ouverture de carton »** : au scroll sur la section Expédier, un filet rouge continu se déplie horizontalement comme un ruban adhésif qu’on découpe, révélant les blocs-services. Simple, évoque le geste, ne surcharge pas.
