@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débarras Faur'Art & Co — Débarras éco-responsable à Paris 15ᵉ</title>
+    <meta name="description" content="Débarras Faur'Art & Co, entreprise de débarras éco-responsable à Paris 15ᵉ. Succession, syndrome de Diogène, après-décès — nous vidons avec respect, trions avec art. Devis gratuit sous 24h. Note 4.8★ — 185 Rue Saint-Charles, 75015 Paris.">
+    <meta property="og:title" content="Débarras Faur'Art & Co — L'art de vider, l'âme du soin">
+    <meta property="og:description" content="Débarras éco-responsable à Paris. Nous libérons votre espace avec respect, trions avec art et redonnons vie à chaque objet. Devis gratuit.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ctext y='32' x='50%25' text-anchor='middle' font-size='32'%3E%F0%9F%AA%B6%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --fond: #F9F6F0;
+            --encre: #3B2F2A;
+            --bois: #C8B49A;
+            --vegetal: #4A6B5D;
+            --lueur: #D4C9B8;
+            --terrecuite: #B76D55;
+            --blanc: #FFFDF9;
+            --ombre-douce: 0 4px 20px rgba(59, 47, 42, 0.06);
+            --ombre-medium: 0 12px 40px rgba(59, 47, 42, 0.10);
+            --rayon-carte: 16px;
+            --transition-lente: 0.55s cubic-bezier(0.25, 0.1, 0.15, 1);
+            --transition-medium: 0.35s cubic-bezier(0.25, 0.1, 0.15, 1);
+            --transition-rapide: 0.2s cubic-bezier(0.25, 0.1, 0.15, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 76px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: clamp(1rem, 1.6vw, 1.125rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* texture grain globale */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: clamp(12px, 2vw, 18px) clamp(16px, 4vw, 48px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: rgba(249, 246, 240, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(200, 180, 154, 0.3);
+            transition: all var(--transition-medium);
+        }
+        .header.scrolled {
+            background: rgba(249, 246, 240, 0.92);
+            border-bottom-color: rgba(200, 180, 154, 0.5);
+            box-shadow: 0 1px 8px rgba(59, 47, 42, 0.04);
+        }
+        .header-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.15rem, 2vw, 1.4rem);
+            color: var(--encre);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+        .header-brand:hover {
+            color: var(--vegetal);
+        }
+        .header-brand span {
+            color: var(--terrecuite);
+            font-style: italic;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 2.5vw, 28px);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--encre);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1.3vw, 1rem);
+            letter-spacing: 0.02em;
+            position: relative;
+            transition: color var(--transition-rapide);
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--vegetal);
+            transition: width var(--transition-medium);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--vegetal);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-block;
+            background: var(--encre);
+            color: var(--blanc);
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+            border: 2px solid var(--encre);
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--vegetal);
+            border-color: var(--vegetal);
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(74, 107, 93, 0.3);
+        }
+        .header-burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--encre);
+            z-index: 1001;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .header-burger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: var(--transition-rapide);
+        }
+        @media (max-width: 820px) {
+            .header-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: min(320px, 80vw);
+                height: 100vh;
+                background: var(--fond);
+                flex-direction: column;
+                padding: 100px 32px 40px;
+                gap: 24px;
+                transition: right var(--transition-lente);
+                box-shadow: -4px 0 30px rgba(59, 47, 42, 0.12);
+                align-items: flex-start;
+                z-index: 1000;
+            }
+            .header-nav.active {
+                right: 0;
+            }
+            .header-burger {
+                display: flex;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-nav .header-cta {
+                display: inline-block;
+                margin-top: 8px;
+            }
+        }
+        @media (min-width: 821px) {
+            .header-nav .header-cta {
+                display: none;
+            }
+            .header-cta.desktop-only {
+                display: inline-block;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 64px);
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+            filter: brightness(1.03) saturate(0.85);
+            transition: transform 0.1s linear;
+            will-change: transform;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(165deg,
+                    rgba(249, 246, 240, 0.55) 0%,
+                    rgba(249, 246, 240, 0.25) 35%,
+                    rgba(59, 47, 42, 0.15) 70%,
+                    rgba(59, 47, 42, 0.35) 100%);
+            pointer-events: none;
+        }
+        /* reflet miroir simulé */
+        .hero-reflet {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 28%;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(to top,
+                    rgba(249, 246, 240, 0.7) 0%,
+                    rgba(212, 201, 184, 0.25) 30%,
+                    transparent 70%);
+            opacity: 0.65;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 680px;
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.1, 0.15, 1) forwards;
+            opacity: 0;
+            transform: translateY(28px);
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 246, 240, 0.85);
+            border: 1px solid rgba(200, 180, 154, 0.5);
+            border-radius: 40px;
+            padding: 8px 18px 8px 14px;
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.1vw, 0.88rem);
+            color: var(--encre);
+            letter-spacing: 0.02em;
+            margin-bottom: clamp(20px, 3.5vw, 32px);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .hero-badge .stars {
+            color: #d4a437;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+        .hero-badge .note {
+            font-weight: 700;
+            color: var(--encre);
+        }
+        .hero-badge .avis-count {
+            color: var(--vegetal);
+            font-weight: 400;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: clamp(14px, 2vw, 22px);
+            text-shadow: 0 1px 4px rgba(249, 246, 240, 0.4);
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--terrecuite);
+        }
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+            font-weight: 400;
+            color: var(--encre);
+            opacity: 0.85;
+            margin-bottom: clamp(24px, 3.5vw, 36px);
+            line-height: 1.6;
+            letter-spacing: 0.015em;
+        }
+        .btn-devis {
+            display: inline-block;
+            background: var(--encre);
+            color: var(--blanc);
+            padding: clamp(13px, 2vw, 16px) clamp(26px, 4vw, 40px);
+            border-radius: 44px;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+            border: 2px solid var(--encre);
+            cursor: pointer;
+        }
+        .btn-devis:hover,
+        .btn-devis:focus-visible {
+            background: var(--vegetal);
+            border-color: var(--vegetal);
+            box-shadow: 0 8px 30px rgba(74, 107, 93, 0.35);
+            transform: translateY(-2px);
+        }
+        .btn-devis:focus-visible {
+            outline: 3px solid var(--vegetal);
+            outline-offset: 3px;
+        }
+
+        /* SECTIONS GÉNÉRALES */
+        section {
+            position: relative;
+            padding: clamp(48px, 10vw, 100px) clamp(20px, 5vw, 64px);
+            isolation: isolate;
+        }
+        .section-titre {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            letter-spacing: -0.01em;
+            color: var(--encre);
+            margin-bottom: clamp(8px, 1.5vw, 16px);
+            line-height: 1.2;
+        }
+        .section-soustitre {
+            font-weight: 400;
+            color: var(--vegetal);
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            letter-spacing: 0.03em;
+            margin-bottom: clamp(28px, 5vw, 48px);
+        }
+        .grand-nombre {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: clamp(7rem, 16vw, 18rem);
+            line-height: 1;
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            color: var(--bois);
+            opacity: 0.08;
+            transition: opacity 1.2s cubic-bezier(0.25, 0.1, 0.15, 1);
+            user-select: none;
+        }
+        .grand-nombre.revele {
+            opacity: 0.22;
+        }
+
+        /* PHILOSOPHIE */
+        .philo {
+            background: var(--fond);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .philo .grand-nombre {
+            top: -10%;
+            right: -4%;
+            font-size: clamp(6rem, 14vw, 16rem);
+        }
+        .philo-texte {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            line-height: 1.75;
+            color: var(--encre);
+            opacity: 0.9;
+        }
+        .philo-texte strong {
+            font-weight: 600;
+            color: var(--vegetal);
+        }
+
+        /* SERVICES */
+        .services {
+            background: #F5F1EA;
+            position: relative;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: clamp(16px, 3vw, 28px);
+            position: relative;
+            z-index: 1;
+        }
+        .carte-service {
+            background: var(--blanc);
+            border-radius: var(--rayon-carte);
+            padding: clamp(24px, 3.5vw, 36px);
+            box-shadow: var(--ombre-douce);
+            transition: all var(--transition-medium);
+            border: 1px solid transparent;
+            position: relative;
+            cursor: default;
+        }
+        .carte-service:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--ombre-medium);
+            border-color: rgba(200, 180, 154, 0.45);
+        }
+        .carte-service .icone {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+            color: var(--vegetal);
+            opacity: 0.8;
+        }
+        .carte-service h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+            color: var(--encre);
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+        .carte-service p {
+            font-size: 0.95rem;
+            color: var(--encre);
+            opacity: 0.75;
+            line-height: 1.55;
+        }
+
+        /* FILET DÉCORATIF */
+        .filet {
+            width: 60px;
+            height: 2px;
+            background: var(--bois);
+            margin: 0 auto clamp(24px, 4vw, 40px);
+            border-radius: 1px;
+            opacity: 0.7;
+        }
+
+        /* AVANT / APRÈS */
+        .avant-apres {
+            background: var(--fond);
+            position: relative;
+            overflow: hidden;
+        }
+        .avant-apres .grand-nombre {
+            bottom: -6%;
+            left: -3%;
+            font-size: clamp(5rem, 12vw, 14rem);
+        }
+        .diptyques-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(20px, 4vw, 36px);
+            position: relative;
+            z-index: 1;
+        }
+        .diptyque {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--rayon-carte);
+            overflow: hidden;
+            cursor: col-resize;
+            box-shadow: var(--ombre-douce);
+            user-select: none;
+            -webkit-user-select: none;
+            background: #e8e2d9;
+        }
+        .diptyque .img-layer {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/maps-1.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: filter 0.3s ease;
+        }
+        .diptyque .img-avant {
+            filter: brightness(0.75) saturate(0.6) contrast(1.1);
+            z-index: 1;
+            clip-path: inset(0 50% 0 0);
+        }
+        .diptyque .img-apres {
+            filter: brightness(1.05) saturate(0.9) contrast(1.02);
+            z-index: 0;
+        }
+        .diptyque .slider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: rgba(249, 246, 240, 0.85);
+            z-index: 5;
+            pointer-events: none;
+            box-shadow: 0 0 12px rgba(59, 47, 42, 0.2);
+            left: 50%;
+            transition: left 0.08s ease-out;
+        }
+        .diptyque .slider-handle {
+            position: absolute;
+            top: 50%;
+            z-index: 6;
+            pointer-events: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--blanc);
+            border: 2px solid var(--bois);
+            transform: translate(-50%, -50%);
+            left: 50%;
+            box-shadow: 0 2px 10px rgba(59, 47, 42, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--encre);
+            transition: left 0.08s ease-out;
+        }
+        .diptyque-label {
+            position: absolute;
+            bottom: 14px;
+            z-index: 7;
+            pointer-events: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--blanc);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(59, 47, 42, 0.5);
+        }
+        .diptyque-label.avant {
+            left: 14px;
+        }
+        .diptyque-label.apres {
+            right: 14px;
+        }
+
+        /* PROCESSUS */
+        .processus {
+            background: #F5F1EA;
+            position: relative;
+        }
+        .frise {
+            display: flex;
+            gap: clamp(12px, 2vw, 20px);
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+        @media (max-width: 700px) {
+            .frise {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+        .etape {
+            flex: 1 1 200px;
+            min-width: 200px;
+            max-width: 280px;
+            background: var(--blanc);
+            border-radius: var(--rayon-carte);
+            padding: clamp(20px, 3vw, 28px);
+            text-align: center;
+            box-shadow: var(--ombre-douce);
+            position: relative;
+            transition: all var(--transition-medium);
+            border: 1px solid transparent;
+        }
+        .etape:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--ombre-medium);
+            border-color: rgba(200, 180, 154, 0.4);
+        }
+        .etape-numero {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--bois);
+            opacity: 0.6;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+        .etape h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            color: var(--encre);
+            margin-bottom: 6px;
+        }
+        .etape p {
+            font-size: 0.9rem;
+            color: var(--encre);
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* TÉMOIGNAGES */
+        .temoignages {
+            background: var(--fond);
+            position: relative;
+            overflow: hidden;
+        }
+        .temoignages .grand-nombre {
+            top: -5%;
+            right: -3%;
+            font-size: clamp(5rem, 12vw, 14rem);
+        }
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(16px, 3vw, 28px);
+            position: relative;
+            z-index: 1;
+        }
+        .carte-temoignage {
+            background: var(--blanc);
+            border-radius: var(--rayon-carte);
+            padding: clamp(20px, 3.5vw, 32px);
+            box-shadow: var(--ombre-douce);
+            border-left: 3px solid var(--bois);
+            position: relative;
+            transition: all var(--transition-medium);
+        }
+        .carte-temoignage:hover {
+            box-shadow: var(--ombre-medium);
+            border-left-color: var(--vegetal);
+        }
+        .carte-temoignage .quote {
+            font-style: italic;
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            color: var(--encre);
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-bottom: 14px;
+            quotes: "«\00a0" "\00a0»";
+        }
+        .carte-temoignage .quote::before {
+            content: open-quote;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            color: var(--bois);
+            line-height: 0;
+            vertical-align: -0.2em;
+            margin-right: 2px;
+        }
+        .carte-temoignage .quote::after {
+            content: close-quote;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            color: var(--bois);
+            line-height: 0;
+            vertical-align: -0.3em;
+            margin-left: 2px;
+        }
+        .carte-temoignage .auteur {
+            font-weight: 600;
+            color: var(--vegetal);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .note-globale {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blanc);
+            border-radius: 40px;
+            padding: 10px 20px;
+            border: 1px solid rgba(200, 180, 154, 0.5);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .note-globale .etoiles {
+            color: #d4a437;
+            letter-spacing: 2px;
+        }
+
+        /* NOUS TROUVER */
+        .trouver {
+            background: #F5F1EA;
+        }
+        .trouver-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 5vw, 48px);
+            position: relative;
+            z-index: 1;
+            align-items: start;
+        }
+        @media (max-width: 750px) {
+            .trouver-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .trouver-infos {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 1rem;
+        }
+        .trouver-infos .info-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+        .trouver-infos .info-icone {
+            flex-shrink: 0;
+            width: 28px;
+            text-align: center;
+            color: var(--vegetal);
+            font-size: 1.1rem;
+        }
+        .trouver-infos a {
+            color: var(--vegetal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-rapide);
+            border-bottom: 1px solid transparent;
+        }
+        .trouver-infos a:hover,
+        .trouver-infos a:focus-visible {
+            color: var(--terrecuite);
+            border-bottom-color: var(--terrecuite);
+        }
+        .trouver-carte {
+            border-radius: var(--rayon-carte);
+            overflow: hidden;
+            box-shadow: var(--ombre-douce);
+            aspect-ratio: 4/3;
+            min-height: 300px;
+        }
+        .trouver-carte iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--encre);
+            color: rgba(249, 246, 240, 0.8);
+            padding: clamp(32px, 5vw, 48px) clamp(20px, 5vw, 48px);
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .footer a {
+            color: var(--lueur);
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer .footer-nap {
+            margin-bottom: 10px;
+        }
+        .footer .agence {
+            font-size: 0.78rem;
+            opacity: 0.6;
+            margin-top: 12px;
+        }
+
+        /* REVEAL AU SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 0.1, 0.15, 1), transform 0.7s cubic-bezier(0.22, 0.1, 0.15, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* FOCUS */
+        :focus-visible {
+            outline: 3px solid var(--vegetal);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Lien skip */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--encre);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="header" id="header" role="banner">
+        <a href="#hero" class="header-brand" aria-label="Débarras Faur'Art & Co — Accueil">Faur'<span>Art</span> & Co</a>
+        <button class="header-burger" id="burger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="nav" role="navigation" aria-label="Navigation principale">
+            <a href="#philo">Philosophie</a>
+            <a href="#services">Services</a>
+            <a href="#avant-apres">Réalisations</a>
+            <a href="#processus">Processus</a>
+            <a href="#temoignages">Avis</a>
+            <a href="#trouver">Contact</a>
+            <a href="#trouver" class="header-cta">Devis gratuit</a>
+        </nav>
+        <a href="#trouver" class="header-cta desktop-only">Devis gratuit</a>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero" id="hero" aria-labelledby="hero-titre">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="assets/maps-1.jpg" alt="" loading="eager" id="hero-img">
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-reflet" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="stars" aria-hidden="true">★★★★★</span>
+                    <span class="note">4.8</span>
+                    <span class="avis-count">sur 60 avis Google</span>
+                </div>
+                <h1 id="hero-titre">Votre espace mérite<br><em>un nouveau souffle.</em></h1>
+                <p class="hero-subtitle">Débarras éco-responsable à Paris — nous vidons avec respect, trions avec art, et redonnons vie à chaque objet.</p>
+                <a href="#trouver" class="btn-devis">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHIE -->
+        <section class="philo reveal" id="philo" aria-labelledby="philo-titre">
+            <span class="grand-nombre" id="gn-2010" aria-hidden="true">2010</span>
+            <h2 class="section-titre" id="philo-titre">Depuis 2010, l'humain au cœur du débarras</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <div class="philo-texte">
+                <p>Chaque mission est une histoire. Situés <strong>rue Saint-Charles</strong>, nous intervenons chez vous avec discrétion et bienveillance, que ce soit pour une <strong>succession</strong>, un <strong>déménagement</strong> ou une situation plus délicate. Ici, rien ne se jette sans réflexion&nbsp;: nous <strong>donnons, recyclons et valorisons</strong> jusqu'au dernier souvenir.</p>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services reveal" id="services" aria-labelledby="services-titre">
+            <h2 class="section-titre" id="services-titre">Une réponse sur mesure à chaque besoin</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <p class="section-soustitre">Du diagnostic au recyclage, une chaîne 100&nbsp;% transparente.</p>
+            <div class="services-grid">
+                <div class="carte-service reveal reveal-delay-1">
+                    <span class="icone" aria-hidden="true">🏠</span>
+                    <h3>Débarras d'appartement</h3>
+                    <p>Vider un appartement en vue d'une vente, d'une location ou d'un rafraîchissement.</p>
+                </div>
+                <div class="carte-service reveal reveal-delay-2">
+                    <span class="icone" aria-hidden="true">🏡</span>
+                    <h3>Maison & cave</h3>
+                    <p>Débarras complet de maisons, caves, boxes et greniers avec tri méthodique.</p>
+                </div>
+                <div class="carte-service reveal reveal-delay-3">
+                    <span class="icone" aria-hidden="true">📜</span>
+                    <h3>Succession</h3>
+                    <p>Accompagnement respectueux dans la transmission, avec évaluation et valorisation.</p>
+                </div>
+                <div class="carte-service reveal reveal-delay-1">
+                    <span class="icone" aria-hidden="true">🕊️</span>
+                    <h3>Syndrome de Diogène</h3>
+                    <p>Intervention experte et bienveillante, en collaboration avec les familles et les aidants.</p>
+                </div>
+                <div class="carte-service reveal reveal-delay-2">
+                    <span class="icone" aria-hidden="true">🕯️</span>
+                    <h3>Après-décès</h3>
+                    <p>Débarras empreint de pudeur, dans le respect du deuil et des souvenirs.</p>
+                </div>
+                <div class="carte-service reveal reveal-delay-3">
+                    <span class="icone" aria-hidden="true">🎹</span>
+                    <h3>Coffre-fort & Piano</h3>
+                    <p>Objets lourds ou spécifiques&nbsp;: nous maîtrisons leur manipulation et leur recyclage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVANT / APRÈS -->
+        <section class="avant-apres reveal" id="avant-apres" aria-labelledby="aa-titre">
+            <span class="grand-nombre" id="gn-450" aria-hidden="true">450</span>
+            <h2 class="section-titre" id="aa-titre">450 espaces libérés, 450 nouvelles histoires</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <p class="section-soustitre">Découvrez quelques-uns de nos derniers chantiers à Paris et en Île-de-France. Chaque image raconte la renaissance d'un lieu.</p>
+            <div class="diptyques-container">
+                <div class="diptyque" data-offset="0.48" aria-label="Avant/Après — Faites glisser pour révéler la transformation">
+                    <div class="img-layer img-avant"></div>
+                    <div class="img-layer img-apres"></div>
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-handle" aria-hidden="true">⟷</div>
+                    <span class="diptyque-label avant">Avant</span>
+                    <span class="diptyque-label apres">Après</span>
+                </div>
+                <div class="diptyque" data-offset="0.52" aria-label="Avant/Après — Faites glisser pour révéler la transformation">
+                    <div class="img-layer img-avant" style="background-position:center 30%;"></div>
+                    <div class="img-layer img-apres" style="background-position:center 30%;"></div>
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-handle" aria-hidden="true">⟷</div>
+                    <span class="diptyque-label avant">Avant</span>
+                    <span class="diptyque-label apres">Après</span>
+                </div>
+                <div class="diptyque" data-offset="0.5" aria-label="Avant/Après — Faites glisser pour révéler la transformation">
+                    <div class="img-layer img-avant" style="background-position:center 60%;"></div>
+                    <div class="img-layer img-apres" style="background-position:center 60%;"></div>
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-handle" aria-hidden="true">⟷</div>
+                    <span class="diptyque-label avant">Avant</span>
+                    <span class="diptyque-label apres">Après</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSUS -->
+        <section class="processus reveal" id="processus" aria-labelledby="proc-titre">
+            <h2 class="section-titre" id="proc-titre">Un débarras sans stress, en 4 instants clés</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <div class="frise">
+                <div class="etape reveal reveal-delay-1">
+                    <div class="etape-numero" aria-hidden="true">❶</div>
+                    <h4>Échange & devis gratuit</h4>
+                    <p>Un rendez-vous sous 24&nbsp;h pour comprendre votre besoin et chiffrer l'intervention.</p>
+                </div>
+                <div class="etape reveal reveal-delay-2">
+                    <div class="etape-numero" aria-hidden="true">❷</div>
+                    <h4>Planification sur-mesure</h4>
+                    <p>Nous fixons ensemble une date qui respecte votre calendrier et vos contraintes.</p>
+                </div>
+                <div class="etape reveal reveal-delay-3">
+                    <div class="etape-numero" aria-hidden="true">❸</div>
+                    <h4>Jour J&nbsp;: tri & évacuation</h4>
+                    <p>Tri sélectif, évacuation des encombrants, nettoyage minutieux — tout est pris en charge.</p>
+                </div>
+                <div class="etape reveal reveal-delay-4">
+                    <div class="etape-numero" aria-hidden="true">❹</div>
+                    <h4>Bilan & attestation</h4>
+                    <p>Nous vous remettons une attestation de recyclage et un récapitulatif détaillé.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="temoignages reveal" id="temoignages" aria-labelledby="tem-titre">
+            <span class="grand-nombre" id="gn-48" aria-hidden="true">4.8</span>
+            <h2 class="section-titre" id="tem-titre">Une confiance qui se lit dans leurs mots</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <div class="note-globale">
+                <span class="etoiles" aria-hidden="true">★★★★★</span>
+                <span>Note globale <strong>4.8 / 5</strong> — 60 avis Google</span>
+            </div>
+            <div class="temoignages-grid">
+                <div class="carte-temoignage reveal reveal-delay-1">
+                    <p class="quote">Un service remarquable. Nicolas et son équipe ont vidé l'appartement de ma mère avec une délicatesse incroyable. Chaque objet a été trié avec soin. Je recommande sincèrement.</p>
+                    <span class="auteur">— Virginie, Paris 15ᵉ</span>
+                </div>
+                <div class="carte-temoignage reveal reveal-delay-2">
+                    <p class="quote">Intervention rapide, propre, et humaine. Ils ont su gérer une situation très difficile avec professionnalisme et empathie. Le recyclage est réel, ce n'est pas du marketing.</p>
+                    <span class="auteur">— Gildas, Paris 16ᵉ</span>
+                </div>
+                <div class="carte-temoignage reveal reveal-delay-3">
+                    <p class="quote">Débarras d'un piano quart de queue et d'une cave entière en une journée. Ponctuels, efficaces, et très respectueux des parties communes. Tarif transparent, sans surprise.</p>
+                    <span class="auteur">— Marie-Laure, Boulogne</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUS TROUVER -->
+        <section class="trouver reveal" id="trouver" aria-labelledby="trouver-titre">
+            <h2 class="section-titre" id="trouver-titre">Au cœur du 15ᵉ, près de chez vous</h2>
+            <div class="filet" aria-hidden="true"></div>
+            <div class="trouver-grid">
+                <div class="trouver-infos">
+                    <div class="info-ligne">
+                        <span class="info-icone" aria-hidden="true">📍</span>
+                        <span><strong>Adresse</strong><br>185 Rue Saint-Charles<br>75015 Paris</span>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="info-icone" aria-hidden="true">📞</span>
+                        <span><strong>Téléphone</strong><br><a href="tel:+33602107014">06 02 10 70 14</a></span>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="info-icone" aria-hidden="true">✉️</span>
+                        <span><strong>Email</strong><br><a href="mailto:nicolas@faurart.com">nicolas@faurart.com</a></span>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="info-icone" aria-hidden="true">🕐</span>
+                        <span><strong>Horaires</strong><br>Lundi – Vendredi<br>9h00 – 20h00</span>
+                    </div>
+                    <div class="info-ligne" style="margin-top:8px;">
+                        <span class="info-icone" aria-hidden="true">📋</span>
+                        <span><a href="#mentions">Mentions légales</a> & <a href="#confidentialite">Politique de confidentialité</a></span>
+                    </div>
+                </div>
+                <div class="trouver-carte">
+                    <iframe src="https://maps.google.com/maps?q=D%C3%A9barras+Faur%27Art+%26+Co+185+Rue+Saint+Charles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Débarras Faur'Art & Co, 185 Rue Saint-Charles, Paris"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="footer-nap">
+            <strong>Débarras Faur'Art & Co</strong> — 185 Rue Saint-Charles, 75015 Paris — <a href="tel:+33602107014">06 02 10 70 14</a> — <a href="mailto:nicolas@faurart.com">nicolas@faurart.com</a>
+        </div>
+        <div id="mentions" style="margin-top:8px;opacity:0.65;">Mentions légales | Politique de confidentialité | RCS Paris</div>
+        <div class="agence">Site créé par <a href="https://agence.mooo.com/debarras-faur-art-co" target="_blank" rel="noopener">Agence Mooo</a></div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Débarras Faur'Art & Co",
+            "description": "Débarras éco-responsable à Paris — nous vidons avec respect, trions avec art, et redonnons vie à chaque objet.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "185 Rue Saint-Charles",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33602107014",
+            "email": "nicolas@faurart.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "60"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "20:00"
+            },
+            "url": "https://agence.mooo.com/debarras-faur-art-co"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll
+            const header = document.getElementById('header');
+            const burger = document.getElementById('burger');
+            const nav = document.getElementById('nav');
+            const heroImg = document.getElementById('hero-img');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Scroll header style
+            let lastScrollY = 0;
+            function updateHeader() {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                // Parallaxe miroir sur le héro
+                if (heroImg && !prefersReduced) {
+                    const heroSection = document.querySelector('.hero');
+                    const heroRect = heroSection.getBoundingClientRect();
+                    if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                        const progress = (window.innerHeight - heroRect.top) / (window.innerHeight + heroRect.height);
+                        const translateY = progress * 40 - 10;
+                        heroImg.style.transform = `translateY(${translateY}px) scale(1.04)`;
+                    }
+                }
+                lastScrollY = scrollY;
+            }
+
+            window.addEventListener('scroll', updateHeader, { passive: true });
+            updateHeader();
+
+            // Burger menu
+            burger.addEventListener('click', function() {
+                const isActive = nav.classList.toggle('active');
+                burger.setAttribute('aria-expanded', isActive);
+            });
+            // Fermer le menu au clic sur un lien
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // IntersectionObserver pour reveals + grands nombres
+            const revealEls = document.querySelectorAll('.reveal');
+            const grandNombres = document.querySelectorAll('.grand-nombre');
+            const observerOptions = { threshold: 0.18, rootMargin: '0px 0px -40px 0px' };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => observer.observe(el));
+
+            // Observer pour grands nombres (effet de transparence)
+            const gnObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revele');
+                    } else {
+                        entry.target.classList.remove('revele');
+                    }
+                });
+            }, { threshold: 0.3, rootMargin: '0px 0px -20px 0px' });
+
+            grandNombres.forEach(el => gnObserver.observe(el));
+
+            // Diptyques interactifs
+            const diptyques = document.querySelectorAll('.diptyque');
+            diptyques.forEach(dipt => {
+                const imgAvant = dipt.querySelector('.img-avant');
+                const sliderLine = dipt.querySelector('.slider-line');
+                const sliderHandle = dipt.querySelector('.slider-handle');
+                let isDragging = false;
+
+                function setSplit(percent) {
+                    const clamped = Math.max(0.08, Math.min(0.92, percent));
+                    imgAvant.style.clipPath = `inset(0 ${(1 - clamped) * 100}% 0 0)`;
+                    sliderLine.style.left = (clamped * 100) + '%';
+                    sliderHandle.style.left = (clamped * 100) + '%';
+                }
+
+                // Position initiale
+                const initOffset = parseFloat(dipt.dataset.offset) || 0.5;
+                setSplit(initOffset);
+
+                function handleMove(clientX) {
+                    const rect = dipt.getBoundingClientRect();
+                    const x = clientX - rect.left;
+                    const percent = x / rect.width;
+                    setSplit(percent);
+                }
+
+                dipt.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    dipt.style.cursor = 'col-resize';
+                    handleMove(e.clientX);
+                    e.preventDefault();
+                });
+
+                dipt.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        handleMove(e.clientX);
+                    }
+                });
+
+                dipt.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    dipt.style.cursor = 'col-resize';
+                });
+
+                dipt.addEventListener('mouseleave', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        dipt.style.cursor = 'col-resize';
+                    }
+                });
+
+                // Touch support
+                dipt.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    handleMove(e.touches[0].clientX);
+                    e.preventDefault();
+                }, { passive: false });
+
+                dipt.addEventListener('touchmove', (e) => {
+                    if (isDragging) {
+                        handleMove(e.touches[0].clientX);
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+
+                dipt.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+
+                // Hover simple (quand pas de drag) : léger déplacement
+                dipt.addEventListener('mousemove', function(e) {
+                    if (!isDragging) {
+                        const rect = dipt.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const percent = x / rect.width;
+                        setSplit(percent);
+                    }
+                });
+
+                dipt.addEventListener('mouseleave', function() {
+                    if (!isDragging) {
+                        setSplit(initOffset);
+                    }
+                });
+            });
+
+            // Fermer nav si clic hors
+            document.addEventListener('click', function(e) {
+                if (!header.contains(e.target) && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Gérer le redimensionnement
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 820 && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
