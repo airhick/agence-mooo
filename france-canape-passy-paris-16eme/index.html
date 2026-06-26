@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>France Canapé Passy - Paris 16ème — Canapés & fauteuils d'exception</title>
+    <meta name="description" content="France Canapé Passy, 56 avenue Paul Doumer, Paris 16ᵉ. Une adresse dédiée au design d'assise depuis plus de vingt ans. Canapés en cuir pleine fleur, velours et tissus techniques. Conseil personnalisé, planification 3D, livraison Paris et Ouest francilien.">
+    <meta property="og:title" content="France Canapé Passy — L'assise pensée, 16ᵉ arrondissement">
+    <meta property="og:description" content="Avenue Paul Doumer, une adresse parisienne dédiée au design d'assise depuis plus de vingt ans. Matières sourcées, lignes tenues, confort durable.">
+    <meta property="og:image" content="https://agence.mooo.com/france-canape-passy-paris-16eme/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%91%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --pierre-passy: #F5F2ED;
+            --noyer-profond: #2C241B;
+            --cuir-havane: #B87B4C;
+            --bleu-fumee: #546E7A;
+            --gris-pierre-chaude: #E6E1D8;
+            --laiton-brosse: #C4A96A;
+            --text-body: #2C241B;
+            --text-muted: #6B5F55;
+            --surface-card: #E6E1D8;
+            --surface-light: #F5F2ED;
+            --border-subtle: rgba(44, 36, 27, 0.12);
+            --border-accent: rgba(196, 169, 106, 0.4);
+            --shadow-soft: 0 4px 24px rgba(44, 36, 27, 0.06);
+            --shadow-elevated: 0 12px 48px rgba(44, 36, 27, 0.10);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --font-display: 'Libre Baskerville', 'Times New Roman', serif;
+            --font-body: 'Karla', 'Segoe UI', system-ui, sans-serif;
+            --transition-calm: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-slow: 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --stitch-offset-desktop: 18%;
+            --stitch-width: 1.5px;
+            --noise-opacity: 0.025;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text-body);
+            background-color: var(--pierre-passy);
+            background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* === FIL DE COUTURE VERTICAL === */
+        .stitch-thread {
+            position: fixed;
+            top: 0;
+            left: var(--stitch-offset-desktop);
+            width: var(--stitch-width);
+            height: 100vh;
+            background: var(--laiton-brosse);
+            z-index: 100;
+            pointer-events: none;
+            transform-origin: top;
+            opacity: 0.55;
+            transform: scaleY(0);
+            transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            box-shadow: 0 0 12px rgba(196, 169, 106, 0.25);
+        }
+        .stitch-thread.revealed {
+            transform: scaleY(1);
+        }
+        .stitch-thread::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--laiton-brosse);
+            box-shadow: 0 0 8px rgba(196, 169, 106, 0.5);
+            opacity: 0;
+            transition: opacity 0.6s ease 0.3s;
+        }
+        .stitch-thread.revealed::after {
+            opacity: 1;
+        }
+
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(245, 242, 237, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 var(--border-subtle);
+            padding: 0.7rem 2rem;
+        }
+        .header-brand {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-weight: 600;
+            color: var(--noyer-profond);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+        .header-brand:hover {
+            color: var(--cuir-havane);
+        }
+        .header-brand span {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-body);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.25rem 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--cuir-havane);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .header-nav a:hover {
+            color: var(--cuir-havane);
+        }
+        .header-nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .header-cta {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            background: var(--noyer-profond);
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+            white-space: nowrap;
+        }
+        .header-cta:hover {
+            background: var(--cuir-havane);
+            box-shadow: 0 6px 20px rgba(184, 123, 76, 0.3);
+            transform: translateY(-1px);
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 210;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--noyer-profond);
+            transition: all 0.35s ease;
+            border-radius: 1px;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .site-header {
+                padding: 0.8rem 1.2rem;
+            }
+            .site-header.scrolled {
+                padding: 0.6rem 1.2rem;
+            }
+            .mobile-nav-panel {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 360px;
+                height: 100vh;
+                background: rgba(245, 242, 237, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                z-index: 205;
+                padding: 5rem 2rem 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.8rem;
+                transition: right 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+                box-shadow: -4px 0 30px rgba(44, 36, 27, 0.15);
+            }
+            .mobile-nav-panel.open {
+                right: 0;
+            }
+            .mobile-nav-panel a {
+                font-family: var(--font-display);
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: var(--noyer-profond);
+                text-decoration: none;
+                letter-spacing: 0.02em;
+                transition: color 0.3s;
+                border-bottom: 1px solid var(--border-subtle);
+                padding-bottom: 0.6rem;
+            }
+            .mobile-nav-panel a:hover {
+                color: var(--cuir-havane);
+            }
+            .mobile-nav-cta {
+                margin-top: auto;
+                font-family: var(--font-body);
+                font-size: 0.9rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #fff;
+                background: var(--noyer-profond);
+                border: none;
+                padding: 0.8rem 1.6rem;
+                border-radius: 2px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background 0.35s;
+            }
+            .mobile-nav-cta:hover {
+                background: var(--cuir-havane);
+            }
+        }
+        @media (min-width: 901px) {
+            .mobile-nav-panel {
+                display: none;
+            }
+        }
+
+        /* === HERO === */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 6rem 2rem 3rem;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85) saturate(0.7) contrast(1.05);
+            opacity: 0.85;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(195deg,
+                    rgba(245, 242, 237, 0.55) 0%,
+                    rgba(245, 242, 237, 0.25) 30%,
+                    rgba(44, 36, 27, 0.35) 70%,
+                    rgba(44, 36, 27, 0.5) 100%);
+            mix-blend-mode: multiply;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 65% 55%, rgba(245, 242, 237, 0.5) 0%, transparent 60%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            margin-left: clamp(1rem, 10vw, 8rem);
+            animation: heroReveal 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        }
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-tag {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--laiton-brosse);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            border: 1px solid rgba(196, 169, 106, 0.5);
+            padding: 0.35rem 1rem;
+            border-radius: 1px;
+            background: rgba(245, 242, 237, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5.5vw, 3.8rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--noyer-profond);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 3px rgba(245, 242, 237, 0.4);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--text-body);
+            max-width: 500px;
+            opacity: 0.85;
+        }
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 2rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--noyer-profond);
+            background: rgba(245, 242, 237, 0.75);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+            border: 1px solid var(--border-subtle);
+        }
+        .hero-rating .stars {
+            color: var(--laiton-brosse);
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+        }
+        .hero-rating .count {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .hero-section {
+                padding: 5rem 1.2rem 2rem;
+                min-height: 100svh;
+            }
+            .hero-content {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+            .hero-title {
+                font-size: clamp(1.7rem, 7vw, 2.4rem);
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* === SECTIONS GÉNÉRALES === */
+        .section-block {
+            position: relative;
+            padding: clamp(3rem, 8vw, 7rem) clamp(1.2rem, 8vw, 6rem);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-block.with-stitch {
+            padding-left: calc(var(--stitch-offset-desktop) + 4rem);
+        }
+        @media (max-width: 900px) {
+            .section-block.with-stitch {
+                padding-left: clamp(1.2rem, 8vw, 3rem);
+            }
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bleu-fumee);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--noyer-profond);
+            margin-bottom: 1.5rem;
+        }
+        .section-body {
+            font-family: var(--font-body);
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            font-weight: 400;
+            line-height: 1.85;
+            color: var(--text-body);
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--laiton-brosse);
+            margin: 2rem 0;
+            border: none;
+            opacity: 0.6;
+        }
+
+        /* === REVEAL ANIMATION === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.12s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.36s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.48s;
+        }
+
+        /* === ADRESSE SECTION === */
+        .adresse-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .adresse-ornament {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--gris-pierre-chaude);
+            border-radius: var(--radius-sm);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .adresse-ornament::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 40% 50%, rgba(184, 123, 76, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 65% 30%, rgba(84, 110, 122, 0.08) 0%, transparent 50%);
+        }
+        .adresse-ornament-inner {
+            font-family: var(--font-display);
+            font-size: clamp(5rem, 12vw, 10rem);
+            font-weight: 700;
+            color: rgba(44, 36, 27, 0.06);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            user-select: none;
+            pointer-events: none;
+        }
+        @media (max-width: 750px) {
+            .adresse-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .adresse-ornament {
+                aspect-ratio: 16/9;
+                order: -1;
+            }
+            .adresse-ornament-inner {
+                font-size: 4rem;
+            }
+        }
+
+        /* === COLLECTIONS SECTION === */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .collection-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-sm);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 80% 20%, rgba(196, 169, 106, 0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .collection-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elevated);
+            border-color: var(--border-accent);
+        }
+        .collection-card:hover::before {
+            opacity: 1;
+        }
+        .collection-card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.8;
+        }
+        .collection-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--noyer-profond);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+        .collection-card p {
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .collection-card .card-meta {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--laiton-brosse);
+            margin-top: 1rem;
+            display: inline-block;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.35s;
+        }
+        .collection-card:hover .card-meta {
+            border-bottom-color: var(--laiton-brosse);
+        }
+        @media (max-width: 750px) {
+            .collections-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* === SAVOIR-FAIRE SECTION === */
+        .savoir-faire-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+        .sf-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .sf-block {
+            background: var(--surface-card);
+            border-radius: var(--radius-sm);
+            padding: 1.8rem;
+            border-left: 3px solid var(--laiton-brosse);
+            transition: all 0.4s ease;
+        }
+        .sf-block:hover {
+            background: #fff;
+            box-shadow: var(--shadow-soft);
+            border-left-color: var(--cuir-havane);
+        }
+        .sf-block h5 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--noyer-profond);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+        .sf-block p {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        @media (max-width: 750px) {
+            .savoir-faire-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* === STUDIO SECTION === */
+        .studio-card {
+            background: var(--noyer-profond);
+            color: #e8e4dc;
+            border-radius: var(--radius-md);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .studio-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(196, 169, 106, 0.2) 0%, transparent 55%);
+            z-index: 0;
+        }
+        .studio-card>* {
+            position: relative;
+            z-index: 1;
+        }
+        .studio-card .section-title {
+            color: #f2efe8;
+        }
+        .studio-card .section-body {
+            color: #d5cfc5;
+            opacity: 1;
+        }
+        .studio-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            list-style: none;
+        }
+        .studio-features li {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e8e4dc;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.7rem 1.2rem;
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .studio-features li::before {
+            content: '—';
+            color: var(--laiton-brosse);
+            font-weight: 700;
+        }
+
+        /* === VENIR SECTION === */
+        .venir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-subtle);
+            background: var(--gris-pierre-chaude);
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+        }
+        .infos-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .infos-list li {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            line-height: 1.5;
+        }
+        .infos-list li .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface-card);
+            border-radius: 50%;
+            font-size: 0.85rem;
+            color: var(--cuir-havane);
+        }
+        .infos-list a {
+            color: var(--cuir-havane);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+            font-weight: 500;
+        }
+        .infos-list a:hover {
+            border-bottom-color: var(--cuir-havane);
+        }
+        .horaires-note {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-top: 0.3rem;
+        }
+        @media (max-width: 750px) {
+            .venir-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--noyer-profond);
+            color: #c5bfb4;
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1.2rem, 8vw, 6rem);
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            line-height: 1.8;
+            border-top: 4px solid var(--laiton-brosse);
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .footer-inner h6 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e8e4dc;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner a {
+            color: #c5bfb4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-inner a:hover {
+            color: var(--laiton-brosse);
+        }
+        .footer-credit {
+            grid-column: 1/-1;
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+            color: #9a9388;
+            letter-spacing: 0.04em;
+        }
+        @media (max-width: 650px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* === FOCUS VISIBLE === */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--cuir-havane);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* === ACCESSIBILITÉ === */
+        @media (prefers-contrast: high) {
+            :root {
+                --text-body: #1a1008;
+                --text-muted: #3a2f25;
+                --border-subtle: rgba(44, 36, 27, 0.25);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIL DE COUTURE -->
+    <div class="stitch-thread" id="stitchThread" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#" class="header-brand" aria-label="France Canapé Passy — Accueil">
+            France Canapé Passy
+            <span>Paris 16ᵉ</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav" id="headerNav">
+                <li><a href="#adresse">L'adresse</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#savoir-faire">Savoir-faire</a></li>
+                <li><a href="#studio">Studio</a></li>
+                <li><a href="#venir">Venir</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+33156071565" class="header-cta desktop-only" aria-label="Appeler France Canapé Passy">Appeler</a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- MOBILE NAV PANEL -->
+    <div class="mobile-nav-panel" id="mobileNavPanel" aria-hidden="true">
+        <a href="#adresse" class="mobile-nav-link">L'adresse</a>
+        <a href="#collections" class="mobile-nav-link">Collections</a>
+        <a href="#savoir-faire" class="mobile-nav-link">Savoir-faire</a>
+        <a href="#studio" class="mobile-nav-link">Studio</a>
+        <a href="#venir" class="mobile-nav-link">Venir</a>
+        <a href="tel:+33156071565" class="mobile-nav-cta">Appeler</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="France Canapé Passy — Boutique avenue Paul Doumer" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <span class="hero-tag">Paris 16ᵉ · Avenue Paul Doumer</span>
+                <h1 class="hero-title">Le canapé n'est pas un meuble. C'est la pièce où la maison se tient.</h1>
+                <p class="hero-subtitle">Avenue Paul Doumer, une adresse parisienne dédiée au design d'assise depuis plus de vingt ans. Matières sourcées, lignes tenues, confort durable.</p>
+                <div class="hero-rating">
+                    <span class="stars" aria-label="4.6 étoiles sur 5">★★★★★</span>
+                    <span>4.6</span>
+                    <span class="count">sur 91 avis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ADRESSE -->
+        <section class="section-block with-stitch reveal" id="adresse">
+            <span class="section-label">Passy, 16ᵉ</span>
+            <h2 class="section-title">Une maison pour le salon</h2>
+            <hr class="section-divider" aria-hidden="true">
+            <div class="adresse-grid">
+                <div>
+                    <p class="section-body">À deux pas du Trocadéro, notre boutique de l'avenue Paul Doumer rassemble le meilleur de l'édition design française et européenne. Un lieu à échelle humaine pour essayer, comparer, et repartir avec un conseil véritable.</p>
+                </div>
+                <div class="adresse-ornament reveal reveal-delay-2">
+                    <span class="adresse-ornament-inner">56</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTIONS -->
+        <section class="section-block with-stitch reveal" id="collections">
+            <span class="section-label">Canapés & fauteuils</span>
+            <h2 class="section-title">L'assise pensée</h2>
+            <hr class="section-divider" aria-hidden="true">
+            <p class="section-body">Droit, d'angle, panoramique ou convertible. Chaque modèle est présenté par famille de style et par matière. Fiches produit avec dimensions, délais de fabrication et options de personnalisation.</p>
+            <div class="collections-grid">
+                <div class="collection-card reveal reveal-delay-1">
+                    <span class="collection-card-icon">🪑</span>
+                    <h4>Scandinave</h4>
+                    <p>Lignes sobres, bois clair et assise accueillante. Une silhouette intemporelle qui respire dans tous les intérieurs.</p>
+                    <span class="card-meta">Velours · Tissu technique</span>
+                </div>
+                <div class="collection-card reveal reveal-delay-2">
+                    <span class="collection-card-icon">🛋️</span>
+                    <h4>Italien contemporain</h4>
+                    <p>Volume généreux, proportions étudiées. L'exigence du design transalpin au service du confort quotidien.</p>
+                    <span class="card-meta">Cuir pleine fleur · Nubuck</span>
+                </div>
+                <div class="collection-card reveal reveal-delay-3">
+                    <span class="collection-card-icon">🪞</span>
+                    <h4>Intemporel</h4>
+                    <p>Des classiques réédités avec justesse. Le canapé qu'on choisit une fois et qu'on garde toujours.</p>
+                    <span class="card-meta">Bois massif · Tissu haut grammage</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAVOIR-FAIRE -->
+        <section class="section-block with-stitch reveal" id="savoir-faire">
+            <span class="section-label">Ce qui fait la durée</span>
+            <h2 class="section-title">La fabrication à l'épreuve du temps</h2>
+            <hr class="section-divider" aria-hidden="true">
+            <div class="savoir-faire-layout">
+                <div class="sf-visual">
+                    <div class="sf-block reveal reveal-delay-1">
+                        <h5>Structure bois massif</h5>
+                        <p>Hêtre ou noyer selon les modèles. Assemblage traditionnel à tenons et mortaises, sans aggloméré.</p>
+                    </div>
+                    <div class="sf-block reveal reveal-delay-2">
+                        <h5>Coutures sellier</h5>
+                        <p>Réalisées une à une par des artisans formés. Point sellier pour les cuirs, surpiqûres anglaises pour les velours.</p>
+                    </div>
+                    <div class="sf-block reveal reveal-delay-3">
+                        <h5>Mousse haute résilience</h5>
+                        <p>Densité 35 à 55 kg/m³ selon les zones d'assise. Garde sa tenue au-delà de 100&nbsp;000 cycles d'usage.</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="section-body">Un canapé conçu pour traverser les années commence par des choix de fabrication rigoureux. Structure en bois massif, coutures sellier, mousse haute résilience&nbsp;: nous expliquons ce qui distingue un canapé pensé pour durer de celui qu'on remplace.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDIO PASSY -->
+        <section class="section-block reveal" id="studio">
+            <div class="studio-card">
+                <span class="section-label" style="color:#c4a96a;">Votre projet, accompagné</span>
+                <h2 class="section-title">Le studio Passy</h2>
+                <hr class="section-divider" aria-hidden="true">
+                <p class="section-body">Nos conseillers reçoivent sur rendez-vous pour étudier vos contraintes d'espace, de lumière et d'usage. Une approche sur mesure, sans pression, pour trouver l'assise qui correspond à votre intérieur — et à votre façon de vivre.</p>
+                <ul class="studio-features">
+                    <li>Planification 3D de votre espace</li>
+                    <li>Échantillonnage de tissus à emporter</li>
+                    <li>Livraison & installation Paris et Ouest francilien</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- VENIR -->
+        <section class="section-block with-stitch reveal" id="venir">
+            <span class="section-label">Venir</span>
+            <h2 class="section-title">56 avenue Paul Doumer, 75016 Paris</h2>
+            <hr class="section-divider" aria-hidden="true">
+            <div class="venir-grid">
+                <div>
+                    <ul class="infos-list">
+                        <li>
+                            <span class="info-icon">📍</span>
+                            <span><strong>Adresse</strong><br>56 Avenue Paul Doumer, 75016 Paris</span>
+                        </li>
+                        <li>
+                            <span class="info-icon">📞</span>
+                            <span><strong>Téléphone</strong><br><a href="tel:+33156071565">01 56 07 15 65</a></span>
+                        </li>
+                        <li>
+                            <span class="info-icon">✉️</span>
+                            <span><strong>Email</strong><br><a href="mailto:passy@francecanape.com">passy@francecanape.com</a></span>
+                        </li>
+                        <li>
+                            <span class="info-icon">🚇</span>
+                            <span><strong>Accès</strong><br>Métro Trocadéro (ligne 6) · La Muette (ligne 9)<br>Parking à proximité</span>
+                        </li>
+                        <li>
+                            <span class="info-icon">🕐</span>
+                            <span><strong>Horaires</strong><br>Horaires à confirmer — merci de nous contacter ou de prendre rendez-vous.<br><span class="horaires-note">Nous vous recommandons d'appeler avant votre visite.</span></span>
+                        </li>
+                    </ul>
+                    <a href="tel:+33156071565" class="header-cta" style="display:inline-block;margin-top:1.5rem;">Prendre rendez-vous</a>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=France+Canap%C3%A9+Passy+-+Paris+16%C3%A8me+56+Avenue+Paul+Doumer%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès France Canapé Passy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <h6>France Canapé Passy</h6>
+                <p>56 Avenue Paul Doumer<br>75016 Paris<br>Tél. : 01 56 07 15 65<br><a href="mailto:passy@francecanape.com">passy@francecanape.com</a></p>
+            </div>
+            <div>
+                <h6>Navigation</h6>
+                <p>
+                    <a href="#adresse">L'adresse</a><br>
+                    <a href="#collections">Collections</a><br>
+                    <a href="#savoir-faire">Savoir-faire</a><br>
+                    <a href="#studio">Studio Passy</a><br>
+                    <a href="#venir">Venir</a>
+                </p>
+            </div>
+            <div>
+                <h6>À propos</h6>
+                <p>Design d'assise depuis plus de vingt ans au cœur du 16ᵉ arrondissement. Conseil personnalisé, matières sourcées, fabrication exigeante.</p>
+                <p style="margin-top:0.8rem;">⭐ 4.6/5 — 91 avis Google</p>
+            </div>
+            <p class="footer-credit">© France Canapé Passy — Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "France Canapé Passy - Paris 16ème",
+            "image": "https://agence.mooo.com/france-canape-passy-paris-16eme/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "56 Avenue Paul Doumer",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33156071565",
+            "email": "passy@francecanape.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "91"
+            },
+            "url": "https://agence.mooo.com/france-canape-passy-paris-16eme"
+        }
+    </script>
+
+    <script>
+        // === FIL DE COUTURE — révélation au scroll ===
+        (function() {
+            const stitchThread = document.getElementById('stitchThread');
+            const heroSection = document.getElementById('hero');
+            let revealed = false;
+
+            function updateStitch() {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                // On révèle le fil quand le héros est presque entièrement défilé
+                if (heroBottom < window.innerHeight * 0.5 && !revealed) {
+                    stitchThread.classList.add('revealed');
+                    revealed = true;
+                }
+                if (heroBottom >= window.innerHeight * 0.5 && revealed) {
+                    // Optionnel: masquer si on remonte tout en haut
+                    // stitchThread.classList.remove('revealed');
+                    // revealed = false;
+                }
+            }
+
+            // Vérification initiale
+            updateStitch();
+
+            window.addEventListener('scroll', updateStitch, { passive: true });
+            window.addEventListener('resize', updateStitch, { passive: true });
+        })();
+
+        // === REVEAL AU SCROLL (IntersectionObserver) ===
+        (function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length === 0) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        })();
+
+        // === HEADER SCROLL EFFECT ===
+        (function() {
+            const header = document.getElementById('siteHeader');
+            let scrolled = false;
+
+            function updateHeader() {
+                const shouldScroll = window.scrollY > 40;
+                if (shouldScroll !== scrolled) {
+                    scrolled = shouldScroll;
+                    if (scrolled) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            }
+
+            updateHeader();
+            window.addEventListener('scroll', updateHeader, { passive: true });
+        })();
+
+        // === MOBILE MENU TOGGLE ===
+        (function() {
+            const toggle = document.getElementById('mobileMenuToggle');
+            const panel = document.getElementById('mobileNavPanel');
+            const links = panel.querySelectorAll('.mobile-nav-link');
+            let open = false;
+
+            function closeMenu() {
+                open = false;
+                panel.classList.remove('open');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                panel.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu() {
+                open = true;
+                panel.classList.add('open');
+                toggle.classList.add('active');
+                toggle.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            toggle.addEventListener('click', () => {
+                if (open) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+
+            // Fermer au clic en dehors
+            document.addEventListener('click', (e) => {
+                if (open && !panel.contains(e.target) && !toggle.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Fermer avec Échap
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && open) {
+                    closeMenu();
+                    toggle.focus();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
