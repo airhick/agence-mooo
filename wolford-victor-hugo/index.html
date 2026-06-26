@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolford Victor Hugo • Boutique collants & prêt-à-porter • Paris 16ᵉ</title>
+    <meta name="description" content="Boutique Wolford au 140 avenue Victor Hugo, Paris 16ᵉ. Essayages privés sur rendez-vous, collants, corps & prêt-à-porter. Conseil de précision depuis 1950.">
+    <meta property="og:title" content="Wolford Victor Hugo • La transparence à l'adresse juste">
+    <meta property="og:description" content="Boutique Wolford au 140 avenue Victor Hugo, Paris 16ᵉ. Essayages privés sur rendez-vous. Une architecture claire, une lumière froide qui sublime tout.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⬩%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanc-optique: #FFFFFF;
+            --noir-absolu: #0D0D0D;
+            --beige-cendre: #F4F2EE;
+            --argent-bruni: #C8CCCE;
+            --carmin-wolford: #9E1B2E;
+            --filet: rgba(200, 204, 206, 0.45);
+            --ombre-douce: 0 1px 0 rgba(13, 13, 13, 0.06), 0 4px 20px rgba(13, 13, 13, 0.03);
+            --transition-rapide: 220ms cubic-bezier(0.33, 0, 0.2, 1);
+            --transition-medium: 380ms cubic-bezier(0.33, 0, 0.2, 1);
+            --transition-lente: 620ms cubic-bezier(0.22, 0, 0.1, 1);
+            --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            background-color: var(--blanc-optique);
+            color: var(--noir-absolu);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                animation-delay: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.005em;
+            background-color: var(--blanc-optique);
+            color: var(--noir-absolu);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ----- HEADER ----- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(18px) saturate(1.4);
+            -webkit-backdrop-filter: blur(18px) saturate(1.4);
+            border-bottom: 1px solid var(--filet);
+            transition: background var(--transition-rapide), border-color var(--transition-rapide);
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .header-logo {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            letter-spacing: 0.03em;
+            color: var(--noir-absolu);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .header-logo span {
+            color: var(--carmin-wolford);
+            font-weight: 700;
+            font-size: 1.15em;
+            line-height: 0;
+            display: inline-block;
+            transform: translateY(-1px);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 2vw, 1.6rem);
+            list-style: none;
+            flex-wrap: nowrap;
+        }
+        .header-nav a {
+            font-family: 'Geist', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--noir-absolu);
+            text-decoration: none;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color var(--transition-rapide);
+            white-space: nowrap;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--carmin-wolford);
+            transition: width var(--transition-rapide);
+        }
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            color: var(--carmin-wolford);
+            outline: none;
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.3rem;
+            background: var(--carmin-wolford);
+            color: #fff;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1.1vw, 0.78rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 0;
+            transition: background var(--transition-rapide), box-shadow var(--transition-rapide);
+            white-space: nowrap;
+            line-height: 1;
+            border: none;
+            cursor: pointer;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: #7a1524;
+            box-shadow: 0 0 0 3px rgba(158, 27, 46, 0.18);
+            outline: none;
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--carmin-wolford);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav .hide-mobile {
+                display: none;
+            }
+            .header-nav {
+                gap: 0.6rem;
+            }
+            .header-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+            .site-header {
+                height: 56px;
+                padding: 0 1rem;
+            }
+        }
+        @media (max-width: 420px) {
+            .header-nav a {
+                font-size: 0.65rem;
+            }
+            .header-cta {
+                padding: 0.45rem 0.8rem;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 6rem clamp(1.5rem, 6vw, 5rem) 4rem;
+            overflow: hidden;
+            background: var(--blanc-optique);
+            isolation: isolate;
+        }
+
+        .hero-image-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 52%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            /* Effet de transparence au chargement : overlay qui se retire */
+        }
+        .hero-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--blanc-optique);
+            z-index: 3;
+            animation: revealSweep 1.5s var(--easing-out-expo) 0.4s forwards;
+            pointer-events: none;
+        }
+        @keyframes revealSweep {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(105%);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-container::after {
+                animation: none;
+                transform: translateY(105%);
+            }
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+            filter: grayscale(0.25) contrast(1.06) brightness(1.02);
+            mix-blend-mode: normal;
+            animation: imageFadeIn 0.9s var(--easing-out-expo) 0.55s both;
+        }
+        @keyframes imageFadeIn {
+            from {
+                opacity: 0.75;
+                filter: grayscale(0.5) contrast(1.12) brightness(1.08);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-container img {
+                animation: none;
+            }
+        }
+
+        /* Texture calque transparent – superposition d'une trame fine */
+        .hero-texture-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 52%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.14;
+            background-image: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(200, 204, 206, 0.55) 2px,
+                    rgba(200, 204, 206, 0.55) 2.5px),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(200, 204, 206, 0.35) 2px,
+                    rgba(200, 204, 206, 0.35) 2.5px);
+            animation: textureFadeIn 1.8s var(--easing-out-expo) 0.7s both;
+        }
+        @keyframes textureFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.14;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-texture-overlay {
+                animation: none;
+                opacity: 0.14;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 600px;
+            padding-right: 1rem;
+        }
+        .hero-label {
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.65rem, 1vw, 0.75rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--carmin-wolford);
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        .hero-title {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: clamp(3.2rem, 9vw, 7.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.015em;
+            color: var(--noir-absolu);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--easing-out-expo) 0.15s forwards;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-title {
+                animation: none;
+                opacity: 1;
+            }
+        }
+        .hero-subtitle {
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            line-height: 1.55;
+            letter-spacing: 0.01em;
+            color: var(--noir-absolu);
+            max-width: 420px;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--easing-out-expo) 0.3s forwards;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-subtitle {
+                animation: none;
+                opacity: 1;
+            }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background: var(--beige-cendre);
+            border: 1px solid var(--argent-bruni);
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            color: var(--noir-absolu);
+            text-decoration: none;
+            transition: border-color var(--transition-rapide), box-shadow var(--transition-rapide);
+        }
+        .hero-badge .stars {
+            color: var(--carmin-wolford);
+            letter-spacing: 0.08em;
+            font-size: 1.05em;
+        }
+        .hero-badge:hover {
+            border-color: var(--carmin-wolford);
+            box-shadow: 0 0 0 2px rgba(158, 27, 46, 0.08);
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                padding-top: 7rem;
+                min-height: auto;
+                gap: 2rem;
+            }
+            .hero-image-container {
+                position: relative;
+                width: 100%;
+                height: 50vh;
+                min-height: 340px;
+                order: -1;
+                right: auto;
+                top: auto;
+            }
+            .hero-texture-overlay {
+                width: 100%;
+                height: 100%;
+                right: auto;
+                top: auto;
+            }
+            .hero-content {
+                max-width: 100%;
+                padding-right: 0;
+                text-align: left;
+            }
+        }
+
+        /* ----- SECTIONS GÉNÉRALES ----- */
+        .section {
+            padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+            position: relative;
+        }
+        .section-alt {
+            background: var(--beige-cendre);
+        }
+        .section-title {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: clamp(2.8rem, 8vw, 7.5rem);
+            line-height: 0.94;
+            letter-spacing: -0.01em;
+            color: var(--noir-absolu);
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+            word-break: break-word;
+        }
+        .section-body {
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            line-height: 1.65;
+            letter-spacing: 0.008em;
+            color: var(--noir-absolu);
+            max-width: 640px;
+        }
+        .section-body+.section-body {
+            margin-top: 1rem;
+        }
+        .inline-accent {
+            color: var(--carmin-wolford);
+            font-weight: 600;
+        }
+
+        /* Filets / séparateurs */
+        .filet {
+            height: 1px;
+            background: var(--argent-bruni);
+            width: 100%;
+            margin: clamp(1.5rem, 3vw, 2.5rem) 0;
+            opacity: 0.7;
+        }
+        .filet-accent {
+            height: 2px;
+            background: var(--carmin-wolford);
+            width: 3rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        /* Cartes / encarts */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(1rem, 2.5vw, 2rem);
+            margin-top: 2rem;
+        }
+        .card {
+            background: var(--blanc-optique);
+            border: 1px solid var(--argent-bruni);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            transition: box-shadow var(--transition-rapide), border-color var(--transition-rapide);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .card:hover {
+            border-color: var(--carmin-wolford);
+            box-shadow: 0 8px 30px rgba(13, 13, 13, 0.05), 0 0 0 1px rgba(158, 27, 46, 0.08);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 1px,
+                    rgba(200, 204, 206, 0.15) 1px,
+                    rgba(200, 204, 206, 0.15) 1.5px);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .card-title {
+            font-family: 'Instrument Serif', 'Times New Roman', serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            letter-spacing: 0.01em;
+            color: var(--noir-absolu);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 2;
+        }
+        .card-text {
+            font-family: 'Geist', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--noir-absolu);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ----- GOOGLE BADGE ----- */
+        .google-badge-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: var(--noir-absolu);
+            background: var(--blanc-optique);
+            border: 1px solid var(--argent-bruni);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            transition: border-color var(--transition-rapide);
+        }
+        .google-badge-inline .stars {
+            color: var(--carmin-wolford);
+            letter-spacing: 0.06em;
+        }
+
+        /* ----- MAP ----- */
+        .map-wrapper {
+            width: 100%;
+            border: 1px solid var(--argent-bruni);
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+            filter: grayscale(0.15) contrast(1.03);
+        }
+
+        /* ----- REVEAL AU SCROLL ----- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--easing-out-expo), transform 0.7s var(--easing-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: var(--beige-cendre);
+            border-top: 1px solid var(--argent-bruni);
+            padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 6vw, 5rem);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            font-family: 'Geist', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--noir-absolu);
+            letter-spacing: 0.01em;
+        }
+        .site-footer strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .site-footer a {
+            color: var(--noir-absolu);
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+        .site-footer a:hover,
+        .site-footer a:focus-visible {
+            color: var(--carmin-wolford);
+            outline: none;
+        }
+        .footer-credit {
+            grid-column: 1/-1;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(13, 13, 13, 0.55);
+            letter-spacing: 0.05em;
+            border-top: 1px solid var(--argent-bruni);
+            padding-top: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ----- ACCESSIBILITÉ ----- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--carmin-wolford);
+            outline-offset: 3px;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ----- LIENS TÉLÉPHONE/EMAIL ----- */
+        .contact-link {
+            font-weight: 600;
+            color: var(--carmin-wolford);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition-rapide);
+        }
+        .contact-link:hover,
+        .contact-link:focus-visible {
+            border-bottom-color: var(--carmin-wolford);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <a href="#hero" class="header-logo" aria-label="Wolford Victor Hugo – retour à l'accueil">
+            W<span>·</span>VH
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#lieu" class="hide-mobile">Le lieu</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#selection">Sélection</a></li>
+                <li><a href="#venir">Venir</a></li>
+            </ul>
+        </nav>
+        <a href="#rendezvous" class="header-cta">Réserver</a>
+    </header>
+
+    <main id="hero">
+        <!-- HÉRO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-image-container">
+                <img src="assets/maps-1.jpg" alt="Boutique Wolford Victor Hugo – façade parisienne lumineuse" loading="eager" width="1200" height="1600">
+            </div>
+            <div class="hero-texture-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="hero-label">Boutique Wolford • Paris 16ᵉ</span>
+                <h1 class="hero-title" id="hero-title">La transparence<br>à l'adresse juste</h1>
+                <p class="hero-subtitle">Collants, corps & prêt-à-porter – 140 avenue Victor Hugo. Essayages privés sur rendez-vous.</p>
+                <a href="https://search.google.com/local/reviews?placeid=ChIJ______w" target="_blank" rel="noopener" class="hero-badge" aria-label="Note Google 4.1 sur 5 étoiles, 10 avis">
+                    <span class="stars" aria-hidden="true">★★★★☆</span> 4.1/5 — 10 avis
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : LE LIEU -->
+        <section class="section" id="lieu" aria-labelledby="titre-lieu">
+            <h2 class="section-title reveal" id="titre-lieu">L'écrin Victor Hugo</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <p class="section-body reveal">Une architecture claire, des cabines pensées comme des loges, une lumière froide qui ne pardonne rien – et sublime tout. Dans le calme de l'avenue, à deux pas du Trocadéro.</p>
+            <p class="section-body reveal">Ici, l'essayage devient un luxe discret. Les murs blancs, le verre et le métal brossé composent une atmosphère de galerie d'art contemporain où chaque silhouette trouve sa juste lecture.</p>
+        </section>
+
+        <!-- SECTION 2 : SERVICES SUR PLACE -->
+        <section class="section section-alt" id="services" aria-labelledby="titre-services">
+            <h2 class="section-title reveal" id="titre-services">Conseil et précision</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <div class="card-grid">
+                <div class="card reveal">
+                    <div class="card-title">Essayage accompagné</div>
+                    <p class="card-text">Une conseillère dédiée vous guide en cabine privée. Aucune pression de vente : un regard formé à la ligne, pas au chiffre.</p>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.1s;">
+                    <div class="card-title">Retouches minute</div>
+                    <p class="card-text">Ourlets, ajustements, reprises délicates effectués sur place avec la précision d'un atelier de couture.</p>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.2s;">
+                    <div class="card-title">Repigmentation</div>
+                    <p class="card-text">Vos collants retrouvent leur profondeur. Un bain de couleur froide, maîtrisé, pour prolonger la vie de chaque pièce.</p>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.3s;">
+                    <div class="card-title">Diagnostic de silhouette</div>
+                    <p class="card-text">Une analyse nette et bienveillante pour identifier les coupes, les matières et les constructions qui servent votre ligne.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : SÉLECTION DU MOIS -->
+        <section class="section" id="selection" aria-labelledby="titre-selection">
+            <h2 class="section-title reveal" id="titre-selection">Les pièces de cabine</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <p class="section-body reveal">Une édition resserrée, renouvelée chaque saison. Non pas un inventaire, mais ce que l'on aime voir porté : la robe drappée Icon, le body transparent Pure, les bas autofixants en mérinos.</p>
+            <p class="section-body reveal">Chaque pièce est sélectionnée pour sa tenue, sa transparence maîtrisée et sa capacité à devenir une <span class="inline-accent">seconde peau</span> – sans couture, sans compromis.</p>
+            <div class="filet" aria-hidden="true"></div>
+            <p class="section-body reveal" style="font-style: italic; color: rgba(13,13,13,0.65);">La sélection complète se découvre en boutique. Prenez rendez-vous pour un essayage privé.</p>
+        </section>
+
+        <!-- SECTION 4 : HORAIRES & ACCÈS -->
+        <section class="section section-alt" id="venir" aria-labelledby="titre-venir">
+            <h2 class="section-title reveal" id="titre-venir">Venir</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal">
+                    <div class="card-title">Adresse</div>
+                    <p class="card-text">140 Avenue Victor Hugo<br>75016 Paris<br>France</p>
+                    <p class="card-text" style="margin-top:0.8rem;">Station de métro <span class="inline-accent">Victor Hugo</span> (ligne 2).<br>Parking public à 80 m.<br>Entrée sur rue, niveau trottoir.</p>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.15s;">
+                    <div class="card-title">Horaires d'ouverture</div>
+                    <p class="card-text">Mardi – Samedi<br><span class="inline-accent">10h – 19h</span></p>
+                    <p class="card-text" style="margin-top:0.8rem; font-size:0.8rem; color:rgba(13,13,13,0.6);">Dimanche et lundi fermés.<br>Jours fériés : horaires à confirmer.</p>
+                </div>
+            </div>
+            <div class="map-wrapper reveal" style="margin-top:2rem;">
+                <iframe src="https://maps.google.com/maps?q=Wolford+Victor+Hugo+140+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps – Wolford Victor Hugo, 140 Avenue Victor Hugo, Paris"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : PRENDRE RENDEZ-VOUS -->
+        <section class="section" id="rendezvous" aria-labelledby="titre-rdv">
+            <h2 class="section-title reveal" id="titre-rdv">Un essayage privé</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <p class="section-body reveal">Réservez votre créneau pour une heure de conseil exclusif, seule ou accompagnée. La cabine vous attend, la lumière est réglée, le silence de l'avenue fait le reste.</p>
+            <p class="section-body reveal" style="margin-top:1.5rem;">
+                <a href="tel:+33155730102" class="contact-link">01 55 73 01 02</a><br>
+                <span style="font-size:0.85rem; color:rgba(13,13,13,0.6);">ou</span><br>
+                <a href="mailto:service.france@wolford.com" class="contact-link">service.france@wolford.com</a>
+            </p>
+            <div class="filet" aria-hidden="true"></div>
+            <p class="section-body reveal" style="font-size:0.85rem; color:rgba(13,13,13,0.55);">Téléphonez également au <a href="tel:+33788660954" class="contact-link" style="font-weight:400;">07 88 66 09 54</a> pour une réservation directe avec l'équipe de la boutique.</p>
+        </section>
+
+        <!-- SECTION 6 : LA MAISON WOLFORD -->
+        <section class="section section-alt" id="maison" aria-labelledby="titre-maison">
+            <h2 class="section-title reveal" id="titre-maison">Depuis 1950</h2>
+            <div class="filet-accent reveal" aria-hidden="true"></div>
+            <p class="section-body reveal">Une histoire de fils, de mailles et d'émancipation. Nos collants sont tricotés en Europe, nos finitions sont sans couture. La boutique Victor Hugo est l'une de nos adresses historiques à Paris.</p>
+            <p class="section-body reveal">Chaque pièce Wolford incarne une promesse de <span class="inline-accent">netteté</span> : la maille ne se relâche pas, la transparence ne triche pas, la coupe ne pardonne que l'essentiel. Depuis plus de soixante-dix ans, nous habillons les jambes et les corps avec la même exigence architecturale.</p>
+            <div style="margin-top:2rem;">
+                <a href="https://search.google.com/local/reviews?placeid=ChIJ______w" target="_blank" rel="noopener" class="google-badge-inline reveal" aria-label="Note Google 4.1 sur 5 étoiles, 10 avis">
+                    <span class="stars" aria-hidden="true">★★★★☆</span> 4.1/5 • 10 avis Google
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div>
+            <strong>Wolford Victor Hugo</strong>
+            140 Avenue Victor Hugo<br>
+            75016 Paris<br>
+            France
+        </div>
+        <div>
+            <strong>Contact</strong>
+            <a href="tel:+33155730102">01 55 73 01 02</a><br>
+            <a href="mailto:service.france@wolford.com">service.france@wolford.com</a><br>
+            <a href="mailto:quality@wolford.com">quality@wolford.com</a>
+        </div>
+        <div>
+            <strong>Horaires</strong>
+            Mardi – Samedi<br>
+            10h – 19h<br>
+            <span style="font-size:0.75rem; color:rgba(13,13,13,0.5);">Dimanche et lundi fermés</span>
+        </div>
+        <div>
+            <strong>Liens</strong>
+            <a href="#lieu">Le lieu</a><br>
+            <a href="#services">Services</a><br>
+            <a href="#rendezvous">Rendez-vous</a>
+        </div>
+        <div class="footer-credit">
+            Site créé par Agence Mooo • <a href="https://agence.mooo.com/wolford-victor-hugo" style="color:inherit;">agence.mooo.com/wolford-victor-hugo</a>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Wolford Victor Hugo",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "140 Avenue Victor Hugo",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33155730102",
+            "email": "service.france@wolford.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.1",
+                "reviewCount": "10"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "10:00",
+                "closes": "19:00"
+            },
+            "url": "https://agence.mooo.com/wolford-victor-hugo"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // IntersectionObserver pour les reveals au scroll
+            const reveals = document.querySelectorAll('.reveal');
+            if (reveals.length === 0) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Nettoyage de l'animation de balayage du héros pour éviter des bugs de cache
+            const heroOverlay = document.querySelector('.hero-image-container::after');
+            // L'animation CSS gère déjà le retrait ; rien de plus nécessaire.
+        })();
+    </script>
+</body>
+</html>
