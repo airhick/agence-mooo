@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daylice Café – Restaurant & Salon de thé | 152 Avenue Victor Hugo, Paris 16e</title>
+    <meta name="description" content="Daylice Café, votre salon du 16e arrondissement. Café, déjeuner, salon de thé au 152 Avenue Victor Hugo, Paris. Cuisine fraîche préparée sur place, menu du marché. Note 4.8★.">
+    <meta property="og:title" content="Daylice Café – Votre salon du 16e, du matin au dernier verre">
+    <meta property="og:description" content="Café, déjeuner, salon de thé : au 152 de l'Avenue Victor Hugo, tout est préparé sur place, avec le marché du jour. Note 4.8★.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232C2C2E'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23EDE4D8' font-family='serif'%3E☕%3C/text%3E%3C/svg%3E">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pierre: #EDE4D8;
+            --ardoise: #2C2C2E;
+            --creme: #FAFAF7;
+            --verdure: #5C7345;
+            --ecorce: #A4845C;
+            --ardoise-light: #3A3A3C;
+            --shadow-soft: 0 4px 24px rgba(44, 44, 46, 0.08);
+            --shadow-deep: 0 12px 40px rgba(44, 44, 46, 0.16);
+            --transition-smooth: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            background-color: var(--pierre);
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--ardoise);
+            background-color: var(--pierre);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Typographie expressive */
+        h1, h2, h3, .display-font {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--ardoise);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        h3 {
+            font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+            font-weight: 500;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            font-weight: 400;
+            color: var(--ardoise);
+            max-width: 65ch;
+        }
+
+        /* Accessibilité focus */
+        :focus-visible {
+            outline: 3px solid var(--verdure);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Header collant */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(237, 228, 216, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(44, 44, 46, 0.08);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+            box-shadow: 0 2px 20px rgba(44, 44, 46, 0.04);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--ardoise);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .logo span {
+            font-size: 1.9rem;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ardoise);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1.5px;
+            background-color: var(--verdure);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background-color: var(--ardoise);
+            color: var(--creme);
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .cta-header:hover {
+            background-color: var(--verdure);
+            color: var(--creme);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(92, 115, 69, 0.25);
+        }
+
+        /* Héro */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 7rem 2rem 3rem;
+            background-color: var(--pierre);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            max-width: 1300px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            aspect-ratio: 4 / 3;
+            background-color: var(--ardoise-light);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.94) contrast(1.04) saturate(0.9);
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 44, 46, 0.05) 0%, rgba(92, 115, 69, 0.08) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-weight: 400;
+            color: var(--ecorce);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .hero-content .accroche {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--ardoise);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            border-left: 3px solid var(--verdure);
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--creme);
+            border: 1px solid rgba(164, 132, 92, 0.3);
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--ardoise);
+            box-shadow: var(--shadow-soft);
+            width: fit-content;
+        }
+
+        .badge-google .stars {
+            color: #e67e22;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        /* Sections communes */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            color: var(--ardoise);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 2px;
+            background-color: var(--verdure);
+            opacity: 0.7;
+        }
+
+        /* Comptoir du jour */
+        .comptoir {
+            background-color: var(--creme);
+            border-top: 1px solid rgba(44, 44, 46, 0.06);
+            border-bottom: 1px solid rgba(44, 44, 46, 0.06);
+            padding: 5rem 2rem;
+        }
+
+        .comptoir .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .menu-board {
+            background-color: var(--ardoise);
+            color: var(--creme);
+            padding: 3rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-board::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(92, 115, 69, 0.08) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .menu-board h2 {
+            color: var(--creme);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-board .menu-intro {
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            border-bottom: 1px dashed rgba(250, 250, 247, 0.25);
+            padding-bottom: 1rem;
+        }
+
+        .menu-item h3 {
+            color: var(--creme);
+            font-size: 1.6rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .menu-item .description {
+            color: rgba(250, 250, 247, 0.75);
+            font-size: 0.95rem;
+            margin: 0.4rem 0 0.6rem;
+            font-weight: 300;
+        }
+
+        .menu-item .price {
+            font-weight: 600;
+            color: var(--ecorce);
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .menu-note {
+            margin-top: 2rem;
+            font-style: italic;
+            color: rgba(250, 250, 247, 0.65);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(250, 250, 247, 0.2);
+            padding-top: 1.2rem;
+        }
+
+        /* Infos pratiques */
+        .infos {
+            background-color: var(--pierre);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .info-card {
+            background-color: var(--creme);
+            padding: 2.5rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-soft);
+            border-left: 4px solid var(--verdure);
+        }
+
+        .info-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--ardoise);
+        }
+
+        .info-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.9rem;
+            font-size: 1.05rem;
+        }
+
+        .info-line .label {
+            font-weight: 600;
+            color: var(--ecorce);
+            min-width: 100px;
+        }
+
+        .info-line a {
+            color: var(--ardoise);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--ecorce);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .info-line a:hover {
+            color: var(--verdure);
+            border-bottom-color: var(--verdure);
+        }
+
+        .horaires-block {
+            background-color: var(--ardoise);
+            color: var(--creme);
+            padding: 2.5rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-deep);
+        }
+
+        .horaires-block h3 {
+            color: var(--creme);
+            margin-bottom: 1.2rem;
+        }
+
+        .horaires-list {
+            list-style: none;
+        }
+
+        .horaires-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+            font-size: 1rem;
+            color: rgba(250, 250, 247, 0.9);
+        }
+
+        .horaires-note {
+            margin-top: 1rem;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: rgba(250, 250, 247, 0.6);
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            grid-column: 1 / -1;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            background-color: var(--ardoise-light);
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--ardoise);
+            color: var(--creme);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(250, 250, 247, 0.08);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .footer-nap {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .footer-nap strong {
+            color: var(--creme);
+            font-weight: 600;
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            color: rgba(250, 250, 247, 0.5);
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.25s; }
+        .reveal-delay-3 { transition-delay: 0.4s; }
+        .reveal-delay-4 { transition-delay: 0.55s; }
+
+        /* Chargement initial : fade-in orchestre */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+        }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.7s; }
+
+        .hero-image-wrapper {
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+            animation-delay: 0.15s;
+        }
+
+        /* prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-image-wrapper {
+                order: -1;
+                max-height: 50vh;
+            }
+            .hero {
+                padding: 6rem 1.5rem 2rem;
+                min-height: auto;
+            }
+            .site-header {
+                padding: 0.6rem 1.2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a:not(.cta-header) {
+                font-size: 0.85rem;
+            }
+            .infos {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .menu-board {
+                padding: 2rem 1.5rem;
+            }
+            section {
+                padding: 3rem 1.5rem;
+            }
+            .comptoir {
+                padding: 3rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+            .nav-links a:not(.cta-header) {
+                display: none;
+            }
+            .cta-header {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="#" class="logo">
+            <span>☕</span> Daylice
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#comptoir">Menu</a></li>
+                <li><a href="#infos">Infos</a></li>
+                <li><a href="tel:+33145533937" class="cta-header">Appeler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="subtitle">152 Avenue Victor Hugo, Paris 16ᵉ</p>
+                    <h1>Votre salon du 16ᵉ, du matin au dernier verre.</h1>
+                    <p class="accroche">Café, déjeuner, salon de thé : au 152 de l'Avenue Victor Hugo, tout est préparé sur place, avec le marché du jour.</p>
+                    <div class="badge-google">
+                        <span class="stars">★★★★★</span> 4.8 / 5 <span style="font-weight:400; margin-left:0.3rem;">(88 avis)</span>
+                    </div>
+                    <div style="margin-top:0.5rem;">
+                        <a href="tel:+33145533937" style="display:inline-block; background:var(--ardoise); color:var(--creme); padding:0.8rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; transition:all 0.3s; border:1px solid transparent;"
+                           onmouseover="this.style.background='var(--verdure)'" onmouseout="this.style.background='var(--ardoise)'">
+                            📞 01 45 53 39 37
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="assets/maps-1.jpg" alt="Terrasse du Daylice Café baignée de lumière naturelle" loading="eager" width="800" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPTOIR DU JOUR -->
+        <section id="comptoir" class="comptoir">
+            <div class="inner reveal">
+                <div class="menu-board">
+                    <div class="section-title">
+                        <h2>Au tableau aujourd'hui</h2>
+                    </div>
+                    <p class="menu-intro">Découvrez nos suggestions fraîches, préparées sur place. Salades composées, plats mijotés ou grillés : le menu change avec le marché.</p>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <h3>Salade Daylice</h3>
+                            <p class="description">Mesclun, chèvre frais, noix caramélisées, poires rôties, vinaigrette miel & thym.</p>
+                            <span class="price">14,50 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Poulet rôti & herbes</h3>
+                            <p class="description">Suprême de volaille fermière, écrasé de pommes de terre à l'huile d'olive, jus corsé.</p>
+                            <span class="price">18,90 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Risotto primeurs</h3>
+                            <p class="description">Riz carnaroli, asperges vertes, petits pois, parmesan AOP, menthe fraîche.</p>
+                            <span class="price">16,50 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Tartine du moment</h3>
+                            <p class="description">Pain de campagne toasté, avocat, saumon fumé, aneth, citron confit.</p>
+                            <span class="price">13,90 €</span>
+                        </div>
+                    </div>
+                    <p class="menu-note">🌸 Menus disponibles du mardi au samedi, de 12h à 15h. Prix nets, service compris.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section id="infos" class="infos">
+            <div class="info-card reveal reveal-delay-1">
+                <h3>📍 Nous trouver</h3>
+                <div class="info-line">
+                    <span class="label">Adresse</span>
+                    <span>152 Avenue Victor Hugo, 75116 Paris</span>
+                </div>
+                <div class="info-line">
+                    <span class="label">Téléphone</span>
+                    <a href="tel:+33145533937">01 45 53 39 37</a>
+                </div>
+                <div class="info-line">
+                    <span class="label">Email</span>
+                    <a href="mailto:info@daylice-cafe.com">info@daylice-cafe.com</a>
+                </div>
+                <div class="info-line" style="margin-top:1rem;">
+                    <span class="badge-google" style="font-size:0.9rem; padding:0.3rem 0.8rem;">
+                        <span class="stars">★★★★★</span> 4.8/5 (88 avis Google)
+                    </span>
+                </div>
+            </div>
+
+            <div class="horaires-block reveal reveal-delay-2">
+                <h3>🕒 Horaires d'ouverture</h3>
+                <ul class="horaires-list">
+                    <li><span>Lundi</span> <span>08:00 – 18:00</span></li>
+                    <li><span>Mardi – Vendredi</span> <span>08:00 – 23:00</span></li>
+                    <li><span>Samedi</span> <span>09:00 – 23:00</span></li>
+                    <li><span>Dimanche</span> <span>09:00 – 16:00</span></li>
+                </ul>
+                <p class="horaires-note">✨ Horaires indicatifs — nous vous invitons à appeler pour confirmer avant votre visite, particulièrement les jours fériés.</p>
+            </div>
+
+            <div class="map-container reveal reveal-delay-3">
+                <iframe src="https://maps.google.com/maps?q=Daylice+Caf%C3%A9+152+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Daylice Café"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-nap">
+                <strong>Daylice Café</strong><br>
+                152 Avenue Victor Hugo, 75116 Paris<br>
+                Tél : <a href="tel:+33145533937" style="color:var(--creme); text-decoration:underline;">01 45 53 39 37</a> — 
+                <a href="mailto:info@daylice-cafe.com" style="color:var(--creme); text-decoration:underline;">info@daylice-cafe.com</a>
+            </div>
+            <p class="footer-credit">Site créé par <strong>Agence Mooo</strong></p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Daylice Café",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "152 Avenue Victor Hugo",
+                "addressLocality": "Paris",
+                "postalCode": "75116",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145533937",
+            "email": "info@daylice-cafe.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "88"
+            },
+            "priceRange": "€€",
+            "servesCuisine": "Française, Salon de thé",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "09:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "09:00",
+                    "closes": "16:00"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        // IntersectionObserver pour les révélations au scroll
+        (function() {
+            const reveals = document.querySelectorAll('.reveal');
+            if (!reveals.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Cleanup observer on page unload (bonne pratique)
+            window.addEventListener('beforeunload', () => {
+                reveals.forEach(el => observer.unobserve(el));
+            });
+        })();
+
+        // Gestion du header : léger effet d'ombre au scroll
+        (function() {
+            const header = document.querySelector('.site-header');
+            if (!header) return;
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY > 10) {
+                            header.style.boxShadow = '0 4px 30px rgba(44,44,46,0.08)';
+                        } else {
+                            header.style.boxShadow = '0 2px 20px rgba(44,44,46,0.04)';
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
