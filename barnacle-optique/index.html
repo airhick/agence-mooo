@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barnacle Optique — Opticien artisanal, 2 rue de la Convention Paris 15e</title>
+    <meta name="description" content="Barnacle Optique — Mickael vous reçoit dans son atelier d'opticien rue de la Convention à Paris 15e. Examens de vue, collections exigeantes, ajustages de précision. Tiers-payant accepté.">
+    <meta property="og:title" content="Barnacle Optique — La vue prend son temps, rue de la Convention">
+    <meta property="og:description" content="Atelier d'opticien artisanal à Paris 15e. Mickael vous reçoit pour examens, conseil et ajustages — loin des chaînes anonymes.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%232D2A26' stroke-width='1.5'/%3E%3Cpath d='M8 16a8 8 0 0 1 8-8' fill='none' stroke='%232D2A26' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M24 16a8 8 0 0 1-8 8' fill='none' stroke='%232D2A26' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%232D2A26' opacity='0.7'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            --beige-atelier: #F7F2E9;
+            --noir-optique: #1C1C1C;
+            --brun-encre: #2D2A26;
+            --bleu-prescription: #3A5A78;
+            --laiton-monture: #C4945B;
+            --sepia-clair: #E0D8CD;
+            --font-display: 'Bricolage Grotesque', serif;
+            --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-out-quart: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--beige-atelier);
+            color: var(--brun-encre);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.05vw, 1.1rem);
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ---- Focus visible ---- */
+        :focus-visible {
+            outline: 2px solid var(--bleu-prescription);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ---- Motif lentille-cache SVG ---- */
+        .lens-watermark {
+            position: relative;
+        }
+        .lens-watermark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='48' fill='none' stroke='%23E0D8CD' stroke-width='1.2' opacity='0.5'/%3E%3Cpath d='M22 60a38 38 0 0 1 38-38' fill='none' stroke='%23E0D8CD' stroke-width='1.8' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M98 60a38 38 0 0 1-38 38' fill='none' stroke='%23E0D8CD' stroke-width='1.8' stroke-linecap='round' opacity='0.45'/%3E%3Ccircle cx='60' cy='60' r='8' fill='none' stroke='%23E0D8CD' stroke-width='0.8' opacity='0.35'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 120px 120px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+        .lens-watermark--dark::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='48' fill='none' stroke='%23333' stroke-width='1.2' opacity='0.35'/%3E%3Cpath d='M22 60a38 38 0 0 1 38-38' fill='none' stroke='%23333' stroke-width='1.8' stroke-linecap='round' opacity='0.3'/%3E%3Cpath d='M98 60a38 38 0 0 1-38 38' fill='none' stroke='%23333' stroke-width='1.8' stroke-linecap='round' opacity='0.3'/%3E%3Ccircle cx='60' cy='60' r='8' fill='none' stroke='%23333' stroke-width='0.8' opacity='0.25'/%3E%3C/svg%3E");
+        }
+
+        /* ---- HEADER sticky ---- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 242, 233, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--sepia-clair);
+            padding: 0.85rem clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            transition: background 0.4s ease;
+        }
+        .site-header:hover {
+            background: rgba(247, 242, 233, 0.94);
+        }
+        .header-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+            color: var(--noir-optique);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .header-brand span {
+            color: var(--bleu-prescription);
+            font-weight: 500;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            list-style: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--brun-encre);
+            transition: color 0.25s ease;
+            position: relative;
+            padding: 0.2em 0;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--laiton-monture);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header-nav a:hover {
+            color: var(--noir-optique);
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--noir-optique);
+            color: var(--beige-atelier);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            padding: 0.55em 1.3em;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--bleu-prescription);
+            transform: translateY(-1px);
+            outline: none;
+        }
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.7rem 1rem;
+                gap: 0.7rem;
+            }
+            .header-nav {
+                gap: 0.8rem;
+                font-size: 0.8rem;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                mask-image: linear-gradient(to right, black 85%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+                padding-bottom: 2px;
+            }
+            .header-nav::-webkit-scrollbar {
+                display: none;
+            }
+            .header-cta {
+                font-size: 0.78rem;
+                padding: 0.5em 1em;
+            }
+        }
+
+        /* ---- SECTION GENERIQUE ---- */
+        .section {
+            padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 3rem);
+        }
+        .section--dark {
+            background: var(--noir-optique);
+            color: var(--beige-atelier);
+        }
+        .section--tight {
+            padding-top: clamp(2rem, 4vw, 3.5rem);
+            padding-bottom: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        /* ---- CONTAINER ---- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .container--narrow {
+            max-width: 800px;
+        }
+        .container--wide {
+            max-width: 1400px;
+        }
+
+        /* ---- TITRES ---- */
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bleu-prescription);
+            margin-bottom: 0.6em;
+        }
+        .section--dark .section-label {
+            color: var(--laiton-monture);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--noir-optique);
+            margin-bottom: 0.5em;
+        }
+        .section--dark .section-title {
+            color: var(--beige-atelier);
+        }
+        .section-subtitle {
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            font-weight: 400;
+            color: var(--brun-encre);
+            opacity: 0.8;
+            max-width: 600px;
+            line-height: 1.55;
+        }
+        .section--dark .section-subtitle {
+            color: var(--beige-atelier);
+            opacity: 0.75;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 0;
+        }
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.85) saturate(1.05);
+            transition: filter 1.2s ease;
+        }
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(28, 28, 28, 0.55) 0%,
+                    rgba(28, 28, 28, 0.25) 40%,
+                    rgba(28, 28, 28, 0.6) 100%);
+            z-index: 1;
+        }
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            padding-top: clamp(6rem, 12vw, 10rem);
+            padding-bottom: clamp(3rem, 8vw, 6rem);
+        }
+        .hero__street-badge {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--beige-atelier);
+            border: 1px solid rgba(247, 242, 233, 0.45);
+            padding: 0.45em 1em;
+            border-radius: 2px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            width: fit-content;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.15s forwards;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: #fff;
+            max-width: 750px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeUp 0.9s 0.3s forwards;
+        }
+        .hero__subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 520px;
+            line-height: 1.55;
+            text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            animation: fadeUp 0.9s 0.5s forwards;
+        }
+        .hero__ctas {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.7s forwards;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            letter-spacing: 0.04em;
+            padding: 0.7em 1.6em;
+            border-radius: 2px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            border: none;
+            white-space: nowrap;
+        }
+        .btn--primary {
+            background: var(--beige-atelier);
+            color: var(--noir-optique);
+        }
+        .btn--primary:hover,
+        .btn--primary:focus-visible {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+            outline: none;
+        }
+        .btn--ghost {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+        }
+        .btn--ghost:hover,
+        .btn--ghost:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            outline: none;
+        }
+        .btn--dark {
+            background: var(--noir-optique);
+            color: var(--beige-atelier);
+        }
+        .btn--dark:hover,
+        .btn--dark:focus-visible {
+            background: var(--bleu-prescription);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---- GOOGLE BADGE ---- */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.4em 0.85em;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #fff;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.6s forwards;
+            width: fit-content;
+        }
+        .google-badge__stars {
+            color: #f4b731;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+        .google-badge__note {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* ---- REVEAL BLUR ---- */
+        .reveal-blur {
+            filter: blur(7px);
+            opacity: 0;
+            transition: filter 0.7s var(--ease-out-expo), opacity 0.7s var(--ease-out-expo);
+            will-change: filter, opacity;
+        }
+        .reveal-blur.is-revealed {
+            filter: blur(0);
+            opacity: 1;
+        }
+        .reveal-blur--fast {
+            transition-duration: 0.5s;
+        }
+        .reveal-blur--slow {
+            transition-duration: 0.85s;
+        }
+
+        /* ---- ATELIER ---- */
+        .atelier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .atelier-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .atelier-text p {
+            max-width: 480px;
+            line-height: 1.7;
+        }
+        .atelier-text .highlight {
+            font-weight: 600;
+            color: var(--bleu-prescription);
+        }
+        .atelier-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 0.7rem;
+            position: relative;
+        }
+        .atelier-images .img-wrap {
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .atelier-images .img-wrap:first-child {
+            grid-column: 1 / -1;
+            aspect-ratio: 3 / 2;
+        }
+        .atelier-images .img-wrap:nth-child(2),
+        .atelier-images .img-wrap:nth-child(3) {
+            aspect-ratio: 1 / 1;
+        }
+        .atelier-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .atelier-images .img-wrap:hover img {
+            transform: scale(1.04);
+        }
+        .img-duotone {
+            position: relative;
+        }
+        .img-duotone::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bleu-prescription);
+            mix-blend-mode: overlay;
+            opacity: 0.25;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .img-duotone:hover::after {
+            opacity: 0.08;
+        }
+        .img-warm-overlay {
+            position: relative;
+        }
+        .img-warm-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(196, 148, 91, 0.3) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .atelier-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .atelier-images {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .atelier-images .img-wrap:first-child {
+                aspect-ratio: 16/10;
+            }
+        }
+
+        /* ---- SERVICES ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: #fff;
+            padding: clamp(1.4rem, 2vw, 1.8rem);
+            border-radius: 2px;
+            border: 1px solid var(--sepia-clair);
+            transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09);
+        }
+        .service-card__icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+        .service-card__icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--bleu-prescription);
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--noir-optique);
+            letter-spacing: -0.01em;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            line-height: 1.55;
+            color: var(--brun-encre);
+            opacity: 0.85;
+        }
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---- COLLECTIONS ---- */
+        .collections-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.6rem, 1.5vw, 1rem);
+            margin-top: 2rem;
+        }
+        .collection-img-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            aspect-ratio: 3/4;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+            cursor: default;
+        }
+        .collection-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo), filter 0.6s ease;
+            filter: grayscale(0.2) brightness(0.95);
+        }
+        .collection-img-wrap:hover img {
+            transform: scale(1.06);
+            filter: grayscale(0) brightness(1.05);
+        }
+        .collection-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 28, 28, 0.5) 0%, transparent 45%);
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .collection-img-wrap:hover::before {
+            opacity: 0.3;
+        }
+        .collection-img-wrap .img-label {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+            z-index: 2;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.04em;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 768px) {
+            .collections-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .collections-gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+        }
+
+        /* ---- MARQUES ---- */
+        .marques-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2rem;
+        }
+        .marque-item {
+            border-left: 2px solid var(--sepia-clair);
+            padding-left: 1.2rem;
+            transition: border-color 0.4s ease;
+        }
+        .marque-item:hover {
+            border-left-color: var(--laiton-monture);
+        }
+        .marque-item h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--beige-atelier);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.3em;
+        }
+        .marque-item p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* ---- QUARTIER ---- */
+        .quartier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3.5rem);
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+        .quartier-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .horaires-table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 360px;
+        }
+        .horaires-table td {
+            padding: 0.45em 0;
+            border-bottom: 1px solid var(--sepia-clair);
+        }
+        .horaires-table td:first-child {
+            font-weight: 600;
+            color: var(--noir-optique);
+            width: 40%;
+        }
+        .horaires-table td:last-child {
+            color: var(--brun-encre);
+            opacity: 0.85;
+        }
+        .quartier-map {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+            min-height: 280px;
+        }
+        .quartier-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .quartier-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .quartier-map {
+                aspect-ratio: 16/9;
+                min-height: 240px;
+            }
+        }
+
+        /* ---- FORMULAIRE ---- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .form-grid .full-width {
+            grid-column: 1 / -1;
+        }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+        }
+        .form-field label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--brun-encre);
+            opacity: 0.8;
+        }
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.7em 0.9em;
+            border: 1.5px solid var(--sepia-clair);
+            border-radius: 2px;
+            background: #fff;
+            color: var(--brun-encre);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            resize: vertical;
+        }
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--bleu-prescription);
+            box-shadow: 0 0 0 3px rgba(58, 90, 120, 0.08);
+            outline: none;
+        }
+        .form-field textarea {
+            min-height: 100px;
+        }
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--noir-optique);
+            color: var(--beige-atelier);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 5vw, 3rem) 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-footer .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: start;
+        }
+        .footer-nap {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+        .footer-nap strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        .footer-nap a {
+            color: var(--laiton-monture);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-nap a:hover {
+            color: #fff;
+        }
+        .footer-credit {
+            font-size: 0.78rem;
+            opacity: 0.5;
+            text-align: right;
+            align-self: end;
+        }
+        @media (max-width: 600px) {
+            .site-footer .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-credit {
+                text-align: left;
+            }
+        }
+
+        /* ---- LENS ACCENT ---- */
+        .lens-accent {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.1em;
+            margin: 0 0.15em;
+        }
+
+        /* ---- SEPARATEUR ---- */
+        .sep-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--laiton-monture);
+            display: inline-block;
+            margin: 0 0.6em;
+            vertical-align: middle;
+            opacity: 0.7;
+        }
+
+        /* ---- UTILITIES ---- */
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+        <a href="#hero" class="header-brand">Barnacle<span>Optique</span></a>
+        <nav aria-label="Navigation principale">
+            <ul class="header-nav">
+                <li><a href="#atelier">L'Atelier</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#quartier">Quartier</a></li>
+                <li><a href="#rdv" class="header-cta">Prendre RDV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
+            <div class="hero__bg">
+                <img src="assets/maps-1.jpg" alt="Devanture de Barnacle Optique, 2 rue de la Convention à Paris" loading="eager" decoding="async">
+            </div>
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <div class="hero__content">
+                <span class="hero__street-badge">2 rue de la Convention · Paris 15ᵉ</span>
+                <h1 id="hero-heading">Rue de la Convention,<br>la vue prend son temps.</h1>
+                <p class="hero__subtitle">Mickael vous reçoit dans son atelier d'opticien — examens de vue, collections exigeantes et ajustages de précision, loin des chaînes anonymes.</p>
+                <div class="google-badge" aria-label="Note Google 4,5 étoiles sur 5 basée sur 22 avis">
+                    <span class="google-badge__stars">★★★★☆</span>
+                    <span class="google-badge__note">4,5</span>
+                    <span>/5 · 22 avis</span>
+                </div>
+                <div class="hero__ctas">
+                    <a href="#rdv" class="btn btn--primary">Prendre rendez-vous</a>
+                    <a href="#atelier" class="btn btn--ghost">Voir l'atelier ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ATELIER -->
+        <section class="section" id="atelier" aria-labelledby="atelier-heading">
+            <div class="container">
+                <span class="section-label">À propos</span>
+                <div class="atelier-grid">
+                    <div class="atelier-text reveal-blur">
+                        <h2 class="section-title" id="atelier-heading">L'opticien derrière les montures.</h2>
+                        <p>Mickael a posé ses outils au <span class="highlight">2 rue de la Convention</span> pour faire de la lunetterie une affaire de soin et de conseil. Ici, une monture se choisit au visage, pas dans un panier.</p>
+                        <p>Examen de vue complet, prise de mesures au millimètre, réparations express et tiers-payant mutuelle&nbsp;: tout se règle en boutique, avec du temps devant vous.</p>
+                    </div>
+                    <div class="atelier-images reveal-blur reveal-blur--slow">
+                        <div class="img-wrap img-duotone">
+                            <img src="assets/maps-1.jpg" alt="Intérieur de l'atelier Barnacle Optique" loading="lazy" decoding="async">
+                        </div>
+                        <div class="img-wrap img-warm-overlay">
+                            <img src="assets/maps-1.jpg" alt="Présentoir de montures chez Barnacle" loading="lazy" decoding="async" style="object-position: 30% center;">
+                        </div>
+                        <div class="img-wrap img-warm-overlay">
+                            <img src="assets/maps-1.jpg" alt="Détail des montures en boutique" loading="lazy" decoding="async" style="object-position: 60% center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section section--dark lens-watermark lens-watermark--dark" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <span class="section-label">Services</span>
+                <h2 class="section-title reveal-blur" id="services-heading">Ce que l'on fait pour vos yeux.</h2>
+                <div class="services-grid">
+                    <div class="service-card reveal-blur reveal-blur--fast">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="12"/><circle cx="18" cy="18" r="5"/><line x1="18" y1="4" x2="18" y2="8"/><line x1="18" y1="28" x2="18" y2="32"/><line x1="4" y1="18" x2="8" y2="18"/><line x1="28" y1="18" x2="32" y2="18"/></svg>
+                        </div>
+                        <h3>Examen de vue</h3>
+                        <p>Tests de réfraction, dépistage et ordonnance sur place — votre mutuelle est prise en charge en tiers-payant.</p>
+                    </div>
+                    <div class="service-card reveal-blur reveal-blur--fast" style="transition-delay: 0.1s;">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="6" y="10" width="24" height="16" rx="3"/><line x1="12" y1="14" x2="24" y2="14"/><line x1="12" y1="18" x2="20" y2="18"/><line x1="12" y1="22" x2="22" y2="22"/></svg>
+                        </div>
+                        <h3>Conseil &amp; essayage</h3>
+                        <p>Une sélection de montures adaptée à votre morphologie et à votre style, sans pression.</p>
+                    </div>
+                    <div class="service-card reveal-blur reveal-blur--fast" style="transition-delay: 0.2s;">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="13"/><path d="M10 18a8 8 0 0 1 8-8"/><line x1="18" y1="6" x2="18" y2="12"/><line x1="29" y1="12" x2="26" y2="15"/></svg>
+                        </div>
+                        <h3>Atelier de réparation</h3>
+                        <p>Ajustage, changement de verres, ressoudage : vos lunettes sont souvent réparables en moins de 24&nbsp;heures.</p>
+                    </div>
+                    <div class="service-card reveal-blur reveal-blur--fast" style="transition-delay: 0.3s;">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="4" y="10" width="28" height="16" rx="2"/><line x1="4" y1="16" x2="32" y2="16"/><circle cx="18" cy="14" r="2"/></svg>
+                        </div>
+                        <h3>Tiers-payant</h3>
+                        <p>La plupart des mutuelles sont acceptées ; Barnacle Optique s'occupe des démarches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTIONS -->
+        <section class="section" id="collections" aria-labelledby="collections-heading">
+            <div class="container container--wide">
+                <span class="section-label">Collections</span>
+                <h2 class="section-title reveal-blur" id="collections-heading">Des montures qui ne font pas semblant.</h2>
+                <p class="section-subtitle reveal-blur reveal-blur--fast">Une curation de marques créateurs et de classiques choisis pour leur design et leur tenue dans le temps. Chaque paire est présentée comme une pièce, pas comme une référence produit.</p>
+                <div class="collections-gallery">
+                    <div class="collection-img-wrap reveal-blur">
+                        <img src="assets/maps-1.jpg" alt="Montures exposées en boutique Barnacle" loading="lazy" decoding="async" style="object-position: 25% 50%;">
+                        <span class="img-label">Lunor</span>
+                    </div>
+                    <div class="collection-img-wrap reveal-blur" style="transition-delay: 0.1s;">
+                        <img src="assets/maps-1.jpg" alt="Monture classique posée sur le bois de l'atelier" loading="lazy" decoding="async" style="object-position: 50% 60%;">
+                        <span class="img-label">Ray-Ban</span>
+                    </div>
+                    <div class="collection-img-wrap reveal-blur" style="transition-delay: 0.2s;">
+                        <img src="assets/maps-1.jpg" alt="Lunettes de créateur en lumière naturelle" loading="lazy" decoding="async" style="object-position: 70% 45%;">
+                        <span class="img-label">Créateurs</span>
+                    </div>
+                </div>
+                <p class="text-center mt-2" style="font-size:0.9rem; opacity:0.75;">Voir en boutique — <a href="#rdv" style="color:var(--bleu-prescription);font-weight:600;text-decoration:none;">Prendre rendez-vous</a></p>
+            </div>
+        </section>
+
+        <!-- MARQUES -->
+        <section class="section section--dark section--tight lens-watermark lens-watermark--dark" id="marques" aria-labelledby="marques-heading">
+            <div class="container">
+                <span class="section-label">Marques</span>
+                <h2 class="section-title reveal-blur" id="marques-heading">Les maisons que l'on défend.</h2>
+                <div class="marques-list">
+                    <div class="marque-item reveal-blur reveal-blur--fast">
+                        <h3>Ray-Ban</h3>
+                        <p>Classiques américains depuis 1937. Des modèles iconiques qui traversent les époques sans perdre leur allure.</p>
+                    </div>
+                    <div class="marque-item reveal-blur reveal-blur--fast" style="transition-delay:0.1s;">
+                        <h3>Lunor</h3>
+                        <p>Finesse allemande, montures faites main. Un savoir-faire artisanal pour des lunettes à la précision d'horloger.</p>
+                    </div>
+                    <div class="marque-item reveal-blur reveal-blur--fast" style="transition-delay:0.2s;">
+                        <h3>Oliver Peoples</h3>
+                        <p>L'élégance californienne discrète. Des montures qui jouent la carte du détail plutôt que du logo.</p>
+                    </div>
+                    <div class="marque-item reveal-blur reveal-blur--fast" style="transition-delay:0.3s;">
+                        <h3>Garrett Leight</h3>
+                        <p>Inspiration Venice Beach, fabrication irréprochable. Pour ceux qui cherchent une allure décontractée sans compromis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE QUARTIER -->
+        <section class="section" id="quartier" aria-labelledby="quartier-heading">
+            <div class="container">
+                <span class="section-label">Le quartier</span>
+                <h2 class="section-title reveal-blur" id="quartier-heading">2 rue de la Convention, Paris 15ᵉ.</h2>
+                <p class="section-subtitle reveal-blur reveal-blur--fast">À deux pas de la station Boucicaut, dans une rue de commerce et d'artisanat qui garde l'âme du 15ᵉ arrondissement. Un opticien de quartier, avec son rythme et sa clientèle d'habitués.</p>
+                <div class="quartier-grid mt-2">
+                    <div class="quartier-info reveal-blur">
+                        <div>
+                            <h3 style="font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--noir-optique);margin-bottom:0.6em;">Horaires d'ouverture</h3>
+                            <table class="horaires-table">
+                                <tbody>
+                                    <tr><td>Lundi</td><td>13h – 19h</td></tr>
+                                    <tr><td>Mardi</td><td>10h – 19h</td></tr>
+                                    <tr><td>Mercredi</td><td>10h – 19h</td></tr>
+                                    <tr><td>Jeudi</td><td>10h – 19h</td></tr>
+                                    <tr><td>Vendredi</td><td>10h – 19h</td></tr>
+                                    <tr><td>Samedi</td><td>Sur rendez-vous</td></tr>
+                                    <tr><td>Dimanche</td><td>Fermé</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <p style="font-weight:600;color:var(--noir-optique);">📞 <a href="tel:+33750668908" style="color:var(--bleu-prescription);text-decoration:none;">07 50 66 89 08</a></p>
+                            <p style="font-weight:600;color:var(--noir-optique);">✉️ <a href="mailto:mickael@barnacle.fr" style="color:var(--bleu-prescription);text-decoration:none;">mickael@barnacle.fr</a></p>
+                        </div>
+                    </div>
+                    <div class="quartier-map reveal-blur reveal-blur--slow">
+                        <iframe src="https://maps.google.com/maps?q=Barnacle+Optique+2+Rue+de+la+Convention%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de Barnacle Optique"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRENDRE RENDEZ-VOUS -->
+        <section class="section section--dark lens-watermark lens-watermark--dark" id="rdv" aria-labelledby="rdv-heading">
+            <div class="container container--narrow">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title reveal-blur" id="rdv-heading">Un moment pour vos yeux.</h2>
+                <p class="section-subtitle reveal-blur reveal-blur--fast">Remplissez ce formulaire — Mickael vous répondra personnellement pour convenir d'un créneau. Pas de calendrier automatique, juste un échange humain.</p>
+                <form class="form-grid mt-2 reveal-blur reveal-blur--slow" action="#" method="post" novalidate>
+                    <div class="form-field">
+                        <label for="rdv-nom">Nom</label>
+                        <input type="text" id="rdv-nom" name="nom" required placeholder="Votre nom" autocomplete="name">
+                    </div>
+                    <div class="form-field">
+                        <label for="rdv-email">Email</label>
+                        <input type="email" id="rdv-email" name="email" required placeholder="vous@exemple.fr" autocomplete="email">
+                    </div>
+                    <div class="form-field">
+                        <label for="rdv-tel">Téléphone</label>
+                        <input type="tel" id="rdv-tel" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel">
+                    </div>
+                    <div class="form-field">
+                        <label for="rdv-motif">Motif</label>
+                        <select id="rdv-motif" name="motif" required>
+                            <option value="">— Choisissez —</option>
+                            <option value="examen">Examen de vue</option>
+                            <option value="reparation">Réparation / ajustage</option>
+                            <option value="conseil">Conseil montures</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="rdv-creneau">Créneau souhaité</label>
+                        <input type="text" id="rdv-creneau" name="creneau" placeholder="Ex : mardi matin, vendredi après-midi…">
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="rdv-message">Message (optionnel)</label>
+                        <textarea id="rdv-message" name="message" placeholder="Précisez votre demande si vous le souhaitez…"></textarea>
+                    </div>
+                    <div class="full-width">
+                        <button type="submit" class="btn btn--primary" style="cursor:pointer;">Envoyer la demande</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer lens-watermark lens-watermark--dark" role="contentinfo">
+        <div class="container">
+            <div class="footer-nap">
+                <strong>Barnacle Optique</strong><br>
+                2 rue de la Convention, 75015 Paris<br>
+                <a href="tel:+33750668908">07 50 66 89 08</a> <span class="sep-dot" aria-hidden="true"></span>
+                <a href="mailto:mickael@barnacle.fr">mickael@barnacle.fr</a><br>
+                <span style="opacity:0.65;">Google : 4,5★ · 22 avis</span><br>
+                <span style="opacity:0.5;font-size:0.8rem;">Mentions légales · CGV · Paiement sécurisé</span>
+            </div>
+            <div class="footer-credit">
+                Site créé par Agence Mooo
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Barnacle Optique",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 rue de la Convention",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33750668908",
+            "email": "mickael@barnacle.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.5",
+                "reviewCount": "22"
+            },
+            "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "13:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "19:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "00:00", "closes": "00:00", "description": "Sur rendez-vous" }
+            ],
+            "priceRange": "€€"
+        }
+    </script>
+
+    <!-- JS : révélations au scroll -->
+    <script>
+        (function() {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        if (prefersReduced) {
+                            entry.target.style.filter = 'none';
+                            entry.target.style.opacity = '1';
+                        }
+                        entry.target.classList.add('is-revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-blur').forEach(function(el) {
+                if (prefersReduced) {
+                    el.style.transition = 'none';
+                }
+                revealObserver.observe(el);
+            });
+
+            // Déclenchement au chargement pour les éléments déjà dans le viewport
+            window.addEventListener('load', function() {
+                document.querySelectorAll('.reveal-blur').forEach(function(el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        if (prefersReduced) {
+                            el.style.filter = 'none';
+                            el.style.opacity = '1';
+                        }
+                        el.classList.add('is-revealed');
+                        revealObserver.unobserve(el);
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
