@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWEET HALAL & VEGAN | Bonbons halal, vegan & sans gluten à Châtillon</title>
+    <meta name="description" content="Confiserie de quartier à Châtillon — bonbons en vrac 100% halal certifiés, vegan et sans gluten. Gourmandise inclusive et sans compromis, 2 rue Edmond Rostand.">
+    <meta property="og:title" content="SWEET HALAL & VEGAN — Le goût de l'enfance, sans compromis">
+    <meta property="og:description" content="Bonbons halal certifiés, vegan et sans gluten — en vrac ou à l'unité, au pied de ta résidence à Châtillon.">
+    <meta property="og:image" content="https://agence.mooo.com/sweet-halal-vegan-2/assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="theme-color" content="#FEFAF6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='0' y='52' font-size='48'%3E🍬%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --fond: #FEFAF6;
+            --encre: #2C3E2D;
+            --framboise: #E94F64;
+            --citron: #F7D44A;
+            --menthe: #A7D0CD;
+            --barbe-a-papa: #F2CECE;
+            --display: 'Cormorant Garamond', 'Times New Roman', serif;
+            --body: 'Jost', 'Helvetica Neue', 'Arial', sans-serif;
+            --gap: clamp(1rem, 3vw, 2.5rem);
+            --radius-sm: 0.75rem;
+            --radius-md: 1.25rem;
+            --radius-lg: 2rem;
+            --shadow-soft: 0 4px 24px rgba(44, 62, 45, 0.06);
+            --shadow-card: 0 8px 32px rgba(44, 62, 45, 0.08);
+            --shadow-hover: 0 16px 40px rgba(44, 62, 45, 0.13);
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .reveal,
+            .reveal-up,
+            .reveal-left,
+            .reveal-right,
+            .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .hero-img-frame {
+                animation: none !important;
+            }
+            .grain-overlay {
+                animation: none !important;
+            }
+            .hover-lift {
+                transition: none !important;
+            }
+        }
+
+        body {
+            font-family: var(--body);
+            background-color: var(--fond);
+            color: var(--encre);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* ---- texture grain subtile ---- */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            background-repeat: repeat;
+        }
+
+        /* ---- liens & sélection ---- */
+        ::selection {
+            background: var(--framboise);
+            color: #fff;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s var(--ease-out-smooth);
+        }
+        a:hover,
+        a:focus-visible {
+            color: var(--framboise);
+        }
+        :focus-visible {
+            outline: 2px solid var(--framboise);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ---- classes d'animation ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s var(--ease-out-expo) 0.05s, transform 0.7s var(--ease-out-expo) 0.05s;
+        }
+        .reveal-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-32px);
+            transition: opacity 0.7s var(--ease-out-expo) 0.1s, transform 0.7s var(--ease-out-expo) 0.1s;
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(32px);
+            transition: opacity 0.7s var(--ease-out-expo) 0.15s, transform 0.7s var(--ease-out-expo) 0.15s;
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.7s var(--ease-out-expo) 0.08s, transform 0.7s var(--ease-out-expo) 0.08s;
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .delay-1 {
+            transition-delay: 0.12s;
+        }
+        .delay-2 {
+            transition-delay: 0.22s;
+        }
+        .delay-3 {
+            transition-delay: 0.32s;
+        }
+        .delay-4 {
+            transition-delay: 0.42s;
+        }
+
+        /* ---- header ---- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(254, 250, 246, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(44, 62, 45, 0.08);
+            padding: 0.7rem 0;
+            transition: box-shadow 0.3s var(--ease-out-smooth);
+        }
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(44, 62, 45, 0.07);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--gap);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .brand {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            letter-spacing: 0.04em;
+            color: var(--encre);
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .brand span {
+            display: block;
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: 0.6em;
+            letter-spacing: 0.06em;
+            color: var(--framboise);
+            text-transform: uppercase;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            align-items: center;
+        }
+        .nav-list a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25em 0;
+            color: var(--encre);
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--framboise);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+        .badge-google-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border: 1px solid rgba(44, 62, 45, 0.1);
+            border-radius: 2rem;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--encre);
+            white-space: nowrap;
+            box-shadow: var(--shadow-soft);
+            transition: box-shadow 0.3s var(--ease-out-smooth), transform 0.3s var(--ease-out-smooth);
+            cursor: default;
+        }
+        .badge-google-header:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-1px);
+        }
+        .stars {
+            color: #F9A825;
+            letter-spacing: -0.05em;
+            font-size: 0.9rem;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: var(--framboise);
+            color: #fff !important;
+            font-weight: 600;
+            padding: 0.55em 1.3em;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: background 0.3s var(--ease-out-smooth), transform 0.3s var(--ease-out-smooth), box-shadow 0.3s var(--ease-out-smooth);
+            box-shadow: 0 4px 16px rgba(233, 79, 100, 0.25);
+            white-space: nowrap;
+        }
+        .btn-cta:hover,
+        .btn-cta:focus-visible {
+            background: #d43d52;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 79, 100, 0.35);
+            color: #fff !important;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 110;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--encre);
+            margin: 6px 0;
+            border-radius: 2px;
+            transition: all 0.3s var(--ease-out-smooth);
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (max-width: 860px) {
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75vw;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--fond);
+                flex-direction: column;
+                padding: 6rem 2rem 3rem;
+                gap: 1.8rem;
+                box-shadow: -8px 0 40px rgba(44, 62, 45, 0.12);
+                transition: right 0.4s var(--ease-out-expo);
+                z-index: 105;
+                align-items: flex-start;
+            }
+            .nav-list.open {
+                right: 0;
+            }
+            .nav-list a {
+                font-size: 1.15rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .badge-google-header {
+                display: none;
+            }
+            .btn-cta.desktop-only {
+                display: none;
+            }
+        }
+        @media (min-width: 861px) {
+            .btn-cta.mobile-only {
+                display: none;
+            }
+        }
+
+        /* ---- sections ---- */
+        .section {
+            padding: clamp(3.5rem, 7vw, 6rem) var(--gap);
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--body);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--framboise);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            letter-spacing: 0.02em;
+            color: var(--encre);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-family: var(--body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            color: rgba(44, 62, 45, 0.75);
+            max-width: 600px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ---- HERO ---- */
+        .hero-section {
+            padding-top: clamp(2rem, 5vw, 3.5rem);
+            padding-bottom: clamp(3rem, 6vw, 5rem);
+            background: var(--fond);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -80px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(167, 208, 205, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(242, 206, 206, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--gap);
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text {
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            border: 1px solid rgba(44, 62, 45, 0.1);
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.1s both;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            letter-spacing: 0.01em;
+            color: var(--encre);
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--framboise);
+            position: relative;
+        }
+        .hero-subtitle {
+            font-family: var(--body);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: rgba(44, 62, 45, 0.8);
+            margin-bottom: 1.8rem;
+            max-width: 480px;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.4s both;
+        }
+        .btn-outline {
+            display: inline-block;
+            padding: 0.6em 1.4em;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            border: 1.5px solid var(--encre);
+            color: var(--encre);
+            transition: all 0.3s var(--ease-out-smooth);
+            background: transparent;
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: var(--encre);
+            color: #fff;
+            border-color: var(--encre);
+        }
+        .hero-img-wrapper {
+            position: relative;
+            animation: fadeInUp 0.9s var(--ease-out-expo) 0.25s both;
+        }
+        .hero-img-frame {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            aspect-ratio: 4/3;
+            background: var(--menthe);
+            border: 3px solid #fff;
+            outline: 1px solid rgba(44, 62, 45, 0.12);
+            outline-offset: -8px;
+        }
+        .hero-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .hero-img-frame:hover img {
+            transform: scale(1.04);
+        }
+        .hero-img-accent {
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            width: 80px;
+            height: 80px;
+            background: var(--citron);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.7;
+            box-shadow: 0 8px 24px rgba(247, 212, 74, 0.3);
+        }
+        .hero-img-accent-2 {
+            position: absolute;
+            top: -18px;
+            left: -18px;
+            width: 50px;
+            height: 50px;
+            background: var(--barbe-a-papa);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+            }
+            .hero-cta-row {
+                justify-content: center;
+            }
+            .hero-img-wrapper {
+                order: -1;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .hero-img-accent {
+                bottom: -10px;
+                right: -10px;
+                width: 56px;
+                height: 56px;
+            }
+            .hero-img-accent-2 {
+                top: -10px;
+                left: -10px;
+                width: 36px;
+                height: 36px;
+            }
+            .hero-badge {
+                margin: 0 auto 1.2rem;
+            }
+        }
+
+        /* ---- PROMESSE ---- */
+        .promesse-section {
+            background: #fff;
+            position: relative;
+        }
+        .promesse-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(44, 62, 45, 0.1) 30%, rgba(44, 62, 45, 0.1) 70%, transparent);
+        }
+        .promesse-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            margin-top: 2.5rem;
+        }
+        .promesse-card {
+            background: var(--fond);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.35s var(--ease-out-smooth), box-shadow 0.35s var(--ease-out-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .promesse-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--menthe);
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s var(--ease-out-expo);
+        }
+        .promesse-card:hover::after {
+            transform: scaleX(1);
+        }
+        .promesse-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        .promesse-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .promesse-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--encre);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+        .promesse-card p {
+            font-size: 0.95rem;
+            color: rgba(44, 62, 45, 0.75);
+            line-height: 1.5;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+        .promesse-badge {
+            display: inline-block;
+            background: var(--citron);
+            color: var(--encre);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.3em 0.8em;
+            border-radius: 1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        @media (max-width: 768px) {
+            .promesse-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ---- INCONTOURNABLES ---- */
+        .incontournables-section {
+            background: var(--fond);
+            position: relative;
+        }
+        .incontournables-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(167, 208, 205, 0.2) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 70%, rgba(242, 206, 206, 0.25) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .produits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--gap);
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .produit-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+            position: relative;
+            cursor: default;
+        }
+        .produit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .produit-card .produit-fond {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        .produit-fond.c1 {
+            background: #FEF0F2;
+        }
+        .produit-fond.c2 {
+            background: #FFF9E6;
+        }
+        .produit-fond.c3 {
+            background: #EEF7F6;
+        }
+        .produit-fond.c4 {
+            background: #FDF2F5;
+        }
+        .produit-card h4 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--encre);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+        .produit-card p {
+            font-size: 0.85rem;
+            color: rgba(44, 62, 45, 0.7);
+            line-height: 1.4;
+        }
+        .tag-produit {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.25em 0.7em;
+            border-radius: 1rem;
+            margin-top: 0.6rem;
+        }
+        .tag-vegan {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+        .tag-sans-gluten {
+            background: #FFF8E1;
+            color: #F57F17;
+        }
+        .tag-halal {
+            background: #FCE4EC;
+            color: #C62828;
+        }
+
+        @media (max-width: 860px) {
+            .produits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .produits-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ---- TEMOIGNAGES ---- */
+        .temoignages-section {
+            background: #fff;
+            position: relative;
+        }
+        .temoignages-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(242, 206, 206, 0.2) 0%, transparent 40%, transparent 60%, rgba(167, 208, 205, 0.15) 100%);
+            pointer-events: none;
+        }
+        .temoignages-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .big-note {
+            font-family: var(--display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--framboise);
+            line-height: 1;
+        }
+        .big-note small {
+            font-size: 0.5em;
+            font-weight: 400;
+            color: rgba(44, 62, 45, 0.7);
+            display: block;
+            font-family: var(--body);
+            letter-spacing: 0.04em;
+        }
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            position: relative;
+            z-index: 1;
+        }
+        .temoignage-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            transition: transform 0.35s var(--ease-out-smooth), box-shadow 0.35s var(--ease-out-smooth);
+        }
+        .temoignage-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .temoignage-card::before {
+            content: '"';
+            position: absolute;
+            top: 0.5rem;
+            left: 1.2rem;
+            font-family: var(--display);
+            font-size: 4rem;
+            color: rgba(233, 79, 100, 0.15);
+            line-height: 1;
+            pointer-events: none;
+        }
+        .temoignage-stars {
+            color: #F9A825;
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.04em;
+        }
+        .temoignage-card p {
+            font-size: 0.95rem;
+            color: rgba(44, 62, 45, 0.8);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .temoignage-auteur {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+        }
+        .temoignage-auteur span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: rgba(44, 62, 45, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .temoignages-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ---- TROUVER ---- */
+        .trouver-section {
+            background: var(--fond);
+            position: relative;
+        }
+        .trouver-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap);
+            margin-top: 2rem;
+            align-items: start;
+        }
+        .trouver-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .info-bloc {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 1.2rem 1.5rem;
+            background: #fff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft);
+            transition: box-shadow 0.3s var(--ease-out-smooth);
+        }
+        .info-bloc:hover {
+            box-shadow: var(--shadow-hover);
+        }
+        .info-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--menthe);
+        }
+        .info-bloc h4 {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--encre);
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.02em;
+        }
+        .info-bloc p {
+            font-size: 0.9rem;
+            color: rgba(44, 62, 45, 0.7);
+            line-height: 1.4;
+        }
+        .info-bloc a {
+            color: var(--framboise);
+            font-weight: 500;
+        }
+        .carte-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            background: #fff;
+            border: 3px solid #fff;
+            outline: 1px solid rgba(44, 62, 45, 0.1);
+            outline-offset: -6px;
+        }
+        .carte-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 360px;
+            border: 0;
+        }
+        .horaires-note {
+            display: inline-block;
+            background: var(--citron);
+            color: var(--encre);
+            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 0.25em 0.8em;
+            border-radius: 1rem;
+            letter-spacing: 0.04em;
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .trouver-grid {
+                grid-template-columns: 1fr;
+            }
+            .carte-wrapper {
+                order: -1;
+            }
+            .carte-wrapper iframe {
+                height: 280px;
+            }
+        }
+
+        /* ---- CONTACT ---- */
+        .contact-section {
+            background: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(44, 62, 45, 0.08) 30%, rgba(44, 62, 45, 0.08) 70%, transparent);
+        }
+        .contact-email {
+            font-family: var(--display);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 600;
+            color: var(--encre);
+            letter-spacing: 0.02em;
+            margin-top: 1.5rem;
+            display: inline-block;
+            transition: color 0.3s var(--ease-out-smooth);
+        }
+        .contact-email:hover {
+            color: var(--framboise);
+        }
+        .contact-intro {
+            font-size: 1rem;
+            color: rgba(44, 62, 45, 0.7);
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--encre);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 2.5rem var(--gap);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .footer-nap {
+            line-height: 1.6;
+        }
+        .footer-nap strong {
+            font-family: var(--display);
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            color: #fff;
+        }
+        .footer-credits {
+            text-align: right;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .footer-credits a {
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .footer-credits a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-credits {
+                text-align: center;
+            }
+        }
+
+        /* ---- hover lift utilitaire ---- */
+        .hover-lift {
+            transition: transform 0.35s var(--ease-out-smooth), box-shadow 0.35s var(--ease-out-smooth);
+        }
+        .hover-lift:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* ---- skip link ---- */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--encre);
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 0 0 6px 6px;
+            z-index: 200;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <header class="site-header" id="header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="SWEET HALAL & VEGAN — Accueil">
+                SWEET HALAL<br><span>& VEGAN</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="#promesse">La promesse</a></li>
+                    <li><a href="#incontournables">Les incontournables</a></li>
+                    <li><a href="#temoignages">Avis</a></li>
+                    <li><a href="#trouver">Nous trouver</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-only"><a href="mailto:sweethalal@hotmail.com" class="btn-cta">Écrire</a></li>
+                </ul>
+            </nav>
+            <div class="badge-google-header" aria-label="Note Google 5 étoiles sur 35 avis">
+                <span class="stars">★★★★★</span> 5/5 · 35 avis
+            </div>
+            <a href="#contact" class="btn-cta desktop-only">Nous écrire</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="hero-section" id="hero" aria-labelledby="heroTitle">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="stars">★★★★★</span> 5/5 — 35 avis Google
+                    </div>
+                    <h1 class="hero-title" id="heroTitle">Le goût de l'enfance,<br><em>sans compromis.</em></h1>
+                    <p class="hero-subtitle">Bonbons halal certifiés, vegan et sans gluten — en vrac ou à l'unité, au pied de ta résidence, 2 rue Edmond Rostand à Châtillon.</p>
+                    <div class="hero-cta-row">
+                        <a href="#trouver" class="btn-cta">Nous trouver</a>
+                        <a href="#promesse" class="btn-outline">Découvrir la promesse</a>
+                    </div>
+                </div>
+                <div class="hero-img-wrapper">
+                    <div class="hero-img-frame">
+                        <img src="assets/maps-1.jpg" alt="SWEET HALAL & VEGAN — La confiserie de quartier à Châtillon" width="600" height="450" loading="eager" decoding="async">
+                    </div>
+                    <div class="hero-img-accent" aria-hidden="true"></div>
+                    <div class="hero-img-accent-2" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA PROMESSE -->
+        <section class="section promesse-section" id="promesse" aria-labelledby="promesseTitle">
+            <div class="section-inner">
+                <p class="section-label reveal">Pourquoi nous choisir</p>
+                <h2 class="section-title reveal delay-1" id="promesseTitle">Ce qui les rend si bons</h2>
+                <p class="section-subtitle reveal delay-2">Chaque bonbon raconte une histoire de rigueur et de plaisir. Trois engagements, zéro doute.</p>
+                <div class="promesse-grid">
+                    <div class="promesse-card reveal-up delay-1">
+                        <span class="promesse-icon">🏷️</span>
+                        <span class="promesse-badge">Certifié</span>
+                        <h3>Halal certifié</h3>
+                        <p>Certification officielle à l'appui, pour une gourmandise en toute confiance, respectueuse des exigences alimentaires de chacun.</p>
+                    </div>
+                    <div class="promesse-card reveal-up delay-2">
+                        <span class="promesse-icon">🌱</span>
+                        <span class="promesse-badge">100 % végétal</span>
+                        <h3>100 % vegan</h3>
+                        <p>Pas de gélatine animale, pas de cire d'abeille. Que des ingrédients d'origine végétale, sélectionnés avec soin.</p>
+                    </div>
+                    <div class="promesse-card reveal-up delay-3">
+                        <span class="promesse-icon">🌾</span>
+                        <span class="promesse-badge">Sans gluten</span>
+                        <h3>Sans gluten</h3>
+                        <p>Pour les intolérants et les curieux, zéro trace de gluten. Toute la famille peut se régaler sans la moindre inquiétude.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LES INCONTOURNABLES -->
+        <section class="section incontournables-section" id="incontournables" aria-labelledby="incontournablesTitle">
+            <div class="section-inner">
+                <p class="section-label reveal">La sélection du confiseur</p>
+                <h2 class="section-title reveal delay-1" id="incontournablesTitle">Nos pépites sucrées</h2>
+                <p class="section-subtitle reveal delay-2">Des classiques réinventés, posés comme dans un catalogue d'apothicaire. Fraîcheur garantie, plaisir immédiat.</p>
+                <div class="produits-grid">
+                    <div class="produit-card reveal-scale delay-1">
+                        <div class="produit-fond c1">🐻</div>
+                        <h4>Oursons gélifiés</h4>
+                        <p>Moelleux, fruités, sans gélatine animale. Le bonbon qui a conquis toutes les générations.</p>
+                        <span class="tag-produit tag-vegan">Vegan</span>
+                    </div>
+                    <div class="produit-card reveal-scale delay-2">
+                        <div class="produit-fond c2">🍭</div>
+                        <h4>Sucettes artisanales</h4>
+                        <p>Fruits rouges, citron, cola… Des recettes d'antan, des colorants 100 % naturels.</p>
+                        <span class="tag-produit tag-sans-gluten">Sans gluten</span>
+                    </div>
+                    <div class="produit-card reveal-scale delay-3">
+                        <div class="produit-fond c3">☁️</div>
+                        <h4>Chamallows fondants</h4>
+                        <p>Aériens, vanillés, sans gélatine — parfaits pour les chocolats chauds maison.</p>
+                        <span class="tag-produit tag-halal">Halal</span>
+                    </div>
+                    <div class="produit-card reveal-scale delay-4">
+                        <div class="produit-fond c4">🍬</div>
+                        <h4>Dragées colorées</h4>
+                        <p>Amandes enrobées ou cœurs fondants, dans un écrin pastel à offrir… ou à s'offrir.</p>
+                        <span class="tag-produit tag-vegan">Vegan</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="section temoignages-section" id="temoignages" aria-labelledby="temoignagesTitle">
+            <div class="section-inner">
+                <div class="temoignages-header reveal">
+                    <p class="section-label">La parole est à tes voisins</p>
+                    <div class="big-note">4,8<small>moyenne sur 35 avis Google</small></div>
+                    <p class="stars" style="font-size:1.3rem;margin-top:0.3rem;">★★★★★</p>
+                </div>
+                <div class="temoignages-grid">
+                    <div class="temoignage-card reveal-left delay-1">
+                        <div class="temoignage-stars">★★★★★</div>
+                        <p>« Enfin une confiserie où je peux tout acheter les yeux fermés ! Mes enfants adorent, et moi je suis rassurée. Le cadre est tout mignon, on s'y sent bien. »</p>
+                        <div class="temoignage-auteur">Sarah L.<span>Cliente du quartier</span></div>
+                    </div>
+                    <div class="temoignage-card reveal-up delay-2">
+                        <div class="temoignage-stars">★★★★★</div>
+                        <p>« Je cherchais des bonbons halal pour un mariage. Accueil parfait, conseils au top, et les invités ont adoré. Je recommande sans hésiter. »</p>
+                        <div class="temoignage-auteur">Karim B.<span>Habitué depuis 2023</span></div>
+                    </div>
+                    <div class="temoignage-card reveal-right delay-3">
+                        <div class="temoignage-stars">★★★★★</div>
+                        <p>« C'est mon petit plaisir du samedi. Les chamallows sont une tuerie, et savoir que tout est vegan et sans gluten, c'est la cerise sur le gâteau. »</p>
+                        <div class="temoignage-auteur">Lucie M.<span>Voisine à Châtillon</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OÙ NOUS TROUVER -->
+        <section class="section trouver-section" id="trouver" aria-labelledby="trouverTitle">
+            <div class="section-inner">
+                <p class="section-label reveal">Viens nous voir</p>
+                <h2 class="section-title reveal delay-1" id="trouverTitle">Au pied de ta résidence</h2>
+                <p class="section-subtitle reveal delay-2">Pousse la porte du RDC, 2 rue Edmond Rostand à Châtillon. Les bocaux t'attendent.</p>
+                <div class="trouver-grid">
+                    <div class="trouver-info">
+                        <div class="info-bloc reveal-left delay-1">
+                            <div class="info-icon">📍</div>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>RDC en bas de la résidence<br>2 Rue Edmond Rostand<br>92320 Châtillon</p>
+                            </div>
+                        </div>
+                        <div class="info-bloc reveal-left delay-2">
+                            <div class="info-icon">🕐</div>
+                            <div>
+                                <h4>Horaires</h4>
+                                <p>Horaires à confirmer</p>
+                                <span class="horaires-note">Passe nous voir ou écris-nous !</span>
+                            </div>
+                        </div>
+                        <div class="info-bloc reveal-left delay-3">
+                            <div class="info-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:sweethalal@hotmail.com">sweethalal@hotmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carte-wrapper reveal-right delay-2">
+                        <iframe src="https://maps.google.com/maps?q=SWEET+HALAL+%26+VEGAN+RDC+EN+BAS+DE+LA+RESIDENCE%2C+2+Rue+Edmond+Rostand%2C+Ch%C3%A2tillon&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de SWEET HALAL & VEGAN"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
+            <div class="section-inner">
+                <p class="section-label reveal">Une question, une commande ?</p>
+                <h2 class="section-title reveal delay-1" id="contactTitle">On reste à ta disposition</h2>
+                <p class="contact-intro reveal delay-2">Écris-nous directement par email. On te répond aussi vite qu'on emballe les bonbons — c'est-à-dire très rapidement.</p>
+                <a href="mailto:sweethalal@hotmail.com" class="contact-email reveal-scale delay-3">sweethalal@hotmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-nap">
+                <strong>SWEET HALAL & VEGAN</strong><br>
+                RDC, 2 Rue Edmond Rostand, 92320 Châtillon<br>
+                <a href="mailto:sweethalal@hotmail.com" style="color:rgba(255,255,255,0.8);">sweethalal@hotmail.com</a> · Note Google : 5/5 (35 avis)
+            </div>
+            <div class="footer-credits">
+                Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener noreferrer">Agence Mooo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "SWEET HALAL & VEGAN",
+            "description": "Confiserie de quartier proposant des bonbons halal certifiés, 100% vegan et sans gluten, en vrac ou à l'unité.",
+            "image": "https://agence.mooo.com/sweet-halal-vegan-2/assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "RDC, 2 Rue Edmond Rostand",
+                "addressLocality": "Châtillon",
+                "postalCode": "92320",
+                "addressCountry": "FR"
+            },
+            "email": "sweethalal@hotmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "35",
+                "bestRating": "5"
+            },
+            "url": "https://agence.mooo.com/sweet-halal-vegan-2",
+            "telephone": ""
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Menu mobile toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            menuToggle.addEventListener('click', function() {
+                const isOpen = navList.classList.toggle('open');
+                menuToggle.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+            });
+            // Fermer le menu au clic sur un lien
+            navList.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navList.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Header scroll shadow
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { passive: true });
+
+            // IntersectionObserver pour les reveals
+            const revealElements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion && revealElements.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.1
+                };
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else if (prefersReducedMotion) {
+                // Rendre tout visible immédiatement
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+```
