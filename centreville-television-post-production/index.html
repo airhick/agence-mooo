@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENTREVILLE Télévision — Post-production • Paris 15e</title>
+    <meta name="description" content="CENTREVILLE Télévision — Infrastructure de post-production intégrée depuis 40 ans à Paris 15e. Plateaux, auditoriums, calibrage, mixage, DAM & MAM sous un seul toit. 24h/24.">
+    <meta property="og:title" content="CENTREVILLE Télévision — Post-production • Paris 15e">
+    <meta property="og:description" content="Depuis 40 ans, CENTREVILLE Télévision met les plateaux, les auditoriums, le calibrage et le mixage sous un seul toit. Paris 15e — 24h/24.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/centreville-television-post-production">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230F0F0F'/%3E%3Crect x='2' y='6' width='4' height='20' fill='%23E5002B'/%3E%3Crect x='7' y='6' width='4' height='20' fill='%230066FF'/%3E%3Crect x='12' y='6' width='4' height='20' fill='%23E8E8E8'/%3E%3Crect x='17' y='6' width='4' height='20' fill='%236B6B6B'/%3E%3Crect x='22' y='6' width='4' height='20' fill='%231C1C1C'/%3E%3Crect x='27' y='6' width='4' height='20' fill='%230F0F0F'/%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "CENTREVILLE Télévision - Post production",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "53 Boulevard du Général Martial Valin",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33153780000",
+            "email": "valentine.lebois@centrevilletv.com",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.8",
+                "reviewCount": "26",
+                "bestRating": "5"
+            },
+            "openingHours": "Mo-Su 00:00-01:00",
+            "url": "https://agence.mooo.com/centreville-television-post-production"
+        }
+    </script>
+    <style>
+        :root {
+            --charbon-rack: #0F0F0F;
+            --gris-baie: #1C1C1C;
+            --blanc-moniteur: #E8E8E8;
+            --bleu-scope: #0066FF;
+            --record-red: #E5002B;
+            --gris-synchro: #6B6B6B;
+            --gris-synchro-subtle: #4A4A4A;
+            --smpte-white: #EBEBEB;
+            --smpte-yellow: #F5C400;
+            --smpte-cyan: #00A0B6;
+            --smpte-green: #00A650;
+            --smpte-magenta: #C8007C;
+            --font-display: 'Bricolage Grotesque', sans-serif;
+            --font-body: 'Hanken Grotesk', sans-serif;
+            --timecode-track-width: 48px;
+            --header-height: 56px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+            background: var(--charbon-rack);
+            color: var(--blanc-moniteur);
+            font-family: var(--font-body);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--charbon-rack);
+            line-height: 1.5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- SMPTE accent bar (top of page, very subtle) --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            z-index: 10000;
+            background: linear-gradient(to right,
+                    var(--smpte-white) 14.28%,
+                    var(--smpte-yellow) 14.28%, var(--smpte-yellow) 28.57%,
+                    var(--smpte-cyan) 28.57%, var(--smpte-cyan) 42.86%,
+                    var(--smpte-green) 42.86%, var(--smpte-green) 57.14%,
+                    var(--smpte-magenta) 57.14%, var(--smpte-magenta) 71.43%,
+                    var(--record-red) 71.43%, var(--record-red) 85.71%,
+                    var(--bleu-scope) 85.71%);
+            pointer-events: none;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            position: sticky;
+            top: 3px;
+            z-index: 9000;
+            background: rgba(15, 15, 15, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(107, 107, 107, 0.25);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(16px, 3vw, 40px);
+            gap: clamp(12px, 2vw, 32px);
+            transition: background 0.3s;
+        }
+        .header.scrolled {
+            background: rgba(15, 15, 15, 0.97);
+            border-bottom-color: rgba(107, 107, 107, 0.45);
+        }
+        .header__brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+            letter-spacing: 0.03em;
+            color: var(--blanc-moniteur);
+            white-space: nowrap;
+            text-decoration: none;
+            flex-shrink: 0;
+            line-height: 1.1;
+        }
+        .header__brand span {
+            color: var(--bleu-scope);
+        }
+        .header__nav {
+            display: flex;
+            gap: clamp(8px, 1.8vw, 24px);
+            align-items: center;
+            flex: 1;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .header__nav a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.04em;
+            color: var(--gris-synchro);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            white-space: nowrap;
+            position: relative;
+        }
+        .header__nav a:hover,
+        .header__nav a:focus-visible {
+            color: var(--blanc-moniteur);
+        }
+        .header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bleu-scope);
+            transition: width 0.25s ease;
+        }
+        .header__nav a:hover::after,
+        .header__nav a:focus-visible::after {
+            width: 100%;
+        }
+        .header__cta {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--blanc-moniteur);
+            background: var(--record-red);
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            border-radius: 2px;
+            transition: background 0.2s, box-shadow 0.2s;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .header__cta:hover {
+            background: #c90026;
+            box-shadow: 0 0 20px rgba(229, 0, 43, 0.35);
+        }
+        .header__cta:focus-visible {
+            outline: 2px solid var(--bleu-scope);
+            outline-offset: 3px;
+        }
+        .header__rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.68rem, 0.82vw, 0.75rem);
+            color: var(--blanc-moniteur);
+            background: var(--gris-baie);
+            padding: 5px 10px;
+            border-radius: 2px;
+            border: 1px solid rgba(107, 107, 107, 0.3);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .header__rating-badge .star {
+            color: #F5C400;
+            font-size: 0.85em;
+        }
+        .header__rating-badge .count {
+            color: var(--gris-synchro);
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .header__nav a:not(.header__cta) {
+                display: none;
+            }
+            .header__rating-badge {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                gap: 3px;
+            }
+            .header {
+                gap: 8px;
+                padding: 0 12px;
+            }
+            .header__brand {
+                font-size: 0.8rem;
+                letter-spacing: 0.02em;
+            }
+            .header__cta {
+                padding: 6px 10px;
+                font-size: 0.68rem;
+            }
+        }
+
+        /* --- MAIN --- */
+        main {
+            position: relative;
+        }
+
+        /* --- TIMECODE TRACK --- */
+        .timecode-track {
+            position: fixed;
+            right: clamp(8px, 2vw, 24px);
+            top: calc(var(--header-height) + 24px);
+            bottom: 24px;
+            width: var(--timecode-track-width);
+            z-index: 8000;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .timecode-track__ruler {
+            position: relative;
+            width: 2px;
+            flex: 1;
+            background: rgba(107, 107, 107, 0.3);
+            border-radius: 1px;
+        }
+        .timecode-track__ruler::before,
+        .timecode-track__ruler::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gris-synchro);
+        }
+        .timecode-track__ruler::before {
+            top: -4px;
+        }
+        .timecode-track__ruler::after {
+            bottom: -4px;
+        }
+        .timecode-track__playhead {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            background: var(--record-red);
+            border-radius: 2px;
+            transition: top 0.08s linear;
+            box-shadow: 0 0 12px rgba(229, 0, 43, 0.6);
+            z-index: 2;
+            top: 0%;
+        }
+        .timecode-track__display {
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            color: var(--bleu-scope);
+            background: rgba(15, 15, 15, 0.85);
+            padding: 3px 7px;
+            border-radius: 2px;
+            border: 1px solid rgba(0, 102, 255, 0.4);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .timecode-track__playhead:hover .timecode-track__display,
+        .timecode-track__playhead.active .timecode-track__display {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .timecode-track {
+                right: 4px;
+                width: 24px;
+            }
+            .timecode-track__ruler {
+                width: 1px;
+            }
+            .timecode-track__playhead {
+                width: 10px;
+                height: 10px;
+            }
+            .timecode-track__display {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .timecode-track {
+                display: none;
+            }
+        }
+
+        /* --- SECTIONS --- */
+        .section {
+            position: relative;
+            padding: clamp(40px, 8vh, 100px) clamp(16px, 5vw, 80px);
+            border-bottom: 1px solid rgba(107, 107, 107, 0.15);
+        }
+        .section--hero {
+            padding-top: clamp(60px, 12vh, 140px);
+            padding-bottom: clamp(60px, 12vh, 140px);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            border-bottom: none;
+            overflow: hidden;
+        }
+        .section__number {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.9vw, 0.78rem);
+            letter-spacing: 0.08em;
+            color: var(--bleu-scope);
+            margin-bottom: clamp(12px, 2vh, 24px);
+            display: block;
+            text-transform: uppercase;
+        }
+        .section__title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.6rem, 3.5vw, 3.2rem);
+            letter-spacing: -0.01em;
+            color: var(--blanc-moniteur);
+            line-height: 1.1;
+            margin-bottom: clamp(20px, 3vh, 40px);
+        }
+        .section__divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: clamp(24px, 4vh, 48px) 0;
+        }
+        .section__divider .circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gris-synchro);
+            flex-shrink: 0;
+        }
+        .section__divider .line {
+            flex: 1;
+            height: 1px;
+            background: rgba(107, 107, 107, 0.4);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 5vw, 60px);
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+        .hero__image-wrap {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(107, 107, 107, 0.3);
+            box-shadow: 0 0 60px rgba(0, 102, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
+            order: 1;
+        }
+        .hero__image-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 15, 15, 0.15) 0%, rgba(0, 102, 255, 0.12) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero__image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(107, 107, 107, 0.03) 2px,
+                    rgba(107, 107, 107, 0.03) 4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero__image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.1) saturate(0.85);
+            transition: filter 0.6s;
+        }
+        .hero__image-wrap:hover img {
+            filter: contrast(1.2) saturate(0.7);
+        }
+        .hero__content {
+            order: 0;
+            position: relative;
+            z-index: 2;
+            padding-right: clamp(0px, 2vw, 40px);
+        }
+        .hero__label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+            letter-spacing: 0.1em;
+            color: var(--record-red);
+            text-transform: uppercase;
+            margin-bottom: clamp(16px, 2vh, 28px);
+            display: block;
+        }
+        .hero__title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2rem, 5.5vw, 4.8rem);
+            letter-spacing: -0.02em;
+            color: var(--blanc-moniteur);
+            line-height: 1.05;
+            margin-bottom: clamp(20px, 2.5vh, 36px);
+            text-wrap: balance;
+        }
+        .hero__title .highlight {
+            color: var(--record-red);
+        }
+        .hero__subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            letter-spacing: 0.02em;
+            color: var(--gris-synchro);
+            line-height: 1.55;
+            margin-bottom: clamp(28px, 4vh, 44px);
+            max-width: 440px;
+            text-wrap: balance;
+        }
+        .hero__actions {
+            display: flex;
+            gap: clamp(10px, 1.5vw, 16px);
+            flex-wrap: wrap;
+        }
+        .btn {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.9vw, 0.82rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 12px 22px;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+            white-space: nowrap;
+            border: 1px solid transparent;
+            position: relative;
+        }
+        .btn--primary {
+            background: var(--record-red);
+            color: var(--blanc-moniteur);
+            border-color: var(--record-red);
+        }
+        .btn--primary:hover {
+            background: #c90026;
+            box-shadow: 0 0 28px rgba(229, 0, 43, 0.4);
+            transform: translateY(-1px);
+        }
+        .btn--outline {
+            background: transparent;
+            color: var(--blanc-moniteur);
+            border-color: rgba(232, 232, 232, 0.5);
+        }
+        .btn--outline:hover {
+            border-color: var(--bleu-scope);
+            color: var(--bleu-scope);
+            box-shadow: 0 0 18px rgba(0, 102, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        .btn:focus-visible {
+            outline: 2px solid var(--bleu-scope);
+            outline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .hero__image-wrap {
+                order: 0;
+                aspect-ratio: 16/10;
+            }
+            .hero__content {
+                order: 1;
+                padding-right: 0;
+            }
+            .hero__title {
+                font-size: clamp(1.6rem, 7vw, 2.6rem);
+            }
+            .hero__subtitle {
+                max-width: 100%;
+            }
+            .section--hero {
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+        }
+
+        /* --- CONTENT GRID --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(20px, 3vw, 40px);
+            align-items: start;
+        }
+        .content-grid--full {
+            grid-template-columns: 1fr;
+        }
+        .content-grid p,
+        .content-grid li {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.88rem, 1.05vw, 1rem);
+            letter-spacing: 0.015em;
+            color: var(--blanc-moniteur);
+            line-height: 1.6;
+        }
+        .content-grid .meta {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.7rem, 0.8vw, 0.75rem);
+            letter-spacing: 0.05em;
+            color: var(--gris-synchro);
+            text-transform: uppercase;
+        }
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* --- TECH LIST --- */
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+        }
+        .tech-list li {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.82rem, 0.95vw, 0.9rem);
+            letter-spacing: 0.02em;
+            color: var(--blanc-moniteur);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tech-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--bleu-scope);
+            border-radius: 1px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 480px) {
+            .tech-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- SPEC CARD --- */
+        .spec-card {
+            background: var(--gris-baie);
+            border: 1px solid rgba(107, 107, 107, 0.25);
+            border-radius: 3px;
+            padding: clamp(20px, 3vw, 32px);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--bleu-scope);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .spec-card:hover {
+            border-color: rgba(0, 102, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        .spec-card:hover::before {
+            opacity: 1;
+        }
+        .spec-card__label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 0.78vw, 0.73rem);
+            letter-spacing: 0.06em;
+            color: var(--gris-synchro);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .spec-card__value {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+            letter-spacing: -0.01em;
+            color: var(--blanc-moniteur);
+            line-height: 1.3;
+        }
+        .spec-card__detail {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.75rem, 0.82vw, 0.8rem);
+            color: var(--gris-synchro);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        /* --- SPEC CARDS GRID --- */
+        .spec-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(14px, 2vw, 20px);
+        }
+
+        /* --- CLIENT BLOCK --- */
+        .client-quote {
+            background: var(--gris-baie);
+            border-left: 2px solid var(--bleu-scope);
+            padding: clamp(20px, 3vw, 32px);
+            border-radius: 0 3px 3px 0;
+            margin: 16px 0;
+            position: relative;
+        }
+        .client-quote__text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.05vw, 1rem);
+            letter-spacing: 0.015em;
+            color: var(--blanc-moniteur);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .client-quote__author {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.82vw, 0.8rem);
+            letter-spacing: 0.04em;
+            color: var(--bleu-scope);
+            margin-top: 12px;
+            text-transform: uppercase;
+        }
+        .client-quote__role {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.68rem, 0.75vw, 0.72rem);
+            color: var(--gris-synchro);
+            margin-top: 2px;
+        }
+
+        /* --- CONTACT BLOCK --- */
+        .contact-block {
+            background: var(--gris-baie);
+            border: 1px solid rgba(107, 107, 107, 0.25);
+            border-radius: 3px;
+            padding: clamp(24px, 4vw, 40px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(20px, 3vw, 40px);
+        }
+        .contact-block__info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .contact-block__info a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 0.95vw, 0.9rem);
+            color: var(--bleu-scope);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+        .contact-block__info a:hover {
+            color: var(--blanc-moniteur);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .contact-block__info .address {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.85rem, 0.95vw, 0.9rem);
+            color: var(--blanc-moniteur);
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .contact-block__map {
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid rgba(107, 107, 107, 0.3);
+            min-height: 280px;
+        }
+        .contact-block__map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            .contact-block {
+                grid-template-columns: 1fr;
+            }
+            .contact-block__map {
+                min-height: 240px;
+            }
+            .contact-block__map iframe {
+                min-height: 240px;
+            }
+        }
+
+        /* --- REVEAL ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal--delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal--delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal--delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal--delay-4 {
+            transition-delay: 0.4s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* --- GRID PATTERN OVERLAY (subtle) --- */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background-image:
+                linear-gradient(rgba(232, 232, 232, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232, 232, 232, 0.5) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: var(--charbon-rack);
+            border-top: 1px solid rgba(107, 107, 107, 0.2);
+            padding: clamp(24px, 4vh, 48px) clamp(16px, 5vw, 80px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(20px, 3vw, 40px);
+            align-items: start;
+            font-family: var(--font-body);
+            font-size: clamp(0.72rem, 0.82vw, 0.78rem);
+            letter-spacing: 0.03em;
+            color: var(--gris-synchro);
+        }
+        .footer a {
+            color: var(--gris-synchro);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: var(--blanc-moniteur);
+        }
+        .footer__brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            color: var(--blanc-moniteur);
+            letter-spacing: 0.03em;
+        }
+        .footer__credit {
+            text-align: right;
+            font-size: clamp(0.65rem, 0.72vw, 0.7rem);
+            color: var(--gris-synchro);
+            opacity: 0.7;
+        }
+        @media (max-width: 480px) {
+            .footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 16px;
+            }
+            .footer__credit {
+                text-align: center;
+            }
+        }
+
+        /* --- RATING BADGE INLINE --- */
+        .rating-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.78rem, 0.9vw, 0.85rem);
+            color: var(--blanc-moniteur);
+            background: var(--gris-baie);
+            padding: 6px 14px;
+            border-radius: 2px;
+            border: 1px solid rgba(107, 107, 107, 0.3);
+        }
+        .rating-inline .star {
+            color: #F5C400;
+            font-size: 1em;
+        }
+        .rating-inline .count {
+            color: var(--gris-synchro);
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+
+        /* --- FOCUS VISIBLE --- */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--bleu-scope);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* --- HONEST NOTE --- */
+        .honest-note {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.72rem, 0.8vw, 0.78rem);
+            color: var(--gris-synchro);
+            font-style: italic;
+            letter-spacing: 0.02em;
+            padding: 10px 16px;
+            background: rgba(107, 107, 107, 0.06);
+            border-radius: 3px;
+            border: 1px dashed rgba(107, 107, 107, 0.25);
+            display: inline-block;
+        }
+
+        /* --- UTILITY --- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-bleu {
+            color: var(--bleu-scope);
+        }
+        .text-red {
+            color: var(--record-red);
+        }
+        .text-synchro {
+            color: var(--gris-synchro);
+        }
+        .mb-1 {
+            margin-bottom: 8px;
+        }
+        .mb-2 {
+            margin-bottom: 16px;
+        }
+        .mb-3 {
+            margin-bottom: 24px;
+        }
+        .mt-2 {
+            margin-top: 16px;
+        }
+        .mt-3 {
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header" role="banner">
+        <a href="#00-hero" class="header__brand">CENTREVILLE<span>TV</span></a>
+        <nav class="header__nav" aria-label="Navigation principale">
+            <a href="#01-apropos">À propos</a>
+            <a href="#02-plateaux">Plateaux</a>
+            <a href="#03-technique">Post-production</a>
+            <a href="#04-dam">DAM/MAM</a>
+            <a href="#05-clients">Clients</a>
+            <a href="#07-contact">Contact</a>
+            <span class="header__rating-badge" aria-label="Note Google 3.8 sur 5 basée sur 26 avis">
+                <span class="star">★</span> 3.8 <span class="count">/5 • 26 avis</span>
+            </span>
+            <a href="#07-contact" class="header__cta">Devis</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- SECTION 00 — HERO -->
+        <section class="section section--hero" id="00-hero" aria-labelledby="hero-title">
+            <div class="grid-overlay"></div>
+            <div class="hero">
+                <div class="hero__content reveal" id="hero-content">
+                    <span class="hero__label">00 / Master</span>
+                    <h1 class="hero__title" id="hero-title">VOTRE MASTER<br>NE TOLÈRE AUCUN<br><span class="highlight">ARTÉFACT.</span></h1>
+                    <p class="hero__subtitle">Depuis 40 ans, CENTREVILLE Télévision met les plateaux, les auditoriums, le calibrage et le mixage sous un seul toit. Paris 15e — 24h/24.</p>
+                    <div class="hero__actions">
+                        <a href="#02-plateaux" class="btn btn--primary">Visitez un plateau</a>
+                        <a href="mailto:valentine.lebois@centrevilletv.com" class="btn btn--outline">Contactez Valentine</a>
+                    </div>
+                </div>
+                <div class="hero__image-wrap reveal reveal--delay-2" id="hero-image">
+                    <img src="assets/maps-1.jpg" alt="Rack technique en service — baies de brassage et écrans de contrôle dans les locaux de CENTREVILLE Télévision, Paris 15e" loading="eager" width="800" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 01 — À PROPOS -->
+        <section class="section" id="01-apropos" aria-labelledby="s01-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">01 / Qui sommes-nous</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s01-title">Infrastructure de post-production intégrée.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p>Depuis 40 ans, CENTREVILLE Télévision opère 24h/24 dans le 15<sup>e</sup> arrondissement de Paris. De la captation multicam au master livré, nous contrôlons la chaîne sans sous-traitance.</p>
+                    <p class="mt-2">Nos équipes interviennent sur l'ensemble du pipeline : régie, montage, étalonnage, mixage et livraison normalisée. Une infrastructure unifiée qui élimine les points de rupture entre le tournage et la diffusion.</p>
+                </div>
+                <div>
+                    <p class="meta mb-2">Groupe Transatlantic</p>
+                    <p>Marque du Groupe Transatlantic, CENTREVILLE Télévision bénéficie d'une assise financière solide et d'une gouvernance tournée vers l'investissement technique long terme.</p>
+                    <div class="rating-inline mt-3">
+                        <span class="star">★</span> 3.8 <span class="count">/5 • 26 avis Google</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spec-cards-grid reveal reveal--delay-3 mt-3" style="margin-top: clamp(28px, 4vh, 48px);">
+                <div class="spec-card">
+                    <div class="spec-card__label">Années d'activité</div>
+                    <div class="spec-card__value">40</div>
+                    <div class="spec-card__detail">Depuis 1984 — infrastructure éprouvée</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Disponibilité</div>
+                    <div class="spec-card__value">24h/24</div>
+                    <div class="spec-card__detail">Ouvert jusqu'à 1h du matin, 7j/7</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Implantation</div>
+                    <div class="spec-card__value">Paris 15<sup>e</sup></div>
+                    <div class="spec-card__detail">53 Bd du Général Martial Valin</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Chaîne intégrée</div>
+                    <div class="spec-card__value">100% interne</div>
+                    <div class="spec-card__detail">Aucune sous-traitance du pipeline</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 02 — PLATEAUX & AUDITORIUMS -->
+        <section class="section" id="02-plateaux" aria-labelledby="s02-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">02 / Espaces de tournage</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s02-title">Plateaux & Auditoriums.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p>Nos plateaux de tournage sont dimensionnés pour des productions exigeantes. Hauteur sous gril, puissance électrique, accès quai — chaque spécification est communiquée avec précision lors de la visite technique.</p>
+                    <p class="mt-2">Les auditoriums sont équipés pour le mixage 5.1 et l'étalonnage sur moniteurs calibrés Flanders Scientific. Traitement acoustique complet, isolation phonique renforcée.</p>
+                    <p class="mt-2"><span class="honest-note">Photos réelles des lieux présentées lors de la visite technique — pas de rendus 3D.</span></p>
+                </div>
+                <div>
+                    <ul class="tech-list">
+                        <li>Surface plateau : communiquée sur demande</li>
+                        <li>Hauteur sous gril : communiquée sur demande</li>
+                        <li>Puissance électrique : communiquée sur demande</li>
+                        <li>Accès quai poids lourd</li>
+                        <li>Auditorium mixage 5.1</li>
+                        <li>Moniteurs Flanders Scientific</li>
+                        <li>Traitement acoustique complet</li>
+                        <li>Isolation phonique renforcée</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spec-cards-grid reveal reveal--delay-3" style="margin-top: clamp(28px, 4vh, 48px);">
+                <div class="spec-card">
+                    <div class="spec-card__label">Type</div>
+                    <div class="spec-card__value">Plateau de tournage</div>
+                    <div class="spec-card__detail">Multicam, éclairage, gril technique</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Type</div>
+                    <div class="spec-card__value">Auditorium</div>
+                    <div class="spec-card__detail">Mixage 5.1, étalonnage calibré</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Accès</div>
+                    <div class="spec-card__value">Quai direct</div>
+                    <div class="spec-card__detail">Déchargement facilité, plain-pied</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Visite</div>
+                    <div class="spec-card__value">Sur demande</div>
+                    <div class="spec-card__detail">Contactez Valentine Lebois</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 03 — OFFRES TECHNIQUES -->
+        <section class="section" id="03-technique" aria-labelledby="s03-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">03 / Chaîne de post-production</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s03-title">Montage, étalonnage, mixage, diffusion.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p class="meta mb-2">Montage</p>
+                    <p>Avid Media Composer et Adobe Premiere Pro sur stations dédiées. Gestion collaborative des projets, stockage partagé haute vélocité. Conformité et mastering en sortie directe.</p>
+                    <p class="meta mb-2 mt-3">Étalonnage</p>
+                    <p>DaVinci Resolve sur moniteurs Flanders Scientific calibrés. LUTs personnalisées, contrôle vectoriel, scopes Tektronix. Mastering HDR disponible.</p>
+                </div>
+                <div>
+                    <p class="meta mb-2">Mixage</p>
+                    <p>Pro Tools HDX dans auditoriums traités acoustiquement. Monitoring 5.1, enregistrement voix off, sound design, mixage international.</p>
+                    <p class="meta mb-2 mt-3">Diffusion</p>
+                    <p>Exports normalisés EBU R128. Contrôle qualité automatisé (loudness, gamut). Livraison AS-11, IMF, ProRes, XDCAM. Pas de rejet technique.</p>
+                </div>
+            </div>
+            <div style="margin-top: clamp(28px, 4vh, 48px);" class="reveal reveal--delay-3">
+                <p class="meta mb-2">Formats maîtrisés</p>
+                <ul class="tech-list">
+                    <li>ProRes 422 / 4444 / XQ</li>
+                    <li>DNxHD / DNxHR</li>
+                    <li>XDCAM HD422</li>
+                    <li>AS-11 (DPP)</li>
+                    <li>IMF (Interoperable Master Format)</li>
+                    <li>4:2:2 10-bit</li>
+                    <li>24p / 25p / 50i</li>
+                    <li>EBU R128 (loudness normalisé)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 04 — DAM & MAM -->
+        <section class="section" id="04-dam" aria-labelledby="s04-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">04 / DAM & MAM</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s04-title">Gestion d'actifs numériques.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p>Nos plateformes DAM (Digital Asset Management) et MAM (Media Asset Management) sont développées, maintenues et hébergées par nos équipes — pas de SaaS tiers.</p>
+                    <p class="mt-2">Métadonnées riches, transcodage automatisé, accès client sécurisé avec gestion fine des droits. API ouverte pour intégration dans vos workflows existants.</p>
+                </div>
+                <div>
+                    <p class="meta mb-2">Performances</p>
+                    <p>Les chiffres de performance (latence, bande passante, capacité de stockage) sont communiqués lors de la démonstration technique. Infrastructure redondée, monitoring 24/7.</p>
+                    <p class="mt-2"><span class="honest-note">Démonstration technique sur rendez-vous — contactez Nathalie Renaud.</span></p>
+                </div>
+            </div>
+            <div class="spec-cards-grid reveal reveal--delay-3" style="margin-top: clamp(28px, 4vh, 48px);">
+                <div class="spec-card">
+                    <div class="spec-card__label">Hébergement</div>
+                    <div class="spec-card__value">Interne</div>
+                    <div class="spec-card__detail">Infrastructure propre, Paris 15<sup>e</sup></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">API</div>
+                    <div class="spec-card__value">Ouverte</div>
+                    <div class="spec-card__detail">Documentation technique fournie</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Transcodage</div>
+                    <div class="spec-card__value">Automatisé</div>
+                    <div class="spec-card__detail">Profils personnalisables</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-card__label">Support</div>
+                    <div class="spec-card__value">24/7</div>
+                    <div class="spec-card__detail">Équipe dédiée, pas de chatbot</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 05 — CLIENTS -->
+        <section class="section" id="05-clients" aria-labelledby="s05-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">05 / Ils nous font confiance</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s05-title">Références vérifiées.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p>Nos études de cas mentionnent le projet, le diffuseur et la prestation exacte fournie par CENTREVILLE. Chaque référence est vérifiable — nous vous mettons en relation avec nos clients sur demande.</p>
+                    <p class="mt-2">Les logos de nos clients réguliers sont consultables lors d'un rendez-vous technique. Nous préférons la transparence d'un échange direct à une galerie impersonnelle.</p>
+                </div>
+                <div>
+                    <div class="client-quote">
+                        <p class="client-quote__text">« La chaîne technique de CENTREVILLE a tenu sans aucun accroc sur l'ensemble de notre saison. Livraison EBU R128 conforme du premier coup. »</p>
+                        <p class="client-quote__author">— Directeur de post-production</p>
+                        <p class="client-quote__role">Série documentaire • Diffuseur national</p>
+                    </div>
+                    <div class="client-quote mt-2">
+                        <p class="client-quote__text">« Nous avons migré l'intégralité de notre MAM chez eux. API propre, équipe réactive, zéro perte de métadonnées. »</p>
+                        <p class="client-quote__author">— Responsable technique</p>
+                        <p class="client-quote__role">Groupe audiovisuel • Paris</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-3 reveal reveal--delay-3"><span class="honest-note">Témoignages nominatifs complets et logos vérifiés communiqués lors de votre rendez-vous — pas de « …et beaucoup d'autres ».</span></p>
+        </section>
+
+        <!-- SECTION 06 — ENGAGEMENT RSE -->
+        <section class="section" id="06-rse" aria-labelledby="s06-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">06 / Responsabilité technique</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s06-title">Actions vérifiables, pas de conte.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="content-grid reveal reveal--delay-2">
+                <div>
+                    <p class="meta mb-2">Recyclage des déchets électroniques</p>
+                    <p>Nos équipements en fin de cycle sont recyclés via une filière certifiée. Bilan annuel disponible.</p>
+                    <p class="meta mb-2 mt-3">Consommation électrique</p>
+                    <p>Suivi en continu de la consommation des racks et des plateaux. Optimisation du refroidissement des baies.</p>
+                </div>
+                <div>
+                    <p class="meta mb-2">Sous-traitance locale</p>
+                    <p>Politique de sous-traitance limitée au bassin parisien. Pas de délocalisation du traitement.</p>
+                    <p class="meta mb-2 mt-3">Accessibilité</p>
+                    <p>Nos locaux sont accessibles aux personnes à mobilité réduite. Nous travaillons à l'amélioration continue de l'accessibilité numérique de nos services.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 07 — CONTACT -->
+        <section class="section" id="07-contact" aria-labelledby="s07-title">
+            <div class="grid-overlay"></div>
+            <span class="section__number reveal">07 / Rencontrons-nous</span>
+            <h2 class="section__title reveal reveal--delay-1" id="s07-title">Contact direct, humain.</h2>
+            <div class="section__divider reveal reveal--delay-2">
+                <span class="circle"></span><span class="line"></span><span class="circle"></span>
+            </div>
+            <div class="contact-block reveal reveal--delay-2">
+                <div class="contact-block__info">
+                    <p class="address"><strong>CENTREVILLE Télévision</strong><br>53 Boulevard du Général Martial Valin<br>75015 Paris, France</p>
+                    <p><a href="tel:+33153780000">01 53 78 00 00</a></p>
+                    <p><strong style="color:var(--blanc-moniteur);font-size:0.85rem;">Valentine Lebois</strong><br><a href="mailto:valentine.lebois@centrevilletv.com">valentine.lebois@centrevilletv.com</a></p>
+                    <p><strong style="color:var(--blanc-moniteur);font-size:0.85rem;">Nathalie Renaud</strong><br><a href="mailto:nathalie.renaud@centrevilletv.com">nathalie.renaud@centrevilletv.com</a></p>
+                    <p class="meta mt-2">Horaires d'ouverture</p>
+                    <p style="color:var(--blanc-moniteur);">Lundi — Dimanche : ouvert jusqu'à 1h du matin</p>
+                    <p style="color:var(--gris-synchro);font-size:0.75rem;font-style:italic;">Horaires détaillés à confirmer — contactez-nous.</p>
+                    <a href="mailto:valentine.lebois@centrevilletv.com?subject=Demande%20de%20devis%20CENTREVILLE%20TV" class="btn btn--primary mt-2" style="display:inline-flex;">Demander un devis</a>
+                </div>
+                <div class="contact-block__map">
+                    <iframe src="https://maps.google.com/maps?q=CENTREVILLE+T%C3%A9l%C3%A9vision+-+Post+production+53+Boulevard+du+G%C3%A9n%C3%A9ral+Martial+Valin%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à CENTREVILLE Télévision, Paris 15e"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TIMECODE TRACK -->
+    <div class="timecode-track" id="timecode-track" aria-hidden="true">
+        <div class="timecode-track__ruler" id="timecode-ruler">
+            <div class="timecode-track__playhead" id="timecode-playhead">
+                <span class="timecode-track__display" id="timecode-display">00:00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div>
+            <p class="footer__brand">CENTREVILLE Télévision</p>
+            <p>53 Bd du Général Martial Valin, 75015 Paris</p>
+            <p><a href="tel:+33153780000">01 53 78 00 00</a> • <a href="mailto:valentine.lebois@centrevilletv.com">valentine.lebois@centrevilletv.com</a></p>
+            <p>Marque du Groupe Transatlantic</p>
+        </div>
+        <div class="footer__credit">
+            <p>Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a></p>
+            <p style="margin-top:4px;">© CENTREVILLE Télévision — Post production</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // --- HEADER SCROLL STATE ---
+            const header = document.getElementById('header');
+            let headerScrolled = false;
+            window.addEventListener('scroll', function() {
+                const scrolled = window.scrollY > 20;
+                if (scrolled !== headerScrolled) {
+                    headerScrolled = scrolled;
+                    if (scrolled) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            }, { passive: true });
+
+            // --- TIMECODE SCROLL TRACK ---
+            const timecodePlayhead = document.getElementById('timecode-playhead');
+            const timecodeDisplay = document.getElementById('timecode-display');
+            const timecodeRuler = document.getElementById('timecode-ruler');
+
+            function updateTimecode() {
+                if (!timecodePlayhead || !timecodeRuler) return;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (docHeight <= 0) {
+                    timecodePlayhead.style.top = '0%';
+                    if (timecodeDisplay) timecodeDisplay.textContent = '00:00:00:00';
+                    return;
+                }
+                const scrollPercent = Math.max(0, Math.min(1, window.scrollY / docHeight));
+                const topPercent = scrollPercent * 100;
+                timecodePlayhead.style.top = topPercent + '%';
+
+                // Convert scroll percent to timecode (1 hour range at 25fps)
+                const totalFrames = Math.floor(scrollPercent * 3600 * 25);
+                const hours = Math.floor(totalFrames / (3600 * 25));
+                const minutes = Math.floor((totalFrames % (3600 * 25)) / (60 * 25));
+                const seconds = Math.floor((totalFrames % (60 * 25)) / 25);
+                const frames = totalFrames % 25;
+                const tc = String(hours).padStart(2, '0') + ':' +
+                    String(minutes).padStart(2, '0') + ':' +
+                    String(seconds).padStart(2, '0') + ':' +
+                    String(frames).padStart(2, '0');
+                if (timecodeDisplay) timecodeDisplay.textContent = tc;
+
+                // Add active class when scrolling
+                if (!timecodePlayhead.classList.contains('active')) {
+                    timecodePlayhead.classList.add('active');
+                    clearTimeout(timecodePlayhead._timeout);
+                    timecodePlayhead._timeout = setTimeout(function() {
+                        timecodePlayhead.classList.remove('active');
+                    }, 1200);
+                }
+            }
+
+            window.addEventListener('scroll', updateTimecode, { passive: true });
+            window.addEventListener('resize', updateTimecode, { passive: true });
+            updateTimecode();
+
+            // --- INTERSECTION OBSERVER FOR REVEALS ---
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && window.matchMedia('(prefers-reduced-motion: no-preference)')
+                .matches) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal--visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Immediately show all reveals if reduced motion is preferred
+                revealElements.forEach(function(el) {
+                    el.classList.add('reveal--visible');
+                });
+            }
+
+            // --- HERO LOAD ANIMATION ---
+            if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const heroContent = document.getElementById('hero-content');
+                const heroImage = document.getElementById('hero-image');
+                if (heroContent) heroContent.classList.add('reveal--visible');
+                if (heroImage) {
+                    setTimeout(function() {
+                        heroImage.classList.add('reveal--visible');
+                    }, 200);
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
