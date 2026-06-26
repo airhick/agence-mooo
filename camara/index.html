@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camara Paris 15 — Labo photo & conseil expert, rue Saint-Charles</title>
+    <meta name="description" content="Camara, votre magasin photo de quartier au 158 rue Saint-Charles, Paris 15ᵉ. Développement argentique, conseil expert, studio d'identité, occasions garanties. Du lundi au samedi.">
+    <meta property="og:title" content="Camara Paris 15 — Labo photo & conseil expert">
+    <meta property="og:description" content="Du développement argentique au conseil expert, Camara accompagne chaque image, chaque projet, chaque déclic. 158 rue Saint-Charles, Paris 15ᵉ.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:url" content="https://agence.mooo.com/camara">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect x='4' y='6' width='28' height='22' rx='3' fill='%23D94A38'/><rect x='8' y='10' width='20' height='14' rx='2' fill='%230F0F0F'/><circle cx='18' cy='17' r='5' fill='%23F2ECE4'/><circle cx='18' cy='17' r='3' fill='%230F0F0F'/><rect x='25' y='12' width='3' height='3' rx='1' fill='%23E8B24B'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir-velours: #0F0F0F;
+            --anthracite: #1C1C1C;
+            --encre-sepia: #F2ECE4;
+            --rouge-inactinique: #D94A38;
+            --bleu-optique: #2A5A6B;
+            --or-contact: #E8B24B;
+            --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--noir-velours);
+            color: var(--encre-sepia);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.05vw, 1.08rem);
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.25;
+            background-image: var(--grain);
+            background-repeat: repeat;
+            background-size: 180px 180px;
+        }
+
+        /* Ligne rouge inactinique fixe en haut */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--rouge-inactinique);
+            z-index: 10001;
+            pointer-events: none;
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--rouge-inactinique);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(242, 236, 228, 0.06);
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            min-height: 60px;
+        }
+
+        .header-logo-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .header-logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            letter-spacing: 0.12em;
+            color: var(--encre-sepia);
+            text-transform: uppercase;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .header-logo-underline {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--rouge-inactinique);
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .header-nav a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: var(--encre-sepia);
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--rouge-inactinique);
+            transition: width 0.3s ease;
+        }
+
+        .header-nav a:hover::after,
+        .header-nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        .header-nav a:hover {
+            color: var(--or-contact);
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--rouge-inactinique);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            padding: 0.55rem 1.1rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background 0.25s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            background: #c43d2e;
+            transform: translateY(-2px);
+        }
+
+        .header-cta:active {
+            transform: scale(0.97);
+        }
+
+        /* Badge note Google */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--anthracite);
+            border: 1px solid rgba(242, 236, 228, 0.12);
+            border-radius: 6px;
+            padding: 0.35rem 0.7rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            color: var(--encre-sepia);
+        }
+        .google-badge .stars {
+            color: var(--or-contact);
+            letter-spacing: 0.04em;
+            font-size: 0.85rem;
+        }
+        .google-badge .note {
+            font-weight: 700;
+            color: var(--encre-sepia);
+        }
+        .google-badge .count {
+            color: rgba(242, 236, 228, 0.55);
+            font-size: 0.7rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: clamp(3.5rem, 8vw, 7rem) 1.5rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.35) contrast(1.1) grayscale(0.15);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(15, 15, 15, 0.2) 0%,
+                    rgba(15, 15, 15, 0.55) 50%,
+                    rgba(15, 15, 15, 0.92) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            animation: fadeUp 0.9s ease-out backwards;
+            animation-delay: 0.1s;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--or-contact);
+            border: 1px solid var(--or-contact);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s ease-out backwards;
+            animation-delay: 0.05s;
+        }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            color: var(--encre-sepia);
+            margin-bottom: 1.2rem;
+            animation: fadeUp 0.9s ease-out backwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            line-height: 1.55;
+            color: rgba(242, 236, 228, 0.8);
+            max-width: 560px;
+            letter-spacing: 0.015em;
+            animation: fadeUp 0.9s ease-out backwards;
+            animation-delay: 0.35s;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+            animation: fadeUp 0.9s ease-out backwards;
+            animation-delay: 0.5s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            padding: 0.7rem 1.5rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--rouge-inactinique);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #c43d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 74, 56, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--encre-sepia);
+            border: 1px solid rgba(242, 236, 228, 0.35);
+        }
+        .btn-outline:hover {
+            border-color: var(--encre-sepia);
+            background: rgba(242, 236, 228, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section titles */
+        .section-eyebrow {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--rouge-inactinique);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+            line-height: 1.1;
+            letter-spacing: 0.01em;
+            color: var(--encre-sepia);
+            margin-bottom: 0.8rem;
+        }
+        .section-subtitle {
+            font-weight: 300;
+            color: rgba(242, 236, 228, 0.65);
+            font-size: 0.95rem;
+            max-width: 500px;
+            line-height: 1.5;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Filet décoratif */
+        .hairline {
+            width: 50px;
+            height: 1px;
+            background: var(--rouge-inactinique);
+            margin: 1.2rem 0 2rem;
+        }
+
+        /* Cartes services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--anthracite);
+            border: 1px solid rgba(242, 236, 228, 0.06);
+            padding: 1.8rem 1.5rem;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.35s ease;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rouge-inactinique), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(242, 236, 228, 0.18);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        }
+        .service-card:hover::before {
+            opacity: 0.7;
+        }
+
+        .service-icon {
+            font-size: 1.6rem;
+            color: var(--or-contact);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0;
+        }
+        .service-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            color: var(--encre-sepia);
+            margin-bottom: 0.4rem;
+        }
+        .service-card p {
+            font-weight: 300;
+            font-size: 0.88rem;
+            color: rgba(242, 236, 228, 0.6);
+            line-height: 1.5;
+        }
+        .service-price {
+            display: inline-block;
+            margin-top: 0.7rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--or-contact);
+            letter-spacing: 0.03em;
+        }
+
+        /* Galerie */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+        @media(min-width:768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.6rem;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 3px;
+            cursor: pointer;
+            background: var(--anthracite);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.85) contrast(1.15) brightness(0.8);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0.3) contrast(1.05) brightness(0.9);
+            transform: scale(1.04);
+        }
+
+        /* Filet d'angle viseur */
+        .viseur-frame {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+            z-index: 3;
+            border-left: 2px solid var(--rouge-inactinique);
+            border-top: 2px solid var(--rouge-inactinique);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover .viseur-frame {
+            opacity: 1;
+            animation: viseurPulse 1.2s ease-in-out infinite;
+        }
+        @keyframes viseurPulse {
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.12);
+            }
+        }
+
+        .gallery-caption {
+            text-align: center;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: rgba(242, 236, 228, 0.5);
+            margin-top: 1.2rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Avis */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+        @media(min-width:768px) {
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .review-card {
+            background: var(--anthracite);
+            border: 1px solid rgba(242, 236, 228, 0.05);
+            padding: 1.5rem;
+            border-radius: 4px;
+            position: relative;
+        }
+        .review-card .reviewer {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--encre-sepia);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.35rem;
+        }
+        .review-card .review-text {
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            color: rgba(242, 236, 228, 0.7);
+        }
+        .review-reply {
+            margin-top: 0.9rem;
+            padding: 0.7rem 0.9rem;
+            background: rgba(42, 90, 107, 0.12);
+            border-left: 2px solid var(--bleu-optique);
+            border-radius: 0 3px 3px 0;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: rgba(242, 236, 228, 0.6);
+            font-style: italic;
+        }
+        .review-reply strong {
+            font-style: normal;
+            color: var(--encre-sepia);
+            font-weight: 600;
+        }
+
+        .btn-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--encre-sepia);
+            text-decoration: none;
+            border: 1px solid rgba(242, 236, 228, 0.2);
+            padding: 0.55rem 1.2rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .btn-google:hover {
+            border-color: var(--encre-sepia);
+            background: rgba(242, 236, 228, 0.04);
+        }
+
+        /* Venir - grille */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media(min-width:768px) {
+            .venue-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .hours-table td {
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(242, 236, 228, 0.07);
+        }
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+            color: var(--encre-sepia);
+        }
+        .hours-table td:first-child {
+            color: rgba(242, 236, 228, 0.6);
+            font-weight: 300;
+        }
+        .hours-note {
+            font-size: 0.7rem;
+            color: rgba(242, 236, 228, 0.4);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .contact-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--encre-sepia);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.25s;
+        }
+        .contact-link:hover {
+            color: var(--or-contact);
+        }
+        .contact-link .icon-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rouge-inactinique);
+            flex-shrink: 0;
+        }
+
+        /* Formulaire */
+        .booking-form {
+            background: var(--anthracite);
+            border: 1px solid rgba(242, 236, 228, 0.06);
+            padding: 1.8rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .booking-form label {
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(242, 236, 228, 0.7);
+            margin-bottom: -0.5rem;
+        }
+        .booking-form select,
+        .booking-form input {
+            background: var(--noir-velours);
+            border: 1px solid rgba(242, 236, 228, 0.15);
+            color: var(--encre-sepia);
+            padding: 0.7rem 0.9rem;
+            border-radius: 3px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            width: 100%;
+        }
+        .booking-form select:focus,
+        .booking-form input:focus {
+            border-color: var(--rouge-inactinique);
+            outline: none;
+        }
+        .booking-form .btn {
+            align-self: flex-start;
+            margin-top: 0.3rem;
+        }
+
+        /* Carte */
+        .map-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(242, 236, 228, 0.08);
+            margin-top: 1.5rem;
+        }
+
+        /* Journal */
+        .journal-card {
+            background: var(--anthracite);
+            border: 1px solid rgba(242, 236, 228, 0.05);
+            padding: 1.8rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            transition: all 0.35s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .journal-card:hover {
+            border-color: rgba(242, 236, 228, 0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+        .journal-card .journal-date {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--rouge-inactinique);
+            font-weight: 600;
+        }
+        .journal-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: var(--encre-sepia);
+        }
+        .journal-card p {
+            font-weight: 300;
+            font-size: 0.88rem;
+            color: rgba(242, 236, 228, 0.55);
+            line-height: 1.5;
+        }
+        .journal-link {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu-optique);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .journal-link:hover {
+            color: var(--or-contact);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--noir-velours);
+            border-top: 1px solid rgba(242, 236, 228, 0.06);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(242, 236, 228, 0.45);
+            letter-spacing: 0.03em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            align-items: center;
+        }
+        .footer strong {
+            color: var(--encre-sepia);
+            font-weight: 600;
+        }
+        .footer .credits {
+            font-size: 0.7rem;
+            color: rgba(242, 236, 228, 0.3);
+            margin-top: 0.3rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.94);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Reduced motion */
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .viseur-frame {
+                animation: none !important;
+            }
+            .hero-content,
+            .hero-label,
+            .hero-title,
+            .hero-subtitle,
+            .hero-actions {
+                animation: none !important;
+                opacity: 1 !important;
+            }
+        }
+
+        /* Mobile nav burger */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1002;
+            padding: 4px;
+        }
+        .burger span {
+            width: 24px;
+            height: 2px;
+            background: var(--encre-sepia);
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+        @media(max-width:768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 15, 15, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(242, 236, 228, 0.06);
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .burger {
+                display: flex;
+            }
+            .header-cta.desktop-only {
+                display: none;
+            }
+            .header-cta.mobile-inline {
+                display: inline-flex;
+                font-size: 0.78rem;
+                padding: 0.45rem 0.9rem;
+            }
+            .google-badge {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+        @media(min-width:769px) {
+            .burger {
+                display: none;
+            }
+            .header-cta.mobile-inline {
+                display: none;
+            }
+            .header-cta.desktop-only {
+                display: inline-flex;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Camara Paris 15",
+            "description": "Labo photo, développement argentique, conseil expert, studio d'identité et occasions garanties au 158 rue Saint-Charles, Paris 15ᵉ.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "158 Rue Saint Charles",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145582013",
+            "email": "paris15@camara.net",
+            "url": "https://agence.mooo.com/camara",
+            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.6",
+                "reviewCount": "41",
+                "bestRating": "5"
+            },
+            "openingHours": [
+                "Mo 10:00-19:00",
+                "Tu 10:00-19:00",
+                "We 10:00-19:00",
+                "Th 10:00-19:00",
+                "Fr 10:00-19:00",
+                "Sa 10:00-19:00"
+            ],
+            "priceRange": "€€"
+        }
+    </script>
+</head>
+<body>
+    <header class="header" id="top">
+        <div class="header-logo-group">
+            <a href="#top" class="header-logo" aria-label="Camara — Retour en haut">Camara</a>
+            <span class="header-logo-underline" aria-hidden="true"></span>
+        </div>
+        <button class="burger" aria-label="Menu" id="burgerBtn">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header-nav" id="mainNav">
+            <a href="#officine">L'Officine</a>
+            <a href="#comptoir">Le Comptoir</a>
+            <a href="#galerie">Instantanés</a>
+            <a href="#avis">Avis</a>
+            <a href="#venir">Venir</a>
+            <a href="#journal">Journal</a>
+            <span class="google-badge" aria-label="Note Google 3.6 sur 5 basée sur 41 avis">
+                <span class="stars">★★★<span style="color:rgba(232,178,75,0.5);">★</span>☆</span>
+                <span class="note">3.6</span>
+                <span class="count">(41)</span>
+            </span>
+        </nav>
+        <a href="tel:+33145582013" class="header-cta desktop-only">Appeler</a>
+        <a href="tel:+33145582013" class="header-cta mobile-inline">📞 Appeler</a>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero section" id="hero">
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80&auto=format&fit=crop"
+                alt="Rayons de matériel photo chez Camara"
+                loading="eager"
+                width="1920"
+                height="1080">
+            </div>
+            <div class="container hero-content">
+                <span class="hero-label">Labo d'images • Paris 15ᵉ</span>
+                <h1 class="hero-title">Toutes les photos<br>naissent ici</h1>
+                <p class="hero-subtitle">Du développement argentique au conseil expert, nous accompagnons chaque image, chaque projet, chaque déclic. Votre magasin Camara, au 158 rue Saint-Charles, 15ᵉ.</p>
+                <div class="hero-actions">
+                    <a href="#venir" class="btn btn-primary">Prendre rendez-vous</a>
+                    <a href="#officine" class="btn btn-outline">Découvrir nos services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'OFFICINE -->
+        <section class="section" id="officine">
+            <div class="container">
+                <span class="section-eyebrow reveal">Ce que l'on fait vraiment</span>
+                <h2 class="section-title reveal reveal-delay-1">L'Officine</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <p class="section-subtitle reveal reveal-delay-2">Chaque service est un engagement, pas une option. Nous prenons le temps qu'il faut pour chaque projet.</p>
+                <div class="services-grid">
+                    <article class="service-card reveal reveal-delay-1">
+                        <div class="service-icon">📷</div>
+                        <h3>Le Touch & Try</h3>
+                        <p>Essayez le boîtier de vos rêves avant de l'adopter. Nos experts vous guident dans la prise en main, sans pression.</p>
+                    </article>
+                    <article class="service-card reveal reveal-delay-2">
+                        <div class="service-icon">🪪</div>
+                        <h3>Studio d'identité</h3>
+                        <p>Photos aux normes officielles, sans rendez-vous, en 10 minutes. Éclairage pro, retouche conforme, prêtes à l'emploi.</p>
+                    </article>
+                    <article class="service-card reveal reveal-delay-3">
+                        <div class="service-icon">🎞️</div>
+                        <h3>Labo argentique</h3>
+                        <p>Développement pellicule 35 mm et 120, tirage sur place. La magie de la chambre noire, à deux pas de chez vous.</p>
+                    </article>
+                    <article class="service-card reveal reveal-delay-1">
+                        <div class="service-icon">🔧</div>
+                        <h3>Nettoyage capteur</h3>
+                        <p>Intervention en 48 h, précision et soin garantis pour retrouver des images sans poussière.</p>
+                        <span class="service-price">À partir de 39 €</span>
+                    </article>
+                    <article class="service-card reveal reveal-delay-2">
+                        <div class="service-icon">🔄</div>
+                        <h3>Occasions garanties</h3>
+                        <p>Du matériel révisé, contrôlé et prêt à shooter. Boîtiers, optiques, accessoires — tout est testé par nos soins.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE COMPTOIR -->
+        <section class="section" id="comptoir" style="background:var(--anthracite);">
+            <div class="container">
+                <span class="section-eyebrow reveal">L'équipe et l'accueil</span>
+                <h2 class="section-title reveal reveal-delay-1">Le Comptoir</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <p class="section-subtitle reveal reveal-delay-2" style="max-width:600px;">Des visages, pas des vendeurs. Ici, on ne pousse pas à l'achat, on écoute, on conseille et on partage. Rencontrez ceux qui réparent, expliquent et transmettent leur passion du déclenchement, du lundi au samedi.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;">
+                    <div class="reveal reveal-delay-3" style="flex:1;min-width:200px;background:var(--noir-velours);padding:1.2rem 1.5rem;border-radius:4px;border-left:2px solid var(--rouge-inactinique);">
+                        <p style="font-weight:600;font-size:0.95rem;color:var(--encre-sepia);">Une équipe de passionnés</p>
+                        <p style="font-weight:300;font-size:0.85rem;color:rgba(242,236,228,0.55);">Photographes amateurs et experts techniques, nous partageons nos connaissances avec enthousiasme et honnêteté.</p>
+                    </div>
+                    <div class="reveal reveal-delay-4" style="flex:1;min-width:200px;background:var(--noir-velours);padding:1.2rem 1.5rem;border-radius:4px;border-left:2px solid var(--bleu-optique);">
+                        <p style="font-weight:600;font-size:0.95rem;color:var(--encre-sepia);">Conseil sans commission</p>
+                        <p style="font-weight:300;font-size:0.85rem;color:rgba(242,236,228,0.55);">Nous ne sommes pas rémunérés à la vente. Notre seul objectif : vous aider à trouver ce qui correspond vraiment à votre pratique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTANTANÉS D'ATELIER -->
+        <section class="section" id="galerie">
+            <div class="container">
+                <span class="section-eyebrow reveal">Galerie d'ambiance réelle</span>
+                <h2 class="section-title reveal reveal-delay-1">Instantanés d'atelier</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal reveal-delay-1">
+                        <div class="viseur-frame" aria-hidden="true"></div>
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format&fit=crop"
+                        alt="Produits en vitrine chez Camara"
+                        loading="lazy"
+                        width="600"
+                        height="800">
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-2">
+                        <div class="viseur-frame" aria-hidden="true"></div>
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop"
+                        alt="Intérieur de la boutique Camara"
+                        loading="lazy"
+                        width="600"
+                        height="800">
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-3">
+                        <div class="viseur-frame" aria-hidden="true"></div>
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&auto=format&fit=crop"
+                        alt="Devanture du magasin Camara rue Saint-Charles"
+                        loading="lazy"
+                        width="600"
+                        height="800">
+                    </div>
+                    <div class="gallery-item reveal reveal-delay-4">
+                        <div class="viseur-frame" aria-hidden="true"></div>
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop"
+                        alt="Rayons et comptoir de conseil Camara"
+                        loading="lazy"
+                        width="600"
+                        height="800">
+                    </div>
+                </div>
+                <p class="gallery-caption reveal reveal-delay-5">Dans notre atelier, chaque outil raconte une histoire.</p>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis" style="background:var(--anthracite);">
+            <div class="container">
+                <span class="section-eyebrow reveal">Preuve sociale</span>
+                <h2 class="section-title reveal reveal-delay-1">Ce que l'on dit de nous</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <div class="reviews-grid">
+                    <div class="review-card reveal reveal-delay-1">
+                        <p class="reviewer">Marie K.</p>
+                        <p class="review-text">Équipe super compétente, ils ont pris le temps de m'expliquer les différences entre les boîtiers. Je suis repartie avec exactement ce qu'il me fallait. Le Touch & Try, c'est vraiment top !</p>
+                    </div>
+                    <div class="review-card reveal reveal-delay-2">
+                        <p class="reviewer">Julien T.</p>
+                        <p class="review-text">Bon conseil mais un peu d'attente un samedi après-midi. Le service est de qualité cela dit, on sent qu'ils connaissent leur métier.</p>
+                        <div class="review-reply">
+                            <strong>Réponse de Thomas, gérant —</strong> Bonjour Julien, merci pour votre retour. Les samedis sont effectivement nos journées les plus chargées. Nous mettons en place un système de créneaux pour les services rapides afin de réduire l'attente. Au plaisir de vous revoir !
+                        </div>
+                    </div>
+                    <div class="review-card reveal reveal-delay-3">
+                        <p class="reviewer">Claire D.</p>
+                        <p class="review-text">Développement argentique impeccable, mes pellicules 120 sont traitées avec un soin rare. Un vrai labo de quartier comme on en voit peu. Je recommande les yeux fermés.</p>
+                    </div>
+                </div>
+                <a href="https://maps.google.com/maps?q=Camara+158+Rue+Saint+Charles%2C+Paris" target="_blank" rel="noopener noreferrer" class="btn-google reveal reveal-delay-4">
+                    <span>⭐</span> Tous les avis sur Google
+                </a>
+            </div>
+        </section>
+
+        <!-- VENIR, APPELER, ÉCRIRE -->
+        <section class="section" id="venir">
+            <div class="container">
+                <span class="section-eyebrow reveal">Conversion locale</span>
+                <h2 class="section-title reveal reveal-delay-1">Venir, appeler, écrire</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <div class="venue-grid">
+                    <div class="reveal reveal-delay-2">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:0.8rem;letter-spacing:0.03em;">Horaires d'ouverture</h3>
+                        <table class="hours-table">
+                            <tr><td>Lundi</td><td>10h – 19h</td></tr>
+                            <tr><td>Mardi</td><td>10h – 19h</td></tr>
+                            <tr><td>Mercredi</td><td>10h – 19h</td></tr>
+                            <tr><td>Jeudi</td><td>10h – 19h</td></tr>
+                            <tr><td>Vendredi</td><td>10h – 19h</td></tr>
+                            <tr><td>Samedi</td><td>10h – 19h</td></tr>
+                            <tr><td>Dimanche</td><td>Fermé</td></tr>
+                        </table>
+                        <p class="hours-note">Horaires indicatifs, susceptibles d'évolution. Nous vous invitons à confirmer par téléphone.</p>
+
+                        <div class="contact-block" style="margin-top:2rem;">
+                            <a href="tel:+33145582013" class="contact-link"><span class="icon-dot"></span> 01 45 58 20 13</a>
+                            <a href="mailto:paris15@camara.net" class="contact-link"><span class="icon-dot"></span> paris15@camara.net</a>
+                            <p style="font-weight:300;font-size:0.85rem;color:rgba(242,236,228,0.5);margin-top:0.5rem;">158 Rue Saint Charles, 75015 Paris<br>
+                                Métro Charles Michels (ligne 10) à 200 m<br>
+                                RER C Javel à 600 m<br>
+                                Parking public Charles Michels à 200 m</p>
+                        </div>
+                        <a href="https://maps.google.com/maps?q=Camara+158+Rue+Saint+Charles%2C+Paris" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:1.2rem;">Itinéraire sur Google Maps</a>
+                    </div>
+
+                    <div class="reveal reveal-delay-3">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:0.8rem;letter-spacing:0.03em;">Pré-réservation rapide</h3>
+                        <form class="booking-form" id="bookingForm" onsubmit="event.preventDefault(); document.getElementById('bookingConfirmation').style.display='block'; this.style.display='none';">
+                            <label for="serviceSelect">Service souhaité</label>
+                            <select id="serviceSelect" name="service" required>
+                                <option value="">— Sélectionnez —</option>
+                                <option value="photo-identite">Photo d'identité</option>
+                                <option value="nettoyage-capteur">Nettoyage capteur</option>
+                            </select>
+                            <label for="creneau">Créneau préféré</label>
+                            <select id="creneau" name="creneau" required>
+                                <option value="">— Sélectionnez —</option>
+                                <option value="lundi-matin">Lundi matin (10h – 12h30)</option>
+                                <option value="lundi-apres-midi">Lundi après-midi (14h – 18h)</option>
+                                <option value="mardi-matin">Mardi matin (10h – 12h30)</option>
+                                <option value="mardi-apres-midi">Mardi après-midi (14h – 18h)</option>
+                                <option value="mercredi-matin">Mercredi matin (10h – 12h30)</option>
+                                <option value="mercredi-apres-midi">Mercredi après-midi (14h – 18h)</option>
+                                <option value="jeudi-matin">Jeudi matin (10h – 12h30)</option>
+                                <option value="jeudi-apres-midi">Jeudi après-midi (14h – 18h)</option>
+                                <option value="vendredi-matin">Vendredi matin (10h – 12h30)</option>
+                                <option value="vendredi-apres-midi">Vendredi après-midi (14h – 18h)</option>
+                                <option value="samedi-matin">Samedi matin (10h – 12h30)</option>
+                                <option value="samedi-apres-midi">Samedi après-midi (14h – 18h)</option>
+                            </select>
+                            <label for="nom">Votre nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Prénom et nom" required>
+                            <label for="tel">Téléphone</label>
+                            <input type="tel" id="tel" name="tel" placeholder="06 XX XX XX XX" required>
+                            <button type="submit" class="btn btn-primary">Demander un créneau</button>
+                        </form>
+                        <p id="bookingConfirmation" style="display:none;padding:1.5rem;background:rgba(42,90,107,0.15);border-radius:4px;border-left:2px solid var(--bleu-optique);font-weight:400;font-size:0.9rem;color:var(--encre-sepia);margin-top:1rem;">
+                            ✅ Merci ! Nous avons bien reçu votre demande de créneau. L'équipe vous confirmera par téléphone dans les meilleurs délais.
+                        </p>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-4">
+                    <iframe src="https://maps.google.com/maps?q=Camara+158+Rue+Saint+Charles%2C+Paris&output=embed"
+                    width="100%"
+                    height="360"
+                    style="border:0;display:block;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Carte Camara Paris 15"
+                    aria-label="Carte Google Maps de Camara au 158 rue Saint Charles Paris"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNAL DES OPTIQUES -->
+        <section class="section" id="journal" style="background:var(--anthracite);">
+            <div class="container">
+                <span class="section-eyebrow reveal">Conseils & actualités</span>
+                <h2 class="section-title reveal reveal-delay-1">Le Journal des optiques</h2>
+                <div class="hairline reveal reveal-delay-2"></div>
+                <a href="#" class="journal-card reveal reveal-delay-3" style="max-width:600px;" aria-label="Article : 3 itinéraires pour shooter le 15ᵉ comme un photoreporter">
+                    <span class="journal-date">15 janvier 2025</span>
+                    <h3>3 itinéraires pour shooter le 15ᵉ comme un photoreporter</h3>
+                    <p>Du parc André-Citroën aux quais de Javel en passant par la rue du Commerce, découvrez trois parcours photo dans l'arrondissement, avec nos conseils de cadrage et de lumière.</p>
+                    <span class="journal-link">Lire la suite →</span>
+                </a>
+                <p style="font-weight:300;font-size:0.8rem;color:rgba(242,236,228,0.4);margin-top:1rem;" class="reveal reveal-delay-4">Retrouvez plus d'articles sur le site national Camara.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p><strong>Camara Paris 15</strong> — 158 Rue Saint Charles, 75015 Paris</p>
+        <p>Tél. : 01 45 58 20 13 — paris15@camara.net</p>
+        <p>Du lundi au samedi, 10h – 19h</p>
+        <p class="credits">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script>
+        // Burger menu
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mainNav = document.getElementById('mainNav');
+        burgerBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const spans = burgerBtn.querySelectorAll('span');
+            if (mainNav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+            } else {
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            }
+        });
+        // Fermer le menu au clic sur un lien
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const spans = burgerBtn.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            });
+        });
+
+        // IntersectionObserver pour reveals au scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.12
+        };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Réinitialiser l'affichage du formulaire si l'utilisateur navigue
+        window.addEventListener('load', () => {
+            const form = document.getElementById('bookingForm');
+            const confirm = document.getElementById('bookingConfirmation');
+            if (form && confirm && confirm.style.display === 'block') {
+                confirm.style.display = 'none';
+                form.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
