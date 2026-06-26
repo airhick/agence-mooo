@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLEL EXCELLENCE — Hi-Fi & Home Cinéma, Paris 15ᵉ</title>
+    <meta name="description" content="Spécialiste Hi-Fi & Home Cinéma depuis 1965 à Paris 15ᵉ. Conseil, installation, auditorium privé. À deux pas de la rue de la Convention — 3 Rue Vasco de Gama.">
+    <meta property="og:title" content="ILLEL EXCELLENCE — L'oreille et l'objet depuis 1965">
+    <meta property="og:description" content="Spécialiste Hi-Fi & Home Cinéma. Conseil, installation, suivi — à deux pas de la rue de la Convention, Paris 15ᵉ.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F0F0C'/%3E%3Cpath d='M8 16 Q12 6 16 16 Q20 26 24 16' stroke='%23C5843E' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23D45A3A'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir-bitume: #0F0F0C;
+            --blanc-coquille: #E6E3DD;
+            --gris-bronze: #1A1B16;
+            --cuivre-oxyde: #C5843E;
+            --orange-cendre: #D45A3A;
+            --creme-technique: #F1EFE9;
+            --gris-typographique: #B7B4AB;
+            --gris-fonce: #2A2B25;
+            --gris-surface: #1E1F1A;
+            --shadow-deep: 0 4px 40px rgba(0, 0, 0, 0.55);
+            --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+            --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+            --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            background-color: var(--noir-bitume);
+            color: var(--blanc-coquille);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--noir-bitume);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Grain global */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 12, 0.82);
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            border-bottom: 1px solid rgba(197, 132, 62, 0.12);
+            transition: background 0.4s var(--ease-out-expo), border-color 0.4s var(--ease-out-expo);
+            padding: 0 1.25rem;
+        }
+        .site-header.scrolled {
+            background: rgba(15, 15, 12, 0.94);
+            border-bottom-color: rgba(197, 132, 62, 0.22);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 1.5rem;
+        }
+        .brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            letter-spacing: 0.06em;
+            color: var(--blanc-coquille);
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-decoration: none;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .brand:hover {
+            color: var(--cuivre-oxyde);
+        }
+        .brand-accent {
+            color: var(--cuivre-oxyde);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--gris-typographique);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            white-space: nowrap;
+            padding: 0.3rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--cuivre-oxyde);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--blanc-coquille);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: transparent;
+            color: var(--cuivre-oxyde);
+            border: 1.5px solid var(--cuivre-oxyde);
+            transition: all 0.35s var(--ease-out-expo);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: var(--cuivre-oxyde);
+            color: var(--noir-bitume);
+            border-color: var(--cuivre-oxyde);
+            box-shadow: 0 0 28px rgba(197, 132, 62, 0.3);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--blanc-coquille);
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: currentColor;
+            margin: 5px 0;
+            transition: all 0.3s;
+            border-radius: 1px;
+        }
+
+        /* Sections */
+        .section {
+            position: relative;
+            padding: 5rem 1.5rem;
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .section-hero {
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 85vh;
+            align-items: center;
+            gap: 3rem;
+        }
+        @media (max-width: 860px) {
+            .section-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: 6rem;
+                padding-bottom: 3rem;
+                gap: 2rem;
+            }
+            .section-hero .hero-visual {
+                order: -1;
+                max-height: 50vh;
+            }
+        }
+        .hero-content {
+            padding: 1rem 0;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange-cendre);
+            border: 1px solid rgba(212, 90, 58, 0.35);
+            padding: 0.4rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--blanc-coquille);
+            margin-bottom: 1.25rem;
+        }
+        .hero-title em {
+            font-style: normal;
+            color: var(--cuivre-oxyde);
+            position: relative;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            line-height: 1.55;
+            color: var(--gris-typographique);
+            max-width: 440px;
+            margin-bottom: 2rem;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.8rem;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: var(--cuivre-oxyde);
+            color: var(--noir-bitume);
+            border: none;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+            box-shadow: 0 0 0 rgba(197, 132, 62, 0);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #d4954a;
+            box-shadow: 0 8px 32px rgba(197, 132, 62, 0.35);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: transparent;
+            color: var(--blanc-coquille);
+            border: 1.5px solid rgba(230, 227, 221, 0.3);
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            border-color: var(--blanc-coquille);
+            background: rgba(230, 227, 221, 0.04);
+        }
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.75) contrast(1.08) saturate(0.7);
+            transition: filter 0.6s;
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(15, 15, 12, 0.3) 0%, rgba(15, 15, 12, 0.6) 40%, rgba(15, 15, 12, 0.85) 100%);
+            pointer-events: none;
+        }
+        .hero-visual .vu-indicator {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 6px;
+            height: 120px;
+            background: rgba(26, 27, 22, 0.7);
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 2px;
+            padding: 3px;
+        }
+        .hero-visual .vu-indicator .vu-segment {
+            height: 8px;
+            border-radius: 1px;
+            background: var(--gris-fonce);
+            transition: background 0.4s;
+        }
+        .hero-visual .vu-indicator .vu-segment.active {
+            background: var(--orange-cendre);
+            box-shadow: 0 0 8px rgba(212, 90, 58, 0.6);
+        }
+        .hero-visual .vu-indicator .vu-segment.warn {
+            background: var(--cuivre-oxyde);
+            box-shadow: 0 0 6px rgba(197, 132, 62, 0.5);
+        }
+
+        /* VU-Mètre transition */
+        .vu-transition {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2.5rem 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .vu-bar-group {
+            display: flex;
+            gap: 4px;
+            align-items: flex-end;
+            height: 90px;
+        }
+        .vu-bar {
+            width: 5px;
+            border-radius: 2px;
+            background: var(--gris-fonce);
+            transition: height 0.6s var(--ease-in-out-quint), background 0.4s;
+            height: 12px;
+        }
+        .vu-bar.lit {
+            background: var(--cuivre-oxyde);
+            box-shadow: 0 0 10px rgba(197, 132, 62, 0.5);
+        }
+        .vu-bar.peak {
+            background: var(--orange-cendre);
+            box-shadow: 0 0 14px rgba(212, 90, 58, 0.65);
+        }
+        .vu-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange-cendre);
+            box-shadow: 0 0 10px rgba(212, 90, 58, 0.8);
+            animation: vu-dot-pulse 1.6s ease-in-out infinite;
+        }
+        @keyframes vu-dot-pulse {
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.8);
+            }
+        }
+        .vu-line {
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(90deg, transparent, rgba(197, 132, 62, 0.3), transparent);
+            max-width: 160px;
+        }
+
+        /* Section headings */
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--orange-cendre);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            color: var(--blanc-coquille);
+            margin-bottom: 1.25rem;
+        }
+        .section-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--gris-typographique);
+            max-width: 620px;
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .card {
+            background: var(--gris-bronze);
+            border: 1px solid rgba(230, 227, 221, 0.06);
+            border-radius: 3px;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.45s var(--ease-out-expo);
+            box-shadow: var(--shadow-card);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 132, 62, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.45s;
+        }
+        .card:hover::before,
+        .card:focus-within::before {
+            opacity: 1;
+        }
+        .card:hover {
+            border-color: rgba(197, 132, 62, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(197, 132, 62, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(197, 132, 62, 0.2);
+        }
+        .card-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--cuivre-oxyde);
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            color: var(--blanc-coquille);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--gris-typographique);
+        }
+
+        /* Auditorium section */
+        .auditorium-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+            background: var(--gris-bronze);
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            border: 1px solid rgba(230, 227, 221, 0.05);
+        }
+        @media (max-width: 768px) {
+            .auditorium-block {
+                grid-template-columns: 1fr;
+            }
+        }
+        .auditorium-visual {
+            min-height: 300px;
+            background: radial-gradient(ellipse at 40% 50%, rgba(197, 132, 62, 0.18) 0%, transparent 70%),
+                radial-gradient(ellipse at 60% 30%, rgba(212, 90, 58, 0.08) 0%, transparent 60%),
+                var(--gris-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .auditorium-visual .concentric {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 132, 62, 0.25);
+            position: relative;
+            animation: concentric-pulse 4s ease-in-out infinite;
+        }
+        .auditorium-visual .concentric::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 90, 58, 0.2);
+            animation: concentric-pulse 4s ease-in-out 0.6s infinite;
+        }
+        .auditorium-visual .concentric::after {
+            content: '';
+            position: absolute;
+            inset: 50px;
+            border-radius: 50%;
+            background: rgba(197, 132, 62, 0.08);
+            animation: concentric-pulse 4s ease-in-out 1.2s infinite;
+        }
+        @keyframes concentric-pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.06);
+                opacity: 1;
+            }
+        }
+        .auditorium-content {
+            padding: 2.5rem 2rem;
+        }
+        .auditorium-content h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--blanc-coquille);
+            margin-bottom: 0.8rem;
+        }
+        .auditorium-content p {
+            color: var(--gris-typographique);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .auditorium-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .auditorium-list li {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--blanc-coquille);
+            padding-left: 1.4rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .auditorium-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cuivre-oxyde);
+        }
+
+        /* CTA section */
+        .cta-block {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--gris-bronze);
+            border-radius: 3px;
+            border: 1px solid rgba(197, 132, 62, 0.15);
+            box-shadow: var(--shadow-card);
+        }
+        .cta-phone {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            letter-spacing: 0.03em;
+            color: var(--cuivre-oxyde);
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .cta-phone:hover {
+            color: #d4954a;
+            text-shadow: 0 0 30px rgba(197, 132, 62, 0.4);
+        }
+
+        /* Venir section */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .venue-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .venue-info .info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .info-item .info-icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(197, 132, 62, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(197, 132, 62, 0.2);
+        }
+        .info-item .info-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--cuivre-oxyde);
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .info-item h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--blanc-coquille);
+            margin-bottom: 0.2rem;
+        }
+        .info-item p,
+        .info-item a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--gris-typographique);
+            text-decoration: none;
+            line-height: 1.5;
+        }
+        .info-item a:hover {
+            color: var(--cuivre-oxyde);
+        }
+        .map-wrapper {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: var(--shadow-deep);
+            border: 1px solid rgba(230, 227, 221, 0.08);
+            height: 360px;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(30%) brightness(0.85) contrast(1.1);
+        }
+
+        /* Rating badge */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.3rem;
+            background: var(--gris-bronze);
+            border: 1px solid rgba(197, 132, 62, 0.25);
+            border-radius: 3px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--blanc-coquille);
+            letter-spacing: 0.03em;
+            box-shadow: var(--shadow-card);
+        }
+        .rating-stars {
+            color: var(--cuivre-oxyde);
+            letter-spacing: 0.08em;
+            font-size: 1.1rem;
+        }
+        .rating-count {
+            color: var(--gris-typographique);
+            font-weight: 400;
+            font-size: 0.8rem;
+        }
+
+        /* Reviews section */
+        .reviews-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .review-quote {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            line-height: 1.7;
+            color: var(--blanc-coquille);
+            max-width: 600px;
+            font-style: italic;
+            position: relative;
+            padding: 1.5rem 2rem;
+            background: var(--gris-bronze);
+            border-radius: 3px;
+            border-left: 3px solid var(--cuivre-oxyde);
+            box-shadow: var(--shadow-card);
+        }
+        .review-quote::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(197, 132, 62, 0.2);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--gris-bronze);
+            border-top: 1px solid rgba(230, 227, 221, 0.06);
+            padding: 3rem 1.5rem 2rem;
+            margin-top: 4rem;
+        }
+        .footer-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            color: var(--blanc-coquille);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--gris-typographique);
+            text-decoration: none;
+            line-height: 1.7;
+            display: block;
+        }
+        .footer-col a:hover {
+            color: var(--cuivre-oxyde);
+        }
+        .footer-credit {
+            max-width: 1160px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(230, 227, 221, 0.06);
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--gris-typographique);
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Focus */
+        :focus-visible {
+            outline: 2px solid var(--cuivre-oxyde);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            z-index: 10000;
+            background: var(--cuivre-oxyde);
+            color: var(--noir-bitume);
+            padding: 0.6rem 1.2rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 15, 12, 0.96);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(197, 132, 62, 0.15);
+                z-index: 999;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            .section-hero {
+                padding-top: 5.5rem;
+            }
+        }
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand" aria-label="ILLEL EXCELLENCE — Accueil">ILLEL<span class="brand-accent">·</span>EXCELLENCE</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#oreille">Notre oreille</a></li>
+                    <li><a href="#selection">La sélection</a></li>
+                    <li><a href="#sur-mesure">Sur-mesure</a></li>
+                    <li><a href="#rendezvous">Rendez-vous</a></li>
+                    <li><a href="#venir">Venir</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="tel:+33140349345" class="nav-cta">Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HÉRO -->
+        <section class="section section-hero" aria-labelledby="hero-heading">
+            <div class="hero-content reveal">
+                <span class="hero-tag">Depuis 1965 — Paris 15ᵉ</span>
+                <h1 class="hero-title" id="hero-heading">Nous écoutons vos <em>silences</em> depuis&nbsp;1965.</h1>
+                <p class="hero-subtitle">Spécialiste Hi-Fi & Home Cinéma — conseil, installation, suivi — à deux pas de la rue de la Convention.</p>
+                <div class="hero-actions">
+                    <a href="tel:+33140349345" class="btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        01 40 34 93 45
+                    </a>
+                    <a href="#rendezvous" class="btn-secondary">Prendre rendez-vous</a>
+                </div>
+                <div class="rating-badge" style="margin-top:1.5rem;" aria-label="Note Google 4.2 sur 5, 63 avis">
+                    <span class="rating-stars">★★★★☆</span> 4.2
+                    <span class="rating-count">· 63 avis vérifiés</span>
+                </div>
+            </div>
+            <div class="hero-visual reveal reveal-delay-2">
+                <img src="assets/maps-1.jpg" alt="ILLEL EXCELLENCE — Façade discrète rue Vasco de Gama, Paris 15ᵉ" loading="eager" width="800" height="600">
+                <div class="vu-indicator" aria-hidden="true">
+                    <div class="vu-segment active"></div>
+                    <div class="vu-segment active"></div>
+                    <div class="vu-segment active"></div>
+                    <div class="vu-segment warn"></div>
+                    <div class="vu-segment warn"></div>
+                    <div class="vu-segment"></div>
+                    <div class="vu-segment"></div>
+                    <div class="vu-segment"></div>
+                    <div class="vu-segment"></div>
+                    <div class="vu-segment"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-1">
+                <div class="vu-bar" style="height:18px;"></div><div class="vu-bar" style="height:28px;"></div><div class="vu-bar" style="height:42px;"></div>
+                <div class="vu-bar" style="height:55px;"></div><div class="vu-bar" style="height:38px;"></div><div class="vu-bar" style="height:62px;"></div>
+                <div class="vu-bar" style="height:50px;"></div><div class="vu-bar" style="height:70px;"></div><div class="vu-bar" style="height:35px;"></div>
+                <div class="vu-bar" style="height:48px;"></div><div class="vu-bar" style="height:58px;"></div><div class="vu-bar" style="height:30px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- NOTRE OREILLE -->
+        <section class="section" id="oreille" aria-labelledby="oreille-heading">
+            <span class="section-label reveal">01 — L'écoute avant la vente</span>
+            <h2 class="section-title reveal reveal-delay-1" id="oreille-heading">Notre oreille</h2>
+            <p class="section-text reveal reveal-delay-2">Trois générations de passion vous accueillent dans l'univers du son juste. Ici, on ne vend pas&nbsp;: on compare, on écoute, on ajuste — ensemble.</p>
+            <div class="cards-grid">
+                <div class="card reveal reveal-delay-2">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <h3>Conseil personnalisé</h3>
+                    <p>Chaque projet commence par une conversation. Vos goûts, votre pièce, vos habitudes d'écoute : nous posons les bonnes questions avant de proposer.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M2 12h2l4-8 4 16 4-12 2 4h2"/></svg></div>
+                    <h3>Comparaison à l'oreille</h3>
+                    <p>Dans notre auditorium, vous écoutez plusieurs configurations. A/B testing réel, sans pression : vos oreilles décident.</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/></svg></div>
+                    <h3>Suivi dans la durée</h3>
+                    <p>Un système Hi-Fi évolue. Nous restons à vos côtés pour les réglages, les évolutions et l'entretien, des années après l'installation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-2">
+                <div class="vu-bar" style="height:22px;"></div><div class="vu-bar" style="height:65px;"></div><div class="vu-bar" style="height:40px;"></div>
+                <div class="vu-bar" style="height:72px;"></div><div class="vu-bar" style="height:30px;"></div><div class="vu-bar" style="height:55px;"></div>
+                <div class="vu-bar" style="height:68px;"></div><div class="vu-bar" style="height:25px;"></div><div class="vu-bar" style="height:50px;"></div>
+                <div class="vu-bar" style="height:60px;"></div><div class="vu-bar" style="height:35px;"></div><div class="vu-bar" style="height:45px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- CE QUE VOUS ENTENDEZ -->
+        <section class="section" id="selection" aria-labelledby="selection-heading">
+            <span class="section-label reveal">02 — Une sélection exigeante</span>
+            <h2 class="section-title reveal reveal-delay-1" id="selection-heading">Ce que vous entendez, c'est nous</h2>
+            <p class="section-text reveal reveal-delay-2">Une sélection exigeante d'enceintes, de platines vinyles, d'amplis et de projecteurs, validée à l'oreille avant d'entrer en boutique. Chaque produit a été écouté, questionné, retenu — ou non.</p>
+            <div class="cards-grid">
+                <div class="card reveal reveal-delay-2">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="8,2 18,6 18,18 8,22 2,18 2,6"/></svg></div>
+                    <h3>Enceintes</h3>
+                    <p>Bibliothèque, colonne, encastrables. Des marques qui maîtrisent la restitution fidèle, choisies pour leur justesse et leur tenue dans le temps.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="2" x2="12" y2="6"/></svg></div>
+                    <h3>Platines vinyles</h3>
+                    <p>Cellules, bras, plateaux : nous défendons le grain chaud du vinyle avec des platines qui respectent le sillon et subliment le geste.</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="12" cy="11" r="4"/></svg></div>
+                    <h3>Amplis & électroniques</h3>
+                    <p>Amplificateurs intégrés, préamplis, DAC : l'électronique discrète qui laisse passer la musique sans la colorer.</p>
+                </div>
+                <div class="card reveal reveal-delay-5">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polygon points="10,19 14,19 13,22 11,22"/></svg></div>
+                    <h3>Projecteurs Home Cinéma</h3>
+                    <p>Pour les amateurs d'image autant que de son : projecteurs 4K, écrans,校准 professionnel pour votre salle obscure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-3">
+                <div class="vu-bar" style="height:55px;"></div><div class="vu-bar" style="height:30px;"></div><div class="vu-bar" style="height:70px;"></div>
+                <div class="vu-bar" style="height:20px;"></div><div class="vu-bar" style="height:60px;"></div><div class="vu-bar" style="height:40px;"></div>
+                <div class="vu-bar" style="height:75px;"></div><div class="vu-bar" style="height:28px;"></div><div class="vu-bar" style="height:52px;"></div>
+                <div class="vu-bar" style="height:65px;"></div><div class="vu-bar" style="height:32px;"></div><div class="vu-bar" style="height:48px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- L'ÉCOUTE SUR-MESURE -->
+        <section class="section" id="sur-mesure" aria-labelledby="surmesure-heading">
+            <span class="section-label reveal">03 — Installation & calibrage</span>
+            <h2 class="section-title reveal reveal-delay-1" id="surmesure-heading">L'écoute sur-mesure</h2>
+            <p class="section-text reveal reveal-delay-2" style="margin-bottom:2rem;">Auditorium privé, prise en main à domicile, calibrage professionnel. Nous venons chez vous poser le son comme on pose une voix&nbsp;: au bon endroit, au bon niveau.</p>
+            <div class="auditorium-block reveal reveal-delay-2">
+                <div class="auditorium-visual" aria-hidden="true">
+                    <div class="concentric"></div>
+                </div>
+                <div class="auditorium-content">
+                    <h3>Auditorium privé</h3>
+                    <p>Un espace dédié en boutique pour écouter dans des conditions optimales. Acoustique traitée, matériel calibré, silence absolu.</p>
+                    <ul class="auditorium-list">
+                        <li>Séance d'écoute personnalisée sur rendez-vous</li>
+                        <li>Comparaison A/B de plusieurs configurations</li>
+                        <li>Conseil acoustique pour votre pièce</li>
+                        <li>Calibrage professionnel à domicile</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-4">
+                <div class="vu-bar" style="height:40px;"></div><div class="vu-bar" style="height:68px;"></div><div class="vu-bar" style="height:25px;"></div>
+                <div class="vu-bar" style="height:55px;"></div><div class="vu-bar" style="height:72px;"></div><div class="vu-bar" style="height:30px;"></div>
+                <div class="vu-bar" style="height:60px;"></div><div class="vu-bar" style="height:20px;"></div><div class="vu-bar" style="height:50px;"></div>
+                <div class="vu-bar" style="height:65px;"></div><div class="vu-bar" style="height:35px;"></div><div class="vu-bar" style="height:45px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- AVANT D'ALLUMER -->
+        <section class="section" id="rendezvous" aria-labelledby="rdv-heading">
+            <span class="section-label reveal">04 — Prenez rendez-vous</span>
+            <h2 class="section-title reveal reveal-delay-1" id="rdv-heading">Avant d'allumer</h2>
+            <p class="section-text reveal reveal-delay-2" style="margin-bottom:2rem;">Prise de rendez-vous conseil au <strong>01 40 34 93 45</strong>. Une heure, une pièce, vos oreilles&nbsp;: nous réglons le reste.</p>
+            <div class="cta-block reveal reveal-delay-2">
+                <p style="font-family:var(--font-body);color:var(--gris-typographique);margin-bottom:1rem;font-size:0.9rem;">Appelez-nous pour convenir d'un moment</p>
+                <a href="tel:+33140349345" class="cta-phone">01 40 34 93 45</a>
+                <p style="font-family:var(--font-body);color:var(--gris-typographique);margin-top:1rem;font-size:0.85rem;">Ou écrivez-nous : <a href="mailto:contact@illel.fr" style="color:var(--cuivre-oxyde);text-decoration:none;">contact@illel.fr</a></p>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-5">
+                <div class="vu-bar" style="height:30px;"></div><div class="vu-bar" style="height:55px;"></div><div class="vu-bar" style="height:70px;"></div>
+                <div class="vu-bar" style="height:22px;"></div><div class="vu-bar" style="height:60px;"></div><div class="vu-bar" style="height:45px;"></div>
+                <div class="vu-bar" style="height:68px;"></div><div class="vu-bar" style="height:28px;"></div><div class="vu-bar" style="height:52px;"></div>
+                <div class="vu-bar" style="height:40px;"></div><div class="vu-bar" style="height:65px;"></div><div class="vu-bar" style="height:35px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- VENIR -->
+        <section class="section" id="venir" aria-labelledby="venir-heading">
+            <span class="section-label reveal">05 — Poussez la porte</span>
+            <h2 class="section-title reveal reveal-delay-1" id="venir-heading">Venir</h2>
+            <p class="section-text reveal reveal-delay-2">3 Rue Vasco de Gama, 75015 Paris. Du mardi au samedi, 10h30–19h00. Métro Convention ou Lourmel. Le magasin ne paie pas de mine&nbsp;: c'est pour mieux vous surprendre à l'intérieur.</p>
+            <div class="venue-grid">
+                <div class="venue-info reveal reveal-delay-2">
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>3 Rue Vasco de Gama<br>75015 Paris</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Mardi – Samedi<br>10h30 – 19h00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><circle cx="8" cy="8" r="2"/><circle cx="16" cy="16" r="2"/></svg></div>
+                        <div>
+                            <h4>Métro</h4>
+                            <p>Convention (ligne 12)<br>Lourmel (ligne 8)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33140349345">01 40 34 93 45</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-3">
+                    <iframe src="https://maps.google.com/maps?q=ILLEL+EXCELLENCE+3+Rue+Vasco+de+Gama%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès ILLEL EXCELLENCE"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- VU Transition -->
+        <div class="vu-transition" aria-hidden="true">
+            <div class="vu-line"></div>
+            <div class="vu-bar-group" id="vu-group-6">
+                <div class="vu-bar" style="height:50px;"></div><div class="vu-bar" style="height:35px;"></div><div class="vu-bar" style="height:65px;"></div>
+                <div class="vu-bar" style="height:28px;"></div><div class="vu-bar" style="height:72px;"></div><div class="vu-bar" style="height:42px;"></div>
+                <div class="vu-bar" style="height:58px;"></div><div class="vu-bar" style="height:20px;"></div><div class="vu-bar" style="height:55px;"></div>
+                <div class="vu-bar" style="height:68px;"></div><div class="vu-bar" style="height:30px;"></div><div class="vu-bar" style="height:48px;"></div>
+            </div>
+            <div class="vu-dot"></div>
+            <div class="vu-line"></div>
+        </div>
+
+        <!-- CEUX QUI ONT ÉCOUTÉ -->
+        <section class="section" id="avis" aria-labelledby="avis-heading">
+            <span class="section-label reveal">06 — Témoignages</span>
+            <h2 class="section-title reveal reveal-delay-1" id="avis-heading">Ceux qui ont écouté</h2>
+            <p class="section-text reveal reveal-delay-2">Avis clients vérifiés — parce que la meilleure enceinte est celle qui fait dire «&nbsp;je ne l'éteindrai plus&nbsp;».</p>
+            <div class="reviews-block">
+                <div class="rating-badge reveal reveal-delay-2" style="font-size:1rem;padding:0.9rem 1.6rem;" aria-label="Note Google 4.2 sur 5, 63 avis vérifiés">
+                    <span class="rating-stars" style="font-size:1.3rem;">★★★★☆</span> 4.2/5
+                    <span class="rating-count">· 63 avis Google vérifiés</span>
+                </div>
+                <div class="review-quote reveal reveal-delay-3">
+                    <p style="position:relative;z-index:1;">Conseil d'une rare qualité. On prend le temps d'écouter vos besoins avant de proposer quoi que ce soit. Résultat : un son qui correspond exactement à ce que je cherchais, sans pression commerciale.</p>
+                </div>
+                <div class="review-quote reveal reveal-delay-4">
+                    <p style="position:relative;z-index:1;">Trois générations de savoir-faire, ça s'entend. L'auditorium permet de vraiment comparer, et l'installation à domicile a été impeccable. Mon salon n'a jamais sonné aussi bien.</p>
+                </div>
+                <a href="https://maps.google.com/maps?q=ILLEL+EXCELLENCE+3+Rue+Vasco+de+Gama%2C+Paris" target="_blank" rel="noopener noreferrer" class="btn-secondary reveal reveal-delay-4" style="margin-top:0.5rem;">Voir tous les avis Google</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>ILLEL EXCELLENCE</h4>
+                <p>Spécialiste Hi-Fi & Home Cinéma depuis 1965.<br>Conseil, écoute, installation, suivi.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>3 Rue Vasco de Gama, 75015 Paris</p>
+                <a href="tel:+33140349345">01 40 34 93 45</a>
+                <a href="mailto:contact@illel.fr">contact@illel.fr</a>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Mardi – Samedi<br>10h30 – 19h00</p>
+                <p style="font-size:0.75rem;color:var(--gris-typographique);">Dimanche & lundi : fermé</p>
+            </div>
+            <div class="footer-col">
+                <h4>Accès</h4>
+                <p>Métro Convention (ligne 12)</p>
+                <p>Métro Lourmel (ligne 8)</p>
+                <p style="font-size:0.75rem;color:var(--gris-typographique);">Stationnement à proximité</p>
+            </div>
+        </div>
+        <div class="footer-credit">
+            Site créé par Agence Mooo — <a href="https://agence.mooo.com/illel-excellence-2" style="color:inherit;">agence.mooo.com</a>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ILLEL EXCELLENCE",
+            "description": "Spécialiste Hi-Fi & Home Cinéma depuis 1965 à Paris 15ᵉ. Conseil, installation, auditorium privé, suivi personnalisé.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3 Rue Vasco de Gama",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33140349345",
+            "email": "contact@illel.fr",
+            "url": "https://agence.mooo.com/illel-excellence-2",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:30",
+                    "closes": "19:00"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "63"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.8405,
+                "longitude": 2.2865
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Header scroll effect
+            const header = document.getElementById('site-header');
+            const scrollObserver = new IntersectionObserver((entries) => {
+                const heroVisible = entries[0] && entries[0].isIntersecting;
+                if (!heroVisible) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { threshold: 0.1 });
+            const heroSection = document.querySelector('.section-hero');
+            if (heroSection) scrollObserver.observe(heroSection);
+
+            // Reveal on scroll
+            const reveals = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            reveals.forEach(el => revealObserver.observe(el));
+
+            // VU meter animations on scroll
+            const vuGroups = document.querySelectorAll('.vu-bar-group');
+            const vuObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.vu-bar');
+                        bars.forEach((bar, i) => {
+                            const baseH = parseFloat(bar.style.height) || 20;
+                            const variation = Math.sin((i * 1.7) + Date.now() * 0.003) * 0.5 + 0.5;
+                            const newH = baseH * (0.55 + variation * 0.9);
+                            bar.style.height = newH + 'px';
+                            if (variation > 0.7) {
+                                bar.classList.add('peak');
+                                bar.classList.remove('lit');
+                            } else if (variation > 0.4) {
+                                bar.classList.add('lit');
+                                bar.classList.remove('peak');
+                            } else {
+                                bar.classList.remove('lit', 'peak');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+            vuGroups.forEach(group => vuObserver.observe(group));
+
+            // Continuous VU animation
+            function animateVU() {
+                vuGroups.forEach(group => {
+                    const rect = group.getBoundingClientRect();
+                    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+                    if (inView) {
+                        const bars = group.querySelectorAll('.vu-bar');
+                        bars.forEach((bar, i) => {
+                            const baseH = parseFloat(bar.getAttribute('data-base') || bar.style.height) || 30;
+                            if (!bar.getAttribute('data-base') && bar.style.height) {
+                                bar.setAttribute('data-base', bar.style.height);
+                            }
+                            const realBase = parseFloat(bar.getAttribute('data-base')) || baseH;
+                            const variation = Math.sin((i * 2.1) + performance.now() * 0.0025) * 0.5 + 0.5;
+                            const newH = realBase * (0.45 + variation * 1.1);
+                            bar.style.height = newH + 'px';
+                            if (variation > 0.72) {
+                                bar.classList.add('peak');
+                                bar.classList.remove('lit');
+                            } else if (variation > 0.38) {
+                                bar.classList.add('lit');
+                                bar.classList.remove('peak');
+                            } else {
+                                bar.classList.remove('lit', 'peak');
+                            }
+                        });
+                    }
+                });
+                requestAnimationFrame(animateVU);
+            }
+            requestAnimationFrame(animateVU);
+
+            // Mobile menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('open');
+                    menuBtn.setAttribute('aria-expanded', isOpen);
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                });
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('open');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // Close mobile menu on outside click
+            document.addEventListener('click', (e) => {
+                if (navLinks && navLinks.classList.contains('open') && !navLinks.contains(e.target) && e
+                    .target !== menuBtn && !menuBtn.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Initialize base data for VU bars
+            vuGroups.forEach(group => {
+                const bars = group.querySelectorAll('.vu-bar');
+                bars.forEach(bar => {
+                    if (bar.style.height && !bar.getAttribute('data-base')) {
+                        bar.setAttribute('data-base', bar.style.height);
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
