@@ -1,82 +1,108 @@
-**BRIEF CRÉATIF — ACANTHE**  
-**Site vitrine · 65 Rue de la Tour, Paris 16ᵉ**
+# BRIEF CRÉATIF — ACANTHE
+
+## 1. Concept & positionnement
+**Acanthe n’est pas un stock, c’est un vestiaire de famille.**  
+On ne vend pas des vêtements soldés, on transmet un savoir-faire textile français depuis 1983, dans un écrin de quartier — le 16ᵉ arrondissement, la rue de la Tour, la boutique où l’on pousse la porte et où l’on connaît votre prénom. Le site doit redevenir ce qu’il aurait toujours dû être : la version numérique de la boutique physique, avec ses boiseries mentales, son odeur de tissu, sa relation humaine.
+
+**Positionnement** : *Le vestiaire familial qui habille trois générations au même endroit, depuis quarante ans.*  
+Le site n’est plus un catalogue de produits soldés, c’est le portail d’une maison de vêtements à taille humaine, ancrée dans un quartier, avec une vraie adresse, un vrai visage, et une exigence de qualité.
 
 ---
 
-## 1. CONCEPT & POSITIONNEMENT
+## 2. Direction artistique
+**Parti pris esthétique : « CLASSICISME ARCHITECTURAL, DOUCEUR DOMESTIQUE »**
 
-**Acanthe n’est pas une boutique, c’est un atelier de quartier où le vêtement se transmet.**  
-Depuis 1983, la famille imagine un vestiaire français à la coupe précise et à l’âme douce, dans l’effervescence discrète du 16ᵉ arrondissement. Le site sera la porte d’entrée numérique de ce lieu hybride : la chaleur du bois et du savoir‑faire artisanal y croise l’éclat assumé du néon vert qui signe la façade.  
-**On retiendra : une maison de couture de poche, parisienne, légèrement rock, qui préfère le conseil à la vente et la fidélité au passage.**
+Le nom *Acanthe* évoque la feuille d’acanthe, motif sculpté des chapiteaux corinthiens. On file la métaphore architecturale — la boutique est un petit monument intime, la robe est une colonne, le vêtement une structure qui tient et protège.
 
----
-
-## 2. DIRECTION ARTISTIQUE : “BOIS & NÉON”
-
-**Parti pris esthétique : brut élégant, entre atelier de tailleur et galerie contemporaine.**
-La DA puise directement dans les matières et lumières réelles de la boutique photographiée Rue de la Tour :  
-- La **chaleur du bois** (comptoir, étagères) devient un fond enveloppant, jamais rustique.  
-- Le **néon vert** de l’enseigne est érigé en signalétique graphique — il guide, souligne, révèle.  
-- L’**encre métallique** du lettrage en façade inspire un jeu de filets fins, comme des surpiqûres.  
-La composition est architecturée, aérée, mais garde une assise très concrète : chaque bloc est taillé comme un vêtement, avec ses aplombs, ses respirations, ses détails de finition. On est loin d’un catalogue e‑commerce ; on entre dans l’intimité du lieu.
+- **Sources visuelles réelles (déduites de l’univers du commerce)** :  
+  Pierre de taille blonde des immeubles haussmanniens du 16ᵉ, boiseries patinées, lumière tamisée d’un appartement parisien, textile au drapé lourd et chaud, élégance sans ostentation.  
+- **Refus délibéré du style « mode magazine »** : pas de blanc clinique, pas de typo froide, pas de mannequins distants. On photographie les vêtements portés par des personnes réelles aux âges variés, dans des intérieurs habités ou dans la rue de la Tour.  
+- **Rythme** : aéré, silencieux, avec une hiérarchie typographique qui structure comme des moulures — titres puissants en Bricolage Grotesque, texte courant discret en Hanken Grotesk.
 
 ---
 
-## 3. PALETTE
+## 3. Palette
 
-| Rôle | Nom | Hex | Usage |
-|------|-----|-----|-------|
-| Fond principal & respirations | **Bois Crème** | `#F6EFE3` | Arrière‑plans, cartes, blocs chaleureux |
-| Texte, encre principale | **Gris Couture** | `#2F4F4F` | Corps de texte, titres discrets, icônes |
-| Accent chaud, liens secondaires | **Or Moulure** | `#C8A96E` | Filets, soulignements, détails typographiques |
-| Accent froid, signalétique | **Vert Enseigne** | `#39FF14` | Navigation, boutons, hover, révélations animées |
-| Fond sombre contrasté | **Nuit Atelier** | `#1E2525` | Footer, bandeaux d’ambiance, mode sombre optionnel |
-| Neutre clair | **Blanc Cassé** | `#FBF9F6` | Fond de page, cartes légères |
+| Nom             | Hex       | Rôle                                      |
+|-----------------|-----------|-------------------------------------------|
+| Pierre blonde   | `#F2E8DA` | Fond principal (chaud, pas blanc froid)   |
+| Encre de loge   | `#1E2C3A` | Texte principal (bleu nuit profond)       |
+| Vert acanthe    | `#2E4A3A` | Accent principal (feuillage sculpté)      |
+| Cuir vieilli    | `#8B5E3C` | Accent secondaire, encadrés, liens        |
+| Craie           | `#FDF9F2` | Fond carte, surbrillance, notes           |
+| Ombre chaude    | `#D4C4B0` | Filets, bordures, séparateurs             |
 
-> Le vert néon n’est jamais posé en aplat large : il apparaît par touches (surlignage, icône active, trait d’animation). L’ambiance générale reste dominée par le bois crème et le gris couture, élégante sans fadeur.
-
----
-
-## 4. TON ÉDITORIAL
-
-**Voix : voussoiement de rigueur, registre courant supérieur, esprit “mot du tailleur”.**  
-On parle de vêtements comme on parlerait d’architecture ou de recettes de famille : avec précision, fierté, mais sans emphase. Une pointe d’humour parisien affleure dans les formules courtes (« Une robe ne devrait jamais mentir sur sa coupe. Ni sur sa provenance. »).  
-Pas de jargon marketing, pas de faux storytelling. Les textes sont signés Acanthe, comme une conversation au comptoir.
+**Ambiance** : claire, tamisée, jamais agressive. Le contraste est doux — l’encre de loge sur pierre blonde donne un confort de lecture haut de gamme. Le vert acanthe n’est jamais fluorescent, il est sourd, moussu, sophistiqué.
 
 ---
 
-## 5. ACCROCHE HÉRO
+## 4. Ton éditorial
+**Voix** : intime, posée, légèrement littéraire mais sans emphase — comme une conversation dans la boutique avec la personne qui vous connaît bien.
 
-**Titre :**  
-*Le vestiaire français a une adresse.*
-
-**Sous‑titre :**  
-*Depuis 1983, Acanthe imagine des vêtements qui durent — pour les femmes, les hommes, les enfants et les tout‑petits. Poussez la porte du 65 Rue de la Tour, dans le 16ᵉ arrondissement, et découvrez une maison où l’essayage est un art et le conseil, une tradition.*
+- **Registre** : chaleureux-concret. On tutoie l’usure, on vouvoie l’élégance.  
+- **Règle** : jamais de jargon marketing (« collection capsule », « must-have »). On dit ce que le vêtement devient dans la vie des gens.  
+- **Adresse revendiquée** : le lecteur est un client du quartier qui pousserait la porte un samedi matin. On lui parle comme on lui parlerait en boutique.
 
 ---
 
-## 6. SECTIONS (page d’accueil longue)
+## 5. Accroche héro
 
-1. **Notre maison**  
-   *Titre :* Une histoire de fils et de Paris  
-   *Contenu :* Française par sa coupe, familiale par son esprit, Acanthe habille depuis quarante ans les générations qui aiment la belle matière et la discrétion. Chaque vêtement est pensé dans notre atelier parisien, chaque détail a une raison d’être. Bien plus qu’une marque, un vestiaire.
+> **H1 (grand titre Bricolage Grotesque) :**  
+> Vestiaire de famille depuis 1983  
+>  
+> **Sous-titre (Hanken Grotesk, corps 18-20) :**  
+> Au 65 de la rue de la Tour, on habille les enfants, leurs parents, parfois leurs grands-parents. Chemises, robes, pyjamas — tout est conçu pour durer, dans des matières qui respirent. Poussez la porte, essayez, repartez avec quelque chose de vrai.  
+>  
+> **Bouton (CTA) :**  
+> *Voir la collection printemps* (pas de « je découvre », pas de « en savoir + »).
 
-2. **La boutique du 65 Rue de la Tour**  
-   *Titre :* Ici, on prend vos mesures, pas vos clics  
-   *Contenu :* Bois ciré, lumières douces et néon assumé — notre adresse historique cultive l’ambiance d’un cabinet de curiosités textiles. Horaires, plan, téléphone direct (01 45 03 35 80), tout est là pour que vous veniez nous voir. [Intégration d’un plan Google Maps dynamique, galerie photo immersive]
+---
 
-3. **L’accueil sur‑mesure**  
-   *Titre :* Des conseils taillés pour vous  
-   *Contenu :* Nos équipes vous reçoivent sans rendez‑vous ou sur réservation pour un essayage privé. Nous ajustons, nous retouchons, nous écoutons. Pour les familles, un espace enfant permet d’essayer en toute sérénité. (La note Google devient désuète quand on lit l’attention réelle.)
+## 6. Sections
 
-4. **Les services de la maison**  
-   *Titre :* La carte Acanthe+ vit aussi en boutique  
-   *Contenu :* – 30 % sur tous vos achats pendant un an, livraison offerte dès 50 €, retouches offertes sur les pièces achetées ici, commandes sur‑mesure via notre atelier. Et surtout : un café servi pendant qu’on prépare votre paquet.
+### ① **Vitrine** (H2 : « La boutique du 16ᵉ »)
+Une bande de trois photos pleine largeur de la boutique réelle — façade rue de la Tour, intérieur boisé, vue d’un détail textile (pli, bouton, col).  
+*Texte d’accompagnement* : « Nous sommes au 65 rue de la Tour depuis quarante et un ans. Vous venez pour une chemise, vous restez pour le conseil. Horaires d’ouverture : du mardi au samedi, 10h–19h, sans interruption le samedi. Téléphone : 01 45 03 35 80. »
 
-5. **Le vestiaire (aperçu)**  
-   *Titre :* Quelques pièces signatures  
-   *Contenu :* Sans transformer le site en e‑shop, présentons trois ou quatre silhouettes emblématiques (la blouse GAIA, le pull ZOE, la robe BERTILLE) avec un lien discret vers la boutique en ligne pour les impatients. Ici, l’image prime : shooting éditorial dans la boutique même, lumière naturelle, mouvements saisis.
+### ② **Savoir-faire** (H2 : « Des vêtements qui tiennent »)
+Récit de fabrication sans fausse modestie.  
+*Texte* : « Nous choisissons des cotons longue fibre, des laines peignées, des toiles Liberty pour les enfants. Chaque pièce est coupée dans des ateliers que nous connaissons, pour que la robe de cette année soit encore portable l’an prochain. »
 
-6. **Nous écrire, nous voir, nous joindre**  
-   *Titre :* Parlez‑nous, on est juste là  
-   *Contenu :* Téléphone, email (contact@acanthe-paris.fr), formulaire de prise de rendez‑vous, adresse et itinéraire. Le footer
+### ③ **Les familles Acanthe** (H2 : « Trois générations au même endroit »)
+Galerie photo réelle : clients de tous âges portant les vêtements dans la boutique ou le quartier (avec autorisation bien sûr).  
+*Texte* : « Venez avec vos photos. Nous en avons des albums entiers depuis 1983. »
+
+### ④ **La carte Acanthe+** (H2 : « La carte qui dit merci »)
+Explication sobre du programme de fidélité, sans pourcentage agressif.  
+*Texte* : « Pour nos clients réguliers, la carte Acanthe+ offre −30 % sur tous les achats pendant un an. Elle se prend en boutique. Aucune obligation. Juste un remerciement, de notre famille à la vôtre. »
+
+### ⑤ **Collection** (H2 : « Printemps–été » ou nom de la collection réelle)
+Navigation par catégories : Homme, Femme, Enfant, Bébé, Liberty, Toile de Jouy. Pas de grilles de produits sur la page d’accueil — on dirige vers les pages dédiées.
+
+### ⑥ **Venir** (H2 : « Nous trouver »)
+Plan Google Maps intégré, adresse postale, téléphone cliquable sur mobile, métros à proximité (Rue de la Pompe, Trocadéro), photo de l’entrée avec les horaires gravés.
+
+### ⑦ **Journal** (H2 : « Dans le vestiaire »)
+Espace éditorial léger : une histoire de tissu, un hommage à un client historique, une visite d’atelier. Pas un blog, plutôt des notes chapitrées.
+
+---
+
+## 7. Signature visuelle
+
+1. **Le motif acanthe réinterprété**  
+   Une feuille d’acanthe linéaire, dessinée au trait, utilisée comme séparateur de section, motif de fond discret, ou animation discrète qui se déroule au scroll comme un chapiteau qu’on sculpte. Pas clip-art, pas vectoriel générique : une version exclusive dessinée pour la marque.
+
+2. **Animation d’apparition « textile »**  
+   Les blocs d’images et de texte apparaissent au scroll avec un léger mouvement vertical + fondu, comme un tissu qui se déplie ou un rideau qui s’ouvre. L’effet est un décalage horizontal subtil des lignes de texte (Bricolage Grotesque glisse ses caractères en quinconce, type typographie à l’ancienne). Une seule animation signature, pas une pluie d’effets.
+
+3. **Menu latéral discret façon « armoire »**  
+   Sur desktop, un panneau latéral gauche ou droit qui contient le menu principal, les horaires, le téléphone, et la carte Acanthe+, toujours visible, comme le comptoir d’un magasin. Développe un lien constant avec le lieu physique.
+
+---
+
+**Ce brief est conçu pour éradiquer tous les défauts listés par l’audit :**  
+- La boutique physique devient héroïne (adresse, horaires, téléphone en façade).  
+- Plus aucune promotion agressive en accueil (−50 % disparaît du vocabulaire visuel).  
+- Narration familiale et savoir-faire remplacent le bruit promotionnel.  
+- Hiérarchie typographique réelle (H2 structurels, pas des noms de produits).  
+- Palette directement inspirée de la rue de la Tour et de l’acanthe architecturale, pas d’un template IA.
