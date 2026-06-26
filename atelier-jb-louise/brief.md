@@ -1,117 +1,128 @@
-# BRIEF CRÉATIF — ATELIER JB LOUISE
-
-Horlogerie de collection | 76 Rue de la Pompe, Paris 16ᵉ | Depuis 1984
-
-
-## 1. Concept & positionnement
-
-L'Atelier JB Louise n'est pas un simple point de vente : c'est un lieu où le temps se transmet autant qu'il se mesure. On y confie une montre comme on confie une archive familiale — avec la certitude que le geste artisanal, la traçabilité et l'expertise technique en restitueront l'âme. Le site doit incarner cette promesse de *transmission* et de *mémoire mécanique*, en faisant ressentir la valeur patrimoniale de chaque garde-temps avant même d'en afficher le prix.
-
-**L'idée-force :** faire du site une vitrine aussi précise qu'un mouvement horloger, où chaque élément porte du sens, où le luxe est dans le détail et non dans l'ostentation.
-
-
-## 2. Direction artistique
-
-**Parti pris : « MÉCANIQUE ÉDITORIALE »**
-
-Un style à la croisée du catalogue raisonné d'art et du carnet d'atelier. L'esthétique puise dans les signaux réels du commerce : les établis en bois fruitier patinés par quarante ans de travail, la lumière rasante sur les boîtiers anciens, le contraste entre l'acier microbillé des mouvements et le laiton des ponts, les loupes d'horloger et leurs halos de lumière dirigée. On évite le froid clinique de la haute horlogerie contemporaine pour embrasser la *chaleur du savoir-faire* — un luxe habité, presque tactile.
-
-La direction s'articule autour de trois principes :
-- **Précision typographique** : chaque graisse, chaque échelle, chaque espacement est aussi délibéré qu'un calibre horloger.
-- **Noblesse des matières à l'écran** : textures de papier vélin, noirs d'encre, rehauts dorés évoquant les gravures sur coq de montre.
-- **Narration par le détail** : la macro est reine. On montre ce que l'œil ne voit pas d'ordinaire — une vis polie, un balancier en mouvement, une signature d'horloger.
-
-
-## 3. Palette chromatique
-
-Ancrée dans les teintes réelles de l'atelier et des objets qu'il abrite.
-
-| Rôle | Hex | Nom | Usage |
-|------|-----|-----|-------|
-| **Fond principal** | `#1C1B19` | Noir d'atelier | Arrière-plans, blocs de contenu — un noir chaud, jamais froid, comme un établi en ébène. |
-| **Fond secondaire** | `#F5F0E8` | Vélin ancien | Cartes, fiches techniques, encarts — l'ivoire des cadrans patinés. |
-| **Encre** | `#2C2A27` | Encre de graveur | Texte courant sur fond clair. |
-| **Encre inversée** | `#E8E0D5` | Ivoire | Texte sur fond sombre. |
-| **Accent primaire** | `#C49A2B` | Laiton poli | Boutons, liens, soulignés, icônes — le métal noble des mouvements anciens. |
-| **Accent secondaire** | `#8B1E2F` | Rubis | Très parcimonieusement : pastilles de service, indicateur de rareté, un détail d'interface — la couleur des pierres de mouvement. |
-
-**Ambiance dominante :** sombre et chaleureuse. Le fond « Noir d'atelier » structure les grandes sections, avec des respirations sur le fond « Vélin ancien » pour les fiches techniques et les espaces de confiance. Le laiton poli guide le regard sans crier. Aucun gris fade, aucun blanc pur, aucun dégradé plaqué.
-
-
-## 4. Ton éditorial
-
-Une voix de *maître artisan* qui connaît son art sur le bout des doigts mais n'a pas besoin de le prouver à chaque phrase. Le registre est soutenu sans être précieux, précis sans être froid. On tutoie la montre, pas le lecteur.
-
-- **Niveau de langue :** français impeccable, vocabulaire technique assumé mais rendu accessible par le contexte.
-- **Posture :** celle d'un atelier qui authentifie, certifie et garantit — pas d'un revendeur qui négocie. L'autorité vient de l'expertise, pas du volume sonore.
-- **Émotion :** une pointe d'émerveillement face à la beauté mécanique, jamais de sentimentalisme plaqué. « Chaque montre a une histoire » — mais on ne la raconte que si l'archive l'atteste.
-
-
-## 5. Accroche héro
-
-**Titre (H1 unique, en Instrument Serif, grande échelle) :**
-
-> *Le temps ne s'achète pas.*
-> *Il se confie.*
-
-**Sous-titre (en Geist, corps généreux, encre ivoire sur fond Noir d'atelier) :**
-
-> Depuis 1984, l'Atelier JB Louise restaure, authentifie et transmet les plus belles montres de collection. Un savoir-faire horloger intégral, au service de votre garde-temps.
-
-**CTA principal (bouton laiton poli) :** « Prendre rendez-vous »
-
-Justification : on ne met pas en avant « Acheter / Vendre / Restaurer » comme des services interchangeables. On ouvre sur une thèse — la valeur émotionnelle et patrimoniale de la montre confiée — et on invite à l'acte le plus engageant : venir à l'atelier. Le commerce de luxe commence par la relation.
-
-
-## 6. Sections (structure ordonnée)
-
-### 6.1. Services — les trois piliers
-*Titre de section :* **Ce que nous devons à votre montre**
-
-Trois blocs distincts, visuellement séparés et iconographiés par des photos macro distinctes (pas d'icônes génériques) :
-
-- **Restaurer** — *« Un protocole manufacture, pour chaque pièce. »*  
-  Notre atelier collabore avec les plus grandes maisons horlogères. Mouvement mécanique, automatique, quartz ou complication : chaque restauration suit un cahier des charges strict, de l'expertise initiale au contrôle final. Garantie écrite sur chaque intervention.
-  
-- **Acquérir** — *« Des garde-temps rares, certifiés et traçables. »*  
-  Une sélection de montres d'occasion iconiques, authentifiées une à une par nos soins. Chaque pièce est livrée avec son certificat d'origine et l'historique des pièces de remplacement. Parce que la confiance n'a pas de prix, mais elle a une preuve.
-  
-- **Vendre** — *« Une estimation ferme sous 48 heures. »*  
-  Vous souhaitez vous séparer de votre montre ? Nous expertisons le modèle, la référence et l'état de conservation. Une réponse claire, un règlement rapide, une transaction en toute transparence.
-
-*Chaque bloc se termine par un CTA spécifique :* « Demander un devis de restauration » / « Voir la collection » / « Obtenir une estimation »
-
-### 6.2. Montres à la une
-*Titre de section :* **Pièces remarquables**
-
-Une galerie épurée, en grand format. Trois à six montres maximum, photographiées avec un traitement visuel cohérent (fond sombre, lumière dirigée, macro sur un détail signature). Pour chaque montre : nom du modèle, année, une phrase d'histoire vérifiable, prix. Pas de slider automatique — une navigation lente, intentionnelle, au geste.
-
-### 6.3. L'atelier
-*Titre de section :* **Un lieu, des mains**
-
-Photos de l'atelier réel (établi, outillage, geste en cours), pas de banques d'images. Texte court sur l'histoire de la maison depuis 1984, l'adresse historique de la Rue de la Pompe, la double implantation (boutique et atelier). Cette section humanise l'expertise technique de la section Services et répond au besoin de preuve sociale.
-
-### 6.4. Confiance
-*Titre de section :* **Ce que disent nos clients**
-
-Note Google de 4.7/5 (96 avis) affichée fièrement, avec trois extraits d'avis réels choisis pour leur diversité (restauration, achat, vente). Lien vers la fiche Google. Cette section, absente du site actuel, est capitale pour la réassurance.
-
-### 6.5. Prendre rendez-vous
-*Titre de section :* **Venir à l'atelier**
-
-Deux adresses clairement distinguées avec leur usage :
-- **Boutique & exposition :** 76 Rue de la Pompe, 75116 Paris — pour découvrir les pièces disponibles.
-- **Atelier de restauration :** [adresse si distincte] — sur rendez-vous uniquement.
-
-Horaires vérifiés et conformes à la réalité (corriger l'incohérence Google Maps signalée dans l'audit). Formulaire de contact intégré avec possibilité de téléverser des photos pour une pré-expertise. Clic direct sur le numéro de téléphone.
-
-
-## 7. Signature visuelle
-
-**1. La macro animée —** En ouverture ou au survol des montres de la galerie, une zone de loupe interactive : l'utilisateur déplace son curseur sur une montre et découvre un détail du mouvement à échelle 4x. L'animation reproduit le geste de l'horloger qui inspecte une pièce à la loupe. Ce traitement devient la signature mnémotechnique du site.
-
-**2. Le filet gravé —** Un séparateur de section unique : un double filet doré (laiton poli) d'épaisseur 1px / 0.5px, comme les finitions « Côtes de Genève » des mouvements. Ce motif discret mais reconnaissable entre initiés traverse le site et signe chaque transition.
+# BRIEF CRÉATIF — Atelier JB Louise
 
 ---
 
-*Ce brief est conçu pour guider la conception front-end et le contenu. Aucun code n'est attendu à ce stade — la direction artistique prime.*
+## 1. Concept & positionnement
+
+Pas une bijouterie, pas un musée : **un atelier vivant où le temps se répare, se porte et se transmet.**  
+On ne « vend » pas des montres chez JB Louise – on les réveille, on les authentifie, on leur donne une seconde vie.  
+Le site sera le reflet numérique de l’établi : un espace feutré où le visiteur entre dans la confidence d’un savoir-faire rare, sans vitrine criarde ni discours de marché.
+
+**Positionnement** : l’anti-plateforme. Là où les grandes maisons misent sur l’aseptisé, JB Louise assume son statut d’artisan de collection – précis, direct, patrimonial.
+
+---
+
+## 2. Direction artistique
+
+**Parti pris : ATELIER PATINÉ — entre cabinet de curiosités horloger et appartement privé du 16ᵉ.**
+
+L’esthétique se déduit de l’adresse (Rue de la Pompe, immeuble haussmannien discret), de la note Google (4,7 sur 96 avis : confiance, exigence, clientèle d’initiés) et du triple métier (restauration, achat, vente). On traduit cela par :
+
+- Une atmosphère **bois ciré, laiton oxydé, verre dépoli** : les matières de l’établi, pas du showroom.
+- Une lumière **chaude et directive**, comme celle d’une lampe d’horloger sur un plan de travail.
+- Une composition **verticale et respirée**, à la manière des colonnes d’un carnet d’atelier ou des pages d’un catalogue raisonné.
+- Aucun « luxe criard » (zéro fond noir verni + dorures brillantes). Le luxe est dans l’information, la rareté, la discrétion.
+
+Le site oppose deux régimes visuels volontaires : **un mode texte ample et littéraire** pour les services (restauration, vente) ; **un mode objet serré et iconique** pour les montres à la une.
+
+---
+
+## 3. Palette
+
+Les couleurs proviennent de l’imaginaire d’un atelier d’horloger ancien, rue de la Pompe. Pas de terracotta, pas de crème doucereuse.
+
+| Rôle | Hex | Nom d’usage |
+|------|-----|-------------|
+| Fond principal (mode clair) | `#F5F0E8` | Écaille pâle |
+| Fond alternatif / cartes | `#E8E1D5` | Vélin vieilli |
+| Texte principal, encre | `#2C221B` | Brun de graveur |
+| Accent principal (liens, CTA, filets) | `#8B6914` | Laiton oxydé |
+| Accent secondaire (surlignage discret) | `#B4975A` | Dorure mate |
+| Fond sombre alternatif | `#1C1611` | Pénombre d’atelier |
+
+Le site vit principalement sur fond clair (écaille pâle) pour la lisibilité et la noblesse du texte ; le mode sombre (1C1611) est réservé aux **vignettes des montres** et au **hero** – comme on place un garde-temps sous une loupe éclairée.
+
+---
+
+## 4. Ton éditorial
+
+**Voix** : un artisan-historien, ni vendeur ni professeur.
+
+- Niveau de langue soutenu mais sans emphase inutile.
+- Précision technique assumée (on nomme les complications, les calibres, les états) – le client de JB Louise sait ou veut apprendre.
+- Aucun superlatif creux (« exceptionnel », « rare », « unique ») sans justification concrète.
+- On tutoie la montre, on vouvoie le client. Distance élégante, jamais hautaine.
+- Les avis clients (note 4.7) seront intégrés comme des **témoignages non signés** mais vérifiables, sans fausses citations inventées.
+
+---
+
+## 5. Accroche héro
+
+**Titre**  
+*Nos mains connaissent votre montre avant vous.*
+
+**Sous-titre**  
+Horloger de collection depuis 1984. Restauration, expertise, achat et vente de garde-temps d’exception — dans l’intimité d’un atelier du 16ᵉ arrondissement.
+
+**CTA principal** : Prendre rendez-vous à l’atelier  →
+
+L’accroche évite le cliché « le temps c’est de l’argent » et ancre immédiatement la promesse dans le **geste artisanal** et la **connaissance intime** de l’objet. Le sous-titre donne les trois piliers + la localisation prestige.
+
+---
+
+## 6. Sections
+
+Les sections sont ordonnées pour corriger les faiblesses de l’audit : tunnel de conversion prioritaire, hiérarchie claire, respiration.
+
+### ① Hero – Promesse & identité
+*Cf. Accroche ci-dessus.*  
+Fond : photographie en noir et blanc d’un plan de travail d’atelier, cadrage serré, flou artistique. Typographie *Instrument Serif* en grand, alignée à gauche.
+
+### ② Services – La colonne vertébrale de l’atelier
+Trois blocs égaux en largeur, numérotés (I, II, III – une séquence qui a du sens : l’ordre logique des métiers : restaurer, puis acheter, puis vendre).
+
+- **I. RESTAURATION** — *Chaque montre que nous ouvrons est lue avant d’être touchée. Diagnostic complet, démontage, nettoyage, remontage et réglage. Nous collaborons avec les manufactures pour les pièces d’origine.*  
+  → *Décrire ma montre pour un devis*
+
+- **II. ACHAT** — *Une sélection personnelle de pièces authentifiées, certifiées, traçables. Pas de catalogue ouvert : des garde-temps choisis pour leur état, leur rareté ou leur histoire.*  
+  → *Voir les montres à la une*
+
+- **III. VENTE** — *Vous vous séparez de votre montre ? Expertise sous 48 heures, proposition ferme, transaction sécurisée en atelier. Nous reprenons les montres mécaniques, automatiques et à quartz de collection.*  
+  → *Faire estimer ma montre*
+
+> **Correction de l’audit** : ces trois blocs sont des CTA différenciés visuellement (boutons laiton oxydé sur fond vélin). Plus de liens noyés dans le texte.
+
+### ③ Montres à la une – Objets de désir
+Section en bandeau horizontal défilant (swiper desktop + mobile), chaque fiche produit contient : photographie de la montre sur fond pénombre, référence/modèle, année, état certifié, prix (fourchette ou prix net). Pas de faux bouton « Acheter » si la vente se fait sur contact ; à la place : *Se renseigner sur cette pièce*.
+
+### ④ L’atelier – Savoir-faire & histoire
+Titre : *Un établi rue de la Pompe.*  
+Texte : *Depuis 1984, l’Atelier JB Louise perpétue la tradition horlogère française dans un écrin discret du 16ᵉ arrondissement. Ici, on ne chronomètre rien : on prend le temps qu’il faut. Chaque montre confiée à l’atelier bénéficie du même soin, qu’il s’agisse d’une révision simple ou d’une restauration complète sur un calibre centenaire.*  
+Accompagné d’une photo d’ambiance (établi, outils, mains au travail) – pas une photo corporate posée.
+
+### ⑤ Preuves sociales – Confiance
+Bloc épuré :  
+*4,7 sur 96 avis — Extraits choisis* (3 courtes citations de vrais avis Google, sans noms complets, avec date : « sept. 2024 », « juin 2024 », etc.).  
+Lien discret : *Voir tous les avis sur Google*.
+
+> **Correction de l’audit** : les preuves sociales sont extraites et mises en avant, sans se substituer à Google mais en crédibilisant immédiatement.
+
+### ⑥ Contact & Venir – Pratique & haut de gamme
+Deux colonnes :
+- **Horaires** : présentés clairement, avec mention de la fermeture le samedi MAIS compensation : *Sur rendez-vous du mardi au samedi matin — appelez-nous ou réservez en ligne.*
+- **Adresse & accès** : 76 Rue de la Pompe, métro Rue de la Pompe (ligne 9). Texte d’ambiance : *L’atelier se trouve derrière une porte cochère haussmannienne. Sonnez, on vous ouvre.*
+- **Liens utiles** : téléphone cliquable (`tel:`), email, formulaire de prise de rendez-vous intégré (type Calendly ou natif).
+
+---
+
+## 7. Signature visuelle
+
+**1. Le mouvement typographique**  
+En hero, le mot « mains » du titre principal est légèrement animé au chargement : ses lettres se décalent imperceptiblement, comme les aiguilles d’une montre qui se règlent. Animation subtile, unique, qui ne se produit qu’une fois par visite – pas de boucle décorative. Techniquement : un effet de tracking CSS sur `Instrument Serif`, déclenché au scroll ou au load.
+
+**2. Le filet de section**  
+Un filet horizontal d’une finesse extrême (1px) sépare chaque grande section, mais au lieu d’un trait continu gris, c’est un **filet doré dégradé** qui s’illumine au survol de la section, comme un éclat de lumière sur un boîtier poli. Ce détail rappelle la micromécanique horlogère sans illustration littérale d’engrenage – élégant, abstrait, mémorable.
+
+---
+
+**Brief rédigé pour l’Atelier JB Louise. À exécuter sans dérive vers le « luxe générique » : chaque décision — palette, typo, animation — découle du métier réel, du quartier et de la promesse artisanale.**
