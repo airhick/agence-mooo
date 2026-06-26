@@ -1,93 +1,88 @@
-# BRIEF CRÉATIF — ANN TUIL
-
-## 1. Concept & positionnement
-
-Ann Tuil n’est pas un simple magasin de chaussures : c’est une adresse de quartier où l’on vient chercher un conseil juste, une qualité qui tient dans le temps, et ce mélange rare de marques pointues et d’une ligne maison conçue ici même. Le concept : **« L’allure en héritage »** — la boutique comme un tailleur du pas, qui habille vos pieds avec le même soin qu’un vêtement sur mesure, dans la tradition discrète et exigeante du 16ᵉ arrondissement. On retient une adresse parisienne où le savoir-faire traverse les générations sans jamais se figer, entre classicisme vivant et modernité portable.
-
-Le positionnement : haut de gamme accessible, ancré dans la réalité familiale du quartier (homme, femme, enfant), porté par une vraie légitimité de lieu et de sélection, loin des chaînes impersonnelles. Le site vitrine doit traduire cette idée de « maison » — un écrin numérique sobre, élégant, habitable.
-
-## 2. Direction artistique
-
-**Parti pris : Épure haussmannienne réchauffée.**  
-Loin du minimalisme glacial, cette direction s’inspire directement de l’immeuble haussmannien qui abrite la boutique, de la pierre de taille blonde, des boiseries patinées, de la lumière tamisée des vitrines à l’ancienne, et bien sûr du cuir — matière reine du lieu. L’esthétique conjugue une architecture graphique claire et structurée (symétrie, respiration, lisibilité) avec une palette organique et tactile qui évoque le confort d’un intérieur bien tenu. Ce n’est pas le « luxe signal » tape-à-l’œil, mais un raffinement parisien discret, habité, qui sent le cuir grainé, la cire d’abeille et le bois ciré.
-
-Objectif : faire ressentir la matière et la pérennité, sans tomber dans le rétro. L’héritage visuel du quartier devient un cadre, pas un folklore.
-
-## 3. Palette
-
-La palette se déploie dans un registre clair et chaud, ancré par des neutres sophistiqués et un accent inattendu, puisé dans les teintes réelles de la sellerie fine (cuirs, piqûres, doublures).  
-
-| Rôle | Nom | HEX |
-|------|-----|-----|
-| Fond principal | Pierre blonde | `#F8F5EF` |
-| Fond alternatif / cartes | Gris laine | `#EDE7DF` |
-| Encre (texte) | Cuir bruni | `#2C241E` |
-| Accent principal | Bleu sellerie | `#3F5C69` |
-| Accent secondaire (survols, filets) | Cuivre brossé | `#B68B5E` |
-| Soutien clair (bordures, séparateurs subtils) | Plâtre | `#E4DCD2` |
-
-- **Pierre blonde** : un blanc cassé chaleureux qui respire, jamais stérile.  
-- **Cuir bruni** : remplace le noir pur ; plus doux, plus « toucher », conserve une excellente lisibilité.  
-- **Bleu sellerie** : un bleu profond désaturé (gris-bleu) qui remplace avantageusement le bleu marine trop attendu ; élégant sans froideur, clin d’œil aux piqûres contrastées des chaussures haut de gamme.  
-- **Cuivre brossé** : utilisé avec parcimonie sur les boutons, les filets, les liens actifs. Évoque les boucles, les rivets, les ferrures de la boutique réelle.  
-- Pas de terracotta, pas de crème jaune, pas de quasi-noir. La chaleur vient des sous-tons, pas d’une couleur « épicée » plaquée.
-
-## 4. Ton éditorial
-
-**Voix : précise, chaleureuse, sans emphase.**  
-Le ton parle à un client du quartier qui connaît la valeur des choses, qui peut être un parent pressé comme un amateur exigeant. Tutoiement exclu, vouvoiement naturel. Niveau de langue soigné mais non guindé : le vouvoiement n’exclut pas une forme de complicité souriante. On évite l’overdose d’adjectifs (« exceptionnel », « unique », « inimitable ») ; on préfère la description juste, le conseil sûr, l’affirmation tranquille.
-
-**Exemple type** : « Nous aimons les chaussures que l’on oublie au fil de la journée parce qu’elles tiennent parfaitement, et que l’on retrouve chaque matin avec plaisir. »
-
-Aucun faux fait : pas de « depuis 1923 » si ce n’est pas vrai, pas de fausses citations clients. Les seuls chiffres réels sont la note Google et l’adresse.
-
-## 5. Accroche héro
-
-**Titre principal (en Marcellus, grand corps)** :  
-*Le pas parisien a son adresse.*
-
-**Sous-titre (en Mulish, graisse régulière)** :  
-Rue de Passy, la maison Ann Tuil veille sur vos pieds avec le même soin depuis toujours. Marques d’exception et ligne personnelle, pour femmes, hommes et enfants.
-
-**Texte d’appel du bouton principal** : « Découvrir la collection »
-
-Pas de promesse intenable ni de storytelling inventé. L’accroche joue sur l’ancrage ultra-local, la notion d’adresse pérenne, et l’élégance parisienne assumée.
-
-## 6. Sections (page unique, défilement vertical)
-
-**① Qui nous sommes (À propos)**  
-**Titre :** *Une maison, une famille, un savoir-faire*  
-**Contenu :** « Depuis l’ouverture de notre boutique rue de Passy, nous sélectionnons pour vous des chaussures qui durent et des marques qui ont du sens. Notre ligne Ann Tuil est conçue ici même, dans l’esprit du quartier : élégante sans effort, taillée pour la vie réelle. »
-
-**② Nos collections**  
-**Titre :** *Ce que vous trouverez chez nous*  
-**Contenu (au minimum trois catégories présentées par des visuels sobres, détourage ou fond neutre)** :  
-- Femme : Des lignes nettes, des cuirs souples, du caractère.  
-- Homme : Classiques réinventés, semelles cousues pour durer.  
-- Enfant : Le vrai cuir aux petits pieds, parce qu’ils courent tout Paris.  
-+ Bloc spécifique : « Notre marque maison — pensée et ajustée sur place, à l’écoute de nos clients. »
-
-**③ Avis & confiance**  
-**Titre :** *Vous en parlez le mieux*  
-**Contenu :** Intégration sobre de la note Google 4,3 / 5, suivie de 2–3 courts avis réels du web (reproduits textuellement, avec prénom seulement, sans photos de profil fake). Simple, lisible, sur fond gris laine pour isoler le bloc.
-
-**④ Nos services**  
-**Titre :** *Plus qu’une boutique*  
-**Contenu :** « Conseil personnalisé, retouches, recherches sur demande : nous prenons le temps qu’il faut, comme il se fait dans les vraies maisons de quartier. » (Lister brièvement les services réels si confirmés par le commerce ; sinon, rester sur une promesse légitime d’attention et de suivi.)
-
-**⑤ Nous trouver**  
-**Titre :** *Poussez notre porte*  
-**Contenu :** 63 Rue de Passy, 75016 Paris. Horaires d’ouverture réels, téléphone cliquable, lien vers itinéraire. Carte Google Maps intégrée proprement (sans tracking agressif). Fond pierre blonde, informations typographiées avec soin.
-
-## 7. Signature visuelle
-
-1. **Motif « empreinte » discret.** Sur la page d’accueil, un filet horizontal ondulé très fin (rappel des lignes d’une semelle cousue) peut apparaître au scroll, en séparateur entre les sections — il sera animé, se traçant au fur et à mesure que l’utilisateur descend. Ce motif est unique, ne fait pas « déco », il encode directement l’objet du commerce.
-
-2. **Typographie Marcellus en mode « affiche ».** Un mot-clé par section (ex. : « SAVOIR-FAIRE », « COLLECTIONS ») apparaît en très grand corps, dans un des gris de la palette, en léger fondu avec le fond, comme un filigrane qui ancre la page et donne de la structure. Ce n’est pas un titre répété, mais un contrepoint visuel qui renforce le caractère affiché.
-
-3. **Animation de chargement sobre :** au premier chargement, un trait fin se dessine horizontalement (comme un lacet qu’on attache), et le bloc central apparaît en fondu. Pas de tonnerre d’effets : ce moment unique d’élégance donne le ton et rend le site mémorable.
+**BRIEF CRÉATIF — ANN TUIL**  
+*Site vitrine — 63 Rue de Passy, Paris 16e*
 
 ---
 
-**Pourquoi ce brief répond à l’audit**  
-Le site actuel est injoignable (score 0/100). La nouvelle DA propose dès le livrable une identité forte, déclinable immédiatement en maquettes statiques puis en développement, sans dépendre d’un contenu existant. Chaque section est nommée, chaque contenu est rédigé en français réel sans remplissage. La palette échappe aux défauts listés, le ton est juste, l’ancrage Rue de Passy est exploité comme un personnage à part entière, et la signature visuelle apporte cette singularité qui manque cruellement aux sites de commerce local génériques. La promesse est structurée autour de ce qui fait *vraiment* Ann Tuil : une maison, pas une chaîne, une adresse de confiance où l’on revient.
+### 1. Concept & positionnement
+**La chaussure ne commence pas en ligne, elle se chausse rue de Passy.**  
+Le site ne doit plus être un entrepôt de marques, mais la première marche vers la boutique — un vestibule numérique où l’on ressent le bois, le miroir et la parole d’une experte. On vend une sélection vécue, pas un catalogue ; l’adresse, l’histoire et le conseil incarnent la valeur in-copiable. On retient : « Ann Tuil, c’est la femme qui a choisi la paire que vous allez aimer. »
+
+---
+
+### 2. Direction artistique
+**« Le salon d’essayage éditorial »** — un parti pris qui marie l’intimité feutrée d’une boutique de quartier cossu et la mise en scène magistrale de l’objet.  
+L’énergie visuelle réelle se lit en creux : la Rue de Passy impose une élégance sans ostentation, des matières nobles (bois ciré, laiton, cuir), une lumière tamisée de milieu de journée. On traduit cela par un design de *slow luxury* : images aux noirs profonds et aux clairs ivoire, typographie ciselée, mises en page aérées qui laissent respirer l’objet, comme sur un présentoir. Rien n’est jeté, tout est présenté.
+
+---
+
+### 3. Palette
+Extraite d’un univers de boutique parisienne : boiseries, cuir, dorure, velours.
+
+| Rôle | Hex | Nom d’usage |
+|------|-----|-------------|
+| Fond principal | `#F7F3EB` | Coquille d’ivoire (clair cassé, non crème standard) |
+| Texte & encre | `#1A1817` | Noir laine (adouci, jamais pur #000) |
+| Accent primaire | `#5B1A22` | Bordeaux confidentiel |
+| Accent secondaire | `#B8A07E` | Laiton patiné |
+| Fond contrasté | `#EEE6DA` | Sable poudré (pour cartes secondaires) |
+| Subtilité | `#8C8279` | Taupe souris (légendes, sous-titres) |
+
+*Pas de terracotta, pas de vert acide. Le blanc fade est remplacé par le coquille d’ivoire, chaleureux mais sobre.*
+
+---
+
+### 4. Ton éditorial
+**Une voix de femme, experte et accueillante.**  
+On dit « vous » avec la distance juste, celle du bon conseil. Le registre est celui de la confidence de vestiaire, jamais commercial : précision du vocabulaire mode, mais phrases limpides. On fait sentir l’œil qui sélectionne, on nomme les marques avec parcimonie comme on présenterait une recommandation personnelle. Aucune expression interchangeable (« large choix », « qualité irréprochable ») — on parle de la cambrure, du confort d’une semelle, de la façon dont une bottine tombe.
+
+---
+
+### 5. Accroche héro
+**Titre :** Le 63 rue de Passy est une adresse. Ann Tuil, un regard.  
+**Sous-titre :** Depuis plus de vingt ans, nous choisissons chaque soulier comme on choisit une pièce pour soi — pour son élégance, son confort vrai et sa capacité à traverser la journée. Et nous vous les présentons, en boutique, comme on ouvre un écrin.
+
+*(L’image d’ouverture montre la porte vitrée de la boutique, laquée de reflets, entrebâillée sur un intérieur aux tons chauds.)*
+
+---
+
+### 6. Sections
+
+1. **Notre histoire**  
+   « Une maison, un savoir-faire »  
+   Contenu : Portrait d’Ann Tuil (ou de la famille) et genèse de la boutique — de la première paire choisie à l’enseigne de Passy. Une photographie pleine largeur du comptoir ou du salon d’essayage. Le texte raconte l’engagement sur le chaussant, la connaissance du pied, le refus du “catalogue”.
+
+2. **Les souliers**  
+   « Une sélection, pas un inventaire »  
+   Contenu : Six paires en majesté — bottine Sergio Rossi, escarpin Free Lance, sandale Sartore… Chacune est légendée d’une phrase de l’experte : « Pour une soirée debout sans y penser », « Le cuir qui se patine et raconte ». Disposition en grille asymétrique, images en semi-couleurs (noir et blanc colorisé sur le soulier uniquement). Bouton discret « Voir la collection actuelle » renvoyant vers la boutique en ligne.
+
+3. **Le vestiaire**  
+   « Le prêt-à-porter qui accompagne »  
+   Contenu : Une sélection éditoriale de pièces fortes (robe DMN, gilet 8pm, jean Mother) présentées en silhouettes composées. Légende en style conseil : « Avec la bottine Ann Tuil, le jean droit qui allonge ». Priorité à l’association avec les souliers de la maison.
+
+4. **Conseil sur mesure**  
+   « Un rendez-vous privé, comme autrefois »  
+   Contenu : Nous prenons le temps de vous écouter. Essayage en salon privé, recherche de la forme idéale, ajustement du chaussant. Possibilité de prise de rendez-vous (CTA visible). Photo d’un fauteuil crapaud avec une paire sur le tabouret voisin.
+
+5. **Nous trouver**  
+   « 63 Rue de Passy, Paris 16e »  
+   Contenu : Horaires complets, téléphone, email corrigé `contact@anntuil.com`, plan intégré, photo de la devanture avec son enseigne discrète. Mention « Proche métro Passy ». Invitation finale : « Poussez la porte — vous êtes attendue. »
+
+6. **Ce que vous dites**  
+   « La parole à celles qui nous portent »  
+   Contenu : Trois avis clients choisis parmi les 60 avis Google (note 4,3 mise en avant). Chacun est traité en citation suspendue avec un filet laiton. Exemple : « Un accueil rare et un vrai conseil. Je n’achète plus mes chaussures ailleurs. » — Marie C.
+
+7. **Marques de confiance**  
+   « Les maisons que nous aimons »  
+   Contenu : Un nuage de logos sobre (Sergio Rossi, Free Lance, Sartore, UGG, See by Chloé, Ann Tuil, Clio Tuil…) rangé en mosaïque monochrome, sans lien, comme une signature collective. Pas de liste exhaustive.
+
+---
+
+### 7. Signature visuelle
+- **Le filet parlant** : un trait de laiton (couleur `#B8A07E`) scande la page — il souligne les titres, borde les cartes, accompagne les avis. Ce geste répété devient la grammaire de l’élégance.
+- **Typographie en majesté** : les titres en Marcellus jouent sur des tailles XXL (jusqu’à 5rem) avec un espacement de lettres généreux (`letter-spacing: 0.08em`), évoquant l’enseigne peinte à l’ancienne. Le texte courant en Mulish garde une grande lisibilité, jamais en dessous de 1.1rem. Les nombres (prix, horaires) utilisent les chiffres tabulaires de Mulish pour un rythme soigné.
+- **Révélation au scroll** : au défilement, les images apparaissent comme dévoilées par un voile semi-opaque qui se lève lentement, renforçant l’idée de découverte et de soin. Fondu d’un bloc ivoire supraposé, pas de slide brutal.
+- **Image signature** : un pictogramme minimaliste — la silhouette d’un talon fin dessiné d’un seul trait continu doré — utilisé comme favicon, marqueur de fin de section, ou en filigrane sur les fonds contrastés. Invisible, mais reconnaissable.
+
+---
+
+**Ce brief renverse la logique du site actuel : il ne catalogue plus, il incarne. L’écrin de la boutique devient l’expérience numérique, et chaque visiteur sait pourquoi franchir le 63 rue de Passy.**
