@@ -1,105 +1,109 @@
-# Brief créatif — Daumal Ste
+# BRIEF CRÉATIF — Daumal · Cuisines & Électroménager Haut de Gamme
 
 ---
 
-## 1. Concept & positionnement
+## 1. CONCEPT & POSITIONNEMENT
 
-Daumal ne vend pas des cuisines ; Daumal transmet une exigence. L’idée forte : **l’expertise silencieuse, celle qui ne se voit pas mais que l’on ressent à l’usage**. Le site incarne la promesse d’un luxe discret, familial et radicalement compétent — à l’opposé des showrooms clinquants. On parle à l’acheteur du 16ᵉ qui ne choisit pas un meuble, mais un partenaire de confiance pour vingt ans.
-
----
-
-## 2. Direction artistique
-
-**« Luxe essentiel »** — un minimalisme organique, inspiré directement des matières d’une cuisine haut de gamme : pierre, bois massif, acier brossé, laque mate. Pas d’effets gratuits. Chaque choix renvoie à un geste précis : un espacement évoque le joint d’un plan de travail, un traitement d’image rappelle le grain du noyer, une animation suggère l’ouverture d’un tiroir. La sophistication naît de la retenue.
-
-L’influence haussmannienne du quartier (Rue de la Pompe, 16ᵉ) est distillé en filigrane — moulures abstraites dans les séparateurs, proportions classiques dans la grille — sans jamais verser dans le pastiche. L’ambiance est feutrée, comme le showroom lui-même : belle lumière, silence, matières nobles.
+Daumal n'est pas un simple vendeur d'électroménager : c'est une **maison d'artisanat culinaire de troisième génération**, nichée dans l'élégance discrète du 16ᵉ arrondissement. Le site ne doit pas « vendre des cuisines » — il doit **incarner l'atelier de conception** où naissent des projets uniques, dans une logique de galerie d'art appliqué. On retient : *transmission, précision, matériaux nobles, sur-mesure radical, partenariat de confiance.*
 
 ---
 
-## 3. Palette
+## 2. DIRECTION ARTISTIQUE
 
-Ancrée dans les teintes réelles d’une cuisine haut de gamme et du showroom parisien.
+**Parti pris : « Atelier d'excellence — entre ébénisterie contemporaine et laboratoire de précision »**
 
-| Rôle             | HEX       | Nom d’usage     | Usage principal                                  |
-|------------------|-----------|------------------|--------------------------------------------------|
-| Encre            | `#1C1A18` | Noir noyer       | Texte courant, titres, icônes                    |
-| Fond principal   | `#F4F0EA` | Blanc pierre     | Arrière-plan majoritaire, respirations           |
-| Surface froide   | `#E7E3DC` | Gris travertin   | Cartes, blocs distingués, séparations subtiles   |
-| Accent chaud     | `#AD8B6C` | Bronze vieilli   | Liens, boutons, filets, mots-clés                |
-| Sombre d’ancrage | `#292523` | Ombre noyer      | Footer, bandeaux, zones de contraste             |
-| Signalétique     | `#5F6B5E` | Vert sauge foncé | Très ponctuel — pastille « ouvert », confirmation|
+L'esthétique emprunte au **minimalisme chauffé par la matière**. On rejette le blanc clinique des showrooms génériques au profit d'une ambiance de studio de création : fonds ardoise profonde, surfaces minérales, éclats de laiton mat, respirations amples. La lumière est celle d'un atelier d'artisan — dirigée, précise, jamais spectaculaire. Les cuisines sont présentées comme des œuvres, pas comme des produits sur catalogue.
 
-> **Principe :** Palette claire dominante, mais jamais fade. Le bronze vieilli (`#AD8B6C`) est l’unique couleur chaude — il remplace tout or/cuivre trop brillant. Le vert sauge (`#5F6B5E`) vient du laurier discret qu’on croise dans les entrées d’immeubles du quartier ; il n’apparaît que sur des micro-éléments (badge, coche).
+Ce parti pris naît de la conjonction de trois signaux réels :
+- Le quartier (Paris 16ᵉ discret, cossu, exigeant) impose une élégance sans ostentation.
+- Les marques distribuées (Subzero/Wolf, Vzug, Warendorf) parlent le langage de l'ingénierie de précision.
+- L'histoire familiale depuis 1981 évoque la transmission d'un geste artisanal.
 
 ---
 
-## 4. Ton éditorial
+## 3. PALETTE
 
-**Sobre, direct, sans fioritures.** On s’adresse au client avec le vouvoiement naturel du conseil haut de gamme, mais sans froideur. La voix est celle d’un artisan de la troisième génération qui connaît son métier sur le bout des doigts et ne ressent pas le besoin d’en faire trop. Aucun superlatif vide, aucune fausse proximité. Des phrases courtes, des faits précis, une confiance tranquille.
+| Rôle | HEX | Nom | Usage |
+|------|-----|-----|-------|
+| Fond principal | `#1E1D1C` | Noir Ardoise | Arrière-plans, héros, cartes de projet |
+| Fond secondaire | `#F4F0EB` | Pierre de Bourgogne | Sections de contenu, fonds clairs |
+| Encre | `#2B2520` | Chêne Fumé | Texte courant, titres sur fond clair |
+| Accent primaire | `#B8925C` | Laiton Patiné | CTA, séparateurs, icônes, liens actifs |
+| Accent secondaire | `#9EA4A8` | Inox Brossé | Contours, badges marques, éléments techniques |
+| Texte sur fond sombre | `#E8E3DC` | Craie d'Atelier | Typographie sur fond ardoise |
 
-**Registre :** ni « corporate », ni « start-up ». C’est le ton de l’expert qui vous reçoit dans son showroom un samedi matin.
+On évite les blancs purs (trop froids) et les gris interchangeables : chaque teinte est nommée d'après un matériau réel du métier.
 
 ---
 
-## 5. Accroche héro
+## 4. TON ÉDITORIAL
 
-**Titre :**
-> **Trois générations à l’ouvrage. Une seule promesse.**
+**Voix :** Un artisan de troisième génération qui connaît chaque marque, chaque matériau, et s'adresse à des clients qui n'ont pas besoin d'être convaincus par du marketing — ils cherchent un interlocuteur qui maîtrise son sujet.
+
+**Registre :** Sobre, précis, affirmé. Pas de superlatifs creux ni de jargon commercial. Des phrases courtes, des énumérations choisies, une ponctuation maîtrisée. On dit « nous » pour la maison Daumal, jamais de « on ». On nomme les marques avec naturel, sans les faire rouler comme des arguments de vente.
+
+**Niveau de langue :** Excellent français, vocabulaire technique maîtrisé et accessible. On bannit « solution », « haut de gamme » (qui va sans dire), « expérience », « passion » — ces mots-là sont des cache-misère.
+
+---
+
+## 5. ACCROCHE HÉRO
+
+**Titre (H1) :**
+> Trois générations à concevoir des cuisines que l'on transmet
 
 **Sous-titre :**
-> Cuisines et électroménager haut de gamme conçus sur mesure, de la première esquisse à la prise en main, au cœur du 16ᵉ arrondissement de Paris.
+> Depuis 1981, la maison Daumal imagine et réalise sur mesure, au 21 rue de la Pompe, des cuisines et des choix d’électroménager qui traversent le temps.
 
-**Bouton principal :** `Prendre rendez-vous au showroom`
+**CTA principal :** « Prendre rendez-vous au showroom »
 
-*Justification :* le titre ancre immédiatement le legs familial (différence clé face aux chaînes) et la promesse implicite de continuité. Le sous-titre résume l’offre en termes concrets, avec une indication géographique qui rassure.
-
----
-
-## 6. Sections (ordre et contenu réel)
-
-### 1. **Notre métier, notre héritage**
-*À propos / Histoire*
-
-> Depuis 1981, Daumal est une affaire de famille. Électriciens à l’origine, nous nous sommes spécialisés dans la conception de cuisines et le choix d’électroménager haut de gamme, avec une discipline rare : ne traiter que le meuble et l’appareil, et nous entourer, pour chaque corps d’état, des meilleurs partenaires. La troisième génération vous accueille aujourd’hui dans le même esprit d’exigence et de discrétion.
-
-### 2. **Cuisines conçues pour durer**
-*Offre cuisines*
-
-> Chaque projet naît d’un plan unique. Nous concevons des cuisines intégralement sur mesure — implantation, choix des matériaux, agencement — avec un seul objectif : que l’espace devienne le vôtre, naturellement. Design convivial, volumes justes, matières sincères. Rien n’est standard, tout est réfléchi avec vous.
-
-### 3. **Électroménager haute performance**
-*Offre électroménager*
-
-> Nous sélectionnons les appareils des marques les plus exigeantes du marché — tables de cuisson, fours, hottes, froid — en privilégiant l’intégration juste et la fiabilité à long terme. Notre showroom permet de voir et manipuler les appareils en situation réelle de fonctionnement. Hottes sur mesure conçues dans notre atelier.
-
-### 4. **Les marques que nous défendons**
-*Marques partenaires*
-
-> Notre catalogue s’est construit au fil des années autour de fabricants qui partagent nos standards : Novy, V-Zug, Warendorf, Sub-Zero, Wolf, Miele. Chacune de ces maisons est sélectionnée pour la qualité de sa fabrication, la cohérence de sa gamme et sa capacité à s’effacer au profit de l’usage.
-
-*Affichage : logos sobres, sans slider tape-à-l’œil — une grille fixe avec liens discrets vers les fiches marque (contenu à venir).*
-
-### 5. **Bienvenue rue de la Pompe**
-*Showroom & adresse*
-
-> Notre espace d’exposition vous reçoit au 21, rue de la Pompe, dans le 16ᵉ arrondissement. Vous y découvrez une sélection de cuisines montées et d’appareils en fonctionnement — la manière la plus juste de vous projeter. Nous prenons le temps qu’il faut. Chaque visite se fait sur rendez-vous afin de vous garantir une écoute exclusive.
-
-*Bloc pratique : adresse, plan intégré (OpenStreetMap ou Google Maps sans tracker au chargement), téléphone cliquable `01 45 03 13 52`, email.*
-*Horaires affichés dynamiquement (issus de Google Maps) pour éviter les incohérences.*
-
-### 6. **Parlons de votre projet**
-*Contact & prise de rendez-vous*
-
-> Une cuisine ne s’improvise pas. Décrivez-nous votre projet, vos contraintes, vos envies. Nous vous répondons sous 48 heures pour fixer un entretien au showroom.
-
-*Formulaire minimal : nom, email, téléphone, message libre. Bouton principal « Demander un rendez-vous ». Aucune demande superflue — le formulaire est un outil de diagnostic, pas un fichage.*
+**Note sous CTA (petite typo) :** 4.4 ★ — 7 avis Google
 
 ---
 
-## 7. Signature visuelle
+## 6. SECTIONS
 
-**1. Traitement d’image : le « détail matière »**
-Chaque photo de réalisation ou de showroom est recadrée en deux temps : une vue d’ensemble large, et un détail matière en très grand format (grain du bois, joint de pierre, texture d’acier brossé) qui apparaît au scroll comme un fond texturé derrière un bloc de texte. Ce détail est spécifique au projet montré — jamais générique.
+### 1. L'atelier (section « À propos » revisitée)
+**Titre :** *Une histoire de transmission*
+**Contenu réel :** Fondée en 1981, la maison Daumal est aujourd'hui dirigée par la troisième génération de la famille. Électriciens à l'origine, nous avons concentré notre savoir-faire sur l'ameublement et l'électroménager haut de gamme — un choix d'exigence. Pour le reste, nous travaillons avec des partenaires choisis un par un, chacun spécialiste exclusif de son corps d'état. Chaque projet est unique ; nous l'accompagnons depuis le premier trait jusqu'à la première poêle sur la plaque.
 
-**2. Typographie sculptée dans l’espace**
-Les titres des grandes sections sont composés en **Fraunces** dans des corps surdimensionnés (jusqu’à 120px sur desktop), avec une variante « Soft » pour quelques mots clés, créant un contraste de texture typographique. La graisse et l’espacement sont ajustés pour que le titre occupe toute la large
+### 2. Réalisations
+**Titre :** *Projets livrés, cuisines habitées*
+**Contenu réel :** Galerie maçonnée de photographies grand format — pas de slider automatique, pas de miniature timide. Chaque image occupe une pleine largeur, légendée sobrement : « Appartement familial — Paris 16ᵉ », « Maison de ville — Neuilly », « Duplex contemporain — Boulogne ». L'accent est mis sur les détails : veinage du bois, alignement des appareils, éclairage intégré.
+
+### 3. Marques
+**Titre :** *Les marques pour lesquelles nous avons choisi de travailler*
+**Contenu réel :** Pas un mur de logos. Chaque marque bénéficie d'une fiche concise — une phrase qui justifie le choix :
+- **Subzero & Wolf** — Conservation et cuisson de précision, fabrication américaine.
+- **Vzug** — Ingénierie suisse, spécialiste du traitement du linge et de la vapeur.
+- **Warendorf** — Menuiserie architecturale modulaire, fabrication allemande.
+- **Novy** — Hottes silencieuses et discrètes, conception belge.
+- **Miele** — Fiabilité allemande pour le lave-vaisselle et la machine à café.
+
+*Note : Chaque marque a un badge « en démonstration au showroom » si l'appareil est en situation de fonctionnement, comme indiqué dans le texte source.*
+
+### 4. Le showroom
+**Titre :** *21 rue de la Pompe, Paris 16ᵉ*
+**Contenu réel :** Nos appareils sont en situation de fonctionnement. Venez les essayer, les entendre, les ouvrir. Nous sommes une adresse qui se mérite — appelez-nous pour convenir d'un moment privilégié.
+- **Horaires :** Ajoutés explicitement (données Google Maps : fermé le lundi, ouvre à 9h, etc.)
+- **Téléphone :** 01 45 03 13 52
+- **Email :** cuisines@daumal.net
+- **Plan :** Carte Google Maps intégrée avec lien vers l'itinéraire.
+
+### 5. Contact & Devis
+**Titre :** *Parlons de votre projet*
+**Contenu réel :** Formulaire structuré : Nom, Téléphone, Email, Type de projet (Cuisine complète / Électroménager uniquement / Hotte sur mesure), Budget envisagé (fourchettes : < 15 000 €, 15 000 - 40 000 €, 40 000 €+), Message libre. Bouton « Envoyer ». Rappel du téléphone en bas.
+
+### 6. Avis clients
+**Titre :** *Ce qu'ils en disent*
+**Contenu réel :** Intégration des 7 avis Google réels (widget ou reprise manuelle accordéon). Note 4.4/5 affichée en tête de section. Lien vers la fiche Google pour déposer un avis.
+
+### 7. Footer
+**Contenu réel :** Reprise du NAP (Nom, Adresse, Téléphone) avec Schema.org LocalBusiness. Mention « Maison familiale depuis 1981 ». Liens : Marques, Réalisations, Showroom, Mentions légales. Pas de crédit parasite.
+
+---
+
+## 7. SIGNATURE VISUELLE
+
+**Détail 1 — Le filet de laiton :** Un trait horizontal fin (1px), couleur Laiton Patiné, qui sépare chaque section majeure. Il rappelle le geste de l'ébéniste et unifie la page sans décor superflu. Il pulse légèrement au scroll (animation discrète).
+
+**Détail 2 — La typographie surdimensionnée par effleurement :** Sur la section Réalisations, les légendes apparaissent en Fraunces semi-transparent (rempli craie sur fond ardoise) en chevauchant partiellement l'image — la police « effleure » la photo, comme un calque d'architecte posé sur un plan. Ce traitement crée une signature immédiatement reconnaissable et ancre le site dans l'univers de la conception.
