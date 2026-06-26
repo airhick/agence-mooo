@@ -3,749 +3,949 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daylice Café – Restaurant & Salon de thé | 152 Avenue Victor Hugo, Paris 16e</title>
-    <meta name="description" content="Daylice Café, votre salon du 16e arrondissement. Café, déjeuner, salon de thé au 152 Avenue Victor Hugo, Paris. Cuisine fraîche préparée sur place, menu du marché. Note 4.8★.">
-    <meta property="og:title" content="Daylice Café – Votre salon du 16e, du matin au dernier verre">
-    <meta property="og:description" content="Café, déjeuner, salon de thé : au 152 de l'Avenue Victor Hugo, tout est préparé sur place, avec le marché du jour. Note 4.8★.">
+    <title>Daylice Café — Salon de thé fait maison • Avenue Victor Hugo, Paris 16e</title>
+    <meta name="description" content="Daylice Café, salon de thé de quartier au 152 Avenue Victor Hugo à Paris. Cuisine intégralement faite maison, pierre haussmannienne et design contemporain. Note 4.8★ sur 88 avis Google.">
+    <meta property="og:title" content="Daylice Café — Brut chic parisien • Avenue Victor Hugo">
+    <meta property="og:description" content="Cuisine faite maison dans un écrin haussmannien. Pierre, bois clair, néon urbain. 4.8★ sur Google.">
     <meta property="og:image" content="assets/maps-1.jpg">
     <meta property="og:type" content="restaurant">
     <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232C2C2E'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23EDE4D8' font-family='serif'%3E☕%3C/text%3E%3C/svg%3E">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --pierre-claire: #f4efe7;
+            --pierre-moyenne: #e3d9ce;
+            --pierre-foncee: #b8a898;
+            --bois-clair: #d9c8a9;
+            --metal-noir: #1a1a1a;
+            --metal-fonce: #2c2c2c;
+            --neon-vert: #c7f0b8;
+            --neon-ambre: #f5d98b;
+            --blanc-casse: #fdfaf6;
+            --noir-profond: #111111;
+            --gris-texte: #4a4540;
+            --gris-clair: #6b6560;
+            --accent-dore: #c4a46c;
+            --erreur-rouge: #c0392b;
         }
 
-        :root {
-            --pierre: #EDE4D8;
-            --ardoise: #2C2C2E;
-            --creme: #FAFAF7;
-            --verdure: #5C7345;
-            --ecorce: #A4845C;
-            --ardoise-light: #3A3A3C;
-            --shadow-soft: 0 4px 24px rgba(44, 44, 46, 0.08);
-            --shadow-deep: 0 12px 40px rgba(44, 44, 46, 0.16);
-            --transition-smooth: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
             scroll-behavior: smooth;
-            font-size: 100%;
-            background-color: var(--pierre);
-        }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--ardoise);
-            background-color: var(--pierre);
+            font-size: clamp(16px, 1vw + 14px, 18px);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
         }
 
-        /* Typographie expressive */
-        h1, h2, h3, .display-font {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            line-height: 1.1;
-        }
-
-        h1 {
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--ardoise);
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
-
-        h3 {
-            font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-            font-weight: 500;
-        }
-
-        p, li {
-            font-size: clamp(1rem, 1.8vw, 1.15rem);
-            font-weight: 400;
-            color: var(--ardoise);
-            max-width: 65ch;
-        }
-
-        /* Accessibilité focus */
-        :focus-visible {
-            outline: 3px solid var(--verdure);
-            outline-offset: 4px;
-            border-radius: 2px;
-        }
-
-        /* Header collant */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(237, 228, 216, 0.85);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(44, 44, 46, 0.08);
-            padding: 0.75rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition-smooth);
-            box-shadow: 0 2px 20px rgba(44, 44, 46, 0.04);
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--ardoise);
-            letter-spacing: -0.01em;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .logo span {
-            font-size: 1.9rem;
-            line-height: 1;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--ardoise);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            position: relative;
-            padding-bottom: 2px;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 1.5px;
-            background-color: var(--verdure);
-            transition: width 0.25s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a:focus-visible::after {
-            width: 100%;
-        }
-
-        .cta-header {
-            background-color: var(--ardoise);
-            color: var(--creme);
-            padding: 0.5rem 1.3rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all var(--transition-smooth);
-            border: 1px solid transparent;
-            white-space: nowrap;
-        }
-
-        .cta-header:hover {
-            background-color: var(--verdure);
-            color: var(--creme);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(92, 115, 69, 0.25);
-        }
-
-        /* Héro */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 7rem 2rem 3rem;
-            background-color: var(--pierre);
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
-            max-width: 1300px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: var(--shadow-deep);
-            aspect-ratio: 4 / 3;
-            background-color: var(--ardoise-light);
-        }
-
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: brightness(0.94) contrast(1.04) saturate(0.9);
-            transition: transform 0.8s ease;
-        }
-
-        .hero-image-wrapper:hover img {
-            transform: scale(1.02);
-        }
-
-        .hero-image-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(44, 44, 46, 0.05) 0%, rgba(92, 115, 69, 0.08) 100%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .hero-content .subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            font-weight: 400;
-            color: var(--ecorce);
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .hero-content .accroche {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
-            color: var(--ardoise);
-            font-style: italic;
-            font-weight: 400;
-            line-height: 1.5;
-            border-left: 3px solid var(--verdure);
-            padding-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .badge-google {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--creme);
-            border: 1px solid rgba(164, 132, 92, 0.3);
-            padding: 0.5rem 1.1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--ardoise);
-            box-shadow: var(--shadow-soft);
-            width: fit-content;
-        }
-
-        .badge-google .stars {
-            color: #e67e22;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-        }
-
-        /* Sections communes */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            color: var(--ardoise);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60%;
-            height: 2px;
-            background-color: var(--verdure);
-            opacity: 0.7;
-        }
-
-        /* Comptoir du jour */
-        .comptoir {
-            background-color: var(--creme);
-            border-top: 1px solid rgba(44, 44, 46, 0.06);
-            border-bottom: 1px solid rgba(44, 44, 46, 0.06);
-            padding: 5rem 2rem;
-        }
-
-        .comptoir .inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .menu-board {
-            background-color: var(--ardoise);
-            color: var(--creme);
-            padding: 3rem;
-            border-radius: 2px;
-            box-shadow: var(--shadow-deep);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .menu-board::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(92, 115, 69, 0.08) 1px, transparent 1px);
-            background-size: 20px 20px;
-            pointer-events: none;
-        }
-
-        .menu-board h2 {
-            color: var(--creme);
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-board .menu-intro {
-            color: rgba(250, 250, 247, 0.85);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .menu-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .menu-item {
-            border-bottom: 1px dashed rgba(250, 250, 247, 0.25);
-            padding-bottom: 1rem;
-        }
-
-        .menu-item h3 {
-            color: var(--creme);
-            font-size: 1.6rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-        }
-
-        .menu-item .description {
-            color: rgba(250, 250, 247, 0.75);
-            font-size: 0.95rem;
-            margin: 0.4rem 0 0.6rem;
-            font-weight: 300;
-        }
-
-        .menu-item .price {
-            font-weight: 600;
-            color: var(--ecorce);
-            font-size: 1.2rem;
-            letter-spacing: 0.02em;
-        }
-
-        .menu-note {
-            margin-top: 2rem;
-            font-style: italic;
-            color: rgba(250, 250, 247, 0.65);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(250, 250, 247, 0.2);
-            padding-top: 1.2rem;
-        }
-
-        /* Infos pratiques */
-        .infos {
-            background-color: var(--pierre);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .info-card {
-            background-color: var(--creme);
-            padding: 2.5rem;
-            border-radius: 2px;
-            box-shadow: var(--shadow-soft);
-            border-left: 4px solid var(--verdure);
-        }
-
-        .info-card h3 {
-            margin-bottom: 1.5rem;
-            color: var(--ardoise);
-        }
-
-        .info-line {
-            display: flex;
-            align-items: baseline;
-            gap: 0.6rem;
-            margin-bottom: 0.9rem;
-            font-size: 1.05rem;
-        }
-
-        .info-line .label {
-            font-weight: 600;
-            color: var(--ecorce);
-            min-width: 100px;
-        }
-
-        .info-line a {
-            color: var(--ardoise);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--ecorce);
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .info-line a:hover {
-            color: var(--verdure);
-            border-bottom-color: var(--verdure);
-        }
-
-        .horaires-block {
-            background-color: var(--ardoise);
-            color: var(--creme);
-            padding: 2.5rem;
-            border-radius: 2px;
-            box-shadow: var(--shadow-deep);
-        }
-
-        .horaires-block h3 {
-            color: var(--creme);
-            margin-bottom: 1.2rem;
-        }
-
-        .horaires-list {
-            list-style: none;
-        }
-
-        .horaires-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
-            font-size: 1rem;
-            color: rgba(250, 250, 247, 0.9);
-        }
-
-        .horaires-note {
-            margin-top: 1rem;
-            font-style: italic;
-            font-size: 0.85rem;
-            color: rgba(250, 250, 247, 0.6);
-        }
-
-        .map-container {
-            margin-top: 3rem;
-            grid-column: 1 / -1;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: var(--shadow-deep);
-            background-color: var(--ardoise-light);
-        }
-
-        /* Footer */
-        .site-footer {
-            background-color: var(--ardoise);
-            color: var(--creme);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(250, 250, 247, 0.08);
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .footer-nap {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: rgba(250, 250, 247, 0.85);
-        }
-
-        .footer-nap strong {
-            color: var(--creme);
-            font-weight: 600;
-        }
-
-        .footer-credit {
-            font-size: 0.85rem;
-            color: rgba(250, 250, 247, 0.5);
-            margin-top: 1rem;
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.25s; }
-        .reveal-delay-3 { transition-delay: 0.4s; }
-        .reveal-delay-4 { transition-delay: 0.55s; }
-
-        /* Chargement initial : fade-in orchestre */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-content > * {
-            animation: fadeInUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            opacity: 0;
-        }
-        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-        .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
-        .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
-        .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
-        .hero-content > *:nth-child(5) { animation-delay: 0.7s; }
-
-        .hero-image-wrapper {
-            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            opacity: 0;
-            animation-delay: 0.15s;
-        }
-
-        /* prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
-            .reveal {
+        }
+
+        body {
+            font-family: 'Jost', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--noir-profond);
+            background-color: var(--blanc-casse);
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* === SCROLL REVEAL === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* === LOADING ENTRANCE === */
+        .entrance-stagger {
+            opacity: 0;
+            animation: fadeSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .entrance-stagger:nth-child(1) { animation-delay: 0.05s; }
+        .entrance-stagger:nth-child(2) { animation-delay: 0.2s; }
+        .entrance-stagger:nth-child(3) { animation-delay: 0.35s; }
+        .entrance-stagger:nth-child(4) { animation-delay: 0.5s; }
+        .entrance-stagger:nth-child(5) { animation-delay: 0.65s; }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            100% {
                 opacity: 1;
-                transform: none;
-                transition: none;
+                transform: translateY(0);
             }
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+        /* === HEADER === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(253, 250, 246, 0.82);
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            border-bottom: 1px solid rgba(184, 168, 152, 0.3);
+            padding: 0.75rem clamp(1rem, 3vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: background 0.3s;
+        }
+        .site-header.scrolled {
+            background: rgba(253, 250, 246, 0.94);
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
+        }
+        .header-brand {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+            letter-spacing: -0.01em;
+            color: var(--metal-noir);
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .header-brand span {
+            display: block;
+            font-size: 0.5em;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gris-clair);
+            margin-top: 0.1em;
+            font-family: 'Jost', sans-serif;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.8rem, 2vw, 2rem);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-list a {
+            text-decoration: none;
+            color: var(--metal-fonce);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.25s;
+            position: relative;
+            padding: 0.25em 0;
+        }
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-dore);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--noir-profond);
+        }
+        .nav-cta {
+            background: var(--metal-noir);
+            color: #fff !important;
+            padding: 0.45em 1.3em !important;
+            border-radius: 2px;
+            font-weight: 600 !important;
+            letter-spacing: 0.06em;
+            transition: background 0.25s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: var(--metal-fonce) !important;
+            transform: translateY(-1px);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--metal-noir);
+            z-index: 1001;
+        }
+        .hamburger-line {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--metal-noir);
+            margin: 6px 0;
+            transition: 0.3s;
+            border-radius: 1px;
+        }
+        @media (max-width: 860px) {
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--blanc-casse);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 1.5rem;
+                align-items: flex-start;
+                transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
+                z-index: 999;
             }
-            .hero-image-wrapper {
+            .nav-list.active {
+                right: 0;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-list a {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* === HERO === */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 7rem clamp(1.5rem, 6vw, 6rem) 4rem;
+            overflow: hidden;
+            background: var(--pierre-claire);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55) contrast(1.05) saturate(0.7);
+            mix-blend-mode: multiply;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.65) 0%, rgba(26, 26, 26, 0.15) 50%, rgba(184, 168, 152, 0.35) 100%);
+            z-index: 1;
+        }
+        .hero-bg .grain-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.18;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 680px;
+        }
+        .hero-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--neon-vert);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(3.2rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+        .hero-subtitle {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.4em 1em;
+            border-radius: 3px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .stars {
+            color: var(--neon-ambre);
+            letter-spacing: 0.1em;
+        }
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent-dore);
+            color: var(--metal-noir);
+            font-weight: 600;
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.8em 2em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background 0.25s, transform 0.2s;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #dbb87c;
+            transform: translateY(-2px);
+            outline: 2px solid var(--accent-dore);
+            outline-offset: 3px;
+        }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            font-weight: 500;
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.8em 2em;
+            text-decoration: none;
+            border-radius: 2px;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            transition: background 0.25s, border-color 0.25s;
+            font-size: 0.9rem;
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            outline: 2px solid rgba(255, 255, 255, 0.6);
+            outline-offset: 3px;
+        }
+
+        /* === SECTION GENERALE === */
+        .section {
+            padding: 5rem clamp(1.5rem, 6vw, 6rem);
+            position: relative;
+        }
+        .section-label {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gris-clair);
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--metal-noir);
+            margin-bottom: 1.5rem;
+        }
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-dore);
+            margin-bottom: 2rem;
+            border-radius: 1px;
+        }
+
+        /* === À PROPOS === */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--gris-texte);
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+        .about-image {
+            position: relative;
+            border-radius: 1px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-height: 520px;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.05) saturate(0.85);
+            transition: transform 0.6s ease;
+        }
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(26, 26, 26, 0.3));
+            z-index: 1;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
                 order: -1;
-                max-height: 50vh;
-            }
-            .hero {
-                padding: 6rem 1.5rem 2rem;
-                min-height: auto;
-            }
-            .site-header {
-                padding: 0.6rem 1.2rem;
-            }
-            .nav-links {
-                gap: 1rem;
-            }
-            .nav-links a:not(.cta-header) {
-                font-size: 0.85rem;
-            }
-            .infos {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .menu-board {
-                padding: 2rem 1.5rem;
-            }
-            section {
-                padding: 3rem 1.5rem;
-            }
-            .comptoir {
-                padding: 3rem 1.2rem;
+                max-height: 380px;
             }
         }
 
+        /* === OFFRE / CARTE === */
+        .offre-bg {
+            background: var(--pierre-claire);
+            position: relative;
+        }
+        .offre-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(217, 200, 169, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .offre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .offre-card {
+            background: var(--blanc-casse);
+            padding: 2rem;
+            border-radius: 1px;
+            border: 1px solid rgba(184, 168, 152, 0.35);
+            transition: box-shadow 0.35s, transform 0.35s;
+            position: relative;
+        }
+        .offre-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+            transform: translateY(-4px);
+        }
+        .offre-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--metal-noir);
+        }
+        .offre-card p {
+            color: var(--gris-texte);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .offre-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        /* === AMBIANCE / GALERIE === */
+        .galerie-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--pierre-foncee) transparent;
+        }
+        .galerie-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .galerie-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .galerie-scroll::-webkit-scrollbar-thumb {
+            background: var(--pierre-foncee);
+            border-radius: 3px;
+        }
+        .galerie-item {
+            flex: 0 0 clamp(260px, 40vw, 400px);
+            scroll-snap-align: start;
+            aspect-ratio: 3/4;
+            border-radius: 1px;
+            overflow: hidden;
+            position: relative;
+        }
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.04) saturate(0.8);
+            transition: transform 0.5s ease;
+        }
+        .galerie-item:hover img {
+            transform: scale(1.05);
+        }
+        .galerie-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(26, 26, 26, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* === AVIS === */
+        .avis-card {
+            background: var(--metal-fonce);
+            color: #fff;
+            padding: 3rem clamp(1.5rem, 4vw, 4rem);
+            border-radius: 1px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .avis-card::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(196, 164, 108, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .avis-note {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            color: var(--neon-ambre);
+        }
+        .avis-stars {
+            font-size: 1.5rem;
+            letter-spacing: 0.15em;
+            color: var(--neon-ambre);
+        }
+        .avis-count {
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        .avis-text {
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+            max-width: 400px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* === INFOS PRATIQUES === */
+        .infos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: start;
+        }
+        .infos-map iframe {
+            width: 100%;
+            height: 360px;
+            border: 0;
+            border-radius: 1px;
+            filter: grayscale(30%) contrast(1.02);
+        }
+        .infos-details dl {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+        .infos-details dt {
+            font-weight: 600;
+            color: var(--metal-noir);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .infos-details dd {
+            color: var(--gris-texte);
+            margin: 0;
+        }
+        .infos-details a {
+            color: var(--metal-noir);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--accent-dore);
+            transition: color 0.2s;
+        }
+        .infos-details a:hover {
+            color: var(--accent-dore);
+        }
+        .horaires-note {
+            background: var(--pierre-claire);
+            padding: 1rem 1.5rem;
+            border-left: 3px solid var(--accent-dore);
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gris-texte);
+            border-radius: 0 2px 2px 0;
+        }
+        @media (max-width: 768px) {
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === CONTACT === */
+        .contact-form {
+            display: grid;
+            gap: 1.2rem;
+            max-width: 600px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.8em 1em;
+            border: 1px solid var(--pierre-foncee);
+            border-radius: 1px;
+            background: var(--blanc-casse);
+            color: var(--noir-profond);
+            transition: border-color 0.25s;
+            width: 100%;
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid var(--accent-dore);
+            outline-offset: 2px;
+            border-color: var(--accent-dore);
+        }
+        .contact-form button {
+            justify-self: start;
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--metal-noir);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 3rem clamp(1.5rem, 6vw, 6rem);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 4px solid var(--accent-dore);
+        }
+        .site-footer a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .site-footer a:hover {
+            color: var(--neon-ambre);
+        }
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #fff;
+            letter-spacing: -0.01em;
+        }
+        .footer-credits {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 1rem;
+            letter-spacing: 0.04em;
+        }
         @media (max-width: 600px) {
-            .logo {
-                font-size: 1.4rem;
+            .site-footer {
+                grid-template-columns: 1fr;
             }
-            .nav-links a:not(.cta-header) {
-                display: none;
+        }
+
+        /* === FOCUS VISIBLE === */
+        :focus-visible {
+            outline: 2.5px solid var(--accent-dore);
+            outline-offset: 3px;
+        }
+        a:focus-visible,
+        button:focus-visible {
+            border-radius: 2px;
+        }
+
+        /* === OVERLAY NAV (mobile) === */
+        @media (max-width: 860px) {
+            .nav-list.active~.mobile-menu-btn .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
             }
-            .cta-header {
-                padding: 0.4rem 1rem;
-                font-size: 0.8rem;
+            .nav-list.active~.mobile-menu-btn .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .nav-list.active~.mobile-menu-btn .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
         }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <a href="#" class="logo">
-            <span>☕</span> Daylice
-        </a>
+    <header class="site-header" id="header">
+        <a href="#hero" class="header-brand">Daylice<span>Café</span></a>
+        <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
         <nav>
-            <ul class="nav-links">
-                <li><a href="#comptoir">Menu</a></li>
+            <ul class="nav-list" id="navList">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#offre">Carte</a></li>
+                <li><a href="#galerie">Ambiance</a></li>
+                <li><a href="#avis">Avis</a></li>
                 <li><a href="#infos">Infos</a></li>
-                <li><a href="tel:+33145533937" class="cta-header">Appeler</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+33145533937" class="nav-cta">Appeler</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- HÉRO -->
-        <section class="hero">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <p class="subtitle">152 Avenue Victor Hugo, Paris 16ᵉ</p>
-                    <h1>Votre salon du 16ᵉ, du matin au dernier verre.</h1>
-                    <p class="accroche">Café, déjeuner, salon de thé : au 152 de l'Avenue Victor Hugo, tout est préparé sur place, avec le marché du jour.</p>
-                    <div class="badge-google">
-                        <span class="stars">★★★★★</span> 4.8 / 5 <span style="font-weight:400; margin-left:0.3rem;">(88 avis)</span>
-                    </div>
-                    <div style="margin-top:0.5rem;">
-                        <a href="tel:+33145533937" style="display:inline-block; background:var(--ardoise); color:var(--creme); padding:0.8rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; transition:all 0.3s; border:1px solid transparent;"
-                           onmouseover="this.style.background='var(--verdure)'" onmouseout="this.style.background='var(--ardoise)'">
-                            📞 01 45 53 39 37
-                        </a>
-                    </div>
+        <section class="hero-section" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Daylice Café — Façade haussmannienne" loading="eager" decoding="async">
+                <div class="grain-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-eyebrow entrance-stagger">Brut chic parisien</p>
+                <h1 class="hero-title entrance-stagger">Daylice<br>Café</h1>
+                <p class="hero-subtitle entrance-stagger">Cuisine intégralement faite maison, au cœur du 16<sup>e</sup> arrondissement. Pierre haussmannienne, bois clair, néon urbain.</p>
+                <div class="hero-badge entrance-stagger">
+                    <span class="stars">★★★★★</span> 4.8 sur 88 avis Google
                 </div>
-                <div class="hero-image-wrapper">
-                    <img src="assets/maps-1.jpg" alt="Terrasse du Daylice Café baignée de lumière naturelle" loading="eager" width="800" height="600">
+                <div class="hero-cta-group entrance-stagger">
+                    <a href="tel:+33145533937" class="btn-primary">Appeler</a>
+                    <a href="#infos" class="btn-outline">Itinéraire</a>
                 </div>
             </div>
         </section>
 
-        <!-- COMPTOIR DU JOUR -->
-        <section id="comptoir" class="comptoir">
-            <div class="inner reveal">
-                <div class="menu-board">
-                    <div class="section-title">
-                        <h2>Au tableau aujourd'hui</h2>
-                    </div>
-                    <p class="menu-intro">Découvrez nos suggestions fraîches, préparées sur place. Salades composées, plats mijotés ou grillés : le menu change avec le marché.</p>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <h3>Salade Daylice</h3>
-                            <p class="description">Mesclun, chèvre frais, noix caramélisées, poires rôties, vinaigrette miel & thym.</p>
-                            <span class="price">14,50 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <h3>Poulet rôti & herbes</h3>
-                            <p class="description">Suprême de volaille fermière, écrasé de pommes de terre à l'huile d'olive, jus corsé.</p>
-                            <span class="price">18,90 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <h3>Risotto primeurs</h3>
-                            <p class="description">Riz carnaroli, asperges vertes, petits pois, parmesan AOP, menthe fraîche.</p>
-                            <span class="price">16,50 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <h3>Tartine du moment</h3>
-                            <p class="description">Pain de campagne toasté, avocat, saumon fumé, aneth, citron confit.</p>
-                            <span class="price">13,90 €</span>
-                        </div>
-                    </div>
-                    <p class="menu-note">🌸 Menus disponibles du mardi au samedi, de 12h à 15h. Prix nets, service compris.</p>
+        <!-- À PROPOS -->
+        <section class="section" id="about">
+            <p class="section-label reveal">Notre philosophie</p>
+            <h2 class="section-title reveal reveal-delay-1">L'exigence du fait-maison,<br>la décontraction d'un café de poche</h2>
+            <div class="section-divider reveal reveal-delay-2"></div>
+            <div class="about-grid">
+                <div class="about-text reveal reveal-delay-2">
+                    <p>Daylice Café redonne ses lettres de noblesse au salon de thé de quartier. Ici, tout est préparé sur place, avec des produits frais sélectionnés chaque matin. Ni cantine impersonnelle ni adresse guindée : un repaire chaleureux où la pierre haussmannienne dialogue avec le design contemporain.</p>
+                    <p>Installé au 152 de l'avenue Victor Hugo, notre café cultive l'équilibre entre exigence culinaire et ambiance décontractée, pour une clientèle urbaine qui veut bien manger sans façons.</p>
+                </div>
+                <div class="about-image reveal reveal-delay-3">
+                    <img src="assets/maps-1.jpg" alt="Intérieur du Daylice Café" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFRE / CARTE -->
+        <section class="section offre-bg" id="offre">
+            <p class="section-label reveal">Notre carte</p>
+            <h2 class="section-title reveal reveal-delay-1">Fait maison, de la première<br>à la dernière bouchée</h2>
+            <div class="section-divider reveal reveal-delay-2"></div>
+            <div class="offre-grid">
+                <div class="offre-card reveal reveal-delay-1">
+                    <span class="offre-icon">🥐</span>
+                    <h3>Viennoiseries & pâtisseries</h3>
+                    <p>Croissants, pains au chocolat, tartes de saison et entremets réalisés chaque matin dans notre laboratoire.</p>
+                </div>
+                <div class="offre-card reveal reveal-delay-2">
+                    <span class="offre-icon">☕</span>
+                    <h3>Cafés de spécialité</h3>
+                    <p>Grains rigoureusement sourcés, torréfaction artisanale. Espresso, latte, cappuccino ou café filtre doux.</p>
+                </div>
+                <div class="offre-card reveal reveal-delay-3">
+                    <span class="offre-icon">🥗</span>
+                    <h3>Déjeuner & brunch</h3>
+                    <p>Salades composées, quiches, soupes maison et formules brunch le week-end. Tout est préparé sur place.</p>
+                </div>
+                <div class="offre-card reveal reveal-delay-4">
+                    <span class="offre-icon">🍰</span>
+                    <h3>Goûter & tea time</h3>
+                    <p>Thés grands crus, infusions, chocolat chaud et pâtisseries fines pour une parenthèse gourmande.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMBIANCE / GALERIE -->
+        <section class="section" id="galerie">
+            <p class="section-label reveal">Ambiance</p>
+            <h2 class="section-title reveal reveal-delay-1">La pierre, le bois,<br>la lumière</h2>
+            <div class="section-divider reveal reveal-delay-2"></div>
+            <div class="galerie-scroll reveal reveal-delay-3">
+                <div class="galerie-item"><img src="assets/maps-1.jpg" alt="Ambiance Daylice Café" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-1.jpg" alt="Salle du Daylice Café" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-1.jpg" alt="Comptoir Daylice Café" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-1.jpg" alt="Terrasse Daylice Café" loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <!-- AVIS -->
+        <section class="section" id="avis">
+            <p class="section-label reveal">Avis Google</p>
+            <div class="avis-card reveal reveal-delay-1">
+                <div>
+                    <div class="avis-note">4.8</div>
+                    <div class="avis-stars">★★★★★</div>
+                    <div class="avis-count">Basé sur 88 avis Google</div>
+                </div>
+                <div class="avis-text">
+                    « Un véritable coup de cœur. La cuisine est excellente, le cadre mêle élégance et simplicité. On s'y sent comme chez soi, en mieux. »
                 </div>
             </div>
         </section>
 
         <!-- INFOS PRATIQUES -->
-        <section id="infos" class="infos">
-            <div class="info-card reveal reveal-delay-1">
-                <h3>📍 Nous trouver</h3>
-                <div class="info-line">
-                    <span class="label">Adresse</span>
-                    <span>152 Avenue Victor Hugo, 75116 Paris</span>
+        <section class="section" id="infos">
+            <p class="section-label reveal">Infos pratiques</p>
+            <h2 class="section-title reveal reveal-delay-1">Nous trouver</h2>
+            <div class="section-divider reveal reveal-delay-2"></div>
+            <div class="infos-grid">
+                <div class="infos-map reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=Daylice+Caf%C3%A9+152+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Daylice Café"></iframe>
                 </div>
-                <div class="info-line">
-                    <span class="label">Téléphone</span>
-                    <a href="tel:+33145533937">01 45 53 39 37</a>
-                </div>
-                <div class="info-line">
-                    <span class="label">Email</span>
-                    <a href="mailto:info@daylice-cafe.com">info@daylice-cafe.com</a>
-                </div>
-                <div class="info-line" style="margin-top:1rem;">
-                    <span class="badge-google" style="font-size:0.9rem; padding:0.3rem 0.8rem;">
-                        <span class="stars">★★★★★</span> 4.8/5 (88 avis Google)
-                    </span>
+                <div class="infos-details reveal reveal-delay-3">
+                    <dl>
+                        <dt>Adresse</dt>
+                        <dd>152 Avenue Victor Hugo,<br>75116 Paris, France</dd>
+                        <dt>Téléphone</dt>
+                        <dd><a href="tel:+33145533937">01 45 53 39 37</a></dd>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:info@daylice-cafe.com">info@daylice-cafe.com</a></dd>
+                        <dt>Google</dt>
+                        <dd>4.8 ★ (88 avis)</dd>
+                    </dl>
+                    <div class="horaires-note">
+                        <strong>Horaires</strong><br>
+                        Les horaires d'ouverture sont à confirmer. Nous vous invitons à nous contacter directement pour plus d'informations.
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="horaires-block reveal reveal-delay-2">
-                <h3>🕒 Horaires d'ouverture</h3>
-                <ul class="horaires-list">
-                    <li><span>Lundi</span> <span>08:00 – 18:00</span></li>
-                    <li><span>Mardi – Vendredi</span> <span>08:00 – 23:00</span></li>
-                    <li><span>Samedi</span> <span>09:00 – 23:00</span></li>
-                    <li><span>Dimanche</span> <span>09:00 – 16:00</span></li>
-                </ul>
-                <p class="horaires-note">✨ Horaires indicatifs — nous vous invitons à appeler pour confirmer avant votre visite, particulièrement les jours fériés.</p>
-            </div>
-
-            <div class="map-container reveal reveal-delay-3">
-                <iframe src="https://maps.google.com/maps?q=Daylice+Caf%C3%A9+152+Avenue+Victor+Hugo%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès Daylice Café"></iframe>
-            </div>
+        <!-- CONTACT -->
+        <section class="section offre-bg" id="contact">
+            <p class="section-label reveal">Contact</p>
+            <h2 class="section-title reveal reveal-delay-1">Une question,<br>une réservation ?</h2>
+            <div class="section-divider reveal reveal-delay-2"></div>
+            <form class="contact-form reveal reveal-delay-3" action="#" method="post">
+                <input type="text" name="nom" placeholder="Votre nom" required aria-label="Votre nom">
+                <input type="email" name="email" placeholder="Votre email" required aria-label="Votre email">
+                <textarea name="message" rows="4" placeholder="Votre message" required aria-label="Votre message"></textarea>
+                <button type="submit" class="btn-primary">Envoyer</button>
+            </form>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-nap">
-                <strong>Daylice Café</strong><br>
-                152 Avenue Victor Hugo, 75116 Paris<br>
-                Tél : <a href="tel:+33145533937" style="color:var(--creme); text-decoration:underline;">01 45 53 39 37</a> — 
-                <a href="mailto:info@daylice-cafe.com" style="color:var(--creme); text-decoration:underline;">info@daylice-cafe.com</a>
-            </div>
-            <p class="footer-credit">Site créé par <strong>Agence Mooo</strong></p>
+        <div>
+            <div class="footer-brand">Daylice Café</div>
+            <p>152 Avenue Victor Hugo<br>75116 Paris, France</p>
+            <p><a href="tel:+33145533937">01 45 53 39 37</a><br>
+                <a href="mailto:info@daylice-cafe.com">info@daylice-cafe.com</a></p>
+        </div>
+        <div>
+            <p><strong>Liens rapides</strong></p>
+            <p><a href="#about">À propos</a> · <a href="#offre">Carte</a> · <a href="#galerie">Ambiance</a><br>
+                <a href="#avis">Avis</a> · <a href="#infos">Infos pratiques</a> · <a href="#contact">Contact</a></p>
+        </div>
+        <div class="footer-credits">
+            Site créé par Agence Mooo — <a href="https://agence.mooo.com/daylice-cafe" target="_blank" rel="noopener">agence.mooo.com/daylice-cafe</a>
         </div>
     </footer>
 
@@ -769,81 +969,82 @@
                 "ratingValue": "4.8",
                 "reviewCount": "88"
             },
-            "priceRange": "€€",
-            "servesCuisine": "Française, Salon de thé",
-            "openingHoursSpecification": [
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Monday",
-                    "opens": "08:00",
-                    "closes": "18:00"
-                },
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-                    "opens": "08:00",
-                    "closes": "23:00"
-                },
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Saturday",
-                    "opens": "09:00",
-                    "closes": "23:00"
-                },
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Sunday",
-                    "opens": "09:00",
-                    "closes": "16:00"
-                }
-            ]
+            "url": "https://agence.mooo.com/daylice-cafe",
+            "servesCuisine": "French",
+            "priceRange": "€€"
         }
     </script>
 
     <script>
-        // IntersectionObserver pour les révélations au scroll
         (function() {
+            // === SCROLL REVEAL (IntersectionObserver) ===
             const reveals = document.querySelectorAll('.reveal');
-            if (!reveals.length) return;
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
 
-            const observer = new IntersectionObserver((entries) => {
+            const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
+                        revealObserver.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -40px 0px'
-            });
+            }, observerOptions);
 
-            reveals.forEach(el => observer.observe(el));
+            reveals.forEach(el => revealObserver.observe(el));
 
-            // Cleanup observer on page unload (bonne pratique)
-            window.addEventListener('beforeunload', () => {
-                reveals.forEach(el => observer.unobserve(el));
-            });
-        })();
-
-        // Gestion du header : léger effet d'ombre au scroll
-        (function() {
-            const header = document.querySelector('.site-header');
-            if (!header) return;
-            let ticking = false;
+            // === HEADER SCROLL EFFECT ===
+            const header = document.getElementById('header');
+            let scrollTicking = false;
             window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        if (window.scrollY > 10) {
-                            header.style.boxShadow = '0 4px 30px rgba(44,44,46,0.08)';
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 80) {
+                            header.classList.add('scrolled');
                         } else {
-                            header.style.boxShadow = '0 2px 20px rgba(44,44,46,0.04)';
+                            header.classList.remove('scrolled');
                         }
-                        ticking = false;
+                        scrollTicking = false;
                     });
-                    ticking = true;
+                    scrollTicking = true;
                 }
             });
+
+            // === MOBILE MENU TOGGLE ===
+            const navList = document.getElementById('navList');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+
+            menuBtn.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+
+            // Fermer le menu au clic sur un lien (mobile)
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 860) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
+
+            // Fermer si clic en dehors
+            document.addEventListener('click', (e) => {
+                if (!navList.contains(e.target) && !menuBtn.contains(e.target) && navList.classList.contains(
+                        'active')) {
+                    navList.classList.remove('active');
+                }
+            });
+
+            // === RESPECT PREFERS-REDUCED-MOTION (déjà géré en CSS, mais on désactive aussi les observers si besoin) ===
+            const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mqReduced.matches) {
+                reveals.forEach(el => {
+                    el.classList.add('revealed');
+                });
+            }
         })();
     </script>
 </body>
