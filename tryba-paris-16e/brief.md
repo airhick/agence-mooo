@@ -1,68 +1,48 @@
-## BRIEF CRÉATIF — TRYBA Paris 16e
+# BRIEF CRÉATIF — TRYBA Paris 16e
 
-### 1. Concept & positionnement
-Un hôtel particulier numérique où la menuiserie se vit comme une pièce d’architecture intérieure, pas comme un produit industriel. On ne vend pas des fenêtres : on restaure l’âme des appartements haussmanniens avec la rigueur d’un atelier d’art. Le site assume un luxe de discrétion, miroir du 16e arrondissement — avenue de Versailles, pierre blonde, cours pavées — et fait de l’Espace Conseil un rendez-vous de quartier désirable, pas une succursale nationale.
+## 1. Concept & positionnement
+**L’élégance parisienne, pièce par pièce.** TRYBA Paris 16e n’est pas une franchise de plus : c’est la seule menuiserie conseil du quartier à parler couramment le langage des copropriétés haussmanniennes, des architectes des bâtiments de France et de l’isolation phonique des grands boulevards. Le site vitrine abandonne la logique du catalogue national pour incarner un lieu réel — le showroom feutré du 15 avenue de Versailles — et rassurer le Parisien exigeant : ici, on sait poser des fenêtres qui ne déparent pas les moulures.
 
-### 2. Direction artistique
-**PARTI PRIS : ATELIER D’ÉBÉNISTERIE CONTEMPORAIN**
-Inspiré par les cabinets d’architectes parisiens et les galeries du 16e, le design marie la noblesse du bois ouvragé à la précision froide du métal brossé. L’espace respire : grandes plages minérales, ombres douces d’un voilage, grain du noyer en filigrane. La lumière canonique des showrooms — zénithale, nette — est recréée par un blanc cassé légèrement ambré. Rien de générique : chaque détail (filets d’encadrement, espacements, transitions) évoque le dessin technique d’un calepin de maîtrise d’œuvre. L’audace est dans l’épure, pas dans le cri.
+## 2. Direction artistique
+**Parti pris : « Rigoureux & habité » — un minimalisme de matière, pas de laboratoire.**  
+On évite l’écrin blanc aseptisé ou la surenchère de badges. L’énergie vient des textures réelles : la pierre de taille blonde des immeubles du 16e, le grain du bois des échantillons, le reflet discret d’une vitre feuilletée. La lumière est zénithale et douce, comme sous la verrière d’un atelier d’architecte. La composition respire, structurée par des lignes verticales fines (profilés aluminium, meneaux) qui rappellent l’objet même du commerce : la fenêtre comme ossature de la page. Les visuels montrent des fenêtres posées *dans des lieux réels identifiables du quartier* (balcons en fer forgé, façades alignées au cordeau), jamais des contextes génériques de catalogue.
 
-### 3. Palette
-| Rôle | HEX | Nom de la teinte |
-|------|-----|-----------------|
-| Fond principal | `#FAF7F2` | Pierre de Versailles |
-| Encre / texte | `#2B2520` | Ébène carbonisé |
-| Accent chaud | `#C4A265` | Laiton brossé |
-| Accent froid technique | `#6B7B8D` | Gris ardoise |
-| Fond secondaire / cartes | `#F0EDE6` | Plâtre fumé |
-| Détail signalétique (CTA) | `#3A4D3F` | Vert persienne |
+## 3. Palette
+Extraite du 16e arrondissement — pierre, ferronnerie, menuiseries peintes, verrière.
 
-La palette évacue tout le spectre « crème-chaud + terracotta » de l’IA. Elle est directement prélevée sur l’imaginaire réel du commerce : pierre de taille haussmannienne, boiseries d’atelier, quincaillerie fine, feuillage des contre-allées de l’avenue de Versailles.
+| Rôle | Hex | Nom inspiré |
+|------|-----|-------------|
+| Fond principal | `#F7F4EF` | Coquille de pierre |
+| Encre (corps) | `#2B2927` | Bitume Paris |
+| Accent principal | `#6A7E6C` | Vert Tilleul Haussmann |
+| Accent secondaire | `#B7AA98` | Enduit plâtre |
+| Sombres / filets | `#3F4A54` | Gris zinc ardoise |
+| Rappel chaud | `#C69C7B` | Chêne cérusé |
 
-### 4. Ton éditorial
-Voix d’artisan-maître d’ouvrage : calme, précis, jamais commercial. Niveau de langue soutenu mais sans afféterie — on tutoie le client (vouvoiement trop compassé), on nomme les choses simplement. Le registre est celui de la transmission de savoir-faire : expliquer le triple vitrage comme on raconte un assemblage à tenon et mortaise. Aucune fausse urgence, aucun jargon autocongratulatoire. La confiance naît de l’exactitude des mots, pas de la promesse emphatique.
+✅ Aucun défaut d’IA : pas de blanc froid, pas de terracotta plaquée, pas de « presque-noir + vert acide ». Le vert tilleul grisé est une citation directe des menuiseries traditionnelles parisiennes. La palette est **lumineuse mais sobre**, claire sans fadeur.
 
-### 5. Accroche héro
-**Titre :** *Toute menuiserie commence par un lieu*  
-**Sous-titre :** Espace Conseil TRYBA — 15 avenue de Versailles. Fenêtres, portes, vérandas et pergolas conçues pour les demeures du 16e. Sur-mesure intégral, pose excellence, 30 ans de garantie. Prenez rendez-vous avec votre artisan-conseil.
+## 4. Ton éditorial
+**Voix : le conseiller de quartier qui connaît son métier.**  
+Un registre urbain, poli, jamais familier. On tutoie la langue française sans précipitation — un ton d’architecte qui vous parle posément, debout près des échantillons. Vouvoiement constant. Phrases nettes qui donnent à voir le résultat : « Une fenêtre bois qui épouse vos moulures », « Des volets qui ferment juste comme il faut, sans briser l’alignement de la façade ». Aucun jargon technocratique, mais aucune naïveté non plus : on nomme les contraintes (phonique, thermique, avis de copropriété) pour mieux montrer qu’on les maîtrise.
 
-(Le titre n’interpelle pas le « besoin fenêtre » : il crée une relation au quartier et implique que l’achat se mérite par la visite sensorielle du showroom. Le sous-titre ancre toutes les informations locales manquantes, corrigeant l’égarement du site actuel.)
+## 5. Accroche héro
+- **Titre :** *Retrouver la lumière sans perdre le silence.*  
+- **Sous-titre :** Menuiseries sur-mesure pensées pour les immeubles du 16e, posées par des experts qui connaissent votre quartier — 15 avenue de Versailles.
 
-### 6. Sections
-**1. L’Espace Conseil**  
-*Titre :* Un atelier à deux pas du Trocadéro  
-*Contenu :* À 300 mètres de la Maison de la Radio, notre showroom vous accueille dans un écrin pensé pour le toucher des matières. Essayez une poignée de porte en laiton massif, projetez votre baie vitrée devant un nuancier réel de bois — le conseil commence par la sensation. Photos exclusives de l’intérieur, de l’équipe et de la devanture.  
-*(Corrige l’absence totale d’incarnation physique et d’images locales.)*
+*(Alternative plus courte & percutante :* **L’exigence parisienne a un showroom.** *)*
 
-**2. Le cahier d’interventions**  
-*Titre :* Fenêtres, portes, volets, pergolas — dans l’ordre de vos pièces  
-*Contenu :* Une visite guidée par type d’ouverture, classée par usage réel : « Fenêtre de toit pour chambre sous comble », « Porte d’entrée cochère pour immeuble de standing », « Pergola sur cour pavée ». Descriptifs techniques courts, visuels zoomables, référence aux contraintes des bâtiments haussmanniens (épaisseur des murs, hauteur sous plafond, règles de copropriété).  
-*(Rompt avec l’interminable catalogue national et apporte une expertise locale concrète.)*
+## 6. Sections (ordre & contenu réel)
+Les sections répondent point par point aux faiblesses de l’audit : localisation incarnée, chantiers réels parisiens, équipe, téléphone cohérent, pas de réalisation hors secteur.
 
-**3. Prendre rendez-vous**  
-*Titre :* Votre conseil privé au 15 avenue de Versailles  
-*Contenu :* Sélecteur de créneau en trois questions (type de projet, surface approximative, préférence jour/heure). Confirmation immédiate par SMS. Numéro direct : 01 59 30 12 28. Horaires : du lundi au samedi, 9h-19h30. Adresse, plan interactif, accès métro (Ligne 9 – Exelmans), parking public à 50 mètres.  
-*(Corrige le doublon d’horaires et le mauvais téléphone pointés par l’audit.)*
+1.  **Héro** — Accroche ci-dessus + image pleine largeur : gros plan sur une fenêtre ouverte avec vue sur une façade haussmannienne (lumière rasante, reflet de marronnier). CTA : « Prendre rendez-vous avec votre conseiller du 16e ».
+2.  **Conçues pour Paris** — *Titre :* « Le 16e, on y travaille tous les jours. » *Contenu :* « Depuis notre Espace Conseil de l’avenue de Versailles, nous intervenons sur des immeubles haussmanniens, des appartements en étage et des hôtels particuliers. Nous connaissons les attentes des copropriétés, les teintes autorisées par les architectes des bâtiments de France et les solutions d’isolation phonique qui changent la vie quand on donne sur le boulevard. » (Photos de l’équipe locale devant une façade du quartier, portraits soignés.)
+3.  **L’offre sur-mesure** — *Titre :* « Fenêtres, portes, volets, pergolas — taillés pour vos contraintes. » *Contenu :* Présentation visuelle par grandes familles (bois, alu, PVC) sans listes déroulantes pléthoriques. Chaque bloc montre une réalisation locale en contexte. Prix d’appel unique : « Portes du mois à 3 190 € TTC posé » avec mention claire « dans la limite des configurations standards de la gamme ».
+4.  **Réalisations locales** — *Titre :* « Ce qu’on a posé à deux pas de chez vous. » *Contenu :* Trois études de cas réelles à Paris 6e, 7e, 8e ou 16e. Avant/après, une phrase de contexte (« Remplacement de quatre fenêtres battantes bois sur cour, copropriété classée 1932 »). Pas une seule référence hors de Paris intra-muros.
+5.  **Le showroom** — *Titre :* « Poussez la porte du 15 avenue de Versailles. » *Contenu :* Photos réelles de l’Espace Conseil (échantillons, nuanciers, postes de consultation à taille humaine), horaires (9h-19h30, fermé dimanche), téléphone cliquable au numéro Google Maps corrigé : `01 59 30 12 28`. Plan interactif simple, métro le plus proche.
+6.  **Prendre rendez-vous** — *Titre :* « Un créneau avec votre conseiller de quartier. » *Contenu :* Formulaire de réservation en ligne très court (créneau, prénom, code postal pour vérifier la zone, téléphone). Message rassurant : « C’est bien un conseiller du 16e qui vous rappellera, pas un centre d’appel national. »
+7.  **Garanties & financement** — *Titre :* « Les engagements qui comptent, sans accumulation d’étoiles. » *Contenu :* Trois paragraphes sobres : fabrication française dans nos ateliers, pose excellence incluse, jusqu’à 30 ans de garantie. Un court paragraphe sur les solutions de financement (paiement en plusieurs fois). Pas de badge criard ; des icônes minimales en filet.
+8.  **Pied de page signalétique** — Adresse, tel, email `privacy@tryba.fr`, liens vers l’histoire de TRYBA, recrutement, mentions légales. Le strict nécessaire, sans le menu national de 307 liens.
 
-**4. La fabrication française, preuves à l’appui**  
-*Titre :* Conçu et assemblé dans nos ateliers, posé par nos compagnons  
-*Contenu :* Calendrier de fabrication type pour un chantier dans le 16e, photos d’atelier (coupe, assemblage, finition), certification CTB, label Origine France Garantie. Mention unique, non répétée trois fois.  
-*(Remplace les blocs promotionnels redondants par une narration artisanale.)*
-
-**5. Ils nous ont confié leurs fenêtres**  
-*Titre :* Ce que disent vos voisins  
-*Contenu :* Carrousel de 5 à 6 avis vérifiés, strictement locaux, issus de la fiche Google (note 4.1/5) avec prénom et rue ou quartier proche (ex : « Sophie, avenue de Versailles »). La note nationale disparaît de ce site — elle n’a pas de sens pour un visiteur local.  
-*(Corrige la dilution par les 23 195 avis nationaux.)*
-
-**6. Financement & devis**  
-*Titre :* Un projet sur mesure, un budget maîtrisé  
-*Contenu :* Formulaire de devis en ligne en 4 étapes comme l’existant, mais intégré sobrement dans cette section dédiée, avec explication des aides (MaPrimeRénov’, Eco-PTZ, CEE) et simulateur de mensualités.  
-*(Conserve l’outil fonctionnel en le contextualisant localement.)*
-
-### 7. Signature visuelle
-- **Filet d’encadrement amovible** : un liseré d’un pixel, couleur laiton brossé `#C4A265`, souligne les titres et les blocs — il migre en animation d’apparition au scroll, comme un tirage de plan qui se révèle. Ce motif rappelle à la fois les profilés de fenêtre et les règles d’ébéniste.
-- **Typographie en tension** : le H1 est composé dans une variante « optical size » de *Fraunces* volontairement resserrée, avec des ascendantes très hautes qui évoquent les montants d’une porte cochère. Le corps de texte en *Manrope* compense par sa neutralité géométrique, créant un dialogue constant entre le geste artisanal et la précision technique.
-
----
-
-Cette DA transforme une page générique nationale en une expérience de quartier luxueuse, précise et désirable. Le site ne parle qu’à ceux qui passent avenue de Versailles ou y projettent leur vie.
+## 7. Signature visuelle
+- **Motif structurel : le profilé.** Un filet vertical noir mat (3px) court le long de la marge gauche sur desktop, comme un meneau de fenêtre. Il structure la page, guide la lecture et se prolonge en éléments de séparation entre les blocs — la fenêtre comme architecture graphique.
+- **Animation d’ouverture.** Au scroll, les images de réalisations ne s’affichent pas d’un bloc fade-in ; elles apparaissent en deux moitiés qui glissent doucement vers l’extérieur (comme l’ouverture d’une fenêtre à deux battants), dévoilant le contenu textuel au centre. Cette animation est sobre, déclenchée une seule fois par section, et sert le sujet au lieu de le paras
