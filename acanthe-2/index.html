@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acanthe — Vestiaire français · 65 Rue de la Tour, Paris 16ᵉ</title>
+    <meta name="description" content="Acanthe, maison de couture parisienne depuis 1983. Vêtements pour femmes, hommes et enfants, coupe précise et âme douce. Poussez la porte du 65 Rue de la Tour, Paris 16ᵉ.">
+    <meta property="og:title" content="Acanthe — Le vestiaire français a une adresse.">
+    <meta property="og:description" content="Depuis 1983, Acanthe imagine des vêtements qui durent. Atelier de quartier au 65 Rue de la Tour, Paris 16ᵉ. Conseil, essayage, retouches.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agence.mooo.com/acanthe-2">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bois-creme: #F6EFE3;
+            --gris-couture: #2F4F4F;
+            --or-moulure: #C8A96E;
+            --vert-enseigne: #39FF14;
+            --nuit-atelier: #1E2525;
+            --blanc-casse: #FBF9F6;
+            --font-display: 'Bricolage Grotesque', 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Hanken Grotesk', 'Helvetica Neue', 'Arial', sans-serif;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--blanc-casse);
+            color: var(--gris-couture);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ---- GRAIN TEXTURE OVERLAY ---- */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            image-rendering: pixelated;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(251, 249, 246, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(47, 79, 79, 0.08);
+            transition: all 0.4s var(--ease-out-expo);
+            padding: 0.9rem 0;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 1px 0 rgba(47, 79, 79, 0.06), 0 4px 24px rgba(30, 37, 37, 0.04);
+            padding: 0.6rem 0;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.2rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .logo-word {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+            color: var(--gris-couture);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            position: relative;
+        }
+
+        .logo-neon-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--vert-enseigne);
+            margin-left: 2px;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            box-shadow: 0 0 8px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.25);
+            animation: neonPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neonPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 8px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.25);
+            }
+            50% {
+                box-shadow: 0 0 16px rgba(57, 255, 20, 0.7), 0 0 36px rgba(57, 255, 20, 0.35);
+            }
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.6rem, 2vw, 1.6rem);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+            color: var(--gris-couture);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.25em 0;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--vert-enseigne);
+            transition: width 0.35s var(--ease-out-expo);
+        }
+
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--gris-couture);
+            outline: none;
+        }
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 1.3vw, 0.84rem);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--gris-couture);
+            border: 1.5px solid var(--gris-couture);
+            background: transparent;
+            padding: 0.5em 1.25em;
+            cursor: pointer;
+            transition: all 0.35s var(--ease-out-expo);
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2px;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--vert-enseigne);
+            transform: translateY(105%);
+            transition: transform 0.35s var(--ease-out-expo);
+            z-index: -1;
+        }
+        .nav-cta:hover::before,
+        .nav-cta:focus-visible::before {
+            transform: translateY(0);
+        }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            color: var(--nuit-atelier);
+            border-color: var(--vert-enseigne);
+            outline: none;
+        }
+
+        /* ---- MOBILE NAV TOGGLE ---- */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-shrink: 0;
+            z-index: 1001;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gris-couture);
+            margin: 5px 0;
+            transition: all 0.3s;
+            border-radius: 1px;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--blanc-casse);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                gap: 1.2rem;
+                transition: right 0.4s var(--ease-out-expo);
+                box-shadow: -8px 0 32px rgba(30, 37, 37, 0.12);
+                z-index: 999;
+                align-items: flex-start;
+            }
+            .nav-list.active {
+                right: 0;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-list a {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ---- HERO ---- */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--bois-creme);
+            overflow: hidden;
+            margin-top: 0;
+            padding-top: 5rem;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(0.7) contrast(1.1);
+            mix-blend-mode: multiply;
+            opacity: 0.75;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 40% 50%, rgba(246, 239, 227, 0.35) 0%, rgba(30, 37, 37, 0.55) 100%);
+            z-index: 1;
+        }
+
+        .hero-neon-line {
+            position: absolute;
+            left: clamp(1.5rem, 6vw, 5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: clamp(60px, 20vh, 180px);
+            background: var(--vert-enseigne);
+            z-index: 2;
+            box-shadow: 0 0 14px rgba(57, 255, 20, 0.5), 0 0 40px rgba(57, 255, 20, 0.2);
+            animation: neonLineGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes neonLineGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 14px rgba(57, 255, 20, 0.5), 0 0 40px rgba(57, 255, 20, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 22px rgba(57, 255, 20, 0.75), 0 0 60px rgba(57, 255, 20, 0.3);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: clamp(2rem, 8vw, 6rem) clamp(1.2rem, 6vw, 5rem);
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1.1vw, 0.78rem);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--vert-enseigne);
+            border: 1px solid var(--vert-enseigne);
+            padding: 0.4em 1em;
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s 0.2s forwards var(--ease-out-expo);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.4rem, 7vw, 5.5rem);
+            color: var(--blanc-casse);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            max-width: 800px;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateY(24px);
+            animation: revealUp 0.9s 0.35s forwards var(--ease-out-expo);
+        }
+
+        .hero-title em {
+            font-style: normal;
+            color: var(--vert-enseigne);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            color: rgba(251, 249, 246, 0.85);
+            line-height: 1.6;
+            max-width: 580px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.9s 0.5s forwards var(--ease-out-expo);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.9s 0.65s forwards var(--ease-out-expo);
+        }
+
+        .btn-primary {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.82rem, 1.3vw, 0.9rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--nuit-atelier);
+            background: var(--vert-enseigne);
+            border: none;
+            padding: 0.8em 1.8em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2px;
+            transition: all 0.35s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #2de010;
+            box-shadow: 0 0 28px rgba(57, 255, 20, 0.35);
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(0.82rem, 1.3vw, 0.9rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--blanc-casse);
+            border: 1.5px solid rgba(251, 249, 246, 0.6);
+            background: transparent;
+            padding: 0.8em 1.8em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2px;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .btn-outline-light:hover,
+        .btn-outline-light:focus-visible {
+            border-color: var(--vert-enseigne);
+            color: var(--vert-enseigne);
+            outline: none;
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---- GOOGLE BADGE ---- */
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.82rem;
+            color: var(--blanc-casse);
+            background: rgba(30, 37, 37, 0.55);
+            backdrop-filter: blur(8px);
+            padding: 0.45em 0.9em;
+            border-radius: 20px;
+            letter-spacing: 0.03em;
+            border: 1px solid rgba(200, 169, 110, 0.3);
+        }
+        .google-badge .stars {
+            color: var(--or-moulure);
+            letter-spacing: 0.08em;
+        }
+        .google-badge .rating-num {
+            font-weight: 700;
+        }
+
+        /* ---- SECTIONS ---- */
+        .section {
+            padding: clamp(4rem, 10vw, 8rem) clamp(1.2rem, 6vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--or-moulure);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            color: var(--gris-couture);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title .neon-accent {
+            display: inline-block;
+            position: relative;
+        }
+        .section-title .neon-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0.08em;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--vert-enseigne);
+            opacity: 0.7;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.35);
+        }
+
+        .section-body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.12rem);
+            color: var(--gris-couture);
+            line-height: 1.7;
+            max-width: 640px;
+            letter-spacing: 0.015em;
+        }
+
+        .filet-or {
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--or-moulure);
+            margin: 1.5rem 0;
+            opacity: 0.6;
+        }
+
+        /* ---- SECTION: NOTRE MAISON ---- */
+        .section-maison {
+            background: var(--blanc-casse);
+        }
+        .maison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 8vw, 6rem);
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .maison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .maison-visual {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: var(--bois-creme);
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 20px 50px rgba(30, 37, 37, 0.1);
+        }
+        .maison-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.25) brightness(0.9) contrast(1.05);
+            mix-blend-mode: normal;
+            transition: filter 0.6s;
+        }
+        .maison-visual:hover img {
+            filter: sepia(0.1) brightness(1) contrast(1);
+        }
+        .maison-visual::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, rgba(246, 239, 227, 0.7), transparent);
+            pointer-events: none;
+        }
+        .maison-stripe {
+            position: absolute;
+            top: 1.5rem;
+            right: -0.5rem;
+            width: 4px;
+            height: 60px;
+            background: var(--vert-enseigne);
+            z-index: 2;
+            box-shadow: 0 0 16px rgba(57, 255, 20, 0.4);
+        }
+
+        /* ---- SECTION: BOUTIQUE ---- */
+        .section-boutique {
+            background: var(--bois-creme);
+            position: relative;
+        }
+        .boutique-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .boutique-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: var(--blanc-casse);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border-radius: 2px;
+            border-left: 3px solid var(--vert-enseigne);
+            box-shadow: 0 4px 20px rgba(30, 37, 37, 0.05);
+            font-family: var(--font-body);
+            line-height: 1.7;
+        }
+        .info-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--gris-couture);
+        }
+        .info-card p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .info-card a {
+            color: var(--gris-couture);
+            text-decoration: underline;
+            text-decoration-color: var(--vert-enseigne);
+            text-underline-offset: 4px;
+            transition: all 0.3s;
+        }
+        .info-card a:hover {
+            text-decoration-color: var(--or-moulure);
+            color: var(--gris-couture);
+        }
+
+        .hours-note {
+            font-style: italic;
+            color: #6b7b7b;
+            font-size: 0.88rem;
+            margin-top: 0.6rem;
+            display: block;
+        }
+
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 16px 44px rgba(30, 37, 37, 0.12);
+            border: 1px solid rgba(200, 169, 110, 0.25);
+        }
+
+        /* ---- SECTION: ACCUEIL ---- */
+        .section-accueil {
+            background: var(--blanc-casse);
+            position: relative;
+        }
+        .accueil-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 768px) {
+            .accueil-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        .accueil-feature {
+            padding: 1.8rem;
+            background: var(--bois-creme);
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s;
+            border-top: 2px solid transparent;
+        }
+        .accueil-feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(30, 37, 37, 0.08);
+            border-top-color: var(--vert-enseigne);
+        }
+        .accueil-feature .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .accueil-feature h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--gris-couture);
+            margin-bottom: 0.4rem;
+        }
+        .accueil-feature p {
+            font-size: 0.92rem;
+            color: #5a6a6a;
+            line-height: 1.6;
+        }
+
+        /* ---- SECTION: SERVICES ---- */
+        .section-services {
+            background: var(--nuit-atelier);
+            color: var(--blanc-casse);
+            position: relative;
+        }
+        .section-services .section-title {
+            color: var(--blanc-casse);
+        }
+        .section-services .section-body {
+            color: rgba(251, 249, 246, 0.8);
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2.5vw, 1.8rem);
+            margin-top: 2rem;
+            list-style: none;
+        }
+        @media (max-width: 600px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .services-list li {
+            padding: 1.2rem 1.5rem;
+            background: rgba(246, 239, 227, 0.06);
+            border-left: 2px solid var(--vert-enseigne);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            border-radius: 0 2px 2px 0;
+            transition: all 0.35s;
+            cursor: default;
+        }
+        .services-list li:hover {
+            background: rgba(57, 255, 20, 0.06);
+            border-left-width: 4px;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.08);
+        }
+        .services-list li strong {
+            color: var(--vert-enseigne);
+            font-weight: 600;
+        }
+
+        /* ---- SECTION: VESTIAIRE ---- */
+        .section-vestiaire {
+            background: var(--bois-creme);
+        }
+        .vestiaire-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 768px) {
+            .vestiaire-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .vestiaire-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .piece-card {
+            background: var(--blanc-casse);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(30, 37, 37, 0.06);
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+        }
+        .piece-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(30, 37, 37, 0.14);
+        }
+        .piece-card .piece-img {
+            aspect-ratio: 3/4;
+            background: var(--bois-creme);
+            position: relative;
+            overflow: hidden;
+        }
+        .piece-card .piece-img .placeholder-visual {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: sepia(0.3) brightness(0.85) contrast(1.1);
+            transition: filter 0.5s;
+        }
+        .piece-card:hover .piece-img .placeholder-visual {
+            filter: sepia(0.05) brightness(0.95) contrast(1.05);
+        }
+        .piece-card .piece-tag {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--vert-enseigne);
+            color: var(--nuit-atelier);
+            padding: 0.3em 0.7em;
+            border-radius: 2px;
+        }
+        .piece-card .piece-info {
+            padding: 1.2rem 1.3rem;
+        }
+        .piece-card .piece-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--gris-couture);
+            margin-bottom: 0.25rem;
+        }
+        .piece-card .piece-desc {
+            font-size: 0.85rem;
+            color: #6b7b7b;
+            line-height: 1.4;
+        }
+        .piece-card .piece-link {
+            display: inline-block;
+            margin-top: 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gris-couture);
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--vert-enseigne);
+            padding-bottom: 2px;
+            transition: all 0.3s;
+        }
+        .piece-card .piece-link:hover {
+            color: var(--vert-enseigne);
+            border-color: var(--gris-couture);
+        }
+
+        /* ---- SECTION: CONTACT ---- */
+        .section-contact {
+            background: var(--blanc-casse);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 6vw, 5rem);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-details {
+            font-family: var(--font-body);
+            line-height: 1.8;
+        }
+        .contact-details a {
+            color: var(--gris-couture);
+            text-decoration: underline;
+            text-decoration-color: var(--vert-enseigne);
+            text-underline-offset: 4px;
+        }
+        .contact-details a:hover {
+            text-decoration-color: var(--or-moulure);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.8em 1em;
+            border: 1.5px solid rgba(47, 79, 79, 0.25);
+            border-radius: 2px;
+            background: var(--blanc-casse);
+            color: var(--gris-couture);
+            transition: all 0.3s;
+            resize: vertical;
+            width: 100%;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--vert-enseigne);
+            box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.08);
+        }
+        .contact-form button {
+            align-self: flex-start;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--nuit-atelier);
+            background: var(--vert-enseigne);
+            border: none;
+            padding: 0.8em 2em;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .contact-form button:hover {
+            box-shadow: 0 0 24px rgba(57, 255, 20, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background: var(--nuit-atelier);
+            color: rgba(251, 249, 246, 0.7);
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(1.2rem, 6vw, 4rem);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        .footer-inner h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--blanc-casse);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+        .footer-inner a {
+            color: rgba(251, 249, 246, 0.7);
+            text-decoration: underline;
+            text-decoration-color: rgba(200, 169, 110, 0.4);
+            text-underline-offset: 4px;
+            transition: color 0.3s;
+        }
+        .footer-inner a:hover {
+            color: var(--vert-enseigne);
+        }
+        .footer-credit {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(200, 169, 110, 0.2);
+            text-align: center;
+            font-size: 0.78rem;
+            color: rgba(251, 249, 246, 0.45);
+            letter-spacing: 0.04em;
+        }
+        .footer-credit a {
+            color: rgba(251, 249, 246, 0.55);
+            text-decoration: none;
+        }
+        .footer-credit a:hover {
+            color: var(--vert-enseigne);
+        }
+
+        /* ---- REVEAL ON SCROLL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ---- FOCUS VISIBLE ---- */
+        :focus-visible {
+            outline: 2px solid var(--vert-enseigne);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ---- SCROLLBAR ---- */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--blanc-casse);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(47, 79, 79, 0.25);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(47, 79, 79, 0.4);
+        }
+
+        /* ---- RESPONSIVE TWEAKS ---- */
+        @media (max-width: 600px) {
+            .hero-neon-line {
+                left: 0.8rem;
+                height: 80px;
+            }
+            .hero-title {
+                font-size: clamp(1.8rem, 8vw, 2.6rem);
+            }
+            .btn-primary,
+            .btn-outline-light {
+                width: 100%;
+                text-align: center;
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo-link" aria-label="Acanthe — Accueil">
+                <span class="logo-word">ACANTHE</span>
+                <span class="logo-neon-dot" aria-hidden="true"></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#maison">Notre maison</a></li>
+                    <li><a href="#boutique">La boutique</a></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#vestiaire">Vestiaire</a></li>
+                    <li><a href="#contact" class="nav-cta">Nous écrire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-image">
+            <img src="assets/maps-1.jpg" alt="Façade d'Acanthe, 65 Rue de la Tour, Paris 16ᵉ — enseigne au néon vert" loading="eager" decoding="async">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-neon-line" aria-hidden="true"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Paris 16ᵉ · Depuis 1983</span>
+            <h1 class="hero-title">Le vestiaire français a une <em>adresse</em>.</h1>
+            <p class="hero-subtitle">Depuis 1983, Acanthe imagine des vêtements qui durent — pour les femmes, les hommes, les enfants et les tout‑petits. Poussez la porte du 65 Rue de la Tour, dans le 16ᵉ arrondissement, et découvrez une maison où l'essayage est un art et le conseil, une tradition.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">Prendre rendez‑vous</a>
+                <a href="tel:+33145033580" class="btn-outline-light">Appeler le 01 45 03 35 80</a>
+            </div>
+            <div style="margin-top:1.5rem;">
+                <span class="google-badge" title="Note Google">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-num">2.8</span>/5
+                    <span style="opacity:0.7;">· 11 avis</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NOTRE MAISON -->
+    <section class="section section-maison" id="maison">
+        <div class="section-inner">
+            <div class="maison-grid">
+                <div class="maison-visual reveal">
+                    <img src="assets/maps-1.jpg" alt="Intérieur chaleureux d'Acanthe — bois ciré et luminaires" loading="lazy" decoding="async">
+                    <div class="maison-stripe" aria-hidden="true"></div>
+                </div>
+                <div>
+                    <span class="section-label reveal reveal-delay-1">Notre maison</span>
+                    <h2 class="section-title reveal reveal-delay-1">Une histoire de fils et de <span class="neon-accent">Paris</span></h2>
+                    <span class="filet-or reveal reveal-delay-2" aria-hidden="true"></span>
+                    <p class="section-body reveal reveal-delay-2">Française par sa coupe, familiale par son esprit, Acanthe habille depuis quarante ans les générations qui aiment la belle matière et la discrétion. Chaque vêtement est pensé dans notre atelier parisien, chaque détail a une raison d'être. Bien plus qu'une marque, un vestiaire.</p>
+                    <p class="section-body reveal reveal-delay-3" style="margin-top:1rem;">Une robe ne devrait jamais mentir sur sa coupe. Ni sur sa provenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LA BOUTIQUE -->
+    <section class="section section-boutique" id="boutique">
+        <div class="section-inner">
+            <span class="section-label reveal">La boutique du 65 Rue de la Tour</span>
+            <h2 class="section-title reveal">Ici, on prend vos mesures, pas vos <span class="neon-accent">clics</span></h2>
+            <span class="filet-or reveal" aria-hidden="true"></span>
+            <div class="boutique-grid" style="margin-top:2rem;">
+                <div class="reveal">
+                    <p class="section-body" style="margin-bottom:1.5rem;">Bois ciré, lumières douces et néon assumé — notre adresse historique cultive l'ambiance d'un cabinet de curiosités textiles. Tout est là pour que vous veniez nous voir.</p>
+                    <div class="info-card">
+                        <h3>📍 Adresse</h3>
+                        <p>65 Rue de la Tour<br>75116 Paris, France</p>
+                        <h3 style="margin-top:1rem;">📞 Téléphone</h3>
+                        <p><a href="tel:+33145033580">01 45 03 35 80</a></p>
+                        <h3 style="margin-top:1rem;">🕰️ Horaires</h3>
+                        <p>Du mardi au samedi, de 10h à 19h</p>
+                        <span class="hours-note">Horaires indicatifs — nous vous invitons à confirmer par téléphone avant votre visite.</span>
+                    </div>
+                </div>
+                <div class="map-wrapper reveal reveal-delay-2">
+                    <iframe src="https://maps.google.com/maps?q=Acanthe+65+Rue+de+la+Tour%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Plan Google Maps — Acanthe, 65 Rue de la Tour, Paris"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ACCUEIL SUR-MESURE -->
+    <section class="section section-accueil" id="accueil">
+        <div class="section-inner">
+            <span class="section-label reveal">L'accueil sur‑mesure</span>
+            <h2 class="section-title reveal">Des conseils taillés pour <span class="neon-accent">vous</span></h2>
+            <span class="filet-or reveal" aria-hidden="true"></span>
+            <p class="section-body reveal">Nos équipes vous reçoivent sans rendez‑vous ou sur réservation pour un essayage privé. Nous ajustons, nous retouchons, nous écoutons. Pour les familles, un espace enfant permet d'essayer en toute sérénité.</p>
+            <p class="section-body reveal reveal-delay-1" style="margin-top:0.6rem;font-style:italic;color:#5a6a6a;">La note Google devient désuète quand on lit l'attention réelle.</p>
+            <div class="accueil-features">
+                <div class="accueil-feature reveal reveal-delay-1">
+                    <span class="feature-icon">✂️</span>
+                    <h4>Essayage privé</h4>
+                    <p>Sur réservation, nous vous recevons en toute confidentialité pour un moment privilégié.</p>
+                </div>
+                <div class="accueil-feature reveal reveal-delay-2">
+                    <span class="feature-icon">🧵</span>
+                    <h4>Retouches maison</h4>
+                    <p>Nos tailleurs ajustent chaque pièce achetée ici, pour un tombé parfait.</p>
+                </div>
+                <div class="accueil-feature reveal reveal-delay-3">
+                    <span class="feature-icon">🧸</span>
+                    <h4>Espace enfant</h4>
+                    <p>Un coin dédié pour que les tout‑petits patientent pendant l'essayage des parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SERVICES -->
+    <section class="section section-services" id="services">
+        <div class="section-inner">
+            <span class="section-label reveal" style="color:rgba(200,169,110,0.8);">Les services de la maison</span>
+            <h2 class="section-title reveal">La carte Acanthe+ vit aussi en <span class="neon-accent">boutique</span></h2>
+            <span class="filet-or reveal" aria-hidden="true" style="background:rgba(200,169,110,0.5);"></span>
+            <p class="section-body reveal" style="color:rgba(251,249,246,0.8);margin-bottom:1rem;">Et surtout : un café servi pendant qu'on prépare votre paquet.</p>
+            <ul class="services-list">
+                <li class="reveal reveal-delay-1"><strong>−30 %</strong> sur tous vos achats pendant un an</li>
+                <li class="reveal reveal-delay-1"><strong>Livraison offerte</strong> dès 50 €</li>
+                <li class="reveal reveal-delay-2"><strong>Retouches offertes</strong> sur les pièces achetées ici</li>
+                <li class="reveal reveal-delay-2"><strong>Commandes sur‑mesure</strong> via notre atelier</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION: VESTIAIRE (APERÇU) -->
+    <section class="section section-vestiaire" id="vestiaire">
+        <div class="section-inner">
+            <span class="section-label reveal">Le vestiaire</span>
+            <h2 class="section-title reveal">Quelques pièces <span class="neon-accent">signatures</span></h2>
+            <span class="filet-or reveal" aria-hidden="true"></span>
+            <p class="section-body reveal" style="margin-bottom:0.5rem;">Sans transformer le site en e‑shop, voici trois silhouettes emblématiques. L'image prime, la lumière naturelle aussi — shooting éditorial dans la boutique même.</p>
+            <div class="vestiaire-grid">
+                <div class="piece-card reveal reveal-delay-1">
+                    <div class="piece-img">
+                        <img src="assets/maps-1.jpg" alt="Blouse GAIA — silhouette fluide" class="placeholder-visual" loading="lazy" decoding="async">
+                        <span class="piece-tag">Signature</span>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Blouse GAIA</h4>
+                        <p class="piece-desc">Coupe ample, col tailleur, matière vaporeuse. L'alliée des jours de bureau et des soirées imprévues.</p>
+                        <a href="#" class="piece-link">Voir en boutique →</a>
+                    </div>
+                </div>
+                <div class="piece-card reveal reveal-delay-2">
+                    <div class="piece-img">
+                        <img src="assets/maps-1.jpg" alt="Pull ZOE — maille douce" class="placeholder-visual" loading="lazy" decoding="async">
+                        <span class="piece-tag">Iconique</span>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Pull ZOE</h4>
+                        <p class="piece-desc">Maille côtelée, tombé droit, finitions main. Disponible en six teintes, du grège au vert profond.</p>
+                        <a href="#" class="piece-link">Voir en boutique →</a>
+                    </div>
+                </div>
+                <div class="piece-card reveal reveal-delay-3">
+                    <div class="piece-img">
+                        <img src="assets/maps-1.jpg" alt="Robe BERTILLE — ligne architecturée" class="placeholder-visual" loading="lazy" decoding="async">
+                        <span class="piece-tag">Best-seller</span>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Robe BERTILLE</h4>
+                        <p class="piece-desc">Ligne architecturée, ceinture nouée, poches discrètes. La robe qui traverse les saisons sans se démoder.</p>
+                        <a href="#" class="piece-link">Voir en boutique →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT -->
+    <section class="section section-contact" id="contact">
+        <div class="section-inner">
+            <span class="section-label reveal">Nous écrire, nous voir, nous joindre</span>
+            <h2 class="section-title reveal">Parlez‑nous, on est juste <span class="neon-accent">là</span></h2>
+            <span class="filet-or reveal" aria-hidden="true"></span>
+            <div class="contact-grid" style="margin-top:2rem;">
+                <div class="contact-details reveal">
+                    <p><strong>Acanthe</strong><br>65 Rue de la Tour<br>75116 Paris, France</p>
+                    <p style="margin-top:0.8rem;">📞 <a href="tel:+33145033580">01 45 03 35 80</a></p>
+                    <p>✉️ <a href="mailto:contact@acanthe-paris.fr">contact@acanthe-paris.fr</a></p>
+                    <p style="margin-top:1rem;font-style:italic;color:#6b7b7b;">Métro Rue de la Pompe · Ligne 9<br>Bus 52, 63 — Arrêt Rue de la Tour</p>
+                </div>
+                <form class="contact-form reveal reveal-delay-2" onsubmit="event.preventDefault(); alert('Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.');">
+                    <input type="text" name="nom" placeholder="Votre nom" required aria-label="Votre nom">
+                    <input type="email" name="email" placeholder="Votre adresse email" required aria-label="Votre adresse email">
+                    <textarea name="message" rows="5" placeholder="Votre message — une question, une demande de rendez‑vous, une envie particulière…" required aria-label="Votre message"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Acanthe</h4>
+                <p>65 Rue de la Tour<br>75116 Paris, France</p>
+                <p>📞 <a href="tel:+33145033580">01 45 03 35 80</a></p>
+                <p>✉️ <a href="mailto:contact@acanthe-paris.fr">contact@acanthe-paris.fr</a></p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <p><a href="#maison">Notre maison</a></p>
+                <p><a href="#boutique">La boutique</a></p>
+                <p><a href="#accueil">Accueil sur‑mesure</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#vestiaire">Vestiaire</a></p>
+            </div>
+            <div>
+                <h4>Google</h4>
+                <p>Note : 2.8 ★ sur 5</p>
+                <p>Basé sur 11 avis</p>
+                <p style="font-size:0.8rem;opacity:0.7;">La note ne reflète pas toujours l'attention réelle — venez vous faire votre propre avis.</p>
+            </div>
+        </div>
+        <div class="footer-credit">
+            Site créé par <a href="https://agence.mooo.com/acanthe-2" target="_blank" rel="noopener">Agence Mooo</a> · Acanthe © 2024
+        </div>
+    </footer>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Acanthe",
+            "description": "Maison de couture parisienne depuis 1983. Vêtements pour femmes, hommes et enfants, coupe précise et âme douce.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "65 Rue de la Tour",
+                "addressLocality": "Paris",
+                "postalCode": "75116",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145033580",
+            "email": "contact@acanthe-paris.fr",
+            "image": "assets/maps-1.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "2.8",
+                "reviewCount": "11",
+                "bestRating": "5"
+            },
+            "url": "https://agence.mooo.com/acanthe-2"
+        }
+    </script>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // Sticky header
+            const header = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // Mobile nav toggle
+            const navToggle = document.getElementById('navToggle');
+            const navList = document.getElementById('navList');
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navList.classList.toggle('active');
+            });
+            // Close nav on link click
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navList.classList.remove('active');
+                });
+            });
+
+            // IntersectionObserver for reveals
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                revealEls.forEach(el => observer.observe(el));
+            } else {
+                // Fallback: show all
+                revealEls.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+</body>
+</html>
