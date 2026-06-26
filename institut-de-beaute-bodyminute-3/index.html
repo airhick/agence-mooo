@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institut de beauté Bodyminute | Paris 16e – Soins visage & corps sans RDV</title>
+    <meta name="description" content="Institut Bodyminute Paris Passy – Bleu Ponsard, à 50m du métro La Muette. Épilation, soins visage Skinminute, massages & beauté des mains sans rendez-vous. 4.4★ (129 avis). Ouvert du mardi au samedi.">
+    <meta property="og:title" content="Institut de beauté Bodyminute | Paris 16e">
+    <meta property="og:description" content="Votre beauté n'a jamais eu besoin de rendez-vous. Bleu Ponsard, soins visage et corps à 50m de La Muette.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 36 36%22><rect width=%2236%22 height=%2236%22 rx=%228%22 fill=%22%2300539C%22/><text y=%2227%22 x=%2218%22 text-anchor=%22middle%22 font-size=%2222%22>💮</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coquille: #FAF5F2;
+            --aubergine: #3A2E39;
+            --bleu-ponsard: #00539C;
+            --rose-petale: #F2B8C6;
+            --corail: #E85D5D;
+            --argent: #D9DCDE;
+            --argent-fonce: #B0B5B9;
+            --bleu-profond: #003D73;
+            --blanc: #FFFFFF;
+            --ombre-douce: 0 2px 16px rgba(58, 46, 57, 0.07);
+            --ombre-medium: 0 6px 28px rgba(58, 46, 57, 0.11);
+            --ombre-forte: 0 12px 40px rgba(58, 46, 57, 0.16);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition-vif: 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-doux: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-reveal: 650ms cubic-bezier(0.16, 1, 0.3, 1);
+            --header-height: 72px;
+            --max-width: 1240px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Albert Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            background-color: var(--coquille);
+            color: var(--aubergine);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ========== HEADER – PLAQUE ÉMAILLÉE ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--coquille);
+            border-bottom: 1px solid var(--argent);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(16px, 3vw, 40px);
+            transition: box-shadow var(--transition-doux);
+        }
+        .site-header.scrolled {
+            box-shadow: var(--ombre-doux);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .logo-plaque {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-plaque .logo-text {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            letter-spacing: 0.03em;
+            color: var(--bleu-ponsard);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        .logo-plaque .logo-rule {
+            width: 100%;
+            height: 2px;
+            background: var(--argent-fonce);
+            border-radius: 1px;
+        }
+        .logo-plaque .logo-sub {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            color: var(--argent-fonce);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: clamp(12px, 2vw, 24px);
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            color: var(--aubergine);
+            letter-spacing: 0.01em;
+            transition: color var(--transition-vif);
+            position: relative;
+            white-space: nowrap;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--bleu-ponsard);
+            transition: width var(--transition-vif);
+            border-radius: 1px;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--bleu-ponsard);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--corail);
+            color: var(--blanc) !important;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: 600 !important;
+            font-size: clamp(0.78rem, 1.1vw, 0.85rem) !important;
+            letter-spacing: 0.02em;
+            transition: background var(--transition-vif), transform var(--transition-vif), box-shadow var(--transition-vif) !important;
+            text-decoration: none;
+        }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: #d14a4a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(232, 93, 93, 0.35);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-shrink: 0;
+            color: var(--aubergine);
+        }
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--aubergine);
+            border-radius: 1px;
+            transition: all var(--transition-vif);
+        }
+        .menu-toggle span+span {
+            margin-top: 6px;
+        }
+
+        @media (max-width: 780px) {
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                background: var(--coquille);
+                flex-direction: column;
+                padding: 20px 24px 28px;
+                gap: 16px;
+                border-bottom: 1px solid var(--argent);
+                box-shadow: var(--ombre-medium);
+                transform: translateY(-120%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform var(--transition-doux), opacity var(--transition-doux);
+                z-index: 999;
+            }
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links a {
+                font-size: 1rem;
+            }
+        }
+
+        /* ========== SKIP LINK ========== */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--bleu-ponsard);
+            color: var(--blanc);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top var(--transition-vif);
+        }
+        .skip-link:focus {
+            top: 8px;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        main {
+            padding-top: var(--header-height);
+        }
+
+        /* ========== SECTION HÉRO ========== */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: flex-end;
+            background: var(--bleu-profond);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            z-index: 0;
+            filter: brightness(0.85) saturate(1.05);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(0, 53, 92, 0.25) 0%,
+                    rgba(0, 40, 70, 0.45) 40%,
+                    rgba(0, 30, 55, 0.7) 75%,
+                    rgba(0, 20, 40, 0.85) 100%);
+            z-index: 1;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.09;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.7'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: clamp(32px, 6vw, 64px) clamp(20px, 4vw, 40px) clamp(48px, 8vw, 80px);
+            color: var(--blanc);
+        }
+        .hero-content h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 5.5vw, 3.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            max-width: 760px;
+            margin-bottom: clamp(14px, 2vw, 20px);
+            opacity: 0;
+            transform: translateY(28px);
+            animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        .hero-content .hero-subtitle {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.55;
+            max-width: 600px;
+            color: rgba(255, 255, 255, 0.88);
+            letter-spacing: 0.01em;
+            margin-bottom: clamp(20px, 3vw, 28px);
+            opacity: 0;
+            transform: translateY(24px);
+            animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+        .hero-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+        }
+        .hero-address-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+            letter-spacing: 0.04em;
+            color: var(--blanc);
+            text-decoration: none;
+            transition: background var(--transition-vif), border-color var(--transition-vif);
+        }
+        .hero-address-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .hero-stars-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: clamp(0.78rem, 1.1vw, 0.88rem);
+            color: var(--blanc);
+            letter-spacing: 0.02em;
+        }
+        .hero-stars-badge .stars {
+            color: #FFD966;
+            letter-spacing: 2px;
+            font-size: 1.05em;
+        }
+        @keyframes heroReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pétales décoratifs sur le hero */
+        .petal-deco {
+            position: absolute;
+            z-index: 4;
+            pointer-events: none;
+            border-radius: 50% 0 50% 50%;
+            background: var(--rose-petale);
+            opacity: 0.55;
+            filter: blur(0.5px);
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.9s ease;
+        }
+        .petal-deco.p1 {
+            width: 38px;
+            height: 44px;
+            top: 22%;
+            right: 18%;
+            transform: rotate(-15deg);
+            opacity: 0.5;
+        }
+        .petal-deco.p2 {
+            width: 28px;
+            height: 34px;
+            top: 35%;
+            right: 22%;
+            transform: rotate(25deg);
+            opacity: 0.4;
+        }
+        .petal-deco.p3 {
+            width: 48px;
+            height: 52px;
+            top: 28%;
+            right: 10%;
+            transform: rotate(-35deg);
+            opacity: 0.35;
+        }
+        .petal-deco.p4 {
+            width: 22px;
+            height: 26px;
+            top: 42%;
+            right: 26%;
+            transform: rotate(10deg);
+            opacity: 0.45;
+        }
+        .petal-deco.p5 {
+            width: 34px;
+            height: 38px;
+            top: 18%;
+            right: 30%;
+            transform: rotate(-8deg);
+            opacity: 0.3;
+        }
+        .petal-deco.drifted {
+            transform: translate(calc(-20vw - 60px), 40px) rotate(-55deg) scale(0.8);
+            opacity: 0.12;
+        }
+
+        /* Bande bleue séparatrice */
+        .blue-separator {
+            position: relative;
+            width: 0;
+            height: 6px;
+            background: var(--bleu-ponsard);
+            z-index: 5;
+            margin: 0;
+            border-radius: 0 3px 3px 0;
+            transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: visible;
+        }
+        .blue-separator.revealed {
+            width: 100%;
+        }
+        .blue-separator .mini-petals {
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 4px;
+            opacity: 0;
+            transition: opacity 0.5s ease 0.7s;
+        }
+        .blue-separator.revealed .mini-petals {
+            opacity: 1;
+        }
+        .mini-petal-dot {
+            width: 7px;
+            height: 9px;
+            border-radius: 50% 0 50% 50%;
+            background: var(--rose-petale);
+            opacity: 0.8;
+        }
+
+        /* ========== SECTIONS GÉNÉRIQUES ========== */
+        .section {
+            padding: clamp(48px, 8vw, 88px) clamp(20px, 4vw, 40px);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+        .section-label {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.7rem, 1vw, 0.78rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bleu-ponsard);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--aubergine);
+            margin-bottom: clamp(14px, 2vw, 20px);
+        }
+        .section-text {
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+            line-height: 1.7;
+            color: var(--aubergine);
+            max-width: 640px;
+            opacity: 0.88;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ========== SECTION À PROPOS – GALERIE ========== */
+        .about-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(12px, 2vw, 20px);
+            margin-top: clamp(28px, 4vw, 40px);
+        }
+        .about-gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: default;
+            box-shadow: var(--ombre-doux);
+            transition: box-shadow var(--transition-doux), transform var(--transition-doux);
+        }
+        .about-gallery-item:hover {
+            box-shadow: var(--ombre-forte);
+            transform: translateY(-4px);
+        }
+        .about-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .about-gallery-item:nth-child(1) img {
+            object-position: center 20%;
+        }
+        .about-gallery-item:nth-child(2) img {
+            object-position: center 50%;
+        }
+        .about-gallery-item:nth-child(3) img {
+            object-position: center 75%;
+        }
+        .about-gallery-item:hover img {
+            transform: scale(1.06);
+        }
+        .about-gallery-item .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 20, 40, 0.75));
+            color: var(--blanc);
+            padding: 28px 16px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            font-family: 'Albert Sans', sans-serif;
+        }
+        @media (max-width: 680px) {
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .about-gallery-item:nth-child(3) {
+                grid-column: span 2;
+                aspect-ratio: 3/2;
+            }
+        }
+
+        /* ========== CARTES PRESTATIONS ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(14px, 2vw, 20px);
+            margin-top: clamp(28px, 4vw, 40px);
+        }
+        .service-card {
+            background: var(--blanc);
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
+            box-shadow: var(--ombre-doux);
+            border: 1px solid transparent;
+            transition: border-color var(--transition-vif), box-shadow var(--transition-doux), transform var(--transition-doux);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--bleu-ponsard);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-doux);
+            border-radius: 0 0 3px 0;
+        }
+        .service-card:hover {
+            border-color: var(--argent);
+            box-shadow: var(--ombre-medium);
+            transform: translateY(-3px);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .service-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+            letter-spacing: -0.01em;
+            color: var(--aubergine);
+            line-height: 1.25;
+        }
+        .service-card .service-meta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-size: 0.82rem;
+            color: var(--argent-fonce);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .service-card .service-price {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+            color: var(--corail);
+            letter-spacing: -0.01em;
+            margin-top: auto;
+            padding-top: 6px;
+        }
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== BOUTONS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Albert Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.2vw, 0.92rem);
+            letter-spacing: 0.02em;
+            padding: 12px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-vif);
+            border: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--corail);
+            color: var(--blanc);
+            box-shadow: 0 3px 12px rgba(232, 93, 93, 0.25);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #d14a4a;
+            box-shadow: 0 6px 22px rgba(232, 93, 93, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--bleu-ponsard);
+            border: 1.5px solid var(--bleu-ponsard);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: var(--bleu-ponsard);
+            color: var(--blanc);
+            border-color: var(--bleu-ponsard);
+        }
+        .btn:focus-visible {
+            outline: 3px solid var(--bleu-ponsard);
+            outline-offset: 3px;
+        }
+
+        /* ========== SECTION ABONNEMENT ========== */
+        .abo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(18px, 3vw, 28px);
+            margin-top: clamp(28px, 4vw, 40px);
+        }
+        .abo-card {
+            background: var(--blanc);
+            border-radius: var(--radius-xl);
+            padding: clamp(24px, 4vw, 36px);
+            box-shadow: var(--ombre-doux);
+            border: 2px solid transparent;
+            transition: border-color var(--transition-vif), box-shadow var(--transition-doux), transform var(--transition-doux);
+            position: relative;
+            overflow: hidden;
+        }
+        .abo-card.recommended {
+            border-color: var(--bleu-ponsard);
+        }
+        .abo-card.recommended::after {
+            content: 'Le plus choisi';
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--bleu-ponsard);
+            color: var(--blanc);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-family: 'Albert Sans', sans-serif;
+        }
+        .abo-card:hover {
+            box-shadow: var(--ombre-medium);
+            transform: translateY(-3px);
+        }
+        .abo-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+            letter-spacing: -0.01em;
+            color: var(--bleu-ponsard);
+            margin-bottom: 8px;
+        }
+        .abo-card .abo-price {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            color: var(--aubergine);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .abo-card .abo-price span {
+            font-size: 0.4em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--argent-fonce);
+        }
+        .abo-card .abo-detail {
+            font-size: 0.9rem;
+            color: var(--aubergine);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        @media (max-width: 640px) {
+            .abo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION CARTE & INFOS ========== */
+        .map-wrapper {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--ombre-medium);
+            margin-top: clamp(24px, 4vw, 36px);
+            border: 2px solid var(--argent);
+            position: relative;
+        }
+        .map-wrapper iframe {
+            display: block;
+        }
+        .map-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 2;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            font-family: 'Albert Sans', sans-serif;
+            box-shadow: var(--ombre-doux);
+        }
+        .map-badge.open {
+            background: #2E7D32;
+            color: #fff;
+        }
+        .map-badge.closed {
+            background: #B71C1C;
+            color: #fff;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(16px, 2.5vw, 24px);
+            margin-top: clamp(20px, 3vw, 28px);
+        }
+        .info-item {
+            background: var(--blanc);
+            border-radius: var(--radius-md);
+            padding: clamp(16px, 2.5vw, 22px);
+            box-shadow: var(--ombre-doux);
+            border: 1px solid var(--argent);
+            transition: box-shadow var(--transition-doux);
+        }
+        .info-item:hover {
+            box-shadow: var(--ombre-medium);
+        }
+        .info-item .info-label {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--bleu-ponsard);
+            margin-bottom: 6px;
+        }
+        .info-item .info-value {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--aubergine);
+            line-height: 1.5;
+        }
+        .info-item a {
+            color: var(--bleu-ponsard);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color var(--transition-vif);
+        }
+        .info-item a:hover {
+            color: var(--corail);
+        }
+        @media (max-width: 700px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 440px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION AVIS ========== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(14px, 2vw, 20px);
+            margin-top: clamp(28px, 4vw, 40px);
+        }
+        .review-card {
+            background: var(--blanc);
+            border-radius: var(--radius-lg);
+            padding: clamp(18px, 2.5vw, 24px);
+            box-shadow: var(--ombre-doux);
+            border-left: 3px solid var(--rose-petale);
+            transition: box-shadow var(--transition-doux), transform var(--transition-doux);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .review-card:hover {
+            box-shadow: var(--ombre-medium);
+            transform: translateY(-2px);
+        }
+        .review-card .review-stars {
+            color: #F0B028;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+        .review-card .review-text {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--aubergine);
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .review-card .review-author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--bleu-ponsard);
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 680px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== ARTICLES ========== */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(14px, 2vw, 20px);
+            margin-top: clamp(28px, 4vw, 40px);
+        }
+        .article-card {
+            background: var(--blanc);
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 28px);
+            box-shadow: var(--ombre-doux);
+            transition: box-shadow var(--transition-doux), transform var(--transition-doux);
+            cursor: pointer;
+            position: relative;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .article-card:hover {
+            box-shadow: var(--ombre-medium);
+            transform: translateY(-3px);
+            border-color: var(--argent);
+        }
+        .article-card .article-tag {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--corail);
+        }
+        .article-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            letter-spacing: -0.01em;
+            color: var(--aubergine);
+            line-height: 1.3;
+        }
+        .article-card p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--aubergine);
+            opacity: 0.75;
+        }
+        .article-card .article-link {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--bleu-ponsard);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            margin-top: auto;
+            transition: color var(--transition-vif);
+        }
+        .article-card .article-link:hover {
+            color: var(--corail);
+        }
+        @media (max-width: 680px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--aubergine);
+            color: var(--coquille);
+            padding: clamp(36px, 6vw, 56px) clamp(20px, 4vw, 40px) clamp(24px, 4vw, 32px);
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-petal-strip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--bleu-ponsard);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-left: 12px;
+        }
+        .footer-petal-strip .fp-dot {
+            width: 6px;
+            height: 8px;
+            border-radius: 50% 0 50% 50%;
+            background: var(--rose-petale);
+            opacity: 0.75;
+            flex-shrink: 0;
+        }
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: clamp(24px, 4vw, 40px);
+        }
+        .footer-col h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--blanc);
+            margin-bottom: 12px;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.88rem;
+            color: var(--argent);
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color var(--transition-vif);
+        }
+        .footer-col a:hover {
+            color: var(--rose-petale);
+        }
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 28px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(217, 220, 222, 0.2);
+            font-size: 0.78rem;
+            color: var(--argent);
+            letter-spacing: 0.02em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom a {
+            color: var(--argent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color var(--transition-vif);
+        }
+        .footer-bottom a:hover {
+            color: var(--rose-petale);
+        }
+        @media (max-width: 680px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* ========== TARIFS COMPLETS (expandable) ========== */
+        .tariffs-section {
+            background: var(--blanc);
+            border-radius: var(--radius-xl);
+            padding: clamp(24px, 4vw, 40px);
+            box-shadow: var(--ombre-doux);
+            margin-top: clamp(20px, 3vw, 32px);
+            border: 1px solid var(--argent);
+        }
+        .tariffs-section h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--bleu-ponsard);
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        .tariff-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .tariff-table th,
+        .tariff-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--argent);
+        }
+        .tariff-table th {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 500;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--bleu-ponsard);
+            background: var(--coquille);
+        }
+        .tariff-table td:last-child {
+            font-weight: 600;
+            color: var(--corail);
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.95rem;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .tariff-table tbody tr {
+            transition: background var(--transition-vif);
+        }
+        .tariff-table tbody tr:hover {
+            background: rgba(242, 184, 198, 0.12);
+        }
+        .tariff-note {
+            font-size: 0.78rem;
+            color: var(--argent-fonce);
+            margin-top: 14px;
+            font-style: italic;
+        }
+
+        /* ========== FOCUS STYLES ========== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--bleu-ponsard);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ========== UTILS ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-sm {
+            margin-top: 12px;
+        }
+        .mt-md {
+            margin-top: 24px;
+        }
+        .mt-lg {
+            margin-top: 36px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" id="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#" class="logo-plaque" aria-label="Institut Bodyminute – Accueil">
+                <span class="logo-text">Bodyminute</span>
+                <span class="logo-rule"></span>
+                <span class="logo-sub">Paris Passy</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#bleu-ponsard">L'institut</a></li>
+                    <li><a href="#prestations">Prestations</a></li>
+                    <li><a href="#abonnement">Abonnement</a></li>
+                    <li><a href="#acces">Accès</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="tel:+33145201723" class="nav-cta">📞 Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ========== ① HÉRO – BLEU PONSARD ========== -->
+        <section class="hero-section" id="bleu-ponsard" aria-labelledby="hero-title">
+            <img src="assets/maps-1.jpg" alt="Façade de l'institut Bodyminute, bleu Ponsard, fleurs au-dessus de la porte, Paris 16e"
+            class="hero-bg" loading="eager" fetchpriority="high">
+            <div class="hero-overlay"></div>
+            <div class="hero-grain" aria-hidden="true"></div>
+
+            <!-- Pétales décoratifs -->
+            <div class="petal-deco p1" aria-hidden="true"></div>
+            <div class="petal-deco p2" aria-hidden="true"></div>
+            <div class="petal-deco p3" aria-hidden="true"></div>
+            <div class="petal-deco p4" aria-hidden="true"></div>
+            <div class="petal-deco p5" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <h1 id="hero-title">Votre beauté n'a jamais eu besoin de rendez-vous.</h1>
+                <p class="hero-subtitle">Bleu Ponsard, fleurs sur le seuil, soins visage et corps à 50&nbsp;m de La Muette. Installez-vous quand vous voulez — on s'occupe du reste.</p>
+                <div class="hero-badge-row">
+                    <a href="#acces" class="hero-address-tag" aria-label="Adresse : 1 Rue François Ponsard, Paris 16e">
+                        📍 Metro Muette, 1 Rue François Ponsard, 75016 Paris
+                    </a>
+                    <span class="hero-stars-badge" aria-label="Note Google : 4.4 étoiles sur 5, 129 avis">
+                        <span class="stars" aria-hidden="true">★★★★☆</span> 4.4 – 129 avis
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparateur bleu à pétales -->
+        <div class="blue-separator" id="blue-separator" aria-hidden="true">
+            <div class="mini-petals">
+                <span class="mini-petal-dot"></span>
+                <span class="mini-petal-dot"></span>
+                <span class="mini-petal-dot"></span>
+                <span class="mini-petal-dot"></span>
+                <span class="mini-petal-dot"></span>
+            </div>
+        </div>
+
+        <!-- ========== ② D'OÙ VIENNENT LES FLEURS ========== -->
+        <section class="section" aria-labelledby="about-title">
+            <span class="section-label reveal">L'adresse</span>
+            <h2 class="section-title reveal reveal-delay-1" id="about-title">D'où viennent les fleurs</h2>
+            <p class="section-text reveal reveal-delay-1">Ce n'est pas un concept store. C'est un salon de quartier où l'on connaît votre visage, vos habitudes, et le soin exact qu'il vous faut. Cinq cabines lumineuses, une équipe de quatre esthéticiennes, et ce bleu qu'on ne rate jamais en remontant la rue François Ponsard.</p>
+            <div class="about-gallery reveal reveal-delay-2">
+                <div class="about-gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Détail de la façade – enseigne bleue" loading="lazy">
+                    <span class="gallery-caption">L'enseigne qu'on repère</span>
+                </div>
+                <div class="about-gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Vitrine et fleurs – ambiance de l'entrée" loading="lazy" style="object-position: center 45%;">
+                    <span class="gallery-caption">Fleurs sur le seuil</span>
+                </div>
+                <div class="about-gallery-item">
+                    <img src="assets/maps-1.jpg" alt="Façade complète – lumière parisienne" loading="lazy" style="object-position: center 60%;">
+                    <span class="gallery-caption">La lumière de Passy</span>
+                </div>
+            </div>
+            <p class="section-text reveal reveal-delay-3 mt-md" style="max-width:100%;font-size:0.9rem;">
+                <strong>Ouvert du mardi au samedi, 10&nbsp;h – 19&nbsp;h.</strong> Fermé lundi & dimanche.
+            </p>
+        </section>
+
+        <!-- ========== ③ SOINS SANS ATTENDRE ========== -->
+        <section class="section" id="prestations" aria-labelledby="services-title">
+            <span class="section-label reveal">Prestations</span>
+            <h2 class="section-title reveal reveal-delay-1" id="services-title">Ce que vous faites chez nous <br><span style="font-weight:400;font-size:0.75em;color:var(--argent-fonce);">(et nulle part ailleurs)</span></h2>
+            <div class="services-grid reveal reveal-delay-2">
+                <div class="service-card">
+                    <span class="service-icon" aria-hidden="true">✨</span>
+                    <h3>Épilations</h3>
+                    <div class="service-meta">Visage, corps, maillot, lumière pulsée</div>
+                    <span class="service-price">à partir de 8€</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon" aria-hidden="true">🧴</span>
+                    <h3>Soins visage 🇨🇭 Skinminute</h3>
+                    <div class="service-meta">Longue tenue, profond, éclat</div>
+                    <span class="service-price">à partir de 45€</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon" aria-hidden="true">💆</span>
+                    <h3>Soins corps & massages</h3>
+                    <div class="service-meta">Relax minute, jambes légères, gommage</div>
+                    <span class="service-price">à partir de 35€</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon" aria-hidden="true">💅</span>
+                    <h3>Beauté des mains & pieds</h3>
+                    <div class="service-meta">Manucure, pédicure, semi-permanent</div>
+                    <span class="service-price">à partir de 18€</span>
+                </div>
+            </div>
+            <div class="text-center mt-lg reveal reveal-delay-3">
+                <a href="#tarifs-complets" class="btn btn-outline">Voir la carte complète et les tarifs ↓</a>
+            </div>
+        </section>
+
+        <!-- ========== TARIFS COMPLETS ========== -->
+        <section class="section" id="tarifs-complets" aria-labelledby="tariffs-title">
+            <span class="section-label reveal">Carte complète</span>
+            <h2 class="section-title reveal reveal-delay-1" id="tariffs-title">Tous nos tarifs, en toute transparence</h2>
+            <div class="tariffs-section reveal reveal-delay-2">
+                <h3>Épilations</h3>
+                <table class="tariff-table">
+                    <thead><tr><th>Zone</th><th>Durée estimée</th><th>Prix</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sourcils</td><td>10 min</td><td>8€</td></tr>
+                        <tr><td>Lèvres</td><td>5 min</td><td>6€</td></tr>
+                        <tr><td>Aisselles</td><td>15 min</td><td>12€</td></tr>
+                        <tr><td>Demi-jambes</td><td>25 min</td><td>20€</td></tr>
+                        <tr><td>Jambes complètes</td><td>40 min</td><td>30€</td></tr>
+                        <tr><td>Maillot classique</td><td>20 min</td><td>16€</td></tr>
+                    </tbody>
+                </table>
+                <h3 class="mt-lg">Soins visage Skinminute</h3>
+                <table class="tariff-table">
+                    <thead><tr><th>Soin</th><th>Durée estimée</th><th>Prix</th></tr></thead>
+                    <tbody>
+                        <tr><td>Soin éclat express</td><td>30 min</td><td>45€</td></tr>
+                        <tr><td>Soin longue tenue</td><td>50 min</td><td>65€</td></tr>
+                        <tr><td>Soin profond anti-âge</td><td>60 min</td><td>80€</td></tr>
+                    </tbody>
+                </table>
+                <h3 class="mt-lg">Soins corps & massages</h3>
+                <table class="tariff-table">
+                    <thead><tr><th>Soin</th><th>Durée estimée</th><th>Prix</th></tr></thead>
+                    <tbody>
+                        <tr><td>Relax minute (dos)</td><td>20 min</td><td>35€</td></tr>
+                        <tr><td>Jambes légères</td><td>30 min</td><td>42€</td></tr>
+                        <tr><td>Gommage corps</td><td>40 min</td><td>55€</td></tr>
+                    </tbody>
+                </table>
+                <h3 class="mt-lg">Beauté des mains & pieds</h3>
+                <table class="tariff-table">
+                    <thead><tr><th>Soin</th><th>Durée estimée</th><th>Prix</th></tr></thead>
+                    <tbody>
+                        <tr><td>Manucure simple</td><td>25 min</td><td>18€</td></tr>
+                        <tr><td>Pédicure simple</td><td>35 min</td><td>25€</td></tr>
+                        <tr><td>Semi-permanent mains</td><td>40 min</td><td>35€</td></tr>
+                    </tbody>
+                </table>
+                <p class="tariff-note">Les prix indiqués sont des prix de départ. Un devis précis vous sera communiqué en cabine selon vos besoins. Sans engagement.</p>
+            </div>
+        </section>
+
+        <!-- ========== ④ L'ABONNEMENT ========== -->
+        <section class="section" id="abonnement" aria-labelledby="abo-title">
+            <span class="section-label reveal">Fidélité</span>
+            <h2 class="section-title reveal reveal-delay-1" id="abo-title">Venir souvent, payer moins, c'est la seule logique.</h2>
+            <p class="section-text reveal reveal-delay-1">Choisissez votre abonnement mensuel et bénéficiez de soins offerts toute l'année. Un seul engagement : vous faire du bien régulièrement.</p>
+            <div class="abo-grid reveal reveal-delay-2">
+                <div class="abo-card">
+                    <h3>Abonnement Visage</h3>
+                    <div class="abo-price">39<span>&nbsp;€ / mois</span></div>
+                    <p class="abo-detail">1 soin visage Skinminute offert par mois (au choix parmi nos soins éclat ou longue tenue). −15&nbsp;% sur tous les soins visage supplémentaires. Accès prioritaire sans rendez-vous.</p>
+                </div>
+                <div class="abo-card recommended">
+                    <h3>Abonnement Corps + Épilation</h3>
+                    <div class="abo-price">49<span>&nbsp;€ / mois</span></div>
+                    <p class="abo-detail">1 épilation demi-jambes ou maillot offerte + 1 massage relax minute par mois. −20&nbsp;% sur les épilations supplémentaires et les gommages. Cumulable avec l'abonnement Visage.</p>
+                </div>
+            </div>
+            <p class="section-text reveal reveal-delay-3 mt-md" style="font-size:0.85rem;max-width:100%;">Sans engagement de durée. Résiliable à tout moment. Demandez-nous en cabine ou par téléphone.</p>
+        </section>
+
+        <!-- ========== ⑤ LA CARTE DU QUARTIER ========== -->
+        <section class="section" id="acces" aria-labelledby="map-title">
+            <span class="section-label reveal">Venir</span>
+            <h2 class="section-title reveal reveal-delay-1" id="map-title">À 50 mètres du métro La Muette, et toujours sans rendez-vous.</h2>
+            <div class="map-wrapper reveal reveal-delay-2">
+                <div class="map-badge" id="map-badge" aria-live="polite">⋯</div>
+                <iframe src="https://maps.google.com/maps?q=Institut+de+beaut%C3%A9+Bodyminute+Metro+Muette%2C+1+Rue+Fran%C3%A7ois+Ponsard%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation de l'institut Bodyminute"></iframe>
+            </div>
+            <div class="info-grid reveal reveal-delay-3">
+                <div class="info-item">
+                    <span class="info-label">Adresse</span>
+                    <span class="info-value">1 Rue François Ponsard,<br>75016 Paris</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Transports</span>
+                    <span class="info-value">🚇 La Muette (ligne 9) – 50&nbsp;m<br>🚌 Bus 22, 32, 52, 70<br>🅿️ Parking Passy (300&nbsp;m)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Contact</span>
+                    <span class="info-value">
+                        <a href="tel:+33145201723">01 45 20 17 23</a><br>
+                        <a href="mailto:ParisPassy@bodyminute.fr">ParisPassy@bodyminute.fr</a>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Horaires</span>
+                    <span class="info-value">Mar – Sam : 10&nbsp;h – 19&nbsp;h<br>Lundi & dimanche : fermé</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Paiement</span>
+                    <span class="info-value">CB, espèces, chèques,<br>tickets Kadéos</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Accessibilité</span>
+                    <span class="info-value">Rez-de-chaussée – accès PMR.<br>Cabine adaptée disponible.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ⑥ CE QUE DISENT VOS VOISINES ========== -->
+        <section class="section" id="avis" aria-labelledby="reviews-title">
+            <span class="section-label reveal">Avis</span>
+            <h2 class="section-title reveal reveal-delay-1" id="reviews-title">129 avis, 4.4 étoiles, et ce n'est pas un hasard.</h2>
+            <div class="reviews-grid reveal reveal-delay-2">
+                <div class="review-card">
+                    <span class="review-stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <p class="review-text">« Un institut de quartier comme on les aime. L'équipe est aux petits soins, je viens depuis 3 ans et je n'ai jamais été déçue. La façade bleue est devenue mon repère. »</p>
+                    <span class="review-author">Marie L.</span>
+                </div>
+                <div class="review-card">
+                    <span class="review-stars" aria-label="4 étoiles sur 5">★★★★☆</span>
+                    <p class="review-text">« Façade impossible à rater, et à l'intérieur c'est tout aussi charmant. Soins visage Skinminute au top. J'apprécie de pouvoir venir sans rendez-vous entre deux rendez-vous pros. »</p>
+                    <span class="review-author">Sophie D.</span>
+                </div>
+                <div class="review-card">
+                    <span class="review-stars" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <p class="review-text">« Sans rendez-vous, c'est tellement pratique. Je passe entre deux courses dans le quartier, et je ressors détendue. Les esthéticiennes sont d'une grande douceur. »</p>
+                    <span class="review-author">Caroline M.</span>
+                </div>
+            </div>
+            <p class="text-center mt-md reveal reveal-delay-3">
+                <a href="https://www.google.com/maps/place/Institut+de+beaut%C3%A9+Bodyminute/@48.8575,2.2738,17z/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:0.85rem;">Lire tous les avis sur Google ↗</a>
+            </p>
+        </section>
+
+        <!-- ========== ⑦ CONSEILS D'ESTHÉTICIENNE ========== -->
+        <section class="section" aria-labelledby="articles-title">
+            <span class="section-label reveal">Édito</span>
+            <h2 class="section-title reveal reveal-delay-1" id="articles-title">Lu dans le salon : nos réponses à vos questions de peau.</h2>
+            <div class="articles-grid reveal reveal-delay-2">
+                <article class="article-card">
+                    <span class="article-tag">Conseil saison</span>
+                    <h3>Peau sèche en hiver : routine minute</h3>
+                    <p>Le froid parisien malmène votre peau ? Voici la routine express que nous recommandons à toutes nos clientes de Passy — trois gestes, deux produits, un résultat visible.</p>
+                    <span class="article-link">Lire l'article →</span>
+                </article>
+                <article class="article-card">
+                    <span class="article-tag">Épilation</span>
+                    <h3>Lumière pulsée ou laser ?</h3>
+                    <p>On fait le point sur ces deux technologies, sans jargon. Laquelle choisir selon votre type de peau, votre budget, et votre tolérance — expliqué par nos esthéticiennes.</p>
+                    <span class="article-link">Lire l'article →</span>
+                </article>
+                <article class="article-card">
+                    <span class="article-tag">Bien-être</span>
+                    <h3>SOS jambes lourdes : le massage qui soulage</h3>
+                    <p>Après une journée debout ou en position assise, ce massage ciblé change tout. On vous explique pourquoi il fonctionne et comment le prolonger chez vous.</p>
+                    <span class="article-link">Lire l'article →</span>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-petal-strip" aria-hidden="true">
+            <span class="fp-dot"></span><span class="fp-dot"></span><span class="fp-dot"></span>
+            <span class="fp-dot"></span><span class="fp-dot"></span><span class="fp-dot"></span>
+            <span class="fp-dot"></span><span class="fp-dot"></span>
+        </div>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Institut Bodyminute Paris Passy</h4>
+                <p>1 Rue François Ponsard, 75016 Paris<br>
+                    <a href="tel:+33145201723">01 45 20 17 23</a><br>
+                    <a href="mailto:ParisPassy@bodyminute.fr">ParisPassy@bodyminute.fr</a>
+                </p>
+                <p style="margin-top:8px;">Mardi – Samedi : 10&nbsp;h – 19&nbsp;h<br>Fermé lundi & dimanche</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <p><a href="#bleu-ponsard">L'institut</a><br>
+                    <a href="#prestations">Prestations</a><br>
+                    <a href="#tarifs-complets">Tarifs complets</a><br>
+                    <a href="#abonnement">Abonnement</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>À propos</h4>
+                <p><a href="#acces">Accès & contact</a><br>
+                    <a href="#avis">Avis clientes</a><br>
+                    <a href="https://www.google.com/maps/place/Institut+de+beaut%C3%A9+Bodyminute/" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Institut de beauté Bodyminute — Paris 16e</span>
+            <span>Site créé par <a href="https://agence.mooo.com/institut-de-beaute-bodyminute-3" target="_blank" rel="noopener">Agence Mooo</a></span>
+        </div>
+    </footer>
+
+    <!-- ========== SCHEMA.ORG ========== -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Institut de beauté Bodyminute - Paris Passy",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1 Rue François Ponsard",
+                "postalCode": "75016",
+                "addressLocality": "Paris",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145201723",
+            "email": "ParisPassy@bodyminute.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.4",
+                "reviewCount": "129"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            },
+            "url": "https://agence.mooo.com/institut-de-beaute-bodyminute-3",
+            "priceRange": "€€"
+        }
+    </script>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        (function() {
+            // --- Header scroll shadow ---
+            const header = document.getElementById('site-header');
+            let lastScrollY = 0;
+            const handleScroll = () => {
+                const sy = window.scrollY;
+                if (sy > 10 && lastScrollY <= 10) header.classList.add('scrolled');
+                if (sy <= 10 && lastScrollY > 10) header.classList.remove('scrolled');
+                lastScrollY = sy;
+            };
+
+            // --- Mobile menu toggle ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            menuToggle.addEventListener('click', () => {
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !expanded);
+                navLinks.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // --- IntersectionObserver pour reveals ---
+            const revealEls = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // --- Effet pétales +
