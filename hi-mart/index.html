@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Mart — Épicerie coréenne authentique, Paris 15e</title>
+    <meta name="description" content="Hi Mart, épicerie coréenne authentique rue Saint-Charles à Paris 15e. Kimchi maison, produits frais et surgelés, sauces fermentées. À deux pas du métro Charles Michels.">
+    <meta property="og:title" content="Hi Mart — Le goût de Séoul à Paris 15e">
+    <meta property="og:description" content="Épicerie coréenne authentique — produits frais, surgelés, kimchi maison. Venez nous voir au 75 rue Saint-Charles.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🏪%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --hanji: #FAF6F0;
+            --sumi: #2B1D14;
+            --gochujang: #8B3A36;
+            --algae: #3D4F3D;
+            --celadon: #4A5D6B;
+            --poirier: #F0EBE0;
+            --white-real: #FEFCF9;
+            --grain: rgba(43, 29, 20, 0.03);
+
+            --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+            --font-body: 'Jost', 'Helvetica Neue', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--hanji);
+            color: var(--sumi);
+            line-height: 1.6;
+            font-weight: 350;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+            opacity: 0.55;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---------- HEADER ---------- */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 246, 240, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(43, 29, 20, 0.08);
+            transition: all 0.35s ease;
+            padding: 0.75rem 0;
+        }
+        .site-header.scrolled {
+            background: rgba(250, 246, 240, 0.94);
+            box-shadow: 0 1px 20px rgba(43, 29, 20, 0.04);
+            padding: 0.5rem 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+        .logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--sumi);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.3s;
+        }
+        .logo:hover {
+            color: var(--gochujang);
+        }
+        .logo .hangul-mark {
+            font-size: 0.55em;
+            font-weight: 400;
+            color: var(--gochujang);
+            opacity: 0.7;
+            letter-spacing: 0;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 3vw, 2.5rem);
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--sumi);
+            font-weight: 450;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gochujang);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--gochujang);
+        }
+        .header-cta {
+            background: var(--gochujang);
+            color: #fff;
+            padding: 0.55rem 1.3rem;
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 1.5px solid var(--gochujang);
+            white-space: nowrap;
+        }
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: transparent;
+            color: var(--gochujang);
+            box-shadow: 0 4px 16px rgba(139, 58, 54, 0.18);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            padding: 4px;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--sumi);
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: block;
+        }
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        @media (max-width: 860px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 340px;
+                height: 100vh;
+                background: var(--hanji);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 4rem 2rem;
+                gap: 2rem;
+                box-shadow: -8px 0 40px rgba(43, 29, 20, 0.08);
+                transition: right 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 1000;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: clamp(4rem, 10vw, 7rem) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---------- DANcheong motif ---------- */
+        .dancheong-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 1.5rem 0 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .dancheong-separator.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dancheong-separator .bar {
+            width: clamp(3rem, 6vw, 5rem);
+            height: 2px;
+            background: var(--algae);
+            border-radius: 2px;
+        }
+        .dancheong-separator .diamond {
+            width: 12px;
+            height: 12px;
+            background: var(--gochujang);
+            transform: rotate(45deg);
+            border-radius: 2px;
+        }
+        .dancheong-separator .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--celadon);
+            border-radius: 50%;
+        }
+
+        /* ---------- HÉRO ---------- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.72) contrast(1.05) saturate(0.85);
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(250, 246, 240, 0.52) 0%,
+                    rgba(240, 235, 224, 0.35) 40%,
+                    rgba(43, 29, 20, 0.45) 100%);
+            mix-blend-mode: multiply;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 80vh;
+            max-width: 1100px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(250, 246, 240, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 1.1rem;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--sumi);
+            width: fit-content;
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--gochujang);
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeUp 0.9s 0.2s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .hero-badge .stars {
+            color: var(--gochujang);
+            letter-spacing: 0.15em;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: 0.01em;
+            color: #fff;
+            text-shadow: 0 2px 18px rgba(43, 29, 20, 0.35);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s 0.45s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+            max-width: 850px;
+        }
+        .hero-title .hangul-watermark {
+            display: block;
+            font-size: 0.38em;
+            font-weight: 400;
+            opacity: 0.7;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.1em;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: none;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-weight: 350;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            line-height: 1.55;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s 0.65s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s 0.85s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .btn-primary {
+            background: var(--gochujang);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 1.5px solid var(--gochujang);
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: #fff;
+            padding: 0.85rem 2rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            white-space: nowrap;
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fff;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero-title {
+                text-shadow: 0 2px 12px rgba(43, 29, 20, 0.5);
+            }
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            .btn-primary,
+            .btn-ghost {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        /* ---------- SECTION HEADS ---------- */
+        .section-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--gochujang);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+            color: var(--sumi);
+            margin-bottom: 1.2rem;
+        }
+        .section-title .hangul-inset {
+            display: inline-block;
+            font-size: 0.45em;
+            font-weight: 400;
+            color: var(--celadon);
+            opacity: 0.5;
+            margin-left: 0.25em;
+            vertical-align: middle;
+            letter-spacing: 0.05em;
+        }
+        .section-body {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(43, 29, 20, 0.78);
+            max-width: 640px;
+            line-height: 1.7;
+            letter-spacing: 0.015em;
+        }
+
+        /* ---------- NOTRE ÉPICERIE ---------- */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2.5rem, 7vw, 5rem);
+            align-items: center;
+        }
+        .grid-2col .image-frame {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 30px rgba(43, 29, 20, 0.07);
+        }
+        .grid-2col .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+        .grid-2col .image-frame:hover img {
+            transform: scale(1.03);
+        }
+        .grid-2col .image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139, 58, 54, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 760px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .grid-2col .image-frame {
+                order: -1;
+            }
+        }
+
+        /* ---------- FICHES MARCHÉ ---------- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        .product-card {
+            background: var(--white-real);
+            border-radius: 3px;
+            padding: 1.8rem;
+            border: 1px solid rgba(43, 29, 20, 0.06);
+            transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            box-shadow: 0 1px 6px rgba(43, 29, 20, 0.03);
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(43, 29, 20, 0.1);
+            border-color: rgba(139, 58, 54, 0.2);
+        }
+        .product-card .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--poirier);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            color: var(--algae);
+        }
+        .product-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+        .product-card .kr-name {
+            font-size: 0.8rem;
+            color: var(--celadon);
+            opacity: 0.7;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.8rem;
+        }
+        .product-card p {
+            font-size: 0.95rem;
+            color: rgba(43, 29, 20, 0.72);
+            line-height: 1.6;
+        }
+
+        /* ---------- ESPRIT DU LIEU ---------- */
+        .gallery-scroll {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: var(--poirier);
+            border-radius: 2px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--algae);
+            border-radius: 2px;
+        }
+        .gallery-item {
+            flex: 0 0 clamp(260px, 45vw, 380px);
+            scroll-snap-align: start;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 14px rgba(43, 29, 20, 0.06);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(transparent, rgba(43, 29, 20, 0.7));
+            color: #fff;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            font-weight: 400;
+        }
+
+        /* ---------- VENIR ---------- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+        .info-block {
+            background: var(--white-real);
+            border-radius: 3px;
+            padding: 2rem;
+            border: 1px solid rgba(43, 29, 20, 0.06);
+            box-shadow: 0 1px 8px rgba(43, 29, 20, 0.03);
+        }
+        .info-block h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.02em;
+        }
+        .info-block .info-line {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .info-block .info-line .label-icon {
+            color: var(--algae);
+            font-weight: 600;
+            min-width: 30px;
+        }
+        .info-block a {
+            color: var(--sumi);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .info-block a:hover {
+            border-bottom-color: var(--gochujang);
+            color: var(--gochujang);
+        }
+        .map-frame {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(43, 29, 20, 0.06);
+            height: 360px;
+        }
+        .map-frame iframe {
+            display: block;
+        }
+
+        @media (max-width: 760px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-frame {
+                height: 280px;
+            }
+        }
+
+        /* ---------- FOOTER ---------- */
+        .site-footer {
+            background: var(--poirier);
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(43, 29, 20, 0.06);
+            text-align: center;
+        }
+        .site-footer .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.04em;
+        }
+        .site-footer .footer-info {
+            font-size: 0.85rem;
+            color: rgba(43, 29, 20, 0.65);
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+        }
+        .site-footer .footer-credit {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            color: rgba(43, 29, 20, 0.45);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ---------- REVEAL UTILS ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ---------- REDUCED MOTION ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .dancheong-separator {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---------- FOCUS ---------- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2.5px solid var(--gochujang);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Hi Mart — Accueil">
+                Hi Mart
+                <span class="hangul-mark">안녕</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#epicerie">L'épicerie</a></li>
+                    <li><a href="#incontournables">Produits</a></li>
+                    <li><a href="#esprit">Ambiance</a></li>
+                    <li><a href="#venir">Venir</a></li>
+                    <li><a href="#venir" class="header-cta">Horaires & Itinéraire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HÉRO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Hi Mart — Épicerie coréenne rue Saint-Charles, Paris 15e" loading="eager" width="1600" height="1100">
+            </div>
+            <div class="container">
+                <div class="hero-badge">
+                    <span class="stars">★ 4.2</span> — 329 avis Google
+                </div>
+                <h1 class="hero-title">
+                    <span class="hangul-watermark">서울의 맛</span>
+                    Le goût de Séoul<br>à deux pas du métro Charles Michels
+                </h1>
+                <p class="hero-subtitle">
+                    Épicerie coréenne authentique — produits frais, surgelés, kimchi maison.
+                    Venez nous voir au 75 rue Saint-Charles, Paris 15.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#venir" class="btn-primary">Voir les horaires & l'itinéraire</a>
+                    <a href="tel:+33173778810" class="btn-ghost">📞 01 73 77 88 10</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE ÉPICERIE -->
+        <section id="epicerie">
+            <div class="container">
+                <div class="dancheong-separator" data-reveal>
+                    <span class="bar"></span><span class="diamond"></span><span class="dot"></span><span class="bar"></span>
+                </div>
+                <div class="grid-2col">
+                    <div class="reveal">
+                        <span class="section-eyebrow">Notre épicerie</span>
+                        <h2 class="section-title">
+                            Un coin de Corée<br>rue Saint-Charles
+                            <span class="hangul-inset">서울</span>
+                        </h2>
+                        <p class="section-body" style="margin-top:1.2rem;">
+                            Poussez la porte du 75, laissez-vous guider par les parfums.
+                            Kimchi frais, riz coréen, sauces fermentées, snacks, boissons…
+                            Chaque produit est choisi pour sa qualité, comme on le ferait
+                            pour une recette de famille.
+                        </p>
+                    </div>
+                    <div class="image-frame reveal reveal-delay-2">
+                        <img src="assets/maps-1.jpg" alt="Intérieur de Hi Mart — étals et produits coréens" loading="lazy" width="600" height="450">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LES INCONTOURNABLES -->
+        <section id="incontournables" style="background:var(--poirier);">
+            <div class="container">
+                <div class="dancheong-separator" data-reveal>
+                    <span class="bar"></span><span class="diamond"></span><span class="dot"></span><span class="bar"></span>
+                </div>
+                <div class="reveal" style="margin-bottom:2.5rem;">
+                    <span class="section-eyebrow">Les incontournables</span>
+                    <h2 class="section-title">Ce qui fait notre réputation</h2>
+                    <p class="section-body">Des produits phares sélectionnés avec soin, présentés comme sur un étal de marché.</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="product-card reveal reveal-delay-1">
+                        <div class="card-icon">🌶️</div>
+                        <h3>Gochujang</h3>
+                        <div class="kr-name">고추장</div>
+                        <p>Pâte de piment fermentée artisanale, parfaite pour vos bibimbap et marinades. Profondeur et chaleur maîtrisée.</p>
+                    </div>
+                    <div class="product-card reveal reveal-delay-2">
+                        <div class="card-icon">🥬</div>
+                        <h3>Kimchi maison</h3>
+                        <div class="kr-name">김치</div>
+                        <p>Préparé sur place selon une recette traditionnelle. Chou napa, radis, épices — fraîcheur et fermentation équilibrées.</p>
+                    </div>
+                    <div class="product-card reveal reveal-delay-3">
+                        <div class="card-icon">🍚</div>
+                        <h3>Riz coréen</h3>
+                        <div class="kr-name">쌀</div>
+                        <p>Riz à grains courts cultivé en Corée, essentiel pour un repas authentique. Texture moelleuse et goût subtil.</p>
+                    </div>
+                    <div class="product-card reveal reveal-delay-4">
+                        <div class="card-icon">🍵</div>
+                        <h3>Thés & Infusions</h3>
+                        <div class="kr-name">차</div>
+                        <p>Orge grillée, citron, ginseng… Une sélection apaisante pour prolonger l'expérience coréenne à la maison.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ESPRIT DU LIEU -->
+        <section id="esprit">
+            <div class="container">
+                <div class="dancheong-separator" data-reveal>
+                    <span class="bar"></span><span class="diamond"></span><span class="dot"></span><span class="bar"></span>
+                </div>
+                <div class="reveal" style="margin-bottom:2.5rem;">
+                    <span class="section-eyebrow">L'esprit du lieu</span>
+                    <h2 class="section-title">Bien plus qu'une épicerie</h2>
+                    <p class="section-body">Un aperçu de l'ambiance réelle du magasin : étals, gestes du commerçant, détail des produits.</p>
+                </div>
+                <div class="gallery-scroll reveal reveal-delay-2">
+                    <div class="gallery-item">
+                        <img src="assets/maps-1.jpg" alt="Ambiance Hi Mart — vue de l'intérieur" loading="lazy" width="380" height="280">
+                        <span class="caption">L'étal des sauces fermentées</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/maps-1.jpg" alt="Produits frais Hi Mart" loading="lazy" width="380" height="280">
+                        <span class="caption">Kimchi et produits frais du jour</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/maps-1.jpg" alt="Rayon surgelés Hi Mart" loading="lazy" width="380" height="280">
+                        <span class="caption">Rayon surgelés — mandus et galettes</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/maps-1.jpg" alt="Snacks et boissons coréennes" loading="lazy" width="380" height="280">
+                        <span class="caption">Snacks, boissons et douceurs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENIR & NOUS TROUVER -->
+        <section id="venir" style="background:var(--poirier);">
+            <div class="container">
+                <div class="dancheong-separator" data-reveal>
+                    <span class="bar"></span><span class="diamond"></span><span class="dot"></span><span class="bar"></span>
+                </div>
+                <div class="reveal" style="margin-bottom:2.5rem;">
+                    <span class="section-eyebrow">Venir & nous trouver</span>
+                    <h2 class="section-title">On vous attend</h2>
+                    <p class="section-body">Commandez en ligne, récupérez sur place — ou passez simplement nous saluer.</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-block reveal reveal-delay-1">
+                        <h3>Infos pratiques</h3>
+                        <div class="info-line">
+                            <span class="label-icon">📍</span>
+                            <span>75 Rue Saint Charles, 75015 Paris</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="label-icon">🚇</span>
+                            <span>Métro Charles Michels — Ligne 10</span>
+                        </div>
+                        <div class="info-line">
+                            <span class="label-icon">📞</span>
+                            <a href="tel:+33173778810">01 73 77 88 10</a>
+                        </div>
+                        <div class="info-line">
+                            <span class="label-icon">✉️</span>
+                            <a href="mailto:acemartmall@gmail.com">acemartmall@gmail.com</a>
+                        </div>
+                        <div class="info-line" style="margin-top:1.2rem;">
+                            <span class="label-icon">🕒</span>
+                            <span><strong>Horaires à confirmer</strong><br>Nous vous invitons à nous contacter pour connaître nos horaires actualisés.</span>
+                        </div>
+                        <div class="info-line" style="margin-top:0.5rem;">
+                            <span class="label-icon">★</span>
+                            <span>4.2 / 5 — 329 avis Google</span>
+                        </div>
+                    </div>
+                    <div class="map-frame reveal reveal-delay-2">
+                        <iframe src="https://maps.google.com/maps?q=Hi+Mart+75+Rue+Saint+Charles%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Hi Mart, 75 rue Saint-Charles Paris"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">Hi Mart</div>
+            <p class="footer-info">
+                75 Rue Saint Charles, 75015 Paris — <a href="tel:+33173778810">01 73 77 88 10</a> —
+                <a href="mailto:acemartmall@gmail.com">acemartmall@gmail.com</a><br>
+                Métro Charles Michels (ligne 10) — Note Google : 4.2★ (329 avis)
+            </p>
+            <p class="footer-credit">Site créé par Agence Mooo</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Hi Mart",
+            "description": "Épicerie coréenne authentique — produits frais, surgelés, kimchi maison. Paris 15e.",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "75 Rue Saint Charles",
+                "addressLocality": "Paris",
+                "postalCode": "75015",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33173778810",
+            "email": "acemartmall@gmail.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.2",
+                "reviewCount": "329"
+            },
+            "url": "https://agence.mooo.com/hi-mart"
+        }
+    </script>
+
+    <script>
+        (function() {
+            // Mobile nav toggle
+            const toggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', !expanded);
+                    toggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+                // Close on link click
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        toggle.setAttribute('aria-expanded', 'false');
+                        toggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = scrollY;
+            }, { passive: true });
+
+            // Reveal on scroll
+            const revealEls = document.querySelectorAll('.reveal, .dancheong-separator[data-reveal]');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // Small delay to ensure dancheong separators are ready
+            document.querySelectorAll('.dancheong-separator[data-reveal]').forEach(el => {
+                if (!el.classList.contains('reveal')) {
+                    el.classList.add('reveal');
+                }
+            });
+            // Re-check reveals on load
+            window.addEventListener('load', () => {
+                revealEls.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight + 80) {
+                        el.classList.add('revealed');
+                        revealObserver.unobserve(el);
+                    }
+                });
+            });
+
+            // Smooth scroll for anchor links (redundant with CSS but ensures consistency)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight + 16;
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY -
+                            headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
