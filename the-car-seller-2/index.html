@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE CAR SELLER | Votre prochaine voiture au 22 rue Kléber, Levallois-Perret</title>
+  <meta name="description" content="THE CAR SELLER – Experts multimarques depuis 10 ans à Levallois-Perret. 100 points de contrôle, 4.9★ sur 88 avis. Vente, achat, estimation de votre véhicule.">
+  <meta property="og:title" content="THE CAR SELLER | Levallois-Perret">
+  <meta property="og:description" content="Votre prochaine voiture est au 22 rue Kléber. 4.9/5 sur 88 avis Google. Transparence radicale, expertise locale.">
+  <meta property="og:image" content="assets/maps-1.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui, sans-serif' font-weight='700' fill='%231A1A1A'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: #F4F1EB;
+      color: #1A1A1A;
+      line-height: 1.6;
+      font-weight: 400;
+      font-size: clamp(1rem, 1.1vw + 1rem, 1.2rem);
+    }
+
+    /* Utility Classes */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+    .accent { color: #C44B3C; }
+    .metal { color: #3B5B7A; }
+    .warm { color: #C44B3C; }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 0.5em; }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 500; color: #3B5B7A; margin-bottom: 0.25em; }
+    .section-title {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #262626;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #3B5B7A;
+    }
+    .display-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 0.9;
+      color: #3B5B7A;
+    }
+    .display-stats {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(244, 241, 235, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(59, 91, 122, 0.1);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
+    .logo a { color: #1A1A1A; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #1A1A1A; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a:focus { color: #3B5B7A; }
+    .cta-button {
+      background: #3B5B7A;
+      color: #F4F1EB;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .cta-button:hover { background: #2a4a5f; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: #1A1A1A;
+      overflow: hidden;
+      padding: 4rem 1.5rem;
+    }
+    .hero-content { position: relative; z-index: 10; max-width: 800px; }
+    .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; }
+    .hero-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.6rem); color: #3B5B7A; margin-bottom: 2rem; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(244, 241, 235, 0.9);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      margin-top: 1.5rem;
+    }
+    .stars { color: #C44B3C; letter-spacing: 2px; }
+    .hero-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 45%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .hero-image img { filter: contrast(1.05) grayscale(0.2); }
+
+    /* Sections */
+    section { padding: 6rem 1.5rem; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header h2 { margin-bottom: 0.5rem; }
+
+    /* Stock Grid */
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .vehicle-card {
+      background: #F4F1EB;
+      border: 1px solid #E8E3DA;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .vehicle-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .card-image { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .vehicle-card:hover .card-image img { transform: scale(1.05); }
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+    }
+    .card-content { padding: 1.2rem; }
+    .card-content h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .car-meta { display: flex; gap: 1rem; margin: 0.5rem 0; font-size: 0.9rem; color: #3B5B7A; }
+    .car-price { font-weight: 700; color: #C44B3C; }
+    .filter-bar { display: flex; gap: 0.5rem; margin: 2rem 0; flex-wrap: wrap; }
+    .filter-btn {
+      background: #E8E3DA;
+      border: 1px solid #3B5B7A;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .filter-btn.active { background: #3B5B7A; color: #F4F1EB; border-color: #3B5B7A; }
+
+    /* Process Steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      background: #F4F1EB;
+      padding: 2rem;
+      border-radius: 4px;
+    }
+    .step { text-align: center; padding: 1.5rem; }
+    .step-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: #3B5B7A;
+    }
+
+    /* Reviews Carousel */
+    .reviews-carousel {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0.5rem;
+    }
+    .review-card {
+      min-width: 300px;
+      background: #F4F1EB;
+      padding: 2rem;
+      border-radius: 4px;
+      scroll-snap-align: start;
+    }
+    .review-text { font-style: italic; }
+    .review-author { font-weight: 600; margin-top: 1rem; }
+
+    /* Commitments */
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .commitment-item { padding: 2rem; text-align: center; }
+    .commitment-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #3B5B7A;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #262626;
+      color: #F4F1EB;
+      padding: 4rem 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .footer-brand h3 { font-size: 1.5rem; color: #F4F1EB; }
+    .footer-links a { color: #E8E3DA; text-decoration: none; }
+    .footer-links a:hover { color: #C44B3C; }
+
+    /* Animations */
+    .reveal-text { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .reveal-text.visible { opacity: 1; transform: translateY(0); }
+    .reveal-image { clip-path: inset(0% 0% 0% 0%); transition: clip-path 0.6s ease; }
+    .reveal-image.visible { clip-path: inset(0% 0% 0% 0%); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding: 2rem 1.5rem; }
+      .hero-content { max-width: 100%; }
+      .hero-image { display: none; }
+      .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-text { animation: none; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">THE CAR SELLER</a>
+      <nav class="nav-links">
+        <a href="#stock">Véhicules</a>
+        <a href="#vendre">Vendre</a>
+        <a href="#agence">L'agence</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#avis">Avis</a>
+      </nav>
+      <a href="tel:+33674333277" class="cta-button">📞 06 74 33 32 77</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/maps-1.jpg" alt="Façade de THE CAR SELLER au 22 rue Kléber, Levallois-Perret" loading="lazy">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="stars">★★★★★</span>
+          <span>4.9/5 sur 88 avis Google</span>
+        </div>
+        <h1 class="hero-title">Votre prochaine voiture<br>est au 22 rue Kléber.</h1>
+        <p class="hero-subtitle">Experts multimarques depuis 10 ans. 100 points de contrôle, transparence radicale — et une adresse où nous rencontrer.</p>
+      </div>
+    </section>
+
+    <!-- Stock Section -->
+    <section id="stock" class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nos véhicules disponibles en ce moment</h2>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="berline">Berlines</button>
+        <button class="filter-btn" data-filter="suv">SUV</button>
+        <button class="filter-btn" data-filter="citadine">Citadines</button>
+        <button class="filter-btn" data-filter="utilitaire">Utilitaires</button>
+      </div>
+      <div class="stock-grid">
+        <!-- Card 1 -->
+        <article class="vehicle-card" data-category="berline">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="Berline premium" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>BMW Série 3</h3>
+            <div class="car-meta">
+              <span>2020 • 45 000 km</span>
+              <span class="car-price">32 900 €</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="vehicle-card" data-category="suv">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="SUV familial" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>Audi Q5</h3>
+            <div class="car-meta">
+              <span>2022 • 62 000 km</span>
+              <span class="car-price">41 500 €</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="vehicle-card" data-category="citadine">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="Citadine compacte" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>Mercedes Classe A</h3>
+            <div class="car-meta">
+              <span>2023 • 28 000 km</span>
+              <span class="car-price">28 900 €</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="vehicle-card" data-category="berline">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="Berline sport" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>Peugeot 508</h3>
+            <div class="car-meta">
+              <span>2021 • 51 000 km</span>
+              <span class="car-price">34 700 €</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article class="vehicle-card" data-category="utilitaire">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="Utilitaire professionnel" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>Renault Master</h3>
+            <div class="car-meta">
+              <span>2022 • 38 000 km</span>
+              <span class="car-price">25 800 €</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="vehicle-card" data-category="suv">
+          <div class="card-image">
+            <img src="assets/maps-1.jpg" alt="SUV hybride" loading="lazy">
+            <div class="card-overlay"><span>Disponible</span></div>
+          </div>
+          <div class="card-content">
+            <h3>Toyota RAV4</h3>
+            <div class="car-meta">
+              <span>2021 • 44 000 km</span>
+              <span class="car-price">37 200 €</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sell Section -->
+    <section id="vendre" class="container">
+      <div class="section-header">
+        <h2 class="section-title">Vendez votre voiture,<br>en face à face et en toute sécurité</h2>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h4>Estimation gratuite</h4>
+          <p>Sur place ou en ligne, en quelques minutes.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h4>100 points de contrôle</h4>
+          <p>Expertise détaillée et transparente.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h4>Compte séquestre</h4>
+          <p>Paiement sécurisé pour tous.</p>
+        </div>
+      </div>
+      <a href="tel:+33674333277" class="cta-button">📞 06 74 33 32 77 Prendre rendez-vous</a>
+    </section>
+
+    <!-- Agency Section -->
+    <section id="agence" class="container">
+      <div class="section-header">
+        <h2 class="section-title">Bienvenue au 22 rue Kléber</h2>
+      </div>
+      <div class="agency-content">
+        <div class="agency-map">
+          <iframe src="https://maps.google.com/maps?q=THE+CAR+SELLER+22+Rue+Kl%C3%A9ber%2C+Levallois-Perret&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="agency-info">
+          <div class="info-block">
+            <h3>🕒 Horaires d'ouverture</h3>
+            <table>
+              <tr><td>Lundi - Vendredi</td><td>09:00 – 19:00</td></tr>
+              <tr><td>Samedi</td><td>10:00 – 18:00</td></tr>
+              <tr><td>Dimanche</td><td>Fermé</td></tr>
+            </table>
+          </div>
+          <div class="info-block">
+            <h3>📍 Adresse</h3>
+            <p>22 Rue Kléber, 92300 Levallois-Perret</p>
+          </div>
+          <div class="info-block">
+            <h3>📞 Téléphone</h3>
+            <a href="tel:+33674333277">06 74 33 32 77</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="avis" class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="stars">★★★★★</span>
+          <span>4.9 étoiles, 88 avis Google — voici pourquoi</span>
+        </div>
+      </div>
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <p class="review-text">"Service impeccable, très professionnel. J'ai acheté ma deuxième voiture chez eux, tout s'est passé rapidement et en toute confiance. Je recommande vivement !"</p>
+          <p class="review-author">— Marc L.</p>
+          <span class="review-date">Octobre 2024</span>
+          <span class="verified-badge">✓ Vérifié Google</span>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Transparence totale, aucun frais caché. Le processus était clair, l'équipe à l'écoute. Très satisfait de mon achat."</p>
+          <p class="review-author">— Sophie D.</p>
+          <span class="review-date">Septembre 2024</span>
+          <span class="verified-badge">✓ Vérifié Google</span>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Excellente expertise mécanique. Ils ont pris le temps de tout m'expliquer, sans pression. Voiture impeccable, livrée comme promise."</p>
+          <p class="review-author">— Jean-Pierre K.</p>
+          <span class="review-date">Août 2024</span>
+          <span class="verified-badge">✓ Vérifié Google</span>
+        </div>
+      </div>
+      <a href="https://search.google.com/local/reviews?placeid=THE+CAR+SELLER" class="reviews-link" target="_blank" rel="noopener">Voir tous les avis sur Google →</a>
+    </section>
+
+    <!-- Commitments Section -->
+    <section id="engagements" class="container">
+      <div class="section-header">
+        <h2 class="section-title">Des garanties qui ont<br>de la mécanique</h2>
+      </div>
+      <div class="commitments-grid">
+        <div class="commitment-item">
+          <span class="commitment-number">100</span>
+          <h4>Points de contrôle</h4>
+          <p>Expertise complète avant achat ou vente.</p>
+        </div>
+        <div class="commitment-item">
+          <span class="commitment-number">Essai</span>
+          <h4>Avant achat</h4>
+          <p>Essayez votre futur véhicule sur route.</p>
+        </div>
+        <div class="commitment-item">
+          <span class="commitment-number">Garantie</span>
+          <h4>Constructeur ou partenaire</h4>
+          <p>Couverture étendue, selon ancienneté.</p>
+        </div>
+        <div class="commitment-item">
+          <span class="commitment-number">Dossier</span>
+          <h4>Administratif complet</h4>
+          <p>Pas de mauvaise surprise, tout est clair.</p>
+        </div>
+        <div class="commitment-item">
+          <span class="commitment-number">Satisfaction</span>
+          <h4>Ou remboursé</h4>
+          <p>Service client dédié, à votre écoute.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>THE CAR SELLER</h3>
+          <p>Le Vendeur Automobiles</p>
+          <p class="footer-address">22 Rue Kléber, 92300 Levallois-Perret</p>
+          <a href="tel:+33674333277" class="footer-phone">06 74 33 32 77</a>
+          <a href="mailto:contact@levendeurautomobiles.com" class="footer-email">contact@levendeurautomobiles.com</a>
+        </div>
+        <div class="footer-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">CGV</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Devenir franchisé Le Vendeur Automobiles</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 THE CAR SELLER. Site créé par <a href="https://agence.mooo.com" target="_blank" rel="noopener">Agence Mooo</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+
+    // Scroll Reveal Animations
+    const revealTexts = document.querySelectorAll('.reveal-text');
+    const revealImages = document.querySelectorAll('.reveal-image');
+
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    revealTexts.forEach(el => revealOnScroll.observe(el));
+    revealImages.forEach(el => revealOnScroll.observe(el));
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const vehicleCards = document.querySelectorAll('.vehicle-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.dataset.filter;
+        vehicleCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu after click
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+```
