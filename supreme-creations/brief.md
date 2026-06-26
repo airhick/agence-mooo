@@ -1,84 +1,83 @@
-Voici un brief créatif taillé sur mesure pour Supreme Creations, fondé uniquement sur les signaux réels de l’entreprise — son activité, son quartier, ses matières, ses lumières — et conçu pour corriger les faiblesses identifiées par l’audit.
+**BRIEF CRÉATIF — Supreme Creations**  
+*Audit / Refonte — Fiche Google Maps & site actuel*  
+*14 avril 2025*
 
 ---
 
-## 1. Concept & positionnement
-**L’atelier de la trace douce.**  
-Supreme Creations ne fabrique pas des objets, elle tisse un lien entre la marque cliente et son engagement. On ne vend ni du coton ni du jute, mais la promesse tangible d’un commerce qui laisse une empreinte légère. Le site sera la vitrine d’un savoir-faire parisien, B Corp, où chaque pièce raconte une chaîne d’amour, de la matière brute au produit scellé.  
-Pour le visiteur local comme pour la marque internationale, l’expérience doit sentir l’atelier, pas l’usine.
+### 1. CONCEPT & POSITIONNEMENT
+**L’idée forte** : Supreme Creations n’est pas un simple fournisseur de goodies. C’est **l’atelier parisien qui élève l’objet promotionnel au rang d’accessoire de mode responsable**. Chaque tote, chaque pochon, chaque bouteille devient une pièce d’image pour vos marques, pensée comme un vêtement, portée comme un manifeste.  
+**Positionnement** : on abandonne le catalogue B2B illisible pour une **vitrine éditoriale confidentielle**, ancrée dans le 15ᵉ arrondissement. L’internaute ne parcourt pas une usine lointaine — il pousse la porte d’un showroom-bureau où l’on vient co-créer un objet durable, en chair et en matière, sur rendez-vous.
 
 ---
 
-## 2. Direction artistique : *Atelier organique – Luxe silencieux*
-Le parti pris esthétique conjugue trois strates issues **directement** des photos réelles du commerce :
-- **La matière textile** (toile de jute, coton épais, simili cuir vegan) traitée en macrophotographie, révélant la trame et les coutures.
-- **La lumière chaude et tamisée** d’un atelier du 15ᵉ arrondissement, avec ses boiseries et ses établis, restituée par une photographie à dominante ombre douce et pleins tons beiges.
-- **Les motifs floraux et les étiquettes colorées** utilisés sur les sacs, qu’on réintroduit sous forme de vignettes, de filets peints et d’illustrations botaniques délavées, comme tamponnées à la main.
-
-Le rendu bannit le blanc clinique et le gris froid au profit d’un fond toujours légèrement *écru*, comme un tissu brut. La typographie *Playfair Display* apporte son élégance intemporelle, tandis que *Source Sans 3* ancre la modernité et la lisibilité. Les séparations ne seront pas des traits numériques mais des filets irréguliers, façon fil de coton ou lisière effilochée.
+### 2. DIRECTION ARTISTIQUE
+**Parti pris : « Atelier organique & cuir végétal »**  
+Un luxe feutré qui naît de la **matière brute** : le bois clair du grand fauteuil design, les fibres du jute, le grain du coton et la souplesse du simili cuir. La direction est purement tactile : on compose avec des textures photographiées en macro, des fonds chauds (bois, ficelle, papier kraft épuré), et une hiérarchie typographique au cordeau. Le blanck n’existe pas — il est remplacé par un beige cassé très légèrement granité, qui reproduit la lumière tamisée du showroom et supprime toute froideur aseptisée.
 
 ---
 
-## 3. Palette extraite des photos réelles
-Les couleurs sont prélevées sur les clichés Google Maps du commerce : murs, boîtes, tissus empilés, et ces célèbres sacs floraux.
+### 3. PALETTE (6 teintes, rôles explicites)
+| Teinte | Hex | Rôle |
+|--------|-----|------|
+| Lin brut | `#F7F2EA` | Fond de page, arrière-plan lumineux |
+| Noir d’encre | `#1E1C1C` | Titres, corps de texte, logo |
+| Vert olive foulé | `#4B5E2C` | Accent primaire (boutons, filets, icônes discrètes) |
+| Marron cuir retourné | `#8B5A3C` | Accent secondaire (survol, subtils liserés, citations) |
+| Laiton brossé | `#BC9B6A` | Accent métallique réservé aux finitions ultra-select (crochets, puces, bordures de témoignage) |
+| Crème froissé | `#F2EDE4` | Alternance de fond pour cartes produits, séparateurs |
 
-| Rôle | Nom | Code HEX | Usage |
-|------|-----|---------|-------|
-| Fond principal | Lin brut | `#F7F2EB` | Arrière-plans, cartes, blocs |
-| Encre (texte, titres) | Bleu atelier | `#1D2B42` | Corps de texte, logo, navigation |
-| Second fond | Blanc mèche | `#FFFFFF` | Surfaces de cartes, contrastes doux |
-| Accent 1 floral | Rose pétale sourd | `#C0867A` | Boutons, icônes actives, prix, liens, filets peints |
-| Accent 2 végétal | Sauge effacée | `#8E9F8C` | Pastilles éco (B Corp, certification), filets secondaires |
-| Neutre chaud (remplace le gris) | Chanvre | `#E2DCD3` | Séparateurs subtils, fonds alternatifs |
-
-Cette palette évite soigneusement les duos « crème + terracotta » ou « presque noir + vert acide ». Le rose pétale et le sauge sont des tons feutrés, prélevés directement sur les imprimés floraux des sacs et les pastilles colorées des étiquettes.
+> **Note** : Pas de gris, pas de blanc pur. Le thermique est chaud sans virer au terracotta, l’olive ancre le durable sans agressivité.
 
 ---
 
-## 4. Ton éditorial
-Une voix calme, précise et fière, qui tutoie le lecteur professionnel sans familiarité excessive. On emploie un français soigné, des phrases plutôt courtes à l’écran, avec des verbes d’action concrets : *couper, imprimer, nouer, expédier*.  
-L’engagement éthique est incarné par des faits (audits, labels, B Corp) et jamais par des déclarations vagues. L’expression « Conçus et scellés avec amour » est conservée mais rhabillée : elle devient une signature, pas un argument de vente.
-
-**Registre :** courant professionnel, teinté d’artisanat – pas de jargon technique brut, pas de poésie gratuite.
+### 4. TON ÉDITORIAL
+Une voix **précise, chaleureuse et vouée au détail**. On vouvoie le client avec l’assurance d’un artisan haut de gamme, sans jargon corporate ni anglicismes inutiles. Les phrases sont courtes, les verbes d’action privilégient la co-création : *concevez, choisissez, marquez*.  
+**Registre** : littéraire sans être ampoulé ; jamais de fausse proximité, jamais de superlatifs vides. Les certifications (B Corp, audits éthiques) ne sont pas criées en gras — elles sont simplement **racontées**, comme une évidence.
 
 ---
 
-## 5. Accroche héro
-**Titre principal :**  
-*La trame de vos engagements.*
+### 5. ACCROCHE HÉRO (grand titre + sous-titre)
+**Titre majeur** :  
+*La marque responsable prend sa forme*  
+**Sous-titre** :  
+Showroom & atelier sur mesure dans le 15ᵉ — nous donnons vie à vos écrins durables, du premier croquis à la livraison.
 
-**Sous-titre :**  
-*Sacs, bouteilles, trousses et accessoires réutilisables personnalisés, fabriqués avec amour dans notre atelier du 15ᵉ arrondissement — certifiés B Corp.*
-
-**Bouton principal :**  
-*Voir nos produits →*  
-**Bouton secondaire :**  
-*Devis en 48h*
+*(Pas de slogan générique « Des produits d’exception… » — du concret, du lieu, de l’intention.)*
 
 ---
 
-## 6. Sections ordonnées (structure de la page d’accueil)
-L’organisation est pensée pour alléger le menu actuel (50+ entrées) et répondre aux trois cibles : le commerçant local pressé, la marque en quête de personnalisation, le visiteur qui veut vérifier l’éthique.
+### 6. SECTIONS (ordre, vrai titre, phrase d’effet)
+1. **Héritage**  
+   *À propos*  
+   « Depuis notre atelier parisien, nous réinventons le cadeau d’entreprise avec des matières responsables et une finition haute couture. »
 
-1. **Héro** – Grande photo texture (coton ou jute) avec l’accroche ci-dessus.
-2. **Manifeste** – *Nous croyons aux objets qui durent.*  
-   Une phrase : « Depuis l’Avenue Félix Faure, nous taillons, cousons et imprimons des alternatives textiles aux plastiques à usage unique, sous le label Bags of Ethics. »
-3. **Services express (pour les locaux)** – *Pour les Parisiens pressés.*  
-   Trois pictos : Commande en 48h · Retrait au showroom · Devis sur photo. Chacun avec un lien vers une page dédiée, corrigeant l’absence de tunnel court pointée par l’audit.
-4. **Galerie matière** – *Toile, jute, simili cuir vegan.*  
-   Défilé horizontal de photos macro, sur fond chanvre. Chaque image porte une légende minimale (ex. « Coton certifié GOTS — 220 g/m² »).
-5. **Catégories phares** – Réduites à six entrées claires et sans fautes orthographiques : *Sacs réutilisables · Bouteilles & mugs · Pochettes & trousses · Bureau & papeterie · Linge de maison · Accessoires en cuir vegan*. Aucune variation parasite, aucun « passpeport ».
-6. **Label & promesse** – *B Corp, audits éthiques, REACH.*  
-   Une frise de certifications avec le logo B Corp, le label Bags of Ethics et les mentions d’audit. Un texte court remplace l’actuel double bloc redondant : « Nos ateliers sont soumis à des contrôles indépendants garantissant conditions de travail, absence de substances nocives et traçabilité complète. »
-7. **Ils nous ont fait confiance** – *La British Embassy, le prix Veuve Clicquot 2026, et plus de 200 marques.*  
-   Citations d’acheteurs professionnels, pas de faux avis Google. Une ligne : « Supreme Creations a fourni les sacs durables de la British Embassy in Paris pour célébrer l’innovation architecturale durable. »
-8. **Contact & showroom** – *15ᵉ arrondissement, à deux pas de la Mairie.*  
-   Adresse complète : MBE Suite 1002, 141 Avenue Félix Faure (avec un plan interactif, les horaires Google Maps 9h-18h30, le téléphone unique 06 30 18 76 89 et un bouton « Réserver une consultation vidéo de 15 min »).
-9. **Pied de page** – B Corp, liens vers les pages légales, formulaire de contact rapide, rappel du téléphone et email.
+2. **Le geste**  
+   *Notre processus de création*  
+   « Parlez-nous de votre projet. Nous dessinons un prototype, vous l’essayez, puis nous fabriquons la commande dans nos ateliers partenaires certifiés B Corp. »
+
+3. **Les étoffes**  
+   *Gammes & familles de produits*  
+   Trois familles, une cohérence : Sacs & accessoires portés · Bouteilles, mugs & art de la table · Linge, bureau & voyage. Chaque fiche produit est une planche matière, pas une vignette e-commerce.
+
+4. **Sur pièce**  
+   *Visiter le showroom*  
+   « À deux pas de l’avenue Félix Faure, notre espace vous accueille sur rendez-vous pour toucher, comparer et valider votre commande. » (Adresse, plan, téléphone unique `06 30 18 76 89`, horaires généraux — sans faux détails.)
+
+5. **L’éthique en étiquette**  
+   *Engagements & certifications*  
+   « B Corp, audits SEDEX, coton labellisé — chaque article porte la preuve d’une fabrication digne. Pas une promesse, un label. »
+
+6. **Devis sur canevas**  
+   *Formulaire de projet sur mesure*  
+   « Envoyez-nous votre brief en quelques lignes. Nous revenons vers vous sous 48 heures avec une proposition chiffrée et un échantillon virtuel. »
 
 ---
 
-## 7. Signature visuelle
-**Deux détails mémorables** :
-- **Le filigrane floral animé** : en fond des blocs « Manifeste » et « Label », un motif botanique très agrandi, opacité 5 %, reprend l’imprimé vedette des sacs. Au scroll, il se déplace en parallaxe lent, comme un fil qui se déroule.
-- **Le filet fil-de-coton** : chaque séparation entre sections est un trait irrégulier, comme tracé au cordeau de tailleur. Au survol des boutons principaux, ce même filet ourle le bord du bouton en micro-animation.
+### 7. SIGNATURE VISUELLE (détails mémorables)
+- **Un rideau de texture** : en fond de la section « Les étoffes », une macro-photo d’un tissage coton/jute ou d’un cuir grainé vient se superposer en très légère transparence, uniquement au survol des cartes, comme si l’on effleurait la matière.  
+- **Le trait continu** : un filet vertical vert olive parcourt toute la longueur de la page, de la navigation jusqu’au pied de page, symbolisant la ligne de coupe — il s’anime au scroll pour marquer la progression du visiteur dans l’histoire du produit.  
+- **Typographie ouvragée** : le mot « Créations » dans le logo est traité en **Playfair Display 900 italique**, et sa première lettre « C » devient un crochet graphique (détail SVG animé) qui accueille le curseur sur le bouton de devis.
+
+---
+
+**Directeur de création** — Ce brief est prêt pour la maquette. Chaque décision plastique est motivée par les photos réelles du commerce (la palette beige-bois-olive, le fauteuil en bois, la lumière tamisée) et corrige point par point les lacunes de l’actuel site (H1 absent, offre illisible, aucune information locale, tonalité clinique). Nous sommes désormais dans l’atelier parisien, pas dans une plateforme B2B.
