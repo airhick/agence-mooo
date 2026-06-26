@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manfield Avenue Mozart — Bottier-Conseil, Paris 16e</title>
+    <meta name="description" content="Boutique Manfield au 9 Avenue Mozart, Paris 16e. Un accueil personnalisé, des collections de cuirs, des conseils d'experts. Note 5★ — appelez le 01 45 24 31 47.">
+    <meta property="og:title" content="Manfield Avenue Mozart — Poussez la porte.">
+    <meta property="og:description" content="Ici, on entre pour le conseil autant que pour la chaussure. La boutique du 16e vous reçoit comme un habitué.">
+    <meta property="og:image" content="assets/maps-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%9E%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --pierre-mozart: #F5F3EE;
+            --cuir-fume: #2B1D14;
+            --laiton-bruni: #B4844E;
+            --blanc-velin: #EDE8DF;
+            --bois-de-rose: #7A5C43;
+            --essence-brune: #1A110C;
+            --halo-laiton: rgba(180, 132, 78, 0.06);
+            --halo-laiton-fort: rgba(180, 132, 78, 0.13);
+            --shadow-carte: 0 1px 2px rgba(43, 29, 20, 0.04), 0 4px 16px rgba(43, 29, 20, 0.06), 0 8px 40px var(--halo-laiton);
+            --shadow-halo: 0 0 0 1px rgba(180, 132, 78, 0.07), 0 2px 3px rgba(43, 29, 20, 0.04), 0 6px 20px var(--halo-laiton), 0 0 80px var(--halo-laiton);
+            --transition-lente: 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-douce: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-rapide: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --font-display: 'DM Serif Display', serif;
+            --font-texte: 'DM Sans', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-texte);
+            background-color: var(--pierre-mozart);
+            color: var(--cuir-fume);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ---------- HEADER COLLANT ---------- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(245, 243, 238, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(180, 132, 78, 0.15);
+            transition: background var(--transition-douce), box-shadow var(--transition-douce);
+            padding: 0.7rem 0;
+        }
+
+        .header.scrolled {
+            background: rgba(245, 243, 238, 0.94);
+            box-shadow: 0 1px 3px rgba(43, 29, 20, 0.05), 0 0 30px var(--halo-laiton);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+            letter-spacing: 0.05em;
+            color: var(--cuir-fume);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+            transition: color var(--transition-rapide);
+        }
+
+        .header-logo:hover {
+            color: var(--laiton-bruni);
+        }
+
+        .header-logo .point-laiton {
+            display: inline-block;
+            color: var(--laiton-bruni);
+            font-size: 0.7em;
+            vertical-align: middle;
+            line-height: 1;
+            margin: 0 0.05em;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.6rem, 1.8vw, 1.5rem);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--bois-de-rose);
+            font-family: var(--font-texte);
+            font-weight: 400;
+            font-size: clamp(0.82rem, 1vw, 0.9rem);
+            letter-spacing: 0.03em;
+            transition: color var(--transition-rapide);
+            position: relative;
+            padding: 0.3em 0;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--laiton-bruni);
+            transition: width var(--transition-douce);
+        }
+
+        .nav-list a:hover,
+        .nav-list a:focus-visible {
+            color: var(--laiton-bruni);
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            background: var(--laiton-bruni);
+            color: #fff !important;
+            padding: 0.5em 1.2em;
+            border-radius: 2px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            font-size: clamp(0.8rem, 0.95vw, 0.88rem);
+            transition: background var(--transition-rapide), transform var(--transition-rapide), box-shadow var(--transition-rapide);
+            box-shadow: 0 1px 2px rgba(43, 29, 20, 0.08), 0 4px 12px var(--halo-laiton);
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: #9b6f3e;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(43, 29, 20, 0.12), 0 8px 24px var(--halo-laiton-fort);
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem clamp(1rem, 4vw, 3rem) 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            filter: brightness(0.7) saturate(0.85);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 65% 55%, rgba(245, 243, 238, 0.05) 0%, rgba(26, 17, 12, 0.6) 70%, rgba(26, 17, 12, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+            color: #F5F3EE;
+            animation: heroReveal 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        }
+
+        @keyframes heroReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-accroche {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            line-height: 1.08;
+            margin-bottom: 0.3em;
+            text-shadow: 0 2px 12px rgba(26, 17, 12, 0.5), 0 0 80px rgba(180, 132, 78, 0.25);
+        }
+
+        .hero-sous-titre {
+            font-family: var(--font-texte);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            letter-spacing: 0.03em;
+            line-height: 1.7;
+            max-width: 580px;
+            margin: 0 auto 2rem;
+            color: rgba(245, 243, 238, 0.88);
+            text-shadow: 0 1px 4px rgba(26, 17, 12, 0.5);
+        }
+
+        .hero-file {
+            display: inline-block;
+            width: clamp(40px, 6vw, 56px);
+            height: 1px;
+            background: var(--laiton-bruni);
+            margin: 0.5rem auto 1.5rem;
+            opacity: 0.8;
+            box-shadow: 0 0 12px rgba(180, 132, 78, 0.5);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            background: rgba(26, 17, 12, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(180, 132, 78, 0.3);
+            border-radius: 3px;
+            padding: 0.5em 1.2em;
+            font-family: var(--font-texte);
+            font-weight: 500;
+            font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+            letter-spacing: 0.04em;
+            color: #F5F3EE;
+            box-shadow: 0 2px 6px rgba(26, 17, 12, 0.3), 0 0 30px var(--halo-laiton);
+        }
+
+        .hero-badge .stars {
+            color: var(--laiton-bruni);
+            font-size: 1.1em;
+            letter-spacing: 0.08em;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0.7;
+            animation: floatDown 2.2s ease-in-out infinite;
+        }
+
+        @keyframes floatDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        .scroll-indicator span {
+            font-family: var(--font-texte);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(245, 243, 238, 0.7);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 30px;
+            background: rgba(180, 132, 78, 0.5);
+        }
+
+        /* ---------- SECTIONS GÉNÉRALES ---------- */
+        .section {
+            position: relative;
+            padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 4vw, 3rem);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-titre {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            line-height: 1.15;
+            color: var(--cuir-fume);
+            margin-bottom: 0.7em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-titre .point-laiton {
+            display: inline-block;
+            color: var(--laiton-bruni);
+            font-size: 0.55em;
+            vertical-align: middle;
+            margin-left: 0.15em;
+            line-height: 1;
+        }
+
+        .section-texte {
+            font-family: var(--font-texte);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            line-height: 1.75;
+            letter-spacing: 0.02em;
+            color: var(--bois-de-rose);
+            max-width: 640px;
+        }
+
+        .file-laiton {
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--laiton-bruni);
+            margin: 1.5rem 0;
+            opacity: 0.6;
+        }
+
+        /* ---------- GALERIE ---------- */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.8rem, 1.5vw, 1.3rem);
+            margin-top: 2.5rem;
+        }
+
+        .galerie-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: var(--shadow-carte);
+            transition: box-shadow var(--transition-douce), transform var(--transition-douce);
+        }
+
+        .galerie-item:hover {
+            box-shadow: var(--shadow-halo);
+            transform: translateY(-3px);
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-lente);
+            filter: brightness(0.92) saturate(0.9);
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.85) saturate(0.85);
+        }
+
+        .galerie-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(26, 17, 12, 0.15) 100%);
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity var(--transition-douce);
+        }
+
+        .galerie-item:hover::after {
+            opacity: 0.5;
+        }
+
+        /* ---------- CARTE AVIS ---------- */
+        .avis-carte {
+            background: var(--blanc-velin);
+            border-radius: 3px;
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            box-shadow: var(--shadow-halo);
+            max-width: 620px;
+            margin-top: 2rem;
+            position: relative;
+            border-left: 3px solid var(--laiton-bruni);
+        }
+
+        .avis-citation {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+            color: var(--cuir-fume);
+            margin-bottom: 1rem;
+            quotes: none;
+        }
+
+        .avis-auteur {
+            font-family: var(--font-texte);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--laiton-bruni);
+        }
+
+        /* ---------- INFOS PRATIQUES ---------- */
+        .pratiques-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-top: 2.5rem;
+            align-items: start;
+        }
+
+        .pratiques-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+
+        .pratiques-info .info-ligne {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7em;
+            font-family: var(--font-texte);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 1.05vw, 1rem);
+            letter-spacing: 0.02em;
+            color: var(--cuir-fume);
+        }
+
+        .pratiques-info .info-ligne .icone {
+            color: var(--laiton-bruni);
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .pratiques-info a {
+            color: var(--bois-de-rose);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition-rapide), color var(--transition-rapide);
+        }
+
+        .pratiques-info a:hover {
+            color: var(--laiton-bruni);
+            border-bottom-color: var(--laiton-bruni);
+        }
+
+        .carte-container {
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: var(--shadow-halo);
+            aspect-ratio: 4/3;
+            min-height: 280px;
+        }
+
+        .carte-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background: var(--essence-brune);
+            color: rgba(245, 243, 238, 0.75);
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) 3rem;
+            margin-top: clamp(3rem, 6vw, 5rem);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-col {
+            min-width: 180px;
+        }
+
+        .footer-nom {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            color: #F5F3EE;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-adresse {
+            font-family: var(--font-texte);
+            font-weight: 300;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-adresse a {
+            color: rgba(245, 243, 238, 0.7);
+            text-decoration: none;
+            transition: color var(--transition-rapide);
+        }
+
+        .footer-adresse a:hover {
+            color: var(--laiton-bruni);
+        }
+
+        .footer-credits {
+            width: 100%;
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(180, 132, 78, 0.2);
+            font-family: var(--font-texte);
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            color: rgba(245, 243, 238, 0.4);
+        }
+
+        /* ---------- REVEAL AU SCROLL ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .nav-list {
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+            .nav-list a {
+                font-size: 0.75rem;
+            }
+            .galerie-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pratiques-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-accroche {
+                font-size: clamp(2.4rem, 10vw, 4rem);
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            .header-inner {
+                gap: 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galerie-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .nav-list {
+                gap: 0.3rem;
+            }
+            .nav-list a {
+                font-size: 0.7rem;
+                letter-spacing: 0.01em;
+            }
+            .nav-cta {
+                padding: 0.4em 0.8em;
+                font-size: 0.7rem;
+            }
+            .header-logo {
+                font-size: 1rem;
+            }
+            .hero {
+                min-height: 90vh;
+            }
+        }
+
+        /* ---------- FOCUS ---------- */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--laiton-bruni);
+            outline-offset: 3px;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#top" class="header-logo" aria-label="Manfield Avenue Mozart — Retour en haut">
+                Manfield<span class="point-laiton">▪</span>Mozart
+            </a>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list">
+                    <li><a href="#le-lieu">L'adresse</a></li>
+                    <li><a href="#accueil">Avis</a></li>
+                    <li><a href="#cuirs">Cuirs</a></li>
+                    <li><a href="#venir">Venir</a></li>
+                    <li><a href="tel:+33145243147" class="nav-cta">Appeler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-titre">
+            <div class="hero-bg">
+                <img src="assets/maps-1.jpg" alt="Façade de la boutique Manfield, 9 Avenue Mozart, Paris" loading="eager" decoding="async">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-accroche" id="hero-titre">Poussez la porte.</h1>
+                <div class="hero-file" aria-hidden="true"></div>
+                <p class="hero-sous-titre">Ici, on entre pour le conseil autant que pour la chaussure. La boutique Manfield de l'Avenue Mozart vous reçoit comme un habitué — même la première fois.</p>
+                <div class="hero-badge">
+                    <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span> 5,0 — avis Google
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Découvrir</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- LE LIEU -->
+        <section class="section reveal" id="le-lieu" aria-labelledby="titre-lieu">
+            <h2 class="section-titre" id="titre-lieu">L'adresse<span class="point-laiton">▪</span></h2>
+            <div class="file-laiton" aria-hidden="true"></div>
+            <p class="section-texte">Une façade en pierre, une devanture sobre, et l'une des plus belles avenues de Paris. La boutique Manfield du 16<sup>e</sup> existe depuis des décennies dans l'élégance calme du quartier. Ici, on prend le temps.</p>
+        </section>
+
+        <!-- GALERIE (entre lieu et accueil, comme respiration) -->
+        <section class="section reveal reveal-delay-1" aria-label="Galerie de la boutique">
+            <div class="galerie-grid">
+                <div class="galerie-item"><img src="assets/maps-2.jpg" alt="Intérieur de la boutique Manfield, présentoirs en bois" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-3.jpg" alt="Reflets sur les vitrines, collection de chaussures" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-4.jpg" alt="Détail des rayonnages en bois verni" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-5.jpg" alt="Ambiance chaleureuse de la boutique" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-6.jpg" alt="Vitrine extérieure, Avenue Mozart" loading="lazy" decoding="async"></div>
+                <div class="galerie-item"><img src="assets/maps-1.jpg" alt="Façade en pierre de la boutique" loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <!-- L'ACCUEIL -->
+        <section class="section reveal reveal-delay-2" id="accueil" aria-labelledby="titre-accueil">
+            <h2 class="section-titre" id="titre-accueil">Ce que nos clients racontent<span class="point-laiton">▪</span></h2>
+            <div class="file-laiton" aria-hidden="true"></div>
+            <p class="section-texte">Les avis le disent mieux que nous. Prenez trois minutes pour lire ce que vos voisins pensent de la boutique.</p>
+            <div class="avis-carte reveal reveal-delay-3">
+                <p class="avis-citation">« Un accueil d'une sincérité rare. Un vendeur élégant qui connaît son métier. »</p>
+                <p class="avis-auteur">— Avis client, Google 5★</p>
+            </div>
+        </section>
+
+        <!-- CE QUE VOUS TROUVEREZ -->
+        <section class="section reveal reveal-delay-3" id="cuirs" aria-labelledby="titre-cuirs">
+            <h2 class="section-titre" id="titre-cuirs">Cuirs et conseils<span class="point-laiton">▪</span></h2>
+            <div class="file-laiton" aria-hidden="true"></div>
+            <p class="section-texte">Du mocassin au richelieu, de la sandale à la botte : les collections Manfield, Bowen, Colisée Paris et Fairmount sont présentées dans un cadre boisé qui invite à toucher, essayer, marcher. Le stock est celui de la boutique physique — appelez pour vérifier une pointure, un modèle.</p>
+        </section>
+
+        <!-- VENIR -->
+        <section class="section reveal reveal-delay-4" id="venir" aria-labelledby="titre-venir">
+            <h2 class="section-titre" id="titre-venir">Passage Avenue Mozart<span class="point-laiton">▪</span></h2>
+            <div class="file-laiton" aria-hidden="true"></div>
+            <div class="pratiques-grid">
+                <div class="pratiques-info">
+                    <p class="section-texte" style="max-width:100%;">Ouvert du lundi au samedi, fermeture à 19h. Le métro Jasmin est à deux pas. Pour un essayage en toute tranquillité, appelez avant : une voix vous répondra — pas un standard.</p>
+                    <div class="info-ligne">
+                        <span class="icone">📞</span>
+                        <a href="tel:+33145243147">01 45 24 31 47</a>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="icone">✉️</span>
+                        <a href="mailto:serviceclient@manbow.fr">serviceclient@manbow.fr</a>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="icone">📍</span>
+                        <span>9 Avenue Mozart, 75016 Paris</span>
+                    </div>
+                    <p style="font-family:var(--font-texte);font-weight:300;font-size:0.8rem;color:var(--bois-de-rose);margin-top:0.3rem;letter-spacing:0.03em;">Horaires affichés à titre indicatif — pensez à confirmer avant de vous déplacer.</p>
+                </div>
+                <div class="carte-container">
+                    <iframe src="https://maps.google.com/maps?q=Manfield+9+Avenue+Mozart%2C+Paris&output=embed" width="100%" height="360" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps — Manfield, 9 Avenue Mozart, Paris"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- LE SOIN -->
+        <section class="section reveal reveal-delay-5" aria-labelledby="titre-soin">
+            <h2 class="section-titre" id="titre-soin">Après l'achat<span class="point-laiton">▪</span></h2>
+            <div class="file-laiton" aria-hidden="true"></div>
+            <p class="section-texte">Cirage, ressemelage, conseils d'entretien : la boutique vous accompagne bien au-delà du passage en caisse. Parce qu'une belle paire se garde, et qu'une bonne adresse aussi.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <p class="footer-nom">Manfield<span style="color:var(--laiton-bruni);">▪</span>Mozart</p>
+                <p class="footer-adresse">
+                    9 Avenue Mozart<br>
+                    75016 Paris<br>
+                    <a href="tel:+33145243147">01 45 24 31 47</a><br>
+                    <a href="mailto:serviceclient@manbow.fr">serviceclient@manbow.fr</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-adresse" style="margin-top:0.3rem;">
+                    Du lundi au samedi<br>
+                    Fermeture à 19h<br>
+                    Métro Jasmin (ligne 9)
+                </p>
+            </div>
+        </div>
+        <p class="footer-credits">Site créé par Agence Mooo</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Manfield Avenue Mozart",
+            "image": "assets/maps-1.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "9 Avenue Mozart",
+                "addressLocality": "Paris",
+                "postalCode": "75016",
+                "addressCountry": "FR"
+            },
+            "telephone": "+33145243147",
+            "email": "serviceclient@manbow.fr",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "5"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "closes": "19:00"
+                }
+            ]
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+
+            function updateHeader() {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            }
+
+            window.addEventListener('scroll', updateHeader, { passive: true });
+            updateHeader();
+
+            // IntersectionObserver pour les reveals
+            const revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length > 0 && window.IntersectionObserver) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px -40px 0px',
+                    threshold: 0.15
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback : tout afficher
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // Défilement fluide pour les ancres (complémentaire au scroll-behavior)
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#top' || href === '#') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+                    const target = document.querySelector(href);
+                    if (target && href !== '#') {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
