@@ -1,96 +1,78 @@
-**BRIEF CRÉATIF — Pitlane Balard**
-*Site vitrine haut de gamme | 39 rue Balard, Paris 15ᵉ*
+# BRIEF CRÉATIF — Pitlane Balard
 
 ---
 
-### 1. Concept & positionnement
-**« La voie des stands au cœur de la ville. »**  
-Pitlane Balard n’est pas un garage anonyme : c’est l’adresse où les scooters et motos parisiens reçoivent les mêmes soins qu’une machine de course. On capitalise sur le nom « Pitlane » pour installer une double promesse : précision mécanique héritée de la compétition + service de quartier ultra-réactif. L’identité visuelle traduit ce paradoxe : la rigueur froide de l’atelier rencontre la chaleur des avis clients réels.
+## 1. Concept & positionnement
+
+Un garage, c’est un stand. Un stand, c’est un métier, une urgence maîtrisée, un savoir-faire qui se lit dans les gestes et les outils. Pitlane Balard n’est pas un concessionnaire aseptisé ni un simple « réparateur de scooters » : c’est le **pit-stop du quotidien parisien**, l’endroit où l’on confie sa machine à des mécaniciens qui aiment les moteurs sous toutes leurs formes — thermiques, électriques, hybrides — depuis plus de 25 ans. Le site doit incarner cette double vérité : **la rigueur technique du stand de course, la simplicité directe d’un garage de quartier où l’on vous connaît par votre prénom.** On ne vend pas des véhicules, on équipe des Parisiens pour la jungle urbaine.
+
+L’idée forte : chaque page est un **poste de travail** — diagnostic, essai, financement, entretien — pensé pour faire gagner du temps, rassurer par la transparence des informations, et donner envie de pousser la porte du 39 rue Balard.
 
 ---
 
-### 2. Direction artistique
-**« Brut mécanique »**  
-Un parti pris **industriel épuré**, sans nostalgie vintage. La référence n’est pas le rétro-garage chaleureux, mais le stand technique moderne : lignes droites, métal brossé, contraste noir/rouge, lumière blanche à 5000K (celle des vrais ateliers).  
-- *Matières* : fonds façon tôle grainée ou aluminium anodisé (en micro-textures CSS), touches de vernis brillant (icônes, séparateurs).  
-- *Lumière* : directionnelle, rasante, avec des ombres nettes, comme sous un néon d’établi.  
-- *Grid* : strict, colonnes à l’allemande, pour une hiérarchie de compétition. Les photos d’atelier en pleine largeur sont traitées en duotone noir / gris acier avant de recevoir l’accent rouge.
+## 2. Direction artistique
+
+Je nomme ce parti pris : **« Fiche technique habitée »**.
+
+L’énergie visuelle réelle, lue dans les photos Google Maps et confirmée par la nature du lieu, est celle d’un **atelier urbain à la lumière crue**, où le métal, le verre, le rouge des carénages et le jaune de la signalétique coexistent sans se contredire. Le site reprend ces ingrédients mais les traite avec une rigueur éditoriale : on garde la froideur technique du néon, la franchise du métal brossé, mais on y injecte une chaleur humaine par la typographie et la photographie.
+
+- **Pas de dark mode « racing game »** : fond clair (blanc atelier / gris béton ciré) pour rester fidèle à la luminosité réelle du showroom et des photos, et pour garantir une lisibilité irréprochable sur mobile, là où l’essentiel des visites se fait.
+- **Le rouge et le jaune** (extraits de la signalétique réelle du commerce) sont conservés mais maîtrisés : le rouge devient un accent sanguin et profond, jamais criard ; le jaune reste ce signal de stand, mais il est utilisé par petites touches, en filets, en surlignages, jamais en aplat dominant.
+- **Les matières se répondent** : arrière-plans texturés évoquant le métal brossé ou le sol d’atelier, typographie qui claque comme une inscription sur un carénage, blocs d’information détourés comme des étiquettes techniques.
+- **La photographie évite le stock photo** : les vrais véhicules du showroom, shootés sous l’éclairage réel du garage, avec un traitement qui amplifie le brillant des carrosseries et la précision des pièces mécaniques — on assume le côté « vitrine de quartier », mais on le sublime par une direction photo cohérente.
+
+Ce n’est pas un style plaqué : c’est l’esthétique **naturelle du lieu, hissée au niveau d’un système graphique.**
 
 ---
 
-### 3. Palette
-| Rôle | HEX | Nom | Usage |
-|------|-----|-----|-------|
-| Fond sombre | `#0D0D0D` | Asphalte | Arrière-plans, header, footer |
-| Encre claire | `#F2F2F2` | Optique blanc | Texte courant, titres inversés |
-| Métal froid | `#A9A9AF` | Alu brossé | Bordures, filets, icônes, hover |
-| Accent racing | `#E10600` | Rouge pitlane | Boutons CTA, soulignés, puces, prix |
-| Fond carte clair | `#F7F7F8` | Blanc atelier | Fond de certaines sections pour lisibilité |
-| Sombre tempéré | `#1C1C1E` | Carbone | Surfaces secondaires, cartes, contrastes doux |
+## 3. Palette
 
-**Principe** : majorité de fond noir asphalte, texte blanc optique, rouge uniquement pour les éléments interactifs et les informations critiques (prix, CTA, téléphone). Le métal froid structure l’espace.
+| Rôle | Nom | Hex | Justification |
+|------|-----|-----|---------------|
+| Fond principal | **Blanc Atelier** | `#F2EFE9` | Blanc cassé légèrement chaud (pas le blanc fade), rappelle la lumière des néons réfléchie sur les murs du showroom. |
+| Texte / Encre | **Gris Fonte** | `#1E1E1E` | Presque noir, mais pas un noir pur — un gris métallurgique profond, comme de la fonte usinée. |
+| Métal | **Gris Carter** | `#B0B5B9` | Le gris-bleu froid du métal, des carters, des jantes. Utilisé pour les filets, séparateurs, arrière-plans de cartes. |
+| Accent primaire | **Rouge Carénage** | `#C41230` | Un rouge profond, légèrement assombri, celui d’un carénage sportif sous un éclairage d’atelier. |
+| Accent signal | **Jaune Stand** | `#F2C900` | Jaune vif mais pas fluorescent, extrait des vraies enseignes et stickers visibles en vitrine. Utilisé pour les CTA, les surlignages, les pastilles. |
+| Fond secondaire | **Béton Ciré** | `#E8E3DD` | Pour les zones de différenciation (témoignages, pied de page), une teinte légèrement plus grisée que le fond principal, qui évoque le sol d’un garage moderne. |
 
----
-
-### 4. Ton éditorial
-**Expert, direct, calé — zéro pommade.**  
-On parle comme le chef d’atelier : franc, concret, un peu sec mais jamais désagréable. Pas de « solutions innovantes », on dit exactement ce qu’on fait et combien ça coûte.  
-- Vocabulaire technique maîtrisé (kit chaîne, révision des 10 000 km, valise de diagnostic) mais vulgarisé quand il le faut.  
-- Tutoiement collectif au « vous » du commerce parisien.  
-- Avis clients réels intégrés tels quels, avec prénoms et dates.
+**Règle d’usage** : 70% blanc atelier / gris carter, 20% gris fonte (texte), 10% rouge carénage + jaune stand combinés. Le rouge et le jaune ne sont jamais côte à côte sans un « silence » de blanc ou de métal entre eux.
 
 ---
 
-### 5. Accroche héro
-**Titre (H1 — Marcellus, tracking élargi, capitale, orange rouge sur fond noir) :**  
-> ENTRETIEN, VENTE, FINANCEMENT : VOTRE STAND DE CONFIANCE PARIS 15ᵉ  
+## 4. Ton éditorial
 
-**Sous-titre (Mulish, regular, corps de lecture) :**  
-> Scooters thermiques & électriques, motos 125 cm³ et maxi-scooters.  
-> 25 ans d’expertise, 4,1 ★ sur 74 avis, une adresse : 39 rue Balard.
+**Voix** : Celle du chef d’atelier qui vous reçoit en blouson, les mains dans les poches, avec un demi-sourire — compétent, direct, trop fier de son boulot pour en faire des caisses. On vouvoie le client par respect, mais on ne lui parle pas comme un assureur. On nomme les choses précisément (« transmission », « pièce d’origine constructeur », « batterie lithium ») sans faire de cours magistral.
 
-**Bouton principal :**  
-[ Prendre rendez-vous en 2 clics ]  —  [ Appeler le garage : 01 42 18 57 00 ]
+**Registre** : Langage courant soigné, émaillé d’expressions du métier quand elles éclairent le propos, jamais pour exclure. Une pointe d’humour parisien peut affleurer dans les micro-textes, mais jamais dans les informations critiques (prix, garantie, procédure).
+
+**Principe cardinal pour le copywriting** : toute affirmation générale est remplacée par un fait vérifiable ou une explication concrète. Pas de « meilleur service », mais « pièces d’origine constructeur sur tous nos entretiens » ou « nous ouvrons vos pièces devant vous si vous le souhaitez ». Chaque mot doit mériter sa place, comme dans un manuel technique bien écrit.
 
 ---
 
-### 6. Sections (ordre et contenu réel)
+## 5. Accroche héro
 
-**① EXPERTISE LOCALE — 25 ANS DE MÉCA PARISIENNE**  
-*Titre de section* : L’atelier  
-> Du scooter 50 cm³ à la moto électrique 125, on entretient votre deux-roues comme s’il allait se mettre en grille. Pièces d’origine constructeur, valise de diagnostic, passage au banc : tout est fait ici, par nous, dans notre atelier du 15ᵉ.  
-> *Photo pleine largeur de l’atelier réel, traitement duotone noir/alu, légende : « Sylvain et son équipe — depuis 1999 ».*
+**[Marcellus, taille display XL]**
+> **Votre pit-stop personnel, entre Balard et le périph.**
 
-**② NOS SERVICES — CLAIRS, CHIFFRÉS, SANS MAUVAISE SURPRISE**  
-*Blocs distincts avec icônes géométriques fines :*  
-- **Entretien thermique** → Forfait révision à partir de 89 €. Vidange, filtres, courroie, freins.  
-- **Entretien électrique** → Diagnostic batterie, mise à jour ECU, contrôle moteur.  
-- **Vente véhicules neufs & occasion** → Sym, Benelli, Nerva, Segway… Essayez gratuitement.  
-- **Financement** → En 3, 4 ou 10 fois, ou LOA/LLD jusqu’à 60 mois avec Siko Mobility.
-
-**③ VÉHICULES EN STOCK — ESSAI GRATUIT SUR PLACE**  
-*Titre* : Prêt à rouler  
-*Sous-titre* : Scooters électriques 50/125, thermiques 50 à 300 cm³.  
-> Découvrez les modèles disponibles immédiatement au 39 rue Balard. Chaque véhicule est préparé par nos soins, révisé, garanti. Appelez-nous pour un essai sans engagement.  
-*Grille de mini-fiches produit (photo du véhicule sur fond asphalte, nom du modèle, cylindrée, prix de départ en rouge).*
-
-**④ POURQUOI NOS CLIENTS NOUS FONT CONFIANCE**  
-*Titre* : 74 avis, une moyenne de 4,1 ★  
-> Trois vrais avis Google récents, affichés en cartes sombres avec citation > « Changement du kit chaîne pour ma CBR 650R, rien à redire. Je recommande. » — Frédéric D., avril 2025.  
-> Note moyenne, badge Google, lien vers la fiche pour lire la suite.
-
-**⑤ HORAIRES & CONTACT — PAS DE STAND SANS PITLANE**  
-*Titre* : Venez au garage  
-> Du lundi au jeudi : 8h30 – 19h00  
-> Vendredi : 8h30 – 18h30  
-> 39 rue Balard, Paris 15ᵉ (métro Balard ou Lourmel) — Tél. 01 42 18 57 00 — pitlane150@gmail.com  
-*Carte intégrée fond sombre, marqueur rouge racing.*
+**[Mulish, corps, taille L]**
+> Scooters, motos thermiques ou électriques. Vente, entretien, essai gratuit au cœur du 15ᵉ. Depuis 25 ans, on prépare vos deux-roues comme on aimerait qu’on prépare les nôtres.
 
 ---
 
-### 7. Signature visuelle
-- **Animation de chargement** : un compte-tours stylisé (rond central avec aiguille rouge) qui grimpe et redescend avant de laisser place au header.  
-- **Hover sur les boutons** : un filet rouge latéral glisse de gauche à droite, comme une bande de stand au sol.  
-- **Séparateurs** : des lignes fines en dégradé de métal, traversées diagonalement de points rouge/alu (clin d’œil aux damiers de ligne d’arrivée).  
-- **Typographie signature** : les titres en Marcellus sont systématiquement en capitales avec un tracking de 200 et un poids régulier ; le rouge n’est utilisé que sur le premier mot ou un nom de marque, le reste reste blanc optique sur fond noir.  
-- **Photos « atelier »** : toutes les images réelles sont passées en noir & blanc froid, puis on réinjecte le rouge uniquement sur les détails signalétiques (une jante, une affichette, un câble) via un masque CSS — effet garanti.
+## 6. Sections (ordre et contenu)
+
+### ① **Le stand** (À propos / Expertise)
+- *Titre section* : **25 ans sous le néon, ça ne s’improvise pas.**
+- *Contenu* : « Pitlane Balard, ce n’est pas une chaîne. C’est un atelier de quartier spécialisé dans la mobilité urbaine depuis plus de vingt-cinq ans. Nous entretenons et vendons des scooters et motos — thermiques ou électriques — avec la même rigueur : pièce d’origine, diagnostic transparent, tarif maîtrisé. Le nom Pitlane ? Une promesse : le sérieux d’un stand, la rapidité d’un arrêt aux stands. »
+
+### ② **Faites l’essai** (Call-to-action principal, remonté AVANT l’offre)
+- *Titre section* : **Prenez le guidon. Sans pression.**
+- *Contenu* : « Réservez un essai gratuit, seul ou accompagné d’un mécanicien. 20 minutes dans le 15ᵉ, pour sentir la machine, poser vos questions, et repartir avec une idée claire. Sans engagement, parce qu’un deux-roues se choisit au ressenti, pas sur une fiche technique. » → **Bouton CTA Jaune Stand** : « Réserver un essai ».
+
+### ③ **Ce qu’on fait** (Services — double colonne claire)
+- *Titre section* : **Entretien électrique, thermique, ou les deux.**
+- *Colonne Thermique* : « Vidange, courroie, valves, transmission : nous travaillons comme à l’époque où les moteurs avaient des carbus — c’est-à-dire avec attention. Pièces origine constructeur, devis avant intervention, et un café si vous attendez. »
+- *Colonne Électrique* : « Batterie, contrôleur, faisceau : l’électrique ne supporte pas l’approximation. Nous formons nos mécaniciens aux technologies Kove, Niu, Segway, Silence. Diagnostic logiciel inclus. »
+
+### ④ **Les machines** (Galer
