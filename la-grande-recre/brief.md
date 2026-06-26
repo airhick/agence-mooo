@@ -1,47 +1,43 @@
-**1. Concept & positionnement**  
-On ne vient pas à La Grande Récré Passy uniquement pour acheter un jouet : on y vient pour une parenthèse enchantée en famille. Le site sera une véritable *vitrine joyau*, traitée comme l’écrin lumineux d’un magasin qui fait briller les yeux des enfants – et des parents. Le parti pris : une sophistication éditoriale au service du jeu, où chaque détail raconte que l’endroit est aussi élégant que le quartier, aussi chaleureux qu’un Noël permanent, aussi fiable qu’une enseigne centenaire.
+Excellent. Voici le brief créatif pour **La Grande Récré**, pensé pour incarner l’élégance du 16ᵉ arrondissement et la joie sophistiquée de l’enfance — sans jamais tomber dans les clichés.
 
-**2. Direction artistique**  
-*Classicisme Pop* – Un mariage entre la tradition typographique épurée des beaux quartiers et la vitalité pop d’un magasin de jouets. La structure reste sobre et aérée (fond blanc, grille rigoureuse, filets fins), mais elle est réveillée par des éclats de couleurs franches issues directement des lettres du logo et des guirlandes lumineuses des vraies photos. L’impression générale est celle d’un catalogue papier haut de gamme qui aurait croisé l’univers d’un illustrateur jeunesse – chic et immédiatement chaleureux, jamais infantile.
+---
 
-**3. Palette**  
-- `#FFFFFF` – Fond principal, toile lumineuse qui amplifie les éclats de couleur.  
-- `#E50013` – Rouge enseigne (accent principal, boutons, filets, animations).  
-- `#0A2C61` – Bleu profond (encre principale, titres secondaires, icônes).  
-- `#FFD500` – Jaune guirlande (surlignage, étiquettes, détails énergiques).  
-- `#F0F0F0` – Gris très clair (arrière-plan doux pour les cartes, séparateurs discret).  
-La palette évite le terracotta, le vert acide et le presque-noir uniforme. Le rouge et le jaune sont utilisés en touches, jamais en aplat dominant, pour garder la sophistication.
+### 1. Concept & positionnement
+La Grande Récré n’est pas un magasin de jouets, mais l’adresse mode des enfants du 16ᵉ. Le site doit refléter une double promesse : la rigueur du chic parisien et l’insouciance maîtrisée de l’enfance. Nous vendons de beaux vêtements dans lesquels on peut vraiment jouer, avec cette idée centrale : *la récréation, c’est sérieux*. Le client repartira avec l’impression de feuilleter un album d’Épinal contemporain, où chaque pièce est un petit trésor de confection.
 
-**4. Ton éditorial**  
-Voix chaleureuse, précise et complice. On tutoie (l’enfant intérieur des parents), on adopte un vocabulaire simple mais élégant, avec des élans poétiques quand il s’agit d’évoquer l’éveil et le jeu. Aucun remplissage : chaque phrase décrit un service concret, une ambiance tangible, une qualité réelle du magasin.
+### 2. Direction artistique
+**Parti pris esthétique : « Récréation Haute Couture »**.  
+Nous fusionnons les codes de l’atelier de mode parisien et l’esprit jardin d’hiver du Ranelagh tout proche. Matières texturées (lin, papier vergé), lumière naturelle douce, cadrage serré sur les détails de couture, et une sophistication qui refuse la mièvrerie. L’énergie visuelle est celle d’un quartier haussmannien traversé de rires d’enfants : pierre blonde, ombre des marronniers, tenues impeccables froissées de joie. Libre Baskerville (titres) apporte l’héritage littéraire ; Karla (corps) ancre le propos dans une modernité propre et lisible.
 
-**5. Accroche héro**  
-**Titre** : Ici commence la plus belle des récrés.  
-**Sous-titre** : Au cœur du Passy Plaza, un écrin de jouets pensé pour les rêveurs de 0 à 99 ans.
+### 3. Palette
+Cinq teintes tirées de l’imaginaire du quartier et de l’univers textile :
 
-**6. Sections** (ordre et contenu réel)  
+| Rôle | HEX | Nom d’usage |
+|------|-----|-------------|
+| Fond principal | `#F7F3EC` | Lin écru (blanc cassé très légèrement froid) |
+| Texte / encre | `#2B2D2A` | Vert bronze (presque-noir chaleureux, non neutre) |
+| Accent franc | `#C75B5B` | Corail vénitien (rose-rouge poudré, ni terracotta ni vermillon) |
+| Accent secondaire | `#8BA888` | Vert sauge (écho aux jardins, jamais acide) |
+| Contraste discret | `#DDBEA9` | Beige rosé (rappel de velours ou de carnation, utilisé en filets) |
 
-**① La magie du lieu**  
-*Titre* : Un magasin qui scintille  
-*Contenu* : Dès l’entrée, les guirlandes lumineuses guident votre regard vers les grandes lettres colorées qui ont fait la légende de l’enseigne. Ici, chaque rayon est scénographié comme une promesse d’aventure, des poupées aux jeux de construction en passant par les univers Harry Potter ou Playmobil.
+*Ni crème + terracotta, ni presque-noir + vert acide. Fond clair mais à peine chaud — la chaleur viendra du corail et du vert sauge.*
 
-**② L’adresse parisienne du jeu**  
-*Titre* : Rendez-vous au 53 rue de Passy  
-*Contenu* : Situé au sein du centre commercial Passy Plaza, notre magasin vous accueille du lundi au samedi de 10h à 20h. Le quartier, bien desservi (métro La Muette, bus 32, 52, 70), permet une visite facile, que vous soyez en promenade dominicale ou en quête d’une idée cadeau de dernière minute.
+### 4. Ton éditorial
+Voix : une vendeuse de confiance, experte et complice, qui vouvoie. Registre soutenu mais jamais guindé, avec une pointe d’esprit parisien. On met en avant la qualité des matières, l’origine, les conseils. Aucune mention générique : chaque phrase doit sonner comme une recommandation de bouche à oreilles. Par exemple : *« Madame, cette robe en coton bio est prévue pour durer toute une saison de marelle. »*
 
-**③ Services sur mesure**  
-*Titre* : Plus qu’un achat, une écoute  
-*Contenu* : Nos conseillers passionnés vous aident à trouver le jouet parfait pour l’âge et les goûts de l’enfant. Nous proposons un service de liste de naissance, le paiement en plusieurs fois, le click & collect en 1 heure et l’emballage cadeau offert.
+### 5. Accroche héro
+**Titre** : *L’élégance ne prend pas de vacances, même en récréation.*  
+**Sous-titre** : Découvrez notre collection printemps-été : des pièces raffinées, coupées dans les plus beaux tissus, au cœur du Passy Plaza.
 
-**④ La récré des tout-petits**  
-*Titre* : Espace éveil & démonstration  
-*Contenu* : Au fond du magasin, un coin moquetté permet aux enfants de tester les jeux d’éveil et aux parents d’échanger avec nos équipes. Peluches, premiers puzzles et jouets en bois sont à portée de main, dans un environnement tout doux.
+### 6. Sections (ordre et contenu réel)
+1. **Titre : Le beau jeu**  
+   *Depuis plus de 20 ans, nous sélectionnons pour vos enfants des vêtements qui allient la noblesse des matières à la liberté du mouvement. Chaque pièce est pensée pour que vos petits puissent courir, sauter et rêver avec une élégance innée.*
 
-**⑤ Le joyau du 16ᵉ**  
-*Titre* : Dans l’air du temps, depuis toujours  
-*Contenu* : La Grande Récré fait partie du paysage parisien depuis plus de 40 ans. À Passy, nous cultivons cet héritage en proposant à la fois les grands classiques indémodables et les dernières nouveautés repérées sur les salons internationaux.
+2. **Titre : L’air de Paris**  
+   *Robes en coton bio, bermudas en lin, cardigans en cachemire… Notre collection estivale s’inspire des nuances du jardin du Ranelagh et de l’esprit guinguette chic, sans jamais sacrifier le confort.*
 
-**7. Signature visuelle**  
-- **Animation guirlandes** : Des points lumineux (en `#FFD500`) qui s’illuminent séquentiellement au scroll le long d’un fil invisible, traversant les sections comme une ligne joyeuse qui relie toute la page.  
-- **Typographie display cinétique** : Le titre « Ici commence la plus belle des récrés » est affiché en Libre Baskerville avec un jeu de graisses (regular + bold) et un léger soulignement ondulé en rouge (`#E50013`) qui se déroule au chargement, comme la languette d’un paquet cadeau qu’on défait.  
-- **Griffe graphique** : Chaque le nom de jouet cité dans le texte (exemple : « poupée Corolle », « circuit Brio ») est mis en exergue par un petit badge rectangulaire jaune (`#FFD500`) à coins arrondis, façon étiquette de prix détournée en clin d’œil au commerce.
+3. **Titre : Un écrin au Passy Plaza**  
+   *Nichée au premier étage du centre commercial, notre boutique est un cocon pensé pour les familles. Un espace où l’on prend le temps de choisir, conseiller, retoucher. Comme à la maison, en plus beau.*
+
+4. **Titre : À votre service**  
+   *Retouches sur place, click & collect en 2 heures, liste de naissance personnalisée. Nous accompagnons chaque famille avec la même attention — et le
