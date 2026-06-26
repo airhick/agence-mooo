@@ -1,70 +1,95 @@
-Voici le brief créatif pour le nouveau site vitrine de la Pharmacie Theophile Gautier, conçu pour corriger l’absence totale d’ancrage local et offrir une expérience à la hauteur du quartier.
+# BRIEF CRÉATIF — Pharmacie Theophile Gautier
 
 ---
 
 ## 1. Concept & positionnement
-**La pharmacie de famille du 16e, entre pierre haussmannienne et rigueur contemporaine.**  
-On abandonne le site générique du réseau pour incarner une adresse : celle d’un officin de proximité où l’expertise pharmaceutique dialogue avec l’élégance minérale de la façade et le vert néon de la croix emblématique. Le site devient le reflet numérique de ce lieu réel, rassurant et impeccable, pensé pour les habitants de l’Avenue Théophile Gautier qui cherchent bien plus que des horaires : une relation de confiance, des services concrets et un repère visuel familier.
 
-## 2. Direction artistique
-**“Haussmann graphique”** – Un classicisme architectural assumé (moulures, pierre de taille, boiseries) traversé par une ponctuation graphique contemporaine : le vert néon électrique de la croix, utilisé comme un signal visuel fort. La composition mêle la rigueur des façades du 16e à une structuration claire, presque signalétique, où chaque information est un repère. La lumière froide et vive des photos réelles se traduit par une interface à fond clair laiteux, valorisant la typographie et les contrastes nets.
+Une pharmacie de quartier ne devrait jamais être un portail générique sans visage — surtout quand elle porte le nom d'un des plus grands écrivains français du XIXe siècle. **« L'Officine Lettée »** : on pose la pharmacie comme un lieu où l'expertise médicale rencontre l'élégance littéraire de son adresse. Exit le catalogue Pharmactiv sans âme ; on crée une vitrine de quartier qui rassure, qui renseigne, et qui donne envie de pousser la porte. Ce site est la première poignée de main avant la visite : chaleureuse, nette, cultivée.
 
-## 3. Palette
-Couleurs directement extraites de l’énergie visuelle réelle du commerce (façade pierre, croix verte, boiseries intérieures) :
+---
 
-| Rôle | HEX | Nom d’usage |
-|------|-----|-------------|
-| Fond principal | `#F8F5F0` | Pierre chaude |
-| Texte / encre | `#2C2B2B` | Ardoise foncée |
-| Accent primaire (croix, CTA) | `#39FF14` | Vert néon |
-| Accent secondaire (bois, chaleur) | `#8B6B4D` | Noyer |
-| Surface / carte | `#E8E3DC` | Calcaire |
-| Détails froids (filets, icônes) | `#9EA2A1` | Pierre de taille |
+## 2. Direction artistique : **Officine bourgeoise parisienne**
 
-La pierre chaude domine les fonds, évitant le blanc fade ; le vert néon est réservé aux interactions clés (boutons, liens, motifs-signature) pour créer une identité immédiatement reconnaissable.
+Un parti pris esthétique qui puise dans trois strates réelles du commerce :
+- **Le quartier** : le 16ᵉ arrondissement haussmannien, ses immeubles en pierre de taille, ses boiseries, ses poignées en laiton, ses cages d'escalier à moulures.
+- **Le nom** : Théophile Gautier, figure du romantisme et du Parnasse — on injecte une élégance typographique et un rapport au livre, au papier, à la belle ouvrage.
+- **Le métier** : l'officine traditionnelle — flacons en verre ambré, mortier en porcelaine, étiquettes manuscrites, tiroirs en acajou, blouse blanche amidonnée.
+
+L'esthétique résultante est celle d'une **bibliothèque de santé** : sobre, érudite, rassurante. Pas de clinquant médical, pas de blanc clinique aseptisé. On travaille des matières nobles (papier vergé, verre dépoli, laiton, acajou) traduites en langage web : textures subtiles en arrière-plan, ombres douces, transitions liquides. Le site doit sentir le papier et la propreté, pas l'hôpital.
+
+---
+
+## 3. Palette chromatique
+
+Ancrée dans l'univers réel d'une officine parisienne de standing, loin des verts criards « croix de pharmacie ».
+
+| Rôle | HEX | Nom | Usage |
+|------|-----|-----|-------|
+| Fond principal | `#F7F3EB` | Blanc vergé | Fond de page, respire, chaud sans être crème |
+| Encre | `#1C2331` | Bleu nuit | Texte courant, élégant, moins dur qu'un noir pur |
+| Accent primaire | `#2D5A3D` | Vert empire | Boutons, liens, filets, croix discrète — vert pharmacie profond, digne |
+| Accent secondaire | `#B8863E` | Laiton bruni | Icônes, soulignés, éléments décoratifs fins |
+| Fond sombre | `#2B1F1C` | Acajou | Pied de page, bandeaux contrastés, évoque les boiseries |
+| Surbrillance | `#C9A96E` | Or pâle | Très peu utilisé : badges, mise en avant ponctuelle |
+
+**Principe** : 80 % fond vergé + encre, 15 % vert empire, 5 % laiton/or. Jamais de gris froid, jamais de blanc pur `#FFFFFF`, jamais de vert fluo.
+
+---
 
 ## 4. Ton éditorial
-**Registre :** Proche, confiant, précis. Une voix de pharmacien qui connaît ses clients – ni soutenue, ni infantilisante.  
-**Niveau de langue :** Vous de courtoisie, mais avec la fluidité de l’oral : « Passez nous voir », « On vous prépare votre ordonnance ».  
-**Énergie :** Rassurante et pratique. Chaque phrase répond à une question concrète (horaires, services, disponibilité). Pas de jargon national ni de remplissage marketing.
+
+**Voix** : le pharmacien cultivé du 16ᵉ, qui connaît ses patients par leur nom, vous parle en regardant dans les yeux. Ni corporate, ni paternaliste, ni faussement décontracté.
+
+**Registre** : courant soigné. Vouvoiement de rigueur. Phrases équilibrées. Quelques discretes pointes d'esprit — on est avenue *Théophile Gautier*, pas avenue de la Convention. Le vocabulaire médical est précis mais immédiatement explicité.
+
+**Règle de fer** : chaque information utile (horaires, téléphone, services) est énoncée clairement, sans fioritures. On ne fait pas de « copywriting vendeur » — on informe et on rassure.
+
+---
 
 ## 5. Accroche héro
-**Titre :** Votre ordonnance, notre savoir-faire.  
-**Sous-titre :** Pharmacie familiale depuis [année de création à confirmer, ex. 30 ans] au 2 Avenue Théophile Gautier. Tests antigéniques, livraison à domicile, parapharmacie conseil. Ouverts jusqu’à 20h ce soir.
 
-(Cette accroche associe immédiatement l’adresse réelle, les services clés et l’horaire du jour – elle corrige le défaut critique de l’audit : l’absence d’informations locales.)
+**Grand titre :**
+> Votre santé a une adresse.
 
-## 6. Sections (ordre de la page)
-1. **Pharmacie Théophile Gautier**  
-   Logo / enseigne + menu minimal. Bouton « Appeler le 01 42 88 05 65 » bien visible.  
-   *Contenu :* Aucun renvoi à un réseau national. Le nom de la pharmacie est le H1 implicite du site.
+**Sous-titre :**
+> Pharmacie Theophile Gautier — Officine de quartier depuis [date], à l'écoute de votre bien-être avenue Théophile Gautier, Paris 16ᵉ.
 
-2. **Héros**  
-   Titre et sous-titre ci-dessus, sur fond photographique pleine largeur montrant la façade réelle en pierre avec la croix verte allumée (photo issue des images Google Maps retravaillée).  
-   CTA principal : « Voir nos services » ⏤ « Appeler maintenant ».
+**Texte d'accompagnement (bouton CTAs) :**
+[Voir les horaires] [Nous appeler]
 
-3. **En ce moment (ou « Votre santé au 16e »)**  
-   *Titre :* Ce que vous cherchez ce mois-ci  
-   *Contenu réel :* Trois cartes : « Dépistage grippe/Covid sans RDV – résultats en 15 min », « Location de tire-lait, aérosols, béquilles : devis sous 24h », « Ordonnance en ligne ? Faites-la nous parvenir par email et récupérez-la en 20 minutes ». Pas d’articles génériques nationaux.
+---
 
-4. **Nos services locaux**  
-   *Titre :* Ce qu’on fait, à deux pas de chez vous  
-   *Liste concise et visuelle :* Tests antigéniques / Vaccination / Livraison d’ordonnances à domicile (périmètre 75016) / Matériel médical / Parapharmacie conseil / Gardes et nuits. Chaque service a un pictogramme discret et un lien pour en savoir plus (ancre).
+## 6. Sections du site
 
-5. **L’équipe & le lieu**  
-   *Titre :* Les visages derrière le comptoir  
-   *Contenu :* Photos réelles ou portraits style “équipe de quartier” (à défaut, on travaillera des illustrations éditoriales en cohérence avec le style haussmannien graphique). Courte phrase : « Martin, pharmacien titulaire, et Marina, préparatrice, vous connaissent par votre prénom. Ici, on prend le temps d’expliquer. » (Corrige l’absence d’identité humaine.)
+### 6.1 — Accueil (Héro)
+- **Titre** : Votre santé a une adresse.
+- **Contenu** : Une photographie pleine largeur de la devanture réelle de la pharmacie (à commander), avec le nom en grand. Adresse, téléphone et horaires visibles immédiatement dans une bande laiton. Bouton d'appel direct sur mobile.
 
-6. **Nous trouver**  
-   *Titre :* 2 Avenue Théophile Gautier, 75016 Paris  
-   *Contenu :* Carte Google Maps intégrée, horaires complets jour par jour (avec prochaines gardes en évidence), métro le plus proche (Jasmin ou Église d’Auteuil), bus dispo. Bloc cliquable « Appeler un taxi ou réserver une livraison ».
+### 6.2 — À propos & équipe
+- **Titre** : Une pharmacie à taille humaine
+- **Contenu** : Portrait de l'équipe (pharmaciens titulaires, préparateurs) avec prénoms et spécialités. Texte sur l'engagement de proximité, sans jargon corporate. « Ici, on ne sert pas des numéros d'ordonnance : on sert des habitants du quartier. »
 
-7. **Pied de page**  
-   *Contenu :* Rappel téléphone, email local (ex. contact@pharmacie-théophilegautier.fr), lien vers la page de confidentialité, crédits. Totalement désolidarisé de la plateforme Pharmactiv visible en surface.
+### 6.3 — Nos services
+- **Titre** : Tout ce que votre pharmacie peut faire pour vous
+- **Contenu** : Grille de services réels (tests rapides, vaccination, location de matériel médical, livraison à domicile, suivi de traitements chroniques, préparation de piluliers) présentés avec icônes en laiton et descriptions d'une phrase. Pas d'invention — chaque service doit être réellement proposé.
+
+### 6.4 — Conseils santé (bloc éditorial)
+- **Titre** : Conseils saisonniers
+- **Contenu** : 2-3 articles courts, écrits par l'équipe de la pharmacie, sur des sujets de saison (allergies, sommeil, immunité hivernale…). Ton de conseil personnalisé, pas de recyclage de contenu Pharmactiv. Chaque conseil est signé d'un prénom.
+
+### 6.5 — Contact & informations pratiques
+- **Titre** : Nous trouver, nous appeler
+- **Contenu** : Adresse, plan intégré, numéro de téléphone, email, horaires d'ouverture complets (semaine, samedi, gardes). Mention des jours de garde si pertinent. Accessibilité en transports en commun.
+
+### 6.6 — Pied de page signature
+- **Contenu** : Nom complet, adresse, téléphone, liens légaux discrets. Affiliation Pharmactiv mentionnée sobrement (« Membre du groupement Pharmactiv ») sans en faire le sujet du site. © année en cours.
+
+---
 
 ## 7. Signature visuelle
-1. **La croix néon comme motif mutique** – La croix verte `#39FF14` est le fil rouge du site : elle apparaît en version miniature à chaque changement de section (comme un repère visuel), en loader animé, ou en filigrane sur les photos d’ambiance. Elle signe l’identité locale bien plus que le logo réseau.
 
-2. **Typographie sculpturale** – Le nom complet « Pharmacie Theophile Gautier » est affiché une fois en très grand en Cormorant Garamond (graisse regular, lettres espacées avec élégance), comme une enseigne numérique. Il trône sur le héros et le pied de page, toujours en `#2C2B2B` sur fond pierre chaude. Aucun autre mot ne rivalise en taille avec ce balisage local.
+**1 — L'enseigne typographique littéraire**
+Le nom « Théophile Gautier » en Cormorant Garamond surdimensionné, avec une ligature ligaturée personnalisée (le « Th » lié) et un ornement typographique discret (fleuron ou cul-de-lampe XIXᵉ) sous le nom. Cet ornement se décline comme séparateur entre les sections : un mince filet à motif végétal ou géométrique, jamais lourd.
 
-Ces deux partis pris répondent à l’exigence de ne jamais produire un site générique et de faire de l’adresse réelle une icône immédiate pour le visiteur.
+**2 — L'animation « feuilletage »**
+Au scroll, les sections se dévoilent avec une transition douce qui évoque le tournage d'une page de registre d'officine : un très léger voile de texture papier vergé (opacité 5 %, SVG en background), et les blocs de contenu arrivent avec un reveal soyeux (pas de fade sec ni de slide mécanique). Le mode sombre n'est pas proposé : l'officine est un lieu de lumière et de lisibilité absolue. En revanche, un mode « confort » abaisse légèrement la température de blanc pour la consultation tardive.

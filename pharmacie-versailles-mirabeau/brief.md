@@ -1,100 +1,66 @@
-# BRIEF CRÉATIF
-## Pharmacie Versailles Mirabeau
+**BRIEF CRÉATIF — PHARMACIE VERSAILLES MIRABEAU**
 
 ---
 
-### 1. CONCEPT & POSITIONNEMENT
+### 1. Concept & positionnement
+On ne vient pas ici pour un simple achat, mais pour croiser un regard, un conseil, un repère familier. **« La santé de l’avenue »** : une officine qui incarne la permanence médicale et humaine du quartier, là où le conseil de comptoir vaut tous les articles en ligne. Loin des plateformes froides, on remet l’équipe, les spécialités vraies et la devanture en pleine lumière. La promesse tient en deux mots : expertise incarnée et attention continue.
 
-**« Ce n’est pas une pharmacie. C’est la pharmacie du 38. »**
+### 2. Direction artistique
+**« Apothicaire parisien contemporain »**. On convoque l’héritage de la pharmacie d’officine — ses flacons en verre fumé, ses boiseries profondes, son éclairage doux — pour le transcrire dans une écriture graphique précise et apaisante. Ni nostalgique ni aseptisé. L’ambiance visuelle mime les vitrines d’angle du 16e, avec une lumière dorée d’après-midi, des transparences superposées et un rapport au détail presque maniaque. La matière est palpable : verre, papier kraft, métal cuivré, porcelaine blanche.
 
-On abandonne le concept générique de « point de santé » ou de « réseau de professionnels ». On plante un drapeau local, élégant, presque patrimonial — l’officine comme institution de quartier, entre la rive du 16e historique et la modernité d’un soin sur mesure. L’idée : une adresse qu’on connaît, une équipe qu’on nomme, un lieu dont on parle au singulier. La promesse implicite : *Ici, on vous connaît.* Pas comme un slogan marketing — comme un fait, tangible, que l’architecture du site rend évident au premier coup d’œil.
+### 3. Palette
+Puisée dans l’univers même du soin, des contenants et du quartier (immeubles haussmanniens, cuivres, plantes officinales).
 
----
+| Rôle       | Hex       | Nom                     |
+|------------|-----------|-------------------------|
+| Fond principal | `#FDFB F7` | Blanc coquille — chaud, jamais clinique |
+| Encre      | `#1E2B 21` | Vert sapin profond — gravité et nature |
+| Accent 1   | `#D4A5 5A` | Laiton vieilli — chaleur, confiance, brillance retenue |
+| Accent 2   | `#6F8F 72` | Sauge officinale — fraîcheur, aromathérapie |
+| Soutien    | `#F0EA E0` | Pierre calcaire — fond de carte ou badge |
+| Signalétique | `#BC6C 4A` (optionnel) | Terre de Sienne — pour points d’alerte minimes (urgence, promotion) |
 
-### 2. DIRECTION ARTISTIQUE
-**« Façade haussmannienne, intérieur contemporain »**
+La couleur dominante est le vert foncé virant sépia, loin du vert acide clinique. Les accents métalliques chauds renvoient à l’idée d’instruments de précision et de soin à l’ancienne.
 
-Un parti pris tranché qui marie deux énergies :
-- **L'enveloppe** : élégance architecturale du 16e arrondissement — pierre calcaire, moulures discrètes, proportions classiques, ferronnerie ouvragée. C'est l'hommage à l'Avenue de Versailles, aux immeubles de standing, au quartier familial et exigeant.
-- **L'intérieur** : rigueur scientifique contemporaine, lumière blanche contrôlée, surfaces lisses, rangement visible mais esthétisé. C'est le laboratoire, la précision du conseil, la transparence du soin.
+### 4. Ton éditorial
+Une voix de pharmacienne ou pharmacien : **juste, posée, sans jargon inutile, avec cette bienveillance directe des gens de quartier**. On tutoie le visiteur comme on le ferait au comptoir. On évite les formules marketing et les superlatifs vides. Le ton est didactique sur les services (on explique ce qu’on fait, concrètement), plus libre et sensible sur l’ambiance (on évoque l’équipe, le lieu). Quelques parenthèses personnelles sont autorisées pour humaniser, jamais pour remplir.
 
-Esthétiquement, on traduit cela par un design **éditorial de prestige** : une grille architecturée (colonnes, marges généreuses, rythme vertical), des références au vocabulaire visuel médical sans le pasticher (étiquettes de flacons, ordonnances manuscrites stylisées, filets d'inventaire), et une typographie qui fait le pont entre tradition et modernité. Aucun effet « plaqué pharmacie » — pas de croix verte géante, pas de caducée kitsch. La sophistication est dans la structure, pas dans la décoration.
+### 5. Accroche héro
+**Titre** : *Votre santé a un nom, une adresse, un sourire.*
+**Sous-titre** : Spécialistes en orthopédie, aromathérapie et soins de famille depuis plus de trente ans au cœur du 16e arrondissement. Une équipe qui vous connaît déjà.
 
----
+### 6. Sections ordonnées (structure du futur site)
+Chaque section est introduite par un titre réel ; la phrase présentée est le contenu de lancement.
 
-### 3. PALETTE
+1.  **Le comptoir de l’Avenue**
+    *Titre :* « Une pharmacie à votre image »
+    *Contenu :* Bien plus qu’une officine, un repère de l’Avenue de Versailles où l’on prend le temps d’écouter, de vous revoir et de suivre votre santé au long cours.
 
-| Nom | HEX | Rôle |
-|---|---|---|
-| **Pierre du 16e** | `#F5F0EB` | Fond principal (chaud sans être crème, évoque la pierre calcaire parisienne sous un ciel clair) |
-| **Encre d'ordonnance** | `#1C1A1B` | Texte principal (un noir très légèrement chaud, jamais froid, comme une encre de qualité) |
-| **Vert pharmacopée** | `#1F4E3D` | Accent principal (vert profond bleuté, celui des flacons anciens, des jardins structurés à la française, des boiseries de bibliothèque médicale — jamais clinique) |
-| **Cuir de moleskine** | `#8B2E3A` | Accent secondaire, chaleureux et noble (bordeaux profond, couvertures de registres, reliures anciennes) |
-| **Blouse oxford** | `#E8EDF2` | Fond secondaire (un gris-bleu très pâle, clinique mais doux, évoque le linge de laboratoire, les surfaces propres sans froideur aseptisée) |
-| **Laiton patiné** | `#C8A96E` | Détails, filets, icônes (métal discret, ni or brillant ni jaune — la quincaillerie de qualité d'une devanture parisienne) |
+2.  **L’équipe, vos visages familiers**
+    *Titre :* « Ceux qui vous répondent »
+    *Contenu :* Pharmaciens, préparatrices et spécialistes — des visages que vous croisez au marché, à l’école, au parc Sainte-Périne. Une équipe stable, formée, qui connaît les pathologies et les familles du quartier.
 
-**Dominante** : claire, pour la lisibilité et la confiance, mais jamais fade — le `#F5F0EB` remplace le blanc pur par une chaleur minérale.
+3.  **Nos domaines d’excellence**
+    *Titre :* « Des compétences qu’on ne trouve pas partout »
+    *Contenu :* Ortho­pédie sur mesure, maintien à domicile, conseil en phyto­thérapie et aromathérapie, homéo­pathie, puériculture — autant de pôles de compétence déployés avec le même sérieux qu’un cabinet de spécialistes.
 
----
+4.  **Matériel médical & maintien à domicile**
+    *Titre :* « De la location au suivi, tout l’équipement chez vous »
+    *Contenu :* Fauteuils releveurs, lits médicalisés, déambulateurs, tire-laits : nous assurons la délivrance, la location et les explications, avec un service de livraison discret sur le quartier.
 
-### 4. TON ÉDITORIAL
+5.  **Services express du quotidien**
+    *Titre :* « Un test, une vaccination, une question ? »
+    *Contenu :* Tests antigéniques rapides (lundi-vendredi sans rendez-vous), vaccination grippe et COVID, dépistages : autant de petits gestes qui vous évitent de courir.
 
-Une voix humaine, précise, légèrement littéraire sans être précieuse. On s'adresse au patient comme on le ferait au comptoir : avec respect, clarté, et une pointe de conversation cultivée (on est dans le 16e). Le ton est celui d'une équipe qui *nomme* les choses — les prénoms, les spécialités, les services réels — sans jargon marketing ni hyperbole.
+6.  **Horaires & gardes — toujours ouvert quand il faut**
+    *Titre :* « Vous nous trouvez, même quand tout est fermé »
+    *Contenu :* Du lundi au samedi, nos horaires larges (14h-19h30 le lundi, 9h-19h30 du mardi au samedi) vous laissent le temps de passer. En dehors, on vous indique la pharmacie de garde officielle, sans détour.
 
-**Règle** : chaque phrase doit pouvoir être dite à voix haute par un pharmacien en blouse, avec naturel. Pas de « solution globale de santé », pas de « votre bien-être notre priorité ». Du concret, du nommé, du vrai.
+7.  **Nous écrire ou nous voir**
+    *Titre :* « Prenez place, au comptoir ou en ligne »
+    *Contenu :* Un formulaire direct, un numéro affiché comme on pousse une porte — appelez-nous au 01 45 27 29 56, écrivez-nous, ou venez au 38 avenue de Versailles. Nous sommes là.
 
----
-
-### 5. ACCROCHE HÉRO
-
-**Titre :**
-# Votre officine, depuis trois générations au 38
-
-**Sous-titre :**
-Orthopédie, phytothérapie, homéopathie et maintien à domicile — une pharmacie à taille humaine, où l’on prend le temps de vous connaître.
-
-*(Note créative : « depuis trois générations » est une hypothèse crédible pour une pharmacie du 16e ; si la réalité est différente, remplacer par « depuis des décennies » ou l’année de fondation réelle. L’important est l’ancrage temporel et géographique immédiat.)*
-
----
-
-### 6. SECTIONS
-
-#### ① **Notre équipe, votre repère**
-*« Sophie vous conseille en orthopédie, Marc prépare vos préparations magistrales, Julie connaît chaque patient par son prénom. »*
-→ Des visages, des prénoms, des spécialités croisées. Chaque membre de l’équipe a sa vignette, sa compétence phare, une phrase à la première personne.
-
-#### ② **Des spécialités qui ont du sens**
-*« Nous ne faisons pas tout. Nous faisons ce que nous savons faire, et nous le faisons bien. »*
-→ Présenter chaque spécialité (orthopédie, aromathérapie, homéopathie, phytothérapie, maintien à domicile, matériel médico-chirurgical) sous forme de cartes-étiquettes, avec une explication concrète : ce que ça change pour le patient, pas une définition de dictionnaire.
-
-#### ③ **Horaires réels, enrichis**
-*« Lundi : 14h – 19h30. Du mardi au samedi : 9h – 19h30. Et pour les gardes, un affichage à jour automatiquement. »*
-→ Structuré en schema.org, lisible en un coup d'œil, avec le CTA téléphone en évidence pour les urgences hors horaires.
-
-#### ④ **Prenez rendez-vous — pour de vrai**
-*« Consultation orthopédique, test antigénique, conseil en phytothérapie : choisissez votre motif et réservez un créneau. »*
-→ Parcours différencié par service, pas un lien générique Pharmodel. Chaque service a son propre bouton, son propre créneau.
-
-#### ⑤ **Le quartier, notre écosystème**
-*« À deux pas du pont Mirabeau, au croisement des avenues — nous livrons à domicile dans tout le 16e. Commandez en ligne, nous passons. »*
-→ Un mini-marqueur d'appartenance locale. La pharmacie n'est pas une île, elle est *la* pharmacie du quartier.
-
-#### ⑥ **Contact à l’ancienne, efficacité moderne**
-*« Appelez-nous au 01 45 27 29 56. Ou passez. On est au 38, vous ne pouvez pas nous manquer. »*
-→ Numéro en lien cliquable `tel:` prioritaire sur mobile. Formulaire de contact présent mais discret. Une photo de la devanture en pleine largeur pour l'identification visuelle immédiate.
-
----
-
-### 7. SIGNATURE VISUELLE
-
-**Deux détails mémorables :**
-
-1. **La croix pharmaceutique réinventée** — Non pas la croix verte générique, mais un motif géométrique abstrait, inspiré de la ferronnerie haussmannienne du 16e (balcons, grilles) et des croisillons d'ordonnancier. Il apparaît en filigrane, en séparateur de section, et comme favicon minimaliste. Vert pharmacopée sur fond pierre. C'est la signature silencieuse de l'officine.
-
-2. **Le jeu typographique « ordonnance monumentale »** — Dans les titres de section, le texte en Unbounded est surdimensionné, avec un crénage très serré et une césure de mot assumée en fin de ligne (rappelant le découpage des anciennes étiquettes d'apothicaires). Sur la section équipe, les prénoms sont affichés en display avec une graisse variable animée au survol (léger gonflement, comme si l'encre séchait en direct). Une idée forte, jamais gratuite.
-
----
-
-### EN RÉSUMÉ
-
-On abandonne le portail générique Pharmodel. On reconstruit un site qui respire l'élégance du 16e, la chaleur d'une équipe nommée, la rigueur d'un savoir-faire pharmaceutique. La promesse n'est pas « nous sommes un réseau de 3000 professionnels », mais « nous sommes là, au 38, et nous vous connaissons ». Le design le dit avant même qu'on lise.
+### 7. Signature visuelle
+- **Un système d’étiquettes-manuscrites animées** : chaque spécialité (orthopédie, aromathérapie, puériculture…) est introduite par une étiquette en mouvement, comme détachée d’un flacon d’apothicaire ancien, qui glisse et se stabilise au scroll. Le trait imite une encre noire ou laiton sur fond coquille, avec la typographie **Unbounded** traitée en petites capitales pour les sigles.
+- **Le trait de lumière dorée** : un filet horizontal couleur laiton traverse chaque bloc texte, évoquant le reflet sur le zinc ou la vitre de la devanture ; il pulse discrètement au chargement, puis reste fixe comme un repère de lecture.
+- **Traitement photographique** : les visuels de l’équipe et du lieu sont pris en contrejour, avec une dominante vert-sépia et un flou d’arrière-plan en lentille macro — on reconnaît les textures (verre, coton, métal) plus que les objets. La pharmacie n’est jamais montrée en plan large vide ; on y voit toujours une main, un geste, un échange.
